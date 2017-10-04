@@ -20,7 +20,7 @@ jobs:
       - run: git fetch origin
       - run: git config --global user.name LinuxbrewTestBot
       - run: git config --global user.email testbot@linuxbrew.sh
-      - run: chmod 0644 *.rb
+      - run: chmod 0644 Formula/*.rb || true
       - run: mkdir -p /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew
       - run: cp -a . /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew/$CIRCLE_PROJECT_REPONAME
       - run: mkdir /home/linuxbrew/bottles
