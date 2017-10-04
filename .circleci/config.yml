@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  build-linux:
     docker:
       - image: linuxbrew/linuxbrew
     environment:
@@ -31,10 +31,68 @@ jobs:
           brew install patchelf
           && brew tap linuxbrew/xorg
           && brew test-bot
-      - store_artifacts:
-          path: /home/linuxbrew/bottles
+      - persist_to_workspace:
+          root: /home/linuxbrew
+          paths:
+            - bottles
       - store_test_results:
           path: /home/linuxbrew/bottles
+  build-macos:
+    macos:
+      xcode: "8.3.3"
+    environment:
+      CIRCLE_REPOSITORY_URL: https://github.com/linuxbrew/homebrew-bioinformatics
+      HOMEBREW_DEVELOPER: 1
+      HOMEBREW_NO_AUTO_UPDATE: 1
+    steps:
+      - run: |
+          brew --version
+          brew update
+          cd $(brew --repo)
+          git fetch origin --unshallow --tags
+          git reset --hard origin/master
+          brew config
+      - checkout
+      - run: |
+          git remote set-url origin $CIRCLE_REPOSITORY_URL
+          if [ -e .git/shallow ]; then echo git fetch --unshallow; fi
+          git fetch origin
+          git reset --hard origin/master
+          git config --global user.name LinuxbrewTestBot
+          git config --global user.email testbot@linuxbrew.sh
+          repo=$(brew --repo $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME)
+          echo $repo
+          mkdir -p $repo
+          cp -a ./ $repo/
+      - run: |
+          mkdir /tmp/bottles
+          cd /tmp/bottles
+          brew test-bot
+      - persist_to_workspace:
+          root: /tmp
+          paths:
+            - bottles
+      - store_test_results:
+          path: /tmp/bottles
+  collect-bottles:
+    docker:
+      - image: linuxbrew/linuxbrew
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
+      - store_artifacts:
+          path: /tmp/workspace/bottles
+          destination: bottles
+workflows:
+  version: 2
+  test-bot:
+    jobs:
+      - build-linux
+      - build-macos
+      - collect-bottles:
+          requires:
+            - build-linux
+            - build-macos
 notify:
   webhooks:
     - url: https://p4142ivuwk.execute-api.us-west-2.amazonaws.com/prod/ci-upload
