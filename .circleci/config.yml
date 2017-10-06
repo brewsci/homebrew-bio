@@ -67,7 +67,7 @@ jobs:
       - run: |
           mkdir /tmp/bottles
           cd /tmp/bottles
-          brew test-bot
+          brew test-bot || true
       - persist_to_workspace:
           root: /tmp
           paths:
