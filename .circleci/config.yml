@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: linuxbrew/linuxbrew
     environment:
-      CIRCLE_REPOSITORY_URL: https://github.com/linuxbrew/homebrew-bioinformatics
+      CIRCLE_REPOSITORY_URL: https://github.com/linuxbrew/homebrew-bio
       HOMEBREW_DEVELOPER: 1
       HOMEBREW_NO_AUTO_UPDATE: 1
       HOMEBREW_VERBOSE: 1
@@ -41,7 +41,7 @@ jobs:
     macos:
       xcode: "8.3.3"
     environment:
-      CIRCLE_REPOSITORY_URL: https://github.com/linuxbrew/homebrew-bioinformatics
+      CIRCLE_REPOSITORY_URL: https://github.com/linuxbrew/homebrew-bio
       HOMEBREW_DEVELOPER: 1
       HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
