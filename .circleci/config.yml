@@ -52,8 +52,7 @@ jobs:
           if [ -e .git/shallow ]; then echo git fetch --unshallow; fi
           git fetch origin --tags
           git reset --hard origin/master
-          sed -i '' 's/return if ENV\["TRAVIS"]/return if ENV["CI"]/' /usr/local/Homebrew/Library/Homebrew/extend/os/mac/diagnostic.rb
-          git -C /usr/local/Homebrew commit Library/Homebrew/extend/os/mac/diagnostic.rb -m 'Ignore out-of-date XCode on CircleCI'
+          brew --env
           brew config
       - checkout
       - run: |
@@ -70,7 +69,7 @@ jobs:
       - run: |
           mkdir /tmp/bottles
           cd /tmp/bottles
-          brew test-bot
+          brew test-bot --skip-setup
       - persist_to_workspace:
           root: /tmp
           paths:
