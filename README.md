@@ -1,4 +1,4 @@
-![BrewSci logo](https://raw.githubusercontent.com/Homebrew/homebrew-science/gh-pages/images/brewsci-256x256.png)
+![BrewSci logo](https://raw.githubusercontent.com/brewsci/homebrew-science/master/.github/brewsci-256x256.png)
 
 # Linuxbrew Bioinformatics
 
