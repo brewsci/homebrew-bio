@@ -1,4 +1,5 @@
 theme: jekyll-theme-cayman
 title: Brewsci/bio
+description: Bioinformatics formulae for the Linuxbrew and Homebrew package managers
 show_downloads: false
 google_analytics: UA-2437900-5
