@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: linuxbrew/linuxbrew
     environment:
-      CIRCLE_REPOSITORY_URL: https://github.com/linuxbrew/homebrew-bio
+      CIRCLE_REPOSITORY_URL: https://github.com/brewsci/homebrew-bio
       HOMEBREW_DEVELOPER: 1
       HOMEBREW_NO_AUTO_UPDATE: 1
       HOMEBREW_VERBOSE: 1
@@ -21,8 +21,8 @@ jobs:
       - run: git config --global user.name LinuxbrewTestBot
       - run: git config --global user.email testbot@linuxbrew.sh
       - run: chmod 0644 Formula/*.rb
-      - run: mkdir -p /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew
-      - run: cp -a . /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew/$CIRCLE_PROJECT_REPONAME
+      - run: mkdir -p /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/$CIRCLE_PROJECT_USERNAME
+      - run: cp -a . /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
       - run: mkdir /home/linuxbrew/bottles
       - run: >-
           cd /home/linuxbrew/bottles;
@@ -41,7 +41,7 @@ jobs:
     macos:
       xcode: "9.0"
     environment:
-      CIRCLE_REPOSITORY_URL: https://github.com/linuxbrew/homebrew-bio
+      CIRCLE_REPOSITORY_URL: https://github.com/brewsci/homebrew-bio
       HOMEBREW_DEVELOPER: 1
       HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
