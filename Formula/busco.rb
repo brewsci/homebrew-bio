@@ -7,6 +7,12 @@ class Busco < Formula
   # doi "10.1093/bioinformatics/btv351"
   # tag "bioinformatics"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "cdb14d393a9791cd121756fd74f6677f2e4d577cc268036fa7fb708a1e65edd2" => :sierra_or_later
+    sha256 "d5fc62e2ab2d5cf248d6cac19de3be8c69b6ec4ebbcd8d132974dbf0add3d6ca" => :x86_64_linux
+  end
+
   depends_on "python3"
   depends_on "blast" => :recommended
   # Also depends on augustus and hmmer
