@@ -19,6 +19,6 @@ class Adam < Formula
   end
 
   test do
-    system "#{bin}/adam-submit", "--version"
+    assert_match "Usage", shell_output("#{bin}/adam-submit --help")
   end
 end
