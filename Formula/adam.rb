@@ -18,9 +18,7 @@ class Adam < Formula
     depends_on "maven" => :build
   end
 
-  option "without-test", "Disable build-time checking (not recommended)"
-
-  deprecated_option "without-check" => "without-test"
+  option "without-test", "Disable build-time unit tests (not recommended)"
 
   depends_on "apache-spark"
 
