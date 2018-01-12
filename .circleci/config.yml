@@ -42,6 +42,7 @@ jobs:
       xcode: "9.0"
     environment:
       CIRCLE_REPOSITORY_URL: https://github.com/brewsci/homebrew-bio
+      HOMEBREW_BOTTLE_DOMAIN: https://linuxbrew.bintray.com
       HOMEBREW_DEVELOPER: 1
       HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
