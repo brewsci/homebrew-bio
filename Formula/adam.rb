@@ -5,6 +5,13 @@ class Adam < Formula
   sha256 "08e43ab689977787635b1c92b056b387e3d19fd2ae173fbaf5cf3a7c948188a5"
   # cite "http://doi.org/10.1145/2723372.2742787"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "c7f6a6d8ee7d73c255a17ba442f4c0d841e1e6eba3d6f72b84f81d2d1e8ae589" => :sierra_or_later
+    sha256 "81364913e52d15dc450b214d17355c44c00d115b3349c475e0fe7c5f0b82c982" => :x86_64_linux
+  end
+
   head do
     url "https://github.com/bigdatagenomics/adam.git", :shallow => false
     depends_on "maven" => :build
