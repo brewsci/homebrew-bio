@@ -8,6 +8,7 @@ class Busco < Formula
   # tag "bioinformatics"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
     sha256 "cdb14d393a9791cd121756fd74f6677f2e4d577cc268036fa7fb708a1e65edd2" => :sierra_or_later
     sha256 "d5fc62e2ab2d5cf248d6cac19de3be8c69b6ec4ebbcd8d132974dbf0add3d6ca" => :x86_64_linux
