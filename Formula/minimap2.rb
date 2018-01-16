@@ -1,10 +1,10 @@
 class Minimap2 < Formula
   desc "Fast pairwise aligner for genomic and spliced nucleotide sequences"
   homepage "https://github.com/lh3/minimap2"
-  url "https://github.com/lh3/minimap2/releases/download/v2.3/minimap2-2.3.tar.bz2"
-  sha256 "a7bad55254bc4011d4501c2a5a21fd30443ffd04cbcbe28ba190ae160f7955e6"
+  url "https://github.com/lh3/minimap2/releases/download/v2.7/minimap2-2.7.tar.bz2"
+  sha256 "19d6dbeaa19440e0199ae9bebaf34349ef2e2696a127206ccf80498ade55d408"
   head "https://github.com/lh3/minimap2.git"
-  # doi "https://arxiv.org/abs/1708.01492"
+  # cite "https://arxiv.org/abs/1708.01492"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
