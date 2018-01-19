@@ -7,6 +7,13 @@ class Oma < Formula
   # cite "http://doi.org/10.1093/bioinformatics/btx229"
   # cite "http://doi.org/10.1093/nar/gku1158"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "4893b28658e53492c7ec7641eaeabcba66f2e3d4edaed4a4e2bc78d4fae0440e" => :sierra_or_later
+    sha256 "c0e059b258cd1ac426b9ecb12d15f517e211cd5cb5fd1c696cbf672553fb2cad" => :x86_64_linux
+  end
+
   depends_on "python"
 
   def install
