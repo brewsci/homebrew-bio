@@ -30,7 +30,7 @@ jobs:
           PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH";
           brew install patchelf
           && brew tap linuxbrew/xorg
-          && brew test-bot
+          && brew test-bot --bintray-org=linuxbrew --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
       - persist_to_workspace:
           root: /home/linuxbrew
           paths:
@@ -42,7 +42,6 @@ jobs:
       xcode: "9.0"
     environment:
       CIRCLE_REPOSITORY_URL: https://github.com/brewsci/homebrew-bio
-      HOMEBREW_BOTTLE_DOMAIN: https://linuxbrew.bintray.com
       HOMEBREW_DEVELOPER: 1
       HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
@@ -70,7 +69,7 @@ jobs:
       - run: |
           mkdir /tmp/bottles
           cd /tmp/bottles
-          brew test-bot --skip-setup
+          brew test-bot --skip-setup --bintray-org=linuxbrew --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
       - persist_to_workspace:
           root: /tmp
           paths:
