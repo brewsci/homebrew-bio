@@ -4,8 +4,7 @@ class Busco < Formula
   url "https://gitlab.com/ezlab/busco/repository/3.0.2/archive.tar.bz2"
   sha256 "cd0699545a126c7cc94604eef7c8dc50379b5d11becbad3a0f55d995a4c5e1c0"
   head "https://gitlab.com/ezlab/busco.git"
-  # doi "10.1093/bioinformatics/btv351"
-  # tag "bioinformatics"
+  # cite "http://doi.org/10.1093/bioinformatics/btv351"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
