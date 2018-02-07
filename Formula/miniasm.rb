@@ -7,6 +7,8 @@ class Miniasm < Formula
   # cite "https://doi.org/10.1093/bioinformatics/btw152"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any
     sha256 "dbc894c4fbc31b8694777654b4df0e1ce74aff4ef20699c5541a7382f697f475" => :sierra_or_later
     sha256 "db65b66443d72a14d80e228874b9d906e536c52915b7a8d0670b6e9ee96df90d" => :x86_64_linux
   end
