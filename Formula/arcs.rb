@@ -6,6 +6,13 @@ class Arcs < Formula
   head "https://github.com/bcgsc/arcs.git"
   # cite "https://doi.org/10.1093/bioinformatics/btx675"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any
+    sha256 "0015ed6dfafcad4c001fa2db63b6cd9c93cf768dcc2103ed3901222b14855e89" => :sierra_or_later
+    sha256 "140ea9634bd9ec54eeaa41e69e502f7bd928dce7423d4f39687820a0ff4aa3c0" => :x86_64_linux
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "boost" => :build
