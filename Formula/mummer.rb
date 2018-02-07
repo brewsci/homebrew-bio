@@ -3,7 +3,7 @@ class Mummer < Formula
   homepage "https://mummer.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/mummer/mummer/3.23/MUMmer3.23.tar.gz"
   sha256 "1efad4f7d8cee0d8eaebb320a2d63745bb3a160bb513a15ef7af46f330af662f"
-  revision 2
+  revision 3
   # cite "https://doi.org/10.1186/gb-2004-5-2-r12"
 
   bottle do
@@ -14,6 +14,12 @@ class Mummer < Formula
   end
 
   depends_on "tcsh" unless OS.mac?
+
+  # Fix the error: Can't use 'defined(%hash)'
+  patch do
+    url "https://gist.githubusercontent.com/sjackman/a531ee6866e6dcd89aaec37eaa60d5f4/raw/0d3f0146f1d9154913fee0564c6468c49efdc391/mummerplot.diff"
+    sha256 "9b1a3619ec1a2f91c5141c275dd6ddcc4788dbce0835697402cd6e8d006f4c2a"
+  end
 
   TOOLS = %w[
     annotate combineMUMs delta-filter dnadiff exact-tandems gaps mapview mgaps
@@ -34,9 +40,7 @@ class Mummer < Formula
   test do
     TOOLS.each do |tool|
       # Skip two tools that do not have a help flag
-      next if ["gaps", "nucmer2xfig"].include?(tool)
-      # mummerplot is broken with recent versions of Perl.
-      next if tool == "mummerplot" && OS.linux?
+      next if ["gaps", "nucmer2xfig"].include? tool
       assert_match /U(sage|SAGE)/, pipe_output("#{prefix}/#{tool} -h 2>&1")
     end
   end
