@@ -6,6 +6,13 @@ class Fastani < Formula
   head "https://github.com/ParBLiSS/FastANI.git"
   # cite "https://doi.org/10.1101/225342"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "c18aa0ce0cce03a4c792deee3e6ffa04903d32900395c421ff51f5d561a30dfe" => :sierra_or_later
+    sha256 "4750f5c51b9f93ae04a8436e106809b6e8743692284da012393561b056fad040" => :x86_64_linux
+  end
+
   depends_on "zlib" unless OS.mac?
   depends_on "autoconf" => :build
   depends_on "gsl"
