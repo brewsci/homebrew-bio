@@ -6,6 +6,13 @@ class Mummer < Formula
   revision 2
   # cite "https://doi.org/10.1186/gb-2004-5-2-r12"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "08eb9012c2e9466b8945c9bdd6d4397d5ad70b025c102f5a2de1dcbff5175755" => :sierra_or_later
+    sha256 "14086ae0f8420cc5d322f5ccfe614d418a2eb4bdd5304126881a66cc7b33f35b" => :x86_64_linux
+  end
+
   depends_on "tcsh" unless OS.mac?
 
   TOOLS = %w[
