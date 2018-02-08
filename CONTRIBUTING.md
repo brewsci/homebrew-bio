@@ -31,3 +31,21 @@ First time contributing to Homebrew? Read our [Code of Conduct](https://github.c
 * [open a pull request](https://docs.brew.sh/How-To-Open-a-Homebrew-Pull-Request.html) and fix any failing tests
 
 Thanks!
+
+# Creating a Formula
+
+First see [the Homebrew documentation](https://docs.brew.sh/#contributors) and [the Formula Cookbook](https://docs.brew.sh/Formula-Cookbook.html).
+
+## Citation
+
+Include a citation to the tool before the `desc`. For example:
+
+```ruby
+  # cite Smith_2010: "https://doi.org/10.1234/56789"
+```
+
+The citation label is the first author's surname and year of publication separated by an underscore. Please use `doi.org` to look up the citation label for a DOI:
+
+```sh
+curl -LH "Accept: text/bibliography; style=bibtex" "https://doi.org/10.1234/56789"
+```
