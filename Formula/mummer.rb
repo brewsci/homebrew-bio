@@ -4,7 +4,7 @@ class Mummer < Formula
   url "https://downloads.sourceforge.net/project/mummer/mummer/3.23/MUMmer3.23.tar.gz"
   sha256 "1efad4f7d8cee0d8eaebb320a2d63745bb3a160bb513a15ef7af46f330af662f"
   revision 3
-  # cite "https://doi.org/10.1186/gb-2004-5-2-r12"
+  # cite Kurtz_2004: "https://doi.org/10.1186/gb-2004-5-2-r12"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
