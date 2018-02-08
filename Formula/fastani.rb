@@ -1,10 +1,10 @@
 class Fastani < Formula
+  # cite Jain_2017: "https://doi.org/10.1101/225342"
   desc "Fast Whole-Genome Similarity (ANI) Estimation"
   homepage "https://github.com/ParBLiSS/FastANI"
   url "https://github.com/ParBLiSS/FastANI/archive/v1.0.tar.gz"
   sha256 "36f35211f2f4dc02b4e250af7c40c5f616d30239f5ef7aa366cdec65075a7db7"
   head "https://github.com/ParBLiSS/FastANI.git"
-  # cite "https://doi.org/10.1101/225342"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

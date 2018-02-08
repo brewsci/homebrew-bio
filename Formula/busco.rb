@@ -1,10 +1,10 @@
 class Busco < Formula
+  # cite Sim_o_2015: "https://doi.org/10.1093/bioinformatics/btv351"
   desc "Assess genome assembly completeness with single-copy orthologs"
   homepage "http://busco.ezlab.org"
   url "https://gitlab.com/ezlab/busco/repository/3.0.2/archive.tar.bz2"
   sha256 "cd0699545a126c7cc94604eef7c8dc50379b5d11becbad3a0f55d995a4c5e1c0"
   head "https://gitlab.com/ezlab/busco.git"
-  # cite "http://doi.org/10.1093/bioinformatics/btv351"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

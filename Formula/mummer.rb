@@ -1,10 +1,10 @@
 class Mummer < Formula
+  # cite Kurtz_2004: "https://doi.org/10.1186/gb-2004-5-2-r12"
   desc "Alignment of large-scale DNA and protein sequences"
   homepage "https://mummer.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/mummer/mummer/3.23/MUMmer3.23.tar.gz"
   sha256 "1efad4f7d8cee0d8eaebb320a2d63745bb3a160bb513a15ef7af46f330af662f"
   revision 3
-  # cite Kurtz_2004: "https://doi.org/10.1186/gb-2004-5-2-r12"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
