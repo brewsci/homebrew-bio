@@ -7,6 +7,12 @@ class Skesa < Formula
   version "2.0.551987"
   sha256 "82d9b0c06eb50ce9baff1a7b1d5a7a18e5a4ed7009f22a1e80a3ca6fdc70429c"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "59fb2540d2b5c6a3a6e354ea349eb03054797179aa2a9c2447ed7bd282ac4ab7" => :x86_64_linux
+  end
+
   depends_on :linux
 
   resource "readme" do
