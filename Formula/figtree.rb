@@ -5,11 +5,10 @@ class Figtree < Formula
   sha256 "f497d4dd3a6d220f6b62495b6f47a12ade50d87dbd8d6089f168e94d202f937b"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-bio"
-    prefix "/usr/local"
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
     rebuild 1
-    sha256 "aa0742bb3801a0fe5944a652b1c45900f50544619c2252158eedab1f1438301a" => :sierra
+    sha256 "aa0742bb3801a0fe5944a652b1c45900f50544619c2252158eedab1f1438301a" => :sierra_or_later
   end
 
   depends_on :java
