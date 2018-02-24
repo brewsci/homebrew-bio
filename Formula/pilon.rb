@@ -6,6 +6,12 @@ class Pilon < Formula
   head "https://github.com/broadinstitute/pilon.git"
   # cite Walker_2014: "https://doi.org/10.1371/journal.pone.0112963"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "79b1480bd485ebb3985db93d8361d68b7f5408c586f127f285288de3d7781efc" => :sierra_or_later
+  end
+
   depends_on :java
 
   def install
