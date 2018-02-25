@@ -7,6 +7,12 @@ class Nanopolish < Formula
         :revision => "1c6ae110a1b7d0ca5072025b1889997fec0828ed"
   head "https://github.com/jts/nanopolish.git"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "fc037c77203e00cb96937cea83aa524c97af083ec051a3c7a28cc6bb666b7415" => :sierra_or_later
+    sha256 "27bc64fe7504ef33c2463c41f7ee11807193368c4ac68d6f6575b037c3e83575" => :x86_64_linux
+  end
+
   fails_with :clang # needs openmp
   needs :cxx11
 
