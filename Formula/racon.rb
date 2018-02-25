@@ -6,6 +6,13 @@ class Racon < Formula
   sha256 "298934749d5ce76be3645f62a5cc9194572bb62f5ba646c153df1dac2983e084"
   head "https://github.com/isovic/racon.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "11f4cb3b08cc8c85379206380ca31c6d3080c0ad2d57cf3521b205c696da025a" => :sierra_or_later
+    sha256 "e0ddcba858fd4fea2ee153095acf409ff18c4544c029a71907da4eae285a753b" => :x86_64_linux
+  end
+
   needs :cxx11
   fails_with :clang # needs openmp
 
