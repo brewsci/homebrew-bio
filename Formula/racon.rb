@@ -1,9 +1,9 @@
 class Racon < Formula
-  # cite "https://doi.org/10.1101/gr.214270.116"
+  # cite Vaser_2017: "https://doi.org/10.1101/gr.214270.116"
   desc "Compute consensus sequence of a genome assembly of long uncorrected reads"
   homepage "https://github.com/isovic/racon"
-  url "https://github.com/isovic/racon/files/741519/racon-v0.5.0.tar.gz"
-  sha256 "298934749d5ce76be3645f62a5cc9194572bb62f5ba646c153df1dac2983e084"
+  url "https://github.com/isovic/racon/releases/download/1.0.0/racon-v1.0.0.tar.gz"
+  sha256 "0865d04540d5d0c87d2c64a82d657bda5398ded180fb442c4d1a9a4d0cf93782"
   head "https://github.com/isovic/racon.git"
 
   bottle do
@@ -16,6 +16,7 @@ class Racon < Formula
   needs :cxx11
   fails_with :clang # needs openmp
 
+  depends_on "cmake" => :build
   if OS.mac?
     depends_on "gcc" # for openmp
   else
@@ -23,11 +24,14 @@ class Racon < Formula
   end
 
   def install
-    system "make"
-    bin.install "bin/racon"
+    mkdir "build" do
+      system "cmake", "..", *std_cmake_args
+      system "make"
+      system "make", "install"
+    end
   end
 
   test do
-    assert_match "Options", shell_output("#{bin}/racon 2>&1", 1)
+    assert_match "usage", shell_output("#{bin}/racon --help")
   end
 end
