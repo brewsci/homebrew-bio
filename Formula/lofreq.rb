@@ -5,6 +5,12 @@ class Lofreq < Formula
   url "https://github.com/CSB5/lofreq/archive/v2.1.3.1.tar.gz"
   sha256 "72ad0165a226ad8601297d5e01d139574f30d0637c70dec543f8d513c26958eb"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "4d41c8e305ec4d1b044c6291b00d77d4056d986965dd0746c4f71dc6a61d1cfe" => :sierra_or_later
+    sha256 "c85acd934a221204fb1b57d31206042df3843b3a91db25b265f35e889c98d9a6" => :x86_64_linux
+  end
+
   depends_on "libtool" => :build
   depends_on "autoconf" => :build
   depends_on "automake" => :build
