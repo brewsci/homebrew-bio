@@ -2,8 +2,8 @@ class Racon < Formula
   # cite Vaser_2017: "https://doi.org/10.1101/gr.214270.116"
   desc "Compute consensus sequence of a genome assembly of long uncorrected reads"
   homepage "https://github.com/isovic/racon"
-  url "https://github.com/isovic/racon/releases/download/1.0.0/racon-v1.0.0.tar.gz"
-  sha256 "0865d04540d5d0c87d2c64a82d657bda5398ded180fb442c4d1a9a4d0cf93782"
+  url "https://github.com/isovic/racon/releases/download/1.0.1/racon-v1.0.1.tar.gz"
+  sha256 "6da26c3fbc4a3257edc547025613c32ca4daa0b51e2a263aa4e86e72907ea577"
   head "https://github.com/isovic/racon.git"
 
   bottle do
