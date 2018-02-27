@@ -4,6 +4,13 @@ class Gfakluge < Formula
   url "https://github.com/edawson/gfakluge/archive/0.1.0.tar.gz"
   sha256 "a5cc74a5733b2e17cc5819749c1a6a696620e5bc247663231112199bc891bc1e"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "213958aa6c3d4059a23ff1a24ebd10ee5a3e2f8b9f44ef1befe7544f046eecf8" => :sierra_or_later
+    sha256 "71cc2877ce102e0ad35532458aaaaf34ffb93857999e7d0802681bfaaa04e3a1" => :x86_64_linux
+  end
+
   def install
     system "make"
     include.install "src/gfakluge.hpp"
