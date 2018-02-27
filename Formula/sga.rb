@@ -13,6 +13,12 @@ class Sga < Formula
   depends_on "bamtools"
   depends_on "zlib" unless OS.mac?
 
+  # Fix error: call to 'abs' is ambiguous
+  patch do
+    url "https://github.com/jts/sga/pull/148.patch?full_index=1"
+    sha256 "257de28dec7c8fdfa8029bff0b14fc336f39a40984f8e7fc85903099d64887f0"
+  end
+
   def install
     cd "src" do
       system "./autogen.sh"
