@@ -5,6 +5,12 @@ class Flash < Formula
   url "https://downloads.sourceforge.net/project/flashpage/FLASH-1.2.11.tar.gz"
   sha256 "685ca6f7fedda07434d8ee03c536f4763385671c4509c5bb48beb3055fd236ac"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "de91f8ecf68dd85c6935367def8e7452cbeb3039e50e4fc10393f27dbbcebcc4" => :sierra
+    sha256 "6ee7d8e115ea5c7ee2a4584a699f6366b8b91d8ff52dd3019f9932f56e437a18" => :x86_64_linux
+  end
+
   depends_on "zlib" unless OS.mac?
 
   def install
