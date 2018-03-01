@@ -6,6 +6,13 @@ class Ntcard < Formula
   sha256 "f3f5969f2bc49a86d045749e49049717032305f5648b26c1be23bb0f8a13854a"
   head "https://github.com/bcgsc/ntCard"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any
+    sha256 "c2a4975d62ca60e7926dd78831aec208ad55bc77ab1f716c87bbdd541f500110" => :sierra_or_later
+    sha256 "6d1fb4c956d57ae24466c44ace9a9523c3704fe8269e0367dde301a8d73ff422" => :x86_64_linux
+  end
+
   fails_with :clang # needs openmp
 
   depends_on "autoconf" => :build
