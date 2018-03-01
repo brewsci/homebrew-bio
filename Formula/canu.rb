@@ -2,8 +2,8 @@ class Canu < Formula
   # cite Koren_2017: "https://doi.org/10.1101/gr.215087.116"
   desc "Single molecule sequence assembler"
   homepage "https://canu.readthedocs.org/en/latest/"
-  url "https://github.com/marbl/canu/archive/v1.6.tar.gz"
-  sha256 "470e0ac761d69d1fecab85da810a6474b1e2387d7124290a0e4124d660766498"
+  url "https://github.com/marbl/canu/archive/v1.7.tar.gz"
+  sha256 "c5be54b0ad20729093413e7e722a19637d32e966dc8ecd2b579ba3e4958d378a"
   head "https://github.com/marbl/canu.git"
 
   bottle do
@@ -13,8 +13,9 @@ class Canu < Formula
     sha256 "1391c084e04168491ba6d9b6c1f6340b79b56e269d0e7ba75df60f15a800a550" => :x86_64_linux
   end
 
-  # Fix fatal error: 'omp.h' file not found
-  depends_on "gcc" unless OS.mac? # for openmp
+  fails_with :clang # needs openmp
+
+  depends_on "gcc" if OS.mac? # for openmp
 
   def install
     system "make", "-C", "src"
