@@ -6,6 +6,13 @@ class Repeatmasker < Formula
   sha256 "16faf40e5e2f521146f6692f09561ebef5f6a022feb17031f2ddb3e3aabcf166"
   revision 2
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "862d3c592bb3f0474ae0183aa8b474f07327a4487c6e7cb6e4dd0c9e8da4cc88" => :sierra_or_later
+    sha256 "c67b04f3a1f906946a45e9e7fd6d0aedc5791400e93bdfd3f2bde30664e393d9" => :x86_64_linux
+  end
+
   depends_on "blast"
   depends_on "hmmer"
   depends_on "rmblast"
