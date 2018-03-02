@@ -32,6 +32,6 @@ class Bandage < Formula
   end
 
   test do
-    # Bandage is a GUI with no command line testing capability
+    assert_match "Usage", shell_output("#{bin}/Bandage --help")
   end
 end
