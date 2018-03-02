@@ -16,6 +16,7 @@ class KentTools < Formula
   depends_on "libpng"
   depends_on "mysql"
   depends_on "openssl"
+  depends_on "rsync" unless OS.mac?
   depends_on "util-linux" unless OS.mac?
   depends_on "zlib" unless OS.mac?
 
