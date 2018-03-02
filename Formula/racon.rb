@@ -7,10 +7,10 @@ class Racon < Formula
   head "https://github.com/isovic/racon.git"
 
   bottle do
-    cellar :any_skip_relocation
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "d69babadc6d2dd8998930c477cb5fdae92cc01861aa4bca22a6983738f9499f5" => :sierra_or_later
-    sha256 "2235f933003d0ab6be31d248eeb764bebeae1ee73ce877607e1865d136d7524b" => :x86_64_linux
+    cellar :any
+    sha256 "f78e0fe1681ee65fd72a2b3cc18e3559ff457b7cdcd180df0ba497fe6c5b1609" => :sierra_or_later
+    sha256 "5278acd367c0c37f4dd583e954a48c99235f6a0b7f7745b5e6fe0be5eac7807e" => :x86_64_linux
   end
 
   needs :cxx11
