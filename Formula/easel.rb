@@ -6,6 +6,13 @@ class Easel < Formula
   version "0.43"
   sha256 "ac8c24f484205cfb7124c38d6dc638a28f2b9035b9433efec5dc753c7e84226b"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "88436bd5340a4202a0a2a769226a97456d695883d2e97a8e4aa64e0e2560891b" => :sierra_or_later
+    sha256 "d7f95fcf20e465bb25b27bd1bd19631fe3bd636d5e415d8665e660c0a2fd8ad6" => :x86_64_linux
+  end
+
   def install
     system "./configure", "--prefix=#{prefix}"
     cd "easel" do
