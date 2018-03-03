@@ -6,6 +6,13 @@ class Fastp < Formula
   sha256 "e6f8ba5399290dd469d5da25caa9b97e40da8dc3066226faf692f4042c9d7055"
   head "https://github.com/OpenGene/fastp.git"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "8e04cc8a0c2a0067710fa13a68456393026a26c84916d7660b64270de49c2396" => :sierra_or_later
+    sha256 "cca5e746085309b668d76bc56ab990db77767447304bec85c3d692f666704ca5" => :x86_64_linux
+  end
+
   depends_on "zlib" unless OS.mac?
 
   needs :cxx11
