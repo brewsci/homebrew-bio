@@ -5,6 +5,13 @@ class Barrnap < Formula
   sha256 "82004930767e92b61539c0de27ff837b8b7af01236e565f1473c63668cf0370f"
   head "https://github.com/tseemann/barrnap.git"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "1215c64ca5d2fec2665d0b6167edec78c1a9545a54c2c9bf35c6f531a5d6b5e4" => :sierra_or_later
+    sha256 "bcc05e5b81475bb0982cd741f8e94e854d80333abd994d84a53c7084fa5e5c45" => :x86_64_linux
+  end
+
   depends_on "hmmer"
 
   def install
