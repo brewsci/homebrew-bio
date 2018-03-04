@@ -4,21 +4,15 @@ class KentTools < Formula
   url "http://hgdownload.soe.ucsc.edu/admin/exe/userApps.v361.src.tgz"
   sha256 "4eef556e9a6191b2f7f76b1b3d01bea356ae5648e9d00e79ddc8e2a61cd37e85"
   head "git://genome-source.cse.ucsc.edu/kent.git"
-  # tag "bioinformatics"
-
-  bottle do
-    cellar :any
-    sha256 "04b38d218eb87829f33baae42d453b872aa2de986a330754445b2fc12d60fb93" => :high_sierra
-    sha256 "2b2faf1a428b99541c20dc4136c8ea6d6f4832607364478e537c278baeb4f676" => :sierra
-    sha256 "6bf095413b6aa2de56551c51a81273ced85efae0b59905492fccdbc08e7d2b8c" => :el_capitan
-  end
 
   depends_on "libpng"
   depends_on "mysql"
   depends_on "openssl"
-  depends_on "rsync" unless OS.mac?
-  depends_on "util-linux" unless OS.mac?
-  depends_on "zlib" unless OS.mac?
+  unless OS.mac?
+    depends_on "rsync"
+    depends_on "util-linux"
+    depends_on "zlib"
+  end
 
   def install
     libpng = Formula["libpng"]
@@ -28,14 +22,8 @@ class KentTools < Formula
     args << "MACHTYPE=#{`uname -m`.chomp}"
     args << "PNGLIB=-L#{libpng.opt_lib} -lpng -lz"
     args << "PNGINCL=-I#{libpng.opt_include}"
-
-    # On Linux, depends_on :mysql looks at system MySQL so check if Homebrew
-    # MySQL already exists. If it does, then link against that. Otherwise, let
-    # kent-tools link against system MySQL (see kent/src/inc/common.mk)
-    if mysql.installed?
-      args << "MYSQLINC=#{mysql.opt_include}/mysql"
-      args << "MYSQLLIBS=-lmysqlclient -lz"
-    end
+    args << "MYSQLINC=#{mysql.opt_include}/mysql"
+    args << "MYSQLLIBS=-lmysqlclient -lz"
 
     cd build.head? ? "src" : "kent/src" do
       system "make", *args
