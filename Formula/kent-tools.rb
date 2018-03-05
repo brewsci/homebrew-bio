@@ -5,6 +5,12 @@ class KentTools < Formula
   sha256 "4eef556e9a6191b2f7f76b1b3d01bea356ae5648e9d00e79ddc8e2a61cd37e85"
   head "git://genome-source.cse.ucsc.edu/kent.git"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "370a96e2fbfc23bfa6065e83fa3aa5caa006b42120f8d92f5fc010d4378d377e" => :sierra_or_later
+    sha256 "6ff00e1bef1ffd58e02bbb9ea2d02f2566be07dc5e2d9be86b31f1ee854735fa" => :x86_64_linux
+  end
+
   depends_on "libpng"
   depends_on "mysql"
   depends_on "openssl"
