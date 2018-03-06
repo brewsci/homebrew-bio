@@ -1,4 +1,5 @@
 class Busco < Formula
+  # cite Waterhouse_2017: "https://doi.org/10.1093/molbev/msx319"
   # cite Sim_o_2015: "https://doi.org/10.1093/bioinformatics/btv351"
   desc "Assess genome assembly completeness with single-copy orthologs"
   homepage "http://busco.ezlab.org"
