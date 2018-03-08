@@ -6,6 +6,13 @@ class Unicycler < Formula
   sha256 "ddd446f4fc17094825878ce245bb885e5b6dfe9b607d4a3e32387bf3fc1ea969"
   head "https://github.com/rrwick/Unicycler/releases"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "7609477768912069a93d5a178e0b108bac57c19eef605658163486439ccc1565" => :sierra_or_later
+    sha256 "de3ccc4f43e397cb07d251fad230f7c047879b2620b6c2cd9d1fdd1cbeb1396a" => :x86_64_linux
+  end
+
   needs :cxx14
 
   depends_on "blast"
