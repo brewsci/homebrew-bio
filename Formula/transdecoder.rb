@@ -5,6 +5,13 @@ class Transdecoder < Formula
   sha256 "c3946c07ae21857e5a35d76083b21e925b43bba2dee02db14d31b65942302298"
   head "https://github.com/TransDecoder/TransDecoder.git"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "17f2e7de9352f9735ea93b9bdb6da49c9ec869010678cf3a5e178b661c19cf94" => :sierra_or_later
+    sha256 "67ce07e6e66232ca8a8543867f137f3b1f5a5c5a0fe3d9b7613907e86460250d" => :x86_64_linux
+  end
+
   unless OS.mac?
     depends_on "cpanminus" => :build
     depends_on "perl"
