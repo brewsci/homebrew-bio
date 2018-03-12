@@ -5,6 +5,12 @@ class Exonerate < Formula
   url "http://ftp.ebi.ac.uk/pub/software/vertebrategenomics/exonerate/exonerate-2.2.0.tar.gz"
   sha256 "0ea2720b1388fa329f889522f43029b416ae311f57b229129a65e779616fe5ff"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "da5d8b8ba78eaa5e5c9f02b6116d1a354543a69cc612e4aecd0030efaf32ddc3" => :sierra_or_later
+    sha256 "ffc9dc069931c451df43d67dc0ed5b21f45594c942564eda789eac9b5002293e" => :x86_64_linux
+  end
+
   devel do
     url "http://ftp.ebi.ac.uk/pub/software/vertebrategenomics/exonerate/exonerate-2.4.0.tar.gz"
     sha256 "f849261dc7c97ef1f15f222e955b0d3daf994ec13c9db7766f1ac7e77baa4042"
