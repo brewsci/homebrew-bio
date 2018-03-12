@@ -6,6 +6,12 @@ class Trnascan < Formula
   version "1.23"
   sha256 "843caf3e258a6293300513ddca7eb7dbbd2225e5baae1e5a7bcafd509f6dd550"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "a54b3d2b603962584f862f25c1a385bd38653d1b691df8ece20319e6f0848e27" => :sierra_or_later
+    sha256 "d81fc3713ae3db57312729afa507a2858a9c406107fd130b0a5ada21c7db01b3" => :x86_64_linux
+  end
+
   def install
     system "make", "all", "CFLAGS=-D_POSIX_C_SOURCE=1", "BINDIR=#{bin}", "LIBDIR=#{libexec}"
     bin.install %w[coves-SE covels-SE eufindtRNA trnascan-1.4 tRNAscan-SE]
