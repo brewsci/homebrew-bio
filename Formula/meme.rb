@@ -7,6 +7,11 @@ class Meme < Formula
   sha256 "377238c2a9dda64e01ffae8ecdbc1492c100df9b0f84132d50c1cf2f68921b22"
   revision 3
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "81803b3e1fd878c908f91f2f04e85e5916a3766487b54ce545a8d861c88f0c86" => :x86_64_linux
+  end
+
   # Work around the error:
   # ld: file not found: /usr/lib/system/libsystem_darwin.dylib
   depends_on :linux if ENV["CIRCLECI"]
