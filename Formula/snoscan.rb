@@ -5,6 +5,12 @@ class Snoscan < Formula
   url "http://lowelab.ucsc.edu/software/snoscan-0.9.1.tar.gz"
   sha256 "e6ad2f10354cb0c4c44d46d5f298476dbe250a4817afcc8d1c56d252e08ae19e"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "4f17ef4945c1abe1fade5e7c8b84c0af114487e950331b43227dabe64cdf6a62" => :sierra_or_later
+    sha256 "7a29e836a55f23cb203ff35ff3a92de8ec86c65cc84f871b7c2120f07816c19e" => :x86_64_linux
+  end
+
   def install
     perl = OS.mac? ? "#!/usr/bin/perl" : "#!/usr/bin/env perl"
     inreplace "sort-snos", "#! /usr/local/bin/perl", perl
