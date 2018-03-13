@@ -5,6 +5,8 @@ class EMem < Formula
   url "https://github.com/lucian-ilie/E-MEM/archive/v1.0.1.tar.gz"
   sha256 "70a5a1e8b4e190d117b8629fff3493a4762708c8c0fe9eae84da918136ceafea"
 
+  fails_with :clang # needs openmp
+
   depends_on "boost" => :build
   depends_on "gcc" if OS.mac? # for openmp
 
