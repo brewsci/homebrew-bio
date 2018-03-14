@@ -45,6 +45,7 @@ jobs:
     steps:
       - run: |
           brew --version
+          brew remove $(brew list)
           brew update
           cd $(brew --repo)
           if [ -e .git/shallow ]; then echo git fetch --unshallow; fi
