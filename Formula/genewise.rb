@@ -6,6 +6,13 @@ class Genewise < Formula
   sha256 "240e2b12d6cd899040e2efbcb85b0d3c10245c255f3d07c1db45d0af5a4d5fa1"
   revision 1
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any
+    sha256 "6fdc8a97b8c15df77d6c6a7cb545ce9f2fa21c14e010e041b5d8eff64b5c20c1" => :sierra_or_later
+    sha256 "67e56af99ac88549d06a08338a0e953a355d61ab31abd5ce0708a16baab98d75" => :x86_64_linux
+  end
+
   depends_on "pkg-config" => :build
   depends_on "glib"
 
