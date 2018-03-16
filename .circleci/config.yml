@@ -12,6 +12,9 @@ jobs:
           cd /home/linuxbrew/.linuxbrew/Homebrew
           git fetch origin --unshallow --tags
           git reset --hard origin/master
+          cd /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/homebrew/homebrew-core
+          git fetch origin --depth=1
+          git reset --hard origin/master
       - checkout
       - run: git remote set-url origin $CIRCLE_REPOSITORY_URL
       - run: if [ -e .git/shallow ]; then echo git fetch --unshallow; fi
