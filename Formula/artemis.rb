@@ -4,9 +4,7 @@ class Artemis < Formula
   homepage "https://www.sanger.ac.uk/science/tools/artemis"
   url "ftp://ftp.sanger.ac.uk/pub/resources/software/artemis/v17/v17.0.1/artemis-v17.0.1.jar"
   sha256 "8703fd02df01084c8dcb06abf181b378cdf4dd9ba70d71fbd950c2056fefe932"
-  # head "https://github.com/sanger-pathogens/Artemis"
-
-  bottle :unneeded
+  revision 1
 
   depends_on :java
 
@@ -26,6 +24,10 @@ class Artemis < Formula
     bin.write_jar_script libexec/jar, "dnaplotter", opts
     inreplace bin/"dnaplotter", "-jar", "-cp"
     inreplace bin/"dnaplotter", '"$@"', 'uk.ac.sanger.artemis.circular.DNADraw "$@"'
+
+    bin.write_jar_script libexec/jar, "bamview", opts
+    inreplace bin/"bamview", "-jar", "-cp"
+    inreplace bin/"bamview", '"$@"', 'uk.ac.sanger.artemis.components.alignment.BamView "$@"'
   end
 
   test do
