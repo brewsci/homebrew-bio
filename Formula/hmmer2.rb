@@ -7,6 +7,12 @@ class Hmmer2 < Formula
   url "http://eddylab.org/software/hmmer/2.4i/hmmer-2.4i.tar.gz"
   sha256 "73cb85c2197017fa7a25482556ed250bdeed256974b99b0c25e02854e710a886"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "7cbccc680a07e5421f3a582e5bf8d2c73c9a930b77823360e794aecf7928c51d" => :x86_64_linux
+  end
+
   keg_only "hmmer2 conflicts with hmmer 3.x"
 
   # fast_algorithms.c:49:10: fatal error: 'ppc_intrinsics.h' file not found
