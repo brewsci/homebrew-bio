@@ -6,6 +6,12 @@ class Artemis < Formula
   sha256 "8703fd02df01084c8dcb06abf181b378cdf4dd9ba70d71fbd950c2056fefe932"
   revision 1
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "afe9a473decfdaac3d4d4da8feb0d9731f4bd0079f65e59d17bce0d9c0bd4e4a" => :sierra
+    sha256 "87d973ba74d1738917f1c99acd608a1bd617e2d5c888d6ebc4067ec22dcb646d" => :x86_64_linux
+  end
+
   depends_on :java
 
   def install
