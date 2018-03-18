@@ -5,6 +5,12 @@ class Quast < Formula
   url "https://downloads.sourceforge.net/project/quast/quast-4.6.3.tar.gz"
   sha256 "c00ef637282207dcad05de9503c704bc6cc69eea4fb52f7802fd8566afa31c4e"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "101ecf5624406959757f074218ba95ebc16a226b852f68832b0da29e0b303779" => :sierra_or_later
+    sha256 "ce3487e38818178541943c3961139339cbfb6f785ffb744a0eddef8d28aabd90" => :x86_64_linux
+  end
+
   depends_on "e-mem"
   depends_on "matplotlib"
 
