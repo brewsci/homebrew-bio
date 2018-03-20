@@ -1,5 +1,5 @@
 class ClustalOmega < Formula
-  # Sievers_2011: "https://doi.org/10.1038/msb.2011.75"
+  # cite Sievers_2011: "https://doi.org/10.1038/msb.2011.75"
   desc "Fast, scalable generation multiple sequence alignments"
   homepage "http://www.clustal.org/omega/"
   url "http://www.clustal.org/omega/clustal-omega-1.2.4.tar.gz"
