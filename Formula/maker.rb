@@ -8,6 +8,13 @@ class Maker < Formula
   # cite Holt_2011: "http://doi.org/10.1186/1471-2105-12-491" # MAKER2
   # cite Campbell_2013: "http://doi.org/10.1104/pp.113.230144" # MAKER-P
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "c6cc8d7e23cae66426580681b726c6653a60f07fe654d6e6a3fcc8a8de2d7399" => :sierra_or_later
+    sha256 "d8219353cc1d7c8b339ccdcad812fbac80d1ae201ae0536244025a399eb9d9e9" => :x86_64_linux
+  end
+
   depends_on "cpanminus" => :build
   depends_on "augustus"
   depends_on "bioperl"
