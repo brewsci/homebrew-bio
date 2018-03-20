@@ -1,5 +1,5 @@
 class Trnascan < Formula
-  # cite "https://doi.org/10.1093/nar/25.5.0955"
+  # cite Lowe_1997: "https://doi.org/10.1093/nar/25.5.0955"
   desc "Detect tRNA in genome sequence"
   homepage "http://eddylab.org/software.html"
   url "http://eddylab.org/software/tRNAscan-SE/tRNAscan-SE.tar.Z"

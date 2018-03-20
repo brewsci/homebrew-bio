@@ -1,5 +1,5 @@
 class Snap < Formula
-  # cite "https://doi.org/10.1186/1471-2105-5-59"
+  # cite Korf_2004: "https://doi.org/10.1186/1471-2105-5-59"
   desc "Gene prediction tool"
   homepage "http://korflab.ucdavis.edu/software.html"
   url "http://korflab.ucdavis.edu/Software/snap-2013-11-29.tar.gz"

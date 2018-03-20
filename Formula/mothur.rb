@@ -1,5 +1,5 @@
 class Mothur < Formula
-  # cite "https://doi.org/10.1128/AEM.01541-09"
+  # cite Schloss_2009: "https://doi.org/10.1128/AEM.01541-09"
   desc "16s analysis software"
   homepage "https://www.mothur.org/"
   url "https://github.com/mothur/mothur/archive/v1.39.5.tar.gz"

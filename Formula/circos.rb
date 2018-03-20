@@ -1,5 +1,5 @@
 class Circos < Formula
-  # cite "https://doi.org/10.1101/gr.092759.109"
+  # cite Krzywinski_2009: "https://doi.org/10.1101/gr.092759.109"
   desc "Visualize data in a circular layout"
   homepage "http://circos.ca"
   url "http://circos.ca/distribution/circos-0.69-6.tgz"

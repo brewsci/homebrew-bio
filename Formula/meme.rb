@@ -1,5 +1,5 @@
 class Meme < Formula
-  # cite "https://doi.org/10.1093/nar/gkp335"
+  # cite Bailey_2009: "https://doi.org/10.1093/nar/gkp335"
   desc "Tools for motif discovery"
   homepage "http://meme-suite.org"
   url "http://meme-suite.org/meme-software/4.11.2/meme_4.11.2_2.tar.gz"

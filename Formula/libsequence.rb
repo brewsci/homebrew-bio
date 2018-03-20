@@ -1,5 +1,5 @@
 class Libsequence < Formula
-  # cite "https://doi.org/10.1093/bioinformatics/btg316"
+  # cite Thornton_2003: "https://doi.org/10.1093/bioinformatics/btg316"
   desc "C++ library for evolutionary genetics"
   homepage "https://molpopgen.github.io/libsequence/"
   url "https://github.com/molpopgen/libsequence/archive/1.9.2.tar.gz"

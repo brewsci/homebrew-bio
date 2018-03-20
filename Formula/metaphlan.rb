@@ -1,5 +1,5 @@
 class Metaphlan < Formula
-  # cite "https://doi.org/10.1038/nmeth.2066"
+  # cite Segata_2012: "https://doi.org/10.1038/nmeth.2066"
   desc "MetaPhlAn: Metagenomic Phylogenetic Analysis"
   homepage "https://huttenhower.sph.harvard.edu/metaphlan"
   url "https://bitbucket.org/nsegata/metaphlan/get/default.tar.bz2"

@@ -1,5 +1,5 @@
 class Fwdpp < Formula
-  # cite "https://doi.org/10.1534/genetics.114.165019"
+  # cite Thornton_2014: "https://doi.org/10.1534/genetics.114.165019"
   desc "C++ template library for forward-time population genetic simulations"
   homepage "https://molpopgen.github.io/fwdpp/"
   url "https://github.com/molpopgen/fwdpp/archive/0.5.7.tar.gz"

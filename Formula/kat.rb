@@ -1,5 +1,5 @@
 class Kat < Formula
-  # cite "https://doi.org/10.1093/bioinformatics/btw663"
+  # cite Mapleson_2016: "https://doi.org/10.1093/bioinformatics/btw663"
   desc "K-mer Analysis Toolkit (KAT) analyses k-mer spectra"
   homepage "https://github.com/TGAC/KAT"
   url "https://github.com/TGAC/KAT/releases/download/Release-2.3.4/kat-2.3.4.tar.gz"

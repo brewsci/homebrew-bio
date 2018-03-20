@@ -1,5 +1,5 @@
 class Unicycler < Formula
-  # cite "https://doi.org/10.1371/journal.pcbi.1005595"
+  # cite Wick_2017: "https://doi.org/10.1371/journal.pcbi.1005595"
   desc "Hybrid assembly pipeline for bacterial genomes"
   homepage "https://github.com/rrwick/Unicycler"
   url "https://github.com/rrwick/Unicycler/archive/v0.4.4.tar.gz"

@@ -1,5 +1,5 @@
 class Trf < Formula
-  # cite "https://doi.org/10.1093/nar/27.2.573"
+  # cite Benson_1999: "https://doi.org/10.1093/nar/27.2.573"
   desc "Tandem repeats finder"
   homepage "https://tandem.bu.edu/trf/trf.html"
   if OS.mac?

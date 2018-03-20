@@ -1,5 +1,5 @@
 class Salmon < Formula
-  # cite "https://doi.org/10.1038/nmeth.4197"
+  # cite Patro_2017: "https://doi.org/10.1038/nmeth.4197"
   desc "Transcript-level quantification from RNA-seq reads"
   homepage "https://github.com/COMBINE-lab/salmon"
   url "https://github.com/COMBINE-lab/salmon/archive/v0.9.1.tar.gz"

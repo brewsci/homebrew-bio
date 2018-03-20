@@ -1,5 +1,5 @@
 class Snoscan < Formula
-  # cite "https://doi.org/10.1126/science.283.5405.1168"
+  # cite Lowe_1999: "https://doi.org/10.1126/science.283.5405.1168"
   desc "Search for C/D box methylation guide snoRNA genes in a genomic sequence"
   homepage "http://lowelab.ucsc.edu/snoscan/"
   url "http://lowelab.ucsc.edu/software/snoscan-0.9.1.tar.gz"

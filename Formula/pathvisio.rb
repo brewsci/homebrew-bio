@@ -1,5 +1,5 @@
 class Pathvisio < Formula
-  # cite "https://doi.org/10.1371/journal.pcbi.1004085"
+  # cite Kutmon_2015: "https://doi.org/10.1371/journal.pcbi.1004085"
   desc "Extendable Pathway Analysis Toolbox"
   homepage "https://www.pathvisio.org/"
   url "https://www.pathvisio.org/data/releases/3.3.0/pathvisio_bin-3.3.0.zip"
