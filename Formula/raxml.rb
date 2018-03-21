@@ -6,6 +6,13 @@ class Raxml < Formula
   sha256 "08cda74bf61b90eb09c229e39b1121c6d95caf182708e8745bd69d02848574d7"
   head "https://github.com/stamatak/standard-RAxML.git"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "b05330863e74c37db0f647ea7922008e2eb5fc564485b9f2c531ca8b289efabc" => :sierra_or_later
+    sha256 "86d4b421265183d8fcf76b9c525ac62f9d12e1106ed6e1b02491c5bf199c859b" => :x86_64_linux
+  end
+
   depends_on "gcc" # gfortran
   depends_on "open-mpi" => :recommended unless OS.mac? # uses Linux-specific APIs
 
