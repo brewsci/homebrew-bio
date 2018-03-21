@@ -6,6 +6,13 @@ class Oases < Formula
   sha256 "a90d469bd19d355edf6193dcf321f77216389d2831a849d4c151c1c0c771ab36"
   head "https://github.com/dzerbino/oases"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "79b961f7f73835ea2ae13a7312bfd84f18c0af317de31659a475e27048d946c9" => :sierra_or_later
+    sha256 "0efc1b966ea6e662d6994762b3d20d76d1278965e666fa7f06ccb25ac0d1053b" => :x86_64_linux
+  end
+
   depends_on "python@2"
   depends_on "velvet"
   depends_on "zlib" unless OS.mac?
