@@ -6,6 +6,13 @@ class Velvet < Formula
   sha256 "884dd488c2d12f1f89cdc530a266af5d3106965f21ab9149e8cb5c633c977640"
   head "https://github.com/dzerbino/velvet.git"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "2f7e5a1c844dbad804e896a9f27768cdd17b25b0c46de794449f7d44266379b2" => :sierra_or_later
+    sha256 "79ad825ef586b4627de53573503b695c7a1f4167bba3a0f9058aa1d83382934e" => :x86_64_linux
+  end
+
   depends_on "zlib" unless OS.mac?
 
   def install
