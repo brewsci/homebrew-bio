@@ -7,12 +7,13 @@ jobs:
       CIRCLE_REPOSITORY_URL: https://github.com/brewsci/homebrew-bio
       HOMEBREW_DEVELOPER: 1
       HOMEBREW_NO_AUTO_UPDATE: 1
-      HOMEBREW_VERBOSE: 1
-      HOMEBREW_VERBOSE_USING_DOTS: 1
     steps:
       - run: |
           cd /home/linuxbrew/.linuxbrew/Homebrew
           git fetch origin --unshallow --tags
+          git reset --hard origin/master
+          cd /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/homebrew/homebrew-core
+          git fetch origin --depth=1
           git reset --hard origin/master
       - checkout
       - run: git remote set-url origin $CIRCLE_REPOSITORY_URL
@@ -47,6 +48,7 @@ jobs:
     steps:
       - run: |
           brew --version
+          brew remove $(brew list)
           brew update
           cd $(brew --repo)
           if [ -e .git/shallow ]; then echo git fetch --unshallow; fi

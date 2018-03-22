@@ -1,11 +1,11 @@
 class Oma < Formula
+  # cite Altenhoff_2014: "https://doi.org/10.1093/nar/gku1158"
+  # cite Altenhoff_2017: "https://doi.org/10.1093/nar/gkx1019"
+  # cite Train_2017: "https://doi.org/10.1093/bioinformatics/btx229"
   desc "Standalone package to infer orthologs with the OMA algorithm"
   homepage "https://omabrowser.org/standalone/"
   url "https://omabrowser.org/standalone/OMA.2.2.0.tgz"
   sha256 "25ee17b92ef6631507311a93036c91154a42bcee8d033e3a3912836f2764040d"
-  # cite "http://doi.org/10.1093/nar/gkx1019"
-  # cite "http://doi.org/10.1093/bioinformatics/btx229"
-  # cite "http://doi.org/10.1093/nar/gku1158"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

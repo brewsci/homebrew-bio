@@ -1,15 +1,16 @@
 class Minimap2 < Formula
+  # cite Li_2018: "https://arxiv.org/abs/1708.01492"
   desc "Fast pairwise aligner for genomic and spliced nucleotide sequences"
   homepage "https://github.com/lh3/minimap2"
-  url "https://github.com/lh3/minimap2/releases/download/v2.3/minimap2-2.3.tar.bz2"
-  sha256 "a7bad55254bc4011d4501c2a5a21fd30443ffd04cbcbe28ba190ae160f7955e6"
+  url "https://github.com/lh3/minimap2/releases/download/v2.9/minimap2-2.9.tar.bz2"
+  sha256 "b6d527cb947506e504bd1b7c71bf6cabf6a7466e69d33752986acaa4ac8d3ff5"
   head "https://github.com/lh3/minimap2.git"
-  # doi "https://arxiv.org/abs/1708.01492"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "a53d9a577ed3592cd45cb1d3456b27e990c3c64faa163dfc25b1afa99086d346" => :sierra_or_later
-    sha256 "ee7edc40aa7ea0f8f5c88b2176bcdfe56dca6cb71581b7c94592d2f19605b90d" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "011e0932718cd703c25e0dc7eb1d8981adcfb5073ebc7ab0a1dde699b926ca45" => :sierra_or_later
+    sha256 "3014285111827c16f6954aa58bcbbc1e053449a1760989cb3af182f68e49c0f0" => :x86_64_linux
   end
 
   depends_on "zlib" unless OS.mac?
