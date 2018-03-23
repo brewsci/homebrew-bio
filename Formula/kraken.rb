@@ -6,6 +6,13 @@ class Kraken < Formula
   sha256 "a4ac74c54c10920f431741c80d8a172670be12c3b352912000030fb5ea4c87a7"
   head "https://github.com/DerrickWood/kraken.git"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any
+    sha256 "b1d19fd51e040f01a12042a24bf834b776c4efda337ec96b86372b98ea44b7f1" => :sierra_or_later
+    sha256 "f58c1cb9381196f215d98da12c106455b07590608cb47960ee61b18a4702cf17" => :x86_64_linux
+  end
+
   fails_with :clang # needs openmp
   depends_on "gcc" if OS.mac? # for openmp
 
@@ -29,6 +36,6 @@ class Kraken < Formula
   end
 
   test do
-    assert_match "Usage", shell_output("#{bin}/kraken 2>&1", 64)
+    assert_match "Usage:", shell_output("#{bin}/kraken --help 2>&1")
   end
 end
