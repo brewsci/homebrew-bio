@@ -1,8 +1,8 @@
 class Quicktree < Formula
   desc "Phylogenetic neighbor-joining tree builder"
   homepage "https://www.sanger.ac.uk/science/tools/quicktree"
-  url "https://github.com/khowe/quicktree/archive/v2.2.tar.gz"
-  sha256 "e44d9147a81888d6bfed5e538367ecd4e5d373ae882d5eb9649e5e33f54f1bd6"
+  url "https://github.com/khowe/quicktree/archive/v2.3.tar.gz"
+  sha256 "3739f7962ce72c1d3c86ba0a3faa82cc60749f6d9f627c1aba3729b6c881dee4"
   head "https://github.com/khowe/quicktree.git"
 
   bottle do
