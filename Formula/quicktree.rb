@@ -6,10 +6,10 @@ class Quicktree < Formula
   head "https://github.com/khowe/quicktree.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    root_url "https://homebrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "078298b9503e4f0c923b4a8d07be1712e40db974f7d46e144c570bc79a392722" => :sierra_or_later
-    sha256 "9a05196897f1f10455db8756847927679710b344ecdd525f0f8780dee16a3e02" => :x86_64_linux
+    sha256 "536ff4f63edd1ce2bf6e8890894ded4a6f9016ff736110f24d848c59bfd014e2" => :sierra_or_later
+    sha256 "6816df014b3490de99c0404cafcf053d5297c90e366edb924205cff1ecba1f1a" => :x86_64_linux
   end
 
   def install
