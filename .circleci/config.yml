@@ -16,14 +16,14 @@ jobs:
           git fetch origin --depth=1
           git reset --hard origin/master
       - checkout
-      - run: git remote set-url origin $CIRCLE_REPOSITORY_URL
-      - run: if [ -e .git/shallow ]; then echo git fetch --unshallow; fi
-      - run: git fetch origin
-      - run: git config --global user.name LinuxbrewTestBot
-      - run: git config --global user.email testbot@linuxbrew.sh
-      - run: chmod 0644 Formula/*.rb
-      - run: mkdir -p /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/$CIRCLE_PROJECT_USERNAME
-      - run: cp -a . /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
+      - run: |
+          git remote set-url origin $CIRCLE_REPOSITORY_URL
+          git fetch origin
+          git config --global user.name LinuxbrewTestBot
+          git config --global user.email testbot@linuxbrew.sh
+          chmod 0644 Formula/*.rb
+          mkdir -p /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/$CIRCLE_PROJECT_USERNAME
+          cp -a . /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
       - run:
           no_output_timeout: 20m
           command: |
@@ -53,7 +53,6 @@ jobs:
           brew remove $(brew list)
           brew update
           cd $(brew --repo)
-          if [ -e .git/shallow ]; then echo git fetch --unshallow; fi
           git fetch origin --tags
           git reset --hard origin/master
           brew --env
@@ -61,13 +60,11 @@ jobs:
       - checkout
       - run: |
           git remote set-url origin $CIRCLE_REPOSITORY_URL
-          if [ -e .git/shallow ]; then echo git fetch --unshallow; fi
           git fetch origin
           git reset --hard origin/master
           git config --global user.name LinuxbrewTestBot
           git config --global user.email testbot@linuxbrew.sh
           repo=$(brew --repo $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME)
-          echo $repo
           mkdir -p $repo
           cp -a ./ $repo/
       - run:
