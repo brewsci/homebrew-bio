@@ -7,6 +7,12 @@ class Portcullis < Formula
   sha256 "872c0dbd7515229ecc22c9bdcd72eb78dfe93a3c0bfd14af52c448c142fe892a"
   head "https://github.com/maplesond/portcullis.git"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "84338ad415271085e13df015eb979923b8c7db080c93b6fb534340f08d5e069d" => :sierra_or_later
+    sha256 "e9f5e571b9c40a054832112b4e94137844dbad291588708a22c083834a767edc" => :x86_64_linux
+  end
+
   needs :cxx11
 
   depends_on "autoconf" => :build
