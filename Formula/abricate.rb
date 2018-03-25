@@ -5,6 +5,14 @@ class Abricate < Formula
   sha256 "287bc61518f86ffd04801bd8f2c7aeebb62b7c74b2fa154974c321efcee5a206"
   head "https://github.com/tseemann/abricate.git"
 
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-bio"
+    prefix "/usr/local"
+    cellar :any_skip_relocation
+    sha256 "c2d91f0289166944030f9f1e386b4933ce004de146b5e6505ff718a6894f1318" => :sierra
+    sha256 "0ee6ee07fef3fa7280e831e06845f405182f19ca6067651d89592e73f2677f21" => :x86_64_linux
+  end
+
   depends_on "cpanminus" => :build
   depends_on "bioperl"
   depends_on "blast"
