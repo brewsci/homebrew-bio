@@ -8,9 +8,9 @@ class Kmc < Formula
   revision 1
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "3f6989a7acf4d982edd19b96360ece099f288f919c74f4dbf5cd5a59bf295fd9" => :x86_64_linux
+    sha256 "37113f2f997dafce42289bb75710a340d0623b3b77e020235ca27c349199a343" => :sierra
+    sha256 "afd0759beef802e266f150b2f505445b6962c9a7d25493d4cd02a90319ff8e46" => :x86_64_linux
   end
 
   fails_with :clang # fatal error: 123:10: 'ext/algorithm' file not found
