@@ -5,6 +5,7 @@ class Kmc < Formula
   url "https://github.com/marekkokot/KMC/archive/v3.0.1.tar.gz"
   sha256 "0dbc9254f95541a060d94076d2aa03bb57eb2da114895848f65af0db1e4f8b67"
   head "https://github.com/marekkokot/KMC.git"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -12,8 +13,9 @@ class Kmc < Formula
     sha256 "3f6989a7acf4d982edd19b96360ece099f288f919c74f4dbf5cd5a59bf295fd9" => :x86_64_linux
   end
 
-  # fatal error: 123:10: 'ext/algorithm' file not found
-  depends_on :linux
+  fails_with :clang # fatal error: 123:10: 'ext/algorithm' file not found
+  
+  depends_on "gcc" if OS.mac?
 
   needs :cxx14
 
