@@ -7,6 +7,13 @@ class Treepl < Formula
   sha256 "7543dbf3cc174bc4b7a39618267439c11c9cd5d1f18ef5b42f0159f389684370"
   head "https://github.com/blackrim/treePL.git"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any
+    sha256 "32ca33f557f19da2355bf1c4ea00a176e7e4ad45420d9509f4c3a80555efabed" => :sierra_or_later
+    sha256 "bc12c0f4376fd6c90835a47368654ea7f9c56eba6fbe78b40c7d23909742b7ac" => :x86_64_linux
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
