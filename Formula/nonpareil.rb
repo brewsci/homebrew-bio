@@ -7,6 +7,13 @@ class Nonpareil < Formula
   sha256 "6fc9caf915f80704876fcd7b0a1fb3beda664fdb840fa0866bdfa1cb76df1a34"
   head "https://github.com/lmrodriguezr/nonpareil.git"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "b787eb1c9c4b954e9aa0e738eee41cfa4fbe22a6bb25b6d532de0cc1c511ffc1" => :sierra_or_later
+    sha256 "c67480c06e4c0527fbd1565f6904f873d7d463ce8e05d319b00681dda8f6823d" => :x86_64_linux
+  end
+
   depends_on "r"
   depends_on "open-mpi" => :optional
 
