@@ -6,6 +6,14 @@ class Paml < Formula
   version "4.9g"
   sha256 "30092007a105324e4fdd5b5a4737098531269839cc561f7bab3acfaf0ea1b3cf"
 
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-bio"
+    prefix "/usr/local"
+    cellar :any_skip_relocation
+    sha256 "a405e3b54cbb5f2a9ad8296c68500d83723a420ba6a3f47cecfad7c459a8a0b4" => :sierra
+    sha256 "de947f72f5e61e42f15a75f874daa62161ca6f1a462529c9fdd4fbb47a437b75" => :x86_64_linux
+  end
+
   def install
     # Restore permissions, as some are wrong in the tarball archives
     chmod_R "u+rw", "."
