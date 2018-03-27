@@ -6,6 +6,12 @@ class Samblaster < Formula
   sha256 "72c42e0a346166ba00152417c82179bd5139636fea859babb06ca855af93d11f"
   head "https://github.com/GregoryFaust/samblaster"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "6cbcf31a1f314f12519ca125d28deb931589fceb7b833616b242c44c6c5e8312" => :sierra
+    sha256 "41fdd5d3bf09c1a45dc4a4aa4bfd7cee316e582f352bffa0ebe31a103e8dd814" => :x86_64_linux
+  end
+
   def install
     system "make"
     bin.install "samblaster"
