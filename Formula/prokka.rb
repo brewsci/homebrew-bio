@@ -5,7 +5,12 @@ class Prokka < Formula
   url "https://github.com/tseemann/prokka/archive/v1.13.tar.gz"
   sha256 "0090acd6e3a8cb2d517fe0933c717c4f8271c60d0a493f7c4927504d77a8db4f"
 
-  depends_on "cpanminus" => :build
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "6de2b11685a40317e2bc75154ddbe5af305e9a07da4a3d6d608824ab0d96114b" => :sierra_or_later
+    sha256 "bc296240135b977f46a03c9c00f2a106844eda17250e663c98cd6e3539912b22" => :x86_64_linux
+  end
 
   depends_on "aragorn"
   depends_on "barrnap"
