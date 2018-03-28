@@ -11,6 +11,13 @@ class Cap3 < Formula
   end
   version "2015-02-11"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "99ecfe1010263867a187ed2c4e74af9b3ece721ec95c2974ae0a98bc054804e1" => :sierra_or_later
+    sha256 "a886d7d77eb147b14095f22efc1f2cfa4b595810658cb47ffc99512010ddf24e" => :x86_64_linux
+  end
+
   depends_on "patchelf" => :build unless OS.mac?
 
   def install
