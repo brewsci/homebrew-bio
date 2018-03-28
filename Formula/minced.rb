@@ -6,8 +6,9 @@ class Minced < Formula
   head "https://github.com/ctSkennerton/minced.git"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "b1c15ae6c44f97b2942a613c38ea05052fa324d17823d096b5cb33728f1cdbaf" => :sierra
+    sha256 "b1c15ae6c44f97b2942a613c38ea05052fa324d17823d096b5cb33728f1cdbaf" => :sierra_or_later
     sha256 "357e033708312a17f0625b4cc51092ce51070c8c69b2cff72f2ba82d80e1bc50" => :x86_64_linux
   end
 
