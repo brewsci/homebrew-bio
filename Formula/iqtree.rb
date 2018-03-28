@@ -5,6 +5,12 @@ class Iqtree < Formula
   url "https://github.com/Cibiv/IQ-TREE/archive/v1.6.2.tar.gz"
   sha256 "2a60884fac28325f1123ffb4063a22b6f2568e5b3f1fa074379a665404b7dd82"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "f5014de6c36e33aef433600009e72bd93ba270e4a61fb9931d245885f1e2d75d" => :sierra_or_later
+    sha256 "587f038c94b4b68571e08e721266e8fb09a46cf3516b6577104d2170c01d0e6a" => :x86_64_linux
+  end
+
   fails_with :clang # needs openmp
 
   depends_on "cmake" => :build
