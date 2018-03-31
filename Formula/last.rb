@@ -6,6 +6,14 @@ class Last < Formula
   sha256 "0bebd28ad4b0a6e377f53d25f0572b7202fc7cd1292ac482100767e052a5672c"
   head "http://last.cbrc.jp/last", :using => :hg
 
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-bio"
+    prefix "/usr/local"
+    cellar :any_skip_relocation
+    sha256 "b9685214aafa8564147ea9ed7312511a00dd314a6d333dc81e26ec05378a7727" => :sierra
+    sha256 "7d492b03fa60b7f154ad58a52ce861b351afb43687e507e41c32d1aafafeeaba" => :x86_64_linux
+  end
+
   depends_on "zlib" unless OS.mac?
 
   needs :cxx11
