@@ -1,5 +1,5 @@
 class Emboss < Formula
-  # cite Rice_2000: "http://doi.org/10.1016/S0168-9525(00)02024-2"
+  # cite Rice_2000: "https://doi.org/10.1016/S0168-9525(00)02024-2"
   desc "European Molecular Biology Open Software Suite"
   homepage "https://emboss.sourceforge.io/"
   url "ftp://emboss.open-bio.org/pub/EMBOSS/EMBOSS-6.6.0.tar.gz"
