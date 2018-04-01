@@ -1,5 +1,5 @@
 class Raxml < Formula
-  # cite Stamatakis_2014: "http://doi.org/10.1093/bioinformatics/btu033"
+  # cite Stamatakis_2014: "https://doi.org/10.1093/bioinformatics/btu033"
   desc "Maximum likelihood analysis of large phylogenies"
   homepage "https://sco.h-its.org/exelixis/web/software/raxml/index.html"
   url "https://github.com/stamatak/standard-RAxML/archive/v8.2.11.tar.gz"

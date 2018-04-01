@@ -1,5 +1,5 @@
 class Squeakr < Formula
-  # cite Pandey_2017: "https://dx.doi.org/10.1093/bioinformatics/btx636"
+  # cite Pandey_2017: "https://doi.org/10.1093/bioinformatics/btx636"
   desc "Exact and Approximate k-mer Counting System"
   homepage "https://github.com/splatlab/squeakr"
   url "https://github.com/splatlab/squeakr/archive/v0.5.tar.gz"

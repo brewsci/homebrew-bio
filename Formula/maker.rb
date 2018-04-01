@@ -1,7 +1,7 @@
 class Maker < Formula
-  # cite Cantarel_2007: "http://doi.org/10.1101/gr.6743907" # MAKER
-  # cite Holt_2011: "http://doi.org/10.1186/1471-2105-12-491" # MAKER2
-  # cite Campbell_2013: "http://doi.org/10.1104/pp.113.230144" # MAKER-P
+  # cite Cantarel_2007: "https://doi.org/10.1101/gr.6743907" # MAKER
+  # cite Holt_2011: "https://doi.org/10.1186/1471-2105-12-491" # MAKER2
+  # cite Campbell_2013: "https://doi.org/10.1104/pp.113.230144" # MAKER-P
   desc "Genome annotation pipeline"
   homepage "http://www.yandell-lab.org/software/maker.html"
   url "http://yandell.topaz.genetics.utah.edu/maker_downloads/static/maker-2.31.9.tgz"
