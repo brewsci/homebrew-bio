@@ -6,6 +6,14 @@ class Dwgsim < Formula
     :revision => "4fd56bf39dbba3801856fa0512aed68726e3ca6e"
   head "https://github.com/nh13/DWGSIM.git"
 
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-bio"
+    prefix "/usr/local"
+    cellar :any_skip_relocation
+    sha256 "f6794802ed9615c73fe240a0e322c6ab9e773b2e22c05482908f38f85c15c653" => :sierra
+    sha256 "dd36a513fa17141d0a98a59b985f7965c80498b30c1fa2d8dabba3cc1d42929a" => :x86_64_linux
+  end
+
   unless OS.mac?
     # dwgsim builds a vendored copy of samtools, which requires (static) ncurses.
     depends_on "ncurses" => :build
