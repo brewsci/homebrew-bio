@@ -6,6 +6,13 @@ class Exabayes < Formula
   sha256 "e401f1b4645e67e8879d296807131d0ab79bba81a1cd5afea14d7c3838b095a2"
   head "https://github.com/aberer/exabayes.git", :branch => "devel"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any
+    sha256 "77fda7581253a180c1ccd75db4e160ca1be097a2884946efe292c7307e401db4" => :sierra_or_later
+    sha256 "739036d04fcb054c2456b8148a9667e80636a3e1b5b03dcee1d1add9dc2c6464" => :x86_64_linux
+  end
+
   depends_on "autoconf" => :build
   depends_on "autoconf-archive" => :build
   depends_on "automake" => :build
