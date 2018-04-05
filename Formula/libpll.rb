@@ -6,6 +6,13 @@ class Libpll < Formula
   sha256 "45107d59d87be921c522478bb3688beee60dc79154e0b4a183af01122c597132"
   head "https://github.com/xflouris/libpll.git"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any
+    sha256 "6c0db69ccdf356afb339511e1acd31664f2c5742aba5ce0045c7ff6eecdeed6a" => :sierra_or_later
+    sha256 "58b69c916fcea6f08e91ce956b5f426416506cf70a0ca13763bf3578b0a014fb" => :x86_64_linux
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
