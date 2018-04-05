@@ -6,6 +6,13 @@ class R8s < Formula
   version "1.8"
   sha256 "3b70c86c5aeff52b42598bd48777881b22104c1c1c4658ebcf96d2da9d9521b4"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any
+    sha256 "a4f0418cd11cf09e3bfa91f1415760a294facf81f1493024c6e2e25c8bc148bb" => :sierra_or_later
+    sha256 "25f4ea64a58ac75c39b5509d964f60db013ea308e2e898b955be5e094bcf5378" => :x86_64_linux
+  end
+
   depends_on "gcc" # for gfortran
 
   def install
