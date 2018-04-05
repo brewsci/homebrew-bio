@@ -1,8 +1,8 @@
 class Gfakluge < Formula
   desc "C++ library and utilities for Graphical Fragment Assembly (GFA)"
   homepage "https://github.com/edawson/gfakluge"
-  url "https://github.com/edawson/gfakluge/archive/0.1.0.tar.gz"
-  sha256 "a5cc74a5733b2e17cc5819749c1a6a696620e5bc247663231112199bc891bc1e"
+  url "https://github.com/edawson/gfakluge/archive/0.2.1.tar.gz"
+  sha256 "4b0d60841613322ab8a33b4d16a73dac0d47b3c8c7a20286652b2612b1eac75d"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
