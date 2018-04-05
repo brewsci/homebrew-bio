@@ -6,6 +6,13 @@ class Bamm < Formula
   sha256 "526eef85ef011780ee21fe65cbc10ecc62efe54044102ae40bdef49c2985b4f4"
   head "https://github.com/macroevolution/bamm.git"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "fd57d0a4cee9311723afa3ce19cd828fce43f529c79a70b74c1ee9bf0857812d" => :sierra_or_later
+    sha256 "ea25ffe317ad5d39f8c3c1f4d1d565de1f053a41654333873869f912ca0a4fda" => :x86_64_linux
+  end
+
   depends_on "cmake" => :build
 
   fails_with :gcc => "4.8" do
