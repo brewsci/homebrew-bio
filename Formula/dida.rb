@@ -7,6 +7,12 @@ class Dida < Formula
   sha256 "251d8b6d40d061eb7a7c49737a1ce41592b89a6c8647a791fb9d64ff26afd7bd"
   revision 2
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "be712df11ffeb8d647d62e68d38209cd1e90494ea5227ff6c8f35d08cdfd13d9" => :sierra_or_later
+    sha256 "be67b9e1b268441b1ded890789aa081ee133f1c532ac3145c423726f2a96a44e" => :x86_64_linux
+  end
+
   fails_with :clang # needs openmp
 
   # Fix error: DIDA must be compiled with MPI support.
