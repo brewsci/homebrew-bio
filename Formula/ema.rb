@@ -6,6 +6,12 @@ class Ema < Formula
     :tag => "0.6.0", :revision => "4e72fe2b1a207d9d5d75ecbf0a782987b3e9f250"
   head "https://github.com/arshajii/ema"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "1377a872946bf0ee9537538bacf672a80697bff05da6f69b57f0e68b7be328c3" => :sierra_or_later
+    sha256 "90e87b95f0a2ba6b64977d8ac1c3073b06108631d3c0d2fbd3f217c3569cdafc" => :x86_64_linux
+  end
+
   fails_with :clang # needs openmp
   needs :cxx14
 
