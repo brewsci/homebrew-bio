@@ -2,8 +2,8 @@ class Arcs < Formula
   # cite Yeo_2017: "https://doi.org/10.1093/bioinformatics/btx675"
   desc "Scaffold genome sequence assemblies using 10x Genomics data"
   homepage "https://github.com/bcgsc/arcs"
-  url "https://github.com/bcgsc/arcs/archive/v1.0.1.tar.gz"
-  sha256 "4dc5336e741abdd0197335a21fcdc578eb4251131caf86ca4fb191c125065bf4"
+  url "https://github.com/bcgsc/arcs/archive/v1.0.2.tar.gz"
+  sha256 "ad8a168fe3f4ebbb4212fab8222228c70eca4fb19c83fbc335be35297bd0bbbb"
   head "https://github.com/bcgsc/arcs.git"
 
   bottle do
