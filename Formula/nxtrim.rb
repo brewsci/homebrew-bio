@@ -2,9 +2,8 @@ class Nxtrim < Formula
   # cite O_Connell_2014: "https://doi.org/10.1101/007666"
   desc "Trim adapters for Illumina Nextera Mate Pair libraries"
   homepage "https://github.com/sequencing/NxTrim"
-  url "https://github.com/sequencing/NxTrim/archive/v0.4.2.tar.gz"
-  sha256 "851dc82e1e503485ae70ea0770563b977a15d7b4dd29c4ca318bec4323355c19"
-  revision 1
+  url "https://github.com/sequencing/NxTrim/archive/v0.4.3.tar.gz"
+  sha256 "d216b34f92f95263882abd297332c3a6159c7f3c4165975a190891f3898391da"
   head "https://github.com/sequencing/NxTrim.git"
 
   bottle do
@@ -19,7 +18,7 @@ class Nxtrim < Formula
 
   def install
     system "make", "BOOST_ROOT=#{Formula["boost"].prefix}"
-    bin.install "nxtrim", "mergeReads"
+    bin.install "nxtrim"
   end
 
   test do
