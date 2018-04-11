@@ -9,8 +9,8 @@ class Nxtrim < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "d511ca04cfb5329414dfc6c6ddaffe42f4e3cefeb6f9ed3453725c624251dfb1" => :sierra_or_later
-    sha256 "0b76900670cf28b33f0c49c46ebe432001d4d4172113155f72338c8ab130e525" => :x86_64_linux
+    sha256 "1a1af7b998b50d4f788d0096190ff96825131ad4117da8e02e5dd3b8c0b1a198" => :sierra_or_later
+    sha256 "4a60e1b58c0ed93be841ea2f25c7046dc57170812c63fc5de813af55b9d3c094" => :x86_64_linux
   end
 
   depends_on "boost" => :build
