@@ -3,7 +3,7 @@ class Ema < Formula
   desc "Fast and accurate alignment of linked reads"
   homepage "http://ema.csail.mit.edu"
   url "https://github.com/arshajii/ema.git",
-    :tag => "0.6.0", :revision => "4e72fe2b1a207d9d5d75ecbf0a782987b3e9f250"
+    :tag => "v0.6.1", :revision => "bf4376b506a4461da03879c317d69f6b8e69e4a4"
   head "https://github.com/arshajii/ema"
 
   bottle do
