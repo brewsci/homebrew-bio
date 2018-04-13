@@ -25,7 +25,7 @@ jobs:
           mkdir -p /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/$CIRCLE_PROJECT_USERNAME
           cp -a . /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
       - run:
-          no_output_timeout: 30m
+          no_output_timeout: 60m
           command: |
             mkdir /tmp/bottles
             cd /tmp/bottles
@@ -68,7 +68,7 @@ jobs:
           mkdir -p $repo
           cp -a ./ $repo/
       - run:
-          no_output_timeout: 30m
+          no_output_timeout: 60m
           command: |
             mkdir /tmp/bottles
             cd /tmp/bottles
