@@ -4,8 +4,8 @@ class Kat < Formula
   # cite Mapleson_2016: "https://doi.org/10.1093/bioinformatics/btw663"
   desc "K-mer Analysis Toolkit (KAT) analyses k-mer spectra"
   homepage "https://github.com/TGAC/KAT"
-  url "https://github.com/TGAC/KAT/archive/Release-2.4.0.tar.gz"
-  sha256 "0681a6d941a7e0987c994f21c18ee648dea2881b33530628a7f0ec6fd3726a18"
+  url "https://github.com/TGAC/KAT/archive/Release-2.4.1.tar.gz"
+  sha256 "068bd63b022588058d2ecae817140ca67bba81a9949c754c6147175d73b32387"
   head "https://github.com/TGAC/KAT.git"
 
   bottle do
