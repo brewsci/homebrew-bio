@@ -8,7 +8,7 @@ class Abricate < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "c2d91f0289166944030f9f1e386b4933ce004de146b5e6505ff718a6894f1318" => :sierra
+    sha256 "c2d91f0289166944030f9f1e386b4933ce004de146b5e6505ff718a6894f1318" => :sierra_or_later
     sha256 "0ee6ee07fef3fa7280e831e06845f405182f19ca6067651d89592e73f2677f21" => :x86_64_linux
   end
 

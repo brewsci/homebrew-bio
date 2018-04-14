@@ -10,7 +10,7 @@ class Kat < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "1fe502f358fa86157037fa0898aabf7bf987954ddfb0110ed79138baa0075c0d" => :sierra
+    sha256 "1fe502f358fa86157037fa0898aabf7bf987954ddfb0110ed79138baa0075c0d" => :sierra_or_later
     sha256 "513bf8d955eb6d336c17933a035da9499ed6e038e15648e19d248d8ada7163e9" => :x86_64_linux
   end
 
