@@ -2,8 +2,8 @@ class Arcs < Formula
   # cite Yeo_2017: "https://doi.org/10.1093/bioinformatics/btx675"
   desc "Scaffold genome sequence assemblies using 10x Genomics data"
   homepage "https://github.com/bcgsc/arcs"
-  url "https://github.com/bcgsc/arcs/archive/v1.0.2.tar.gz"
-  sha256 "ad8a168fe3f4ebbb4212fab8222228c70eca4fb19c83fbc335be35297bd0bbbb"
+  url "https://github.com/bcgsc/arcs/releases/download/v1.0.3/arcs-1.0.3.tar.gz"
+  sha256 "85973989da98ea9071c93f00cf4182b359e7f576414e1cbb02ca581d9016368f"
   head "https://github.com/bcgsc/arcs.git"
 
   bottle do
@@ -13,14 +13,16 @@ class Arcs < Formula
     sha256 "fc751b87c3cc2e756e4966e262c3c49fde5e38d1d1c9e4a2f61f9b444af7c4e3" => :x86_64_linux
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
+  head do
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+  end
+
   depends_on "boost" => :build
   depends_on "zlib" unless OS.mac?
 
   def install
-    inreplace "autogen.sh", "automake -a", "automake -a --foreign"
-    system "./autogen.sh"
+    system "./autogen.sh" if build.head?
     system "./configure",
       "--disable-dependency-tracking",
       "--disable-silent-rules",
