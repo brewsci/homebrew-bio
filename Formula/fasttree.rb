@@ -5,6 +5,13 @@ class Fasttree < Formula
   url "http://microbesonline.org/fasttree/FastTree-2.1.10.c"
   sha256 "54cb89fc1728a974a59eae7a7ee6309cdd3cddda9a4c55b700a71219fc6e926d"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "194ffe49108f7738034c65dde0a449702a0a4ebb3f853cc0f2cb977af6bc0bba" => :sierra_or_later
+    sha256 "19fa2ac6897a1678901cdc62f91623520fd7dabcb057ea5d7853f32de2d5d101" => :x86_64_linux
+  end
+
   # 26 Aug 2017; Community mostly wants USE_DOUBLE; make it default now
   # http://www.microbesonline.org/fasttree/#BranchLen
   # http://darlinglab.org/blog/2015/03/23/not-so-fast-fasttree.html
