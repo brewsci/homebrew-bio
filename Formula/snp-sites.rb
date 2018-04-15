@@ -6,6 +6,14 @@ class SnpSites < Formula
   sha256 "4ccbf6016b37ba1aae67ee8dd265537098eb9a7965186deb0b862efd7c416ae6"
   head "https://github.com/sanger-pathogens/snp-sites.git"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    prefix "/usr/local"
+    cellar :any
+    sha256 "963f1b2cce96f685098ff185edb6607c45c5e65119084d254b1261071f914579" => :sierra_or_later
+    sha256 "0721484daa84e9bbd74d54f20ad17d1918ad78849f98999f6c48c1ce88a745fa" => :x86_64_linux
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "check" => :build
