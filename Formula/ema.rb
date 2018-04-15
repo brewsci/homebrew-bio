@@ -4,7 +4,7 @@ class Ema < Formula
   homepage "http://ema.csail.mit.edu"
   url "https://github.com/arshajii/ema.git",
     :tag => "v0.6.1", :revision => "bf4376b506a4461da03879c317d69f6b8e69e4a4"
-  head "https://github.com/arshajii/ema"
+  head "https://github.com/arshajii/ema.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
