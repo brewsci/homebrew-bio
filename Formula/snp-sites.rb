@@ -1,5 +1,5 @@
 class SnpSites < Formula
-  # cite Page_2016: "https://dx.doi.org/10.1099/mgen.0.000056"
+  # cite Page_2016: "https://doi.org/10.1099/mgen.0.000056"
   desc "Find SNP sites in a multi FASTA alignment file"
   homepage "https://github.com/sanger-pathogens/snp-sites"
   url "https://github.com/sanger-pathogens/snp-sites/archive/v2.4.0.tar.gz"
