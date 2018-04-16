@@ -4,6 +4,13 @@ class Bonsai < Formula
   url "https://github.com/dnbaker/bonsai/archive/v0.3.tar.gz"
   sha256 "f89efdf87c4d4a20bf3b8d4e9a11120b44b2b6b3055698c1e48d7790088618b3"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "189b70f92aa7b714bc645f5ab759646e0871181a8a6b463dfd3fe11b989fc300" => :sierra_or_later
+    sha256 "13dd340ff0ff41c70d77d01e9e9e54a90783d98409492428861fbfea31f02762" => :x86_64_linux
+  end
+
   unless OS.mac?
     depends_on "patchelf" => :build
     depends_on "zlib"
