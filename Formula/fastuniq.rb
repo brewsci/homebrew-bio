@@ -5,6 +5,13 @@ class Fastuniq < Formula
   url "https://downloads.sourceforge.net/project/fastuniq/FastUniq-1.1.tar.gz"
   sha256 "9ebf251566d097226393fb5aa9db30a827e60c7a4bd9f6e06022b4af4cee0eae"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "d1102d51ef9544219812a378b24ef165cf1780ba7c2e8806373acc9d5741977b" => :sierra_or_later
+    sha256 "ee48dc9e66808e87057362b7a5f8fbc7debe1b63aa521b8817cbe1c5a02dc684" => :x86_64_linux
+  end
+
   def install
     inreplace "source/fastq_uniq.c", "FSATQ", "FASTQ" # fix typo
     system "make", "-C", "source"
