@@ -8,8 +8,6 @@ class Megahit < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    prefix "/usr/local"
-    cellar "/usr/local/Cellar"
     sha256 "c82763b2625de5ccb1c9d5c671eb4c4aae36c584b569f3330618d70b7ac568d8" => :sierra_or_later
     sha256 "48f6cacd8476c46690ec7d4e094e3280a34762d4678c127633c8dc6ab5b9a006" => :x86_64_linux
   end
