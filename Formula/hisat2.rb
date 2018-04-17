@@ -5,6 +5,7 @@ class Hisat2 < Formula
   url "https://github.com/infphilo/hisat2/archive/0f01dc6397a.tar.gz"
   version "2.1.0"
   sha256 "1e878745c8b5bf93d88986add1dcd450611ab3406a8e046e941fcf67349df664"
+  head "https://github.com/infphilo/hisat2.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
