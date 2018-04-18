@@ -5,6 +5,13 @@ class Beagle < Formula
   url "https://github.com/beagle-dev/beagle-lib/archive/beagle_release_2_1_2.tar.gz"
   sha256 "82ff13f4e7d7bffab6352e4551dfa13afabf82bff54ea5761d1fc1e78341d7de"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "11813a2b5ba8f7d9823bf022b39a2ab8b08304ad0ec6ab773c2cf4223fef6815" => :sierra_or_later
+    sha256 "d54b6f619fa74482163b5b56d1b9a1ab6f173e8c7e1b0dfa4bc92867bf96377f" => :x86_64_linux
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "doxygen" => :build
