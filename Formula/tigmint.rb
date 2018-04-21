@@ -4,6 +4,7 @@ class Tigmint < Formula
   homepage "https://bcgsc.github.io/tigmint/"
   url "https://github.com/bcgsc/tigmint/archive/1.1.0.tar.gz"
   sha256 "f11471e322fa6ffaa560846e92e095a18f1c989bb5bfe729884857b277a6c25b"
+  head "https://github.com/bcgsc/tigmint.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
