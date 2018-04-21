@@ -5,6 +5,12 @@ class FermiLite < Formula
   url "https://github.com/lh3/fermi-lite/archive/v0.1.tar.gz"
   sha256 "661053bc7213b575912fc7be9cdfebc1c92a10319594a8e8f18542c9e2adda6e"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "7f5893730da8f22a792c26c7c4885a1a97d7f3074a4aba97ffc26c08cd869793" => :sierra_or_later
+    sha256 "0bdc4c570af402f510dee46e368b538dacb43d36ebfe479d5e4a5ca6321a62be" => :x86_64_linux
+  end
+
   depends_on "zlib" unless OS.mac?
 
   def install
