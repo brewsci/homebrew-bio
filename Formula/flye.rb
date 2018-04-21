@@ -5,6 +5,12 @@ class Flye < Formula
   url "https://github.com/fenderglass/Flye/archive/2.3.3.tar.gz"
   sha256 "51fd081265d5f427343cd387e7f7e313a8dddfb1db6abfd00344d86b43ce1c90"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "d0bd9bcabf374ee0c624be18c4b429ce5c1497475a3abad73f60c573ef67bf1e" => :sierra_or_later
+    sha256 "3b29b9f8386ea89f99c3a4621061259b36c3c72f0976e94b987b19e47364af57" => :x86_64_linux
+  end
+
   needs :cxx11
 
   depends_on "python@2"
