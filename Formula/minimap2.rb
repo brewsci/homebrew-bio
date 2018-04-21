@@ -4,6 +4,7 @@ class Minimap2 < Formula
   homepage "https://github.com/lh3/minimap2"
   url "https://github.com/lh3/minimap2/releases/download/v2.10/minimap2-2.10.tar.bz2"
   sha256 "52b36f726ec00bfca4a2ffc23036d1a2b5f96f0aae5a92fd826be6680c481c20"
+  revision 1
   head "https://github.com/lh3/minimap2.git"
 
   bottle do
@@ -13,16 +14,19 @@ class Minimap2 < Formula
     sha256 "03412ea8d74d5962bb9ed97b6a7454f967f5441067dcde591a670513ac24eecb" => :x86_64_linux
   end
 
+  depends_on "k8" # for paftools.js
   depends_on "zlib" unless OS.mac?
 
   def install
     system "make"
     bin.install "minimap2"
+    bin.install "misc/paftools.js"
     man1.install "minimap2.1"
     pkgshare.install "python", "test"
   end
 
   test do
-    assert_match "Usage", shell_output("#{bin}/minimap2 --help 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/minimap2 --version 2>&1")
+    assert_match /\d/, shell_output("#{bin}/paftools.js version 2>&1")
   end
 end
