@@ -5,6 +5,13 @@ class Tigmint < Formula
   url "https://github.com/bcgsc/tigmint/archive/1.1.0.tar.gz"
   sha256 "f11471e322fa6ffaa560846e92e095a18f1c989bb5bfe729884857b277a6c25b"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any
+    sha256 "36bd557f6c41fa5034e1b0305553825bd0df26bf5306317f0f5197ed0536d5b8" => :sierra_or_later
+    sha256 "580262b97b0695b1ab187d1999b72af2c16cb08a8b72b0ce3b92d6e60d8254ac" => :x86_64_linux
+  end
+
   depends_on "bedtools"
   depends_on "python"
 
