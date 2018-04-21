@@ -4,6 +4,7 @@ class Flye < Formula
   homepage "https://github.com/fenderglass/Flye"
   url "https://github.com/fenderglass/Flye/archive/2.3.3.tar.gz"
   sha256 "51fd081265d5f427343cd387e7f7e313a8dddfb1db6abfd00344d86b43ce1c90"
+  head "https://github.com/fenderglass/Flye.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
