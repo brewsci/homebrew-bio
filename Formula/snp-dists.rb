@@ -1,8 +1,8 @@
 class SnpDists < Formula
   desc "Pairwise SNP distance matrix from a FASTA sequence alignment"
   homepage "https://github.com/tseemann/snp-dists"
-  url "https://github.com/tseemann/snp-dists/archive/v0.2.tar.gz"
-  sha256 "3deb6feb5d2b8c3588059fdfa14a94440957fe31f9da4f9c0c7e72113f2f52fc"
+  url "https://github.com/tseemann/snp-dists/archive/v0.5.tar.gz"
+  sha256 "701a6bfb595aab858d69905eac3e9a358b2c9569fb6d9aaf508ed735e97d00fb"
   head "https://github.com/tseemann/snp-dists.git"
 
   bottle do
@@ -16,7 +16,8 @@ class SnpDists < Formula
 
   def install
     exe = "snp-dists"
-    system "make", exe
+    system "make"
+    system "make", "check"
     bin.install exe
     pkgshare.install "test"
   end
