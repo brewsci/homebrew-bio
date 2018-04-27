@@ -5,6 +5,12 @@ class GmapGsnap < Formula
   url "http://research-pub.gene.com/gmap/src/gmap-gsnap-2017-01-14.tar.gz"
   sha256 "f3eca0b66ff9770c5965d43b3532e59d839e593de00fa3550141527f3c7f1d2c"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "f39654d9dad269ab406326fdb51c4b0ec55d930711c5c8484b7d6845248d2038" => :sierra_or_later
+    sha256 "68bddc2d4a3b28f6dceae1809c9ede40e8c49bcdf678f2ad9a0195a7fb34276c" => :x86_64_linux
+  end
+
   depends_on "samtools"
 
   def install
