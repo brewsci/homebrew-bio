@@ -6,6 +6,13 @@ class Blat < Formula
   url "http://hgwdev.cse.ucsc.edu/~kent/src/blatSrc36.zip"
   sha256 "4b0fff006c86dceb7428922bfb4f8625d78fd362d205df68e4ebba04742d2c71"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any
+    sha256 "3cc1890800350138e4a7d0db4fe9dfef2b5685d07957972f6b522f6eb274cc96" => :sierra_or_later
+    sha256 "97e2bc6d6fa598620ba8815c37d0cef1c106cea310a4c8e15295138e5ed88a18" => :x86_64_linux
+  end
+
   depends_on "libpng"
   depends_on "mysql"
   depends_on "openssl"
