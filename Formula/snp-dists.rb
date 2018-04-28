@@ -1,9 +1,8 @@
 class SnpDists < Formula
   desc "Pairwise SNP distance matrix from a FASTA sequence alignment"
   homepage "https://github.com/tseemann/snp-dists"
-  url "https://github.com/tseemann/snp-dists/archive/v0.5.tar.gz"
-  sha256 "701a6bfb595aab858d69905eac3e9a358b2c9569fb6d9aaf508ed735e97d00fb"
-  head "https://github.com/tseemann/snp-dists.git"
+  url "https://github.com/tseemann/snp-dists/archive/v0.6.tar.gz"
+  sha256 "7e412de31e60bfe7ea51f67e92dba9e6cac5d1d12326522015b26407ddaca483"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
