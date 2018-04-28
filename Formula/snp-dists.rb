@@ -7,8 +7,8 @@ class SnpDists < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "d0e37f7a33e36a820ddb46e0af783717c4837c43f5ee54c190b321d0e4334069" => :sierra_or_later
-    sha256 "1986143fb403d25687158d3024d47ffa63b019780bef4cbd1ede0b5dbb7abd17" => :x86_64_linux
+    sha256 "87755e5d9549aa51ede1f0ef1eee7a2a5a59a5a24d2c7488cee629bc1a9e7cb3" => :sierra_or_later
+    sha256 "1e4807d3ce60a2e8fe0e20252e0500cfe78bf2ebefa0498f7edf701756f6f449" => :x86_64_linux
   end
 
   depends_on "zlib" unless OS.mac?
