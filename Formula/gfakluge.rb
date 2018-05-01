@@ -1,8 +1,8 @@
 class Gfakluge < Formula
   desc "C++ library and utilities for Graphical Fragment Assembly (GFA)"
   homepage "https://github.com/edawson/gfakluge"
-  url "https://github.com/edawson/gfakluge/archive/0.2.1.tar.gz"
-  sha256 "4b0d60841613322ab8a33b4d16a73dac0d47b3c8c7a20286652b2612b1eac75d"
+  url "https://github.com/edawson/gfakluge/archive/0.2.2.tar.gz"
+  sha256 "cad8293786d1567f3eb74b4bc9f79c2871715a7ae7f7f6e51ad7528bcf873d5c"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -15,7 +15,7 @@ class Gfakluge < Formula
     system "make"
     include.install "src/gfakluge.hpp"
     lib.install "libgfakluge.a"
-    bin.install %w[gfa_diff gfa_ids gfa_merge gfa_sort gfa_spec_convert gfa_stats]
+    bin.install %w[gfak]
   end
 
   test do
