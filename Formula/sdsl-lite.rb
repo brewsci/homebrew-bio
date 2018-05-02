@@ -9,12 +9,8 @@ class SdslLite < Formula
   url "https://github.com/simongog/sdsl-lite.git",
     :revision => "0546faf0552142f06ff4b201b671a5769dd007ad",
     :tag => "v2.1.1"
-  revision 3
-
+  revision 2
   depends_on "cmake" => :build
-
-  # this library is now part of SDSL - should remove the formula?
-  conflicts_with "libdivsufsort"
 
   needs :cxx11
 
