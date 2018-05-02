@@ -9,9 +9,9 @@ class Gfakluge < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "213958aa6c3d4059a23ff1a24ebd10ee5a3e2f8b9f44ef1befe7544f046eecf8" => :sierra_or_later
-    sha256 "71cc2877ce102e0ad35532458aaaaf34ffb93857999e7d0802681bfaaa04e3a1" => :x86_64_linux
+    cellar :any
+    sha256 "532ead613d78cb589ab2ddbe088edc684756b66f637f31b199bd155f40547f87" => :sierra_or_later
+    sha256 "d68b72627b3deb02ee8028719ea1dd1d290b10632384093c6099d27196cd51e2" => :x86_64_linux
   end
 
   def install
