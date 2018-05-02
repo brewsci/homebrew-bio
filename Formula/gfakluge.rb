@@ -4,6 +4,9 @@ class Gfakluge < Formula
   url "https://github.com/edawson/gfakluge/archive/0.2.2.tar.gz"
   sha256 "cad8293786d1567f3eb74b4bc9f79c2871715a7ae7f7f6e51ad7528bcf873d5c"
 
+  fails_with :clang
+  depends_on "gcc" if OS.mac?
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
@@ -13,7 +16,7 @@ class Gfakluge < Formula
 
   def install
     system "make"
-    include.install "src/gfakluge.hpp"
+    include.install "src/gfakluge.hpp", "src/pliib.hpp"
     lib.install "libgfakluge.a"
     bin.install %w[gfak]
   end
@@ -24,6 +27,6 @@ class Gfakluge < Formula
       S\t1\tACGTACGT\tLN:i:8
       L\t1\t+\t1\t+\t4M
     EOS
-    assert_equal "Number of nodes: 1\nNumber of edges: 1\nTotal graph length in basepairs: 8\n", shell_output("#{bin}/gfak stats -A -i test.gfa")
+    assert_equal "Number of nodes: 1\nNumber of edges: 1\nNumber of links: 1\nNumber of containments: 0\n", shell_output("#{bin}/gfak stats -n -e test.gfa")
   end
 end
