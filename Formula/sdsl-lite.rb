@@ -10,6 +10,8 @@ class SdslLite < Formula
     :revision => "0546faf0552142f06ff4b201b671a5769dd007ad",
     :tag => "v2.1.1"
   revision 2
+  head "https://github.com/simongog/sdsl-lite.git"
+  
   depends_on "cmake" => :build
 
   needs :cxx11
