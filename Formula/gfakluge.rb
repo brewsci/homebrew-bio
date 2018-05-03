@@ -4,8 +4,8 @@ class Gfakluge < Formula
   url "https://github.com/edawson/gfakluge/archive/0.2.2.tar.gz"
   sha256 "cad8293786d1567f3eb74b4bc9f79c2871715a7ae7f7f6e51ad7528bcf873d5c"
 
-  fails_with :clang
-  depends_on "gcc" if OS.mac?
+  fails_with :clang # needs openmp
+  depends_on "gcc" if OS.mac? # for openmp
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
