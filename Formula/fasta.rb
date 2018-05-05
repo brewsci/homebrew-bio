@@ -2,8 +2,8 @@ class Fasta < Formula
   # cite Pearson_1990: "https://doi.org/10.1016/0076-6879(90)83007-V"
   desc "Classic FASTA sequence alignment suite"
   homepage "http://faculty.virginia.edu/wrpearson/fasta/"
-  url "http://faculty.virginia.edu/wrpearson/fasta/fasta36/fasta-36.3.8.tar.gz"
-  sha256 "e235458afd16591bbcd5b89b639497e20346841091440a2445593318510a2262"
+  url "https://github.com/wrpearson/fasta36/archive/fasta-v36.3.8g.tar.gz"
+  sha256 "fa5318b6f8d6a3cfdef0d29de530eb005bfd3ca05835faa6ad63663f8dce7b2e"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -16,11 +16,12 @@ class Fasta < Formula
 
   def install
     bin.mkpath
-    arch = OS.mac? ? "os_x86_64" : "linux"
+    arch = OS.mac? ? "os_x86_64" : "linux64_sse2"
     system "make", "-C", "src", "-f", "../make/Makefile.#{arch}"
     rm "bin/README"
     bin.install Dir["bin/*"]
     doc.install Dir["doc/*"]
+    pkgshare.install "scripts", "test", "psisearch2", "data", "misc"
   end
 
   test do
