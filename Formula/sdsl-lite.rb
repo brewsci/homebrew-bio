@@ -19,7 +19,6 @@ class SdslLite < Formula
     ENV.cxx11
     system "./install.sh", prefix
     pkgshare.install "examples", "extras", "tutorial"
-    
     # Reduce memory usage for Circle CI.
     ENV["MAKEFLAGS"] = "-j8" if ENV["CIRCLECI"]
   end
