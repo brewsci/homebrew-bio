@@ -21,7 +21,7 @@ class SdslLite < Formula
     pkgshare.install "examples", "extras", "tutorial"
     
      # Reduce memory usage for Circle CI.
-    ENV["MAKEFLAGS"] = "-j16" if ENV["CIRCLECI"]
+    ENV["MAKEFLAGS"] = "-j8" if ENV["CIRCLECI"]
   end
 
   test do
