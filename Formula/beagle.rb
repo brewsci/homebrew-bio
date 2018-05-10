@@ -8,8 +8,8 @@ class Beagle < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "11813a2b5ba8f7d9823bf022b39a2ab8b08304ad0ec6ab773c2cf4223fef6815" => :sierra_or_later
-    sha256 "d54b6f619fa74482163b5b56d1b9a1ab6f173e8c7e1b0dfa4bc92867bf96377f" => :x86_64_linux
+    sha256 "e21b7007657a3267538115c5b6c69d0a638a0fb1635c0ea08260754a742b6871" => :sierra_or_later
+    sha256 "ecd81ffb7b8e5d4f56fff480c42039cff46798ab214a980639b6d4299057df03" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
