@@ -1,9 +1,9 @@
 class Skesa < Formula
   desc "Strategic Kmer Extension for Scrupulous Assemblies"
   homepage "https://ftp.ncbi.nlm.nih.gov/pub/agarwala/skesa/"
-  url "https://ftp.ncbi.nlm.nih.gov/pub/agarwala/skesa/skesa.static"
-  version "2.1"
-  sha256 "2c36e0bdc6372795876fe1ce87cb3a32e66cb113fd5be2b0e2e33f1ded0db138"
+  url "https://ftp.ncbi.nlm.nih.gov/pub/agarwala/skesa/skesa.centos6.9"
+  version "2.2"
+  sha256 "26158881c6895529924147877d627fc2c702f4c83ace0b93e279b9d6144b9fc7"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -19,7 +19,7 @@ class Skesa < Formula
   end
 
   def install
-    bin.install "skesa.static" => "skesa"
+    bin.install Dir["skes*"].first => "skesa"
     unless OS.mac?
       system "patchelf",
         "--set-interpreter", HOMEBREW_PREFIX/"lib/ld.so",
