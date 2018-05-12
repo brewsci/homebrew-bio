@@ -10,7 +10,7 @@ class Cytoscape < Formula
 
   def install
     inreplace "cytoscape.sh", "$script_path", prefix
-    prefix.install %w[cytoscape.sh apps gen_vmoptions.sh framework sampleData]
+    prefix.install %W[cytoscape.sh apps gen_vmoptions.sh framework sampleData]
     bin.install_symlink prefix/"cytoscape.sh" => "cytoscape"
   end
 
