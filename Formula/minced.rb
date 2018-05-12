@@ -1,9 +1,8 @@
 class Minced < Formula
   desc "Mining CRISPRs in Environmental Datasets"
   homepage "https://github.com/ctSkennerton/minced"
-  url "https://github.com/ctSkennerton/minced/archive/0.2.1.tar.gz"
-  sha256 "2570aa20d5fd6bdc1003ecf3cd84a403896261fa45cec131fe1a063a11f7b648"
-  head "https://github.com/ctSkennerton/minced.git"
+  url "https://github.com/ctSkennerton/minced/releases/download/0.3.0/minced.jar"
+  sha256 "16bdaa1fea625d1ce2f87d24e68eeb5bd733d8d04dda83c6ff74ee8d15fb8fe9"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -15,10 +14,9 @@ class Minced < Formula
   depends_on :java
 
   def install
-    system "make", "JC=javac -source 1.7"
-    libexec.install "minced.jar"
-    bin.write_jar_script libexec/"minced.jar", "minced"
-    pkgshare.install Dir["t/*"]
+    jar = "minced.jar"
+    libexec.install jar
+    bin.write_jar_script libexec/jar, "minced"
   end
 
   test do
