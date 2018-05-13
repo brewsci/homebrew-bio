@@ -5,6 +5,13 @@ class Mpboot < Formula
   url "http://www.iqtree.org/mpboot/mpboot-1.1.0-Source.tar.gz"
   sha256 "164ceb7839b7fc7fa81ee44ee4b2fd4921fd9389f860f2132a3d19e9e37fa61f"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "c3a99c0519bec05893eb24bb4363906fc00a989c2055ef8620536cde08c60fa6" => :sierra_or_later
+    sha256 "cd27e1c484da823dbf33b4e081c950b46aacfb3057af17552347bb3c011eba07" => :x86_64_linux
+  end
+
   option "with-avx", "Enable AVX SIMD instructions instead of SSE4"
 
   fails_with :clang # needs openmp
