@@ -6,11 +6,11 @@ class Cytoscape < Formula
   url "http://chianti.ucsd.edu/cytoscape-3.4.0/cytoscape-3.4.0.tar.gz"
   sha256 "e20a04b031818005090bd65b78bb08813b7a8e018c73496d41f2f00014d6ae18"
 
-  depends_on :java => "1.8"
+  depends_on java => "1.8"
 
   def install
     inreplace "cytoscape.sh", "$script_path", prefix
-    prefix.install %W[cytoscape.sh apps gen_vmoptions.sh framework sampleData]
+    prefix.install %w[cytoscape.sh apps gen_vmoptions.sh framework sampleData]
     bin.install_symlink prefix/"cytoscape.sh" => "cytoscape"
   end
 
