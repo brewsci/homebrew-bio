@@ -16,11 +16,11 @@ class SdslLite < Formula
   needs :cxx11
 
   def install
+     # Reduce memory usage for Circle CI.
+    ENV["MAKEFLAGS"] = "-j8" if ENV["CIRCLECI"]
     ENV.cxx11
     system "./install.sh", prefix
     pkgshare.install "examples", "extras", "tutorial"
-    # Reduce memory usage for Circle CI.
-    ENV["MAKEFLAGS"] = "-j8" if ENV["CIRCLECI"]
   end
 
   test do
