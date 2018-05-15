@@ -9,6 +9,8 @@ class Cytoscape < Formula
   depends_on :java => "1.8"
 
   def install
+    cmd = Language::Java.java_home_cmd("1.8")
+    ENV["JAVA_HOME"] = Utils.popen_read(cmd).chomp
     inreplace "cytoscape.sh", "$script_path", prefix
     prefix.install %w[cytoscape.sh apps gen_vmoptions.sh framework sampleData]
     bin.install_symlink prefix/"cytoscape.sh" => "cytoscape"
