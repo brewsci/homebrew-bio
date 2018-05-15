@@ -14,6 +14,7 @@ class Cytoscape < Formula
     inreplace "cytoscape.sh", "$script_path", prefix
     prefix.install %w[cytoscape.sh apps gen_vmoptions.sh framework sampleData]
     bin.install_symlink prefix/"cytoscape.sh" => "cytoscape"
+    (bin/"cytoscape").write_env_script libexec/"cytoscape", Language::Java.java_home_env("1.8")
   end
 
   def caveats
