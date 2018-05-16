@@ -11,6 +11,13 @@ class SdslLite < Formula
     :tag => "v2.1.1"
   revision 2
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "e44e437f1f32ce5fb6de0cfc5aec132bfc09322ad71c211a8bb77bc332d4325c" => :sierra_or_later
+    sha256 "34182f95fd635533ba8f686b5ebafe411204dbcb3969a6b2e92f2e22c4d778bb" => :x86_64_linux
+  end
+
   depends_on "cmake" => :build
 
   needs :cxx11
