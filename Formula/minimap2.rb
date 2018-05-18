@@ -9,7 +9,6 @@ class Minimap2 < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    prefix "/usr/local"
     cellar :any_skip_relocation
     sha256 "934e3c21cc5e36f6bdb6c61f204b76773b9c54d51338bdb3c584d9dc4307603d" => :sierra_or_later
     sha256 "36489f784fcc18961dd6255ab64b05bf1d23fcfd42c7a51dce5582061552bb65" => :x86_64_linux
