@@ -26,7 +26,6 @@ class Edirect < Formula
       name = File.basename script
       (bin/name).write_env_script(script, :PERL5LIB => ENV["PERL5LIB"])
     end
-
   end
 
   test do
