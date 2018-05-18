@@ -9,8 +9,8 @@ class Tigmint < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "36bd557f6c41fa5034e1b0305553825bd0df26bf5306317f0f5197ed0536d5b8" => :sierra_or_later
-    sha256 "580262b97b0695b1ab187d1999b72af2c16cb08a8b72b0ce3b92d6e60d8254ac" => :x86_64_linux
+    sha256 "4c83fedfc8e30014c0765a1acd66ff5a35572e37d0976c01f31ea6418d6f4963" => :sierra_or_later
+    sha256 "8eb4f7eda64705b2fa02d272a49e7ad66ca439d29e6e5ccf010e8c45dd8da0ed" => :x86_64_linux
   end
 
   depends_on "bedtools"
