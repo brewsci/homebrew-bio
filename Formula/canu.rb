@@ -11,6 +11,7 @@ class Canu < Formula
     cellar :any
     sha256 "25e519d43ded5a33afdd43fa3f757d65d6af3774257f13e6c78cf835650f4156" => :sierra_or_later
     sha256 "07f832430879c3cd2baa67b7db097da135cd82ecfe218a9afb1bc7f861b46c0f" => :x86_64_linux
+    revision 1
   end
 
   fails_with :clang # needs openmp
