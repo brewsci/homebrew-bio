@@ -1,11 +1,10 @@
 class Sortmerna < Formula
+  # cite Kopylova_2012: "http://doi.org/10.1093/bioinformatics/bts611"
   desc "SortMeRNA: filter metatranscriptomic ribosomal RNA"
   homepage "http://bioinfo.lifl.fr/RNA/sortmerna/"
-  # doi "10.1093/bioinformatics/bts611"
-  # tag "bioinformatics"
-
   url "https://github.com/biocore/sortmerna/archive/2.1b.tar.gz"
   sha256 "b3d122776c323813971b35991cda21a2c2f3ce817daba68a4c4e09d4367c0abe"
+  head "https://github.com/biocore/sortmerna.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
