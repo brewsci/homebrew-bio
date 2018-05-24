@@ -2,8 +2,8 @@ class Beagle < Formula
   # cite Ayres_2011: "https://doi.org/10.1093/sysbio/syr100"
   desc "Evaluate the likelihood of sequence evolution on trees"
   homepage "https://github.com/beagle-dev/beagle-lib"
-  url "https://github.com/beagle-dev/beagle-lib/archive/v3.0.0.tar.gz"
-  sha256 "05140ac1f777cc69d6271223970642801edf538f191006271c3606420d3c5c3c"
+  url "https://github.com/beagle-dev/beagle-lib/archive/v3.0.1.tar.gz"
+  sha256 "d94b3b440ea64c564005f4eadceff8d502129dd22369f6045e40121ca383a6ca"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
