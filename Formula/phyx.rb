@@ -3,6 +3,13 @@ class Phyx < Formula
   homepage "https://github.com/FePhyFoFum/phyx"
   url "https://github.com/FePhyFoFum/phyx/archive/v0.99.tar.gz"
   sha256 "6c767b2b2a9666849c3035e479a2135734fccf882d4957f69ea251632d7ed010"
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "cd90f8b841520f719c444611fb102f6192efa5c86aae6b3b23a0624eaf5b5c42" => :sierra_or_later
+    sha256 "7349967ca64b1226fac3394b50d2131c665d5c246eaa4e90ec599686c6f3907f" => :x86_64_linux
+  end
+
   # cite Brown_2017: "https://doi.org/10.1093/bioinformatics/btx063"
 
   depends_on "armadillo"
