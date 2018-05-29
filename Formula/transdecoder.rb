@@ -1,8 +1,8 @@
 class Transdecoder < Formula
   desc "Identifies candidate coding regions within transcript sequences"
   homepage "https://transdecoder.github.io/"
-  url "https://github.com/TransDecoder/TransDecoder/archive/TransDecoder-v5.0.2.tar.gz"
-  sha256 "c3946c07ae21857e5a35d76083b21e925b43bba2dee02db14d31b65942302298"
+  url "https://github.com/TransDecoder/TransDecoder/archive/TransDecoder-v5.3.0.tar.gz"
+  sha256 "60dc0e6e31902bede257b8f8cdbf34750a9866323f4c7788f4ef80b0ad782077"
   head "https://github.com/TransDecoder/TransDecoder.git"
 
   bottle do
@@ -36,7 +36,7 @@ class Transdecoder < Formula
   end
 
   test do
-    assert_match "USAGE", shell_output("#{bin}/TransDecoder.LongOrfs 2>&1", 1)
-    assert_match "USAGE", shell_output("#{bin}/TransDecoder.Predict 2>&1", 1)
+    assert_match "Transdecoder", shell_output("#{bin}/TransDecoder.LongOrfs 2>&1", 255)
+    assert_match "Transdecoder", shell_output("#{bin}/TransDecoder.Predict 2>&1", 255)
   end
 end
