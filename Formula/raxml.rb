@@ -9,8 +9,8 @@ class Raxml < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "b05330863e74c37db0f647ea7922008e2eb5fc564485b9f2c531ca8b289efabc" => :sierra_or_later
-    sha256 "86d4b421265183d8fcf76b9c525ac62f9d12e1106ed6e1b02491c5bf199c859b" => :x86_64_linux
+    sha256 "d399bf6f9e9e84831182e64687d2b21fbebead01126e9337211cc4198f0b8ec9" => :sierra_or_later
+    sha256 "3c091cd8095130a9e14e5c44ccc36fd0ae19f053fad65097cd90f1dc83bc245d" => :x86_64_linux
   end
 
   depends_on "gcc" # gfortran
