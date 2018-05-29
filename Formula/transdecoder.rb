@@ -8,8 +8,8 @@ class Transdecoder < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "17f2e7de9352f9735ea93b9bdb6da49c9ec869010678cf3a5e178b661c19cf94" => :sierra_or_later
-    sha256 "67ce07e6e66232ca8a8543867f137f3b1f5a5c5a0fe3d9b7613907e86460250d" => :x86_64_linux
+    sha256 "38524859f40e4a2eb35b16f5641f387413cf35f10dedda4e43c5c3d572596af6" => :sierra_or_later
+    sha256 "37966e88285039f7584fcb186f82b91ae8b6cec107bcc361ac9caba7cdc3e587" => :x86_64_linux
   end
 
   unless OS.mac?
