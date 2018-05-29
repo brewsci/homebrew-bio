@@ -10,8 +10,8 @@ class LinksScaffolder < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "fcd061118391b4bb7975f79596319090033e4181904eed54ce070470d11dada2" => :sierra_or_later
-    sha256 "5532580f2bebf2c3964f1e79be2a8daa2357946dd88f6d480568d7d6210e27cb" => :x86_64_linux
+    sha256 "4592bb6832f05bdc05e4e11f3f9fa252da6088f06bb897b04701c9c369463602" => :sierra_or_later
+    sha256 "83c3cc95d8394455b0a82c8e807dacff378082c5ac2f12671b2d4d81613df4e4" => :x86_64_linux
   end
 
   depends_on "swig" => :build
