@@ -2,8 +2,9 @@ class Trnascan < Formula
   # cite Lowe_1997: "https://doi.org/10.1093/nar/25.5.0955"
   desc "Search for tRNA genes in genomic sequence"
   homepage "http://lowelab.ucsc.edu/tRNAscan-SE/"
-  url "http://lowelab.ucsc.edu/software/tRNAscan-SE-1.23.tar.gz"
-  sha256 "b2ee8bae8be0f48235eb0e9ce83a179d6520ab3610b9f557ef04b49975402716"
+  url "http://lowelab.ucsc.edu/software/tRNAscan-SE-1.3.tar.gz"
+  sha256 "c40d05bbaa9d6efbfc0e447f8ac521e3b4067fab4b64a351c0763a3f41f6581f"
+  version_scheme 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -12,12 +13,20 @@ class Trnascan < Formula
   end
 
   def install
-    system "make", "all", "CFLAGS=-D_POSIX_C_SOURCE=1", "BINDIR=#{bin}", "LIBDIR=#{libexec}"
-    bin.install %w[coves-SE covels-SE eufindtRNA trnascan-1.4 tRNAscan-SE]
-    libexec.install Dir["gcode.*", "*.cm", "*signal"]
-    man1.install "tRNAscan-SE.man" => "tRNAscan-SE.1"
+    inreplace "tRNAscan-SE.src", "use strict;", "use strict;\nuse lib \"#{prefix}\";"
+    system "make", "all", "install", "CFLAGS=-D_POSIX_C_SOURCE=1", "BINDIR=#{bin}", "LIBDIR=#{libexec}", "MANDIR=#{man}"
+    prefix.install bin/"tRNAscanSE"
     prefix.install "Demo"
-    (prefix/"Demo").install "testrun.ref"
+    (prefix/"Demo/testrun.ref").write <<~EOS
+      Sequence 		tRNA 	Bounds	tRNA	Anti	Intron Bounds	Cove	Hit
+      Name     	tRNA #	Begin	End  	Type	Codon	Begin	End	Score	Origin
+      -------- 	------	---- 	------	----	-----	-----	----	------	------
+      CELF22B7 	1	12619	12738	Leu	CAA	12657	12692	60.01	Bo
+      CELF22B7 	2	19480	19561	Ser	AGA	0	0	80.44	Bo
+      CELF22B7 	3	26367	26439	Phe	GAA	0	0	80.32	Bo
+      CELF22B7 	4	26992	26920	Phe	GAA	0	0	80.32	Bo
+      CELF22B7 	5	23765	23694	Pro	CGG	0	0	75.76	Bo
+    EOS
   end
 
   test do
