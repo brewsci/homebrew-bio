@@ -2,9 +2,9 @@ class Trnascan < Formula
   # cite Lowe_1997: "https://doi.org/10.1093/nar/25.5.0955"
   desc "Detect tRNA in genome sequence"
   homepage "http://eddylab.org/software.html"
-  url "http://eddylab.org/software/tRNAscan-SE/tRNAscan-SE.tar.Z"
-  version "1.23"
-  sha256 "843caf3e258a6293300513ddca7eb7dbbd2225e5baae1e5a7bcafd509f6dd550"
+  url "http://eddylab.org/software/tRNAscan-SE/tRNAscan-SE-#{version}.tar.gz"
+  version "1.3.1"
+  sha256 "862924d869453d1c111ba02f47d4cd86c7d6896ff5ec9e975f1858682282f316"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
