@@ -2,17 +2,16 @@ class Cytoscape < Formula
   # cite Saito_2012 "https://doi.org/10.1038/nmeth.2212"
   desc "Network Data Integration, Analysis, and Visualization in a Box"
   homepage "http://www.cytoscape.org/"
-
   url "https://github.com/cytoscape/cytoscape/archive/3.6.1.tar.gz"
-  sha256 "e20a04b031818005090bd65b78bb08813b7a8e018c73496d41f2f00014d6ae18"
+  sha256 "f172c9e459293661a83d2618da511901410336b76b0c1716697e60f821c2f150"
 
   depends_on :java => "1.8"
 
   def install
-    inreplace "cytoscape.sh", "$script_path", prefix
-    prefix.install %w[cytoscape.sh apps gen_vmoptions.sh framework sampleData]
-    bin.install_symlink prefix/"cytoscape.sh" => "cytoscape"
-    (bin/"cytoscape").write_env_script libexec/"cytoscape", Language::Java.java_home_env("1.8")
+    ENV["JAVA_HOME"] = Formula["jdk"].prefix if ENV["CIRCLECI"]
+    inreplace "cy.sh", "$script_path", prefix
+    prefix.install %w[cy.sh apps gen_vmoptions.sh framework sampleData]
+    bin.install_symlink prefix/"cy.sh" => "cytoscape"
   end
 
   def caveats
