@@ -17,8 +17,8 @@ class Edirect < Formula
     ENV.prepend_create_path "PERL5LIB", prefix/"perl5/lib/perl5"
     ENV["OPENSSL_PREFIX"] = Formula["openssl"].opt_prefix # for Net::SSLeay
     pms = %w[Encode::Locale File::Listing HTML::Parser HTML::Tagset HTML::Entities HTML::Tree
-             HTTP::Cookies HTTP::Date HTTP::Message HTTP::Negotiate LWP::MediaTypes
-             LWP::Protocol::https Net::HTTP URI WWW::RobotRules Mozilla::CA]
+             HTTP::Cookies HTTP::Date HTTP::Message HTTP::Negotiate LWP::MediaTypes IO::Socket::SSL
+             LWP::Protocol::https URI WWW::RobotRules Mozilla::CA Net::SSLeay]
     system "cpanm", "--self-contained", "-l", prefix/"perl5", *pms
 
     libexec.install Dir["*"]
