@@ -8,8 +8,8 @@ class Cytoscape < Formula
   depends_on :java => "1.8"
 
   def install
-    ENV["JAVA_HOME"] = Formula["jdk"].prefix if ENV["CIRCLECI"]
-    inreplace "cy.sh", "$script_path", prefix
+    ENV["JAVA_HOME"] = Formula["jdk@8"].prefix if ENV["CIRCLECI"]
+    inreplace "cy.sh", "/home/linuxbrew/.linuxbrew/Cellar/cytoscape/3.6.1", prefix
     prefix.install %w[cy.sh apps gen_vmoptions.sh framework sampleData]
     bin.install_symlink prefix/"cy.sh" => "cytoscape"
   end
