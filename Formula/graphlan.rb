@@ -1,7 +1,7 @@
 class Graphlan < Formula
   desc "Render circular taxonomic and phylogenetic trees"
   homepage "https://bitbucket.org/nsegata/graphlan/wiki/Home"
-  url "https://hg@bitbucket.org/nsegata/graphlan/get/1.1.2.tar.bz2"
+  url "https://bitbucket.org/nsegata/graphlan/get/1.1.2.tar.bz2"
   sha256 "c417ca2c5789dc264393427e448422ae1877a47a5169d4ed41ec54f3dcabb011"
 
   depends_on "matplotlib"
