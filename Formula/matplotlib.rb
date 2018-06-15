@@ -20,9 +20,8 @@ end
 class Matplotlib < Formula
   desc "Python 2D plotting library"
   homepage "https://matplotlib.org"
-  url "https://files.pythonhosted.org/packages/f5/f0/9da3ef24ea7eb0ccd12430a261b66eca36b924aeef06e17147f9f9d7d310/matplotlib-2.0.2.tar.gz"
-  sha256 "0ffbc44faa34a8b1704bc108c451ecf87988f900ef7ce757b8e2e84383121ff1"
-  revision 1
+  url "https://files.pythonhosted.org/packages/6d/bd/3e8cec37bcf71cfd81fe798cf733c046b1ceb123e7dddf6d3435cf03b506/matplotlib-2.1.2.tar.gz"
+  sha256 "725a3f12739d133adfa381e1b33bd70c6f64db453bfc536e148824816e568894"
   head "https://github.com/matplotlib/matplotlib.git"
 
   bottle do
@@ -64,9 +63,9 @@ class Matplotlib < Formula
     sha256 "cd7b2d1018258d7247a71425e9f26463dfb444d411c39569972f4ce586b0c9d8"
   end
 
-  resource "functools32" do
-    url "https://files.pythonhosted.org/packages/c5/60/6ac26ad05857c601308d8fb9e87fa36d0ebf889423f47c3502ef034365db/functools32-3.2.3-2.tar.gz"
-    sha256 "f6253dfbe0538ad2e387bd8fdfd9293c925d63553f5813c4e587745416501e6d"
+  resource "backports.functools_lru_cache" do
+    url "https://files.pythonhosted.org/packages/57/d4/156eb5fbb08d2e85ab0a632e2bebdad355798dece07d4752f66a8d02d1ea/backports.functools_lru_cache-1.5.tar.gz"
+    sha256 "9d98697f088eb1b0fa451391f91afb5e3ebde16bbdb272819fd091151fda4f1a"
   end
 
   resource "pyparsing" do
@@ -112,7 +111,7 @@ class Matplotlib < Formula
       res = if version.to_s.start_with? "2"
         resources.map(&:name).to_set
       else
-        resources.map(&:name).to_set - ["functools32", "subprocess32"]
+        resources.map(&:name).to_set - ["backports.functools_lru_cache", "subprocess32"]
       end
       res.each do |r|
         resource(r).stage do
