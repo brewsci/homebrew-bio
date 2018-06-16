@@ -3,7 +3,7 @@ class Tigmint < Formula
   desc "Correct misassemblies using linked reads"
   homepage "https://bcgsc.github.io/tigmint/"
   url "https://github.com/bcgsc/tigmint/archive/1.1.2.tar.gz"
-  sha256 "c103f1fa50e124dbee16abb97650b8f006877de5852a67dc8f5a42642effbb58"
+  sha256 "1cff0c5087f9f8f9cf0f129539585e1e5ae7288922b5f5f4ff36f2d936846783"
   head "https://github.com/bcgsc/tigmint.git"
 
   bottle do
