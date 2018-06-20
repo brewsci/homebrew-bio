@@ -8,8 +8,8 @@ class Arcs < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "79b87cd3e692a479594eed4e0b1dcf59b7880626ff2320c71a83a4fb465c6bc6" => :sierra_or_later
-    sha256 "ec7b96c3e5773bd903f8ba845447ae540d82bce80684c98ebcd34d2d64d1275d" => :x86_64_linux
+    sha256 "fd95f05adc24b526e1d83ad9b7e4b8ef00baf8632a40dbcecf4a5eb42becd52a" => :sierra_or_later
+    sha256 "28fa1663deb8ab65d38532f1d73468bb8f7c2c07d29f9524245c177879a66bbe" => :x86_64_linux
   end
 
   head do
