@@ -2,9 +2,8 @@ class Biobloomtools < Formula
   # cite Chu_2014: "https://doi.org/10.1093/bioinformatics/btu558"
   desc "BioBloom Tools (BBT): Bloom filter for bioinformatics"
   homepage "http://www.bcgsc.ca/platform/bioinfo/software/biobloomtools/"
-  url "https://github.com/bcgsc/biobloom/releases/download/2.0.13/biobloomtools-2.0.13.tar.gz"
-  sha256 "7b4aeef70feb3fc31db2f4695159523272eadd8787b33c2902e2970a7d569ba3"
-  revision 1
+  url "http://www.bcgsc.ca/platform/bioinfo/software/biobloomtools/releases/2.1.1/biobloomtools-2.1.1.tar.gz"
+  sha256 "1628e62b2e671f271a8d0a5aba78d32888d4c7c4f1b6341140a7f1364c557457"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -22,6 +21,7 @@ class Biobloomtools < Formula
   fails_with :clang # needs openmp
 
   depends_on "boost" => :build
+  depends_on "google-sparsehash" => :build
   if OS.mac?
     depends_on "gcc" # for openmp
   else
@@ -31,7 +31,6 @@ class Biobloomtools < Formula
   def install
     system "./autogen.sh" if build.head?
     system "./configure",
-      "--disable-debug",
       "--disable-dependency-tracking",
       "--disable-silent-rules",
       "--prefix=#{prefix}"
