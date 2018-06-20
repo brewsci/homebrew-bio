@@ -5,6 +5,13 @@ class SeqGen < Formula
   url "https://github.com/rambaut/Seq-Gen/archive/1.3.4.tar.gz"
   sha256 "092ec2255ce656a02b2c3012c32443c7d8e38c692f165fb155b304ca030cbb59"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "aa358ba771b0e3fff0eef22258ef350bf89fddc09dc544a227a557d417be38b8" => :sierra_or_later
+    sha256 "3691d3c197f7cc5c03e22b8f800553d5692e4fe58e6bbea8c62e9a669e81c7f8" => :x86_64_linux
+  end
+
   def install
     system "make", "-C", "source"
     bin.install "source/seq-gen"
