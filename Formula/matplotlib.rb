@@ -20,8 +20,8 @@ end
 class Matplotlib < Formula
   desc "Python 2D plotting library"
   homepage "https://matplotlib.org"
-  url "https://files.pythonhosted.org/packages/6d/bd/3e8cec37bcf71cfd81fe798cf733c046b1ceb123e7dddf6d3435cf03b506/matplotlib-2.1.2.tar.gz"
-  sha256 "725a3f12739d133adfa381e1b33bd70c6f64db453bfc536e148824816e568894"
+  url "https://files.pythonhosted.org/packages/ec/ed/46b835da53b7ed05bd4c6cae293f13ec26e877d2e490a53a709915a9dcb7/matplotlib-2.2.2.tar.gz"
+  sha256 "4dc7ef528aad21f22be85e95725234c5178c0f938e2228ca76640e5e84d8cde8"
   head "https://github.com/matplotlib/matplotlib.git"
 
   bottle do
