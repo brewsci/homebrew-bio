@@ -27,8 +27,8 @@ class Matplotlib < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "9eb1b8cc5a8dab582cf4273ee02a66ec1cf20edd1ed3d3d337600a50b897fc3c" => :sierra_or_later
-    sha256 "0640b36579f0d626d6bee9ee6c0a8fd0619abb5b9e054f6acc072e7fbc114803" => :x86_64_linux
+    sha256 "f8e0bfe7c8d02c2e3a0b052228b576d5a15f7a6efd50bb1e196afa6bb105ee94" => :sierra_or_later
+    sha256 "4b0e34a68ad98f5475ef44503f6289c027804cc96d969d2c34dc5b8920c22eaf" => :x86_64_linux
   end
 
   depends_on NoExternalPyCXXPackage => :build
