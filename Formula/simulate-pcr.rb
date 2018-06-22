@@ -5,6 +5,13 @@ class SimulatePcr < Formula
   url "https://downloads.sourceforge.net/project/simulatepcr/simulate_PCR-v1.2.tar.gz"
   sha256 "022d1cc595d78a03b6a8a982865650f99d9fa067997bfea574c2416cc462e982"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "df52352b2edbe4af87cc652c2de48e2852d7901135f03bde85f11e85c3e72bd5" => :sierra_or_later
+    sha256 "33c1468a21e303ee370f22fdc0277c269bbb392bf77bc550ea70273898544cfc" => :x86_64_linux
+  end
+
   depends_on "cpanminus" => :build
   depends_on "bioperl"
   depends_on "blast"
