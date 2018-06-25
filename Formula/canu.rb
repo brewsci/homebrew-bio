@@ -4,6 +4,7 @@ class Canu < Formula
   homepage "https://canu.readthedocs.org/en/latest/"
   url "https://github.com/marbl/canu/archive/v1.7.tar.gz"
   sha256 "c5be54b0ad20729093413e7e722a19637d32e966dc8ecd2b579ba3e4958d378a"
+  revision 1
   head "https://github.com/marbl/canu.git"
 
   bottle do
