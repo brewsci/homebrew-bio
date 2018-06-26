@@ -2,8 +2,8 @@ class Canu < Formula
   # cite Koren_2017: "https://doi.org/10.1101/gr.215087.116"
   desc "Single molecule sequence assembler"
   homepage "https://canu.readthedocs.org/en/latest/"
-  url "https://github.com/marbl/canu/archive/v1.7.tar.gz"
-  sha256 "c5be54b0ad20729093413e7e722a19637d32e966dc8ecd2b579ba3e4958d378a"
+  url "https://github.com/marbl/canu/archive/v1.7.1.tar.gz"
+  sha256 "c314659c929ee05fd413274f391463a93f19b8337eabb7ee5de1ecfc061caafa"
   head "https://github.com/marbl/canu.git"
 
   bottle do
