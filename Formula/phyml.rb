@@ -2,8 +2,8 @@ class Phyml < Formula
   # cite Guindon_2010: "https://doi.org/10.1093/sysbio/syq010"
   desc "Fast maximum likelihood-based phylogenetic inference"
   homepage "http://www.atgc-montpellier.fr/phyml/"
-  url "https://github.com/stephaneguindon/phyml/archive/v3.3.20180214.tar.gz"
-  sha256 "ec059e3662874be3fdf1a9dc6d71fe4d568d987f66da9495f154f8f49c6d153e"
+  url "https://github.com/stephaneguindon/phyml/archive/v3.3.20180621.tar.gz"
+  sha256 "a66c1c5758408578c34a17733f92db11a67aa572a06a9b5e3046009ee8bed0d3"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
