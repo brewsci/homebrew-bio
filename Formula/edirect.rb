@@ -1,9 +1,9 @@
 class Edirect < Formula
   desc "Access NCBI databases via the command-line"
   homepage "https://www.ncbi.nlm.nih.gov/books/NBK179288/"
-  url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/8.70.20180516/edirect.tar.gz"
-  version "8.70"
-  sha256 "de3267b0432321da88d900c34bcaea72dc0ed02338fb09ead945a05fa937b864"
+  url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/9.20.20180627/edirect-9.20.20180627.tar.gz"
+  version "9.20"
+  sha256 "ee12e2b0262ef63d942ab1d133fb818c03bbc84ba8151d9ee64b0a390c80bfb3"
 
   depends_on "cpanminus" => :build
   depends_on "openssl"
