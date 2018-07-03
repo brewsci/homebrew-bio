@@ -1,8 +1,8 @@
 class KentTools < Formula
   desc "Utilities for the UCSC Genome Browser"
   homepage "https://genome.ucsc.edu/"
-  url "http://hgdownload.soe.ucsc.edu/admin/exe/userApps.v361.src.tgz"
-  sha256 "4eef556e9a6191b2f7f76b1b3d01bea356ae5648e9d00e79ddc8e2a61cd37e85"
+  url "http://hgdownload.soe.ucsc.edu/admin/exe/userApps.v367.src.tgz"
+  sha256 "dea0d6d9f8011f6212c196b26f0549c5c09268abf179a444fec674304e70f460"
   head "git://genome-source.cse.ucsc.edu/kent.git"
 
   bottle do
@@ -12,7 +12,7 @@ class KentTools < Formula
   end
 
   depends_on "libpng"
-  depends_on "mysql"
+  depends_on "mysql@5.7"
   depends_on "openssl"
   unless OS.mac?
     depends_on "rsync"
@@ -22,7 +22,7 @@ class KentTools < Formula
 
   def install
     libpng = Formula["libpng"]
-    mysql = Formula["mysql"]
+    mysql = Formula["mysql@5.7"]
 
     args = ["userApps", "BINDIR=#{bin}", "SCRIPTS=#{bin}"]
     args << "MACHTYPE=#{`uname -m`.chomp}"
@@ -32,6 +32,7 @@ class KentTools < Formula
     args << "MYSQLLIBS=-lmysqlclient -lz"
 
     cd build.head? ? "src" : "kent/src" do
+      inreplace "parasol/makefile", "DESTDIR=${HOME}/bin", ""
       system "make", *args
     end
 
