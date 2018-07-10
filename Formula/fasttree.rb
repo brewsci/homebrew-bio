@@ -8,8 +8,9 @@ class Fasttree < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "194ffe49108f7738034c65dde0a449702a0a4ebb3f853cc0f2cb977af6bc0bba" => :sierra_or_later
-    sha256 "19fa2ac6897a1678901cdc62f91623520fd7dabcb057ea5d7853f32de2d5d101" => :x86_64_linux
+    rebuild 1
+    sha256 "0cf193935cbc45bcfd494e0e15062a9de07870f0b6539f4ce35ccc0d565f5339" => :sierra_or_later
+    sha256 "acf0c2e94f6bc3d0272a5bf36da9d5a3163591de07cb98ce32f99596306bb03e" => :x86_64_linux
   end
 
   # 26 Aug 2017; Community mostly wants USE_DOUBLE; make it default now
