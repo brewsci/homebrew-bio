@@ -8,9 +8,10 @@ class Ema < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
+    prefix "/usr/local"
     cellar :any
-    sha256 "afaa81140abaf043c99a0cbf0eeea9a70d516595ed78b96f46324237cea90cb4" => :sierra_or_later
-    sha256 "eda95342a40a2092b760798638fc119b0f83a643a1d87ef520ae7a04e67b91ff" => :x86_64_linux
+    sha256 "146c172575768d79936b1475d4a596d2599d8483b0e8ebd24b8808b227c4480c" => :sierra_or_later
+    sha256 "9aef677e79f0853fd815c2551bedc7c0fdaae6854b6453fe12c6844812edbb60" => :x86_64_linux
   end
 
   fails_with :clang # needs openmp
