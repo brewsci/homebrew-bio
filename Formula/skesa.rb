@@ -1,9 +1,9 @@
 class Skesa < Formula
   desc "Strategic Kmer Extension for Scrupulous Assemblies"
   homepage "https://ftp.ncbi.nlm.nih.gov/pub/agarwala/skesa/"
-  url "https://ftp.ncbi.nlm.nih.gov/pub/agarwala/skesa/skesa.centos6.9"
-  version "2.2"
-  sha256 "26158881c6895529924147877d627fc2c702f4c83ace0b93e279b9d6144b9fc7"
+  url "https://ftp.ncbi.nlm.nih.gov/pub/agarwala/skesa/skesa.2.2.updated_README.tar.gz"
+  version "2.2.1"
+  sha256 "402905876e4bb2556614eb247c436d23d1c5dec4a83577918243bbd38d734797"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -11,21 +11,23 @@ class Skesa < Formula
     sha256 "252a040d1184b30c08dccea18cd6b34400b60cf1d241307d9a6e85ed329247b5" => :x86_64_linux
   end
 
-  depends_on :linux
+  depends_on "boost"
+  depends_on "zlib" unless OS.mac?
 
-  unless OS.mac?
-    depends_on "patchelf" => :build
-    depends_on "zlib"
-  end
+  needs :cxx11
 
   def install
-    bin.install Dir["skes*"].first => "skesa"
-    unless OS.mac?
-      system "patchelf",
-        "--set-interpreter", HOMEBREW_PREFIX/"lib/ld.so",
-        "--set-rpath", HOMEBREW_PREFIX/"lib",
-        bin/"skesa"
+    makefile = "Makefile.nongs"
+
+    # https://github.com/ncbi/SKESA/issues/6
+    if OS.mac?
+      inreplace makefile, "-Wl,-Bstatic", ""
+      inreplace makefile, "-Wl,-Bdynamic -lrt", ""
     end
+
+    system "make", "-f", makefile, "BOOST_PATH=#{Formula["boost"].opt_prefix}"
+    bin.install "skesa"
+    doc.install "README.skesa"
   end
 
   test do
