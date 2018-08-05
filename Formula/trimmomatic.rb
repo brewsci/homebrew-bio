@@ -2,8 +2,8 @@ class Trimmomatic < Formula
   # cite Bolger_2014: "https://doi.org/10.1093/bioinformatics/btu170"
   desc "Flexible read trimming tool for Illumina data"
   homepage "http://www.usadellab.org/cms/?page=trimmomatic"
-  url "http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.36.zip"
-  sha256 "4846c42347b663b9d6d3a8cef30da2aec89fc718bf291392c58e5afcea9f70fe"
+  url "http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.38.zip"
+  sha256 "d428af42b6c400a2e7ee5e6b4cab490eddc621f949b086bd7dddb698dcf1647c"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -15,7 +15,7 @@ class Trimmomatic < Formula
 
   def install
     cmd = "trimmomatic"
-    jar = "#{cmd}-0.36.jar"
+    jar = "#{cmd}-0.38.jar"
     libexec.install jar
     bin.write_jar_script libexec/jar, cmd
     pkgshare.install "adapters"
@@ -29,6 +29,6 @@ class Trimmomatic < Formula
   end
 
   test do
-    assert_match "trimmer", shell_output("#{bin}/trimmomatic 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/trimmomatic -version 2>&1")
   end
 end
