@@ -2,8 +2,8 @@ class BaliPhy < Formula
   # cite Suchard_2006: "http://dx.doi.org/10.1093/bioinformatics/btl175"
   desc "Bayesian co-estimation of phylogenies and multiple alignments"
   homepage "http://www.bali-phy.org/"
-  url "https://github.com/bredelings/BAli-Phy/archive/3.1.4.tar.gz"
-  sha256 "83124383533d12ea335e81e63a202ca97d850e8962b1a77e6166ae0fd0ebffa0"
+  url "https://github.com/bredelings/BAli-Phy/archive/3.3.tar.gz"
+  sha256 "84132dd0ec8a62eb6697374c62847e4b84082cbf09977f0e157e8407db010ccc"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -14,6 +14,8 @@ class BaliPhy < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pandoc" => :build
+  depends_on "pkg-config" => :build
+  depends_on "cairo"
 
   def install
     flags = %w[-C build install]
@@ -25,5 +27,7 @@ class BaliPhy < Formula
 
   test do
     system "#{bin}/bali-phy", "--version"
+    system "#{bin}/bali-phy", "#{doc}/examples/sequences/5S-rRNA/5d.fasta", "--iter=150"
+    system "#{bin}/bp-analyze", "5d-1"
   end
 end
