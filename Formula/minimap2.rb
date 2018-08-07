@@ -2,8 +2,8 @@ class Minimap2 < Formula
   # cite Li_2018: "https://arxiv.org/abs/1708.01492"
   desc "Fast pairwise aligner for genomic and spliced nucleotide sequences"
   homepage "https://github.com/lh3/minimap2"
-  url "https://github.com/lh3/minimap2/releases/download/v2.11/minimap2-2.11.tar.bz2"
-  sha256 "c22607eef1c819c2daba4b09aaea04d4d34a7587d14379704d7e15e39f01fecc"
+  url "https://github.com/lh3/minimap2/releases/download/v2.12/minimap2-2.12.tar.bz2"
+  sha256 "88df501d48da3bbff35fed0c61f3395ea524a870aadf14228cee9704332c0549"
   head "https://github.com/lh3/minimap2.git"
 
   bottle do
@@ -21,7 +21,7 @@ class Minimap2 < Formula
     bin.install "minimap2"
     bin.install "misc/paftools.js"
     man1.install "minimap2.1"
-    pkgshare.install "python", "test"
+    pkgshare.install "python", "test", "misc"
   end
 
   test do
