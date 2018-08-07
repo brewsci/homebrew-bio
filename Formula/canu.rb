@@ -9,8 +9,8 @@ class Canu < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "25e519d43ded5a33afdd43fa3f757d65d6af3774257f13e6c78cf835650f4156" => :sierra_or_later
-    sha256 "07f832430879c3cd2baa67b7db097da135cd82ecfe218a9afb1bc7f861b46c0f" => :x86_64_linux
+    sha256 "89a2adedebda4320abeacaa395f12303a7aef8c2ea643543796d43e163fb2032" => :sierra_or_later
+    sha256 "c51a332282420561f760e547f5afa11c23b47942494c7324e52a935c4bb7c291" => :x86_64_linux
   end
 
   fails_with :clang # needs openmp
