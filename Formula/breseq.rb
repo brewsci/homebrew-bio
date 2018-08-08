@@ -6,6 +6,13 @@ class Breseq < Formula
   sha256 "f553931e810a5c31434f2f90e977589c99c9dcbd258045df9fd37acc21d58574"
   head "https://github.com/barricklab/breseq.git"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "3b2e34a9b72e16b288ee4505c1c550a31829b4b5f4de2e7591c648b91a743db2" => :sierra_or_later
+    sha256 "1dbff33c770ed9ce16a0225023af135a81d9b24d2aba322cbafb5a66cd4ba3b9" => :x86_64_linux
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
