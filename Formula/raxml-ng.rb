@@ -2,8 +2,8 @@ class RaxmlNg < Formula
   desc "RAxML Next Generation: faster, easier-to-use and more flexible"
   homepage "https://sco.h-its.org/exelixis/web/software/raxml/"
   url "https://github.com/amkozlov/raxml-ng.git",
-    :tag => "0.5.1",
-    :revision => "8a3d6af12fbff60239744595631a468275d5a02a"
+    :revision => "26ae172851547b03c8af2942ecfb4ece2a7b905d"
+  version "0.6.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -28,15 +28,20 @@ class RaxmlNg < Formula
   end
 
   def install
-    # Build release binaries
-    inreplace "CMakeLists.txt", "set (CMAKE_BUILD_TYPE DEBUG)", ""
+    args = std_cmake_args
+    if build.bottle?
+      # Bottles are built with -march=core2, so disable AVX instructions
+      args += %w[-DENABLE_AVX=false -DENABLE_AVX2=false] if build.bottle?
+    else
+      args << "-DENABLE_AVX=false" unless Hardware::CPU.avx?
+      args << "-DENABLE_AVX2=false" unless Hardware::CPU.avx2?
+    end
+
     mkdir "build" do
-      system "cmake", "..", *std_cmake_args
-      system "make", "libpll"
+      system "cmake", "..", *args
       system "make"
       if build.with? "open-mpi"
-        system "cmake", "..", *std_cmake_args, "-DUSE_MPI=ON"
-        system "make", "libpll"
+        system "cmake", "..", *args, "-DUSE_MPI=ON"
         system "make"
       end
     end
