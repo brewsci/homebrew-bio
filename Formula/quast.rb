@@ -16,7 +16,7 @@ class Quast < Formula
   end
 
   depends_on "zlib" unless OS.mac?
-  depends_on "python3"
+  depends_on "python"
 
   def install
     prefix.install Dir["*"]
