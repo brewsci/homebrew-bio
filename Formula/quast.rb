@@ -16,19 +16,18 @@ class Quast < Formula
   end
 
   depends_on "zlib" unless OS.mac?
-  depends_on "python"
+  depends_on "python3"
 
   def install
     prefix.install Dir["*"]
     bin.install_symlink "../quast.py", "../metaquast.py", "../quast-lg.py", "../icarus.py",
       "quast.py" => "quast", "metaquast.py" => "metaquast", "quast-lg.py" => "quast-lg", "icarus.py" => "icarus"
+    inreplace "#{bin}/../quast.py", "#!/usr/bin/env python", "#!/usr/bin/env python3"
+    inreplace "#{bin}/../metaquast.py", "#!/usr/bin/env python", "#!/usr/bin/env python3"
+    inreplace "#{bin}/../icarus.py", "#!/usr/bin/env python", "#!/usr/bin/env python3"
+
     # Compile the bundled aligner so that `brew test quast` does not fail.
     system "#{bin}/quast", "--test"
-    if OS.linux?
-      inreplace "#{bin}/../quast.py", "#!/usr/bin/env python", "#!/usr/bin/env python3"
-      inreplace "#{bin}/../metaquast.py", "#!/usr/bin/env python", "#!/usr/bin/env python3"
-      inreplace "#{bin}/../icarus.py", "#!/usr/bin/env python", "#!/usr/bin/env python3"
-    end
   end
 
   test do
