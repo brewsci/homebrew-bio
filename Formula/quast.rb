@@ -11,8 +11,9 @@ class Quast < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "101ecf5624406959757f074218ba95ebc16a226b852f68832b0da29e0b303779" => :sierra_or_later
-    sha256 "ce3487e38818178541943c3961139339cbfb6f785ffb744a0eddef8d28aabd90" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "4a0b5774de1fff664631a6864bd1efb5b380df4a303ab811ea876e9e45d5536e" => :sierra_or_later
+    sha256 "f28944d4ac6776b635320c3674b9d7c88b1788e423b484938a0b915a723fdfea" => :x86_64_linux
   end
 
   depends_on "zlib" unless OS.mac?
