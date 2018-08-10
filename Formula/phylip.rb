@@ -5,6 +5,13 @@ class Phylip < Formula
   url "http://evolution.gs.washington.edu/phylip/download/phylip-3.697.tar.gz"
   sha256 "9a26d8b08b8afea7f708509ef41df484003101eaf4beceb5cf7851eb940510c1"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any
+    sha256 "408a84406e51f2306176eaa97865e6737f270300a12825d50b3f34ee15102679" => :sierra_or_later
+    sha256 "bbadb5138e4d3bb0824497d97996252a5e266dd99cb95a87551061c57392a518" => :x86_64_linux
+  end
+
   def install
     cd "src" do
       system "make", "-f", "Makefile.unx", "all"
