@@ -7,6 +7,13 @@ class Vsearch < Formula
   revision 1
   head "https://github.com/torognes/vsearch.git"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "48669dbd515e234fae8d2d1a89cfd71484c88e77bb04c186cbbf54401916a7da" => :sierra_or_later
+    sha256 "8a1912e76409cf9f37ae2dfef7d91044799bde8d527fb71a32c4ac37e3731ca8" => :x86_64_linux
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   unless OS.mac?
