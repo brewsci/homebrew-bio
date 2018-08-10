@@ -2,8 +2,8 @@ class GmapGsnap < Formula
   # cite Wu_2010: "https://doi.org/10.1093/bioinformatics/btq057"
   desc "Genomic Mapping & Alignment Program for RNA/EST/Short-read sequences"
   homepage "http://research-pub.gene.com/gmap/"
-  url "http://research-pub.gene.com/gmap/src/gmap-gsnap-2017-01-14.tar.gz"
-  sha256 "f3eca0b66ff9770c5965d43b3532e59d839e593de00fa3550141527f3c7f1d2c"
+  url "http://research-pub.gene.com/gmap/src/gmap-gsnap-2018-07-04.tar.gz"
+  sha256 "a9f8c1f0810df65b2a089dc10be79611026f4c95e4681dba98fea3d55d598d24"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
