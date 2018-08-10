@@ -14,7 +14,6 @@ class IndelSeqGen < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
 
-  # Fix error: random.cpp:148:5: error: reference to 'next' is ambiguous
   depends_on :linux
 
   def install
