@@ -1,5 +1,5 @@
 class Nextflow < Formula
-  # Tommaso_2017: "https://doi.org/10.1038/nbt.3820"
+  # cite Tommaso_2017: "https://doi.org/10.1038/nbt.3820"
   desc "Data-driven computational pipelines"
   homepage "https://www.nextflow.io/"
   url "https://github.com/nextflow-io/nextflow/releases/download/v0.29.1/nextflow"
