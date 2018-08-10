@@ -5,6 +5,7 @@ class Portcullis < Formula
   homepage "https://github.com/maplesond/portcullis"
   url "https://github.com/maplesond/portcullis/archive/Release-1.1.0.tar.gz"
   sha256 "872c0dbd7515229ecc22c9bdcd72eb78dfe93a3c0bfd14af52c448c142fe892a"
+  revision 1
   head "https://github.com/maplesond/portcullis.git"
 
   bottle do
