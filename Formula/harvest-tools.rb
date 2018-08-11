@@ -6,6 +6,12 @@ class HarvestTools < Formula
   sha256 "ffbcf0a115c74507695fd6cee4a9d5ba27a700db36b32d226521ef8dd3309264"
   head "https://github.com/marbl/harvest-tools.git"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "bea665dabd577ff78847689683634e581ae160fa114c6236f1cebadac9ba28d7" => :sierra_or_later
+    sha256 "fd5f92ca90802aa2f5174b175d39aa72558f67ba2d199eacb22baf86ca2d9955" => :x86_64_linux
+  end
+
   depends_on "autoconf" => :build
   depends_on "capnp"
   depends_on "protobuf"
