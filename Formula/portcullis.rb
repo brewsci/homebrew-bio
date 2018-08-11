@@ -3,8 +3,8 @@ class Portcullis < Formula
   # cite Mapleson_2017: "https://www.biorxiv.org/content/early/2017/11/10/217620"
   desc "Genuine splice junction prediction from BAM files"
   homepage "https://github.com/maplesond/portcullis"
-  url "https://github.com/maplesond/portcullis/archive/Release-1.1.0.tar.gz"
-  sha256 "872c0dbd7515229ecc22c9bdcd72eb78dfe93a3c0bfd14af52c448c142fe892a"
+  url "https://github.com/maplesond/portcullis/archive/Release-1.1.2.tar.gz"
+  sha256 "5c581a7f827ffeecfe68107b7fe27ed60108325fd2f86a79d93f61b328687749"
   revision 1
   head "https://github.com/maplesond/portcullis.git"
 
