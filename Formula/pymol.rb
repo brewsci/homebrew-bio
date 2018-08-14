@@ -1,7 +1,7 @@
 class Pymol < Formula
   include Language::Python::Virtualenv
-  desc "Open-source pymol ver. 2.2.0"
-  homepage "https://pymol.org/2/"
+  desc "molecular visualization system"
+  homepage "https://pymol.org/"
   url "https://github.com/schrodinger/pymol-open-source/archive/v2.2.0.tar.gz"
   sha256 "58d910103dc494c49c86bc8fd6cd94b1a030647f9d72f69fbd7d7ad25fb11233"
 
@@ -10,11 +10,10 @@ class Pymol < Formula
     sha256 "ff0a40dfad3132faa2ff2d7db88831987b548da177bfcf646bd606df88234883" => :x86_64_linux
   end
 
-  # remove macos dependency
   depends_on "freeglut"
   depends_on "freetype"
   depends_on "glew"
-  depends_on "glm" # PyMOL >= 2.2
+  depends_on "glm"
   depends_on "libpng"
   depends_on "msgpack"
   depends_on "pyqt"
@@ -26,7 +25,6 @@ class Pymol < Formula
     sha256 "a4a433b3a264dbc9aa9c7c241e87c0358a503ea6394f8737df1683c7c9a102ac"
   end
 
-  # for loading mmtf format
   resource "mmtf-python" do
     url "https://files.pythonhosted.org/packages/13/ea/c6a302ccdfdcc1ab200bd2b7561e574329055d2974b1fb7939a7aa374da3/mmtf-python-1.1.2.tar.gz"
     sha256 "a5caa7fcd2c1eaa16638b5b1da2d3276cbd3ed3513f0c2322957912003b6a8df"
@@ -47,34 +45,37 @@ class Pymol < Formula
     sha256 "4a5df9350275b006d36bfb5cf792aaee363b8cff80a6544c8d4b4a924944787f"
   end
 
-  # The bundled Pmw is deprecated. Pmw (>2.0) is required.
   resource "Pmw" do
     url "https://files.pythonhosted.org/packages/e7/20/8d0c4ba96a5fe62e1bcf2b8a212ccfecd67ad951e8f3e89cf147d63952aa/Pmw-2.0.1.tar.gz"
     sha256 "0b9d28f52755a7a081b44591c3dd912054f896e56c9a627db4dd228306ad1120"
   end
 
   def install
-    if OS.linux?
+    unless OS.mac?
       # comment out glDebugMessageCallback if CentOS 7
       # https://github.com/schrodinger/pymol-open-source/issues/2
       inreplace "layer5/PyMOL.cpp",
       "glDebugMessageCallback(gl_debug_proc, NULL);",
       "// glDebugMessageCallback(gl_debug_proc, NULL); //"
     end
+
     xy = Language::Python.major_minor_version "python3"
     ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
+
     # install other resources
     resources.each do |r|
       r.stage do
         system "python3", *Language::Python.setup_install_args(libexec)
       end
     end
+
     # To circumvent an installation error "libxml/xmlwriter.h not found".
     unless OS.mac?
       ENV.append "LDFLAGS", "-L#{Formula["libxml2"].opt_lib}"
       ENV.append "CPPFLAGS", "-I#{Formula["libxml2"].opt_include}/libxml2"
       ENV.append "CPPFLAGS", "-I#{Formula["freetype"].opt_include}/freetype2"
     end
+
     ENV.append "CPPFLAGS", "-I#{Formula["freetype"].opt_include}"
 
     args = %W[
@@ -83,14 +84,12 @@ class Pymol < Formula
       --pyqt PyQt5
     ]
     args << "--osx-frameworks" if OS.mac?
-
     system "python3", "setup.py", "install", *args
 
     bin.install libexec/"bin/pymol"
   end
 
   test do
-    # command-line test
     system "#{bin}/pymol", "-c"
   end
 end
