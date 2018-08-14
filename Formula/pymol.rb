@@ -5,6 +5,11 @@ class Pymol < Formula
   url "https://github.com/schrodinger/pymol-open-source/archive/v2.2.0.tar.gz"
   sha256 "58d910103dc494c49c86bc8fd6cd94b1a030647f9d72f69fbd7d7ad25fb11233"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "ff0a40dfad3132faa2ff2d7db88831987b548da177bfcf646bd606df88234883" => :x86_64_linux
+  end
+
   # remove macos dependency
   depends_on "freeglut"
   depends_on "freetype"
