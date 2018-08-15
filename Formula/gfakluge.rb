@@ -1,11 +1,17 @@
 class Gfakluge < Formula
   desc "C++ library and utilities for Graphical Fragment Assembly (GFA)"
   homepage "https://github.com/edawson/gfakluge"
-  url "https://github.com/edawson/gfakluge/archive/0.2.2.tar.gz"
-  sha256 "cad8293786d1567f3eb74b4bc9f79c2871715a7ae7f7f6e51ad7528bcf873d5c"
+  url "https://github.com/edawson/gfakluge/archive/0.3.0.tar.gz"
+  sha256 "840a5849ec6a9cce9390cc9526f2935483e65bfe8715b5dab2c9833ae30a40b4"
+  head "https://github.com/edawson/gfakluge.git"
 
   fails_with :clang # needs openmp
-  depends_on "gcc" if OS.mac? # for openmp
+
+  if OS.mac?
+    depends_on "gcc" # for openmp
+  else
+    depends_on "zlib"
+  end
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -16,7 +22,7 @@ class Gfakluge < Formula
 
   def install
     system "make"
-    include.install "src/gfakluge.hpp", "src/pliib.hpp"
+    include.install "src/gfakluge.hpp", "src/tinyFA/tinyfa.hpp", "src/tinyFA/pliib.hpp"
     lib.install "libgfakluge.a"
     bin.install %w[gfak]
   end
