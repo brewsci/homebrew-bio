@@ -1,4 +1,6 @@
 class Circlator < Formula
+  # cite Hunt_2015: "https://doi.org/10.1186/s13059-015-0849-0"
+
   include Language::Python::Virtualenv
 
   desc "Tool to circularize genome assemblies"
