@@ -4,6 +4,12 @@ class Snippy < Formula
   url "https://github.com/tseemann/snippy/archive/v4.0.5.tar.gz"
   sha256 "9f383763edc6e85cf5ba2cc0f88e94a2de280e97bdc1ed8ea1f5123372aa487b"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "7b782fd47d041ac84e33f2cdaccd55e1d5c9225492e2bec7e79038344107a588" => :x86_64_linux
+  end
+
   depends_on "bcftools"
   depends_on "bioperl"
   depends_on "bwa"
