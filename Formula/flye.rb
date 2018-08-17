@@ -2,8 +2,8 @@ class Flye < Formula
   # cite Kolmogorov_2018: "https://doi.org/10.1101/247148"
   desc "Fast and accurate de novo assembler for single molecule sequencing reads"
   homepage "https://github.com/fenderglass/Flye"
-  url "https://github.com/fenderglass/Flye/archive/2.3.4.tar.gz"
-  sha256 "51885adde4ca22ac8de67ae09d2151f17c192e06b80976ec77b7cc43f943e75d"
+  url "https://github.com/fenderglass/Flye/archive/2.3.5.tar.gz"
+  sha256 "d074055b1d8a8a91f0a0b28f98793441e82987ccb569a03d27db7d729a9fadcb"
   head "https://github.com/fenderglass/Flye.git"
 
   bottle do
