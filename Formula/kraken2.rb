@@ -6,6 +6,13 @@ class Kraken2 < Formula
   version "2.0.7"
   sha256 "baa160f5aef73327e1a79e6d1c54b64b2fcdaee0be31b456f7bc411d1897a744"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any
+    sha256 "48ed6a84341a531b1ff9547c306fc1874fb5345b03af6aa4d543256e45881a71" => :sierra_or_later
+    sha256 "011ac904f9a6341e34f296e9af6853209e57dd34225b3adeabd134ffca71affe" => :x86_64_linux
+  end
+
   fails_with :clang # needs openmp
 
   depends_on "blast" # for segmasker + dustmasker
