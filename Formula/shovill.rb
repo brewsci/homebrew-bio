@@ -1,8 +1,8 @@
 class Shovill < Formula
   desc "De novo assembly pipeline for Illumina paired-end reads"
   homepage "https://github.com/tseemann/shovill"
-  url "https://github.com/tseemann/shovill/archive/v1.0.0.tar.gz"
-  sha256 "722adeef163c2dba42dbf06e905c4abd4a97816bb227d776213a9c05898cc371"
+  url "https://github.com/tseemann/shovill/archive/v1.0.1.tar.gz"
+  sha256 "3985a1381a009d2335645627c14301395ab82f0ad6a7f48f7e1abab3303cfec9"
   head "https://github.com/tseemann/shovill.git"
 
   bottle :unneeded
