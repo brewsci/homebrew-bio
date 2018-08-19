@@ -5,6 +5,12 @@ class IndelSeqGen < Formula
   url "http://bioinfolab.unl.edu/~cstrope/iSG/indel-seq-gen-2.1.03.tar.gz"
   sha256 "4e9cf9d81eed573281fc69303fc35fe335c931496e7a403a7ea88d9b74c05d6f"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "9d08dd183ed7b2ddaa5e7d0e2736fd3c3a54757b8ed44276c088d98086e6d6b1" => :x86_64_linux
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
 
