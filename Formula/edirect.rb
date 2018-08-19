@@ -5,6 +5,13 @@ class Edirect < Formula
   version "9.70"
   sha256 "8c5f383ee1943656d0b74e88eb661c7ee1f45579b03f84ee46b8c7859d7f3b99"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any
+    sha256 "9398e09435cd85d8fef88563d08ba50107bb95c7ce8fd320f6ef26bab0e9675c" => :sierra_or_later
+    sha256 "37c2da4298051c569cb3c2e5a1c6df566ab0aa5aa3b2cdc3908043fd40a4edac" => :x86_64_linux
+  end
+
   depends_on "cpanminus" => :build
   depends_on "openssl"
   unless OS.mac?
