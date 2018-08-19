@@ -1,8 +1,8 @@
 class Abricate < Formula
   desc "Find antimicrobial resistance and virulence genes in contigs"
   homepage "https://github.com/tseemann/abricate"
-  url "https://github.com/tseemann/abricate/archive/v0.8.tar.gz"
-  sha256 "287bc61518f86ffd04801bd8f2c7aeebb62b7c74b2fa154974c321efcee5a206"
+  url "https://github.com/tseemann/abricate/archive/v0.8.7.tar.gz"
+  sha256 "6eb3f8e77c6bcbeb30a1b36ac5d65f44cb53f26935373f56ec83a611b378be83"
   head "https://github.com/tseemann/abricate.git"
 
   bottle do
@@ -25,7 +25,7 @@ class Abricate < Formula
     ENV.prepend "PERL5LIB", Formula["bioperl"].libexec/"lib/perl5"
     ENV.prepend_create_path "PERL5LIB", prefix/"perl5/lib/perl5"
 
-    pms = %w[JSON Time::Piece File::Slurp Text::CSV]
+    pms = %w[JSON Time::Piece Text::CSV]
     pms << "List::MoreUtils" unless OS.mac?
     system "cpanm", "--self-contained", "-l", prefix/"perl5", *pms
 
