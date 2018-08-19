@@ -1,8 +1,8 @@
 class Mlst < Formula
   desc "Multi-Locus Sequence Typing of bacterial contigs"
   homepage "https://github.com/tseemann/mlst"
-  url "https://github.com/tseemann/mlst/archive/v2.11.tar.gz"
-  sha256 "fcb403e3563b68119359235c984ce65e4604056a0678699ac559294fc2224086"
+  url "https://github.com/tseemann/mlst/archive/v2.12.tar.gz"
+  sha256 "a8df8301e5b51e6484ddd0f7cbd551b3d25cc4d46135ec67745109a2721c42b2"
   head "https://github.com/tseemann/mlst.git"
 
   bottle do
@@ -20,6 +20,7 @@ class Mlst < Formula
     depends_on "gzip"
     depends_on "perl"
   end
+  depends_on "wget"
 
   def install
     libexec.install Dir["*"]
@@ -32,7 +33,7 @@ class Mlst < Formula
     tdir = libexec/"test"
     assert_match version.to_s, shell_output("#{bin}/mlst --version")
     assert_match "senterica", shell_output("#{bin}/mlst --list 2>&1")
-    system "#{bin}/mlst --check"
+    system "#{bin}/mlst", "--check"
     system "#{bin}/mlst -q #{tdir}/example.fna.gz | grep -w 184"
     system "#{bin}/mlst -q #{tdir}/example.gbk.gz | grep -w 184"
     system "gzip -d -c #{tdir}/example.fna.gz | #{bin}/mlst -q /dev/stdin | grep -w 184"
