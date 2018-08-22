@@ -8,8 +8,8 @@ class Verticalize < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "18dab9f5eea52a95c3821c7af59aa95b1e11e8de78e3a2581fb549dc080b3394" => :sierra_or_later
-    sha256 "4821491790dd77a2de2a7a9c214ef326b13251f736bf730f45eb6f0c17806ab6" => :x86_64_linux
+    sha256 "cc01630a582a00db26eb35fbb1706ec8a98d987bf0d93596e60b0e5a744f3515" => :sierra_or_later
+    sha256 "5c1b1ee9fe0b8c955f271745f0cbef8bcc34a09bc453144c44268e7ca4ea370f" => :x86_64_linux
   end
 
   def install
