@@ -13,7 +13,7 @@ class KentTools < Formula
   end
 
   depends_on "libpng"
-  depends_on "mysql@5.7"
+  depends_on "mysql"
   depends_on "openssl"
   unless OS.mac?
     depends_on "rsync"
@@ -23,7 +23,7 @@ class KentTools < Formula
 
   def install
     libpng = Formula["libpng"]
-    mysql = Formula["mysql@5.7"]
+    mysql = Formula["mysql"]
 
     args = ["userApps", "BINDIR=#{bin}", "SCRIPTS=#{bin}"]
     args << "MACHTYPE=#{`uname -m`.chomp}"
