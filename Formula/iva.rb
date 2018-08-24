@@ -5,6 +5,12 @@ class Iva < Formula
   url "https://github.com/sanger-pathogens/iva/archive/v1.0.8.tar.gz"
   sha256 "20cac9b6683a2a33dc8cf790287f0eb8c3b4d02a287a380a071d821c1e0f1040"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "8d400f42176e2ca421f6bdca8bd735a0ef2ab8af56f1ffd0f824e7d4f6b15e21" => :sierra_or_later
+    sha256 "3c4914d151ebef4d190cfe211c4262eea85cb31ee0d61e3b9c6e37001a6586e1" => :x86_64_linux
+  end
+
   depends_on "kmc"
   depends_on "mummer"
   depends_on "numpy"
