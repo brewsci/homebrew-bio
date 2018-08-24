@@ -5,6 +5,7 @@ class Nanopolish < Formula
   url "https://github.com/jts/nanopolish.git",
         :tag => "v0.9.0",
         :revision => "1c6ae110a1b7d0ca5072025b1889997fec0828ed"
+  revision 1
   head "https://github.com/jts/nanopolish.git"
 
   bottle do
