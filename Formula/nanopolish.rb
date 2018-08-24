@@ -10,8 +10,8 @@ class Nanopolish < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "fc037c77203e00cb96937cea83aa524c97af083ec051a3c7a28cc6bb666b7415" => :sierra_or_later
-    sha256 "27bc64fe7504ef33c2463c41f7ee11807193368c4ac68d6f6575b037c3e83575" => :x86_64_linux
+    sha256 "71678e2e4d84087dea84cac10d565f53ea139e33b6d91d7e00b14ca50a144919" => :sierra_or_later
+    sha256 "8ef53cdfc106e902a60fdfbf39eaa49ff0e5de83bf67807493699cb0aaad3ae6" => :x86_64_linux
   end
 
   fails_with :clang # needs openmp
