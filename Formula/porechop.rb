@@ -9,8 +9,8 @@ class Porechop < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "7d81f81db5155d7016b5e414a5102ba007ec77f9f2ccf0249f33fe39fab1fc29" => :sierra_or_later
-    sha256 "3473f4445a1b115180780fb0744a747388c1fd663b0be3633008e51793da9e9e" => :x86_64_linux
+    sha256 "34b03ce111f627cf13c8b9d28bd926eae9969690904fccc8cef3b22edbdb1e75" => :sierra_or_later
+    sha256 "28cc0a48435c306d1efbd82f23b9ea096fa54a8ceb64f109e69637a61921a3da" => :x86_64_linux
   end
 
   depends_on "python"
