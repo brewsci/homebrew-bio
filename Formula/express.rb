@@ -5,6 +5,12 @@ class Express < Formula
   url "https://github.com/adarob/eXpress/archive/1.5.2.tar.gz"
   sha256 "831588e4e2c6e60d163bab98a9b4fcf8d2a3fa319cfd33ef0b86cb0af180c66e"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "93ec3978d88e6d2aeb087599f4380e3951467492b5627eef3801bf3d86f978a7" => :sierra_or_later
+    sha256 "8557322f664c213c58e7bbe9de475d160495a9a3fc628eaed3dde4471d25a5c7" => :x86_64_linux
+  end
+
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "bamtools"
