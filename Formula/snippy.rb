@@ -1,8 +1,8 @@
 class Snippy < Formula
   desc "Rapid bacterial SNP calling and core genome alignments"
   homepage "https://github.com/tseemann/snippy"
-  url "https://github.com/tseemann/snippy/archive/v4.0.5.tar.gz"
-  sha256 "9f383763edc6e85cf5ba2cc0f88e94a2de280e97bdc1ed8ea1f5123372aa487b"
+  url "https://github.com/tseemann/snippy/archive/v4.1.0.tar.gz"
+  sha256 "8044aebfc4f73eee7cc5d961882f9b825face526be85d9764e7d4058bfea153d"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -39,14 +39,17 @@ class Snippy < Formula
 
     prefix.install Dir["*"]
     bioperl = Formula["bioperl"].libexec/"lib/perl5"
-    Dir[bin/"snipp*"].each do |script|
-      inreplace script, "###LINE_FOR_BREW_CONDA###", "use lib '#{bioperl}';"
+    %w[snippy snippy-core snippy-vcf_to_tab snippy-clean_full_aln].each do |script|
+      inreplace bin/script, "###LINE_FOR_BREW_CONDA###", "use lib '#{bioperl}';"
     end
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/snippy --version 2>&1")
     assert_match version.to_s, shell_output("#{bin}/snippy-core --version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/snippy-vcf_to_tab --version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/snippy-clean_full_aln --version 2>&1")
+    system "#{bin}/snippy-multi", "--help"
     system "#{bin}/snippy", "--check"
   end
 end
