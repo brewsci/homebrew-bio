@@ -1,8 +1,8 @@
 class Mlst < Formula
   desc "Multi-Locus Sequence Typing of bacterial contigs"
   homepage "https://github.com/tseemann/mlst"
-  url "https://github.com/tseemann/mlst/archive/v2.12.tar.gz"
-  sha256 "a8df8301e5b51e6484ddd0f7cbd551b3d25cc4d46135ec67745109a2721c42b2"
+  url "https://github.com/tseemann/mlst/archive/v2.13.tar.gz"
+  sha256 "ccda958021cc4b2ab1ae1fde62eb82732ecca4555e71b81f88d57f2e4f71e126"
   head "https://github.com/tseemann/mlst.git"
 
   bottle do
