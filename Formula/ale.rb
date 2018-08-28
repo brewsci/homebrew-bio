@@ -2,9 +2,9 @@ class Ale < Formula
   # cite Clark_2013: "https://doi.org/10.1093/bioinformatics/bts723"
   desc "Assembly Likelihood Estimator"
   homepage "https://github.com/sc932/ALE"
-  url "https://github.com/sc932/ALE/archive/20130717.tar.gz"
-  version "0.0.20130717"
-  sha256 "fa331a4693b02c6a74a1f699ff39b83860036a9a3a7b1a4fa1effe95072c63a2"
+  url "https://github.com/sc932/ALE/archive/4aec46e0a544680edd8ec638d25bdf825b9d3b56.tar.gz"
+  version "0.0.20171221"
+  sha256 "47daa42bd1ae3ea915ee3fa2f6409eb01c5a9dffc185407a892e9a9010fefc6d"
 
   depends_on "zlib" unless OS.mac?
 
