@@ -7,7 +7,7 @@ class Snippy < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "7b782fd47d041ac84e33f2cdaccd55e1d5c9225492e2bec7e79038344107a588" => :x86_64_linux
+    sha256 "94ddd387d241db107e48840032e8ceba5500d5be343fdab1731d3a75cb7df450" => :x86_64_linux
   end
 
   depends_on "bcftools"
