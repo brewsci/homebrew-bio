@@ -8,8 +8,8 @@ class Mlst < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "fb743c4888af134b497225316e37ac8f183ed5493f3c55f0e854751a00d01bfa" => :sierra_or_later
-    sha256 "3e5f5a7e861a4eb77ca92a470e244d0567ceb8997d3add4bc62054d4a70e4e39" => :x86_64_linux
+    sha256 "5d82acb9ea557f206900ea21d78b4c201246e877df5eb57e8113ea291a2cd263" => :sierra_or_later
+    sha256 "6409825f6bd60d8d36ba17e6379c3de681e12b06a62dca56f09bfc868c07e0e1" => :x86_64_linux
   end
 
   depends_on "cpanminus" => :build
