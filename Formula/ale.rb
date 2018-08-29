@@ -5,6 +5,7 @@ class Ale < Formula
   url "https://github.com/sc932/ALE/archive/4aec46e0a544680edd8ec638d25bdf825b9d3b56.tar.gz"
   version "0.0.20171221"
   sha256 "47daa42bd1ae3ea915ee3fa2f6409eb01c5a9dffc185407a892e9a9010fefc6d"
+  head "https://github.com/sc932/ALE.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
