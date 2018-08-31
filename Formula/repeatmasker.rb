@@ -4,7 +4,7 @@ class Repeatmasker < Formula
   url "http://repeatmasker.org/RepeatMasker-open-4-0-7.tar.gz"
   version "4.0.7"
   sha256 "16faf40e5e2f521146f6692f09561ebef5f6a022feb17031f2ddb3e3aabcf166"
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
