@@ -6,11 +6,12 @@ class Tbl2asn < Formula
   version "25.6"
   if OS.mac?
     url "https://ftp.ncbi.nih.gov/toolbox/ncbi_tools/converters/by_program/tbl2asn/mac.tbl2asn.gz"
-    sha256 "c79416ff5fea23baf4ac10ff1a67f7f6e099980a45ac878f649821ba7b68788b"
+    sha256 "f0ef9038bb021fa0c8b546a78539fe2f34c3b22c28986c3f99d216073366ff08"
   elsif OS.linux?
     url "https://ftp.ncbi.nih.gov/toolbox/ncbi_tools/converters/by_program/tbl2asn/linux64.tbl2asn.gz"
-    sha256 "5306321c1e9cd709c41a47a01c8193cff20bc2c71141037e739dd8b59cb30dc2"
+    sha256 "f0e7d2fc6c68b39ff7b6abb1475e0a9d63c60887cfbd2857ccf0a0923eb4b96e"
   end
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -31,13 +32,12 @@ class Tbl2asn < Formula
   end
 
   def install
-    if OS.mac?
-      bin.install "mac.tbl2asn" => "tbl2asn"
-    elsif OS.linux?
-      bin.install "linux64.tbl2asn" => "tbl2asn"
+    bin.install Dir["tbl2asn*"].first => "tbl2asn"
+    if OS.linux?
       system "patchelf",
         "--set-interpreter", HOMEBREW_PREFIX/"lib/ld.so",
         "--set-rpath", HOMEBREW_PREFIX/"lib",
+        "--replace-needed", "libidn.so.11", "libidn.so.12",
         bin/"tbl2asn"
     end
     doc.install resource("doc")
