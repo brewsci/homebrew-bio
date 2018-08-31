@@ -1,9 +1,8 @@
 class Quicktree < Formula
   desc "Phylogenetic neighbor-joining tree builder"
   homepage "https://www.sanger.ac.uk/science/tools/quicktree"
-  url "https://github.com/khowe/quicktree/archive/v2.3.tar.gz"
-  sha256 "3739f7962ce72c1d3c86ba0a3faa82cc60749f6d9f627c1aba3729b6c881dee4"
-  revision 1
+  url "https://github.com/khowe/quicktree/archive/v2.4.tar.gz"
+  sha256 "9d9743d2cfe93659fd4ec3c098f0fcfa38f4bfe61d6596e2568221101b90b812"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -13,8 +12,6 @@ class Quicktree < Formula
   end
 
   def install
-    # https://github.com/khowe/quicktree/issues/8
-    inreplace "src/distancemat.c", "strlen(identifier)", "(strlen(identifier)+1)"
     system "make"
     bin.install "quicktree"
   end
