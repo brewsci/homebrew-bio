@@ -22,7 +22,10 @@ class Maker < Formula
   depends_on "exonerate"
   depends_on "repeatmasker"
   depends_on "snap"
-  depends_on "perl" unless OS.mac?
+  unless OS.mac?
+    depends_on "perl"
+    depends_on "sqlite"
+  end
 
   # Build MAKER with MPI support, but do not force the dependency on the user.
   if ENV["CIRCLECI"]
