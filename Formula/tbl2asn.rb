@@ -37,8 +37,10 @@ class Tbl2asn < Formula
       system "patchelf",
         "--set-interpreter", HOMEBREW_PREFIX/"lib/ld.so",
         "--set-rpath", HOMEBREW_PREFIX/"lib",
-        "--replace-needed", "libidn.so.11", "libidn.so.12",
         bin/"tbl2asn"
+        # Normally we would use patchelf to make this change but it seems
+        # broken for this use-case. Use the Stick of Correction instead.
+        inreplace bin/"tbl2asn", "libidn.so.11", "libidn.so.12"
     end
     doc.install resource("doc")
   end
