@@ -1,7 +1,7 @@
 class Bioperl < Formula
   # cite Stajich_2002: "https://doi.org/10.1101/gr.361602"
   desc "Open source Perl tools for bioinformatics, genomics and life science"
-  homepage "http://bioperl.org"
+  homepage "https://bioperl.org"
   url "https://cpan.metacpan.org/authors/id/C/CJ/CJFIELDS/BioPerl-1.007002.tar.gz"
   sha256 "17aa3aaab2f381bbcaffdc370002eaf28f2c341b538068d6586b2276a76464a1"
 
