@@ -4,6 +4,7 @@ class Fraggenescan < Formula
   homepage "https://github.com/COL-IU/FragGeneScan"
   url "https://downloads.sourceforge.net/project/fraggenescan/FragGeneScan1.31.tar.gz"
   sha256 "cd3212d0f148218eb3b17d24fcd1fc897fb9fee9b2c902682edde29f895f426c"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -16,8 +17,23 @@ class Fraggenescan < Formula
 
   def install
     system "make", "clean"
-    prefix.install Dir["*"]
-    bin.install_symlink Dir["#{prefix}/run_FragGeneScan.pl"]
+    system "make", "fgs"
+
+    script = "run_FragGeneScan.pl"
+
+    # https://github.com/COL-IU/FragGeneScan/issues/8
+    inreplace script, "#!/usr/bin/perl -w",
+                      "#!/usr/bin/env perl\nuse warnings;"
+
+    # https://github.com/COL-IU/FragGeneScan/issues/9
+    inreplace script, "my $dir = substr($0, 0, length($0)-19);",
+                      "use FindBin;\nmy $dir = \"$FindBin::RealBin/\";";
+
+    # https://github.com/COL-IU/FragGeneScan/issues/6
+    chmod 0644, [ "README", "releases", Dir["train/*"], Dir["example/*"] ]
+
+    prefix.install "FragGeneScan", script, "train", "example"
+    bin.install_symlink Dir["#{prefix}/#{script}"]
   end
 
   test do
