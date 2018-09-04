@@ -10,8 +10,8 @@ class Ale < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "0b4ca1437ab82ddc666eb666abd71839ae716b3fd8d3c0599cd2e7b77c8c53df" => :sierra_or_later
-    sha256 "c94cba3e6b7ee8892c110021bb2bb5ffe351383fee795e0095ea3c9099b408bb" => :x86_64_linux
+    sha256 "78ac2d51e396bd5225c2887f7198074aba2f4de6be5d8f67e9d94f7bdd6981ff" => :sierra_or_later
+    sha256 "8d003ad08edfe031ce31d0305a901bcb3dcda4c8d3b7f6a31b4cd6c27a385587" => :x86_64_linux
   end
 
   depends_on "zlib" unless OS.mac?
