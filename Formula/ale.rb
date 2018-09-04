@@ -2,9 +2,9 @@ class Ale < Formula
   # cite Clark_2013: "https://doi.org/10.1093/bioinformatics/bts723"
   desc "Assembly Likelihood Estimator"
   homepage "https://github.com/sc932/ALE"
-  url "https://github.com/sc932/ALE/archive/4aec46e0a544680edd8ec638d25bdf825b9d3b56.tar.gz"
-  version "0.0.20171221"
-  sha256 "47daa42bd1ae3ea915ee3fa2f6409eb01c5a9dffc185407a892e9a9010fefc6d"
+  url "https://github.com/sc932/ALE/archive/20180904.tar.gz"
+  version "0.0.20180904"
+  sha256 "123457834c173f10710a0b4c2fcefd8c6fa62af11f6ad311f199c242c49e8f68"
   head "https://github.com/sc932/ALE.git"
 
   bottle do
