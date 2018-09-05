@@ -10,8 +10,8 @@ class Idba < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "8dd38aa4b77473863dc5b0d2112cbb10906092197348621e9b04835f690a362b" => :sierra_or_later
-    sha256 "52b014cf241e90e3e053e752ae860f8c52b75b2498c06ac44b269179696a51a1" => :x86_64_linux
+    sha256 "c277691a6bb779ee3a46028c1877d2218b0c1d4b36487d960e1b694c87aa5d92" => :sierra_or_later
+    sha256 "bbff88868d15b3b5d835e2204cca2d07910a8ae303308d81a8595b7fa1f16fe0" => :x86_64_linux
   end
 
   fails_with :clang # needs OpenMP
