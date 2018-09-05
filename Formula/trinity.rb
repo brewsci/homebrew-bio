@@ -5,6 +5,13 @@ class Trinity < Formula
   url "https://github.com/trinityrnaseq/trinityrnaseq/archive/Trinity-v2.8.3.tar.gz"
   sha256 "745abda5eafdd98e4625aae6c190975b499695a4ebda537d305fcd0129859823"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "38ba406ba401e8199095fbb0e14f4915e6d5738a8ee5a5fdb6c6b219c96cab04" => :sierra_or_later
+    sha256 "30b06bb67c0d83b1e54f49642bf438faff43cb12e529928123bed231a91406a4" => :x86_64_linux
+  end
+
   depends_on "cmake" => :build
   depends_on "gcc" => :build
   depends_on "bowtie2"
