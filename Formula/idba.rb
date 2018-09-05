@@ -4,6 +4,8 @@ class Idba < Formula
   homepage "https://i.cs.hku.hk/~alse/hkubrg/projects/idba/"
   url "https://github.com/loneknightpy/idba/archive/1.1.3.tar.gz"
   sha256 "6b1746a29884f4fa17b110d94d9ead677ab5557c084a93b16b6a043dbb148709"
+  revision 1
+  head "https://github.com/loneknightpy/idba.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -31,14 +33,14 @@ class Idba < Formula
     system "./configure", "--prefix=#{prefix}"
     system "make"
     system "make", "check"
+    rm_rf Dir["bin/*.dSYM"] if OS.mac?
     # system "make", "install"  # currently does not install everything
     bin.install Dir["bin/idba*"].select { |x| File.executable? x }
     libexec.install Dir["bin/*"].select { |x| File.executable? x }
-    doc.install %w[AUTHORS ChangeLog NEWS README.md]
   end
 
   test do
-    system "#{bin}/idba_ud 2>&1 |grep IDBA-UD"
+    assert_match "Usage", shell_output("#{bin}/idba_ud 2>&1", 1)
     resource("lacto-genus").stage testpath
     cd testpath do
       system libexec/"sim_reads", "220668.fa", "220668.reads-10", "--paired", "--depth", "10"
