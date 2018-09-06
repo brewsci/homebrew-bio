@@ -51,10 +51,8 @@ jobs:
       - run: |
           brew --version
           brew remove $(brew list)
-          brew update
-          cd $(brew --repo)
-          git fetch origin --tags
-          git reset --hard origin/master
+          rm -rf /usr/local/Homebrew/Library/Taps/
+          brew update-reset
           brew --env
           brew config
       - checkout
