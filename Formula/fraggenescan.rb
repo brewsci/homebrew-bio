@@ -9,8 +9,8 @@ class Fraggenescan < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "02d0741b14113b9df714ce874579c59c3bfa4a1d10683010b008835ad051a4ff" => :sierra_or_later
-    sha256 "816966b16547812cf8be5c04670356394e3acd98718ba90b797cd687026e4b35" => :x86_64_linux
+    sha256 "a82f77a860becbe0c068f8421fecd4f9371abf0342efdd5837aed3635d3612b3" => :sierra_or_later
+    sha256 "962e3fad1b35d723b39231a27718d16f420332c36d1eb9b132522fedea786d1e" => :x86_64_linux
   end
 
   depends_on "perl" unless OS.mac?
