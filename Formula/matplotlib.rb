@@ -20,9 +20,8 @@ end
 class Matplotlib < Formula
   desc "Python 2D plotting library"
   homepage "https://matplotlib.org"
-  url "https://files.pythonhosted.org/packages/ec/ed/46b835da53b7ed05bd4c6cae293f13ec26e877d2e490a53a709915a9dcb7/matplotlib-2.2.2.tar.gz"
-  sha256 "4dc7ef528aad21f22be85e95725234c5178c0f938e2228ca76640e5e84d8cde8"
-  revision 1
+  url "https://files.pythonhosted.org/packages/eb/a0/31b6ba00bc4dcbc06f0b80d1ad6119a9cc3081ecb04a00117f6c1ca3a084/matplotlib-2.2.3.tar.gz"
+  sha256 "7355bf757ecacd5f0ac9dd9523c8e1a1103faadf8d33c22664178e17533f8ce5"
   head "https://github.com/matplotlib/matplotlib.git"
 
   bottle do
@@ -38,7 +37,7 @@ class Matplotlib < Formula
   depends_on "libpng"
   depends_on "numpy"
   depends_on "python" => :recommended
-  depends_on "python@2" => :recommended if !OS.mac? || MacOS.version <= :snow_leopard
+  depends_on "python@2" => :recommended
 
   if build.with? "cairo"
     depends_on "py2cairo"
@@ -66,6 +65,11 @@ class Matplotlib < Formula
   resource "backports.functools_lru_cache" do
     url "https://files.pythonhosted.org/packages/57/d4/156eb5fbb08d2e85ab0a632e2bebdad355798dece07d4752f66a8d02d1ea/backports.functools_lru_cache-1.5.tar.gz"
     sha256 "9d98697f088eb1b0fa451391f91afb5e3ebde16bbdb272819fd091151fda4f1a"
+  end
+
+  resource "kiwisolver" do
+    url "https://files.pythonhosted.org/packages/31/60/494fcce70d60a598c32ee00e71542e52e27c978e5f8219fae0d4ac6e2864/kiwisolver-1.0.1.tar.gz"
+    sha256 "ce3be5d520b4d2c3e5eeb4cd2ef62b9b9ab8ac6b6fedbaa0e39cdb6f50644278"
   end
 
   resource "pyparsing" do
