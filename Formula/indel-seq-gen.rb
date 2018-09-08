@@ -8,7 +8,8 @@ class IndelSeqGen < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "9d08dd183ed7b2ddaa5e7d0e2736fd3c3a54757b8ed44276c088d98086e6d6b1" => :x86_64_linux
+    rebuild 1
+    sha256 "417c706403a1d0444c84c2b295bf06e59f166e8fd5007fc13b644bcd3e646941" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
