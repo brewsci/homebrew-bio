@@ -1,8 +1,8 @@
 class Gfakluge < Formula
   desc "C++ library and utilities for Graphical Fragment Assembly (GFA)"
   homepage "https://github.com/edawson/gfakluge"
-  url "https://github.com/edawson/gfakluge/archive/0.3.0.tar.gz"
-  sha256 "840a5849ec6a9cce9390cc9526f2935483e65bfe8715b5dab2c9833ae30a40b4"
+  url "https://github.com/edawson/gfakluge/archive/0.3.1.tar.gz"
+  sha256 "30b2f177906fa24adb78e6ecb3edc23f2f6f9a097b870fa16a9e8d54e4d5ea58"
   head "https://github.com/edawson/gfakluge.git"
 
   fails_with :clang # needs openmp
