@@ -5,6 +5,13 @@ class Rcorrector < Formula
   url "https://github.com/mourisl/Rcorrector/archive/v1.0.3.tar.gz"
   sha256 "e0e4710d4ad36dd9b93158655fb2a1fd063ec4b513a505603cdf6ccfc5eb88ef"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "cbb94eed122b82034b56e1824e4c2a6a3424cf09c608b74701d99f641b899562" => :sierra_or_later
+    sha256 "089eab745eb21dd1180eabf842c13257f9c8faa5167da193a4adefe37753d165" => :x86_64_linux
+  end
+
   depends_on "jellyfish"
   depends_on "zlib" if OS.linux?
 
