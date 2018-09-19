@@ -1,8 +1,8 @@
 class Snippy < Formula
   desc "Rapid bacterial SNP calling and core genome alignments"
   homepage "https://github.com/tseemann/snippy"
-  url "https://github.com/tseemann/snippy/archive/v4.1.0.tar.gz"
-  sha256 "8044aebfc4f73eee7cc5d961882f9b825face526be85d9764e7d4058bfea153d"
+  url "https://github.com/tseemann/snippy/archive/v4.2.2.tar.gz"
+  sha256 "3838c0c60e152c4bb375fb5490b29a7193f684f0e83a7c0b59f7970e4aebf0f1"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -11,11 +11,11 @@ class Snippy < Formula
   end
 
   depends_on "bcftools"
+  depends_on "bedtools"
   depends_on "bioperl"
   depends_on "bwa"
   depends_on "emboss"
   depends_on "freebayes"
-  depends_on :linux # https://github.com/brewsci/homebrew-bio/pull/348 --check returns 255 :(
   depends_on "minimap2"
   depends_on "parallel"
   depends_on "samclip"
@@ -51,5 +51,6 @@ class Snippy < Formula
     assert_match version.to_s, shell_output("#{bin}/snippy-clean_full_aln --version 2>&1")
     system "#{bin}/snippy-multi", "--help"
     system "#{bin}/snippy", "--check"
+    system "#{bin}/snippy-core", "--check"
   end
 end
