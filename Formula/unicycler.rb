@@ -8,9 +8,9 @@ class Unicycler < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "c09abcc94a1520b8469de97c3b9ece1661ab6a13d8dd05c53c63f63dcf689e68" => :sierra_or_later
-    sha256 "c73c13bed2d620983f71e0fa5cdddd6898eba6cb6aa820674a5b70a0f0f310f5" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "8ce5a702a13ed9a9948cc93bc3e56a09d8f418181d046f815e1f5c3fed5b9773" => :sierra_or_later
+    sha256 "aa9986644891bee7f1a3196515f88b8f9e3c84968f412524ca552d968a403063" => :x86_64_linux
   end
 
   needs :cxx14
