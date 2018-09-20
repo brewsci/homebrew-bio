@@ -2,8 +2,8 @@ class Unicycler < Formula
   # cite Wick_2017: "https://doi.org/10.1371/journal.pcbi.1005595"
   desc "Hybrid assembly pipeline for bacterial genomes"
   homepage "https://github.com/rrwick/Unicycler"
-  url "https://github.com/rrwick/Unicycler/archive/v0.4.6.tar.gz"
-  sha256 "56f6f358a5d1f8dd0fcd1df04504079fc42cec8453a36ee59ff89295535d03f5"
+  url "https://github.com/rrwick/Unicycler/archive/v0.4.7.tar.gz"
+  sha256 "a8cf65e46dc2694b0fbd4e9190c73a1f300921457aadfab27a1792b785620d63"
   head "https://github.com/rrwick/Unicycler/releases"
 
   bottle do
