@@ -4,6 +4,7 @@ class Edirect < Formula
   url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/9.70.20180816/edirect-9.70.20180816.tar.gz"
   version "9.70"
   sha256 "8c5f383ee1943656d0b74e88eb661c7ee1f45579b03f84ee46b8c7859d7f3b99"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -14,10 +15,8 @@ class Edirect < Formula
 
   depends_on "cpanminus" => :build
   depends_on "openssl"
-  unless OS.mac?
-    depends_on "perl"
-    depends_on "zlib"
-  end
+  depends_on "perl"
+  depends_on "zlib" unless OS.mac?
 
   def install
     rm %w[Mozilla-CA.tar.gz setup.sh setup-deps.pl]
