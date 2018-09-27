@@ -4,7 +4,7 @@ class Repeatmasker < Formula
   url "http://repeatmasker.org/RepeatMasker-open-4-0-7.tar.gz"
   version "4.0.7"
   sha256 "16faf40e5e2f521146f6692f09561ebef5f6a022feb17031f2ddb3e3aabcf166"
-  revision 3
+  revision 4
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -46,7 +46,7 @@ class Repeatmasker < Formula
     # HMMER INSTALLATION PATH Enter path
     # Do you want HMMER to be your default search engine for Repeatmasker?
     # 5. Done
-    (libexec/"config.txt").write <<~EOS
+    (libexec/"configure.input").write <<~EOS
 
       #{perl}
       #{libexec}
@@ -60,7 +60,7 @@ class Repeatmasker < Formula
       5
       EOS
     Dir.chdir libexec.to_s do
-      system "./configure <config.txt"
+      system "./configure <configure.input"
     end
   end
 
@@ -72,10 +72,12 @@ class Repeatmasker < Formula
     adequate for use with your own custom repeat library.  If you
     plan to search using common species specific repeats you will
     need to obtain the complete RepeatMasker repeat library from
-    GIRI ( www.girinst.org ) and install it:
+    GIRI and install it:
+      Browse to https://www.girinst.org/server/RepBase/
+      Download RepBaseRepeatMaskerEdition-*.tar.gz
       cd #{libexec}
-      tar zxvf repeatmaskerlibraries-20140131.tar.gz
-      ./configure <config.txt
+      tar zxvf repeatmaskerlibraries-*.tar.gz
+      ./configure <configure.input
 
     The default aligner is RMBlast. You may reconfigure RepeatMasker
     by running
