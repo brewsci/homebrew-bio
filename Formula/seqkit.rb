@@ -11,12 +11,12 @@ class Seqkit < Formula
     sha256 "56b01963ad272cd388fff25d92115fd7b301c8faef79322ade1d036cfd437781"
   end
   version "0.9.0"
-  
-  bottle do	
-    root_url "https://linuxbrew.bintray.com/bottles-bio"	
-    cellar :any_skip_relocation	
-    sha256 "7a69ce7a8b1c53858005754c4f3725262a0539166c3fcc316f2ac25f422f0363" => :sierra_or_later	
-    sha256 "c17453614853dcb7bf49d94c3f395f9b4fb2c162c4667adfe0d73b0988621c82" => :x86_64_linux	
+
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "7a69ce7a8b1c53858005754c4f3725262a0539166c3fcc316f2ac25f422f0363" => :sierra_or_later
+    sha256 "c17453614853dcb7bf49d94c3f395f9b4fb2c162c4667adfe0d73b0988621c82" => :x86_64_linux
   end
 
   def install
