@@ -2,8 +2,8 @@ class Miniasm < Formula
   # cite Li_2016: "https://doi.org/10.1093/bioinformatics/btw152"
   desc "Ultrafast de novo assembly for long noisy reads"
   homepage "https://github.com/lh3/miniasm"
-  url "https://github.com/lh3/miniasm/archive/v0.2.tar.gz"
-  sha256 "177cbb93dbdd3da73e3137296f7822ede830af10339aa7f84fc76afab95a1be6"
+  url "https://github.com/lh3/miniasm/archive/v0.3.tar.gz"
+  sha256 "9b688454f30f99cf1a0b0b1316821ad92fbd44d83ff0b35b2403ee8692ba093d"
   head "https://github.com/lh3/miniasm.git"
 
   bottle do
@@ -18,10 +18,10 @@ class Miniasm < Formula
   def install
     system "make"
     bin.install "miniasm", "minidot"
-    pkgshare.install "misc"
+    pkgshare.install Dir["misc/*"]
   end
 
   test do
-    assert_match "in.paf", shell_output("#{bin}/miniasm 2>&1", 1)
+    assert_match "Usage", shell_output("#{bin}/miniasm 2>&1", 1)
   end
 end
