@@ -8,9 +8,9 @@ class Miniasm < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "dbc894c4fbc31b8694777654b4df0e1ce74aff4ef20699c5541a7382f697f475" => :sierra_or_later
-    sha256 "db65b66443d72a14d80e228874b9d906e536c52915b7a8d0670b6e9ee96df90d" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "8af4181f510ce974fd6054c61a682d1c0e3a81849dcfcb26fcc662df9cb061cd" => :sierra_or_later
+    sha256 "28cd7ae2c914864a0f2c594b24390c137f40f208d7400700ea12295a2dc801fb" => :x86_64_linux
   end
 
   depends_on "zlib" unless OS.mac?
