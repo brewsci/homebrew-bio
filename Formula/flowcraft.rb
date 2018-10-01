@@ -3,6 +3,7 @@ class Flowcraft < Formula
   homepage "https://github.com/assemblerflow/flowcraft"
   url "https://github.com/assemblerflow/flowcraft/archive/1.3.1.tar.gz"
   sha256 "06b206bdd2348facea50641a8ca2149c39d83e82d0870d5501003b84669584c0"
+  head "https://github.com/assemblerflow/flowcraft.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
