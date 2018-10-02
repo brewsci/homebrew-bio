@@ -6,6 +6,13 @@ class Bfc < Formula
   version "r175"
   sha256 "0fad5807a417f8cc033b5deea04c0fa763947e55415372f89bd2914df48154b7"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "96f0c5343aba43216d0f25c7ee8060eb68645a70904d81689b5da2333cfe8e2e" => :sierra_or_later
+    sha256 "85ad1e0d8290a563e4afeac4b9691330ba226c2b3142b214b169ad77d67abde8" => :x86_64_linux
+  end
+
   depends_on "zlib" unless OS.mac?
 
   def install
