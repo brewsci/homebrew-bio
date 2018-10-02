@@ -2,7 +2,7 @@ class NoExternalPyCXXPackage < Requirement
   fatal false
 
   satisfy do
-    !quiet_system "python", "-c", "import CXX"
+    !quiet_system "python3", "-c", "import CXX"
   end
 
   def message; <<~EOS
@@ -11,9 +11,9 @@ class NoExternalPyCXXPackage < Requirement
     probably make the build of Matplotlib fail. In python you can test if that
     package is available with `import CXX`. To get a hint where that package
     is installed, you can:
-        python -c "import os; import CXX; print(os.path.dirname(CXX.__file__))"
+        python3 -c "import os; import CXX; print(os.path.dirname(CXX.__file__))"
     See also: https://github.com/Homebrew/homebrew-python/issues/56
-    EOS
+  EOS
   end
 end
 
@@ -36,13 +36,10 @@ class Matplotlib < Formula
   depends_on "freetype"
   depends_on "libpng"
   depends_on "numpy"
-  depends_on "python" => :recommended
-  depends_on "python@2" => :recommended
+  depends_on "python"
 
-  if build.with? "cairo"
-    depends_on "py2cairo"
-    depends_on "py3cairo"
-  end
+  depends_on "cairo" => :optional
+  depends_on "py3cairo" if build.with? "cairo"
 
   depends_on "gtk+3" => :optional
   depends_on "pygobject3" if build.with? "gtk+3"
@@ -60,11 +57,6 @@ class Matplotlib < Formula
   resource "Cycler" do
     url "https://files.pythonhosted.org/packages/c2/4b/137dea450d6e1e3d474e1d873cd1d4f7d3beed7e0dc973b06e8e10d32488/cycler-0.10.0.tar.gz"
     sha256 "cd7b2d1018258d7247a71425e9f26463dfb444d411c39569972f4ce586b0c9d8"
-  end
-
-  resource "backports.functools_lru_cache" do
-    url "https://files.pythonhosted.org/packages/57/d4/156eb5fbb08d2e85ab0a632e2bebdad355798dece07d4752f66a8d02d1ea/backports.functools_lru_cache-1.5.tar.gz"
-    sha256 "9d98697f088eb1b0fa451391f91afb5e3ebde16bbdb272819fd091151fda4f1a"
   end
 
   resource "kiwisolver" do
@@ -92,11 +84,6 @@ class Matplotlib < Formula
     sha256 "105f8d68616f8248e24bf0e9372ef04d3cc10104f1980f54d57b2ce73a5ad56a"
   end
 
-  resource "subprocess32" do
-    url "https://files.pythonhosted.org/packages/b8/2f/49e53b0d0e94611a2dc624a1ad24d41b6d94d0f1b0a078443407ea2214c2/subprocess32-3.2.7.tar.gz"
-    sha256 "1e450a4a4c53bf197ad6402c564b9f7a53539385918ef8f12bdf430a61036590"
-  end
-
   def install
     if MacOS.version == :el_capitan && MacOS::Xcode.installed? && MacOS::Xcode.version >= "8.0" \
       || MacOS.version == :yosemite && MacOS::Xcode.installed? && MacOS::Xcode.version >= "7.0"
@@ -107,31 +94,22 @@ class Matplotlib < Formula
               "'darwin': ['/usr/local/'",
               "'darwin': ['#{HOMEBREW_PREFIX}'"
 
-    Language::Python.each_python(build) do |python, version|
-      bundle_path = libexec/"lib/python#{version}/site-packages"
-      bundle_path.mkpath
-      ENV.prepend_path "PYTHONPATH", bundle_path
+    xy = Language::Python.major_minor_version "python3"
+    site_packages = libexec/"lib/python#{xy}/site-packages"
+    ENV.prepend_create_path "PYTHONPATH", site_packages
 
-      res = if version.to_s.start_with? "2"
-        resources.map(&:name).to_set
-      else
-        resources.map(&:name).to_set - ["backports.functools_lru_cache", "subprocess32"]
+    resources.each do |r|
+      r.stage do
+        system "python3", *Language::Python.setup_install_args(libexec)
       end
-      res.each do |r|
-        resource(r).stage do
-          system python, *Language::Python.setup_install_args(libexec)
-        end
-      end
-      (lib/"python#{version}/site-packages/homebrew-matplotlib-bundle.pth").write "#{bundle_path}\n"
-
-      system python, *Language::Python.setup_install_args(prefix)
     end
+    (lib/"python#{xy}/site-packages/homebrew-matplotlib.pth").write "#{site_packages}\n"
+
+    system "python3", *Language::Python.setup_install_args(prefix)
   end
 
   test do
     ENV["PYTHONDONTWRITEBYTECODE"] = "1"
-    Language::Python.each_python(build) do |python, _|
-      system python, "-c", "import matplotlib"
-    end
+    system "python3", "-c", "import matplotlib"
   end
 end
