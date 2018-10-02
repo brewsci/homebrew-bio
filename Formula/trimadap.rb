@@ -1,8 +1,10 @@
 class Trimadap < Formula
   desc "Fast but inaccurate adapter trimmer for Illumina reads"
   homepage "https://github.com/lh3/trimadap"
-  url "https://github.com/lh3/trimadap/archive/0.1.tar.gz"
-  sha256 "553069d81004b120d9df7d6161edce9317c0f95e5eefe2ec3325dd4081a90acd"
+  url "https://github.com/lh3/trimadap/archive/ddfef210563830d9193b40949da3523b6fb93003.tar.gz"
+  version "0.1.11"
+  sha256 "0aad29cc8f2fb65b464785b5787a29c0e0a6eab59f08eea82dffe15165151d4f"
+  head "https://github.com/lh3/trimadap.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
