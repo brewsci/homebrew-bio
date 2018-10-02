@@ -9,8 +9,8 @@ class Trimadap < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "259c8475ea71102a0d57aa374c7ae296aa5ca6b5ec5c500fe72de0b5db396c35" => :sierra_or_later
-    sha256 "a643ca2ca68cda607e4bd48ae1e806a27784b6b7a131e38f5311193c916a3e1b" => :x86_64_linux
+    sha256 "d55f3e6d04a44e747d1fc0b8b279c44518be18d198ceb746052d02dbb2442d74" => :sierra_or_later
+    sha256 "763804b091eba6b97a3276e73e8c05c761ab5e1836fb2fee9038e08aa0e8096d" => :x86_64_linux
   end
 
   depends_on "zlib" unless OS.mac?
