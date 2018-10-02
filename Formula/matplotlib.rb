@@ -2,7 +2,7 @@ class NoExternalPyCXXPackage < Requirement
   fatal false
 
   satisfy do
-    !quiet_system "python", "-c", "import CXX"
+    !quiet_system "python3", "-c", "import CXX"
   end
 
   def message; <<~EOS
@@ -11,18 +11,17 @@ class NoExternalPyCXXPackage < Requirement
     probably make the build of Matplotlib fail. In python you can test if that
     package is available with `import CXX`. To get a hint where that package
     is installed, you can:
-        python -c "import os; import CXX; print(os.path.dirname(CXX.__file__))"
+        python3 -c "import os; import CXX; print(os.path.dirname(CXX.__file__))"
     See also: https://github.com/Homebrew/homebrew-python/issues/56
-    EOS
+  EOS
   end
 end
 
 class Matplotlib < Formula
   desc "Python 2D plotting library"
   homepage "https://matplotlib.org"
-  url "https://files.pythonhosted.org/packages/ec/ed/46b835da53b7ed05bd4c6cae293f13ec26e877d2e490a53a709915a9dcb7/matplotlib-2.2.2.tar.gz"
-  sha256 "4dc7ef528aad21f22be85e95725234c5178c0f938e2228ca76640e5e84d8cde8"
-  revision 1
+  url "https://files.pythonhosted.org/packages/eb/a0/31b6ba00bc4dcbc06f0b80d1ad6119a9cc3081ecb04a00117f6c1ca3a084/matplotlib-2.2.3.tar.gz"
+  sha256 "7355bf757ecacd5f0ac9dd9523c8e1a1103faadf8d33c22664178e17533f8ce5"
   head "https://github.com/matplotlib/matplotlib.git"
 
   bottle do
@@ -37,13 +36,10 @@ class Matplotlib < Formula
   depends_on "freetype"
   depends_on "libpng"
   depends_on "numpy"
-  depends_on "python" => :recommended
-  depends_on "python@2" => :recommended if !OS.mac? || MacOS.version <= :snow_leopard
+  depends_on "python"
 
-  if build.with? "cairo"
-    depends_on "py2cairo"
-    depends_on "py3cairo"
-  end
+  depends_on "cairo" => :optional
+  depends_on "py3cairo" if build.with? "cairo"
 
   depends_on "gtk+3" => :optional
   depends_on "pygobject3" if build.with? "gtk+3"
@@ -63,9 +59,9 @@ class Matplotlib < Formula
     sha256 "cd7b2d1018258d7247a71425e9f26463dfb444d411c39569972f4ce586b0c9d8"
   end
 
-  resource "backports.functools_lru_cache" do
-    url "https://files.pythonhosted.org/packages/57/d4/156eb5fbb08d2e85ab0a632e2bebdad355798dece07d4752f66a8d02d1ea/backports.functools_lru_cache-1.5.tar.gz"
-    sha256 "9d98697f088eb1b0fa451391f91afb5e3ebde16bbdb272819fd091151fda4f1a"
+  resource "kiwisolver" do
+    url "https://files.pythonhosted.org/packages/31/60/494fcce70d60a598c32ee00e71542e52e27c978e5f8219fae0d4ac6e2864/kiwisolver-1.0.1.tar.gz"
+    sha256 "ce3be5d520b4d2c3e5eeb4cd2ef62b9b9ab8ac6b6fedbaa0e39cdb6f50644278"
   end
 
   resource "pyparsing" do
@@ -88,11 +84,6 @@ class Matplotlib < Formula
     sha256 "105f8d68616f8248e24bf0e9372ef04d3cc10104f1980f54d57b2ce73a5ad56a"
   end
 
-  resource "subprocess32" do
-    url "https://files.pythonhosted.org/packages/b8/2f/49e53b0d0e94611a2dc624a1ad24d41b6d94d0f1b0a078443407ea2214c2/subprocess32-3.2.7.tar.gz"
-    sha256 "1e450a4a4c53bf197ad6402c564b9f7a53539385918ef8f12bdf430a61036590"
-  end
-
   def install
     if MacOS.version == :el_capitan && MacOS::Xcode.installed? && MacOS::Xcode.version >= "8.0" \
       || MacOS.version == :yosemite && MacOS::Xcode.installed? && MacOS::Xcode.version >= "7.0"
@@ -103,31 +94,22 @@ class Matplotlib < Formula
               "'darwin': ['/usr/local/'",
               "'darwin': ['#{HOMEBREW_PREFIX}'"
 
-    Language::Python.each_python(build) do |python, version|
-      bundle_path = libexec/"lib/python#{version}/site-packages"
-      bundle_path.mkpath
-      ENV.prepend_path "PYTHONPATH", bundle_path
+    xy = Language::Python.major_minor_version "python3"
+    site_packages = libexec/"lib/python#{xy}/site-packages"
+    ENV.prepend_create_path "PYTHONPATH", site_packages
 
-      res = if version.to_s.start_with? "2"
-        resources.map(&:name).to_set
-      else
-        resources.map(&:name).to_set - ["backports.functools_lru_cache", "subprocess32"]
+    resources.each do |r|
+      r.stage do
+        system "python3", *Language::Python.setup_install_args(libexec)
       end
-      res.each do |r|
-        resource(r).stage do
-          system python, *Language::Python.setup_install_args(libexec)
-        end
-      end
-      (lib/"python#{version}/site-packages/homebrew-matplotlib-bundle.pth").write "#{bundle_path}\n"
-
-      system python, *Language::Python.setup_install_args(prefix)
     end
+    (lib/"python#{xy}/site-packages/homebrew-matplotlib.pth").write "#{site_packages}\n"
+
+    system "python3", *Language::Python.setup_install_args(prefix)
   end
 
   test do
     ENV["PYTHONDONTWRITEBYTECODE"] = "1"
-    Language::Python.each_python(build) do |python, _|
-      system python, "-c", "import matplotlib"
-    end
+    system "python3", "-c", "import matplotlib"
   end
 end
