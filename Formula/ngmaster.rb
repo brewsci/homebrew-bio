@@ -4,6 +4,13 @@ class Ngmaster < Formula
   url "https://github.com/MDU-PHL/ngmaster/archive/v0.5.5.tar.gz"
   sha256 "bfd9290dee6d3a2159852b68305b3e886c7f8b382eb9f0fbca7acd6b2d2eb502"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "14cca7517aef3474b85af618d3edb204fa6d2639eb5e01b2a13de8054ae188f1" => :sierra_or_later
+    sha256 "fd79d30a60bfe5fed010b29386fd3442ec9bcd0e3f259225473a33e272815290" => :x86_64_linux
+  end
+
   depends_on "ispcr"
   depends_on "numpy"
   depends_on "python"
