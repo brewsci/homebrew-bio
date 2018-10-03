@@ -2,7 +2,7 @@ class Flowcraft < Formula
   desc "Nextflow pipeline assembler for genomics"
   homepage "https://github.com/assemblerflow/flowcraft"
   url "https://github.com/assemblerflow/flowcraft/archive/1.3.1.tar.gz"
-  sha256 "06b206bdd2348facea50641a8ca2149c39d83e82d0870d5501003b84669584c0"
+  sha256 "77d5289bd5fcbf05917b36764bb1ed5544d54f32c386270f230b5c6e8bc48bb7"
   head "https://github.com/assemblerflow/flowcraft.git"
 
   bottle do
