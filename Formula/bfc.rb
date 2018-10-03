@@ -9,8 +9,8 @@ class Bfc < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "96f0c5343aba43216d0f25c7ee8060eb68645a70904d81689b5da2333cfe8e2e" => :sierra_or_later
-    sha256 "85ad1e0d8290a563e4afeac4b9691330ba226c2b3142b214b169ad77d67abde8" => :x86_64_linux
+    sha256 "ae209def35d23b0885832d1e14c4ac37e05daae151c7196bca597d38a5274f60" => :sierra_or_later
+    sha256 "3a8a77f320e0d5ab85b1a05c979f9e94e2b1ddf9465c71b95d1559a0c52287ba" => :x86_64_linux
   end
 
   depends_on "zlib" unless OS.mac?
