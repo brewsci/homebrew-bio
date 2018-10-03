@@ -2,9 +2,9 @@ class Bfc < Formula
   # Li_2015: "https://doi.org/10.1093/bioinformatics/btv290"
   desc "High-performance error correction for Illumina resequencing data"
   homepage "https://github.com/lh3/bfc"
-  url "https://github.com/lh3/bfc/archive/submitted-v1.tar.gz"
-  version "r175"
-  sha256 "0fad5807a417f8cc033b5deea04c0fa763947e55415372f89bd2914df48154b7"
+  url "https://github.com/lh3/bfc/archive/69ab176e7aac4af482d7d8587e45bfe239d02c96.tar.gz"
+  version "r181"
+  sha256 "4f510557ea5fb9ed179bc21d9ffc85c0ae346525b56e3b72bf6204d64f6bfb8b"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
