@@ -89,11 +89,11 @@ before_install:
   - HOME=/home/linuxbrew
   - sudo mkdir $HOME
   - sudo chown "$USER:" $HOME
-  - LINUXBREW=$HOME/.linuxbrew
-  - mkdir -p $LINUXBREW/bin
-  - git clone --depth=1 https://github.com/Linuxbrew/brew "$LINUXBREW/Homebrew"
-  - ln -s ../Homebrew/bin/brew /home/linuxbrew/.linuxbrew/bin/
-  - export PATH="$LINUXBREW/bin:$LINUXBREW/sbin:$PATH"
+  - git clone --depth=1 https://github.com/Linuxbrew/brew "$HOME/.linuxbrew/Homebrew";
+    mkdir "$HOME/.linuxbrew/bin";
+    ln -s ../Homebrew/bin/brew "$HOME/.linuxbrew/bin/";
+    PATH="$HOME/.linuxbrew/bin:/usr/bin:/bin";
+    umask 022;
   - export HOMEBREW_DEVELOPER=1
   - export HOMEBREW_FORCE_VENDOR_RUBY=1
   - export HOMEBREW_NO_AUTO_UPDATE=1
@@ -103,7 +103,6 @@ before_install:
   - ln -s "$PWD" "$HOMEBREW_TAP_DIR"
   # Fix error: Incorrect file permissions (664)
   - chmod 0644 Formula/*.rb
-  - umask 022
   - env | grep TRAVIS | tee /tmp/travis.env
   - ulimit -n 1024
 
