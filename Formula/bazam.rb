@@ -5,6 +5,13 @@ class Bazam < Formula
   url "https://github.com/ssadedin/bazam/releases/download/1.0.1/bazam.jar"
   sha256 "396e584c95e2184025f9b9eca7377c376894f3afb4572856387866ab59c741e8"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "5fc4d9196cfaa7f87e40383c830ef220b0a0a76028c68ae03a3f0d48d1de5120" => :sierra_or_later
+    sha256 "08d9d9e0560074dafa59cc6347fa714d717bdefe69cf90f88ce017ead1344919" => :x86_64_linux
+  end
+
   depends_on :java
 
   def install
