@@ -3,21 +3,15 @@ class Sambamba < Formula
   desc "Tools for working with SAM/BAM data"
   homepage "https://lomereiter.github.io/sambamba"
   url "https://github.com/lomereiter/sambamba.git",
-      :tag => "v0.6.7",
-      :revision => "18b1df553e58b4cd6a8ddb64e59bbd9a167d44f1"
+      :tag => "v0.6.8",
+      :revision => "96d1b755594f3075afac4b5f02f8d932c7c4919d"
 
   depends_on "ldc" => :build
-  depends_on "python@2" => :build unless OS.mac?
-
-  resource "undeaD" do
-    url "https://github.com/dlang/undeaD/archive/v1.0.9.tar.gz"
-    sha256 "d32eebcce826f2bc1af71a3ea37f0677485c6e04fb5d4cb0565ed66777569125"
-  end
+  depends_on "python" => :build
 
   def install
-    (buildpath/"undeaD").install resource("undeaD")
-    system "make", "sambamba-ldmd2-64"
-    bin.install "build/sambamba"
+    system "make", "release"
+    bin.install "bin/sambamba"
     pkgshare.install "BioD/test/data/ex1_header.bam"
   end
 
