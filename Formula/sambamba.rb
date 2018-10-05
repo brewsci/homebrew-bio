@@ -10,6 +10,7 @@ class Sambamba < Formula
   depends_on "python" => :build
 
   def install
+    system "make", "utils/ldc_version_info_.d"
     system "make", "release"
     bin.install "bin/sambamba"
     pkgshare.install "BioD/test/data/ex1_header.bam"
