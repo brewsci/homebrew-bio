@@ -5,6 +5,13 @@ class Swipe < Formula
   url "https://github.com/torognes/swipe/archive/v2.1.0.tar.gz"
   sha256 "9706cc1419bba9e4d77e2afb3565ac4f0f34abc294c5c2d0914325ab3207859f"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "04d5c4e737d41d1fca5d8b848d3bfdfac96e9c7defeeae73fcb5ad40944ff439" => :sierra_or_later
+    sha256 "fe6052456ecb3759d84019038262b07bff3a665ed114d73b614275220728d3c0" => :x86_64_linux
+  end
+
   needs :cxx11
 
   def install
