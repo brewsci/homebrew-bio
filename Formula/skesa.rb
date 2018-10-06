@@ -4,6 +4,7 @@ class Skesa < Formula
   homepage "https://github.com/ncbi/SKESA"
   url "https://github.com/ncbi/SKESA/archive/v2.2.1.tar.gz"
   sha256 "9fe712c1c0d69c963efd433c18a66c42136e8a2fe5efacc9791aa3dfb75021e8"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
