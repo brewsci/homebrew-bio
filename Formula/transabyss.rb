@@ -5,6 +5,11 @@ class Transabyss < Formula
   url "https://github.com/bcgsc/transabyss/archive/2.0.1.tar.gz"
   sha256 "9101107d1df5ae86dd6a87d26181bb4c1967724e2560bc3b8ca44c30ce85ce12"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "c3adcd840c6bdebae3a6a0018138ee47d8ca0da01713ba35973bf89b3e2a39a8" => :x86_64_linux
+  end
+
   depends_on "abyss"
   depends_on "blat"
   depends_on "igraph"
