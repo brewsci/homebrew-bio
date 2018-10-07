@@ -4,6 +4,7 @@ class Transabyss < Formula
   homepage "https://github.com/bcgsc/transabyss"
   url "https://github.com/bcgsc/transabyss/archive/2.0.1.tar.gz"
   sha256 "9101107d1df5ae86dd6a87d26181bb4c1967724e2560bc3b8ca44c30ce85ce12"
+  head "https://github.com/bcgsc/transabyss.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
