@@ -6,6 +6,13 @@ class Sambamba < Formula
       :revision => "595197546e1418b4944e2f797d8ceac6d495f741"
   version "0.6.8"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any
+    sha256 "70df7afcd3a125442c3303e85d1af3608a3ecb317783f3da81094dc3d12ae33a" => :sierra_or_later
+    sha256 "d82fb6275ee8f516ed30c6d0797adf2ce5acb504f81fd5888bbaa367555dae7e" => :x86_64_linux
+  end
+
   depends_on "ldc" => :build
   depends_on "python" => :build
 
