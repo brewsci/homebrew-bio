@@ -1,12 +1,13 @@
 class FinchRs < Formula
+  # Bovee_2018: "https://doi.org/10.21105/joss.00505"
   desc "Genomic minhashing implementation in Rust"
   homepage "https://github.com/onecodex/finch-rs"
   if OS.mac?
-    url "https://github.com/onecodex/finch-rs/releases/download/v0.1.5/finch-mac64-v0.1.5.zip"
-    sha256 "0638b92a11f243d410f8d72c727d31c23f9b01e441b47971080e80caeb706ae4"
+    url "https://github.com/onecodex/finch-rs/releases/download/v0.1.8/finch-mac64-v0.1.8.zip"
+    sha256 "8e840c9a817b7f8d975a4634a03e7c0a4c9c96c2d9838214015b2c4c9ed7d764"
   else
-    url "https://github.com/onecodex/finch-rs/releases/download/v0.1.5/finch-linux64-v0.1.5.tar.gz"
-    sha256 "f513602d6851fa865878e6ca402903b9f5b14f65f12017b3d300fc4b64e6855a"
+    url "https://github.com/onecodex/finch-rs/releases/download/v0.1.8/finch-linux64-v0.1.8.gz"
+    sha256 "d2c35e65956b02ea1833f2529f139c593c87d26b5d83a2de3d4793d4b3be2154"
   end
 
   bottle do
@@ -16,8 +17,8 @@ class FinchRs < Formula
     sha256 "04c19cd85384188617657ed68f18e1a4e43123be4a5b1d1e555699d956de4c97" => :x86_64_linux
   end
 
-
   depends_on "patchelf" => :build unless OS.mac?
+  depends_on "xz"
 
   def install
     exe = "finch"
