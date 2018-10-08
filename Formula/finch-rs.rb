@@ -12,9 +12,9 @@ class FinchRs < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "0fe81384891552713f78ca597a56ece5495b6ba1957f4462367d25dc81e4062f" => :sierra_or_later
-    sha256 "04c19cd85384188617657ed68f18e1a4e43123be4a5b1d1e555699d956de4c97" => :x86_64_linux
+    cellar :any
+    sha256 "2e897484a427b9a334948ca8a24ee6512f34bc8ae450a717f680072ef935a570" => :sierra_or_later
+    sha256 "7f7facafdcf630b9d9caec6d8f4b8d302494ccbfc71ff1581b4114f31daa68e7" => :x86_64_linux
   end
 
   depends_on "patchelf" => :build unless OS.mac?
