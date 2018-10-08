@@ -5,6 +5,12 @@ class Parasail < Formula
   url "https://github.com/jeffdaily/parasail/releases/download/v2.2/parasail-2.2.0.tar.gz"
   sha256 "8e75b32027017c891d6a84bb69ae83b0fe7d55253dd1c72a90946fb8fd15b374"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "56654603399ca71fd04761e9410d2762cd69c70999d14ba37ef07a4791bf3991" => :x86_64_linux
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
