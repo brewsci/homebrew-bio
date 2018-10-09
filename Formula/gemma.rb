@@ -6,7 +6,8 @@ class Gemma < Formula
 
   depends_on "gsl"
   depends_on "eigen"
-  depends_on "openblas" unless OS.mac?
+  # include openblas because of cblas.h
+  depends_on "openblas"
   depends_on "zlib" unless OS.mac?
 
   def install
