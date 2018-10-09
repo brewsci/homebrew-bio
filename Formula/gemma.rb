@@ -12,7 +12,8 @@ class Gemma < Formula
   depends_on "zlib"
 
   def install
-    system "make"
+    # system "make", "EIGEN_INCLUDE_PATH=../Cellar/eigen/3.3.5/include/eigen3"
+    system "make", "EIGEN_INCLUDE_PATH=#{Formula["eigen"].opt_include}/eigen3"
     system "make", "check"
     bin.install "bin/gemma"
     # pkgshare.install "BioD/test/data/ex1_header.bam"
