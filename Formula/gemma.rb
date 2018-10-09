@@ -16,14 +16,9 @@ class Gemma < Formula
     system "make", "EIGEN_INCLUDE_PATH=#{Formula["eigen"].opt_include}/eigen3"
     system "make", "check"
     bin.install "bin/gemma"
-    # pkgshare.install "BioD/test/data/ex1_header.bam"
   end
 
   test do
-    # assert_match "Usage", shell_output("#{bin}/gemma --help 2>&1", 1)
-    # system "#{bin}/gemma",
-    #   "sort", "-t2", "-n", "#{pkgshare}/ex1_header.bam",
-    #   "-o", "ex1_header.nsorted.bam", "-m", "200K"
-    assert_predicate testpath/"ex1_header.nsorted.bam", :exist?
+    assert_match "GEMMA", shell_output("#{bin}/gemma 2>&1")
   end
 end
