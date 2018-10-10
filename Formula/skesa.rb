@@ -2,9 +2,8 @@ class Skesa < Formula
   # cite Souvorov_2018: "https://doi.org/10.1186/s13059-018-1540-z"
   desc "Strategic Kmer Extension for Scrupulous Assemblies"
   homepage "https://github.com/ncbi/SKESA"
-  url "https://github.com/ncbi/SKESA/archive/v2.2.1.tar.gz"
-  sha256 "9fe712c1c0d69c963efd433c18a66c42136e8a2fe5efacc9791aa3dfb75021e8"
-  revision 1
+  url "https://github.com/ncbi/SKESA/archive/v2.3.0.tar.gz"
+  sha256 "13832e41b69a94d9f64dee7685b4d05f2e94f807ad819afa8d4cd78cee54879d"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
