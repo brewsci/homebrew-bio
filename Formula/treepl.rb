@@ -5,6 +5,7 @@ class Treepl < Formula
   url "https://github.com/blackrim/treePL/archive/fcddad99f4ecbada67ecd210f12fefa762f0d51c.tar.gz"
   version "2017.05.23"
   sha256 "7543dbf3cc174bc4b7a39618267439c11c9cd5d1f18ef5b42f0159f389684370"
+  revision 1
   head "https://github.com/blackrim/treePL.git"
 
   bottle do
