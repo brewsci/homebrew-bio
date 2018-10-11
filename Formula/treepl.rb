@@ -11,8 +11,8 @@ class Treepl < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "32ca33f557f19da2355bf1c4ea00a176e7e4ad45420d9509f4c3a80555efabed" => :sierra_or_later
-    sha256 "bc12c0f4376fd6c90835a47368654ea7f9c56eba6fbe78b40c7d23909742b7ac" => :x86_64_linux
+    sha256 "605fa093b78e162cf8b6bcda49bb10cded586fc54d9f48214f83dcf46b9fc4cb" => :sierra_or_later
+    sha256 "a296416e5f12ce1a2e218b3148399529d028c84223e363bdfc896b3a69aa124f" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
