@@ -15,8 +15,8 @@ class Seqkit < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "8e0eb32420f81223da5f6df24a8efe3ed79ccb17f378495d9a9a57d0e7eba5bb" => :sierra_or_later
-    sha256 "9e7afa76d2f09d978389a616f0870f20050b143ef7490f18e4e0c0fd22c901ce" => :x86_64_linux
+    sha256 "3c68a41cda7c77ab0a56c67dd2c3045f3197aca5830114a52d35268b0170517c" => :sierra_or_later
+    sha256 "a08ceaee2edccc91fdf4c3aab6d388251571f63a5e81c5a3b39cc0edf536e31f" => :x86_64_linux
   end
 
   def install
