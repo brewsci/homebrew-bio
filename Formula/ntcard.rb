@@ -4,6 +4,7 @@ class Ntcard < Formula
   homepage "https://github.com/bcgsc/ntCard"
   url "https://github.com/bcgsc/ntCard/archive/1.0.1.tar.gz"
   sha256 "f3f5969f2bc49a86d045749e49049717032305f5648b26c1be23bb0f8a13854a"
+  revision 1
   head "https://github.com/bcgsc/ntCard"
 
   bottle do
@@ -13,11 +14,11 @@ class Ntcard < Formula
     sha256 "6d1fb4c956d57ae24466c44ace9a9523c3704fe8269e0367dde301a8d73ff422" => :x86_64_linux
   end
 
-  fails_with :clang # needs openmp
-
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "gcc" if OS.mac? # for openmp
+
+  fails_with :clang # needs openmp
 
   def install
     system "./autogen.sh"
