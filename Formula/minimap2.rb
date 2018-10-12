@@ -2,8 +2,8 @@ class Minimap2 < Formula
   # cite Li_2018: "https://arxiv.org/abs/1708.01492"
   desc "Fast pairwise aligner for genomic and spliced nucleotide sequences"
   homepage "https://github.com/lh3/minimap2"
-  url "https://github.com/lh3/minimap2/releases/download/v2.12/minimap2-2.12.tar.bz2"
-  sha256 "88df501d48da3bbff35fed0c61f3395ea524a870aadf14228cee9704332c0549"
+  url "https://github.com/lh3/minimap2/releases/download/v2.13/minimap2-2.13.tar.bz2"
+  sha256 "ac1ce248f4a9c8d47397204ada38bb4739fc2c9b81e6c0894e074b5e89deb76c"
   head "https://github.com/lh3/minimap2.git"
 
   bottle do
@@ -20,12 +20,13 @@ class Minimap2 < Formula
     system "make"
     bin.install "minimap2"
     bin.install "misc/paftools.js"
+    bin.install_symlink "paftools.js" => "paftools"
     man1.install "minimap2.1"
     pkgshare.install "python", "test", "misc"
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/minimap2 --version 2>&1")
-    assert_match /\d/, shell_output("#{bin}/paftools.js version 2>&1")
+    assert_match /\d/, shell_output("#{bin}/paftools version 2>&1")
   end
 end
