@@ -1,8 +1,7 @@
 class Taxonkit < Formula
   desc "Cross-platform and efficient NCBI taxonomy toolkit"
   homepage "https://github.com/shenwei356/taxonkit"
-  version "0.2.5"
-  revision 1
+  version "0.2.5-stable"
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
