@@ -10,10 +10,10 @@ class Taxonkit < Formula
   end
 
   if OS.mac?
-    url "https://github.com/shenwei356/taxonkit/releases/download/v0.2.5/taxonkit_darwin_amd64.tar.gz"
+    url "https://github.com/shenwei356/taxonkit/releases/download/v0.3.0/taxonkit_darwin_amd64.tar.gz"
     sha256 "b6cabc477f5fcf41419b6998a06cfae90d6627eb7177637955b7769f3ecdda7d"
   elsif OS.linux?
-    url "https://github.com/shenwei356/taxonkit/releases/download/v0.2.5/taxonkit_linux_amd64.tar.gz"
+    url "https://github.com/shenwei356/taxonkit/releases/download/v0.3.0/taxonkit_linux_amd64.tar.gz"
     sha256 "c386e04026c5982639fdf4870b70d96c0da53c9252aeccd71b26a8a7ec5a6cc1"
   end
 
