@@ -5,6 +5,13 @@ class Kaiju < Formula
   url "https://github.com/bioinformatics-centre/kaiju/archive/v1.6.3.tar.gz"
   sha256 "4e2b0eccebc36307d561d713c558adb8f82414a1ea1ecf448c217812b12ef5ad"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "20762c16e53260aadd5442819643afd294d74aae65018a0c585ddd0883140978" => :sierra_or_later
+    sha256 "97054f3c70423eb6a1b3ccf3427e38afb09b9eaf00dc4a18cd6f4a5ba5f46300" => :x86_64_linux
+  end
+
   depends_on "perl" # for gbk2faa.pl
   depends_on "python@2" # for convert_mar_to_kaiju.py
 
