@@ -1,7 +1,7 @@
 class Taxonkit < Formula
-  desc "Cross-platform and efficient NCBI taxonomy toolkit"
+  desc "A cross-platform and efficient NCBI taxonomy toolkit"
   homepage "https://github.com/shenwei356/taxonkit"
-  version "0.2.5"
+  version "0.3.0"
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
@@ -10,11 +10,11 @@ class Taxonkit < Formula
   end
 
   if OS.mac?
-    url "https://github.com/shenwei356/taxonkit/releases/download/v0.2.5-dev3/taxonkit_darwin_amd64.tar.gz"
-    sha256 "d0b1f4354a42a998515a380c7b650aa94d1a5b7cc6fc124a87602a6f0f6b190d"
+    url "https://github.com/shenwei356/taxonkit/releases/download/v0.3.0/taxonkit_darwin_amd64.tar.gz"
+    sha256 "b6cabc477f5fcf41419b6998a06cfae90d6627eb7177637955b7769f3ecdda7d"
   elsif OS.linux?
-    url "https://github.com/shenwei356/taxonkit/releases/download/v0.2.5-dev3/taxonkit_linux_amd64.tar.gz"
-    sha256 "2a48f8bbe8bb12ad985bc0fb1273c88cf322f0016b4e068f9dd006d4b7a4a8d2"
+    url "https://github.com/shenwei356/taxonkit/releases/download/v0.3.0/taxonkit_linux_amd64.tar.gz"
+    sha256 "c386e04026c5982639fdf4870b70d96c0da53c9252aeccd71b26a8a7ec5a6cc1"
   end
 
   def install
