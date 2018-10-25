@@ -71,7 +71,7 @@ jobs:
           command: |
             mkdir /tmp/bottles
             cd /tmp/bottles
-            brew test-bot --skip-setup --or-later --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
+            brew test-bot --skip-setup --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
       - persist_to_workspace:
           root: /tmp
           paths:
