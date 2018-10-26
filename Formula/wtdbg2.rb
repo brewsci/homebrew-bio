@@ -12,7 +12,8 @@ class Wtdbg2 < Formula
 
   depends_on "autoconf" => :build
 
-  depends_on :linux # https://github.com/brewsci/homebrew-bio/pull/504
+  # See https://github.com/brewsci/homebrew-bio/pull/504
+  depends_on :linux
 
   def install
     # https://github.com/ruanjue/wtdbg2/issues/30
