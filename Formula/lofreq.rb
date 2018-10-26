@@ -7,7 +7,7 @@ class Lofreq < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "4d41c8e305ec4d1b044c6291b00d77d4056d986965dd0746c4f71dc6a61d1cfe" => :sierra_or_later
+    sha256 "4d41c8e305ec4d1b044c6291b00d77d4056d986965dd0746c4f71dc6a61d1cfe" => :sierra
     sha256 "c85acd934a221204fb1b57d31206042df3843b3a91db25b265f35e889c98d9a6" => :x86_64_linux
   end
 

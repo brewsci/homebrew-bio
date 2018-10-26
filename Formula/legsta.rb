@@ -7,7 +7,7 @@ class Legsta < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "f1c3d9ca09f4b1285b03bdd0c341aaf950d432f3fdd1eec9c9d149c732240b77" => :sierra_or_later
+    sha256 "f1c3d9ca09f4b1285b03bdd0c341aaf950d432f3fdd1eec9c9d149c732240b77" => :sierra
     sha256 "7c3d1a4dc8041079d56d4f5456e9f2c87e224db1b4659b498bbcd9fd71301626" => :x86_64_linux
   end
 

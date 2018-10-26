@@ -9,7 +9,7 @@ class Kmergenie < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "3eee36e39911e3578cb1c4e824be9d342937246a48e604561c0ab88782f3e1a4" => :sierra_or_later
+    sha256 "3eee36e39911e3578cb1c4e824be9d342937246a48e604561c0ab88782f3e1a4" => :sierra
     sha256 "3924e202b8e447adb1e08a341db269b8eeb390198d4a6d8a6b033925be1e9b30" => :x86_64_linux
   end
 

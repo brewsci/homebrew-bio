@@ -8,7 +8,7 @@ class Biomake < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "392c08b1568213df278806f7565c254ebadae455e010803e3b748efffbbd73e5" => :sierra_or_later
+    sha256 "392c08b1568213df278806f7565c254ebadae455e010803e3b748efffbbd73e5" => :sierra
     sha256 "7f74baac28c1761084e6a22c7595ba9002201540633e149e7e43270838f6cb0b" => :x86_64_linux
   end
 

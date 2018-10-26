@@ -8,7 +8,7 @@ class Muscle < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "facb165df0b74683682971e5570332a1dcb111720f853fb3ecae4de63509c3a2" => :sierra_or_later
+    sha256 "facb165df0b74683682971e5570332a1dcb111720f853fb3ecae4de63509c3a2" => :sierra
     sha256 "bb3bd2fc6f97b35f5427dbbe75aa8dc8fefc6bc49566f000d669004c641cde8e" => :x86_64_linux
   end
 

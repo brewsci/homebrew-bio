@@ -9,7 +9,7 @@ class Trimadap < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "d55f3e6d04a44e747d1fc0b8b279c44518be18d198ceb746052d02dbb2442d74" => :sierra_or_later
+    sha256 "d55f3e6d04a44e747d1fc0b8b279c44518be18d198ceb746052d02dbb2442d74" => :sierra
     sha256 "763804b091eba6b97a3276e73e8c05c761ab5e1836fb2fee9038e08aa0e8096d" => :x86_64_linux
   end
 

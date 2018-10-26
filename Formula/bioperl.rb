@@ -9,7 +9,7 @@ class Bioperl < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "d2255f2db57198ff261ae32fb762d908e9b1764c381442512e538c40c2914d4b" => :sierra_or_later
+    sha256 "d2255f2db57198ff261ae32fb762d908e9b1764c381442512e538c40c2914d4b" => :sierra
     sha256 "65041bff8020118f48c8d4cc8e39114c1591756dd2cd83b1a3090fcb3ad9b9aa" => :x86_64_linux
   end
 

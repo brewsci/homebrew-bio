@@ -7,7 +7,7 @@ class Minia < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "de11f70552777947ceb1325956ddfb99816b9053dead8834d43dee1a3ab36619" => :sierra_or_later
+    sha256 "de11f70552777947ceb1325956ddfb99816b9053dead8834d43dee1a3ab36619" => :sierra
     sha256 "aab986fbbd91ae6d0bb392eb5fc93b2ba4117e18c6a19cccd3c4be1bcd056adf" => :x86_64_linux
   end
 

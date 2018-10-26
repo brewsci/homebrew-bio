@@ -9,7 +9,7 @@ class Fastp < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "dc4ef5eb181cb1675670dbaddd45ac811e59a9d948f2a57cc7c8730f1fe2f187" => :sierra_or_later
+    sha256 "dc4ef5eb181cb1675670dbaddd45ac811e59a9d948f2a57cc7c8730f1fe2f187" => :sierra
     sha256 "63cc989f0792f129bdc32ec6f81813562178e34ec4bd91c90839864e8fae9c2b" => :x86_64_linux
   end
 

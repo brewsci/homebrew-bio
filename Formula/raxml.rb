@@ -9,7 +9,7 @@ class Raxml < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "d399bf6f9e9e84831182e64687d2b21fbebead01126e9337211cc4198f0b8ec9" => :sierra_or_later
+    sha256 "d399bf6f9e9e84831182e64687d2b21fbebead01126e9337211cc4198f0b8ec9" => :sierra
     sha256 "3c091cd8095130a9e14e5c44ccc36fd0ae19f053fad65097cd90f1dc83bc245d" => :x86_64_linux
   end
 

@@ -8,7 +8,7 @@ class Mpboot < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "c3a99c0519bec05893eb24bb4363906fc00a989c2055ef8620536cde08c60fa6" => :sierra_or_later
+    sha256 "c3a99c0519bec05893eb24bb4363906fc00a989c2055ef8620536cde08c60fa6" => :sierra
     sha256 "cd27e1c484da823dbf33b4e081c950b46aacfb3057af17552347bb3c011eba07" => :x86_64_linux
   end
 

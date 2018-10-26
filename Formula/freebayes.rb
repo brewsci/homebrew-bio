@@ -10,7 +10,7 @@ class Freebayes < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "c31f2510892d984b82447c64293f0937bd85bc5a7cbd671d200a0663f5ba5722" => :sierra_or_later
+    sha256 "c31f2510892d984b82447c64293f0937bd85bc5a7cbd671d200a0663f5ba5722" => :sierra
     sha256 "ec3a1bda228061b3388111425e32765196669f44f3cdbc8e0408f5770de7787d" => :x86_64_linux
   end
 

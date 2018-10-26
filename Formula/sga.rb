@@ -9,7 +9,7 @@ class Sga < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "c557433d9f39a90ecdcc0eaccae50f590d1913d79faa23ed5625329ac61c348c" => :sierra_or_later
+    sha256 "c557433d9f39a90ecdcc0eaccae50f590d1913d79faa23ed5625329ac61c348c" => :sierra
     sha256 "7caa32dd5ce43febeffa62f307d35988eaee298b133c3e6f8948a703fa3194e1" => :x86_64_linux
   end
 

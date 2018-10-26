@@ -8,7 +8,7 @@ class Trinity < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "38ba406ba401e8199095fbb0e14f4915e6d5738a8ee5a5fdb6c6b219c96cab04" => :sierra_or_later
+    sha256 "38ba406ba401e8199095fbb0e14f4915e6d5738a8ee5a5fdb6c6b219c96cab04" => :sierra
     sha256 "30b06bb67c0d83b1e54f49642bf438faff43cb12e529928123bed231a91406a4" => :x86_64_linux
   end
 

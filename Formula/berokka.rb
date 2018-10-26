@@ -8,7 +8,7 @@ class Berokka < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "f93bff2ca6572ef70c7282b1821a186f278b9320e4fac37e7eb60c87c7d27a15" => :sierra_or_later
+    sha256 "f93bff2ca6572ef70c7282b1821a186f278b9320e4fac37e7eb60c87c7d27a15" => :sierra
     sha256 "90c1e666295c95869598887b3b3d18e0293b24f372fe596adfff38db9a79e9d8" => :x86_64_linux
   end
 

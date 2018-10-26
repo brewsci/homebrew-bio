@@ -9,7 +9,7 @@ class Mhap < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "9dc80ffe3fc5ee5056b59dc444207aa5be09c2191cca955387be3c49c462c359" => :sierra_or_later
+    sha256 "9dc80ffe3fc5ee5056b59dc444207aa5be09c2191cca955387be3c49c462c359" => :sierra
     sha256 "17714c9a0a868298fe64d13cae37640ecae28323e9fc748c5696af93326a8e35" => :x86_64_linux
   end
 

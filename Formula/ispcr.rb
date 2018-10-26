@@ -7,7 +7,7 @@ class Ispcr < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "85489c58247d2182937f3449a2a838ad020691f9a796eacd1aa482fb58534236" => :sierra_or_later
+    sha256 "85489c58247d2182937f3449a2a838ad020691f9a796eacd1aa482fb58534236" => :sierra
     sha256 "99c9b17d01cb0618b6ca9bd37e27dfd1c721204da3e9860f19bfb38dfc2ca995" => :x86_64_linux
   end
 

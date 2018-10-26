@@ -8,7 +8,7 @@ class Orfm < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "0a19b5b29dcd9cdbc1357fc053750d8e546bdd716f865ffee0880b0e8a0a30ec" => :sierra_or_later
+    sha256 "0a19b5b29dcd9cdbc1357fc053750d8e546bdd716f865ffee0880b0e8a0a30ec" => :sierra
     sha256 "fc5c9e157ba4820a17c6ed38f56569e76ade956a449b32b06a904019f9b4845c" => :x86_64_linux
   end
 

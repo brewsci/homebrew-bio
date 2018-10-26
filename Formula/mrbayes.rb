@@ -8,7 +8,7 @@ class Mrbayes < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "a74e4e1ea82efca6bfca5efe791940bffe167467a121a417b770823bebe66039" => :sierra_or_later
+    sha256 "a74e4e1ea82efca6bfca5efe791940bffe167467a121a417b770823bebe66039" => :sierra
     sha256 "de35643f5dc2c6f2234aed0d121b5446688fda285d0ecdd450a0258afc728717" => :x86_64_linux
   end
 

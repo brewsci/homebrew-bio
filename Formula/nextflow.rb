@@ -9,7 +9,7 @@ class Nextflow < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "7756ba884a26e1e5b8328131a0555c77436320581c97631581d853cc6759aa9e" => :sierra_or_later
+    sha256 "7756ba884a26e1e5b8328131a0555c77436320581c97631581d853cc6759aa9e" => :sierra
     sha256 "f27ad17cbe742c3d719602bb1de9b8e2841a993e7324b64b7ebd4788d9ddb8ce" => :x86_64_linux
   end
 

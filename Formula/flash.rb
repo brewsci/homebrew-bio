@@ -8,7 +8,7 @@ class Flash < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "de91f8ecf68dd85c6935367def8e7452cbeb3039e50e4fc10393f27dbbcebcc4" => :sierra_or_later
+    sha256 "de91f8ecf68dd85c6935367def8e7452cbeb3039e50e4fc10393f27dbbcebcc4" => :sierra
     sha256 "6ee7d8e115ea5c7ee2a4584a699f6366b8b91d8ff52dd3019f9932f56e437a18" => :x86_64_linux
   end
 

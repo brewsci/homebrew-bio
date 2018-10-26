@@ -9,7 +9,7 @@ class Humann2 < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "40584007fa77ebf9a6b5443f34dc0dff14c51d6ccdc9ebae2488a16f16729d5f" => :sierra_or_later
+    sha256 "40584007fa77ebf9a6b5443f34dc0dff14c51d6ccdc9ebae2488a16f16729d5f" => :sierra
     sha256 "85a765927ad6e378b793d07e12a25a9207e4f441ca5b5b106d1f09153e243428" => :x86_64_linux
   end
 

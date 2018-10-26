@@ -8,7 +8,7 @@ class Rcorrector < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "cbb94eed122b82034b56e1824e4c2a6a3424cf09c608b74701d99f641b899562" => :sierra_or_later
+    sha256 "cbb94eed122b82034b56e1824e4c2a6a3424cf09c608b74701d99f641b899562" => :sierra
     sha256 "089eab745eb21dd1180eabf842c13257f9c8faa5167da193a4adefe37753d165" => :x86_64_linux
   end
 

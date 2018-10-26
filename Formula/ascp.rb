@@ -12,7 +12,7 @@ class Ascp < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "c78e4351309f0c0e543420d421d559f87f3b66c31a1212200263ea7c77752093" => :sierra_or_later
+    sha256 "c78e4351309f0c0e543420d421d559f87f3b66c31a1212200263ea7c77752093" => :sierra
     sha256 "00416de41eae2e20018d28197714d868f12009c7012d9c914e74392cff80bbdc" => :x86_64_linux
   end
 

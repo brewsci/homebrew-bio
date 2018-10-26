@@ -8,7 +8,7 @@ class Stringtie < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "88efd6d81791afe33bf0bb4e70870ec99802751438dfc8aab482065025ce06d6" => :sierra_or_later
+    sha256 "88efd6d81791afe33bf0bb4e70870ec99802751438dfc8aab482065025ce06d6" => :sierra
     sha256 "280961f1341325e6b86c7c02b6de900a506d5e8aa026d33cc18fff83fff003e3" => :x86_64_linux
   end
 

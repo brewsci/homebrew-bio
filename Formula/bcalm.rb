@@ -8,7 +8,7 @@ class Bcalm < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "6943db20f24e6ae8e904d5cc0c023c9f03fac05ba8e6ff6c45951fd75144c024" => :sierra_or_later
+    sha256 "6943db20f24e6ae8e904d5cc0c023c9f03fac05ba8e6ff6c45951fd75144c024" => :sierra
     sha256 "c13588ca561bc31e073857f2d27c0afc66e465c03358c52c9711f2af64e54f7c" => :x86_64_linux
   end
 

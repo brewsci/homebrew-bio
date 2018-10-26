@@ -10,7 +10,7 @@ class Idba < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "c277691a6bb779ee3a46028c1877d2218b0c1d4b36487d960e1b694c87aa5d92" => :sierra_or_later
+    sha256 "c277691a6bb779ee3a46028c1877d2218b0c1d4b36487d960e1b694c87aa5d92" => :sierra
     sha256 "bbff88868d15b3b5d835e2204cca2d07910a8ae303308d81a8595b7fa1f16fe0" => :x86_64_linux
   end
 

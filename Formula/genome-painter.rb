@@ -6,7 +6,7 @@ class GenomePainter < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "b5bee7ec1ba40a4f7ef98a00d39866d85de24cb23ec2a74861bee803eb07220a" => :sierra_or_later
+    sha256 "b5bee7ec1ba40a4f7ef98a00d39866d85de24cb23ec2a74861bee803eb07220a" => :sierra
     sha256 "466bc33dade80e94cfb92578be6c4f71e68bb5f6b50f0131bd346accc7642ee0" => :x86_64_linux
   end
 

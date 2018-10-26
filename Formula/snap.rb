@@ -9,7 +9,7 @@ class Snap < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "5e856b94be598ccbe6f40d0e18c7d8a3be24b428cf9f48f9f621a2899d2aa5e5" => :sierra_or_later
+    sha256 "5e856b94be598ccbe6f40d0e18c7d8a3be24b428cf9f48f9f621a2899d2aa5e5" => :sierra
     sha256 "1719060198b0c7937b4a01eac3783262bfea23b240952c15b3d46320251322af" => :x86_64_linux
   end
 

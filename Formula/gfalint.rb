@@ -8,7 +8,7 @@ class Gfalint < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "df40acd7ebcce869c0ffa8538d6a105a73737ffae107fda0f6ea561f36893331" => :sierra_or_later
+    sha256 "df40acd7ebcce869c0ffa8538d6a105a73737ffae107fda0f6ea561f36893331" => :sierra
     sha256 "8e82b29cec5636771ea2f2b9447f4083acbaa1efcc392f5ec64fe6c45bcad4c8" => :x86_64_linux
   end
 

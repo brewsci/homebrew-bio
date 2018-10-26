@@ -9,7 +9,7 @@ class Clonalframeml < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "061350e7413c704eb627d28ee9cc391d1e031b0f6e4a9323900ce12d356a1fa1" => :sierra_or_later
+    sha256 "061350e7413c704eb627d28ee9cc391d1e031b0f6e4a9323900ce12d356a1fa1" => :sierra
     sha256 "3555d42efc067ca6eb62dee08ca5981b939e00aaeaaa59d9598eff5aa621bc51" => :x86_64_linux
   end
 

@@ -9,7 +9,7 @@ class Kraken2 < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "48ed6a84341a531b1ff9547c306fc1874fb5345b03af6aa4d543256e45881a71" => :sierra_or_later
+    sha256 "48ed6a84341a531b1ff9547c306fc1874fb5345b03af6aa4d543256e45881a71" => :sierra
     sha256 "011ac904f9a6341e34f296e9af6853209e57dd34225b3adeabd134ffca71affe" => :x86_64_linux
   end
 

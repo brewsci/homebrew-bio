@@ -9,7 +9,7 @@ class Emboss < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "57219a42bac24b44d5d1ae5f9eb4f24039f984f23235f3cbcd589980289131a4" => :sierra_or_later
+    sha256 "57219a42bac24b44d5d1ae5f9eb4f24039f984f23235f3cbcd589980289131a4" => :sierra
     sha256 "dd11bf961d44c707a75be24535d8bac8e1fa2eaf6d983888e185d8723e6c798c" => :x86_64_linux
   end
 

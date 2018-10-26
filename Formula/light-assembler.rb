@@ -8,7 +8,7 @@ class LightAssembler < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "43b5f48a1d81da2c0c279a7875e8527638ff543b908762ae2f60cbee0ec2059e" => :sierra_or_later
+    sha256 "43b5f48a1d81da2c0c279a7875e8527638ff543b908762ae2f60cbee0ec2059e" => :sierra
     sha256 "f229cf9f21614d98e3a18610df63ead630d8f12b3439404a0fe42c8d91886142" => :x86_64_linux
   end
 

@@ -7,7 +7,7 @@ class Snoscan < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "4f17ef4945c1abe1fade5e7c8b84c0af114487e950331b43227dabe64cdf6a62" => :sierra_or_later
+    sha256 "4f17ef4945c1abe1fade5e7c8b84c0af114487e950331b43227dabe64cdf6a62" => :sierra
     sha256 "7a29e836a55f23cb203ff35ff3a92de8ec86c65cc84f871b7c2120f07816c19e" => :x86_64_linux
   end
 

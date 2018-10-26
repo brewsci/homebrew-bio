@@ -8,7 +8,7 @@ class Aragorn < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "f896ddcae611fbc70e626039eefb08613ccc734ad5bd2c17cd8f514f1531021a" => :sierra_or_later
+    sha256 "f896ddcae611fbc70e626039eefb08613ccc734ad5bd2c17cd8f514f1531021a" => :sierra
     sha256 "7670f2b0c66f5567844300f3c7b909cc679948e2fea74657631b025b24ce0520" => :x86_64_linux
   end
 

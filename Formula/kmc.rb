@@ -8,7 +8,7 @@ class Kmc < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "01ceaecc1f729be665192020a480d5cc92d929f358a748e6ebc121c6f73ebbde" => :sierra_or_later
+    sha256 "01ceaecc1f729be665192020a480d5cc92d929f358a748e6ebc121c6f73ebbde" => :sierra
     sha256 "21482251545f007d0a94d03be049ce9ee31d8ff0c374782b6e647fec24c30c07" => :x86_64_linux
   end
 

@@ -8,7 +8,7 @@ class Fwdpp < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "5ac03ce334689ebd1f516eb86b3ae0fb7b8f0181ab18d2342230b77cf4693edb" => :sierra_or_later
+    sha256 "5ac03ce334689ebd1f516eb86b3ae0fb7b8f0181ab18d2342230b77cf4693edb" => :sierra
     sha256 "b0cb4ea0d175ce870981dc7e66439fb990283eade34fd37076e119fe48c67c77" => :x86_64_linux
   end
 

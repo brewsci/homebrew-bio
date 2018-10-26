@@ -7,7 +7,7 @@ class Iqtree < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "03ae383754dcc4e6b17d58a779fd977c09035f8b71de0bdc46f29652b6af2e6b" => :sierra_or_later
+    sha256 "03ae383754dcc4e6b17d58a779fd977c09035f8b71de0bdc46f29652b6af2e6b" => :sierra
     sha256 "1f7ba8351cc4a0c674d2f239c8b9e89a3af82769a972cb6935c66b62ccc5d924" => :x86_64_linux
   end
 

@@ -9,7 +9,7 @@ class Oases < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "79b961f7f73835ea2ae13a7312bfd84f18c0af317de31659a475e27048d946c9" => :sierra_or_later
+    sha256 "79b961f7f73835ea2ae13a7312bfd84f18c0af317de31659a475e27048d946c9" => :sierra
     sha256 "0efc1b966ea6e662d6994762b3d20d76d1278965e666fa7f06ccb25ac0d1053b" => :x86_64_linux
   end
 

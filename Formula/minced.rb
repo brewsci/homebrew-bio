@@ -7,7 +7,7 @@ class Minced < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "ad305c528a5993583fea3daf9211cad4d4080dcfc8cc3d2c7c9b3562c1d197c2" => :sierra_or_later
+    sha256 "ad305c528a5993583fea3daf9211cad4d4080dcfc8cc3d2c7c9b3562c1d197c2" => :sierra
     sha256 "05c96b71921f6afaf5f0552dcc6be206c441b9e46d04fa5f0ad56be82bd9336a" => :x86_64_linux
   end
 

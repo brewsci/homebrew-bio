@@ -8,7 +8,7 @@ class Jspecies < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "fdad5b757d32a71e196a65e6b241d30472e55c16634e0f7e777f840817bc8cc9" => :sierra_or_later
+    sha256 "fdad5b757d32a71e196a65e6b241d30472e55c16634e0f7e777f840817bc8cc9" => :sierra
   end
 
   depends_on :java

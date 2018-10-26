@@ -7,7 +7,7 @@ class Repaq < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "e958a6d2b6510627d73c6bd60f4bdb992e7214d3ff92e1d54fa49a80bf0e9924" => :sierra_or_later
+    sha256 "e958a6d2b6510627d73c6bd60f4bdb992e7214d3ff92e1d54fa49a80bf0e9924" => :sierra
     sha256 "4e291d5df6f67232d7bc2616b3b2f90f22c3960d56b006c46bcee37df383bbb7" => :x86_64_linux
   end
 

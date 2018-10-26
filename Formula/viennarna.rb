@@ -7,7 +7,7 @@ class Viennarna < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "4fba00c07584848dd8b2bd82377217cdcc7393cfe890255673a3ddb66234491f" => :sierra_or_later
+    sha256 "4fba00c07584848dd8b2bd82377217cdcc7393cfe890255673a3ddb66234491f" => :sierra
     sha256 "7f6a88b2c3855a40255ed707bd2596e10a24c80bcd007453440d0d561828ee9f" => :x86_64_linux
   end
 

@@ -8,7 +8,7 @@ class RtgTools < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "bdaf12a1b959ff8e6f0be5c76e7cae0dbf702713d3536662d624d31d14d8992a" => :sierra_or_later
+    sha256 "bdaf12a1b959ff8e6f0be5c76e7cae0dbf702713d3536662d624d31d14d8992a" => :sierra
     sha256 "1356b2f836c6644e4eca186f5d34346bdad080bf3c562e9f1c9af03787373ce6" => :x86_64_linux
   end
 

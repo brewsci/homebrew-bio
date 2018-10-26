@@ -8,7 +8,7 @@ class HarvestTools < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "bea665dabd577ff78847689683634e581ae160fa114c6236f1cebadac9ba28d7" => :sierra_or_later
+    sha256 "bea665dabd577ff78847689683634e581ae160fa114c6236f1cebadac9ba28d7" => :sierra
     sha256 "fd5f92ca90802aa2f5174b175d39aa72558f67ba2d199eacb22baf86ca2d9955" => :x86_64_linux
   end
 

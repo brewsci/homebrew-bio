@@ -9,7 +9,7 @@ class Samblaster < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "6cbcf31a1f314f12519ca125d28deb931589fceb7b833616b242c44c6c5e8312" => :sierra_or_later
+    sha256 "6cbcf31a1f314f12519ca125d28deb931589fceb7b833616b242c44c6c5e8312" => :sierra
     sha256 "41fdd5d3bf09c1a45dc4a4aa4bfd7cee316e582f352bffa0ebe31a103e8dd814" => :x86_64_linux
   end
 

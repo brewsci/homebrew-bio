@@ -8,7 +8,7 @@ class Jellyfish < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "ab6db416d9178cd2706eb372eeeda55bfefd5efb0de2c2ac7353df098632e7c4" => :sierra_or_later
+    sha256 "ab6db416d9178cd2706eb372eeeda55bfefd5efb0de2c2ac7353df098632e7c4" => :sierra
     sha256 "61f9f49af2c78c06cefb7752bd07ad27a46a7be511e3926d4e3bacbfd93c4303" => :x86_64_linux
   end
 

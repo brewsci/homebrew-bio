@@ -9,7 +9,7 @@ class Dwgsim < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "f6794802ed9615c73fe240a0e322c6ab9e773b2e22c05482908f38f85c15c653" => :sierra_or_later
+    sha256 "f6794802ed9615c73fe240a0e322c6ab9e773b2e22c05482908f38f85c15c653" => :sierra
     sha256 "dd36a513fa17141d0a98a59b985f7965c80498b30c1fa2d8dabba3cc1d42929a" => :x86_64_linux
   end
 

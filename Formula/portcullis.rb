@@ -10,7 +10,7 @@ class Portcullis < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "52b593d877a74a1268a9bb75e40dc9fcd3ecc5e197d84dffec2fc01c0ec4bd79" => :sierra_or_later
+    sha256 "52b593d877a74a1268a9bb75e40dc9fcd3ecc5e197d84dffec2fc01c0ec4bd79" => :sierra
     sha256 "e91724794110a2c76755b1e480c479f1707d3dff25b6b7ef4b20f82e885fbf5c" => :x86_64_linux
   end
 

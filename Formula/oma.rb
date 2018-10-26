@@ -11,7 +11,7 @@ class Oma < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "5d6d55e5bbb31530d6c7780599df4ba9ea7d204cb0357efba046c02bf3bd8f6a" => :sierra_or_later
+    sha256 "5d6d55e5bbb31530d6c7780599df4ba9ea7d204cb0357efba046c02bf3bd8f6a" => :sierra
     sha256 "9e9c58ac097a75b9aedd89ab788ff684ba897c865a54be98f0c41c8fde36dd2b" => :x86_64_linux
   end
 

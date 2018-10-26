@@ -7,7 +7,7 @@ class NewickUtils < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "112a87fb8e837fe74b12c0fc77c3181b5f62d17eff1d566287ef6d106ac52a85" => :sierra_or_later
+    sha256 "112a87fb8e837fe74b12c0fc77c3181b5f62d17eff1d566287ef6d106ac52a85" => :sierra
     sha256 "998dc74a04eef21d5cbe508ce5135414eb9dd97d3cd327324b1d02dbac200ce0" => :x86_64_linux
   end
 

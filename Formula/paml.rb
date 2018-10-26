@@ -9,7 +9,7 @@ class Paml < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "a405e3b54cbb5f2a9ad8296c68500d83723a420ba6a3f47cecfad7c459a8a0b4" => :sierra_or_later
+    sha256 "a405e3b54cbb5f2a9ad8296c68500d83723a420ba6a3f47cecfad7c459a8a0b4" => :sierra
     sha256 "de947f72f5e61e42f15a75f874daa62161ca6f1a462529c9fdd4fbb47a437b75" => :x86_64_linux
   end
 

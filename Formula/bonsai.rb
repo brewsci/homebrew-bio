@@ -7,7 +7,7 @@ class Bonsai < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "189b70f92aa7b714bc645f5ab759646e0871181a8a6b463dfd3fe11b989fc300" => :sierra_or_later
+    sha256 "189b70f92aa7b714bc645f5ab759646e0871181a8a6b463dfd3fe11b989fc300" => :sierra
     sha256 "13dd340ff0ff41c70d77d01e9e9e54a90783d98409492428861fbfea31f02762" => :x86_64_linux
   end
 

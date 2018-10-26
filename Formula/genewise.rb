@@ -9,7 +9,7 @@ class Genewise < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "6fdc8a97b8c15df77d6c6a7cb545ce9f2fa21c14e010e041b5d8eff64b5c20c1" => :sierra_or_later
+    sha256 "6fdc8a97b8c15df77d6c6a7cb545ce9f2fa21c14e010e041b5d8eff64b5c20c1" => :sierra
     sha256 "67e56af99ac88549d06a08338a0e953a355d61ab31abd5ce0708a16baab98d75" => :x86_64_linux
   end
 

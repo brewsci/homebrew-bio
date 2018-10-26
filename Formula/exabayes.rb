@@ -9,7 +9,7 @@ class Exabayes < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "77fda7581253a180c1ccd75db4e160ca1be097a2884946efe292c7307e401db4" => :sierra_or_later
+    sha256 "77fda7581253a180c1ccd75db4e160ca1be097a2884946efe292c7307e401db4" => :sierra
     sha256 "739036d04fcb054c2456b8148a9667e80636a3e1b5b03dcee1d1add9dc2c6464" => :x86_64_linux
   end
 

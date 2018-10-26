@@ -8,7 +8,7 @@ class Figtree < Formula
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
     rebuild 1
-    sha256 "aa0742bb3801a0fe5944a652b1c45900f50544619c2252158eedab1f1438301a" => :sierra_or_later
+    sha256 "aa0742bb3801a0fe5944a652b1c45900f50544619c2252158eedab1f1438301a" => :sierra
   end
 
   depends_on :java

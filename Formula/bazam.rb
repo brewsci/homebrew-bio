@@ -8,7 +8,7 @@ class Bazam < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "5fc4d9196cfaa7f87e40383c830ef220b0a0a76028c68ae03a3f0d48d1de5120" => :sierra_or_later
+    sha256 "5fc4d9196cfaa7f87e40383c830ef220b0a0a76028c68ae03a3f0d48d1de5120" => :sierra
     sha256 "08d9d9e0560074dafa59cc6347fa714d717bdefe69cf90f88ce017ead1344919" => :x86_64_linux
   end
 

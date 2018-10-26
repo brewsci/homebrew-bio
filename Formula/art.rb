@@ -15,7 +15,7 @@ class Art < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "90251eba71f0fb1a439c25cfd7bf35ebc709fc56fa6600799ce1bf7ae2b16426" => :sierra_or_later
+    sha256 "90251eba71f0fb1a439c25cfd7bf35ebc709fc56fa6600799ce1bf7ae2b16426" => :sierra
     sha256 "e435a79c84db0f569ded452e2b4c1b561396c31f4360e939ac7408f80b4e1862" => :x86_64_linux
   end
 

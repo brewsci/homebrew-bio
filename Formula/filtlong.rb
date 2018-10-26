@@ -7,7 +7,7 @@ class Filtlong < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "f587624c4b2dcf5c3b746b3fbf34e20e9ff5839d4fc80256035b23d834d05524" => :sierra_or_later
+    sha256 "f587624c4b2dcf5c3b746b3fbf34e20e9ff5839d4fc80256035b23d834d05524" => :sierra
     sha256 "446414903f438e372b2548d88f2c601c428f5f105ddd39d457312959e7f73ece" => :x86_64_linux
   end
 

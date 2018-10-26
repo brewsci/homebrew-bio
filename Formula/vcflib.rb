@@ -7,7 +7,7 @@ class Vcflib < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "f31f2741b8261681dc89f30e1c3c304a253943cb4878e070ca2038adbda8ca24" => :sierra_or_later
+    sha256 "f31f2741b8261681dc89f30e1c3c304a253943cb4878e070ca2038adbda8ca24" => :sierra
     sha256 "79c9ba55db62acb9b8acf11a03bcf8674e40118ac3df1dadd7f8a2552f99f130" => :x86_64_linux
   end
 

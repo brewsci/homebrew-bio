@@ -5,7 +5,7 @@ class Unikmer < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "fb6c13799244134cdd3147b603d49c3c3780b49e973b46af4eb32e09c551bdb4" => :sierra_or_later
+    sha256 "fb6c13799244134cdd3147b603d49c3c3780b49e973b46af4eb32e09c551bdb4" => :sierra
     sha256 "41cb1d3c30c6dd007c85c29d139abeea7ccc6a4cb0152707ded72704ca34c082" => :x86_64_linux
   end
 

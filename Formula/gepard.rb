@@ -8,7 +8,7 @@ class Gepard < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "c8e3c9921c645c8c1656980a39168078a369dfbe7b56cc77f74fdd3741eca7d4" => :sierra_or_later
+    sha256 "c8e3c9921c645c8c1656980a39168078a369dfbe7b56cc77f74fdd3741eca7d4" => :sierra
   end
 
   depends_on :java

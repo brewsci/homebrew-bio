@@ -8,7 +8,7 @@ class EMem < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "3c9a845ba5cae921c0fce986c5245e5fc58583c294ca75190afccbaf80bce58f" => :sierra_or_later
+    sha256 "3c9a845ba5cae921c0fce986c5245e5fc58583c294ca75190afccbaf80bce58f" => :sierra
     sha256 "76369dd5a7d236a62f5b64c69a9f171b7db2c2f5a6e090a253e266e6d920df04" => :x86_64_linux
   end
 

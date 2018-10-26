@@ -9,7 +9,7 @@ class Pilon < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "79b1480bd485ebb3985db93d8361d68b7f5408c586f127f285288de3d7781efc" => :sierra_or_later
+    sha256 "79b1480bd485ebb3985db93d8361d68b7f5408c586f127f285288de3d7781efc" => :sierra
   end
 
   depends_on :java

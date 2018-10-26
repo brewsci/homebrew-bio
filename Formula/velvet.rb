@@ -9,7 +9,7 @@ class Velvet < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "2f7e5a1c844dbad804e896a9f27768cdd17b25b0c46de794449f7d44266379b2" => :sierra_or_later
+    sha256 "2f7e5a1c844dbad804e896a9f27768cdd17b25b0c46de794449f7d44266379b2" => :sierra
     sha256 "79ad825ef586b4627de53573503b695c7a1f4167bba3a0f9058aa1d83382934e" => :x86_64_linux
   end
 

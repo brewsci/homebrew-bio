@@ -10,7 +10,7 @@ class Vt < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "1b599e67c480a2650694804e14e8df4d126a3094092f44f4f1bf814d22fe1061" => :sierra_or_later
+    sha256 "1b599e67c480a2650694804e14e8df4d126a3094092f44f4f1bf814d22fe1061" => :sierra
     sha256 "fa81d9983854db901ee2d868e3a4ffc3195f042e01f9cfa54d78ea020726b59c" => :x86_64_linux
   end
 

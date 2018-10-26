@@ -9,7 +9,7 @@ class Circos < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "b65df59d1401bec985bca7a38720291270b757f887df8ba61f6d1a05982e473d" => :sierra_or_later
+    sha256 "b65df59d1401bec985bca7a38720291270b757f887df8ba61f6d1a05982e473d" => :sierra
     sha256 "4ddaed7ed97b3adc31683eb8e4e050243cd75086f5767e50ca6f7fa92af620b7" => :x86_64_linux
   end
 

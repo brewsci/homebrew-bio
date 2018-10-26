@@ -7,7 +7,7 @@ class Crumble < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "88bef976442dd4576cca660433da403793e57ad8b2793c0468ad13ec891cb82f" => :sierra_or_later
+    sha256 "88bef976442dd4576cca660433da403793e57ad8b2793c0468ad13ec891cb82f" => :sierra
     sha256 "cefb87a986c595142887fda7d015d70a6643a9693c467b2c2251cd3dc8986098" => :x86_64_linux
   end
 

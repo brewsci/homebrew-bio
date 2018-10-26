@@ -10,7 +10,7 @@ class Nxrepair < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "315fee829379b9f5bd9096c5b4d24475ab6f5f58fbc857919b1681393998b92e" => :sierra_or_later
+    sha256 "315fee829379b9f5bd9096c5b4d24475ab6f5f58fbc857919b1681393998b92e" => :sierra
     sha256 "9dd38cc1cfe647dd8172b3fa0cd49649b9447de8f6b47e433bdba2564e0be0b0" => :x86_64_linux
   end
 

@@ -7,7 +7,7 @@ class Barrnap < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "3695f106e600e0bd8f21e8ea70d4eea54cdac6f2c27262ed17306b288605031b" => :sierra_or_later
+    sha256 "3695f106e600e0bd8f21e8ea70d4eea54cdac6f2c27262ed17306b288605031b" => :sierra
     sha256 "7329922f75852f701922912d413f74820b8c557f40d04b7bb28b6ef057ea46e6" => :x86_64_linux
   end
 

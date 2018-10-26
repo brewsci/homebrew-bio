@@ -9,7 +9,7 @@ class R8s < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "a4f0418cd11cf09e3bfa91f1415760a294facf81f1493024c6e2e25c8bc148bb" => :sierra_or_later
+    sha256 "a4f0418cd11cf09e3bfa91f1415760a294facf81f1493024c6e2e25c8bc148bb" => :sierra
     sha256 "25f4ea64a58ac75c39b5509d964f60db013ea308e2e898b955be5e094bcf5378" => :x86_64_linux
   end
 

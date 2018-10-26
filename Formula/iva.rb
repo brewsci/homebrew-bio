@@ -7,7 +7,7 @@ class Iva < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "8d400f42176e2ca421f6bdca8bd735a0ef2ab8af56f1ffd0f824e7d4f6b15e21" => :sierra_or_later
+    sha256 "8d400f42176e2ca421f6bdca8bd735a0ef2ab8af56f1ffd0f824e7d4f6b15e21" => :sierra
     sha256 "3c4914d151ebef4d190cfe211c4262eea85cb31ee0d61e3b9c6e37001a6586e1" => :x86_64_linux
   end
 

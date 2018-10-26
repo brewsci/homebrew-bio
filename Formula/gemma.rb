@@ -8,7 +8,7 @@ class Gemma < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "a70496a8b7dcb1b2b0466f32729a2087d43e511de00e619b52090ed9d745c5b9" => :sierra_or_later
+    sha256 "a70496a8b7dcb1b2b0466f32729a2087d43e511de00e619b52090ed9d745c5b9" => :sierra
     sha256 "78f2bcec7d7f010188a5619d83b3b68a6b4169c8e40ae33fd1e03815bc98facb" => :x86_64_linux
   end
 

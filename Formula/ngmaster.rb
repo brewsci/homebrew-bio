@@ -7,7 +7,7 @@ class Ngmaster < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "14cca7517aef3474b85af618d3edb204fa6d2639eb5e01b2a13de8054ae188f1" => :sierra_or_later
+    sha256 "14cca7517aef3474b85af618d3edb204fa6d2639eb5e01b2a13de8054ae188f1" => :sierra
     sha256 "fd79d30a60bfe5fed010b29386fd3442ec9bcd0e3f259225473a33e272815290" => :x86_64_linux
   end
 
