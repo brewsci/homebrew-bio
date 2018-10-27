@@ -5,6 +5,12 @@ class Xssp < Formula
   url "https://github.com/cmbi/xssp/archive/3.0.5.tar.gz"
   sha256 "fded09f08cfb12e578e4823295dc0d0aaeff6559d5e099df23c5bcc911597ccd"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "849f2d68b0544ae0ac3000c056d3808525a6d66ee53832983cf9be5ef555193a" => :sierra
+    sha256 "4b5099b0040f734ea414ea38c0984590370cd12e8ced7bfc3c7ceddfab45e66c" => :x86_64_linux
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "boost"
