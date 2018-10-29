@@ -9,8 +9,8 @@ class Vsearch < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "48669dbd515e234fae8d2d1a89cfd71484c88e77bb04c186cbbf54401916a7da" => :sierra
-    sha256 "8a1912e76409cf9f37ae2dfef7d91044799bde8d527fb71a32c4ac37e3731ca8" => :x86_64_linux
+    sha256 "cc559c53e335c17f4d2dcd1a0fca5f604621dfdc32f955d01bf399c010070c4e" => :sierra
+    sha256 "b555695319c32998da3c13934bf9beac091950eb3ba56de39829f2190fcbda40" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
