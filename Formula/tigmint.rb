@@ -1,5 +1,5 @@
 class Tigmint < Formula
-  # cite Jackman_2018: "https://doi.org/10.1101/304253"
+  # cite Jackman_2018: "https://doi.org/10.1186/s12859-018-2425-6"
   desc "Correct misassemblies using linked reads"
   homepage "https://bcgsc.github.io/tigmint/"
   url "https://github.com/bcgsc/tigmint/archive/1.1.2.tar.gz"
