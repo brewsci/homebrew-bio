@@ -4,6 +4,13 @@ class Nextgenmap < Formula
   url "https://github.com/Cibiv/NextGenMap/archive/v0.5.5.tar.gz"
   sha256 "c205e6cb312d2f495106435f10fb446e6fb073dd1474f4f74ab5980ba9803661"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "acdb87a47abc42331556aafa75815511dc6844173973d50ee54854ec90648138" => :sierra
+    sha256 "e7af4a31a9ad956bd07b2c324535da4e973b37e67c4c203acdec728a52e45c58" => :x86_64_linux
+  end
+
   depends_on "cmake" => :build
 
   def install
