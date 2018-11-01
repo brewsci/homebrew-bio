@@ -2,9 +2,9 @@ class Paml < Formula
   # cite Yang_2007: "https://doi.org/10.1093/molbev/msm088"
   desc "Phylogenetic analysis by maximum likelihood"
   homepage "http://abacus.gene.ucl.ac.uk/software/paml.html"
-  url "http://abacus.gene.ucl.ac.uk/software/paml4.9g.tgz"
-  version "4.9g"
-  sha256 "30092007a105324e4fdd5b5a4737098531269839cc561f7bab3acfaf0ea1b3cf"
+  url "http://abacus.gene.ucl.ac.uk/software/paml4.9h.tgz"
+  version "4.9h"
+  sha256 "623bf6cf4a018a4e7b4dbba189c41d6c0c25fdca3a0ae24703b82965c772edb3"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
