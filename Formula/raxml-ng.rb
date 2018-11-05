@@ -2,8 +2,8 @@ class RaxmlNg < Formula
   desc "RAxML Next Generation: faster, easier-to-use and more flexible"
   homepage "https://sco.h-its.org/exelixis/web/software/raxml/"
   url "https://github.com/amkozlov/raxml-ng.git",
-    :tag => "0.5.1",
-    :revision => "8a3d6af12fbff60239744595631a468275d5a02a"
+    :tag      => "0.7.0",
+    :revision => "6fe3fa9c5817bfc9f352f5fe7fa14a54f9ac2b6a"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -32,11 +32,9 @@ class RaxmlNg < Formula
     inreplace "CMakeLists.txt", "set (CMAKE_BUILD_TYPE DEBUG)", ""
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
-      system "make", "libpll"
       system "make"
       if build.with? "open-mpi"
         system "cmake", "..", *std_cmake_args, "-DUSE_MPI=ON"
-        system "make", "libpll"
         system "make"
       end
     end
@@ -45,7 +43,6 @@ class RaxmlNg < Formula
 
   test do
     testpath.install resource("example")
-    args = %w[--all --msa dna.phy --model GTR+G --bs-trees 100 --tree pars{10} --force --threads 2]
-    system "#{bin}/raxml-ng", *args
+    system "#{bin}/raxml-ng", "--msa", "dna.phy", "--start", "--model", "GTR"
   end
 end
