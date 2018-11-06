@@ -2,7 +2,7 @@ version: 2
 jobs:
   build-linux:
     docker:
-      - image: linuxbrew/linuxbrew
+      - image: linuxbrew/brew
     environment:
       CIRCLE_REPOSITORY_URL: https://github.com/brewsci/homebrew-bio
       HOMEBREW_DEVELOPER: 1
@@ -81,7 +81,7 @@ jobs:
           path: /tmp/bottles
   collect-bottles:
     docker:
-      - image: linuxbrew/linuxbrew
+      - image: linuxbrew/brew
     steps:
       - attach_workspace:
           at: /tmp/workspace
