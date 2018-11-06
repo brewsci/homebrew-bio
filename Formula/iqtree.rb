@@ -2,8 +2,8 @@ class Iqtree < Formula
   # cite Nguyen_2015: "https://doi.org/10.1093/molbev/msu300"
   desc "Efficient phylogenomic software by maximum likelihood"
   homepage "http://www.iqtree.org/"
-  url "https://github.com/Cibiv/IQ-TREE/archive/v1.6.5.tar.gz"
-  sha256 "1488cec17b2ce1e23dd4367c3a8d43c5d2ed3a965aba61d155034471fbd08154"
+  url "https://github.com/Cibiv/IQ-TREE/archive/v1.6.8.tar.gz"
+  sha256 "77037032366d28c1e2c9d77e10e2b76e09495009518b5a3c546d7c1581b55b18"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -11,13 +11,13 @@ class Iqtree < Formula
     sha256 "1f7ba8351cc4a0c674d2f239c8b9e89a3af82769a972cb6935c66b62ccc5d924" => :x86_64_linux
   end
 
-  fails_with :clang # needs openmp
-
   depends_on "cmake" => :build
   depends_on "eigen" => :build # header only C++ library
   depends_on "gsl"   => :build # static linking
   depends_on "gcc" if OS.mac? # for openmp
   depends_on "zlib" unless OS.mac?
+
+  fails_with :clang # needs openmp
 
   needs :cxx11
 
