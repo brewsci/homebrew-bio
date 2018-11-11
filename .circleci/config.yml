@@ -60,7 +60,6 @@ jobs:
       - run: |
           git remote set-url origin $CIRCLE_REPOSITORY_URL
           git fetch origin
-          git reset --hard origin/master
           git config --global user.name LinuxbrewTestBot
           git config --global user.email testbot@linuxbrew.sh
           repo=$(brew --repo $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME)
