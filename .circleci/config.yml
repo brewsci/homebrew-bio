@@ -38,7 +38,8 @@ jobs:
       - persist_to_workspace:
           root: /tmp
           paths:
-            - bottles
+            - bottles/*.json
+            - bottles/*.tar.gz
       - store_test_results:
           path: /tmp/bottles
   build-macos:
@@ -74,7 +75,8 @@ jobs:
       - persist_to_workspace:
           root: /tmp
           paths:
-            - bottles
+            - bottles/*.json
+            - bottles/*.tar.gz
       - store_test_results:
           path: /tmp/bottles
   collect-bottles:
