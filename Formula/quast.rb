@@ -5,8 +5,8 @@ class Quast < Formula
   # cite Mikheenko_2018: "https://doi.org/10.1093/bioinformatics/bty266"
   desc "QUAST: Quality Assessment Tool for Genome Assemblies"
   homepage "https://quast.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/quast/quast-5.0.1.tar.gz"
-  sha256 "ec79e229e924b76535534375b3cf1c55d0fbc9b44d2795eaf1a65037ea3e5bb0"
+  url "https://downloads.sourceforge.net/project/quast/quast-5.0.2.tar.gz"
+  sha256 "cdb8f83e20cc38f218ff7172b454280fcb1c7e2dff74e1f8618cacc53d46b48e"
   head "https://github.com/ablab/quast.git"
 
   bottle do
