@@ -7,8 +7,8 @@ class Cannoli < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "92b50cdf8c318b8ceab6c9719d84f5acb1c4ffd7b338ff0a6c923264d3357c4e" => :sierra
-    sha256 "fcf69e2869fac7a034b917e694c046b9da596df78a0b8ce8b46681c78e0131a4" => :x86_64_linux
+    sha256 "41dc551d6d618ab7afb03f4bd75d85576f4697188826b4b090217476de56eb85" => :sierra
+    sha256 "1710a37d143880146e867ad433a709213bae28caff2805cbc52f8deb4be6253f" => :x86_64_linux
   end
 
   head do
