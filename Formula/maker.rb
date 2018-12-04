@@ -6,13 +6,18 @@ class Maker < Formula
   homepage "https://www.yandell-lab.org/software/maker.html"
   url "http://yandell.topaz.genetics.utah.edu/maker_downloads/static/maker-2.31.9.tgz"
   sha256 "c92f9c8c96c6e7528d0a119224f57cf5e74fadfc5fce5f4b711d0778995cabab"
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
     sha256 "1efb1f0da0b497ce17b502d55b6aa2c7834dddcb4e471f49ccb4a6f7dba445b4" => :sierra
     sha256 "8c0eff342b2bd680bf4efc9c7c68f380622385279514683a358869c4fd35cfc4" => :x86_64_linux
+  end
+
+  devel do
+    url "http://yandell.topaz.genetics.utah.edu/maker_downloads/static/maker-3.01.02-beta.tgz"
+    sha256 "1b44a7d930f49de6cac10d2818c45c292a2a400cb873f443828582a40c4b6bb0"
   end
 
   depends_on "cpanminus" => :build
@@ -33,6 +38,10 @@ class Maker < Formula
   else
     depends_on "open-mpi" => :optional
   end
+
+  # Fix a bug fixed upstream in 3.01.02-beta.
+  # Pass --minintron and --maxintron to Exonerate when aligning protein.
+  patch :DATA if build.stable?
 
   def install
     ENV.prepend "PERL5LIB", Formula["bioperl"].libexec/"lib/perl5"
@@ -71,10 +80,25 @@ class Maker < Formula
     MAKER is not available for commercial use without a license. Those
     wishing to license MAKER for commercial use should contact Beth
     Drees at the University of Utah TCO to discuss your needs.
-    EOS
+  EOS
   end
 
   test do
     system "#{bin}/maker", "--version"
   end
 end
+
+__END__
+diff --git maker-2.31.9/lib/polisher/exonerate/protein.pm maker-3.01.02-beta/lib/polisher/exonerate/protein.pm
+index e65c855..5c238a3 100755
+--- maker-2.31.9/lib/polisher/exonerate/protein.pm
++++ maker-3.01.02-beta/lib/polisher/exonerate/protein.pm
+@@ -98,7 +98,7 @@ sub runExonerate {
+	if ($matrix) {
+	    $command .= " --proteinsubmat $matrix";
+	}
+-	$command .= " --showcigar ";
++	$command .= " --minintron $min_intron --maxintron $max_intron --showcigar";
+	$command .= " > $o_file";
+
+         my $w = new Widget::exonerate::protein2genome();
