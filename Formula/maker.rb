@@ -4,9 +4,8 @@ class Maker < Formula
   # cite Campbell_2013: "https://doi.org/10.1104/pp.113.230144" # MAKER-P
   desc "Genome annotation pipeline"
   homepage "https://www.yandell-lab.org/software/maker.html"
-  url "http://yandell.topaz.genetics.utah.edu/maker_downloads/static/maker-2.31.9.tgz"
-  sha256 "c92f9c8c96c6e7528d0a119224f57cf5e74fadfc5fce5f4b711d0778995cabab"
-  revision 3
+  url "http://yandell.topaz.genetics.utah.edu/maker_downloads/static/maker-2.31.10.tgz"
+  sha256 "d3979af9710d61754a3b53f6682d0e2052c6c3f36be6f2df2286d2587406f07d"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
