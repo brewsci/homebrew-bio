@@ -11,8 +11,8 @@ class Maker < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "1efb1f0da0b497ce17b502d55b6aa2c7834dddcb4e471f49ccb4a6f7dba445b4" => :sierra
-    sha256 "8c0eff342b2bd680bf4efc9c7c68f380622385279514683a358869c4fd35cfc4" => :x86_64_linux
+    sha256 "6386bda1e5bcb5dcdab2494172c8bb38589e08c261002776359ca2f78109b8aa" => :sierra
+    sha256 "75f70f0b2879d6503d019a19ddba847f2a559c828cbf94479248ce1f94829cfa" => :x86_64_linux
   end
 
   devel do
