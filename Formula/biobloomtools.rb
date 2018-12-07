@@ -8,8 +8,8 @@ class Biobloomtools < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "6d0dd5f159163f6d47747ef5d136bab79baf53ee8fa51b769a6bd96903e7f844" => :sierra
-    sha256 "aedb46bf6e27447abc59cab419cd3da24b8c6f136e5e90951f56aa3e99659a05" => :x86_64_linux
+    sha256 "73238359ef0ddb1bcaa250b18e8f543e2c90346ffd54c31af93365c0e0c8f721" => :sierra
+    sha256 "5f30ba8e6ca4cbd406cd4819d48b5acdc1f4c65fa41f821b52e0e5c346dea2a8" => :x86_64_linux
   end
 
   head do
