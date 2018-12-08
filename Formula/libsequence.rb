@@ -2,8 +2,8 @@ class Libsequence < Formula
   # cite Thornton_2003: "https://doi.org/10.1093/bioinformatics/btg316"
   desc "C++ library for evolutionary genetics"
   homepage "https://molpopgen.github.io/libsequence/"
-  url "https://github.com/molpopgen/libsequence/archive/1.9.2.tar.gz"
-  sha256 "e7232c969bf9dabab86cd6c592c80de521cc15287252e3a996e63d24028cdd40"
+  url "https://github.com/molpopgen/libsequence/archive/1.9.3.tar.gz"
+  sha256 "f834da85d4f5265eb8e4d34642fa4d4517d5d3694c0ae9db6e7b919fffd65eea"
   head "https://github.com/molpopgen/libsequence.git"
 
   bottle do
