@@ -1,9 +1,11 @@
 class BaliPhy < Formula
   # cite Suchard_2006: "http://dx.doi.org/10.1093/bioinformatics/btl175"
+  # cite Redelings_2014: "https://dx.doi.org/10.1093/molbev/msu174"
   desc "Bayesian co-estimation of phylogenies and multiple alignments"
   homepage "http://www.bali-phy.org/"
-  url "https://github.com/bredelings/BAli-Phy/archive/3.3.tar.gz"
-  sha256 "84132dd0ec8a62eb6697374c62847e4b84082cbf09977f0e157e8407db010ccc"
+  url "https://github.com/bredelings/BAli-Phy/archive/3.4.tar.gz"
+  sha256 "06a404039e988af4c2070aa6436c8a64f0a8d9eec403ffe99635574cefcc4d8d"
+  head "https://github.com/bredelings/BAli-Phy.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -21,7 +23,7 @@ class BaliPhy < Formula
   def install
     flags = %w[-C build install]
     # Reduce memory usage for Circle CI
-    flags += %w[-j 4] if ENV["CIRCLECI"]
+    flags << "-j4" if ENV["HOMEBREW_CIRCLECI"]
     system "meson", "build", "--prefix=#{prefix}"
     system "ninja", *flags
   end
