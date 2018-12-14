@@ -10,8 +10,8 @@ class BaliPhy < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "1d245b28d3dcb87d1a0d26a194c0a57c638356dd064065d6620cfc203ba00656" => :sierra
-    sha256 "53e848975660e3a763a7129a249206d5a06e8523476991b673c4b0d8b00ad6f1" => :x86_64_linux
+    sha256 "2f44d8d2b639d38edaf1e971546d4eb9d01b6be0dae11434a0c19f23849c33b9" => :sierra
+    sha256 "1d509a5489f915bbedde437b70694960778250e54c0f7e8538db8fb0663170b8" => :x86_64_linux
   end
 
   depends_on "meson" => :build
