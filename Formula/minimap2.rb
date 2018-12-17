@@ -1,5 +1,5 @@
 class Minimap2 < Formula
-  # cite Li_2018: "https://arxiv.org/abs/1708.01492"
+  # cite Li_2018: "https://doi.org/10.1093/bioinformatics/bty191"
   desc "Fast pairwise aligner for genomic and spliced nucleotide sequences"
   homepage "https://github.com/lh3/minimap2"
   url "https://github.com/lh3/minimap2/releases/download/v2.14/minimap2-2.14.tar.bz2"
