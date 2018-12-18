@@ -1,4 +1,5 @@
 class Porechop < Formula
+  # cite Wick_2017: "https://doi.org/10.1099/mgen.0.000132"
   desc "Trim adapters of Oxford Nanopore sequencing reads"
   homepage "https://github.com/rrwick/Porechop"
   url "https://github.com/rrwick/Porechop/archive/v0.2.3.tar.gz"
