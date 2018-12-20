@@ -6,10 +6,10 @@ class Tbl2asn < Formula
   version "25.6"
   if OS.mac?
     url "https://ftp.ncbi.nih.gov/toolbox/ncbi_tools/converters/by_program/tbl2asn/mac.tbl2asn.gz"
-    sha256 "f0ef9038bb021fa0c8b546a78539fe2f34c3b22c28986c3f99d216073366ff08"
+    sha256 "dfaedbd1ddd5e9fbf8f80e6214f48e3012498f4951e39157f3ab1926cd392c1a"
   elsif OS.linux?
     url "https://ftp.ncbi.nih.gov/toolbox/ncbi_tools/converters/by_program/tbl2asn/linux64.tbl2asn.gz"
-    sha256 "f0e7d2fc6c68b39ff7b6abb1475e0a9d63c60887cfbd2857ccf0a0923eb4b96e"
+    sha256 "38560dd0764d1cfa7e139c65285b3194bacaa4bd8ac09f60f5e2bb8027cc6ca2"
   end
   revision 1
 
@@ -33,14 +33,14 @@ class Tbl2asn < Formula
 
   def install
     bin.install Dir["tbl2asn*"].first => "tbl2asn"
-    if OS.linux?
+    unless OS.mac?
       system "patchelf",
         "--set-interpreter", HOMEBREW_PREFIX/"lib/ld.so",
         "--set-rpath", HOMEBREW_PREFIX/"lib",
         bin/"tbl2asn"
-        # Normally we would use patchelf to make this change but it seems
-        # broken for this use-case. Use the Stick of Correction instead.
-        inreplace bin/"tbl2asn", "libidn.so.11", "libidn.so.12"
+      # Normally we would use patchelf to make this change but it seems
+      # broken for this use-case. Use the Stick of Correction instead.
+      inreplace bin/"tbl2asn", "libidn.so.11", "libidn.so.12"
     end
     doc.install resource("doc")
   end
