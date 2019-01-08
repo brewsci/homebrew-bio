@@ -7,15 +7,15 @@ class Trinity < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
+    cellar :any
     sha256 "38ba406ba401e8199095fbb0e14f4915e6d5738a8ee5a5fdb6c6b219c96cab04" => :sierra
     sha256 "30b06bb67c0d83b1e54f49642bf438faff43cb12e529928123bed231a91406a4" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
-  depends_on "gcc" => :build
   depends_on "bowtie2"
   depends_on "express"
+  depends_on "gcc" if OS.mac? # for openmp
   depends_on "htslib"
   depends_on :java => "1.8+"
   depends_on "jellyfish"
@@ -23,10 +23,10 @@ class Trinity < Formula
   depends_on "samtools"
   depends_on "trimmomatic"
 
-  fails_with :clang
-
   # Trinity doesn't link to eXpress, which depends on Boost, built with C++11
   cxxstdlib_check :skip
+
+  fails_with :clang # needs openmp
 
   def install
     inreplace "Trinity" do |s|
