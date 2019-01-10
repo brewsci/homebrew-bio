@@ -9,8 +9,8 @@ class Minimap2 < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "0b1f28add0d512504654e6b7f7bc9efe1f9ea1ce14b3496e9d5507a22f0c1ddc" => :sierra
-    sha256 "69f9073fc28f997e984be84cc682ad5be5c946f567bac6f8017b192a7b4677b0" => :x86_64_linux
+    sha256 "6b1d7bc07616ab8557e9e0b5624a0b4ad2fd2764981b97a44bb98e0f6d73068c" => :sierra
+    sha256 "53c03ee28c7f38d56db6b8e3420627f0428c05b898d73b535e1df8780e58be3c" => :x86_64_linux
   end
 
   depends_on "k8" # for paftools.js
