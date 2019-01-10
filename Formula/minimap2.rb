@@ -2,8 +2,8 @@ class Minimap2 < Formula
   # cite Li_2018: "https://doi.org/10.1093/bioinformatics/bty191"
   desc "Fast pairwise aligner for genomic and spliced nucleotide sequences"
   homepage "https://github.com/lh3/minimap2"
-  url "https://github.com/lh3/minimap2/releases/download/v2.14/minimap2-2.14.tar.bz2"
-  sha256 "9088b785bb0c33488ca3a27c8994648ce21a8be54cb117f5ecee26343facd03b"
+  url "https://github.com/lh3/minimap2/releases/download/v2.15/minimap2-2.15.tar.bz2"
+  sha256 "ad9fe97a8b1a0274ae61f78acb5edb5f041631cb728c838ad3171498831caf80"
   head "https://github.com/lh3/minimap2.git"
 
   bottle do
