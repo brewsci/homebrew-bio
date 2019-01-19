@@ -1,5 +1,5 @@
 class Uniqtag < Formula
-  # Jackman_2014: "https://doi.org/10.1101/007583"
+  # cite Jackman_2015: "https://doi.org/10.1371/journal.pone.0128026"
   desc "Abbreviate strings to short unique identifiers"
   homepage "https://github.com/sjackman/uniqtag"
   url "https://github.com/sjackman/uniqtag/archive/1.0.tar.gz"
