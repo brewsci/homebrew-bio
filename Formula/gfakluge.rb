@@ -1,8 +1,8 @@
 class Gfakluge < Formula
   desc "C++ library and utilities for Graphical Fragment Assembly (GFA)"
   homepage "https://github.com/edawson/gfakluge"
-  url "https://github.com/edawson/gfakluge/archive/1.0.0.tar.gz"
-  sha256 "258e0048fa02ab680f4a8b8d9237aa1b56983804d30c1dbae56e4984fd6791d0"
+  url "https://github.com/edawson/gfakluge/archive/1.1.0.tar.gz"
+  sha256 "1b3114fc3004b2ce2210c469a1894a81cba252e5b35c770ba7be63452e5e448a"
   head "https://github.com/edawson/gfakluge.git"
 
   bottle do
@@ -22,9 +22,9 @@ class Gfakluge < Formula
 
   def install
     system "make"
-    include.install "src/gfakluge.hpp", "src/tinyFA/tinyfa.hpp", "src/tinyFA/pliib.hpp"
-    lib.install "libgfakluge.a"
-    bin.install %w[gfak]
+    mkdir [bin, include]
+    system "make", "install", "PREFIX=#{prefix}"
+    include.install "src/tinyFA/tinyfa.hpp", "src/tinyFA/pliib.hpp"
   end
 
   test do
