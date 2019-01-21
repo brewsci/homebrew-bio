@@ -8,8 +8,8 @@ class Gfakluge < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "115c14604c83be964cb54a476a76680475ccff173f61d0de572fcb3088c68c25" => :sierra
-    sha256 "1a092a48de508127d6216f1929f8daf24b2dcaf431159269cb053daaf740677f" => :x86_64_linux
+    sha256 "81a6144046840e79918e5b9313726ad6aab5eb5b044bee2932e022da0c05e3f1" => :sierra
+    sha256 "53ca94220975cdc85360476be91613030c7fd15ecd20f1524ba90c7798a05696" => :x86_64_linux
   end
 
   if OS.mac?
