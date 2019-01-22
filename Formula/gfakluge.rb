@@ -1,4 +1,5 @@
 class Gfakluge < Formula
+  # cite Dawson_2019: "https://doi.org/10.21105/joss.01083"
   desc "C++ library and utilities for Graphical Fragment Assembly (GFA)"
   homepage "https://github.com/edawson/gfakluge"
   url "https://github.com/edawson/gfakluge/archive/1.1.0.tar.gz"
