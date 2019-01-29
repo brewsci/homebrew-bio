@@ -26,8 +26,6 @@ class Parsnp < Formula
   depends_on "libmuscle"
   depends_on "zlib" unless OS.mac?
 
-  needs :cxx11
-
   def install
     # remove binaries
     rm Dir["bin/*"]

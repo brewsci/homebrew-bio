@@ -14,7 +14,6 @@ class Nanopolish < Formula
   end
 
   fails_with :clang # needs openmp
-  needs :cxx11
 
   depends_on "eigen" => :build
   depends_on "hdf5"

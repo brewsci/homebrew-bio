@@ -14,8 +14,6 @@ class Minia < Formula
   depends_on "cmake" => :build
   depends_on "zlib" unless OS.mac?
 
-  needs :cxx11
-
   def install
     mkdir "build" do
       args = std_cmake_args

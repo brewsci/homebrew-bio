@@ -23,8 +23,6 @@ class Fastani < Formula
   depends_on "boost"
   depends_on "zlib" unless OS.mac?
 
-  needs :cxx11
-
   def install
     # https://github.com/ParBLiSS/FastANI/issues/17 (macos clang opts for gcc)
     inreplace "Makefile.in", "-mmacosx-version-min=10.7 -stdlib=libc++", "-v"

@@ -15,8 +15,6 @@ class Flye < Formula
 
   depends_on "python@2"
 
-  needs :cxx11
-
   def install
     system "python2", "setup.py", "install", "--prefix=#{prefix}"
   end

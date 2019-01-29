@@ -18,8 +18,6 @@ class SdslLite < Formula
 
   depends_on "cmake" => :build
 
-  needs :cxx11
-
   def install
     # Reduce memory usage for Circle CI
     ENV["MAKEFLAGS"] = "-j8" if ENV["CIRCLECI"]

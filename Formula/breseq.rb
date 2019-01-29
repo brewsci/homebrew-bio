@@ -22,8 +22,6 @@ class Breseq < Formula
   depends_on "gzip" unless OS.mac?
   depends_on "r"
 
-  needs :cxx11
-
   def install
     # Reduce memory usage for CircleCI.
     ENV["MAKEFLAGS"] = "-j8" if ENV["CIRCLECI"]

@@ -22,8 +22,6 @@ class Kraken2 < Formula
     depends_on "perl"
   end
 
-  needs :cxx11
-
   def install
     libexec.mkdir
     system "./install_kraken2.sh", libexec

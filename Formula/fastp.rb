@@ -15,8 +15,6 @@ class Fastp < Formula
 
   depends_on "zlib" unless OS.mac?
 
-  needs :cxx11
-
   def install
     system "make"
     bin.install "fastp"

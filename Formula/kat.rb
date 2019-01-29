@@ -25,8 +25,6 @@ class Kat < Formula
     sha256 "83a0b8e17c09f012090a50e1e97ae897300a72b35e0c86c0b53d3bd2ae86d8c6"
   end
 
-  needs :cxx11
-
   def install
     # Reduce memory usage for Circle CI.
     ENV["MAKEFLAGS"] = "-j8" if ENV["CIRCLECI"]

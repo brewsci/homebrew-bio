@@ -17,8 +17,6 @@ class HarvestTools < Formula
   depends_on "protobuf"
   depends_on "zlib" unless OS.mac?
 
-  needs :cxx11
-
   def install
     system "autoconf"
     system "./configure", "--prefix=#{prefix}",

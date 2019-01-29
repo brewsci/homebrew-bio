@@ -17,8 +17,6 @@ class Libsequence < Formula
   depends_on "gsl"
   depends_on "tbb"
 
-  needs :cxx11
-
   def install
     ENV.cxx11
     system "./configure",

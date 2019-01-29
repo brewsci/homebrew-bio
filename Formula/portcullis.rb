@@ -14,8 +14,6 @@ class Portcullis < Formula
     sha256 "e91724794110a2c76755b1e480c479f1707d3dff25b6b7ef4b20f82e885fbf5c" => :x86_64_linux
   end
 
-  needs :cxx11
-
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build

@@ -14,8 +14,6 @@ class Skesa < Formula
   depends_on "boost"
   depends_on "zlib" unless OS.mac?
 
-  needs :cxx11
-
   def install
     makefile = "Makefile.nongs"
 

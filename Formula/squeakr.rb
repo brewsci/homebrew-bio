@@ -19,8 +19,6 @@ class Squeakr < Formula
   depends_on "bzip2" unless OS.mac?
   depends_on "zlib" unless OS.mac?
 
-  needs :cxx11
-
   def install
     inreplace "Makefile", "-lboost_system -lboost_thread",
                           "-lboost_system-mt -lboost_thread-mt"

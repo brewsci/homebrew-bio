@@ -13,8 +13,6 @@ class Salmon < Formula
     sha256 "402f7b66bcbf4347dbfedd8e39507024ad223b31b915a42f28cec37e2254a372" => :x86_64_linux
   end
 
-  needs :cxx11
-
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "cmake" => :build

@@ -22,7 +22,6 @@ class Racon < Formula
   end
 
   fails_with :clang # needs openmp
-  needs :cxx11
 
   def install
     mkdir "build" do

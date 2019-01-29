@@ -15,8 +15,6 @@ class Kaiju < Formula
   depends_on "perl" # for gbk2faa.pl
   depends_on "python@2" # for convert_mar_to_kaiju.py
 
-  needs :cxx11
-
   def install
     # https://github.com/bioinformatics-centre/kaiju/issues/92
     inreplace "util/gbk2faa.pl", "/usr/bin/perl -w", "/usr/bin/env perl"

@@ -19,8 +19,6 @@ class GenomePainter < Formula
   depends_on "gcc" # for openmp
   depends_on "zlib" unless OS.mac?
 
-  needs :cxx11
-
   def install
     system "./autogen.sh"
     system "./configure", "--prefix=#{prefix}"

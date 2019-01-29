@@ -12,8 +12,6 @@ class Swipe < Formula
     sha256 "fe6052456ecb3759d84019038262b07bff3a665ed114d73b614275220728d3c0" => :x86_64_linux
   end
 
-  needs :cxx11
-
   def install
     system "make", "swipe", "COMMON="
     bin.install "swipe"

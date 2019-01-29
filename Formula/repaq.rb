@@ -13,8 +13,6 @@ class Repaq < Formula
 
   depends_on "zlib" unless OS.mac?
 
-  needs :cxx11
-
   def install
     system "make"
     # https://github.com/OpenGene/repaq/issues/6

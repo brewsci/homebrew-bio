@@ -18,8 +18,6 @@ class Gemma < Formula
   depends_on "openblas"
   depends_on "zlib" unless OS.mac?
 
-  needs :cxx11
-
   def install
     # https://github.com/brewsci/homebrew-bio/pull/479
     inreplace "Makefile", "-lgfortran", ""

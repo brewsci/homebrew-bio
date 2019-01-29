@@ -19,8 +19,6 @@ class Iqtree < Formula
 
   fails_with :clang # needs openmp
 
-  needs :cxx11
-
   def install
     # Reduce memory usage for Circle CI.
     ENV["MAKEFLAGS"] = "-j8" if ENV["CIRCLECI"]

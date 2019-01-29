@@ -15,8 +15,6 @@ class Last < Formula
 
   depends_on "zlib" unless OS.mac?
 
-  needs :cxx11
-
   def install
     system "make", "install", "prefix=#{prefix}"
     doc.install Dir["doc/*"]
