@@ -13,8 +13,6 @@ class Unicycler < Formula
     sha256 "aa9986644891bee7f1a3196515f88b8f9e3c84968f412524ca552d968a403063" => :x86_64_linux
   end
 
-  needs :cxx14
-
   depends_on "blast"
   depends_on "bowtie2"
   depends_on "pilon"

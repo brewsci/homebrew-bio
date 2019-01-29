@@ -14,7 +14,6 @@ class Ema < Formula
   end
 
   fails_with :clang # needs openmp
-  needs :cxx14
 
   if OS.mac?
     depends_on "gcc" # needs openmp

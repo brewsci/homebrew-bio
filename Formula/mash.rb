@@ -22,8 +22,6 @@ class Mash < Formula
   depends_on "gsl"
   depends_on "zlib" unless OS.mac?
 
-  needs :cxx14
-
   def install
     # https://github.com/marbl/Mash/issues/98
     inreplace "configure.ac", "c++11", "c++14"

@@ -15,8 +15,6 @@ class Kmc < Formula
   # Fix error: 'ext/algorithm' file not found
   fails_with :clang
 
-  needs :cxx14
-
   def install
     # Reduce memory usage below 4 GB for Circle CI.
     ENV["MAKEFLAGS"] = "-j4" if ENV["CIRCLECI"]
