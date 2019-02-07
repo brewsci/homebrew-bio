@@ -7,6 +7,13 @@ class Seqan < Formula
   # cite D_ring_2008: "https://doi.org/10.1186/1471-2105-9-11"
   # cite Reinert_2017: "https://doi.org/10.1016/j.jbiotec.2017.07.017"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "6d8fb5e40c810aa02affea2c6a1191cde5f3a91df30e29d02924970d180eda11" => :sierra
+    sha256 "9943d2d86dbf1fad7d703ccd2236e5cefb6a7923436ca3af3bcd842ac874d13d" => :x86_64_linux
+  end
+
   def install
     include.install "include/seqan"
     if build.head?
