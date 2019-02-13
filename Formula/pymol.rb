@@ -1,15 +1,11 @@
 class Pymol < Formula
   include Language::Python::Virtualenv
-  desc "molecular visualization system"
+  desc "Open-source PyMOL molecular visualization system"
   homepage "https://pymol.org/"
-  url "https://github.com/schrodinger/pymol-open-source/archive/v2.2.0.tar.gz"
-  sha256 "58d910103dc494c49c86bc8fd6cd94b1a030647f9d72f69fbd7d7ad25fb11233"
+  url "https://github.com/schrodinger/pymol-open-source/archive/v2.3.0.tar.gz"
+  sha256 "62aa21fafd1db805c876f89466e47513809f8198395e1f00a5f5cc40d6f40ed0"
 
-  bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "ff0a40dfad3132faa2ff2d7db88831987b548da177bfcf646bd606df88234883" => :x86_64_linux
-  end
-
+  depends_on "brewsci/bio/mmtf-cpp"
   depends_on "freeglut"
   depends_on "freetype"
   depends_on "glew"
@@ -21,8 +17,8 @@ class Pymol < Formula
   depends_on "sip"
 
   resource "numpy" do
-    url "https://files.pythonhosted.org/packages/d5/6e/f00492653d0fdf6497a181a1c1d46bbea5a2383e7faf4c8ca6d6f3d2581d/numpy-1.14.5.zip"
-    sha256 "a4a433b3a264dbc9aa9c7c241e87c0358a503ea6394f8737df1683c7c9a102ac"
+    url "https://files.pythonhosted.org/packages/3a/20/c81632328b1a4e1db65f45c0a1350a9c5341fd4bbb8ea66cdd98da56fe2e/numpy-1.15.0.zip"
+    sha256 "f28e73cf18d37a413f7d5de35d024e6b98f14566a10d82100f9dc491a7d449f9"
   end
 
   resource "mmtf-python" do
@@ -31,8 +27,8 @@ class Pymol < Formula
   end
 
   resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/f3/b6/9affbea179c3c03a0eb53515d9ce404809a122f76bee8fc8c6ec9497f51f/msgpack-0.5.6.tar.gz"
-    sha256 "0ee8c8c85aa651be3aa0cd005b5931769eaa658c948ce79428766f1bd46ae2c3"
+    url "https://files.pythonhosted.org/packages/81/9c/0036c66234482044070836cc622266839e2412f8108849ab0bfdeaab8578/msgpack-0.6.1.tar.gz"
+    sha256 "4008c72f5ef2b7936447dcb83db41d97e9791c83221be13d5e19db0796df1972"
   end
 
   resource "msgpack-python" do
@@ -51,13 +47,8 @@ class Pymol < Formula
   end
 
   def install
-    unless OS.mac?
-      # comment out glDebugMessageCallback if CentOS 7
-      # https://github.com/schrodinger/pymol-open-source/issues/2
-      inreplace "layer5/PyMOL.cpp",
-      "glDebugMessageCallback(gl_debug_proc, NULL);",
-      "// glDebugMessageCallback(gl_debug_proc, NULL); //"
-    end
+    # Reduce memory usage for CircleCI.
+    ENV["MAKEFLAGS"] = "-j2" if ENV["CIRCLECI"]
 
     xy = Language::Python.major_minor_version "python3"
     ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
@@ -81,9 +72,11 @@ class Pymol < Formula
     args = %W[
       --install-scripts=#{libexec}/bin
       --install-lib=#{libexec}/lib/python#{xy}/site-packages
-      --pyqt PyQt5
+      --glut
+      --use-msgpackc c++11
     ]
     args << "--osx-frameworks" if OS.mac?
+    args << "--jobs 1" if ENV["CIRCLECI"] # Reduce memory usage for CircleCI.
     system "python3", "setup.py", "install", *args
 
     bin.install libexec/"bin/pymol"
