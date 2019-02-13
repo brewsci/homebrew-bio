@@ -6826,6 +6826,59 @@
     "outdated": false
   },
   {
+    "name": "mmtf-cpp",
+    "full_name": "brewsci/bio/mmtf-cpp",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "The pure C++ implementation of the MMTF API, decoder and encoder",
+    "homepage": "https://github.com/rcsb/mmtf-cpp",
+    "versions": {
+      "stable": "1.0.0",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mmtf-cpp-1.0.0.sierra.bottle.tar.gz",
+            "sha256": "8b39cff9ba4c472eed266632996266fdf4533c28600ee629ad4fe5b433dccca3"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mmtf-cpp-1.0.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "13fdd052921a4c7404dcb224c1dc426d8bf468349ddb401afb3d6932167ee3c5"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "options": [],
+    "build_dependencies": [
+      "cmake",
+      "ninja"
+    ],
+    "dependencies": [
+      "msgpack"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "mosdepth",
     "full_name": "brewsci/bio/mosdepth",
     "oldname": null,
