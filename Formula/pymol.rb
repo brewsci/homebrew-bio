@@ -12,14 +12,14 @@ class Pymol < Formula
 
   depends_on "freeglut"
   depends_on "freetype"
+  depends_on "gcc"
   depends_on "glew"
+  depends_on "glfw"
   depends_on "glm"
   depends_on "libpng"
   depends_on "msgpack"
   depends_on "pyqt"
   depends_on "python"
-  depends_on "glfw"
-  depends_on "gcc"
   depends_on "sip"
 
 
