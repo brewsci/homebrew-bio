@@ -2,8 +2,8 @@ class Pymol < Formula
   include Language::Python::Virtualenv
   desc "molecular visualization system"
   homepage "https://pymol.org/"
-  url "https://github.com/schrodinger/pymol-open-source/archive/v2.2.0.tar.gz"
-  sha256 "58d910103dc494c49c86bc8fd6cd94b1a030647f9d72f69fbd7d7ad25fb11233"
+      url "https://github.com/schrodinger/pymol-open-source/archive/v2.3.0.tar.gz"
+  sha256 "62aa21fafd1db805c876f89466e47513809f8198395e1f00a5f5cc40d6f40ed0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -18,7 +18,10 @@ class Pymol < Formula
   depends_on "msgpack"
   depends_on "pyqt"
   depends_on "python"
+  depends_on "glfw"
+  depends_on "gcc"
   depends_on "sip"
+
 
   resource "numpy" do
     url "https://files.pythonhosted.org/packages/d5/6e/f00492653d0fdf6497a181a1c1d46bbea5a2383e7faf4c8ca6d6f3d2581d/numpy-1.14.5.zip"
@@ -81,7 +84,6 @@ class Pymol < Formula
     args = %W[
       --install-scripts=#{libexec}/bin
       --install-lib=#{libexec}/lib/python#{xy}/site-packages
-      --pyqt PyQt5
     ]
     args << "--osx-frameworks" if OS.mac?
     system "python3", "setup.py", "install", *args
