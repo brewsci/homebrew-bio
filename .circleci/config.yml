@@ -11,7 +11,7 @@ jobs:
     steps:
       - run: |
           cd /home/linuxbrew/.linuxbrew/Homebrew
-          git fetch origin --unshallow --tags
+          git fetch origin --unshallow --tags || git fetch origin --depth=1000000 --tags
           git reset --hard origin/master
           cd /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/homebrew/homebrew-core
           git fetch origin --depth=1
@@ -35,11 +35,11 @@ jobs:
             brew install patchelf
             brew tap linuxbrew/xorg
             brew test-bot --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
+            mv brew-test-bot.xml brew-test-bot-linux.xml
       - persist_to_workspace:
           root: /tmp
           paths:
-            - bottles/*.json
-            - bottles/*.tar.gz
+            - bottles/*
       - store_test_results:
           path: /tmp/bottles
   build-macos:
@@ -72,11 +72,11 @@ jobs:
             mkdir /tmp/bottles
             cd /tmp/bottles
             brew test-bot --skip-setup --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
+            mv brew-test-bot.xml brew-test-bot-macos.xml
       - persist_to_workspace:
           root: /tmp
           paths:
-            - bottles/*.json
-            - bottles/*.tar.gz
+            - bottles/*
       - store_test_results:
           path: /tmp/bottles
   collect-bottles:
