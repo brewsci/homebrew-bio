@@ -11,12 +11,12 @@ class Pymol < Formula
     sha256 "8621be3863ecfbf5e0140240d8a5bd648aea59a175a45766a57b64b089956db9" => :x86_64_linux
   end
 
-  depends_on "brewsci/bio/mmtf-cpp"
   depends_on "freeglut"
   depends_on "freetype"
   depends_on "glew"
   depends_on "glm"
   depends_on "libpng"
+  depends_on "mmtf-cpp"
   depends_on "msgpack"
   depends_on "pyqt"
   depends_on "python"
@@ -53,9 +53,6 @@ class Pymol < Formula
   end
 
   def install
-    # Reduce memory usage for CircleCI.
-    ENV["MAKEFLAGS"] = "-j2" if ENV["CIRCLECI"]
-
     xy = Language::Python.major_minor_version "python3"
     ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
 
@@ -79,10 +76,11 @@ class Pymol < Formula
       --install-scripts=#{libexec}/bin
       --install-lib=#{libexec}/lib/python#{xy}/site-packages
       --glut
-      --use-msgpackc c++11
+      --use-msgpackc=c++11
     ]
     args << "--osx-frameworks" if OS.mac?
-    args << "--jobs 1" if ENV["CIRCLECI"] # Reduce memory usage for CircleCI.
+    # Reduce memory usage for CircleCI.
+    args << "--jobs=4" if ENV["CIRCLECI"]
     system "python3", "setup.py", "install", *args
 
     bin.install libexec/"bin/pymol"
