@@ -8612,10 +8612,10 @@
     "oldname": null,
     "aliases": [],
     "versioned_formulae": [],
-    "desc": "molecular visualization system",
+    "desc": "Open-source PyMOL molecular visualization system",
     "homepage": "https://pymol.org/",
     "versions": {
-      "stable": "2.2.0",
+      "stable": "2.3.0",
       "devel": null,
       "head": null,
       "bottle": true
@@ -8625,13 +8625,13 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": "/home/linuxbrew/.linuxbrew/Cellar",
+        "cellar": ":any",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/pymol-2.2.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "ff0a40dfad3132faa2ff2d7db88831987b548da177bfcf646bd606df88234883"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/pymol-2.3.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "8621be3863ecfbf5e0140240d8a5bd648aea59a175a45766a57b64b089956db9"
           }
         }
       }
@@ -8647,6 +8647,7 @@
       "glew",
       "glm",
       "libpng",
+      "mmtf-cpp",
       "msgpack",
       "pyqt",
       "python",
