@@ -15,6 +15,7 @@ all: formula.json
 setup:
 	sudo chown $(USER): $(HOME)
 	sudo chown -R $(USER): .
+	git remote set-url origin https://$(HOMEBREW_GITHUB_API_TOKEN)@github.com/$(tap)
 
 formula.json:
 	brew install jq
