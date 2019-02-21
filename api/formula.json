@@ -504,7 +504,7 @@
     "optional_dependencies": [],
     "requirements": [],
     "conflicts_with": [],
-    "caveats": "Aspera keys are in /home/linuxbrew/.linuxbrew/Cellar/ascp/3.7.7/etc\nAspera certificates are in /home/linuxbrew/.linuxbrew/Cellar/ascp/3.7.7/certs\n",
+    "caveats": "Aspera keys are in $(brew --prefix)/Cellar/ascp/3.7.7/etc\nAspera certificates are in $(brew --prefix)/Cellar/ascp/3.7.7/certs\n",
     "installed": [],
     "linked_keg": null,
     "pinned": false,
@@ -920,7 +920,7 @@
     "optional_dependencies": [],
     "requirements": [],
     "conflicts_with": [],
-    "caveats": "This install coexists with BEAST 1.x as all scripts are suffixed with '-2':\n    beast-2 -help\n\nTo use the unprefixed versions, add /home/linuxbrew/.linuxbrew/Cellar/beast2/2.5.0/libexec/bin to your PATH.\n",
+    "caveats": "This install coexists with BEAST 1.x as all scripts are suffixed with '-2':\n    beast-2 -help\n\nTo use the unprefixed versions, add $(brew --prefix)/Cellar/beast2/2.5.0/libexec/bin to your PATH.\n",
     "installed": [],
     "linked_keg": null,
     "pinned": false,
@@ -1037,7 +1037,7 @@
     "desc": "BioBloom Tools (BBT): Bloom filter for bioinformatics",
     "homepage": "http://www.bcgsc.ca/platform/bioinfo/software/biobloomtools/",
     "versions": {
-      "stable": "2.3.1",
+      "stable": "2.3.2",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -1052,12 +1052,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/biobloomtools-2.3.1.sierra.bottle.tar.gz",
-            "sha256": "dacebfac0fda80e132ecd710160a39a9843426d5b7d1aa0830a45e65d9746b90"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/biobloomtools-2.3.2.sierra.bottle.tar.gz",
+            "sha256": "4181eb16f11624fc6f5750a9d8dda2f948866ddfdf6551ebe486a6f221e9cde0"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/biobloomtools-2.3.1.x86_64_linux.bottle.tar.gz",
-            "sha256": "cf88536e6236fcc36b1760c1462573e725a58df0dcc7a0065d5e7c33da178712"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/biobloomtools-2.3.2.x86_64_linux.bottle.tar.gz",
+            "sha256": "a495e45dd593d6c015da6840579409b91dc1d95c3fba721623af07e04ac0024e"
           }
         }
       }
@@ -1742,7 +1742,7 @@
       }
     ],
     "conflicts_with": [],
-    "caveats": "The Makefile for building indices was installed to:\n  /home/linuxbrew/.linuxbrew/Cellar/centrifuge/1.0.3/share/centrifuge/indices\n",
+    "caveats": "The Makefile for building indices was installed to:\n  $(brew --prefix)/Cellar/centrifuge/1.0.3/share/centrifuge/indices\n",
     "installed": [],
     "linked_keg": null,
     "pinned": false,
@@ -2599,7 +2599,7 @@
     "optional_dependencies": [],
     "requirements": [],
     "conflicts_with": [],
-    "caveats": "The barcode whitelist is available at\n/home/linuxbrew/.linuxbrew/Cellar/ema/0.6.2/4M-with-alts-february-2016.txt",
+    "caveats": "The barcode whitelist is available at\n$(brew --prefix)/Cellar/ema/0.6.2/4M-with-alts-february-2016.txt",
     "installed": [],
     "linked_keg": null,
     "pinned": false,
@@ -4112,7 +4112,7 @@
     "optional_dependencies": [],
     "requirements": [],
     "conflicts_with": [],
-    "caveats": "You will need to either download or build indexed search databases.\nSee the readme file for how to do this:\n  http://research-pub.gene.com/gmap/src/README\n\nDatabases will be installed to:\n  /home/linuxbrew/.linuxbrew/Cellar/gmap-gsnap/2018-07-04/share\n",
+    "caveats": "You will need to either download or build indexed search databases.\nSee the readme file for how to do this:\n  http://research-pub.gene.com/gmap/src/README\n\nDatabases will be installed to:\n  $(brew --prefix)/Cellar/gmap-gsnap/2018-07-04/share\n",
     "installed": [],
     "linked_keg": null,
     "pinned": false,
@@ -4925,7 +4925,7 @@
     "optional_dependencies": [],
     "requirements": [],
     "conflicts_with": [],
-    "caveats": "You must build a kaiju database before usage.\nSee /home/linuxbrew/.linuxbrew/Cellar/kaiju/1.6.3/share/kaiju/README.md for details.\n",
+    "caveats": "You must build a kaiju database before usage.\nSee $(brew --prefix)/Cellar/kaiju/1.6.3/share/kaiju/README.md for details.\n",
     "installed": [],
     "linked_keg": null,
     "pinned": false,
@@ -5334,7 +5334,7 @@
     "optional_dependencies": [],
     "requirements": [],
     "conflicts_with": [],
-    "caveats": "You must build a Kraken2 database before usage.\nSee /home/linuxbrew/.linuxbrew/share/doc/kraken2/MANUAL.markdown for details.\n",
+    "caveats": "You must build a Kraken2 database before usage.\nSee $(brew --prefix)/share/doc/kraken2/MANUAL.markdown for details.\n",
     "installed": [],
     "linked_keg": null,
     "pinned": false,
@@ -7923,7 +7923,7 @@
     "optional_dependencies": [],
     "requirements": [],
     "conflicts_with": [],
-    "caveats": "Documentation and examples:\n  /home/linuxbrew/.linuxbrew/share/doc/paml\nDat and ctl files:\n  /home/linuxbrew/.linuxbrew/share/paml\n",
+    "caveats": "Documentation and examples:\n  $(brew --prefix)/share/doc/paml\nDat and ctl files:\n  $(brew --prefix)/share/paml\n",
     "installed": [],
     "linked_keg": null,
     "pinned": false,
@@ -9371,7 +9371,7 @@
     "optional_dependencies": [],
     "requirements": [],
     "conflicts_with": [],
-    "caveats": "Congratulations!  RepeatMasker is now ready to use.\nThe program is installed with a minimal repeat library\nby default.  This library only contains simple, low-complexity,\nand common artefact ( contaminate ) sequences.  These are\nadequate for use with your own custom repeat library.  If you\nplan to search using common species specific repeats you will\nneed to obtain the complete RepeatMasker repeat library from\nGIRI and install it:\n  Browse to https://www.girinst.org/server/RepBase/\n  Download RepBaseRepeatMaskerEdition-*.tar.gz\n  cd /home/linuxbrew/.linuxbrew/Cellar/repeatmasker/4.0.7_4/libexec\n  tar zxvf repeatmaskerlibraries-*.tar.gz\n  ./configure <configure.input\n\nThe default aligner is RMBlast. You may reconfigure RepeatMasker\nby running\n  cd /home/linuxbrew/.linuxbrew/Cellar/repeatmasker/4.0.7_4/libexec && ./configure\n",
+    "caveats": "Congratulations!  RepeatMasker is now ready to use.\nThe program is installed with a minimal repeat library\nby default.  This library only contains simple, low-complexity,\nand common artefact ( contaminate ) sequences.  These are\nadequate for use with your own custom repeat library.  If you\nplan to search using common species specific repeats you will\nneed to obtain the complete RepeatMasker repeat library from\nGIRI and install it:\n  Browse to https://www.girinst.org/server/RepBase/\n  Download RepBaseRepeatMaskerEdition-*.tar.gz\n  cd $(brew --prefix)/Cellar/repeatmasker/4.0.7_4/libexec\n  tar zxvf repeatmaskerlibraries-*.tar.gz\n  ./configure <configure.input\n\nThe default aligner is RMBlast. You may reconfigure RepeatMasker\nby running\n  cd $(brew --prefix)/Cellar/repeatmasker/4.0.7_4/libexec && ./configure\n",
     "installed": [],
     "linked_keg": null,
     "pinned": false,
@@ -10551,7 +10551,7 @@
     "optional_dependencies": [],
     "requirements": [],
     "conflicts_with": [],
-    "caveats": "Download the human database using the command\n  snpEff download -v GRCh38.82\nThe databases will be installed in /home/linuxbrew/.linuxbrew/Cellar/snpeff/4.3t/share/snpeff/data\n",
+    "caveats": "Download the human database using the command\n  snpEff download -v GRCh38.82\nThe databases will be installed in $(brew --prefix)/Cellar/snpeff/4.3t/share/snpeff/data\n",
     "installed": [],
     "linked_keg": null,
     "pinned": false,
@@ -11347,7 +11347,7 @@
     "optional_dependencies": [],
     "requirements": [],
     "conflicts_with": [],
-    "caveats": "FASTA file of adapter sequences are located here:\n/home/linuxbrew/.linuxbrew/Cellar/trimmomatic/0.38/share/trimmomatic/adapters\n",
+    "caveats": "FASTA file of adapter sequences are located here:\n$(brew --prefix)/Cellar/trimmomatic/0.38/share/trimmomatic/adapters\n",
     "installed": [],
     "linked_keg": null,
     "pinned": false,
@@ -11731,7 +11731,7 @@
     "optional_dependencies": [],
     "requirements": [],
     "conflicts_with": [],
-    "caveats": "The vcflib R scripts can be found in\n/home/linuxbrew/.linuxbrew/share/vcflib/\n",
+    "caveats": "The vcflib R scripts can be found in\n$(brew --prefix)/share/vcflib/\n",
     "installed": [],
     "linked_keg": null,
     "pinned": false,
