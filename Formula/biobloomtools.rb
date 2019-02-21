@@ -2,8 +2,8 @@ class Biobloomtools < Formula
   # cite Chu_2014: "https://doi.org/10.1093/bioinformatics/btu558"
   desc "BioBloom Tools (BBT): Bloom filter for bioinformatics"
   homepage "http://www.bcgsc.ca/platform/bioinfo/software/biobloomtools/"
-  url "https://github.com/bcgsc/biobloom/releases/download/2.3.1/biobloomtools-2.3.1.tar.gz"
-  sha256 "0a0b8854a1e5c8206b977d8365fdd9b23027b3c500e2bbac140eb6d3d047dc77"
+  url "https://github.com/bcgsc/biobloom/releases/download/2.3.2/biobloomtools-2.3.2.tar.gz"
+  sha256 "a1e6b5a58750280c29f82f7d2f795efaeab8bebe1266f2e8f6e285649fd7f38a"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
