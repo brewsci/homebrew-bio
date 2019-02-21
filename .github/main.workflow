@@ -14,5 +14,5 @@ action "Deploy formula.json" {
   uses = "docker://linuxbrew/brew"
   runs = "make"
   args = "deploy"
-  secrets = ["GITHUB_TOKEN"]
+  secrets = ["HOMEBREW_GITHUB_API_TOKEN"]
 }

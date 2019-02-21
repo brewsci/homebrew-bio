@@ -11,7 +11,8 @@ jobs:
     steps:
       - run: |
           cd /home/linuxbrew/.linuxbrew/Homebrew
-          git fetch origin --unshallow --tags || git fetch origin --depth=1000000 --tags
+          if [ -e .git/shallow ]; then echo git fetch --unshallow; fi
+          git fetch origin --tags
           git reset --hard origin/master
           cd /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/homebrew/homebrew-core
           git fetch origin --depth=1
