@@ -114,7 +114,7 @@
     "desc": "Genomics analysis platform built on Apache Avro, Apache Spark and Parquet",
     "homepage": "https://github.com/bigdatagenomics/adam",
     "versions": {
-      "stable": "0.25.0",
+      "stable": "0.26.0",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -129,12 +129,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/adam-0.25.0.sierra.bottle.tar.gz",
-            "sha256": "58b2227b1b98fb8993e681ccde4763724829605756950bdd5fd3b3c399ec3ec2"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/adam-0.26.0.sierra.bottle.tar.gz",
+            "sha256": "b4dd401b099ca3df1accb5cb6ff246160a2307d96a5281e45a9fac3909ec7477"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/adam-0.25.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "0b7796be251094bb2575ed2caf8cb8cd5de527e3a72f943f068edb72fec5593f"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/adam-0.26.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "6a625d612816a4a689226158a009e74094eb098c0f1d75df3947d1ff91257374"
           }
         }
       }
