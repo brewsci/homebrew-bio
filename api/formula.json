@@ -8871,9 +8871,9 @@
     "aliases": [],
     "versioned_formulae": [],
     "desc": "Estimate rates and divergence times on phylogenetic trees",
-    "homepage": "https://ceiba.biosci.arizona.edu/r8s/",
+    "homepage": "http://ceiba.biosci.arizona.edu/r8s/",
     "versions": {
-      "stable": "1.8",
+      "stable": "1.81",
       "devel": null,
       "head": null,
       "bottle": true
@@ -8883,17 +8883,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/r8s-1.8.sierra.bottle.tar.gz",
-            "sha256": "a4f0418cd11cf09e3bfa91f1415760a294facf81f1493024c6e2e25c8bc148bb"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/r8s-1.81.sierra.bottle.tar.gz",
+            "sha256": "471af1c1ebb7c44ac985fdcfb4e545440e9c6dbc978c84772eb084f1cdcad749"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/r8s-1.8.x86_64_linux.bottle.tar.gz",
-            "sha256": "25f4ea64a58ac75c39b5509d964f60db013ea308e2e898b955be5e094bcf5378"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/r8s-1.81.x86_64_linux.bottle.tar.gz",
+            "sha256": "fb55772378ba1d0a41291c1cc58c2b5e892f749799920050fdab2dd5365803f2"
           }
         }
       }
