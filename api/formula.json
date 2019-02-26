@@ -5545,7 +5545,7 @@
     "aliases": [],
     "versioned_formulae": [],
     "desc": "Phylogenetic likelihood library",
-    "homepage": "http://www.libpll.org/",
+    "homepage": "https://github.com/xflouris/libpll",
     "versions": {
       "stable": "0.3.2",
       "devel": null,
