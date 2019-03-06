@@ -2684,6 +2684,60 @@
     "outdated": false
   },
   {
+    "name": "epa-ng",
+    "full_name": "brewsci/bio/epa-ng",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Massively parallel phylogenetic placement of genetic sequences",
+    "homepage": "https://github.com/Pbdas/epa-ng",
+    "versions": {
+      "stable": "0.3.5",
+      "devel": null,
+      "head": "HEAD",
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/epa-ng-0.3.5.sierra.bottle.tar.gz",
+            "sha256": "7307cf15a282c14dcb64c9b0bcb8f31d4512e866f74196f766826e4afefcc7d1"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/epa-ng-0.3.5.x86_64_linux.bottle.tar.gz",
+            "sha256": "a7704605db8d0be2014651b8f96503ec4e1de9e2e155e3f40741fafc8a1fe1e5"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "options": [],
+    "build_dependencies": [
+      "cmake",
+      "bison",
+      "flex"
+    ],
+    "dependencies": [
+      "zlib"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "exabayes",
     "full_name": "brewsci/bio/exabayes",
     "oldname": null,
