@@ -8661,6 +8661,59 @@
     "outdated": false
   },
   {
+    "name": "pullseq",
+    "full_name": "brewsci/bio/pullseq",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Utility program for extracting sequences from a fasta/fastq file",
+    "homepage": "https://github.com/bcthomas/pullseq",
+    "versions": {
+      "stable": "1.0.2",
+      "devel": null,
+      "head": "HEAD",
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/pullseq-1.0.2.sierra.bottle.tar.gz",
+            "sha256": "eca75d11a1e178df11521eb98bb73ed9f28fa9989a95e42942db8ac5fabf17f7"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/pullseq-1.0.2.x86_64_linux.bottle.tar.gz",
+            "sha256": "3512313f9f64ba8a0cd50e7108059ea6187dc95054aa3d1495bfefd9479de836"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "options": [],
+    "build_dependencies": [
+      "autoconf",
+      "automake"
+    ],
+    "dependencies": [
+      "pcre"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "pymol",
     "full_name": "brewsci/bio/pymol",
     "oldname": null,
