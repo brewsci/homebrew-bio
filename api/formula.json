@@ -1389,6 +1389,54 @@
     "outdated": false
   },
   {
+    "name": "bracken",
+    "full_name": "brewsci/bio/bracken",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Bayesian estimation species abundances from Kraken output",
+    "homepage": "https://ccb.jhu.edu/software/bracken/index.shtml",
+    "versions": {
+      "stable": "2.2",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bracken-2.2.sierra.bottle.tar.gz",
+            "sha256": "bf6f1a9da346233d92ad335e80480d365be757f41b975e659113895d44d64ebb"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bracken-2.2.x86_64_linux.bottle.tar.gz",
+            "sha256": "ab432ce231a1cba0a6d79f5bdbfc8f1ec73840bdf33e09726823b34d3e4aa7a1"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "breseq",
     "full_name": "brewsci/bio/breseq",
     "oldname": null,
