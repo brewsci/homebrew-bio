@@ -7888,7 +7888,7 @@
     "desc": "Standalone package to infer orthologs with the OMA algorithm",
     "homepage": "https://omabrowser.org/standalone/",
     "versions": {
-      "stable": "2.3.0",
+      "stable": "2.3.1",
       "devel": null,
       "head": null,
       "bottle": true
@@ -7903,12 +7903,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/oma-2.3.0.sierra.bottle.tar.gz",
-            "sha256": "5d6d55e5bbb31530d6c7780599df4ba9ea7d204cb0357efba046c02bf3bd8f6a"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/oma-2.3.1.sierra.bottle.tar.gz",
+            "sha256": "a3faceacda5a26ce054e9d14f254b7e17728a27e3ee73d0b5bfefa29764c02c0"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/oma-2.3.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "9e9c58ac097a75b9aedd89ab788ff684ba897c865a54be98f0c41c8fde36dd2b"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/oma-2.3.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "57f39d3238c12cbe8534a4f571e52328060b106580cb48c72272492f39e8f029"
           }
         }
       }
