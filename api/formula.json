@@ -6432,12 +6432,12 @@
     "desc": "Tools for motif discovery",
     "homepage": "http://meme-suite.org",
     "versions": {
-      "stable": "4.11.2.2",
+      "stable": "5.0.4",
       "devel": null,
       "head": null,
       "bottle": true
     },
-    "revision": 4,
+    "revision": 0,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -6447,8 +6447,8 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/meme-4.11.2.2_4.x86_64_linux.bottle.tar.gz",
-            "sha256": "e749f456fde1861ebcaac2614f031dc29722e34e2e0c5bdfbe0997a21710c7e4"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/meme-5.0.4.x86_64_linux.bottle.tar.gz",
+            "sha256": "bd12839fa2cab51ddd2165764fee991f9a01f1ade1f766600a1301fbda55dd60"
           }
         }
       }
