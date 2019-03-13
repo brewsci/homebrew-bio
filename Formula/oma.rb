@@ -5,8 +5,8 @@ class Oma < Formula
   # cite Altenhoff_2018: "https://doi.org/10.1101/397752"
   desc "Standalone package to infer orthologs with the OMA algorithm"
   homepage "https://omabrowser.org/standalone/"
-  url "https://omabrowser.org/standalone/OMA.2.3.0.tgz"
-  sha256 "7ff7440015555eab4bce72dba440b4e57cfb67272c3afb6241b1836cb845d821"
+  url "https://omabrowser.org/standalone/OMA.2.3.1.tgz"
+  sha256 "ad7e4e131de444f426576b1f4a0b276c8bcebc281e0fa1e7fb4172614b71da19"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
