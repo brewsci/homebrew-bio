@@ -23,7 +23,6 @@ class Meme < Formula
 
   def install
     system "./configure", "--disable-dependency-tracking", "--prefix=#{libexec}", "--with-url=http://meme-suite.org/", "--enable-build-libxml2", "--enable-build-libxslt"
-    system "make", "-j#{ENV.make_jobs}"
     system "make", "install"
     prefix.install "tests"
     perl_files = `grep -l -w "#!/usr/bin/perl" #{bin}/*`.split("\n")
