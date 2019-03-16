@@ -5,6 +5,13 @@ class StadenIoLib < Formula
   sha256 "a172cb66416794fdd9c1fc443f722f7e3439b52c99510b9a60f828392b9989e4"
   head "https://github.com/jkbonfield/io_lib.git"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "9466bcd62e1a1cf4fe17361a43e220704df0a1069bc3243e8494e46af960af65" => :sierra
+    sha256 "194a6acbe5fb3024bcc73dc35a4781309c69901d841f901fae280d72a5183267" => :x86_64_linux
+  end
+
   depends_on "xz"
 
   unless OS.mac?
