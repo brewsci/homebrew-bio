@@ -10867,6 +10867,59 @@
     "outdated": false
   },
   {
+    "name": "staden-io-lib",
+    "full_name": "brewsci/bio/staden-io-lib",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Staden Package io_lib",
+    "homepage": "https://staden.sourceforge.io/",
+    "versions": {
+      "stable": "1.14.11",
+      "devel": null,
+      "head": "HEAD",
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/staden-io-lib-1.14.11.sierra.bottle.tar.gz",
+            "sha256": "9466bcd62e1a1cf4fe17361a43e220704df0a1069bc3243e8494e46af960af65"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/staden-io-lib-1.14.11.x86_64_linux.bottle.tar.gz",
+            "sha256": "194a6acbe5fb3024bcc73dc35a4781309c69901d841f901fae280d72a5183267"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [
+      "xz",
+      "bzip2",
+      "curl",
+      "zlib"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "stringtie",
     "full_name": "brewsci/bio/stringtie",
     "oldname": null,
