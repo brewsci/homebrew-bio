@@ -1,8 +1,8 @@
 class Flowcraft < Formula
   desc "Nextflow pipeline assembler for genomics"
   homepage "https://github.com/assemblerflow/flowcraft"
-  url "https://github.com/assemblerflow/flowcraft/archive/1.4.0.tar.gz"
-  sha256 "cbcaa7d0a89b29ad2e650d1d4cb028de5a2795b5452a640d5c8f320c367c0048"
+  url "https://github.com/assemblerflow/flowcraft/archive/1.4.1.tar.gz"
+  sha256 "ca5f698f286b6bcc6fc15cb7767ae903e06f6b7af11183917845b1be4304f11f"
   head "https://github.com/assemblerflow/flowcraft.git", :branch => "dev"
 
   bottle do
