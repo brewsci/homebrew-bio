@@ -7,9 +7,9 @@ class Flowcraft < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "f6a37ba5294eb518772ff4d2d325fcfbbe9c37cd009d1c135e015ce247f2edc6" => :sierra
-    sha256 "3d7729b04a2586ac131dab82578b432a2f1601680bdad2eca9bb4fa899c3e586" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "402845eb61ea741201bcb15031f323aed78b803e2aa42ec3310137d47b2c0811" => :sierra
+    sha256 "fd22b0af6afa8da1d05aa75c59f21cd884ef4d14a4bcc4e50e3bf810b52abb06" => :x86_64_linux
   end
 
   depends_on "nextflow"
