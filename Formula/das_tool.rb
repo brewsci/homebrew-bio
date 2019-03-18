@@ -6,6 +6,13 @@ class DasTool < Formula
   sha256 "2a55f67b5331251d8fd5adea867cc341363fbf7fa7ed5c3ce9c7679d8039f03a"
   head "https://github.com/cmks/DAS_Tool.git"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any
+    sha256 "34a350e6b2079c327d5826446e0fc43d6d7691b03055570e60113437d9224b78" => :sierra
+    sha256 "307f8bcc14f7ddbef62b3b0cbf6b65a18a24c79e1a0e76ff993f30913797b84b" => :x86_64_linux
+  end
+
   if OS.mac?
     depends_on "gettext"
   else
