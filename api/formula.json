@@ -2201,6 +2201,62 @@
     "outdated": false
   },
   {
+    "name": "das_tool",
+    "full_name": "brewsci/bio/das_tool",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Genomic binning refiner",
+    "homepage": "https://github.com/cmks/DAS_Tool",
+    "versions": {
+      "stable": "1.1.1",
+      "devel": null,
+      "head": "HEAD",
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/das_tool-1.1.1.sierra.bottle.tar.gz",
+            "sha256": "34a350e6b2079c327d5826446e0fc43d6d7691b03055570e60113437d9224b78"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/das_tool-1.1.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "307f8bcc14f7ddbef62b3b0cbf6b65a18a24c79e1a0e76ff993f30913797b84b"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "options": [],
+    "build_dependencies": [
+      "unzip"
+    ],
+    "dependencies": [
+      "icu4c",
+      "diamond",
+      "prodigal",
+      "pullseq",
+      "r"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "dida",
     "full_name": "brewsci/bio/dida",
     "oldname": null,
