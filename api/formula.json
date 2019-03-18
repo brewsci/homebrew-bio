@@ -3472,7 +3472,7 @@
     "desc": "Nextflow pipeline assembler for genomics",
     "homepage": "https://github.com/assemblerflow/flowcraft",
     "versions": {
-      "stable": "1.4.0",
+      "stable": "1.4.1",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -3482,17 +3482,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/flowcraft-1.4.0.sierra.bottle.tar.gz",
-            "sha256": "f6a37ba5294eb518772ff4d2d325fcfbbe9c37cd009d1c135e015ce247f2edc6"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/flowcraft-1.4.1.sierra.bottle.tar.gz",
+            "sha256": "402845eb61ea741201bcb15031f323aed78b803e2aa42ec3310137d47b2c0811"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/flowcraft-1.4.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "3d7729b04a2586ac131dab82578b432a2f1601680bdad2eca9bb4fa899c3e586"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/flowcraft-1.4.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "fd22b0af6afa8da1d05aa75c59f21cd884ef4d14a4bcc4e50e3bf810b52abb06"
           }
         }
       }
