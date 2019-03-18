@@ -5593,6 +5593,56 @@
     "outdated": false
   },
   {
+    "name": "libdivsufsort",
+    "full_name": "brewsci/bio/libdivsufsort",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Lightweight suffix-sorting library",
+    "homepage": "https://github.com/y-256/libdivsufsort",
+    "versions": {
+      "stable": "2.0.1",
+      "devel": null,
+      "head": "HEAD",
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/libdivsufsort-2.0.1.sierra.bottle.tar.gz",
+            "sha256": "d0b2553d3c658e81530f399f93c01044fe5de7f3924cc0058a57761095a31c4e"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/libdivsufsort-2.0.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "1f8809025776d0c921c65b0c89d9d9191120108d7d5103227e39444624623168"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "options": [],
+    "build_dependencies": [
+      "cmake"
+    ],
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "libmuscle",
     "full_name": "brewsci/bio/libmuscle",
     "oldname": null,
