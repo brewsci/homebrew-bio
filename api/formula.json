@@ -3788,6 +3788,58 @@
     "outdated": false
   },
   {
+    "name": "gappa",
+    "full_name": "brewsci/bio/gappa",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Genesis Applications for Phylogenetic Placement Analysis",
+    "homepage": "https://github.com/lczech/gappa",
+    "versions": {
+      "stable": "0.2.0",
+      "devel": null,
+      "head": "HEAD",
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/gappa-0.2.0.sierra.bottle.tar.gz",
+            "sha256": "70c597a42934a466bc88f926259eab7c3f323b71a03675d06f403205052e0fa0"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/gappa-0.2.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "ef9ea2adc12c1b171acf96414a442907ec0cad78289f08d8ff31d4fbf81d0c4f"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "options": [],
+    "build_dependencies": [
+      "cmake"
+    ],
+    "dependencies": [
+      "zlib"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "gatk",
     "full_name": "brewsci/bio/gatk",
     "oldname": null,
