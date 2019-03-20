@@ -9,7 +9,7 @@ class Gappa < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
+    cellar :any
     sha256 "70c597a42934a466bc88f926259eab7c3f323b71a03675d06f403205052e0fa0" => :sierra
     sha256 "ef9ea2adc12c1b171acf96414a442907ec0cad78289f08d8ff31d4fbf81d0c4f" => :x86_64_linux
   end
