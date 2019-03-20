@@ -9,8 +9,8 @@ class CdHit < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "3db52e92cfa868b972c384b7113bfa19fdd04ce7a4206a027f7f6142dd4ee70b" => :sierra
-    sha256 "415bb54b663fb976b36eb703942b8f5a392cdfd76baf08462699c5052bd9590b" => :x86_64_linux
+    sha256 "9a3289933ffe405f4dcc43b57d582ac3757aed01901669b80c686be431a12c7f" => :sierra
+    sha256 "0986ecff059b6e8bb299846a7d5257a6df127c601299e9f0afddfa0c3ec36d0b" => :x86_64_linux
   end
 
   fails_with :clang # fatal error: 'omp.h' file not found
