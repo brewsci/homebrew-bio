@@ -1707,9 +1707,9 @@
     "desc": "Cluster and compare protein or nucleotide sequences",
     "homepage": "http://cd-hit.org",
     "versions": {
-      "stable": "4.6.8",
+      "stable": "4.8.1",
       "devel": null,
-      "head": null,
+      "head": "HEAD",
       "bottle": true
     },
     "revision": 0,
@@ -1722,12 +1722,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/cd-hit-4.6.8.sierra.bottle.tar.gz",
-            "sha256": "3db52e92cfa868b972c384b7113bfa19fdd04ce7a4206a027f7f6142dd4ee70b"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/cd-hit-4.8.1.sierra.bottle.tar.gz",
+            "sha256": "9a3289933ffe405f4dcc43b57d582ac3757aed01901669b80c686be431a12c7f"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/cd-hit-4.6.8.x86_64_linux.bottle.tar.gz",
-            "sha256": "415bb54b663fb976b36eb703942b8f5a392cdfd76baf08462699c5052bd9590b"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/cd-hit-4.8.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "0986ecff059b6e8bb299846a7d5257a6df127c601299e9f0afddfa0c3ec36d0b"
           }
         }
       }
@@ -1735,7 +1735,9 @@
     "keg_only": false,
     "options": [],
     "build_dependencies": [],
-    "dependencies": [],
+    "dependencies": [
+      "zlib"
+    ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
     "requirements": [],
