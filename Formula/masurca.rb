@@ -11,7 +11,10 @@ class Masurca < Formula
   depends_on :linux
   depends_on "parallel"
   depends_on "perl"
-  depends_on "zlib"
+  unless OS.mac?
+    depends_on "bzip2"
+    depends_on "zlib"
+  end
 
   def install
     ENV.deparallelize
