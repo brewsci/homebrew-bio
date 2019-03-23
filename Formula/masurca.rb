@@ -6,7 +6,6 @@ class Masurca < Formula
   sha256 "587d0ee2c6b9fbd3436ca2a9001e19f251b677757fe5e88e7f94a0664231e020"
 
   depends_on "boost" => :build
-  depends_on "bzip2"
   depends_on "jellyfish"
   depends_on :linux
   depends_on "parallel"
