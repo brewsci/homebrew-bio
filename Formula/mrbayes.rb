@@ -1,9 +1,9 @@
 class Mrbayes < Formula
   # cite Ronquist_2003: "https://doi.org/10.1093/bioinformatics/btg180"
   desc "Bayesian inference of phylogenies and evolutionary models"
-  homepage "https://mrbayes.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/mrbayes/mrbayes/3.2.6/mrbayes-3.2.6.tar.gz"
-  sha256 "f8fea43b5cb5e24a203a2bb233bfe9f6e7f77af48332f8df20085467cc61496d"
+  homepage "https://nbisweden.github.io/MrBayes/"
+  url "https://github.com/NBISweden/MrBayes/archive/v3.2.7a.tar.gz"
+  sha256 "efc4ee9f1c8b0ba8ebcdd904541f971b4d41b1bd0198c758830e5d10a1b67c8d"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -12,18 +12,17 @@ class Mrbayes < Formula
     sha256 "de35643f5dc2c6f2234aed0d121b5446688fda285d0ecdd450a0258afc728717" => :x86_64_linux
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
   depends_on "beagle" => :recommended
   depends_on "open-mpi" => :recommended
+  depends_on "readline" => :recommended
 
   def install
-    args = ["--disable-debug", "--prefix=#{prefix}"]
+    args = ["--prefix=#{prefix}"]
     args << "--with-beagle=" + (build.with?("beagle") ? Formula["beagle"].opt_prefix : "no")
-    args << "--enable-mpi="  + (build.with?("open-mpi") ? "yes" : "no")
+    args << "--with-mpi="  + (build.with?("open-mpi") ? "yes" : "no")
+    args << "--with-readline=" + (build.with?("readline") ? "yes" : "no")
 
     cd "src" do
-      system "autoconf"
       system "./configure", *args
       system "make"
       bin.install "mb"
