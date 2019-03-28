@@ -12,15 +12,15 @@ class Mrbayes < Formula
     sha256 "de35643f5dc2c6f2234aed0d121b5446688fda285d0ecdd450a0258afc728717" => :x86_64_linux
   end
 
-  depends_on "beagle" => :recommended
-  depends_on "open-mpi" => :recommended
+  depends_on "beagle"   => :recommended
+  depends_on "open-mpi" => :optional
   depends_on "readline" => :recommended
 
   def install
     args = ["--prefix=#{prefix}"]
-    args << "--with-beagle=" + (build.with?("beagle") ? Formula["beagle"].opt_prefix : "no")
-    args << "--with-mpi="  + (build.with?("open-mpi") ? "yes" : "no")
-    args << "--with-readline=" + (build.with?("readline") ? "yes" : "no")
+    args << "--with-beagle="    + (build.with?("beagle") ? Formula["beagle"].opt_prefix : "no")
+    args << "--with-mpi="       + (build.with?("open-mpi") ? "yes" : "no")
+    args << "--with-readline="  + (build.with?("readline") ? "yes" : "no")
 
     system "./configure", *args
     system "make"
