@@ -24,9 +24,7 @@ class Mrbayes < Formula
 
     system "./configure", *args
     system "make"
-    bin.install "mb"
-
-    pkgshare.install ["documentation", "examples"]
+    system "make", "install"
   end
 
   test do
