@@ -3,7 +3,7 @@ class Mrbayes < Formula
   desc "Bayesian inference of phylogenies and evolutionary models"
   homepage "https://nbisweden.github.io/MrBayes/"
   url "https://github.com/NBISweden/MrBayes/archive/v3.2.7a.tar.gz"
-  sha256 "efc4ee9f1c8b0ba8ebcdd904541f971b4d41b1bd0198c758830e5d10a1b67c8d"
+  sha256 "3eed2e3b1d9e46f265b6067a502a89732b6f430585d258b886e008e846ecc5c6"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
