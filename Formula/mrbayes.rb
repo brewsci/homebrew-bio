@@ -22,11 +22,9 @@ class Mrbayes < Formula
     args << "--with-mpi="  + (build.with?("open-mpi") ? "yes" : "no")
     args << "--with-readline=" + (build.with?("readline") ? "yes" : "no")
 
-    cd "src" do
-      system "./configure", *args
-      system "make"
-      bin.install "mb"
-    end
+    system "./configure", *args
+    system "make"
+    bin.install "mb"
 
     pkgshare.install ["documentation", "examples"]
   end
