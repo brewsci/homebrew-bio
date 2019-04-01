@@ -3183,7 +3183,7 @@
     "desc": "Ultrafast all-in-one FASTQ preprocessor",
     "homepage": "https://github.com/OpenGene/fastp",
     "versions": {
-      "stable": "0.19.5",
+      "stable": "0.19.8",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -3198,12 +3198,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/fastp-0.19.5.sierra.bottle.tar.gz",
-            "sha256": "608e3967eaf02c1162d89c0f6275a7cd513c492f68b409cb7d9237da5a0fda1f"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/fastp-0.19.8.sierra.bottle.tar.gz",
+            "sha256": "e6c920a65264bc1d908e32bc7e02e12ab120f8657fba743c202871e012bac12f"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/fastp-0.19.5.x86_64_linux.bottle.tar.gz",
-            "sha256": "32e6f4cf7aeb91c28aa8639d3381a76e870b99848bd0cd4cdfdf33063221ce44"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/fastp-0.19.8.x86_64_linux.bottle.tar.gz",
+            "sha256": "7efc6449f8020d3e5c64af330c22d658b121d719fc33cee86b5b358295e47ea4"
           }
         }
       }
