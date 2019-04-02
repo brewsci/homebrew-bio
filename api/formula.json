@@ -8091,6 +8091,57 @@
     "outdated": false
   },
   {
+    "name": "ntedit",
+    "full_name": "brewsci/bio/ntedit",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Scalable genome assembly polishing",
+    "homepage": "https://github.com/bcgsc/ntEdit",
+    "versions": {
+      "stable": "1.1.0",
+      "devel": null,
+      "head": "HEAD",
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ntedit-1.1.0.sierra.bottle.tar.gz",
+            "sha256": "f81c78a0836f9727064122aa7e118fb01c37df843c13bb6b5e001344394c7844"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ntedit-1.1.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "1402f099b915da6af80afddd675bcbcd5a124290c59cb5251dc528f0da193403"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [
+      "zlib"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "nxrepair",
     "full_name": "brewsci/bio/nxrepair",
     "oldname": null,
