@@ -6030,7 +6030,7 @@
     "desc": "C++ library for evolutionary genetics",
     "homepage": "https://molpopgen.github.io/libsequence/",
     "versions": {
-      "stable": "1.9.3",
+      "stable": "1.9.7",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -6040,17 +6040,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/libsequence-1.9.3.sierra.bottle.tar.gz",
-            "sha256": "b5307598ac42979585759217d4731b09b0b884bdd6c8f8aaa972b720e47be38e"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/libsequence-1.9.7.sierra.bottle.tar.gz",
+            "sha256": "c53f302106ccc56edf1fb006b16865ad1a8830babae3ec2994711a6eaa2ad0a2"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/libsequence-1.9.3.x86_64_linux.bottle.tar.gz",
-            "sha256": "28860452fe218465728bc696682b9a434e9944e83431f91469afc710cb4dc089"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/libsequence-1.9.7.x86_64_linux.bottle.tar.gz",
+            "sha256": "914657f11e0f86f552d181a17737c3ef2dfbc1f0b7bc427ef3ec6ec65dccedfa"
           }
         }
       }
@@ -6059,11 +6059,7 @@
     "bottle_disabled": false,
     "options": [],
     "build_dependencies": [],
-    "dependencies": [
-      "boost",
-      "gsl",
-      "tbb"
-    ],
+    "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
     "requirements": [],
