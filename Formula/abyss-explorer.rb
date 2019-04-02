@@ -6,6 +6,13 @@ class AbyssExplorer < Formula
   sha256 "fa4197c985ae9e66a01b4d3db4e6211f4e84444bc31deaf4c1aa352431ae6491"
   head "https://github.com/bcgsc/ABySS-explorer.git"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "31a7d44cd130d195138d2ac617f0f504c23e3f5acf11fa41622c38ba9c267a69" => :sierra
+    sha256 "998383b13779fb6ccad8dec1a59fe19e1f8e1958c81f271a971bb6b3a0fdeaab" => :x86_64_linux
+  end
+
   depends_on :java
 
   def install
