@@ -28,7 +28,7 @@ class Mrbayes < Formula
   end
 
   test do
-    cp pkgshare/"examples/mrbayes/finch.nex", testpath
+    cp pkgshare/"../examples/mrbayes/finch.nex", testpath
     cmd = "mcmc ngen = 50000; sump; sumt;"
     cmd = "set usebeagle=yes beagledevice=cpu;" + cmd if build.with? "beagle"
     inreplace "finch.nex", "end;", cmd + "\n\nend;"
