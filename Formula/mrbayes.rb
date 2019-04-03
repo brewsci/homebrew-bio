@@ -31,7 +31,7 @@ class Mrbayes < Formula
     cp pkgshare/"../examples/mrbayes/primates.nex", testpath
     cmd = "mcmc ngen = 50000; sump; sumt;"
     cmd = "set usebeagle=yes beagledevice=cpu;" + cmd if build.with? "beagle"
-    inreplace "finch.nex", "end;", cmd + "\n\nend;"
+    inreplace "primates.nex", "end;", cmd + "\n\nend;"
     system bin/"mb", "primates.nex"
   end
 end
