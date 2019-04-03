@@ -18,9 +18,9 @@ class Mrbayes < Formula
 
   def install
     args = ["--prefix=#{prefix}"]
-    args << "--with-beagle="    + (build.with?("beagle") ? Formula["beagle"].opt_prefix : "no")
-    args << "--with-mpi="       + (build.with?("open-mpi") ? "yes" : "no")
-    args << "--with-readline="  + (build.with?("readline") ? "yes" : "no")
+    args << "--with-beagle="   + (build.with?("beagle")   ? Formula["beagle"].opt_prefix : "no")
+    args << "--with-mpi="      + (build.with?("open-mpi") ? "yes" : "no")
+    args << "--with-readline=" + (build.with?("readline") ? "yes" : "no")
 
     system "./configure", *args
     system "make"
@@ -28,7 +28,7 @@ class Mrbayes < Formula
   end
 
   test do
-    cp pkgshare/"examples/finch.nex", testpath
+    cp pkgshare/"examples/mrbayes/finch.nex", testpath
     cmd = "mcmc ngen = 50000; sump; sumt;"
     cmd = "set usebeagle=yes beagledevice=cpu;" + cmd if build.with? "beagle"
     inreplace "finch.nex", "end;", cmd + "\n\nend;"
