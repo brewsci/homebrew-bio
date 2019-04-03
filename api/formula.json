@@ -8191,6 +8191,58 @@
     "outdated": false
   },
   {
+    "name": "nthits",
+    "full_name": "brewsci/bio/nthits",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Identifying repeats in high-throughput sequencing data",
+    "homepage": "https://github.com/bcgsc/ntHits",
+    "versions": {
+      "stable": "0.0.1",
+      "devel": null,
+      "head": "HEAD",
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/nthits-0.0.1.sierra.bottle.tar.gz",
+            "sha256": "4d51d461f5bb9f4b18f43b5dae781f4f47906680968ea5249d0877ba453653bd"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/nthits-0.0.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "7c19716fbc5c4fe7709c4cbe14b2bc5f1cb7ec1f871dc956db2f380ca9d2cb74"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [
+      "autoconf",
+      "automake"
+    ],
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "nxrepair",
     "full_name": "brewsci/bio/nxrepair",
     "oldname": null,
