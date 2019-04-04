@@ -13,7 +13,7 @@ class Mrbayes < Formula
   end
 
   depends_on "beagle"   => :recommended
-  depends_on "readline" => :recommended
+  depends_on "readline"
   depends_on "open-mpi" => :optional
 
   def install
