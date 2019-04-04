@@ -4,6 +4,7 @@ class Mrbayes < Formula
   homepage "https://nbisweden.github.io/MrBayes/"
   url "https://github.com/NBISweden/MrBayes/archive/v3.2.7a.tar.gz"
   sha256 "3eed2e3b1d9e46f265b6067a502a89732b6f430585d258b886e008e846ecc5c6"
+  head "https://github.com/NBISweden/MrBayes.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
