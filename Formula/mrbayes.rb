@@ -12,7 +12,7 @@ class Mrbayes < Formula
     sha256 "de35643f5dc2c6f2234aed0d121b5446688fda285d0ecdd450a0258afc728717" => :x86_64_linux
   end
 
-  depends_on "beagle"   => :recommended
+  depends_on "beagle"
   depends_on "readline"
   depends_on "open-mpi" => :optional
 
