@@ -13,8 +13,8 @@ class Mrbayes < Formula
   end
 
   depends_on "beagle"   => :recommended
-  depends_on "open-mpi" => :optional
   depends_on "readline" => :recommended
+  depends_on "open-mpi" => :optional
 
   def install
     args = ["--prefix=#{prefix}"]
