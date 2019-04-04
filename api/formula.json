@@ -1347,13 +1347,12 @@
     "bottle_disabled": false,
     "options": [],
     "build_dependencies": [
-      "unzip"
-    ],
-    "dependencies": [
+      "unzip",
       "libpng",
       "mysql",
       "openssl"
     ],
+    "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
     "requirements": [],
