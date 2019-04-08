@@ -9626,12 +9626,12 @@
     "desc": "Compute consensus sequence of a genome assembly of long uncorrected reads",
     "homepage": "https://github.com/isovic/racon",
     "versions": {
-      "stable": "1.3.1",
+      "stable": "1.3.2",
       "devel": null,
       "head": "HEAD",
       "bottle": true
     },
-    "revision": 1,
+    "revision": 0,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -9641,12 +9641,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/racon-1.3.1_1.sierra.bottle.tar.gz",
-            "sha256": "7a436eaff5e5a32cd65857fafa285cbb3d380e52d984ba66140f8ac3f7fe1462"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/racon-1.3.2.sierra.bottle.tar.gz",
+            "sha256": "1fd45c7a87050ea72ac64bc99c9794eb34770cbe2e1f2b4f7e02912019cbf7f5"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/racon-1.3.1_1.x86_64_linux.bottle.tar.gz",
-            "sha256": "71f2504e578ca97ef91dc085970023b565f854a9bc65667cd8c15d15d701a53a"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/racon-1.3.2.x86_64_linux.bottle.tar.gz",
+            "sha256": "17e84c6f3d31b08a7744cb972351f5f088f4fc9be9ba3c1690874ee763a9dc93"
           }
         }
       }
