@@ -12967,6 +12967,59 @@
     "outdated": false
   },
   {
+    "name": "xmatchview",
+    "full_name": "brewsci/bio/xmatchview",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Smith-waterman alignment visualization",
+    "homepage": "https://github.com/bcgsc/xmatchview",
+    "versions": {
+      "stable": "1.1.1",
+      "devel": null,
+      "head": "HEAD",
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/xmatchview-1.1.1.sierra.bottle.tar.gz",
+            "sha256": "8c7c07606ed33a2f6b435de93510566b01b737987a8c97f373735350c8a391a2"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/xmatchview-1.1.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "a5a8927f3ba541355ccb4fea94e2f639651e55bff2c2641cc04ffb8594774b5f"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [
+      "jpeg",
+      "python@2",
+      "zlib"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "xssp",
     "full_name": "brewsci/bio/xssp",
     "oldname": null,
