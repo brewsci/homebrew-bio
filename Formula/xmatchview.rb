@@ -6,6 +6,13 @@ class Xmatchview < Formula
   sha256 "987ee64c9287c89bf4eba1c4f2438bf7a49ae70fab34c0282e724710d56d75cc"
   head "https://github.com/bcgsc/xmatchview.git"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any
+    sha256 "8c7c07606ed33a2f6b435de93510566b01b737987a8c97f373735350c8a391a2" => :sierra
+    sha256 "a5a8927f3ba541355ccb4fea94e2f639651e55bff2c2641cc04ffb8594774b5f" => :x86_64_linux
+  end
+
   depends_on "jpeg"
   depends_on "python@2"
   depends_on "zlib" unless OS.mac?
