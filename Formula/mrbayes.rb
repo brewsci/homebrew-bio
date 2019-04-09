@@ -25,7 +25,7 @@ class Mrbayes < Formula
     system "make"
     system "make", "install"
 
-    pkgshare.install [share/"doc", share/"examples"]
+    doc.install share/"examples/mrbayes" => "examples"
   end
 
   test do
