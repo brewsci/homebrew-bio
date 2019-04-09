@@ -1,42 +1,38 @@
 class Mrbayes < Formula
   # cite Ronquist_2003: "https://doi.org/10.1093/bioinformatics/btg180"
   desc "Bayesian inference of phylogenies and evolutionary models"
-  homepage "https://mrbayes.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/mrbayes/mrbayes/3.2.6/mrbayes-3.2.6.tar.gz"
-  sha256 "f8fea43b5cb5e24a203a2bb233bfe9f6e7f77af48332f8df20085467cc61496d"
+  homepage "https://nbisweden.github.io/MrBayes/"
+  url "https://github.com/NBISweden/MrBayes/archive/v3.2.7a.tar.gz"
+  sha256 "3eed2e3b1d9e46f265b6067a502a89732b6f430585d258b886e008e846ecc5c6"
+  head "https://github.com/NBISweden/MrBayes.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "a74e4e1ea82efca6bfca5efe791940bffe167467a121a417b770823bebe66039" => :sierra
-    sha256 "de35643f5dc2c6f2234aed0d121b5446688fda285d0ecdd450a0258afc728717" => :x86_64_linux
+    sha256 "55f858faa19f1073cc030c19be1feb1cc154e6baaf3c8905f0953ba013385e08" => :sierra
+    sha256 "832051f9fbdb0557e2c3a483907b78723f1c1114ab42c8dcc1f804ff2eaa6376" => :x86_64_linux
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "beagle" => :recommended
-  depends_on "open-mpi" => :recommended
+  depends_on "beagle"
+  depends_on "readline"
+  depends_on "open-mpi" => :optional
 
   def install
-    args = ["--disable-debug", "--prefix=#{prefix}"]
-    args << "--with-beagle=" + (build.with?("beagle") ? Formula["beagle"].opt_prefix : "no")
-    args << "--enable-mpi="  + (build.with?("open-mpi") ? "yes" : "no")
+    args = ["--prefix=#{prefix}"]
+    args << "--with-mpi=" + (build.with?("open-mpi") ? "yes" : "no")
 
-    cd "src" do
-      system "autoconf"
-      system "./configure", *args
-      system "make"
-      bin.install "mb"
-    end
+    system "./configure", *args
+    system "make"
+    system "make", "install"
 
-    pkgshare.install ["documentation", "examples"]
+    doc.install share/"examples/mrbayes" => "examples"
   end
 
   test do
-    cp pkgshare/"examples/finch.nex", testpath
+    cp doc/"examples/primates.nex", testpath
     cmd = "mcmc ngen = 50000; sump; sumt;"
     cmd = "set usebeagle=yes beagledevice=cpu;" + cmd if build.with? "beagle"
-    inreplace "finch.nex", "end;", cmd + "\n\nend;"
-    system bin/"mb", "finch.nex"
+    inreplace "primates.nex", "end;", cmd + "\n\nend;"
+    system bin/"mb", "primates.nex"
   end
 end
