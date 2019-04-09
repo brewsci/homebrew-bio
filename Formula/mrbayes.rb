@@ -19,9 +19,7 @@ class Mrbayes < Formula
 
   def install
     args = ["--prefix=#{prefix}"]
-    args << "--with-beagle="   + (build.with?("beagle")   ? Formula["beagle"].opt_prefix : "no")
-    args << "--with-mpi="      + (build.with?("open-mpi") ? "yes" : "no")
-    args << "--with-readline=" + (build.with?("readline") ? "yes" : "no")
+    args << "--with-mpi=" + (build.with?("open-mpi") ? "yes" : "no")
 
     system "./configure", *args
     system "make"
