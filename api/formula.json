@@ -7607,11 +7607,11 @@
     "aliases": [],
     "versioned_formulae": [],
     "desc": "Bayesian inference of phylogenies and evolutionary models",
-    "homepage": "https://mrbayes.sourceforge.io/",
+    "homepage": "https://nbisweden.github.io/MrBayes/",
     "versions": {
-      "stable": "3.2.6",
+      "stable": "3.2.7",
       "devel": null,
-      "head": null,
+      "head": "HEAD",
       "bottle": true
     },
     "revision": 0,
@@ -7624,12 +7624,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/mrbayes-3.2.6.sierra.bottle.tar.gz",
-            "sha256": "a74e4e1ea82efca6bfca5efe791940bffe167467a121a417b770823bebe66039"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mrbayes-3.2.7.sierra.bottle.tar.gz",
+            "sha256": "55f858faa19f1073cc030c19be1feb1cc154e6baaf3c8905f0953ba013385e08"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/mrbayes-3.2.6.x86_64_linux.bottle.tar.gz",
-            "sha256": "de35643f5dc2c6f2234aed0d121b5446688fda285d0ecdd450a0258afc728717"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mrbayes-3.2.7.x86_64_linux.bottle.tar.gz",
+            "sha256": "832051f9fbdb0557e2c3a483907b78723f1c1114ab42c8dcc1f804ff2eaa6376"
           }
         }
       }
@@ -7638,24 +7638,19 @@
     "bottle_disabled": false,
     "options": [
       {
-        "option": "--without-beagle",
-        "description": "Build without beagle support"
-      },
-      {
-        "option": "--without-open-mpi",
-        "description": "Build without open-mpi support"
+        "option": "--with-open-mpi",
+        "description": "Build with open-mpi support"
       }
     ],
-    "build_dependencies": [
-      "autoconf",
-      "automake"
-    ],
-    "dependencies": [],
-    "recommended_dependencies": [
+    "build_dependencies": [],
+    "dependencies": [
       "beagle",
+      "readline"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [
       "open-mpi"
     ],
-    "optional_dependencies": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
