@@ -26,6 +26,8 @@ class Mrbayes < Formula
     system "./configure", *args
     system "make"
     system "make", "install"
+
+    mkdir pkgshare/"examples"
     mv share/"examples/mrbayes", pkgshare/"examples"
   end
 
