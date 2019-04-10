@@ -9,8 +9,8 @@ class Ntedit < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "f81c78a0836f9727064122aa7e118fb01c37df843c13bb6b5e001344394c7844" => :sierra
-    sha256 "1402f099b915da6af80afddd675bcbcd5a124290c59cb5251dc528f0da193403" => :x86_64_linux
+    sha256 "cc89d24d290da6e35955c5fe2e02c43ad98d55f248376708ba105b7515030759" => :sierra
+    sha256 "57e7bf2395530c2ffdc8b88c8a31bf1c296f55e853f089766c222a97932929cb" => :x86_64_linux
   end
 
   if OS.mac?
