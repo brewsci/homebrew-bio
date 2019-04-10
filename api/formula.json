@@ -8198,7 +8198,7 @@
     "desc": "Scalable genome assembly polishing",
     "homepage": "https://github.com/bcgsc/ntEdit",
     "versions": {
-      "stable": "1.1.0",
+      "stable": "1.2.0",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -8213,12 +8213,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ntedit-1.1.0.sierra.bottle.tar.gz",
-            "sha256": "f81c78a0836f9727064122aa7e118fb01c37df843c13bb6b5e001344394c7844"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ntedit-1.2.0.sierra.bottle.tar.gz",
+            "sha256": "cc89d24d290da6e35955c5fe2e02c43ad98d55f248376708ba105b7515030759"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ntedit-1.1.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "1402f099b915da6af80afddd675bcbcd5a124290c59cb5251dc528f0da193403"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ntedit-1.2.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "57e7bf2395530c2ffdc8b88c8a31bf1c296f55e853f089766c222a97932929cb"
           }
         }
       }
