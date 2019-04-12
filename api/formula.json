@@ -5922,6 +5922,58 @@
     "outdated": false
   },
   {
+    "name": "libbigwig",
+    "full_name": "brewsci/bio/libbigwig",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "C library for processing the big UCSC fomats",
+    "homepage": "https://github.com/dpryan79/libBigWig",
+    "versions": {
+      "stable": "0.4.2",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/libbigwig-0.4.2.sierra.bottle.tar.gz",
+            "sha256": "6c8853bfae2b374bfb6949036cb64b39667dfb5a5b1be9c92bcb61df867931b2"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/libbigwig-0.4.2.x86_64_linux.bottle.tar.gz",
+            "sha256": "46011c89b465d546b60c616d7510be4c615b2836e3781000f7c721b95cb48ed9"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [
+      "curl",
+      "zlib"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "libdivsufsort",
     "full_name": "brewsci/bio/libdivsufsort",
     "oldname": null,
