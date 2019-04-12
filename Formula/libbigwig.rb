@@ -5,8 +5,8 @@ class Libbigwig < Formula
   sha256 "c32c655bf6e383226f76fd4052e0371848a274bc14502a0fe1b851b6d901c85b"
   # tag "bioinformatics"
 
-  depends_on "curl"
-  depends_on "zlib"
+  depends_on "curl" unless OS.mac?
+  depends_on "zlib" unless OS.mac?
 
   def install
     curl = Formula["curl"]
