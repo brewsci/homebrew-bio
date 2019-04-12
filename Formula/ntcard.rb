@@ -2,8 +2,8 @@ class Ntcard < Formula
   # cite Mohamadi_2017: "https://doi.org/10.1093/bioinformatics/btw832"
   desc "Estimating k-mer coverage histogram of genomics data"
   homepage "https://github.com/bcgsc/ntCard"
-  url "https://github.com/bcgsc/ntCard/archive/v1.1.0.tar.gz"
-  sha256 "88ffcffc67e619e714b65753baa077a9a16536fcb5c789c2d77bbd87dd4c2a15"
+  url "https://github.com/bcgsc/ntCard/archive/v1.1.1.tar.gz"
+  sha256 "f1b34c4d55055819908248324e6010008c43d74ab56b72ceb5a56bde4dfcdbde"
   head "https://github.com/bcgsc/ntCard"
 
   bottle do
