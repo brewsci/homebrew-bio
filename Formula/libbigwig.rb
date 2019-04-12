@@ -6,6 +6,7 @@ class Libbigwig < Formula
   # tag "bioinformatics"
 
   depends_on "curl"
+  depends_on "zlib"
 
   def install
     curl = Formula["curl"]
