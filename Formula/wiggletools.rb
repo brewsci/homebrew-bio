@@ -13,6 +13,7 @@ class Wiggletools < Formula
   depends_on "gsl"
   depends_on "htslib"
   depends_on "libbigwig"
+  depends_on "python@2"
 
   def install
     system "make"
@@ -25,7 +26,7 @@ class Wiggletools < Formula
     cp_r pkgshare/"test", testpath
     cp_r prefix/"bin", testpath
     cd "test" do
-      system "python2.7", "test.py"
+      system "python2", "test.py"
     end
   end
 end
