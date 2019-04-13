@@ -13017,6 +13017,62 @@
     "outdated": false
   },
   {
+    "name": "wiggletools",
+    "full_name": "brewsci/bio/wiggletools",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Compute genome-wide statistics with composable iterators",
+    "homepage": "https://github.com/Ensembl/WiggleTools",
+    "versions": {
+      "stable": "1.2.3",
+      "devel": null,
+      "head": "HEAD",
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/wiggletools-1.2.3.sierra.bottle.tar.gz",
+            "sha256": "db1f34f8201aa5b03453e31e06244322d9ab2be20cc29db42becc59be72cc96f"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/wiggletools-1.2.3.x86_64_linux.bottle.tar.gz",
+            "sha256": "d77d48a9a8975a81bb7c744c12a01ca16819c1a2e5bac798c993329d3ab3fe66"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [
+      "gsl",
+      "htslib",
+      "libbigwig",
+      "python@2",
+      "curl",
+      "zlib"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "wtdbg2",
     "full_name": "brewsci/bio/wtdbg2",
     "oldname": null,
