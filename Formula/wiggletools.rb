@@ -4,6 +4,13 @@ class Wiggletools < Formula
   url "https://github.com/Ensembl/WiggleTools/archive/v1.2.3.tar.gz"
   sha256 "2adc6c0f1738e604aa20a60b1c79ea36bc8cd030a2b6039b8e5ddc31c2bf846c"
   head "https://github.com/Ensembl/WiggleTools.git"
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "db1f34f8201aa5b03453e31e06244322d9ab2be20cc29db42becc59be72cc96f" => :sierra
+    sha256 "d77d48a9a8975a81bb7c744c12a01ca16819c1a2e5bac798c993329d3ab3fe66" => :x86_64_linux
+  end
+
   # doi "10.1093/bioinformatics/btt737"
 
   unless OS.mac?
