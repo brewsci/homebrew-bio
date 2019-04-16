@@ -30,7 +30,7 @@ class Kaiju < Formula
   def caveats
     <<~EOS
       You must build a #{name} database before usage.
-      See #{pkgshare}/README.md for details.
+      See #{opt_prefix}/README.md for details.
     EOS
   end
 
