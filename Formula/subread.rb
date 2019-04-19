@@ -5,6 +5,8 @@ class Subread < Formula
   url "https://cfhcable.dl.sourceforge.net/project/subread/subread-1.6.4/subread-1.6.4-source.tar.gz"
   sha256 "b7bd0ee3b0942d791aecce6454d2f3271c95a010beeeff2daf1ff71162e43969"
 
+  depends_on "zlib" unless OS.mac?
+
   def install
     cd "src" do
       if OS.mac?
