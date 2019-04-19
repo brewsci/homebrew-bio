@@ -5345,7 +5345,7 @@
     "optional_dependencies": [],
     "requirements": [],
     "conflicts_with": [],
-    "caveats": "You must build a kaiju database before usage.\nSee $(brew --prefix)/Cellar/kaiju/1.6.3/share/kaiju/README.md for details.\n",
+    "caveats": "You must build a kaiju database before usage.\nSee $(brew --prefix)/opt/kaiju/README.md for details.\n",
     "installed": [],
     "linked_keg": null,
     "pinned": false,
