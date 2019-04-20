@@ -2,8 +2,8 @@ class GmapGsnap < Formula
   # cite Wu_2010: "https://doi.org/10.1093/bioinformatics/btq057"
   desc "Genomic Mapping & Alignment Program for RNA/EST/Short-read sequences"
   homepage "http://research-pub.gene.com/gmap/"
-  url "http://research-pub.gene.com/gmap/src/gmap-gsnap-2018-07-04.tar.gz"
-  sha256 "a9f8c1f0810df65b2a089dc10be79611026f4c95e4681dba98fea3d55d598d24"
+  url "http://research-pub.gene.com/gmap/src/gmap-gsnap-2019-03-15.tar.gz"
+  sha256 "a6c2cd10833e27e6e0465f43432aecc872529bbb056da7b621aafa081b9b4b7a"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -22,13 +22,14 @@ class GmapGsnap < Formula
     system "make", "install"
   end
 
-  def caveats; <<~EOS
-    You will need to either download or build indexed search databases.
-    See the readme file for how to do this:
-      http://research-pub.gene.com/gmap/src/README
+  def caveats
+    <<~EOS
+      You will need to either download or build indexed search databases.
+      See the readme file for how to do this:
+        http://research-pub.gene.com/gmap/src/README
 
-    Databases will be installed to:
-      #{share}
+      Databases will be installed to:
+        #{share}
     EOS
   end
 
