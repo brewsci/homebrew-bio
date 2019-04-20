@@ -11711,6 +11711,57 @@
     "outdated": false
   },
   {
+    "name": "subread",
+    "full_name": "brewsci/bio/subread",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "High-performance read alignment, quantification and mutation discovery",
+    "homepage": "https://academic.oup.com/nar/article/41/10/e108/1075719",
+    "versions": {
+      "stable": "1.6.4",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/subread-1.6.4.sierra.bottle.tar.gz",
+            "sha256": "83e6016cc219298b602e1648f269ced8c1c09493f3cbbb2affec7f5f50abedd2"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/subread-1.6.4.x86_64_linux.bottle.tar.gz",
+            "sha256": "6afd221103869e166d2d2a8ecd9495173173903d11576ad92bf2da61b374109a"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [
+      "zlib"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "sumaclust",
     "full_name": "brewsci/bio/sumaclust",
     "oldname": null,
