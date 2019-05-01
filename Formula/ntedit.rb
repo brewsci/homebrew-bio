@@ -2,15 +2,15 @@ class Ntedit < Formula
   # cite Warren_2019: "https://doi.org/10.1101/565374"
   desc "Scalable genome assembly polishing"
   homepage "https://github.com/bcgsc/ntEdit"
-  url "https://github.com/bcgsc/ntEdit/archive/v1.2.0.tar.gz"
-  sha256 "0e850e58b0b63d4278c8fbe190afe04091a918ec6d8e3d1aa42a5ad862413254"
+  url "https://github.com/bcgsc/ntEdit/archive/v1.2.1.tar.gz"
+  sha256 "0ed34798bfa5c81196175087a28c26496aaa853709b6e3514ab29145938e45ef"
   head "https://github.com/bcgsc/ntEdit.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "cc89d24d290da6e35955c5fe2e02c43ad98d55f248376708ba105b7515030759" => :sierra
-    sha256 "57e7bf2395530c2ffdc8b88c8a31bf1c296f55e853f089766c222a97932929cb" => :x86_64_linux
+    sha256 "32c0f2249a180ae79973e5439f81927000f84e24dda62f7b2c912eb047d603f8" => :sierra
+    sha256 "508ab570089b9a3b9d2ba938c1a1d61d81132bfea55a81af01dceb0cc21dde6e" => :x86_64_linux
   end
 
   if OS.mac?
