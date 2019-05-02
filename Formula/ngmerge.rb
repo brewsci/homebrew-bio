@@ -8,7 +8,6 @@ class Ngmerge < Formula
 
   fails_with :clang # needs OpenMP
 
-  depends_on "gcc" if OS.mac?
   if OS.mac?
     depends_on "gcc"
   else
