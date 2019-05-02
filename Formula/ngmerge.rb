@@ -9,7 +9,11 @@ class Ngmerge < Formula
   fails_with :clang # needs OpenMP
 
   depends_on "gcc" if OS.mac?
-  depends_on "zlib" unless OS.mac?
+  if OS.mac?
+    depends_on "gcc"
+  else
+    depends_on "zlib"
+  end
 
   def install
     system "make"
