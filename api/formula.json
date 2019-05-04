@@ -8132,6 +8132,57 @@
     "outdated": false
   },
   {
+    "name": "ngmerge",
+    "full_name": "brewsci/bio/ngmerge",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Merging paired-end reads and removing adapters",
+    "homepage": "https://github.com/jsh58/NGmerge",
+    "versions": {
+      "stable": "0.2",
+      "devel": null,
+      "head": "HEAD",
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ngmerge-0.2.sierra.bottle.tar.gz",
+            "sha256": "94c91a6b4728d97272b2ce738f3840636e6c5a00b91dae3584d8c04f8981029d"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ngmerge-0.2.x86_64_linux.bottle.tar.gz",
+            "sha256": "14aa3ca38df1d4ba671be3adbb249585468355c87950e055060f2066a86d1403"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [
+      "zlib"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "nonpareil",
     "full_name": "brewsci/bio/nonpareil",
     "oldname": null,
