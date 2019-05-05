@@ -7284,7 +7284,7 @@
     "desc": "Fast pairwise aligner for genomic and spliced nucleotide sequences",
     "homepage": "https://github.com/lh3/minimap2",
     "versions": {
-      "stable": "2.16",
+      "stable": "2.17",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -7299,12 +7299,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/minimap2-2.16.sierra.bottle.tar.gz",
-            "sha256": "8a2d6b89ea351215268b494789beb5384932b317c60d66dd20913a2d13c5b754"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/minimap2-2.17.sierra.bottle.tar.gz",
+            "sha256": "cf78c0b192a7766dcebc18df96ef90492af999dae1903bcdbf360c150936abda"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/minimap2-2.16.x86_64_linux.bottle.tar.gz",
-            "sha256": "b739700c5ffcbb89ab497feb1d0f6ba6abbb9965ded664a0b409f9ee60f4bb47"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/minimap2-2.17.x86_64_linux.bottle.tar.gz",
+            "sha256": "8db660e19fb613e93dbcf0ebfecd4b7741bb349906e00e0a7aa73009809e806b"
           }
         }
       }
