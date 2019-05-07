@@ -2311,7 +2311,7 @@
     "desc": "Removes adapter sequences, primers, and poly-A tails",
     "homepage": "https://github.com/marcelm/cutadapt",
     "versions": {
-      "stable": "1.16",
+      "stable": "2.3",
       "devel": null,
       "head": null,
       "bottle": true
@@ -2321,17 +2321,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/cutadapt-1.16.sierra.bottle.tar.gz",
-            "sha256": "675a7ebb24a54e73716df4133d52062301013d22345932a658dbc7d75cd397ab"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/cutadapt-2.3.sierra.bottle.tar.gz",
+            "sha256": "108bd35c16edcb2f6dee522d95e441dbc8fb489555f8c15b4f2851ab6e972862"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/cutadapt-1.16.x86_64_linux.bottle.tar.gz",
-            "sha256": "4d158948f51088ff553bc6621b57e74d6e02212bae2d2268075b48cef9ba8713"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/cutadapt-2.3.x86_64_linux.bottle.tar.gz",
+            "sha256": "02fa5cf6cd2f2fc590aa075d9610c090a4e59dc80628c8c7053dab1466d674b6"
           }
         }
       }
