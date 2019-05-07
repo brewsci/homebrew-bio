@@ -2,8 +2,8 @@ class RaxmlNg < Formula
   desc "RAxML Next Generation: faster, easier-to-use and more flexible"
   homepage "https://sco.h-its.org/exelixis/web/software/raxml/"
   url "https://github.com/amkozlov/raxml-ng.git",
-    :tag      => "0.7.0",
-    :revision => "6fe3fa9c5817bfc9f352f5fe7fa14a54f9ac2b6a"
+    :tag      => "0.8.1",
+    :revision => "30c61006cba268a570aba7f862c813142bc41785"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
