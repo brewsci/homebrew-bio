@@ -7,8 +7,8 @@ class Quicktree < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "532ff0ba43db37406937641d3d8b24aead47201e09f04cabc075352b787f5d7d" => :sierra
-    sha256 "9d79252329c90936a71615f4b06ca1d74e1c18f461c8bbd091fdb5c9fc752dac" => :x86_64_linux
+    sha256 "0f0d3d53c06ddbb56ad38f6263a49d0fd52b3aed7e99225a8dc286ce2857f157" => :sierra
+    sha256 "3f79f6279f053a919147c2c6625a3ecbaafaf0e5e14afd0aa881bf3b80bb934e" => :x86_64_linux
   end
 
   def install
