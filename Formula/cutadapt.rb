@@ -9,9 +9,9 @@ class Cutadapt < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "675a7ebb24a54e73716df4133d52062301013d22345932a658dbc7d75cd397ab" => :sierra
-    sha256 "4d158948f51088ff553bc6621b57e74d6e02212bae2d2268075b48cef9ba8713" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "108bd35c16edcb2f6dee522d95e441dbc8fb489555f8c15b4f2851ab6e972862" => :sierra
+    sha256 "02fa5cf6cd2f2fc590aa075d9610c090a4e59dc80628c8c7053dab1466d674b6" => :x86_64_linux
   end
 
   depends_on "python"
