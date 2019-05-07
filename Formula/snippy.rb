@@ -1,8 +1,8 @@
 class Snippy < Formula
   desc "Rapid bacterial SNP calling and core genome alignments"
   homepage "https://github.com/tseemann/snippy"
-  url "https://github.com/tseemann/snippy/archive/v4.3.2.tar.gz"
-  sha256 "50bc2a3f506122338eff225d7f4ae9c2c0dfeb407f5bd2dd21b09b8c893ef2eb"
+  url "https://github.com/tseemann/snippy/archive/v4.3.8.tar.gz"
+  sha256 "16569aabcca866ca40c20b4f3905448204cdea014ea231b2302e8d739a931b3a"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
