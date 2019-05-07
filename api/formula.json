@@ -9937,7 +9937,7 @@
     "desc": "RAxML Next Generation: faster, easier-to-use and more flexible",
     "homepage": "https://sco.h-its.org/exelixis/web/software/raxml/",
     "versions": {
-      "stable": "0.7.0",
+      "stable": "0.8.1",
       "devel": null,
       "head": null,
       "bottle": true
@@ -9952,12 +9952,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/raxml-ng-0.7.0.sierra.bottle.tar.gz",
-            "sha256": "17e881992196791560375129120040b203fe68ed472c122c5b18c903dc494689"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/raxml-ng-0.8.1.sierra.bottle.tar.gz",
+            "sha256": "50027eb27a1a44edd0ef93d393f3aed3957f544ace2a34b14d6dfd82b3f9683d"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/raxml-ng-0.7.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "c478d2495ab915e3595cb0372bf022532efbed69e5bcf9d4ca25eb7c4273e5f5"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/raxml-ng-0.8.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "91ae9d22784c2fe702518d3b9df0444e8667b6f2825b46fe5dedc2332ccf5cb5"
           }
         }
       }
