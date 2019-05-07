@@ -1,8 +1,8 @@
 class Figtree < Formula
   desc "Graphical viewer of phylogenetic trees"
   homepage "http://tree.bio.ed.ac.uk/software/figtree/"
-  url "https://github.com/rambaut/figtree/releases/download/v1.4.3/FigTree_v1.4.3.tgz"
-  sha256 "f497d4dd3a6d220f6b62495b6f47a12ade50d87dbd8d6089f168e94d202f937b"
+  url "https://github.com/rambaut/figtree/releases/download/v1.4.4/FigTree_v1.4.4.tgz"
+  sha256 "529b867657b29e369cf81cd361e6a76bd713d488a63b91932df2385800423aa8"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -20,6 +20,6 @@ class Figtree < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/figtree -help 2>&1", 0)
+    assert_match version.to_s, shell_output("#{bin}/figtree -help 2>&1")
   end
 end
