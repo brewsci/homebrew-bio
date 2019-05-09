@@ -2,8 +2,8 @@ class Iqtree < Formula
   # cite Nguyen_2015: "https://doi.org/10.1093/molbev/msu300"
   desc "Efficient phylogenomic software by maximum likelihood"
   homepage "http://www.iqtree.org/"
-  url "https://github.com/Cibiv/IQ-TREE/archive/v1.6.8.tar.gz"
-  sha256 "77037032366d28c1e2c9d77e10e2b76e09495009518b5a3c546d7c1581b55b18"
+  url "https://github.com/Cibiv/IQ-TREE/archive/v1.6.10.tar.gz"
+  sha256 "dcbf0753557855b851654b48e74943c7d6844072a201aa3059d28458569d92b6"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
