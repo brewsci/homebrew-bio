@@ -2,9 +2,9 @@ class Kraken2 < Formula
   desc "Taxonomic sequence classification system"
   homepage "https://github.com/DerrickWood/kraken2"
   # URL hack is to bypass audit for word "beta"
-  url "https://github.com/DerrickWood/kraken2/archive/v2.0.7-b%65ta.tar.gz"
-  version "2.0.7"
-  sha256 "baa160f5aef73327e1a79e6d1c54b64b2fcdaee0be31b456f7bc411d1897a744"
+  url "https://github.com/DerrickWood/kraken2/archive/v2.0.8-b%65ta.tar.gz"
+  version "2.0.8"
+  sha256 "f2a91fc57a40b3e87df8ac2ea7c0ff1060cc9295c95de417ee53249ee3f7ad8e"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -13,14 +13,14 @@ class Kraken2 < Formula
     sha256 "011ac904f9a6341e34f296e9af6853209e57dd34225b3adeabd134ffca71affe" => :x86_64_linux
   end
 
-  fails_with :clang # needs openmp
-
   depends_on "blast" # for segmasker + dustmasker
   if OS.mac?
     depends_on "gcc" # for openmp
   else
     depends_on "perl"
   end
+
+  fails_with :clang # needs openmp
 
   def install
     libexec.mkdir
