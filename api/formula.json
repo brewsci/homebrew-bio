@@ -10104,40 +10104,6 @@
     "outdated": false
   },
   {
-    "name": "readseq",
-    "full_name": "brewsci/bio/readseq",
-    "oldname": null,
-    "aliases": [],
-    "versioned_formulae": [],
-    "desc": "Read and reformat biosequences",
-    "homepage": "http://iubio.bio.indiana.edu/soft/molbio/readseq/java/",
-    "versions": {
-      "stable": "2.1.30",
-      "devel": null,
-      "head": null,
-      "bottle": false
-    },
-    "revision": 0,
-    "version_scheme": 0,
-    "bottle": {},
-    "keg_only": false,
-    "bottle_disabled": true,
-    "options": [],
-    "build_dependencies": [],
-    "dependencies": [
-      "openjdk"
-    ],
-    "recommended_dependencies": [],
-    "optional_dependencies": [],
-    "requirements": [],
-    "conflicts_with": [],
-    "caveats": null,
-    "installed": [],
-    "linked_keg": null,
-    "pinned": false,
-    "outdated": false
-  },
-  {
     "name": "realphy",
     "full_name": "brewsci/bio/realphy",
     "oldname": null,
