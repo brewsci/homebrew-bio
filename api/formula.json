@@ -8782,7 +8782,7 @@
     "desc": "Pairwise Sequence Alignment Library",
     "homepage": "https://github.com/jeffdaily/parasail",
     "versions": {
-      "stable": "2.2.0",
+      "stable": "2.4.1",
       "devel": null,
       "head": null,
       "bottle": true
@@ -8796,9 +8796,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/parasail-2.4.1.sierra.bottle.tar.gz",
+            "sha256": "65765b5cdbd7df279b53531510747a729c6e0f8ab0fbaf6fbf3dd2df2bb96525"
+          },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/parasail-2.2.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "56654603399ca71fd04761e9410d2762cd69c70999d14ba37ef07a4791bf3991"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/parasail-2.4.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "8bec7c43ed7c68786b0af4d4ededf42caf78899d6bfd2ccae7a9dae9d0356ebb"
           }
         }
       }
@@ -8817,13 +8821,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
-    "requirements": [
-      {
-        "name": "linux",
-        "cask": null,
-        "download": null
-      }
-    ],
+    "requirements": [],
     "conflicts_with": [],
     "caveats": null,
     "installed": [],
