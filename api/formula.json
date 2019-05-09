@@ -4999,7 +4999,7 @@
     "desc": "Efficient phylogenomic software by maximum likelihood",
     "homepage": "http://www.iqtree.org/",
     "versions": {
-      "stable": "1.6.8",
+      "stable": "1.6.10",
       "devel": null,
       "head": null,
       "bottle": true
@@ -5009,17 +5009,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": "/home/linuxbrew/.linuxbrew/Cellar",
+        "cellar": ":any",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/iqtree-1.6.8.sierra.bottle.tar.gz",
-            "sha256": "bd7c438724427c83f9264dea0505645ea94a31eba823c088204a331e746cab06"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/iqtree-1.6.10.sierra.bottle.tar.gz",
+            "sha256": "036a80c97c5530560beacfdfe30373e82740c8d613d05a073a7fbb9558af10b4"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/iqtree-1.6.8.x86_64_linux.bottle.tar.gz",
-            "sha256": "e2a36da62da8d117a795a09473df0cc375ee6f038cb4190b827ad31882054b6a"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/iqtree-1.6.10.x86_64_linux.bottle.tar.gz",
+            "sha256": "17059cff983af8b6b722df118bde70913d4c9418d1ac7ae17d587e02a90ea3b2"
           }
         }
       }
