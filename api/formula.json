@@ -5729,7 +5729,7 @@
     "desc": "Taxonomic sequence classification system",
     "homepage": "https://github.com/DerrickWood/kraken2",
     "versions": {
-      "stable": "2.0.7",
+      "stable": "2.0.8",
       "devel": null,
       "head": null,
       "bottle": true
@@ -5739,17 +5739,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/kraken2-2.0.7.sierra.bottle.tar.gz",
-            "sha256": "48ed6a84341a531b1ff9547c306fc1874fb5345b03af6aa4d543256e45881a71"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/kraken2-2.0.8.sierra.bottle.tar.gz",
+            "sha256": "43156e8e27f5e6bb459d6c8ba42cfc6eca0d18dcf8a03162413e98288b2f716d"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/kraken2-2.0.7.x86_64_linux.bottle.tar.gz",
-            "sha256": "011ac904f9a6341e34f296e9af6853209e57dd34225b3adeabd134ffca71affe"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/kraken2-2.0.8.x86_64_linux.bottle.tar.gz",
+            "sha256": "f0aecc6bc527bb7718874b2852e7829fb7a53401df2555f6009c8d6b915e864f"
           }
         }
       }
