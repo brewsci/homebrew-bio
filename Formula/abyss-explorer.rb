@@ -28,6 +28,6 @@ class AbyssExplorer < Formula
     assert_predicate bin/"abyss-explorer", :executable?
     assert_predicate libexec/"AbyssExplorer.jar", :exist?
     # This test fails on CI, though it succeeds locally.
-    assert_match "Usage", shell_output("#{bin}/abyss-explorer --help") unless ENV["CI"]
+    assert_match "Build", shell_output("#{bin}/abyss-explorer --version") unless ENV["CI"]
   end
 end
