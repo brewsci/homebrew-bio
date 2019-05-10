@@ -2,8 +2,8 @@ class Minia < Formula
   # cite Chikhi_2013: "https://doi.org/10.1186/1748-7188-8-22"
   desc "Short-read assembler based on a de Bruijn graph"
   homepage "http://minia.genouest.org/"
-  url "https://github.com/GATB/minia/releases/download/v3.2.0/minia-v3.2.0-Source.tar.gz"
-  sha256 "1e0fca9687002d776490234abe95e9516ff43fa43a16ab41d18807c129c02881"
+  url "https://github.com/GATB/minia/releases/download/v3.2.1/minia-v3.2.1-Source.tar.gz"
+  sha256 "c431915f034bc58887f9a14f6f65be2c83e0faae312ef330c3a11c6ba131162c"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
