@@ -4,6 +4,7 @@ class Trinity < Formula
   homepage "https://trinityrnaseq.github.io"
   url "https://github.com/trinityrnaseq/trinityrnaseq/archive/Trinity-v2.8.3.tar.gz"
   sha256 "745abda5eafdd98e4625aae6c190975b499695a4ebda537d305fcd0129859823"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
