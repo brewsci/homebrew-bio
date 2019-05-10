@@ -1,8 +1,8 @@
 class Pilon < Formula
   desc "Improve draft assemblies and find variation"
   homepage "https://github.com/broadinstitute/pilon/wiki"
-  url "https://github.com/broadinstitute/pilon/releases/download/v1.22/pilon-1.22.jar"
-  sha256 "ff738f3bbb964237f6b2cf69243ebf9a21cb7f4edf10bbdcc66fa4ebaad5d13d"
+  url "https://github.com/broadinstitute/pilon/releases/download/v1.23/pilon-1.23.jar"
+  sha256 "bde1d3c8da5537abbc80627f0b2a4165c2b68551690e5733a6adf62413b87185"
   head "https://github.com/broadinstitute/pilon.git"
   # cite Walker_2014: "https://doi.org/10.1371/journal.pone.0112963"
 
