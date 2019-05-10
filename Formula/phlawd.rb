@@ -5,6 +5,7 @@ class Phlawd < Formula
   url "https://github.com/jonchang/phlawd/archive/3.4b.tar.gz"
   version "3.4b"
   sha256 "a0fea43866e425f7fed5f74bcb8c391484a10b486f3f03d5b7bbc4df84dd84b8"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
