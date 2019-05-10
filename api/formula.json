@@ -8938,22 +8938,22 @@
       "head": null,
       "bottle": true
     },
-    "revision": 0,
+    "revision": 1,
     "version_scheme": 0,
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": "/home/linuxbrew/.linuxbrew/Cellar",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/phlawd-3.4b.sierra.bottle.tar.gz",
-            "sha256": "0ff87865859df75440a866fdb88a411bdfd27a185fdec27310446cd5e26cdcbd"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/phlawd-3.4b_1.sierra.bottle.tar.gz",
+            "sha256": "ad5daf13faa785f34a1ca49dff3807791c28db24de091ae6b56042b7322dc2ad"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/phlawd-3.4b.x86_64_linux.bottle.tar.gz",
-            "sha256": "294abcba6001867ae060b20fc6471d175a3ac62452b61f91e2964ee77cb968f6"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/phlawd-3.4b_1.x86_64_linux.bottle.tar.gz",
+            "sha256": "41fd5fa09423ecabdc64a893e08186eb07714f3f63b5d065175ca5a8a653492b"
           }
         }
       }
@@ -12156,22 +12156,22 @@
       "head": "HEAD",
       "bottle": true
     },
-    "revision": 1,
+    "revision": 2,
     "version_scheme": 0,
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/treepl-2017.05.23_1.sierra.bottle.tar.gz",
-            "sha256": "605fa093b78e162cf8b6bcda49bb10cded586fc54d9f48214f83dcf46b9fc4cb"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/treepl-2017.05.23_2.sierra.bottle.tar.gz",
+            "sha256": "6b2108bb284e51d0a73177f0435731faebaab4843babe1075e39f39044387e43"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/treepl-2017.05.23_1.x86_64_linux.bottle.tar.gz",
-            "sha256": "a296416e5f12ce1a2e218b3148399529d028c84223e363bdfc896b3a69aa124f"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/treepl-2017.05.23_2.x86_64_linux.bottle.tar.gz",
+            "sha256": "4deca3d89b7c58f3b8875154deef677b6c17847b33b118f2772292e62116356c"
           }
         }
       }
@@ -12398,22 +12398,22 @@
       "head": null,
       "bottle": true
     },
-    "revision": 0,
+    "revision": 1,
     "version_scheme": 0,
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/trinity-2.8.3.sierra.bottle.tar.gz",
-            "sha256": "38ba406ba401e8199095fbb0e14f4915e6d5738a8ee5a5fdb6c6b219c96cab04"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/trinity-2.8.3_1.sierra.bottle.tar.gz",
+            "sha256": "5e23769342aadb13867b85f482c8fd7e1cd55cac5a31d21a190217030ac8a756"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/trinity-2.8.3.x86_64_linux.bottle.tar.gz",
-            "sha256": "30b06bb67c0d83b1e54f49642bf438faff43cb12e529928123bed231a91406a4"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/trinity-2.8.3_1.x86_64_linux.bottle.tar.gz",
+            "sha256": "ff67590d079efb957c3b2619afb2fa10f71cf1ebc9b54399f63a793aebf85fd8"
           }
         }
       }
