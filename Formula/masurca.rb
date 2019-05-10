@@ -2,8 +2,8 @@ class Masurca < Formula
   # cite Zimin_2013: "https://doi.org/10.1093/bioinformatics/btt476"
   desc "Maryland Super-Read Celera Assembler"
   homepage "https://masurca.blogspot.com/"
-  url "https://github.com/alekseyzimin/masurca/releases/download/v3.3.1/MaSuRCA-3.3.1.tar.gz"
-  sha256 "587d0ee2c6b9fbd3436ca2a9001e19f251b677757fe5e88e7f94a0664231e020"
+  url "https://github.com/alekseyzimin/masurca/releases/download/3.3.2/MaSuRCA-3.3.2.tar.gz"
+  sha256 "c39b25d3f2e31fab9ccf9a922622ce7558179baf81fcacf1e4d126ec9210261d"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -24,6 +24,10 @@ class Masurca < Formula
   def install
     ENV.deparallelize
 
+    # Reduce memory usage on CircleCI
+    ENV["MAKEFLAGS"] = "-j4" if ENV["CIRCLECI"]
+    # Respect MAKEFLAGS variable
+    inreplace "install.sh", "make -j $NUM_THREADS", "make"
     ENV["DEST"] = libexec
     system "./install.sh"
 
