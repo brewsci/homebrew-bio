@@ -6,6 +6,12 @@ class Metabat < Formula
   sha256 "aa75a2b62ec9588add4c288993821bab5312a83b1259ff0d508c215133492d74"
   head "https://bitbucket.org/berkeleylab/metabat.git"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "a4f61a63b2ec1344807d0da324626b15b1a49a710e471238f05fe158cf20dceb" => :x86_64_linux
+  end
+
   depends_on :linux unless build.head?
 
   depends_on "autoconf" => :build
