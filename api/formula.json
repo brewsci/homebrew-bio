@@ -6987,6 +6987,63 @@
     "outdated": false
   },
   {
+    "name": "metabat",
+    "full_name": "brewsci/bio/metabat",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Statistical framework for reconstructing genomes from metagenomic data",
+    "homepage": "https://bitbucket.org/berkeleylab/metabat/",
+    "versions": {
+      "stable": "2.13",
+      "devel": null,
+      "head": "HEAD",
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/metabat-2.13.x86_64_linux.bottle.tar.gz",
+            "sha256": "a4f61a63b2ec1344807d0da324626b15b1a49a710e471238f05fe158cf20dceb"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [
+      "autoconf",
+      "automake",
+      "cmake"
+    ],
+    "dependencies": [
+      "boost"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [
+      {
+        "name": "linux",
+        "cask": null,
+        "download": null
+      }
+    ],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "metaphlan",
     "full_name": "brewsci/bio/metaphlan",
     "oldname": null,
