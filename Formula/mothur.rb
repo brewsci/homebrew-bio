@@ -4,6 +4,7 @@ class Mothur < Formula
   homepage "https://www.mothur.org/"
   url "https://github.com/mothur/mothur/archive/v1.40.3.tar.gz"
   sha256 "7237e763b046ade1034bf39e3e76ee0256013b1d50103330f0177c3b0cb876f7"
+  revision 1
   head "https://github.com/mothur/mothur.git"
 
   bottle do
