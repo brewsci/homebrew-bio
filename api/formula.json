@@ -7190,7 +7190,7 @@
     "desc": "Short-read assembler based on a de Bruijn graph",
     "homepage": "http://minia.genouest.org/",
     "versions": {
-      "stable": "3.2.0",
+      "stable": "3.2.1",
       "devel": null,
       "head": null,
       "bottle": true
@@ -7200,17 +7200,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": "/home/linuxbrew/.linuxbrew/Cellar",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/minia-3.2.0.sierra.bottle.tar.gz",
-            "sha256": "de11f70552777947ceb1325956ddfb99816b9053dead8834d43dee1a3ab36619"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/minia-3.2.1.sierra.bottle.tar.gz",
+            "sha256": "0aa4268b6671d25ab642c61e5c848708c65385f28424096a2c16e8a25e1882c5"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/minia-3.2.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "aab986fbbd91ae6d0bb392eb5fc93b2ba4117e18c6a19cccd3c4be1bcd056adf"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/minia-3.2.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "987ae35c73a400c072f82b5e801fc660eb14c5c9c25ac3b82f5df6c7614c2ce7"
           }
         }
       }
