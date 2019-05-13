@@ -3981,7 +3981,7 @@
     "desc": "Genesis Applications for Phylogenetic Placement Analysis",
     "homepage": "https://github.com/lczech/gappa",
     "versions": {
-      "stable": "0.2.0",
+      "stable": "0.4.0",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -3991,17 +3991,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/gappa-0.2.0.sierra.bottle.tar.gz",
-            "sha256": "70c597a42934a466bc88f926259eab7c3f323b71a03675d06f403205052e0fa0"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/gappa-0.4.0.sierra.bottle.tar.gz",
+            "sha256": "3631e901f4c8036bf29556d131cee2df52912c6d5494ba4d3b69090af12c8929"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/gappa-0.2.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "ef9ea2adc12c1b171acf96414a442907ec0cad78289f08d8ff31d4fbf81d0c4f"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/gappa-0.4.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "3010aa16e49c604ad5bdee5101723e6672a130e67e31dd8aa98de245557cb795"
           }
         }
       }
