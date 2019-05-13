@@ -3,8 +3,8 @@ class Gappa < Formula
   # cite Czech_2018: "https://doi.org/10.1101/346353"
   desc "Genesis Applications for Phylogenetic Placement Analysis"
   homepage "https://github.com/lczech/gappa"
-  url "https://github.com/lczech/gappa/archive/v0.2.0.tar.gz"
-  sha256 "d3673f2a52ca691543a9ec9ecf21c5444c95249e764b89028db946cda0ec8412"
+  url "https://github.com/lczech/gappa/archive/v0.4.0.tar.gz"
+  sha256 "14470272ba00d0b0b4d7a3fd67e07c93c6af8fbe6f9d1a6a76d349080d81a860"
   head "https://github.com/lczech/gappa.git"
 
   bottle do
