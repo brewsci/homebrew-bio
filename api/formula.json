@@ -6514,7 +6514,7 @@
       "head": null,
       "bottle": true
     },
-    "revision": 0,
+    "revision": 1,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -6524,12 +6524,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/maker-2.31.10.sierra.bottle.tar.gz",
-            "sha256": "d86524884088f5fb4a82fc921b4584dc5041a96c7ffc3d8b4eebbe01c464fa41"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/maker-2.31.10_1.sierra.bottle.tar.gz",
+            "sha256": "fd228276674bd6da591c88e57833acbbda08240b86a8fbb70bb9c7b24adc574b"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/maker-2.31.10.x86_64_linux.bottle.tar.gz",
-            "sha256": "31081039a26b17a70bd14397e6a9438f872d060fcf08718ec1fcbe66715258f3"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/maker-2.31.10_1.x86_64_linux.bottle.tar.gz",
+            "sha256": "0ab95a55c2a80af83a89b44997b88fa26a5d20b8ab0cd8db8b1fc2589687b406"
           }
         }
       }
