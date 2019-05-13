@@ -3,22 +3,24 @@ class Nanopolish < Formula
   desc "Signal-level algorithms for MinION data"
   homepage "https://github.com/jts/nanopolish"
   url "https://github.com/jts/nanopolish.git",
-        :tag => "v0.10.2",
-        :revision => "12285f628a8e00a5aef4a36f65340dacf7e3e5e2"
+      :tag      => "v0.10.2",
+      :revision => "12285f628a8e00a5aef4a36f65340dacf7e3e5e2"
+  revision 1
   head "https://github.com/jts/nanopolish.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "7c07d70ae03bd60f4b9e22a8a9c0ceba0a4b75ca90a099e93ecb762c38c960f3" => :sierra
-    sha256 "7d2afd5e0464cd2f2f91324b0daab99b01955eebdd95f1030973d045c1c8587d" => :x86_64_linux
+    cellar :any
+    sha256 "778bc9ee1ca72935495e31a5a6c7f95168c9f62b4c20476ee056b5699d56b568" => :sierra
+    sha256 "cf71c24e7a3f7e5ee30a1cbba8a6a65ba3bd8e3bcca3cb35630272ecef925079" => :x86_64_linux
   end
 
-  fails_with :clang # needs openmp
-
   depends_on "eigen" => :build
+  depends_on "gcc" if OS.mac? # for openmp
   depends_on "hdf5"
   depends_on "htslib"
-  depends_on "gcc" if OS.mac? # for openmp
+
+  fails_with :clang # needs openmp
 
   def install
     # Reduce memory usage for CircleCI.
@@ -33,7 +35,8 @@ class Nanopolish < Formula
 
   test do
     assert_match "usage", shell_output("#{bin}/nanopolish --help")
-    assert_match "extracted 1 read", shell_output("#{bin}/nanopolish extract -o out.fasta #{pkgshare}/test/data/LomanLabz_PC_Ecoli_K12_R7.3_2549_1_ch8_file30_strand.fast5 2>&1")
+    assert_match "extracted 1 read",
+                 shell_output("#{bin}/nanopolish extract -o out.fasta #{pkgshare}/test/data/LomanLabz_PC_Ecoli_K12_R7.3_2549_1_ch8_file30_strand.fast5 2>&1")
     assert_match ">channel_8_read_24", File.read("out.fasta")
   end
 end
