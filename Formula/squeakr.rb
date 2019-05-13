@@ -4,7 +4,7 @@ class Squeakr < Formula
   homepage "https://github.com/splatlab/squeakr"
   url "https://github.com/splatlab/squeakr/archive/v0.5.tar.gz"
   sha256 "9931d35e71bca0b4f0e9d3865a7c3563b2d4e7bfa03871d113777188f9b75bab"
-  revision 1
+  revision 2
   head "https://github.com/splatlab/squeakr.git"
 
   bottle do
