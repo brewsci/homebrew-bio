@@ -1,9 +1,9 @@
 class Rails < Formula
-  # cite L_Warren_2016: "https://doi.org/10.21105/joss.00116"
+  # cite Warren_2016: "https://doi.org/10.21105/joss.00116"
   desc "Scaffolding and gap-filling with long sequences: RAILS and Cobbler"
   homepage "https://github.com/bcgsc/RAILS"
-  url "https://github.com/bcgsc/RAILS/archive/v1.4.1.tar.gz"
-  sha256 "21d5a0ae1cdcc23b9544c89d47f66d99f2d060da5ba9d7fdb2753502e53be6d8"
+  url "https://github.com/bcgsc/RAILS/archive/v1.4.2.tar.gz"
+  sha256 "1da9ca0899e967472dec936b50fdbf649024d7ac226fd786224479d860dc55ea"
   head "https://github.com/bcgsc/RAILS.git"
 
   bottle do
