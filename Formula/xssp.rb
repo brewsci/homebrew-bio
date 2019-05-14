@@ -4,11 +4,13 @@ class Xssp < Formula
   homepage "https://github.com/cmbi/xssp"
   url "https://github.com/cmbi/xssp/archive/3.0.5.tar.gz"
   sha256 "fded09f08cfb12e578e4823295dc0d0aaeff6559d5e099df23c5bcc911597ccd"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "849f2d68b0544ae0ac3000c056d3808525a6d66ee53832983cf9be5ef555193a" => :sierra
-    sha256 "4b5099b0040f734ea414ea38c0984590370cd12e8ced7bfc3c7ceddfab45e66c" => :x86_64_linux
+    cellar :any
+    sha256 "1cfd2279f435083986bb73101913462d182d38a06fcf144d31d3db8abcf546af" => :sierra
+    sha256 "6e55df1195b701427dd3b418e62c2a86ee88fa21928b2bba8c1b6c0e9a5a0802" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
