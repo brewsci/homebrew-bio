@@ -59,7 +59,7 @@
     "desc": "Find antimicrobial resistance and virulence genes in contigs",
     "homepage": "https://github.com/tseemann/abricate",
     "versions": {
-      "stable": "0.8.10",
+      "stable": "0.8.13",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -74,12 +74,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/abricate-0.8.10.sierra.bottle.tar.gz",
-            "sha256": "1dc04fd025ac6dc6b4919d7b98cc595390939aeb32c6f6ffab57db53c25f6a48"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/abricate-0.8.13.sierra.bottle.tar.gz",
+            "sha256": "64a7fc3e2857ea1718e3f970990bb979b6de014a4bdde25da93318ce5f96525e"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/abricate-0.8.10.x86_64_linux.bottle.tar.gz",
-            "sha256": "611d560a8af672f9b958e5c2df19adfe2e407a7e5170e1bdaef8967992f54548"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/abricate-0.8.13.x86_64_linux.bottle.tar.gz",
+            "sha256": "cc4412ab1579f3cabf629dbd90ea4b09144f0ab73b474ae39cd3baaadfbfe468"
           }
         }
       }
@@ -1277,7 +1277,7 @@
       "head": null,
       "bottle": true
     },
-    "revision": 1,
+    "revision": 2,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -1287,12 +1287,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/bioperl-1.007002_1.sierra.bottle.tar.gz",
-            "sha256": "d2255f2db57198ff261ae32fb762d908e9b1764c381442512e538c40c2914d4b"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bioperl-1.007002_2.sierra.bottle.tar.gz",
+            "sha256": "671e8767d3f46e4fe875873f2aa3feae5d2e9852b7e21773d04f8fd760254f35"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/bioperl-1.007002_1.x86_64_linux.bottle.tar.gz",
-            "sha256": "65041bff8020118f48c8d4cc8e39114c1591756dd2cd83b1a3090fcb3ad9b9aa"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bioperl-1.007002_2.x86_64_linux.bottle.tar.gz",
+            "sha256": "f7b12d49d7cccdd7c4a7c71a59b8775bcdc47a013bf3c8968d76119c13fe7d59"
           }
         }
       }
@@ -4800,7 +4800,7 @@
       "head": "HEAD",
       "bottle": true
     },
-    "revision": 1,
+    "revision": 2,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -4810,12 +4810,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/idba-1.1.3_1.sierra.bottle.tar.gz",
-            "sha256": "c277691a6bb779ee3a46028c1877d2218b0c1d4b36487d960e1b694c87aa5d92"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/idba-1.1.3_2.sierra.bottle.tar.gz",
+            "sha256": "e46bf1a3c2148adc2234d41cb1a213e5d067aa7cda1799712db83908cfbc71da"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/idba-1.1.3_1.x86_64_linux.bottle.tar.gz",
-            "sha256": "bbff88868d15b3b5d835e2204cca2d07910a8ae303308d81a8595b7fa1f16fe0"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/idba-1.1.3_2.x86_64_linux.bottle.tar.gz",
+            "sha256": "0b0bb52ff5136db2addc8619c957d2aebc55a6efc03aec8785efd48bd72fc7ff"
           }
         }
       }
