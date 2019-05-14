@@ -13323,22 +13323,22 @@
       "head": null,
       "bottle": true
     },
-    "revision": 0,
+    "revision": 1,
     "version_scheme": 0,
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": "/home/linuxbrew/.linuxbrew/Cellar",
+        "cellar": ":any",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/xssp-3.0.5.sierra.bottle.tar.gz",
-            "sha256": "849f2d68b0544ae0ac3000c056d3808525a6d66ee53832983cf9be5ef555193a"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/xssp-3.0.5_1.sierra.bottle.tar.gz",
+            "sha256": "1cfd2279f435083986bb73101913462d182d38a06fcf144d31d3db8abcf546af"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/xssp-3.0.5.x86_64_linux.bottle.tar.gz",
-            "sha256": "4b5099b0040f734ea414ea38c0984590370cd12e8ced7bfc3c7ceddfab45e66c"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/xssp-3.0.5_1.x86_64_linux.bottle.tar.gz",
+            "sha256": "6e55df1195b701427dd3b418e62c2a86ee88fa21928b2bba8c1b6c0e9a5a0802"
           }
         }
       }
