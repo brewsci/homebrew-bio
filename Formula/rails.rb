@@ -9,8 +9,8 @@ class Rails < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "d40a0006cb6fd302f9467d1bd957f94a4ffeed8caf59ca777bef3ea43f0ddc88" => :sierra
-    sha256 "d8596e415a173476130e987c64a746e83c88b11e3b4811c0e802db9d84c03ffc" => :x86_64_linux
+    sha256 "85cf1112959366d6923f22e5e898dca3ca3ff9acc8cb06b59424f69a26b36dd0" => :sierra
+    sha256 "94b6c9106dd5f0377d5fcf65ebfd2d9bc0a7dad17ec86c970a0ff8d9b1cf89a4" => :x86_64_linux
   end
 
   depends_on "bwa"
