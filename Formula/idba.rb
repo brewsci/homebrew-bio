@@ -4,7 +4,7 @@ class Idba < Formula
   homepage "https://i.cs.hku.hk/~alse/hkubrg/projects/idba/"
   url "https://github.com/loneknightpy/idba/archive/1.1.3.tar.gz"
   sha256 "6b1746a29884f4fa17b110d94d9ead677ab5557c084a93b16b6a043dbb148709"
-  revision 1
+  revision 2
   head "https://github.com/loneknightpy/idba.git"
 
   bottle do
@@ -14,12 +14,12 @@ class Idba < Formula
     sha256 "bbff88868d15b3b5d835e2204cca2d07910a8ae303308d81a8595b7fa1f16fe0" => :x86_64_linux
   end
 
-  fails_with :clang # needs OpenMP
-
   depends_on "autoconf" => :build
   depends_on "automake" => :build
 
   depends_on "gcc" if OS.mac? # for OpenMP
+
+  fails_with :clang # needs OpenMP
 
   resource "lacto-genus" do
     url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/hku-idba/lacto-genus.tar.gz"
