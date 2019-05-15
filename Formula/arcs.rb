@@ -2,8 +2,8 @@ class Arcs < Formula
   # cite Yeo_2017: "https://doi.org/10.1093/bioinformatics/btx675"
   desc "Scaffold genome sequence assemblies using 10x Genomics data"
   homepage "https://github.com/bcgsc/arcs"
-  url "https://github.com/bcgsc/arcs/releases/download/v1.0.5/arcs-1.0.5.tar.gz"
-  sha256 "367247aaa5bf431ee1379b9835d87ffeaa90fd40eb8d90837764d6f77c498b21"
+  url "https://github.com/bcgsc/arcs/releases/download/v1.0.6/arcs-1.0.6.tar.gz"
+  sha256 "226b951a47979389e1eae25ab1c9dcad58a6a3f375095bdf60031158aed96746"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
