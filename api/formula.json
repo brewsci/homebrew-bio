@@ -429,7 +429,7 @@
     "desc": "Scaffold genome assemblies with 10x Genomics Chromium reads",
     "homepage": "https://github.com/bcgsc/arks",
     "versions": {
-      "stable": "1.0.3",
+      "stable": "1.0.4",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -444,12 +444,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/arks-1.0.3.sierra.bottle.tar.gz",
-            "sha256": "ae92e410e1ee06fa21e11c60a8f96231ace4a9ede2eb7974c05754dbb8da6d9c"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/arks-1.0.4.sierra.bottle.tar.gz",
+            "sha256": "9a3c4628f6b9cdb438082551316ff918c2eacfe2fb303766b652e6daede6a537"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/arks-1.0.3.x86_64_linux.bottle.tar.gz",
-            "sha256": "b4d8dff6fd1598fc1cbc19ddda6f24232937ff0805adfefbb0800b1d10adeae8"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/arks-1.0.4.x86_64_linux.bottle.tar.gz",
+            "sha256": "e862be3388e4dc1731de0d3d9e2836a0f5538fa71a11092f5e8edfab4c603d6c"
           }
         }
       }
