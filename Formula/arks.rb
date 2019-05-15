@@ -2,8 +2,8 @@ class Arks < Formula
   # cite Coombe_2018: "https://doi.org/10.1186/s12859-018-2243-x"
   desc "Scaffold genome assemblies with 10x Genomics Chromium reads"
   homepage "https://github.com/bcgsc/arks"
-  url "https://github.com/bcgsc/arks/archive/1.0.3.tar.gz"
-  sha256 "036971694e36de68d1285e385804489d478e7668459cd2fffccf9f64cf0facef"
+  url "https://github.com/bcgsc/arks/archive/v1.0.4.tar.gz"
+  sha256 "bb99a2e2adc988605a19b2f1cfcd6300ba392ac9697efc22c2b2b77de2b13711"
   head "https://github.com/bcgsc/arks.git"
 
   bottle do
