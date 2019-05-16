@@ -1,5 +1,5 @@
 class Ntedit < Formula
-  # cite Warren_2019: "https://doi.org/10.1101/565374"
+  # cite Warren_2019: "https://doi.org/10.1093/bioinformatics/btz400"
   desc "Scalable genome assembly polishing"
   homepage "https://github.com/bcgsc/ntEdit"
   url "https://github.com/bcgsc/ntEdit/archive/v1.2.1.tar.gz"
