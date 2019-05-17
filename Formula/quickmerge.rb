@@ -8,8 +8,8 @@ class Quickmerge < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "e74cf28cd0819e7ce718391d0553bf58be562cb73e4828880c6ec0abbac0b874" => :sierra
-    sha256 "76d98343d7381db1d97ec39ce91dc082c11bd5588a0f96b031bc4671d5e170fc" => :x86_64_linux
+    sha256 "dac4d13b6bce25546570e2302721ca3b26c6c99fd1e13d189d5ee4c79d0259cb" => :sierra
+    sha256 "980b2b1f9113b394deac9ddb5ce0acf978d19a5ce57b7d8e80bbec28a744f8ff" => :x86_64_linux
   end
 
   depends_on "mummer"
