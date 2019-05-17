@@ -9639,7 +9639,7 @@
     "desc": "Merge long read and short read assemblies",
     "homepage": "https://github.com/mahulchak/quickmerge",
     "versions": {
-      "stable": "0.2",
+      "stable": "0.3",
       "devel": null,
       "head": null,
       "bottle": true
@@ -9654,12 +9654,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/quickmerge-0.2.sierra.bottle.tar.gz",
-            "sha256": "e74cf28cd0819e7ce718391d0553bf58be562cb73e4828880c6ec0abbac0b874"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/quickmerge-0.3.sierra.bottle.tar.gz",
+            "sha256": "dac4d13b6bce25546570e2302721ca3b26c6c99fd1e13d189d5ee4c79d0259cb"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/quickmerge-0.2.x86_64_linux.bottle.tar.gz",
-            "sha256": "76d98343d7381db1d97ec39ce91dc082c11bd5588a0f96b031bc4671d5e170fc"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/quickmerge-0.3.x86_64_linux.bottle.tar.gz",
+            "sha256": "980b2b1f9113b394deac9ddb5ce0acf978d19a5ce57b7d8e80bbec28a744f8ff"
           }
         }
       }
