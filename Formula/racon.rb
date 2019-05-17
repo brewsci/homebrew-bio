@@ -4,6 +4,7 @@ class Racon < Formula
   homepage "https://github.com/isovic/racon"
   url "https://github.com/isovic/racon/releases/download/1.3.2/racon-v1.3.2.tar.gz"
   sha256 "7c99380a0f1091f5ee138b559e318d7e9463d3145eac026bf236751c2c4b92c7"
+  revision 1
   head "https://github.com/isovic/racon.git"
 
   bottle do
