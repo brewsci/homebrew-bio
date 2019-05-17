@@ -4,6 +4,13 @@ class Any2fasta < Formula
   url "https://github.com/tseemann/any2fasta/archive/v0.4.2.tar.gz"
   sha256 "e4cb2ddccda6298f5b0aee0c10184a75307a08b584d2abbfbf0d59d37b197e73"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "8d3d3f2b64992031b9c29c0d634003e744d70a0d9696fc815bd1349db27db405" => :sierra
+    sha256 "56f513ec7e523f5fae592ecdd98ebeab235644c54025ad8597ee3163d00e24c7" => :x86_64_linux
+  end
+
   def install
     bin.install "any2fasta"
     pkgshare.install Dir["test.*"]
