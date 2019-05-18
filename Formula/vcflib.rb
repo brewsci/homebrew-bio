@@ -3,7 +3,7 @@ class Vcflib < Formula
   homepage "https://github.com/ekg/vcflib"
   url "https://github.com/ekg/vcflib.git",
     :tag => "v1.0.0-rc2", :revision => "5b0f4d5b0cbdfb7b890353b08b9d397c92312d8f"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
