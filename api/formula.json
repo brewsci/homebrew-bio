@@ -12796,22 +12796,22 @@
       "head": null,
       "bottle": true
     },
-    "revision": 1,
+    "revision": 2,
     "version_scheme": 0,
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": "/home/linuxbrew/.linuxbrew/Cellar",
+        "cellar": ":any",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/vcflib-1.0.0_1.sierra.bottle.tar.gz",
-            "sha256": "f31f2741b8261681dc89f30e1c3c304a253943cb4878e070ca2038adbda8ca24"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/vcflib-1.0.0_2.sierra.bottle.tar.gz",
+            "sha256": "a4ad4e7762aefdef35d7b467233f1f5ed1d607560391257aea070f4bddd3a3d5"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/vcflib-1.0.0_1.x86_64_linux.bottle.tar.gz",
-            "sha256": "79c9ba55db62acb9b8acf11a03bcf8674e40118ac3df1dadd7f8a2552f99f130"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/vcflib-1.0.0_2.x86_64_linux.bottle.tar.gz",
+            "sha256": "545342ee6617f60654a8e9e0c4f6b1fb6926a456f61f69d054d90f65ae39fce7"
           }
         }
       }
