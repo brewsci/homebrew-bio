@@ -4,13 +4,14 @@ class Racon < Formula
   homepage "https://github.com/isovic/racon"
   url "https://github.com/isovic/racon/releases/download/1.3.2/racon-v1.3.2.tar.gz"
   sha256 "7c99380a0f1091f5ee138b559e318d7e9463d3145eac026bf236751c2c4b92c7"
+  revision 1
   head "https://github.com/isovic/racon.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "1fd45c7a87050ea72ac64bc99c9794eb34770cbe2e1f2b4f7e02912019cbf7f5" => :sierra
-    sha256 "17e84c6f3d31b08a7744cb972351f5f088f4fc9be9ba3c1690874ee763a9dc93" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "fb34a1cd494826c7ce24a70e3f39859a1cc38eefee6b7d3d70f8d611b8a499dd" => :sierra
+    sha256 "017bfaa79c852ee19a3b728a8589498588723421d42f03c63011e8c9a90026e9" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
