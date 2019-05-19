@@ -319,6 +319,55 @@
     "outdated": false
   },
   {
+    "name": "any2fasta",
+    "full_name": "brewsci/bio/any2fasta",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Convert various sequence formats to FASTA",
+    "homepage": "https://github.com/tseemann/any2fasta",
+    "versions": {
+      "stable": "0.4.2",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/any2fasta-0.4.2.sierra.bottle.tar.gz",
+            "sha256": "8d3d3f2b64992031b9c29c0d634003e744d70a0d9696fc815bd1349db27db405"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/any2fasta-0.4.2.x86_64_linux.bottle.tar.gz",
+            "sha256": "56f513ec7e523f5fae592ecdd98ebeab235644c54025ad8597ee3163d00e24c7"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "aragorn",
     "full_name": "brewsci/bio/aragorn",
     "oldname": null,
