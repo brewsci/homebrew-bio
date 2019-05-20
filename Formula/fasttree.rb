@@ -4,6 +4,7 @@ class Fasttree < Formula
   homepage "http://microbesonline.org/fasttree/"
   url "http://microbesonline.org/fasttree/FastTree-2.1.10.c"
   sha256 "54cb89fc1728a974a59eae7a7ee6309cdd3cddda9a4c55b700a71219fc6e926d"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -21,9 +22,10 @@ class Fasttree < Formula
   option "without-openmp", "Disable multithreading support"
   option "without-sse", "Disable SSE parallel instructions"
 
-  fails_with :clang # needs OpenMP
-
-  depends_on "gcc" if OS.mac? # needs OpenMP
+  if build.with? "openmp"
+    fails_with :clang # needs OpenMP
+    depends_on "gcc" if OS.mac? # needs OpenMP
+  end
 
   def install
     opts = %w[-O3 -finline-functions -funroll-loops]
