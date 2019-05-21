@@ -4,6 +4,7 @@ class Phyx < Formula
   homepage "https://github.com/FePhyFoFum/phyx"
   url "https://github.com/FePhyFoFum/phyx/archive/v0.999.tar.gz"
   sha256 "d8dfef84731677f92740fd6f0d003e0b3edc25b7e0eaa4c90c4d7da088f32a64"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -19,8 +20,6 @@ class Phyx < Formula
     cd "src" do
       if OS.linux?
         inreplace "Makefile.in" do |s|
-          # configure doesn't detect NLopt properly. fixed in > 0.99
-          s.gsub! "@HNLOPT@", "Y"
           # When bottling, disable opportunistic linking to libmvec,
           # which causes runtime errors on glibc > 2.19 and < 2.22
           s.gsub! "-ftree-vectorize", "-fno-tree-vectorize" if ENV["CIRCLECI"]
@@ -28,8 +27,8 @@ class Phyx < Formula
       end
       system "./configure", "--prefix=#{prefix}"
       system "make"
-      # Makefile installs directly to prefix. fixed in > 0.99
-      bin.install Dir["px*"]
+      bin.mkdir
+      system "make", "install"
     end
     pkgshare.install Dir["example_files/*"]
   end
@@ -37,8 +36,9 @@ class Phyx < Formula
   test do
     assert_match "Usage", shell_output("#{bin}/pxseqgen --help")
     # This test times out for unknown reasons on CircleCI with Linux.
-    return if ENV["CIRCLECI"] && OS.linux?
-    system "#{bin}/pxseqgen", "-t", "#{pkgshare}/pxseqgen_example/seqgen_test.tre", "-o", "output.fa"
-    File.exist? "output.fa"
+    unless ENV["CIRCLECI"] && OS.linux?
+      system "#{bin}/pxseqgen", "-t", "#{pkgshare}/pxseqgen_example/seqgen_test.tre", "-o", "output.fa"
+      File.exist? "output.fa"
+    end
   end
 end
