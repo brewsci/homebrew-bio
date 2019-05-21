@@ -4,16 +4,14 @@ class Parsnp < Formula
   homepage "https://github.com/marbl/parsnp"
   url "https://github.com/marbl/parsnp/archive/v1.2.tar.gz"
   sha256 "c2cbefcf961925c3368476420e28a63741376773f948094ed845a32291bda436"
-  revision 2
+  revision 3
+  head "https://github.com/marbl/parsnp.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "5808430a58991c541f7d3948451b047004cddd7f0b7e427d6226991b85fe93f1" => :sierra
-    sha256 "69d7edf2c58a0ee90edd73c653090b578056a36ef0d939ad065ea0279eb7886e" => :x86_64_linux
+    cellar :any
+    sha256 "b0e844a937884f368e4b1294e0d356155dd3371bdfe37c778826c0c59b310246" => :sierra
+    sha256 "0717e9aa5c6fdff91bb340b415694849813465beae6103fa949c64a774d9a453" => :x86_64_linux
   end
-
-  fails_with :clang # needs openmp
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
@@ -21,10 +19,16 @@ class Parsnp < Formula
   depends_on "pkg-config" => :build
 
   depends_on "fasttree"
-  depends_on "gcc" if OS.mac? # needs opemmp
   depends_on "harvest-tools"
   depends_on "libmuscle"
-  depends_on "zlib" unless OS.mac?
+
+  if OS.mac?
+    depends_on "gcc"
+  else
+    depends_on "zlib"
+  end
+
+  fails_with :clang # needs openmp
 
   def install
     # remove binaries
