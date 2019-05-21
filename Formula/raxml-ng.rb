@@ -7,6 +7,7 @@ class RaxmlNg < Formula
     :revision => "0a064e9a40f2e00828662795141659d946440c81"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
     sha256 "44d9f4c7f2631ec3c5761ff142d0ceec2e02ae2a700131fc3235b47b865ed105" => :sierra
     sha256 "6becae15d7f01dd4fdc2a2a2c3c46cec50db2c42ac2dc1ed0f64b934c817e931" => :x86_64_linux
