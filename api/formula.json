@@ -3396,22 +3396,22 @@
       "head": null,
       "bottle": true
     },
-    "revision": 0,
+    "revision": 1,
     "version_scheme": 0,
     "bottle": {
       "stable": {
-        "rebuild": 1,
+        "rebuild": 0,
         "cellar": ":any",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/fasttree-2.1.10.sierra.bottle.1.tar.gz",
-            "sha256": "0cf193935cbc45bcfd494e0e15062a9de07870f0b6539f4ce35ccc0d565f5339"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/fasttree-2.1.10_1.sierra.bottle.tar.gz",
+            "sha256": "56ab8decf6430233974a88acd7f0c9c62ecf1810984540017a89dbe0d25cafeb"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/fasttree-2.1.10.x86_64_linux.bottle.1.tar.gz",
-            "sha256": "acf0c2e94f6bc3d0272a5bf36da9d5a3163591de07cb98ce32f99596306bb03e"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/fasttree-2.1.10_1.x86_64_linux.bottle.tar.gz",
+            "sha256": "321bbdcfeb64124bc8f487740fbadbb24fba9ca38706de38ccadadf87fe802ae"
           }
         }
       }
