@@ -8946,25 +8946,25 @@
     "versions": {
       "stable": "1.2",
       "devel": null,
-      "head": null,
+      "head": "HEAD",
       "bottle": true
     },
-    "revision": 2,
+    "revision": 3,
     "version_scheme": 0,
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any_skip_relocation",
+        "cellar": ":any",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/parsnp-1.2_2.sierra.bottle.tar.gz",
-            "sha256": "5808430a58991c541f7d3948451b047004cddd7f0b7e427d6226991b85fe93f1"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/parsnp-1.2_3.sierra.bottle.tar.gz",
+            "sha256": "b0e844a937884f368e4b1294e0d356155dd3371bdfe37c778826c0c59b310246"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/parsnp-1.2_2.x86_64_linux.bottle.tar.gz",
-            "sha256": "69d7edf2c58a0ee90edd73c653090b578056a36ef0d939ad065ea0279eb7886e"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/parsnp-1.2_3.x86_64_linux.bottle.tar.gz",
+            "sha256": "0717e9aa5c6fdff91bb340b415694849813465beae6103fa949c64a774d9a453"
           }
         }
       }
