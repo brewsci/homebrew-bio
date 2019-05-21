@@ -9,7 +9,7 @@ class Parsnp < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
+    cellar :any
     sha256 "b0e844a937884f368e4b1294e0d356155dd3371bdfe37c778826c0c59b310246" => :sierra
     sha256 "0717e9aa5c6fdff91bb340b415694849813465beae6103fa949c64a774d9a453" => :x86_64_linux
   end
