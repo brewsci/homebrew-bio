@@ -1,9 +1,10 @@
 class RaxmlNg < Formula
+  # cite Kozlov_2019: "https://doi.org/10.1093/bioinformatics/btz305"
   desc "RAxML Next Generation: faster, easier-to-use and more flexible"
   homepage "https://sco.h-its.org/exelixis/web/software/raxml/"
   url "https://github.com/amkozlov/raxml-ng.git",
-    :tag      => "0.8.1",
-    :revision => "30c61006cba268a570aba7f862c813142bc41785"
+    :tag      => "0.9.0",
+    :revision => "0a064e9a40f2e00828662795141659d946440c81"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -28,17 +29,14 @@ class RaxmlNg < Formula
   end
 
   def install
-    # Build release binaries
-    inreplace "CMakeLists.txt", "set (CMAKE_BUILD_TYPE DEBUG)", ""
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
-      system "make"
+      system "make", "install"
       if build.with? "open-mpi"
         system "cmake", "..", *std_cmake_args, "-DUSE_MPI=ON"
-        system "make"
+        system "make", "install"
       end
     end
-    bin.install Dir["bin/raxml-ng*"]
   end
 
   test do
