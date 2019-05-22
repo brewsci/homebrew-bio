@@ -2,9 +2,8 @@ class Mothur < Formula
   # cite Schloss_2009: "https://doi.org/10.1128/AEM.01541-09"
   desc "16s analysis software"
   homepage "https://www.mothur.org/"
-  url "https://github.com/mothur/mothur/archive/v1.40.3.tar.gz"
-  sha256 "7237e763b046ade1034bf39e3e76ee0256013b1d50103330f0177c3b0cb876f7"
-  revision 1
+  url "https://github.com/mothur/mothur/archive/v1.42.1.tar.gz"
+  sha256 "6b61591dda289ac2d8361f9c1547ffbeeba3b9fbdff877dd286bad850bbd5539"
   head "https://github.com/mothur/mothur.git"
 
   bottle do
@@ -22,9 +21,7 @@ class Mothur < Formula
     ENV["MAKEFLAGS"] = "-j8" if ENV["CIRCLECI"]
 
     boost = Formula["boost"]
-    inreplace "Makefile", '"\"Enter_your_boost_library_path_here\""', boost.opt_lib
-    inreplace "Makefile", '"\"Enter_your_boost_include_path_here\""', boost.opt_include
-    system "make"
+    system "make", "USEBOOST=yes", "BOOST_LIBRARY_DIR=#{boost.opt_lib}", "BOOST_INCLUDE_DIR=#{boost.opt_include}"
     bin.install "mothur", "uchime"
   end
 
