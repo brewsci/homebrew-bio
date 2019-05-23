@@ -1693,7 +1693,7 @@
       "head": "HEAD",
       "bottle": true
     },
-    "revision": 1,
+    "revision": 2,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -1703,35 +1703,31 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-3.0.2_1.sierra.bottle.tar.gz",
-            "sha256": "594cc8b36a46aebaaa2d3041fb0283b8c431933a73624958d7abc26a19f18ce0"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-3.0.2_2.sierra.bottle.tar.gz",
+            "sha256": "dcd4dac383b75a661f950b5a5313824e36055ef00a149d8eb10b7dce46c0e4cc"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-3.0.2_1.x86_64_linux.bottle.tar.gz",
-            "sha256": "f77caa27c9ea8e866682a00cd93bbb626f6139b6a95e1c7354b0268ad806a253"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-3.0.2_2.x86_64_linux.bottle.tar.gz",
+            "sha256": "119c1d4ea6ab45cca36fef4f160623aa1798f7412bf50d53a4148b482051432b"
           }
         }
       }
     },
     "keg_only": false,
     "bottle_disabled": false,
-    "options": [
-      {
-        "option": "--without-blast",
-        "description": "Build without blast support"
-      }
-    ],
+    "options": [],
     "build_dependencies": [],
     "dependencies": [
+      "augustus",
+      "blast",
+      "hmmer",
       "python"
     ],
-    "recommended_dependencies": [
-      "blast"
-    ],
+    "recommended_dependencies": [],
     "optional_dependencies": [],
     "requirements": [],
     "conflicts_with": [],
-    "caveats": null,
+    "caveats": "You probably also want to download lineage datasets to run BUSCO:\n\n  https://busco.ezlab.org\n\nTo generate graphs, also make sure a working R is installed:\n\n  brew cask install r\n\nor alternatively\n\n  brew install r\n",
     "installed": [],
     "linked_keg": null,
     "pinned": false,
