@@ -9249,7 +9249,7 @@
       "head": null,
       "bottle": true
     },
-    "revision": 0,
+    "revision": 1,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -9259,12 +9259,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/phyx-0.999.sierra.bottle.tar.gz",
-            "sha256": "b17d2d3f3270a7de8c63c6f2a22ab94d2cff06611d2fef933f9dc41fe55d01dd"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/phyx-0.999_1.sierra.bottle.tar.gz",
+            "sha256": "0624af0f10604c04808ffb83aa89f247fb247e9b328591603ec85710166f7592"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/phyx-0.999.x86_64_linux.bottle.tar.gz",
-            "sha256": "f139fb3628527c5b8888e74e929be2c25b2c7945472488239ccd024e00f6c9f4"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/phyx-0.999_1.x86_64_linux.bottle.tar.gz",
+            "sha256": "df83058b0a1ac9893fed65f50663ce15a95d01f79614b2d2d3e0071748be8e15"
           }
         }
       }
@@ -13308,7 +13308,7 @@
     "desc": "Fuzzy de Bruijn Graph long read assembler",
     "homepage": "https://github.com/ruanjue/wtdbg2",
     "versions": {
-      "stable": "2.1",
+      "stable": "2.4",
       "devel": null,
       "head": null,
       "bottle": true
@@ -13323,8 +13323,8 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/wtdbg2-2.1.x86_64_linux.bottle.tar.gz",
-            "sha256": "632f04d7df45eeb45270bafbbdf7e2a896f82bc71ee76ae558c1c47541e5cbbd"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/wtdbg2-2.4.x86_64_linux.bottle.tar.gz",
+            "sha256": "0a9910cf4ff402a2c091589264a3b2236318b6a074cbace3ad16bef9444d39cf"
           }
         }
       }
@@ -13335,7 +13335,9 @@
     "build_dependencies": [
       "autoconf"
     ],
-    "dependencies": [],
+    "dependencies": [
+      "zlib"
+    ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
     "requirements": [
