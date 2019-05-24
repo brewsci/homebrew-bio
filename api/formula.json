@@ -1734,6 +1734,57 @@
     "outdated": false
   },
   {
+    "name": "bwa-mem2",
+    "full_name": "brewsci/bio/bwa-mem2",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "The next version of bwa-mem short read aligner",
+    "homepage": "https://github.com/bwa-mem2/bwa-mem2",
+    "versions": {
+      "stable": "2.0pre1",
+      "devel": null,
+      "head": "HEAD",
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bwa-mem2-2.0pre1.sierra.bottle.tar.gz",
+            "sha256": "527b631644aae4a36532607d5671078b78703611670656e18bf6f9cdf387fb7e"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bwa-mem2-2.0pre1.x86_64_linux.bottle.tar.gz",
+            "sha256": "41f25256fd39920c9188bff511d422b926c9540c3aa8f6ed67c0e55aee25bc91"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [
+      "zlib"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "cannoli",
     "full_name": "brewsci/bio/cannoli",
     "oldname": null,
