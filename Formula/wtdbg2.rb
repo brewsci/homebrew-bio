@@ -7,7 +7,7 @@ class Wtdbg2 < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "632f04d7df45eeb45270bafbbdf7e2a896f82bc71ee76ae558c1c47541e5cbbd" => :x86_64_linux
+    sha256 "0a9910cf4ff402a2c091589264a3b2236318b6a074cbace3ad16bef9444d39cf" => :x86_64_linux
   end
 
   depends_on "zlib" unless OS.mac?
