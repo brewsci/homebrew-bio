@@ -2,16 +2,15 @@ class Mothur < Formula
   # cite Schloss_2009: "https://doi.org/10.1128/AEM.01541-09"
   desc "16s analysis software"
   homepage "https://www.mothur.org/"
-  url "https://github.com/mothur/mothur/archive/v1.40.3.tar.gz"
-  sha256 "7237e763b046ade1034bf39e3e76ee0256013b1d50103330f0177c3b0cb876f7"
-  revision 1
+  url "https://github.com/mothur/mothur/archive/v1.42.1.tar.gz"
+  sha256 "6b61591dda289ac2d8361f9c1547ffbeeba3b9fbdff877dd286bad850bbd5539"
   head "https://github.com/mothur/mothur.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "cdf69947c8dbfed5160ab42ec035d0cdfb71640df5615127fc0e070ee320a648" => :sierra
-    sha256 "9a3b6a35f60346765ad8861bfc42258a28ef1b40544e532cd5277dfc0973e0e5" => :x86_64_linux
+    sha256 "b1098f9c6dce8417abb486f42c3f2297b6cd593de6c9418a98b7e28b2fcedde0" => :sierra
+    sha256 "78bda9eb10493199353e47a862685148632488885621de987a355b767935511d" => :x86_64_linux
   end
 
   depends_on "boost"
@@ -22,9 +21,7 @@ class Mothur < Formula
     ENV["MAKEFLAGS"] = "-j8" if ENV["CIRCLECI"]
 
     boost = Formula["boost"]
-    inreplace "Makefile", '"\"Enter_your_boost_library_path_here\""', boost.opt_lib
-    inreplace "Makefile", '"\"Enter_your_boost_include_path_here\""', boost.opt_include
-    system "make"
+    system "make", "USEBOOST=yes", "BOOST_LIBRARY_DIR=#{boost.opt_lib}", "BOOST_INCLUDE_DIR=#{boost.opt_include}"
     bin.install "mothur", "uchime"
   end
 
