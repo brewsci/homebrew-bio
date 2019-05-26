@@ -8,8 +8,8 @@ class Adam < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "b4dd401b099ca3df1accb5cb6ff246160a2307d96a5281e45a9fac3909ec7477" => :sierra
-    sha256 "6a625d612816a4a689226158a009e74094eb098c0f1d75df3947d1ff91257374" => :x86_64_linux
+    sha256 "2a4dcda80b0cc137a2c432016f864e5551b8d514cf079395410d5bc08c3cac31" => :sierra
+    sha256 "6c4fb4bbed3d317d82909217c8ac7355ba0d91f109815a69c9c0ce98a2d4d71c" => :x86_64_linux
   end
 
   head do
