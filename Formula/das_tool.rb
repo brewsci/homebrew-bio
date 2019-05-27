@@ -4,6 +4,7 @@ class DasTool < Formula
   homepage "https://github.com/cmks/DAS_Tool"
   url "https://github.com/cmks/DAS_Tool/archive/1.1.1.tar.gz"
   sha256 "2a55f67b5331251d8fd5adea867cc341363fbf7fa7ed5c3ce9c7679d8039f03a"
+  revision 1
   head "https://github.com/cmks/DAS_Tool.git"
 
   bottle do
@@ -36,12 +37,15 @@ class DasTool < Formula
 
     chmod 0755, "DAS_Tool"
     inreplace "DAS_Tool", "split --numeric-suffixes --lines=", "split -l " if OS.mac?
+    inreplace "src/Fasta_to_Scaffolds2Bin.sh", "#!/bin/env bash", "#!/bin/bash"
 
     libexec.install "DAS_Tool", "src", "db", "lib"
     (bin/"DAS_Tool").write_env_script libexec/"DAS_Tool", :R_LIBS_SITE => libexec/"lib/R"
+    ln_s libexec/"src/Fasta_to_Scaffolds2Bin.sh", bin/"Fasta_to_Scaffolds2Bin"
   end
 
   test do
     assert_match "Usage", shell_output("#{bin}/DAS_Tool -h", 1)
+    assert_match "Usage", shell_output("#{bin}/Fasta_to_Scaffolds2Bin -h", 1)
   end
 end
