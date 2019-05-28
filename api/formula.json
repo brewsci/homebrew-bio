@@ -13300,6 +13300,57 @@
     "outdated": false
   },
   {
+    "name": "wish",
+    "full_name": "brewsci/bio/wish",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Predict prokaryotic host for phage metagenomic sequences",
+    "homepage": "https://github.com/soedinglab/WIsH/",
+    "versions": {
+      "stable": "1.0",
+      "devel": null,
+      "head": "HEAD",
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/wish-1.0.sierra.bottle.tar.gz",
+            "sha256": "0fe6f09eef78b511617714b71dcb5450486e76f56e45fc33ed39a626b37e4ada"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/wish-1.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "0d279486aaffe2c0660a94867bd60d8d102bafd63c8608660cefdf65a854a813"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [
+      "cmake"
+    ],
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "wtdbg2",
     "full_name": "brewsci/bio/wtdbg2",
     "oldname": null,
