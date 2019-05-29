@@ -3,6 +3,13 @@ class Pplacer < Formula
   desc "Place query sequences on a fixed reference phylogenetic tree"
   homepage "https://matsen.fhcrc.org/pplacer/"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "67bc8639e0f54daa1c141b906814578cd26f9510f9803297c337b4a0c241f577" => :sierra
+    sha256 "a3defbdaf841d3fb1297cb1175a29b7ecee7f964cd6e25cf95a1de7a4946a105" => :x86_64_linux
+  end
+
   # We use binaries to avoid compiling OCaml code
   if OS.mac?
     url "https://github.com/matsen/pplacer/releases/download/v1.1.alpha17/pplacer-Darwin-v1.1.alpha17.zip"
