@@ -9449,6 +9449,57 @@
     "outdated": false
   },
   {
+    "name": "pplacer",
+    "full_name": "brewsci/bio/pplacer",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Place query sequences on a fixed reference phylogenetic tree",
+    "homepage": "https://matsen.fhcrc.org/pplacer/",
+    "versions": {
+      "stable": "1.1.alpha17",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/pplacer-1.1.alpha17.sierra.bottle.tar.gz",
+            "sha256": "67bc8639e0f54daa1c141b906814578cd26f9510f9803297c337b4a0c241f577"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/pplacer-1.1.alpha17.x86_64_linux.bottle.tar.gz",
+            "sha256": "a3defbdaf841d3fb1297cb1175a29b7ecee7f964cd6e25cf95a1de7a4946a105"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [
+      "unzip"
+    ],
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "prank",
     "full_name": "brewsci/bio/prank",
     "oldname": null,
