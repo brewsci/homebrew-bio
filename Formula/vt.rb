@@ -4,14 +4,14 @@ class Vt < Formula
   homepage "https://genome.sph.umich.edu/wiki/Vt"
   url "https://github.com/atks/vt/archive/0.5772.tar.gz"
   sha256 "b147520478a2f7c536524511e48133d0360e88282c7159821813738ccbda97e7"
-  revision 1
+  revision 2
   head "https://github.com/atks/vt.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "1b599e67c480a2650694804e14e8df4d126a3094092f44f4f1bf814d22fe1061" => :sierra
-    sha256 "fa81d9983854db901ee2d868e3a4ffc3195f042e01f9cfa54d78ea020726b59c" => :x86_64_linux
+    cellar :any
+    sha256 "43c34b6bf2d3209088a1e6ce61e37844ef3bbf08b871861214714ce10b18f707" => :sierra
+    sha256 "a2f0c3b7e3078719d39b7d257d964f19d327e3a3638c9e1397d804588da811f6" => :x86_64_linux
   end
 
   depends_on "gcc" if OS.mac? # Fix error: static_assert failed
