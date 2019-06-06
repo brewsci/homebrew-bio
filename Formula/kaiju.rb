@@ -2,8 +2,8 @@ class Kaiju < Formula
   # Menzel_2016: "https://doi.org/10.1038/ncomms11257"
   desc "Fast taxonomic classification of metagenomic sequencing reads"
   homepage "http://kaiju.binf.ku.dk/"
-  url "https://github.com/bioinformatics-centre/kaiju/archive/v1.6.3.tar.gz"
-  sha256 "4e2b0eccebc36307d561d713c558adb8f82414a1ea1ecf448c217812b12ef5ad"
+  url "https://github.com/bioinformatics-centre/kaiju/archive/v1.7.0.tar.gz"
+  sha256 "96ecc84634f2a5f1440ac6d40896fdb207b1931b78629b56853ab0391e31c105"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -12,17 +12,20 @@ class Kaiju < Formula
     sha256 "97054f3c70423eb6a1b3ccf3427e38afb09b9eaf00dc4a18cd6f4a5ba5f46300" => :x86_64_linux
   end
 
-  depends_on "perl" # for gbk2faa.pl
-  depends_on "python@2" # for convert_mar_to_kaiju.py
+  depends_on "perl"     # for kaiju-gbk2faa.pl
+  depends_on "python@2" # for kaiju-convertMAR.py
 
   def install
-    # https://github.com/bioinformatics-centre/kaiju/issues/92
-    inreplace "util/gbk2faa.pl", "/usr/bin/perl -w", "/usr/bin/env perl"
-
     system "make", "-C", "src"
 
     # https://github.com/bioinformatics-centre/kaiju/issues/93
-    rm "bin/taxonlist.tsv"
+    inreplace "bin/kaiju-makedb" do |s|
+      s.gsub! "$SCRIPTDIR/kaiju-convertMAR.py", pkgshare/"kaiju-convertMAR.py"
+      s.gsub! "$SCRIPTDIR/kaiju-taxonlistEuk.tsv", pkgshare/"kaiju-taxonlistEuk.tsv"
+    end
+
+    pkgshare.install "bin/kaiju-convertMAR.py"
+    pkgshare.install "bin/kaiju-taxonlistEuk.tsv"
 
     bin.install Dir["bin/*"]
   end
@@ -35,11 +38,6 @@ class Kaiju < Formula
   end
 
   test do
-    Dir[bin/"kaij*"].each do |exe|
-      assert_match version.to_s, shell_output("#{exe} -h 2>&1", 1)
-    end
-    %w[mkfmi mkbwt].each do |exe|
-      assert_match exe.to_s, shell_output("#{bin}/#{exe} -h 2>&1")
-    end
+    assert_match version.to_s, shell_output("#{bin}/kaiju -h 2>&1", 1)
   end
 end
