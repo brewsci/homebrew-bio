@@ -5408,7 +5408,7 @@
     "desc": "Fast taxonomic classification of metagenomic sequencing reads",
     "homepage": "http://kaiju.binf.ku.dk/",
     "versions": {
-      "stable": "1.6.3",
+      "stable": "1.7.0",
       "devel": null,
       "head": null,
       "bottle": true
@@ -5423,12 +5423,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/kaiju-1.6.3.sierra.bottle.tar.gz",
-            "sha256": "20762c16e53260aadd5442819643afd294d74aae65018a0c585ddd0883140978"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/kaiju-1.7.0.sierra.bottle.tar.gz",
+            "sha256": "4b82eb52bd366a066ac477f1b45c2f7c36c160d7856384ffea34cec8027e8558"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/kaiju-1.6.3.x86_64_linux.bottle.tar.gz",
-            "sha256": "97054f3c70423eb6a1b3ccf3427e38afb09b9eaf00dc4a18cd6f4a5ba5f46300"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/kaiju-1.7.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "47579c356dd649d72a3b4ed0d4739c17669911f5cd8b2f842e5b48eaf5512835"
           }
         }
       }
