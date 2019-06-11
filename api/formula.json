@@ -11833,6 +11833,57 @@
     "outdated": false
   },
   {
+    "name": "stacks",
+    "full_name": "brewsci/bio/stacks",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Pipeline for building loci from short-read sequences",
+    "homepage": "http://catchenlab.life.illinois.edu/stacks/",
+    "versions": {
+      "stable": "2.4",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/stacks-2.4.sierra.bottle.tar.gz",
+            "sha256": "55204c9a00e505a599b69db565a8621892ad0db15719e3d8f6b8e6692a7ba4b3"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/stacks-2.4.x86_64_linux.bottle.tar.gz",
+            "sha256": "76b3d4dfde71dc07a2cd414950eaeaaa60617719647854b8f3058861469702ad"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [
+      "zlib"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "staden-io-lib",
     "full_name": "brewsci/bio/staden-io-lib",
     "oldname": null,
