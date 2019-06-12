@@ -2,17 +2,16 @@ class LinksScaffolder < Formula
   # cite Warren_2015: "https://doi.org/10.1186/s13742-015-0076-3"
   desc "Long Interval Nucleotide K-mer Scaffolder"
   homepage "http://www.bcgsc.ca/platform/bioinfo/software/links"
-  url "https://github.com/bcgsc/LINKS/releases/download/v1.8.6/links_v1-8-6.tar.gz"
-  version "1.8.6"
-  sha256 "0930f60ef300dda533247a46e77bbec9f1f9508e5fc4a97728ed5fd40a7614ed"
-  revision 1
+  url "https://github.com/bcgsc/LINKS/releases/download/v1.8.7/links_v1-8-7.tar.gz"
+  version "1.8.7"
+  sha256 "3401a2694a3545cb7bf3fb13a5854e5d1c5b87200cad998d967fe8e0fc980e1c"
   head "https://github.com/bcgsc/LINKS.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "38c2914cb3cf216cc6890a17e95d5fedfb254ed98dbd675d6eed06e078663e07" => :sierra
-    sha256 "80798b8417f1e1fc330cdcd3e499769c1202663df57707be695207d4831ec687" => :x86_64_linux
+    sha256 "63b9e042a8edbfc9b404af9358bc97ecd59140518ce021be26176fddc2c5287b" => :sierra
+    sha256 "8b2946fca823037cd7c10f93ae86e718d7493c528615c51e24cc10de7ec523a4" => :x86_64_linux
   end
 
   depends_on "swig" => :build
@@ -22,7 +21,7 @@ class LinksScaffolder < Formula
     if OS.mac?
       # Fix error: no known conversion from 'size_t' (aka 'unsigned long') to 'uint64_t &' (aka 'unsigned long long &')
       cd "lib/bloomfilter" do
-        inreplace ["BloomFilter.hpp", "RollingHash.h", "RollingHashIterator.h", "swig/BloomFilter.i"],
+        inreplace ["BloomFilter.hpp", "nthash.hpp", "ntHashIterator.hpp", "swig/BloomFilter.i", "KmerBloomFilter.hpp"],
           "size_t", "uint64_t"
       end
     end

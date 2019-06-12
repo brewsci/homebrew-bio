@@ -1,15 +1,15 @@
 class Flowcraft < Formula
   desc "Nextflow pipeline assembler for genomics"
   homepage "https://github.com/assemblerflow/flowcraft"
-  url "https://github.com/assemblerflow/flowcraft/archive/1.4.0.tar.gz"
-  sha256 "cbcaa7d0a89b29ad2e650d1d4cb028de5a2795b5452a640d5c8f320c367c0048"
+  url "https://github.com/assemblerflow/flowcraft/archive/1.4.1.tar.gz"
+  sha256 "ca5f698f286b6bcc6fc15cb7767ae903e06f6b7af11183917845b1be4304f11f"
   head "https://github.com/assemblerflow/flowcraft.git", :branch => "dev"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "f6a37ba5294eb518772ff4d2d325fcfbbe9c37cd009d1c135e015ce247f2edc6" => :sierra
-    sha256 "3d7729b04a2586ac131dab82578b432a2f1601680bdad2eca9bb4fa899c3e586" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "402845eb61ea741201bcb15031f323aed78b803e2aa42ec3310137d47b2c0811" => :sierra
+    sha256 "fd22b0af6afa8da1d05aa75c59f21cd884ef4d14a4bcc4e50e3bf810b52abb06" => :x86_64_linux
   end
 
   depends_on "nextflow"

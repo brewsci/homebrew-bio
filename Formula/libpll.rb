@@ -1,7 +1,7 @@
 class Libpll < Formula
   # cite Flouri_2015: "https://doi.org/10.1093/sysbio/syu084"
   desc "Phylogenetic likelihood library"
-  homepage "http://www.libpll.org/"
+  homepage "https://github.com/xflouris/libpll"
   url "https://github.com/xflouris/libpll/archive/0.3.2.tar.gz"
   sha256 "45107d59d87be921c522478bb3688beee60dc79154e0b4a183af01122c597132"
   head "https://github.com/xflouris/libpll.git"

@@ -2,14 +2,12 @@ class Meme < Formula
   # cite Bailey_2009: "https://doi.org/10.1093/nar/gkp335"
   desc "Tools for motif discovery"
   homepage "http://meme-suite.org"
-  url "http://meme-suite.org/meme-software/4.11.2/meme_4.11.2_2.tar.gz"
-  version "4.11.2.2"
-  sha256 "377238c2a9dda64e01ffae8ecdbc1492c100df9b0f84132d50c1cf2f68921b22"
-  revision 4
+  url "http://meme-suite.org/meme-software/5.0.4/meme-5.0.4.tar.gz"
+  sha256 "b5e067c8b9d9fe4a2a35d4f4d053714beb380c0c06b54ed94737dd31d93c4cf4"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "e749f456fde1861ebcaac2614f031dc29722e34e2e0c5bdfbe0997a21710c7e4" => :x86_64_linux
+    sha256 "bd12839fa2cab51ddd2165764fee991f9a01f1ade1f766600a1301fbda55dd60" => :x86_64_linux
   end
 
   # Work around the error:
@@ -24,8 +22,7 @@ class Meme < Formula
   end
 
   def install
-    ENV.deparallelize
-    system "./configure", "--disable-debug", "--disable-dependency-tracking", "--prefix=#{libexec}"
+    system "./configure", "--disable-dependency-tracking", "--prefix=#{libexec}", "--with-url=http://meme-suite.org/", "--enable-build-libxml2", "--enable-build-libxslt"
     system "make", "install"
     prefix.install "tests"
     perl_files = `grep -l -w "#!/usr/bin/perl" #{bin}/*`.split("\n")

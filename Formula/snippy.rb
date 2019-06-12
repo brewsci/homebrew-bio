@@ -1,14 +1,14 @@
 class Snippy < Formula
   desc "Rapid bacterial SNP calling and core genome alignments"
   homepage "https://github.com/tseemann/snippy"
-  url "https://github.com/tseemann/snippy/archive/v4.3.2.tar.gz"
-  sha256 "50bc2a3f506122338eff225d7f4ae9c2c0dfeb407f5bd2dd21b09b8c893ef2eb"
+  url "https://github.com/tseemann/snippy/archive/v4.3.8.tar.gz"
+  sha256 "16569aabcca866ca40c20b4f3905448204cdea014ea231b2302e8d739a931b3a"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "f6ac739de4b0031052e76b09b294ee5b76642fccabc416734228db6b281c7003" => :sierra
-    sha256 "7748a369adad0fc6d581bfdf31854c26015a7c08dddcc5e93155587ac82709b8" => :x86_64_linux
+    sha256 "78a7d3a4cde4431a4fc514d93afdd112be4e7207f0b48b6219c701ce31cdb609" => :sierra
+    sha256 "6fabc9cbf069ce99d20b5587457fe1602f98fbbc32e803bdb249673ca64eaa78" => :x86_64_linux
   end
 
   depends_on "bcftools"

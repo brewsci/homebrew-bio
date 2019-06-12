@@ -20,6 +20,7 @@ jobs:
         tap=/home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/"$BUILD_REPOSITORY_ID"
         mkdir -p $(dirname "$tap")
         ln -s "$PWD" "$tap"
+        chmod 644 Formula/*.rb
         /home/linuxbrew/.linuxbrew/bin/brew install patchelf
         /home/linuxbrew/.linuxbrew/bin/brew test-bot --bintray-org=linuxbrew --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
       displayName: Run brew test-bot

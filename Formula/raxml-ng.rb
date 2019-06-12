@@ -1,15 +1,16 @@
 class RaxmlNg < Formula
+  # cite Kozlov_2019: "https://doi.org/10.1093/bioinformatics/btz305"
   desc "RAxML Next Generation: faster, easier-to-use and more flexible"
   homepage "https://sco.h-its.org/exelixis/web/software/raxml/"
   url "https://github.com/amkozlov/raxml-ng.git",
-    :tag      => "0.7.0",
-    :revision => "6fe3fa9c5817bfc9f352f5fe7fa14a54f9ac2b6a"
+    :tag      => "0.9.0",
+    :revision => "0a064e9a40f2e00828662795141659d946440c81"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "17e881992196791560375129120040b203fe68ed472c122c5b18c903dc494689" => :sierra
-    sha256 "c478d2495ab915e3595cb0372bf022532efbed69e5bcf9d4ca25eb7c4273e5f5" => :x86_64_linux
+    sha256 "44d9f4c7f2631ec3c5761ff142d0ceec2e02ae2a700131fc3235b47b865ed105" => :sierra
+    sha256 "6becae15d7f01dd4fdc2a2a2c3c46cec50db2c42ac2dc1ed0f64b934c817e931" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
@@ -28,17 +29,14 @@ class RaxmlNg < Formula
   end
 
   def install
-    # Build release binaries
-    inreplace "CMakeLists.txt", "set (CMAKE_BUILD_TYPE DEBUG)", ""
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
-      system "make"
+      system "make", "install"
       if build.with? "open-mpi"
         system "cmake", "..", *std_cmake_args, "-DUSE_MPI=ON"
-        system "make"
+        system "make", "install"
       end
     end
-    bin.install Dir["bin/raxml-ng*"]
   end
 
   test do

@@ -3,12 +3,13 @@ class Vcflib < Formula
   homepage "https://github.com/ekg/vcflib"
   url "https://github.com/ekg/vcflib.git",
     :tag => "v1.0.0-rc2", :revision => "5b0f4d5b0cbdfb7b890353b08b9d397c92312d8f"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "f31f2741b8261681dc89f30e1c3c304a253943cb4878e070ca2038adbda8ca24" => :sierra
-    sha256 "79c9ba55db62acb9b8acf11a03bcf8674e40118ac3df1dadd7f8a2552f99f130" => :x86_64_linux
+    cellar :any
+    sha256 "a4ad4e7762aefdef35d7b467233f1f5ed1d607560391257aea070f4bddd3a3d5" => :sierra
+    sha256 "545342ee6617f60654a8e9e0c4f6b1fb6926a456f61f69d054d90f65ae39fce7" => :x86_64_linux
   end
 
   if OS.mac?

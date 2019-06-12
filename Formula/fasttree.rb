@@ -4,13 +4,13 @@ class Fasttree < Formula
   homepage "http://microbesonline.org/fasttree/"
   url "http://microbesonline.org/fasttree/FastTree-2.1.10.c"
   sha256 "54cb89fc1728a974a59eae7a7ee6309cdd3cddda9a4c55b700a71219fc6e926d"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    rebuild 1
-    sha256 "0cf193935cbc45bcfd494e0e15062a9de07870f0b6539f4ce35ccc0d565f5339" => :sierra
-    sha256 "acf0c2e94f6bc3d0272a5bf36da9d5a3163591de07cb98ce32f99596306bb03e" => :x86_64_linux
+    sha256 "56ab8decf6430233974a88acd7f0c9c62ecf1810984540017a89dbe0d25cafeb" => :sierra
+    sha256 "321bbdcfeb64124bc8f487740fbadbb24fba9ca38706de38ccadadf87fe802ae" => :x86_64_linux
   end
 
   # 26 Aug 2017; Community mostly wants USE_DOUBLE; make it default now
@@ -21,9 +21,10 @@ class Fasttree < Formula
   option "without-openmp", "Disable multithreading support"
   option "without-sse", "Disable SSE parallel instructions"
 
-  fails_with :clang # needs OpenMP
-
-  depends_on "gcc" if OS.mac? # needs OpenMP
+  if build.with? "openmp"
+    fails_with :clang # needs OpenMP
+    depends_on "gcc" if OS.mac? # needs OpenMP
+  end
 
   def install
     opts = %w[-O3 -finline-functions -funroll-loops]

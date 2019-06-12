@@ -4,14 +4,14 @@ class Squeakr < Formula
   homepage "https://github.com/splatlab/squeakr"
   url "https://github.com/splatlab/squeakr/archive/v0.5.tar.gz"
   sha256 "9931d35e71bca0b4f0e9d3865a7c3563b2d4e7bfa03871d113777188f9b75bab"
-  revision 1
+  revision 2
   head "https://github.com/splatlab/squeakr.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "6647d50895fcb8fe83e5ad85e3c02c258ca51febcdecaea3aca36e05869bb437" => :sierra
-    sha256 "71962bb43d00f84054488c34c16899293f13bc4f3b0653baf89c1f9267bd59af" => :x86_64_linux
+    sha256 "dfa98d5cd8460acb93fc203e112ca594513f45dde30761d22a816dee6fddd6a3" => :sierra
+    sha256 "ca1e2c8f2c704153e82faa2cbfcbad90af363e397e22c035ce33fdb2f021a710" => :x86_64_linux
   end
 
   depends_on "boost"
