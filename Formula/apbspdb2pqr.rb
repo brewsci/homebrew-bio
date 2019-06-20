@@ -10,6 +10,12 @@ class Apbspdb2pqr < Formula
       :revision => "aa353941cfadc09ccd113075d261a427864c2979"
   head "https://github.com/Electrostatics/apbs-pdb2pqr.git"
 
+  bottle do
+    cellar :any
+    sha256 "20632b132bd4b3f2d5b76810b20d95a2980071f870957273b5d803a78586ef50" => :sierra
+    sha256 "0a100baae07f10c659ce97c7750fe610fefe57bc84067e0d0fdccf5fa7cac09b" => :x86_64_linux
+  end
+
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "eigen"
