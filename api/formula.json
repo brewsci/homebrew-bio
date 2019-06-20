@@ -368,6 +368,63 @@
     "outdated": false
   },
   {
+    "name": "apbspdb2pqr",
+    "full_name": "brewsci/bio/apbspdb2pqr",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Electrostatic and solvation properties for complex molecules",
+    "homepage": "https://www.poissonboltzmann.org/",
+    "versions": {
+      "stable": "1.5",
+      "devel": null,
+      "head": "HEAD",
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/apbspdb2pqr-1.5.sierra.bottle.tar.gz",
+            "sha256": "20632b132bd4b3f2d5b76810b20d95a2980071f870957273b5d803a78586ef50"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/apbspdb2pqr-1.5.x86_64_linux.bottle.tar.gz",
+            "sha256": "0a100baae07f10c659ce97c7750fe610fefe57bc84067e0d0fdccf5fa7cac09b"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [
+      "cmake"
+    ],
+    "dependencies": [
+      "boost",
+      "eigen",
+      "python",
+      "python@2",
+      "swig"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "aragorn",
     "full_name": "brewsci/bio/aragorn",
     "oldname": null,
