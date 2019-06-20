@@ -6872,9 +6872,9 @@
     "aliases": [],
     "versioned_formulae": [],
     "desc": "Binning algorithm to recover genomes from metagenomic datasets",
-    "homepage": "https://downloads.jbei.org/data/microbial_communities/MaxBin/MaxBin.html",
+    "homepage": "https://sourceforge.net/projects/maxbin2/",
     "versions": {
-      "stable": "2.2.5",
+      "stable": "2.2.6",
       "devel": null,
       "head": null,
       "bottle": true
@@ -6889,12 +6889,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/maxbin2-2.2.5.sierra.bottle.tar.gz",
-            "sha256": "9e9f738f0db2854c22c3ffff3ccf26d8e9ca26eb9fe0dee3bcf0391a93a889b7"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/maxbin2-2.2.6.sierra.bottle.tar.gz",
+            "sha256": "a5e1ef4145979d58c09431effd1a634f20b560f1fa1bc8df5f62ae73038403d2"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/maxbin2-2.2.5.x86_64_linux.bottle.tar.gz",
-            "sha256": "8d365882abbddfe35395b365e80981a89b6fe4af868bfd9f743b55d02e04b894"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/maxbin2-2.2.6.x86_64_linux.bottle.tar.gz",
+            "sha256": "a7828904c3ddcf9c4adcc367ce1f973fb39638c113ebf8ff5f400a51c3749049"
           }
         }
       }
@@ -6912,13 +6912,14 @@
       "fraggenescan",
       "hmmer",
       "idba",
-      "perl"
+      "perl",
+      "openssl"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
     "requirements": [],
     "conflicts_with": [],
-    "caveats": null,
+    "caveats": "The main executable is installed as `maxbin2`. All other executable files\nare installed to `$(brew --prefix)/Cellar/maxbin2/2.2.6/libexec`.\n",
     "installed": [],
     "linked_keg": null,
     "pinned": false,
