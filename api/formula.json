@@ -2884,7 +2884,7 @@
       "head": null,
       "bottle": true
     },
-    "revision": 1,
+    "revision": 2,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -2894,12 +2894,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/edirect-9.70_1.sierra.bottle.tar.gz",
-            "sha256": "fedb6269dd75de7b178f79701caf3438eddfbece091943b77d34bbba6194f300"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/edirect-9.70_2.sierra.bottle.tar.gz",
+            "sha256": "b5311aa60c1499624c3c24fcb8f6aea9305b61df678fab3cdf62b06128891ed4"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/edirect-9.70_1.x86_64_linux.bottle.tar.gz",
-            "sha256": "ad8e9d21c9c7a70b1a583afcee85f2a27cceb6ec1778c067888f792242fc20dc"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/edirect-9.70_2.x86_64_linux.bottle.tar.gz",
+            "sha256": "6795f25577e4ef30ee239422d81056210751b1a1856ed6eb9831f52958a42296"
           }
         }
       }
