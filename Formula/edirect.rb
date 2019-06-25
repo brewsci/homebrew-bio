@@ -1,7 +1,7 @@
 class Edirect < Formula
   desc "Access NCBI databases via the command-line"
   homepage "https://www.ncbi.nlm.nih.gov/books/NBK179288/"
-  url "http://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/11.6.20190620/edirect-11.6.20190620.tar.gz"
+  url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/11.6.20190620/edirect-11.6.20190620.tar.gz"
   version "11.6"
   sha256 "b2a5ef44b8dac9502f3662eccce728f944f3abbc3f50317630ec276bcc4550fc"
 
