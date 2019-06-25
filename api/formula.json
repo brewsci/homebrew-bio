@@ -1115,7 +1115,7 @@
     "desc": "Bayesian evolutionary analysis by sampling trees",
     "homepage": "https://www.beast2.org/",
     "versions": {
-      "stable": "2.5.0",
+      "stable": "2.5.2",
       "devel": null,
       "head": null,
       "bottle": true
@@ -1130,12 +1130,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/beast2-2.5.0.sierra.bottle.tar.gz",
-            "sha256": "6fe1fd9679d3526f70bc610ccc039a589f9a24fdfe84ebfd5b5cbefe953e7012"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/beast2-2.5.2.sierra.bottle.tar.gz",
+            "sha256": "0c691344ed296f3dfad345a41452232e5d4171448243a8328ec3eda83464338b"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/beast2-2.5.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "333eea1f859d21c26249c6959fc9f2dec4c12da12d1f73f18c515da11c91640f"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/beast2-2.5.2.x86_64_linux.bottle.tar.gz",
+            "sha256": "0d9d25160218d6650246f3955791603e61d450bcb152d7b15f9c5ce2459e319f"
           }
         }
       }
@@ -1153,7 +1153,7 @@
     "optional_dependencies": [],
     "requirements": [],
     "conflicts_with": [],
-    "caveats": "This install coexists with BEAST 1.x as all scripts are suffixed with '-2':\n    beast-2 -help\n\nTo use the unprefixed versions, add $(brew --prefix)/Cellar/beast2/2.5.0/libexec/bin to your PATH.\n",
+    "caveats": "This install coexists with BEAST 1.x as all scripts are suffixed with '-2':\n    beast-2 -help\n\nTo use the unprefixed versions, add $(brew --prefix)/Cellar/beast2/2.5.2/libexec/bin to your PATH.\n",
     "installed": [],
     "linked_keg": null,
     "pinned": false,
