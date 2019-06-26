@@ -14,7 +14,7 @@ jobs:
         sudo chown "$USER" /home/linuxbrew
         git config --global user.name LinuxbrewTestBot
         git config --global user.email testbot@linuxbrew.sh
-        git clone https://github.com/Linuxbrew/brew /home/linuxbrew/.linuxbrew/Homebrew
+        git clone https://github.com/Homebrew/brew /home/linuxbrew/.linuxbrew/Homebrew
         mkdir /home/linuxbrew/.linuxbrew/bin
         ln -s ../Homebrew/bin/brew /home/linuxbrew/.linuxbrew/bin/
         tap=/home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/"$BUILD_REPOSITORY_ID"
