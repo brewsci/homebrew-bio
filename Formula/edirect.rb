@@ -27,7 +27,7 @@ class Edirect < Formula
     pms = %w[XML::Simple Encode::Locale File::Listing HTML::Parser HTML::Tagset HTML::Entities HTML::Tree
              HTTP::Cookies HTTP::Date HTTP::Message HTTP::Negotiate LWP::MediaTypes IO::Socket::SSL
              LWP::Protocol::https URI WWW::RobotRules Mozilla::CA Net::SSLeay]
-    system "cpan", "-f", "-l", prefix/"perl5", "XML::SAX::Expat"
+    system "cpan", "-f", prefix/"perl5", "XML::SAX::Expat"
     system "cpanm", "--force", "--self-contained", "-l", prefix/"perl5", *pms
 
     libexec.install Dir["*"]
