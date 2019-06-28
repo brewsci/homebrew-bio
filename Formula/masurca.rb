@@ -2,13 +2,13 @@ class Masurca < Formula
   # cite Zimin_2013: "https://doi.org/10.1093/bioinformatics/btt476"
   desc "Maryland Super-Read Celera Assembler"
   homepage "https://masurca.blogspot.com/"
-  url "https://github.com/alekseyzimin/masurca/releases/download/3.3.2/MaSuRCA-3.3.2.tar.gz"
-  sha256 "c39b25d3f2e31fab9ccf9a922622ce7558179baf81fcacf1e4d126ec9210261d"
+  url "https://github.com/alekseyzimin/masurca/releases/download/v3.3.3/MaSuRCA-3.3.3.tar.gz"
+  sha256 "55516b7ed971a9f9a59d298893da16f441792a7ffedfe2bbc97dc6c0931abc6a"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "d41adead7cf4cd5235bc79fbfaff898349b37a4f59e4ce29b1d4576571681b92" => :x86_64_linux
+    sha256 "fe478f9c6e92ee3fa9ccc24a42d6930f415cf3ab3dfff6a2d4143e3d3e65f0f2" => :x86_64_linux
   end
 
   depends_on "boost" => :build
@@ -16,10 +16,8 @@ class Masurca < Formula
   depends_on :linux
   depends_on "parallel"
   depends_on "perl"
-  unless OS.mac?
-    depends_on "bzip2"
-    depends_on "zlib"
-  end
+  uses_from_macos "bzip2"
+  uses_from_macos "zlib"
 
   def install
     ENV.deparallelize
