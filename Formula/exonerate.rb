@@ -15,11 +15,6 @@ class Exonerate < Formula
   depends_on "glib"
 
   def install
-    # Fix the following error. This issue is fixed upstream in 2.4.0.
-    # /usr/bin/ld: socket.o: undefined reference to symbol 'pthread_create@@GLIBC_2.2.5'
-    # /lib/x86_64-linux-gnu/libpthread.so.0: error adding symbols: DSO missing from command line
-    # inreplace "configure", 'LDFLAGS="$LDFLAGS -lpthread"', 'LIBS="$LIBS -lpthread"' unless build.devel?
-
     system "./configure",
       "--disable-debug",
       "--disable-dependency-tracking",
