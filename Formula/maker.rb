@@ -28,7 +28,6 @@ class Maker < Formula
   depends_on "repeatmasker"
   depends_on "snap"
   unless OS.mac?
-    depends_on "perl"
     depends_on "sqlite"
   end
 
