@@ -45,9 +45,10 @@ class Maker < Formula
   def install
     ENV.prepend "PERL5LIB", Formula["bioperl"].libexec/"lib/perl5"
     ENV.prepend_create_path "PERL5LIB", prefix/"perl5/lib/perl5"
+    system "cpanm", "-l", prefix/"perl5", "DBD::SQLite"
     system "cpanm", "-l", prefix/"perl5",
       "IO::All", "Perl::Unsafe::Signals", "Want", "forks", "forks::shared"
-    system "cpanm", "-l", prefix/"perl5", "Bit::Vector", "DBD::SQLite", "Inline::C" unless OS.mac?
+    system "cpanm", "-l", prefix/"perl5", "Bit::Vector", "Inline::C" unless OS.mac?
 
     cd "src" do
       mpi = build.with?("open-mpi") ? "yes" : "no"
