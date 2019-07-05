@@ -2,8 +2,8 @@ class Adam < Formula
   # cite Nothaft_2015: "https://doi.org/10.1145/2723372.2742787"
   desc "Genomics analysis platform built on Apache Avro, Apache Spark and Parquet"
   homepage "https://github.com/bigdatagenomics/adam"
-  url "https://search.maven.org/remotecontent?filepath=org/bdgenomics/adam/adam-distribution-spark2_2.11/0.27.0/adam-distribution-spark2_2.11-0.27.0-bin.tar.gz"
-  sha256 "9efa010fd8c06998217f93e1f620c0e11f373260b00d589cadb1e48354210e7c"
+  url "https://search.maven.org/remotecontent?filepath=org/bdgenomics/adam/adam-distribution-spark2_2.11/0.28.0/adam-distribution-spark2_2.11-0.28.0-bin.tar.gz"
+  sha256 "ba514ecd38dde12ba60886504cd41c6036150026c85cda957a84e582e57fbf9f"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
