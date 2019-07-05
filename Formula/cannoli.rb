@@ -1,8 +1,8 @@
 class Cannoli < Formula
   desc "Big Data Genomics ADAM Pipe API wrappers for bioinformatics tools"
   homepage "https://github.com/bigdatagenomics/cannoli"
-  url "https://search.maven.org/remotecontent?filepath=org/bdgenomics/cannoli/cannoli-distribution-spark2_2.11/0.3.0/cannoli-distribution-spark2_2.11-0.3.0-bin.tar.gz"
-  sha256 "8ecc77eacd85d27b7a47b2f9d5be80aa7e286a991cfc68b2512edbdcc7ce29ab"
+  url "https://search.maven.org/remotecontent?filepath=org/bdgenomics/cannoli/cannoli-distribution-spark2_2.11/0.6.0/cannoli-distribution-spark2_2.11-0.6.0-bin.tar.gz"
+  sha256 "00acc9e3fe7e4cf8803abce88d912de12bcea3ea9fccd92224199928c685bb67"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
