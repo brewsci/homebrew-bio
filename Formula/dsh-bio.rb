@@ -1,8 +1,8 @@
 class DshBio < Formula
   desc "Tools for BED, FASTA, FASTQ, GFA1/2, GFF3, SAM, and VCF files"
   homepage "https://github.com/heuermh/dishevelled-bio"
-  url "https://search.maven.org/remotecontent?filepath=org/dishevelled/dsh-bio-tools/1.1/dsh-bio-tools-1.1-bin.tar.gz"
-  sha256 "ee83f4875e15d0444d9230a4971514eba436585f6782240106075c63492ce853"
+  url "https://search.maven.org/remotecontent?filepath=org/dishevelled/dsh-bio-tools/1.2/dsh-bio-tools-1.2-bin.tar.gz"
+  sha256 "f5ecfc9071c1baaa6ccb3d0643554f4275b49f4112595cec5f32a2bbc9898f39"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
