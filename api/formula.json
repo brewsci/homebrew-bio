@@ -12204,7 +12204,7 @@
     "desc": "A cross-platform and efficient NCBI taxonomy toolkit",
     "homepage": "https://github.com/shenwei356/taxonkit",
     "versions": {
-      "stable": "0.3.0",
+      "stable": "0.5.0",
       "devel": null,
       "head": null,
       "bottle": true
@@ -12219,12 +12219,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/taxonkit-0.3.0.sierra.bottle.tar.gz",
-            "sha256": "52bc0f2bbd2286f5e4394e22c232851435f3b3b5d43834dd4f0bb5c362045569"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/taxonkit-0.5.0.sierra.bottle.tar.gz",
+            "sha256": "0afc6abccfda04fc09e9672a9952a73069a9d8831bd77e40b084657487b5ab83"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/taxonkit-0.3.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "57b2f2b8c6601ed954bbbfdba1c10fc54da88054bde8ff88a99b4f99e77d981b"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/taxonkit-0.5.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "79f1c7f5af26435d0d09a69ce52236cd9b16a30e37ba3063a78cd8117a54a9e5"
           }
         }
       }
