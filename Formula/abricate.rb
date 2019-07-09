@@ -3,6 +3,7 @@ class Abricate < Formula
   homepage "https://github.com/tseemann/abricate"
   url "https://github.com/tseemann/abricate/archive/v0.8.13.tar.gz"
   sha256 "21cae491e40ee12ce34fd6fbcc93ca3ed12d88a9a774b9f8e62da36078b8292d"
+  revision 1
   head "https://github.com/tseemann/abricate.git"
 
   bottle do
