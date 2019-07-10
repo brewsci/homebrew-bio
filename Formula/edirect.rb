@@ -28,7 +28,6 @@ class Edirect < Formula
              HTTP::Cookies HTTP::Date HTTP::Message HTTP::Negotiate LWP::MediaTypes IO::Socket::SSL
              LWP::Protocol::https URI WWW::RobotRules Mozilla::CA Net::SSLeay]
     ENV.deparallelize
-    system "cpanm", "--force", "--self-contained", "-l", prefix/"perl5", "XML::SAX::Expat"
     system "cpanm", "--force", "--self-contained", "-l", prefix/"perl5", *pms
 
     libexec.install Dir["*"]
