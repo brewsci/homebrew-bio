@@ -4,6 +4,7 @@ class Skesa < Formula
   homepage "https://github.com/ncbi/SKESA"
   url "https://github.com/ncbi/SKESA/archive/v2.3.0.tar.gz"
   sha256 "13832e41b69a94d9f64dee7685b4d05f2e94f807ad819afa8d4cd78cee54879d"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -12,18 +13,47 @@ class Skesa < Formula
   end
 
   depends_on "boost"
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "libxml2"
+  uses_from_macos "zlib"
+
+  resource "ngs" do
+    url "https://github.com/ncbi/ngs/archive/2.9.6.tar.gz"
+    sha256 "4be42f4d62b2376dc2fc4cd992822525bd99f8e1193008c2dab387a2f291405b"
+  end
+
+  resource "ncbi-vdb" do
+    url "https://github.com/ncbi/ncbi-vdb/archive/2.9.6.tar.gz"
+    sha256 "3b13ae1362b01f8300a6e8b75742857bd8b0c9ee62561f9fdd4a46be384451d6"
+  end
 
   def install
-    makefile = "Makefile.nongs"
+    ENV.cxx11
 
     # https://github.com/ncbi/SKESA/issues/6
     if OS.mac?
-      inreplace makefile, "-Wl,-Bstatic", ""
-      inreplace makefile, "-Wl,-Bdynamic -lrt", ""
+      inreplace "Makefile", "-Wl,-Bstatic", ""
+      inreplace "Makefile", "-Wl,-Bdynamic -lrt", ""
+      ENV["MACOSX_DEPLOYMENT_TARGET"] = "10.9" if MacOS.version < :high_sierra
     end
 
-    system "make", "-f", makefile, "BOOST_PATH=#{Formula["boost"].opt_prefix}"
+    # Replicate build steps by unpacking ngs and ncbi-vdb ourselves.
+    resource("ngs").stage do
+      cd "ngs-sdk" do
+        system "./configure", "--prefix=#{libexec}/ngs_out"
+        system "make", "install"
+      end
+    end
+
+    resource("ncbi-vdb").stage do
+      ENV.deparallelize
+      system "./configure", "--prefix=#{libexec}/vdb_out", "--with-ngs-sdk-prefix=#{libexec}/ngs_out"
+      inreplace "Makefile", "-mmacosx-version-min=version=10.6", "-mmacosx-version-min=version=10.9" if MacOS.version < :high_sierra
+      system "make", "install"
+    end
+
+    touch libexec/"ngs.done" # Build system needs this flag file
+
+    system "make", "BOOST_PATH=#{Formula["boost"].opt_prefix}", "NGS_DIR=#{libexec}"
     bin.install "skesa"
   end
 
