@@ -64,7 +64,7 @@
       "head": "HEAD",
       "bottle": true
     },
-    "revision": 0,
+    "revision": 1,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -74,12 +74,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/abricate-0.8.13.sierra.bottle.tar.gz",
-            "sha256": "64a7fc3e2857ea1718e3f970990bb979b6de014a4bdde25da93318ce5f96525e"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/abricate-0.8.13_1.sierra.bottle.tar.gz",
+            "sha256": "2a0d5ca4c023c3a6861b832a04207e0ff44e895360d2e98b70ed32e3a6575c13"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/abricate-0.8.13.x86_64_linux.bottle.tar.gz",
-            "sha256": "cc4412ab1579f3cabf629dbd90ea4b09144f0ab73b474ae39cd3baaadfbfe468"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/abricate-0.8.13_1.x86_64_linux.bottle.tar.gz",
+            "sha256": "f166e269d2235aed9eb1b8eead6c81abe23e5dc68996639457bf7ae9fe6d15d3"
           }
         }
       }
@@ -1383,7 +1383,7 @@
       "head": null,
       "bottle": true
     },
-    "revision": 2,
+    "revision": 3,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -1393,12 +1393,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/bioperl-1.007002_2.sierra.bottle.tar.gz",
-            "sha256": "671e8767d3f46e4fe875873f2aa3feae5d2e9852b7e21773d04f8fd760254f35"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bioperl-1.007002_3.sierra.bottle.tar.gz",
+            "sha256": "36b08831cc85e3550ee622b3d1c485f6bf9d2dcfd87ef9a9c33ba72f9bae8f94"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/bioperl-1.007002_2.x86_64_linux.bottle.tar.gz",
-            "sha256": "f7b12d49d7cccdd7c4a7c71a59b8775bcdc47a013bf3c8968d76119c13fe7d59"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bioperl-1.007002_3.x86_64_linux.bottle.tar.gz",
+            "sha256": "7a3a5d0a2179fe45c2d407f13bac0d5c484e2d80639a094baa353167ab4abf9d"
           }
         }
       }
@@ -6667,7 +6667,7 @@
       "head": null,
       "bottle": true
     },
-    "revision": 1,
+    "revision": 2,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -6677,12 +6677,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/maker-2.31.10_1.sierra.bottle.tar.gz",
-            "sha256": "fd228276674bd6da591c88e57833acbbda08240b86a8fbb70bb9c7b24adc574b"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/maker-2.31.10_2.sierra.bottle.tar.gz",
+            "sha256": "9d5e53a07e6e73dc09abdc9939a9f3f731535fdb0cc354935b3ff3a5e79e0c18"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/maker-2.31.10_1.x86_64_linux.bottle.tar.gz",
-            "sha256": "0ab95a55c2a80af83a89b44997b88fa26a5d20b8ab0cd8db8b1fc2589687b406"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/maker-2.31.10_2.x86_64_linux.bottle.tar.gz",
+            "sha256": "6004e89464cf7b149fb339dd9aec0e614e90e13e0d1755f63f4d70de963f0ab2"
           }
         }
       }
