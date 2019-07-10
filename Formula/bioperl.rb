@@ -4,13 +4,13 @@ class Bioperl < Formula
   homepage "https://bioperl.org"
   url "https://cpan.metacpan.org/authors/id/C/CJ/CJFIELDS/BioPerl-1.007002.tar.gz"
   sha256 "17aa3aaab2f381bbcaffdc370002eaf28f2c341b538068d6586b2276a76464a1"
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "671e8767d3f46e4fe875873f2aa3feae5d2e9852b7e21773d04f8fd760254f35" => :sierra
-    sha256 "f7b12d49d7cccdd7c4a7c71a59b8775bcdc47a013bf3c8968d76119c13fe7d59" => :x86_64_linux
+    sha256 "36b08831cc85e3550ee622b3d1c485f6bf9d2dcfd87ef9a9c33ba72f9bae8f94" => :sierra
+    sha256 "7a3a5d0a2179fe45c2d407f13bac0d5c484e2d80639a094baa353167ab4abf9d" => :x86_64_linux
   end
 
   depends_on "cpanminus" => :build

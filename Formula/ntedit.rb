@@ -7,6 +7,7 @@ class Ntedit < Formula
   head "https://github.com/bcgsc/ntEdit.git"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
     sha256 "2ba8df7fc9c2de6072834cc2d0455cc23c1afe7869ffd177d8674d8eb3c49288" => :sierra
     sha256 "60004945f186ea293feb6007e362fdf7af5928cc45865a218f622906eae3e624" => :x86_64_linux
