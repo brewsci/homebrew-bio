@@ -1,16 +1,15 @@
 class Edirect < Formula
   desc "Access NCBI databases via the command-line"
   homepage "https://www.ncbi.nlm.nih.gov/books/NBK179288/"
-  url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/9.70.20180816/edirect-9.70.20180816.tar.gz"
-  version "9.70"
-  sha256 "8c5f383ee1943656d0b74e88eb661c7ee1f45579b03f84ee46b8c7859d7f3b99"
-  revision 2
+  url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/11.6.20190620/edirect-11.6.20190620.tar.gz"
+  version "11.6"
+  sha256 "b2a5ef44b8dac9502f3662eccce728f944f3abbc3f50317630ec276bcc4550fc"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "b5311aa60c1499624c3c24fcb8f6aea9305b61df678fab3cdf62b06128891ed4" => :sierra
-    sha256 "6795f25577e4ef30ee239422d81056210751b1a1856ed6eb9831f52958a42296" => :x86_64_linux
+    sha256 "6a223e7f9f2e132a57b131b37609eba8bf2108ebf8098d12678ed3d8f2a5e3ba" => :sierra
+    sha256 "54cc6e0ede6779012aa798a19d82df256dfe0f9ae700b26bb64988f67d661fe0" => :x86_64_linux
   end
 
   depends_on "cpanminus" => :build
@@ -25,9 +24,10 @@ class Edirect < Formula
 
     ENV.prepend_create_path "PERL5LIB", prefix/"perl5/lib/perl5"
     ENV["OPENSSL_PREFIX"] = Formula["openssl"].opt_prefix # for Net::SSLeay
-    pms = %w[Encode::Locale File::Listing HTML::Parser HTML::Tagset HTML::Entities HTML::Tree
+    pms = %w[XML::Simple Encode::Locale File::Listing HTML::Parser HTML::Tagset HTML::Entities HTML::Tree
              HTTP::Cookies HTTP::Date HTTP::Message HTTP::Negotiate LWP::MediaTypes IO::Socket::SSL
              LWP::Protocol::https URI WWW::RobotRules Mozilla::CA Net::SSLeay]
+    ENV.deparallelize
     system "cpanm", "--self-contained", "-l", prefix/"perl5", *pms
 
     libexec.install Dir["*"]
