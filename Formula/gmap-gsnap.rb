@@ -7,9 +7,9 @@ class GmapGsnap < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "d3f2ddc81b616b01ea9e2f1857f0ff1d64e49d35361661b579ec36420b60f963" => :sierra
-    sha256 "b336ad0183f34f685d8e3e83961499a1da2e616637f04447408f1758ef8e9729" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "25420cf61683ccd854309cb9ba52a78ce99758eea10fa6b96f77e03dbe910d8c" => :sierra
+    sha256 "37982e497f6cf41f07afa055ea733490d6c7940c516925426c07badfa45791d3" => :x86_64_linux
   end
 
   depends_on "samtools"
