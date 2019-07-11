@@ -2,9 +2,8 @@ class Bowtie < Formula
   # cite Langmead_2009: "https://doi.org/10.1186/gb-2009-10-3-r25"
   desc "Ultrafast memory-efficient short read aligner"
   homepage "https://bowtie-bio.sourceforge.io/"
-  url "https://github.com/BenLangmead/bowtie/archive/v1.2.2_p1.tar.gz"
-  version "1.2.2_p1"
-  sha256 "e1b02b2e77a0d44a3dd411209fa1f44f0c4ee304ef5cc83f098275085740d5a1"
+  url "https://github.com/BenLangmead/bowtie/archive/v1.2.3.tar.gz"
+  sha256 "86402114caeacbb3a3030509cb59f0b7e96361c7b3ee2dd50e2cd68200898823"
   head "https://github.com/BenLangmead/bowtie.git"
 
   bottle do
