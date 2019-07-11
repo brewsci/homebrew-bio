@@ -2,8 +2,8 @@ class GmapGsnap < Formula
   # cite Wu_2010: "https://doi.org/10.1093/bioinformatics/btq057"
   desc "Genomic Mapping & Alignment Program for RNA/EST/Short-read sequences"
   homepage "http://research-pub.gene.com/gmap/"
-  url "http://research-pub.gene.com/gmap/src/gmap-gsnap-2018-07-04.tar.gz"
-  sha256 "a9f8c1f0810df65b2a089dc10be79611026f4c95e4681dba98fea3d55d598d24"
+  url "http://research-pub.gene.com/gmap/src/gmap-gsnap-2019-06-10.tar.gz"
+  sha256 "6b90c09931d0aef36e28c526233054144af32542ae22b079379fcf5f25f58dd1"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -29,7 +29,7 @@ class GmapGsnap < Formula
 
     Databases will be installed to:
       #{share}
-    EOS
+  EOS
   end
 
   test do
