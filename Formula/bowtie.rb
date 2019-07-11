@@ -20,6 +20,7 @@ class Bowtie < Formula
 
     doc.install "MANUAL", "NEWS", "TUTORIAL"
     pkgshare.install "scripts", "genomes", "indexes", "reads"
+    bin.install "bowtie-inspect"
   end
 
   test do
