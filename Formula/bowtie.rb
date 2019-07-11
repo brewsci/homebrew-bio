@@ -14,13 +14,13 @@ class Bowtie < Formula
   end
 
   depends_on "tbb"
+  depends_on "python@2" => :test unless OS.mac? || which("python")
 
   def install
     system "make", "install", "prefix=#{prefix}"
 
     doc.install "MANUAL", "NEWS", "TUTORIAL"
     pkgshare.install "scripts", "genomes", "indexes", "reads"
-    bin.install "bowtie-inspect"
   end
 
   test do
