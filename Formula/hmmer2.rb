@@ -4,8 +4,8 @@ class Hmmer2 < Formula
   # cite Eddy_2011: "https://doi.org/10.1371/journal.pcbi.1002195"
   desc "Profile HMM models for protein sequences"
   homepage "http://hmmer.org/"
-  url "http://eddylab.org/software/hmmer/2.4i/hmmer-2.4i.tar.gz"
-  sha256 "73cb85c2197017fa7a25482556ed250bdeed256974b99b0c25e02854e710a886"
+  url "http://eddylab.org/software/hmmer/hmmer-3.2.1.tar.gz"
+  sha256 "a56129f9d786ec25265774519fc4e736bbc16e4076946dcbd7f2c16efc8e2b9c"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
