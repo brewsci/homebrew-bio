@@ -4276,7 +4276,7 @@
     "desc": "Linear mixed models (LMMs) for genome-wide association (GWA)",
     "homepage": "https://github.com/genetics-statistics/gemma",
     "versions": {
-      "stable": "0.98",
+      "stable": "0.98.1",
       "devel": null,
       "head": null,
       "bottle": true
@@ -4291,12 +4291,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/gemma-0.98.sierra.bottle.tar.gz",
-            "sha256": "a70496a8b7dcb1b2b0466f32729a2087d43e511de00e619b52090ed9d745c5b9"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/gemma-0.98.1.sierra.bottle.tar.gz",
+            "sha256": "552f7f77c75747d9d0457706cb480fed17063f633d088e099ef3aac44b4aea4f"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/gemma-0.98.x86_64_linux.bottle.tar.gz",
-            "sha256": "78f2bcec7d7f010188a5619d83b3b68a6b4169c8e40ae33fd1e03815bc98facb"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/gemma-0.98.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "4a65d64d34e24e2ac644bd9ad4eca53adca4c395d6fee82a3d78d4e3a1052247"
           }
         }
       }
