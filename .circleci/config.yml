@@ -45,7 +45,7 @@ jobs:
           path: /tmp/bottles
   build-macos:
     macos:
-      xcode: "9.0"
+      xcode: "9.2"
     environment:
       CIRCLE_REPOSITORY_URL: https://github.com/brewsci/homebrew-bio
       HOMEBREW_DEVELOPER: 1
