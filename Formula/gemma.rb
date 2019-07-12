@@ -2,14 +2,14 @@ class Gemma < Formula
   # cite Zhou_2012: "http://dx.doi.org/10.1038/ng.2310"
   desc "Linear mixed models (LMMs) for genome-wide association (GWA)"
   homepage "https://github.com/genetics-statistics/gemma"
-  url "https://github.com/genetics-statistics/GEMMA/archive/v0.98.tar.gz"
-  sha256 "ab00d933007ce375c3c187486a7ded4c5e45b711f30ee3434821310b416889de"
+  url "https://github.com/genetics-statistics/GEMMA/archive/0.98.1.tar.gz"
+  sha256 "6beeed4a9e727a96fdea9e86e39bbe9cbc9f0540ad3a1053814e95b0863a7e6b"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "a70496a8b7dcb1b2b0466f32729a2087d43e511de00e619b52090ed9d745c5b9" => :sierra
-    sha256 "78f2bcec7d7f010188a5619d83b3b68a6b4169c8e40ae33fd1e03815bc98facb" => :x86_64_linux
+    sha256 "552f7f77c75747d9d0457706cb480fed17063f633d088e099ef3aac44b4aea4f" => :sierra
+    sha256 "4a65d64d34e24e2ac644bd9ad4eca53adca4c395d6fee82a3d78d4e3a1052247" => :x86_64_linux
   end
 
   depends_on "eigen" => :build
