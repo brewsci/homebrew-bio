@@ -2,14 +2,14 @@ class Iqtree < Formula
   # cite Nguyen_2015: "https://doi.org/10.1093/molbev/msu300"
   desc "Efficient phylogenomic software by maximum likelihood"
   homepage "http://www.iqtree.org/"
-  url "https://github.com/Cibiv/IQ-TREE/archive/v1.6.10.tar.gz"
-  sha256 "dcbf0753557855b851654b48e74943c7d6844072a201aa3059d28458569d92b6"
+  url "https://github.com/Cibiv/IQ-TREE/archive/v1.6.11.tar.gz"
+  sha256 "39906e59821b6241fbe2cf5676926ed89a05433a6116322d2d448e1622d9e1c2"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "036a80c97c5530560beacfdfe30373e82740c8d613d05a073a7fbb9558af10b4" => :sierra
-    sha256 "17059cff983af8b6b722df118bde70913d4c9418d1ac7ae17d587e02a90ea3b2" => :x86_64_linux
+    sha256 "e4949bf5964090c5c1a9785d86a86cbcd7c3190fe503df08da08c50b5e3bc53b" => :sierra
+    sha256 "201e73a51356a687b02de381685b81451f01c9ae24c94fcc146368f0387172d8" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
