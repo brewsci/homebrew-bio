@@ -3760,7 +3760,7 @@
     "desc": "Genomic minhashing implementation in Rust",
     "homepage": "https://github.com/onecodex/finch-rs",
     "versions": {
-      "stable": "0.1.8",
+      "stable": "0.2.0",
       "devel": null,
       "head": null,
       "bottle": true
@@ -3775,12 +3775,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/finch-rs-0.1.8.sierra.bottle.tar.gz",
-            "sha256": "2e897484a427b9a334948ca8a24ee6512f34bc8ae450a717f680072ef935a570"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/finch-rs-0.2.0.sierra.bottle.tar.gz",
+            "sha256": "70247045d1517084a4297c42f2c2f8c7cbfdfb4999c434ff796318e0987a65a2"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/finch-rs-0.1.8.x86_64_linux.bottle.tar.gz",
-            "sha256": "7f7facafdcf630b9d9caec6d8f4b8d302494ccbfc71ff1581b4114f31daa68e7"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/finch-rs-0.2.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "47491278c899f82d8691d528a75a0934f2db112008e4bdae5103b534081e7bf2"
           }
         }
       }
