@@ -4,6 +4,13 @@ class Bam2fastx < Formula
   url "https://github.com/PacificBiosciences/bam2fastx/archive/1.3.0.tar.gz"
   sha256 "be5639807f1ffd2fb972e570068173971026300a79e879384fbf6ad20b5ab762"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any
+    sha256 "5e1053af2b9f378b5176e16bf65387d5e0ddfbec6468a5e21640f39b501bdf16" => :sierra
+    sha256 "2990674c01b517325aeab3d132436bd5bba1bee063112117206ff0ac3b50eb29" => :x86_64_linux
+  end
+
   depends_on "boost" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
