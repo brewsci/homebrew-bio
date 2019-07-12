@@ -2,8 +2,8 @@ class Iva < Formula
   # cite Hunt_2015: "https://doi.org/10.1093/bioinformatics/btv120"
   desc "Iterative Virus Assembler"
   homepage "https://github.com/sanger-pathogens/iva"
-  url "https://github.com/sanger-pathogens/iva/archive/v1.0.8.tar.gz"
-  sha256 "20cac9b6683a2a33dc8cf790287f0eb8c3b4d02a287a380a071d821c1e0f1040"
+  url "https://github.com/sanger-pathogens/iva/archive/v1.0.9.tar.gz"
+  sha256 "91ba402d0feacc88b3e34e71b4f10e0552702887e6e416076e57f95f6aaf7fad"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -60,7 +60,7 @@ class Iva < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/iva --version 2>&1")
+    assert_match "usage", shell_output("#{bin}/iva 2>&1", 2)
     assert_match "-f reads_fwd -r reads_rev", shell_output("#{bin}/iva --help 2>&1")
   end
 end
