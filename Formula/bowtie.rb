@@ -2,19 +2,19 @@ class Bowtie < Formula
   # cite Langmead_2009: "https://doi.org/10.1186/gb-2009-10-3-r25"
   desc "Ultrafast memory-efficient short read aligner"
   homepage "https://bowtie-bio.sourceforge.io/"
-  url "https://github.com/BenLangmead/bowtie/archive/v1.2.2_p1.tar.gz"
-  version "1.2.2_p1"
-  sha256 "e1b02b2e77a0d44a3dd411209fa1f44f0c4ee304ef5cc83f098275085740d5a1"
+  url "https://github.com/BenLangmead/bowtie/archive/v1.2.3.tar.gz"
+  sha256 "86402114caeacbb3a3030509cb59f0b7e96361c7b3ee2dd50e2cd68200898823"
   head "https://github.com/BenLangmead/bowtie.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "d6d3a56db17786537453e3c841b4938fd190970e7534eaee5446bbae55254fda" => :sierra
-    sha256 "f5d9b8994e1fcb589b3eb9290cffa78243463dc4ec0c8f2a21cb9831defcc630" => :x86_64_linux
+    sha256 "68c4f8f9e4437c7831fb0f3e09fa32acef47a763db231c700ee2f60fa93c52ff" => :sierra
+    sha256 "f517d5d13bdb58b788e621a2771702acfb81387eaafabe194b4622c294af9e76" => :x86_64_linux
   end
 
   depends_on "tbb"
+  depends_on "python@2" => :test unless OS.mac? || which("python")
 
   def install
     system "make", "install", "prefix=#{prefix}"
