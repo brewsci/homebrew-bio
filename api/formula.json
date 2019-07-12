@@ -4638,7 +4638,7 @@
     "desc": "Genomic Mapping & Alignment Program for RNA/EST/Short-read sequences",
     "homepage": "http://research-pub.gene.com/gmap/",
     "versions": {
-      "stable": "2018-07-04",
+      "stable": "2019-06-10",
       "devel": null,
       "head": null,
       "bottle": true
@@ -4648,17 +4648,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/gmap-gsnap-2018-07-04.sierra.bottle.tar.gz",
-            "sha256": "d3f2ddc81b616b01ea9e2f1857f0ff1d64e49d35361661b579ec36420b60f963"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/gmap-gsnap-2019-06-10.sierra.bottle.tar.gz",
+            "sha256": "25420cf61683ccd854309cb9ba52a78ce99758eea10fa6b96f77e03dbe910d8c"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/gmap-gsnap-2018-07-04.x86_64_linux.bottle.tar.gz",
-            "sha256": "b336ad0183f34f685d8e3e83961499a1da2e616637f04447408f1758ef8e9729"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/gmap-gsnap-2019-06-10.x86_64_linux.bottle.tar.gz",
+            "sha256": "37982e497f6cf41f07afa055ea733490d6c7940c516925426c07badfa45791d3"
           }
         }
       }
@@ -4674,7 +4674,7 @@
     "optional_dependencies": [],
     "requirements": [],
     "conflicts_with": [],
-    "caveats": "You will need to either download or build indexed search databases.\nSee the readme file for how to do this:\n  http://research-pub.gene.com/gmap/src/README\n\nDatabases will be installed to:\n  $(brew --prefix)/Cellar/gmap-gsnap/2018-07-04/share\n",
+    "caveats": "You will need to either download or build indexed search databases.\nSee the readme file for how to do this:\n  http://research-pub.gene.com/gmap/src/README\n\nDatabases will be installed to:\n  $(brew --prefix)/Cellar/gmap-gsnap/2019-06-10/share\n",
     "installed": [],
     "linked_keg": null,
     "pinned": false,
