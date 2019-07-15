@@ -7,8 +7,8 @@ class Libbigwig < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "6c8853bfae2b374bfb6949036cb64b39667dfb5a5b1be9c92bcb61df867931b2" => :sierra
-    sha256 "46011c89b465d546b60c616d7510be4c615b2836e3781000f7c721b95cb48ed9" => :x86_64_linux
+    sha256 "3513fd0a41b0bf1409cb8f1e5ce9113811ece9d48c34a1a8cb2d734122d1c531" => :sierra
+    sha256 "f85dc5dd0b892d1bcaeb4bec2623085f3a15e73adc115aa2fac119889d42131e" => :x86_64_linux
   end
 
   uses_from_macos "curl"
