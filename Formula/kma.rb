@@ -11,6 +11,8 @@ class Kma < Formula
     sha256 "e54d17008120a044e39eed76089655af8a8187407fad6ae1db2b29f4d3c581c5" => :x86_64_linux
   end
 
+  uses_from_macos "zlib"
+
   def install
     system "make"
     bin.install %w[kma kma_index kma_shm]
