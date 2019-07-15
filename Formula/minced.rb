@@ -1,8 +1,8 @@
 class Minced < Formula
   desc "Mining CRISPRs in Environmental Datasets"
   homepage "https://github.com/ctSkennerton/minced"
-  url "https://github.com/ctSkennerton/minced/releases/download/0.3.0/minced.jar"
-  sha256 "16bdaa1fea625d1ce2f87d24e68eeb5bd733d8d04dda83c6ff74ee8d15fb8fe9"
+  url "https://github.com/ctSkennerton/minced/releases/download/0.4.0/minced.jar"
+  sha256 "b643d7e56335c0ce9fb95aee7958accb7ebc50ce385f4e12a5abc5547bf7fad6"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -32,6 +32,6 @@ class Minced < Formula
       GTTCACTGCCGTACAGGCAGCTTAGAAACTGAACGTTGAAGAGTGCGACCGTCTCTCCTT
       GTTCACTGCCGTACAGGCAGTATTCACA
     EOS
-    assert_match "1\t507\t9", shell_output("#{bin}/minced -gff #{testpath}/test.fa")
+    assert_match "1\t508\t8", shell_output("#{bin}/minced -gff #{testpath}/test.fa")
   end
 end
