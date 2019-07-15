@@ -60,7 +60,7 @@ class Iva < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/iva --version 2>&1")
+    assert_match "usage", shell_output("#{bin}/iva 2>&1")
     assert_match "-f reads_fwd -r reads_rev", shell_output("#{bin}/iva --help 2>&1")
   end
 end
