@@ -2,9 +2,8 @@ class Porechop < Formula
   # cite Wick_2017: "https://doi.org/10.1099/mgen.0.000132"
   desc "Trim adapters of Oxford Nanopore sequencing reads"
   homepage "https://github.com/rrwick/Porechop"
-  url "https://github.com/rrwick/Porechop/archive/v0.2.3.tar.gz"
-  sha256 "bfed39f82abc54f44fffd9b13d2121868084da7ac3d158ac9b9aa6fa0257f0f4"
-  revision 1
+  url "https://github.com/rrwick/Porechop/archive/v0.2.4.tar.gz"
+  sha256 "44b499157d933be43f702cec198d1d693dcb9276e3c545669be63c2612493299"
   head "https://github.com/rrwick/Porechop"
 
   bottle do
