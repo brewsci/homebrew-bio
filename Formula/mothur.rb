@@ -8,9 +8,9 @@ class Mothur < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "b1098f9c6dce8417abb486f42c3f2297b6cd593de6c9418a98b7e28b2fcedde0" => :sierra
-    sha256 "78bda9eb10493199353e47a862685148632488885621de987a355b767935511d" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "0a406594b1f9a67f3dad8c77653547e1a68e561d9802ccc67f42b312965743d8" => :sierra
+    sha256 "7544e56fb0feb4318191f92119d14bf67fd80db11203f9c9dae9bbb2b131243d" => :x86_64_linux
   end
 
   depends_on "boost"
