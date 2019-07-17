@@ -843,6 +843,64 @@
     "outdated": false
   },
   {
+    "name": "bam2fastx",
+    "full_name": "brewsci/bio/bam2fastx",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Convert and demultiplex PacBio BAM files to fasta and fastq format",
+    "homepage": "https://github.com/PacificBiosciences/bam2fastx",
+    "versions": {
+      "stable": "1.3.0",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bam2fastx-1.3.0.sierra.bottle.tar.gz",
+            "sha256": "5e1053af2b9f378b5176e16bf65387d5e0ddfbec6468a5e21640f39b501bdf16"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bam2fastx-1.3.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "2990674c01b517325aeab3d132436bd5bba1bee063112117206ff0ac3b50eb29"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [
+      "boost",
+      "meson",
+      "ninja",
+      "pkg-config",
+      "python"
+    ],
+    "dependencies": [
+      "htslib",
+      "zlib"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "bamm",
     "full_name": "brewsci/bio/bamm",
     "oldname": null,
@@ -3229,8 +3287,8 @@
     "desc": "Pairwise sequence alignment of DNA and proteins",
     "homepage": "https://www.ebi.ac.uk/about/vertebrate-genomics/software/exonerate",
     "versions": {
-      "stable": "2.2.0",
-      "devel": "2.4.0",
+      "stable": "2.4.0",
+      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -3239,17 +3297,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": "/home/linuxbrew/.linuxbrew/Cellar",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/exonerate-2.2.0.sierra.bottle.tar.gz",
-            "sha256": "da5d8b8ba78eaa5e5c9f02b6116d1a354543a69cc612e4aecd0030efaf32ddc3"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/exonerate-2.4.0.sierra.bottle.tar.gz",
+            "sha256": "fcadadfecae574f5d9aee1b1adad4a23bd24f682bc6f76358a27512025207325"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/exonerate-2.2.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "ffc9dc069931c451df43d67dc0ed5b21f45594c942564eda789eac9b5002293e"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/exonerate-2.4.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "ab0093c6b90759419d20b4905100517df0eb4b8f79ec9ef68671f6aa4473a5fc"
           }
         }
       }
@@ -5259,7 +5317,7 @@
     "desc": "Iterative Virus Assembler",
     "homepage": "https://github.com/sanger-pathogens/iva",
     "versions": {
-      "stable": "1.0.8",
+      "stable": "1.0.9",
       "devel": null,
       "head": null,
       "bottle": true
@@ -5269,17 +5327,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": "/home/linuxbrew/.linuxbrew/Cellar",
+        "cellar": ":any",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/iva-1.0.8.sierra.bottle.tar.gz",
-            "sha256": "8d400f42176e2ca421f6bdca8bd735a0ef2ab8af56f1ffd0f824e7d4f6b15e21"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/iva-1.0.9.sierra.bottle.tar.gz",
+            "sha256": "49a1baf28d5f8e89175dc01f08e3e6a9b8439e493ade3f58a162cc9561b3ced1"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/iva-1.0.8.x86_64_linux.bottle.tar.gz",
-            "sha256": "3c4914d151ebef4d190cfe211c4262eea85cb31ee0d61e3b9c6e37001a6586e1"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/iva-1.0.9.x86_64_linux.bottle.tar.gz",
+            "sha256": "eea163ae65cacbfca08005e99169d79ec7b641996b23751af0492176784576a6"
           }
         }
       }
@@ -5630,7 +5688,7 @@
     "desc": "Align long and short reads to redundant sequence databases",
     "homepage": "https://bitbucket.org/genomicepidemiology/kma",
     "versions": {
-      "stable": "0.14.3",
+      "stable": "1.2.8",
       "devel": null,
       "head": null,
       "bottle": true
@@ -5645,12 +5703,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/kma-0.14.3.sierra.bottle.tar.gz",
-            "sha256": "cbfefe7546a5df7b5b2ed5414be613152beb8bcf7e97524f64f2ca01aff5b90f"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/kma-1.2.8.sierra.bottle.tar.gz",
+            "sha256": "52522844f305d67dc389fa3c3034227d2a72ffa6ce66bba2b7498db214af0b30"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/kma-0.14.3.x86_64_linux.bottle.tar.gz",
-            "sha256": "e54d17008120a044e39eed76089655af8a8187407fad6ae1db2b29f4d3c581c5"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/kma-1.2.8.x86_64_linux.bottle.tar.gz",
+            "sha256": "ac88a5f2440997f0f09d08f4f734cf9d8f129a10d91c98661a9108ceaaecac08"
           }
         }
       }
@@ -5661,7 +5719,9 @@
     "build_dependencies": [
       "unzip"
     ],
-    "dependencies": [],
+    "dependencies": [
+      "zlib"
+    ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
     "requirements": [],
@@ -5935,7 +5995,7 @@
     "desc": "Find similar regions between sequences",
     "homepage": "http://last.cbrc.jp/",
     "versions": {
-      "stable": "926",
+      "stable": "982",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -5950,12 +6010,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/last-926.sierra.bottle.tar.gz",
-            "sha256": "b9685214aafa8564147ea9ed7312511a00dd314a6d333dc81e26ec05378a7727"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/last-982.sierra.bottle.tar.gz",
+            "sha256": "1079d4290ae07bbc6c7fc82dc15e8999c5864c6b958b6f94f18f25bbba9db8b9"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/last-926.x86_64_linux.bottle.tar.gz",
-            "sha256": "7d492b03fa60b7f154ad58a52ce861b351afb43687e507e41c32d1aafafeeaba"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/last-982.x86_64_linux.bottle.tar.gz",
+            "sha256": "cdfb9576c6e776fa2a338322a08a80156ee767348d3921ed49ba850f132b0a18"
           }
         }
       }
@@ -6088,7 +6148,7 @@
     "desc": "C library for processing the big UCSC fomats",
     "homepage": "https://github.com/dpryan79/libBigWig",
     "versions": {
-      "stable": "0.4.2",
+      "stable": "0.4.4",
       "devel": null,
       "head": null,
       "bottle": true
@@ -6103,12 +6163,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/libbigwig-0.4.2.sierra.bottle.tar.gz",
-            "sha256": "6c8853bfae2b374bfb6949036cb64b39667dfb5a5b1be9c92bcb61df867931b2"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/libbigwig-0.4.4.sierra.bottle.tar.gz",
+            "sha256": "3513fd0a41b0bf1409cb8f1e5ce9113811ece9d48c34a1a8cb2d734122d1c531"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/libbigwig-0.4.2.x86_64_linux.bottle.tar.gz",
-            "sha256": "46011c89b465d546b60c616d7510be4c615b2836e3781000f7c721b95cb48ed9"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/libbigwig-0.4.4.x86_64_linux.bottle.tar.gz",
+            "sha256": "f85dc5dd0b892d1bcaeb4bec2623085f3a15e73adc115aa2fac119889d42131e"
           }
         }
       }
@@ -7041,7 +7101,7 @@
     "desc": "Ultra-fast SMP/GPU succinct DBG metagenome assembly",
     "homepage": "https://github.com/voutcn/megahit",
     "versions": {
-      "stable": "1.1.3",
+      "stable": "1.1.4",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -7051,17 +7111,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": "/home/linuxbrew/.linuxbrew/Cellar",
+        "cellar": ":any",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/megahit-1.1.3.sierra.bottle.tar.gz",
-            "sha256": "c82763b2625de5ccb1c9d5c671eb4c4aae36c584b569f3330618d70b7ac568d8"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/megahit-1.1.4.sierra.bottle.tar.gz",
+            "sha256": "44de1004f2014f3660a71d8a4bf1012440fb30e6d8bbc7e32cbbe9ce7af579e1"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/megahit-1.1.3.x86_64_linux.bottle.tar.gz",
-            "sha256": "48f6cacd8476c46690ec7d4e094e3280a34762d4678c127633c8dc6ab5b9a006"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/megahit-1.1.4.x86_64_linux.bottle.tar.gz",
+            "sha256": "317e6684fbe9c566bfd94367461f752aa18745fcb81399068ac351d948bfbe94"
           }
         }
       }
@@ -7294,7 +7354,7 @@
     "desc": "Mining CRISPRs in Environmental Datasets",
     "homepage": "https://github.com/ctSkennerton/minced",
     "versions": {
-      "stable": "0.3.0",
+      "stable": "0.4.0",
       "devel": null,
       "head": null,
       "bottle": true
@@ -7309,12 +7369,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/minced-0.3.0.sierra.bottle.tar.gz",
-            "sha256": "ad305c528a5993583fea3daf9211cad4d4080dcfc8cc3d2c7c9b3562c1d197c2"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/minced-0.4.0.sierra.bottle.tar.gz",
+            "sha256": "0a48b74df3e25ebec567c1935f324a647f1bf392e0b6e7d2640202456e7edff1"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/minced-0.3.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "05c96b71921f6afaf5f0552dcc6be206c441b9e46d04fa5f0ad56be82bd9336a"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/minced-0.4.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "c4f31d9bd1ebc1303502e1290051d1a446fd8440a3bdaadedab8476614517598"
           }
         }
       }
@@ -7774,7 +7834,7 @@
     "desc": "16s analysis software",
     "homepage": "https://www.mothur.org/",
     "versions": {
-      "stable": "1.42.1",
+      "stable": "1.42.3",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -7784,17 +7844,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/mothur-1.42.1.sierra.bottle.tar.gz",
-            "sha256": "b1098f9c6dce8417abb486f42c3f2297b6cd593de6c9418a98b7e28b2fcedde0"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mothur-1.42.3.sierra.bottle.tar.gz",
+            "sha256": "0a406594b1f9a67f3dad8c77653547e1a68e561d9802ccc67f42b312965743d8"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/mothur-1.42.1.x86_64_linux.bottle.tar.gz",
-            "sha256": "78bda9eb10493199353e47a862685148632488885621de987a355b767935511d"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mothur-1.42.3.x86_64_linux.bottle.tar.gz",
+            "sha256": "7544e56fb0feb4318191f92119d14bf67fd80db11203f9c9dae9bbb2b131243d"
           }
         }
       }
@@ -8889,7 +8949,7 @@
     "desc": "Phylogenetic analysis by maximum likelihood",
     "homepage": "http://abacus.gene.ucl.ac.uk/software/paml.html",
     "versions": {
-      "stable": "4.9h",
+      "stable": "4.9i",
       "devel": null,
       "head": null,
       "bottle": true
@@ -8904,12 +8964,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/paml-4.9h.sierra.bottle.tar.gz",
-            "sha256": "9baeabcd51652cf9e0c985daaf617162587cdf3c16ec199b47b19d6cbc5e5ab3"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/paml-4.9i.sierra.bottle.tar.gz",
+            "sha256": "e06d36db51df737038660dfec71f75d26dd86ad1061072fba9c60b7a7b324986"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/paml-4.9h.x86_64_linux.bottle.tar.gz",
-            "sha256": "fe32ec27cad2f1a61406c1ada23504745090668158e9d61b2f1f5cf23d965eeb"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/paml-4.9i.x86_64_linux.bottle.tar.gz",
+            "sha256": "6fd44750c1a4ada0f8689c3e7364c23a1a0934ab7599b89250d0eb959a5d01f9"
           }
         }
       }
@@ -9249,7 +9309,7 @@
     "desc": "Fast maximum likelihood-based phylogenetic inference",
     "homepage": "http://www.atgc-montpellier.fr/phyml/",
     "versions": {
-      "stable": "3.3.20180621",
+      "stable": "3.3.20190321",
       "devel": null,
       "head": null,
       "bottle": true
@@ -9264,12 +9324,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/phyml-3.3.20180621.sierra.bottle.tar.gz",
-            "sha256": "8b176e13572c8c3d2dc21ddfc4d52a766f6b45c863b7609c722976100144f994"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/phyml-3.3.20190321.sierra.bottle.tar.gz",
+            "sha256": "a578ab66e19ae5062fb6e61008220c9576d723c974f2da2f76b9b0bd4fe50dbd"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/phyml-3.3.20180621.x86_64_linux.bottle.tar.gz",
-            "sha256": "9cb33e5552ff063ebe5a4717256b78f3b899e783843b3c2fbb3bf100e55824e9"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/phyml-3.3.20190321.x86_64_linux.bottle.tar.gz",
+            "sha256": "601324d1a3ab1a474f468dd22e60be48a65fb716b591d6ba5a7c904fd839c902"
           }
         }
       }
@@ -9406,27 +9466,27 @@
     "desc": "Trim adapters of Oxford Nanopore sequencing reads",
     "homepage": "https://github.com/rrwick/Porechop",
     "versions": {
-      "stable": "0.2.3",
+      "stable": "0.2.4",
       "devel": null,
       "head": "HEAD",
       "bottle": true
     },
-    "revision": 1,
+    "revision": 0,
     "version_scheme": 0,
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any_skip_relocation",
+        "cellar": ":any",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/porechop-0.2.3_1.sierra.bottle.tar.gz",
-            "sha256": "34b03ce111f627cf13c8b9d28bd926eae9969690904fccc8cef3b22edbdb1e75"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/porechop-0.2.4.sierra.bottle.tar.gz",
+            "sha256": "9582147a653c87fb61b94ef8f001da7d45455a87f445297bc7020520cb1be319"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/porechop-0.2.3_1.x86_64_linux.bottle.tar.gz",
-            "sha256": "28cc0a48435c306d1efbd82f23b9ea096fa54a8ceb64f109e69637a61921a3da"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/porechop-0.2.4.x86_64_linux.bottle.tar.gz",
+            "sha256": "7f19dfbdbc11a540a7b1760b41781ac4456299db8bbe707575f9c7a8f4674358"
           }
         }
       }
@@ -12005,7 +12065,7 @@
     "desc": "Transcript assembly and quantification for RNA-Seq",
     "homepage": "https://ccb.jhu.edu/software/stringtie",
     "versions": {
-      "stable": "1.3.4d",
+      "stable": "1.3.6",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -12015,17 +12075,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": "/home/linuxbrew/.linuxbrew/Cellar",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/stringtie-1.3.4d.sierra.bottle.tar.gz",
-            "sha256": "88efd6d81791afe33bf0bb4e70870ec99802751438dfc8aab482065025ce06d6"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/stringtie-1.3.6.sierra.bottle.tar.gz",
+            "sha256": "19a315de6e4d605b7265aafdf7ac3679132c83ed13554d436a3ed2ad43217af2"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/stringtie-1.3.4d.x86_64_linux.bottle.tar.gz",
-            "sha256": "280961f1341325e6b86c7c02b6de900a506d5e8aa026d33cc18fff83fff003e3"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/stringtie-1.3.6.x86_64_linux.bottle.tar.gz",
+            "sha256": "d0de065c76440a908f7a77d3beb8e7edbfc24688ed89825ead5462d0dd68102c"
           }
         }
       }
@@ -12416,7 +12476,7 @@
     "desc": "Identifies candidate coding regions within transcript sequences",
     "homepage": "https://transdecoder.github.io/",
     "versions": {
-      "stable": "5.3.0",
+      "stable": "5.5.0",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -12431,12 +12491,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/transdecoder-5.3.0.sierra.bottle.tar.gz",
-            "sha256": "38524859f40e4a2eb35b16f5641f387413cf35f10dedda4e43c5c3d572596af6"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/transdecoder-5.5.0.sierra.bottle.tar.gz",
+            "sha256": "e042f955488ce81913380ae2090db14f5384ed90e2c9c823b31ff2a92f50feac"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/transdecoder-5.3.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "37966e88285039f7584fcb186f82b91ae8b6cec107bcc361ac9caba7cdc3e587"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/transdecoder-5.5.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "13f7d49edfe061c813960bbb59a7c7c27f6eac82a9c058b34bf1d1f52d095c06"
           }
         }
       }
