@@ -1,21 +1,19 @@
 class Transdecoder < Formula
   desc "Identifies candidate coding regions within transcript sequences"
   homepage "https://transdecoder.github.io/"
-  url "https://github.com/TransDecoder/TransDecoder/archive/TransDecoder-v5.3.0.tar.gz"
-  sha256 "60dc0e6e31902bede257b8f8cdbf34750a9866323f4c7788f4ef80b0ad782077"
+  url "https://github.com/TransDecoder/TransDecoder/archive/TransDecoder-v5.5.0.tar.gz"
+  sha256 "c800d9226350817471e9f51267c91f7cab99dbc9b26c980527fc1019e7d90a76"
   head "https://github.com/TransDecoder/TransDecoder.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "38524859f40e4a2eb35b16f5641f387413cf35f10dedda4e43c5c3d572596af6" => :sierra
-    sha256 "37966e88285039f7584fcb186f82b91ae8b6cec107bcc361ac9caba7cdc3e587" => :x86_64_linux
+    sha256 "e042f955488ce81913380ae2090db14f5384ed90e2c9c823b31ff2a92f50feac" => :sierra
+    sha256 "13f7d49edfe061c813960bbb59a7c7c27f6eac82a9c058b34bf1d1f52d095c06" => :x86_64_linux
   end
 
-  unless OS.mac?
-    depends_on "cpanminus" => :build
-    depends_on "perl"
-  end
+  depends_on "cpanminus" => :build unless OS.mac?
+  uses_from_macos "perl"
 
   def install
     system "make"

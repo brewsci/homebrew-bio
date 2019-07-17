@@ -2,13 +2,14 @@ class Iva < Formula
   # cite Hunt_2015: "https://doi.org/10.1093/bioinformatics/btv120"
   desc "Iterative Virus Assembler"
   homepage "https://github.com/sanger-pathogens/iva"
-  url "https://github.com/sanger-pathogens/iva/archive/v1.0.8.tar.gz"
-  sha256 "20cac9b6683a2a33dc8cf790287f0eb8c3b4d02a287a380a071d821c1e0f1040"
+  url "https://github.com/sanger-pathogens/iva/archive/v1.0.9.tar.gz"
+  sha256 "91ba402d0feacc88b3e34e71b4f10e0552702887e6e416076e57f95f6aaf7fad"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "8d400f42176e2ca421f6bdca8bd735a0ef2ab8af56f1ffd0f824e7d4f6b15e21" => :sierra
-    sha256 "3c4914d151ebef4d190cfe211c4262eea85cb31ee0d61e3b9c6e37001a6586e1" => :x86_64_linux
+    cellar :any
+    sha256 "49a1baf28d5f8e89175dc01f08e3e6a9b8439e493ade3f58a162cc9561b3ced1" => :sierra
+    sha256 "eea163ae65cacbfca08005e99169d79ec7b641996b23751af0492176784576a6" => :x86_64_linux
   end
 
   depends_on "kmc"
@@ -60,7 +61,7 @@ class Iva < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/iva --version 2>&1")
+    assert_match "usage", shell_output("#{bin}/iva 2>&1", 2)
     assert_match "-f reads_fwd -r reads_rev", shell_output("#{bin}/iva --help 2>&1")
   end
 end

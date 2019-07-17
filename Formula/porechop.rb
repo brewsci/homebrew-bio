@@ -2,16 +2,15 @@ class Porechop < Formula
   # cite Wick_2017: "https://doi.org/10.1099/mgen.0.000132"
   desc "Trim adapters of Oxford Nanopore sequencing reads"
   homepage "https://github.com/rrwick/Porechop"
-  url "https://github.com/rrwick/Porechop/archive/v0.2.3.tar.gz"
-  sha256 "bfed39f82abc54f44fffd9b13d2121868084da7ac3d158ac9b9aa6fa0257f0f4"
-  revision 1
+  url "https://github.com/rrwick/Porechop/archive/v0.2.4.tar.gz"
+  sha256 "44b499157d933be43f702cec198d1d693dcb9276e3c545669be63c2612493299"
   head "https://github.com/rrwick/Porechop"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "34b03ce111f627cf13c8b9d28bd926eae9969690904fccc8cef3b22edbdb1e75" => :sierra
-    sha256 "28cc0a48435c306d1efbd82f23b9ea096fa54a8ceb64f109e69637a61921a3da" => :x86_64_linux
+    cellar :any
+    sha256 "9582147a653c87fb61b94ef8f001da7d45455a87f445297bc7020520cb1be319" => :sierra
+    sha256 "7f19dfbdbc11a540a7b1760b41781ac4456299db8bbe707575f9c7a8f4674358" => :x86_64_linux
   end
 
   depends_on "python"
