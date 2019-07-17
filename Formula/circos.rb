@@ -4,7 +4,7 @@ class Circos < Formula
   homepage "http://circos.ca"
   url "http://circos.ca/distribution/circos-0.69-6.tgz"
   sha256 "52d29bfd294992199f738a8d546a49754b0125319a1685a28daca71348291566"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
