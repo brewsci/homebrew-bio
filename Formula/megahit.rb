@@ -12,8 +12,10 @@ class Megahit < Formula
     sha256 "48f6cacd8476c46690ec7d4e094e3280a34762d4678c127633c8dc6ab5b9a006" => :x86_64_linux
   end
 
+  depends_on "gcc@8" if OS.mac?
   depends_on "python@2"
 
+  fails_with :gcc => "9"
   fails_with :clang # needs openmp
 
   if OS.mac?
