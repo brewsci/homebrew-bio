@@ -8,8 +8,9 @@ class Megahit < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "c82763b2625de5ccb1c9d5c671eb4c4aae36c584b569f3330618d70b7ac568d8" => :sierra
-    sha256 "48f6cacd8476c46690ec7d4e094e3280a34762d4678c127633c8dc6ab5b9a006" => :x86_64_linux
+    cellar :any
+    sha256 "44de1004f2014f3660a71d8a4bf1012440fb30e6d8bbc7e32cbbe9ce7af579e1" => :sierra
+    sha256 "317e6684fbe9c566bfd94367461f752aa18745fcb81399068ac351d948bfbe94" => :x86_64_linux
   end
 
   depends_on "gcc@8" if OS.mac?
