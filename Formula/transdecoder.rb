@@ -12,7 +12,7 @@ class Transdecoder < Formula
     sha256 "13f7d49edfe061c813960bbb59a7c7c27f6eac82a9c058b34bf1d1f52d095c06" => :x86_64_linux
   end
 
-  uses_from_macos "cpanminus" => :build
+  depends_on "cpanminus" => :build unless OS.mac?
   uses_from_macos "perl"
 
   def install
