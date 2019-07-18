@@ -2,8 +2,8 @@ class Mash < Formula
   # cite Ondov_2016: "https://doi.org/10.1186/s13059-016-0997-x"
   desc "Fast genome distance estimation using MinHash"
   homepage "https://github.com/marbl/Mash"
-  url "https://github.com/marbl/Mash/archive/v2.1.tar.gz"
-  sha256 "38ed8483d7c650ef580c54ca4f8158068248b25aedab19f92eeaea153a4fb534"
+  url "https://github.com/marbl/Mash/archive/v2.1.1.tar.gz"
+  sha256 "77a949e81e21b88acb0df8bfacb418e63ad763597f3430cd0f653d0a167842aa"
   head "https://github.com/marbl/Mash.git"
 
   bottle do
@@ -23,10 +23,6 @@ class Mash < Formula
   depends_on "zlib" unless OS.mac?
 
   def install
-    # https://github.com/marbl/Mash/issues/98
-    inreplace "configure.ac", "c++11", "c++14"
-    inreplace "Makefile.in", "c++11", "c++14"
-
     system "./bootstrap.sh"
     system "./configure",
       "--prefix=#{prefix}",
