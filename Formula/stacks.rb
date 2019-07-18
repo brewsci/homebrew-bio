@@ -8,9 +8,9 @@ class Stacks < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "55204c9a00e505a599b69db565a8621892ad0db15719e3d8f6b8e6692a7ba4b3" => :sierra
-    sha256 "76b3d4dfde71dc07a2cd414950eaeaaa60617719647854b8f3058861469702ad" => :x86_64_linux
+    cellar :any
+    sha256 "9387a6190454b83f17ac5c179abc67382592fa64d00b8c0f6293a5b0100ca117" => :sierra
+    sha256 "06ca98f340aeacd4b0f47d7f3025b73b868289f0f8ff861306c15d13bfc3755b" => :x86_64_linux
   end
 
   if OS.mac?
