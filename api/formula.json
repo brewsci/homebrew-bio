@@ -6620,7 +6620,7 @@
       "head": null,
       "bottle": true
     },
-    "revision": 0,
+    "revision": 1,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -6630,12 +6630,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/lrsim-1.0.sierra.bottle.tar.gz",
-            "sha256": "96badc1920bef8e151b6b714b546bf2e8f21cacc216368d5b8550918aa4a4298"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/lrsim-1.0_1.sierra.bottle.tar.gz",
+            "sha256": "70b0c317721735ec3db62b6b809d2fd4a16f199c5cbe0f3597cc86c9744d3cbf"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/lrsim-1.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "3d123ebe1186971d7884737de8a6192792133caeaf6d127aabd5c00e74eaa0db"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/lrsim-1.0_1.x86_64_linux.bottle.tar.gz",
+            "sha256": "5aaa80b18c061fd7306579fae32a5d503c9a732e05b63c4f9f9713adfa6ab05b"
           }
         }
       }
