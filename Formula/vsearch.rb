@@ -2,8 +2,8 @@ class Vsearch < Formula
   # cite Rognes_2017: "https://doi.org/10.5281/zenodo.275113"
   desc "USEARCH-compatible metagenomic sequence tool"
   homepage "https://github.com/torognes/vsearch"
-  url "https://github.com/torognes/vsearch/archive/v2.9.0.tar.gz"
-  sha256 "588d7d0e6b70a4ccf14ca71ed95ca8ba0e3c2672a5a844ec31672364bcd266f1"
+  url "https://github.com/torognes/vsearch/archive/v2.13.6.tar.gz"
+  sha256 "4b41eb2429f939a8be664b1247e94c65042b39914d9fa3d008320edd136bda84"
   head "https://github.com/torognes/vsearch.git"
 
   bottle do
