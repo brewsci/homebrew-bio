@@ -8,8 +8,8 @@ class Trnascan < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "65df374277adbbf57e9e444d88ac65c2163ffd0599a5495cb00fffc0a47467a5" => :sierra
-    sha256 "447c395805d3603d256d33d36c950816a3b0d354e8f362a406767e0409ad3d8e" => :x86_64_linux
+    sha256 "c748dc081ef572569e4ab23375847bac0f71489fc0f53e96b507574cd9b6e321" => :sierra
+    sha256 "499d55124fced2bf77023a0aa0525a3a7913fa2011078dd3d26d474469cb220f" => :x86_64_linux
   end
 
   depends_on "infernal"
