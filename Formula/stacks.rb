@@ -3,8 +3,8 @@ class Stacks < Formula
   # cite Catchen_2013: "https://doi.org/10.1111/mec.12354"
   desc "Pipeline for building loci from short-read sequences"
   homepage "http://catchenlab.life.illinois.edu/stacks/"
-  url "http://catchenlab.life.illinois.edu/stacks/source/stacks-2.4.tar.gz"
-  sha256 "30093d688a2dc62a19ea42a58065f024c8279419439049bcde186703e75641c1"
+  url "catchenlab.life.illinois.edu/stacks/source/stacks-2.41.tar.gz"
+  sha256 "78be911e083482aea321824b21bbd1cf7548aaf67768ca2073b280257f068260"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
