@@ -3,12 +3,13 @@ class Lrsim < Formula
   homepage "https://github.com/aquaskyline/LRSIM"
   url "https://github.com/aquaskyline/LRSIM/archive/1.0.tar.gz"
   sha256 "89623fba2ce624da4e2c8ce8a99b1a46eb3bc03a8c38044c64f4b8a0d0d9721e"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "96badc1920bef8e151b6b714b546bf2e8f21cacc216368d5b8550918aa4a4298" => :sierra
-    sha256 "3d123ebe1186971d7884737de8a6192792133caeaf6d127aabd5c00e74eaa0db" => :x86_64_linux
+    sha256 "70b0c317721735ec3db62b6b809d2fd4a16f199c5cbe0f3597cc86c9744d3cbf" => :sierra
+    sha256 "5aaa80b18c061fd7306579fae32a5d503c9a732e05b63c4f9f9713adfa6ab05b" => :x86_64_linux
   end
 
   depends_on "samtools"
