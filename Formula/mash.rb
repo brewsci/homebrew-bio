@@ -8,9 +8,9 @@ class Mash < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "6a0a4fd38b7c1a895c069cb8284d5b4e36bb24b8a9a2d1cbf690089c3da385eb" => :sierra
-    sha256 "a58327d0e7aa76f763a9e6e9c77fd0ae8b82302eb115797f75f0595d09992e01" => :x86_64_linux
+    cellar :any
+    sha256 "2f91a23b5a0aa948f5c388dae276bc47d4dcf5d204331fbb94c43ef2976fd562" => :sierra
+    sha256 "1a939c40a533d2299f3b6b16e43c689634ef183b6f03c7850d8ef62ebcc0998f" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
