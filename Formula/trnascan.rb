@@ -2,8 +2,8 @@ class Trnascan < Formula
   # cite Lowe_1997: "https://doi.org/10.1093/nar/25.5.0955"
   desc "Search for tRNA genes in genomic sequence"
   homepage "http://lowelab.ucsc.edu/tRNAscan-SE/"
-  url "http://trna.ucsc.edu/software/trnascan-se-2.0.0.tar.gz"
-  sha256 "0dde1c07142e4bf77b21d53ddf3eeb1ef8c52248005a42323d13f8d7c798100c"
+  url "http://trna.ucsc.edu/software/trnascan-se-2.0.3.tar.gz"
+  sha256 "b305c1bf226d16833349b22ad1f3160a52ad30f577a336128da3cc76d5772a4e"
   version_scheme 1
 
   bottle do
