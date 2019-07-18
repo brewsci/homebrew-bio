@@ -12831,7 +12831,7 @@
     "desc": "Search for tRNA genes in genomic sequence",
     "homepage": "http://lowelab.ucsc.edu/tRNAscan-SE/",
     "versions": {
-      "stable": "2.0.0",
+      "stable": "2.0.3",
       "devel": null,
       "head": null,
       "bottle": true
@@ -12846,12 +12846,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/trnascan-2.0.0.sierra.bottle.tar.gz",
-            "sha256": "65df374277adbbf57e9e444d88ac65c2163ffd0599a5495cb00fffc0a47467a5"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/trnascan-2.0.3.sierra.bottle.tar.gz",
+            "sha256": "c748dc081ef572569e4ab23375847bac0f71489fc0f53e96b507574cd9b6e321"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/trnascan-2.0.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "447c395805d3603d256d33d36c950816a3b0d354e8f362a406767e0409ad3d8e"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/trnascan-2.0.3.x86_64_linux.bottle.tar.gz",
+            "sha256": "499d55124fced2bf77023a0aa0525a3a7913fa2011078dd3d26d474469cb220f"
           }
         }
       }
