@@ -3,9 +3,8 @@ class Nanopolish < Formula
   desc "Signal-level algorithms for MinION data"
   homepage "https://github.com/jts/nanopolish"
   url "https://github.com/jts/nanopolish.git",
-      :tag      => "v0.10.2",
-      :revision => "12285f628a8e00a5aef4a36f65340dacf7e3e5e2"
-  revision 1
+      :tag      => "v0.11.1",
+      :revision => "ee82bf51c8e12f330da13ef6de888e6fba20e722"
   head "https://github.com/jts/nanopolish.git"
 
   bottle do
