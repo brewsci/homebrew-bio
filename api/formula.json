@@ -7672,7 +7672,7 @@
       "head": "HEAD",
       "bottle": true
     },
-    "revision": 0,
+    "revision": 1,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -7682,12 +7682,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/mlst-2.16.1.sierra.bottle.tar.gz",
-            "sha256": "413aeef04cbf68bba3b6ddb5466d2e6b7ac2d5e2822594e62f1f91d35642ea71"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mlst-2.16.1_1.sierra.bottle.tar.gz",
+            "sha256": "d12de45959cd35f2fad04f1fc6a67c0fb9b57fb34fb90bc2289a8bf88ddfa9bf"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/mlst-2.16.1.x86_64_linux.bottle.tar.gz",
-            "sha256": "64d91b4ed3f077f558c9787f2f8d22bf0e122a3f08210fdd6fbd6537b03261ae"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mlst-2.16.1_1.x86_64_linux.bottle.tar.gz",
+            "sha256": "6d48915b5ccec85f3266a5ad610fef7b7bc23e040607a7281c1cefaa9025b9ad"
           }
         }
       }
