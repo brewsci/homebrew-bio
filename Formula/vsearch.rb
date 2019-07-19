@@ -2,15 +2,15 @@ class Vsearch < Formula
   # cite Rognes_2017: "https://doi.org/10.5281/zenodo.275113"
   desc "USEARCH-compatible metagenomic sequence tool"
   homepage "https://github.com/torognes/vsearch"
-  url "https://github.com/torognes/vsearch/archive/v2.9.0.tar.gz"
-  sha256 "588d7d0e6b70a4ccf14ca71ed95ca8ba0e3c2672a5a844ec31672364bcd266f1"
+  url "https://github.com/torognes/vsearch/archive/v2.13.6.tar.gz"
+  sha256 "4b41eb2429f939a8be664b1247e94c65042b39914d9fa3d008320edd136bda84"
   head "https://github.com/torognes/vsearch.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "cc559c53e335c17f4d2dcd1a0fca5f604621dfdc32f955d01bf399c010070c4e" => :sierra
-    sha256 "b555695319c32998da3c13934bf9beac091950eb3ba56de39829f2190fcbda40" => :x86_64_linux
+    sha256 "a2f608173d44c07b4ab8be70b491bea725eea0e1aca2b6ec2c2e39be5ec041d8" => :sierra
+    sha256 "be53bea06af34f1eb38b7228c7f51b98f08636c4ca141ca7fa991a1d68f641ce" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
