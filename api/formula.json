@@ -6790,7 +6790,7 @@
     "desc": "Fast genome distance estimation using MinHash",
     "homepage": "https://github.com/marbl/Mash",
     "versions": {
-      "stable": "2.1",
+      "stable": "2.1.1",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -6800,17 +6800,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any_skip_relocation",
+        "cellar": ":any",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/mash-2.1.sierra.bottle.tar.gz",
-            "sha256": "6a0a4fd38b7c1a895c069cb8284d5b4e36bb24b8a9a2d1cbf690089c3da385eb"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mash-2.1.1.sierra.bottle.tar.gz",
+            "sha256": "2f91a23b5a0aa948f5c388dae276bc47d4dcf5d204331fbb94c43ef2976fd562"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/mash-2.1.x86_64_linux.bottle.tar.gz",
-            "sha256": "a58327d0e7aa76f763a9e6e9c77fd0ae8b82302eb115797f75f0595d09992e01"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mash-2.1.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "1a939c40a533d2299f3b6b16e43c689634ef183b6f03c7850d8ef62ebcc0998f"
           }
         }
       }
