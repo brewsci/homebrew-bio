@@ -2,15 +2,15 @@ class Mash < Formula
   # cite Ondov_2016: "https://doi.org/10.1186/s13059-016-0997-x"
   desc "Fast genome distance estimation using MinHash"
   homepage "https://github.com/marbl/Mash"
-  url "https://github.com/marbl/Mash/archive/v2.1.tar.gz"
-  sha256 "38ed8483d7c650ef580c54ca4f8158068248b25aedab19f92eeaea153a4fb534"
+  url "https://github.com/marbl/Mash/archive/v2.1.1.tar.gz"
+  sha256 "77a949e81e21b88acb0df8bfacb418e63ad763597f3430cd0f653d0a167842aa"
   head "https://github.com/marbl/Mash.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "6a0a4fd38b7c1a895c069cb8284d5b4e36bb24b8a9a2d1cbf690089c3da385eb" => :sierra
-    sha256 "a58327d0e7aa76f763a9e6e9c77fd0ae8b82302eb115797f75f0595d09992e01" => :x86_64_linux
+    cellar :any
+    sha256 "2f91a23b5a0aa948f5c388dae276bc47d4dcf5d204331fbb94c43ef2976fd562" => :sierra
+    sha256 "1a939c40a533d2299f3b6b16e43c689634ef183b6f03c7850d8ef62ebcc0998f" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
@@ -23,10 +23,6 @@ class Mash < Formula
   depends_on "zlib" unless OS.mac?
 
   def install
-    # https://github.com/marbl/Mash/issues/98
-    inreplace "configure.ac", "c++11", "c++14"
-    inreplace "Makefile.in", "c++11", "c++14"
-
     system "./bootstrap.sh"
     system "./configure",
       "--prefix=#{prefix}",
