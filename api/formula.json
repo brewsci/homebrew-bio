@@ -3927,7 +3927,7 @@
       "head": "HEAD",
       "bottle": true
     },
-    "revision": 0,
+    "revision": 1,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -3937,12 +3937,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/flowcraft-1.4.1.sierra.bottle.tar.gz",
-            "sha256": "402845eb61ea741201bcb15031f323aed78b803e2aa42ec3310137d47b2c0811"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/flowcraft-1.4.1_1.sierra.bottle.tar.gz",
+            "sha256": "2a803d712d230c37fdd9d002184c0b5358040419dc1db0c1bcf144fc5b6b738b"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/flowcraft-1.4.1.x86_64_linux.bottle.tar.gz",
-            "sha256": "fd22b0af6afa8da1d05aa75c59f21cd884ef4d14a4bcc4e50e3bf810b52abb06"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/flowcraft-1.4.1_1.x86_64_linux.bottle.tar.gz",
+            "sha256": "81bb9ded1248cc2e277ebb3d88e100a956167f4a8f79d9018a4f2257bfdc1244"
           }
         }
       }
@@ -8261,7 +8261,7 @@
     "desc": "Data-driven computational pipelines",
     "homepage": "https://www.nextflow.io/",
     "versions": {
-      "stable": "0.32.0",
+      "stable": "19.04.1",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -8276,12 +8276,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/nextflow-0.32.0.sierra.bottle.tar.gz",
-            "sha256": "7756ba884a26e1e5b8328131a0555c77436320581c97631581d853cc6759aa9e"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/nextflow-19.04.1.sierra.bottle.tar.gz",
+            "sha256": "0078a9ee2200c4a426759195c942f71f92cbc1451f765fd73547c094700c38e6"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/nextflow-0.32.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "f27ad17cbe742c3d719602bb1de9b8e2841a993e7324b64b7ebd4788d9ddb8ce"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/nextflow-19.04.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "05ae7affdcba74c5eeff7c8bf7f6eaae396e3dc1263d4e70d2e00bbd6366e6ec"
           }
         }
       }
