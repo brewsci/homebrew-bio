@@ -13,10 +13,13 @@ class Salmon < Formula
     sha256 "402f7b66bcbf4347dbfedd8e39507024ad223b31b915a42f28cec37e2254a372" => :x86_64_linux
   end
 
+  uses_from_macos "curl"
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "cmake" => :build
   depends_on "boost"
+  depends_on "icu4c" if OS.mac?
   depends_on "tbb"
   depends_on "xz"
   unless OS.mac?
