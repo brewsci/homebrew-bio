@@ -1,10 +1,9 @@
 class Repeatmasker < Formula
   desc "Program that screens DNA sequences for interspersed repeats"
   homepage "http://www.repeatmasker.org/"
-  url "http://repeatmasker.org/RepeatMasker-open-4-0-7.tar.gz"
-  version "4.0.7"
-  sha256 "16faf40e5e2f521146f6692f09561ebef5f6a022feb17031f2ddb3e3aabcf166"
-  revision 4
+  url "http://repeatmasker.org/RepeatMasker-open-4-0-9-p2.tar.gz"
+  version "4.0.9"
+  sha256 "7b40e7c95531c03c009ee4ea0fdb467f85e55df2fd20b5c24ef72d5906c07cd1"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -57,7 +56,7 @@ class Repeatmasker < Formula
       #{HOMEBREW_PREFIX}/bin
       N
       5
-      EOS
+    EOS
     Dir.chdir libexec.to_s do
       system "./configure <configure.input"
     end
@@ -81,7 +80,7 @@ class Repeatmasker < Formula
     The default aligner is RMBlast. You may reconfigure RepeatMasker
     by running
       cd #{libexec} && ./configure
-    EOS
+  EOS
   end
 
   test do
