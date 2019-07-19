@@ -3,13 +3,14 @@ class Flowcraft < Formula
   homepage "https://github.com/assemblerflow/flowcraft"
   url "https://github.com/assemblerflow/flowcraft/archive/1.4.1.tar.gz"
   sha256 "ca5f698f286b6bcc6fc15cb7767ae903e06f6b7af11183917845b1be4304f11f"
+  revision 1
   head "https://github.com/assemblerflow/flowcraft.git", :branch => "dev"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "402845eb61ea741201bcb15031f323aed78b803e2aa42ec3310137d47b2c0811" => :sierra
-    sha256 "fd22b0af6afa8da1d05aa75c59f21cd884ef4d14a4bcc4e50e3bf810b52abb06" => :x86_64_linux
+    sha256 "2a803d712d230c37fdd9d002184c0b5358040419dc1db0c1bcf144fc5b6b738b" => :sierra
+    sha256 "81bb9ded1248cc2e277ebb3d88e100a956167f4a8f79d9018a4f2257bfdc1244" => :x86_64_linux
   end
 
   depends_on "nextflow"
