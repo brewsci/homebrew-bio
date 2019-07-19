@@ -3,16 +3,15 @@ class Nanopolish < Formula
   desc "Signal-level algorithms for MinION data"
   homepage "https://github.com/jts/nanopolish"
   url "https://github.com/jts/nanopolish.git",
-      :tag      => "v0.10.2",
-      :revision => "12285f628a8e00a5aef4a36f65340dacf7e3e5e2"
-  revision 1
+      :tag      => "v0.11.1",
+      :revision => "ee82bf51c8e12f330da13ef6de888e6fba20e722"
   head "https://github.com/jts/nanopolish.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "778bc9ee1ca72935495e31a5a6c7f95168c9f62b4c20476ee056b5699d56b568" => :sierra
-    sha256 "cf71c24e7a3f7e5ee30a1cbba8a6a65ba3bd8e3bcca3cb35630272ecef925079" => :x86_64_linux
+    sha256 "9e868bdf2683acef824fbfff0643f9d583a32341b0995e86a536cfcae3bcbc4d" => :sierra
+    sha256 "e2e5fdf44975fe4456b1343cce72de09145c28af343f0b2276e37aca51375c6c" => :x86_64_linux
   end
 
   depends_on "eigen" => :build
