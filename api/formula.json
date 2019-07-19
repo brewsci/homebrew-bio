@@ -13367,7 +13367,7 @@
     "desc": "USEARCH-compatible metagenomic sequence tool",
     "homepage": "https://github.com/torognes/vsearch",
     "versions": {
-      "stable": "2.9.0",
+      "stable": "2.13.6",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -13382,12 +13382,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/vsearch-2.9.0.sierra.bottle.tar.gz",
-            "sha256": "cc559c53e335c17f4d2dcd1a0fca5f604621dfdc32f955d01bf399c010070c4e"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/vsearch-2.13.6.sierra.bottle.tar.gz",
+            "sha256": "a2f608173d44c07b4ab8be70b491bea725eea0e1aca2b6ec2c2e39be5ec041d8"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/vsearch-2.9.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "b555695319c32998da3c13934bf9beac091950eb3ba56de39829f2190fcbda40"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/vsearch-2.13.6.x86_64_linux.bottle.tar.gz",
+            "sha256": "be53bea06af34f1eb38b7228c7f51b98f08636c4ca141ca7fa991a1d68f641ce"
           }
         }
       }
