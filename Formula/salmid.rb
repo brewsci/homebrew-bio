@@ -1,8 +1,9 @@
 class Salmid < Formula
   desc "Rapid confirmation of Salmonella species from WGS"
   homepage "https://github.com/hcdenbakker/SalmID"
-  url "https://github.com/hcdenbakker/SalmID/archive/0.122.tar.gz"
-  sha256 "cc0c422d8fe2f4f6c745ee2285557b1e69c12e0a69f08cfeadd06bca9ee7b83b"
+  url "https://github.com/hcdenbakker/SalmID/archive/0.1.23.tar.gz"
+  sha256 "aadcee6a7ba87ff4681129e86238d5edb7617dc4adf291e651b05ccb6d450cc9"
+  version_scheme 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -14,8 +15,14 @@ class Salmid < Formula
   depends_on "python"
 
   def install
-    prefix.install Dir["*"]
-    bin.install_symlink "../SalmID.py"
+    ENV.prepend_path "PATH", libexec/"bin"
+    xy = Language::Python.major_minor_version "python3"
+    ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
+    system "pip3", "install", "--prefix=#{libexec}", "."
+
+    inreplace Dir["SalmID*py"], "#!/usr/bin/env python", "#!#{Formula["python3"].bin}/python3"
+    bin.install Dir["bin/*"]
+    (bin/"SalmID.py").write_env_script libexec/"bin/SalmID.py", :PYTHONPATH => ENV["PYTHONPATH"]
   end
 
   test do
