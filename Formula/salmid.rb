@@ -1,8 +1,8 @@
 class Salmid < Formula
   desc "Rapid confirmation of Salmonella species from WGS"
   homepage "https://github.com/hcdenbakker/SalmID"
-  url "https://github.com/hcdenbakker/SalmID/archive/0.122.tar.gz"
-  sha256 "cc0c422d8fe2f4f6c745ee2285557b1e69c12e0a69f08cfeadd06bca9ee7b83b"
+  url "https://github.com/hcdenbakker/SalmID/archive/0.1.23.tar.gz"
+  sha256 "aadcee6a7ba87ff4681129e86238d5edb7617dc4adf291e651b05ccb6d450cc9"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
