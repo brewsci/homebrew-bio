@@ -4,6 +4,13 @@ class Bbtools < Formula
   url "https://downloads.sourceforge.net/bbmap/BBMap_38.59.tar.gz"
   sha256 "0562634cbff0376d5412ad50e10bb0424c4d0b5d29c9b62efbe69fdd4509607d"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "de114b9cac2dc1c82fdec73d78b5a7253ff1859d1a9a9e1dbbbf38e0ebb499fd" => :sierra
+    sha256 "aec7994d744031765a80c489bc3bf9ad6464c3b36e72201b85779261f4ff9fb1" => :x86_64_linux
+  end
+
   depends_on :java => "1.7+"
 
   def install
