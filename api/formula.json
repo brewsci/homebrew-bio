@@ -1112,6 +1112,57 @@
     "outdated": false
   },
   {
+    "name": "bbtools",
+    "full_name": "brewsci/bio/bbtools",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Suite of Brian Bushnell's tools for manipulating reads",
+    "homepage": "https://jgi.doe.gov/data-and-tools/bbtools/",
+    "versions": {
+      "stable": "38.59",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bbtools-38.59.sierra.bottle.tar.gz",
+            "sha256": "de114b9cac2dc1c82fdec73d78b5a7253ff1859d1a9a9e1dbbbf38e0ebb499fd"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bbtools-38.59.x86_64_linux.bottle.tar.gz",
+            "sha256": "aec7994d744031765a80c489bc3bf9ad6464c3b36e72201b85779261f4ff9fb1"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [
+      "adoptopenjdk"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "bcalm",
     "full_name": "brewsci/bio/bcalm",
     "oldname": null,
