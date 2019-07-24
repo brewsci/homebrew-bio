@@ -4297,7 +4297,7 @@
     "desc": "Genome Analysis Toolkit: Variant Discovery in High-Throughput Sequencing",
     "homepage": "https://software.broadinstitute.org/gatk/",
     "versions": {
-      "stable": "4.0.11.0",
+      "stable": "4.1.2.0",
       "devel": null,
       "head": "HEAD",
       "bottle": false
@@ -12769,7 +12769,7 @@
     "desc": "Flexible read trimming tool for Illumina data",
     "homepage": "http://www.usadellab.org/cms/?page=trimmomatic",
     "versions": {
-      "stable": "0.38",
+      "stable": "0.39",
       "devel": null,
       "head": null,
       "bottle": true
@@ -12784,12 +12784,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/trimmomatic-0.38.sierra.bottle.tar.gz",
-            "sha256": "dedd79b951aca8ed13d0749b21b3d244fa49452432af215071d42165c65bf496"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/trimmomatic-0.39.sierra.bottle.tar.gz",
+            "sha256": "b3252323576db7ff5833ce397c962c1e42e4a95da47f546c77c4e0dfc8d0eadb"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/trimmomatic-0.38.x86_64_linux.bottle.tar.gz",
-            "sha256": "2617dbd81cd0af508269a9382ec4bfd2a1a97aa38ce30a71c4a27fc341127cb1"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/trimmomatic-0.39.x86_64_linux.bottle.tar.gz",
+            "sha256": "a8ef297af91bf7e1ccb35092d054e9aefb2d2cb811a53b53756667a89756a61b"
           }
         }
       }
@@ -12807,7 +12807,7 @@
     "optional_dependencies": [],
     "requirements": [],
     "conflicts_with": [],
-    "caveats": "FASTA file of adapter sequences are located here:\n$(brew --prefix)/Cellar/trimmomatic/0.38/share/trimmomatic/adapters\n",
+    "caveats": "FASTA file of adapter sequences are located here:\n$(brew --prefix)/Cellar/trimmomatic/0.39/share/trimmomatic/adapters\n",
     "installed": [],
     "linked_keg": null,
     "pinned": false,
