@@ -2,8 +2,8 @@ class Trimmomatic < Formula
   # cite Bolger_2014: "https://doi.org/10.1093/bioinformatics/btu170"
   desc "Flexible read trimming tool for Illumina data"
   homepage "http://www.usadellab.org/cms/?page=trimmomatic"
-  url "http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.38.zip"
-  sha256 "d428af42b6c400a2e7ee5e6b4cab490eddc621f949b086bd7dddb698dcf1647c"
+  url "http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.39.zip"
+  sha256 "2f97e3a237378d55c221abfc38e4b11ea232c8a41d511b8b4871f00c0476abca"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -16,7 +16,7 @@ class Trimmomatic < Formula
 
   def install
     cmd = "trimmomatic"
-    jar = "#{cmd}-0.38.jar"
+    jar = "#{cmd}-0.39.jar"
     libexec.install jar
     bin.write_jar_script libexec/jar, cmd
     pkgshare.install "adapters"
