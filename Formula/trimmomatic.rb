@@ -8,8 +8,8 @@ class Trimmomatic < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "dedd79b951aca8ed13d0749b21b3d244fa49452432af215071d42165c65bf496" => :sierra
-    sha256 "2617dbd81cd0af508269a9382ec4bfd2a1a97aa38ce30a71c4a27fc341127cb1" => :x86_64_linux
+    sha256 "b3252323576db7ff5833ce397c962c1e42e4a95da47f546c77c4e0dfc8d0eadb" => :sierra
+    sha256 "a8ef297af91bf7e1ccb35092d054e9aefb2d2cb811a53b53756667a89756a61b" => :x86_64_linux
   end
 
   depends_on :java
