@@ -2,9 +2,8 @@ class Circos < Formula
   # cite Krzywinski_2009: "https://doi.org/10.1101/gr.092759.109"
   desc "Visualize data in a circular layout"
   homepage "http://circos.ca"
-  url "http://circos.ca/distribution/circos-0.69-6.tgz"
-  sha256 "52d29bfd294992199f738a8d546a49754b0125319a1685a28daca71348291566"
-  revision 2
+  url "http://circos.ca/distribution/circos-0.69-9.tgz"
+  sha256 "34d8d7ebebf3f553d62820f8f4a0a57814b610341f836b4740c46c3057f789d2"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
