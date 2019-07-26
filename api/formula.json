@@ -2270,12 +2270,12 @@
     "desc": "Visualize data in a circular layout",
     "homepage": "http://circos.ca",
     "versions": {
-      "stable": "0.69-6",
+      "stable": "0.69-9",
       "devel": null,
       "head": null,
       "bottle": true
     },
-    "revision": 2,
+    "revision": 0,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -2285,12 +2285,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/circos-0.69-6_2.sierra.bottle.tar.gz",
-            "sha256": "b2d89a42e32bdb95f7e6c49f6618a44b4649ae82c07c78fab19005c0447220ef"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/circos-0.69-9.sierra.bottle.tar.gz",
+            "sha256": "8ec9ce8fecc82d9e246675d79b172465eed074547d71ff8f85fc3f9e442b0bfe"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/circos-0.69-6_2.x86_64_linux.bottle.tar.gz",
-            "sha256": "269a858744d84c330459877aea5e4dec8117ed8018fc5b56f497298c5549d911"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/circos-0.69-9.x86_64_linux.bottle.tar.gz",
+            "sha256": "5e67e2246fe7e5135f6ccd0f6f51c1eb2e2ee1bbd9986979889881d7c7b33107"
           }
         }
       }
