@@ -14,7 +14,13 @@ class Salmid < Formula
   depends_on "python"
 
   def install
+    ENV.prepend_path "PATH", libexec/"bin"
+    xy = Language::Python.major_minor_version "python2"
+    ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
+    system "pip3", "install", "--prefix=#{libexec}", "."
+    inreplace Dir["SalmID*py"], "#!/usr/bin/env python", "#!#{Formula["python3"].bin}/python3"
     prefix.install Dir["*"]
+    prefix.env_script_all_files libexec/"bin", :PYTHONPATH => Dir[libexec/"lib/python*/site-packages"].first
     bin.install_symlink "../SalmID.py"
   end
 
