@@ -2,15 +2,14 @@ class Circos < Formula
   # cite Krzywinski_2009: "https://doi.org/10.1101/gr.092759.109"
   desc "Visualize data in a circular layout"
   homepage "http://circos.ca"
-  url "http://circos.ca/distribution/circos-0.69-6.tgz"
-  sha256 "52d29bfd294992199f738a8d546a49754b0125319a1685a28daca71348291566"
-  revision 2
+  url "http://circos.ca/distribution/circos-0.69-9.tgz"
+  sha256 "34d8d7ebebf3f553d62820f8f4a0a57814b610341f836b4740c46c3057f789d2"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "b2d89a42e32bdb95f7e6c49f6618a44b4649ae82c07c78fab19005c0447220ef" => :sierra
-    sha256 "269a858744d84c330459877aea5e4dec8117ed8018fc5b56f497298c5549d911" => :x86_64_linux
+    sha256 "8ec9ce8fecc82d9e246675d79b172465eed074547d71ff8f85fc3f9e442b0bfe" => :sierra
+    sha256 "5e67e2246fe7e5135f6ccd0f6f51c1eb2e2ee1bbd9986979889881d7c7b33107" => :x86_64_linux
   end
 
   depends_on "cpanminus" => :build
