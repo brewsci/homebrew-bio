@@ -13,15 +13,17 @@ class Sortmerna < Formula
     sha256 "b412dde11f5cb06f8c4a1aa3d78719d0647ffe5a2e9ff81df960903346269bd1" => :x86_64_linux
   end
 
+  depends_on "cmake" => :build
   depends_on "zlib" unless OS.mac?
+  depends_on "rocksdb"
+  depends_on "rapidjson"
 
   def install
-    system "./configure",
-      "--disable-debug",
-      "--disable-dependency-tracking",
-      "--disable-silent-rules",
-      "--prefix=#{prefix}"
-    system "make", "install"
+    mkdir "build" do
+      system "cmake", "..", *std_cmake_args
+      system "make"
+      bin.install "sortmerna"
+    end
   end
 
   test do
