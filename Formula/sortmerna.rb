@@ -15,8 +15,8 @@ class Sortmerna < Formula
 
   depends_on "cmake" => :build
   depends_on "zlib" unless OS.mac?
-  depends_on "rocksdb"
   depends_on "rapidjson"
+  depends_on "rocksdb"
 
   def install
     mkdir "build" do
