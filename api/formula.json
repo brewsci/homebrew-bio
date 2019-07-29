@@ -10814,13 +10814,13 @@
     "desc": "Rapid confirmation of Salmonella species from WGS",
     "homepage": "https://github.com/hcdenbakker/SalmID",
     "versions": {
-      "stable": "0.122",
+      "stable": "0.1.23",
       "devel": null,
       "head": null,
       "bottle": true
     },
     "revision": 0,
-    "version_scheme": 0,
+    "version_scheme": 1,
     "bottle": {
       "stable": {
         "rebuild": 0,
@@ -10829,12 +10829,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/salmid-0.122.sierra.bottle.tar.gz",
-            "sha256": "6aefedde63baa9520c8a5100c3fbaf136b11ce025671f1145ec375ce5eca666f"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/salmid-0.1.23.sierra.bottle.tar.gz",
+            "sha256": "259fc770fe9540514d125b042b296e983e91f8466cf7732959f7d6e695b4f245"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/salmid-0.122.x86_64_linux.bottle.tar.gz",
-            "sha256": "f65d345e44e6e7ed6c5ece6cd3cd5ff1a460c1adfdd00e37a67cc1d0d9953c93"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/salmid-0.1.23.x86_64_linux.bottle.tar.gz",
+            "sha256": "7c8b74c883ec1c0c5e83dc053ce622638d4249851ac72803e8de217eaa4d913a"
           }
         }
       }
