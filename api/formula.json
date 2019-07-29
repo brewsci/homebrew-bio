@@ -5792,7 +5792,7 @@
     "desc": "Fast and frugal disk based k-mer counter",
     "homepage": "http://sun.aei.polsl.pl/kmc/",
     "versions": {
-      "stable": "3.1.0",
+      "stable": "3.1.1",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -5802,17 +5802,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": "/home/linuxbrew/.linuxbrew/Cellar",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/kmc-3.1.0.sierra.bottle.tar.gz",
-            "sha256": "01ceaecc1f729be665192020a480d5cc92d929f358a748e6ebc121c6f73ebbde"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/kmc-3.1.1.sierra.bottle.tar.gz",
+            "sha256": "357369318d5619a941285eca62a1b260ae2d519c4fe27f326b26277d70d97451"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/kmc-3.1.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "21482251545f007d0a94d03be049ce9ee31d8ff0c374782b6e647fec24c30c07"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/kmc-3.1.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "a14014ca6943cd93069815a57e40ae2147d01c32e10109b8009e5198ef0aba32"
           }
         }
       }
@@ -5821,7 +5821,11 @@
     "bottle_disabled": false,
     "options": [],
     "build_dependencies": [],
-    "dependencies": [],
+    "dependencies": [
+      "gcc",
+      "zlib",
+      "bzip2"
+    ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
     "requirements": [],
