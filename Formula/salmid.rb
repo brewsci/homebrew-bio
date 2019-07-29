@@ -8,8 +8,8 @@ class Salmid < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "6aefedde63baa9520c8a5100c3fbaf136b11ce025671f1145ec375ce5eca666f" => :sierra
-    sha256 "f65d345e44e6e7ed6c5ece6cd3cd5ff1a460c1adfdd00e37a67cc1d0d9953c93" => :x86_64_linux
+    sha256 "259fc770fe9540514d125b042b296e983e91f8466cf7732959f7d6e695b4f245" => :sierra
+    sha256 "7c8b74c883ec1c0c5e83dc053ce622638d4249851ac72803e8de217eaa4d913a" => :x86_64_linux
   end
 
   depends_on "python"
