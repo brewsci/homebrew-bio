@@ -22,7 +22,7 @@ class Salmid < Formula
 
     inreplace Dir["SalmID*py"], "#!/usr/bin/env python", "#!#{Formula["python3"].bin}/python3"
     bin.install Dir["bin/*"]
-    (bin/"SalmID.py").write_env_script prefix/"SalmID.py", :PYTHONPATH => ENV["PYTHONPATH"]
+    (bin/"SalmID.py").write_env_script libexec/"bin/SalmID.py", :PYTHONPATH => ENV["PYTHONPATH"]
   end
 
   test do
