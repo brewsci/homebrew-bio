@@ -7,6 +7,7 @@ class Kmc < Formula
   head "https://github.com/marekkokot/KMC.git"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
     sha256 "357369318d5619a941285eca62a1b260ae2d519c4fe27f326b26277d70d97451" => :sierra
     sha256 "a14014ca6943cd93069815a57e40ae2147d01c32e10109b8009e5198ef0aba32" => :x86_64_linux
