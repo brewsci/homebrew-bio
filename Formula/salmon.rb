@@ -29,7 +29,7 @@ class Salmon < Formula
 
   def install
     # Reduce memory usage for CircleCI.
-    ENV["MAKEFLAGS"] = "-j4" if ENV["CIRCLECI"]
+    ENV["MAKEFLAGS"] = "-j1" if ENV["CIRCLECI"]
 
     system "cmake", ".", *std_cmake_args
     system "make"
