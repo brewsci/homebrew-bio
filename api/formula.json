@@ -7556,6 +7556,58 @@
     "outdated": false
   },
   {
+    "name": "minigraph",
+    "full_name": "brewsci/bio/minigraph",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Proof-of-concept seq-to-graph mapper and graph generator",
+    "homepage": "https://lh3.github.io/minigraph",
+    "versions": {
+      "stable": "0.2",
+      "devel": null,
+      "head": "HEAD",
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/minigraph-0.2.sierra.bottle.tar.gz",
+            "sha256": "e426ffbb8e00b96381a63acfc657ee130b0baa0e74d27cd7c9794f908dd54a32"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/minigraph-0.2.x86_64_linux.bottle.tar.gz",
+            "sha256": "91a8efd4052fd54d4456180a2a994ded487d799e9cd5f3efb457f79ae01a348c"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [
+      "k8",
+      "zlib"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "minimap",
     "full_name": "brewsci/bio/minimap",
     "oldname": null,
