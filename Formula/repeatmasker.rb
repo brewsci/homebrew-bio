@@ -40,7 +40,7 @@ class Repeatmasker < Formula
     # 2. RMBlast - NCBI Blast with RepeatMasker extensions: [ Un-configured ]
     # RMBlast (rmblastn) INSTALLATION PATH
     # Do you want RMBlast to be your default search engine for Repeatmasker?
-    # 4. HMMER3.1 & DFAM
+    # 3. HMMER3.1 & DFAM
     # HMMER INSTALLATION PATH Enter path
     # Do you want HMMER to be your default search engine for Repeatmasker?
     # 5. Done
@@ -52,7 +52,7 @@ class Repeatmasker < Formula
       2
       #{HOMEBREW_PREFIX}/bin
       Y
-      4
+      3
       #{HOMEBREW_PREFIX}/bin
       N
       5
