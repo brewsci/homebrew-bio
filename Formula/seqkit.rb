@@ -1,5 +1,5 @@
 class Seqkit < Formula
-  # Shen_2016: "https://doi.org/10.1371/journal.pone.0163962"
+  # cite Shen_2016: "https://doi.org/10.1371/journal.pone.0163962"
   desc "Ultrafast FASTA/Q file manipulation"
   homepage "https://bioinf.shenwei.me/seqkit/"
   # We use binaries to avoid compiling Go code
