@@ -3,8 +3,8 @@ class Sambamba < Formula
   desc "Tools for working with SAM/BAM data"
   homepage "https://lomereiter.github.io/sambamba"
   url "https://github.com/biod/sambamba.git",
-      :revision => "595197546e1418b4944e2f797d8ceac6d495f741"
-  version "0.6.8"
+      :revision => "8fc9a378b2f9fb584392b4d54efc511dcfc1abc7",
+      :tag      => "v0.7.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
