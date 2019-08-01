@@ -3,8 +3,8 @@ class Freebayes < Formula
   desc "Bayesian variant discovery and genotyping"
   homepage "https://github.com/ekg/freebayes"
   url "https://github.com/ekg/freebayes.git",
-      :tag => "v1.2.0",
-      :revision => "40155b407a4bead708aaafcadf7904854c411275"
+      :tag      => "v1.3.1",
+      :revision => "4cde5d32ff745018e0b8ec31e81a71e8bc9ecc6f"
   head "https://github.com/ekg/freebayes.git"
 
   bottle do
@@ -17,6 +17,7 @@ class Freebayes < Formula
   depends_on "cmake" => :build
 
   depends_on "parallel"
+  depends_on "python@2"
   depends_on "vcflib"
   depends_on "xz"
 
