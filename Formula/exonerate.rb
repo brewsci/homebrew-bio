@@ -7,7 +7,7 @@ class Exonerate < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
+    cellar :any
     sha256 "fcadadfecae574f5d9aee1b1adad4a23bd24f682bc6f76358a27512025207325" => :sierra
     sha256 "ab0093c6b90759419d20b4905100517df0eb4b8f79ec9ef68671f6aa4473a5fc" => :x86_64_linux
   end
