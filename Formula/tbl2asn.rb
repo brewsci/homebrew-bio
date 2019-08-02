@@ -3,15 +3,14 @@ class Tbl2asn < Formula
   homepage "https://www.ncbi.nlm.nih.gov/genbank/tbl2asn2/"
 
   # version number is in https://ftp.ncbi.nih.gov/toolbox/ncbi_tools/converters/by_program/tbl2asn/DOCUMENTATION/VERSIONS
-  version "25.6"
+  version "25.7"
   if OS.mac?
     url "https://ftp.ncbi.nih.gov/toolbox/ncbi_tools/converters/by_program/tbl2asn/mac.tbl2asn.gz"
-    sha256 "dfaedbd1ddd5e9fbf8f80e6214f48e3012498f4951e39157f3ab1926cd392c1a"
+    sha256 "8dab2f4ff804ad0678de1eebbdd4a3515b0740f5f2116bf91d55cc808f520cbc"
   elsif OS.linux?
     url "https://ftp.ncbi.nih.gov/toolbox/ncbi_tools/converters/by_program/tbl2asn/linux64.tbl2asn.gz"
-    sha256 "38560dd0764d1cfa7e139c65285b3194bacaa4bd8ac09f60f5e2bb8027cc6ca2"
+    sha256 "1f41acb9eacd6e0fa78657b17727b8f94d97490617563686d28b3f6c24d39117"
   end
-  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
