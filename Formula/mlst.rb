@@ -1,16 +1,15 @@
 class Mlst < Formula
   desc "Multi-Locus Sequence Typing of bacterial contigs"
   homepage "https://github.com/tseemann/mlst"
-  url "https://github.com/tseemann/mlst/archive/v2.16.1.tar.gz"
-  sha256 "933798f7e83c7e3acd8174eeecc2c6fa1d49abc80db6c70e5da31a9adedbe52e"
-  revision 1
+  url "https://github.com/tseemann/mlst/archive/v2.16.4.tar.gz"
+  sha256 "e9a3de71450410f4ee6a19f0aef6da55a0a0dd1def8d90753fb230432306e662"
   head "https://github.com/tseemann/mlst.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "d12de45959cd35f2fad04f1fc6a67c0fb9b57fb34fb90bc2289a8bf88ddfa9bf" => :sierra
-    sha256 "6d48915b5ccec85f3266a5ad610fef7b7bc23e040607a7281c1cefaa9025b9ad" => :x86_64_linux
+    sha256 "8a8295517cd0633bffb5931f0e0d80b206047732a28c3951f187e58a858d992a" => :sierra
+    sha256 "df627e32c2fbde256e5147128c8cb58b6727ef14c34a1e4167f0b60bd5b511c7" => :x86_64_linux
   end
 
   depends_on "cpanminus" => :build
