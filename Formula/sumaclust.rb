@@ -1,8 +1,8 @@
 class Sumaclust < Formula
   desc "Fast and exact sequence clustering for DNA metabarcoding"
   homepage "https://git.metabarcoding.org/obitools/sumaclust/wikis/home"
-  url "https://git.metabarcoding.org/obitools/sumaclust/uploads/c6577f046014f6720da072a4d6217a65/sumaclust_v1.0.34.tar.gz"
-  sha256 "e295f1079ef8fe5b746b5769488208079c29b9c638cfef282bfc3d2bdcc2ecc5"
+  url "https://git.metabarcoding.org/obitools/sumaclust/uploads/f0ca7538f8a342f4479dcdf8df898e0c/sumaclust_v1.0.34.tar.gz"
+  sha256 "b879f770ecc604c2dab5e466c4c69cb37e74c75abf4c6400dcee085af909473d"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
