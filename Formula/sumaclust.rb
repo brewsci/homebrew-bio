@@ -12,12 +12,8 @@ class Sumaclust < Formula
   end
 
   def install
-    if OS.mac?
-      system "make", "CC=clang"
-    else
-      system "make", "-C", "sumalibs", "install"
-      system "make", "install"
-    end
+    system "make", "-C", "sumalibs", "install"
+    system "make", "install"
     bin.install "sumaclust"
     doc.install "sumaclust_user_manual.pdf"
   end
