@@ -3597,6 +3597,57 @@
     "outdated": false
   },
   {
+    "name": "fastq-pair",
+    "full_name": "brewsci/bio/fastq-pair",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Fast efficient re-pairing of FASTQ files",
+    "homepage": "https://github.com/linsalrob/fastq-pair",
+    "versions": {
+      "stable": "1.0",
+      "devel": null,
+      "head": "HEAD",
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/fastq-pair-1.0.sierra.bottle.tar.gz",
+            "sha256": "9b609dc9f34d8be8cbf3fa6d988b2746518120ab4b409278b39a354e9c0d683d"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/fastq-pair-1.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "a3874d7eaa8e115e16114b904d55b9cf5119ebc3189c3ed791a050a7dc35aeb7"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [
+      "cmake"
+    ],
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "fasttree",
     "full_name": "brewsci/bio/fasttree",
     "oldname": null,
