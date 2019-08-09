@@ -2,14 +2,14 @@ class Prokka < Formula
   # cite Seemann_2014: "https://doi.org/10.1093/bioinformatics/btu153"
   desc "Rapid annotation of prokaryotic genomes"
   homepage "https://github.com/tseemann/prokka"
-  url "https://github.com/tseemann/prokka/archive/v1.13.tar.gz"
-  sha256 "0090acd6e3a8cb2d517fe0933c717c4f8271c60d0a493f7c4927504d77a8db4f"
+  url "https://github.com/tseemann/prokka/archive/v1.14.0.tar.gz"
+  sha256 "70b647c3efc296fc2909ba85056aa88e76832917876ff22e723798dcab281bb5"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "6de2b11685a40317e2bc75154ddbe5af305e9a07da4a3d6d608824ab0d96114b" => :sierra
-    sha256 "bc296240135b977f46a03c9c00f2a106844eda17250e663c98cd6e3539912b22" => :x86_64_linux
+    sha256 "9d5256b21befdf947eaab88562dcd933e34094facca2536987b9beabfa982c1d" => :sierra
+    sha256 "02017daea749350775e1773e4632f6096dd98929b812f07e7213d89b5d0dcb6e" => :x86_64_linux
   end
 
   depends_on "aragorn"
@@ -30,16 +30,18 @@ class Prokka < Formula
   def install
     # remove all bundled stuff and use brew ones
     rm_r "binaries"
-    rm_r "perl5"
+    # remove non-user scripts
+    rm "bin/prokka-build_kingdom_dbs"
+    rm "bin/prokka-make_tarball"
     # remove need to install XML::Simple for most cases
     inreplace "bin/prokka", "use XML::Simple;\n", ""
     inreplace "bin/prokka", 'msg("Running RNAmmer");', "require XML::Simple;"
     # patch in brewed bioperl path
     bioperl = Formula["bioperl"].libexec/"lib/perl5"
-    inreplace "bin/prokka",
-              "use FindBin;\n",
-              "use FindBin;\nuse lib '#{bioperl}';\n"
     prefix.install Dir["*"]
+    Dir[bin/"*"].each do |exe|
+      inreplace exe, "###BREWCONDA###", "use lib '#{bioperl}';"
+    end
   end
 
   def post_install
@@ -49,6 +51,7 @@ class Prokka < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/prokka --version 2>&1")
     assert_match "Kingdoms:", shell_output("#{bin}/prokka --listdb 2>&1")
+    assert_match "genetic", shell_output("#{bin}/prokka-genbank_to_fasta_db --help 2>&1", 1)
     system "#{bin}/prokka", "--cpus=2", "--prefix=prokka",
       "--outdir=#{testpath}/prokka", "#{prefix}/test/plasmid.fna"
     assert_predicate testpath/"prokka/prokka.gff", :exist?
