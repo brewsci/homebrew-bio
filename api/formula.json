@@ -9838,7 +9838,7 @@
     "desc": "Rapid annotation of prokaryotic genomes",
     "homepage": "https://github.com/tseemann/prokka",
     "versions": {
-      "stable": "1.13",
+      "stable": "1.14.0",
       "devel": null,
       "head": null,
       "bottle": true
@@ -9853,12 +9853,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/prokka-1.13.sierra.bottle.tar.gz",
-            "sha256": "6de2b11685a40317e2bc75154ddbe5af305e9a07da4a3d6d608824ab0d96114b"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/prokka-1.14.0.sierra.bottle.tar.gz",
+            "sha256": "9d5256b21befdf947eaab88562dcd933e34094facca2536987b9beabfa982c1d"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/prokka-1.13.x86_64_linux.bottle.tar.gz",
-            "sha256": "bc296240135b977f46a03c9c00f2a106844eda17250e663c98cd6e3539912b22"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/prokka-1.14.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "02017daea749350775e1773e4632f6096dd98929b812f07e7213d89b5d0dcb6e"
           }
         }
       }
