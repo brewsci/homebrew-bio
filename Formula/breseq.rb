@@ -2,8 +2,8 @@ class Breseq < Formula
   # Deatherage_2014: "https://doi.org/10.1007/978-1-4939-0554-6_12"
   desc "Find mutations in microbes from short reads"
   homepage "http://barricklab.org/twiki/bin/view/Lab/ToolsBacterialGenomeResequencing"
-  url "https://github.com/barricklab/breseq/releases/download/v0.33.0/breseq-0.33.0-Source.tar.gz"
-  sha256 "f553931e810a5c31434f2f90e977589c99c9dcbd258045df9fd37acc21d58574"
+  url "https://github.com/barricklab/breseq/releases/download/v0.33.2/breseq-0.33.2-Source.tar.gz"
+  sha256 "ce1cb0c2893bdec4736e667214be47282d14bfb7d5fcefa097c342ca22e9082e"
   head "https://github.com/barricklab/breseq.git"
 
   bottle do
