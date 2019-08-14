@@ -4076,7 +4076,7 @@
     "desc": "Fast and accurate de novo assembler for single molecule sequencing reads",
     "homepage": "https://github.com/fenderglass/Flye",
     "versions": {
-      "stable": "2.4.2",
+      "stable": "2.5",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -4091,12 +4091,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/flye-2.4.2.sierra.bottle.tar.gz",
-            "sha256": "81c0c105ee8b6316288cb01371e7b62a182acb1a3a673b4e8f3681a424a21a8c"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/flye-2.5.sierra.bottle.tar.gz",
+            "sha256": "63e01cab4cb5870d60fca897ae5c3cd8b52d3bd249a3aa129454910c4fbd2d1f"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/flye-2.4.2.x86_64_linux.bottle.tar.gz",
-            "sha256": "e7c259f6390516d752b5c51d25b75982f896fc18c1cbd4edbb8f7ee33e717bad"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/flye-2.5.x86_64_linux.bottle.tar.gz",
+            "sha256": "d5df5ebfe67e7de0df758c8eaa9a2cc9fe090955a92dca5502db50237688736d"
           }
         }
       }
