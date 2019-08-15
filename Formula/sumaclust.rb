@@ -12,7 +12,7 @@ class Sumaclust < Formula
   end
 
   def install
-    system "make", "-C", "sumalibs", "install"
+    system "make", "-C", "sumalibs", "install", "PREFIX=#{prefix}"
     if OS.mac?
       system "make", "CC=clang"
     end
