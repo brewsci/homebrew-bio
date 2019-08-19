@@ -2,15 +2,14 @@ class Mash < Formula
   # cite Ondov_2016: "https://doi.org/10.1186/s13059-016-0997-x"
   desc "Fast genome distance estimation using MinHash"
   homepage "https://github.com/marbl/Mash"
-  url "https://github.com/marbl/Mash/archive/v2.1.1.tar.gz"
-  sha256 "77a949e81e21b88acb0df8bfacb418e63ad763597f3430cd0f653d0a167842aa"
+  url "https://github.com/marbl/Mash/archive/v2.2.tar.gz"
+  sha256 "7ad006dbf0d6ffc3e164713ba955aab4cd24eaf85c864ac905f48cd8ba332691"
   head "https://github.com/marbl/Mash.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "2f91a23b5a0aa948f5c388dae276bc47d4dcf5d204331fbb94c43ef2976fd562" => :sierra
-    sha256 "1a939c40a533d2299f3b6b16e43c689634ef183b6f03c7850d8ef62ebcc0998f" => :x86_64_linux
+    sha256 "1ebabe10ad2a9a0799484f4af0c752bc2babbc9f234150bf665369806db37253" => :sierra
+    sha256 "c6367106ddeeb0a96e1ad6ecd9b1495950c67458f94779e94445c561327229e1" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
