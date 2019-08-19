@@ -5942,6 +5942,59 @@
     "outdated": false
   },
   {
+    "name": "kounta",
+    "full_name": "brewsci/bio/kounta",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Generate multi-sample k-mer count matrix",
+    "homepage": "https://github.com/tseemann/kounta",
+    "versions": {
+      "stable": "0.1.6",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/kounta-0.1.6.sierra.bottle.tar.gz",
+            "sha256": "8fd5461142b6d7304071710d1e32acec74fede6056e31f882437cb180354d5ad"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/kounta-0.1.6.x86_64_linux.bottle.tar.gz",
+            "sha256": "65914592c5380f403629e306fbe10cb85855a8e260f41eb2a3e889ee382065b3"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [
+      "kmc",
+      "parallel",
+      "perl"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "kr",
     "full_name": "brewsci/bio/kr",
     "oldname": null,
