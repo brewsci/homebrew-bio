@@ -1,8 +1,8 @@
 class Kounta < Formula
   desc "Generate multi-sample k-mer count matrix"
   homepage "https://github.com/tseemann/kounta"
-  url "https://github.com/tseemann/kounta/archive/v0.1.6.tar.gz"
-  sha256 "d3b2312fd03bf39844f22c9169653f3cda10c2919c8d2f9b46f5f35dbf934c38"
+  url "https://github.com/tseemann/kounta/archive/v0.2.0.tar.gz"
+  sha256 "694c697b3282898adf8adfcb4a09269c5f7d5d74ff3f3108d2f283bd39ac789f"
 
   bottle do
     cellar :any_skip_relocation
