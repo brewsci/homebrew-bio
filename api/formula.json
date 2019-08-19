@@ -6204,7 +6204,7 @@
     "desc": "In silico Legionella pneumophila Sequence Based Typing",
     "homepage": "https://github.com/tseemann/legsta",
     "versions": {
-      "stable": "0.3.2",
+      "stable": "0.3.3",
       "devel": null,
       "head": null,
       "bottle": true
@@ -6219,12 +6219,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/legsta-0.3.2.sierra.bottle.tar.gz",
-            "sha256": "f1c3d9ca09f4b1285b03bdd0c341aaf950d432f3fdd1eec9c9d149c732240b77"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/legsta-0.3.3.sierra.bottle.tar.gz",
+            "sha256": "562932340889a5ffbc9c88bcf543655ed55858dd794d87e2cb00979d1994184a"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/legsta-0.3.2.x86_64_linux.bottle.tar.gz",
-            "sha256": "7c3d1a4dc8041079d56d4f5456e9f2c87e224db1b4659b498bbcd9fd71301626"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/legsta-0.3.3.x86_64_linux.bottle.tar.gz",
+            "sha256": "a46963b1877423873b6175dcb0ac58f39d3d62ec7834e5ef48aa4424a027e0f9"
           }
         }
       }
