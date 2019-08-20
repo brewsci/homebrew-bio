@@ -2,9 +2,8 @@ class Xssp < Formula
   # cite Touw_2015: "https://doi.org/10.1093/nar/gku1028"
   desc "Create DSSP and HSSP files"
   homepage "https://github.com/cmbi/xssp"
-  url "https://github.com/cmbi/xssp/archive/3.0.5.tar.gz"
-  sha256 "fded09f08cfb12e578e4823295dc0d0aaeff6559d5e099df23c5bcc911597ccd"
-  revision 1
+  url "https://github.com/cmbi/xssp/releases/download/3.0.9/xssp-3.0.9.tar.gz"
+  sha256 "42a9a93c48d22478212dcaf6ceb3feb64443e4cb2e8cccdd402b47a595d16658"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
