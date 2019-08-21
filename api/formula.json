@@ -5950,7 +5950,7 @@
     "desc": "Generate multi-sample k-mer count matrix",
     "homepage": "https://github.com/tseemann/kounta",
     "versions": {
-      "stable": "0.1.6",
+      "stable": "0.2.0",
       "devel": null,
       "head": null,
       "bottle": true
@@ -5965,12 +5965,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/kounta-0.1.6.sierra.bottle.tar.gz",
-            "sha256": "8fd5461142b6d7304071710d1e32acec74fede6056e31f882437cb180354d5ad"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/kounta-0.2.0.sierra.bottle.tar.gz",
+            "sha256": "8ed7a35906564536e72d2890ae01ae7383f0ece0750eb685134bc4b717699c38"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/kounta-0.1.6.x86_64_linux.bottle.tar.gz",
-            "sha256": "65914592c5380f403629e306fbe10cb85855a8e260f41eb2a3e889ee382065b3"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/kounta-0.2.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "3447f8d1f06cb50ee8d701519129b35f012d4a37a6e434c832a88206c1e17017"
           }
         }
       }
