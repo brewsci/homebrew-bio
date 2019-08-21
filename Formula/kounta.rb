@@ -6,8 +6,8 @@ class Kounta < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "8fd5461142b6d7304071710d1e32acec74fede6056e31f882437cb180354d5ad" => :sierra
-    sha256 "65914592c5380f403629e306fbe10cb85855a8e260f41eb2a3e889ee382065b3" => :x86_64_linux
+    sha256 "8ed7a35906564536e72d2890ae01ae7383f0ece0750eb685134bc4b717699c38" => :sierra
+    sha256 "3447f8d1f06cb50ee8d701519129b35f012d4a37a6e434c832a88206c1e17017" => :x86_64_linux
   end
 
   depends_on "kmc"
