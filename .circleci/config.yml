@@ -36,7 +36,6 @@ jobs:
             brew install patchelf
             brew tap linuxbrew/xorg
             brew test-bot --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
-            mv brew-test-bot.xml brew-test-bot-linux.xml
       - persist_to_workspace:
           root: /tmp
           paths:
@@ -73,7 +72,6 @@ jobs:
             mkdir /tmp/bottles
             cd /tmp/bottles
             brew test-bot --skip-setup --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
-            mv brew-test-bot.xml brew-test-bot-macos.xml
       - persist_to_workspace:
           root: /tmp
           paths:
