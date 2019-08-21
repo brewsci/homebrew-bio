@@ -6147,6 +6147,59 @@
     "outdated": false
   },
   {
+    "name": "kssd",
+    "full_name": "brewsci/bio/kssd",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "K-mer substring space sampling/shuffling decomposition",
+    "homepage": "https://github.com/yhg926/public_kssd",
+    "versions": {
+      "stable": "1.0",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/kssd-1.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "e4932583d638612e52e7091f8ad31201aee0a6f0540c7fd6a09bc1698d963c32"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [
+      "zlib"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [
+      {
+        "name": "linux",
+        "cask": null,
+        "download": null
+      }
+    ],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "last",
     "full_name": "brewsci/bio/last",
     "oldname": null,
