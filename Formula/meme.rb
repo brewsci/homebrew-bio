@@ -2,8 +2,8 @@ class Meme < Formula
   # cite Bailey_2009: "https://doi.org/10.1093/nar/gkp335"
   desc "Tools for motif discovery"
   homepage "http://meme-suite.org"
-  url "http://meme-suite.org/meme-software/5.0.4/meme-5.0.4.tar.gz"
-  sha256 "b5e067c8b9d9fe4a2a35d4f4d053714beb380c0c06b54ed94737dd31d93c4cf4"
+  url "meme-suite.org/meme-software/5.0.5/meme-5.0.5.tar.gz"
+  sha256 "94826793576f4dd2f10fef829426dcde57f3cc990e462d9428c84f83d71eaeeb"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
