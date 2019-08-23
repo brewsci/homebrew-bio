@@ -4347,11 +4347,11 @@
     "aliases": [],
     "versioned_formulae": [],
     "desc": "Genome Analysis Toolkit: Variant Discovery in High-Throughput Sequencing",
-    "homepage": "https://software.broadinstitute.org/gatk/",
+    "homepage": "https://software.broadinstitute.org/gatk",
     "versions": {
-      "stable": "4.1.2.0",
+      "stable": "4.1.3.0",
       "devel": null,
-      "head": "HEAD",
+      "head": null,
       "bottle": false
     },
     "revision": 0,
@@ -4371,7 +4371,7 @@
     "optional_dependencies": [],
     "requirements": [],
     "conflicts_with": [],
-    "caveats": null,
+    "caveats": "This brew installation does not include the necessary python dependencies to run certain gatk tools.\nSimilarly, it does not install the necessary version of R and its packages for certain plotting functions to work.\n\nSee the GATK readme for detailed installation instructions.\n   https://github.com/broadinstitute/gatk\n\nThe recommended way of running the tools with complex python dependencies is to use the pre-built docker images instead of attempting to install them locally.\nGatk dockers are available on docker hub:\n   https://hub.docker.com/r/broadinstitute/gatk/tags/\n",
     "installed": [],
     "linked_keg": null,
     "pinned": false,
