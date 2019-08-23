@@ -1,9 +1,8 @@
 class Abricate < Formula
   desc "Find antimicrobial resistance and virulence genes in contigs"
   homepage "https://github.com/tseemann/abricate"
-  url "https://github.com/tseemann/abricate/archive/v0.8.13.tar.gz"
-  sha256 "21cae491e40ee12ce34fd6fbcc93ca3ed12d88a9a774b9f8e62da36078b8292d"
-  revision 1
+  url "https://github.com/tseemann/abricate/archive/v0.9.3.tar.gz"
+  sha256 "a7714ea591d86fd282b53d0146af8af6ab693aec5d1545632ee73feb8605d46f"
   head "https://github.com/tseemann/abricate.git"
 
   bottle do
@@ -14,9 +13,10 @@ class Abricate < Formula
   end
 
   depends_on "cpanminus" => :build
+  depends_on "any2fasta"
   depends_on "bioperl"
   depends_on "blast"
-  depends_on "emboss"
+  depends_on "edirect"
   unless OS.mac?
     depends_on "perl"
     depends_on "unzip"
@@ -26,7 +26,7 @@ class Abricate < Formula
     ENV.prepend "PERL5LIB", Formula["bioperl"].libexec/"lib/perl5"
     ENV.prepend_create_path "PERL5LIB", prefix/"perl5/lib/perl5"
 
-    pms = %w[JSON Time::Piece Text::CSV List::MoreUtils]
+    pms = %w[JSON Path::Tiny Time::Piece Text::CSV List::MoreUtils]
     system "cpanm", "--self-contained", "-l", prefix/"perl5", *pms
 
     libexec.install Dir["*"]
