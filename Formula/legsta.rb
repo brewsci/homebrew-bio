@@ -1,8 +1,8 @@
 class Legsta < Formula
   desc "In silico Legionella pneumophila Sequence Based Typing"
   homepage "https://github.com/tseemann/legsta"
-  url "https://github.com/tseemann/legsta/archive/v0.3.3.tar.gz"
-  sha256 "a64ad90721db4e130dc66122662aaac6ad98c6247f00573486dfa56d72ef8008"
+  url "https://github.com/tseemann/legsta/archive/v0.3.7.tar.gz"
+  sha256 "4d721a1dcd64b44311992610484e699fb05affb4a32b75aa62225b317cb81163"
 
   bottle do
     cellar :any_skip_relocation
