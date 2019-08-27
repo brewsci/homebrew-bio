@@ -2,8 +2,8 @@ class Salmon < Formula
   # cite Patro_2017: "https://doi.org/10.1038/nmeth.4197"
   desc "Transcript-level quantification from RNA-seq reads"
   homepage "https://github.com/COMBINE-lab/salmon"
-  url "https://github.com/COMBINE-lab/salmon/archive/v0.9.1.tar.gz"
-  sha256 "3a32c28d217f8f0af411c77c04144b1fa4e6fd3c2f676661cc875123e4f53520"
+  url "https://github.com/COMBINE-lab/salmon/archive/v0.14.1.tar.gz"
+  sha256 "05289170e69b5f291a8403b40d6b9bff54cc38825e9f721c210192b51a19273e"
   head "https://github.com/COMBINE-lab/salmon.git"
 
   bottle do
@@ -16,7 +16,13 @@ class Salmon < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "cmake" => :build
+  depends_on "pkg-config" => :build
+
   depends_on "boost"
+  depends_on "curl"
+  depends_on "jemalloc"
+  depends_on "libdivsufsort"
+  depends_on "staden-io-lib"
   depends_on "tbb"
   depends_on "xz"
   unless OS.mac?
@@ -26,7 +32,10 @@ class Salmon < Formula
 
   def install
     # Reduce memory usage for CircleCI.
-    ENV["MAKEFLAGS"] = "-j4" if ENV["CIRCLECI"]
+    ENV["MAKEFLAGS"] = "-j1" if ENV["CIRCLECI"]
+
+    # https://github.com/COMBINE-lab/salmon/issues/412
+    inreplace "CMakeLists.txt", "-d0 -j2", "$MAKEFLAGS"
 
     system "cmake", ".", *std_cmake_args
     system "make"
@@ -34,6 +43,7 @@ class Salmon < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/salmon --version 2>&1")
     assert_match "Usage", shell_output("#{bin}/salmon --help 2>&1")
   end
 end
