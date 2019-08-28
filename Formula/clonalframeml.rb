@@ -2,8 +2,8 @@ class Clonalframeml < Formula
   # cite Didelot_2015: "https://doi.org/10.1371/journal.pcbi.1004041"
   desc "Efficient Inference of Recombination in Bacterial Genomes"
   homepage "https://github.com/xavierdidelot/ClonalFrameML"
-  url "https://github.com/xavierdidelot/ClonalFrameML/archive/v1.11.tar.gz"
-  sha256 "395e2f14a93aa0b999fa152d25668b42450c712f3f4ca305b34533317e81cc84"
+  url "https://github.com/xavierdidelot/ClonalFrameML/archive/v1.12.tar.gz"
+  sha256 "ef76705c1a0f1343184f956cd0bdc96c2cfdbb998177330b09b6df84c74c2de6"
   head "https://github.com/xavierdidelot/ClonalFrameML.git"
 
   bottle do
@@ -14,16 +14,12 @@ class Clonalframeml < Formula
   end
 
   def install
-    cd "src" do
-      exe = "ClonalFrameML"
-      # https://github.com/xavierdidelot/ClonalFrameML/issues/56
-      File.write("version.h", "#define ClonalFrameML_GITRevision #{version}\n")
-      system ENV.cxx, "-O3", "main.cpp", "-o", exe, "-I.", "-Imyutils", "-Icoalesce"
-      bin.install exe
-    end
+    system "make", "-C", "src"
+    bin.install "src/ClonalFrameML"
   end
 
   test do
-    assert_match "recombination", shell_output("#{bin}/ClonalFrameML -h 2>&1", 13)
+    assert_match version.to_s, shell_output("#{bin}/ClonalFrameML -version 2>&1")
+    assert_match "recombination", shell_output("#{bin}/ClonalFrameML -h 2>&1")
   end
 end
