@@ -2325,7 +2325,7 @@
     "desc": "Efficient Inference of Recombination in Bacterial Genomes",
     "homepage": "https://github.com/xavierdidelot/ClonalFrameML",
     "versions": {
-      "stable": "1.11",
+      "stable": "1.12",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -2340,12 +2340,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/clonalframeml-1.11.sierra.bottle.tar.gz",
-            "sha256": "061350e7413c704eb627d28ee9cc391d1e031b0f6e4a9323900ce12d356a1fa1"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/clonalframeml-1.12.sierra.bottle.tar.gz",
+            "sha256": "ef12d55ae473ef2e287e2e42d8b03631c938435ac6a58276e5afb20bd1df20d7"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/clonalframeml-1.11.x86_64_linux.bottle.tar.gz",
-            "sha256": "3555d42efc067ca6eb62dee08ca5981b939e00aaeaaa59d9598eff5aa621bc51"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/clonalframeml-1.12.x86_64_linux.bottle.tar.gz",
+            "sha256": "63567c0ed398baf544e83c62020169bf90790c5a1eb700678ad10a7ee42a5833"
           }
         }
       }
