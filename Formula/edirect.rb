@@ -1,9 +1,9 @@
 class Edirect < Formula
   desc "Access NCBI databases via the command-line"
   homepage "https://www.ncbi.nlm.nih.gov/books/NBK179288/"
-  url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/11.6.20190620/edirect-11.6.20190620.tar.gz"
-  version "11.6"
-  sha256 "b2a5ef44b8dac9502f3662eccce728f944f3abbc3f50317630ec276bcc4550fc"
+  url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/12.1.20190819/edirect-12.1.20190819.tar.gz"
+  version "12.1"
+  sha256 "2ffd695b9e1e2eb0db6956084eb5b77797efdb46f572ef2e300d3b766f4d3ac5"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -41,9 +41,12 @@ class Edirect < Formula
     %w[efetch esearch einfo efilter epost elink].each do |exe|
       assert_match version.to_s, shell_output("#{bin}/#{exe} -version")
     end
-    # >XP_024459497.1 lycopene epsilon cyclase, chloroplastic isoform X3 [Populus trichocarpa]
-    # MECVGARNFGAMAAVLLSCPCPVWRSKTGVATQPQSSSSSSSAKQSVFNSNKRYRLCKVRSGGGSNSSRG
-    assert_match "PQSSSSSSSAK",
-      shell_output("#{bin}/esearch -db protein -query XP_024459497.1 | #{bin}/efetch -format fasta")
+    # CIRCLE-CI MacOS often fails on https accesses
+    unless OS.mac?
+      # >XP_024459497.1 lycopene epsilon cyclase, chloroplastic isoform X3 [Populus trichocarpa]
+      # MECVGARNFGAMAAVLLSCPCPVWRSKTGVATQPQSSSSSSSAKQSVFNSNKRYRLCKVRSGGGSNSSRG
+      assert_match "PQSSSSSSSAK",
+        shell_output("#{bin}/esearch -db protein -query XP_024459497.1 | #{bin}/efetch -format fasta")
+    end
   end
 end
