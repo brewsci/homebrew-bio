@@ -2,8 +2,7 @@ class Vcflib < Formula
   desc "Command-line tools for manipulating VCF files"
   homepage "https://github.com/ekg/vcflib"
   url "https://github.com/ekg/vcflib.git",
-    :tag => "v1.0.0-rc2", :revision => "5b0f4d5b0cbdfb7b890353b08b9d397c92312d8f"
-  revision 2
+    :tag => "v1.0.1", :revision => "d150a89fa4f717634b06e1c78a37794d2c10c94c"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -12,15 +11,13 @@ class Vcflib < Formula
     sha256 "545342ee6617f60654a8e9e0c4f6b1fb6926a456f61f69d054d90f65ae39fce7" => :x86_64_linux
   end
 
-  if OS.mac?
-    depends_on "gcc" # https://github.com/ekg/tabixpp/issues/16
-  else
-    depends_on "bzip2"
-    depends_on "perl"
-    depends_on "zlib"
-  end
-  depends_on "python@2"
+  depends_on "gcc" if OS.mac?
+  depends_on "python"
   depends_on "xz"
+
+  uses_from_macos "bzip2"
+  uses_from_macos "perl"
+  uses_from_macos "zlib"
 
   fails_with :clang # error: ordered comparison between pointer and zero
 
