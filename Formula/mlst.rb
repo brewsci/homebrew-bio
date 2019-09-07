@@ -1,26 +1,24 @@
 class Mlst < Formula
   desc "Multi-Locus Sequence Typing of bacterial contigs"
   homepage "https://github.com/tseemann/mlst"
-  url "https://github.com/tseemann/mlst/archive/v2.16.4.tar.gz"
-  sha256 "e9a3de71450410f4ee6a19f0aef6da55a0a0dd1def8d90753fb230432306e662"
+  url "https://github.com/tseemann/mlst/archive/v2.17.6.tar.gz"
+  sha256 "223c6b4751bc4fb7fe9d41f56e75c90235b1eba022f987abc1d75ae51fc50819"
   head "https://github.com/tseemann/mlst.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "8a8295517cd0633bffb5931f0e0d80b206047732a28c3951f187e58a858d992a" => :sierra
-    sha256 "df627e32c2fbde256e5147128c8cb58b6727ef14c34a1e4167f0b60bd5b511c7" => :x86_64_linux
+    sha256 "c1825f9550326f6ee5aaeebca222fa25ae992ba11ecb5674ae4339721f91dbc9" => :sierra
+    sha256 "86c5be147f02d9eab21a032d53266bcfa6bff6af0d893d6955bff8f1aa98f1a7" => :x86_64_linux
   end
 
   depends_on "cpanminus" => :build
   depends_on "pkg-config" => :build
 
+  depends_on "any2fasta"
   depends_on "blast"
-  unless OS.mac?
-    depends_on "gzip"
-    depends_on "perl"
-  end
+  depends_on "perl" # needs 5.26 so can't use Mac perl
   depends_on "wget"
+  depends_on "zlib" unless OS.mac?
 
   def install
     libexec.install Dir["*"]
