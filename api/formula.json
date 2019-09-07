@@ -2990,7 +2990,7 @@
     "desc": "Access NCBI databases via the command-line",
     "homepage": "https://www.ncbi.nlm.nih.gov/books/NBK179288/",
     "versions": {
-      "stable": "11.6",
+      "stable": "12.1",
       "devel": null,
       "head": null,
       "bottle": true
@@ -3000,17 +3000,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/edirect-11.6.sierra.bottle.tar.gz",
-            "sha256": "6a223e7f9f2e132a57b131b37609eba8bf2108ebf8098d12678ed3d8f2a5e3ba"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/edirect-12.1.sierra.bottle.tar.gz",
+            "sha256": "38deba89becc610a71dbe6891aa5ded018689e8834579851b60ae5322fa81a6d"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/edirect-11.6.x86_64_linux.bottle.tar.gz",
-            "sha256": "54cc6e0ede6779012aa798a19d82df256dfe0f9ae700b26bb64988f67d661fe0"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/edirect-12.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "c92a977a082d18a8438eb724258a95fd8e486a4838c76208646e0b9645f04c86"
           }
         }
       }
