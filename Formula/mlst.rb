@@ -6,10 +6,9 @@ class Mlst < Formula
   head "https://github.com/tseemann/mlst.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "8a8295517cd0633bffb5931f0e0d80b206047732a28c3951f187e58a858d992a" => :sierra
-    sha256 "df627e32c2fbde256e5147128c8cb58b6727ef14c34a1e4167f0b60bd5b511c7" => :x86_64_linux
+    sha256 "c1825f9550326f6ee5aaeebca222fa25ae992ba11ecb5674ae4339721f91dbc9" => :sierra
+    sha256 "86c5be147f02d9eab21a032d53266bcfa6bff6af0d893d6955bff8f1aa98f1a7" => :x86_64_linux
   end
 
   depends_on "cpanminus" => :build
