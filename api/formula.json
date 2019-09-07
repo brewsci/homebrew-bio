@@ -2786,7 +2786,7 @@
     "desc": "Tools for BED, FASTA, FASTQ, GFA1/2, GFF3, SAM, and VCF files",
     "homepage": "https://github.com/heuermh/dishevelled-bio",
     "versions": {
-      "stable": "1.2",
+      "stable": "1.2.1",
       "devel": null,
       "head": null,
       "bottle": true
@@ -2801,12 +2801,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/dsh-bio-1.2.sierra.bottle.tar.gz",
-            "sha256": "e14edc499b5658e6ec688445998c99469a54dbb42a7999ce0ffdf05a548ccc22"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/dsh-bio-1.2.1.sierra.bottle.tar.gz",
+            "sha256": "a1be0d419c4ebc43bf2cfd5354b81a753b2222dd3a595d253d38ba382e2aaf5a"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/dsh-bio-1.2.x86_64_linux.bottle.tar.gz",
-            "sha256": "d777488f0b5d39d0e73e4b40ba0e7a6f15032de6802b966761bb5ff94c405b8b"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/dsh-bio-1.2.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "11e5829cc90fecf7b59e4b7590fd44d8c9d9b2cdd423fb74399e30a6be469a0b"
           }
         }
       }
