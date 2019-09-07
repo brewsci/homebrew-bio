@@ -1,32 +1,31 @@
 class Abricate < Formula
   desc "Find antimicrobial resistance and virulence genes in contigs"
   homepage "https://github.com/tseemann/abricate"
-  url "https://github.com/tseemann/abricate/archive/v0.8.13.tar.gz"
-  sha256 "21cae491e40ee12ce34fd6fbcc93ca3ed12d88a9a774b9f8e62da36078b8292d"
-  revision 1
+  url "https://github.com/tseemann/abricate/archive/v0.9.7.tar.gz"
+  sha256 "e653c019bf140587b69fd4ce55a057c23a95e1f190dbb4a1a8ea86ad030ed777"
   head "https://github.com/tseemann/abricate.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "2a0d5ca4c023c3a6861b832a04207e0ff44e895360d2e98b70ed32e3a6575c13" => :sierra
-    sha256 "f166e269d2235aed9eb1b8eead6c81abe23e5dc68996639457bf7ae9fe6d15d3" => :x86_64_linux
+    sha256 "42aa3ebe90c27163ed2b0f96c54ae45c7ddb2842b02cc24872288b06e082a6c9" => :sierra
+    sha256 "e2521d3d7b7de56ca34af5b7eb724e7dace499026a8f2bc721f7e868dc2a6107" => :x86_64_linux
   end
 
   depends_on "cpanminus" => :build
+  depends_on "any2fasta"
   depends_on "bioperl"
   depends_on "blast"
-  depends_on "emboss"
-  unless OS.mac?
-    depends_on "perl"
-    depends_on "unzip"
-  end
+  depends_on "openssl" # for Net::SSLeay
+  depends_on "perl" # MacOS version too old
+  depends_on "unzip" unless OS.mac?
 
   def install
     ENV.prepend "PERL5LIB", Formula["bioperl"].libexec/"lib/perl5"
     ENV.prepend_create_path "PERL5LIB", prefix/"perl5/lib/perl5"
 
-    pms = %w[JSON Time::Piece Text::CSV List::MoreUtils]
+    ENV["OPENSSL_PREFIX"] = Formula["openssl"].opt_prefix # for Net::SSLeay
+
+    pms = %w[JSON Path::Tiny List::MoreUtils LWP::Simple]
     system "cpanm", "--self-contained", "-l", prefix/"perl5", *pms
 
     libexec.install Dir["*"]
