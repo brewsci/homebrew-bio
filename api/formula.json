@@ -59,12 +59,12 @@
     "desc": "Find antimicrobial resistance and virulence genes in contigs",
     "homepage": "https://github.com/tseemann/abricate",
     "versions": {
-      "stable": "0.8.13",
+      "stable": "0.9.7",
       "devel": null,
       "head": "HEAD",
       "bottle": true
     },
-    "revision": 1,
+    "revision": 0,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -74,12 +74,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/abricate-0.8.13_1.sierra.bottle.tar.gz",
-            "sha256": "2a0d5ca4c023c3a6861b832a04207e0ff44e895360d2e98b70ed32e3a6575c13"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/abricate-0.9.7.sierra.bottle.tar.gz",
+            "sha256": "42aa3ebe90c27163ed2b0f96c54ae45c7ddb2842b02cc24872288b06e082a6c9"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/abricate-0.8.13_1.x86_64_linux.bottle.tar.gz",
-            "sha256": "f166e269d2235aed9eb1b8eead6c81abe23e5dc68996639457bf7ae9fe6d15d3"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/abricate-0.9.7.x86_64_linux.bottle.tar.gz",
+            "sha256": "e2521d3d7b7de56ca34af5b7eb724e7dace499026a8f2bc721f7e868dc2a6107"
           }
         }
       }
@@ -91,9 +91,10 @@
       "cpanminus"
     ],
     "dependencies": [
+      "any2fasta",
       "bioperl",
       "blast",
-      "emboss",
+      "openssl",
       "perl",
       "unzip"
     ],
