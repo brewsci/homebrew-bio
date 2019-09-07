@@ -1,15 +1,14 @@
 class Edirect < Formula
   desc "Access NCBI databases via the command-line"
   homepage "https://www.ncbi.nlm.nih.gov/books/NBK179288/"
-  url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/11.6.20190620/edirect-11.6.20190620.tar.gz"
-  version "11.6"
-  sha256 "b2a5ef44b8dac9502f3662eccce728f944f3abbc3f50317630ec276bcc4550fc"
+  url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/12.1.20190819/edirect-12.1.20190819.tar.gz"
+  version "12.1"
+  sha256 "2ffd695b9e1e2eb0db6956084eb5b77797efdb46f572ef2e300d3b766f4d3ac5"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "6a223e7f9f2e132a57b131b37609eba8bf2108ebf8098d12678ed3d8f2a5e3ba" => :sierra
-    sha256 "54cc6e0ede6779012aa798a19d82df256dfe0f9ae700b26bb64988f67d661fe0" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "38deba89becc610a71dbe6891aa5ded018689e8834579851b60ae5322fa81a6d" => :sierra
+    sha256 "c92a977a082d18a8438eb724258a95fd8e486a4838c76208646e0b9645f04c86" => :x86_64_linux
   end
 
   depends_on "cpanminus" => :build
@@ -41,9 +40,12 @@ class Edirect < Formula
     %w[efetch esearch einfo efilter epost elink].each do |exe|
       assert_match version.to_s, shell_output("#{bin}/#{exe} -version")
     end
-    # >XP_024459497.1 lycopene epsilon cyclase, chloroplastic isoform X3 [Populus trichocarpa]
-    # MECVGARNFGAMAAVLLSCPCPVWRSKTGVATQPQSSSSSSSAKQSVFNSNKRYRLCKVRSGGGSNSSRG
-    assert_match "PQSSSSSSSAK",
-      shell_output("#{bin}/esearch -db protein -query XP_024459497.1 | #{bin}/efetch -format fasta")
+    # CIRCLE-CI MacOS often fails on https accesses
+    unless OS.mac?
+      # >XP_024459497.1 lycopene epsilon cyclase, chloroplastic isoform X3 [Populus trichocarpa]
+      # MECVGARNFGAMAAVLLSCPCPVWRSKTGVATQPQSSSSSSSAKQSVFNSNKRYRLCKVRSGGGSNSSRG
+      assert_match "PQSSSSSSSAK",
+        shell_output("#{bin}/esearch -db protein -query XP_024459497.1 | #{bin}/efetch -format fasta")
+    end
   end
 end
