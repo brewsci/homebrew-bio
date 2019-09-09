@@ -13785,6 +13785,57 @@
     "outdated": false
   },
   {
+    "name": "webin-cli",
+    "full_name": "brewsci/bio/webin-cli",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "ENA Webin command-line submission tool",
+    "homepage": "https://github.com/enasequence/webin-cli",
+    "versions": {
+      "stable": "1.8.11",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/webin-cli-1.8.11.sierra.bottle.tar.gz",
+            "sha256": "883d06b50dab13a9ca315938c88d552528ee51812db91e39c0cd078a256393af"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/webin-cli-1.8.11.x86_64_linux.bottle.tar.gz",
+            "sha256": "cfb18450e818a8b6b984c34fb11d5fa3ed4d55385ebe3a9a2d5ae82dfad9a89b"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [
+      "adoptopenjdk"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "wiggletools",
     "full_name": "brewsci/bio/wiggletools",
     "oldname": null,
