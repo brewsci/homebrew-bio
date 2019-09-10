@@ -483,7 +483,7 @@
     "desc": "Scaffold genome sequence assemblies using 10x Genomics data",
     "homepage": "https://github.com/bcgsc/arcs",
     "versions": {
-      "stable": "1.0.6",
+      "stable": "1.1.0",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -498,12 +498,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/arcs-1.0.6.sierra.bottle.tar.gz",
-            "sha256": "025214bd4e6de45f1509d699259a4f5eb6e0d5cf0d1b81e2d9047f31b4753952"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/arcs-1.1.0.sierra.bottle.tar.gz",
+            "sha256": "763acfd8a19d9b0f3f242a3ed5e980f1a55155242f6020a9b78f873e6a3ddede"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/arcs-1.0.6.x86_64_linux.bottle.tar.gz",
-            "sha256": "7d859bde63d4e711bb5be08925f7d247c490b8234ef578594feb90c42540e6c1"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/arcs-1.1.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "22e26ecd9e44654890f83725f1e2e9acef7bd1c35df0130a0bdad062db3a2161"
           }
         }
       }
@@ -512,7 +512,8 @@
     "bottle_disabled": false,
     "options": [],
     "build_dependencies": [
-      "boost"
+      "boost",
+      "google-sparsehash"
     ],
     "dependencies": [
       "zlib"
@@ -3000,7 +3001,7 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any_skip_relocation",
+        "cellar": ":any",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
@@ -10429,7 +10430,7 @@
     "desc": "Scaffolding and gap-filling with long sequences: RAILS and Cobbler",
     "homepage": "https://github.com/bcgsc/RAILS",
     "versions": {
-      "stable": "1.4.2",
+      "stable": "1.5.1",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -10444,12 +10445,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/rails-1.4.2.sierra.bottle.tar.gz",
-            "sha256": "85cf1112959366d6923f22e5e898dca3ca3ff9acc8cb06b59424f69a26b36dd0"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/rails-1.5.1.sierra.bottle.tar.gz",
+            "sha256": "fc856b3dfd390d14f054bc8a80093759f3c486c639275626af67ed44d2aa55ee"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/rails-1.4.2.x86_64_linux.bottle.tar.gz",
-            "sha256": "94b6c9106dd5f0377d5fcf65ebfd2d9bc0a7dad17ec86c970a0ff8d9b1cf89a4"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/rails-1.5.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "4fe32dcd616749cbba8c0dbb111eb6d12ba80d656753a103c2e78901e4fced2b"
           }
         }
       }
