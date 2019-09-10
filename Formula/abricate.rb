@@ -1,8 +1,8 @@
 class Abricate < Formula
   desc "Find antimicrobial resistance and virulence genes in contigs"
   homepage "https://github.com/tseemann/abricate"
-  url "https://github.com/tseemann/abricate/archive/v0.9.7.tar.gz"
-  sha256 "e653c019bf140587b69fd4ce55a057c23a95e1f190dbb4a1a8ea86ad030ed777"
+  url "https://github.com/tseemann/abricate/archive/v0.9.8.tar.gz"
+  sha256 "b4d75a2bbd496ea4c91d84b2f5f421b83860c843f51f5e079f1926f601ac973f"
   head "https://github.com/tseemann/abricate.git"
 
   bottle do
