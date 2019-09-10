@@ -2,15 +2,15 @@ class Rails < Formula
   # cite Warren_2016: "https://doi.org/10.21105/joss.00116"
   desc "Scaffolding and gap-filling with long sequences: RAILS and Cobbler"
   homepage "https://github.com/bcgsc/RAILS"
-  url "https://github.com/bcgsc/RAILS/archive/v1.4.2.tar.gz"
-  sha256 "1da9ca0899e967472dec936b50fdbf649024d7ac226fd786224479d860dc55ea"
+  url "https://github.com/bcgsc/RAILS/archive/v1.5.1.tar.gz"
+  sha256 "ec7307df042bd3fad2d99d0e89039a661f3fb613f3f26adcd5d481ed1cb94996"
   head "https://github.com/bcgsc/RAILS.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "85cf1112959366d6923f22e5e898dca3ca3ff9acc8cb06b59424f69a26b36dd0" => :sierra
-    sha256 "94b6c9106dd5f0377d5fcf65ebfd2d9bc0a7dad17ec86c970a0ff8d9b1cf89a4" => :x86_64_linux
+    sha256 "fc856b3dfd390d14f054bc8a80093759f3c486c639275626af67ed44d2aa55ee" => :sierra
+    sha256 "4fe32dcd616749cbba8c0dbb111eb6d12ba80d656753a103c2e78901e4fced2b" => :x86_64_linux
   end
 
   depends_on "bwa"
