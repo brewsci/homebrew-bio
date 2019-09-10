@@ -7,8 +7,8 @@ class Abricate < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "42aa3ebe90c27163ed2b0f96c54ae45c7ddb2842b02cc24872288b06e082a6c9" => :sierra
-    sha256 "e2521d3d7b7de56ca34af5b7eb724e7dace499026a8f2bc721f7e868dc2a6107" => :x86_64_linux
+    sha256 "0f282ccc5c9081dd366f232feadf8132fe39ed5d8722ce4999bc5d15813ba227" => :sierra
+    sha256 "8651abf367705a84df42030552d048201a112d25632c710bb7439d18a6283e41" => :x86_64_linux
   end
 
   depends_on "cpanminus" => :build
