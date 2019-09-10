@@ -6,6 +6,7 @@ class Abricate < Formula
   head "https://github.com/tseemann/abricate.git"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
     sha256 "0f282ccc5c9081dd366f232feadf8132fe39ed5d8722ce4999bc5d15813ba227" => :sierra
     sha256 "8651abf367705a84df42030552d048201a112d25632c710bb7439d18a6283e41" => :x86_64_linux
