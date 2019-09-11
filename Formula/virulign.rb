@@ -2,8 +2,8 @@ class Virulign < Formula
   # cite Libin_2018: "https://doi.org/10.1093/bioinformatics/bty851"
   desc "Fast codon-correct alignment and annotation of viral genomes"
   homepage "https://github.com/rega-cev/virulign"
-  url "https://github.com/rega-cev/virulign/archive/v1.0.1.tar.gz"
-  sha256 "f7191c31e73bced5b37a4ef2a1e6d0a5f4214598137588c4e2dc82bb52a0a74c"
+  url "https://github.com/rega-cev/virulign/archive/v1.0.2.tar.gz"
+  sha256 "3e6934d5b5f37ff60b3aed94472b8076a6e79ea870f7e0ad5c4208a4d13d3c09"
 
   bottle do
     cellar :any_skip_relocation
@@ -17,9 +17,7 @@ class Virulign < Formula
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
       system "make"
-      # "make install" is still broken
-      # https://github.com/rega-cev/virulign/issues/10
-      bin.install "src/virulign"
+      system "make", "install"
     end
     pkgshare.install "references"
   end
