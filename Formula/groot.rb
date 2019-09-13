@@ -11,6 +11,13 @@ class Groot < Formula
   end
   version "0.8.5"
 
+  bottle do
+    cellar :any_skip_relocation
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "d1594f5953a4578c4c9d842d8bf115a31da9702a30809969e62fcb715e4587f2" => :sierra
+    sha256 "d29ed2ac8a75a997bd4fad81c578af10a94dc8a20f68ab98c3c779ed9f5ed2bc" => :x86_64_linux
+  end
+
   def install
     bin.install Dir["groot_*"].first => "groot"
   end
