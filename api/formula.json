@@ -4844,6 +4844,55 @@
     "outdated": false
   },
   {
+    "name": "groot",
+    "full_name": "brewsci/bio/groot",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Resistome profiler for Graphing Resistance Out Of meTagenomes",
+    "homepage": "https://github.com/will-rowe/groot",
+    "versions": {
+      "stable": "0.8.5",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/groot-0.8.5.sierra.bottle.tar.gz",
+            "sha256": "d1594f5953a4578c4c9d842d8bf115a31da9702a30809969e62fcb715e4587f2"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/groot-0.8.5.x86_64_linux.bottle.tar.gz",
+            "sha256": "d29ed2ac8a75a997bd4fad81c578af10a94dc8a20f68ab98c3c779ed9f5ed2bc"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "gzstream",
     "full_name": "brewsci/bio/gzstream",
     "oldname": null,
