@@ -10575,6 +10575,57 @@
     "outdated": false
   },
   {
+    "name": "raven-assembler",
+    "full_name": "brewsci/bio/raven-assembler",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "De novo DNA assembly of long uncorrected read",
+    "homepage": "https://github.com/lbcb-sci/raven",
+    "versions": {
+      "stable": "0.0.0",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/raven-assembler-0.0.0.sierra.bottle.tar.gz",
+            "sha256": "a2c5e6443f5f5199de1124cad4a2a6198cbb9501c2b4d5b26f1d84b6204e1e28"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/raven-assembler-0.0.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "848aa58e9977cc568fb90aa73439e1b1706c165fc6e4a692b472c1ab3eee385b"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [
+      "cmake"
+    ],
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "raxml-ng",
     "full_name": "brewsci/bio/raxml-ng",
     "oldname": null,
