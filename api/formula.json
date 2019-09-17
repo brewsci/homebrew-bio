@@ -7112,7 +7112,7 @@
     "desc": "Maryland Super-Read Celera Assembler",
     "homepage": "https://masurca.blogspot.com/",
     "versions": {
-      "stable": "3.3.3",
+      "stable": "3.3.4",
       "devel": null,
       "head": null,
       "bottle": true
@@ -7127,8 +7127,8 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/masurca-3.3.3.x86_64_linux.bottle.tar.gz",
-            "sha256": "fe478f9c6e92ee3fa9ccc24a42d6930f415cf3ab3dfff6a2d4143e3d3e65f0f2"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/masurca-3.3.4.x86_64_linux.bottle.tar.gz",
+            "sha256": "b6b9acb5064523080a6c6e7ba6a56af8a5523e34ed1697021b1f9f996384c6a1"
           }
         }
       }
