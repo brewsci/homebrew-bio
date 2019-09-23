@@ -170,7 +170,7 @@
     "desc": "Genomics analysis platform built on Apache Avro, Apache Spark and Parquet",
     "homepage": "https://github.com/bigdatagenomics/adam",
     "versions": {
-      "stable": "0.28.0",
+      "stable": "0.29.0",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -185,12 +185,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/adam-0.28.0.sierra.bottle.tar.gz",
-            "sha256": "c9fa9b9e6b760a96973d59c2a8d72e1092bf785709ce266d0029d651b3ad8919"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/adam-0.29.0.sierra.bottle.tar.gz",
+            "sha256": "aa77cfc798dec6e26ea21626e2c6e9ab7e4a7aff7356a3008094e39a77634a8e"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/adam-0.28.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "4e0556d378478d8254634a24e0139507562d99ffee32319b9f70bd017c0d89c7"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/adam-0.29.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "2c96a3aa6d447d10a1e8550f480f6d7c9e9533dfee94be790b75953f691d8b8a"
           }
         }
       }
@@ -1962,7 +1962,7 @@
     "desc": "Big Data Genomics ADAM Pipe API wrappers for bioinformatics tools",
     "homepage": "https://github.com/bigdatagenomics/cannoli",
     "versions": {
-      "stable": "0.6.0",
+      "stable": "0.7.0",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -1977,12 +1977,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/cannoli-0.6.0.sierra.bottle.tar.gz",
-            "sha256": "1f27f8051beeeed0d9e3a4013b1e8f1f4357389b353dff1871222b19be2681ae"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/cannoli-0.7.0.sierra.bottle.tar.gz",
+            "sha256": "3cd2c785579e5ba45ea7111d2c4409089a3090162d5b6bedeae4b63b4d163afb"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/cannoli-0.6.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "e6fbd8e759b1cfcfee556d81061c1b601e7b7efa8f2faac348776329e50886d2"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/cannoli-0.7.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "b5a5595141e5d8469d6bd2cd6b6f97a2224389c18d3058378e83c346305d77ed"
           }
         }
       }
