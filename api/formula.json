@@ -12427,6 +12427,57 @@
     "outdated": false
   },
   {
+    "name": "star-aligner",
+    "full_name": "brewsci/bio/star-aligner",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "RNA-seq aligner",
+    "homepage": "https://github.com/alexdobin/STAR",
+    "versions": {
+      "stable": "2.7.2b",
+      "devel": null,
+      "head": "HEAD",
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/star-aligner-2.7.2b.sierra.bottle.tar.gz",
+            "sha256": "5b566d7848575a257cd3ec2e8b103a5f203293c4526ff6ebfb2f834672eb98a8"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/star-aligner-2.7.2b.x86_64_linux.bottle.tar.gz",
+            "sha256": "63663438843f13a2cc068c727043555b2473a37e168a288117e723699d6d6a8d"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [
+      "zlib"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "stringtie",
     "full_name": "brewsci/bio/stringtie",
     "oldname": null,
