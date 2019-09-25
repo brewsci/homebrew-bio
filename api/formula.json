@@ -11486,7 +11486,7 @@
     "desc": "Ultrafast FASTA/Q file manipulation",
     "homepage": "https://bioinf.shenwei.me/seqkit/",
     "versions": {
-      "stable": "0.10.2",
+      "stable": "0.11.0",
       "devel": null,
       "head": null,
       "bottle": true
@@ -11501,12 +11501,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/seqkit-0.10.2.sierra.bottle.tar.gz",
-            "sha256": "9f6fe18fe36ee7083dd1e214cbd7c5f4bda68c2c8d910d62c5ed3e5502b2b5b1"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/seqkit-0.11.0.sierra.bottle.tar.gz",
+            "sha256": "2e97c8f8c443fe3f6e6be7a11102e1dde6ae764cd9c1878041ba5e842a508cab"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/seqkit-0.10.2.x86_64_linux.bottle.tar.gz",
-            "sha256": "9fa2753dfb51abfbfc2ab97b595b12e61c4f8ca72d59d33b3b0be5d332d11dbd"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/seqkit-0.11.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "1e48c929a711a86852decc75a35dc09dd5fda4bf50a73543db738a771e12c5d1"
           }
         }
       }
