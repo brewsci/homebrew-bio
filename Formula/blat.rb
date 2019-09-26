@@ -4,6 +4,7 @@ class Blat < Formula
   homepage "https://genome.ucsc.edu/FAQ/FAQblat.html"
   url "http://hgwdev.cse.ucsc.edu/~kent/src/blatSrc36.zip"
   sha256 "4b0fff006c86dceb7428922bfb4f8625d78fd362d205df68e4ebba04742d2c71"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
