@@ -7046,6 +7046,62 @@
     "outdated": false
   },
   {
+    "name": "mapcaller",
+    "full_name": "brewsci/bio/mapcaller",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Combined short-read alignment and variant detection",
+    "homepage": "https://github.com/hsinnan75/MapCaller",
+    "versions": {
+      "stable": "0.9.9.6",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mapcaller-0.9.9.6.x86_64_linux.bottle.tar.gz",
+            "sha256": "835617af8f147f5edb083dd837301dee1f2041256d04b56c852f888d19f5b2c5"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [
+      "xz",
+      "bzip2",
+      "zlib",
+      "curl"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [
+      {
+        "name": "linux",
+        "cask": null,
+        "download": null
+      }
+    ],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "mash",
     "full_name": "brewsci/bio/mash",
     "oldname": null,
