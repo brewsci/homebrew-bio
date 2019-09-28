@@ -4,6 +4,12 @@ class Mapcaller < Formula
   url "https://github.com/hsinnan75/MapCaller/archive/v0.9.9.6.tar.gz"
   sha256 "ced5475c154f5d1d9d3d35a0214d2638821e4934daff58d669802e126cf76d30"
 
+  bottle do
+    cellar :any_skip_relocation
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "835617af8f147f5edb083dd837301dee1f2041256d04b56c852f888d19f5b2c5" => :x86_64_linux
+  end
+
   # https://github.com/hsinnan75/MapCaller/issues/9
   depends_on :linux
   depends_on "xz"
