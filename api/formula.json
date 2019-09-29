@@ -9831,6 +9831,66 @@
     "outdated": false
   },
   {
+    "name": "pirate",
+    "full_name": "brewsci/bio/pirate",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Pangenome analysis and threshold evaluation toolbox",
+    "homepage": "https://github.com/SionBayliss/PIRATE",
+    "versions": {
+      "stable": "1.0.2",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/pirate-1.0.2.sierra.bottle.tar.gz",
+            "sha256": "4e9fe8d9e3cc185c25f3eb012273fddfa1c94b70022260a03c4bd9196ace595d"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/pirate-1.0.2.x86_64_linux.bottle.tar.gz",
+            "sha256": "55e990b75e9fde5b11fd07dcd0289d11ea6e152ba77576de3264284873ab5fc9"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [
+      "bioperl",
+      "blast",
+      "cd-hit",
+      "diamond",
+      "fasttree",
+      "mafft",
+      "mcl",
+      "parallel",
+      "perl",
+      "unzip"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "porechop",
     "full_name": "brewsci/bio/porechop",
     "oldname": null,
