@@ -8950,7 +8950,7 @@
     "desc": "Scalable genome assembly polishing",
     "homepage": "https://github.com/bcgsc/ntEdit",
     "versions": {
-      "stable": "1.2.2",
+      "stable": "1.2.3",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -8960,17 +8960,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ntedit-1.2.2.sierra.bottle.tar.gz",
-            "sha256": "2ba8df7fc9c2de6072834cc2d0455cc23c1afe7869ffd177d8674d8eb3c49288"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ntedit-1.2.3.sierra.bottle.tar.gz",
+            "sha256": "468426b66a78d26c25a7c490c59d6e8f4897aef399f226f6db6d07c9ef3fca67"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ntedit-1.2.2.x86_64_linux.bottle.tar.gz",
-            "sha256": "60004945f186ea293feb6007e362fdf7af5928cc45865a218f622906eae3e624"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ntedit-1.2.3.x86_64_linux.bottle.tar.gz",
+            "sha256": "f50bc41a308c00614b4f29b9152ffb2b11937ef7950a64e3a393f36090654520"
           }
         }
       }
