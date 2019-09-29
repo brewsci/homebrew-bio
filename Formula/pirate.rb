@@ -5,6 +5,13 @@ class Pirate < Formula
   url "https://github.com/SionBayliss/PIRATE/archive/v1.0.2.tar.gz"
   sha256 "4295f0c3380f1df58fb10792ee8e031c5521e449a6d4e4d289bd8cbf493b33d8"
 
+  bottle do
+    cellar :any_skip_relocation
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "4e9fe8d9e3cc185c25f3eb012273fddfa1c94b70022260a03c4bd9196ace595d" => :sierra
+    sha256 "55e990b75e9fde5b11fd07dcd0289d11ea6e152ba77576de3264284873ab5fc9" => :x86_64_linux
+  end
+
   depends_on "bioperl"
   depends_on "blast"
   depends_on "cd-hit"
