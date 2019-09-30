@@ -13578,7 +13578,7 @@
     "desc": "Manipulate small kmers without frequency information",
     "homepage": "https://github.com/shenwei356/unikmer",
     "versions": {
-      "stable": "0.4.3",
+      "stable": "0.7.0",
       "devel": null,
       "head": null,
       "bottle": true
@@ -13593,12 +13593,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/unikmer-0.4.3.sierra.bottle.tar.gz",
-            "sha256": "fb6c13799244134cdd3147b603d49c3c3780b49e973b46af4eb32e09c551bdb4"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/unikmer-0.7.0.sierra.bottle.tar.gz",
+            "sha256": "6f557483cb5d142e707bd2fe7b570a1e65173fc752085a6f1c182868a48db63d"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/unikmer-0.4.3.x86_64_linux.bottle.tar.gz",
-            "sha256": "41cb1d3c30c6dd007c85c29d139abeea7ccc6a4cb0152707ded72704ca34c082"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/unikmer-0.7.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "72b11857d78fd391aafba36b343088c486a55629bd344532e8d3e5bdb2db602e"
           }
         }
       }
