@@ -2676,6 +2676,57 @@
     "outdated": false
   },
   {
+    "name": "dehomopolymerate",
+    "full_name": "brewsci/bio/dehomopolymerate",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Collapse homopolymer runs in FASTQ files",
+    "homepage": "https://github.com/tseemann/dehomopolymerate",
+    "versions": {
+      "stable": "0.3",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/dehomopolymerate-0.3.sierra.bottle.tar.gz",
+            "sha256": "eec3e8a9cae2c1b5abcaa84400de8cdc2d97ff5fe5fe212edd205058f852cde7"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/dehomopolymerate-0.3.x86_64_linux.bottle.tar.gz",
+            "sha256": "7033066df34fa9c415916469fe8a9c97e7bea45c4bb1c70b303044d4746e13a0"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [
+      "zlib"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "dida",
     "full_name": "brewsci/bio/dida",
     "oldname": null,
