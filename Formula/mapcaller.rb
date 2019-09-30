@@ -1,28 +1,30 @@
 class Mapcaller < Formula
   desc "Combined short-read alignment and variant detection"
   homepage "https://github.com/hsinnan75/MapCaller"
-  url "https://github.com/hsinnan75/MapCaller/archive/v0.9.9.6.tar.gz"
-  sha256 "ced5475c154f5d1d9d3d35a0214d2638821e4934daff58d669802e126cf76d30"
+  url "https://github.com/hsinnan75/MapCaller/archive/v0.9.9.7.tar.gz"
+  sha256 "636e5b96153047b6109e7f462445a973086f816741a6161587fa0a730704e7bb"
 
   bottle do
-    cellar :any_skip_relocation
+    cellar :any
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "835617af8f147f5edb083dd837301dee1f2041256d04b56c852f888d19f5b2c5" => :x86_64_linux
+    sha256 "bf46a0ff5aa8b86a5b03eed10ee1d4232d1a31a58f85123b06044b2f70209286" => :sierra
+    sha256 "584e90f96b88d4dd7ed6afde9a9726f29afcfdf8fa429af810e0cc1b0852fce9" => :x86_64_linux
   end
 
-  # https://github.com/hsinnan75/MapCaller/issues/9
-  depends_on :linux
   depends_on "xz"
-  unless OS.mac?
-    depends_on "bzip2"
-    depends_on "zlib"
-    depends_on "curl"
-  end
+
+  uses_from_macos "bzip2"
+  uses_from_macos "curl"
+  uses_from_macos "zlib"
 
   def install
-    ENV.deparallelize
+    # https://github.com/hsinnan75/MapCaller/issues/17
+    inreplace "makefile", "make -C src/htslib", "make -C src/htslib libhts.a"
+    # https://github.com/hsinnan75/MapCaller/issues/16
+    inreplace "makefile", "make ", "$(MAKE) "
+
     system "make"
-    bin.install "bwt_index", "MapCaller"
+    bin.install "bin/MapCaller", "bin/bwt_index"
     pkgshare.install "test"
   end
 
