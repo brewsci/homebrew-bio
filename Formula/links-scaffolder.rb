@@ -5,13 +5,14 @@ class LinksScaffolder < Formula
   url "https://github.com/bcgsc/LINKS/releases/download/v1.8.7/links_v1-8-7.tar.gz"
   version "1.8.7"
   sha256 "3401a2694a3545cb7bf3fb13a5854e5d1c5b87200cad998d967fe8e0fc980e1c"
+  revision 1
   head "https://github.com/bcgsc/LINKS.git"
 
   bottle do
+    cellar :any_skip_relocation
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "63b9e042a8edbfc9b404af9358bc97ecd59140518ce021be26176fddc2c5287b" => :sierra
-    sha256 "8b2946fca823037cd7c10f93ae86e718d7493c528615c51e24cc10de7ec523a4" => :x86_64_linux
+    sha256 "f00d027ea4ae9195eb35590128e07514a0d558829d682358b0bd66592e50f821" => :sierra
+    sha256 "dc7326911e2fb969cf4ad5720a95a3d924aff737fd547fb16db89346a473a691" => :x86_64_linux
   end
 
   depends_on "swig" => :build
