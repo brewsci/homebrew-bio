@@ -1,6 +1,7 @@
 class Nanofilt < Formula
   include Language::Python::Virtualenv
 
+  # cite De_Coster_2018: "https://doi.org/10.1093/bioinformatics/bty149"
   desc "Filtering and trimming of long read sequencing data"
   homepage "https://github.com/wdecoster/nanofilt"
   url "https://github.com/wdecoster/nanofilt/archive/v2.5.0.tar.gz"
