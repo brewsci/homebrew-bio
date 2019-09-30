@@ -6826,22 +6826,22 @@
       "head": "HEAD",
       "bottle": true
     },
-    "revision": 0,
+    "revision": 1,
     "version_scheme": 0,
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/links-scaffolder-1.8.7.sierra.bottle.tar.gz",
-            "sha256": "63b9e042a8edbfc9b404af9358bc97ecd59140518ce021be26176fddc2c5287b"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/links-scaffolder-1.8.7_1.sierra.bottle.tar.gz",
+            "sha256": "f00d027ea4ae9195eb35590128e07514a0d558829d682358b0bd66592e50f821"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/links-scaffolder-1.8.7.x86_64_linux.bottle.tar.gz",
-            "sha256": "8b2946fca823037cd7c10f93ae86e718d7493c528615c51e24cc10de7ec523a4"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/links-scaffolder-1.8.7_1.x86_64_linux.bottle.tar.gz",
+            "sha256": "dc7326911e2fb969cf4ad5720a95a3d924aff737fd547fb16db89346a473a691"
           }
         }
       }
@@ -7105,7 +7105,7 @@
     "desc": "Combined short-read alignment and variant detection",
     "homepage": "https://github.com/hsinnan75/MapCaller",
     "versions": {
-      "stable": "0.9.9.6",
+      "stable": "0.9.9.7",
       "devel": null,
       "head": null,
       "bottle": true
@@ -7115,13 +7115,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any_skip_relocation",
+        "cellar": ":any",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mapcaller-0.9.9.7.sierra.bottle.tar.gz",
+            "sha256": "bf46a0ff5aa8b86a5b03eed10ee1d4232d1a31a58f85123b06044b2f70209286"
+          },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/mapcaller-0.9.9.6.x86_64_linux.bottle.tar.gz",
-            "sha256": "835617af8f147f5edb083dd837301dee1f2041256d04b56c852f888d19f5b2c5"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mapcaller-0.9.9.7.x86_64_linux.bottle.tar.gz",
+            "sha256": "584e90f96b88d4dd7ed6afde9a9726f29afcfdf8fa429af810e0cc1b0852fce9"
           }
         }
       }
@@ -7133,18 +7137,12 @@
     "dependencies": [
       "xz",
       "bzip2",
-      "zlib",
-      "curl"
+      "curl",
+      "zlib"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
-    "requirements": [
-      {
-        "name": "linux",
-        "cask": null,
-        "download": null
-      }
-    ],
+    "requirements": [],
     "conflicts_with": [],
     "caveats": null,
     "installed": [],
@@ -8557,6 +8555,59 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
+    "name": "nanofilt",
+    "full_name": "brewsci/bio/nanofilt",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Filtering and trimming of long read sequencing data",
+    "homepage": "https://github.com/wdecoster/nanofilt",
+    "versions": {
+      "stable": "2.5.0",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/nanofilt-2.5.0.sierra.bottle.tar.gz",
+            "sha256": "164f29a1c55b1fc725bd10ad13cfb98add4e4083df4e9ef989288765fcb3a873"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/nanofilt-2.5.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "f6d9d7a62d2e3c1f0d3b7e03d7bb0c20444ad59f43f6269244c3b8114e879464"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [
+      "unzip"
+    ],
+    "dependencies": [
+      "python"
+    ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
     "requirements": [],
