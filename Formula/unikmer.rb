@@ -11,10 +11,10 @@ class Unikmer < Formula
   end
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "fb6c13799244134cdd3147b603d49c3c3780b49e973b46af4eb32e09c551bdb4" => :sierra
-    sha256 "41cb1d3c30c6dd007c85c29d139abeea7ccc6a4cb0152707ded72704ca34c082" => :x86_64_linux
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "6f557483cb5d142e707bd2fe7b570a1e65173fc752085a6f1c182868a48db63d" => :sierra
+    sha256 "72b11857d78fd391aafba36b343088c486a55629bd344532e8d3e5bdb2db602e" => :x86_64_linux
   end
 
   def install
