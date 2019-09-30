@@ -6,6 +6,13 @@ class Nanofilt < Formula
   url "https://github.com/wdecoster/nanofilt/archive/v2.5.0.tar.gz"
   sha256 "33c35aad2950145ef66bcf338e68c7c84a20ae62716db24f9c9ccbd881c9a277"
 
+  bottle do
+    cellar :any_skip_relocation
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "164f29a1c55b1fc725bd10ad13cfb98add4e4083df4e9ef989288765fcb3a873" => :sierra
+    sha256 "f6d9d7a62d2e3c1f0d3b7e03d7bb0c20444ad59f43f6269244c3b8114e879464" => :x86_64_linux
+  end
+
   depends_on "python"
 
   resource "biopython" do
