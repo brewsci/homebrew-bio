@@ -5,10 +5,10 @@ class Vcflib < Formula
     :tag => "v1.0.1", :revision => "d150a89fa4f717634b06e1c78a37794d2c10c94c"
 
   bottle do
+    cellar :any_skip_relocation
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "a4ad4e7762aefdef35d7b467233f1f5ed1d607560391257aea070f4bddd3a3d5" => :sierra
-    sha256 "545342ee6617f60654a8e9e0c4f6b1fb6926a456f61f69d054d90f65ae39fce7" => :x86_64_linux
+    sha256 "0a7dd127083d4e4515cbd3ed38bd5cc5bdc693e0f1fd1bb3266bf0e17e04922d" => :sierra
+    sha256 "f10f5737f8ecb6bf5ba530d10a86bb7576843c7e49f401c6018e660cf8027001" => :x86_64_linux
   end
 
   depends_on "gcc" if OS.mac?
