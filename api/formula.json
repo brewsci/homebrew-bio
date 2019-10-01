@@ -13747,27 +13747,27 @@
     "desc": "Command-line tools for manipulating VCF files",
     "homepage": "https://github.com/ekg/vcflib",
     "versions": {
-      "stable": "1.0.0",
+      "stable": "1.0.1",
       "devel": null,
       "head": null,
       "bottle": true
     },
-    "revision": 2,
+    "revision": 0,
     "version_scheme": 0,
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/vcflib-1.0.0_2.sierra.bottle.tar.gz",
-            "sha256": "a4ad4e7762aefdef35d7b467233f1f5ed1d607560391257aea070f4bddd3a3d5"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/vcflib-1.0.1.sierra.bottle.tar.gz",
+            "sha256": "0a7dd127083d4e4515cbd3ed38bd5cc5bdc693e0f1fd1bb3266bf0e17e04922d"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/vcflib-1.0.0_2.x86_64_linux.bottle.tar.gz",
-            "sha256": "545342ee6617f60654a8e9e0c4f6b1fb6926a456f61f69d054d90f65ae39fce7"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/vcflib-1.0.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "f10f5737f8ecb6bf5ba530d10a86bb7576843c7e49f401c6018e660cf8027001"
           }
         }
       }
@@ -13777,11 +13777,11 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
+      "python",
+      "xz",
       "bzip2",
       "perl",
-      "zlib",
-      "python@2",
-      "xz"
+      "zlib"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
