@@ -16,6 +16,7 @@ class Blat < Formula
   depends_on "libpng"
   depends_on "mysql"
   depends_on "openssl"
+  depends_on "pkg-config" => :build
 
   def install
     ENV.append_to_cflags "-I#{Formula["libpng"].opt_include}"
