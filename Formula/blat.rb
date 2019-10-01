@@ -13,10 +13,10 @@ class Blat < Formula
     sha256 "97e2bc6d6fa598620ba8815c37d0cef1c106cea310a4c8e15295138e5ed88a18" => :x86_64_linux
   end
 
+  depends_on "pkg-config" => :build
   depends_on "libpng"
   depends_on "mysql"
   depends_on "openssl"
-  depends_on "pkg-config" => :build
 
   def install
     ENV.append_to_cflags "-I#{Formula["libpng"].opt_include}"
