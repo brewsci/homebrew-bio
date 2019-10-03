@@ -2,8 +2,8 @@ class Vsearch < Formula
   # cite Rognes_2017: "https://doi.org/10.5281/zenodo.275113"
   desc "USEARCH-compatible metagenomic sequence tool"
   homepage "https://github.com/torognes/vsearch"
-  url "https://github.com/torognes/vsearch/archive/v2.13.6.tar.gz"
-  sha256 "4b41eb2429f939a8be664b1247e94c65042b39914d9fa3d008320edd136bda84"
+  url "https://github.com/torognes/vsearch/archive/v2.14.1.tar.gz"
+  sha256 "388529a39eb0618a09047bf91e0a8ae8c9fd851a05f8d975e299331748f97741"
   head "https://github.com/torognes/vsearch.git"
 
   bottle do
@@ -15,10 +15,9 @@ class Vsearch < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  unless OS.mac?
-    depends_on "bzip2"
-    depends_on "zlib"
-  end
+
+  uses_from_macos "bzip2"
+  uses_from_macos "zlib"
 
   def install
     system "./autogen.sh"
