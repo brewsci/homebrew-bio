@@ -7,10 +7,10 @@ class Flye < Formula
   head "https://github.com/fenderglass/Flye.git", :branch => "flye"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "63e01cab4cb5870d60fca897ae5c3cd8b52d3bd249a3aa129454910c4fbd2d1f" => :sierra
-    sha256 "d5df5ebfe67e7de0df758c8eaa9a2cc9fe090955a92dca5502db50237688736d" => :x86_64_linux
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "d6cb8e23b7b58d005697015cba3219d16a9a03109dfe6148762ecb75478b3f9c" => :sierra
+    sha256 "1f82ac7b17a1d276c6f5c2dfaf668b22ae6e021c94c915fe39b5a4e31d7d9968" => :x86_64_linux
   end
 
   depends_on "python"
