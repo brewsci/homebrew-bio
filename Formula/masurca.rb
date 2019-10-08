@@ -3,7 +3,8 @@ class Masurca < Formula
   desc "Maryland Super-Read Celera Assembler"
   homepage "https://masurca.blogspot.com/"
   url "https://github.com/alekseyzimin/masurca/releases/download/v3.3.4/MaSuRCA-3.3.4.tar.gz"
-  sha256 "de96e15e74d233537fddc3d62b59b81677876c874ddc9aef1f55ae2d1c933a1d"
+  sha256 "181887e8ef0c513d1f272956b10dd8f2e7268c3d0b66541c24b8e44f7bcf2e6a"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
