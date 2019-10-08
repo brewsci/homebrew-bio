@@ -67,7 +67,7 @@ jobs:
           mkdir -p $repo
           cp -a ./ $repo/
       - run:
-          no_output_timeout: 30m
+          no_output_timeout: 60m
           command: |
             mkdir /tmp/bottles
             cd /tmp/bottles
