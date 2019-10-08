@@ -2,8 +2,8 @@ class Flye < Formula
   # cite Kolmogorov_2018: "https://doi.org/10.1101/247148"
   desc "Fast and accurate de novo assembler for single molecule sequencing reads"
   homepage "https://github.com/fenderglass/Flye"
-  url "https://github.com/fenderglass/Flye/archive/2.5.tar.gz"
-  sha256 "0ffcb5167650d4854ca2f82e5d36dbcbd80374fd400f5014c297ee551cc21206"
+  url "https://github.com/fenderglass/Flye/archive/2.6.tar.gz"
+  sha256 "5bdc44b84712794fa4264eed690d8c65c0d72f495c7bbf2cd15b634254809131"
   head "https://github.com/fenderglass/Flye.git", :branch => "flye"
 
   bottle do
@@ -13,10 +13,10 @@ class Flye < Formula
     sha256 "d5df5ebfe67e7de0df758c8eaa9a2cc9fe090955a92dca5502db50237688736d" => :x86_64_linux
   end
 
-  depends_on "python@2"
+  depends_on "python"
 
   def install
-    system "python2", "setup.py", "install", "--prefix=#{prefix}"
+    system "python3", "setup.py", "install", "--prefix=#{prefix}"
   end
 
   test do
