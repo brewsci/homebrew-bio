@@ -1,8 +1,8 @@
 class Mapcaller < Formula
   desc "Combined short-read alignment and variant detection"
   homepage "https://github.com/hsinnan75/MapCaller"
-  url "https://github.com/hsinnan75/MapCaller/archive/v0.9.9.7.tar.gz"
-  sha256 "636e5b96153047b6109e7f462445a973086f816741a6161587fa0a730704e7bb"
+  url "https://github.com/hsinnan75/MapCaller/archive/v0.9.9.15.tar.gz"
+  sha256 "5627fb1785698e2f0d94fa61078d4aea32daa9bbcbbe2a462c025cf76f64fff4"
 
   bottle do
     cellar :any
@@ -18,11 +18,6 @@ class Mapcaller < Formula
   uses_from_macos "zlib"
 
   def install
-    # https://github.com/hsinnan75/MapCaller/issues/17
-    inreplace "makefile", "make -C src/htslib", "make -C src/htslib libhts.a"
-    # https://github.com/hsinnan75/MapCaller/issues/16
-    inreplace "makefile", "make ", "$(MAKE) "
-
     system "make"
     bin.install "bin/MapCaller", "bin/bwt_index"
     pkgshare.install "test"
