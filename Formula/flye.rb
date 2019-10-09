@@ -1,9 +1,12 @@
 class Flye < Formula
+  include Language::Python::Virtualenv
+
   # cite Kolmogorov_2018: "https://doi.org/10.1101/247148"
   desc "Fast and accurate de novo assembler for single molecule sequencing reads"
   homepage "https://github.com/fenderglass/Flye"
   url "https://github.com/fenderglass/Flye/archive/2.6.tar.gz"
   sha256 "5bdc44b84712794fa4264eed690d8c65c0d72f495c7bbf2cd15b634254809131"
+  revision 1
   head "https://github.com/fenderglass/Flye.git", :branch => "flye"
 
   bottle do
@@ -16,7 +19,7 @@ class Flye < Formula
   depends_on "python"
 
   def install
-    system "python3", "setup.py", "install", "--prefix=#{prefix}"
+    virtualenv_install_with_resources
   end
 
   test do
