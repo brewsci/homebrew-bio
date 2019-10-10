@@ -2,8 +2,8 @@ class Xmatchview < Formula
   # cite L_Warren_2018: "https://doi.org/10.21105/joss.00497"
   desc "Smith-waterman alignment visualization"
   homepage "https://github.com/bcgsc/xmatchview"
-  url "https://github.com/bcgsc/xmatchview/archive/v1.1.1.tar.gz"
-  sha256 "987ee64c9287c89bf4eba1c4f2438bf7a49ae70fab34c0282e724710d56d75cc"
+  url "https://github.com/bcgsc/xmatchview/archive/v1.2.0.tar.gz"
+  sha256 "17723ba8d6162c2b57f9c63f1f93fcc878963eb00097a12a575c8b3b3c9ef1bf"
   head "https://github.com/bcgsc/xmatchview.git"
 
   bottle do
