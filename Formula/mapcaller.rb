@@ -1,8 +1,8 @@
 class Mapcaller < Formula
   desc "Combined short-read alignment and variant detection"
   homepage "https://github.com/hsinnan75/MapCaller"
-  url "https://github.com/hsinnan75/MapCaller/archive/v0.9.9.15.tar.gz"
-  sha256 "5627fb1785698e2f0d94fa61078d4aea32daa9bbcbbe2a462c025cf76f64fff4"
+  url "https://github.com/hsinnan75/MapCaller/archive/v0.9.9.17.tar.gz"
+  sha256 "9483c4822a2ae6cfad3a818df439644a5052ab79fe664c38f3418820b9f305f1"
 
   bottle do
     cellar :any
