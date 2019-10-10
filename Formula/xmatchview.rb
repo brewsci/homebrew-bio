@@ -9,8 +9,8 @@ class Xmatchview < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "8c7c07606ed33a2f6b435de93510566b01b737987a8c97f373735350c8a391a2" => :sierra
-    sha256 "a5a8927f3ba541355ccb4fea94e2f639651e55bff2c2641cc04ffb8594774b5f" => :x86_64_linux
+    sha256 "2b17c832197c0abd912495ca38cfbd2963218e8771be3efbfad7d3c51b2da504" => :sierra
+    sha256 "280d250cd2daefca86d6c2fe5fa64033b3a7dd68b548563d8ca6fae76d14c681" => :x86_64_linux
   end
 
   depends_on "jpeg"
