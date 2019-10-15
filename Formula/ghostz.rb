@@ -5,6 +5,12 @@ class Ghostz < Formula
   url "https://www.bi.cs.titech.ac.jp/ghostz/releases/ghostz-1.0.2.tar.gz"
   sha256 "3e896563ab49ef620babfb7de7022d678dee2413d34b780d295eff8b984b9902"
 
+  bottle do
+    cellar :any_skip_relocation
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "f0136b33e0b7493ed2c6bcc8f18bbab332252de0c2f3b29e8fffb7b2d6a2a4cb" => :x86_64_linux
+  end
+
   depends_on "gcc" # for openmp
 
   # MacOS can't build binary; CI times out in gcc install
