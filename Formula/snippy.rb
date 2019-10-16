@@ -1,8 +1,8 @@
 class Snippy < Formula
   desc "Rapid bacterial SNP calling and core genome alignments"
   homepage "https://github.com/tseemann/snippy"
-  url "https://github.com/tseemann/snippy/archive/v4.4.0.tar.gz"
-  sha256 "1fbbf1f03f0d18db1c508297946dd8d52f41fd252fa07deb44db41e713f9c0e5"
+  url "https://github.com/tseemann/snippy/archive/v4.4.5.tar.gz"
+  sha256 "22425b1b734621d3b353073d882bda9996e9bd17ff630233ebd5114abfe11fca"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -26,11 +26,9 @@ class Snippy < Formula
   depends_on "vcflib"
   depends_on "vt"
 
-  unless OS.mac?
-    depends_on "bzip2"
-    depends_on "gzip"
-    depends_on "perl"
-  end
+  uses_from_macos "bzip2"
+  uses_from_macos "gzip"
+  uses_from_macos "perl"
 
   def install
     # brew will provide proper binaries, but keep noarch scripts
