@@ -5,10 +5,10 @@ class Snippy < Formula
   sha256 "22425b1b734621d3b353073d882bda9996e9bd17ff630233ebd5114abfe11fca"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "a1cc30fa82d9902328884f859cca34d404accb30c7576a349803bb509783d9e6" => :sierra
-    sha256 "5bf4e438b29b12454c7369fb523348a7be5bfe74f998b21821d21fa0c917fe9d" => :x86_64_linux
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "faa56de1c5b8a1e501679632f19eac6dacc7a01c405994da0ed50a416f6bcc73" => :mojave
+    sha256 "45380c92916dbe78a2a7b1792830776e04802cfdc079dd83fe6a86e453481043" => :x86_64_linux
   end
 
   depends_on "bcftools"
