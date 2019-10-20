@@ -4,6 +4,7 @@ class Ghostz < Formula
   homepage "https://www.bi.cs.titech.ac.jp/ghostz/"
   url "https://www.bi.cs.titech.ac.jp/ghostz/releases/ghostz-1.0.2.tar.gz"
   sha256 "3e896563ab49ef620babfb7de7022d678dee2413d34b780d295eff8b984b9902"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
@@ -12,10 +13,6 @@ class Ghostz < Formula
   end
 
   depends_on "gcc" # for openmp
-
-  # MacOS can't build binary; CI times out in gcc install
-  # https://github.com/brewsci/homebrew-bio/pull/794
-  depends_on :linux
 
   fails_with :clang # needs openmp
 
