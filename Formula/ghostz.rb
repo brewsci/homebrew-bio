@@ -9,7 +9,8 @@ class Ghostz < Formula
   bottle do
     cellar :any_skip_relocation
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "f0136b33e0b7493ed2c6bcc8f18bbab332252de0c2f3b29e8fffb7b2d6a2a4cb" => :x86_64_linux
+    sha256 "45e205642232766d1206e06df7a4e52eea960663b0d520d6f943866db554e596" => :mojave
+    sha256 "ce5f132a6ed9a711bffae6648b18f701f55d965e611ef7320847aee24061a19e" => :x86_64_linux
   end
 
   depends_on "gcc" # for openmp
