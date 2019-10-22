@@ -2,13 +2,13 @@ class SnpSites < Formula
   # cite Page_2016: "https://doi.org/10.1099/mgen.0.000056"
   desc "Find SNP sites in a multi FASTA alignment file"
   homepage "https://github.com/sanger-pathogens/snp-sites"
-  url "https://github.com/sanger-pathogens/snp-sites/archive/v2.4.0.tar.gz"
-  sha256 "4ccbf6016b37ba1aae67ee8dd265537098eb9a7965186deb0b862efd7c416ae6"
+  url "https://github.com/sanger-pathogens/snp-sites/archive/v2.5.1.tar.gz"
+  sha256 "913f79302e5d3127aea382756abc9ffeb05e26ce00022f43a6ea16a55cdd7a7e"
   head "https://github.com/sanger-pathogens/snp-sites.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
     sha256 "963f1b2cce96f685098ff185edb6607c45c5e65119084d254b1261071f914579" => :sierra
     sha256 "0721484daa84e9bbd74d54f20ad17d1918ad78849f98999f6c48c1ce88a745fa" => :x86_64_linux
   end
@@ -19,7 +19,7 @@ class SnpSites < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     system "autoreconf", "-i"
