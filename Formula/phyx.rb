@@ -7,9 +7,9 @@ class Phyx < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "0624af0f10604c04808ffb83aa89f247fb247e9b328591603ec85710166f7592" => :sierra
-    sha256 "df83058b0a1ac9893fed65f50663ce15a95d01f79614b2d2d3e0071748be8e15" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "561513bd343850933d8f034617bb6990100bb8ffbd5f3a6fc7c8145c43401f25" => :mojave
+    sha256 "0b324a7fa20c5f57d4de10ae5034c2885ad7006c04c24107bef67a33a3c1131f" => :x86_64_linux
   end
 
   depends_on "armadillo"
