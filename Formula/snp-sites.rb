@@ -9,8 +9,8 @@ class SnpSites < Formula
   bottle do
     cellar :any
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "963f1b2cce96f685098ff185edb6607c45c5e65119084d254b1261071f914579" => :sierra
-    sha256 "0721484daa84e9bbd74d54f20ad17d1918ad78849f98999f6c48c1ce88a745fa" => :x86_64_linux
+    sha256 "68523d90936ce5ef3db15182579f159f298f3d6933b977854f7e5ef355cbaa3c" => :mojave
+    sha256 "c0f1d36e106ae656720bcd6b90e3cff18c01b75c92cd36b2216c919ae0f33261" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
