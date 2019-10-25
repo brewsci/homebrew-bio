@@ -7,10 +7,10 @@ class Vsearch < Formula
   head "https://github.com/torognes/vsearch.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "a2f608173d44c07b4ab8be70b491bea725eea0e1aca2b6ec2c2e39be5ec041d8" => :sierra
-    sha256 "be53bea06af34f1eb38b7228c7f51b98f08636c4ca141ca7fa991a1d68f641ce" => :x86_64_linux
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "40752ce646e158f551a3f8b8c97879426ddbafe77683dfe2e57f193548dcbfdb" => :mojave
+    sha256 "18aaea48ac36e09cc9b285e7e68a15f4b622f9bfe5f338c8916bda31abe9e9d2" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
