@@ -2,8 +2,8 @@ class GmapGsnap < Formula
   # cite Wu_2010: "https://doi.org/10.1093/bioinformatics/btq057"
   desc "Genomic Mapping & Alignment Program for RNA/EST/Short-read sequences"
   homepage "http://research-pub.gene.com/gmap/"
-  url "http://research-pub.gene.com/gmap/src/gmap-gsnap-2019-06-10.tar.gz"
-  sha256 "6b90c09931d0aef36e28c526233054144af32542ae22b079379fcf5f25f58dd1"
+  url "http://research-pub.gene.com/gmap/src/gmap-gsnap-2019-09-12.tar.gz"
+  sha256 "1bf242eef2ad0ab0280c41fc28b44a5107e90bcba64b37cf1579e1793e892505"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -13,9 +13,11 @@ class GmapGsnap < Formula
   end
 
   depends_on "samtools"
+  uses_from_macos "bzip2"
+  uses_from_macos "zlib"
 
   def install
-    system "./configure", "--prefix=#{prefix}"
+    system "./configure", "--prefix=#{prefix}", "--with-simd-level=sse42"
     system "make"
     ENV.deparallelize
     system "make", "check"
