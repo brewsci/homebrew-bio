@@ -5,10 +5,10 @@ class Bbtools < Formula
   sha256 "0185ebea542c543179eb91faa9705582b65e2d37c259665e9f900f9e6d0060e9"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "de114b9cac2dc1c82fdec73d78b5a7253ff1859d1a9a9e1dbbbf38e0ebb499fd" => :sierra
-    sha256 "aec7994d744031765a80c489bc3bf9ad6464c3b36e72201b85779261f4ff9fb1" => :x86_64_linux
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "3436568b7a2c36aa00a6f87665f9beeb82ad721a8bb047006ed09296fa46ea68" => :mojave
+    sha256 "3ee41c32a6c380184637465dc864500207f3d256323b93dd2cd7098bf10a7f3f" => :x86_64_linux
   end
 
   depends_on :java => "1.7+"
