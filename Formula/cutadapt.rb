@@ -4,8 +4,8 @@ class Cutadapt < Formula
   desc "Removes adapter sequences, primers, and poly-A tails"
   homepage "https://github.com/marcelm/cutadapt"
   url "https://github.com/marcelm/cutadapt.git",
-      :tag      => "v2.3",
-      :revision => "4b17cda378360cd6f95ee36348cd843c690dfa13"
+      :tag      => "v2.5",
+      :revision => "a5d1bac1c8bdfcfd504ebc5fdcc475f22411c460"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
