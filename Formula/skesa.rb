@@ -4,6 +4,7 @@ class Skesa < Formula
   homepage "https://github.com/ncbi/SKESA"
   url "https://github.com/ncbi/SKESA/archive/v2.3.0.tar.gz"
   sha256 "13832e41b69a94d9f64dee7685b4d05f2e94f807ad819afa8d4cd78cee54879d"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -12,7 +13,8 @@ class Skesa < Formula
   end
 
   depends_on "boost"
-  depends_on "zlib" unless OS.mac?
+
+  uses_from_macos "zlib"
 
   def install
     makefile = "Makefile.nongs"
