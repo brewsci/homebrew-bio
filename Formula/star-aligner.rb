@@ -10,8 +10,8 @@ class StarAligner < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "5b566d7848575a257cd3ec2e8b103a5f203293c4526ff6ebfb2f834672eb98a8" => :sierra
-    sha256 "63663438843f13a2cc068c727043555b2473a37e168a288117e723699d6d6a8d" => :x86_64_linux
+    sha256 "6f38f571a24b2fa0baec2674da051d51dd74c84823c9ef1e3537a15565d21559" => :mojave
+    sha256 "17ebb8d1e4f79aad4158bb61573c6522c2a2407fccd2bae43d1d8044cd651981" => :x86_64_linux
   end
 
   fails_with :clang # needs openmp
