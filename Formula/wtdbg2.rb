@@ -5,9 +5,8 @@ class Wtdbg2 < Formula
   sha256 "a2ffc8503d29f491a9a38ef63230d5b3c96db78377b5d25c91df511d0df06413"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "0a9910cf4ff402a2c091589264a3b2236318b6a074cbace3ad16bef9444d39cf" => :x86_64_linux
+    sha256 "a745e86dde75d8ec852dbd2fbf0c145d921d413274854e69ba1249374275f488" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
