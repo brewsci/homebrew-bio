@@ -6,10 +6,10 @@ class Edirect < Formula
   sha256 "a88f6fa9518267def78e3092217c5a75fbbc63f39242c3e41011bb41e95656fc"
 
   bottle do
+    cellar :any_skip_relocation
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "38deba89becc610a71dbe6891aa5ded018689e8834579851b60ae5322fa81a6d" => :sierra
-    sha256 "c92a977a082d18a8438eb724258a95fd8e486a4838c76208646e0b9645f04c86" => :x86_64_linux
+    sha256 "37abb2f97bb0260af84499300935e4fec412fcf385d1f2e303eb681876b47877" => :mojave
+    sha256 "e2fcc5996db0db2bb916e14d4925883d542271c397bf949f6c45d27b9aa4cc4d" => :x86_64_linux
   end
 
   depends_on "cpanminus" => :build
