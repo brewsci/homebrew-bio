@@ -7,10 +7,10 @@ class Canu < Formula
   head "https://github.com/marbl/canu.git"
 
   bottle do
+    cellar :any_skip_relocation
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "59f3483787bad2a576927d253a6bb4f3ebed42b4ff39f7974fb52287340b8e0e" => :sierra
-    sha256 "b5601d86b86046f9bde3fb509fd33efcd04f81a2c34da2b2502a51c0529026ae" => :x86_64_linux
+    sha256 "6042a89505e9c8e553289361dfb2f7d99d3168d4234e97a35e5c91eb38c0820d" => :mojave
+    sha256 "e211e9b9c1c3ba20669050606188b5025042ca9a03e2034f7fe135afc5431fc0" => :x86_64_linux
   end
 
   fails_with :clang # needs openmp
