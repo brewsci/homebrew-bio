@@ -2,8 +2,8 @@ class Canu < Formula
   # cite Koren_2017: "https://doi.org/10.1101/gr.215087.116"
   desc "Single molecule sequence assembler"
   homepage "https://canu.readthedocs.org/en/latest/"
-  url "https://github.com/marbl/canu/archive/v1.8.tar.gz"
-  sha256 "30ecfe574166f54f79606038830f68927cf0efab33bdc3c6e43fd1448fa0b2e4"
+  url "https://github.com/marbl/canu/archive/v1.9.tar.gz"
+  sha256 "6b086ab6086c050752166500378bc4b3b3543d4c617863e894d296171cee3385"
   head "https://github.com/marbl/canu.git"
 
   bottle do
@@ -15,7 +15,7 @@ class Canu < Formula
 
   fails_with :clang # needs openmp
 
-  depends_on "gcc" if OS.mac? # for openmp
+  depends_on "gcc" if OS.mac? # needs openmp
 
   def install
     system "make", "-C", "src"
@@ -26,6 +26,6 @@ class Canu < Formula
   end
 
   test do
-    assert_match "usage", shell_output("#{bin}/canu 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/canu --version")
   end
 end
