@@ -1,8 +1,8 @@
 class Mlst < Formula
   desc "Multi-Locus Sequence Typing of bacterial contigs"
   homepage "https://github.com/tseemann/mlst"
-  url "https://github.com/tseemann/mlst/archive/v2.17.6.tar.gz"
-  sha256 "223c6b4751bc4fb7fe9d41f56e75c90235b1eba022f987abc1d75ae51fc50819"
+  url "https://github.com/tseemann/mlst/archive/v2.18.0.tar.gz"
+  sha256 "6b72dd24e439f360d8adfb19b424eb3365048d2af3a8dfed526a686cd761afcf"
   head "https://github.com/tseemann/mlst.git"
 
   bottle do
@@ -19,7 +19,8 @@ class Mlst < Formula
   depends_on "blast"
   depends_on "perl" # needs 5.26 so can't use Mac perl
   depends_on "wget"
-  depends_on "zlib" unless OS.mac?
+
+  uses_from_macos "zlib"
 
   def install
     libexec.install Dir["*"]
