@@ -49,13 +49,13 @@ class Edirect < Formula
       inreplace tool, "compiled=$0", "compiled=#{bin}/#{tool}"
     end
 
-    ENV.prepend_create_path "PERL5LIB", prefix/"perl5/lib/perl5"
+    ENV.prepend_create_path "PERL5LIB", libexec+"lib/perl5"
     ENV["OPENSSL_PREFIX"] = Formula["openssl"].opt_prefix # for Net::SSLeay
     pms = %w[XML::Simple Encode::Locale File::Listing HTML::Parser HTML::Tagset HTML::Entities HTML::Tree
              HTTP::Cookies HTTP::Date HTTP::Message HTTP::Negotiate LWP::MediaTypes IO::Socket::SSL
              LWP::Protocol::https URI WWW::RobotRules Mozilla::CA Net::SSLeay]
     ENV.deparallelize
-    system "cpanm", "--notest", "--self-contained", "-l", prefix/"perl5", *pms
+    system "cpanm", "--notest", "--self-contained", "-l", libexec, *pms
 
     libexec.install Dir["*"]
     Dir[libexec/"*"].each do |script|
