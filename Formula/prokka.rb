@@ -2,8 +2,8 @@ class Prokka < Formula
   # cite Seemann_2014: "https://doi.org/10.1093/bioinformatics/btu153"
   desc "Rapid annotation of prokaryotic genomes"
   homepage "https://github.com/tseemann/prokka"
-  url "https://github.com/tseemann/prokka/archive/v1.14.0.tar.gz"
-  sha256 "70b647c3efc296fc2909ba85056aa88e76832917876ff22e723798dcab281bb5"
+  url "https://github.com/tseemann/prokka/archive/v1.14.5.tar.gz"
+  sha256 "03550e44db5acfb2b583a4a9eef4b500c2cc33ccad08a9282cdd2764950f6876"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -20,12 +20,9 @@ class Prokka < Formula
   depends_on "infernal"
   depends_on "minced"
   depends_on "parallel"
+  depends_on "perl"
   depends_on "prodigal"
   depends_on "tbl2asn"
-  unless OS.mac?
-    depends_on "less"
-    depends_on "perl"
-  end
 
   def install
     # remove all bundled stuff and use brew ones
