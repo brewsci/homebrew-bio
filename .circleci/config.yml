@@ -35,7 +35,7 @@ jobs:
             PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
             brew install patchelf
             brew tap linuxbrew/xorg
-            brew test-bot --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
+            brew test-bot --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh || true
       - persist_to_workspace:
           root: /tmp
           paths:
