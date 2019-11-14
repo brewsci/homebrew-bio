@@ -8,8 +8,9 @@ class Express < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "93ec3978d88e6d2aeb087599f4380e3951467492b5627eef3801bf3d86f978a7" => :sierra
-    sha256 "8557322f664c213c58e7bbe9de475d160495a9a3fc628eaed3dde4471d25a5c7" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "1f8d67bf11bf49458dcfa173c13722ab83b6b9a555a2fcc27048f5409d1cdf8b" => :mojave
+    sha256 "aae8e9f53dc1ea615b5cafa70a954beba40abe40c0fb15026237e42ea6a86529" => :x86_64_linux
   end
 
   depends_on "bamtools" => :build
