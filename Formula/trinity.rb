@@ -2,9 +2,8 @@ class Trinity < Formula
   # cite Grabherr_2011: "https://doi.org/10.1038/nbt.1883"
   desc "RNA-Seq de novo assembler"
   homepage "https://trinityrnaseq.github.io"
-  url "https://github.com/trinityrnaseq/trinityrnaseq/archive/Trinity-v2.8.3.tar.gz"
-  sha256 "745abda5eafdd98e4625aae6c190975b499695a4ebda537d305fcd0129859823"
-  revision 1
+  url "https://github.com/trinityrnaseq/trinityrnaseq/archive/v2.8.6.tar.gz"
+  sha256 "cff2255e1c6aac54908598ea5ca33cd9767675de478664a53045d431f5ac3c2b"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -18,8 +17,8 @@ class Trinity < Formula
   depends_on "express"
   depends_on "gcc" if OS.mac? # for openmp
   depends_on "htslib"
-  depends_on :java => "1.8+"
   depends_on "jellyfish"
+  depends_on "openjdk"
   depends_on "salmon"
   depends_on "samtools"
   depends_on "trimmomatic"
