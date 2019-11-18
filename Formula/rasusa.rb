@@ -12,8 +12,6 @@ class Rasusa < Formula
     sha256 "eb6d1c1ab48bd3fd568fd7dad338352c54a514762502fc2ec4172ae792a77832"
   end
 
-  conflicts_with "rasusa"
-
   def install
     bin.install "rasusa"
   end
