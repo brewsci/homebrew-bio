@@ -16,6 +16,6 @@ class Rasusa < Formula
   end
 
   test do
-    system "#{bin}/rasusa", "--help"
+    assert_match "Usage", shell_output("#{bin}/rasusa --help")
   end
 end
