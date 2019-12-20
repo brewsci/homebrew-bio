@@ -6,6 +6,13 @@ class Sepp < Formula
   url "https://github.com/smirarab/sepp/archive/4.3.10.tar.gz"
   sha256 "24d8d410138563017e6f2f1263d5e34427f5bbddb875b72a036f7c879cef203b"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "45b005e6beaadc6a631d11f4f32301b55beda6c2a41222a59e96cdb271ee5814" => :mojave
+    sha256 "b81115b45f3c8075931cbf0fefef35a9357f1ff8878353c6a2f45ad8bb7234db" => :x86_64_linux
+  end
+
   depends_on :java
   depends_on "python"
 
