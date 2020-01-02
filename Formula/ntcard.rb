@@ -4,6 +4,7 @@ class Ntcard < Formula
   homepage "https://github.com/bcgsc/ntCard"
   url "https://github.com/bcgsc/ntCard/archive/v1.1.1.tar.gz"
   sha256 "f1b34c4d55055819908248324e6010008c43d74ab56b72ceb5a56bde4dfcdbde"
+  revision 1
   head "https://github.com/bcgsc/ntCard"
 
   bottle do
