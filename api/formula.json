@@ -42,6 +42,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -100,6 +101,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -153,6 +155,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -170,7 +173,7 @@
     "desc": "Genomics analysis platform built on Apache Avro, Apache Spark and Parquet",
     "homepage": "https://github.com/bigdatagenomics/adam",
     "versions": {
-      "stable": "0.29.0",
+      "stable": "0.30.0",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -184,13 +187,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/adam-0.29.0.sierra.bottle.tar.gz",
-            "sha256": "aa77cfc798dec6e26ea21626e2c6e9ab7e4a7aff7356a3008094e39a77634a8e"
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/adam-0.30.0.mojave.bottle.tar.gz",
+            "sha256": "e17eae45abcfc7cc75e784c33d488d5251d58259437aefc89b156c35f88be492"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/adam-0.29.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "2c96a3aa6d447d10a1e8550f480f6d7c9e9533dfee94be790b75953f691d8b8a"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/adam-0.30.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "157467bfd7794832da9c3eb0e5a6b2fdc2100379e8e0f2687077973045e25176"
           }
         }
       }
@@ -204,6 +207,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -255,6 +259,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -311,6 +316,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -360,6 +366,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -417,6 +424,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -466,6 +474,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -520,6 +529,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -576,6 +586,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -627,6 +638,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -678,6 +690,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -729,6 +742,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": "Aspera keys are in $(brew --prefix)/Cellar/ascp/3.7.7/etc\nAspera certificates are in $(brew --prefix)/Cellar/ascp/3.7.7/certs\n",
@@ -780,6 +794,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -836,6 +851,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -894,6 +910,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -945,6 +962,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -996,6 +1014,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [
       {
         "name": "linux",
@@ -1054,6 +1073,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -1105,6 +1125,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -1122,7 +1143,7 @@
     "desc": "Suite of Brian Bushnell's tools for manipulating reads",
     "homepage": "https://jgi.doe.gov/data-and-tools/bbtools/",
     "versions": {
-      "stable": "38.59",
+      "stable": "38.70",
       "devel": null,
       "head": null,
       "bottle": true
@@ -1136,13 +1157,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/bbtools-38.59.sierra.bottle.tar.gz",
-            "sha256": "de114b9cac2dc1c82fdec73d78b5a7253ff1859d1a9a9e1dbbbf38e0ebb499fd"
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bbtools-38.70.mojave.bottle.tar.gz",
+            "sha256": "3436568b7a2c36aa00a6f87665f9beeb82ad721a8bb047006ed09296fa46ea68"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/bbtools-38.59.x86_64_linux.bottle.tar.gz",
-            "sha256": "aec7994d744031765a80c489bc3bf9ad6464c3b36e72201b85779261f4ff9fb1"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bbtools-38.70.x86_64_linux.bottle.tar.gz",
+            "sha256": "3ee41c32a6c380184637465dc864500207f3d256323b93dd2cd7098bf10a7f3f"
           }
         }
       }
@@ -1156,6 +1177,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -1209,6 +1231,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -1226,7 +1249,7 @@
     "desc": "Bayesian evolutionary analysis by sampling trees",
     "homepage": "https://www.beast2.org/",
     "versions": {
-      "stable": "2.5.2",
+      "stable": "2.6.1",
       "devel": null,
       "head": null,
       "bottle": true
@@ -1241,12 +1264,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/beast2-2.5.2.sierra.bottle.tar.gz",
-            "sha256": "0c691344ed296f3dfad345a41452232e5d4171448243a8328ec3eda83464338b"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/beast2-2.6.1.sierra.bottle.tar.gz",
+            "sha256": "d172b12ab67807d7d3f1e61769782b24c47bf912a8ba27c2333311a7e6166f32"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/beast2-2.5.2.x86_64_linux.bottle.tar.gz",
-            "sha256": "0d9d25160218d6650246f3955791603e61d450bcb152d7b15f9c5ce2459e319f"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/beast2-2.6.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "36ebbabeb1f1e7b7f33ee8f6aebb2f438237539ea38e9607390ecf3d49b0391a"
           }
         }
       }
@@ -1262,9 +1285,10 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
-    "caveats": "This install coexists with BEAST 1.x as all scripts are suffixed with '-2':\n    beast-2 -help\n\nTo use the unprefixed versions, add $(brew --prefix)/Cellar/beast2/2.5.2/libexec/bin to your PATH.\n",
+    "caveats": "This install coexists with BEAST 1.x as all scripts are suffixed with '-2':\n    beast-2 -help\n\nTo use the unprefixed versions, add $(brew --prefix)/Cellar/beast2/2.6.1/libexec/bin to your PATH.\n",
     "installed": [],
     "linked_keg": null,
     "pinned": false,
@@ -1315,6 +1339,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -1366,6 +1391,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -1421,6 +1447,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -1472,6 +1499,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -1525,6 +1553,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -1574,6 +1603,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": "Tools 'rpsblast' and 'seedtop' were installed as 'rpsblast.legacy' and 'seedtop.legacy'\nto avoid conflicts with the BLAST+ executables.\n",
@@ -1596,7 +1626,7 @@
       "head": null,
       "bottle": true
     },
-    "revision": 0,
+    "revision": 1,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -1606,12 +1636,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/blat-36.sierra.bottle.tar.gz",
-            "sha256": "3cc1890800350138e4a7d0db4fe9dfef2b5685d07957972f6b522f6eb274cc96"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/blat-36_1.sierra.bottle.tar.gz",
+            "sha256": "176a5d7844d4a0b9609a4677c5937012f18bc8ab5456c6e909ad0ec931a45ad8"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/blat-36.x86_64_linux.bottle.tar.gz",
-            "sha256": "97e2bc6d6fa598620ba8815c37d0cef1c106cea310a4c8e15295138e5ed88a18"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/blat-36_1.x86_64_linux.bottle.tar.gz",
+            "sha256": "8ee3683323642e0e0d3fc1fbd4c7d84b3358a8b74af5833bb6fe1a086690ebbe"
           }
         }
       }
@@ -1620,14 +1650,16 @@
     "bottle_disabled": false,
     "options": [],
     "build_dependencies": [
-      "unzip",
+      "unzip"
+    ],
+    "dependencies": [
       "libpng",
-      "mysql",
+      "mysql@5.7",
       "openssl"
     ],
-    "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -1681,6 +1713,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -1733,6 +1766,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -1782,6 +1816,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -1840,6 +1875,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -1857,12 +1893,12 @@
     "desc": "Assess genome assembly completeness with single-copy orthologs",
     "homepage": "https://busco.ezlab.org",
     "versions": {
-      "stable": "3.0.2",
+      "stable": "4.0.0",
       "devel": null,
       "head": "HEAD",
       "bottle": true
     },
-    "revision": 2,
+    "revision": 0,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -1871,13 +1907,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-3.0.2_2.sierra.bottle.tar.gz",
-            "sha256": "dcd4dac383b75a661f950b5a5313824e36055ef00a149d8eb10b7dce46c0e4cc"
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-4.0.0.mojave.bottle.tar.gz",
+            "sha256": "27563bf86cf13349ac2f877c04241c74f82252a72ad880d0bca6d54da4a579f5"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-3.0.2_2.x86_64_linux.bottle.tar.gz",
-            "sha256": "119c1d4ea6ab45cca36fef4f160623aa1798f7412bf50d53a4148b482051432b"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-4.0.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "2ceb6f7acbc46ba62b673aa534b8f02145f21259948f0f66c583b5701aa65e90"
           }
         }
       }
@@ -1890,13 +1926,17 @@
       "augustus",
       "blast",
       "hmmer",
-      "python"
+      "numpy",
+      "prodigal",
+      "python",
+      "sepp"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
-    "caveats": "You probably also want to download lineage datasets to run BUSCO:\n\n  https://busco.ezlab.org\n\nTo generate graphs, also make sure a working R is installed:\n\n  brew cask install r\n\nor alternatively\n\n  brew install r\n",
+    "caveats": "R must be installed to generate graphs.\n  brew install r\n\n",
     "installed": [],
     "linked_keg": null,
     "pinned": false,
@@ -1945,6 +1985,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -1962,7 +2003,7 @@
     "desc": "Big Data Genomics ADAM Pipe API wrappers for bioinformatics tools",
     "homepage": "https://github.com/bigdatagenomics/cannoli",
     "versions": {
-      "stable": "0.7.0",
+      "stable": "0.8.0",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -1976,13 +2017,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/cannoli-0.7.0.sierra.bottle.tar.gz",
-            "sha256": "3cd2c785579e5ba45ea7111d2c4409089a3090162d5b6bedeae4b63b4d163afb"
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/cannoli-0.8.0.mojave.bottle.tar.gz",
+            "sha256": "b04aa87fe838b097d346fb54d1bf38a2d64c922f1a88e17a57bac1157f734b85"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/cannoli-0.7.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "b5a5595141e5d8469d6bd2cd6b6f97a2224389c18d3058378e83c346305d77ed"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/cannoli-0.8.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "0c805989de8a38f9150a8bb79f6d67edf4e455441dc9a3a4f0b8eb957f65e7bd"
           }
         }
       }
@@ -1996,6 +2037,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -2013,7 +2055,7 @@
     "desc": "Single molecule sequence assembler",
     "homepage": "https://canu.readthedocs.org/en/latest/",
     "versions": {
-      "stable": "1.8",
+      "stable": "1.9",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -2023,17 +2065,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/canu-1.8.sierra.bottle.tar.gz",
-            "sha256": "59f3483787bad2a576927d253a6bb4f3ebed42b4ff39f7974fb52287340b8e0e"
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/canu-1.9.mojave.bottle.tar.gz",
+            "sha256": "6042a89505e9c8e553289361dfb2f7d99d3168d4234e97a35e5c91eb38c0820d"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/canu-1.8.x86_64_linux.bottle.tar.gz",
-            "sha256": "b5601d86b86046f9bde3fb509fd33efcd04f81a2c34da2b2502a51c0529026ae"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/canu-1.9.x86_64_linux.bottle.tar.gz",
+            "sha256": "e211e9b9c1c3ba20669050606188b5025042ca9a03e2034f7fe135afc5431fc0"
           }
         }
       }
@@ -2045,6 +2087,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -2096,6 +2139,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -2147,6 +2191,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -2192,6 +2237,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [
       {
         "name": "linux",
@@ -2255,6 +2301,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -2310,6 +2357,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -2359,6 +2407,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -2410,6 +2459,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -2459,6 +2509,59 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
+    "name": "cluster-picker",
+    "full_name": "brewsci/bio/cluster-picker",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Pick/describe HIV clusters in phylogenetic trees",
+    "homepage": "http://hiv.bio.ed.ac.uk/software.html",
+    "versions": {
+      "stable": "1.2.5",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/cluster-picker-1.2.5.sierra.bottle.tar.gz",
+            "sha256": "88f08aced228d5d0938531578fb0fa1f5c978451a91c99fe1b23a491251060be"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/cluster-picker-1.2.5.x86_64_linux.bottle.tar.gz",
+            "sha256": "db273226399a88119c8790292b7262fe933012b58620dabe53868348f9fee34d"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [
+      "adoptopenjdk"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -2508,6 +2611,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -2559,6 +2663,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -2576,7 +2681,7 @@
     "desc": "Removes adapter sequences, primers, and poly-A tails",
     "homepage": "https://github.com/marcelm/cutadapt",
     "versions": {
-      "stable": "2.3",
+      "stable": "2.6",
       "devel": null,
       "head": null,
       "bottle": true
@@ -2590,13 +2695,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/cutadapt-2.3.sierra.bottle.tar.gz",
-            "sha256": "108bd35c16edcb2f6dee522d95e441dbc8fb489555f8c15b4f2851ab6e972862"
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/cutadapt-2.6.mojave.bottle.tar.gz",
+            "sha256": "f5cd26d5527d8f47fd1ffceee6ad9bc2802f613b48dff34e0be343bf1c912fc1"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/cutadapt-2.3.x86_64_linux.bottle.tar.gz",
-            "sha256": "02fa5cf6cd2f2fc590aa075d9610c090a4e59dc80628c8c7053dab1466d674b6"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/cutadapt-2.6.x86_64_linux.bottle.tar.gz",
+            "sha256": "3c3650c892ef68f718e2662cb90104ea4a25d874c15de7bc8a8174c10cd21781"
           }
         }
       }
@@ -2610,6 +2715,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -2667,6 +2773,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -2718,6 +2825,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -2770,6 +2878,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -2821,6 +2930,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -2838,7 +2948,7 @@
     "desc": "Tools for BED, FASTA, FASTQ, GFA1/2, GFF3, SAM, and VCF files",
     "homepage": "https://github.com/heuermh/dishevelled-bio",
     "versions": {
-      "stable": "1.2.1",
+      "stable": "1.3",
       "devel": null,
       "head": null,
       "bottle": true
@@ -2852,13 +2962,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/dsh-bio-1.2.1.sierra.bottle.tar.gz",
-            "sha256": "a1be0d419c4ebc43bf2cfd5354b81a753b2222dd3a595d253d38ba382e2aaf5a"
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/dsh-bio-1.3.mojave.bottle.tar.gz",
+            "sha256": "8f227cdab85ebad698b670fd74576e82b2f2e41557294c6ff6f3303adf4d1643"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/dsh-bio-1.2.1.x86_64_linux.bottle.tar.gz",
-            "sha256": "11e5829cc90fecf7b59e4b7590fd44d8c9d9b2cdd423fb74399e30a6be469a0b"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/dsh-bio-1.3.x86_64_linux.bottle.tar.gz",
+            "sha256": "bc5c1fc03571f4ffbc57dd59d8951878041d0f9b7a00729886f35e027c8d9208"
           }
         }
       }
@@ -2872,6 +2982,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -2925,6 +3036,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -2976,6 +3088,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -3025,6 +3138,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -3042,7 +3156,7 @@
     "desc": "Access NCBI databases via the command-line",
     "homepage": "https://www.ncbi.nlm.nih.gov/books/NBK179288/",
     "versions": {
-      "stable": "12.1",
+      "stable": "12.4",
       "devel": null,
       "head": null,
       "bottle": true
@@ -3052,17 +3166,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/edirect-12.1.sierra.bottle.tar.gz",
-            "sha256": "38deba89becc610a71dbe6891aa5ded018689e8834579851b60ae5322fa81a6d"
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/edirect-12.4.mojave.bottle.tar.gz",
+            "sha256": "37abb2f97bb0260af84499300935e4fec412fcf385d1f2e303eb681876b47877"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/edirect-12.1.x86_64_linux.bottle.tar.gz",
-            "sha256": "c92a977a082d18a8438eb724258a95fd8e486a4838c76208646e0b9645f04c86"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/edirect-12.4.x86_64_linux.bottle.tar.gz",
+            "sha256": "e2fcc5996db0db2bb916e14d4925883d542271c397bf949f6c45d27b9aa4cc4d"
           }
         }
       }
@@ -3080,6 +3194,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -3129,6 +3244,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -3180,6 +3296,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": "The barcode whitelist is available at\n$(brew --prefix)/Cellar/ema/0.6.2/4M-with-alts-february-2016.txt",
@@ -3253,6 +3370,7 @@
       "mysql",
       "postgresql"
     ],
+    "uses_from_macos": [],
     "requirements": [
       {
         "name": "x11",
@@ -3276,7 +3394,7 @@
     "desc": "Massively parallel phylogenetic placement of genetic sequences",
     "homepage": "https://github.com/Pbdas/epa-ng",
     "versions": {
-      "stable": "0.3.5",
+      "stable": "0.3.6",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -3290,13 +3408,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/epa-ng-0.3.5.sierra.bottle.tar.gz",
-            "sha256": "7307cf15a282c14dcb64c9b0bcb8f31d4512e866f74196f766826e4afefcc7d1"
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/epa-ng-0.3.6.mojave.bottle.tar.gz",
+            "sha256": "66e08b52597ad0c8d192c1f715cfdcee81044dc4f13cb19f651eab2a5f07d6c7"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/epa-ng-0.3.5.x86_64_linux.bottle.tar.gz",
-            "sha256": "a7704605db8d0be2014651b8f96503ec4e1de9e2e155e3f40741fafc8a1fe1e5"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/epa-ng-0.3.6.x86_64_linux.bottle.tar.gz",
+            "sha256": "7da900967d585bc432182fc07ea1057f9cc54fc6e836574837b062d223a216b2"
           }
         }
       }
@@ -3314,6 +3432,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -3374,6 +3493,7 @@
       "open-mpi"
     ],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -3427,6 +3547,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -3444,9 +3565,9 @@
     "desc": "Streaming quantification for sequencing",
     "homepage": "http://bio.math.berkeley.edu/eXpress/",
     "versions": {
-      "stable": "1.5.2",
+      "stable": "1.5.3",
       "devel": null,
-      "head": null,
+      "head": "HEAD",
       "bottle": true
     },
     "revision": 0,
@@ -3454,17 +3575,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": "/home/linuxbrew/.linuxbrew/Cellar",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/express-1.5.2.sierra.bottle.tar.gz",
-            "sha256": "93ec3978d88e6d2aeb087599f4380e3951467492b5627eef3801bf3d86f978a7"
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/express-1.5.3.mojave.bottle.tar.gz",
+            "sha256": "1f8d67bf11bf49458dcfa173c13722ab83b6b9a555a2fcc27048f5409d1cdf8b"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/express-1.5.2.x86_64_linux.bottle.tar.gz",
-            "sha256": "8557322f664c213c58e7bbe9de475d160495a9a3fc628eaed3dde4471d25a5c7"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/express-1.5.3.x86_64_linux.bottle.tar.gz",
+            "sha256": "aae8e9f53dc1ea615b5cafa70a954beba40abe40c0fb15026237e42ea6a86529"
           }
         }
       }
@@ -3473,17 +3594,18 @@
     "bottle_disabled": false,
     "options": [],
     "build_dependencies": [
+      "bamtools",
       "boost",
-      "cmake"
+      "cmake",
+      "gperftools",
+      "protobuf"
     ],
     "dependencies": [
-      "bamtools",
-      "gperftools",
-      "protobuf@3.1",
       "zlib"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -3535,6 +3657,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -3590,6 +3713,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -3641,6 +3765,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -3692,6 +3817,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -3754,6 +3880,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -3803,6 +3930,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -3854,6 +3982,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -3905,6 +4034,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -3956,6 +4086,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -4009,6 +4140,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -4060,6 +4192,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -4112,6 +4245,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -4129,12 +4263,12 @@
     "desc": "Fast and accurate de novo assembler for single molecule sequencing reads",
     "homepage": "https://github.com/fenderglass/Flye",
     "versions": {
-      "stable": "2.5",
+      "stable": "2.6",
       "devel": null,
       "head": "HEAD",
       "bottle": true
     },
-    "revision": 0,
+    "revision": 1,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -4144,12 +4278,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/flye-2.5.sierra.bottle.tar.gz",
-            "sha256": "63e01cab4cb5870d60fca897ae5c3cd8b52d3bd249a3aa129454910c4fbd2d1f"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/flye-2.6_1.sierra.bottle.tar.gz",
+            "sha256": "125848c78a924e0a36c115b7dad48647c59590de0755a2362ee13164b2c3d6f2"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/flye-2.5.x86_64_linux.bottle.tar.gz",
-            "sha256": "d5df5ebfe67e7de0df758c8eaa9a2cc9fe090955a92dca5502db50237688736d"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/flye-2.6_1.x86_64_linux.bottle.tar.gz",
+            "sha256": "075d6ae3911c50b62d32d883903ee4595cf208e396af5155e2266e88e243ba6d"
           }
         }
       }
@@ -4159,10 +4293,11 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "python@2"
+      "python"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -4214,6 +4349,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -4272,6 +4408,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -4326,6 +4463,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [
       {
         "name": "macos",
@@ -4385,6 +4523,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -4402,7 +4541,7 @@
     "desc": "Genome Analysis Toolkit: Variant Discovery in High-Throughput Sequencing",
     "homepage": "https://software.broadinstitute.org/gatk",
     "versions": {
-      "stable": "4.1.3.0",
+      "stable": "4.1.4.1",
       "devel": null,
       "head": null,
       "bottle": false
@@ -4422,6 +4561,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": "This brew installation does not include the necessary python dependencies to run certain gatk tools.\nSimilarly, it does not install the necessary version of R and its packages for certain plotting functions to work.\n\nSee the GATK readme for detailed installation instructions.\n   https://github.com/broadinstitute/gatk\n\nThe recommended way of running the tools with complex python dependencies is to use the pre-built docker images instead of attempting to install them locally.\nGatk dockers are available on docker hub:\n   https://hub.docker.com/r/broadinstitute/gatk/tags/\n",
@@ -4473,6 +4613,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -4528,6 +4669,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -4581,6 +4723,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -4637,6 +4780,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -4684,6 +4828,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -4735,6 +4880,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -4784,6 +4930,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -4835,6 +4982,59 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
+    "name": "ghostz",
+    "full_name": "brewsci/bio/ghostz",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "High-speed remote homologue sequence search tool",
+    "homepage": "https://www.bi.cs.titech.ac.jp/ghostz/",
+    "versions": {
+      "stable": "1.0.2",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 1,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ghostz-1.0.2_1.mojave.bottle.tar.gz",
+            "sha256": "45e205642232766d1206e06df7a4e52eea960663b0d520d6f943866db554e596"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ghostz-1.0.2_1.x86_64_linux.bottle.tar.gz",
+            "sha256": "ce5f132a6ed9a711bffae6648b18f701f55d965e611ef7320847aee24061a19e"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [
+      "gcc"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -4852,7 +5052,7 @@
     "desc": "Genomic Mapping & Alignment Program for RNA/EST/Short-read sequences",
     "homepage": "http://research-pub.gene.com/gmap/",
     "versions": {
-      "stable": "2019-06-10",
+      "stable": "2019-09-12",
       "devel": null,
       "head": null,
       "bottle": true
@@ -4866,13 +5066,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/gmap-gsnap-2019-06-10.sierra.bottle.tar.gz",
-            "sha256": "25420cf61683ccd854309cb9ba52a78ce99758eea10fa6b96f77e03dbe910d8c"
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/gmap-gsnap-2019-09-12.mojave.bottle.tar.gz",
+            "sha256": "9e68cba9eb57c3ef57f1de83fff06967a2fd7f48740288e0bef75b0392fe71d3"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/gmap-gsnap-2019-06-10.x86_64_linux.bottle.tar.gz",
-            "sha256": "37982e497f6cf41f07afa055ea733490d6c7940c516925426c07badfa45791d3"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/gmap-gsnap-2019-09-12.x86_64_linux.bottle.tar.gz",
+            "sha256": "19a643b9dc76c497865d910dd38f758ea56ba0c08954cbb212aba5490f0d907b"
           }
         }
       }
@@ -4882,13 +5082,16 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "samtools"
+      "samtools",
+      "bzip2",
+      "zlib"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
-    "caveats": "You will need to either download or build indexed search databases.\nSee the readme file for how to do this:\n  http://research-pub.gene.com/gmap/src/README\n\nDatabases will be installed to:\n  $(brew --prefix)/Cellar/gmap-gsnap/2019-06-10/share\n",
+    "caveats": "You will need to either download or build indexed search databases.\nSee the readme file for how to do this:\n  http://research-pub.gene.com/gmap/src/README\n\nDatabases will be installed to:\n  $(brew --prefix)/Cellar/gmap-gsnap/2019-09-12/share\n",
     "installed": [],
     "linked_keg": null,
     "pinned": false,
@@ -4935,6 +5138,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -4986,6 +5190,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -5041,6 +5246,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -5090,6 +5296,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -5135,6 +5342,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [
       {
         "name": "linux",
@@ -5195,6 +5403,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -5247,6 +5456,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -5295,6 +5505,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [
       {
         "name": "linux",
@@ -5350,6 +5561,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -5399,6 +5611,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -5454,6 +5667,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -5505,6 +5719,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -5561,6 +5776,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -5610,6 +5826,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -5659,6 +5876,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -5712,6 +5930,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -5764,9 +5983,65 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": "You must build a kaiju database before usage.\nSee $(brew --prefix)/opt/kaiju/README.md for details.\n",
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
+    "name": "kalign",
+    "full_name": "brewsci/bio/kalign",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "SIMD accelerated multiple sequence alignment",
+    "homepage": "https://github.com/TimoLassmann/kalign",
+    "versions": {
+      "stable": "3.1.1",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/kalign-3.1.1.mojave.bottle.tar.gz",
+            "sha256": "95037a99f07ac7ba3729252ee0432f593196adcf375fd71ade1ed9c2e3a0e64b"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/kalign-3.1.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "88b0d12ec4a6a70bb819036c8277bb89eff01fedf7991d6652c489ea86935fc0"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [
+      "autoconf",
+      "automake",
+      "libtool",
+      "pkg-config"
+    ],
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
     "installed": [],
     "linked_keg": null,
     "pinned": false,
@@ -5820,6 +6095,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -5876,6 +6152,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": "The `calc` tool has been renamed to `kent-tools-calc`.\n\nThis only installs the standalone tools located at\n  http://hgdownload.cse.ucsc.edu/admin/exe/\n\nIf you need the full UCSC Genome Browser, run:\n  brew install ucsc-genome-browser\n\nThis does not install the BLAT tools. To install BLAT:\n  brew install blat\n",
@@ -5929,6 +6206,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -5982,6 +6260,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -6035,6 +6314,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -6088,6 +6368,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -6139,6 +6420,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -6188,6 +6470,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": "You must build a DB before usage. Minikraken DB can be found here:\nhttps://ccb.jhu.edu/software/kraken/dl/minikraken_20171019_4GB.tgz\nhttps://ccb.jhu.edu/software/kraken/dl/minikraken_20171019_8GB.tgz\n\nFor more information on kraken DBs:\nhttps://ccb.jhu.edu/software/kraken/\n",
@@ -6240,6 +6523,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": "You must build a Kraken2 database before usage.\nSee $(brew --prefix)/share/doc/kraken2/MANUAL.markdown for details.\n",
@@ -6287,6 +6571,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [
       {
         "name": "linux",
@@ -6346,6 +6631,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -6395,6 +6681,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -6446,6 +6733,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -6498,6 +6786,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -6549,6 +6838,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -6598,6 +6888,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -6653,6 +6944,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -6702,6 +6994,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -6753,6 +7046,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -6804,6 +7098,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -6857,6 +7152,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -6913,6 +7209,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -6965,6 +7262,57 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
+    "name": "lsd2",
+    "full_name": "brewsci/bio/lsd2",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Least-squares method to estimate rates and dates from phylogenies",
+    "homepage": "https://github.com/tothuhien/lsd2",
+    "versions": {
+      "stable": "1.3",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/lsd2-1.3.sierra.bottle.tar.gz",
+            "sha256": "bc3fbc38d1126f0f502d49e93a7c639893cef9b996c468f623a9351ed7a4d046"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/lsd2-1.3.x86_64_linux.bottle.tar.gz",
+            "sha256": "9a79037099326fb802b2f42c86deaea699bc0bd90cfe1f6ff4b45d941a722dc1"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -7021,6 +7369,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": "The 'makeblastdb' command has been installed as 'magicblast-makeblastdb'\nto avoid conflicts with the BLAST+ executables from the 'blast' formula.\n",
@@ -7088,6 +7437,7 @@
     "optional_dependencies": [
       "open-mpi"
     ],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": "Optional compoments of MAKER that can be installed using brew:\n  infernal\n  mir-prefer\n  snoscan\n  trnascan\n\nOptional components of MAKER that are not available using brew:\n  GeneMarkS and GeneMark-ES. Download from http://exon.biology.gatech.edu\n  FGENESH 2.4 or higher. Purchase from http://www.softberry.com\n\nMAKER is available for academic use under either the Artistic\nLicense 2.0 developed by the Perl Foundation or the GNU General\nPublic License developed by the Free Software Foundation.\n\nMAKER is not available for commercial use without a license. Those\nwishing to license MAKER for commercial use should contact Beth\nDrees at the University of Utah TCO to discuss your needs.\n",
@@ -7105,7 +7455,7 @@
     "desc": "Combined short-read alignment and variant detection",
     "homepage": "https://github.com/hsinnan75/MapCaller",
     "versions": {
-      "stable": "0.9.9.7",
+      "stable": "0.9.9.26",
       "devel": null,
       "head": null,
       "bottle": true
@@ -7115,17 +7465,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/mapcaller-0.9.9.7.sierra.bottle.tar.gz",
-            "sha256": "bf46a0ff5aa8b86a5b03eed10ee1d4232d1a31a58f85123b06044b2f70209286"
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mapcaller-0.9.9.26.mojave.bottle.tar.gz",
+            "sha256": "d8322737f3dab43b82cdbb7e294a7b3b2033e0bbad475b3526f536db474216b3"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/mapcaller-0.9.9.7.x86_64_linux.bottle.tar.gz",
-            "sha256": "584e90f96b88d4dd7ed6afde9a9726f29afcfdf8fa429af810e0cc1b0852fce9"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mapcaller-0.9.9.26.x86_64_linux.bottle.tar.gz",
+            "sha256": "f0d93b029986790c5029c48c75ffaeb246ae3c254e5ddc75e66c79f0aceff3ce"
           }
         }
       }
@@ -7142,6 +7492,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -7159,7 +7510,7 @@
     "desc": "Fast genome distance estimation using MinHash",
     "homepage": "https://github.com/marbl/Mash",
     "versions": {
-      "stable": "2.2",
+      "stable": "2.2.2",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -7169,17 +7520,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/mash-2.2.sierra.bottle.tar.gz",
-            "sha256": "1ebabe10ad2a9a0799484f4af0c752bc2babbc9f234150bf665369806db37253"
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mash-2.2.2.mojave.bottle.tar.gz",
+            "sha256": "ceded4203723c07f1468254f7f1281031bfd8163e948fb1b165659064f7ef5a6"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/mash-2.2.x86_64_linux.bottle.tar.gz",
-            "sha256": "c6367106ddeeb0a96e1ad6ecd9b1495950c67458f94779e94445c561327229e1"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mash-2.2.2.x86_64_linux.bottle.tar.gz",
+            "sha256": "4d75b04ef71f547af960aab06fe485dd53dd830695508fb0f2f33e1cfd5461b9"
           }
         }
       }
@@ -7200,6 +7551,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -7222,7 +7574,7 @@
       "head": null,
       "bottle": true
     },
-    "revision": 0,
+    "revision": 1,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -7232,8 +7584,8 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/masurca-3.3.4.x86_64_linux.bottle.tar.gz",
-            "sha256": "b6b9acb5064523080a6c6e7ba6a56af8a5523e34ed1697021b1f9f996384c6a1"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/masurca-3.3.4_1.x86_64_linux.bottle.tar.gz",
+            "sha256": "5e3b156f50496d1d41e60ec6f96089d4ac23749f05052892bd5cd4f883182703"
           }
         }
       }
@@ -7253,6 +7605,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [
       {
         "name": "linux",
@@ -7338,6 +7691,7 @@
       "pygtk",
       "pyqt"
     ],
+    "uses_from_macos": [],
     "requirements": [
       {
         "name": "noexternalpycxxpackage",
@@ -7404,6 +7758,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": "The main executable is installed as `maxbin2`. All other executable files\nare installed to `$(brew --prefix)/Cellar/maxbin2/2.2.6/libexec`.\n",
@@ -7453,6 +7808,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -7505,6 +7861,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -7522,7 +7879,7 @@
     "desc": "Tools for motif discovery",
     "homepage": "http://meme-suite.org",
     "versions": {
-      "stable": "5.0.4",
+      "stable": "5.1.0",
       "devel": null,
       "head": null,
       "bottle": true
@@ -7537,8 +7894,8 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/meme-5.0.4.x86_64_linux.bottle.tar.gz",
-            "sha256": "bd12839fa2cab51ddd2165764fee991f9a01f1ade1f766600a1301fbda55dd60"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/meme-5.1.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "b66235d3ce6851c700bc395dff15f2346234b6e84d750dd9d4d92945a999e01a"
           }
         }
       }
@@ -7562,6 +7919,7 @@
     "optional_dependencies": [
       "open-mpi"
     ],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -7613,6 +7971,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [
       {
         "name": "linux",
@@ -7655,6 +8014,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -7706,6 +8066,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -7757,6 +8118,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -7810,6 +8172,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -7861,6 +8224,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -7913,6 +8277,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -7964,6 +8329,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -8016,6 +8382,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -8071,6 +8438,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -8088,7 +8456,7 @@
     "desc": "Multi-Locus Sequence Typing of bacterial contigs",
     "homepage": "https://github.com/tseemann/mlst",
     "versions": {
-      "stable": "2.17.6",
+      "stable": "2.18.0",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -8102,13 +8470,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/mlst-2.17.6.sierra.bottle.tar.gz",
-            "sha256": "c1825f9550326f6ee5aaeebca222fa25ae992ba11ecb5674ae4339721f91dbc9"
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mlst-2.18.0.mojave.bottle.tar.gz",
+            "sha256": "9a2b1f281e71d728ab5665649e8f3bc9a6d724a2120981a9bb04b3bfebed6958"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/mlst-2.17.6.x86_64_linux.bottle.tar.gz",
-            "sha256": "86c5be147f02d9eab21a032d53266bcfa6bff6af0d893d6955bff8f1aa98f1a7"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mlst-2.18.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "1ac4febaab06562d838becb5fcaef22c5c9a60edd0bf74dcbc13b3a763cb3f15"
           }
         }
       }
@@ -8129,6 +8497,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -8183,6 +8552,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -8233,6 +8603,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [
       {
         "name": "linux",
@@ -8291,6 +8662,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -8342,6 +8714,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -8398,6 +8771,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -8457,6 +8831,57 @@
     "optional_dependencies": [
       "open-mpi"
     ],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
+    "name": "mreps",
+    "full_name": "brewsci/bio/mreps",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Identifying serial/tandem in DNA sequences",
+    "homepage": "https://github.com/gregorykucherov/mreps",
+    "versions": {
+      "stable": "2.6.01",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mreps-2.6.01.mojave.bottle.tar.gz",
+            "sha256": "18da69d83b028a26c6202a9879d3af24d8e678ff36f1cd25979df3dc91c511ac"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mreps-2.6.01.x86_64_linux.bottle.tar.gz",
+            "sha256": "0c7d4a4f202cd4885d25b470d02baa22f7ff8d816c9df7789bc57847a8f13bd7"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -8508,6 +8933,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -8557,6 +8983,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -8610,6 +9037,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -8664,6 +9092,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -8719,6 +9148,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -8770,6 +9200,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -8821,6 +9252,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -8874,6 +9306,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -8925,6 +9358,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -8983,6 +9417,7 @@
     "optional_dependencies": [
       "open-mpi"
     ],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -9005,7 +9440,7 @@
       "head": "HEAD",
       "bottle": true
     },
-    "revision": 0,
+    "revision": 1,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -9014,13 +9449,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ntcard-1.1.1.sierra.bottle.tar.gz",
-            "sha256": "cb5dcd794b5b0caf8a4e75f4d7c8a66a6074a53ee3efb23200cae92806bbbf71"
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ntcard-1.1.1_1.mojave.bottle.tar.gz",
+            "sha256": "beef0f25e0a6c64e399685d77db1b16336551d744f53c184a2ec55194d9fe0b5"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ntcard-1.1.1.x86_64_linux.bottle.tar.gz",
-            "sha256": "87de4b1d23fb01f915d3426802d9f20aedcdd93be71100893ceb22e23114aa5c"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ntcard-1.1.1_1.x86_64_linux.bottle.tar.gz",
+            "sha256": "f1e5d1831be321cb71864fca94fd4de18b3cc9bd088fae974d5b816db48dddb3"
           }
         }
       }
@@ -9035,6 +9470,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -9052,7 +9488,7 @@
     "desc": "Scalable genome assembly polishing",
     "homepage": "https://github.com/bcgsc/ntEdit",
     "versions": {
-      "stable": "1.2.3",
+      "stable": "1.3.1",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -9062,17 +9498,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any_skip_relocation",
+        "cellar": ":any",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ntedit-1.2.3.sierra.bottle.tar.gz",
-            "sha256": "468426b66a78d26c25a7c490c59d6e8f4897aef399f226f6db6d07c9ef3fca67"
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ntedit-1.3.1.mojave.bottle.tar.gz",
+            "sha256": "e22a1f097b540564b408dcf2189f30cdc63a5db15f92b82605dfb13ab14446c9"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ntedit-1.2.3.x86_64_linux.bottle.tar.gz",
-            "sha256": "f50bc41a308c00614b4f29b9152ffb2b11937ef7950a64e3a393f36090654520"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ntedit-1.3.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "a446acbbf4de038f96329f328276f4c154f0ebdfc59a1fd6ce8b4ed23525be86"
           }
         }
       }
@@ -9086,6 +9522,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -9138,6 +9575,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -9195,6 +9633,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -9248,6 +9687,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -9301,6 +9741,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -9318,7 +9759,7 @@
     "desc": "Standalone package to infer orthologs with the OMA algorithm",
     "homepage": "https://omabrowser.org/standalone/",
     "versions": {
-      "stable": "2.3.1",
+      "stable": "2.4.1",
       "devel": null,
       "head": null,
       "bottle": true
@@ -9332,13 +9773,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/oma-2.3.1.sierra.bottle.tar.gz",
-            "sha256": "a3faceacda5a26ce054e9d14f254b7e17728a27e3ee73d0b5bfefa29764c02c0"
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/oma-2.4.1.mojave.bottle.tar.gz",
+            "sha256": "8d9dc53917ab9fc923cb5f42650d4690ea919339082cc5df368b5927d5857db2"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/oma-2.3.1.x86_64_linux.bottle.tar.gz",
-            "sha256": "57f39d3238c12cbe8534a4f571e52328060b106580cb48c72272492f39e8f029"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/oma-2.4.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "d41b7f1cf868eeb797170329bbad3a09faf5ab11e2fdee60e1bbb5507ce51388"
           }
         }
       }
@@ -9348,10 +9789,14 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
+      "libxml2",
+      "libxslt",
+      "numpy",
       "python"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -9407,6 +9852,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -9456,9 +9902,69 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": "Documentation and examples:\n  $(brew --prefix)/share/doc/paml\nDat and ctl files:\n  $(brew --prefix)/share/paml\n",
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
+    "name": "pandaseq",
+    "full_name": "brewsci/bio/pandaseq",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "PAired-eND Assembler for DNA sequences",
+    "homepage": "https://github.com/neufeld/pandaseq",
+    "versions": {
+      "stable": "2.11",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": "/home/linuxbrew/.linuxbrew/Cellar",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/pandaseq-2.11.mojave.bottle.tar.gz",
+            "sha256": "a9e047bdfd18226644594b687f9daf13a7570f4e16f4a2c3860334932adee5a9"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/pandaseq-2.11.x86_64_linux.bottle.tar.gz",
+            "sha256": "7c5ba5be45e1505bbb4a6b7ca6d46a634a06edb302f8c76544b2feea36626b5e"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [
+      "autoconf",
+      "automake",
+      "pkg-config"
+    ],
+    "dependencies": [
+      "libtool",
+      "bzip2",
+      "curl",
+      "zlib"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
     "installed": [],
     "linked_keg": null,
     "pinned": false,
@@ -9512,6 +10018,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -9568,6 +10075,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -9627,6 +10135,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -9663,6 +10172,64 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
+    "name": "peat",
+    "full_name": "brewsci/bio/peat",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Paired-end trimmer with automatic adapter discovery",
+    "homepage": "https://github.com/jhhung/PEAT",
+    "versions": {
+      "stable": "1.2.5",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/peat-1.2.5.sierra.bottle.tar.gz",
+            "sha256": "6de0b86edd00c6efee1c5f8d2b8370a6bbd46b30fc136d4bd1bfc6a1b2a5a10f"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/peat-1.2.5.x86_64_linux.bottle.tar.gz",
+            "sha256": "1aa583f4dbcf1ecd7a769a2d01a4403368b4e72528eb27f6ad8854e6e8674b37"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [
+      "cmake",
+      "pkg-config"
+    ],
+    "dependencies": [
+      "boost",
+      "curl",
+      "zlib"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -9718,6 +10285,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -9767,6 +10335,57 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
+    "name": "phylobayes",
+    "full_name": "brewsci/bio/phylobayes",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Phylogenetic reconstruction using infinite mixtures",
+    "homepage": "http://megasun.bch.umontreal.ca/People/lartillot/www/download.html",
+    "versions": {
+      "stable": "4.1e",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/phylobayes-4.1e.mojave.bottle.tar.gz",
+            "sha256": "d64caf0698e161e24cd60ef993d3033af9629286ccf60ffd7c4ffd2d21acb2a3"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/phylobayes-4.1e.x86_64_linux.bottle.tar.gz",
+            "sha256": "95bd708818d15ab41d8528119a1b63007e687db51c130c35029e68fb29e0357d"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -9821,6 +10440,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -9838,27 +10458,27 @@
     "desc": "Command-line tools for phylogenetic analyses",
     "homepage": "https://github.com/FePhyFoFum/phyx",
     "versions": {
-      "stable": "0.999",
+      "stable": "1.01",
       "devel": null,
       "head": null,
       "bottle": true
     },
-    "revision": 1,
+    "revision": 0,
     "version_scheme": 0,
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/phyx-0.999_1.sierra.bottle.tar.gz",
-            "sha256": "0624af0f10604c04808ffb83aa89f247fb247e9b328591603ec85710166f7592"
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/phyx-1.01.mojave.bottle.tar.gz",
+            "sha256": "561513bd343850933d8f034617bb6990100bb8ffbd5f3a6fc7c8145c43401f25"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/phyx-0.999_1.x86_64_linux.bottle.tar.gz",
-            "sha256": "df83058b0a1ac9893fed65f50663ce15a95d01f79614b2d2d3e0071748be8e15"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/phyx-1.01.x86_64_linux.bottle.tar.gz",
+            "sha256": "0b324a7fa20c5f57d4de10ae5034c2885ad7006c04c24107bef67a33a3c1131f"
           }
         }
       }
@@ -9873,6 +10493,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -9924,6 +10545,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -9984,6 +10606,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -10035,6 +10658,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -10094,6 +10718,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -10145,6 +10770,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -10197,6 +10823,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -10259,6 +10886,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -10313,6 +10941,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -10371,6 +11000,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -10423,6 +11053,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -10475,6 +11106,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -10524,6 +11156,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -10576,6 +11209,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -10627,6 +11261,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -10649,7 +11284,7 @@
       "head": "HEAD",
       "bottle": true
     },
-    "revision": 1,
+    "revision": 2,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -10658,13 +11293,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/racon-1.3.2_1.sierra.bottle.tar.gz",
-            "sha256": "fb34a1cd494826c7ce24a70e3f39859a1cc38eefee6b7d3d70f8d611b8a499dd"
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/racon-1.3.2_2.mojave.bottle.tar.gz",
+            "sha256": "83c39b9ef5b8066098d093346a5c006bbf6fb6787cd7d59c2c5c835d791b3d53"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/racon-1.3.2_1.x86_64_linux.bottle.tar.gz",
-            "sha256": "017bfaa79c852ee19a3b728a8589498588723421d42f03c63011e8c9a90026e9"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/racon-1.3.2_2.x86_64_linux.bottle.tar.gz",
+            "sha256": "eccd09e43785cf3271996399d4069d807156f847831b2ea76dec89fd2a84f46e"
           }
         }
       }
@@ -10680,6 +11315,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -10733,6 +11369,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -10784,6 +11421,59 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
+    "name": "rasusa",
+    "full_name": "brewsci/bio/rasusa",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Randomly subsample sequencing reads to a specified coverage",
+    "homepage": "https://github.com/mbhall88/rasusa",
+    "versions": {
+      "stable": "0.1.0",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/rasusa-0.1.0.mojave.bottle.tar.gz",
+            "sha256": "95748966050bee51706ef2488601699922e6cdda746ce30a8ac1994c0666e2bd"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/rasusa-0.1.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "a8504c1f9fa3ee5f3e65add03688aa7c0be6cd1ee09abaaa132c11d4ac630dad"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [
+      "rust"
+    ],
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -10835,6 +11525,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -10898,6 +11589,7 @@
       "open-mpi"
     ],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -10956,6 +11648,7 @@
       "open-mpi"
     ],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -11008,6 +11701,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -11061,6 +11755,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -11112,6 +11807,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -11169,6 +11865,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": "Congratulations!  RepeatMasker is now ready to use.\nThe program is installed with a minimal repeat library\nby default.  This library only contains simple, low-complexity,\nand common artefact ( contaminate ) sequences.  These are\nadequate for use with your own custom repeat library.  If you\nplan to search using common species specific repeats you will\nneed to obtain the complete RepeatMasker repeat library from\nGIRI and install it:\n  Browse to https://www.girinst.org/server/RepBase/\n  Download RepBaseRepeatMaskerEdition-*.tar.gz\n  cd $(brew --prefix)/Cellar/repeatmasker/4.0.7_4/libexec\n  tar zxvf repeatmaskerlibraries-*.tar.gz\n  ./configure <configure.input\n\nThe default aligner is RMBlast. You may reconfigure RepeatMasker\nby running\n  cd $(brew --prefix)/Cellar/repeatmasker/4.0.7_4/libexec && ./configure\n",
@@ -11223,6 +11920,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -11276,6 +11974,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -11327,6 +12026,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -11386,6 +12086,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -11438,6 +12139,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -11487,6 +12189,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -11536,6 +12239,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -11587,6 +12291,60 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
+    "name": "sepp",
+    "full_name": "brewsci/bio/sepp",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Ensemble of HMM methods (SEPP, TIPP, UPP)",
+    "homepage": "https://github.com/smirarab/sepp",
+    "versions": {
+      "stable": "4.3.10",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/sepp-4.3.10.mojave.bottle.tar.gz",
+            "sha256": "45b005e6beaadc6a631d11f4f32301b55beda6c2a41222a59e96cdb271ee5814"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/sepp-4.3.10.x86_64_linux.bottle.tar.gz",
+            "sha256": "b81115b45f3c8075931cbf0fefef35a9357f1ff8878353c6a2f45ad8bb7234db"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [
+      "adoptopenjdk",
+      "python"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -11636,6 +12394,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -11687,6 +12446,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -11736,6 +12496,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -11792,6 +12553,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -11839,6 +12601,62 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
+    "name": "sibelia",
+    "full_name": "brewsci/bio/sibelia",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Synteny Block ExpLoration tool",
+    "homepage": "http://bioinf.spbau.ru/sibelia",
+    "versions": {
+      "stable": "3.0.7",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "sierra": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/sibelia-3.0.7.sierra.bottle.tar.gz",
+            "sha256": "2edffd9444a1730c681f44725e6c31c3659e5f0bc6155b4e4b4899fe5351341b"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/sibelia-3.0.7.x86_64_linux.bottle.tar.gz",
+            "sha256": "276b51347bcfe63f42c1cf24f21c765dd862549806ee6cca97a49024eb86b44b"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [
+      "cmake"
+    ],
+    "dependencies": [
+      "python",
+      "snpeff"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -11894,6 +12712,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -11945,6 +12764,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -11967,22 +12787,22 @@
       "head": null,
       "bottle": true
     },
-    "revision": 0,
+    "revision": 2,
     "version_scheme": 0,
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": "/home/linuxbrew/.linuxbrew/Cellar",
+        "cellar": ":any",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/skesa-2.3.0.sierra.bottle.tar.gz",
-            "sha256": "8efd0cbd2c73b5bc891a9a22c8e8cb1a338febe8c2bc448f3d4320998abb895e"
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/skesa-2.3.0_2.mojave.bottle.tar.gz",
+            "sha256": "a2bd9acebd6330fd0440ad68e505932f3c032c0c746054712bdcafdc6ea437d5"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/skesa-2.3.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "1f1b6ce810c86616be30dc6267d65416fcfc1d1487083f9e6063242e068ea077"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/skesa-2.3.0_2.x86_64_linux.bottle.tar.gz",
+            "sha256": "90e08e2a0fbf08060b2ffbbd3e3951840af8fd03e1fea9113758fe67677dc4d1"
           }
         }
       }
@@ -11997,6 +12817,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -12046,6 +12867,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -12095,6 +12917,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -12112,7 +12935,7 @@
     "desc": "Rapid bacterial SNP calling and core genome alignments",
     "homepage": "https://github.com/tseemann/snippy",
     "versions": {
-      "stable": "4.4.0",
+      "stable": "4.4.5",
       "devel": null,
       "head": null,
       "bottle": true
@@ -12126,13 +12949,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/snippy-4.4.0.sierra.bottle.tar.gz",
-            "sha256": "a1cc30fa82d9902328884f859cca34d404accb30c7576a349803bb509783d9e6"
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/snippy-4.4.5.mojave.bottle.tar.gz",
+            "sha256": "faa56de1c5b8a1e501679632f19eac6dacc7a01c405994da0ed50a416f6bcc73"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/snippy-4.4.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "5bf4e438b29b12454c7369fb523348a7be5bfe74f998b21821d21fa0c917fe9d"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/snippy-4.4.5.x86_64_linux.bottle.tar.gz",
+            "sha256": "45380c92916dbe78a2a7b1792830776e04802cfdc079dd83fe6a86e453481043"
           }
         }
       }
@@ -12162,6 +12985,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -12211,6 +13035,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -12262,6 +13087,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -12279,7 +13105,7 @@
     "desc": "Find SNP sites in a multi FASTA alignment file",
     "homepage": "https://github.com/sanger-pathogens/snp-sites",
     "versions": {
-      "stable": "2.4.0",
+      "stable": "2.5.1",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -12288,18 +13114,18 @@
     "version_scheme": 0,
     "bottle": {
       "stable": {
-        "rebuild": 0,
+        "rebuild": 1,
         "cellar": ":any",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/snp-sites-2.4.0.sierra.bottle.tar.gz",
-            "sha256": "963f1b2cce96f685098ff185edb6607c45c5e65119084d254b1261071f914579"
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/snp-sites-2.5.1.mojave.bottle.1.tar.gz",
+            "sha256": "a9e5aa1f834835b9eeb9645a6cc4e6b730287754182c54abc55542fe39ef398a"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/snp-sites-2.4.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "0721484daa84e9bbd74d54f20ad17d1918ad78849f98999f6c48c1ce88a745fa"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/snp-sites-2.5.1.x86_64_linux.bottle.1.tar.gz",
+            "sha256": "7395080925bfacc38ca0e7a3f16dc5f824d18b2505a96ce12016c50a36147915"
           }
         }
       }
@@ -12319,6 +13145,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -12372,6 +13199,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": "Download the human database using the command\n  snpEff download -v GRCh38.82\nThe databases will be installed in $(brew --prefix)/Cellar/snpeff/4.3t/share/snpeff/data\n",
@@ -12424,6 +13252,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -12475,6 +13304,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -12525,6 +13355,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [
       {
         "name": "linux",
@@ -12582,6 +13413,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -12636,6 +13468,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -12653,7 +13486,7 @@
     "desc": "RNA-seq aligner",
     "homepage": "https://github.com/alexdobin/STAR",
     "versions": {
-      "stable": "2.7.2b",
+      "stable": "2.7.3a",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -12667,13 +13500,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/star-aligner-2.7.2b.sierra.bottle.tar.gz",
-            "sha256": "5b566d7848575a257cd3ec2e8b103a5f203293c4526ff6ebfb2f834672eb98a8"
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/star-aligner-2.7.3a.mojave.bottle.tar.gz",
+            "sha256": "6f38f571a24b2fa0baec2674da051d51dd74c84823c9ef1e3537a15565d21559"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/star-aligner-2.7.2b.x86_64_linux.bottle.tar.gz",
-            "sha256": "63663438843f13a2cc068c727043555b2473a37e168a288117e723699d6d6a8d"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/star-aligner-2.7.3a.x86_64_linux.bottle.tar.gz",
+            "sha256": "17ebb8d1e4f79aad4158bb61573c6522c2a2407fccd2bae43d1d8044cd651981"
           }
         }
       }
@@ -12687,6 +13520,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -12738,6 +13572,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -12755,7 +13590,7 @@
     "desc": "High-performance read alignment, quantification and mutation discovery",
     "homepage": "https://academic.oup.com/nar/article/41/10/e108/1075719",
     "versions": {
-      "stable": "1.6.4",
+      "stable": "2.0.0",
       "devel": null,
       "head": null,
       "bottle": true
@@ -12769,13 +13604,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/subread-1.6.4.sierra.bottle.tar.gz",
-            "sha256": "83e6016cc219298b602e1648f269ced8c1c09493f3cbbb2affec7f5f50abedd2"
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/subread-2.0.0.mojave.bottle.tar.gz",
+            "sha256": "632afd9717234c43b98b916515f1619cc7aa5e08a92ef4c9b7c46f7411d0399a"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/subread-1.6.4.x86_64_linux.bottle.tar.gz",
-            "sha256": "6afd221103869e166d2d2a8ecd9495173173903d11576ad92bf2da61b374109a"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/subread-2.0.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "7b9dc00896b75d340e779082e8850ecdd0655babf4d8d3c370a4246d9f0fafc8"
           }
         }
       }
@@ -12789,6 +13624,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -12838,6 +13674,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -12887,6 +13724,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -12936,6 +13774,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -12990,6 +13829,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -13042,6 +13882,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -13092,6 +13933,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [
       {
         "name": "linux",
@@ -13151,6 +13993,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -13206,6 +14049,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -13240,6 +14084,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -13291,6 +14136,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -13340,6 +14186,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -13393,6 +14240,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": "FASTA file of adapter sequences are located here:\n$(brew --prefix)/Cellar/trimmomatic/0.39/share/trimmomatic/adapters\n",
@@ -13453,6 +14301,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -13504,6 +14353,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -13561,6 +14411,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -13610,6 +14461,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -13644,6 +14496,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -13678,6 +14531,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -13730,6 +14584,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -13785,6 +14640,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": "The vcflib R scripts can be found in\n$(brew --prefix)/share/vcflib/\n",
@@ -13836,6 +14692,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -13889,6 +14746,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -13938,6 +14796,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -13989,6 +14848,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -14040,6 +14900,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -14057,7 +14918,7 @@
     "desc": "USEARCH-compatible metagenomic sequence tool",
     "homepage": "https://github.com/torognes/vsearch",
     "versions": {
-      "stable": "2.13.6",
+      "stable": "2.14.1",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -14071,13 +14932,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/vsearch-2.13.6.sierra.bottle.tar.gz",
-            "sha256": "a2f608173d44c07b4ab8be70b491bea725eea0e1aca2b6ec2c2e39be5ec041d8"
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/vsearch-2.14.1.mojave.bottle.tar.gz",
+            "sha256": "40752ce646e158f551a3f8b8c97879426ddbafe77683dfe2e57f193548dcbfdb"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/vsearch-2.13.6.x86_64_linux.bottle.tar.gz",
-            "sha256": "be53bea06af34f1eb38b7228c7f51b98f08636c4ca141ca7fa991a1d68f641ce"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/vsearch-2.14.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "18aaea48ac36e09cc9b285e7e68a15f4b622f9bfe5f338c8916bda31abe9e9d2"
           }
         }
       }
@@ -14095,6 +14956,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -14146,6 +15008,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -14197,6 +15060,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -14253,6 +15117,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -14304,6 +15169,7 @@
     "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -14321,7 +15187,7 @@
     "desc": "Fuzzy de Bruijn Graph long read assembler",
     "homepage": "https://github.com/ruanjue/wtdbg2",
     "versions": {
-      "stable": "2.4",
+      "stable": "2.5",
       "devel": null,
       "head": null,
       "bottle": true
@@ -14336,8 +15202,8 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/wtdbg2-2.4.x86_64_linux.bottle.tar.gz",
-            "sha256": "0a9910cf4ff402a2c091589264a3b2236318b6a074cbace3ad16bef9444d39cf"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/wtdbg2-2.5.x86_64_linux.bottle.tar.gz",
+            "sha256": "a745e86dde75d8ec852dbd2fbf0c145d921d413274854e69ba1249374275f488"
           }
         }
       }
@@ -14353,6 +15219,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [
       {
         "name": "linux",
@@ -14376,7 +15243,7 @@
     "desc": "Smith-waterman alignment visualization",
     "homepage": "https://github.com/bcgsc/xmatchview",
     "versions": {
-      "stable": "1.1.1",
+      "stable": "1.2.0",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -14391,12 +15258,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/xmatchview-1.1.1.sierra.bottle.tar.gz",
-            "sha256": "8c7c07606ed33a2f6b435de93510566b01b737987a8c97f373735350c8a391a2"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/xmatchview-1.2.0.sierra.bottle.tar.gz",
+            "sha256": "2b17c832197c0abd912495ca38cfbd2963218e8771be3efbfad7d3c51b2da504"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/xmatchview-1.1.1.x86_64_linux.bottle.tar.gz",
-            "sha256": "a5a8927f3ba541355ccb4fea94e2f639651e55bff2c2641cc04ffb8594774b5f"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/xmatchview-1.2.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "280d250cd2daefca86d6c2fe5fa64033b3a7dd68b548563d8ca6fae76d14c681"
           }
         }
       }
@@ -14412,6 +15279,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
@@ -14467,6 +15335,7 @@
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
+    "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
     "caveats": null,
