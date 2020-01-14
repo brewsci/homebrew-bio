@@ -2,23 +2,24 @@ class EpaNg < Formula
   # cite Barbera_2018: "https://doi.org/10.1093/sysbio/syy054"
   desc "Massively parallel phylogenetic placement of genetic sequences"
   homepage "https://github.com/Pbdas/epa-ng"
-  url "https://github.com/Pbdas/epa-ng/archive/v0.3.5.tar.gz"
-  sha256 "0aa2aa9ffad0d713c42ea43330798a4d701ece883ced617da07218b7c697df41"
+  url "https://github.com/Pbdas/epa-ng/archive/v0.3.6.tar.gz"
+  sha256 "964675e75f192dd680678edb087b2552a1d2f1e3c6b78cb0a1e5c9f5bd80a146"
   head "https://github.com/Pbdas/epa-ng.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "7307cf15a282c14dcb64c9b0bcb8f31d4512e866f74196f766826e4afefcc7d1" => :sierra
-    sha256 "a7704605db8d0be2014651b8f96503ec4e1de9e2e155e3f40741fafc8a1fe1e5" => :x86_64_linux
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "66e08b52597ad0c8d192c1f715cfdcee81044dc4f13cb19f651eab2a5f07d6c7" => :mojave
+    sha256 "7da900967d585bc432182fc07ea1057f9cc54fc6e836574837b062d223a216b2" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
   unless OS.mac?
     depends_on "bison" => :build
     depends_on "flex" => :build
-    depends_on "zlib"
   end
+
+  uses_from_macos "zlib"
 
   def install
     mkdir "build" do
@@ -29,6 +30,6 @@ class EpaNg < Formula
   end
 
   test do
-    assert_match "Usage", shell_output("#{bin}/epa-ng --help")
+    assert_match version.to_s, shell_output("#{bin}/epa-ng --version")
   end
 end

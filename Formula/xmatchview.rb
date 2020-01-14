@@ -2,15 +2,15 @@ class Xmatchview < Formula
   # cite L_Warren_2018: "https://doi.org/10.21105/joss.00497"
   desc "Smith-waterman alignment visualization"
   homepage "https://github.com/bcgsc/xmatchview"
-  url "https://github.com/bcgsc/xmatchview/archive/v1.1.1.tar.gz"
-  sha256 "987ee64c9287c89bf4eba1c4f2438bf7a49ae70fab34c0282e724710d56d75cc"
+  url "https://github.com/bcgsc/xmatchview/archive/v1.2.0.tar.gz"
+  sha256 "17723ba8d6162c2b57f9c63f1f93fcc878963eb00097a12a575c8b3b3c9ef1bf"
   head "https://github.com/bcgsc/xmatchview.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "8c7c07606ed33a2f6b435de93510566b01b737987a8c97f373735350c8a391a2" => :sierra
-    sha256 "a5a8927f3ba541355ccb4fea94e2f639651e55bff2c2641cc04ffb8594774b5f" => :x86_64_linux
+    sha256 "2b17c832197c0abd912495ca38cfbd2963218e8771be3efbfad7d3c51b2da504" => :sierra
+    sha256 "280d250cd2daefca86d6c2fe5fa64033b3a7dd68b548563d8ca6fae76d14c681" => :x86_64_linux
   end
 
   depends_on "jpeg"

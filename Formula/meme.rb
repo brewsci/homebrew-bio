@@ -2,12 +2,12 @@ class Meme < Formula
   # cite Bailey_2009: "https://doi.org/10.1093/nar/gkp335"
   desc "Tools for motif discovery"
   homepage "http://meme-suite.org"
-  url "http://meme-suite.org/meme-software/5.0.4/meme-5.0.4.tar.gz"
-  sha256 "b5e067c8b9d9fe4a2a35d4f4d053714beb380c0c06b54ed94737dd31d93c4cf4"
+  url "http://meme-suite.org/meme-software/5.1.0/meme-5.1.0.tar.gz"
+  sha256 "46b527cb0eebb6ca21976dcd87aae8a4dd9cf55756679c692fc99bae895d36c9"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "bd12839fa2cab51ddd2165764fee991f9a01f1ade1f766600a1301fbda55dd60" => :x86_64_linux
+    sha256 "b66235d3ce6851c700bc395dff15f2346234b6e84d750dd9d4d92945a999e01a" => :x86_64_linux
   end
 
   # Work around the error:

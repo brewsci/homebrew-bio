@@ -1,14 +1,14 @@
 class Snippy < Formula
   desc "Rapid bacterial SNP calling and core genome alignments"
   homepage "https://github.com/tseemann/snippy"
-  url "https://github.com/tseemann/snippy/archive/v4.4.0.tar.gz"
-  sha256 "1fbbf1f03f0d18db1c508297946dd8d52f41fd252fa07deb44db41e713f9c0e5"
+  url "https://github.com/tseemann/snippy/archive/v4.4.5.tar.gz"
+  sha256 "22425b1b734621d3b353073d882bda9996e9bd17ff630233ebd5114abfe11fca"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "a1cc30fa82d9902328884f859cca34d404accb30c7576a349803bb509783d9e6" => :sierra
-    sha256 "5bf4e438b29b12454c7369fb523348a7be5bfe74f998b21821d21fa0c917fe9d" => :x86_64_linux
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "faa56de1c5b8a1e501679632f19eac6dacc7a01c405994da0ed50a416f6bcc73" => :mojave
+    sha256 "45380c92916dbe78a2a7b1792830776e04802cfdc079dd83fe6a86e453481043" => :x86_64_linux
   end
 
   depends_on "bcftools"
@@ -26,11 +26,9 @@ class Snippy < Formula
   depends_on "vcflib"
   depends_on "vt"
 
-  unless OS.mac?
-    depends_on "bzip2"
-    depends_on "gzip"
-    depends_on "perl"
-  end
+  uses_from_macos "bzip2"
+  uses_from_macos "gzip"
+  uses_from_macos "perl"
 
   def install
     # brew will provide proper binaries, but keep noarch scripts

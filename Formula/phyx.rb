@@ -2,15 +2,14 @@ class Phyx < Formula
   # cite Brown_2017: "https://doi.org/10.1093/bioinformatics/btx063"
   desc "Command-line tools for phylogenetic analyses"
   homepage "https://github.com/FePhyFoFum/phyx"
-  url "https://github.com/FePhyFoFum/phyx/archive/v0.999.tar.gz"
-  sha256 "d8dfef84731677f92740fd6f0d003e0b3edc25b7e0eaa4c90c4d7da088f32a64"
-  revision 1
+  url "https://github.com/FePhyFoFum/phyx/archive/v1.01.tar.gz"
+  sha256 "edc1d6f20cc606b086f54c74631ec434ed49d76c2f3feea5302cd02da27e054a"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "0624af0f10604c04808ffb83aa89f247fb247e9b328591603ec85710166f7592" => :sierra
-    sha256 "df83058b0a1ac9893fed65f50663ce15a95d01f79614b2d2d3e0071748be8e15" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "561513bd343850933d8f034617bb6990100bb8ffbd5f3a6fc7c8145c43401f25" => :mojave
+    sha256 "0b324a7fa20c5f57d4de10ae5034c2885ad7006c04c24107bef67a33a3c1131f" => :x86_64_linux
   end
 
   depends_on "armadillo"

@@ -1,14 +1,14 @@
 class Mapcaller < Formula
   desc "Combined short-read alignment and variant detection"
   homepage "https://github.com/hsinnan75/MapCaller"
-  url "https://github.com/hsinnan75/MapCaller/archive/v0.9.9.7.tar.gz"
-  sha256 "636e5b96153047b6109e7f462445a973086f816741a6161587fa0a730704e7bb"
+  url "https://github.com/hsinnan75/MapCaller/archive/v0.9.9.26.tar.gz"
+  sha256 "54831c85f7b29fffc0f287978dfb2977d7be15b7c255a1d68bd08b253a032cc7"
 
   bottle do
-    cellar :any
+    cellar :any_skip_relocation
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "bf46a0ff5aa8b86a5b03eed10ee1d4232d1a31a58f85123b06044b2f70209286" => :sierra
-    sha256 "584e90f96b88d4dd7ed6afde9a9726f29afcfdf8fa429af810e0cc1b0852fce9" => :x86_64_linux
+    sha256 "d8322737f3dab43b82cdbb7e294a7b3b2033e0bbad475b3526f536db474216b3" => :mojave
+    sha256 "f0d93b029986790c5029c48c75ffaeb246ae3c254e5ddc75e66c79f0aceff3ce" => :x86_64_linux
   end
 
   depends_on "xz"
@@ -18,11 +18,6 @@ class Mapcaller < Formula
   uses_from_macos "zlib"
 
   def install
-    # https://github.com/hsinnan75/MapCaller/issues/17
-    inreplace "makefile", "make -C src/htslib", "make -C src/htslib libhts.a"
-    # https://github.com/hsinnan75/MapCaller/issues/16
-    inreplace "makefile", "make ", "$(MAKE) "
-
     system "make"
     bin.install "bin/MapCaller", "bin/bwt_index"
     pkgshare.install "test"

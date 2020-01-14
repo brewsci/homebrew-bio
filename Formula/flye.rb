@@ -1,22 +1,25 @@
 class Flye < Formula
+  include Language::Python::Virtualenv
+
   # cite Kolmogorov_2018: "https://doi.org/10.1101/247148"
   desc "Fast and accurate de novo assembler for single molecule sequencing reads"
   homepage "https://github.com/fenderglass/Flye"
-  url "https://github.com/fenderglass/Flye/archive/2.5.tar.gz"
-  sha256 "0ffcb5167650d4854ca2f82e5d36dbcbd80374fd400f5014c297ee551cc21206"
+  url "https://github.com/fenderglass/Flye/archive/2.6.tar.gz"
+  sha256 "5bdc44b84712794fa4264eed690d8c65c0d72f495c7bbf2cd15b634254809131"
+  revision 1
   head "https://github.com/fenderglass/Flye.git", :branch => "flye"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "63e01cab4cb5870d60fca897ae5c3cd8b52d3bd249a3aa129454910c4fbd2d1f" => :sierra
-    sha256 "d5df5ebfe67e7de0df758c8eaa9a2cc9fe090955a92dca5502db50237688736d" => :x86_64_linux
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "125848c78a924e0a36c115b7dad48647c59590de0755a2362ee13164b2c3d6f2" => :sierra
+    sha256 "075d6ae3911c50b62d32d883903ee4595cf208e396af5155e2266e88e243ba6d" => :x86_64_linux
   end
 
-  depends_on "python@2"
+  depends_on "python"
 
   def install
-    system "python2", "setup.py", "install", "--prefix=#{prefix}"
+    virtualenv_install_with_resources
   end
 
   test do

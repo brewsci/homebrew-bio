@@ -1,14 +1,14 @@
 class Cannoli < Formula
   desc "Big Data Genomics ADAM Pipe API wrappers for bioinformatics tools"
   homepage "https://github.com/bigdatagenomics/cannoli"
-  url "https://search.maven.org/remotecontent?filepath=org/bdgenomics/cannoli/cannoli-distribution-spark2_2.11/0.7.0/cannoli-distribution-spark2_2.11-0.7.0-bin.tar.gz"
-  sha256 "193d4a7919edf36747df2ca78efef601d0de0a1cf0ab9fb0c5062869cedcec29"
+  url "https://search.maven.org/remotecontent?filepath=org/bdgenomics/cannoli/cannoli-distribution-spark2_2.11/0.8.0/cannoli-distribution-spark2_2.11-0.8.0-bin.tar.gz"
+  sha256 "a2f0694cead2fa51e68d0485676b611fd7b0fd500c835934eef6f5d2322d6873"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "3cd2c785579e5ba45ea7111d2c4409089a3090162d5b6bedeae4b63b4d163afb" => :sierra
-    sha256 "b5a5595141e5d8469d6bd2cd6b6f97a2224389c18d3058378e83c346305d77ed" => :x86_64_linux
+    sha256 "b04aa87fe838b097d346fb54d1bf38a2d64c922f1a88e17a57bac1157f734b85" => :mojave
+    sha256 "0c805989de8a38f9150a8bb79f6d67edf4e455441dc9a3a4f0b8eb957f65e7bd" => :x86_64_linux
   end
 
   head do
