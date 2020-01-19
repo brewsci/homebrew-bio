@@ -26,5 +26,6 @@ jobs:
             brew install unzip
             curl -L -o bottles.zip ${{github.event.review.body}}
             unzip bottles.zip
+            brew update-reset
             brew test-bot --ci-upload --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
           esac
