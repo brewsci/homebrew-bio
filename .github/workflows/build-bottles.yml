@@ -12,6 +12,11 @@ jobs:
       HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
       - uses: actions/checkout@master
+      - uses: Homebrew/actions/git-ssh@master
+        with:
+          git_user: LinuxbrewTestBot
+          git_email: testbot@linuxbrew.sh
+          key: ${{secrets.SSH_KEY}}
       - name: Build bottles
         run: |
           mkdir -p "$(dirname $(brew --repo ${{github.repository}}))"
