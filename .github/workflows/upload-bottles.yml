@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Upload bottles
         run: |
-          echo {{github.event.review.state}} ${{github.event.review.body}}
+          echo ${{github.event.review.state}} ${{github.event.review.body}}
           case ${{github.event.review.body}} in https://github.com/brewsci/homebrew-bio/suites/*/artifacts/*)
             brew install unzip
             curl -L -o bottles.zip ${{github.event.review.body}}
