@@ -1,0 +1,25 @@
+name: Upload bottles
+
+on:
+  pull_request_review:
+    types: [submitted, edited]
+
+jobs:
+  upload-bottles:
+    runs-on: ubuntu-latest
+    container:
+      image: homebrew/brew
+    env:
+      HOMEBREW_BINTRAY_USER: linuxbrewtestbot
+      HOMEBREW_NO_ANALYTICS: 1
+      HOMEBREW_NO_AUTO_UPDATE: 1
+    steps:
+      - name: Upload bottles
+        run: |
+          echo {{github.event.review.state}} ${{github.event.review.body}}
+          case ${{github.event.review.body}} in https://github.com/brewsci/homebrew-bio/suites/*/artifacts/*)
+            brew install unzip
+            curl -L -o bottles.zip ${{github.event.review.body}}
+            unzip bottles.zip
+            brew test-bot --ci-upload --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
+          esac
