@@ -32,3 +32,4 @@ Search the [issues](https://github.com/brewsci/homebrew-bio/issues?q=). See also
 ## Contributing
 
 Please see the [contributing guide](https://github.com/brewsci/homebrew-bio/blob/master/CONTRIBUTING.md).
+
