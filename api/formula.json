@@ -3835,12 +3835,12 @@
     "desc": "Approximately-maximum-likelihood phylogenetic trees",
     "homepage": "http://microbesonline.org/fasttree/",
     "versions": {
-      "stable": "2.1.10",
+      "stable": "2.1.11",
       "devel": null,
       "head": null,
       "bottle": true
     },
-    "revision": 1,
+    "revision": 0,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -3849,13 +3849,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/fasttree-2.1.10_1.sierra.bottle.tar.gz",
-            "sha256": "56ab8decf6430233974a88acd7f0c9c62ecf1810984540017a89dbe0d25cafeb"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/fasttree-2.1.11.catalina.bottle.tar.gz",
+            "sha256": "cf6541872936ca28dba6186f57ea237e62715a47632a147eec3ef3f687a0ec22"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/fasttree-2.1.10_1.x86_64_linux.bottle.tar.gz",
-            "sha256": "321bbdcfeb64124bc8f487740fbadbb24fba9ca38706de38ccadadf87fe802ae"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/fasttree-2.1.11.x86_64_linux.bottle.tar.gz",
+            "sha256": "d31e0a4e16dfa3c8ab2695d335eed25b70e0e67bd959d432e7cb360a9ae4f232"
           }
         }
       }
@@ -14319,7 +14319,7 @@
     "desc": "Search for tRNA genes in genomic sequence",
     "homepage": "http://lowelab.ucsc.edu/tRNAscan-SE/",
     "versions": {
-      "stable": "2.0.3",
+      "stable": "2.0.4",
       "devel": null,
       "head": null,
       "bottle": true
@@ -14333,13 +14333,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/trnascan-2.0.3.sierra.bottle.tar.gz",
-            "sha256": "c748dc081ef572569e4ab23375847bac0f71489fc0f53e96b507574cd9b6e321"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/trnascan-2.0.4.catalina.bottle.tar.gz",
+            "sha256": "4b9b41b0218c8eca4a3ee120b308e690d26e2b452cafad34ace553287a656b0c"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/trnascan-2.0.3.x86_64_linux.bottle.tar.gz",
-            "sha256": "499d55124fced2bf77023a0aa0525a3a7913fa2011078dd3d26d474469cb220f"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/trnascan-2.0.4.x86_64_linux.bottle.tar.gz",
+            "sha256": "cd9c6db9ce48711d817ffd2bca2dd6993d60973fb0c80f66f20103060701ca2b"
           }
         }
       }
