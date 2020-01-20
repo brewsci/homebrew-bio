@@ -3,8 +3,8 @@ class Bcalm < Formula
   desc "De Bruijn graph compaction in low memory"
   homepage "https://github.com/GATB/bcalm"
   url "https://github.com/GATB/bcalm.git",
-      :tag => "v2.2.0",
-      :revision => "c8ac60252fa0b2abf511f7363cff7c4342dac2ee"
+      :tag      => "v2.2.1",
+      :revision => "8137cc22535bb0fa8d485d473dd6b12eb638a4f6"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -13,12 +13,9 @@ class Bcalm < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
-    # Reduce memory usage for CircleCI.
-    ENV["MAKEFLAGS"] = "-j4" if ENV["CIRCLECI"]
-
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
       system "make"
