@@ -22,7 +22,7 @@ setup:
 
 formula.json:
 	brew install jq
-	brew tap $(tap)
+	brew tap --full $(tap)
 	brew info --json=v1 `brew --repo $(tap)`/Formula/*.rb | jq >formula.json
 
 api/formula.json: formula.json
