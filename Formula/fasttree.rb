@@ -2,9 +2,8 @@ class Fasttree < Formula
   # cite Price_2010: "https://doi.org/10.1371/journal.pone.0009490"
   desc "Approximately-maximum-likelihood phylogenetic trees"
   homepage "http://microbesonline.org/fasttree/"
-  url "http://microbesonline.org/fasttree/FastTree-2.1.10.c"
-  sha256 "54cb89fc1728a974a59eae7a7ee6309cdd3cddda9a4c55b700a71219fc6e926d"
-  revision 1
+  url "http://microbesonline.org/fasttree/FastTree-2.1.11.c"
+  sha256 "9026ae550307374be92913d3098f8d44187d30bea07902b9dcbfb123eaa2050f"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
