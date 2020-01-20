@@ -492,7 +492,7 @@
     "desc": "Scaffold genome sequence assemblies using 10x Genomics data",
     "homepage": "https://github.com/bcgsc/arcs",
     "versions": {
-      "stable": "1.1.0",
+      "stable": "1.1.1",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -506,13 +506,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/arcs-1.1.0.sierra.bottle.tar.gz",
-            "sha256": "763acfd8a19d9b0f3f242a3ed5e980f1a55155242f6020a9b78f873e6a3ddede"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/arcs-1.1.1.catalina.bottle.tar.gz",
+            "sha256": "c8075e27fb5d1c6f4cc3091f0480089137d4f6b0570fb7a550d34f2ebbc61b36"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/arcs-1.1.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "22e26ecd9e44654890f83725f1e2e9acef7bd1c35df0130a0bdad062db3a2161"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/arcs-1.1.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "40e0c50ce2615b6f2df8a8e60ffa008af3ab74b68e1bf12c52d1dbb1b4a0f0dc"
           }
         }
       }
