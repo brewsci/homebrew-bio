@@ -1,0 +1,37 @@
+name: Upload bottles
+
+on:
+  push:
+    branches: [develop]
+
+jobs:
+  upload-bottles:
+    runs-on: ubuntu-latest
+    container:
+      image: homebrew/brew
+    env:
+      HOMEBREW_BINTRAY_USER: linuxbrewtestbot
+      HOMEBREW_BINTRAY_KEY: ${{secrets.HOMEBREW_BINTRAY_KEY}}
+      HOMEBREW_NO_ANALYTICS: 1
+      HOMEBREW_NO_AUTO_UPDATE: 1
+    steps:
+      - name: Configure git
+        uses: Homebrew/actions/git-ssh@master
+        with:
+          git_user: LinuxbrewTestBot
+          git_email: testbot@linuxbrew.sh
+          key: ${{secrets.SSH_KEY}}
+      - name: Upload bottles
+        run: |
+          set -eux
+          echo '${{github.event.head_commit.id}}'
+          echo '${{github.event.head_commit.message}}'
+          export UPSTREAM_PULL_REQUEST="$(echo '${{github.event.head_commit.message}}' | sed 's/^.*#\([0-9]*\).*/\1/;q')"
+          url="$(echo '${{github.event.head_commit.message}}' | grep -m1 '^https://github.com/${{github.repository}}/suites/[0-9]*/artifacts/[0-9]*$')"
+          echo pr="$UPSTREAM_PULL_REQUEST" url="$url"
+          curl -L -o bottles.zip "$url"
+          brew update-reset
+          brew install unzip
+          unzip bottles.zip
+          brew test-bot --ci-upload --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
+          git -C "$(brew --repo ${{github.repository}})" push --force git@github.com:${{github.repository}} HEAD:develop
