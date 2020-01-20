@@ -1,8 +1,8 @@
 name: Upload bottles
 
 on:
-  pull_request_review:
-    types: [submitted, edited]
+  push:
+    branches: [develop]
 
 jobs:
   upload-bottles:
@@ -23,15 +23,13 @@ jobs:
           key: ${{secrets.SSH_KEY}}
       - name: Upload bottles
         run: |
-          echo ${{github.event.review.user.login}} ${{github.event.review.state}} ${{github.event.review.body}}
-          case ${{github.event.review.user.login}} in
-            sjackman) echo Known reviewer ;;
-            *) echo Unknown reviewer; exit 1 ;;
-          esac
-          case ${{github.event.review.body}} in https://github.com/brewsci/homebrew-bio/suites/*/artifacts/*)
-            brew install unzip
-            curl -L -o bottles.zip ${{github.event.review.body}}
-            unzip bottles.zip
-            brew update-reset
-            brew test-bot --ci-upload --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
-          esac
+          echo ${{github.event.head_commit.id}}
+          echo '${{github.event.head_commit.message}}'
+          export UPSTREAM_PULL_REQUEST=$(echo '${{github.event.head_commit.message}}' | sed 's/^.*(#\([0-9]*\))$/\1/;q')
+          url=$(echo '${{github.event.head_commit.message}}' | grep -m1 "^https://github.com/brewsci/homebrew-bio/suites/[0-9]*/artifacts/[0-9]*$")
+          echo pr=$UPSTREAM_PULL_REQUEST url=$url
+          curl -L -o bottles.zip $url
+          brew install unzip
+          unzip bottles.zip
+          brew update-reset
+          brew test-bot --ci-upload --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
