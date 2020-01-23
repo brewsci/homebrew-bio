@@ -20,6 +20,8 @@ class ClustalW < Formula
 
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
+
+    bin.install_symlink "clustalw2" => "clustalw"
   end
 
   test do
