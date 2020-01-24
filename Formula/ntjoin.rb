@@ -6,6 +6,13 @@ class Ntjoin < Formula
   sha256 "6fbb61308e0a2ac8a883ba1023126ff5529d6589f9e4fb79094931196e2c9c73"
   head "https://github.com/bcgsc/ntJoin.git"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any
+    sha256 "b843446caa1c93a1585e3e3cf22772dfd8f5005f7d595a420bf9d2eef02d1b79" => :catalina
+    sha256 "6f9e3ceacebcf8ba77d5723df304733a4f66e611458549a441187bc23748cca3" => :x86_64_linux
+  end
+
   depends_on "bedtools"
   depends_on "igraph"
   depends_on "numpy"
