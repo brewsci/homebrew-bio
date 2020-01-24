@@ -8,8 +8,9 @@ class ClustalW < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "139b2529b61a2f66e40721e7ee87256c107e5f5deabcafb80fb3a111283b22e5" => :sierra
-    sha256 "1151984c5e8e98359dc213234c9759eae9504d91d3c9d9003ad12f3cbe24d048" => :x86_64_linux
+    rebuild 1
+    sha256 "cd8e60b3e5302663fb451e97fcdb957b0cf1827d2a74a217278f42c201a71625" => :catalina
+    sha256 "bcb7a339eb760fc0f14613ae2d231d1e15ade239fa3aefb2d02fb00705ffe92c" => :x86_64_linux
   end
 
   def install
@@ -20,6 +21,8 @@ class ClustalW < Formula
 
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
+
+    bin.install_symlink "clustalw2" => "clustalw"
   end
 
   test do
