@@ -33,5 +33,5 @@ jobs:
           brew update-reset
           brew install unzip
           unzip bottles.zip
-          brew test-bot --ci-upload --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
+          brew test-bot --ci-upload --publish --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
           git -C "$(brew --repo ${{github.repository}})" push --force git@github.com:${{github.repository}} HEAD:develop
