@@ -9585,6 +9585,64 @@
     "outdated": false
   },
   {
+    "name": "ntjoin",
+    "full_name": "brewsci/bio/ntjoin",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Genome assembly scaffolder using minimizer graphs",
+    "homepage": "https://github.com/bcgsc/ntJoin",
+    "versions": {
+      "stable": "1.0.1",
+      "devel": null,
+      "head": "HEAD",
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ntjoin-1.0.1.catalina.bottle.tar.gz",
+            "sha256": "b843446caa1c93a1585e3e3cf22772dfd8f5005f7d595a420bf9d2eef02d1b79"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ntjoin-1.0.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "6f9e3ceacebcf8ba77d5723df304733a4f66e611458549a441187bc23748cca3"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [
+      "bedtools",
+      "igraph",
+      "numpy",
+      "python",
+      "samtools",
+      "scipy",
+      "zlib"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "nxrepair",
     "full_name": "brewsci/bio/nxrepair",
     "oldname": null,
