@@ -14,7 +14,6 @@ class Viennarna < Formula
   depends_on "gcc" if OS.mac? # for OpenMP
   depends_on "perl"
   depends_on "python"
-  depends_on "python@2"
 
   fails_with :clang # needs OpenMP
 
