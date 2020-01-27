@@ -7,6 +7,7 @@ class FastqPair < Formula
   head "https://github.com/linsalrob/fastq-pair.git"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
     sha256 "9b609dc9f34d8be8cbf3fa6d988b2746518120ab4b409278b39a354e9c0d683d" => :sierra
     sha256 "a3874d7eaa8e115e16114b904d55b9cf5119ebc3189c3ed791a050a7dc35aeb7" => :x86_64_linux

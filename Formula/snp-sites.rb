@@ -7,6 +7,7 @@ class SnpSites < Formula
   head "https://github.com/sanger-pathogens/snp-sites.git"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
     rebuild 1
     sha256 "a9e5aa1f834835b9eeb9645a6cc4e6b730287754182c54abc55542fe39ef398a" => :mojave
