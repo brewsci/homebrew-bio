@@ -11,6 +11,7 @@ class Apbspdb2pqr < Formula
   head "https://github.com/Electrostatics/apbs-pdb2pqr.git"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
     sha256 "20632b132bd4b3f2d5b76810b20d95a2980071f870957273b5d803a78586ef50" => :sierra
     sha256 "0a100baae07f10c659ce97c7750fe610fefe57bc84067e0d0fdccf5fa7cac09b" => :x86_64_linux

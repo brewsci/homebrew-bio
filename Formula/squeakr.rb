@@ -7,6 +7,7 @@ class Squeakr < Formula
   head "https://github.com/splatlab/squeakr.git"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
     sha256 "6736628a4c3690300591032f69684e8a3c8ea411086931bfedc9e1c7a6394163" => :x86_64_linux
   end
