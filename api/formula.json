@@ -9435,7 +9435,7 @@
     "desc": "Estimating k-mer coverage histogram of genomics data",
     "homepage": "https://github.com/bcgsc/ntCard",
     "versions": {
-      "stable": "1.2.0",
+      "stable": "1.2.1",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -9450,12 +9450,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ntcard-1.2.0.catalina.bottle.tar.gz",
-            "sha256": "3687ad1e69cfc8849b4d9d6c2aaaf96f426125509658ace1ec4febe7c3dadcf3"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ntcard-1.2.1.catalina.bottle.tar.gz",
+            "sha256": "a685c7ff1bacf5b3b02c70f6e8eb0e75e64c5892b41d4a6c30770ebc934c7f8e"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ntcard-1.2.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "a4c224a29010985c7956a6ef37e6b08f3370975512031f16ed5f1370b55866a3"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ntcard-1.2.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "c6af69458de6e27eddb2f29f5b625babe016d3c919c140d05de7d8d27fe37fa7"
           }
         }
       }
