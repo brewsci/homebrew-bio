@@ -10,8 +10,8 @@ class Ntcard < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "3687ad1e69cfc8849b4d9d6c2aaaf96f426125509658ace1ec4febe7c3dadcf3" => :catalina
-    sha256 "a4c224a29010985c7956a6ef37e6b08f3370975512031f16ed5f1370b55866a3" => :x86_64_linux
+    sha256 "a685c7ff1bacf5b3b02c70f6e8eb0e75e64c5892b41d4a6c30770ebc934c7f8e" => :catalina
+    sha256 "c6af69458de6e27eddb2f29f5b625babe016d3c919c140d05de7d8d27fe37fa7" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
