@@ -6,7 +6,9 @@ on:
 
 jobs:
   upload-bottles:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
+    container:
+      image: homebrew/brew
     env:
       HOMEBREW_BINTRAY_USER: linuxbrewtestbot
       HOMEBREW_BINTRAY_KEY: ${{secrets.HOMEBREW_BINTRAY_KEY}}
