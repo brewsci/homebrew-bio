@@ -1,8 +1,8 @@
 class Mapcaller < Formula
   desc "Combined short-read alignment and variant detection"
   homepage "https://github.com/hsinnan75/MapCaller"
-  url "https://github.com/hsinnan75/MapCaller/archive/v0.9.9.26.tar.gz"
-  sha256 "54831c85f7b29fffc0f287978dfb2977d7be15b7c255a1d68bd08b253a032cc7"
+  url "https://github.com/hsinnan75/MapCaller/archive/v0.9.9.33.tar.gz"
+  sha256 "0be3e4d3d02c10be5712cd62c96a6586ab11528d4510f38230d2661a77350a4a"
 
   bottle do
     cellar :any_skip_relocation
@@ -19,14 +19,13 @@ class Mapcaller < Formula
 
   def install
     system "make"
-    bin.install "bin/MapCaller", "bin/bwt_index"
+    bin.install "bin/MapCaller"
     pkgshare.install "test"
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/MapCaller -v 2>&1")
-    assert_match "Usage:", shell_output("#{bin}/bwt_index 2>&1")
-    system bin/"bwt_index", pkgshare/"test/ref.fa", testpath/"ref"
+    system bin/"MapCaller", "index", pkgshare/"test/ref.fa", testpath/"ref"
     system bin/"MapCaller", "-i", testpath/"ref",
                             "-f", pkgshare/"test/r1.fq",
                             "-f2", pkgshare/"test/r2.fq",
