@@ -1,4 +1,4 @@
-class Seqan3 < Formula
+class SeqanAT3 < Formula
   # cite D_ring_2008: "https://doi.org/10.1186/1471-2105-9-11"
   # cite Reinert_2017: "https://doi.org/10.1016/j.jbiotec.2017.07.017"
   desc "The modern C++ library for sequence analysis"
