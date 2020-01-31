@@ -7455,7 +7455,7 @@
     "desc": "Combined short-read alignment and variant detection",
     "homepage": "https://github.com/hsinnan75/MapCaller",
     "versions": {
-      "stable": "0.9.9.26",
+      "stable": "0.9.9.33",
       "devel": null,
       "head": null,
       "bottle": true
@@ -7465,17 +7465,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any_skip_relocation",
+        "cellar": ":any",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "mojave": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/mapcaller-0.9.9.26.mojave.bottle.tar.gz",
-            "sha256": "d8322737f3dab43b82cdbb7e294a7b3b2033e0bbad475b3526f536db474216b3"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mapcaller-0.9.9.33.catalina.bottle.tar.gz",
+            "sha256": "7ae8badb8bc4f838e672099073035d6f53c9b1fca8e0d9fe080dafeb0b88539f"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/mapcaller-0.9.9.26.x86_64_linux.bottle.tar.gz",
-            "sha256": "f0d93b029986790c5029c48c75ffaeb246ae3c254e5ddc75e66c79f0aceff3ce"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mapcaller-0.9.9.33.x86_64_linux.bottle.tar.gz",
+            "sha256": "3a606b183f875dbe99e6c590a2e189f7c025d0ada1bfdf57446946aeab276358"
           }
         }
       }
