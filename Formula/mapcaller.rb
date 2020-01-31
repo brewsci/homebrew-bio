@@ -1,14 +1,14 @@
 class Mapcaller < Formula
   desc "Combined short-read alignment and variant detection"
   homepage "https://github.com/hsinnan75/MapCaller"
-  url "https://github.com/hsinnan75/MapCaller/archive/v0.9.9.26.tar.gz"
-  sha256 "54831c85f7b29fffc0f287978dfb2977d7be15b7c255a1d68bd08b253a032cc7"
+  url "https://github.com/hsinnan75/MapCaller/archive/v0.9.9.33.tar.gz"
+  sha256 "0be3e4d3d02c10be5712cd62c96a6586ab11528d4510f38230d2661a77350a4a"
 
   bottle do
-    cellar :any_skip_relocation
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "d8322737f3dab43b82cdbb7e294a7b3b2033e0bbad475b3526f536db474216b3" => :mojave
-    sha256 "f0d93b029986790c5029c48c75ffaeb246ae3c254e5ddc75e66c79f0aceff3ce" => :x86_64_linux
+    cellar :any
+    sha256 "7ae8badb8bc4f838e672099073035d6f53c9b1fca8e0d9fe080dafeb0b88539f" => :catalina
+    sha256 "3a606b183f875dbe99e6c590a2e189f7c025d0ada1bfdf57446946aeab276358" => :x86_64_linux
   end
 
   depends_on "xz"
@@ -19,14 +19,13 @@ class Mapcaller < Formula
 
   def install
     system "make"
-    bin.install "bin/MapCaller", "bin/bwt_index"
+    bin.install "bin/MapCaller"
     pkgshare.install "test"
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/MapCaller -v 2>&1")
-    assert_match "Usage:", shell_output("#{bin}/bwt_index 2>&1")
-    system bin/"bwt_index", pkgshare/"test/ref.fa", testpath/"ref"
+    system bin/"MapCaller", "index", pkgshare/"test/ref.fa", testpath/"ref"
     system bin/"MapCaller", "-i", testpath/"ref",
                             "-f", pkgshare/"test/r1.fq",
                             "-f2", pkgshare/"test/r2.fq",
