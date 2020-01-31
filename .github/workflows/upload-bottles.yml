@@ -21,19 +21,28 @@ jobs:
           git_user: LinuxbrewTestBot
           git_email: testbot@linuxbrew.sh
           key: ${{secrets.SSH_KEY}}
+      - name: Install dependencies
+        run: |
+          brew update-reset
+          brew install hub jq unzip
+          brew tap ${{github.repository}}
       - name: Upload bottles
         run: |
-          set -eux
-          echo '${{github.event.head_commit.id}}'
+          set -eu
+          echo sha1='${{github.event.head_commit.id}}'
           echo '${{github.event.head_commit.message}}'
-          export pr="$(echo '${{github.event.head_commit.message}}' | sed 's/^.*#\([0-9]*\).*/\1/;q')"
-          url="$(echo '${{github.event.head_commit.message}}' | grep -m1 '^https://github.com/${{github.repository}}/suites/[0-9]*/artifacts/[0-9]*$')"
-          echo pr="$pr" url="$url"
-          curl -L -o bottles.zip "$url"
-          brew update-reset
-          brew install unzip
+          pr="$(echo '${{github.event.head_commit.message}}' | sed 's/^.*#\([0-9]*\).*/\1/;q')"
+          git -C "$(brew --repo ${{github.repository}})" fetch origin "pull/$pr/head:pr"
+          sha1="$(git -C "$(brew --repo ${{github.repository}})" rev-parse pr)"
+          echo pr="$pr" sha1="$sha1"
+          run_id=$(curl -s -H 'Accept: application/vnd.github.antiope-preview+json' https://api.github.com/repos/${{github.repository}}/actions/workflows/build-bottles.yml/runs \
+            | jq ".workflow_runs[] | select(.head_sha == \"$sha1\").id")
+          artifact_id="$(curl -s -H 'Accept: application/vnd.github.antiope-preview+json' https://api.github.com/repos/${{github.repository}}/actions/runs/$run_id/artifacts \
+            | jq '.artifacts[0].id')"
+          echo run_id="$run_id" artifact_id="$artifact_id"
+          curl -L -o bottles.zip "https://${{secrets.HOMEBREW_GITHUB_API_TOKEN}}@api.github.com/repos/brewsci/homebrew-bio/actions/artifacts/$artifact_id/zip"
+          file bottles.zip
           unzip bottles.zip
-          UPSTREAM_PULL_REQUEST=$pr brew test-bot --ci-upload --publish --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
-          git -C "$(brew --repo ${{github.repository}})" push --force git@github.com:${{github.repository}} HEAD:pr-$pr
-          brew install hub
-          hub -C "$(brew --repo ${{github.repository}})" pull-request -l bottles -b master -h pr-$pr -m "Bottles for PR $pr" --no-edit
+          UPSTREAM_PULL_REQUEST="$pr" brew test-bot --ci-upload --publish --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
+          git -C "$(brew --repo ${{github.repository}})" push --force git@github.com:${{github.repository}} "HEAD:pr-$pr"
+          GITHUB_TOKEN='${{secrets.HOMEBREW_GITHUB_API_TOKEN}}' hub -C "$(brew --repo ${{github.repository}})" pull-request -l bottles -b master -h "pr-$pr" -m "Bottles for PR $pr" --no-edit
