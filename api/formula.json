@@ -12462,8 +12462,8 @@
     "outdated": false
   },
   {
-    "name": "seqan",
-    "full_name": "brewsci/bio/seqan",
+    "name": "seqan@2",
+    "full_name": "brewsci/bio/seqan@2",
     "oldname": null,
     "aliases": [],
     "versioned_formulae": [],
@@ -12484,13 +12484,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/seqan-2.4.0.sierra.bottle.tar.gz",
-            "sha256": "6d8fb5e40c810aa02affea2c6a1191cde5f3a91df30e29d02924970d180eda11"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/seqan@2-2.4.0.catalina.bottle.tar.gz",
+            "sha256": "1fe83b7b478611b6fc28fe4eb7bc34e8d7846c6bc8dda57ae37d3e4e40d9e821"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/seqan-2.4.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "9943d2d86dbf1fad7d703ccd2236e5cefb6a7923436ca3af3bcd842ac874d13d"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/seqan@2-2.4.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "f4ab354e5fc7f7cf50afd231f1f38a5efcb716bb89347ffa2474aa46e61f3cb6"
           }
         }
       }
@@ -12499,6 +12499,62 @@
     "bottle_disabled": false,
     "options": [],
     "build_dependencies": [
+      "xz"
+    ],
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
+    "name": "seqan@3",
+    "full_name": "brewsci/bio/seqan@3",
+    "oldname": null,
+    "aliases": [
+      "seqan"
+    ],
+    "versioned_formulae": [],
+    "desc": "The modern C++ library for sequence analysis",
+    "homepage": "https://www.seqan.de",
+    "versions": {
+      "stable": "3.0.0",
+      "devel": null,
+      "head": "HEAD",
+      "bottle": true
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/seqan@3-3.0.0.catalina.bottle.tar.gz",
+            "sha256": "a1a8dc4e5bb64b19e4267c4ed23be3a6db8ce6e23f7278e0d1e1b9858a14cb56"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/seqan@3-3.0.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "4085365e99e200e876c473a1530c46d3369ad7c8896f70b22d377360c2310fe6"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [
+      "cmake",
+      "doxygen",
       "xz"
     ],
     "dependencies": [],
