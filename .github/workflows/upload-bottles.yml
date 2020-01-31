@@ -32,8 +32,8 @@ jobs:
           echo sha1='${{github.event.head_commit.id}}'
           echo '${{github.event.head_commit.message}}'
           pr="$(echo '${{github.event.head_commit.message}}' | sed 's/^.*#\([0-9]*\).*/\1/;q')"
-          git -C "$(brew --repo ${{github.repository}})" fetch origin "pull/$pr/head:pr"
-          sha1="$(git -C "$(brew --repo ${{github.repository}})" rev-parse pr)"
+          git -C "$(brew --repo ${{github.repository}})" fetch origin "pull/$pr/head:pr-head"
+          sha1="$(git -C "$(brew --repo ${{github.repository}})" rev-parse pr-head)"
           echo pr="$pr" sha1="$sha1"
           run_id=$(curl -s -H 'Accept: application/vnd.github.antiope-preview+json' https://api.github.com/repos/${{github.repository}}/actions/workflows/build-bottles.yml/runs \
             | jq ".workflow_runs[] | select(.head_sha == \"$sha1\").id")
@@ -44,5 +44,12 @@ jobs:
           file bottles.zip
           unzip bottles.zip
           UPSTREAM_PULL_REQUEST="$pr" brew test-bot --ci-upload --publish --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
-          git -C "$(brew --repo ${{github.repository}})" push --force git@github.com:${{github.repository}} "HEAD:pr-$pr"
-          GITHUB_TOKEN='${{secrets.HOMEBREW_GITHUB_API_TOKEN}}' hub -C "$(brew --repo ${{github.repository}})" pull-request -l bottles -b master -h "pr-$pr" -m "Bottles for PR $pr" --no-edit
+          cd "$(brew --repo ${{github.repository}})"
+          git branch -f "pr$pr"
+          git push --force git@github.com:${{github.repository}} "pr$pr"
+          GITHUB_TOKEN='${{secrets.HOMEBREW_GITHUB_API_TOKEN}}' hub pull-request -l bottles -b master -h "pr$pr" -m "Bottles for PR $pr" --no-edit
+          git fetch origin master
+          git reset --hard origin/master
+          git merge --no-ff -m "Merge pull request #$pr" "pr$pr"
+          git push git@github.com:${{github.repository}} master
+          git push git@github.com:${{github.repository}} -d "pr$pr"
