@@ -5,10 +5,10 @@ class Mapcaller < Formula
   sha256 "0be3e4d3d02c10be5712cd62c96a6586ab11528d4510f38230d2661a77350a4a"
 
   bottle do
-    cellar :any_skip_relocation
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "d8322737f3dab43b82cdbb7e294a7b3b2033e0bbad475b3526f536db474216b3" => :mojave
-    sha256 "f0d93b029986790c5029c48c75ffaeb246ae3c254e5ddc75e66c79f0aceff3ce" => :x86_64_linux
+    cellar :any
+    sha256 "7ae8badb8bc4f838e672099073035d6f53c9b1fca8e0d9fe080dafeb0b88539f" => :catalina
+    sha256 "3a606b183f875dbe99e6c590a2e189f7c025d0ada1bfdf57446946aeab276358" => :x86_64_linux
   end
 
   depends_on "xz"
