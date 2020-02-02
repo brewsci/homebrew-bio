@@ -9,8 +9,8 @@ class Astral < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "8244a801d3e6ff3571e13c0d9fe7149e0b28260f254ef2c3b5208bce660852e3" => :sierra
-    sha256 "b8bc5a4cf097a1b7787534cafbc7d9dbfb65549804a48df4e86a93962d12360a" => :x86_64_linux
+    sha256 "639cf19cf7371e03cbb4092a3d5ec470628817dd3878f9ac0bb20b9b20ed1eba" => :catalina
+    sha256 "0e0f15952cbf659a6a6654c5f11fbc4fe96d74f6c3c6843baba33d89073eacca" => :x86_64_linux
   end
 
   depends_on :java
