@@ -760,7 +760,7 @@
     "desc": "Estimate species tree given set of unrooted gene trees",
     "homepage": "https://github.com/smirarab/ASTRAL",
     "versions": {
-      "stable": "5.5.6",
+      "stable": "5.7.1",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -775,11 +775,11 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/astral-5.5.6.sierra.bottle.tar.gz",
+            "url": "https://linuxbrew.bintray.com/bottles-bio/astral-5.7.1.sierra.bottle.tar.gz",
             "sha256": "8244a801d3e6ff3571e13c0d9fe7149e0b28260f254ef2c3b5208bce660852e3"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/astral-5.5.6.x86_64_linux.bottle.tar.gz",
+            "url": "https://linuxbrew.bintray.com/bottles-bio/astral-5.7.1.x86_64_linux.bottle.tar.gz",
             "sha256": "b8bc5a4cf097a1b7787534cafbc7d9dbfb65549804a48df4e86a93962d12360a"
           }
         }
@@ -1898,7 +1898,7 @@
       "head": "HEAD",
       "bottle": true
     },
-    "revision": 0,
+    "revision": 1,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -1908,11 +1908,11 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "mojave": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-4.0.0.mojave.bottle.tar.gz",
+            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-4.0.0_1.mojave.bottle.tar.gz",
             "sha256": "27563bf86cf13349ac2f877c04241c74f82252a72ad880d0bca6d54da4a579f5"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-4.0.0.x86_64_linux.bottle.tar.gz",
+            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-4.0.0_1.x86_64_linux.bottle.tar.gz",
             "sha256": "2ceb6f7acbc46ba62b673aa534b8f02145f21259948f0f66c583b5701aa65e90"
           }
         }
