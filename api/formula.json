@@ -774,13 +774,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/astral-5.7.1.sierra.bottle.tar.gz",
-            "sha256": "8244a801d3e6ff3571e13c0d9fe7149e0b28260f254ef2c3b5208bce660852e3"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/astral-5.7.1.catalina.bottle.tar.gz",
+            "sha256": "639cf19cf7371e03cbb4092a3d5ec470628817dd3878f9ac0bb20b9b20ed1eba"
           },
           "x86_64_linux": {
             "url": "https://linuxbrew.bintray.com/bottles-bio/astral-5.7.1.x86_64_linux.bottle.tar.gz",
-            "sha256": "b8bc5a4cf097a1b7787534cafbc7d9dbfb65549804a48df4e86a93962d12360a"
+            "sha256": "0e0f15952cbf659a6a6654c5f11fbc4fe96d74f6c3c6843baba33d89073eacca"
           }
         }
       }
