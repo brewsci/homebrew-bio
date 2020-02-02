@@ -23,8 +23,8 @@ jobs:
           key: ${{secrets.SSH_KEY}}
       - name: Install dependencies
         run: |
-          brew update-reset
-          brew install hub jq unzip
+          apt-get update
+          apt-get install hub jq unzip
           brew tap ${{github.repository}}
       - name: Upload bottles
         run: |
