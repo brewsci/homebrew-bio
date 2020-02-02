@@ -30,7 +30,9 @@ jobs:
             | tar xzO hub-linux-amd64-2.14.1/bin/hub >~/bin/hub
           chmod +x ~/bin/hub
       - name: Tap the repository
-        run: brew tap ${{github.repository}}
+        run: |
+          brew update-reset
+          brew tap ${{github.repository}}
       - name: Upload bottles
         run: |
           set -eu
