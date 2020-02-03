@@ -25,10 +25,6 @@ jobs:
         run: |
           apt update
           apt install -y jq unzip
-          mkdir ~/bin
-          curl -sL https://github.com/github/hub/releases/download/v2.14.1/hub-linux-amd64-2.14.1.tgz \
-            | tar xzO hub-linux-amd64-2.14.1/bin/hub >~/bin/hub
-          chmod +x ~/bin/hub
       - name: Tap the repository
         run: |
           brew update-reset
@@ -54,9 +50,15 @@ jobs:
           cd "$(brew --repo ${{github.repository}})"
           git branch -f "pr$pr"
           git push --force git@github.com:${{github.repository}} "pr$pr"
-          GITHUB_TOKEN='${{secrets.HOMEBREW_GITHUB_API_TOKEN}}' ~/bin/hub pull-request -l bottles -b master -h "pr$pr" -m "Bottles for PR $pr" --no-edit
           git fetch origin master
           git reset --hard origin/master
           git merge --no-ff -m "Merge pull request #$pr" "pr$pr"
-          git push git@github.com:${{github.repository}} master master:develop
-          git push git@github.com:${{github.repository}} -d "pr$pr"
+          if git push git@github.com:${{github.repository}} master master:develop; then
+            git push git@github.com:${{github.repository}} -d "pr$pr"
+          else
+            mkdir ~/bin
+            curl -sL https://github.com/github/hub/releases/download/v2.14.1/hub-linux-amd64-2.14.1.tgz \
+              | tar xzO hub-linux-amd64-2.14.1/bin/hub >~/bin/hub
+            chmod +x ~/bin/hub
+            GITHUB_TOKEN='${{secrets.HOMEBREW_GITHUB_API_TOKEN}}' ~/bin/hub pull-request -l bottles -b master -h "pr$pr" -m "Bottles for PR $pr" --no-edit
+          fi
