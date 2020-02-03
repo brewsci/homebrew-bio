@@ -13,6 +13,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://jaist.dl.sourceforge.net/project/abacas/abacas.1.3.1.pl",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -64,6 +71,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/tseemann/abricate/archive/v0.9.8.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -124,6 +138,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "http://www.bcgsc.ca/downloads/abyss-explorer/abyss-explorer-1.3.4/abyss-explorer-1.3.4.zip",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -178,6 +199,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://search.maven.org/remotecontent?filepath=org/bdgenomics/adam/adam-distribution-spark2_2.11/0.30.0/adam-distribution-spark2_2.11-0.30.0-bin.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -230,6 +258,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/sc932/ALE/archive/20180904.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -281,6 +316,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/EvolBioInf/andi/archive/v0.12.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -339,6 +381,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/tseemann/any2fasta/archive/v0.4.2.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -388,6 +437,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/Electrostatics/apbs-pdb2pqr.git",
+        "tag": "apbs-1.5",
+        "revision": "aa353941cfadc09ccd113075d261a427864c2979"
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -447,6 +503,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "http://mbio-serv2.mbioekol.lu.se/ARAGORN/Downloads/aragorn1.2.38.tgz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -496,6 +559,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/bcgsc/arcs/releases/download/v1.1.1/arcs-1.1.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -551,6 +621,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/bcgsc/arks/archive/v1.0.4.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -609,6 +686,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://www.niehs.nih.gov/research/resources/assets/docs/artsrcmountrainier20160605linuxtgz.tgz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 1,
     "version_scheme": 0,
     "bottle": {
@@ -660,6 +744,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "ftp://ftp.sanger.ac.uk/pub/resources/software/artemis/v17/v17.0.1/artemis-v17.0.1.jar",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 1,
     "version_scheme": 0,
@@ -713,6 +804,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://download.asperasoft.com/download/sw/cli/3.7.7/aspera-cli-3.7.7.608.927cce8-linux-64-release.sh",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -765,6 +863,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/smirarab/ASTRAL/archive/v5.7.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -816,6 +921,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/bredelings/BAli-Phy/archive/3.4.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -873,6 +985,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/PacificBiosciences/bam2fastx/archive/1.3.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -933,6 +1052,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/macroevolution/bamm/archive/v2.5.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -984,6 +1110,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/rrwick/Bandage/releases/download/v0.8.1/Bandage_Ubuntu_dynamic_v0_8_1.zip",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -1043,6 +1176,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/tseemann/barrnap/archive/0.9.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -1096,6 +1236,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/ssadedin/bazam/releases/download/1.0.1/bazam.jar",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -1148,6 +1295,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://downloads.sourceforge.net/bbmap/BBMap_38.70.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -1199,6 +1353,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/GATB/bcalm.git",
+        "tag": "v2.2.0",
+        "revision": "c8ac60252fa0b2abf511f7363cff7c4342dac2ee"
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -1254,6 +1415,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/CompEvol/beast2/archive/v2.6.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -1307,6 +1475,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/tseemann/berokka/archive/v0.2.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -1362,6 +1537,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/lh3/bfc/archive/69ab176e7aac4af482d7d8587e45bfe239d02c96.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -1413,6 +1595,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/bcgsc/biobloom/releases/download/2.3.2/biobloomtools-2.3.2.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -1470,6 +1659,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/evoldoers/biomake/archive/v0.1.5.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -1521,6 +1717,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://cpan.metacpan.org/authors/id/C/CJ/CJFIELDS/BioPerl-1.007002.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 3,
     "version_scheme": 0,
@@ -1576,6 +1779,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "ftp://ftp.ncbi.nlm.nih.gov/blast/executables/legacy.NOTSUPPORTED/2.2.26/blast-2.2.26-x64-linux.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -1625,6 +1835,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://hgwdev.cse.ucsc.edu/~kent/src/blatSrc36.zip",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 1,
     "version_scheme": 0,
@@ -1682,6 +1899,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/dnbaker/bonsai/archive/v0.3.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -1736,6 +1960,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/BenLangmead/bowtie/archive/v1.2.3.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -1789,6 +2020,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/jenniferlu717/Bracken/archive/v2.2.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -1838,6 +2076,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/barricklab/breseq/releases/download/v0.33.0/breseq-0.33.0-Source.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -1898,6 +2143,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://gitlab.com/ezlab/busco/repository/4.0.0/archive.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 1,
     "version_scheme": 0,
     "bottle": {
@@ -1956,6 +2208,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/bwa-mem2/bwa-mem2/archive/v2.0pre1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -2007,6 +2266,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://search.maven.org/remotecontent?filepath=org/bdgenomics/cannoli/cannoli-distribution-spark2_2.11/0.8.0/cannoli-distribution-spark2_2.11-0.8.0-bin.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -2060,6 +2326,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/marbl/canu/archive/v1.9.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -2109,6 +2382,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "http://seq.cs.iastate.edu/CAP3/cap3.linux.x86_64.tar",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -2162,6 +2442,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/weizhongli/cdhit/archive/V4.8.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -2214,6 +2501,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/infphilo/centrifuge/archive/v1.0.3.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -2265,6 +2559,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/sanger-pathogens/circlator/archive/v1.5.5.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -2324,6 +2625,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "http://circos.ca/distribution/circos-0.69-9.tgz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -2380,6 +2688,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/xavierdidelot/ClonalFrameML/archive/v1.12.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -2429,6 +2744,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "http://www.clustal.org/omega/clustal-omega-1.2.4.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -2482,6 +2804,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "http://www.clustal.org/download/2.1/clustalw-2.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -2531,6 +2860,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/emmahodcroft/cluster-picker-and-cluster-matcher/raw/master/release/ClusterPicker_1.2.5.jar",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -2584,6 +2920,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "http://stat.sys.i.kyoto-u.ac.jp/prog/consel/pub/cnsls020.tgz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -2633,6 +2976,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/jkbonfield/crumble/releases/download/v0.8.1/crumble-0.8.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -2686,6 +3036,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/marcelm/cutadapt.git",
+        "tag": "v2.6",
+        "revision": "1aceac4cdd61dd8b30d797e7ae0a5d76bacf5b33"
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -2737,6 +3094,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/cmks/DAS_Tool/archive/1.1.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 1,
     "version_scheme": 0,
@@ -2796,6 +3160,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/tseemann/dehomopolymerate/archive/v0.3.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -2847,6 +3218,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "http://www.bcgsc.ca/platform/bioinfo/software/dida/releases/1.0.1/dida-1.0.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 2,
     "version_scheme": 0,
@@ -2901,6 +3279,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/c2-d2/disty/archive/0.1.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -2953,6 +3338,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://search.maven.org/remotecontent?filepath=org/dishevelled/dsh-bio-tools/1.3.1/dsh-bio-tools-1.3.1-bin.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -3004,6 +3396,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/nh13/DWGSIM.git",
+        "tag": "dwgsim.0.1.12",
+        "revision": "4fd56bf39dbba3801856fa0512aed68726e3ca6e"
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -3059,6 +3458,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/lucian-ilie/E-MEM/archive/v1.0.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -3111,6 +3517,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "http://eddylab.org/infernal/infernal-1.1.2.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -3160,6 +3573,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/12.4.20191101/edirect-12.4.20191101.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -3217,6 +3637,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "ftp://ftp.cbcb.umd.edu/pub/software/elph/ELPH-1.0.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -3266,6 +3693,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/arshajii/ema.git",
+        "tag": "v0.6.2",
+        "revision": "893be3470e613043bf75fefdc73396d40c3bc2bc"
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -3318,6 +3752,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "ftp://emboss.open-bio.org/pub/EMBOSS/EMBOSS-6.6.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -3399,6 +3840,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/Pbdas/epa-ng/archive/v0.3.6.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -3454,6 +3902,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://sco.h-its.org/exelixis/resource/download/software/exabayes-1.5.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -3516,6 +3971,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "ftp.ebi.ac.uk/pub/software/vertebrategenomics/exonerate/exonerate-2.4.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -3569,6 +4031,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/adarob/eXpress/archive/1.5.3.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -3628,6 +4097,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/wrpearson/fasta36/archive/fasta-v36.3.8g.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -3679,6 +4155,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/ParBLiSS/FastANI/archive/v1.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -3736,6 +4219,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/OpenGene/fastp/archive/v0.20.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -3788,6 +4278,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/linsalrob/fastq-pair/archive/v1.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -3839,6 +4336,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "http://microbesonline.org/fasttree/FastTree-2.1.11.c",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -3903,6 +4407,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://downloads.sourceforge.net/project/fastuniq/FastUniq-1.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -3952,6 +4463,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/lh3/fermi-lite/archive/v0.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -4005,6 +4523,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/rambaut/figtree/releases/download/v1.4.4/FigTree_v1.4.4.tgz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -4057,6 +4582,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/rrwick/Filtlong/archive/v0.2.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -4108,6 +4640,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/onecodex/finch-rs/releases/download/v0.2.0/finch-linux64-v0.2.0.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -4163,6 +4702,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://downloads.sourceforge.net/project/flashpage/FLASH-1.2.11.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -4214,6 +4760,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/assemblerflow/flowcraft/archive/1.4.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 1,
     "version_scheme": 0,
@@ -4268,6 +4821,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/fenderglass/Flye/archive/2.6.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 1,
     "version_scheme": 0,
     "bottle": {
@@ -4320,6 +4880,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://downloads.sourceforge.net/project/fraggenescan/FragGeneScan1.31.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 1,
     "version_scheme": 0,
     "bottle": {
@@ -4371,6 +4938,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/ekg/freebayes.git",
+        "tag": "v1.3.1",
+        "revision": "4cde5d32ff745018e0b8ec31e81a71e8bc9ecc6f"
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -4430,6 +5004,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/molpopgen/fwdpp/archive/0.6.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -4492,6 +5073,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/lczech/gappa/archive/v0.4.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -4546,6 +5134,7 @@
       "head": null,
       "bottle": false
     },
+    "urls": {},
     "revision": 0,
     "version_scheme": 0,
     "bottle": {},
@@ -4583,6 +5172,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "http://molevol.cmima.csic.es/castresana/Gblocks/Gblocks_Linux64_0.91b.tar.Z",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -4635,6 +5231,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/genetics-statistics/GEMMA/archive/0.98.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -4692,6 +5295,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://www.ebi.ac.uk/~birney/wise2/wise2.4.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 1,
     "version_scheme": 0,
     "bottle": {
@@ -4745,6 +5355,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/scwatts/genome_painter/archive/v0.0.6.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -4803,6 +5420,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/univieCUBE/gepard/blob/master/dist/Gepard-1.40.jar?raw=true",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -4850,6 +5474,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/edawson/gfakluge/archive/1.1.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -4903,6 +5534,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/sjackman/gfalint/releases/download/1.0.0/gfalint-1.0.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -4952,6 +5590,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/lh3/gfa1/archive/2faeed2953399102e8bb22f5aa833c8f900a7587.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -5005,6 +5650,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://www.bi.cs.titech.ac.jp/ghostz/releases/ghostz-1.0.2.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 1,
     "version_scheme": 0,
     "bottle": {
@@ -5056,6 +5708,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "http://research-pub.gene.com/gmap/src/gmap-gsnap-2019-09-12.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -5111,6 +5770,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/will-rowe/groot/releases/download/0.8.5/groot_linux.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -5160,6 +5826,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://www.cs.unc.edu/Research/compgeom/gzstream/gzstream.tgz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -5212,6 +5885,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/marbl/harvest-tools/archive/v1.3.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -5269,6 +5949,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/infphilo/hisat2/archive/0f01dc6397a.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -5318,6 +6005,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "http://eddylab.org/software/hmmer/2.4i/hmmer-2.4i.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -5370,6 +6064,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://bitbucket.org/biobakery/humann2/get/0.11.1.tar.bz2",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -5426,6 +6127,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/loneknightpy/idba/archive/1.1.3.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 2,
     "version_scheme": 0,
     "bottle": {
@@ -5478,6 +6186,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "http://bioinfolab.unl.edu/~cstrope/iSG/indel-seq-gen-2.1.03.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -5534,6 +6249,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "http://abacus.gene.ucl.ac.uk/software/indelible/EFBKqHdv0v7qir6CyeHgqaz/INDELibleV1.03.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -5584,6 +6306,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "http://eddylab.org/software/infernal/infernal-1.1.2.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -5629,10 +6358,17 @@
     "desc": "Efficient phylogenomic software by maximum likelihood",
     "homepage": "http://www.iqtree.org/",
     "versions": {
-      "stable": "1.6.11",
+      "stable": "1.6.12",
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/Cibiv/IQ-TREE/archive/v1.6.12.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -5643,13 +6379,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/iqtree-1.6.11.sierra.bottle.tar.gz",
-            "sha256": "e4949bf5964090c5c1a9785d86a86cbcd7c3190fe503df08da08c50b5e3bc53b"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/iqtree-1.6.12.catalina.bottle.tar.gz",
+            "sha256": "256e9049fddbda956d7c77b7ce4ec44517cb4cac8f2badf3a59e0e6529c2249c"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/iqtree-1.6.11.x86_64_linux.bottle.tar.gz",
-            "sha256": "201e73a51356a687b02de381685b81451f01c9ae24c94fcc146368f0387172d8"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/iqtree-1.6.12.x86_64_linux.bottle.tar.gz",
+            "sha256": "e6ea60f504e3d07e9db71b12658abcca6e17f37570d68853f7e18ee30f9d30d3"
           }
         }
       }
@@ -5689,6 +6425,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://users.soe.ucsc.edu/~kent/src/isPcr33.zip",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -5741,6 +6484,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/sanger-pathogens/iva/archive/v1.0.9.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -5799,6 +6549,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/gmarcais/Jellyfish/releases/download/v2.2.10/jellyfish-2.2.10.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -5849,6 +6606,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://imedea.uib-csic.es/jspecies/jars/jspecies1.2.1.jar",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -5898,6 +6662,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/attractivechaos/k8/releases/download/v0.2.4/k8-0.2.4.tar.bz2",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -5953,6 +6724,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/bioinformatics-centre/kaiju/archive/v1.7.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -6005,6 +6783,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/TimoLassmann/kalign/archive/3.1.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -6060,6 +6845,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/TGAC/KAT/archive/Release-2.4.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 2,
     "version_scheme": 0,
@@ -6118,6 +6910,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "http://hgdownload.soe.ucsc.edu/admin/exe/userApps.v367.src.tgz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -6175,6 +6974,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://bitbucket.org/genomicepidemiology/kma/get/1.2.8.zip",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -6228,6 +7034,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/refresh-bio/KMC/archive/v3.1.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -6283,6 +7096,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "http://kmergenie.bx.psu.edu/kmergenie-1.7048.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 1,
     "version_scheme": 0,
     "bottle": {
@@ -6336,6 +7156,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/tseemann/kounta/archive/v0.2.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -6391,6 +7218,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "http://guanine.evolbio.mpg.de/kr2/kr_2.0.2.tgz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -6443,6 +7277,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/DerrickWood/kraken/archive/v1.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -6492,6 +7333,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/DerrickWood/kraken2/archive/v2.0.8-b%65ta.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -6545,6 +7393,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/yhg926/public_kssd/archive/v1.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -6600,6 +7455,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "http://last.cbrc.jp/last-982.zip",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -6654,6 +7516,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/lastz/lastz/archive/1.04.00.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -6703,6 +7572,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/tseemann/legsta/archive/v0.3.7.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -6755,6 +7631,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/dpryan79/libBigWig/archive/0.4.4.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -6809,6 +7692,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/y-256/libdivsufsort/archive/2.0.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -6861,6 +7751,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/marbl/parsnp/archive/v1.2.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -6910,6 +7807,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/xflouris/libpll/archive/0.3.2.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -6967,6 +7871,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/molpopgen/libsequence/archive/1.9.7.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -7016,6 +7927,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/SaraEl-Metwally/LightAssembler/archive/v1.0.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -7069,6 +7987,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/mourisl/Lighter/archive/v1.1.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 2,
     "version_scheme": 0,
     "bottle": {
@@ -7120,6 +8045,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/bcgsc/LINKS/releases/download/v1.8.7/links_v1-8-7.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 1,
     "version_scheme": 0,
@@ -7174,6 +8106,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/CSB5/lofreq/archive/v2.1.3.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -7232,6 +8171,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/aquaskyline/LRSIM/archive/1.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 1,
     "version_scheme": 0,
     "bottle": {
@@ -7285,6 +8231,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/tothuhien/lsd2/archive/v1.3.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -7334,6 +8287,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "ftp://ftp.ncbi.nlm.nih.gov/blast/executables/magicblast/1.3.0/ncbi-magicblast-1.3.0-x64-linux.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -7391,6 +8351,13 @@
       "devel": "3.01.02-beta",
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "http://yandell.topaz.genetics.utah.edu/maker_downloads/static/maker-2.31.10.tgz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 2,
     "version_scheme": 0,
@@ -7460,6 +8427,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/hsinnan75/MapCaller/archive/v0.9.9.33.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -7514,6 +8488,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/marbl/Mash/archive/v2.2.2.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -7574,6 +8555,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/alekseyzimin/masurca/releases/download/v3.3.4/MaSuRCA-3.3.4.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 1,
     "version_scheme": 0,
     "bottle": {
@@ -7633,6 +8621,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://files.pythonhosted.org/packages/eb/a0/31b6ba00bc4dcbc06f0b80d1ad6119a9cc3081ecb04a00117f6c1ca3a084/matplotlib-2.2.3.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -7720,6 +8715,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://downloads.sourceforge.net/project/maxbin2/MaxBin-2.2.6.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -7781,6 +8783,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://micans.org/mcl/src/mcl-14-137.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -7830,6 +8839,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/voutcn/megahit/archive/v1.1.4.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -7883,6 +8899,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "http://meme-suite.org/meme-software/5.1.0/meme-5.1.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -7942,6 +8965,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://bitbucket.org/berkeleylab/metabat/get/v2.13.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -8000,6 +9030,7 @@
       "head": null,
       "bottle": false
     },
+    "urls": {},
     "revision": 0,
     "version_scheme": 0,
     "bottle": {},
@@ -8036,6 +9067,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/marbl/MHAP/releases/download/2.1.3/mhap-2.1.3.jar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -8089,6 +9127,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/ctSkennerton/minced/releases/download/0.4.0/minced.jar",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -8140,6 +9185,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/GATB/minia/releases/download/v3.2.1/minia-v3.2.1-Source.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -8195,6 +9247,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/lh3/miniasm/archive/v0.3.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -8246,6 +9305,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/lh3/minigraph/archive/v0.2.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -8300,6 +9366,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/lh3/minimap/archive/v0.2.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -8351,6 +9424,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/lh3/minimap2/releases/download/v2.17/minimap2-2.17.tar.bz2",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -8404,6 +9484,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/hangelwen/miR-PREFeR/archive/v0.24.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 1,
     "version_scheme": 0,
@@ -8460,6 +9547,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/tseemann/mlst/archive/v2.18.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -8520,6 +9614,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/rcsb/mmtf-cpp/archive/v1.0.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -8574,6 +9675,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/brentp/mosdepth/releases/download/v0.2.3/mosdepth",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -8632,6 +9740,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/mothur/mothur/archive/v.1.42.3.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -8685,6 +9800,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://faculty.franklin.uga.edu/lliu/sites/faculty.franklin.uga.edu.lliu/files/mpest_2.0.zip",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -8736,6 +9858,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "http://www.iqtree.org/mpboot/mpboot-1.1.0-Source.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -8793,6 +9922,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/NBISweden/MrBayes/archive/v3.2.7a.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -8854,6 +9990,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/gregorykucherov/mreps/archive/2.6.01.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -8903,6 +10046,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://downloads.sourceforge.net/project/mummer/mummer/3.23/MUMmer3.23.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 3,
     "version_scheme": 0,
@@ -8956,6 +10106,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://www.drive5.com/muscle/muscle_src_3.8.1551.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -9005,6 +10162,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/wdecoster/nanofilt/archive/v2.5.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -9060,6 +10224,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/jts/nanopolish.git",
+        "tag": "v0.11.1",
+        "revision": "ee82bf51c8e12f330da13ef6de888e6fba20e722"
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -9114,6 +10285,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "http://cegg.unige.ch/pub/newick-utils-1.6.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -9171,6 +10349,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/nextflow-io/nextflow/releases/download/v19.04.1/nextflow",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -9223,6 +10408,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/Cibiv/NextGenMap/archive/v0.5.5.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -9274,6 +10466,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/MDU-PHL/ngmaster/archive/v0.5.5.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -9329,6 +10528,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/jsh58/NGmerge/archive/v0.2.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -9380,6 +10586,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/lmrodriguezr/nonpareil/archive/v3.3.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -9440,6 +10653,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/bcgsc/ntCard/releases/download/1.2.1/ntcard-1.2.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -9493,6 +10713,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/bcgsc/ntEdit/archive/v1.3.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -9544,6 +10771,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/bcgsc/ntHits/archive/ntHits-v0.0.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -9597,6 +10831,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/bcgsc/ntJoin/releases/download/v1.0.1/ntJoin-1.0.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -9656,6 +10897,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://files.pythonhosted.org/packages/c2/3a/f0b3e44a96c79843902ab7a2500a613e3b2530b7596343ba3f726cb105cb/nxrepair-0.13.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 1,
     "version_scheme": 0,
     "bottle": {
@@ -9714,6 +10962,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/sequencing/NxTrim/archive/v0.4.3.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -9767,6 +11022,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://www.ebi.ac.uk/~zerbino/oases/oases_0.2.08.tgz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -9822,6 +11084,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://omabrowser.org/standalone/OMA.2.4.1.tgz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -9876,6 +11145,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/wwood/OrfM/releases/download/v0.7.1/orfm-0.7.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -9933,6 +11209,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "http://abacus.gene.ucl.ac.uk/software/paml4.9i.tgz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -9982,6 +11265,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/neufeld/pandaseq/archive/v2.11.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -10042,6 +11332,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/sanger-pathogens/panito/archive/0.0.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -10099,6 +11396,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/jeffdaily/parasail/archive/v2.4.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -10155,6 +11459,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/marbl/parsnp/archive/v1.2.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 3,
     "version_scheme": 0,
@@ -10216,6 +11527,7 @@
       "head": null,
       "bottle": false
     },
+    "urls": {},
     "revision": 0,
     "version_scheme": 0,
     "bottle": {},
@@ -10252,6 +11564,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/jhhung/PEAT/archive/v1.2.5.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -10310,6 +11629,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/jonchang/phlawd/archive/3.4b.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 1,
     "version_scheme": 0,
     "bottle": {
@@ -10366,6 +11692,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "http://evolution.gs.washington.edu/phylip/download/phylip-3.697.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -10416,6 +11749,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/bayesiancook/phylobayes/archive/v4.1e.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -10465,6 +11805,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/stephaneguindon/phyml/archive/v3.3.20190321.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -10521,6 +11868,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/FePhyFoFum/phyx/archive/v1.01.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -10574,6 +11928,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/broadinstitute/pilon/releases/download/v1.23/pilon-1.23.jar",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -10625,6 +11986,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/SionBayliss/PIRATE/archive/v1.0.2.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -10687,6 +12055,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/rrwick/Porechop/archive/v0.2.4.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -10738,6 +12113,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/maplesond/portcullis/archive/Release-1.1.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 1,
     "version_scheme": 0,
@@ -10799,6 +12181,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/matsen/pplacer/releases/download/v1.1.alpha17/pplacer-Linux-v1.1.alpha17.zip",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -10850,6 +12239,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "http://wasabiapp.org/download/prank/prank.source.170427.tgz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -10903,6 +12299,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/tseemann/prokka/archive/v1.14.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -10967,6 +12370,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/bcthomas/pullseq/archive/1.0.2.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -11021,6 +12431,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/schrodinger/pymol-open-source/archive/v2.3.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -11081,6 +12498,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://downloads.sourceforge.net/project/quast/quast-5.0.2.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -11133,6 +12557,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/mahulchak/quickmerge/archive/v0.3.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -11187,6 +12618,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/khowe/quicktree/archive/v2.5.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -11236,6 +12674,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://homes.cs.washington.edu/~dcjones/quip/quip-1.1.8.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -11290,6 +12735,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://downloads.sourceforge.net/project/r8s/r8s1.81.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -11341,6 +12793,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/isovic/racon/releases/download/1.4.3/racon-v1.4.3.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -11396,6 +12855,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/bcgsc/RAILS/archive/v1.5.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -11450,6 +12916,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "http://users-birc.au.dk/cstorm/software/rapidnj/rapidnj-src-2.3.2.zip",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -11501,6 +12974,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/mbhall88/rasusa/archive/0.1.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -11554,6 +13034,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/lbcb-sci/raven/releases/download/0.0.0/raven-v0.0.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -11605,6 +13092,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/amkozlov/raxml-ng.git",
+        "tag": "0.9.0",
+        "revision": "0a064e9a40f2e00828662795141659d946440c81"
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -11670,6 +13164,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/stamatak/standard-RAxML/archive/v8.2.12.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -11729,6 +13230,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/mourisl/Rcorrector/archive/v1.0.3.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -11781,6 +13289,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://realphy.unibas.ch/downloads/REALPHY_v112_exec.zip",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -11836,6 +13351,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/OpenGene/repaq/archive/v0.2.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -11887,6 +13409,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "http://repeatmasker.org/RepeatMasker-open-4-0-7.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 4,
     "version_scheme": 0,
@@ -11946,6 +13475,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://ftp.ncbi.nlm.nih.gov/blast/executables/rmblast/LATEST/ncbi-rmblastn-2.2.28-x64-linux.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 1,
     "version_scheme": 0,
     "bottle": {
@@ -12001,6 +13537,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/RealTimeGenomics/rtg-tools/releases/download/3.9/rtg-tools-3.9-nojre.zip",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -12055,6 +13598,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/hcdenbakker/SalmID/archive/0.1.23.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 1,
     "bottle": {
@@ -12106,6 +13656,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/COMBINE-lab/salmon/archive/v0.9.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -12167,6 +13724,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/biod/sambamba.git",
+        "tag": null,
+        "revision": "595197546e1418b4944e2f797d8ceac6d495f741"
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -12220,6 +13784,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/GregoryFaust/samblaster/archive/v.0.1.24.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -12270,6 +13841,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/tseemann/samclip/archive/v0.2.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -12319,6 +13897,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/simongog/sdsl-lite.git",
+        "tag": "v2.1.1",
+        "revision": "0546faf0552142f06ff4b201b671a5769dd007ad"
+      }
     },
     "revision": 2,
     "version_scheme": 0,
@@ -12371,6 +13956,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/smirarab/sepp/archive/4.3.10.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -12425,6 +14017,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/rambaut/Seq-Gen/archive/1.3.4.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -12474,6 +14073,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/seqan/seqan/releases/download/seqan-v2.4.0/seqan-library-2.4.0.tar.xz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -12529,6 +14135,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/seqan/seqan3/archive/3.0.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -12583,6 +14196,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/shenwei356/seqkit/releases/download/v0.11.0/seqkit_linux_amd64.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -12632,6 +14252,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/jts/sga/archive/v0.10.15.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 1,
     "version_scheme": 0,
@@ -12690,6 +14317,7 @@
       "head": "HEAD",
       "bottle": false
     },
+    "urls": {},
     "revision": 0,
     "version_scheme": 0,
     "bottle": {},
@@ -12737,6 +14365,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/bioinf/Sibelia/archive/v3.0.7.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -12792,6 +14427,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://downloads.sourceforge.net/project/simulatepcr/simulate_PCR-v1.2.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -12849,6 +14491,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/simonrharris/SKA/archive/v1.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -12900,6 +14549,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/ncbi/SKESA/archive/v2.3.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 2,
     "version_scheme": 0,
@@ -12954,6 +14610,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://downloads.sourceforge.net/project/smalt/smalt-0.7.6.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -13004,6 +14667,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "http://korflab.ucdavis.edu/Software/snap-2013-11-29.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 1,
     "version_scheme": 0,
     "bottle": {
@@ -13053,6 +14723,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/tseemann/snippy/archive/v4.4.5.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -13122,6 +14799,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "http://lowelab.ucsc.edu/software/snoscan-0.9.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -13171,6 +14855,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/tseemann/snp-dists/archive/v0.6.3.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -13223,6 +14914,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/sanger-pathogens/snp-sites/archive/v2.5.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -13282,6 +14980,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://downloads.sourceforge.net/project/snpeff/snpEff_v4_3t_core.zip",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -13336,6 +15041,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://downloads.sourceforge.net/project/solexaqa/src/SolexaQA%2B%2B_v3.1.7.1.zip",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -13389,6 +15101,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/biocore/sortmerna/archive/2.1b.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -13440,6 +15159,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/splatlab/squeakr/archive/V0.6.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -13498,6 +15224,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "catchenlab.life.illinois.edu/stacks/source/stacks-2.41.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -13549,6 +15282,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/jkbonfield/io_lib/releases/download/io_lib-1-14-11/io_lib-1.14.11.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -13605,6 +15345,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/alexdobin/STAR/archive/2.7.3a.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -13656,6 +15403,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://ccb.jhu.edu/software/stringtie/dl/stringtie-1.3.6.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -13709,6 +15463,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://cfhcable.dl.sourceforge.net/project/subread/subread-2.0.0/subread-2.0.0-source.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -13761,6 +15522,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://git.metabarcoding.org/obitools/sumaclust/uploads/59ff189079b9e318f07b9ff9d5fee54b/sumaclust_v1.0.31.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -13810,6 +15578,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/torognes/swipe/archive/v2.1.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -13861,6 +15636,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/shenwei356/taxonkit/releases/download/v0.5.0/taxonkit_linux_amd64.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -13910,6 +15692,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://ftp.ncbi.nih.gov/toolbox/ncbi_tools/converters/by_program/tbl2asn/linux64.tbl2asn.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -13966,6 +15755,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/bcgsc/tigmint/archive/1.1.2.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 2,
     "version_scheme": 0,
     "bottle": {
@@ -14018,6 +15814,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/bcgsc/transabyss/archive/2.0.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -14076,6 +15879,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/TransDecoder/TransDecoder/archive/TransDecoder-v5.5.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -14129,6 +15939,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/blackrim/treePL/archive/fcddad99f4ecbada67ecd210f12fefa762f0d51c.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 2,
     "version_scheme": 0,
@@ -14186,6 +16003,7 @@
       "head": null,
       "bottle": false
     },
+    "urls": {},
     "revision": 0,
     "version_scheme": 0,
     "bottle": {},
@@ -14220,6 +16038,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/lh3/trimadap/archive/ddfef210563830d9193b40949da3523b6fb93003.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -14273,6 +16098,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/scapella/trimal/archive/v1.4.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -14322,6 +16154,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.39.zip",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -14376,6 +16215,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/trinityrnaseq/trinityrnaseq/archive/Trinity-v2.8.3.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 1,
     "version_scheme": 0,
@@ -14438,6 +16284,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "http://trna.ucsc.edu/software/trnascan-se-2.0.4.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 1,
     "bottle": {
@@ -14489,6 +16342,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/rrwick/Unicycler/archive/v0.4.7.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -14548,6 +16408,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/shenwei356/unikmer/releases/download/v0.7.0/unikmer_linux_amd64.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -14598,6 +16465,7 @@
       "head": "HEAD",
       "bottle": false
     },
+    "urls": {},
     "revision": 0,
     "version_scheme": 0,
     "bottle": {},
@@ -14633,6 +16501,7 @@
       "head": null,
       "bottle": false
     },
+    "urls": {},
     "revision": 0,
     "version_scheme": 0,
     "bottle": {},
@@ -14667,6 +16536,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/bioinform/varsim/releases/download/v0.8.2/varsim-0.8.2.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -14720,6 +16596,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/ekg/vcflib.git",
+        "tag": "v1.0.1",
+        "revision": "d150a89fa4f717634b06e1c78a37794d2c10c94c"
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -14777,6 +16660,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://www.ebi.ac.uk/~zerbino/velvet/velvet_1.2.10.tgz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -14828,6 +16718,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/tseemann/VelvetOptimiser/archive/2.2.6.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -14883,6 +16780,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/lindenb/verticalize/archive/v1.0.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 1,
     "version_scheme": 0,
     "bottle": {
@@ -14932,6 +16836,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://www.tbi.univie.ac.at/RNA/packages/source/ViennaRNA-2.4.3.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -14985,6 +16896,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/rega-cev/virulign/archive/v1.0.2.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -15036,6 +16954,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/torognes/vsearch/archive/v2.14.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -15093,6 +17018,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/atks/vt/archive/0.5772.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 2,
     "version_scheme": 0,
     "bottle": {
@@ -15145,6 +17077,13 @@
       "head": null,
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/enasequence/webin-cli/releases/download/v1.8.11/webin-cli-1.8.11.jar",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -15196,6 +17135,13 @@
       "devel": null,
       "head": "HEAD",
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/Ensembl/WiggleTools/archive/v1.2.3.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -15254,6 +17200,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/soedinglab/WIsH/archive/f3cc533aca6d1066e7816740d4d9afae1b3dfd98.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -15305,6 +17258,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/ruanjue/wtdbg2/archive/v2.5.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
@@ -15362,6 +17322,13 @@
       "head": "HEAD",
       "bottle": true
     },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/bcgsc/xmatchview/archive/v1.2.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {
@@ -15415,6 +17382,13 @@
       "devel": null,
       "head": null,
       "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/cmbi/xssp/releases/download/3.0.9/xssp-3.0.9.tar.gz",
+        "tag": null,
+        "revision": null
+      }
     },
     "revision": 0,
     "version_scheme": 0,
