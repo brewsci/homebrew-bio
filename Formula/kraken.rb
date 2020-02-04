@@ -8,9 +8,9 @@ class Kraken < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "b1d19fd51e040f01a12042a24bf834b776c4efda337ec96b86372b98ea44b7f1" => :sierra
-    sha256 "f58c1cb9381196f215d98da12c106455b07590608cb47960ee61b18a4702cf17" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "fcefe1f392f6c3e9821b24cd8d096c90e8348a25fd577bfecdf507ff863462ef" => :catalina
+    sha256 "a4533e0f5e6dda9546b71f59ce77653f838f9aa59468ca1f6730f838a966523b" => :x86_64_linux
   end
 
   fails_with :clang # needs openmp
