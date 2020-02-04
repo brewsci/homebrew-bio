@@ -15,12 +15,6 @@ jobs:
       HOMEBREW_NO_ANALYTICS: 1
       HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
-      - name: Configure git
-        uses: Homebrew/actions/git-ssh@master
-        with:
-          git_user: LinuxbrewTestBot
-          git_email: testbot@linuxbrew.sh
-          key: ${{secrets.SSH_KEY}}
       - name: Install dependencies
         run: |
           apt update
@@ -50,15 +44,13 @@ jobs:
           brew test-bot --ci-upload --publish --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
           cd "$(brew --repo ${{github.repository}})"
           git branch -f "pr$pr"
-          git push --force git@github.com:${{github.repository}} "pr$pr"
           git fetch origin master
           git checkout master
           git reset --hard origin/master
           git merge -m "Merge pull request #$pr" "pr$pr"
           git status
-          if git push git@github.com:${{github.repository}} master master:develop; then
-            git push git@github.com:${{github.repository}} -d "pr$pr"
-          else
+          if ! git push origin master master:develop; then
+            git push --force origin "pr$pr"
             mkdir ~/bin
             curl -sL https://github.com/github/hub/releases/download/v2.14.1/hub-linux-amd64-2.14.1.tgz \
               | tar xzO hub-linux-amd64-2.14.1/bin/hub >~/bin/hub
