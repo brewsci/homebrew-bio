@@ -31,6 +31,8 @@ jobs:
       HOMEBREW_NO_ANALYTICS: 1
       HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
+      - name: Update Homebrew
+        run: brew update-reset
       - uses: actions/checkout@master
       - name: Build bottles
         run: |
