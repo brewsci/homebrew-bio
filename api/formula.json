@@ -7272,14 +7272,14 @@
     "desc": "Assign taxonomic labels to short DNA sequences",
     "homepage": "https://ccb.jhu.edu/software/kraken/",
     "versions": {
-      "stable": "1.1",
+      "stable": "1.1.1",
       "devel": null,
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/DerrickWood/kraken/archive/v1.1.tar.gz",
+        "url": "https://github.com/DerrickWood/kraken/archive/v1.1.1.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -7289,17 +7289,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/kraken-1.1.sierra.bottle.tar.gz",
-            "sha256": "b1d19fd51e040f01a12042a24bf834b776c4efda337ec96b86372b98ea44b7f1"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/kraken-1.1.1.catalina.bottle.tar.gz",
+            "sha256": "fcefe1f392f6c3e9821b24cd8d096c90e8348a25fd577bfecdf507ff863462ef"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/kraken-1.1.x86_64_linux.bottle.tar.gz",
-            "sha256": "f58c1cb9381196f215d98da12c106455b07590608cb47960ee61b18a4702cf17"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/kraken-1.1.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "a4533e0f5e6dda9546b71f59ce77653f838f9aa59468ca1f6730f838a966523b"
           }
         }
       }
