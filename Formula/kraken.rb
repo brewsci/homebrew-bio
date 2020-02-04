@@ -2,8 +2,8 @@ class Kraken < Formula
   # cite Wood_2014: "https://doi.org/10.1186/gb-2014-15-3-r46"
   desc "Assign taxonomic labels to short DNA sequences"
   homepage "https://ccb.jhu.edu/software/kraken/"
-  url "https://github.com/DerrickWood/kraken/archive/v1.1.tar.gz"
-  sha256 "a4ac74c54c10920f431741c80d8a172670be12c3b352912000030fb5ea4c87a7"
+  url "https://github.com/DerrickWood/kraken/archive/v1.1.1.tar.gz"
+  sha256 "73e48f40418f92b8cf036ca1da727ca3941da9b78d4c285b81ba3267326ac4ee"
   head "https://github.com/DerrickWood/kraken.git"
 
   bottle do
@@ -19,7 +19,7 @@ class Kraken < Formula
   def install
     libexec.mkdir
     system "./install_kraken.sh", libexec
-    libexec_bins = ["kraken", "kraken-build", "kraken-filter", "kraken-mpa-report", "kraken-report", "kraken-translate"].map { |x| libexec + x }
+    libexec_bins = %w[kraken kraken-build kraken-filter kraken-mpa-report kraken-report kraken-translate].map { |x| libexec + x }
     bin.install_symlink(libexec_bins)
     doc.install Dir["docs/*"]
   end
