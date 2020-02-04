@@ -54,7 +54,7 @@ jobs:
           git fetch origin master
           git checkout master
           git reset --hard origin/master
-          git merge --no-ff -m "Merge pull request #$pr" "pr$pr"
+          git merge -m "Merge pull request #$pr" "pr$pr"
           git status
           if git push git@github.com:${{github.repository}} master master:develop; then
             git push git@github.com:${{github.repository}} -d "pr$pr"
