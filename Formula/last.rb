@@ -2,8 +2,8 @@ class Last < Formula
   # cite Kielbasa_2011: "https://doi.org/10.1101/gr.113985.110"
   desc "Find similar regions between sequences"
   homepage "http://last.cbrc.jp/"
-  url "http://last.cbrc.jp/last-982.zip"
-  sha256 "2affa2ff2285f76e00431412429caa59ae3846f92b4d2b0524906cb470ca20d1"
+  url "http://last.cbrc.jp/last-1047.zip"
+  sha256 "c8bdfddf8223efd0571e6774c9077154850d48b66df879872fa3b5c11d26d219"
   head "http://last.cbrc.jp/last", :using => :hg
 
   bottle do
@@ -13,7 +13,7 @@ class Last < Formula
     sha256 "cdfb9576c6e776fa2a338322a08a80156ee767348d3921ed49ba850f132b0a18" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     system "make", "install", "prefix=#{prefix}"
