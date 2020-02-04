@@ -37,7 +37,7 @@ jobs:
           artifact_id="$(curl -s -H 'Accept: application/vnd.github.antiope-preview+json' https://api.github.com/repos/${{github.repository}}/actions/runs/$run_id/artifacts \
             | jq '.artifacts[0].id')"
           echo run_id="$run_id" artifact_id="$artifact_id"
-          curl -L -o bottles.zip "https://${{secrets.HOMEBREW_GITHUB_API_TOKEN}}@api.github.com/repos/brewsci/homebrew-bio/actions/artifacts/$artifact_id/zip"
+          curl -L -o bottles.zip "https://${{secrets.HOMEBREW_GITHUB_API_TOKEN}}@api.github.com/repos/${{github.repository}}/actions/artifacts/$artifact_id/zip"
           file bottles.zip
           unzip bottles.zip
           git -C "$(brew --repo ${{github.repository}})" status
