@@ -8,7 +8,7 @@ class Masurca < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "5e3b156f50496d1d41e60ec6f96089d4ac23749f05052892bd5cd4f883182703" => :x86_64_linux
+    sha256 "2c196a59bb4a486db4caa7f988e11d70303ac6d0f4a292ce9001c67658a473d8" => :x86_64_linux
   end
 
   depends_on "boost" => :build
