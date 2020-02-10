@@ -6,9 +6,8 @@ class Busco < Formula
   # cite Sim_o_2015: "https://doi.org/10.1093/bioinformatics/btv351"
   desc "Assess genome assembly completeness with single-copy orthologs"
   homepage "https://busco.ezlab.org"
-  url "https://gitlab.com/ezlab/busco/repository/4.0.0/archive.tar.gz"
-  sha256 "de1a6069ea660aee81dca4950b7f4203a42f074d7ef22e853765156fc75e649f"
-  revision 1
+  url "https://gitlab.com/ezlab/busco/repository/4.0.2/archive.tar.gz"
+  sha256 "e88f56a601083d449524b018adc323b71d45cffd37505a5a4c5c0fb5c1615781"
   head "https://gitlab.com/ezlab/busco.git"
 
   bottle do
@@ -27,15 +26,16 @@ class Busco < Formula
   depends_on "sepp"
 
   resource "biopython" do
-    url "https://files.pythonhosted.org/packages/33/55/becf2b99556588d22b542f3412990bfc79b674e198d9bc58f7bbc333439e/biopython-1.75.tar.gz"
-    sha256 "5060e4ef29c2bc214749733634051be5b8d11686c6590fa155c3443dcaa89906"
+    url "https://files.pythonhosted.org/packages/ff/f4/0ce39bebcbb0ff619426f2bbe86e60bc549ace318c5a9113ae480ab2adc7/biopython-1.76.tar.gz"
+    sha256 "3873cb98dad5e28d5e3f2215a012565345a398d3d2c4eebf7cd701757b828c72"
   end
 
   def install
     virtualenv_install_with_resources
-    # Save the original config with options, etc.
-    mv libexec/"config/config.ini", libexec/"config/config.default.ini"
-    (libexec/"config/config.ini").write <<~EOS
+    # Save the original config file somewhere and write our own
+    cp buildpath/"config/config.ini", libexec/"config.default.ini"
+
+    (libexec/"config.ini").write <<~EOS
       [busco_run]
       [tblastn]
       path = #{Formula["blast"].bin}
@@ -68,6 +68,10 @@ class Busco < Formula
       path = #{Formula["prodigal"].bin}
       command = prodigal
     EOS
+
+    # Remove virtualenv_install_with_resources link and write our own
+    rm bin/"busco"
+    (bin/"busco").write_env_script libexec/"bin/busco", :BUSCO_CONFIG_FILE => libexec/"config.ini"
   end
 
   def caveats; <<~EOS
