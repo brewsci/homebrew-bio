@@ -21,7 +21,7 @@ class Viennarna < Formula
     system "./configure",
       "--disable-debug",
       "--disable-dependency-tracking",
-      "--with-python",
+      "--without-python",
       "--prefix=#{prefix}"
     system "make"
     ENV.deparallelize
