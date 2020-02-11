@@ -7,6 +7,7 @@ class Clonalframeml < Formula
   head "https://github.com/xavierdidelot/ClonalFrameML.git"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
     sha256 "ef12d55ae473ef2e287e2e42d8b03631c938435ac6a58276e5afb20bd1df20d7" => :sierra
     sha256 "63567c0ed398baf544e83c62020169bf90790c5a1eb700678ad10a7ee42a5833" => :x86_64_linux

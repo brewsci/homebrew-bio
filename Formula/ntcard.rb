@@ -2,16 +2,16 @@ class Ntcard < Formula
   # cite Mohamadi_2017: "https://doi.org/10.1093/bioinformatics/btw832"
   desc "Estimating k-mer coverage histogram of genomics data"
   homepage "https://github.com/bcgsc/ntCard"
-  url "https://github.com/bcgsc/ntCard/archive/v1.1.1.tar.gz"
-  sha256 "f1b34c4d55055819908248324e6010008c43d74ab56b72ceb5a56bde4dfcdbde"
-  revision 1
+  url "https://github.com/bcgsc/ntCard/releases/download/1.2.1/ntcard-1.2.1.tar.gz"
+  sha256 "2d635dec6e293780a5ae2b7bb422ff5cc825a03270b507f5061cbf0f09ee7076"
+
   head "https://github.com/bcgsc/ntCard"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "beef0f25e0a6c64e399685d77db1b16336551d744f53c184a2ec55194d9fe0b5" => :mojave
-    sha256 "f1e5d1831be321cb71864fca94fd4de18b3cc9bd088fae974d5b816db48dddb3" => :x86_64_linux
+    sha256 "a685c7ff1bacf5b3b02c70f6e8eb0e75e64c5892b41d4a6c30770ebc934c7f8e" => :catalina
+    sha256 "c6af69458de6e27eddb2f29f5b625babe016d3c919c140d05de7d8d27fe37fa7" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build

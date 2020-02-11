@@ -6,6 +6,7 @@ class Xssp < Formula
   sha256 "42a9a93c48d22478212dcaf6ceb3feb64443e4cb2e8cccdd402b47a595d16658"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
     sha256 "c0833e3e3db899b28dd9515e1d3ffb791528d2934d25226dbf4eaf0f0428b34f" => :sierra
     sha256 "890f4a0285987df828d271ad333b597181358c75b65026d94dccf3d7c6d49531" => :x86_64_linux
