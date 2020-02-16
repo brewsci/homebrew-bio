@@ -6,9 +6,9 @@ class Mapcaller < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "0f7b021dd4032f2b4596fddf4613f32b76cd1e30eac7f2f6de8251c62c50ca46" => :catalina
-    sha256 "cf0d7297eb1ed30044e49f5de863ed1dc59f4dd3c38fc51efa5499fabdcc561d" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "4a368a1df0ac98307b96956d17ad7229b455a5f116820c1e81b24710b8a8e11e" => :catalina
+    sha256 "c8caeffbbc61a1763be623830632e89eb91b6a0995e4cfdac0b5b25e558f455a" => :x86_64_linux
   end
 
   depends_on "xz"
