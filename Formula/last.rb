@@ -2,18 +2,18 @@ class Last < Formula
   # cite Kielbasa_2011: "https://doi.org/10.1101/gr.113985.110"
   desc "Find similar regions between sequences"
   homepage "http://last.cbrc.jp/"
-  url "http://last.cbrc.jp/last-982.zip"
-  sha256 "2affa2ff2285f76e00431412429caa59ae3846f92b4d2b0524906cb470ca20d1"
+  url "http://last.cbrc.jp/last-1047.zip"
+  sha256 "c8bdfddf8223efd0571e6774c9077154850d48b66df879872fa3b5c11d26d219"
   head "http://last.cbrc.jp/last", :using => :hg
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "1079d4290ae07bbc6c7fc82dc15e8999c5864c6b958b6f94f18f25bbba9db8b9" => :sierra
-    sha256 "cdfb9576c6e776fa2a338322a08a80156ee767348d3921ed49ba850f132b0a18" => :x86_64_linux
+    sha256 "432cce5f2329980be09b68fe283370ae6324f62ace0c5e13c132e61560c5a2ea" => :catalina
+    sha256 "cec8788c7927bb1b2fe9f3465b71a787c1cd0be25f9f9d894d890f8f3849e818" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     system "make", "install", "prefix=#{prefix}"

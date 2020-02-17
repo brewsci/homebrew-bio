@@ -1,14 +1,14 @@
 class Mapcaller < Formula
   desc "Combined short-read alignment and variant detection"
   homepage "https://github.com/hsinnan75/MapCaller"
-  url "https://github.com/hsinnan75/MapCaller/archive/v0.9.9.33.tar.gz"
-  sha256 "0be3e4d3d02c10be5712cd62c96a6586ab11528d4510f38230d2661a77350a4a"
+  url "https://github.com/hsinnan75/MapCaller/archive/v0.9.9.37.tar.gz"
+  sha256 "4cc83e071edbe4310f75eade2f874c8dd11a848909fe6f0706a4badf5bae1898"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "7ae8badb8bc4f838e672099073035d6f53c9b1fca8e0d9fe080dafeb0b88539f" => :catalina
-    sha256 "3a606b183f875dbe99e6c590a2e189f7c025d0ada1bfdf57446946aeab276358" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "4a368a1df0ac98307b96956d17ad7229b455a5f116820c1e81b24710b8a8e11e" => :catalina
+    sha256 "c8caeffbbc61a1763be623830632e89eb91b6a0995e4cfdac0b5b25e558f455a" => :x86_64_linux
   end
 
   depends_on "xz"
