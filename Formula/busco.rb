@@ -6,8 +6,8 @@ class Busco < Formula
   # cite Sim_o_2015: "https://doi.org/10.1093/bioinformatics/btv351"
   desc "Assess genome assembly completeness with single-copy orthologs"
   homepage "https://busco.ezlab.org"
-  url "https://gitlab.com/ezlab/busco/repository/4.0.2/archive.tar.gz"
-  sha256 "e88f56a601083d449524b018adc323b71d45cffd37505a5a4c5c0fb5c1615781"
+  url "https://gitlab.com/ezlab/busco/repository/4.0.4/archive.tar.gz"
+  sha256 "1d42e4b3a53a7e4f3c4c15485ffcc4dac9fd6cbb3a4ac410ca90774c34d4dcb1"
   head "https://gitlab.com/ezlab/busco.git"
 
   bottle do
@@ -71,7 +71,9 @@ class Busco < Formula
 
     # Remove virtualenv_install_with_resources link and write our own
     rm bin/"busco"
-    (bin/"busco").write_env_script libexec/"bin/busco", :BUSCO_CONFIG_FILE => libexec/"config.ini"
+    (bin/"busco").write_env_script libexec/"bin/busco",
+      :BUSCO_CONFIG_FILE    => libexec/"config.ini",
+      :AUGUSTUS_CONFIG_PATH => "#{Formula["augustus"].prefix}/config/"
   end
 
   def caveats; <<~EOS
