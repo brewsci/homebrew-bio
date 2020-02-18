@@ -14,8 +14,8 @@ class Busco < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "a99db008fd25aeb5b06d1d4698b0fed78f39394ed0836ae808eff7c6f939e0df" => :catalina
-    sha256 "67b8f1b73ded03f1ed6e2942ccaedd8a027824514006f63bc8170a3818134a29" => :x86_64_linux
+    sha256 "132bc5b295087ba78bf8bb324aac0680f859982c141c3d0fad9328b0f862ef71" => :catalina
+    sha256 "8ac68071f81ab2db3f19bf99608dcb785dee1e4f9a04bd2686d99ec1651eb080" => :x86_64_linux
   end
 
   depends_on "augustus"
