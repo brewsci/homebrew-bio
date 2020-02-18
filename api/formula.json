@@ -1823,6 +1823,46 @@
     "outdated": false
   },
   {
+    "name": "blast@2.2",
+    "full_name": "brewsci/bio/blast@2.2",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Basic Local Alignment Search Tool",
+    "homepage": "https://blast.ncbi.nlm.nih.gov/",
+    "versions": {
+      "stable": "2.2.31",
+      "devel": null,
+      "head": null,
+      "bottle": false
+    },
+    "urls": {},
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {},
+    "keg_only": true,
+    "bottle_disabled": true,
+    "options": [],
+    "build_dependencies": [
+      "patchelf"
+    ],
+    "dependencies": [
+      "bzip2",
+      "curl",
+      "zlib"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "blat",
     "full_name": "brewsci/bio/blat",
     "oldname": null,
@@ -2138,14 +2178,14 @@
     "desc": "Assess genome assembly completeness with single-copy orthologs",
     "homepage": "https://busco.ezlab.org",
     "versions": {
-      "stable": "4.0.2",
+      "stable": "4.0.4",
       "devel": null,
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://gitlab.com/ezlab/busco/repository/4.0.2/archive.tar.gz",
+        "url": "https://gitlab.com/ezlab/busco/repository/4.0.4/archive.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -2160,12 +2200,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-4.0.2.catalina.bottle.tar.gz",
-            "sha256": "d1a7014dfee399ab4284f4d874469e44cfc47dd5949db8d7e48a4fbc8d749b12"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-4.0.4.catalina.bottle.tar.gz",
+            "sha256": "a99db008fd25aeb5b06d1d4698b0fed78f39394ed0836ae808eff7c6f939e0df"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-4.0.2.x86_64_linux.bottle.tar.gz",
-            "sha256": "76512513d732fc75fc7d7ef0af1ecd004c4f77e7c85693bdccd82b674e615bf1"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-4.0.4.x86_64_linux.bottle.tar.gz",
+            "sha256": "67b8f1b73ded03f1ed6e2942ccaedd8a027824514006f63bc8170a3818134a29"
           }
         }
       }
@@ -13069,77 +13109,6 @@
     ],
     "dependencies": [],
     "recommended_dependencies": [],
-    "optional_dependencies": [],
-    "uses_from_macos": [],
-    "requirements": [],
-    "conflicts_with": [],
-    "caveats": null,
-    "installed": [],
-    "linked_keg": null,
-    "pinned": false,
-    "outdated": false
-  },
-  {
-    "name": "raxml-ng",
-    "full_name": "brewsci/bio/raxml-ng",
-    "oldname": null,
-    "aliases": [],
-    "versioned_formulae": [],
-    "desc": "RAxML Next Generation: faster, easier-to-use and more flexible",
-    "homepage": "https://sco.h-its.org/exelixis/web/software/raxml/",
-    "versions": {
-      "stable": "0.9.0",
-      "devel": null,
-      "head": null,
-      "bottle": true
-    },
-    "urls": {
-      "stable": {
-        "url": "https://github.com/amkozlov/raxml-ng.git",
-        "tag": "0.9.0",
-        "revision": "0a064e9a40f2e00828662795141659d946440c81"
-      }
-    },
-    "revision": 0,
-    "version_scheme": 0,
-    "bottle": {
-      "stable": {
-        "rebuild": 0,
-        "cellar": ":any_skip_relocation",
-        "prefix": "/home/linuxbrew/.linuxbrew",
-        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
-        "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/raxml-ng-0.9.0.sierra.bottle.tar.gz",
-            "sha256": "44d9f4c7f2631ec3c5761ff142d0ceec2e02ae2a700131fc3235b47b865ed105"
-          },
-          "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/raxml-ng-0.9.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "6becae15d7f01dd4fdc2a2a2c3c46cec50db2c42ac2dc1ed0f64b934c817e931"
-          }
-        }
-      }
-    },
-    "keg_only": false,
-    "bottle_disabled": false,
-    "options": [
-      {
-        "option": "--without-open-mpi",
-        "description": "Build without open-mpi support"
-      }
-    ],
-    "build_dependencies": [
-      "autoconf",
-      "automake",
-      "cmake",
-      "libtool",
-      "bison",
-      "flex"
-    ],
-    "dependencies": [],
-    "recommended_dependencies": [
-      "open-mpi"
-    ],
     "optional_dependencies": [],
     "uses_from_macos": [],
     "requirements": [],
