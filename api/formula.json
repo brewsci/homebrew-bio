@@ -2190,7 +2190,7 @@
         "revision": null
       }
     },
-    "revision": 0,
+    "revision": 1,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -2200,12 +2200,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-4.0.4.catalina.bottle.tar.gz",
-            "sha256": "a99db008fd25aeb5b06d1d4698b0fed78f39394ed0836ae808eff7c6f939e0df"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-4.0.4_1.catalina.bottle.tar.gz",
+            "sha256": "132bc5b295087ba78bf8bb324aac0680f859982c141c3d0fad9328b0f862ef71"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-4.0.4.x86_64_linux.bottle.tar.gz",
-            "sha256": "67b8f1b73ded03f1ed6e2942ccaedd8a027824514006f63bc8170a3818134a29"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-4.0.4_1.x86_64_linux.bottle.tar.gz",
+            "sha256": "8ac68071f81ab2db3f19bf99608dcb785dee1e4f9a04bd2686d99ec1651eb080"
           }
         }
       }
@@ -2216,7 +2216,7 @@
     "build_dependencies": [],
     "dependencies": [
       "augustus",
-      "blast",
+      "blast@2.2",
       "hmmer",
       "numpy",
       "prodigal",
@@ -14160,14 +14160,14 @@
     "desc": "Ultrafast FASTA/Q file manipulation",
     "homepage": "https://bioinf.shenwei.me/seqkit/",
     "versions": {
-      "stable": "0.11.0",
+      "stable": "0.12.0",
       "devel": null,
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/shenwei356/seqkit/releases/download/v0.11.0/seqkit_linux_amd64.tar.gz",
+        "url": "https://github.com/shenwei356/seqkit/releases/download/v0.12.0/seqkit_linux_amd64.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -14182,11 +14182,11 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/seqkit-0.11.0.sierra.bottle.tar.gz",
+            "url": "https://linuxbrew.bintray.com/bottles-bio/seqkit-0.12.0.sierra.bottle.tar.gz",
             "sha256": "2e97c8f8c443fe3f6e6be7a11102e1dde6ae764cd9c1878041ba5e842a508cab"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/seqkit-0.11.0.x86_64_linux.bottle.tar.gz",
+            "url": "https://linuxbrew.bintray.com/bottles-bio/seqkit-0.12.0.x86_64_linux.bottle.tar.gz",
             "sha256": "1e48c929a711a86852decc75a35dc09dd5fda4bf50a73543db738a771e12c5d1"
           }
         }
@@ -16797,14 +16797,14 @@
     "desc": "Prediction and comparison of RNA secondary structures",
     "homepage": "https://www.tbi.univie.ac.at/~ronny/RNA/",
     "versions": {
-      "stable": "2.4.3",
+      "stable": "2.4.14",
       "devel": null,
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://www.tbi.univie.ac.at/RNA/packages/source/ViennaRNA-2.4.3.tar.gz",
+        "url": "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.14.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -16814,17 +16814,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": "/home/linuxbrew/.linuxbrew/Cellar",
+        "cellar": ":any",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/viennarna-2.4.3.sierra.bottle.tar.gz",
-            "sha256": "4fba00c07584848dd8b2bd82377217cdcc7393cfe890255673a3ddb66234491f"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/viennarna-2.4.14.catalina.bottle.tar.gz",
+            "sha256": "545e5d7602b62cbe670b203e62e37dced68254007c3f730e0119c6d74a3faddf"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/viennarna-2.4.3.x86_64_linux.bottle.tar.gz",
-            "sha256": "7f6a88b2c3855a40255ed707bd2596e10a24c80bcd007453440d0d561828ee9f"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/viennarna-2.4.14.x86_64_linux.bottle.tar.gz",
+            "sha256": "d76e232d798fdd980cb5a7abac2dcd0c40f70b71923abf4cb1ce92fbe3e04638"
           }
         }
       }
@@ -16834,7 +16834,8 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "python@2"
+      "perl",
+      "python"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
