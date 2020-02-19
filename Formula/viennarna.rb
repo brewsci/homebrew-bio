@@ -7,8 +7,9 @@ class Viennarna < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "4fba00c07584848dd8b2bd82377217cdcc7393cfe890255673a3ddb66234491f" => :sierra
-    sha256 "7f6a88b2c3855a40255ed707bd2596e10a24c80bcd007453440d0d561828ee9f" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "545e5d7602b62cbe670b203e62e37dced68254007c3f730e0119c6d74a3faddf" => :catalina
+    sha256 "d76e232d798fdd980cb5a7abac2dcd0c40f70b71923abf4cb1ce92fbe3e04638" => :x86_64_linux
   end
 
   depends_on "gcc" if OS.mac? # for OpenMP
