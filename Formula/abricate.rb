@@ -1,8 +1,8 @@
 class Abricate < Formula
   desc "Find antimicrobial resistance and virulence genes in contigs"
   homepage "https://github.com/tseemann/abricate"
-  url "https://github.com/tseemann/abricate/archive/v0.9.8.tar.gz"
-  sha256 "b4d75a2bbd496ea4c91d84b2f5f421b83860c843f51f5e079f1926f601ac973f"
+  url "https://github.com/tseemann/abricate/archive/v0.9.9.tar.gz"
+  sha256 "5ff61887cacbba61d30593b8bd602888816c476c50a4f4ecf37fe22b996c5ba1"
   head "https://github.com/tseemann/abricate.git"
 
   bottle do
@@ -16,9 +16,10 @@ class Abricate < Formula
   depends_on "any2fasta"
   depends_on "bioperl"
   depends_on "blast"
-  depends_on "openssl" # for Net::SSLeay
+  depends_on "openssl@1.1" # for Net::SSLeay
   depends_on "perl" # MacOS version too old
-  depends_on "unzip" unless OS.mac?
+
+  uses_from_macos "unzip"
 
   def install
     ENV.prepend "PERL5LIB", Formula["bioperl"].libexec/"lib/perl5"
