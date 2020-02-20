@@ -8,8 +8,8 @@ class Prokka < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "9d5256b21befdf947eaab88562dcd933e34094facca2536987b9beabfa982c1d" => :sierra
-    sha256 "02017daea749350775e1773e4632f6096dd98929b812f07e7213d89b5d0dcb6e" => :x86_64_linux
+    sha256 "992e481c64fb2c63e228f0bf8b1a98926fd7461305d371625736bf53ce863d1f" => :catalina
+    sha256 "33840d6123d3d8713a223a136455ec57028fc28564d7f386b10c981158166935" => :x86_64_linux
   end
 
   depends_on "aragorn"
