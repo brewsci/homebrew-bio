@@ -15,8 +15,8 @@ class Tbl2asn < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "fe9460e20c97aabc4f59f66aa5b72909b3d634089c04439ded94c2c68f8802ad" => :sierra
-    sha256 "d56a0129f2f42bde0c2417f97c0862bd5791c0155b4a0fd93aacbc86f1d86a59" => :x86_64_linux
+    sha256 "eacd51af092160d8382f67ee09409b2dc3d978415dc9f95d2cc7f08af39b30b0" => :catalina
+    sha256 "756239685f6881a204f66cbf0e4ad3edb80e97de10b26c0086d816b2c559ac2a" => :x86_64_linux
   end
 
   unless OS.mac?
