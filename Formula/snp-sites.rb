@@ -4,12 +4,12 @@ class SnpSites < Formula
   homepage "https://github.com/sanger-pathogens/snp-sites"
   url "https://github.com/sanger-pathogens/snp-sites/archive/v2.5.1.tar.gz"
   sha256 "913f79302e5d3127aea382756abc9ffeb05e26ce00022f43a6ea16a55cdd7a7e"
+  revision 1
   head "https://github.com/sanger-pathogens/snp-sites.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    rebuild 1
     sha256 "a9e5aa1f834835b9eeb9645a6cc4e6b730287754182c54abc55542fe39ef398a" => :mojave
     sha256 "7395080925bfacc38ca0e7a3f16dc5f824d18b2505a96ce12016c50a36147915" => :x86_64_linux
   end
