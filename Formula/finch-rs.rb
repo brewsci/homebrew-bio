@@ -3,11 +3,11 @@ class FinchRs < Formula
   desc "Genomic minhashing implementation in Rust"
   homepage "https://github.com/onecodex/finch-rs"
   if OS.mac?
-    url "https://github.com/onecodex/finch-rs/releases/download/v0.2.0/finch-mac64-v0.2.0.zip"
-    sha256 "327d452d33e459afb8a32068354af133fd51bc636c7940a7cf53e5c87f12ce9f"
+    url "https://github.com/onecodex/finch-rs/releases/download/v0.3.0/finch-mac64-v0.3.0.zip"
+    sha256 "06535290f528901868f566beadce71ae89d3b3e238b805317318e6109f756fe0"
   else
-    url "https://github.com/onecodex/finch-rs/releases/download/v0.2.0/finch-linux64-v0.2.0.gz"
-    sha256 "eda928092dda714732a956e647fb8bdcc60d12bd958db55db075b4748cc3eaab"
+    url "https://github.com/onecodex/finch-rs/releases/download/v0.3.0/finch-linux64-v0.3.0.gz"
+    sha256 "d6c41f123bfa4d58028cd2ef9d9981cdd3ed5568f02f53c34e8be602224f7f1b"
   end
 
   bottle do
