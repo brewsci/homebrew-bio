@@ -3,28 +3,26 @@ class Freebayes < Formula
   desc "Bayesian variant discovery and genotyping"
   homepage "https://github.com/ekg/freebayes"
   url "https://github.com/ekg/freebayes.git",
-      :tag      => "v1.3.1",
-      :revision => "4cde5d32ff745018e0b8ec31e81a71e8bc9ecc6f"
+      :tag      => "v1.3.2",
+      :revision => "54bf40915ae7e46798503471ac57f593efdb5493"
   head "https://github.com/ekg/freebayes.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "adba4d27d42731cc325e678e2a510b966e7f7c71529edc356cfc2a8d265f84b6" => :sierra
-    sha256 "abe5ec3e194f5094b0d192d546d65439323115e646e9cecbcffc7464eefd82da" => :x86_64_linux
+    sha256 "c31f2510892d984b82447c64293f0937bd85bc5a7cbd671d200a0663f5ba5722" => :sierra
+    sha256 "ec3a1bda228061b3388111425e32765196669f44f3cdbc8e0408f5770de7787d" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
 
   depends_on "parallel"
-  depends_on "python@2"
+  depends_on "python"
   depends_on "vcflib"
   depends_on "xz"
 
-  unless OS.mac?
-    depends_on "bzip2"
-    depends_on "zlib"
-  end
+  uses_from_macos "bzip2"
+  uses_from_macos "zlib"
 
   def install
     # make -j N results in: make: *** [all] Error 2
