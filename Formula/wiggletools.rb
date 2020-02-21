@@ -9,9 +9,9 @@ class Wiggletools < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "db1f34f8201aa5b03453e31e06244322d9ab2be20cc29db42becc59be72cc96f" => :sierra
-    sha256 "d77d48a9a8975a81bb7c744c12a01ca16819c1a2e5bac798c993329d3ab3fe66" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "ae3b7f504b648dbf02885956bdcc1d0fe2cea35248e3c6052a8f53a46adc4694" => :catalina
+    sha256 "331ca29f300399ba0e4fe1aec7fc378e536c149b740b7e5cfa2ada574be0ca12" => :x86_64_linux
   end
 
   depends_on "gsl"
