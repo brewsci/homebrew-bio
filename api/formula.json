@@ -67,14 +67,14 @@
     "desc": "Find antimicrobial resistance and virulence genes in contigs",
     "homepage": "https://github.com/tseemann/abricate",
     "versions": {
-      "stable": "0.9.8",
+      "stable": "0.9.9",
       "devel": null,
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/tseemann/abricate/archive/v0.9.8.tar.gz",
+        "url": "https://github.com/tseemann/abricate/archive/v0.9.9.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -88,13 +88,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/abricate-0.9.8.sierra.bottle.tar.gz",
-            "sha256": "0f282ccc5c9081dd366f232feadf8132fe39ed5d8722ce4999bc5d15813ba227"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/abricate-0.9.9.catalina.bottle.tar.gz",
+            "sha256": "3cc2e8f8bee8de9f4b83e77545449f5b009b8258a9506644d4ee0c964606d523"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/abricate-0.9.8.x86_64_linux.bottle.tar.gz",
-            "sha256": "8651abf367705a84df42030552d048201a112d25632c710bb7439d18a6283e41"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/abricate-0.9.9.x86_64_linux.bottle.tar.gz",
+            "sha256": "e76a156c79e5d7b38994d75636dfd2df4207f015f343956cea6091f9c875a3ca"
           }
         }
       }
@@ -109,7 +109,7 @@
       "any2fasta",
       "bioperl",
       "blast",
-      "openssl",
+      "openssl@1.1",
       "perl",
       "unzip"
     ],
@@ -4676,14 +4676,14 @@
     "desc": "Genomic minhashing implementation in Rust",
     "homepage": "https://github.com/onecodex/finch-rs",
     "versions": {
-      "stable": "0.2.0",
+      "stable": "0.3.0",
       "devel": null,
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/onecodex/finch-rs/releases/download/v0.2.0/finch-linux64-v0.2.0.gz",
+        "url": "https://github.com/onecodex/finch-rs/releases/download/v0.3.0/finch-linux64-v0.3.0.gz",
         "tag": null,
         "revision": null
       }
@@ -4693,17 +4693,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/finch-rs-0.2.0.sierra.bottle.tar.gz",
-            "sha256": "70247045d1517084a4297c42f2c2f8c7cbfdfb4999c434ff796318e0987a65a2"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/finch-rs-0.3.0.catalina.bottle.tar.gz",
+            "sha256": "eca9f68be258523651b801b889a7535638b069ffe06d5608dc6171da192aacc3"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/finch-rs-0.2.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "47491278c899f82d8691d528a75a0934f2db112008e4bdae5103b534081e7bf2"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/finch-rs-0.3.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "b9e2bc391659d9e97baec72828d5c5d90ec5c991a3a6a0d80f17ec2b52732240"
           }
         }
       }
@@ -4974,7 +4974,7 @@
     "desc": "Bayesian variant discovery and genotyping",
     "homepage": "https://github.com/ekg/freebayes",
     "versions": {
-      "stable": "1.3.1",
+      "stable": "1.3.2",
       "devel": null,
       "head": "HEAD",
       "bottle": true
@@ -4982,8 +4982,8 @@
     "urls": {
       "stable": {
         "url": "https://github.com/ekg/freebayes.git",
-        "tag": "v1.3.1",
-        "revision": "4cde5d32ff745018e0b8ec31e81a71e8bc9ecc6f"
+        "tag": "v1.3.2",
+        "revision": "54bf40915ae7e46798503471ac57f593efdb5493"
       }
     },
     "revision": 0,
@@ -4995,13 +4995,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/freebayes-1.3.1.sierra.bottle.tar.gz",
-            "sha256": "adba4d27d42731cc325e678e2a510b966e7f7c71529edc356cfc2a8d265f84b6"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/freebayes-1.3.2.catalina.bottle.tar.gz",
+            "sha256": "04d29c063def9219df5ae557876fdd4095cfde34e540e2a28acd1109a79f34bf"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/freebayes-1.3.1.x86_64_linux.bottle.tar.gz",
-            "sha256": "abe5ec3e194f5094b0d192d546d65439323115e646e9cecbcffc7464eefd82da"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/freebayes-1.3.2.x86_64_linux.bottle.tar.gz",
+            "sha256": "07f3e4dd360c93efb848b5e4a420a0b32f8ce85d85f21652975aa382716657a9"
           }
         }
       }
@@ -5014,7 +5014,7 @@
     ],
     "dependencies": [
       "parallel",
-      "python@2",
+      "python",
       "vcflib",
       "xz",
       "bzip2",
@@ -10924,6 +10924,71 @@
     "outdated": false
   },
   {
+    "name": "nullarbor",
+    "full_name": "brewsci/bio/nullarbor",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Public health microbiology reports from sequenced isolates",
+    "homepage": "https://github.com/tseemann/nullarbor",
+    "versions": {
+      "stable": "2.0.20191013",
+      "devel": null,
+      "head": null,
+      "bottle": false
+    },
+    "urls": {},
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {},
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [
+      "autoconf",
+      "automake",
+      "cpanminus",
+      "openssl@1.1",
+      "pkg-config"
+    ],
+    "dependencies": [
+      "abricate",
+      "any2fasta",
+      "bioperl",
+      "centrifuge",
+      "emboss",
+      "fasttree",
+      "iqtree",
+      "kraken",
+      "kraken2",
+      "mash",
+      "megahit",
+      "mlst",
+      "newick-utils",
+      "perl",
+      "prokka",
+      "quicktree",
+      "seqtk",
+      "shovill",
+      "skesa",
+      "snippy",
+      "snp-dists",
+      "spades",
+      "trimmomatic",
+      "velvet"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "nxrepair",
     "full_name": "brewsci/bio/nxrepair",
     "oldname": null,
@@ -12335,14 +12400,14 @@
     "desc": "Rapid annotation of prokaryotic genomes",
     "homepage": "https://github.com/tseemann/prokka",
     "versions": {
-      "stable": "1.14.0",
+      "stable": "1.14.6",
       "devel": null,
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/tseemann/prokka/archive/v1.14.0.tar.gz",
+        "url": "https://github.com/tseemann/prokka/archive/v1.14.6.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -12356,13 +12421,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/prokka-1.14.0.sierra.bottle.tar.gz",
-            "sha256": "9d5256b21befdf947eaab88562dcd933e34094facca2536987b9beabfa982c1d"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/prokka-1.14.6.catalina.bottle.tar.gz",
+            "sha256": "992e481c64fb2c63e228f0bf8b1a98926fd7461305d371625736bf53ce863d1f"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/prokka-1.14.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "02017daea749350775e1773e4632f6096dd98929b812f07e7213d89b5d0dcb6e"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/prokka-1.14.6.x86_64_linux.bottle.tar.gz",
+            "sha256": "33840d6123d3d8713a223a136455ec57028fc28564d7f386b10c981158166935"
           }
         }
       }
@@ -12380,10 +12445,9 @@
       "infernal",
       "minced",
       "parallel",
+      "perl",
       "prodigal",
-      "tbl2asn",
-      "less",
-      "perl"
+      "tbl2asn"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -14181,13 +14245,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/seqkit-0.12.0.sierra.bottle.tar.gz",
-            "sha256": "2e97c8f8c443fe3f6e6be7a11102e1dde6ae764cd9c1878041ba5e842a508cab"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/seqkit-0.12.0.catalina.bottle.tar.gz",
+            "sha256": "8db1cf85315bdef00469dd9a56ef57a1129ca1c83716a69065b360c7d905d8c6"
           },
           "x86_64_linux": {
             "url": "https://linuxbrew.bintray.com/bottles-bio/seqkit-0.12.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "1e48c929a711a86852decc75a35dc09dd5fda4bf50a73543db738a771e12c5d1"
+            "sha256": "676879b9162d6d5bf6d65ad3b583e14f11b6adda26e3ac5de4251285fb4c64e3"
           }
         }
       }
@@ -14688,14 +14752,14 @@
     "desc": "Rapid bacterial SNP calling and core genome alignments",
     "homepage": "https://github.com/tseemann/snippy",
     "versions": {
-      "stable": "4.4.5",
+      "stable": "4.5.0",
       "devel": null,
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/tseemann/snippy/archive/v4.4.5.tar.gz",
+        "url": "https://github.com/tseemann/snippy/archive/v4.5.0.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -14709,13 +14773,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "mojave": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/snippy-4.4.5.mojave.bottle.tar.gz",
-            "sha256": "faa56de1c5b8a1e501679632f19eac6dacc7a01c405994da0ed50a416f6bcc73"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/snippy-4.5.0.catalina.bottle.tar.gz",
+            "sha256": "27236e602cc1a06b1a7420d43e8e1778b32d3a1788ef74ebc83c9a53881dd46b"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/snippy-4.4.5.x86_64_linux.bottle.tar.gz",
-            "sha256": "45380c92916dbe78a2a7b1792830776e04802cfdc079dd83fe6a86e453481043"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/snippy-4.5.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "534f4631c159b7ded5b5e4d4e3618beff337e7d9714ba4571defb8761effa8f9"
           }
         }
       }
@@ -14891,22 +14955,22 @@
         "revision": null
       }
     },
-    "revision": 0,
+    "revision": 1,
     "version_scheme": 0,
     "bottle": {
       "stable": {
-        "rebuild": 1,
-        "cellar": ":any",
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "mojave": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/snp-sites-2.5.1.mojave.bottle.1.tar.gz",
-            "sha256": "a9e5aa1f834835b9eeb9645a6cc4e6b730287754182c54abc55542fe39ef398a"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/snp-sites-2.5.1_1.catalina.bottle.tar.gz",
+            "sha256": "e6479d546058d193564ba724fec92872a997403816db0476d0d5b12d5659b2b5"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/snp-sites-2.5.1.x86_64_linux.bottle.1.tar.gz",
-            "sha256": "7395080925bfacc38ca0e7a3f16dc5f824d18b2505a96ce12016c50a36147915"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/snp-sites-2.5.1_1.x86_64_linux.bottle.tar.gz",
+            "sha256": "b85086e6c5714775f2311f7647c571e97057ab761de0aada0afc2f0a8af5e9d7"
           }
         }
       }
@@ -15657,7 +15721,7 @@
     "desc": "Automates the submission of sequence records to GenBank",
     "homepage": "https://www.ncbi.nlm.nih.gov/genbank/tbl2asn2/",
     "versions": {
-      "stable": "25.7",
+      "stable": "25.8",
       "devel": null,
       "head": null,
       "bottle": true
@@ -15678,13 +15742,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/tbl2asn-25.7.sierra.bottle.tar.gz",
-            "sha256": "fe9460e20c97aabc4f59f66aa5b72909b3d634089c04439ded94c2c68f8802ad"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/tbl2asn-25.8.catalina.bottle.tar.gz",
+            "sha256": "eacd51af092160d8382f67ee09409b2dc3d978415dc9f95d2cc7f08af39b30b0"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/tbl2asn-25.7.x86_64_linux.bottle.tar.gz",
-            "sha256": "d56a0129f2f42bde0c2417f97c0862bd5791c0155b4a0fd93aacbc86f1d86a59"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/tbl2asn-25.8.x86_64_linux.bottle.tar.gz",
+            "sha256": "756239685f6881a204f66cbf0e4ad3edb80e97de10b26c0086d816b2c559ac2a"
           }
         }
       }
