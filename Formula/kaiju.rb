@@ -12,8 +12,9 @@ class Kaiju < Formula
     sha256 "47579c356dd649d72a3b4ed0d4739c17669911f5cd8b2f842e5b48eaf5512835" => :x86_64_linux
   end
 
-  depends_on "perl"     # for kaiju-gbk2faa.pl
-  depends_on "python@2" # for kaiju-convertMAR.py
+  depends_on "perl" # for kaiju-gbk2faa.pl
+
+  uses_from_macos "python@2" # for kaiju-convertMAR.py
 
   def install
     system "make", "-C", "src"

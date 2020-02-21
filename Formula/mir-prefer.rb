@@ -14,12 +14,11 @@ class MirPrefer < Formula
     sha256 "43d16a0495132ea407473ca736a7c5f83298649a936665d9784c062d1f79c3b9" => :x86_64_linux
   end
 
-  unless OS.mac?
-    depends_on "patchelf" => :build
-    depends_on "ncurses"
-    depends_on "python@2"
-    depends_on "zlib"
-  end
+  depends_on "patchelf" => :build unless OS.mac?
+
+  uses_from_macos "ncurses"
+  uses_from_macos "python@2"
+  uses_from_macos "zlib"
 
   def install
     inreplace "miR_PREFeR.py", /^import sys$/, "#!/usr/bin/env python2.7\nimport sys"

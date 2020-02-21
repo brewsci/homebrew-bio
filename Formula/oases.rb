@@ -13,9 +13,10 @@ class Oases < Formula
     sha256 "0efc1b966ea6e662d6994762b3d20d76d1278965e666fa7f06ccb25ac0d1053b" => :x86_64_linux
   end
 
-  depends_on "python@2"
   depends_on "velvet"
-  depends_on "zlib" unless OS.mac?
+
+  uses_from_macos "python@2"
+  uses_from_macos "zlib"
 
   resource "velvet" do
     url "https://www.ebi.ac.uk/~zerbino/velvet/velvet_1.2.10.tgz"

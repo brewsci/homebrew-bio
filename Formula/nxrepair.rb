@@ -15,7 +15,6 @@ class Nxrepair < Formula
   end
 
   depends_on "numpy"
-  depends_on "python@2"
   depends_on "scipy"
   unless OS.mac?
     # For matplotlib
@@ -23,6 +22,8 @@ class Nxrepair < Formula
     depends_on "freetype"
     depends_on "libpng"
   end
+
+  uses_from_macos "python@2"
 
   def install
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python2.7/site-packages"
