@@ -1,24 +1,25 @@
 class Abricate < Formula
   desc "Find antimicrobial resistance and virulence genes in contigs"
   homepage "https://github.com/tseemann/abricate"
-  url "https://github.com/tseemann/abricate/archive/v0.9.8.tar.gz"
-  sha256 "b4d75a2bbd496ea4c91d84b2f5f421b83860c843f51f5e079f1926f601ac973f"
+  url "https://github.com/tseemann/abricate/archive/v0.9.9.tar.gz"
+  sha256 "5ff61887cacbba61d30593b8bd602888816c476c50a4f4ecf37fe22b996c5ba1"
   head "https://github.com/tseemann/abricate.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "0f282ccc5c9081dd366f232feadf8132fe39ed5d8722ce4999bc5d15813ba227" => :sierra
-    sha256 "8651abf367705a84df42030552d048201a112d25632c710bb7439d18a6283e41" => :x86_64_linux
+    sha256 "3cc2e8f8bee8de9f4b83e77545449f5b009b8258a9506644d4ee0c964606d523" => :catalina
+    sha256 "e76a156c79e5d7b38994d75636dfd2df4207f015f343956cea6091f9c875a3ca" => :x86_64_linux
   end
 
   depends_on "cpanminus" => :build
   depends_on "any2fasta"
   depends_on "bioperl"
   depends_on "blast"
-  depends_on "openssl" # for Net::SSLeay
+  depends_on "openssl@1.1" # for Net::SSLeay
   depends_on "perl" # MacOS version too old
-  depends_on "unzip" unless OS.mac?
+
+  uses_from_macos "unzip"
 
   def install
     ENV.prepend "PERL5LIB", Formula["bioperl"].libexec/"lib/perl5"
