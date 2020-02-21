@@ -21,7 +21,6 @@ class Apbspdb2pqr < Formula
   depends_on "boost"
   depends_on "eigen"
   depends_on "python"
-  depends_on "python@2"
   depends_on "swig"
 
   def install
