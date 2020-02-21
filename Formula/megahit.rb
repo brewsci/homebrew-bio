@@ -14,16 +14,12 @@ class Megahit < Formula
   end
 
   depends_on "gcc@8" if OS.mac?
-  depends_on "python@2"
+
+  uses_from_macos "python@2"
+  uses_from_macos "zlib"
 
   fails_with :gcc => "9"
   fails_with :clang # needs openmp
-
-  if OS.mac?
-    depends_on "gcc" # for openmp
-  else
-    depends_on "zlib"
-  end
 
   def install
     system "make"
