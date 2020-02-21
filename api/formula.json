@@ -475,7 +475,6 @@
       "boost",
       "eigen",
       "python",
-      "python@2",
       "swig"
     ],
     "recommended_dependencies": [],
@@ -11037,10 +11036,10 @@
     ],
     "dependencies": [
       "numpy",
-      "python@2",
       "scipy",
       "freetype",
-      "libpng"
+      "libpng",
+      "python@2"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -11160,8 +11159,8 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "python@2",
       "velvet",
+      "python@2",
       "zlib"
     ],
     "recommended_dependencies": [],
