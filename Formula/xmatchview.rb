@@ -14,8 +14,9 @@ class Xmatchview < Formula
   end
 
   depends_on "jpeg"
-  depends_on "python@2"
-  depends_on "zlib" unless OS.mac?
+
+  uses_from_macos "python@2"
+  uses_from_macos "zlib"
 
   def install
     ENV.prepend_path "PATH", libexec/"bin"

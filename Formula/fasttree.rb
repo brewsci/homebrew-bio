@@ -2,15 +2,14 @@ class Fasttree < Formula
   # cite Price_2010: "https://doi.org/10.1371/journal.pone.0009490"
   desc "Approximately-maximum-likelihood phylogenetic trees"
   homepage "http://microbesonline.org/fasttree/"
-  url "http://microbesonline.org/fasttree/FastTree-2.1.10.c"
-  sha256 "54cb89fc1728a974a59eae7a7ee6309cdd3cddda9a4c55b700a71219fc6e926d"
-  revision 1
+  url "http://microbesonline.org/fasttree/FastTree-2.1.11.c"
+  sha256 "9026ae550307374be92913d3098f8d44187d30bea07902b9dcbfb123eaa2050f"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "56ab8decf6430233974a88acd7f0c9c62ecf1810984540017a89dbe0d25cafeb" => :sierra
-    sha256 "321bbdcfeb64124bc8f487740fbadbb24fba9ca38706de38ccadadf87fe802ae" => :x86_64_linux
+    sha256 "cf6541872936ca28dba6186f57ea237e62715a47632a147eec3ef3f687a0ec22" => :catalina
+    sha256 "d31e0a4e16dfa3c8ab2695d335eed25b70e0e67bd959d432e7cb360a9ae4f232" => :x86_64_linux
   end
 
   # 26 Aug 2017; Community mostly wants USE_DOUBLE; make it default now

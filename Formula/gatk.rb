@@ -2,13 +2,14 @@ class Gatk < Formula
   # cite McKenna_2010: "https://doi.org/10.1101/gr.107524.110"
   desc "Genome Analysis Toolkit: Variant Discovery in High-Throughput Sequencing"
   homepage "https://software.broadinstitute.org/gatk"
-  url "https://github.com/broadinstitute/gatk/releases/download/4.1.4.0/gatk-4.1.4.0.zip"
-  sha256 "ae54a2b938f704e15ea03d1822b4ce80d9a02108dc3a2b482d80b93edae3d492"
+  url "https://github.com/broadinstitute/gatk/releases/download/4.1.4.1/gatk-4.1.4.1.zip"
+  sha256 "21ae694cfc8b7447381ad5ce62ed4af22e53a228b12495bdcca7df0c73b09cea"
 
   bottle :unneeded
 
   depends_on :java => "1.8"
-  depends_on "python@2" unless OS.mac?
+
+  uses_from_macos "python@2"
 
   resource "count_reads.bam" do
     url "https://github.com/broadinstitute/gatk/blob/626c88732c02b0fd5f395db20c91bf2784ec54b9/src/test/resources/org/broadinstitute/hellbender/tools/count_reads.bam?raw=true"

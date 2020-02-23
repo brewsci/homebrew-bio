@@ -12,7 +12,8 @@ class Varsim < Formula
   end
 
   depends_on :java
-  depends_on "python@2"
+
+  uses_from_macos "python@2"
 
   def install
     jar = "VarSim.jar"

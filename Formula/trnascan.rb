@@ -2,14 +2,14 @@ class Trnascan < Formula
   # cite Lowe_1997: "https://doi.org/10.1093/nar/25.5.0955"
   desc "Search for tRNA genes in genomic sequence"
   homepage "http://lowelab.ucsc.edu/tRNAscan-SE/"
-  url "http://trna.ucsc.edu/software/trnascan-se-2.0.3.tar.gz"
-  sha256 "b305c1bf226d16833349b22ad1f3160a52ad30f577a336128da3cc76d5772a4e"
+  url "http://trna.ucsc.edu/software/trnascan-se-2.0.4.tar.gz"
+  sha256 "d1a68f14ffa48692b1a110c47f9eeb52193eaf4a890d9f81757c321d0b6cea8d"
   version_scheme 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "c748dc081ef572569e4ab23375847bac0f71489fc0f53e96b507574cd9b6e321" => :sierra
-    sha256 "499d55124fced2bf77023a0aa0525a3a7913fa2011078dd3d26d474469cb220f" => :x86_64_linux
+    sha256 "4b9b41b0218c8eca4a3ee120b308e690d26e2b452cafad34ace553287a656b0c" => :catalina
+    sha256 "cd9c6db9ce48711d817ffd2bca2dd6993d60973fb0c80f66f20103060701ca2b" => :x86_64_linux
   end
 
   depends_on "infernal"

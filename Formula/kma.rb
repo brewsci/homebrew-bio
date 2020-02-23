@@ -1,14 +1,14 @@
 class Kma < Formula
   desc "Align long and short reads to redundant sequence databases"
   homepage "https://bitbucket.org/genomicepidemiology/kma"
-  url "https://bitbucket.org/genomicepidemiology/kma/get/1.2.8.zip"
-  sha256 "67d12eda3955c860355421685c13b4b705314b5085868a71f169d2b615f03c08"
+  url "https://bitbucket.org/genomicepidemiology/kma/get/1.2.21.zip"
+  sha256 "2477152c8f48fc49fd889085b2568261ad797646266e77334d0d4cd4588ae6dd"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "52522844f305d67dc389fa3c3034227d2a72ffa6ce66bba2b7498db214af0b30" => :sierra
-    sha256 "ac88a5f2440997f0f09d08f4f734cf9d8f129a10d91c98661a9108ceaaecac08" => :x86_64_linux
+    sha256 "c0e317eb258d153575e9ccfd5a765188b8b7694ae934dd4644f4de1053ca794e" => :catalina
+    sha256 "0c770407cb9eca2e1ec7bb9adf06a5e95c94bee5d3f356115a2e824c99b278c5" => :x86_64_linux
   end
 
   uses_from_macos "zlib"

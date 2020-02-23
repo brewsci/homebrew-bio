@@ -6,6 +6,7 @@ class Peat < Formula
   sha256 "5a44f888dcbae4b537141246a2e991249ae34930d553e1b0a10684309ac03e52"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
     sha256 "6de0b86edd00c6efee1c5f8d2b8370a6bbd46b30fc136d4bd1bfc6a1b2a5a10f" => :sierra
     sha256 "1aa583f4dbcf1ecd7a769a2d01a4403368b4e72528eb27f6ad8854e6e8674b37" => :x86_64_linux

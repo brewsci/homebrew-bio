@@ -1,3 +1,4 @@
 {
-  "beagle": "homebrew/core"
+  "beagle": "homebrew/core",
+  "raxml-ng": "homebrew/core"
 }

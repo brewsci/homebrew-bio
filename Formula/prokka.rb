@@ -2,14 +2,14 @@ class Prokka < Formula
   # cite Seemann_2014: "https://doi.org/10.1093/bioinformatics/btu153"
   desc "Rapid annotation of prokaryotic genomes"
   homepage "https://github.com/tseemann/prokka"
-  url "https://github.com/tseemann/prokka/archive/v1.14.0.tar.gz"
-  sha256 "70b647c3efc296fc2909ba85056aa88e76832917876ff22e723798dcab281bb5"
+  url "https://github.com/tseemann/prokka/archive/v1.14.6.tar.gz"
+  sha256 "f730b5400ea9e507bfe6c5f3d22ce61960a897195c11571c2e1308ce2533faf8"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "9d5256b21befdf947eaab88562dcd933e34094facca2536987b9beabfa982c1d" => :sierra
-    sha256 "02017daea749350775e1773e4632f6096dd98929b812f07e7213d89b5d0dcb6e" => :x86_64_linux
+    sha256 "992e481c64fb2c63e228f0bf8b1a98926fd7461305d371625736bf53ce863d1f" => :catalina
+    sha256 "33840d6123d3d8713a223a136455ec57028fc28564d7f386b10c981158166935" => :x86_64_linux
   end
 
   depends_on "aragorn"
@@ -20,12 +20,9 @@ class Prokka < Formula
   depends_on "infernal"
   depends_on "minced"
   depends_on "parallel"
+  depends_on "perl"
   depends_on "prodigal"
   depends_on "tbl2asn"
-  unless OS.mac?
-    depends_on "less"
-    depends_on "perl"
-  end
 
   def install
     # remove all bundled stuff and use brew ones

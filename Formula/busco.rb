@@ -1,70 +1,86 @@
 class Busco < Formula
+  include Language::Python::Virtualenv
+
+  # cite Seppey_2019: "https://doi.org/10.1007/978-1-4939-9173-0_14"
   # cite Waterhouse_2017: "https://doi.org/10.1093/molbev/msx319"
   # cite Sim_o_2015: "https://doi.org/10.1093/bioinformatics/btv351"
   desc "Assess genome assembly completeness with single-copy orthologs"
   homepage "https://busco.ezlab.org"
-  url "https://gitlab.com/ezlab/busco/repository/3.0.2/archive.tar.bz2"
-  sha256 "cd0699545a126c7cc94604eef7c8dc50379b5d11becbad3a0f55d995a4c5e1c0"
-  revision 2
+  url "https://gitlab.com/ezlab/busco/repository/4.0.4/archive.tar.gz"
+  sha256 "1d42e4b3a53a7e4f3c4c15485ffcc4dac9fd6cbb3a4ac410ca90774c34d4dcb1"
+  revision 1
   head "https://gitlab.com/ezlab/busco.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "dcd4dac383b75a661f950b5a5313824e36055ef00a149d8eb10b7dce46c0e4cc" => :sierra
-    sha256 "119c1d4ea6ab45cca36fef4f160623aa1798f7412bf50d53a4148b482051432b" => :x86_64_linux
+    sha256 "132bc5b295087ba78bf8bb324aac0680f859982c141c3d0fad9328b0f862ef71" => :catalina
+    sha256 "8ac68071f81ab2db3f19bf99608dcb785dee1e4f9a04bd2686d99ec1651eb080" => :x86_64_linux
   end
 
   depends_on "augustus"
-  depends_on "blast"
+  depends_on "blast@2.2"
   depends_on "hmmer"
+  depends_on "numpy"
+  depends_on "prodigal"
   depends_on "python"
+  depends_on "sepp"
+
+  resource "biopython" do
+    url "https://files.pythonhosted.org/packages/ff/f4/0ce39bebcbb0ff619426f2bbe86e60bc549ace318c5a9113ae480ab2adc7/biopython-1.76.tar.gz"
+    sha256 "3873cb98dad5e28d5e3f2215a012565345a398d3d2c4eebf7cd701757b828c72"
+  end
 
   def install
-    inreplace Dir["scripts/*.py"], "#!/usr/bin/env python", "#!#{HOMEBREW_PREFIX}/bin/python3"
-    system "python3", "setup.py", "install", "--prefix=#{prefix}"
+    virtualenv_install_with_resources
+    # Save the original config file somewhere and write our own
+    cp buildpath/"config/config.ini", libexec/"config.default.ini"
 
-    libexec.install Dir["scripts/*"]
-    (bin/"busco").write_env_script(libexec/"run_BUSCO.py", :AUGUSTUS_CONFIG_PATH => "#{Formula["augustus"].prefix}/config/")
-
-    doc.install "BUSCO_v3_userguide.pdf"
-    prefix.install "config"
-
-    (prefix/"config/config.ini").write <<~EOS
-      [busco]
+    (libexec/"config.ini").write <<~EOS
+      [busco_run]
       [tblastn]
-      path = #{Formula["blast"].bin}
+      path = #{Formula["blast@2.2"].bin}
+      command = tblastn
       [makeblastdb]
-      path = #{Formula["blast"].bin}
+      path = #{Formula["blast@2.2"].bin}
+      command = makeblastdb
       [augustus]
       path = #{Formula["augustus"].bin}
+      command = augustus
       [etraining]
       path = #{Formula["augustus"].bin}
+      command = etraining
       [gff2gbSmallDNA.pl]
       path = #{Formula["augustus"].prefix}/scripts/
+      command = gff2gbSmallDNA.pl
       [new_species.pl]
       path = #{Formula["augustus"].prefix}/scripts/
+      command = new_species.pl
       [optimize_augustus.pl]
       path = #{Formula["augustus"].prefix}/scripts/
+      command = optimize_augustus.pl
       [hmmsearch]
       path = #{Formula["hmmer"].bin}
-      [Rscript]
-      path = #{HOMEBREW_PREFIX}/bin
+      command = hmmsearch
+      [sepp]
+      path = #{Formula["sepp"].bin}
+      command = run_sepp.py
+      [prodigal]
+      path = #{Formula["prodigal"].bin}
+      command = prodigal
     EOS
+
+    # Remove virtualenv_install_with_resources link and write our own
+    rm bin/"busco"
+    (bin/"busco").write_env_script libexec/"bin/busco",
+      :BUSCO_CONFIG_FILE    => libexec/"config.ini",
+      :AUGUSTUS_CONFIG_PATH => "#{Formula["augustus"].prefix}/config/"
   end
 
   def caveats; <<~EOS
-    You probably also want to download lineage datasets to run BUSCO:
-
-      https://busco.ezlab.org
-
-    To generate graphs, also make sure a working R is installed:
-
-      brew cask install r
-
-    or alternatively
-
+    R must be installed to generate graphs.
       brew install r
+    #{"Or:\n  brew cask install r" if OS.mac?}
   EOS
   end
 

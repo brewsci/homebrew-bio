@@ -3,18 +3,18 @@ class FinchRs < Formula
   desc "Genomic minhashing implementation in Rust"
   homepage "https://github.com/onecodex/finch-rs"
   if OS.mac?
-    url "https://github.com/onecodex/finch-rs/releases/download/v0.2.0/finch-mac64-v0.2.0.zip"
-    sha256 "327d452d33e459afb8a32068354af133fd51bc636c7940a7cf53e5c87f12ce9f"
+    url "https://github.com/onecodex/finch-rs/releases/download/v0.3.0/finch-mac64-v0.3.0.zip"
+    sha256 "06535290f528901868f566beadce71ae89d3b3e238b805317318e6109f756fe0"
   else
-    url "https://github.com/onecodex/finch-rs/releases/download/v0.2.0/finch-linux64-v0.2.0.gz"
-    sha256 "eda928092dda714732a956e647fb8bdcc60d12bd958db55db075b4748cc3eaab"
+    url "https://github.com/onecodex/finch-rs/releases/download/v0.3.0/finch-linux64-v0.3.0.gz"
+    sha256 "d6c41f123bfa4d58028cd2ef9d9981cdd3ed5568f02f53c34e8be602224f7f1b"
   end
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "70247045d1517084a4297c42f2c2f8c7cbfdfb4999c434ff796318e0987a65a2" => :sierra
-    sha256 "47491278c899f82d8691d528a75a0934f2db112008e4bdae5103b534081e7bf2" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "eca9f68be258523651b801b889a7535638b069ffe06d5608dc6171da192aacc3" => :catalina
+    sha256 "b9e2bc391659d9e97baec72828d5c5d90ec5c991a3a6a0d80f17ec2b52732240" => :x86_64_linux
   end
 
   depends_on "patchelf" => :build unless OS.mac?
