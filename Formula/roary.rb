@@ -5,6 +5,13 @@ class Roary < Formula
   url "https://github.com/sanger-pathogens/Roary/archive/v3.13.0.tar.gz"
   sha256 "375f83c8750b0f4dea5b676471e73e94f3710bc3a327ec88b59f25eae1c3a1e8"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "42756c86160f232c78b00aab596587d9726779f72ccd85e15d778371b9efb800" => :catalina
+    sha256 "68842be0ec83d5d0292006df13ae08aa864a66548551d18ee1118f54d545b958" => :x86_64_linux
+  end
+
   depends_on "cpanminus" => :build
 
   depends_on "bedtools"
