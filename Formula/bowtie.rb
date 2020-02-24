@@ -14,7 +14,8 @@ class Bowtie < Formula
   end
 
   depends_on "tbb"
-  depends_on "python@2" => :test unless OS.mac? || which("python")
+
+  uses_from_macos "python@2" => :test
 
   def install
     system "make", "install", "prefix=#{prefix}"

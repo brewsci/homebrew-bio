@@ -16,10 +16,13 @@ class Salmon < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "cmake" => :build
+  depends_on "pkg-config" => :build
+
   depends_on "boost"
   depends_on "cereal"
+  depends_on "curl"
   depends_on "jemalloc"
-  depends_on "openssl@1.1"
+  depends_on "libgff"
   depends_on "staden-io-lib"
   depends_on "tbb"
   depends_on "xz"

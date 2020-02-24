@@ -32,12 +32,12 @@ jobs:
           git -C "$(brew --repo ${{github.repository}})" fetch origin "pull/$pr/head:pr-head"
           sha1="$(git -C "$(brew --repo ${{github.repository}})" rev-parse pr-head)"
           echo pr="$pr" sha1="$sha1"
-          run_id=$(curl -s -H 'Accept: application/vnd.github.antiope-preview+json' https://api.github.com/repos/${{github.repository}}/actions/workflows/build-bottles.yml/runs \
+          run_id=$(curl -fs -H 'Accept: application/vnd.github.antiope-preview+json' https://api.github.com/repos/${{github.repository}}/actions/workflows/build-bottles.yml/runs \
             | jq ".workflow_runs[] | select(.head_sha == \"$sha1\").id")
-          artifact_id="$(curl -s -H 'Accept: application/vnd.github.antiope-preview+json' https://api.github.com/repos/${{github.repository}}/actions/runs/$run_id/artifacts \
+          artifact_id="$(curl -fs -H 'Accept: application/vnd.github.antiope-preview+json' https://api.github.com/repos/${{github.repository}}/actions/runs/$run_id/artifacts \
             | jq '.artifacts[0].id')"
           echo run_id="$run_id" artifact_id="$artifact_id"
-          curl -L -o bottles.zip "https://${{secrets.HOMEBREW_GITHUB_API_TOKEN}}@api.github.com/repos/${{github.repository}}/actions/artifacts/$artifact_id/zip"
+          curl -fL -o bottles.zip "https://${{secrets.HOMEBREW_GITHUB_API_TOKEN}}@api.github.com/repos/${{github.repository}}/actions/artifacts/$artifact_id/zip"
           file bottles.zip
           unzip bottles.zip
           git -C "$(brew --repo ${{github.repository}})" status
@@ -52,7 +52,7 @@ jobs:
           if ! git push origin master master:develop; then
             git push --force origin "pr$pr"
             mkdir ~/bin
-            curl -sL https://github.com/github/hub/releases/download/v2.14.1/hub-linux-amd64-2.14.1.tgz \
+            curl -fsL https://github.com/github/hub/releases/download/v2.14.1/hub-linux-amd64-2.14.1.tgz \
               | tar xzO hub-linux-amd64-2.14.1/bin/hub >~/bin/hub
             chmod +x ~/bin/hub
             GITHUB_TOKEN='${{secrets.HOMEBREW_GITHUB_API_TOKEN}}' ~/bin/hub pull-request -l bottles -b master -h "pr$pr" -m "Bottles for PR $pr" --no-edit
