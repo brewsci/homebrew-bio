@@ -1,6 +1,13 @@
 class Vmatch < Formula
   desc "Large scale sequence analysis software"
   homepage "http://www.vmatch.de/"
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "510633853d4500dd2cd36b522fdef69056c594c17f14c624613a84300cceeb4d" => :catalina
+    sha256 "a543d450bdedad7174a277f0b9060443ef7a43954f731c89a7fbbdd35430c4e6" => :x86_64_linux
+  end
+
   if OS.mac?
     url "http://www.vmatch.de/distributions/vmatch-2.3.1-Darwin_i386-64bit.tar.gz"
     sha256 "0def2a69515cd36a68724b76f60eca904d2445125d956a7974e34cb72904feda"
