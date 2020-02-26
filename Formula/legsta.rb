@@ -1,8 +1,8 @@
 class Legsta < Formula
   desc "In silico Legionella pneumophila Sequence Based Typing"
   homepage "https://github.com/tseemann/legsta"
-  url "https://github.com/tseemann/legsta/archive/v0.3.7.tar.gz"
-  sha256 "4d721a1dcd64b44311992610484e699fb05affb4a32b75aa62225b317cb81163"
+  url "https://github.com/tseemann/legsta/archive/v0.5.1.tar.gz"
+  sha256 "a094d0e82af988d5fc2ab0ad9c55c23f7f20d0dd424470a28daf00a59a0190b5"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -11,6 +11,7 @@ class Legsta < Formula
     sha256 "10d8a249d6e1a22bc4d8cc06e8dd6cf3f941d6bc1f07905fbb5a29821a98b889" => :x86_64_linux
   end
 
+  depends_on "any2fasta"
   depends_on "ispcr"
 
   def install
