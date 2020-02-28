@@ -1,10 +1,9 @@
 class Racon < Formula
   # cite Vaser_2017: "https://doi.org/10.1101/gr.214270.116"
   desc "Compute consensus sequence of a genome assembly of long uncorrected reads"
-  homepage "https://github.com/isovic/racon"
-  url "https://github.com/isovic/racon/releases/download/1.4.3/racon-v1.4.3.tar.gz"
-  sha256 "dfce0bae8234c414ef72b690247701b4299e39a2593bcda548a7a864f51de7f2"
-  head "https://github.com/isovic/racon.git"
+  homepage "https://github.com/lbcb-sci/racon"
+  url "https://github.com/lbcb-sci/racon/releases/download/1.4.10/racon-v1.4.10.tar.gz"
+  sha256 "016fb3affb977303a5f5ad27339a7044fa3d9b89a6ea3c7734479f864155a0c2"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -15,6 +14,7 @@ class Racon < Formula
 
   depends_on "cmake" => :build
   depends_on "gcc" if OS.mac? # for openmp
+  depends_on "python"
 
   uses_from_macos "zlib"
 
@@ -26,6 +26,7 @@ class Racon < Formula
       system "make"
       system "make", "install"
     end
+    bin.install Dir["scripts/*.py"]
   end
 
   test do
