@@ -34,7 +34,7 @@ class Salmon < Formula
     # Reduce memory usage for CircleCI.
     ENV["MAKEFLAGS"] = "-j4" if ENV["CIRCLECI"]
 
-    system "cmake", ".", *std_cmake_args
+    system "cmake", ".", "-DUSE_SHARED_LIBS=1", *std_cmake_args
     system "make"
     system "make", "install"
   end
@@ -43,4 +43,3 @@ class Salmon < Formula
     assert_match version.to_s, shell_output("#{bin}/salmon --version 2>&1")
   end
 end
-
