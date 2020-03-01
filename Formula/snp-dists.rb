@@ -1,8 +1,8 @@
 class SnpDists < Formula
   desc "Pairwise SNP distance matrix from a FASTA sequence alignment"
   homepage "https://github.com/tseemann/snp-dists"
-  url "https://github.com/tseemann/snp-dists/archive/v0.6.3.tar.gz"
-  sha256 "b7454fdb4ced2ed3f5245334b99c4717005e19495d7bc77fd893b291ba6ccc17"
+  url "https://github.com/tseemann/snp-dists/archive/v0.7.0.tar.gz"
+  sha256 "9f5ae3c48f7c6c59b3132c445fbd6ea9269896a4c588171624adb1a7bb016b57"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -11,7 +11,7 @@ class SnpDists < Formula
     sha256 "dd3920a797e2d8aa378cd5242cc532dcd7dc46307c6aa2ba1c3d36ae36e7d8c7" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     exe = "snp-dists"
