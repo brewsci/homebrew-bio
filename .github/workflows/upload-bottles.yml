@@ -42,6 +42,8 @@ jobs:
           unzip bottles.zip
           git -C "$(brew --repo ${{github.repository}})" status
           brew test-bot --ci-upload --publish --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
+          git config --global user.name "LinuxbrewTestBot"
+          git config --global user.email "testbot@linuxbrew.sh"
           cd "$(brew --repo ${{github.repository}})"
           git branch -f "pr$pr"
           git fetch origin master
@@ -55,5 +57,6 @@ jobs:
             curl -fsL https://github.com/github/hub/releases/download/v2.14.1/hub-linux-amd64-2.14.1.tgz \
               | tar xzO hub-linux-amd64-2.14.1/bin/hub >~/bin/hub
             chmod +x ~/bin/hub
+            git reset --hard origin/master
             GITHUB_TOKEN='${{secrets.HOMEBREW_GITHUB_API_TOKEN}}' ~/bin/hub pull-request -l bottles -b master -h "pr$pr" -m "Bottles for PR $pr" --no-edit
           fi
