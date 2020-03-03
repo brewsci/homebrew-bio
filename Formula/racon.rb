@@ -8,8 +8,8 @@ class Racon < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "e174c78ccd648b764b57e1040f94a6b50e6e752c69855f4080619393b96f3282" => :catalina
-    sha256 "d9632f03a85e84312928de0c2b302d4aa79edc1c250bc24eb17e00ea8152fbdc" => :x86_64_linux
+    sha256 "6ab2eda0ac6f54a9096972bea2b413d2d692bceb28b090eb97571ed02531e2b4" => :catalina
+    sha256 "42aba44f505ae524b7e7aa22827994db66495c76caa35caea938286dda6be851" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
