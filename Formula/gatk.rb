@@ -5,8 +5,6 @@ class Gatk < Formula
   url "https://github.com/broadinstitute/gatk/releases/download/4.1.5.0/gatk-4.1.5.0.zip"
   sha256 "6fc152c2cae0cc54c7c4cfdfd865a64f7054a820f7d02ca2549511af1dd9882b"
 
-  bottle :unneeded
-
   depends_on :java => "1.8"
 
   uses_from_macos "python@2"
