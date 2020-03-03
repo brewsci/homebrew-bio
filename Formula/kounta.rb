@@ -7,8 +7,8 @@ class Kounta < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "8ed7a35906564536e72d2890ae01ae7383f0ece0750eb685134bc4b717699c38" => :sierra
-    sha256 "3447f8d1f06cb50ee8d701519129b35f012d4a37a6e434c832a88206c1e17017" => :x86_64_linux
+    sha256 "1e0eb6dbb219f19b82dc684cbef7ddcdd7ed9f5b9cb5f7b21bb253bc1e369ea1" => :catalina
+    sha256 "bd468d88c9e66bb63a3fd490c30398516e1ed78b119047d33917a00a9da6bc5a" => :x86_64_linux
   end
 
   depends_on "kmc"
