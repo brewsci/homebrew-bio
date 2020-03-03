@@ -6,10 +6,10 @@ class Lsd2 < Formula
   sha256 "538054cf630eacf213af25d867e40455a366d3fe7b1876d1bcedea7dda9d16b1"
 
   bottle do
-    cellar :any_skip_relocation
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "bc3fbc38d1126f0f502d49e93a7c639893cef9b996c468f623a9351ed7a4d046" => :sierra
-    sha256 "9a79037099326fb802b2f42c86deaea699bc0bd90cfe1f6ff4b45d941a722dc1" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "feba97e5dc1630bf6574efcdce71c4d589437f85964df534fb646207032dad47" => :catalina
+    sha256 "f077847fbfbe4f247a92ed9dc6ef5e85147488752a5466a2668cc159a5471204" => :x86_64_linux
   end
 
   def install
