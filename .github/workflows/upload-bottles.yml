@@ -49,7 +49,7 @@ jobs:
           git reset --hard origin/master
           git merge -m "Merge pull request #$pr" "pr$pr"
           git status
-          if ! git push origin master master:develop; then
+          if ! git push origin master:develop master; then
             git push --force origin "pr$pr"
             mkdir ~/bin
             curl -fsL https://github.com/github/hub/releases/download/v2.14.1/hub-linux-amd64-2.14.1.tgz \
