@@ -1,8 +1,8 @@
 class Samclip < Formula
   desc "Filter soft/hard clipped alignments from SAM files"
   homepage "https://github.com/tseemann/samclip"
-  url "https://github.com/tseemann/samclip/archive/v0.2.tar.gz"
-  sha256 "70cf12ec758d5c43fb98dedb9dba0649a851338b19e2290a55288cbf498b6a67"
+  url "https://github.com/tseemann/samclip/archive/v0.3.0.tar.gz"
+  sha256 "d52eb2ce84aed17c72d7f1cde035cddd8f66a45fd748c2325c912a8fc6225889"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
