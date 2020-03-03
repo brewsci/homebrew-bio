@@ -3,8 +3,8 @@ class BaliPhy < Formula
   # cite Redelings_2014: "https://dx.doi.org/10.1093/molbev/msu174"
   desc "Bayesian co-estimation of phylogenies and multiple alignments"
   homepage "http://www.bali-phy.org/"
-  url "https://github.com/bredelings/BAli-Phy/archive/3.4.1.tar.gz"
-  sha256 "d05575278025516729446243fb41ff8588cdfdfbaeaf4792148d5b2e45742c18"
+  url "https://github.com/bredelings/BAli-Phy/archive/3.5.0.tar.gz"
+  sha256 "4938eacf1d07749d6d7ebbdbd151c7d634089c8178efc6bcbf70e7825de73409"
   head "https://github.com/bredelings/BAli-Phy.git"
 
   bottle do
@@ -19,12 +19,16 @@ class BaliPhy < Formula
   depends_on "pandoc" => :build
   depends_on "pkg-config" => :build
   depends_on "cairo"
+  depends_on "gcc@8" unless OS.mac? # for C++17
+
+  # C++17
+  fails_with :gcc => "5"
+  fails_with :gcc => "6"
+  fails_with :gcc => "7"
 
   def install
     flags = %w[-C build install]
-    # Reduce memory usage for Circle CI
-    flags << "-j4" if ENV["HOMEBREW_CIRCLECI"]
-    system "meson", "build", "--prefix=#{prefix}"
+    system "meson", "build", "--prefix=#{prefix}", "--buildtype=release"
     system "ninja", *flags
   end
 
