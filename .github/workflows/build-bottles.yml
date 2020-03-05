@@ -12,6 +12,7 @@ jobs:
       HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
       - uses: actions/checkout@master
+      - uses: jonchang/audit-action@master
       - name: Build bottles
         run: |
           mkdir -p "$(dirname $(brew --repo ${{github.repository}}))"
