@@ -9,7 +9,7 @@ class Nanopolish < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
+    cellar :any
     sha256 "96585ee4d83de6848fcb18f15499b07bc90bb3b1dec358aa1040d307d2c64df3" => :catalina
     sha256 "024891195b39013008a3a2d03946617697602335077d36930e975091232ca8b8" => :x86_64_linux
   end
