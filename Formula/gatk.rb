@@ -5,7 +5,12 @@ class Gatk < Formula
   url "https://github.com/broadinstitute/gatk/releases/download/4.1.5.0/gatk-4.1.5.0.zip"
   sha256 "6fc152c2cae0cc54c7c4cfdfd865a64f7054a820f7d02ca2549511af1dd9882b"
 
-  bottle :unneeded
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "2d322abdd5f5e6f7d481d42ee58832bc29ade6637e18fd00169c129155c97296" => :catalina
+    sha256 "c30f43ea293caea495e70480f7f01174bff7dc3d1f3b49d2d817f315b96f136d" => :x86_64_linux
+  end
 
   depends_on :java => "1.8"
 
