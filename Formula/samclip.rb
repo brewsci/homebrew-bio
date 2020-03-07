@@ -7,8 +7,8 @@ class Samclip < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "2067909340da4ba5782af14b1c009396effdc53efd14b54e02458a3bd7387566" => :catalina
-    sha256 "ed81eb05cd406556e8805a63ed5d2a9223f034626422548e6fa43ef11c463e36" => :x86_64_linux
+    sha256 "f1eef22d3337796057f2f1fd45b63a893b408bc543ebd740a0869d7bf98a4280" => :catalina
+    sha256 "10ed4d3fb055a47767520c453b4952dcaca8dc734784e05749c24f3d59ebc695" => :x86_64_linux
   end
 
   def install
