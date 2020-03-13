@@ -8752,14 +8752,14 @@
     "desc": "Maryland Super-Read Celera Assembler",
     "homepage": "https://masurca.blogspot.com/",
     "versions": {
-      "stable": "3.3.7",
+      "stable": "3.3.9",
       "devel": null,
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/alekseyzimin/masurca/releases/download/v3.3.7/MaSuRCA-3.3.7.tar.gz",
+        "url": "https://github.com/alekseyzimin/masurca/releases/download/v3.3.9/MaSuRCA-3.3.9.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -8774,8 +8774,8 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/masurca-3.3.7.x86_64_linux.bottle.tar.gz",
-            "sha256": "219584cc8498739e61257cb116127af19ff717b91d36dbe78c301452acd41054"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/masurca-3.3.9.x86_64_linux.bottle.tar.gz",
+            "sha256": "16e4787d9289750d0afbddfc178bcc51c1e3f46e2167c4508e49e234fb41e68e"
           }
         }
       }
@@ -14597,24 +14597,47 @@
     "desc": "De novo assembly pipeline for Illumina paired-end reads",
     "homepage": "https://github.com/tseemann/shovill",
     "versions": {
-      "stable": "1.0.4",
+      "stable": "1.1.0",
       "devel": null,
       "head": "HEAD",
-      "bottle": false
+      "bottle": true
     },
-    "urls": {},
+    "urls": {
+      "stable": {
+        "url": "https://github.com/tseemann/shovill/archive/v1.1.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
-    "bottle": {},
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/shovill-1.1.0.catalina.bottle.tar.gz",
+            "sha256": "7348bc9750cc3ed0ec6cec4c1aa55c2e36475e2d791d6edc383429d0677f4ee6"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/shovill-1.1.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "4c8964af516ab407aa754466600409e9e0dd262ed1804211729f34b20cfdc1ea"
+          }
+        }
+      }
+    },
     "keg_only": false,
-    "bottle_disabled": true,
+    "bottle_disabled": false,
     "options": [],
     "build_dependencies": [],
     "dependencies": [
       "bwa",
       "flash",
+      "kmc",
       "lighter",
-      "mash",
       "megahit",
       "pigz",
       "pilon",
@@ -14830,34 +14853,34 @@
     "desc": "Strategic Kmer Extension for Scrupulous Assemblies",
     "homepage": "https://github.com/ncbi/SKESA",
     "versions": {
-      "stable": "2.3.0",
+      "stable": "2.4.0",
       "devel": null,
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/ncbi/SKESA/archive/v2.3.0.tar.gz",
+        "url": "https://github.com/ncbi/SKESA/archive/2.4.0.tar.gz",
         "tag": null,
         "revision": null
       }
     },
-    "revision": 2,
+    "revision": 0,
     "version_scheme": 0,
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "mojave": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/skesa-2.3.0_2.mojave.bottle.tar.gz",
-            "sha256": "a2bd9acebd6330fd0440ad68e505932f3c032c0c746054712bdcafdc6ea437d5"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/skesa-2.4.0.catalina.bottle.tar.gz",
+            "sha256": "6da28be7b7ca7600d5d900094fd1d5d41bf3b376a8b24121912e2256f8115319"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/skesa-2.3.0_2.x86_64_linux.bottle.tar.gz",
-            "sha256": "90e08e2a0fbf08060b2ffbbd3e3951840af8fd03e1fea9113758fe67677dc4d1"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/skesa-2.4.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "bc2b4247e6b192d5c0ddf318d24f62a12ed7a4fd4597b403abfc5183090c4dd1"
           }
         }
       }
