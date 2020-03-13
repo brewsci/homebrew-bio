@@ -2,8 +2,8 @@ class Masurca < Formula
   # cite Zimin_2013: "https://doi.org/10.1093/bioinformatics/btt476"
   desc "Maryland Super-Read Celera Assembler"
   homepage "https://masurca.blogspot.com/"
-  url "https://github.com/alekseyzimin/masurca/releases/download/v3.3.7/MaSuRCA-3.3.7.tar.gz"
-  sha256 "52e1b60387d704544151e81bfa3c5ad16f2bd6997f55156aaa6047414b5b14ce"
+  url "https://github.com/alekseyzimin/masurca/releases/download/v3.3.9/MaSuRCA-3.3.9.tar.gz"
+  sha256 "0971e481eb4d3682bf13ca611098feb5b97ccd786faa94c94f09fae30b159a6f"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -34,6 +34,7 @@ class Masurca < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/masurca --version 2>&1")
     system "#{bin}/masurca", "-h"
   end
 end
