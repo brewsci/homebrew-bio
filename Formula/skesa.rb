@@ -6,10 +6,10 @@ class Skesa < Formula
   sha256 "c07b56dfa394c013e519d5a246b7dee03db41d8ac912ab9ca02cf4d20bf13b15"
 
   bottle do
-    cellar :any
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "a2bd9acebd6330fd0440ad68e505932f3c032c0c746054712bdcafdc6ea437d5" => :mojave
-    sha256 "90e08e2a0fbf08060b2ffbbd3e3951840af8fd03e1fea9113758fe67677dc4d1" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "6da28be7b7ca7600d5d900094fd1d5d41bf3b376a8b24121912e2256f8115319" => :catalina
+    sha256 "bc2b4247e6b192d5c0ddf318d24f62a12ed7a4fd4597b403abfc5183090c4dd1" => :x86_64_linux
   end
 
   depends_on "boost"
