@@ -33,9 +33,7 @@ class Mpboot < Formula
       system "cmake", "..", "-DIQTREE_FLAGS=#{simd}", *std_cmake_args
       system "make"
       system "make", "install"
-      if simd == "avx"
-        mv bin/"mpboot-avx", bin/"mpboot"
-      end
+      mv bin/"mpboot-avx", bin/"mpboot" if simd == "avx"
     end
   end
 
