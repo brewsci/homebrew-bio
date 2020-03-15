@@ -23,7 +23,10 @@ class Bracken < Formula
     inreplace "bracken-build", "$DIR/src", libexec
 
     bin.install "bracken", "bracken-build"
-    libexec.install "src/est_abundance.py", "src/generate_kmer_distribution.py", "src/kmer2read_distr", "src/kreport2mpa.py"
+    libexec.install "src/est_abundance.py",
+                    "src/generate_kmer_distribution.py",
+                    "src/kmer2read_distr",
+                    "src/kreport2mpa.py"
   end
 
   test do
