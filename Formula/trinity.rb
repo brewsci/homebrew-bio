@@ -37,8 +37,9 @@ class Trinity < Formula
         Formula["trimmomatic"].opt_prefix
     end
 
-    inreplace "util/misc/run_jellyfish.pl", '$JELLYFISH_DIR = $FindBin::RealBin . "/../../trinity-plugins/jellyfish-1.1.3";',
-                                            "$JELLYFISH_DIR = \"#{Formula["jellyfish"].opt_prefix}\";"
+    inreplace "util/misc/run_jellyfish.pl",
+      '$JELLYFISH_DIR = $FindBin::RealBin . "/../../trinity-plugins/jellyfish-1.1.3";',
+      "$JELLYFISH_DIR = \"#{Formula["jellyfish"].opt_prefix}\";"
 
     system "make", "all", "plugins", "test"
     libexec.install Dir["*"]
