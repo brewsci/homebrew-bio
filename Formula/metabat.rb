@@ -64,12 +64,13 @@ class Metabat < Formula
   end
 
   if OS.mac?
-    def caveats; <<~EOS
-      Only HEAD currently works on macOS. Use the following to install:
+    def caveats
+      <<~EOS
+        Only HEAD currently works on macOS. Use the following to install:
 
-          brew install --HEAD brewsci/bio/metabat
+            brew install --HEAD brewsci/bio/metabat
 
-    EOS
+      EOS
     end
   end
 
@@ -80,7 +81,8 @@ class Metabat < Formula
              "--outputDepth", "depth.txt",
              "contigs-1000.fastq.bam"
       assert_match "NODE_1_length_5374_cov_8.558988	5404	14.2158	14.2158	16.817", File.read("depth.txt")
-      assert_match "0 bins (0 bases in total) formed.", shell_output("#{bin}/metabat2 -i contigs.fa -l -a depth.txt -o bin 2>&1")
+      assert_match "0 bins (0 bases in total) formed.",
+                   shell_output("#{bin}/metabat2 -i contigs.fa -l -a depth.txt -o bin 2>&1")
     end
   end
 end
