@@ -6,7 +6,7 @@ class SdslLite < Formula
   # Use git to get submodules.
   url "https://github.com/simongog/sdsl-lite.git",
     :revision => "0546faf0552142f06ff4b201b671a5769dd007ad",
-    :tag => "v2.1.1"
+    :tag      => "v2.1.1"
   revision 2
 
   bottle do
@@ -28,9 +28,9 @@ class SdslLite < Formula
 
   test do
     ENV.cxx11
-    system *ENV.cxx.split, "-o", "fm-index",
+    system(*ENV.cxx.split, "-o", "fm-index",
       "-I#{opt_include}", pkgshare/"examples/fm-index.cpp",
-      "-L#{opt_lib}", "-lsdsl", "-ldivsufsort", "-ldivsufsort64"
+      "-L#{opt_lib}", "-lsdsl", "-ldivsufsort", "-ldivsufsort64")
     assert_match "FM-index", shell_output("./fm-index 2>&1", 1)
   end
 end
