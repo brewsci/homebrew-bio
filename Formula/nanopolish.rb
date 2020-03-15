@@ -44,7 +44,8 @@ class Nanopolish < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/nanopolish --version")
     assert_match "extracted 1 read",
-                 shell_output("#{bin}/nanopolish extract -o out.fasta #{pkgshare}/test/data/LomanLabz_PC_Ecoli_K12_R7.3_2549_1_ch8_file30_strand.fast5 2>&1")
+                 shell_output("#{bin}/nanopolish extract -o out.fasta \
+                    #{pkgshare}/test/data/LomanLabz_PC_Ecoli_K12_R7.3_2549_1_ch8_file30_strand.fast5 2>&1")
     assert_match ">channel_8_read_24", File.read("out.fasta")
   end
 end
