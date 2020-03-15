@@ -52,7 +52,14 @@ class Apbspdb2pqr < Formula
       inreplace "pdb2pqr.py.in", "@WHICHPYTHON@", "/usr/bin/env python"
       system "python", "scons/scons.py", "PREFIX=#{prefix}/pdb2pqr", "APBS=#{bin}/apbs", "BUILD_PDB2PKA=False"
       system "python", "scons/scons.py", "install"
-      cp_r %w[main.py main_cgi.py pka.py visualize.py AppService_types.py AppService_services_types.py AppService_services.py AppService_client.py], prefix/"pdb2pqr"
+      cp_r %w[main.py
+              main_cgi.py
+              pka.py
+              visualize.py
+              AppService_types.py
+              AppService_services_types.py
+              AppService_services.py
+              AppService_client.py], prefix/"pdb2pqr"
       cp_r Dir["*"], prefix/"pdb2pqr"
       ln_s prefix/"pdb2pqr/pdb2pqr.py", bin/"pdb2pqr"
     end
