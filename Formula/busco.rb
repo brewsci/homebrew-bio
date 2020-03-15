@@ -19,12 +19,12 @@ class Busco < Formula
   end
 
   depends_on "augustus"
-  depends_on "blast@2.2"
+  depends_on "brewsci/bio/blast@2.2"
+  depends_on "brewsci/bio/sepp"
   depends_on "hmmer"
   depends_on "numpy"
   depends_on "prodigal"
   depends_on "python"
-  depends_on "sepp"
 
   resource "biopython" do
     url "https://files.pythonhosted.org/packages/ff/f4/0ce39bebcbb0ff619426f2bbe86e60bc549ace318c5a9113ae480ab2adc7/biopython-1.76.tar.gz"
@@ -77,11 +77,12 @@ class Busco < Formula
       :AUGUSTUS_CONFIG_PATH => "#{Formula["augustus"].prefix}/config/"
   end
 
-  def caveats; <<~EOS
-    R must be installed to generate graphs.
-      brew install r
-    #{"Or:\n  brew cask install r" if OS.mac?}
-  EOS
+  def caveats
+    <<~EOS
+      R must be installed to generate graphs.
+        brew install r
+      #{"Or:\n  brew cask install r" if OS.mac?}
+    EOS
   end
 
   test do
