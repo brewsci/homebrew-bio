@@ -80,7 +80,12 @@ class Sepp < Formula
   test do
     cp_r opt_pkgshare/"pyrg", testpath
     cd "pyrg" do
-      system "#{bin}/run_sepp.py", "-t=sate.tre", "-r=sate.tre.RAxML_info", "-a=sate.fasta", "-f=pyrg.even.fas", "-x=2"
+      system "#{bin}/run_sepp.py",
+             "-t=sate.tre",
+             "-r=sate.tre.RAxML_info",
+             "-a=sate.fasta",
+             "-f=pyrg.even.fas",
+             "-x=2"
     end
   end
 end
