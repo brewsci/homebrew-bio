@@ -31,21 +31,23 @@ class Gatk < Formula
     bin.install_symlink "#{prefix}/dataproc-cluster-ui"
   end
 
-  def caveats; <<~EOS
-    This brew installation does not include the necessary python dependencies to run certain gatk tools.
-    Similarly, it does not install the necessary version of R and its packages for certain plotting functions to work.
+  def caveats
+    <<~EOS
+      This brew installation does not include the necessary python dependencies to run certain gatk tools.
+      Similarly, it does not install the necessary version of R and its packages for certain plotting functions to work.
 
-    See the GATK readme for detailed installation instructions.
-       https://github.com/broadinstitute/gatk
+      See the GATK readme for detailed installation instructions.
+         https://github.com/broadinstitute/gatk
 
-    The recommended way of running the tools with complex python dependencies is to use the pre-built docker images instead of attempting to install them locally.
-    Gatk dockers are available on docker hub:
-       https://hub.docker.com/r/broadinstitute/gatk/tags/
-  EOS
+      The recommended way of running the tools with complex python dependencies is to use the pre-built docker images instead of attempting to install them locally.
+      Gatk dockers are available on docker hub:
+         https://hub.docker.com/r/broadinstitute/gatk/tags/
+    EOS
   end
   test do
     assert_match "Usage", shell_output("#{bin}/gatk --help 2>&1")
     testpath.install resource("count_reads.bam")
-    assert_equal "Tool returned:\n8", shell_output("#{bin}/gatk CountReads -I count_reads.bam --tmp-dir #{testpath}").strip
+    assert_equal "Tool returned:\n8",
+                  shell_output("#{bin}/gatk CountReads -I count_reads.bam --tmp-dir #{testpath}").strip
   end
 end
