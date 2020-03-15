@@ -3,7 +3,7 @@ class Bcalm < Formula
   desc "De Bruijn graph compaction in low memory"
   homepage "https://github.com/GATB/bcalm"
   url "https://github.com/GATB/bcalm.git",
-      :tag => "v2.2.0",
+      :tag      => "v2.2.0",
       :revision => "c8ac60252fa0b2abf511f7363cff7c4342dac2ee"
 
   bottle do
