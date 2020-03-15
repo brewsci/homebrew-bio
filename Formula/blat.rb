@@ -15,12 +15,15 @@ class Blat < Formula
 
   depends_on "libpng"
   depends_on "mysql@5.7"
-  depends_on "openssl"
+  depends_on "openssl@1.1"
 
   def install
     ENV.append_to_cflags "-I#{Formula["libpng"].opt_include}"
     bin.mkpath
-    system "make", "MYSQLLIBS='-L#{Formula["mysql@5.7"].opt_lib} -lmysqlclient'", "MACHTYPE=#{`uname -m`.chomp}", "BINDIR=#{bin}"
+    system "make",
+      "MYSQLLIBS='-L#{Formula["mysql@5.7"].opt_lib} -lmysqlclient'",
+      "MACHTYPE=#{`uname -m`.chomp}",
+      "BINDIR=#{bin}"
   end
 
   test do
