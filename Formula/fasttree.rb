@@ -16,7 +16,7 @@ class Fasttree < Formula
   # http://www.microbesonline.org/fasttree/#BranchLen
   # http://darlinglab.org/blog/2015/03/23/not-so-fast-fasttree.html
 
-  option "without-double", "Disable double precision floating point. Use single precision floating point and enable SSE."
+  option "without-double", "Disable double precision floating point. Use single precision floating point & enable SSE"
   option "without-openmp", "Disable multithreading support"
   option "without-sse", "Disable SSE parallel instructions"
 
