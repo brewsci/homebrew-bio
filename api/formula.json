@@ -8663,8 +8663,8 @@
       "blast",
       "brewsci/bio/bioperl",
       "brewsci/bio/exonerate",
-      "repeatmasker",
-      "snap",
+      "brewsci/bio/repeatmasker",
+      "brewsci/bio/snap",
       "perl",
       "sqlite"
     ],
@@ -9024,13 +9024,13 @@
       "cpanminus"
     ],
     "dependencies": [
-      "bioperl",
       "bowtie2",
-      "fraggenescan",
+      "brewsci/bio/bioperl",
+      "brewsci/bio/fraggenescan",
+      "brewsci/bio/idba",
       "hmmer",
-      "idba",
-      "perl",
-      "openssl"
+      "openssl@1.1",
+      "perl"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -13724,9 +13724,9 @@
     ],
     "dependencies": [
       "blast",
+      "brewsci/bio/rmblast",
+      "brewsci/bio/trf",
       "hmmer",
-      "rmblast",
-      "trf",
       "perl"
     ],
     "recommended_dependencies": [],
