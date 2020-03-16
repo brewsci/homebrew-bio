@@ -13,9 +13,10 @@ class Repeatmasker < Formula
   end
 
   depends_on "blast"
+  depends_on "brewsci/bio/rmblast"
+  depends_on "brewsci/bio/trf"
   depends_on "hmmer"
-  depends_on "rmblast"
-  depends_on "trf"
+
   unless OS.mac?
     depends_on "cpanminus" => :build
     depends_on "perl"
