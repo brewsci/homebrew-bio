@@ -1975,7 +1975,7 @@
     "dependencies": [
       "libpng",
       "mysql@5.7",
-      "openssl"
+      "openssl@1.1"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -2279,12 +2279,12 @@
     "build_dependencies": [],
     "dependencies": [
       "augustus",
-      "blast@2.2",
+      "brewsci/bio/blast@2.2",
+      "brewsci/bio/sepp",
       "hmmer",
       "numpy",
       "prodigal",
-      "python",
-      "sepp"
+      "python"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -3311,6 +3311,72 @@
     "outdated": false
   },
   {
+    "name": "delly",
+    "full_name": "brewsci/bio/delly",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Structural variant discovery by paired-end and split-read analysis",
+    "homepage": "https://github.com/tobiasrausch/delly",
+    "versions": {
+      "stable": "0.8.3",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/tobiasrausch/delly.git",
+        "tag": "v0.8.3",
+        "revision": "56ab2900da269568dc327045913ae77ff3919df1"
+      }
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/delly-0.8.3.catalina.bottle.tar.gz",
+            "sha256": "58c163c66ccc974146287df238ddbfb073c54486636ab12578b57997710b5347"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/delly-0.8.3.x86_64_linux.bottle.tar.gz",
+            "sha256": "6f65366a9da00ccad5206d0bb5c13ee6a7d304cde81db49609b31ab51dcae13b"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [
+      "autoconf",
+      "automake"
+    ],
+    "dependencies": [
+      "boost",
+      "htslib",
+      "xz",
+      "bzip2",
+      "zlib"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "dida",
     "full_name": "brewsci/bio/dida",
     "oldname": null,
@@ -4199,16 +4265,16 @@
     "aliases": [],
     "versioned_formulae": [],
     "desc": "Classic FASTA sequence alignment suite",
-    "homepage": "http://faculty.virginia.edu/wrpearson/fasta/",
+    "homepage": "https://faculty.virginia.edu/wrpearson/fasta/",
     "versions": {
-      "stable": "36.3.8g",
+      "stable": "36.3.8h",
       "devel": null,
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/wrpearson/fasta36/archive/fasta-v36.3.8g.tar.gz",
+        "url": "https://github.com/wrpearson/fasta36/archive/v36.3.8h_11-Feb-2020.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -4222,13 +4288,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/fasta-36.3.8g.sierra.bottle.tar.gz",
-            "sha256": "389a3bb347fefd53e505923cfc4bc5f45caf9d08c5312161091789dd8d15e749"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/fasta-36.3.8h.catalina.bottle.tar.gz",
+            "sha256": "7243b2aa0b0a8bd26748f1392639e111a692fd789bdc48622772778e5ea953ec"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/fasta-36.3.8g.x86_64_linux.bottle.tar.gz",
-            "sha256": "33403940543bad786c488197361f71ed00847f35793409107ba1103b7a8485bf"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/fasta-36.3.8h.x86_64_linux.bottle.tar.gz",
+            "sha256": "fa74efd96bdcaa4aeb87fd7c4bf2c0df07e366f467750a3fc7a10e9adaabf630"
           }
         }
       }
@@ -4478,7 +4544,7 @@
     "options": [
       {
         "option": "--without-double",
-        "description": "Disable double precision floating point. Use single precision floating point and enable SSE."
+        "description": "Disable double precision floating point. Use single precision floating point & enable SSE"
       },
       {
         "option": "--without-openmp",
@@ -4982,7 +5048,7 @@
     "aliases": [],
     "versioned_formulae": [],
     "desc": "Predicting genes in short and error-prone reads",
-    "homepage": "https://github.com/COL-IU/FragGeneScan",
+    "homepage": "https://omics.informatics.indiana.edu/FragGeneScan/",
     "versions": {
       "stable": "1.31",
       "devel": null,
@@ -7082,7 +7148,7 @@
     "dependencies": [
       "libpng",
       "mysql@5.7",
-      "openssl",
+      "openssl@1.1",
       "rsync",
       "util-linux",
       "zlib"
@@ -8241,7 +8307,7 @@
     "aliases": [],
     "versioned_formulae": [],
     "desc": "Long Interval Nucleotide K-mer Scaffolder",
-    "homepage": "http://www.bcgsc.ca/platform/bioinfo/software/links",
+    "homepage": "https://www.bcgsc.ca/platform/bioinfo/software/links",
     "versions": {
       "stable": "1.8.7",
       "devel": null,
@@ -8594,9 +8660,9 @@
     ],
     "dependencies": [
       "augustus",
-      "bioperl",
       "blast",
-      "exonerate",
+      "brewsci/bio/bioperl",
+      "brewsci/bio/exonerate",
       "repeatmasker",
       "snap",
       "perl",
