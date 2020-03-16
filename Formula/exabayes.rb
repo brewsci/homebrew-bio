@@ -24,14 +24,14 @@ class Exabayes < Formula
     args = %W[--disable-dependency-tracking --disable-silent-rules --prefix=#{prefix}]
     args << "--enable-mpi" if build.with? "open-mpi"
     system "autoreconf", "--install" if build.head?
-    system "./configure", *args
+    system("./configure", *args)
     system "make", "date" if build.head?
 
     # Only build the binaries; `make` by itself will also
     # build the manual which requires a full TeX installation.
     progs = %w[yggdrasil parser-exabayes sdsf postProcParam credibleSet extractBips consense exabayes]
-    system "make", *progs
-    bin.install *progs
+    system("make", *progs)
+    bin.install(*progs)
     pkgshare.install "examples"
   end
 
@@ -62,7 +62,7 @@ class Exabayes < Formula
 
     args = build.with?("open-mpi") ? %W[mpirun -np 2 #{bin}/exabayes] : %W["#{bin}/yggdrasil -T 2]
     args += %w[-f aln.phy -m DNA -n test -s 100 -c config.nex]
-    system *args
+    system(*args)
     system "#{bin}/sdsf", "-f", "ExaBayes_topologies.run-0.test", "ExaBayes_topologies.run-1.test"
     system "#{bin}/consense", "-n", "cons", "-f", "ExaBayes_topologies.run-0.test", "ExaBayes_topologies.run-1.test"
   end

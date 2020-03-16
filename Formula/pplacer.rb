@@ -26,7 +26,9 @@ class Pplacer < Formula
     if OS.mac?
       binaries.each do |bin|
         MachO::Tools.change_install_name bin, "/usr/local/lib/libgsl.0.dylib", "#{Formula["gsl"].lib}/libgsl.dylib"
-        MachO::Tools.change_install_name bin, "/usr/local/lib/libgslcblas.0.dylib", "#{Formula["gsl"].lib}/libgslcblas.0.dylib"
+        MachO::Tools.change_install_name bin,
+          "/usr/local/lib/libgslcblas.0.dylib",
+          "#{Formula["gsl"].lib}/libgslcblas.0.dylib"
         MachO::Tools.change_install_name bin, "/usr/local/lib/gcc/5/libgcc_s.1.dylib", "/usr/lib/libgcc_s.1.dylib"
       end
     end

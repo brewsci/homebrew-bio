@@ -30,7 +30,13 @@ class Bbtools < Formula
 
   test do
     res = prefix/"resources"
-    args = %W[in=#{res}/sample1.fq.gz in2=#{res}/sample2.fq.gz out=R1.fastq.gz out2=R2.fastq.gz ref=#{res}/phix174_ill.ref.fa.gz k=31 hdist=1]
+    args = %W[in=#{res}/sample1.fq.gz
+              in2=#{res}/sample2.fq.gz
+              out=R1.fastq.gz
+              out2=R2.fastq.gz
+              ref=#{res}/phix174_ill.ref.fa.gz
+              k=31
+              hdist=1]
     system "#{bin}/bbduk.sh", *args
     assert_match "bbushnell@lbl.gov", shell_output("#{bin}/bbmap.sh")
     assert_match "maqb", shell_output("#{bin}/bbmap.sh --help 2>&1")

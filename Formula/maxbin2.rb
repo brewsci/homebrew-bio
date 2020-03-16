@@ -33,10 +33,11 @@ class Maxbin2 < Formula
     (bin/"maxbin2").write_env_script libexec/"run_MaxBin.pl", :PERL5LIB => ENV["PERL5LIB"]
   end
 
-  def caveats; <<~EOS
-    The main executable is installed as `maxbin2`. All other executable files
-    are installed to `#{libexec}`.
-  EOS
+  def caveats
+    <<~EOS
+      The main executable is installed as `maxbin2`. All other executable files
+      are installed to `#{libexec}`.
+    EOS
   end
 
   test do

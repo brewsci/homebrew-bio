@@ -22,7 +22,7 @@ class Cap3 < Formula
 
   def install
     tools = %w[cap3 formcon]
-    bin.install *tools
+    bin.install(*tools)
     if OS.linux?
       tools.each do |exe|
         system "patchelf",

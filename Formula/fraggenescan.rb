@@ -1,7 +1,7 @@
 class Fraggenescan < Formula
   # cite Rho_2010: "https://doi.org/10.1093/nar/gkq747"
   desc "Predicting genes in short and error-prone reads"
-  homepage "https://github.com/COL-IU/FragGeneScan"
+  homepage "https://omics.informatics.indiana.edu/FragGeneScan/"
   url "https://downloads.sourceforge.net/project/fraggenescan/FragGeneScan1.31.tar.gz"
   sha256 "cd3212d0f148218eb3b17d24fcd1fc897fb9fee9b2c902682edde29f895f426c"
   revision 1
@@ -27,10 +27,10 @@ class Fraggenescan < Formula
 
     # https://github.com/COL-IU/FragGeneScan/issues/9
     inreplace script, "my $dir = substr($0, 0, length($0)-19);",
-                      "use FindBin;\nmy $dir = \"$FindBin::RealBin/\";";
+                      "use FindBin;\nmy $dir = \"$FindBin::RealBin/\";"
 
     # https://github.com/COL-IU/FragGeneScan/issues/6
-    chmod 0644, [ "README", "releases", Dir["train/*"], Dir["example/*"] ]
+    chmod 0644, ["README", "releases", Dir["train/*"], Dir["example/*"]]
 
     prefix.install "FragGeneScan", script, "train", "example"
     bin.install_symlink Dir["#{prefix}/#{script}"]

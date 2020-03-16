@@ -36,10 +36,11 @@ class Snpeff < Formula
     end
   end
 
-  def caveats; <<~EOS
-    Download the human database using the command
-      snpEff download -v GRCh38.82
-    The databases will be installed in #{pkgshare}/data
+  def caveats
+    <<~EOS
+      Download the human database using the command
+        snpEff download -v GRCh38.82
+      The databases will be installed in #{pkgshare}/data
     EOS
   end
 
