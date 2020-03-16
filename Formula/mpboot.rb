@@ -4,6 +4,7 @@ class Mpboot < Formula
   homepage "http://www.iqtree.org/mpboot/"
   url "http://www.iqtree.org/mpboot/mpboot-1.1.0-Source.tar.gz"
   sha256 "164ceb7839b7fc7fa81ee44ee4b2fd4921fd9389f860f2132a3d19e9e37fa61f"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -14,23 +15,33 @@ class Mpboot < Formula
 
   option "with-avx", "Enable AVX SIMD instructions instead of SSE4"
 
-  fails_with :clang # needs openmp
-
   depends_on "cmake" => :build
-  depends_on "gcc" if OS.mac? # for openmp
+  depends_on "libomp" if OS.mac?
 
   def install
-    # Reduce memory usage for CircleCI.
-    ENV["MAKEFLAGS"] = "-j4" if ENV["CIRCLECI"]
+    libomp = Formula["libomp"]
+    args = std_cmake_args
+    args << "-DOpenMP_C_FLAGS=\"-Xpreprocessor -fopenmp -I#{libomp.opt_include}\""
+    args << "-DOpenMP_CXX_FLAGS=\"-Xpreprocessor -fopenmp -I#{libomp.opt_include}\""
+    args << "-DOpenMP_CXX_LIB_NAMES=omp"
+    args << "-DOpenMP_C_LIB_NAMES=omp"
+    args << "-DOpenMP_omp_LIBRARY=#{libomp.opt_lib}/libomp.dylib"
+    args << "-DAPPLE_OUTPUT_DYLIB=ON"
+
+    simd = build.with?("avx") ? "avx" : "sse4"
+    args << "-DIQTREE_FLAGS=#{simd}"
 
     # https://github.com/diepthihoang/mpboot/issues/1
     inreplace "CMakeLists.txt",
               'install (FILES "${PROJECT_SOURCE_DIR}/examples/example.phy" DESTINATION .)',
               "#"
 
+    # Fix clash with std::vector
+    # https://github.com/diepthihoang/mpboot/pull/4
+    inreplace "optimization.cpp", "vector", "vec"
+
     mkdir "build" do
-      simd = build.with?("avx") ? "avx" : "sse4"
-      system "cmake", "..", "-DIQTREE_FLAGS=#{simd}", *std_cmake_args
+      system "cmake", "..", *args
       system "make"
       system "make", "install"
       mv bin/"mpboot-avx", bin/"mpboot" if simd == "avx"
