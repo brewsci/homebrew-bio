@@ -34,6 +34,7 @@ class Gfakluge < Formula
       S\t1\tACGTACGT\tLN:i:8
       L\t1\t+\t1\t+\t4M
     EOS
-    assert_equal "Number of nodes: 1\nNumber of edges: 1\nNumber of links: 1\nNumber of containments: 0\n", shell_output("#{bin}/gfak stats -n -e test.gfa")
+    assert_equal "Number of nodes: 1\nNumber of edges: 1\nNumber of links: 1\nNumber of containments: 0\n",
+                  shell_output("#{bin}/gfak stats -n -e test.gfa")
   end
 end

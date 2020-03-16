@@ -14,12 +14,11 @@ class KentTools < Formula
 
   depends_on "libpng"
   depends_on "mysql@5.7"
-  depends_on "openssl"
-  unless OS.mac?
-    depends_on "rsync"
-    depends_on "util-linux"
-    depends_on "zlib"
-  end
+  depends_on "openssl@1.1"
+
+  uses_from_macos "rsync"
+  uses_from_macos "util-linux"
+  uses_from_macos "zlib"
 
   def install
     libpng = Formula["libpng"]
@@ -45,17 +44,18 @@ class KentTools < Formula
     end
   end
 
-  def caveats; <<~EOS
-    The `calc` tool has been renamed to `kent-tools-calc`.
+  def caveats
+    <<~EOS
+      The `calc` tool has been renamed to `kent-tools-calc`.
 
-    This only installs the standalone tools located at
-      http://hgdownload.cse.ucsc.edu/admin/exe/
+      This only installs the standalone tools located at
+        http://hgdownload.cse.ucsc.edu/admin/exe/
 
-    If you need the full UCSC Genome Browser, run:
-      brew install ucsc-genome-browser
+      If you need the full UCSC Genome Browser, run:
+        brew install ucsc-genome-browser
 
-    This does not install the BLAT tools. To install BLAT:
-      brew install blat
+      This does not install the BLAT tools. To install BLAT:
+        brew install blat
     EOS
   end
 

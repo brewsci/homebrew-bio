@@ -16,9 +16,7 @@ class Vmatch < Formula
     sha256 "2b28f1f5f6ca3780d75889c63f2b5c9ac4b63c9807d98035668c9beddbd9241a"
   end
 
-  unless OS.mac?
-    depends_on "patchelf" => :build
-  end
+  depends_on "patchelf" => :build unless OS.mac?
 
   def install
     exes = %w[chain2dim matchcluster mkdna6idx mkvtree vendian vmatch

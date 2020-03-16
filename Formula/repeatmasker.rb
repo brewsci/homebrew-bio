@@ -57,30 +57,31 @@ class Repeatmasker < Formula
       #{HOMEBREW_PREFIX}/bin
       N
       5
-      EOS
+    EOS
     Dir.chdir libexec.to_s do
       system "./configure <configure.input"
     end
   end
 
-  def caveats; <<~EOS
-    Congratulations!  RepeatMasker is now ready to use.
-    The program is installed with a minimal repeat library
-    by default.  This library only contains simple, low-complexity,
-    and common artefact ( contaminate ) sequences.  These are
-    adequate for use with your own custom repeat library.  If you
-    plan to search using common species specific repeats you will
-    need to obtain the complete RepeatMasker repeat library from
-    GIRI and install it:
-      Browse to https://www.girinst.org/server/RepBase/
-      Download RepBaseRepeatMaskerEdition-*.tar.gz
-      cd #{libexec}
-      tar zxvf repeatmaskerlibraries-*.tar.gz
-      ./configure <configure.input
+  def caveats
+    <<~EOS
+      Congratulations!  RepeatMasker is now ready to use.
+      The program is installed with a minimal repeat library
+      by default.  This library only contains simple, low-complexity,
+      and common artefact ( contaminate ) sequences.  These are
+      adequate for use with your own custom repeat library.  If you
+      plan to search using common species specific repeats you will
+      need to obtain the complete RepeatMasker repeat library from
+      GIRI and install it:
+        Browse to https://www.girinst.org/server/RepBase/
+        Download RepBaseRepeatMaskerEdition-*.tar.gz
+        cd #{libexec}
+        tar zxvf repeatmaskerlibraries-*.tar.gz
+        ./configure <configure.input
 
-    The default aligner is RMBlast. You may reconfigure RepeatMasker
-    by running
-      cd #{libexec} && ./configure
+      The default aligner is RMBlast. You may reconfigure RepeatMasker
+      by running
+        cd #{libexec} && ./configure
     EOS
   end
 

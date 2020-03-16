@@ -16,9 +16,7 @@ class Ascp < Formula
     sha256 "00416de41eae2e20018d28197714d868f12009c7012d9c914e74392cff80bbdc" => :x86_64_linux
   end
 
-  unless OS.mac?
-    depends_on "patchelf" => :build
-  end
+  depends_on "patchelf" => :build unless OS.mac?
 
   def install
     # Deduce download name from URL
@@ -55,6 +53,6 @@ class Ascp < Formula
   end
 
   test do
-    assert_match "PROXY", shell_output("#{bin}/ascp -h 2>&1", 0)
+    assert_match "PROXY", shell_output("#{bin}/ascp -h 2>&1")
   end
 end
