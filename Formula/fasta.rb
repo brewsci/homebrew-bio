@@ -9,8 +9,8 @@ class Fasta < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "389a3bb347fefd53e505923cfc4bc5f45caf9d08c5312161091789dd8d15e749" => :sierra
-    sha256 "33403940543bad786c488197361f71ed00847f35793409107ba1103b7a8485bf" => :x86_64_linux
+    sha256 "7243b2aa0b0a8bd26748f1392639e111a692fd789bdc48622772778e5ea953ec" => :catalina
+    sha256 "fa74efd96bdcaa4aeb87fd7c4bf2c0df07e366f467750a3fc7a10e9adaabf630" => :x86_64_linux
   end
 
   uses_from_macos "zlib"
