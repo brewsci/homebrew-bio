@@ -14,13 +14,14 @@ class Maxbin2 < Formula
 
   depends_on "cmake" => :build
   depends_on "cpanminus" => :build
-  depends_on "bioperl"
   depends_on "bowtie2"
-  depends_on "fraggenescan"
+  depends_on "brewsci/bio/bioperl"
+  depends_on "brewsci/bio/fraggenescan"
+  depends_on "brewsci/bio/idba"
   depends_on "hmmer"
-  depends_on "idba"
-  depends_on "perl" unless OS.mac?
-  depends_on "openssl"
+  depends_on "openssl@1.1"
+
+  uses_from_macos "perl"
 
   def install
     ENV.prepend_path "PERL5LIB", Formula["bioperl"].libexec/"lib/perl5"
