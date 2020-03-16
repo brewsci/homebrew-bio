@@ -6,6 +6,13 @@ class Delly < Formula
       :tag      => "v0.8.3",
       :revision => "56ab2900da269568dc327045913ae77ff3919df1"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "58c163c66ccc974146287df238ddbfb073c54486636ab12578b57997710b5347" => :catalina
+    sha256 "6f65366a9da00ccad5206d0bb5c13ee6a7d304cde81db49609b31ab51dcae13b" => :x86_64_linux
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
 
