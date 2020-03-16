@@ -20,13 +20,13 @@ class Maker < Formula
     sha256 "1b44a7d930f49de6cac10d2818c45c292a2a400cb873f443828582a40c4b6bb0"
   end
 
+  depends_on "cpanminus" => :build
   depends_on "augustus"
   depends_on "blast"
   depends_on "brewsci/bio/bioperl"
   depends_on "brewsci/bio/exonerate"
-  depends_on "cpanminus" => :build
-  depends_on "repeatmasker"
-  depends_on "snap"
+  depends_on "brewsci/bio/repeatmasker"
+  depends_on "brewsci/bio/snap"
 
   uses_from_macos "perl"
   uses_from_macos "sqlite"
