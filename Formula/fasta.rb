@@ -1,18 +1,19 @@
 class Fasta < Formula
   # cite Pearson_1990: "https://doi.org/10.1016/0076-6879(90)83007-V"
   desc "Classic FASTA sequence alignment suite"
-  homepage "http://faculty.virginia.edu/wrpearson/fasta/"
-  url "https://github.com/wrpearson/fasta36/archive/fasta-v36.3.8g.tar.gz"
-  sha256 "fa5318b6f8d6a3cfdef0d29de530eb005bfd3ca05835faa6ad63663f8dce7b2e"
+  homepage "https://faculty.virginia.edu/wrpearson/fasta/"
+  url "https://github.com/wrpearson/fasta36/archive/v36.3.8h_11-Feb-2020.tar.gz"
+  version "36.3.8h"
+  sha256 "916b327ac996151c808bd7066dea59c4ecb6035fc27c27fa8f011d49548867d6"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "389a3bb347fefd53e505923cfc4bc5f45caf9d08c5312161091789dd8d15e749" => :sierra
-    sha256 "33403940543bad786c488197361f71ed00847f35793409107ba1103b7a8485bf" => :x86_64_linux
+    sha256 "7243b2aa0b0a8bd26748f1392639e111a692fd789bdc48622772778e5ea953ec" => :catalina
+    sha256 "fa74efd96bdcaa4aeb87fd7c4bf2c0df07e366f467750a3fc7a10e9adaabf630" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     bin.mkpath

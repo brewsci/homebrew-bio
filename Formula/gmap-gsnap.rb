@@ -13,7 +13,7 @@ class GmapGsnap < Formula
   end
 
   depends_on "samtools"
-  
+
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
@@ -26,14 +26,15 @@ class GmapGsnap < Formula
     system "make", "install"
   end
 
-  def caveats; <<~EOS
-    You will need to either download or build indexed search databases.
-    See the readme file for how to do this:
-      http://research-pub.gene.com/gmap/src/README
+  def caveats
+    <<~EOS
+      You will need to either download or build indexed search databases.
+      See the readme file for how to do this:
+        http://research-pub.gene.com/gmap/src/README
 
-    Databases will be installed to:
-      #{share}
-  EOS
+      Databases will be installed to:
+        #{share}
+    EOS
   end
 
   test do

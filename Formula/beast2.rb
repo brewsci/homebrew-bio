@@ -35,12 +35,13 @@ class Beast2 < Formula
     doc.install Dir["doc/*"]
   end
 
-  def caveats; <<~EOS
-    This install coexists with BEAST 1.x as all scripts are suffixed with '-2':
-        beast-2 -help
+  def caveats
+    <<~EOS
+      This install coexists with BEAST 1.x as all scripts are suffixed with '-2':
+          beast-2 -help
 
-    To use the unprefixed versions, add #{libexec}/bin to your PATH.
-  EOS
+      To use the unprefixed versions, add #{libexec}/bin to your PATH.
+    EOS
   end
 
   test do

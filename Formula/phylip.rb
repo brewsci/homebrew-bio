@@ -35,8 +35,8 @@ class Phylip < Formula
       Delta     001001
       Epsilon   001110
     EOS
-    expected = "(((Epsilon:0.00,Delta:3.00):2.00,Gamma1:0.00):1.00,(Beta2:0.00,Beta1:0.00):2.00,Alpha2:0.00,Alpha1:0.00);"
+    exp = "(((Epsilon:0.00,Delta:3.00):2.00,Gamma1:0.00):1.00,(Beta2:0.00,Beta1:0.00):2.00,Alpha2:0.00,Alpha1:0.00);"
     system "echo 'Y' | #{bin}/pars"
-    assert_match expected, File.read("outtree")
+    assert_match exp, File.read("outtree")
   end
 end

@@ -22,15 +22,14 @@ class Maker < Formula
 
   depends_on "cpanminus" => :build
   depends_on "augustus"
-  depends_on "bioperl"
   depends_on "blast"
-  depends_on "exonerate"
-  depends_on "repeatmasker"
-  depends_on "snap"
-  unless OS.mac?
-    depends_on "perl"
-    depends_on "sqlite"
-  end
+  depends_on "brewsci/bio/bioperl"
+  depends_on "brewsci/bio/exonerate"
+  depends_on "brewsci/bio/repeatmasker"
+  depends_on "brewsci/bio/snap"
+
+  uses_from_macos "perl"
+  uses_from_macos "sqlite"
 
   # Build MAKER with MPI support, but do not force the dependency on the user.
   if ENV["CIRCLECI"]
@@ -62,25 +61,26 @@ class Maker < Formula
     end
   end
 
-  def caveats; <<~EOS
-    Optional compoments of MAKER that can be installed using brew:
-      infernal
-      mir-prefer
-      snoscan
-      trnascan
+  def caveats
+    <<~EOS
+      Optional compoments of MAKER that can be installed using brew:
+        infernal
+        mir-prefer
+        snoscan
+        trnascan
 
-    Optional components of MAKER that are not available using brew:
-      GeneMarkS and GeneMark-ES. Download from http://exon.biology.gatech.edu
-      FGENESH 2.4 or higher. Purchase from http://www.softberry.com
+      Optional components of MAKER that are not available using brew:
+        GeneMarkS and GeneMark-ES. Download from http://exon.biology.gatech.edu
+        FGENESH 2.4 or higher. Purchase from http://www.softberry.com
 
-    MAKER is available for academic use under either the Artistic
-    License 2.0 developed by the Perl Foundation or the GNU General
-    Public License developed by the Free Software Foundation.
+      MAKER is available for academic use under either the Artistic
+      License 2.0 developed by the Perl Foundation or the GNU General
+      Public License developed by the Free Software Foundation.
 
-    MAKER is not available for commercial use without a license. Those
-    wishing to license MAKER for commercial use should contact Beth
-    Drees at the University of Utah TCO to discuss your needs.
-  EOS
+      MAKER is not available for commercial use without a license. Those
+      wishing to license MAKER for commercial use should contact Beth
+      Drees at the University of Utah TCO to discuss your needs.
+    EOS
   end
 
   test do

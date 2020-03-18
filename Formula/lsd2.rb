@@ -23,7 +23,8 @@ class Lsd2 < Formula
     # unable to determine why this test fails on macos
     unless OS.mac?
       assert_match "Dating results",
-       shell_output("#{bin}/lsd2 -c -v 1 -i #{pkgshare}/examples/rooted_tree/h1n1_phyml.tree -d #{pkgshare}/examples/rooted_tree/h1n1.date 2>&1")
+       shell_output("#{bin}/lsd2 -c -v 1 -i #{pkgshare}/examples/rooted_tree/h1n1_phyml.tree \
+                    -d #{pkgshare}/examples/rooted_tree/h1n1.date 2>&1")
     end
   end
 end
