@@ -3,6 +3,13 @@ class Ivar < Formula
   desc "Viral amplicon-based sequencing pipeline"
   homepage "https://github.com/andersen-lab/ivar"
   url "https://github.com/andersen-lab/ivar/archive/v1.1-beta.tar.gz"
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any
+    sha256 "35d1f36a37874a888e744f77e3191896e32e8003296f1daa7734a0bb4458d429" => :catalina
+    sha256 "cfb9aee9cb008c600921ecb409628cab34b17ccdef192bf4720d6c4735d5dffa" => :x86_64_linux
+  end
+
   version "1.1" # it self reports as this
   sha256 "86438307169a7c0ff97acb06c94ca7e438f47b8bbb3b203d3499521e3d13e181"
 
