@@ -21,6 +21,6 @@ class Flash < Formula
 
   test do
     assert_match "MATES", shell_output("#{bin}/flash 2>&1", 2)
-    assert_match "threads", shell_output("#{bin}/flash --help 2>&1", 0)
+    assert_match "threads", shell_output("#{bin}/flash --help 2>&1")
   end
 end
