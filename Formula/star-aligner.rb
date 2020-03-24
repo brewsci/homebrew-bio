@@ -14,11 +14,11 @@ class StarAligner < Formula
     sha256 "17ebb8d1e4f79aad4158bb61573c6522c2a2407fccd2bae43d1d8044cd651981" => :x86_64_linux
   end
 
+  uses_from_macos "zlib"
+
   fails_with :clang # needs openmp
 
   depends_on "gcc" => :build if OS.mac? # for openmp, linked statically
-
-  uses_from_macos "zlib"
 
   def install
     cd "source" do
