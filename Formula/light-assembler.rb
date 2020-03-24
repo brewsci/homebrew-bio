@@ -12,7 +12,7 @@ class LightAssembler < Formula
     sha256 "f229cf9f21614d98e3a18610df63ead630d8f12b3439404a0fe42c8d91886142" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     system "make", "k=127"

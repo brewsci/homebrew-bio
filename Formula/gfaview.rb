@@ -12,7 +12,7 @@ class Gfaview < Formula
     sha256 "d1937935c3ac96c9cc46ed1b2186c2d3968d99d648890c65fc9eb17e1d44721f" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     system "make"

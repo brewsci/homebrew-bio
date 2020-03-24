@@ -15,9 +15,9 @@ class GenomePainter < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-
   depends_on "gcc" # for openmp
-  depends_on "zlib" unless OS.mac?
+
+  uses_from_macos "zlib"
 
   def install
     system "./autogen.sh"

@@ -13,10 +13,10 @@ class Gemma < Formula
   end
 
   depends_on "eigen" => :build
-
   depends_on "gsl"
   depends_on "openblas"
-  depends_on "zlib" unless OS.mac?
+
+  uses_from_macos "zlib"
 
   def install
     # https://github.com/brewsci/homebrew-bio/pull/479

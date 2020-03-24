@@ -6,7 +6,7 @@ class Uniqtag < Formula
   sha256 "8ff0dd850c15ff3468707ae38a171deb6518866a699964a1aeeec9c90ded7313"
   head "https://github.com/sjackman/uniqtag.git"
 
-  depends_on "ruby" unless OS.mac?
+  uses_from_macos "ruby"
 
   def install
     system "make", "install", "prefix=#{prefix}"

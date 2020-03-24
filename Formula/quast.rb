@@ -16,8 +16,9 @@ class Quast < Formula
     sha256 "8a091a5df4a4895c1c3de153adaeb27473d72c6693855214bc648a9f3a3bff59" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
   depends_on "python"
+
+  uses_from_macos "zlib"
 
   def install
     prefix.install Dir["*"]

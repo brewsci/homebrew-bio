@@ -14,7 +14,8 @@ class Minimap2 < Formula
   end
 
   depends_on "k8" # for paftools.js
-  depends_on "zlib" unless OS.mac?
+
+  uses_from_macos "zlib"
 
   def install
     system "make"

@@ -21,7 +21,8 @@ class Fastani < Formula
   # https://github.com/ParBLiSS/FastANI/issues/18 (don't need gsl+boost, either)
   depends_on "gsl"
   depends_on "boost"
-  depends_on "zlib" unless OS.mac?
+
+  uses_from_macos "zlib"
 
   def install
     # https://github.com/ParBLiSS/FastANI/issues/17 (macos clang opts for gcc)

@@ -15,7 +15,8 @@ class Xssp < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "boost"
-  depends_on "bzip2" unless OS.mac?
+
+  uses_from_macos "bzip2"
 
   resource "pdb" do
     url "https://files.rcsb.org/download/3ZZZ.pdb.gz"

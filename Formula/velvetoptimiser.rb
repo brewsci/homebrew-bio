@@ -13,8 +13,9 @@ class Velvetoptimiser < Formula
   end
 
   depends_on "bioperl"
-  depends_on "perl" unless OS.mac?
   depends_on "velvet"
+
+  uses_from_macos "perl"
 
   def install
     exe = "VelvetOptimiser.pl"

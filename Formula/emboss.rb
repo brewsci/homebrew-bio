@@ -19,11 +19,12 @@ class Emboss < Formula
   depends_on "gd"
   depends_on "libharu"
   depends_on "libpng"
-  depends_on "zlib" unless OS.mac?
 
   depends_on "mysql"      => :optional
   depends_on "postgresql" => :optional
   depends_on :x11         => :optional
+
+  uses_from_macos "zlib"
 
   def install
     args = %W[

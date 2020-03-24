@@ -13,7 +13,7 @@ class Miniasm < Formula
     sha256 "28cd7ae2c914864a0f2c594b24390c137f40f208d7400700ea12295a2dc801fb" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     system "make"
