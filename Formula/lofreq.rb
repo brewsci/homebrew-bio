@@ -11,9 +11,9 @@ class Lofreq < Formula
     sha256 "c85acd934a221204fb1b57d31206042df3843b3a91db25b265f35e889c98d9a6" => :x86_64_linux
   end
 
-  depends_on "libtool" => :build
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "python"
 
   uses_from_macos "zlib"
