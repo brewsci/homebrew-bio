@@ -11,11 +11,11 @@ class Wtdbg2 < Formula
   end
 
   depends_on "autoconf" => :build
+  depends_on :linux
 
   uses_from_macos "zlib"
 
   # See https://github.com/brewsci/homebrew-bio/pull/504
-  depends_on :linux
 
   def install
     system "make"
