@@ -16,10 +16,11 @@ class Oma < Formula
     sha256 "d41b7f1cf868eeb797170329bbad3a09faf5ab11e2fdee60e1bbb5507ce51388" => :x86_64_linux
   end
 
-  uses_from_macos "libxml2"
-  uses_from_macos "libxslt"
   depends_on "numpy"
   depends_on "python"
+
+  uses_from_macos "libxml2"
+  uses_from_macos "libxslt"
 
   resource "biopython" do
     url "https://files.pythonhosted.org/packages/33/55/becf2b99556588d22b542f3412990bfc79b674e198d9bc58f7bbc333439e/biopython-1.75.tar.gz"
