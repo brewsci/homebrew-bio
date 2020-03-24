@@ -11,9 +11,8 @@ class Jspecies < Formula
     sha256 "fdad5b757d32a71e196a65e6b241d30472e55c16634e0f7e777f840817bc8cc9" => :sierra
   end
 
-  depends_on :java
-
   depends_on "blast-legacy"
+  depends_on :java
   depends_on "mummer"
 
   def install
