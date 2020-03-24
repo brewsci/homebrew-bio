@@ -13,10 +13,11 @@ class Dida < Formula
     sha256 "be67b9e1b268441b1ded890789aa081ee133f1c532ac3145c423726f2a96a44e" => :x86_64_linux
   end
 
+  depends_on "open-mpi"
+
   fails_with :clang # needs openmp
 
   # Fix error: DIDA must be compiled with MPI support.
-  depends_on "open-mpi"
   if OS.mac?
     depends_on "gcc" # for openmp
   else
