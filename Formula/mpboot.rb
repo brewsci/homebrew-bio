@@ -14,9 +14,9 @@ class Mpboot < Formula
 
   option "with-avx", "Enable AVX SIMD instructions instead of SSE4"
 
-  fails_with :clang # needs openmp
-
   depends_on "cmake" => :build
+
+  fails_with :clang # needs openmp
   depends_on "gcc" if OS.mac? # for openmp
 
   def install
