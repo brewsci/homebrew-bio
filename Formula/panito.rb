@@ -26,6 +26,6 @@ class Panito < Formula
   end
 
   test do
-    assert_match "ANI", shell_output("#{bin}/panito -h 2>&1", 0)
+    assert_match "ANI", shell_output("#{bin}/panito -h 2>&1")
   end
 end
