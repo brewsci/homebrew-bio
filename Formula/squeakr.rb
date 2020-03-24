@@ -14,7 +14,7 @@ class Squeakr < Formula
 
   depends_on "boost"
   depends_on :linux # https://github.com/splatlab/squeakr/issues/40
-  depends_on "openssl"
+  depends_on "openssl@1.1"
 
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
