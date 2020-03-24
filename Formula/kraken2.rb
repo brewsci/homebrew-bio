@@ -3,7 +3,6 @@ class Kraken2 < Formula
   homepage "https://github.com/DerrickWood/kraken2"
   # URL hack is to bypass audit for word "beta"
   url "https://github.com/DerrickWood/kraken2/archive/v2.0.8-b%65ta.tar.gz"
-  version "2.0.8"
   sha256 "f2a91fc57a40b3e87df8ac2ea7c0ff1060cc9295c95de417ee53249ee3f7ad8e"
 
   bottle do
