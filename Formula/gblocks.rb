@@ -2,7 +2,7 @@ class Gblocks < Formula
   # cite Castresana_2000: "https://doi.org/10.1093/oxfordjournals.molbev.a026334"
   desc "Select conserved blocks from multiple alignments"
   homepage "http://molevol.cmima.csic.es/castresana/Gblocks.html"
-  version "0.91b"
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
