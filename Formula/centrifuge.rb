@@ -11,12 +11,13 @@ class Centrifuge < Formula
     sha256 "cd12f24f14e0fd03e3b534bce48f4c1fd54652473b95daf306bdace8aa101af9" => :x86_64_linux
   end
 
+  depends_on :linux
+
   fails_with :clang # needs OpenMP
 
   depends_on "gcc" if OS.mac? # needs OpenMP
 
   # classifier.h:431:45: error: the value of 'rank' is not usable in a constant expression
-  depends_on :linux
 
   def install
     system "make"
