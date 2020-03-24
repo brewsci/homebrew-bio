@@ -15,8 +15,9 @@ class Squeakr < Formula
   depends_on "boost"
   depends_on :linux # https://github.com/splatlab/squeakr/issues/40
   depends_on "openssl"
-  depends_on "bzip2" unless OS.mac?
-  depends_on "zlib" unless OS.mac?
+
+  uses_from_macos "bzip2"
+  uses_from_macos "zlib"
 
   def install
     inreplace "Makefile", "-lboost_system", "-lboost_system-mt"

@@ -14,7 +14,7 @@ class Lighter < Formula
     sha256 "8ac5bd70228901bcd647c46de6589ee0dcc507d71a7642d0794c4cdc31a2584c" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     # Miscompiles with -Os, see https://github.com/mourisl/Lighter/issues/24

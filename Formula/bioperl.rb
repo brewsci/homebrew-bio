@@ -14,7 +14,8 @@ class Bioperl < Formula
   end
 
   depends_on "cpanminus" => :build
-  depends_on "perl" unless OS.mac?
+
+  uses_from_macos "perl"
 
   def install
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"

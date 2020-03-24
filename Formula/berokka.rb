@@ -14,7 +14,8 @@ class Berokka < Formula
 
   depends_on "bioperl"
   depends_on "blast"
-  depends_on "perl" unless OS.mac?
+
+  uses_from_macos "perl"
 
   def install
     bioperl = Formula["bioperl"].libexec/"lib/perl5"

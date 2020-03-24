@@ -14,7 +14,8 @@ class Nxtrim < Formula
   end
 
   depends_on "boost" => :build
-  depends_on "zlib" unless OS.mac?
+
+  uses_from_macos "zlib"
 
   def install
     system "make", "BOOST_ROOT=#{Formula["boost"].prefix}"

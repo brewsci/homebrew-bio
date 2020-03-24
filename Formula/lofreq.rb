@@ -15,7 +15,8 @@ class Lofreq < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "python"
-  depends_on "zlib" unless OS.mac?
+
+  uses_from_macos "zlib"
 
   # Requires to be statically linked against samtools/htslib 1.1
   # Later versions do not work due to API changes

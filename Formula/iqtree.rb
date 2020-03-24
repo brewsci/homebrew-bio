@@ -16,7 +16,8 @@ class Iqtree < Formula
   depends_on "eigen" => :build # header only C++ library
   depends_on "gsl"   => :build # static linking
   depends_on "gcc" if OS.mac? # for openmp
-  depends_on "zlib" unless OS.mac?
+
+  uses_from_macos "zlib"
 
   fails_with :clang # needs openmp
 

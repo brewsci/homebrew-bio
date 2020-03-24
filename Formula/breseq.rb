@@ -19,8 +19,8 @@ class Breseq < Formula
   depends_on "pkg-config" => :build
 
   depends_on "bowtie2"
-  depends_on "gzip" unless OS.mac?
   depends_on "r"
+  depends_on "gzip" unless OS.mac?
 
   def install
     # Reduce memory usage for CircleCI.

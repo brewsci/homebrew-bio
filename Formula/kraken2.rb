@@ -14,11 +14,9 @@ class Kraken2 < Formula
   end
 
   depends_on "blast" # for segmasker + dustmasker
-  if OS.mac?
-    depends_on "gcc" # for openmp
-  else
-    depends_on "perl"
-  end
+  depends_on "gcc" if OS.mac? # for openmp
+
+  uses_from_macos "perl"
 
   fails_with :clang # needs openmp
 

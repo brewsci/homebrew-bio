@@ -15,7 +15,8 @@ class SimulatePcr < Formula
   depends_on "cpanminus" => :build
   depends_on "bioperl"
   depends_on "blast"
-  depends_on "perl" unless OS.mac?
+
+  uses_from_macos "perl"
 
   def install
     bin.install "simulate_PCR"
