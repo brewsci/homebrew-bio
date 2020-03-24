@@ -12,9 +12,9 @@ class EMem < Formula
     sha256 "76369dd5a7d236a62f5b64c69a9f171b7db2c2f5a6e090a253e266e6d920df04" => :x86_64_linux
   end
 
-  fails_with :clang # needs openmp
-
   depends_on "boost" => :build
+
+  fails_with :clang # needs openmp
   depends_on "gcc" if OS.mac? # for openmp
 
   def install
