@@ -22,7 +22,7 @@ class Disty < Formula
   end
 
   test do
-    assert_match "Usage", shell_output("#{bin}/disty -h", 0)
+    assert_match "Usage", shell_output("#{bin}/disty -h")
     cp_r pkgshare/"tests", "."
     system "make", "-C", "tests", "DM=#{bin}/disty"
   end
