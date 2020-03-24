@@ -13,7 +13,7 @@ class Edirect < Formula
   end
 
   depends_on "cpanminus" => :build
-  depends_on "openssl"
+  depends_on "openssl@1.1"
 
   uses_from_macos "perl"
   uses_from_macos "zlib"
