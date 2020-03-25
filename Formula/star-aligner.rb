@@ -18,7 +18,7 @@ class StarAligner < Formula
 
   fails_with :clang # needs openmp
 
-  depends_on "gcc" => :build if OS.mac? # for openmp, linked statically
+  depends_on "gcc" => :build if OS.mac? # needs openmp, linked statically
 
   def install
     cd "source" do

@@ -13,7 +13,7 @@ class Racon < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "gcc" if OS.mac? # for openmp
+  depends_on "gcc" if OS.mac? # needs openmp
   depends_on "python"
 
   uses_from_macos "zlib"

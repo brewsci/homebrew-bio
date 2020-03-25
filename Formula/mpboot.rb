@@ -15,9 +15,9 @@ class Mpboot < Formula
   option "with-avx", "Enable AVX SIMD instructions instead of SSE4"
 
   depends_on "cmake" => :build
+  depends_on "gcc" if OS.mac? # needs openmp
 
   fails_with :clang # needs openmp
-  depends_on "gcc" if OS.mac? # for openmp
 
   def install
     # Reduce memory usage for CircleCI.

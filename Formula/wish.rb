@@ -14,9 +14,9 @@ class Wish < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "gcc" if OS.mac? # OpenMP
+  depends_on "gcc" if OS.mac? # needs openmp
 
-  fails_with :clang
+  fails_with :clang # needs openmp
 
   def install
     system "cmake", ".", *std_cmake_args

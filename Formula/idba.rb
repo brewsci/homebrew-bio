@@ -17,9 +17,9 @@ class Idba < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
 
-  depends_on "gcc" if OS.mac? # for OpenMP
+  depends_on "gcc" if OS.mac? # needs openmp
 
-  fails_with :clang # needs OpenMP
+  fails_with :clang # needs openmp
 
   resource "lacto-genus" do
     url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/hku-idba/lacto-genus.tar.gz"

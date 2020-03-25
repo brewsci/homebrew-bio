@@ -22,7 +22,7 @@ class Biobloomtools < Formula
   depends_on "google-sparsehash" => :build
 
   if OS.mac?
-    depends_on "gcc" # for openmp
+    depends_on "gcc" # needs openmp
     depends_on "cmake" => :build
     # build sdsl-lite using gcc
     resource "sdsl" do
@@ -32,8 +32,9 @@ class Biobloomtools < Formula
     end
   else
     depends_on "sdsl-lite" => :build
-    depends_on "zlib"
   end
+
+  uses_from_macos "zlib"
 
   fails_with :clang # needs openmp
 

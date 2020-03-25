@@ -13,9 +13,9 @@ class EMem < Formula
   end
 
   depends_on "boost" => :build
+  depends_on "gcc" if OS.mac? # needs openmp
 
   fails_with :clang # needs openmp
-  depends_on "gcc" if OS.mac? # for openmp
 
   def install
     bin.mkpath

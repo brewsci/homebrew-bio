@@ -19,12 +19,9 @@ class Ntjoin < Formula
   depends_on "python"
   depends_on "samtools"
   depends_on "scipy"
+  depends_on "gcc" if OS.mac? # needs openmp
 
-  if OS.mac?
-    depends_on "gcc" # for openmp
-  else
-    depends_on "zlib"
-  end
+  uses_from_macos "zlib"
 
   fails_with :clang # needs openmp
 

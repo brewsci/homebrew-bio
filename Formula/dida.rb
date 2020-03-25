@@ -15,14 +15,12 @@ class Dida < Formula
 
   depends_on "open-mpi"
 
-  fails_with :clang # needs openmp
-
   # Fix error: DIDA must be compiled with MPI support.
-  if OS.mac?
-    depends_on "gcc" # for openmp
-  else
-    depends_on "zlib"
-  end
+  depends_on "gcc" if OS.mac? # needs openmp
+
+  uses_from_macos "zlib"
+
+  fails_with :clang # needs openmp
 
   def install
     system "./configure",
