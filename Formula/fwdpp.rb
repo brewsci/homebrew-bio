@@ -14,8 +14,8 @@ class Fwdpp < Formula
 
   # build fails on Yosemite
   depends_on "boost" => :build
+  depends_on "brewsci/bio/libsequence"
   depends_on "gsl"
-  depends_on "libsequence"
   depends_on :macos => :el_capitan
 
   def install
