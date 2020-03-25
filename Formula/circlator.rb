@@ -15,8 +15,8 @@ class Circlator < Formula
     sha256 "310c5d97d4320ffbde5f0aedbcc7e05d03b721452714cf0e5dd21e5f3e1767f0" => :x86_64_linux
   end
 
+  depends_on "brewsci/bio/mummer"
   depends_on "bwa"
-  depends_on "mummer"
   depends_on "prodigal"
   depends_on "python"
   depends_on "samtools"
