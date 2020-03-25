@@ -12,11 +12,11 @@ class Centrifuge < Formula
   end
 
   depends_on "gcc" if OS.mac?
+  # classifier.h:431:45: error: the value of 'rank' is not usable in a constant expression
   depends_on :linux
 
   fails_with :clang # needs OpenMP # needs OpenMP
 
-  # classifier.h:431:45: error: the value of 'rank' is not usable in a constant expression
 
   def install
     system "make"

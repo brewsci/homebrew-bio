@@ -20,7 +20,7 @@ class Breseq < Formula
 
   depends_on "bowtie2"
   depends_on "r"
-  depends_on "gzip" unless OS.mac?
+  uses_from_macos "gzip"
 
   def install
     # Reduce memory usage for CircleCI.
