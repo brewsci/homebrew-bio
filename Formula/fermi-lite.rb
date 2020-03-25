@@ -11,7 +11,7 @@ class FermiLite < Formula
     sha256 "0bdc4c570af402f510dee46e368b538dacb43d36ebfe479d5e4a5ca6321a62be" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     system "make"

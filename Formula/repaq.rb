@@ -11,7 +11,7 @@ class Repaq < Formula
     sha256 "4e291d5df6f67232d7bc2616b3b2f90f22c3960d56b006c46bcee37df383bbb7" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     system "make"

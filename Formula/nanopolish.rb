@@ -17,7 +17,7 @@ class Nanopolish < Formula
   depends_on "eigen" => :build # static link
   depends_on "wget" => :build
 
-  depends_on "gcc" if OS.mac? # for openmp
+  depends_on "gcc" if OS.mac? # needs openmp
   depends_on "hdf5"
   depends_on "htslib"
   depends_on "python@3.8" # for scripts

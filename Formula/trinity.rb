@@ -16,7 +16,7 @@ class Trinity < Formula
   depends_on "cmake" => :build
   depends_on "bowtie2"
   depends_on "express"
-  depends_on "gcc" if OS.mac? # for openmp
+  depends_on "gcc" if OS.mac? # needs openmp
   depends_on "htslib"
   depends_on :java => "1.8+"
   depends_on "jellyfish"

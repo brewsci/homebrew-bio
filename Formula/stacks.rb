@@ -13,11 +13,9 @@ class Stacks < Formula
     sha256 "06ca98f340aeacd4b0f47d7f3025b73b868289f0f8ff861306c15d13bfc3755b" => :x86_64_linux
   end
 
-  if OS.mac?
-    depends_on "gcc" # for openmp
-  else
-    depends_on "zlib"
-  end
+  depends_on "gcc" if OS.mac? # needs openmp
+
+  uses_from_macos "zlib"
 
   fails_with :clang # needs openmp
 

@@ -13,7 +13,7 @@ class Velvet < Formula
     sha256 "79ad825ef586b4627de53573503b695c7a1f4167bba3a0f9058aa1d83382934e" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     args = ["LONGSEQUENCES=1", "CATEGORIES=2", "MAXKMERLENGTH=127"]

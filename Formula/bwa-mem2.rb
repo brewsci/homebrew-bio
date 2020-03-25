@@ -12,7 +12,7 @@ class BwaMem2 < Formula
     sha256 "41f25256fd39920c9188bff511d422b926c9540c3aa8f6ed67c0e55aee25bc91" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     system "make"

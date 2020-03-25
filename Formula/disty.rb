@@ -12,7 +12,7 @@ class Disty < Formula
     sha256 "f4478bc5857ec7f219d836dc5b599ee72e407e4cd34018a11daf4d7dbbd01f52" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     ENV.cxx11
@@ -22,7 +22,7 @@ class Disty < Formula
   end
 
   test do
-    assert_match "Usage", shell_output("#{bin}/disty -h", 0)
+    assert_match "Usage", shell_output("#{bin}/disty -h")
     cp_r pkgshare/"tests", "."
     system "make", "-C", "tests", "DM=#{bin}/disty"
   end

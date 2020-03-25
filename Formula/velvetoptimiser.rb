@@ -12,9 +12,10 @@ class Velvetoptimiser < Formula
     sha256 "cce69e42775482486576e639f7fc096ea5f7852fdf064f70d01de81461d15db6" => :x86_64_linux
   end
 
-  depends_on "bioperl"
-  depends_on "perl" unless OS.mac?
-  depends_on "velvet"
+  depends_on "brewsci/bio/bioperl"
+  depends_on "brewsci/bio/velvet"
+
+  uses_from_macos "perl"
 
   def install
     exe = "VelvetOptimiser.pl"

@@ -12,9 +12,9 @@ class Bracken < Formula
     sha256 "ab432ce231a1cba0a6d79f5bdbfc8f1ec73840bdf33e09726823b34d3e4aa7a1" => :x86_64_linux
   end
 
-  depends_on "gcc" if OS.mac?
+  depends_on "gcc" if OS.mac? # needs openmp
 
-  fails_with :clang # uses OpenMP
+  fails_with :clang # needs openmp
 
   def install
     system "make", "-C", "src"

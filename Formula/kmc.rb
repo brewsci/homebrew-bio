@@ -14,8 +14,8 @@ class Kmc < Formula
   end
 
   depends_on "gcc"
-  uses_from_macos "zlib"
   uses_from_macos "bzip2"
+  uses_from_macos "zlib"
 
   # Fix error: 'ext/algorithm' file not found
   fails_with :clang

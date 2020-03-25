@@ -12,7 +12,7 @@ class Minimap < Formula
     sha256 "de577da73870b816261d2bf2a1f90d4dc95c9d2be6404ab45c3c0ddbbb2f6fcc" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     system "make"

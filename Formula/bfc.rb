@@ -13,7 +13,7 @@ class Bfc < Formula
     sha256 "3a8a77f320e0d5ab85b1a05c979f9e94e2b1ddf9465c71b95d1559a0c52287ba" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     system "make"

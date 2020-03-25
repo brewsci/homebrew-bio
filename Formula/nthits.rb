@@ -14,7 +14,7 @@ class Nthits < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "gcc" if OS.mac? # for openmp
+  depends_on "gcc" if OS.mac? # needs openmp
 
   fails_with :clang # needs openmp
 

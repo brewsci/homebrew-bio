@@ -16,8 +16,9 @@ class Libpll < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "flex" => :build unless OS.mac?
-  depends_on "bison" => :build unless OS.mac?
+
+  uses_from_macos "bison" => :build
+  uses_from_macos "flex" => :build
 
   def install
     system "./autogen.sh"

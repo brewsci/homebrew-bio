@@ -13,7 +13,7 @@ class Stringtie < Formula
     sha256 "d0de065c76440a908f7a77d3beb8e7edbfc24688ed89825ead5462d0dd68102c" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     system "make", "release"

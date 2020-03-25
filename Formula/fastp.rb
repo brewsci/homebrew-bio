@@ -13,7 +13,7 @@ class Fastp < Formula
     sha256 "94b2ab898bdd7dba321a0ab10ea594b19057575683f1b5fd53cf23166876d8a0" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     system "make"

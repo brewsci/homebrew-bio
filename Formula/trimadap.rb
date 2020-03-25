@@ -13,7 +13,7 @@ class Trimadap < Formula
     sha256 "763804b091eba6b97a3276e73e8c05c761ab5e1836fb2fee9038e08aa0e8096d" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     system "make"

@@ -12,9 +12,10 @@ class Berokka < Formula
     sha256 "90c1e666295c95869598887b3b3d18e0293b24f372fe596adfff38db9a79e9d8" => :x86_64_linux
   end
 
-  depends_on "bioperl"
   depends_on "blast"
-  depends_on "perl" unless OS.mac?
+  depends_on "brewsci/bio/bioperl"
+
+  uses_from_macos "perl"
 
   def install
     bioperl = Formula["bioperl"].libexec/"lib/perl5"

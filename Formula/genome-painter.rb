@@ -10,14 +10,14 @@ class GenomePainter < Formula
     sha256 "466bc33dade80e94cfb92578be6c4f71e68bb5f6b50f0131bd346accc7642ee0" => :x86_64_linux
   end
 
-  fails_with :clang # needs openmp
-
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
+  depends_on "gcc" # needs openmp
 
-  depends_on "gcc" # for openmp
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
+
+  fails_with :clang # needs openmp
 
   def install
     system "./autogen.sh"

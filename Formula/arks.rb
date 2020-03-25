@@ -17,11 +17,9 @@ class Arks < Formula
   depends_on "automake" => :build
   depends_on "boost" => :build
   depends_on "google-sparsehash" => :build
-  if OS.mac?
-    depends_on "gcc" # for openmp
-  else
-    depends_on "zlib"
-  end
+  depends_on "gcc" if OS.mac? # needs openmp
+
+  uses_from_macos "zlib"
 
   fails_with :clang # needs openmp
 
