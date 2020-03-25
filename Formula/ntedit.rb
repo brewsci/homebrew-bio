@@ -13,11 +13,9 @@ class Ntedit < Formula
     sha256 "a446acbbf4de038f96329f328276f4c154f0ebdfc59a1fd6ce8b4ed23525be86" => :x86_64_linux
   end
 
-  if OS.mac?
-    depends_on "gcc" # for openmp
-  else
-    depends_on "zlib"
-  end
+  depends_on "gcc" if OS.mac? # needs openmp
+
+  uses_from_macos "zlib"
 
   fails_with :clang # needs openmp
 

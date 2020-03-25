@@ -18,7 +18,7 @@ class Metabat < Formula
   depends_on "automake" => :build
   depends_on "cmake" => :build
 
-  fails_with :clang # needs OpenMP
+  fails_with :clang # needs openmp
 
   if OS.mac?
     resource "boost" do

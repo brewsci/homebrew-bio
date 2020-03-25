@@ -8,18 +8,16 @@ class CdHit < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
+    cellar :any
     sha256 "9a3289933ffe405f4dcc43b57d582ac3757aed01901669b80c686be431a12c7f" => :sierra
     sha256 "0986ecff059b6e8bb299846a7d5257a6df127c601299e9f0afddfa0c3ec36d0b" => :x86_64_linux
   end
 
-  fails_with :clang # fatal error: 'omp.h' file not found
+  fails_with :clang # needs openmp
 
-  if OS.mac?
-    depends_on "gcc" # needs OpenMP
-  else
-    depends_on "zlib"
-  end
+  depends_on "gcc" if OS.mac? # needs openmp
+
+  uses_from_macos "zlib"
 
   def install
     bin.mkpath

@@ -14,15 +14,13 @@ class Phlawd < Formula
     sha256 "41fd5fa09423ecabdc64a893e08186eb07714f3f63b5d065175ca5a8a653492b" => :x86_64_linux
   end
 
-  if OS.mac?
-    depends_on "gcc" # for openmp
-  else
-    depends_on "sqlite"
-  end
+  depends_on "gcc" if OS.mac? # needs openmp
   depends_on "mafft"
   depends_on "muscle"
   depends_on "quicktree"
   depends_on "wget"
+
+  uses_from_macos "sqlite"
 
   fails_with :clang # needs openmp
 
