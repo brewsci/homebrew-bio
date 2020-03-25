@@ -14,13 +14,13 @@ class Fastani < Formula
   end
 
   depends_on "autoconf" => :build
-  depends_on "gcc" => :build if OS.mac?
+  depends_on "gcc" => :build if OS.mac? # needs openmp
   depends_on "boost"
   depends_on "gsl"
 
   uses_from_macos "zlib"
 
-  fails_with :clang # needs openmp # needs openmp
+  fails_with :clang # needs openmp
 
   # https://github.com/ParBLiSS/FastANI/issues/18 (don't need gsl+boost, either)
 

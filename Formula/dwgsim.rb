@@ -13,7 +13,7 @@ class Dwgsim < Formula
     sha256 "dd36a513fa17141d0a98a59b985f7965c80498b30c1fa2d8dabba3cc1d42929a" => :x86_64_linux
   end
 
-  uses_from_macos "ncurses"
+  uses_from_macos "ncurses" => :build
   uses_from_macos "zlib"
 
   def install
