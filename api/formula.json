@@ -1210,8 +1210,8 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "hmmer",
-      "bedtools"
+      "bedtools",
+      "hmmer"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -1510,8 +1510,8 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "bioperl",
       "blast",
+      "brewsci/bio/bioperl",
       "perl"
     ],
     "recommended_dependencies": [],
@@ -1593,14 +1593,14 @@
     "desc": "Highly parallel build/index of coloured/compacted de Bruijn graphs",
     "homepage": "https://github.com/pmelsted/bifrost",
     "versions": {
-      "stable": "1.0.1",
+      "stable": "1.0.3",
       "devel": null,
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/pmelsted/bifrost/archive/v1.0.1.tar.gz",
+        "url": "https://github.com/pmelsted/bifrost/archive/v1.0.3.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -1615,12 +1615,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/bifrost-1.0.1.catalina.bottle.tar.gz",
-            "sha256": "f1f8cddd35acd9bcc2484cb4ceda170b43743fef6e705e72f55f90525511fbcd"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bifrost-1.0.3.catalina.bottle.tar.gz",
+            "sha256": "7b1dd408c758d9b1d32eb90084b59c9bc63973c16ec1768c9f20782ffdf3c264"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/bifrost-1.0.1.x86_64_linux.bottle.tar.gz",
-            "sha256": "0661fb88ce00d23aa5505284e68aedc63eb4922719b06c8af4f49e76aaafdf6e"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bifrost-1.0.3.x86_64_linux.bottle.tar.gz",
+            "sha256": "a688f96b6a5d61e900001e2332267c8e563e6b82652348649032b2dd23d3ede2"
           }
         }
       }
@@ -2173,7 +2173,7 @@
     "aliases": [],
     "versioned_formulae": [],
     "desc": "Find mutations in microbes from short reads",
-    "homepage": "http://barricklab.org/twiki/bin/view/Lab/ToolsBacterialGenomeResequencing",
+    "homepage": "https://barricklab.org/twiki/bin/view/Lab/ToolsBacterialGenomeResequencing",
     "versions": {
       "stable": "0.33.0",
       "devel": null,
@@ -2218,8 +2218,8 @@
     ],
     "dependencies": [
       "bowtie2",
-      "gzip",
-      "r"
+      "r",
+      "gzip"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -2557,7 +2557,7 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any_skip_relocation",
+        "cellar": ":any",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
@@ -2697,8 +2697,8 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
+      "brewsci/bio/mummer",
       "bwa",
-      "mummer",
       "prodigal",
       "python",
       "samtools",
@@ -3383,7 +3383,7 @@
     "aliases": [],
     "versioned_formulae": [],
     "desc": "Distributed Indexing Dispatched Alignment",
-    "homepage": "http://www.bcgsc.ca/platform/bioinfo/software/dida",
+    "homepage": "https://www.bcgsc.ca/platform/bioinfo/software/dida",
     "versions": {
       "stable": "1.0.1",
       "devel": null,
@@ -3392,7 +3392,7 @@
     },
     "urls": {
       "stable": {
-        "url": "http://www.bcgsc.ca/platform/bioinfo/software/dida/releases/1.0.1/dida-1.0.1.tar.gz",
+        "url": "https://www.bcgsc.ca/platform/bioinfo/software/dida/releases/1.0.1/dida-1.0.1.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -3779,7 +3779,7 @@
       "cpanminus"
     ],
     "dependencies": [
-      "openssl",
+      "openssl@1.1",
       "perl",
       "zlib"
     ],
@@ -4365,8 +4365,8 @@
       "autoconf"
     ],
     "dependencies": [
-      "gsl",
       "boost",
+      "gsl",
       "zlib"
     ],
     "recommended_dependencies": [],
@@ -5214,8 +5214,8 @@
       "boost"
     ],
     "dependencies": [
-      "gsl",
-      "libsequence"
+      "brewsci/bio/libsequence",
+      "gsl"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -5727,7 +5727,7 @@
     "aliases": [],
     "versioned_formulae": [],
     "desc": "Check a GFA file for syntax errors",
-    "homepage": "http://sjackman.ca/gfalint/",
+    "homepage": "https://sjackman.ca/gfalint/",
     "versions": {
       "stable": "1.0.0",
       "devel": null,
@@ -6740,6 +6740,70 @@
     "outdated": false
   },
   {
+    "name": "ivar",
+    "full_name": "brewsci/bio/ivar",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Viral amplicon-based sequencing pipeline",
+    "homepage": "https://github.com/andersen-lab/ivar",
+    "versions": {
+      "stable": "1.1",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/andersen-lab/ivar/archive/v1.1-beta.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ivar-1.1.catalina.bottle.tar.gz",
+            "sha256": "35d1f36a37874a888e744f77e3191896e32e8003296f1daa7734a0bb4458d429"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ivar-1.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "cfb9aee9cb008c600921ecb409628cab34b17ccdef192bf4720d6c4735d5dffa"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [
+      "autoconf",
+      "automake",
+      "libtool"
+    ],
+    "dependencies": [
+      "htslib",
+      "zlib"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "jellyfish",
     "full_name": "brewsci/bio/jellyfish",
     "oldname": null,
@@ -6838,9 +6902,9 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "adoptopenjdk",
-      "blast-legacy",
-      "mummer"
+      "brewsci/bio/blast-legacy",
+      "brewsci/bio/mummer",
+      "adoptopenjdk"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -7272,8 +7336,8 @@
     "build_dependencies": [],
     "dependencies": [
       "gcc",
-      "zlib",
-      "bzip2"
+      "bzip2",
+      "zlib"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -8110,8 +8174,8 @@
       "autoconf",
       "automake",
       "libtool",
-      "flex",
-      "bison"
+      "bison",
+      "flex"
     ],
     "dependencies": [],
     "recommended_dependencies": [],
@@ -8406,9 +8470,9 @@
     "bottle_disabled": false,
     "options": [],
     "build_dependencies": [
-      "libtool",
       "autoconf",
-      "automake"
+      "automake",
+      "libtool"
     ],
     "dependencies": [
       "python",
@@ -8931,10 +8995,6 @@
         "description": "Build with gtk+3 support"
       },
       {
-        "option": "--with-pygtk",
-        "description": "Build with pygtk support"
-      },
-      {
         "option": "--with-pyqt",
         "description": "Build with pyqt support"
       }
@@ -8953,7 +9013,6 @@
     "optional_dependencies": [
       "cairo",
       "gtk+3",
-      "pygtk",
       "pyqt"
     ],
     "uses_from_macos": [],
@@ -9736,7 +9795,7 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "k8",
+      "brewsci/bio/k8",
       "zlib"
     ],
     "recommended_dependencies": [],
@@ -10156,13 +10215,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/mpboot-1.1.0.sierra.bottle.tar.gz",
-            "sha256": "c3a99c0519bec05893eb24bb4363906fc00a989c2055ef8620536cde08c60fa6"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mpboot-1.1.0.catalina.bottle.tar.gz",
+            "sha256": "9f81b4335359b8427fee1737fca2939f63ff62cc0f03097302c9837a99736fdd"
           },
           "x86_64_linux": {
             "url": "https://linuxbrew.bintray.com/bottles-bio/mpboot-1.1.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "cd27e1c484da823dbf33b4e081c950b46aacfb3057af17552347bb3c011eba07"
+            "sha256": "1b0598dc6c2b93a62554e4d5189fb2a5b683f0e812706e7c9a4f61c9fcd227fb"
           }
         }
       }
@@ -11466,10 +11525,10 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "libxml2",
-      "libxslt",
       "numpy",
-      "python"
+      "python",
+      "libxml2",
+      "libxslt"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -12011,11 +12070,11 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "sqlite",
       "mafft",
       "muscle",
       "quicktree",
-      "wget"
+      "wget",
+      "sqlite"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -12879,8 +12938,8 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "zlib",
-      "python"
+      "python",
+      "zlib"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -14836,8 +14895,8 @@
       "cpanminus"
     ],
     "dependencies": [
-      "bioperl",
       "blast",
+      "brewsci/bio/bioperl",
       "perl"
     ],
     "recommended_dependencies": [],
@@ -15468,7 +15527,7 @@
     "aliases": [],
     "versioned_formulae": [],
     "desc": "SortMeRNA: filter metatranscriptomic ribosomal RNA",
-    "homepage": "http://bioinfo.lifl.fr/RNA/sortmerna/",
+    "homepage": "https://bioinfo.lifl.fr/RNA/sortmerna/",
     "versions": {
       "stable": "2.1",
       "devel": null,
@@ -15563,7 +15622,7 @@
     "build_dependencies": [],
     "dependencies": [
       "boost",
-      "openssl",
+      "openssl@1.1",
       "bzip2",
       "zlib"
     ],
@@ -17184,9 +17243,9 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "bioperl",
-      "perl",
-      "velvet"
+      "brewsci/bio/bioperl",
+      "brewsci/bio/velvet",
+      "perl"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
