@@ -12,7 +12,7 @@ class Gzstream < Formula
     sha256 "a7f86908d5605d7c9464136a96ae692147e2889f8d4ee56b8ace305bfb799414" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     system "make"

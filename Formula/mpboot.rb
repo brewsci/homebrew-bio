@@ -8,16 +8,16 @@ class Mpboot < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "c3a99c0519bec05893eb24bb4363906fc00a989c2055ef8620536cde08c60fa6" => :sierra
-    sha256 "cd27e1c484da823dbf33b4e081c950b46aacfb3057af17552347bb3c011eba07" => :x86_64_linux
+    sha256 "9f81b4335359b8427fee1737fca2939f63ff62cc0f03097302c9837a99736fdd" => :catalina
+    sha256 "1b0598dc6c2b93a62554e4d5189fb2a5b683f0e812706e7c9a4f61c9fcd227fb" => :x86_64_linux
   end
 
   option "with-avx", "Enable AVX SIMD instructions instead of SSE4"
 
-  fails_with :clang # needs openmp
-
   depends_on "cmake" => :build
-  depends_on "gcc" if OS.mac? # for openmp
+  depends_on "gcc" if OS.mac? # needs openmp
+
+  fails_with :clang # needs openmp
 
   def install
     # Reduce memory usage for CircleCI.

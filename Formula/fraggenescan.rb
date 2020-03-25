@@ -13,7 +13,7 @@ class Fraggenescan < Formula
     sha256 "962e3fad1b35d723b39231a27718d16f420332c36d1eb9b132522fedea786d1e" => :x86_64_linux
   end
 
-  depends_on "perl" unless OS.mac?
+  uses_from_macos "perl"
 
   def install
     system "make", "clean"

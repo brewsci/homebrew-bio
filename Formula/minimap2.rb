@@ -13,8 +13,9 @@ class Minimap2 < Formula
     sha256 "8db660e19fb613e93dbcf0ebfecd4b7741bb349906e00e0a7aa73009809e806b" => :x86_64_linux
   end
 
-  depends_on "k8" # for paftools.js
-  depends_on "zlib" unless OS.mac?
+  depends_on "brewsci/bio/k8" # for paftools.js
+
+  uses_from_macos "zlib"
 
   def install
     system "make"

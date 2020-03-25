@@ -16,7 +16,8 @@ class Panito < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-  depends_on "zlib" unless OS.mac?
+
+  uses_from_macos "zlib"
 
   def install
     system "autoreconf", "-i", "-f"
@@ -26,6 +27,6 @@ class Panito < Formula
   end
 
   test do
-    assert_match "ANI", shell_output("#{bin}/panito -h 2>&1", 0)
+    assert_match "ANI", shell_output("#{bin}/panito -h 2>&1")
   end
 end

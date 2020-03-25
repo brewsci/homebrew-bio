@@ -11,7 +11,7 @@ class Filtlong < Formula
     sha256 "446414903f438e372b2548d88f2c601c428f5f105ddd39d457312959e7f73ece" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     system "make"

@@ -11,8 +11,8 @@ class Barrnap < Formula
     sha256 "7329922f75852f701922912d413f74820b8c557f40d04b7bb28b6ef057ea46e6" => :x86_64_linux
   end
 
-  depends_on "hmmer"
   depends_on "bedtools"
+  depends_on "hmmer"
 
   def install
     prefix.install Dir["*"]

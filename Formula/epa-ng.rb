@@ -14,11 +14,9 @@ class EpaNg < Formula
   end
 
   depends_on "cmake" => :build
-  unless OS.mac?
-    depends_on "bison" => :build
-    depends_on "flex" => :build
-  end
 
+  uses_from_macos "bison" => :build
+  uses_from_macos "flex" => :build
   uses_from_macos "zlib"
 
   def install

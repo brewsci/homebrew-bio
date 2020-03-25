@@ -11,7 +11,7 @@ class Ska < Formula
     sha256 "caafb54652a88112431cbc92b5885602b3e97dc9722364dd168b252fa2d5b04b" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     system "make"

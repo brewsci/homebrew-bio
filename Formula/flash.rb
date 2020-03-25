@@ -12,7 +12,7 @@ class Flash < Formula
     sha256 "6ee7d8e115ea5c7ee2a4584a699f6366b8b91d8ff52dd3019f9932f56e437a18" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     system "make"
@@ -21,6 +21,6 @@ class Flash < Formula
 
   test do
     assert_match "MATES", shell_output("#{bin}/flash 2>&1", 2)
-    assert_match "threads", shell_output("#{bin}/flash --help 2>&1", 0)
+    assert_match "threads", shell_output("#{bin}/flash --help 2>&1")
   end
 end

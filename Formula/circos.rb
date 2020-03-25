@@ -15,7 +15,8 @@ class Circos < Formula
   depends_on "cpanminus" => :build
   depends_on "pkg-config" => :build
   depends_on "gd"
-  depends_on "perl" unless OS.mac?
+
+  uses_from_macos "perl"
 
   def install
     rm "bin/circos.exe"

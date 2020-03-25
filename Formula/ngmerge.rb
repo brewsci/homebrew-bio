@@ -13,13 +13,11 @@ class Ngmerge < Formula
     sha256 "14aa3ca38df1d4ba671be3adbb249585468355c87950e055060f2066a86d1403" => :x86_64_linux
   end
 
-  fails_with :clang # needs OpenMP
+  fails_with :clang # needs openmp
 
-  if OS.mac?
-    depends_on "gcc"
-  else
-    depends_on "zlib"
-  end
+  depends_on "gcc" if OS.mac? # needs openmp
+
+  uses_from_macos "zlib"
 
   def install
     system "make"

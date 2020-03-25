@@ -9,7 +9,6 @@ class Groot < Formula
     url "https://github.com/will-rowe/groot/releases/download/0.8.5/groot_linux.gz"
     sha256 "700dbf7cc48ecce419aecfa43b9895ef9c3b0ca5362d2b26205858708aca617b"
   end
-  version "0.8.5"
 
   bottle do
     cellar :any_skip_relocation

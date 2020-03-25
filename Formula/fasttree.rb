@@ -21,8 +21,8 @@ class Fasttree < Formula
   option "without-sse", "Disable SSE parallel instructions"
 
   if build.with? "openmp"
-    fails_with :clang # needs OpenMP
-    depends_on "gcc" if OS.mac? # needs OpenMP
+    fails_with :clang # needs openmp
+    depends_on "gcc" if OS.mac? # needs openmp
   end
 
   def install

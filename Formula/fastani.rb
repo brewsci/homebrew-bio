@@ -13,15 +13,16 @@ class Fastani < Formula
     sha256 "71f8d0311cae9c1f6ee05cdf1dae0e6edb88920a9d261275201ce59096753da8" => :x86_64_linux
   end
 
-  fails_with :clang # needs openmp
-
   depends_on "autoconf" => :build
   depends_on "gcc" => :build if OS.mac? # needs openmp
+  depends_on "boost"
+  depends_on "gsl"
+
+  uses_from_macos "zlib"
+
+  fails_with :clang # needs openmp
 
   # https://github.com/ParBLiSS/FastANI/issues/18 (don't need gsl+boost, either)
-  depends_on "gsl"
-  depends_on "boost"
-  depends_on "zlib" unless OS.mac?
 
   def install
     # https://github.com/ParBLiSS/FastANI/issues/17 (macos clang opts for gcc)

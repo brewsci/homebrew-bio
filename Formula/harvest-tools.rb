@@ -15,7 +15,8 @@ class HarvestTools < Formula
   depends_on "autoconf" => :build
   depends_on "capnp"
   depends_on "protobuf"
-  depends_on "zlib" unless OS.mac?
+
+  uses_from_macos "zlib"
 
   def install
     system "autoconf"

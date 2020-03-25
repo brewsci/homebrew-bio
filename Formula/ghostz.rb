@@ -13,7 +13,7 @@ class Ghostz < Formula
     sha256 "ce5f132a6ed9a711bffae6648b18f701f55d965e611ef7320847aee24061a19e" => :x86_64_linux
   end
 
-  depends_on "gcc" # for openmp
+  depends_on "gcc" # needs openmp
 
   fails_with :clang # needs openmp
 

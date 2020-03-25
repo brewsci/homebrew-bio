@@ -15,13 +15,14 @@ class Circlator < Formula
     sha256 "310c5d97d4320ffbde5f0aedbcc7e05d03b721452714cf0e5dd21e5f3e1767f0" => :x86_64_linux
   end
 
+  depends_on "brewsci/bio/mummer"
   depends_on "bwa"
-  depends_on "mummer"
   depends_on "prodigal"
   depends_on "python"
   depends_on "samtools"
   depends_on "spades"
-  depends_on "zlib" unless OS.mac?
+
+  uses_from_macos "zlib"
 
   resource "cython" do
     url "https://files.pythonhosted.org/packages/21/89/ca320e5b45d381ae0df74c4b5694f1471c1b2453c5eb4bac3449f5970481/Cython-0.28.5.tar.gz"

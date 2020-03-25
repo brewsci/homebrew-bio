@@ -15,7 +15,8 @@ class Vt < Formula
   end
 
   depends_on "gcc" if OS.mac? # Fix error: static_assert failed
-  depends_on "zlib" unless OS.mac?
+
+  uses_from_macos "zlib"
 
   fails_with :clang # Fix error: static_assert failed
 
