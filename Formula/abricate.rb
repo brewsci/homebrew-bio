@@ -1,15 +1,15 @@
 class Abricate < Formula
   desc "Find antimicrobial resistance and virulence genes in contigs"
   homepage "https://github.com/tseemann/abricate"
-  url "https://github.com/tseemann/abricate/archive/v0.9.9.tar.gz"
-  sha256 "5ff61887cacbba61d30593b8bd602888816c476c50a4f4ecf37fe22b996c5ba1"
+  url "https://github.com/tseemann/abricate/archive/v1.0.0.tar.gz"
+  sha256 "bf2fc2a8a3b81e2a1fc3d4fe709bdc8bba73c53150362df5dbcc06412b1cc678"
   head "https://github.com/tseemann/abricate.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "3cc2e8f8bee8de9f4b83e77545449f5b009b8258a9506644d4ee0c964606d523" => :catalina
-    sha256 "e76a156c79e5d7b38994d75636dfd2df4207f015f343956cea6091f9c875a3ca" => :x86_64_linux
+    sha256 "d7153879084316c88d0cb63ecd67af403a6bb189ec7090b623bc8a092595d9d6" => :catalina
+    sha256 "90d725dce929665bd7cb9d2baa2686ff687d56c6e32a486388782c06a3b84671" => :x86_64_linux
   end
 
   depends_on "cpanminus" => :build
