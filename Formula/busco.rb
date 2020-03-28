@@ -6,16 +6,15 @@ class Busco < Formula
   # cite Sim_o_2015: "https://doi.org/10.1093/bioinformatics/btv351"
   desc "Assess genome assembly completeness with single-copy orthologs"
   homepage "https://busco.ezlab.org"
-  url "https://gitlab.com/ezlab/busco/repository/4.0.4/archive.tar.gz"
-  sha256 "1d42e4b3a53a7e4f3c4c15485ffcc4dac9fd6cbb3a4ac410ca90774c34d4dcb1"
-  revision 1
+  url "https://gitlab.com/ezlab/busco/repository/4.0.5/archive.tar.bz2"
+  sha256 "f65299b96a14ef1d909e6186107a52336b744428cdacd204fd811002e89811dc"
   head "https://gitlab.com/ezlab/busco.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "132bc5b295087ba78bf8bb324aac0680f859982c141c3d0fad9328b0f862ef71" => :catalina
-    sha256 "8ac68071f81ab2db3f19bf99608dcb785dee1e4f9a04bd2686d99ec1651eb080" => :x86_64_linux
+    sha256 "9c076a4c04a883de25d4678205f3c8c353384c94dc92d602a1ccde53e1418d28" => :catalina
+    sha256 "99233ec7fd13048b37ba737b40b32eebd132dab59ca5ad6d2babef07ea3ea09e" => :x86_64_linux
   end
 
   depends_on "augustus"
