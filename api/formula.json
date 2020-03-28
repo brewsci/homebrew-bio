@@ -67,14 +67,14 @@
     "desc": "Find antimicrobial resistance and virulence genes in contigs",
     "homepage": "https://github.com/tseemann/abricate",
     "versions": {
-      "stable": "0.9.9",
+      "stable": "1.0.0",
       "devel": null,
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/tseemann/abricate/archive/v0.9.9.tar.gz",
+        "url": "https://github.com/tseemann/abricate/archive/v1.0.0.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -89,12 +89,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/abricate-0.9.9.catalina.bottle.tar.gz",
-            "sha256": "3cc2e8f8bee8de9f4b83e77545449f5b009b8258a9506644d4ee0c964606d523"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/abricate-1.0.0.catalina.bottle.tar.gz",
+            "sha256": "d7153879084316c88d0cb63ecd67af403a6bb189ec7090b623bc8a092595d9d6"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/abricate-0.9.9.x86_64_linux.bottle.tar.gz",
-            "sha256": "e76a156c79e5d7b38994d75636dfd2df4207f015f343956cea6091f9c875a3ca"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/abricate-1.0.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "90d725dce929665bd7cb9d2baa2686ff687d56c6e32a486388782c06a3b84671"
           }
         }
       }
@@ -2241,19 +2241,19 @@
     "desc": "Assess genome assembly completeness with single-copy orthologs",
     "homepage": "https://busco.ezlab.org",
     "versions": {
-      "stable": "4.0.4",
+      "stable": "4.0.5",
       "devel": null,
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://gitlab.com/ezlab/busco/repository/4.0.4/archive.tar.gz",
+        "url": "https://gitlab.com/ezlab/busco/repository/4.0.5/archive.tar.bz2",
         "tag": null,
         "revision": null
       }
     },
-    "revision": 1,
+    "revision": 0,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -2263,12 +2263,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-4.0.4_1.catalina.bottle.tar.gz",
-            "sha256": "132bc5b295087ba78bf8bb324aac0680f859982c141c3d0fad9328b0f862ef71"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-4.0.5.catalina.bottle.tar.gz",
+            "sha256": "9c076a4c04a883de25d4678205f3c8c353384c94dc92d602a1ccde53e1418d28"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-4.0.4_1.x86_64_linux.bottle.tar.gz",
-            "sha256": "8ac68071f81ab2db3f19bf99608dcb785dee1e4f9a04bd2686d99ec1651eb080"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-4.0.5.x86_64_linux.bottle.tar.gz",
+            "sha256": "99233ec7fd13048b37ba737b40b32eebd132dab59ca5ad6d2babef07ea3ea09e"
           }
         }
       }
@@ -13379,14 +13379,14 @@
     "desc": "Randomly subsample sequencing reads to a specified coverage",
     "homepage": "https://github.com/mbhall88/rasusa",
     "versions": {
-      "stable": "0.1.0",
+      "stable": "0.2.0",
       "devel": null,
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/mbhall88/rasusa/archive/0.1.0.tar.gz",
+        "url": "https://github.com/mbhall88/rasusa/archive/0.2.0.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -13401,11 +13401,11 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "mojave": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/rasusa-0.1.0.mojave.bottle.tar.gz",
+            "url": "https://linuxbrew.bintray.com/bottles-bio/rasusa-0.2.0.mojave.bottle.tar.gz",
             "sha256": "95748966050bee51706ef2488601699922e6cdda746ce30a8ac1994c0666e2bd"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/rasusa-0.1.0.x86_64_linux.bottle.tar.gz",
+            "url": "https://linuxbrew.bintray.com/bottles-bio/rasusa-0.2.0.x86_64_linux.bottle.tar.gz",
             "sha256": "a8504c1f9fa3ee5f3e65add03688aa7c0be6cd1ee09abaaa132c11d4ac630dad"
           }
         }
