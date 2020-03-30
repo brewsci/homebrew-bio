@@ -6,10 +6,10 @@ class Rasusa < Formula
   sha256 "c098a92bffcd2970174109d14769c46dab1b7c6bc80836b85dcca6d1cc922936"
 
   bottle do
-    cellar :any_skip_relocation
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "95748966050bee51706ef2488601699922e6cdda746ce30a8ac1994c0666e2bd" => :mojave
-    sha256 "a8504c1f9fa3ee5f3e65add03688aa7c0be6cd1ee09abaaa132c11d4ac630dad" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "df58a454ce4a466088dd492d7e0044a7080892261a7a1ccb16bf8133b4007b08" => :catalina
+    sha256 "13b3cfd066b55b0560ea715711b80dcfdbb9d75446019d4793dea54a31e84ac4" => :x86_64_linux
   end
 
   depends_on "rust" => :build
