@@ -2,14 +2,14 @@ class Infernal < Formula
   # cite Nawrocki_2009: "https://doi.org/10.1093/bioinformatics/btp157"
   desc "Search DNA databases for RNA structure and sequence similarities"
   homepage "http://eddylab.org/infernal/"
-  url "http://eddylab.org/software/infernal/infernal-1.1.2.tar.gz"
-  sha256 "ac8c24f484205cfb7124c38d6dc638a28f2b9035b9433efec5dc753c7e84226b"
+  url "http://eddylab.org/software/infernal/infernal-1.1.3.tar.gz"
+  sha256 "3b98a6a3a0e7b01aa077a0caf1e958223c4d8f80a69a4eb602ca59a3475da85e"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "4297291ab9f3a66e671289ecfcd6a282bee0bfcb5d3a35ee1e37c07901d77e93" => :sierra
-    sha256 "2efd7a6c009ef225d83bf4cf8fdb5f4246e7ce5790d62664d6c74b8a7a901dad" => :x86_64_linux
+    sha256 "90dde134e8db249856e3432376d4d5f8658f2a8abc2390beed3030908de03d49" => :catalina
+    sha256 "01baed72ace481f680194bec8c1df2e7f90282f8ba731412e92e8dcfc0ed17ad" => :x86_64_linux
   end
 
   def install
