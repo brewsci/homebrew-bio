@@ -4,6 +4,7 @@ class Ntjoin < Formula
   homepage "https://github.com/bcgsc/ntJoin"
   url "https://github.com/bcgsc/ntJoin/releases/download/v1.0.2/ntJoin-1.0.2.tar.gz"
   sha256 "ea95d7c3033a12a9698725e8144cdc3b75f9d7a2d165f5784e09e7b78d809023"
+  revision 1
   head "https://github.com/bcgsc/ntJoin.git"
 
   bottle do
@@ -30,7 +31,7 @@ class Ntjoin < Formula
     ENV.prepend_path "PATH", libexec/"bin"
     xy = Language::Python.major_minor_version "python3"
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
-    inreplace "requirements.txt", "python-igraph", "python-igraph==0.7.1.post6"
+    inreplace "requirements.txt", "python-igraph", "python-igraph==0.8.0"
     system "pip3", "install", "--prefix=#{libexec}", "-r", "requirements.txt"
     bin.install "ntJoin"
     libexec_src = Pathname.new("#{libexec}/bin/src")
