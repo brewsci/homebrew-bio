@@ -5306,14 +5306,14 @@
     "desc": "Genome Analysis Toolkit: Variant Discovery in High-Throughput Sequencing",
     "homepage": "https://software.broadinstitute.org/gatk",
     "versions": {
-      "stable": "4.1.5.0",
+      "stable": "4.1.6.0",
       "devel": null,
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/broadinstitute/gatk/releases/download/4.1.5.0/gatk-4.1.5.0.zip",
+        "url": "https://github.com/broadinstitute/gatk/releases/download/4.1.6.0/gatk-4.1.6.0.zip",
         "tag": null,
         "revision": null
       }
@@ -5328,12 +5328,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/gatk-4.1.5.0.catalina.bottle.tar.gz",
-            "sha256": "2d322abdd5f5e6f7d481d42ee58832bc29ade6637e18fd00169c129155c97296"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/gatk-4.1.6.0.catalina.bottle.tar.gz",
+            "sha256": "03bd8eecc5ed196021d8e3b5dd421b93534301c3f35516a5be73bf9f6edb4c8d"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/gatk-4.1.5.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "c30f43ea293caea495e70480f7f01174bff7dc3d1f3b49d2d817f315b96f136d"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/gatk-4.1.6.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "21d7b23e9032b646c1a9dee11418db15fce25122386affe61246c480bfeba986"
           }
         }
       }
@@ -6505,14 +6505,14 @@
     "desc": "Search DNA databases for RNA structure and sequence similarities",
     "homepage": "http://eddylab.org/infernal/",
     "versions": {
-      "stable": "1.1.2",
+      "stable": "1.1.3",
       "devel": null,
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "http://eddylab.org/software/infernal/infernal-1.1.2.tar.gz",
+        "url": "http://eddylab.org/software/infernal/infernal-1.1.3.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -6526,13 +6526,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/infernal-1.1.2.sierra.bottle.tar.gz",
-            "sha256": "4297291ab9f3a66e671289ecfcd6a282bee0bfcb5d3a35ee1e37c07901d77e93"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/infernal-1.1.3.catalina.bottle.tar.gz",
+            "sha256": "90dde134e8db249856e3432376d4d5f8658f2a8abc2390beed3030908de03d49"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/infernal-1.1.2.x86_64_linux.bottle.tar.gz",
-            "sha256": "2efd7a6c009ef225d83bf4cf8fdb5f4246e7ce5790d62664d6c74b8a7a901dad"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/infernal-1.1.3.x86_64_linux.bottle.tar.gz",
+            "sha256": "01baed72ace481f680194bec8c1df2e7f90282f8ba731412e92e8dcfc0ed17ad"
           }
         }
       }
@@ -11171,14 +11171,14 @@
     "desc": "Genome assembly scaffolder using minimizer graphs",
     "homepage": "https://github.com/bcgsc/ntJoin",
     "versions": {
-      "stable": "1.0.1",
+      "stable": "1.0.2",
       "devel": null,
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/bcgsc/ntJoin/releases/download/v1.0.1/ntJoin-1.0.1.tar.gz",
+        "url": "https://github.com/bcgsc/ntJoin/releases/download/v1.0.2/ntJoin-1.0.2.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -11193,12 +11193,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ntjoin-1.0.1.catalina.bottle.tar.gz",
-            "sha256": "b843446caa1c93a1585e3e3cf22772dfd8f5005f7d595a420bf9d2eef02d1b79"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ntjoin-1.0.2.catalina.bottle.tar.gz",
+            "sha256": "194371069e006c56cd74a9f1cddf3fab56f01d270e8caef7ff71398e2f637664"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ntjoin-1.0.1.x86_64_linux.bottle.tar.gz",
-            "sha256": "6f9e3ceacebcf8ba77d5723df304733a4f66e611458549a441187bc23748cca3"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ntjoin-1.0.2.x86_64_linux.bottle.tar.gz",
+            "sha256": "7ef839cea24141303ad2a90c73875d6c641eef2dec86a4b718c2789ea287e651"
           }
         }
       }
@@ -11209,11 +11209,11 @@
     "build_dependencies": [],
     "dependencies": [
       "bedtools",
-      "igraph",
       "numpy",
       "python",
       "samtools",
       "scipy",
+      "libxml2",
       "zlib"
     ],
     "recommended_dependencies": [],
@@ -13400,13 +13400,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "mojave": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/rasusa-0.2.0.mojave.bottle.tar.gz",
-            "sha256": "95748966050bee51706ef2488601699922e6cdda746ce30a8ac1994c0666e2bd"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/rasusa-0.2.0.catalina.bottle.tar.gz",
+            "sha256": "df58a454ce4a466088dd492d7e0044a7080892261a7a1ccb16bf8133b4007b08"
           },
           "x86_64_linux": {
             "url": "https://linuxbrew.bintray.com/bottles-bio/rasusa-0.2.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "a8504c1f9fa3ee5f3e65add03688aa7c0be6cd1ee09abaaa132c11d4ac630dad"
+            "sha256": "13b3cfd066b55b0560ea715711b80dcfdbb9d75446019d4793dea54a31e84ac4"
           }
         }
       }
