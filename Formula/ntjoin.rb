@@ -2,8 +2,8 @@ class Ntjoin < Formula
   # cite Coombe_2020: "https://doi.org/10.1101/2020.01.13.905240"
   desc "Genome assembly scaffolder using minimizer graphs"
   homepage "https://github.com/bcgsc/ntJoin"
-  url "https://github.com/bcgsc/ntJoin/releases/download/v1.0.1/ntJoin-1.0.1.tar.gz"
-  sha256 "6fbb61308e0a2ac8a883ba1023126ff5529d6589f9e4fb79094931196e2c9c73"
+  url "https://github.com/bcgsc/ntJoin/releases/download/v1.0.2/ntJoin-1.0.2.tar.gz"
+  sha256 "ea95d7c3033a12a9698725e8144cdc3b75f9d7a2d165f5784e09e7b78d809023"
   head "https://github.com/bcgsc/ntJoin.git"
 
   bottle do
@@ -14,13 +14,13 @@ class Ntjoin < Formula
   end
 
   depends_on "bedtools"
-  depends_on "igraph"
+  depends_on "gcc" if OS.mac? # needs openmp
   depends_on "numpy"
   depends_on "python"
   depends_on "samtools"
   depends_on "scipy"
-  depends_on "gcc" if OS.mac? # needs openmp
 
+  uses_from_macos "libxml2"
   uses_from_macos "zlib"
 
   fails_with :clang # needs openmp
@@ -30,6 +30,7 @@ class Ntjoin < Formula
     ENV.prepend_path "PATH", libexec/"bin"
     xy = Language::Python.major_minor_version "python3"
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
+    inreplace "requirements.txt", "python-igraph", "python-igraph==0.7.1.post6"
     system "pip3", "install", "--prefix=#{libexec}", "-r", "requirements.txt"
     bin.install "ntJoin"
     libexec_src = Pathname.new("#{libexec}/bin/src")
