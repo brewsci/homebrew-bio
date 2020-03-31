@@ -8,8 +8,8 @@ class Infernal < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "4297291ab9f3a66e671289ecfcd6a282bee0bfcb5d3a35ee1e37c07901d77e93" => :sierra
-    sha256 "2efd7a6c009ef225d83bf4cf8fdb5f4246e7ce5790d62664d6c74b8a7a901dad" => :x86_64_linux
+    sha256 "90dde134e8db249856e3432376d4d5f8658f2a8abc2390beed3030908de03d49" => :catalina
+    sha256 "01baed72ace481f680194bec8c1df2e7f90282f8ba731412e92e8dcfc0ed17ad" => :x86_64_linux
   end
 
   def install
