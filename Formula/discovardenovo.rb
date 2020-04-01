@@ -13,16 +13,25 @@ class Discovardenovo < Formula
   depends_on "gcc@4.9" => :build
   depends_on "jemalloc"
 
-  # error: '::memchr' has not been declared
+  # error: invalid use of incomplete type 'struct Serializability<long long int>'
   depends_on :linux
 
   uses_from_macos "zlib"
 
   fails_with :clang # needs openmp
+
   # error: reference to 'align' is ambiguous
   fails_with :gcc => "5"
 
+  # error: could not convert 'kmer_shape_zebra<K>::getStringId()'
+  # from 'String' {aka 'FeudalString<char>'} to 'KmerShapeId'
+  fails_with :gcc => "9"
+
   def install
+    # Fix for case insensitive file systems. error: '::memchr' has not been declared
+    mv "src/String.h", "src/CharString.h"
+    inreplace Dir["src/**/*.{cc,h}"], '#include "String.h"', '#include "CharString.h"', false
+
     # Fix for GCC 5 error: redeclaration of 'template<class TAG> void
     # Contains(const vec<T>&, kmer_id_t, vec<long int>&, bool, int)' may not
     # have default arguments [-fpermissive]
