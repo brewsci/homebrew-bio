@@ -2,9 +2,8 @@ class Ivar < Formula
   # cite Grubaugh_2019: "https://doi.org/10.1101/383513"
   desc "Viral amplicon-based sequencing pipeline"
   homepage "https://github.com/andersen-lab/ivar"
-  url "https://github.com/andersen-lab/ivar/archive/v1.1-beta.tar.gz"
-  version "1.1"
-  sha256 "86438307169a7c0ff97acb06c94ca7e438f47b8bbb3b203d3499521e3d13e181"
+  url "https://github.com/andersen-lab/ivar/archive/v1.2.tar.gz"
+  sha256 "26f6547b7fb642240f31d6c6f495fe873c9ac2aa5d6dd8a5dbc11af57c026b63"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
