@@ -8,8 +8,8 @@ class Ivar < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "35d1f36a37874a888e744f77e3191896e32e8003296f1daa7734a0bb4458d429" => :catalina
-    sha256 "cfb9aee9cb008c600921ecb409628cab34b17ccdef192bf4720d6c4735d5dffa" => :x86_64_linux
+    sha256 "ea335601604594fb31f3978c0f59ce17cea90d703daee780ca579118dc81150a" => :catalina
+    sha256 "39829dc666c8d087a6b6c269690cef5822253b41949058766d11d34b081339e4" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
