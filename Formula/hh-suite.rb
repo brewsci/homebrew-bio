@@ -4,6 +4,7 @@ class HhSuite < Formula
   homepage "https://github.com/soedinglab/hh-suite"
   url "https://github.com/soedinglab/hh-suite/archive/v3.2.0.tar.gz"
   sha256 "6b870dcfbc1ffb9dd664a45415fcd13cf5970f49d1c7b824160c260fa138e6d6"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -13,24 +14,26 @@ class HhSuite < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "perl"
   depends_on "python"
-  on_macos do
-    depends_on "gcc@8" # needs openmp
-  end
+
+  uses_from_macos "perl"
+
   fails_with :clang # needs openmp
 
+  on_macos do
+    depends_on "gcc" # needs openmp
+  end
+
   def install
-    Dir.mkdir("build")
-    Dir.chdir("build")
-    system "cmake", "-DCMAKE_INSTALL_PREFIX=#{prefix}", ".."
-    system "make", "CC=gcc-8", "CXX=g++-8"
-    system "make", "install"
+    mkdir "build" do
+      system "cmake", "..", *std_cmake_args
+      system "make", "install"
+    end
   end
 
   test do
-    system "hhblits -h > /dev/null"
-    system "hhsearch -h > /dev/null"
-    system "hhalign -h > /dev/null"
+    assert_match "Usage", shell_output("#{bin}/hhalign -h")
+    assert_match "Usage", shell_output("#{bin}/hhblits -h")
+    assert_match "Usage", shell_output("#{bin}/hhsearch -h")
   end
 end
