@@ -13,6 +13,7 @@ class Gatk < Formula
   end
 
   depends_on :java => "1.8"
+  depends_on "python"
 
   # uses_from_macos "python@2"
 
