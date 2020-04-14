@@ -6,9 +6,12 @@ class HhSuite < Formula
   sha256 "6b870dcfbc1ffb9dd664a45415fcd13cf5970f49d1c7b824160c260fa138e6d6"
 
   depends_on "cmake" => :build
-  depends_on "gcc@8" => :build
   depends_on "perl"
   depends_on "python"
+  on_macos do
+    depends_on "gcc@8" # needs openmp
+  end
+  fails_with :clang # needs openmp
 
   def install
     Dir.mkdir("build")
