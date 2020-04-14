@@ -30,6 +30,7 @@ class Gatk < Formula
     bash_completion.install "gatk-completion.sh"
     bin.install_symlink "#{prefix}/gatk"
     bin.install_symlink "#{prefix}/dataproc-cluster-ui"
+    Language::Python.rewrite_python_shebang(Formula["python"].opt_bin/"python3")
   end
 
   def caveats
