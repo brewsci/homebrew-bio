@@ -2,8 +2,8 @@ class Salmon < Formula
   # cite Patro_2017: "https://doi.org/10.1038/nmeth.4197"
   desc "Transcript-level quantification from RNA-seq reads"
   homepage "https://github.com/COMBINE-lab/salmon"
-  url "https://github.com/COMBINE-lab/salmon/archive/v0.9.1.tar.gz"
-  sha256 "3a32c28d217f8f0af411c77c04144b1fa4e6fd3c2f676661cc875123e4f53520"
+  url "https://github.com/COMBINE-lab/salmon/archive/v1.2.0.tar.gz"
+  sha256 "c8a6647484ff630e4958aa4540cba28c0913b26922313876d747aba65eefb96f"
   head "https://github.com/COMBINE-lab/salmon.git"
 
   bottle do
@@ -15,19 +15,17 @@ class Salmon < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "boost" => :build
   depends_on "cmake" => :build
-  depends_on "boost"
   depends_on "tbb"
   depends_on "xz"
-  unless OS.mac?
-    depends_on "unzip" => :build
-    depends_on "zlib"
-  end
+
+  uses_from_macos "unzip" => :build
+  uses_from_macos "bzip2"
+  uses_from_macos "curl"
+  uses_from_macos "zlib"
 
   def install
-    # Reduce memory usage for CircleCI.
-    ENV["MAKEFLAGS"] = "-j4" if ENV["CIRCLECI"]
-
     system "cmake", ".", *std_cmake_args
     system "make"
     system "make", "install"
