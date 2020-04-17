@@ -30,6 +30,10 @@ class HhSuite < Formula
     end
   end
 
+  def caveats
+    "MMseqs2 requires at least SSE4.1 CPU instruction support." unless Hardware::CPU.sse4?
+  end
+
   test do
     assert_match "HHalign 3.1.0", shell_output("#{bin}/hhalign -h | head -1")
     assert_match "HHblits 3.1.0", shell_output("#{bin}/hhblits -h | head -1")
