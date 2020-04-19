@@ -1,10 +1,12 @@
 class Easel < Formula
   desc "Multiple sequence alignment toolset"
-  homepage "http://eddylab.org/infernal/"
-  url "http://eddylab.org/infernal/infernal-1.1.2.tar.gz"
-  # Easel is a sub-folder in Infernal, never officially released separately
-  version "0.43"
-  sha256 "ac8c24f484205cfb7124c38d6dc638a28f2b9035b9433efec5dc753c7e84226b"
+  homepage "https://github.com/EddyRivasLab/easel"
+  url "https://github.com/EddyRivasLab/easel/archive/easel-0.46.tar.gz"
+  sha256 "6648ab45346c2cef4a5d4086de8e43e44f0c0f367cf92df08f4f9c88c179da42"
+
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -14,12 +16,11 @@ class Easel < Formula
   end
 
   def install
+    system "autoconf"
     system "./configure", "--prefix=#{prefix}"
-    cd "easel" do
-      system "make"
-      system "make", "install"
-      pkgshare.install "formats", "esl_msa_testfiles", "testsuite"
-    end
+    system "make"
+    system "make", "install"
+    pkgshare.install "esl_msa_testfiles"
   end
 
   test do
