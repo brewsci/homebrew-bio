@@ -14,7 +14,7 @@ class Kaiju < Formula
 
   depends_on "perl" # for kaiju-gbk2faa.pl
 
-  uses_from_macos "python@2" # for kaiju-convertMAR.py
+  # uses_from_macos "python@2" # for kaiju-convertMAR.py
 
   def install
     system "make", "-C", "src"
