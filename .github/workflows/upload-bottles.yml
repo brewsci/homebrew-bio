@@ -20,6 +20,8 @@ jobs:
           apt update
           apt install -y jq unzip
       - uses: actions/checkout@master
+        with:
+          fetch-depth: 100
       - name: Upload bottles
         run: |
           set -eu
