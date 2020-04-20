@@ -312,14 +312,14 @@
     "desc": "Estimate evolutionary distance between similar genomes",
     "homepage": "https://github.com/EvolBioInf/andi",
     "versions": {
-      "stable": "0.12",
+      "stable": "0.13",
       "devel": null,
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/EvolBioInf/andi/archive/v0.12.tar.gz",
+        "url": "https://github.com/EvolBioInf/andi/archive/v0.13.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -334,11 +334,11 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/andi-0.12.sierra.bottle.tar.gz",
+            "url": "https://linuxbrew.bintray.com/bottles-bio/andi-0.13.sierra.bottle.tar.gz",
             "sha256": "7984d474d09cd3020985a5b95ca429f42b8b638e7ab888ff8cd74659abd7701d"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/andi-0.12.x86_64_linux.bottle.tar.gz",
+            "url": "https://linuxbrew.bintray.com/bottles-bio/andi-0.13.x86_64_linux.bottle.tar.gz",
             "sha256": "78fff51d8900bc200d3500216d3309bc821c246a5308fd145b865a40dde557eb"
           }
         }
@@ -354,7 +354,8 @@
       "pkg-config"
     ],
     "dependencies": [
-      "gsl"
+      "gsl",
+      "libdivsufsort"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
