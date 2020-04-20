@@ -4,7 +4,7 @@ class HhSuite < Formula
   homepage "https://github.com/soedinglab/hh-suite"
   url "https://github.com/soedinglab/hh-suite/archive/v3.2.0.tar.gz"
   sha256 "6b870dcfbc1ffb9dd664a45415fcd13cf5970f49d1c7b824160c260fa138e6d6"
-  revision 2
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -18,10 +18,11 @@ class HhSuite < Formula
 
   uses_from_macos "perl"
 
+  fails_with :clang # needs openmp
+
   on_macos do
     depends_on "gcc" # needs openmp
   end
-  fails_with :clang # needs openmp
 
   def install
     mkdir "build" do
@@ -31,15 +32,15 @@ class HhSuite < Formula
   end
 
   def caveats
-    "MMseqs2 requires at least SSE4.1 CPU instruction support." unless Hardware::CPU.sse4?
+    "HH-suite requires at least SSE4.1 CPU instruction support." unless Hardware::CPU.sse4?
   end
 
   test do
-    assert_match "HHalign 3.1.0", shell_output("#{bin}/hhalign -h | head -1")
-    assert_match "HHblits 3.1.0", shell_output("#{bin}/hhblits -h | head -1")
-    assert_match "HHconsensus 3.1.0", shell_output("#{bin}/hhconsensus -h | head -1")
-    assert_match "HHfilter 3.1.0", shell_output("#{bin}/hhfilter -h | head -1")
-    assert_match "HHmake 3.1.0", shell_output("#{bin}/hhmake -h | head -1")
-    assert_match "HHsearch 3.1.0", shell_output("#{bin}/hhsearch -h | head -1")
+    assert_match "Usage", shell_output("#{bin}/hhalign -h")
+    assert_match "Usage", shell_output("#{bin}/hhblits -h")
+    assert_match "Usage", shell_output("#{bin}/hhconsensus -h")
+    assert_match "Usage", shell_output("#{bin}/hhfilter -h")
+    assert_match "Usage", shell_output("#{bin}/hhmake -h")
+    assert_match "Usage", shell_output("#{bin}/hhsearch -h")
   end
 end
