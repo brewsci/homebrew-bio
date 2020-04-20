@@ -39,5 +39,6 @@ class Artemis < Formula
 
   test do
     # No test block because these tools are GUI only
+    nil
   end
 end

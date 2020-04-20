@@ -13,11 +13,13 @@ class CdHit < Formula
     sha256 "0986ecff059b6e8bb299846a7d5257a6df127c601299e9f0afddfa0c3ec36d0b" => :x86_64_linux
   end
 
+  uses_from_macos "zlib"
+
   fails_with :clang # needs openmp
 
-  depends_on "gcc" if OS.mac? # needs openmp
-
-  uses_from_macos "zlib"
+  on_macos do
+    depends_on "gcc" # needs openmp
+  end
 
   def install
     bin.mkpath

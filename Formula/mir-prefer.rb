@@ -17,7 +17,7 @@ class MirPrefer < Formula
   depends_on "patchelf" => :build unless OS.mac?
 
   uses_from_macos "ncurses"
-  uses_from_macos "python@2"
+  # uses_from_macos "python@2"
   uses_from_macos "zlib"
 
   def install

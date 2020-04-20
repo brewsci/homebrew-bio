@@ -17,8 +17,11 @@ class KentTools < Formula
   depends_on "openssl@1.1"
 
   uses_from_macos "rsync"
-  uses_from_macos "util-linux"
   uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "util-linux"
+  end
 
   def install
     libpng = Formula["libpng"]

@@ -12,7 +12,7 @@ class Vcf2phylip < Formula
   end
 
   # migrating to py3: https://github.com/edgardomortiz/vcf2phylip/issues/16
-  uses_from_macos "python@2"
+  # uses_from_macos "python@2"
 
   def install
     exe = "vcf2phylip.py"
