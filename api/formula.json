@@ -2095,8 +2095,7 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "tbb",
-      "python@2"
+      "tbb"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -5415,8 +5414,7 @@
       "unzip"
     ],
     "dependencies": [
-      "adoptopenjdk",
-      "python@2"
+      "adoptopenjdk"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -7156,8 +7154,7 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "perl",
-      "python@2"
+      "perl"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -7346,8 +7343,8 @@
       "mysql@5.7",
       "openssl@1.1",
       "rsync",
-      "util-linux",
-      "zlib"
+      "zlib",
+      "util-linux"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -9990,7 +9987,6 @@
     ],
     "dependencies": [
       "ncurses",
-      "python@2",
       "zlib"
     ],
     "recommended_dependencies": [],
@@ -11475,8 +11471,7 @@
       "numpy",
       "scipy",
       "freetype",
-      "libpng",
-      "python@2"
+      "libpng"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -11597,7 +11592,6 @@
     "build_dependencies": [],
     "dependencies": [
       "velvet",
-      "python@2",
       "zlib"
     ],
     "recommended_dependencies": [],
@@ -13130,8 +13124,7 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "mummer",
-      "python@2"
+      "mummer"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -16254,7 +16247,7 @@
     "oldname": null,
     "aliases": [],
     "versioned_formulae": [],
-    "desc": "A cross-platform and efficient NCBI taxonomy toolkit",
+    "desc": "NCBI taxonomy toolkit",
     "homepage": "https://github.com/shenwei356/taxonkit",
     "versions": {
       "stable": "0.5.0",
@@ -17194,8 +17187,7 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "adoptopenjdk",
-      "python@2"
+      "adoptopenjdk"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -17253,9 +17245,7 @@
     "bottle_disabled": false,
     "options": [],
     "build_dependencies": [],
-    "dependencies": [
-      "python@2"
-    ],
+    "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
     "uses_from_macos": [],
@@ -17915,7 +17905,6 @@
       "gsl",
       "htslib",
       "libbigwig",
-      "python@2",
       "curl",
       "zlib"
     ],
@@ -18101,7 +18090,6 @@
     "build_dependencies": [],
     "dependencies": [
       "jpeg",
-      "python@2",
       "zlib"
     ],
     "recommended_dependencies": [],
