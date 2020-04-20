@@ -12,8 +12,8 @@ class Bowtie < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "68c4f8f9e4437c7831fb0f3e09fa32acef47a763db231c700ee2f60fa93c52ff" => :sierra
-    sha256 "f517d5d13bdb58b788e621a2771702acfb81387eaafabe194b4622c294af9e76" => :x86_64_linux
+    sha256 "7fa2de70af58f8e5da3a0eb5e2027c21f71d9771ce434d3c5e76095587540300" => :catalina
+    sha256 "da870f5995114f425d58663e971f01ea8aa88d41224b6eafdca348362614836b" => :x86_64_linux
   end
 
   depends_on "python"
