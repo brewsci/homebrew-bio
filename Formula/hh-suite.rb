@@ -31,9 +31,16 @@ class HhSuite < Formula
     end
   end
 
+  def caveats
+    "HH-suite requires at least SSE4.1 CPU instruction support." unless Hardware::CPU.sse4?
+  end
+
   test do
     assert_match "Usage", shell_output("#{bin}/hhalign -h")
     assert_match "Usage", shell_output("#{bin}/hhblits -h")
+    assert_match "Usage", shell_output("#{bin}/hhconsensus -h")
+    assert_match "Usage", shell_output("#{bin}/hhfilter -h")
+    assert_match "Usage", shell_output("#{bin}/hhmake -h")
     assert_match "Usage", shell_output("#{bin}/hhsearch -h")
   end
 end
