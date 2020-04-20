@@ -41,9 +41,9 @@ jobs:
           file bottles.zip
           unzip bottles.zip
           git -C "$(brew --repo ${{github.repository}})" status
-          brew test-bot --ci-upload --publish --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
           git config --global user.name "LinuxbrewTestBot"
           git config --global user.email "testbot@linuxbrew.sh"
+          brew pr-upload --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio
           cd "$(brew --repo ${{github.repository}})"
           git branch -f "pr$pr"
           git fetch origin master
