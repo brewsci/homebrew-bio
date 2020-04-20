@@ -333,13 +333,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/andi-0.13.sierra.bottle.tar.gz",
-            "sha256": "7984d474d09cd3020985a5b95ca429f42b8b638e7ab888ff8cd74659abd7701d"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/andi-0.13.catalina.bottle.tar.gz",
+            "sha256": "78dcbf43bcb4cde0ba46cd02af556afceef520a7f04e998fea7d5b2910add590"
           },
           "x86_64_linux": {
             "url": "https://linuxbrew.bintray.com/bottles-bio/andi-0.13.x86_64_linux.bottle.tar.gz",
-            "sha256": "78fff51d8900bc200d3500216d3309bc821c246a5308fd145b865a40dde557eb"
+            "sha256": "7ce8d573d03707e62060cb894e8b66779f1cd4190647d9ae0892cf0f87ceb580"
           }
         }
       }
