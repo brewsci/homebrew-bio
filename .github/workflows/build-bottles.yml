@@ -2,17 +2,23 @@ name: Build bottles
 
 on: pull_request
 
+env:
+  HOMEBREW_NO_ANALYTICS: 1
+  HOMEBREW_NO_AUTO_UPDATE: 1
+  HOMEBREW_NO_INSTALL_CLEANUP: 1
+
 jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: jonchang/audit-action@master
   build-linux-bottles:
     runs-on: ubuntu-latest
     container:
       image: homebrew/brew
-    env:
-      HOMEBREW_NO_ANALYTICS: 1
-      HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
       - uses: actions/checkout@master
-      - uses: jonchang/audit-action@master
       - name: Build bottles
         run: |
           mkdir -p "$(dirname $(brew --repo ${{github.repository}}))"
@@ -28,9 +34,6 @@ jobs:
           path: ${{runner.temp}}/bottles
   build-macos-bottles:
     runs-on: macos-latest
-    env:
-      HOMEBREW_NO_ANALYTICS: 1
-      HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
       - name: Update Homebrew
         run: brew update-reset
