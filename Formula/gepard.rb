@@ -21,5 +21,6 @@ class Gepard < Formula
 
   test do
     # No test because this is a GUI
+    nil
   end
 end

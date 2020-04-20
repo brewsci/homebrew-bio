@@ -14,7 +14,7 @@ class Gatk < Formula
 
   depends_on :java => "1.8"
 
-  uses_from_macos "python@2"
+  # uses_from_macos "python@2"
 
   resource "count_reads.bam" do
     url "https://github.com/broadinstitute/gatk/blob/626c88732c02b0fd5f395db20c91bf2784ec54b9/src/test/resources/org/broadinstitute/hellbender/tools/count_reads.bam?raw=true"

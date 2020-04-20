@@ -15,7 +15,7 @@ class Bowtie < Formula
 
   depends_on "tbb"
 
-  uses_from_macos "python@2" => :test
+  # uses_from_macos "python@2" => :test
 
   def install
     system "make", "install", "prefix=#{prefix}"

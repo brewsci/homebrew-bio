@@ -15,7 +15,7 @@ class Oases < Formula
 
   depends_on "velvet"
 
-  uses_from_macos "python@2"
+  # uses_from_macos "python@2"
   uses_from_macos "zlib"
 
   resource "velvet" do

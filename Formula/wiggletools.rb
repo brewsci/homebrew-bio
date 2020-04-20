@@ -18,7 +18,7 @@ class Wiggletools < Formula
   depends_on "htslib"
   depends_on "libbigwig"
 
-  uses_from_macos "python@2" => :test
+  # uses_from_macos "python@2" => :test
   uses_from_macos "curl"
   uses_from_macos "zlib"
 
