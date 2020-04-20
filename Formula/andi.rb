@@ -7,9 +7,9 @@ class Andi < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "7984d474d09cd3020985a5b95ca429f42b8b638e7ab888ff8cd74659abd7701d" => :sierra
-    sha256 "78fff51d8900bc200d3500216d3309bc821c246a5308fd145b865a40dde557eb" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "78dcbf43bcb4cde0ba46cd02af556afceef520a7f04e998fea7d5b2910add590" => :catalina
+    sha256 "7ce8d573d03707e62060cb894e8b66779f1cd4190647d9ae0892cf0f87ceb580" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
