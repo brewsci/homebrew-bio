@@ -20,6 +20,7 @@ class Breseq < Formula
 
   depends_on "bowtie2"
   depends_on "r"
+
   uses_from_macos "gzip"
 
   def install

@@ -23,7 +23,7 @@ class Nxrepair < Formula
     depends_on "libpng"
   end
 
-  uses_from_macos "python@2"
+  # uses_from_macos "python@2"
 
   def install
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python2.7/site-packages"
