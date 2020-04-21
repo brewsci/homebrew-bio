@@ -19,12 +19,6 @@ class Mosdepth < Formula
 
   def install
     bin.install "mosdepth"
-    unless OS.mac?
-      system "patchelf",
-        "--set-interpreter", HOMEBREW_PREFIX/"lib/ld.so",
-        "--set-rpath", HOMEBREW_PREFIX/"lib",
-        bin/"mosdepth"
-    end
   end
 
   test do
