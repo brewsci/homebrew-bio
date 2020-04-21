@@ -18,7 +18,6 @@ class Wiggletools < Formula
   depends_on "htslib"
   depends_on "libbigwig"
 
-  # uses_from_macos "python@2" => :test
   uses_from_macos "curl"
   uses_from_macos "zlib"
 
@@ -30,10 +29,14 @@ class Wiggletools < Formula
   end
 
   test do
-    cp_r pkgshare/"test", testpath
-    cp_r prefix/"bin", testpath
-    cd "test" do
-      system "python2.7", "test.py"
+    assert_match "Command line", shell_output("#{bin}/wiggletools --help")
+
+    if which "python2.7"
+      cp_r pkgshare/"test", testpath
+      cp_r prefix/"bin", testpath
+      cd "test" do
+        system "python2.7", "test.py"
+      end
     end
   end
 end
