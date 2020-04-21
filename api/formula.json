@@ -2071,7 +2071,7 @@
         "revision": null
       }
     },
-    "revision": 0,
+    "revision": 1,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -2080,13 +2080,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/bowtie-1.2.3.sierra.bottle.tar.gz",
-            "sha256": "68c4f8f9e4437c7831fb0f3e09fa32acef47a763db231c700ee2f60fa93c52ff"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bowtie-1.2.3_1.catalina.bottle.tar.gz",
+            "sha256": "7fa2de70af58f8e5da3a0eb5e2027c21f71d9771ce434d3c5e76095587540300"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/bowtie-1.2.3.x86_64_linux.bottle.tar.gz",
-            "sha256": "f517d5d13bdb58b788e621a2771702acfb81387eaafabe194b4622c294af9e76"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bowtie-1.2.3_1.x86_64_linux.bottle.tar.gz",
+            "sha256": "da870f5995114f425d58663e971f01ea8aa88d41224b6eafdca348362614836b"
           }
         }
       }
@@ -2096,6 +2096,7 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
+      "python",
       "tbb"
     ],
     "recommended_dependencies": [],
@@ -14727,14 +14728,14 @@
     "desc": "Ultrafast FASTA/Q file manipulation",
     "homepage": "https://bioinf.shenwei.me/seqkit/",
     "versions": {
-      "stable": "0.12.0",
+      "stable": "0.12.1",
       "devel": null,
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/shenwei356/seqkit/releases/download/v0.12.0/seqkit_linux_amd64.tar.gz",
+        "url": "https://github.com/shenwei356/seqkit/releases/download/v0.12.1/seqkit_linux_amd64.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -14749,12 +14750,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/seqkit-0.12.0.catalina.bottle.tar.gz",
-            "sha256": "8db1cf85315bdef00469dd9a56ef57a1129ca1c83716a69065b360c7d905d8c6"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/seqkit-0.12.1.catalina.bottle.tar.gz",
+            "sha256": "c11313deaa1b164708aa1281dd7ad9ae1e756a31a4e4ca986a0ab6501546bc7b"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/seqkit-0.12.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "676879b9162d6d5bf6d65ad3b583e14f11b6adda26e3ac5de4251285fb4c64e3"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/seqkit-0.12.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "b57ac08b9dca7898e6a791a1f9a9a1c45eb03aaab5a7783dfd9472a672b23157"
           }
         }
       }
@@ -17882,18 +17883,18 @@
     "version_scheme": 0,
     "bottle": {
       "stable": {
-        "rebuild": 0,
+        "rebuild": 1,
         "cellar": ":any",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/wiggletools-1.2.3_1.catalina.bottle.tar.gz",
-            "sha256": "ae3b7f504b648dbf02885956bdcc1d0fe2cea35248e3c6052a8f53a46adc4694"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/wiggletools-1.2.3_1.catalina.bottle.1.tar.gz",
+            "sha256": "ebbd8e7c64cf65aabbdf7cdeefac77a1e905ad88c578b4192e333c6e48347d81"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/wiggletools-1.2.3_1.x86_64_linux.bottle.tar.gz",
-            "sha256": "331ca29f300399ba0e4fe1aec7fc378e536c149b740b7e5cfa2ada574be0ca12"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/wiggletools-1.2.3_1.x86_64_linux.bottle.1.tar.gz",
+            "sha256": "8f7b446e085dee1e9ebed51632a31d663eb9236778830a615a6ed281b76f0233"
           }
         }
       }
