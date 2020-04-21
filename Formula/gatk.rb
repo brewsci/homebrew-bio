@@ -1,9 +1,12 @@
 class Gatk < Formula
+  include Language::Python::Shebang
+
   # cite McKenna_2010: "https://doi.org/10.1101/gr.107524.110"
   desc "Genome Analysis Toolkit: Variant Discovery in High-Throughput Sequencing"
   homepage "https://software.broadinstitute.org/gatk"
   url "https://github.com/broadinstitute/gatk/releases/download/4.1.6.0/gatk-4.1.6.0.zip"
   sha256 "1a8a0256693c0e1fb83d87b6da4bad4a182bfc2a762394650b627a882694c306"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -28,9 +31,9 @@ class Gatk < Formula
     prefix.install "gatk-package-#{version}-spark.jar"
     prefix.install "gatk-package-#{version}-local.jar"
     bash_completion.install "gatk-completion.sh"
+    bin.find { |f| rewrite_shebang detected_python_shebang, f }
     bin.install_symlink "#{prefix}/gatk"
     bin.install_symlink "#{prefix}/dataproc-cluster-ui"
-    Language::Python.rewrite_python_shebang(Formula["python"].opt_bin/"python3")
   end
 
   def caveats
