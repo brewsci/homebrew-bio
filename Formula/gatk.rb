@@ -31,7 +31,8 @@ class Gatk < Formula
     prefix.install "gatk-package-#{version}-spark.jar"
     prefix.install "gatk-package-#{version}-local.jar"
     bash_completion.install "gatk-completion.sh"
-    bin.find { |f| rewrite_shebang detected_python_shebang, f }
+    bins = ["#{prefix}/gatk","#{prefix}/dataproc-cluster-ui"]
+    bins.find { |f| rewrite_shebang detected_python_shebang, f }
     bin.install_symlink "#{prefix}/gatk"
     bin.install_symlink "#{prefix}/dataproc-cluster-ui"
   end
