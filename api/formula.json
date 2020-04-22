@@ -11424,70 +11424,6 @@
     "outdated": false
   },
   {
-    "name": "nxrepair",
-    "full_name": "brewsci/bio/nxrepair",
-    "oldname": null,
-    "aliases": [],
-    "versioned_formulae": [],
-    "desc": "Correct errors in genome sequence assemblies using mate pair reads",
-    "homepage": "https://github.com/rebeccaroisin/nxrepair",
-    "versions": {
-      "stable": "0.13",
-      "devel": null,
-      "head": "HEAD",
-      "bottle": true
-    },
-    "urls": {
-      "stable": {
-        "url": "https://files.pythonhosted.org/packages/c2/3a/f0b3e44a96c79843902ab7a2500a613e3b2530b7596343ba3f726cb105cb/nxrepair-0.13.tar.gz",
-        "tag": null,
-        "revision": null
-      }
-    },
-    "revision": 1,
-    "version_scheme": 0,
-    "bottle": {
-      "stable": {
-        "rebuild": 0,
-        "cellar": ":any",
-        "prefix": "/home/linuxbrew/.linuxbrew",
-        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
-        "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/nxrepair-0.13_1.sierra.bottle.tar.gz",
-            "sha256": "315fee829379b9f5bd9096c5b4d24475ab6f5f58fbc857919b1681393998b92e"
-          },
-          "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/nxrepair-0.13_1.x86_64_linux.bottle.tar.gz",
-            "sha256": "9dd38cc1cfe647dd8172b3fa0cd49649b9447de8f6b47e433bdba2564e0be0b0"
-          }
-        }
-      }
-    },
-    "keg_only": false,
-    "bottle_disabled": false,
-    "options": [],
-    "build_dependencies": [
-      "pkg-config"
-    ],
-    "dependencies": [
-      "numpy",
-      "scipy",
-      "freetype",
-      "libpng"
-    ],
-    "recommended_dependencies": [],
-    "optional_dependencies": [],
-    "uses_from_macos": [],
-    "requirements": [],
-    "conflicts_with": [],
-    "caveats": null,
-    "installed": [],
-    "linked_keg": null,
-    "pinned": false,
-    "outdated": false
-  },
-  {
     "name": "nxtrim",
     "full_name": "brewsci/bio/nxtrim",
     "oldname": null,
@@ -17224,7 +17160,7 @@
         "revision": null
       }
     },
-    "revision": 0,
+    "revision": 1,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -17234,12 +17170,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/vcf2phylip-2.0.catalina.bottle.tar.gz",
-            "sha256": "834414b031110ed2d19b5152eb68395a3d7472016d9149c6629813a51bd4ce0b"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/vcf2phylip-2.0_1.catalina.bottle.tar.gz",
+            "sha256": "21244da7b9ea1b90afd4096164bfc7cfcedb6953b5368f17e9dc1754dca5764b"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/vcf2phylip-2.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "70d43b99630cff5496f05307f90d8794c17757ab4eeecee51c81987759044746"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/vcf2phylip-2.0_1.x86_64_linux.bottle.tar.gz",
+            "sha256": "910ce0bc45540b67fedb89fc462238abe0b2daf4f803f7a83945b39f4faf613d"
           }
         }
       }
@@ -17248,7 +17184,9 @@
     "bottle_disabled": false,
     "options": [],
     "build_dependencies": [],
-    "dependencies": [],
+    "dependencies": [
+      "python"
+    ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
     "uses_from_macos": [],
