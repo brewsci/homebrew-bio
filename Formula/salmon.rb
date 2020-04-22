@@ -8,7 +8,7 @@ class Salmon < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
+    cellar :any
     sha256 "8b7028be50231b483dfbfde6e72725845bf8fe5c641029307b900f51e75fc69f" => :catalina
     sha256 "4ff4420a22b8f540fe10be43b4e0c5ac53cf36103dbe967f19c05e6128075283" => :x86_64_linux
   end
