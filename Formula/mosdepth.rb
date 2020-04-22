@@ -12,12 +12,6 @@ class Mosdepth < Formula
 
   depends_on :linux
 
-  unless OS.mac?
-    depends_on "patchelf" => :build
-    depends_on "htslib"
-    depends_on "zlib"
-  end
-
   def install
     bin.install "mosdepth"
   end
