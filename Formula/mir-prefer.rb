@@ -14,10 +14,9 @@ class MirPrefer < Formula
     sha256 "43d16a0495132ea407473ca736a7c5f83298649a936665d9784c062d1f79c3b9" => :x86_64_linux
   end
 
-  depends_on "patchelf" => :build unless OS.mac?
+  depends_on :macos # needs python@2
 
   uses_from_macos "ncurses"
-  # uses_from_macos "python@2"
   uses_from_macos "zlib"
 
   def install
@@ -26,17 +25,6 @@ class MirPrefer < Formula
     prefix.install Dir["*"]
     bin.install_symlink "../miR_PREFeR.py"
     bin.install_symlink "miR_PREFeR.py" => "miR_PREFeR"
-    if OS.linux?
-      # Use the brewed ncurses rather than the host's.
-      system "patchelf",
-        "--set-rpath", [HOMEBREW_PREFIX, Formula["ncurses"].lib, Formula["zlib"].lib].join(":"),
-        "--set-interpreter", HOMEBREW_PREFIX/"lib/ld.so",
-        prefix/"dependency/Linux/x64/samtools"
-      system "patchelf",
-        "--replace-needed", "libncurses.so.5", "libncurses.so.6",
-        "--remove-needed", "libtinfo.so.5",
-        prefix/"dependency/Linux/x64/samtools"
-    end
   end
 
   test do
