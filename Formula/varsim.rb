@@ -13,8 +13,6 @@ class Varsim < Formula
 
   depends_on :java
 
-  # uses_from_macos "python@2"
-
   def install
     jar = "VarSim.jar"
     libexec.install jar
