@@ -5389,7 +5389,7 @@
         "revision": null
       }
     },
-    "revision": 0,
+    "revision": 1,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -5399,12 +5399,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/gatk-4.1.6.0.catalina.bottle.tar.gz",
-            "sha256": "03bd8eecc5ed196021d8e3b5dd421b93534301c3f35516a5be73bf9f6edb4c8d"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/gatk-4.1.6.0_1.catalina.bottle.tar.gz",
+            "sha256": "a25c1922a9b347764a82241501478ce7f5bf564ebc91d66da4cec24cb94a82be"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/gatk-4.1.6.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "21d7b23e9032b646c1a9dee11418db15fce25122386affe61246c480bfeba986"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/gatk-4.1.6.0_1.x86_64_linux.bottle.tar.gz",
+            "sha256": "3060ce32a5cc8bf9ea082aec6d905a5f4a15584f89181f191facace6324fd8fe"
           }
         }
       }
@@ -5416,7 +5416,8 @@
       "unzip"
     ],
     "dependencies": [
-      "adoptopenjdk"
+      "adoptopenjdk",
+      "python"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
