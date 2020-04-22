@@ -1,11 +1,10 @@
 class Hisat2 < Formula
   # cite Kim_2015: "https://doi.org/10.1038/nmeth.3317"
   desc "Graph-based alignment to a population of genomes"
-  homepage "https://ccb.jhu.edu/software/hisat2/"
-  url "https://github.com/infphilo/hisat2/archive/0f01dc6397a.tar.gz"
-  version "2.1.0"
-  sha256 "1e878745c8b5bf93d88986add1dcd450611ab3406a8e046e941fcf67349df664"
-  head "https://github.com/infphilo/hisat2.git"
+  homepage "https://daehwankimlab.github.io/hisat2/"
+  url "https://github.com/DaehwanKimLab/hisat2/archive/v2.2.0.tar.gz"
+  sha256 "429882d90ad9c600a986279b3ca5d78573caacf3bf0d780c802c006d4fcf0a01"
+  head "https://github.com/DaehwanKimLab/hisat2.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -18,6 +17,7 @@ class Hisat2 < Formula
 
   def install
     system "make"
+    rm "HISAT2-genotype.png"
     bin.install "hisat2", Dir["hisat2-*"]
     doc.install Dir["doc/*"]
   end
