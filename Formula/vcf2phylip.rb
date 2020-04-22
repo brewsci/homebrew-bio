@@ -1,8 +1,11 @@
 class Vcf2phylip < Formula
+  include Language::Python::Shebang
+
   desc "Convert SNPs in VCF format to alignment file formats"
   homepage "https://github.com/edgardomortiz/vcf2phylip"
   url "https://github.com/edgardomortiz/vcf2phylip/archive/v2.0.tar.gz"
   sha256 "ec16affdc1e25314d02b6fe7330221b67b6ba0c02457649519f3f260cf796d9c"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -11,16 +14,15 @@ class Vcf2phylip < Formula
     sha256 "70d43b99630cff5496f05307f90d8794c17757ab4eeecee51c81987759044746" => :x86_64_linux
   end
 
-  # migrating to py3: https://github.com/edgardomortiz/vcf2phylip/issues/16
-  # uses_from_macos "python@2"
+  depends_on "python"
 
   def install
-    exe = "vcf2phylip.py"
-    bin.install exe
+    rewrite_shebang detected_python_shebang, "vcf2phylip.py"
+    bin.install "vcf2phylip.py"
+    bin.install_symlink "vcf2phylip.py" => "vcf2phylip"
   end
 
   test do
-    # no way to get version: https://github.com/edgardomortiz/vcf2phylip/issues/22
-    assert_match "nexus", shell_output("#{bin}/vcf2phylip.py -h 2>&1")
+    assert_match "usage", shell_output("#{bin}/vcf2phylip.py -h 2>&1")
   end
 end
