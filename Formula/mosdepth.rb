@@ -7,15 +7,10 @@ class Mosdepth < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
+    sha256 "3f26c70c2d74e872b3b925ad5701cb3c39d9b7b216fda9cad5f436c7967bd91e" => :x86_64_linux
   end
 
   depends_on :linux
-
-  unless OS.mac?
-    depends_on "patchelf" => :build
-    depends_on "htslib"
-    depends_on "zlib"
-  end
 
   def install
     bin.install "mosdepth"
