@@ -10139,14 +10139,14 @@
     "desc": "Fast BAM/CRAM depth calculator",
     "homepage": "https://github.com/brentp/mosdepth",
     "versions": {
-      "stable": "0.2.3",
+      "stable": "0.2.9",
       "devel": null,
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/brentp/mosdepth/releases/download/v0.2.3/mosdepth",
+        "url": "https://github.com/brentp/mosdepth/releases/download/v0.2.9/mosdepth",
         "tag": null,
         "revision": null
       }
@@ -10161,8 +10161,8 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/mosdepth-0.2.3.x86_64_linux.bottle.tar.gz",
-            "sha256": "bb05121fdf75c04bc21a7ea46008eb3309a4d9f52ccbba0bde202605a77f3f28"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mosdepth-0.2.9.x86_64_linux.bottle.tar.gz",
+            "sha256": "3f26c70c2d74e872b3b925ad5701cb3c39d9b7b216fda9cad5f436c7967bd91e"
           }
         }
       }
@@ -10170,13 +10170,8 @@
     "keg_only": false,
     "bottle_disabled": false,
     "options": [],
-    "build_dependencies": [
-      "patchelf"
-    ],
-    "dependencies": [
-      "htslib",
-      "zlib"
-    ],
+    "build_dependencies": [],
+    "dependencies": [],
     "recommended_dependencies": [],
     "optional_dependencies": [],
     "uses_from_macos": [],
