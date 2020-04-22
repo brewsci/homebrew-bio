@@ -9984,9 +9984,7 @@
     "keg_only": false,
     "bottle_disabled": false,
     "options": [],
-    "build_dependencies": [
-      "patchelf"
-    ],
+    "build_dependencies": [],
     "dependencies": [
       "ncurses",
       "zlib"
@@ -9994,7 +9992,15 @@
     "recommended_dependencies": [],
     "optional_dependencies": [],
     "uses_from_macos": [],
-    "requirements": [],
+    "requirements": [
+      {
+        "name": "macos",
+        "cask": null,
+        "download": null,
+        "version": null,
+        "contexts": []
+      }
+    ],
     "conflicts_with": [],
     "caveats": null,
     "installed": [],
