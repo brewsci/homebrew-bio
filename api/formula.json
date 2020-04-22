@@ -14127,14 +14127,14 @@
     "desc": "Transcript-level quantification from RNA-seq reads",
     "homepage": "https://github.com/COMBINE-lab/salmon",
     "versions": {
-      "stable": "0.9.1",
+      "stable": "1.2.1",
       "devel": null,
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/COMBINE-lab/salmon/archive/v0.9.1.tar.gz",
+        "url": "https://github.com/COMBINE-lab/salmon/archive/v1.2.1.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -14148,13 +14148,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/salmon-0.9.1.sierra.bottle.tar.gz",
-            "sha256": "48292242cc8968b741494a8b0c2115e963f8d556f69e91a93b0b06f7e01c6c19"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/salmon-1.2.1.catalina.bottle.tar.gz",
+            "sha256": "8b7028be50231b483dfbfde6e72725845bf8fe5c641029307b900f51e75fc69f"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/salmon-0.9.1.x86_64_linux.bottle.tar.gz",
-            "sha256": "402f7b66bcbf4347dbfedd8e39507024ad223b31b915a42f28cec37e2254a372"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/salmon-1.2.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "4ff4420a22b8f540fe10be43b4e0c5ac53cf36103dbe967f19c05e6128075283"
           }
         }
       }
@@ -14165,13 +14165,15 @@
     "build_dependencies": [
       "autoconf",
       "automake",
+      "boost",
       "cmake",
       "unzip"
     ],
     "dependencies": [
-      "boost",
       "tbb",
       "xz",
+      "bzip2",
+      "curl",
       "zlib"
     ],
     "recommended_dependencies": [],
