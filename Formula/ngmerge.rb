@@ -8,9 +8,9 @@ class Ngmerge < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "94c91a6b4728d97272b2ce738f3840636e6c5a00b91dae3584d8c04f8981029d" => :sierra
-    sha256 "14aa3ca38df1d4ba671be3adbb249585468355c87950e055060f2066a86d1403" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "d24a87d8ef03468e83a8ef10a594a4c3bf9588945a1c817294d8b831d704cc59" => :catalina
+    sha256 "57587c4834b4ba04d472b69f0ccfa92ebf1f068c27b43ba21fe165fe06dbe52f" => :x86_64_linux
   end
 
   uses_from_macos "zlib"
