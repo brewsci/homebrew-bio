@@ -6275,16 +6275,16 @@
     "aliases": [],
     "versioned_formulae": [],
     "desc": "Graph-based alignment to a population of genomes",
-    "homepage": "https://ccb.jhu.edu/software/hisat2/",
+    "homepage": "https://daehwankimlab.github.io/hisat2/",
     "versions": {
-      "stable": "2.1.0",
+      "stable": "2.2.0",
       "devel": null,
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/infphilo/hisat2/archive/0f01dc6397a.tar.gz",
+        "url": "https://github.com/DaehwanKimLab/hisat2/archive/v2.2.0.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -6294,17 +6294,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/hisat2-2.1.0.sierra.bottle.tar.gz",
-            "sha256": "8cd78c6f9d9ac19a25c1768d7825686272a0edd05cdad3f93fa152d31470c8cf"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/hisat2-2.2.0.catalina.bottle.tar.gz",
+            "sha256": "fa0b379de74c8f9b952d57693a93d8d7f664ca476d970608a25f3d1786c3d94e"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/hisat2-2.1.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "63de0abb3432c7f2f5b1141c002885016c960d1575d7bb7e13d59f0e28e5075d"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/hisat2-2.2.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "0266c2eaad48f32bbe1b8ba9ed39e6fae3d9c1fbfb70f285d9bf2960d5093842"
           }
         }
       }
@@ -10999,14 +10999,14 @@
     "desc": "Merging paired-end reads and removing adapters",
     "homepage": "https://github.com/jsh58/NGmerge",
     "versions": {
-      "stable": "0.2",
+      "stable": "0.3",
       "devel": null,
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/jsh58/NGmerge/archive/v0.2.tar.gz",
+        "url": "https://github.com/jsh58/NGmerge/archive/v0.3.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -11020,13 +11020,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ngmerge-0.2.sierra.bottle.tar.gz",
-            "sha256": "94c91a6b4728d97272b2ce738f3840636e6c5a00b91dae3584d8c04f8981029d"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ngmerge-0.3.catalina.bottle.tar.gz",
+            "sha256": "d24a87d8ef03468e83a8ef10a594a4c3bf9588945a1c817294d8b831d704cc59"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ngmerge-0.2.x86_64_linux.bottle.tar.gz",
-            "sha256": "14aa3ca38df1d4ba671be3adbb249585468355c87950e055060f2066a86d1403"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ngmerge-0.3.x86_64_linux.bottle.tar.gz",
+            "sha256": "57587c4834b4ba04d472b69f0ccfa92ebf1f068c27b43ba21fe165fe06dbe52f"
           }
         }
       }
