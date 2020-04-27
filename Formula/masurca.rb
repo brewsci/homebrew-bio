@@ -21,9 +21,6 @@ class Masurca < Formula
 
   def install
     ENV.deparallelize
-
-    # Reduce memory usage on CircleCI
-    ENV["MAKEFLAGS"] = "-j4" if ENV["CIRCLECI"]
     # Respect MAKEFLAGS variable
     inreplace "install.sh", "make -j $NUM_THREADS", "make"
     ENV["DEST"] = libexec
