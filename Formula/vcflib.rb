@@ -22,9 +22,6 @@ class Vcflib < Formula
   fails_with :clang # error: ordered comparison between pointer and zero
 
   def install
-    # Reduce memory usage for CircleCI
-    ENV["MAKEFLAGS"] = "-j4" if ENV["CIRCLECI"]
-
     system "make"
     pkgshare.install Dir["bin/*.R"]
     pkgshare.install Dir["bin/*.r"]

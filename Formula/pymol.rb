@@ -79,8 +79,6 @@ class Pymol < Formula
       --use-msgpackc=c++11
     ]
     args << "--osx-frameworks" if OS.mac?
-    # Reduce memory usage for CircleCI.
-    args << "--jobs=4" if ENV["CIRCLECI"]
     system "python3", "setup.py", "install", *args
 
     bin.install libexec/"bin/pymol"

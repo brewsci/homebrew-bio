@@ -24,9 +24,6 @@ class Breseq < Formula
   uses_from_macos "gzip"
 
   def install
-    # Reduce memory usage for CircleCI.
-    ENV["MAKEFLAGS"] = "-j8" if ENV["CIRCLECI"]
-
     system "./configure", "--prefix=#{prefix}", "--without-libunwind"
     system "make"
     system "make", "test"

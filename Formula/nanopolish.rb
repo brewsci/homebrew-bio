@@ -28,9 +28,6 @@ class Nanopolish < Formula
   fails_with :clang # needs openmp
 
   def install
-    # Reduce memory usage for CircleCI.
-    ENV["MAKEFLAGS"] = "-j8" if ENV["CIRCLECI"]
-
     # remove this when 0.12.1 comes out
     # https://github.com/jts/nanopolish/commit/466c63d24896084535e8072e20d0aabc981a9888
     inreplace "src/nanopolish_call_methylation.cpp", "<omp.h>", " <omp.h>\n#include <zlib.h>"

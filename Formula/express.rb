@@ -21,9 +21,6 @@ class Express < Formula
   uses_from_macos "zlib"
 
   def install
-    # Reduce parallelism on Circle
-    ENV["MAKEFLAGS"] = "-j4" if ENV["CIRCLECI"]
-
     # Use Homebrew's bamtools instead of the vendored copy
     mkdir "bamtools"
     ln_s Formula["bamtools"].include/"bamtools", "bamtools/include"

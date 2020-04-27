@@ -22,9 +22,6 @@ class Iqtree < Formula
   fails_with :clang # needs openmp
 
   def install
-    # Reduce memory usage for Circle CI.
-    ENV["MAKEFLAGS"] = "-j8" if ENV["CIRCLECI"]
-
     if OS.mac?
       inreplace "CMakeLists.txt",
         "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -Wl,--gc-sections",

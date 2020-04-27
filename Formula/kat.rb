@@ -26,9 +26,6 @@ class Kat < Formula
   end
 
   def install
-    # Reduce memory usage for Circle CI.
-    ENV["MAKEFLAGS"] = "-j8" if ENV["CIRCLECI"]
-
     resources.each do |r|
       r.stage do
         system "python3", *Language::Python.setup_install_args(libexec)

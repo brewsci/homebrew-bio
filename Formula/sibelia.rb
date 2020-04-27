@@ -17,9 +17,6 @@ class Sibelia < Formula
   depends_on "snpeff"
 
   def install
-    # Reduce memory usage for CircleCI.
-    ENV["MAKEFLAGS"] = "-j8" if ENV["CIRCLECI"]
-
     # 'build' folder already exists
     mkdir "build" do
       system "cmake", "../src", *std_cmake_args

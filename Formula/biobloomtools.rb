@@ -43,7 +43,6 @@ class Biobloomtools < Formula
     if OS.mac?
       sdsl = buildpath/"sdsl"
       resource("sdsl").stage do
-        ENV["MAKEFLAGS"] = "-j8" if ENV["CIRCLECI"]
         ENV.cxx11
         system "./install.sh", sdsl
       end
