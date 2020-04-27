@@ -19,8 +19,6 @@ class Exabayes < Formula
   depends_on "open-mpi" => :recommended
 
   def install
-    # Reduce memory usage for CircleCI.
-    ENV["MAKEFLAGS"] = "-j8" if ENV["CIRCLECI"]
     args = %W[--disable-dependency-tracking --disable-silent-rules --prefix=#{prefix}]
     args << "--enable-mpi" if build.with? "open-mpi"
     system "autoreconf", "--install" if build.head?

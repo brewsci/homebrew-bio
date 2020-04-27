@@ -34,14 +34,10 @@ class Bam2fastx < Formula
       r.stage(buildpath/"subprojects/#{r.name}")
     end
 
-    flags = ["-v"]
-    # Reduce memory usage for CircleCI
-    flags << "-j4" if ENV["HOMEBREW_CIRCLECI"]
-
     mkdir "build" do
       system "meson", "--prefix=#{prefix}", "--wrap-mode=nodownload", ".."
-      system "ninja", *flags
-      system "ninja", "install", *flags
+      system "ninja", "-v"
+      system "ninja", "install", "-v"
     end
 
     pkgshare.install "tests/data"

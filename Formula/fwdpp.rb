@@ -19,9 +19,6 @@ class Fwdpp < Formula
   depends_on :macos => :el_capitan
 
   def install
-    # Reduce memory usage for Circle CI.
-    ENV["MAKEFLAGS"] = "-j16" if ENV["CIRCLECI"]
-
     system "./configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"

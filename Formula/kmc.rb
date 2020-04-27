@@ -21,9 +21,6 @@ class Kmc < Formula
   fails_with :clang
 
   def install
-    # Reduce memory usage below 4 GB for Circle CI.
-    ENV["MAKEFLAGS"] = "-j4" if ENV["CIRCLECI"]
-
     args = %W[CC=#{ENV.cxx} KMC_BIN_DIR=#{bin}]
     args << (OS.mac? ? "-fmakefile_mac" : "-fmakefile")
 

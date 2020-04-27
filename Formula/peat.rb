@@ -21,9 +21,6 @@ class Peat < Formula
   uses_from_macos "zlib"
 
   def install
-    # Reduce memory usage for CircleCI.
-    ENV["MAKEFLAGS"] = "-j4" if ENV["CIRCLECI"]
-
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
       system "make"

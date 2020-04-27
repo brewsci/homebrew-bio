@@ -14,9 +14,6 @@ class RavenAssembler < Formula
   depends_on "cmake" => :build
 
   def install
-    # Reduce memory usage for CircleCI.
-    ENV["MAKEFLAGS"] = "-j4" if ENV["CIRCLECI"]
-
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
       system "make"

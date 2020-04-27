@@ -20,9 +20,6 @@ class Mpboot < Formula
   fails_with :clang # needs openmp
 
   def install
-    # Reduce memory usage for CircleCI.
-    ENV["MAKEFLAGS"] = "-j4" if ENV["CIRCLECI"]
-
     # https://github.com/diepthihoang/mpboot/issues/1
     inreplace "CMakeLists.txt",
               'install (FILES "${PROJECT_SOURCE_DIR}/examples/example.phy" DESTINATION .)',
