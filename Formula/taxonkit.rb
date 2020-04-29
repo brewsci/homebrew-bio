@@ -1,7 +1,7 @@
 class Taxonkit < Formula
   desc "NCBI taxonomy toolkit"
   homepage "https://github.com/shenwei356/taxonkit"
-  version "0.5.0"
+  version "0.6.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -11,13 +11,13 @@ class Taxonkit < Formula
   end
 
   on_linux do
-    url "https://github.com/shenwei356/taxonkit/releases/download/v0.5.0/taxonkit_linux_amd64.tar.gz"
-    sha256 "ddd416bfacb80429d0853324d896fe2b50b7dbb57597408ad73dbb407c923c09"
+    url "https://github.com/shenwei356/taxonkit/releases/download/v0.6.0/taxonkit_linux_amd64.tar.gz"
+    sha256 "0699ce1ea1c2cb69cdb2d8b5494b8217dc6389e010a0e0eacd0b191a14f21d88"
   end
 
   on_macos do
-    url "https://github.com/shenwei356/taxonkit/releases/download/v0.5.0/taxonkit_darwin_amd64.tar.gz"
-    sha256 "0140f58e3bb4b9fef221a8ade2421d353148951e646e36ab2d04fe9247350b45"
+    url "https://github.com/shenwei356/taxonkit/releases/download/v0.6.0/taxonkit_darwin_amd64.tar.gz"
+    sha256 "462e4113d9749269799320f2de26c31aff43aae4ccd4286648410d129718da9f"
   end
 
   def install
