@@ -1,23 +1,23 @@
 class Taxonkit < Formula
   desc "NCBI taxonomy toolkit"
   homepage "https://github.com/shenwei356/taxonkit"
-  version "0.5.0"
+  version "0.6.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "0afc6abccfda04fc09e9672a9952a73069a9d8831bd77e40b084657487b5ab83" => :sierra
-    sha256 "79f1c7f5af26435d0d09a69ce52236cd9b16a30e37ba3063a78cd8117a54a9e5" => :x86_64_linux
+    sha256 "365c36072b1574851918593780efbcc8d9cb3fa5773e0720b66aa1edd7c26fd8" => :catalina
+    sha256 "2cf8a967879c0768e6fcc132470ba5ae0897576828f1364724d52028dde43d1c" => :x86_64_linux
   end
 
   on_linux do
-    url "https://github.com/shenwei356/taxonkit/releases/download/v0.5.0/taxonkit_linux_amd64.tar.gz"
-    sha256 "ddd416bfacb80429d0853324d896fe2b50b7dbb57597408ad73dbb407c923c09"
+    url "https://github.com/shenwei356/taxonkit/releases/download/v0.6.0/taxonkit_linux_amd64.tar.gz"
+    sha256 "0699ce1ea1c2cb69cdb2d8b5494b8217dc6389e010a0e0eacd0b191a14f21d88"
   end
 
   on_macos do
-    url "https://github.com/shenwei356/taxonkit/releases/download/v0.5.0/taxonkit_darwin_amd64.tar.gz"
-    sha256 "0140f58e3bb4b9fef221a8ade2421d353148951e646e36ab2d04fe9247350b45"
+    url "https://github.com/shenwei356/taxonkit/releases/download/v0.6.0/taxonkit_darwin_amd64.tar.gz"
+    sha256 "462e4113d9749269799320f2de26c31aff43aae4ccd4286648410d129718da9f"
   end
 
   def install

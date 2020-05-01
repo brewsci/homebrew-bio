@@ -4,15 +4,14 @@ class Gatk < Formula
   # cite McKenna_2010: "https://doi.org/10.1101/gr.107524.110"
   desc "Genome Analysis Toolkit: Variant Discovery in High-Throughput Sequencing"
   homepage "https://software.broadinstitute.org/gatk"
-  url "https://github.com/broadinstitute/gatk/releases/download/4.1.6.0/gatk-4.1.6.0.zip"
-  sha256 "1a8a0256693c0e1fb83d87b6da4bad4a182bfc2a762394650b627a882694c306"
-  revision 1
+  url "https://github.com/broadinstitute/gatk/releases/download/4.1.7.0/gatk-4.1.7.0.zip"
+  sha256 "1ed6f7c3194563a16c53b66e64d1b16d3f5e919d057d9e60f0ae6570eb0882e3"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "a25c1922a9b347764a82241501478ce7f5bf564ebc91d66da4cec24cb94a82be" => :catalina
-    sha256 "3060ce32a5cc8bf9ea082aec6d905a5f4a15584f89181f191facace6324fd8fe" => :x86_64_linux
+    sha256 "b49233331f6400875534bc35ab296cbc8a6cfe4ffd71468a32362e180696659c" => :catalina
+    sha256 "1dcd885b59803564e698abcdd81c21975d99d85ab83df88537b73cf852fb06f5" => :x86_64_linux
   end
 
   depends_on :java => "1.8"
