@@ -5377,19 +5377,19 @@
     "desc": "Genome Analysis Toolkit: Variant Discovery in High-Throughput Sequencing",
     "homepage": "https://software.broadinstitute.org/gatk",
     "versions": {
-      "stable": "4.1.6.0",
+      "stable": "4.1.7.0",
       "devel": null,
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/broadinstitute/gatk/releases/download/4.1.6.0/gatk-4.1.6.0.zip",
+        "url": "https://github.com/broadinstitute/gatk/releases/download/4.1.7.0/gatk-4.1.7.0.zip",
         "tag": null,
         "revision": null
       }
     },
-    "revision": 1,
+    "revision": 0,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -5399,12 +5399,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/gatk-4.1.6.0_1.catalina.bottle.tar.gz",
-            "sha256": "a25c1922a9b347764a82241501478ce7f5bf564ebc91d66da4cec24cb94a82be"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/gatk-4.1.7.0.catalina.bottle.tar.gz",
+            "sha256": "b49233331f6400875534bc35ab296cbc8a6cfe4ffd71468a32362e180696659c"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/gatk-4.1.6.0_1.x86_64_linux.bottle.tar.gz",
-            "sha256": "3060ce32a5cc8bf9ea082aec6d905a5f4a15584f89181f191facace6324fd8fe"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/gatk-4.1.7.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "1dcd885b59803564e698abcdd81c21975d99d85ab83df88537b73cf852fb06f5"
           }
         }
       }
@@ -12922,6 +12922,10 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/pymol-2.3.0.mojave.bottle.tar.gz",
+            "sha256": "14fe2ca191b6461477fe69d5aec46c965502a0dc1a6ce6d90d824379c77cb473"
+          },
           "x86_64_linux": {
             "url": "https://linuxbrew.bintray.com/bottles-bio/pymol-2.3.0.x86_64_linux.bottle.tar.gz",
             "sha256": "8621be3863ecfbf5e0140240d8a5bd648aea59a175a45766a57b64b089956db9"
@@ -16192,14 +16196,14 @@
     "desc": "NCBI taxonomy toolkit",
     "homepage": "https://github.com/shenwei356/taxonkit",
     "versions": {
-      "stable": "0.5.0",
+      "stable": "0.6.0",
       "devel": null,
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/shenwei356/taxonkit/releases/download/v0.5.0/taxonkit_linux_amd64.tar.gz",
+        "url": "https://github.com/shenwei356/taxonkit/releases/download/v0.6.0/taxonkit_linux_amd64.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -16213,13 +16217,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/taxonkit-0.5.0.sierra.bottle.tar.gz",
-            "sha256": "0afc6abccfda04fc09e9672a9952a73069a9d8831bd77e40b084657487b5ab83"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/taxonkit-0.6.0.catalina.bottle.tar.gz",
+            "sha256": "365c36072b1574851918593780efbcc8d9cb3fa5773e0720b66aa1edd7c26fd8"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/taxonkit-0.5.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "79f1c7f5af26435d0d09a69ce52236cd9b16a30e37ba3063a78cd8117a54a9e5"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/taxonkit-0.6.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "2cf8a967879c0768e6fcc132470ba5ae0897576828f1364724d52028dde43d1c"
           }
         }
       }
@@ -17996,14 +18000,14 @@
     "desc": "Smith-waterman alignment visualization",
     "homepage": "https://github.com/bcgsc/xmatchview",
     "versions": {
-      "stable": "1.2.0",
+      "stable": "1.2.3",
       "devel": null,
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/bcgsc/xmatchview/archive/v1.2.0.tar.gz",
+        "url": "https://github.com/bcgsc/xmatchview/archive/v1.2.3.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -18013,17 +18017,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": "/home/linuxbrew/.linuxbrew/Cellar",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/xmatchview-1.2.0.sierra.bottle.tar.gz",
-            "sha256": "2b17c832197c0abd912495ca38cfbd2963218e8771be3efbfad7d3c51b2da504"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/xmatchview-1.2.3.catalina.bottle.tar.gz",
+            "sha256": "3f69176e6aee0b04a146b13eecc2f4744a6735d18279638fc3e237b4c1369960"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/xmatchview-1.2.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "280d250cd2daefca86d6c2fe5fa64033b3a7dd68b548563d8ca6fae76d14c681"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/xmatchview-1.2.3.x86_64_linux.bottle.tar.gz",
+            "sha256": "13c6109f7a538b4278a468af00ea362ad4d2427ad5e1b9b927f1cfa0b979b985"
           }
         }
       }
@@ -18031,9 +18035,12 @@
     "keg_only": false,
     "bottle_disabled": false,
     "options": [],
-    "build_dependencies": [],
+    "build_dependencies": [
+      "pkg-config"
+    ],
     "dependencies": [
       "jpeg",
+      "python",
       "zlib"
     ],
     "recommended_dependencies": [],
