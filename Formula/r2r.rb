@@ -11,7 +11,6 @@ class R2r < Formula
             "--disable-dependency-tracking",
             "--prefix=#{prefix}"
     system "make", "install"
-    
     doc.install "R2R-manual.pdf"
   end
 
