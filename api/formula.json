@@ -1900,7 +1900,13 @@
       "head": null,
       "bottle": false
     },
-    "urls": {},
+    "urls": {
+      "stable": {
+        "url": "ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.2.31/ncbi-blast-2.2.31+-x64-linux.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {},
@@ -8821,6 +8827,11 @@
         "url": "http://yandell.topaz.genetics.utah.edu/maker_downloads/static/maker-2.31.10.tgz",
         "tag": null,
         "revision": null
+      },
+      "devel": {
+        "url": "http://yandell.topaz.genetics.utah.edu/maker_downloads/static/maker-3.01.02-beta.tgz",
+        "tag": null,
+        "revision": null
       }
     },
     "revision": 2,
@@ -9500,7 +9511,13 @@
       "head": null,
       "bottle": false
     },
-    "urls": {},
+    "urls": {
+      "stable": {
+        "url": "https://bitbucket.org/nsegata/metaphlan/get/default.tar.bz2",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {},
@@ -11373,7 +11390,13 @@
       "head": null,
       "bottle": false
     },
-    "urls": {},
+    "urls": {
+      "stable": {
+        "url": "https://github.com/tseemann/nullarbor/archive/v2.0.20191013.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {},
@@ -12002,7 +12025,13 @@
       "head": null,
       "bottle": false
     },
-    "urls": {},
+    "urls": {
+      "stable": {
+        "url": "https://www.pathvisio.org/data/releases/3.3.0/pathvisio_bin-3.3.0.zip",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {},
@@ -16625,7 +16654,13 @@
       "head": null,
       "bottle": false
     },
-    "urls": {},
+    "urls": {
+      "stable": {
+        "url": "https://tandem.bu.edu/trf/downloads/trf409.linux64",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {},
@@ -17088,7 +17123,13 @@
       "head": "HEAD",
       "bottle": false
     },
-    "urls": {},
+    "urls": {
+      "stable": {
+        "url": "https://github.com/sjackman/uniqtag/archive/1.0.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {},
@@ -17124,7 +17165,13 @@
       "head": null,
       "bottle": false
     },
-    "urls": {},
+    "urls": {
+      "stable": {
+        "url": "https://github.com/dkoboldt/varscan/raw/master/VarScan.v2.4.3.jar",
+        "tag": null,
+        "revision": null
+      }
+    },
     "revision": 0,
     "version_scheme": 0,
     "bottle": {},
