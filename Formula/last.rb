@@ -9,8 +9,8 @@ class Last < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "432cce5f2329980be09b68fe283370ae6324f62ace0c5e13c132e61560c5a2ea" => :catalina
-    sha256 "cec8788c7927bb1b2fe9f3465b71a787c1cd0be25f9f9d894d890f8f3849e818" => :x86_64_linux
+    sha256 "26a9965e1ac0c66c7ca8e77947356b13304b61080e1b1d7f81d783e092977398" => :catalina
+    sha256 "37812f372df4253a73c1d24a4df7a14582d3a85963e2273655a611a23ac57e2f" => :x86_64_linux
   end
 
   uses_from_macos "zlib"
