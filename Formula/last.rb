@@ -2,8 +2,8 @@ class Last < Formula
   # cite Kielbasa_2011: "https://doi.org/10.1101/gr.113985.110"
   desc "Find similar regions between sequences"
   homepage "http://last.cbrc.jp/"
-  url "http://last.cbrc.jp/last-1047.zip"
-  sha256 "c8bdfddf8223efd0571e6774c9077154850d48b66df879872fa3b5c11d26d219"
+  url "http://last.cbrc.jp/last-1061.zip"
+  sha256 "ddb6c04e3e4e84913d115d839ab1cca972af4c5bc045b830482ef7e25d677bc9"
   head "http://last.cbrc.jp/last", :using => :hg
 
   bottle do
