@@ -18,6 +18,8 @@ jobs:
     container:
       image: homebrew/brew
     steps:
+      - name: Update Homebrew
+        run: brew update-reset
       - uses: actions/checkout@master
       - name: Build bottles
         run: |
