@@ -2,8 +2,8 @@ class Pymol < Formula
   include Language::Python::Virtualenv
   desc "Open-source PyMOL molecular visualization system"
   homepage "https://pymol.org/"
-  url "https://github.com/schrodinger/pymol-open-source/archive/v2.3.0.tar.gz"
-  sha256 "62aa21fafd1db805c876f89466e47513809f8198395e1f00a5f5cc40d6f40ed0"
+  url "https://github.com/schrodinger/pymol-open-source/archive/v2.4.0.tar.gz"
+  sha256 "5ede4ce2e8f53713c5ee64f5905b2d29bf01e4391da7e536ce8909d6b9116581"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -12,20 +12,23 @@ class Pymol < Formula
     sha256 "8621be3863ecfbf5e0140240d8a5bd648aea59a175a45766a57b64b089956db9" => :x86_64_linux
   end
 
+  depends_on "brewsci/bio/mmtf-cpp"
+  depends_on "catch2"
+  depends_on "ffmpeg" # enable export a mp4 movie
   depends_on "freeglut"
   depends_on "freetype"
   depends_on "glew"
   depends_on "glm"
   depends_on "libpng"
-  depends_on "mmtf-cpp"
   depends_on "msgpack"
+  depends_on "netcdf"
   depends_on "pyqt"
   depends_on "python"
   depends_on "sip"
 
   resource "numpy" do
-    url "https://files.pythonhosted.org/packages/3a/20/c81632328b1a4e1db65f45c0a1350a9c5341fd4bbb8ea66cdd98da56fe2e/numpy-1.15.0.zip"
-    sha256 "f28e73cf18d37a413f7d5de35d024e6b98f14566a10d82100f9dc491a7d449f9"
+    url "https://files.pythonhosted.org/packages/d3/4b/f9f4b96c0b1ba43d28a5bdc4b64f0b9d3fbcf31313a51bc766942866a7c7/numpy-1.16.4.zip"
+    sha256 "7242be12a58fec245ee9734e625964b97cf7e3f2f7d016603f9e56660ce479c7"
   end
 
   resource "mmtf-python" do
@@ -73,13 +76,14 @@ class Pymol < Formula
 
     ENV.append "CPPFLAGS", "-I#{Formula["freetype"].opt_include}"
 
+    # Note: openvr support is not included.
     args = %W[
       --install-scripts=#{libexec}/bin
       --install-lib=#{libexec}/lib/python#{xy}/site-packages
       --glut
       --use-msgpackc=c++11
+      --testing
     ]
-    args << "--osx-frameworks" if OS.mac?
     system "python3", "setup.py", "install", *args
 
     bin.install libexec/"bin/pymol"
