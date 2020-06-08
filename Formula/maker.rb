@@ -14,7 +14,7 @@ class Maker < Formula
     sha256 "bb1c95a44a03f74fcf2777058f57bf99aa52099d911a04c1ae355aa0a09fd4c4" => :x86_64_linux
   end
 
-  devel do
+  head do
     url "http://yandell.topaz.genetics.utah.edu/maker_downloads/static/maker-3.01.03.tgz"
     sha256 "f36cc7ef584c215955a4d9fdd46287a49f7508bbe59c6fe78d50e0c6e99192ae"
   end
