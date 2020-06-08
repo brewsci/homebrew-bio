@@ -7858,14 +7858,14 @@
     "desc": "Find similar regions between sequences",
     "homepage": "http://last.cbrc.jp/",
     "versions": {
-      "stable": "1047",
+      "stable": "1061",
       "devel": null,
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "http://last.cbrc.jp/last-1047.zip",
+        "url": "http://last.cbrc.jp/last-1061.zip",
         "tag": null,
         "revision": null
       }
@@ -7880,12 +7880,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/last-1047.catalina.bottle.tar.gz",
-            "sha256": "432cce5f2329980be09b68fe283370ae6324f62ace0c5e13c132e61560c5a2ea"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/last-1061.catalina.bottle.tar.gz",
+            "sha256": "26a9965e1ac0c66c7ca8e77947356b13304b61080e1b1d7f81d783e092977398"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/last-1047.x86_64_linux.bottle.tar.gz",
-            "sha256": "cec8788c7927bb1b2fe9f3465b71a787c1cd0be25f9f9d894d890f8f3849e818"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/last-1061.x86_64_linux.bottle.tar.gz",
+            "sha256": "37812f372df4253a73c1d24a4df7a14582d3a85963e2273655a611a23ac57e2f"
           }
         }
       }
@@ -8817,24 +8817,19 @@
     "desc": "Genome annotation pipeline",
     "homepage": "https://www.yandell-lab.org/software/maker.html",
     "versions": {
-      "stable": "2.31.10",
-      "devel": "3.01.02-beta",
-      "head": null,
+      "stable": "2.31.11",
+      "devel": null,
+      "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "http://yandell.topaz.genetics.utah.edu/maker_downloads/static/maker-2.31.10.tgz",
-        "tag": null,
-        "revision": null
-      },
-      "devel": {
-        "url": "http://yandell.topaz.genetics.utah.edu/maker_downloads/static/maker-3.01.02-beta.tgz",
+        "url": "http://yandell.topaz.genetics.utah.edu/maker_downloads/static/maker-2.31.11.tgz",
         "tag": null,
         "revision": null
       }
     },
-    "revision": 2,
+    "revision": 0,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -8843,13 +8838,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/maker-2.31.10_2.sierra.bottle.tar.gz",
-            "sha256": "9d5e53a07e6e73dc09abdc9939a9f3f731535fdb0cc354935b3ff3a5e79e0c18"
+          "mojave": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/maker-2.31.11.mojave.bottle.tar.gz",
+            "sha256": "b6d7f905e818e0624a726a4ae270340b4bd950ea5cf92c6172f16f843e509446"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/maker-2.31.10_2.x86_64_linux.bottle.tar.gz",
-            "sha256": "6004e89464cf7b149fb339dd9aec0e614e90e13e0d1755f63f4d70de963f0ab2"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/maker-2.31.11.x86_64_linux.bottle.tar.gz",
+            "sha256": "bb1c95a44a03f74fcf2777058f57bf99aa52099d911a04c1ae355aa0a09fd4c4"
           }
         }
       }
@@ -8858,8 +8853,8 @@
     "bottle_disabled": false,
     "options": [
       {
-        "option": "--with-open-mpi",
-        "description": "Build with open-mpi support"
+        "option": "--without-open-mpi",
+        "description": "Build without open-mpi support"
       }
     ],
     "build_dependencies": [
@@ -8875,10 +8870,10 @@
       "perl",
       "sqlite"
     ],
-    "recommended_dependencies": [],
-    "optional_dependencies": [
+    "recommended_dependencies": [
       "open-mpi"
     ],
+    "optional_dependencies": [],
     "uses_from_macos": [],
     "requirements": [],
     "conflicts_with": [],
@@ -8897,14 +8892,14 @@
     "desc": "Combined short-read alignment and variant detection",
     "homepage": "https://github.com/hsinnan75/MapCaller",
     "versions": {
-      "stable": "0.9.9.37",
+      "stable": "0.9.9.38",
       "devel": null,
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/hsinnan75/MapCaller/archive/v0.9.9.37.tar.gz",
+        "url": "https://github.com/hsinnan75/MapCaller/archive/v0.9.9.38.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -8914,17 +8909,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any_skip_relocation",
+        "cellar": ":any",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/mapcaller-0.9.9.37.catalina.bottle.tar.gz",
-            "sha256": "4a368a1df0ac98307b96956d17ad7229b455a5f116820c1e81b24710b8a8e11e"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mapcaller-0.9.9.38.catalina.bottle.tar.gz",
+            "sha256": "e3ea40daeea663d7f9e08c1a44f79b6ce161d94238774508e8856d5805c1c01f"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/mapcaller-0.9.9.37.x86_64_linux.bottle.tar.gz",
-            "sha256": "c8caeffbbc61a1763be623830632e89eb91b6a0995e4cfdac0b5b25e558f455a"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mapcaller-0.9.9.38.x86_64_linux.bottle.tar.gz",
+            "sha256": "f0deb980cb0f6a4bc14df5aa013e26824a1e2a66279347d79ac90150fc5b08a7"
           }
         }
       }
