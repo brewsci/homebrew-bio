@@ -4,20 +4,19 @@ class Maker < Formula
   # cite Campbell_2013: "https://doi.org/10.1104/pp.113.230144" # MAKER-P
   desc "Genome annotation pipeline"
   homepage "https://www.yandell-lab.org/software/maker.html"
-  url "http://yandell.topaz.genetics.utah.edu/maker_downloads/static/maker-2.31.10.tgz"
-  sha256 "d3979af9710d61754a3b53f6682d0e2052c6c3f36be6f2df2286d2587406f07d"
-  revision 2
+  url "http://yandell.topaz.genetics.utah.edu/maker_downloads/static/maker-2.31.11.tgz"
+  sha256 "ebb66e798a6a996e4797878c1cb6154914b8e9ae0393381d3904af5782b3b0a5"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "9d5e53a07e6e73dc09abdc9939a9f3f731535fdb0cc354935b3ff3a5e79e0c18" => :sierra
-    sha256 "6004e89464cf7b149fb339dd9aec0e614e90e13e0d1755f63f4d70de963f0ab2" => :x86_64_linux
+    sha256 "b6d7f905e818e0624a726a4ae270340b4bd950ea5cf92c6172f16f843e509446" => :mojave
+    sha256 "bb1c95a44a03f74fcf2777058f57bf99aa52099d911a04c1ae355aa0a09fd4c4" => :x86_64_linux
   end
 
-  devel do
-    url "http://yandell.topaz.genetics.utah.edu/maker_downloads/static/maker-3.01.02-beta.tgz"
-    sha256 "1b44a7d930f49de6cac10d2818c45c292a2a400cb873f443828582a40c4b6bb0"
+  head do
+    url "http://yandell.topaz.genetics.utah.edu/maker_downloads/static/maker-3.01.03.tgz"
+    sha256 "f36cc7ef584c215955a4d9fdd46287a49f7508bbe59c6fe78d50e0c6e99192ae"
   end
 
   depends_on "cpanminus" => :build
@@ -32,7 +31,7 @@ class Maker < Formula
   uses_from_macos "sqlite"
 
   # Build MAKER with MPI support, but do not force the dependency on the user.
-  if ENV["CIRCLECI"]
+  if ENV["CI"]
     depends_on "open-mpi" => :recommended
   else
     depends_on "open-mpi" => :optional
@@ -51,14 +50,20 @@ class Maker < Formula
 
     cd "src" do
       mpi = build.with?("open-mpi") ? "yes" : "no"
-      system "(echo #{mpi}; yes '') |perl Build.PL"
+      system "(echo #{mpi}; yes '') | perl Build.PL"
       system "./Build", "install"
     end
+
     rm_r "src"
     libexec.install Dir["*"]
     %w[gff3_merge maker].each do |name|
       (bin/name).write_env_script("#{libexec}/bin/#{name}", :PERL5LIB => ENV["PERL5LIB"])
     end
+
+    # Fix audit: Files were found with references to the Homebrew shims directory.
+    os = OS.mac? ? "mac" : "linux"
+    inreplace libexec/"perl/lib/MAKER/ConfigData.pm",
+      "#{HOMEBREW_LIBRARY}/Homebrew/shims/#{os}/super:", ""
   end
 
   def caveats
