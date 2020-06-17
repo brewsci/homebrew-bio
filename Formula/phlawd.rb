@@ -10,8 +10,8 @@ class Phlawd < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "ad5daf13faa785f34a1ca49dff3807791c28db24de091ae6b56042b7322dc2ad" => :sierra
-    sha256 "41fd5fa09423ecabdc64a893e08186eb07714f3f63b5d065175ca5a8a653492b" => :x86_64_linux
+    sha256 "ece6f29b1e9ae8f93d7e0cbf041f1bad949c68955f02ca9f0dbb0279d4b3d7b8" => :catalina
+    sha256 "d93ccf2fdc9de7917a96a99c153983c8d8c5798b35a4e63ff247ab54fcdbb061" => :x86_64_linux
   end
 
   depends_on "brewsci/bio/muscle"
