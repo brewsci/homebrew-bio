@@ -2,8 +2,8 @@ class Fastp < Formula
   # cite Chen_2018: "https://doi.org/10.1101/274100"
   desc "Ultrafast all-in-one FASTQ preprocessor"
   homepage "https://github.com/OpenGene/fastp"
-  url "https://github.com/OpenGene/fastp/archive/v0.20.0.tar.gz"
-  sha256 "8d751d2746db11ff233032fc49e3bcc8b53758dd4596fdcf4b4099a4d702ac22"
+  url "https://github.com/OpenGene/fastp/archive/v0.20.1.tar.gz"
+  sha256 "e1b663717850bed7cb560c0c540e9a05dd9448ec76978faaf853a6959fd5b1b3"
   head "https://github.com/OpenGene/fastp.git"
 
   bottle do
