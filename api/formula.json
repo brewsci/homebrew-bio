@@ -1996,6 +1996,66 @@
     "outdated": false
   },
   {
+    "name": "bodr",
+    "full_name": "brewsci/bio/bodr",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Database of chemoinformatics",
+    "homepage": "https://www.sourceforge.net/projects/bodr",
+    "versions": {
+      "stable": "10",
+      "devel": null,
+      "head": null,
+      "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://downloads.sourceforge.net/project/bodr/bodr/10/bodr-10.tar.bz2",
+        "tag": null,
+        "revision": null
+      }
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bodr-10.catalina.bottle.tar.gz",
+            "sha256": "87f1a1334eeccaba523dd941872090b5d2ed138f2f3759d7c27d1e39a2195abc"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bodr-10.x86_64_linux.bottle.tar.gz",
+            "sha256": "902e4559129e1c0bc5e72e172b263ce6686423c82cb6dfdc15d1ed25c6eef01c"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [
+      "libxml2",
+      "libxslt"
+    ],
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false
+  },
+  {
     "name": "bonsai",
     "full_name": "brewsci/bio/bonsai",
     "oldname": null,
@@ -4466,14 +4526,14 @@
     "desc": "Ultrafast all-in-one FASTQ preprocessor",
     "homepage": "https://github.com/OpenGene/fastp",
     "versions": {
-      "stable": "0.20.0",
+      "stable": "0.20.1",
       "devel": null,
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/OpenGene/fastp/archive/v0.20.0.tar.gz",
+        "url": "https://github.com/OpenGene/fastp/archive/v0.20.1.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -4487,13 +4547,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/fastp-0.20.0.sierra.bottle.tar.gz",
-            "sha256": "93d1c52a97cd5aeac01e2edf299aa49fd1a28b37c42d9ba4cb2044814e6f9156"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/fastp-0.20.1.catalina.bottle.tar.gz",
+            "sha256": "f693c70a18ff037dde2e745b321b2327557131c7a60be8ed3b9ee7b0fc5be140"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/fastp-0.20.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "94b2ab898bdd7dba321a0ab10ea594b19057575683f1b5fd53cf23166876d8a0"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/fastp-0.20.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "e0425b440fdc6b152c7a5426a41a437fc58995e67b0fab29864ed896cf2cc1c6"
           }
         }
       }
@@ -12135,7 +12195,7 @@
         "revision": null
       }
     },
-    "revision": 1,
+    "revision": 2,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -12144,13 +12204,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/phlawd-3.4b_1.sierra.bottle.tar.gz",
-            "sha256": "ad5daf13faa785f34a1ca49dff3807791c28db24de091ae6b56042b7322dc2ad"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/phlawd-3.4b_2.catalina.bottle.tar.gz",
+            "sha256": "ece6f29b1e9ae8f93d7e0cbf041f1bad949c68955f02ca9f0dbb0279d4b3d7b8"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/phlawd-3.4b_1.x86_64_linux.bottle.tar.gz",
-            "sha256": "41fd5fa09423ecabdc64a893e08186eb07714f3f63b5d065175ca5a8a653492b"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/phlawd-3.4b_2.x86_64_linux.bottle.tar.gz",
+            "sha256": "d93ccf2fdc9de7917a96a99c153983c8d8c5798b35a4e63ff247ab54fcdbb061"
           }
         }
       }
@@ -12160,9 +12220,9 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
+      "brewsci/bio/muscle",
+      "brewsci/bio/quicktree",
       "mafft",
-      "muscle",
-      "quicktree",
       "wget",
       "sqlite"
     ],
@@ -12481,14 +12541,14 @@
     "desc": "Pangenome analysis and threshold evaluation toolbox",
     "homepage": "https://github.com/SionBayliss/PIRATE",
     "versions": {
-      "stable": "1.0.2",
+      "stable": "1.0.3",
       "devel": null,
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/SionBayliss/PIRATE/archive/v1.0.2.tar.gz",
+        "url": "https://github.com/SionBayliss/PIRATE/archive/v1.0.3.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -12502,13 +12562,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/pirate-1.0.2.sierra.bottle.tar.gz",
-            "sha256": "4e9fe8d9e3cc185c25f3eb012273fddfa1c94b70022260a03c4bd9196ace595d"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/pirate-1.0.3.catalina.bottle.tar.gz",
+            "sha256": "e34974e88ac26d538899b3f86982ee3980cd9ffb40beaf0bb9d7d4d8ad3f67ad"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/pirate-1.0.2.x86_64_linux.bottle.tar.gz",
-            "sha256": "55e990b75e9fde5b11fd07dcd0289d11ea6e152ba77576de3264284873ab5fc9"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/pirate-1.0.3.x86_64_linux.bottle.tar.gz",
+            "sha256": "368b2cbe46f9f9450a775c8c861e3661436e2add1858d625c91110d8ae2295ca"
           }
         }
       }
@@ -16045,16 +16105,16 @@
     "aliases": [],
     "versioned_formulae": [],
     "desc": "Transcript assembly and quantification for RNA-Seq",
-    "homepage": "https://ccb.jhu.edu/software/stringtie",
+    "homepage": "https://ccb.jhu.edu/software/stringtie/",
     "versions": {
-      "stable": "1.3.6",
+      "stable": "2.1.3b",
       "devel": null,
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://ccb.jhu.edu/software/stringtie/dl/stringtie-1.3.6.tar.gz",
+        "url": "https://github.com/gpertea/stringtie/releases/download/v2.1.3b/stringtie-2.1.3b.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -16068,13 +16128,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/stringtie-1.3.6.sierra.bottle.tar.gz",
-            "sha256": "19a315de6e4d605b7265aafdf7ac3679132c83ed13554d436a3ed2ad43217af2"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/stringtie-2.1.3b.catalina.bottle.tar.gz",
+            "sha256": "6a0d778a7396ca1644b4c05df3baf8beceae4204a32011044c1f1619ff20917f"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/stringtie-1.3.6.x86_64_linux.bottle.tar.gz",
-            "sha256": "d0de065c76440a908f7a77d3beb8e7edbfc24688ed89825ead5462d0dd68102c"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/stringtie-2.1.3b.x86_64_linux.bottle.tar.gz",
+            "sha256": "2bdbcf4c21747d487ac02d2f98cb1cbc653b730e6c8bf288a87c2cf8a25ed7e0"
           }
         }
       }
