@@ -5,45 +5,44 @@ class Phlawd < Formula
   url "https://github.com/jonchang/phlawd/archive/3.4b.tar.gz"
   version "3.4b"
   sha256 "a0fea43866e425f7fed5f74bcb8c391484a10b486f3f03d5b7bbc4df84dd84b8"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "ad5daf13faa785f34a1ca49dff3807791c28db24de091ae6b56042b7322dc2ad" => :sierra
-    sha256 "41fd5fa09423ecabdc64a893e08186eb07714f3f63b5d065175ca5a8a653492b" => :x86_64_linux
+    sha256 "ece6f29b1e9ae8f93d7e0cbf041f1bad949c68955f02ca9f0dbb0279d4b3d7b8" => :catalina
+    sha256 "d93ccf2fdc9de7917a96a99c153983c8d8c5798b35a4e63ff247ab54fcdbb061" => :x86_64_linux
   end
 
-  depends_on "gcc" if OS.mac? # needs openmp
+  depends_on "brewsci/bio/muscle"
+  depends_on "brewsci/bio/quicktree"
+  depends_on "libomp" if OS.mac?
   depends_on "mafft"
-  depends_on "muscle"
-  depends_on "quicktree"
   depends_on "wget"
 
   uses_from_macos "sqlite"
 
-  fails_with :clang # needs openmp
-
   def install
-    if OS.mac?
-      # Work around syslog.h errors
-      ENV.append_to_cflags "-mmacosx-version-min=10.12"
-    else
-      # Recompile libsqlitewrapped due to stdlib changes
-      cd "deps" do
-        system "tar", "xf", "sqlitewrapped-1.3.1.tar.gz"
-        cd "sqlitewrapped-1.3.1" do
-          system "make"
-        end
-      end
+    ENV.append_to_cflags "-mmacosx-version-min=10.12 -lomp" if OS.mac?
+    sql = OS.mac? ? "sqlitewrapped-1.3.1.MAC.tgz" : "sqlitewrapped-1.3.1.tar.gz"
+
+    cd "deps" do
+      system "tar", "xf", sql, "--strip-components=1"
+      system "make"
     end
 
     cd "src" do
       inreplace "Makefile.in" do |s|
         s.gsub! "fopenmp", "fopenmp @CFLAGS@"
-        s.gsub! "deps/$(HOST)", "deps/sqlitewrapped-1.3.1" if OS.linux?
+        s.gsub! "deps/$(HOST)", "deps"
       end
-      system "./configure"
+
+      if OS.mac?
+        system "./configure", "ac_cv_prog_cxx_openmp=-Xpreprocessor -fopenmp"
+      else
+        system "./configure"
+      end
+
       system "make"
       bin.install "PHLAWD"
     end

@@ -2,14 +2,14 @@ class Pirate < Formula
   # cite Bayliss_2019: "https://doi.org/10.1101/598391"
   desc "Pangenome analysis and threshold evaluation toolbox"
   homepage "https://github.com/SionBayliss/PIRATE"
-  url "https://github.com/SionBayliss/PIRATE/archive/v1.0.2.tar.gz"
-  sha256 "4295f0c3380f1df58fb10792ee8e031c5521e449a6d4e4d289bd8cbf493b33d8"
+  url "https://github.com/SionBayliss/PIRATE/archive/v1.0.3.tar.gz"
+  sha256 "9dbca21c42215aa3c100bf238febbfb194e369054246434bd40287dda9dc518c"
 
   bottle do
-    cellar :any_skip_relocation
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "4e9fe8d9e3cc185c25f3eb012273fddfa1c94b70022260a03c4bd9196ace595d" => :sierra
-    sha256 "55e990b75e9fde5b11fd07dcd0289d11ea6e152ba77576de3264284873ab5fc9" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "e34974e88ac26d538899b3f86982ee3980cd9ffb40beaf0bb9d7d4d8ad3f67ad" => :catalina
+    sha256 "368b2cbe46f9f9450a775c8c861e3661436e2add1858d625c91110d8ae2295ca" => :x86_64_linux
   end
 
   depends_on "bioperl"
@@ -20,10 +20,9 @@ class Pirate < Formula
   depends_on "mafft"
   depends_on "mcl"
   depends_on "parallel"
-  unless OS.mac?
-    depends_on "perl"
-    depends_on "unzip"
-  end
+
+  uses_from_macos "perl"
+  uses_from_macos "unzip"
 
   def install
     ENV.prepend "PERL5LIB", Formula["bioperl"].libexec/"lib/perl5"

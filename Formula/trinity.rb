@@ -24,14 +24,14 @@ class Trinity < Formula
 
   uses_from_macos "zlib"
 
+  on_macos do
+    depends_on "gcc" # needs openmp
+  end
+
   # Trinity doesn't link to eXpress, which depends on Boost, built with C++11
   cxxstdlib_check :skip
 
   fails_with :clang # needs openmp
-
-  on_macos do
-    depends_on "gcc" # needs openmp
-  end
 
   def install
     inreplace "Trinity" do |s|
