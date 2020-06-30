@@ -8,8 +8,8 @@ class Rasusa < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "df58a454ce4a466088dd492d7e0044a7080892261a7a1ccb16bf8133b4007b08" => :catalina
-    sha256 "13b3cfd066b55b0560ea715711b80dcfdbb9d75446019d4793dea54a31e84ac4" => :x86_64_linux
+    sha256 "9aedd186bd85d4a5945a988409e0ea27c86dc9b0b618659dc92c8ac473d1f5be" => :catalina
+    sha256 "abd0adf78a670077d19c94531f510d079fac45ba23fb0c34c0297bc4558a90ad" => :x86_64_linux
   end
 
   depends_on "rust" => :build
