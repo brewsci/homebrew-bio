@@ -8,9 +8,9 @@ class Gfakluge < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "32e2341a432399529a87eee7c62f2f87cef5f9cb4c06cf6b8a535e831187f15c" => :sierra
-    sha256 "0f162dfa8f8ae6667b11354c6116a0a6e604900356be78ef4c211c4780dba637" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "977ebe86eb2dfe0ae4ee25fdfaaf65dd3f14f2c194f940ecf0c2b4d6268d23e7" => :catalina
+    sha256 "109b9d58544ef9e80d7a49a4067e5ff8ae04d79e2d35abeade3c82f83f2446ef" => :x86_64_linux
   end
 
   depends_on "gcc" if OS.mac? # needs openmp
