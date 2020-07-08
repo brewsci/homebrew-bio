@@ -2,9 +2,8 @@ class Ntjoin < Formula
   # cite Coombe_2020: "https://doi.org/10.1101/2020.01.13.905240"
   desc "Genome assembly scaffolder using minimizer graphs"
   homepage "https://github.com/bcgsc/ntJoin"
-  url "https://github.com/bcgsc/ntJoin/releases/download/v1.0.2/ntJoin-1.0.2.tar.gz"
-  sha256 "ea95d7c3033a12a9698725e8144cdc3b75f9d7a2d165f5784e09e7b78d809023"
-  revision 1
+  url "https://github.com/bcgsc/ntJoin/releases/download/v1.0.3/ntJoin-1.0.3.tar.gz"
+  sha256 "61b5afce7c38e9763777dc1ca5db3944eb76c64c22d2baf61c5f0383a3a74a9c"
   head "https://github.com/bcgsc/ntJoin.git"
 
   bottle do
@@ -15,7 +14,6 @@ class Ntjoin < Formula
   end
 
   depends_on "bedtools"
-  depends_on "gcc" if OS.mac? # needs openmp
   depends_on "numpy"
   depends_on "python@3.8"
   depends_on "samtools"
@@ -23,8 +21,6 @@ class Ntjoin < Formula
 
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
-
-  fails_with :clang # needs openmp
 
   def install
     system "make", "-C", "src"
