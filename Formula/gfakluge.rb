@@ -2,8 +2,8 @@ class Gfakluge < Formula
   # cite Dawson_2019: "https://doi.org/10.21105/joss.01083"
   desc "C++ library and utilities for Graphical Fragment Assembly (GFA)"
   homepage "https://github.com/edawson/gfakluge"
-  url "https://github.com/edawson/gfakluge/archive/1.1.1.tar.gz"
-  sha256 "9af1b0237fcfb548add3d57d8804c20ead846dbcb75d92f9d4e9441e55ea19bb"
+  url "https://github.com/edawson/gfakluge/archive/1.1.2.tar.gz"
+  sha256 "4b9e2d358d87a8a0b8508b6ae076af7657f8bb5c823a73f912917c5689f72121"
   head "https://github.com/edawson/gfakluge.git"
 
   bottle do
@@ -20,6 +20,7 @@ class Gfakluge < Formula
   fails_with :clang # needs openmp
 
   def install
+    inreplace "Makefile", "  mkdir -p $(DESTDIR)$(PREFIX)/bin", "\tmkdir -p $(DESTDIR)$(PREFIX)/bin"
     system "make"
     mkdir [bin, include]
     system "make", "install", "PREFIX=#{prefix}"
