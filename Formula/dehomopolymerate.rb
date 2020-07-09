@@ -1,8 +1,8 @@
 class Dehomopolymerate < Formula
   desc "Collapse homopolymer runs in FASTQ files"
   homepage "https://github.com/tseemann/dehomopolymerate"
-  url "https://github.com/tseemann/dehomopolymerate/archive/v0.3.tar.gz"
-  sha256 "659778bc7cd8e52a92f1547b5a93e71bf8022f62208313d06aec454aad9e91d6"
+  url "https://github.com/tseemann/dehomopolymerate/archive/v0.4.0.tar.gz"
+  sha256 "89b825e8092600cd8a81c81db6b40c1f206ea6b0f1853a15185aefaf24d02383"
 
   bottle do
     cellar :any_skip_relocation
