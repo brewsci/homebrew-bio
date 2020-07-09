@@ -1,8 +1,8 @@
 class Mlst < Formula
   desc "Multi-Locus Sequence Typing of bacterial contigs"
   homepage "https://github.com/tseemann/mlst"
-  url "https://github.com/tseemann/mlst/archive/v2.18.0.tar.gz"
-  sha256 "6b72dd24e439f360d8adfb19b424eb3365048d2af3a8dfed526a686cd761afcf"
+  url "https://github.com/tseemann/mlst/archive/v2.19.0.tar.gz"
+  sha256 "74403be717f0bffd579028fd8e7c02d826f5c896e38e6078271a59f7dfce2b0e"
   head "https://github.com/tseemann/mlst.git"
 
   bottle do
@@ -15,8 +15,8 @@ class Mlst < Formula
   depends_on "cpanminus" => :build
   depends_on "pkg-config" => :build
 
-  depends_on "any2fasta"
   depends_on "blast"
+  depends_on "brewsci/bio/any2fasta"
   depends_on "perl" # needs 5.26 so can't use Mac perl
   depends_on "wget"
 
