@@ -33,6 +33,14 @@ class Kat < Formula
       end
     end
 
+    inreplace [
+      "deps/boost/tools/build/src/tools/darwin.py",
+      "deps/boost/tools/build/src/tools/darwin.jam",
+    ] do |s|
+      s.gsub! "-fcoalesce-templates", ""
+      s.gsub! "-Wno-long-double", ""
+    end
+
     system "./build_boost.sh"
     system "./autogen.sh"
     system "./configure",
