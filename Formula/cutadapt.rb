@@ -4,8 +4,8 @@ class Cutadapt < Formula
   desc "Removes adapter sequences, primers, and poly-A tails"
   homepage "https://github.com/marcelm/cutadapt"
   url "https://github.com/marcelm/cutadapt.git",
-    :tag      => "v2.6",
-    :revision => "1aceac4cdd61dd8b30d797e7ae0a5d76bacf5b33"
+    :tag      => "v2.10",
+    :revision => "9ce76e87d2f96c5369b054dbbd6ad83fa0c15f34"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -14,21 +14,21 @@ class Cutadapt < Formula
     sha256 "3c3650c892ef68f718e2662cb90104ea4a25d874c15de7bc8a8174c10cd21781" => :x86_64_linux
   end
 
-  depends_on "python"
+  depends_on "python@3.8"
 
   resource "cython" do
-    url "https://files.pythonhosted.org/packages/source/C/Cython/Cython-0.29.13.tar.gz"
-    sha256 "c29d069a4a30f472482343c866f7486731ad638ef9af92bfe5fca9c7323d638e"
+    url "https://files.pythonhosted.org/packages/source/C/Cython/Cython-0.29.21.tar.gz"
+    sha256 "e57acb89bd55943c8d8bf813763d20b9099cc7165c0f16b707631a7654be9cad"
   end
 
   resource "dnaio" do
-    url "https://files.pythonhosted.org/packages/source/d/dnaio/dnaio-0.4.tar.gz"
-    sha256 "b0b46c9cc68cc842d1e5968ffd95de37a0987d2ac2c15a0613e2b12f9e47b918"
+    url "https://files.pythonhosted.org/packages/source/d/dnaio/dnaio-0.4.2.tar.gz"
+    sha256 "fa55a45bfd5d9272409b714158fb3a7de5dceac1034a0af84502c7f503ee84f8"
   end
 
   resource "xopen" do
-    url "https://files.pythonhosted.org/packages/source/x/xopen/xopen-0.8.3.tar.gz"
-    sha256 "c62496c789b4db1078fa3769d962669d8886b8f94b8dbdd2c3ea35c1b79e1e22"
+    url "https://files.pythonhosted.org/packages/source/x/xopen/xopen-0.8.4.tar.gz"
+    sha256 "dcd8f5ef5da5564f514a990573a48a0c347ee1fdbb9b6374d31592819868f7ba"
   end
 
   def install
