@@ -5,7 +5,7 @@ class Kat < Formula
   url "https://github.com/TGAC/KAT/archive/Release-2.4.1.tar.gz"
   sha256 "068bd63b022588058d2ecae817140ca67bba81a9949c754c6147175d73b32387"
   license "GPL-3.0"
-  revision 2
+  revision 3
   head "https://github.com/TGAC/KAT.git"
 
   bottle do
