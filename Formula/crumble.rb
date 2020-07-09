@@ -1,8 +1,8 @@
 class Crumble < Formula
   desc "Controllable lossy compression of BAM/CRAM files"
   homepage "https://github.com/jkbonfield/crumble"
-  url "https://github.com/jkbonfield/crumble/releases/download/v0.8.1/crumble-0.8.1.tar.gz"
-  sha256 "8f31aee3e5a2e22be1c0020373a4f689d3f82f4fbd3bea1b2c78352ad8372599"
+  url "https://github.com/jkbonfield/crumble/releases/download/v0.8.3/crumble-0.8.3.tar.gz"
+  sha256 "b1ab503f4c98a83e2c81fec4cf8d951c80957ae05b6a6a19b59ece6caf490c01"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -20,7 +20,6 @@ class Crumble < Formula
   end
 
   test do
-    # https://github.com/jkbonfield/crumble/issues/4
-    assert_match "suspicious", shell_output("#{bin}/crumble -h", 1)
+    assert_match "version #{version}", shell_output("#{bin}/crumble -h")
   end
 end
