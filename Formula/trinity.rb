@@ -2,8 +2,9 @@ class Trinity < Formula
   # cite Grabherr_2011: "https://doi.org/10.1038/nbt.1883"
   desc "RNA-Seq de novo assembler"
   homepage "https://trinityrnaseq.github.io"
-  url "https://github.com/trinityrnaseq/trinityrnaseq/archive/v2.8.6.tar.gz"
-  sha256 "cff2255e1c6aac54908598ea5ca33cd9767675de478664a53045d431f5ac3c2b"
+  url "https://github.com/trinityrnaseq/trinityrnaseq/releases/download/v2.9.1/trinityrnaseq-v2.9.1.FULL.tar.gz"
+  version "2.9.1"
+  sha256 "98d98bc21cd5dd32b408ed52586d01a15873b49b96de3264d42616bdcfc9d455"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -14,13 +15,13 @@ class Trinity < Formula
 
   depends_on "cmake" => :build
   depends_on "bowtie2"
-  depends_on "express"
+  depends_on "brewsci/bio/express"
+  depends_on "brewsci/bio/jellyfish"
+  depends_on "brewsci/bio/salmon"
+  depends_on "brewsci/bio/trimmomatic"
   depends_on "htslib"
   depends_on :java => "1.8+"
-  depends_on "jellyfish"
-  depends_on "salmon"
   depends_on "samtools"
-  depends_on "trimmomatic"
 
   uses_from_macos "zlib"
 
@@ -46,6 +47,10 @@ class Trinity < Formula
       "$JELLYFISH_DIR = \"#{Formula["jellyfish"].opt_prefix}\";"
 
     system "make", "all", "plugins", "test"
+    rm Dir["**/config.log"]
+    rm Dir["**/*.tar.gz"]
+    rm_r Dir["**/build"]
+    rm_r Dir["**/src"]
     libexec.install Dir["*"]
     (bin/"Trinity").write_env_script(libexec/"Trinity", :PERL5LIB => libexec/"PerlLib")
   end
