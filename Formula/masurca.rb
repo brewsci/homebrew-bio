@@ -2,8 +2,8 @@ class Masurca < Formula
   # cite Zimin_2013: "https://doi.org/10.1093/bioinformatics/btt476"
   desc "Maryland Super-Read Celera Assembler"
   homepage "https://masurca.blogspot.com/"
-  url "https://github.com/alekseyzimin/masurca/releases/download/v3.3.9/MaSuRCA-3.3.9.tar.gz"
-  sha256 "0971e481eb4d3682bf13ca611098feb5b97ccd786faa94c94f09fae30b159a6f"
+  url "https://github.com/alekseyzimin/masurca/releases/download/v3.4.1/MaSuRCA-3.4.1.tar.gz"
+  sha256 "a00b941901d8d332c7fa17670ab68eb767cf476a96d8bf721493a37294f5287f"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -12,7 +12,7 @@ class Masurca < Formula
   end
 
   depends_on "boost" => :build
-  depends_on "jellyfish"
+  depends_on "brewsci/bio/jellyfish"
   depends_on :linux
   depends_on "parallel"
   depends_on "perl"
