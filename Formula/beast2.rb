@@ -2,8 +2,8 @@ class Beast2 < Formula
   # cite Bouckaert_2014: "https://doi.org/10.1371/journal.pcbi.1003537"
   desc "Bayesian evolutionary analysis by sampling trees"
   homepage "https://www.beast2.org/"
-  url "https://github.com/CompEvol/beast2/archive/v2.6.1.tar.gz"
-  sha256 "4d5314c7226b0a1e506be8b94239257e8de6746888519bf2159063b21dd171a8"
+  url "https://github.com/CompEvol/beast2/archive/v2.6.2.tar.gz"
+  sha256 "5200318c6d1a0705a8ee861638e61aa064ca9d7801f685e73d82f8fc9ca515fb"
 
   bottle do
     cellar :any_skip_relocation
@@ -19,6 +19,9 @@ class Beast2 < Formula
     # Homebrew renames the unpacked source folder, but build.xml
     # assumes that it won't be renamed.
     inreplace "build.xml", "../beast2/", ""
+    # Targeting Java 6 is no longer supported.
+    inreplace "build.xml", 'source="1.6"', 'source="1.7"'
+    inreplace "build.xml", 'target="1.6"', 'target="1.7"'
     system "ant", "linux"
 
     cd "release/Linux/beast" do
