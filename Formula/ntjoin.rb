@@ -2,20 +2,17 @@ class Ntjoin < Formula
   # cite Coombe_2020: "https://doi.org/10.1101/2020.01.13.905240"
   desc "Genome assembly scaffolder using minimizer graphs"
   homepage "https://github.com/bcgsc/ntJoin"
-  url "https://github.com/bcgsc/ntJoin/releases/download/v1.0.2/ntJoin-1.0.2.tar.gz"
-  sha256 "ea95d7c3033a12a9698725e8144cdc3b75f9d7a2d165f5784e09e7b78d809023"
-  revision 1
+  url "https://github.com/bcgsc/ntJoin/releases/download/v1.0.3/ntJoin-1.0.3.tar.gz"
+  sha256 "61b5afce7c38e9763777dc1ca5db3944eb76c64c22d2baf61c5f0383a3a74a9c"
   head "https://github.com/bcgsc/ntJoin.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "d0f178a6a5280bd8eb2a536b29a30379acfa03821a380b4c36cf9ac01ea8d444" => :catalina
-    sha256 "c70609243c842d96bfd274466c5289074fa93f3afd356abdff375b3ea8b9dc6c" => :x86_64_linux
+    sha256 "e72ac6df9db1734acf60f33e810ab209740b95d350a788963e49b6fdd54af497" => :catalina
+    sha256 "ea4c57a7950d1643fa39a559d7cb330a3ed8f3605a211c1256d706e91a43198d" => :x86_64_linux
   end
 
   depends_on "bedtools"
-  depends_on "gcc" if OS.mac? # needs openmp
   depends_on "numpy"
   depends_on "python@3.8"
   depends_on "samtools"
@@ -23,8 +20,6 @@ class Ntjoin < Formula
 
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
-
-  fails_with :clang # needs openmp
 
   def install
     system "make", "-C", "src"
