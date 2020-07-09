@@ -1,8 +1,8 @@
 class Ngmaster < Formula
   desc "NG-MAST genotyping for Neisseria gonorrhoeae"
   homepage "https://github.com/MDU-PHL/ngmaster"
-  url "https://github.com/MDU-PHL/ngmaster/archive/v0.5.5.tar.gz"
-  sha256 "bfd9290dee6d3a2159852b68305b3e886c7f8b382eb9f0fbca7acd6b2d2eb502"
+  url "https://github.com/MDU-PHL/ngmaster/archive/v0.5.6.tar.gz"
+  sha256 "908b8504804026554a0ec357933b773f6f47b98a0ce5fff77894e743d34200bc"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -13,7 +13,7 @@ class Ngmaster < Formula
 
   depends_on "ispcr"
   depends_on "numpy"
-  depends_on "python"
+  depends_on "python@3.8"
 
   def install
     xy = Language::Python.major_minor_version "python3"
