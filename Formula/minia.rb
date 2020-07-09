@@ -2,8 +2,8 @@ class Minia < Formula
   # cite Chikhi_2013: "https://doi.org/10.1186/1748-7188-8-22"
   desc "Short-read assembler based on a de Bruijn graph"
   homepage "http://minia.genouest.org/"
-  url "https://github.com/GATB/minia/releases/download/v3.2.1/minia-v3.2.1-Source.tar.gz"
-  sha256 "c431915f034bc58887f9a14f6f65be2c83e0faae312ef330c3a11c6ba131162c"
+  url "https://github.com/GATB/minia/releases/download/v3.2.4/minia-v3.2.4-Source.tar.gz"
+  sha256 "76127395b0a7ae76069692c1d23b1595c5d337196db96e8d79be7cd46f442286"
   license "AGPL-3.0"
 
   bottle do
@@ -18,6 +18,7 @@ class Minia < Formula
   uses_from_macos "zlib"
 
   def install
+    inreplace "src/build_info.hpp.in", "${CMAKE_C_COMPILER}", ENV.cc
     mkdir "build" do
       args = std_cmake_args
       args << "-DSKIP_DOC=1"
