@@ -11562,34 +11562,34 @@
     "license": null,
     "homepage": "https://github.com/bcgsc/ntJoin",
     "versions": {
-      "stable": "1.0.2",
+      "stable": "1.0.3",
       "devel": null,
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/bcgsc/ntJoin/releases/download/v1.0.2/ntJoin-1.0.2.tar.gz",
+        "url": "https://github.com/bcgsc/ntJoin/releases/download/v1.0.3/ntJoin-1.0.3.tar.gz",
         "tag": null,
         "revision": null
       }
     },
-    "revision": 1,
+    "revision": 0,
     "version_scheme": 0,
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": "/home/linuxbrew/.linuxbrew/Cellar",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ntjoin-1.0.2_1.catalina.bottle.tar.gz",
-            "sha256": "d0f178a6a5280bd8eb2a536b29a30379acfa03821a380b4c36cf9ac01ea8d444"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ntjoin-1.0.3.catalina.bottle.tar.gz",
+            "sha256": "e72ac6df9db1734acf60f33e810ab209740b95d350a788963e49b6fdd54af497"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ntjoin-1.0.2_1.x86_64_linux.bottle.tar.gz",
-            "sha256": "c70609243c842d96bfd274466c5289074fa93f3afd356abdff375b3ea8b9dc6c"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ntjoin-1.0.3.x86_64_linux.bottle.tar.gz",
+            "sha256": "ea4c57a7950d1643fa39a559d7cb330a3ed8f3605a211c1256d706e91a43198d"
           }
         }
       }
@@ -14508,14 +14508,14 @@
     "license": null,
     "homepage": "https://github.com/COMBINE-lab/salmon",
     "versions": {
-      "stable": "1.2.1",
+      "stable": "1.3.0",
       "devel": null,
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/COMBINE-lab/salmon/archive/v1.2.1.tar.gz",
+        "url": "https://github.com/COMBINE-lab/salmon/archive/v1.3.0.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -14530,12 +14530,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/salmon-1.2.1.catalina.bottle.tar.gz",
-            "sha256": "8b7028be50231b483dfbfde6e72725845bf8fe5c641029307b900f51e75fc69f"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/salmon-1.3.0.catalina.bottle.tar.gz",
+            "sha256": "2a39a9c9053bc725a5b5d47cb35a945555f956b7846dc2d60e98ed07b686f00d"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/salmon-1.2.1.x86_64_linux.bottle.tar.gz",
-            "sha256": "4ff4420a22b8f540fe10be43b4e0c5ac53cf36103dbe967f19c05e6128075283"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/salmon-1.3.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "7851373114d5aa1cd698b73a71223371e2df913280c9c8fa58b32ef9853a5bdd"
           }
         }
       }
@@ -17201,14 +17201,14 @@
     "license": null,
     "homepage": "https://trinityrnaseq.github.io",
     "versions": {
-      "stable": "2.8.6",
+      "stable": "2.9.1",
       "devel": null,
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/trinityrnaseq/trinityrnaseq/archive/v2.8.6.tar.gz",
+        "url": "https://github.com/trinityrnaseq/trinityrnaseq/releases/download/v2.9.1/trinityrnaseq-v2.9.1.FULL.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -17223,12 +17223,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/trinity-2.8.6.catalina.bottle.tar.gz",
-            "sha256": "ecfa16c3838733387305b4a3ca1c34cf8359e94cf2882afdc3f93f408a61e639"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/trinity-2.9.1.catalina.bottle.tar.gz",
+            "sha256": "eb48d8f3f5b99ea356a8f20b15fc4ce3a50e54aaf10d8fbc9cfd92d25a178472"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/trinity-2.8.6.x86_64_linux.bottle.tar.gz",
-            "sha256": "8987dbbccf081049203aa253c36d61e4ba1b26fb80e7ca7a5677153604278994"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/trinity-2.9.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "369b95ac0b090cdacfffc31791c5eb88a37c5ddc5ee163b3c1f2cbaadf189dd6"
           }
         }
       }
@@ -17241,13 +17241,13 @@
     ],
     "dependencies": [
       "bowtie2",
-      "express",
+      "brewsci/bio/express",
+      "brewsci/bio/jellyfish",
+      "brewsci/bio/salmon",
+      "brewsci/bio/trimmomatic",
       "htslib",
       "adoptopenjdk",
-      "jellyfish",
-      "salmon",
       "samtools",
-      "trimmomatic",
       "zlib"
     ],
     "recommended_dependencies": [],
