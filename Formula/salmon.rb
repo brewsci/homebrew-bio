@@ -2,8 +2,8 @@ class Salmon < Formula
   # cite Patro_2017: "https://doi.org/10.1038/nmeth.4197"
   desc "Transcript-level quantification from RNA-seq reads"
   homepage "https://github.com/COMBINE-lab/salmon"
-  url "https://github.com/COMBINE-lab/salmon/archive/v1.2.1.tar.gz"
-  sha256 "10a58a22cb5b3924df3bf78be9cb4b83dce4f6a61e4c6a6e37f3a56ab8ac166f"
+  url "https://github.com/COMBINE-lab/salmon/archive/v1.3.0.tar.gz"
+  sha256 "c105be481630d57e7022bf870eb040857834303abff05fe0e971dda5ed6f0236"
   head "https://github.com/COMBINE-lab/salmon.git"
 
   bottle do
