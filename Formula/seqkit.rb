@@ -4,13 +4,13 @@ class Seqkit < Formula
   homepage "https://bioinf.shenwei.me/seqkit/"
   # We use binaries to avoid compiling Go code
   if OS.mac?
-    url "https://github.com/shenwei356/seqkit/releases/download/v0.13.1/seqkit_darwin_amd64.tar.gz"
-    sha256 "66e02814bf53298684aab03b62c5843ca18a73c5981f63a499797c9ab0ea614f"
+    url "https://github.com/shenwei356/seqkit/releases/download/v0.13.2/seqkit_darwin_amd64.tar.gz"
+    sha256 "1c5c4f5224e1c584ed944dc0d4da879124bb267c2f0805a1f623f4fe1920c744"
   else
-    url "https://github.com/shenwei356/seqkit/releases/download/v0.13.1/seqkit_linux_amd64.tar.gz"
-    sha256 "53d4b06240be2292251b9304d405a22c9f32cc6fa2cd59d2bb6cc35bd73f57f7"
+    url "https://github.com/shenwei356/seqkit/releases/download/v0.13.2/seqkit_linux_amd64.tar.gz"
+    sha256 "53703542d44a5e758eaf34b55d18f70cfe23e9b5b78fd7c1c0202dee9a65bed0"
   end
-  version "0.13.1"
+  version "0.13.2"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
