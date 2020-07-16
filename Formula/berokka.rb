@@ -1,8 +1,8 @@
 class Berokka < Formula
   desc "Trim, circularise, and orient long read assemblies"
   homepage "https://github.com/tseemann/berokka"
-  url "https://github.com/tseemann/berokka/archive/v0.2.tar.gz"
-  sha256 "622786ed7fbd3e397ab9b46de46663ccd7b1830d9a139ae88c4cbb4334779e7c"
+  url "https://github.com/tseemann/berokka/archive/v0.2.3.tar.gz"
+  sha256 "460f4272768e205008aa8aa885d1df5bab9af2c5b404c261e00573c6a30a641f"
   head "https://github.com/tseemann/berokka.git"
 
   bottle do
