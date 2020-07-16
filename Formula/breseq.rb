@@ -10,8 +10,8 @@ class Breseq < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "3b2e34a9b72e16b288ee4505c1c550a31829b4b5f4de2e7591c648b91a743db2" => :sierra
-    sha256 "1dbff33c770ed9ce16a0225023af135a81d9b24d2aba322cbafb5a66cd4ba3b9" => :x86_64_linux
+    sha256 "d3b5cdafaf233010db1c38aac445dc24f14a4b4dff58cd3a85b78f9e29c97575" => :catalina
+    sha256 "9c37da9a107e947404ad87ba57688ad3247f51696a7f2cf3bc197910a2e11d60" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
