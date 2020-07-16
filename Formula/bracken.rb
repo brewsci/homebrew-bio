@@ -2,8 +2,8 @@ class Bracken < Formula
   # cite Lu_2017: "https://doi.org/10.7717/peerj-cs.104"
   desc "Bayesian estimation species abundances from Kraken output"
   homepage "https://ccb.jhu.edu/software/bracken/index.shtml"
-  url "https://github.com/jenniferlu717/Bracken/archive/v2.2.tar.gz"
-  sha256 "307495060d3575c3a90c87cf82074d4a63d20cf4062658f161951c60a66fd319"
+  url "https://github.com/jenniferlu717/Bracken/archive/v2.6.0.tar.gz"
+  sha256 "fb1837d6f32b8f8c87353b9dc8a23d3418c348b00824a7064eb58f9bab11ea68"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
