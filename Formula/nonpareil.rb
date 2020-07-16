@@ -10,8 +10,8 @@ class Nonpareil < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "b787eb1c9c4b954e9aa0e738eee41cfa4fbe22a6bb25b6d532de0cc1c511ffc1" => :sierra
-    sha256 "c67480c06e4c0527fbd1565f6904f873d7d463ce8e05d319b00681dda8f6823d" => :x86_64_linux
+    sha256 "bc566819e555df1f2d78612647642e45cd52953514baf66f3412c797407bce9c" => :catalina
+    sha256 "89f6054e0ac0294ff44a5abfe61db24e7c3b6a440435fac058cec1bdc9f51af0" => :x86_64_linux
   end
 
   depends_on "r"
