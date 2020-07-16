@@ -8,7 +8,7 @@ jobs:
   upload-bottles:
     runs-on: ubuntu-latest
     container:
-      image: homebrew/ubuntu16.04
+      image: homebrew/ubuntu16.04:master
     env:
       HOMEBREW_BINTRAY_USER: linuxbrewtestbot
       HOMEBREW_BINTRAY_KEY: ${{secrets.HOMEBREW_BINTRAY_KEY}}
