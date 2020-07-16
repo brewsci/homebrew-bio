@@ -1,8 +1,8 @@
 class Abricate < Formula
   desc "Find antimicrobial resistance and virulence genes in contigs"
   homepage "https://github.com/tseemann/abricate"
-  url "https://github.com/tseemann/abricate/archive/v1.0.0.tar.gz"
-  sha256 "bf2fc2a8a3b81e2a1fc3d4fe709bdc8bba73c53150362df5dbcc06412b1cc678"
+  url "https://github.com/tseemann/abricate/archive/v1.0.1.tar.gz"
+  sha256 "5edc6b45a0ff73dcb4f1489a64cb3385d065a6f29185406197379522226a5d20"
   head "https://github.com/tseemann/abricate.git"
 
   bottle do
@@ -13,9 +13,9 @@ class Abricate < Formula
   end
 
   depends_on "cpanminus" => :build
-  depends_on "any2fasta"
-  depends_on "bioperl"
   depends_on "blast"
+  depends_on "brewsci/bio/any2fasta"
+  depends_on "brewsci/bio/bioperl"
   depends_on "openssl@1.1" # for Net::SSLeay
   depends_on "perl" # MacOS version too old
 
