@@ -2,8 +2,8 @@ class Parasail < Formula
   # Daily_2016: "https://doi.org/10.1186/s12859-016-0930-z"
   desc "Pairwise Sequence Alignment Library"
   homepage "https://github.com/jeffdaily/parasail"
-  url "https://github.com/jeffdaily/parasail/archive/v2.4.1.tar.gz"
-  sha256 "a0cffa81251151d1038c89ec8c5105d2c4234b88d240015fee0244e26c2a739f"
+  url "https://github.com/jeffdaily/parasail/archive/v2.4.2.tar.gz"
+  sha256 "3843055fc04743269cf22d127ae26952a7f5e6fc4f1bc29f6b6f3c156c8ca434"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
