@@ -9,8 +9,8 @@ class DasTool < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "d10a3ffd28550e973e0403ee52628ab5c0369dd7b0c05c709e41dac732e20d51" => :sierra
-    sha256 "af2c7b200ed174418e337ad5201ae7c53fac842925c4a876595b77730f0cad7c" => :x86_64_linux
+    sha256 "af7fc1d026f60d560b6e6ec396e8e71a64d26688d1f92022c99c986db692a405" => :catalina
+    sha256 "6485d66355c2354db7f21ca23869bb5715bdc9d8ee79aa64d5a3eb6c202b982a" => :x86_64_linux
   end
 
   if OS.mac?
