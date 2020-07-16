@@ -8,8 +8,8 @@ class Bracken < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "bf6f1a9da346233d92ad335e80480d365be757f41b975e659113895d44d64ebb" => :sierra
-    sha256 "ab432ce231a1cba0a6d79f5bdbfc8f1ec73840bdf33e09726823b34d3e4aa7a1" => :x86_64_linux
+    sha256 "2f5ff6fb14b5bd5a787ded1a7a5fb996e8f85786feb75434a4433f5d5830ec9a" => :catalina
+    sha256 "523af87b62653b651851715eced5ae3584e5bd0bb970b69f65fd126c865077f5" => :x86_64_linux
   end
 
   depends_on "gcc" if OS.mac? # needs openmp
