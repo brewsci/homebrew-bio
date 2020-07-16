@@ -1,8 +1,8 @@
 class GenomePainter < Formula
   desc "Paint genomes with taxa-specific k-mer probabilities"
   homepage "https://github.com/scwatts/genome_painter"
-  url "https://github.com/scwatts/genome_painter/archive/v0.0.6.tar.gz"
-  sha256 "8003983616da844be548f2ba54bf16353b7c815d6f44642f0d88211162248bfa"
+  url "https://github.com/scwatts/genome_painter/archive/v0.0.8.tar.gz"
+  sha256 "434d81b4ed301f14aa3e9a55fdeeefab295264aa82410482abda23655e7a18bd"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -26,6 +26,6 @@ class GenomePainter < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/paint_genome --version 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/genomepainter_paint_genome --version 2>&1")
   end
 end
