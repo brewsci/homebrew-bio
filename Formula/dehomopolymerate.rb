@@ -5,10 +5,10 @@ class Dehomopolymerate < Formula
   sha256 "89b825e8092600cd8a81c81db6b40c1f206ea6b0f1853a15185aefaf24d02383"
 
   bottle do
-    cellar :any_skip_relocation
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "eec3e8a9cae2c1b5abcaa84400de8cdc2d97ff5fe5fe212edd205058f852cde7" => :sierra
-    sha256 "7033066df34fa9c415916469fe8a9c97e7bea45c4bb1c70b303044d4746e13a0" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "21e7a971ea6a8657b9634f108e98e52bcf42ef2af5952cbff9cedc737328a25b" => :catalina
+    sha256 "2d12702c3ae4fb608e1e85f69aab2bc2d4e0a858f385668de16fdb3fab6e918c" => :x86_64_linux
   end
 
   uses_from_macos "zlib"
