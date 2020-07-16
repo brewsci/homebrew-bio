@@ -6,8 +6,8 @@ class Busco < Formula
   # cite Sim_o_2015: "https://doi.org/10.1093/bioinformatics/btv351"
   desc "Assess genome assembly completeness with single-copy orthologs"
   homepage "https://busco.ezlab.org"
-  url "https://gitlab.com/ezlab/busco/repository/4.0.5/archive.tar.bz2"
-  sha256 "f65299b96a14ef1d909e6186107a52336b744428cdacd204fd811002e89811dc"
+  url "https://gitlab.com/ezlab/busco/repository/4.1.1/archive.tar.bz2"
+  sha256 "8c9bbdb9f04b89910f8eb8b4e48398faf9e9cb9ca9cabf9b5cd6c6f36c597936"
   head "https://gitlab.com/ezlab/busco.git"
 
   bottle do
@@ -23,11 +23,11 @@ class Busco < Formula
   depends_on "hmmer"
   depends_on "numpy"
   depends_on "prodigal"
-  depends_on "python"
+  depends_on "python@3.8"
 
   resource "biopython" do
-    url "https://files.pythonhosted.org/packages/ff/f4/0ce39bebcbb0ff619426f2bbe86e60bc549ace318c5a9113ae480ab2adc7/biopython-1.76.tar.gz"
-    sha256 "3873cb98dad5e28d5e3f2215a012565345a398d3d2c4eebf7cd701757b828c72"
+    url "https://files.pythonhosted.org/packages/3d/2f/d9df24de05d651c5e686ee8fea3afe3985c03ef9ca02f4cc1e7ea10aa31e/biopython-1.77.tar.gz"
+    sha256 "fb1936e9ca9e7af8de1050e84375f23328e04b801063edf0ad73733494d8ec42"
   end
 
   def install
