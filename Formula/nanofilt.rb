@@ -8,10 +8,10 @@ class Nanofilt < Formula
   sha256 "78de51ecdc8a22d4edc59bc9c858812c9b861e80bc9ec7626ad8d0f6cac68b4b"
 
   bottle do
-    cellar :any_skip_relocation
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "164f29a1c55b1fc725bd10ad13cfb98add4e4083df4e9ef989288765fcb3a873" => :sierra
-    sha256 "f6d9d7a62d2e3c1f0d3b7e03d7bb0c20444ad59f43f6269244c3b8114e879464" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "bbf3e5519315971faac2ef4f24b4eb26b3b7814963cc43957deeea388cd380d9" => :catalina
+    sha256 "f1a2c76d6bf5cc0b9e1f8fe1f585c6fdbb7f674a3a8b2d4340f284b95338553b" => :x86_64_linux
   end
 
   depends_on "python@3.8"
