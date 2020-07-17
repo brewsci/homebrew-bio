@@ -9,7 +9,7 @@ class Metabat < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "a4f61a63b2ec1344807d0da324626b15b1a49a710e471238f05fe158cf20dceb" => :x86_64_linux
+    sha256 "4fcd6b616061cd662956ca9ccb57dcfc5e61e10024d9313ee0a3e9ae89adcea5" => :x86_64_linux
   end
 
   depends_on :linux unless build.head?
