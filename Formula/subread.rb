@@ -6,10 +6,10 @@ class Subread < Formula
   sha256 "d808eb5b1823c572cb45a97c95a3c5acb3d8e29aa47ec74e3ca1eb345787c17b"
 
   bottle do
-    cellar :any_skip_relocation
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "632afd9717234c43b98b916515f1619cc7aa5e08a92ef4c9b7c46f7411d0399a" => :mojave
-    sha256 "7b9dc00896b75d340e779082e8850ecdd0655babf4d8d3c370a4246d9f0fafc8" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "f763ea04f616a72c4b61b04ea345a8577f283b0da29d91714241b70e3b0705f5" => :catalina
+    sha256 "96a086816e5094e5ff5c2ae7d4f11a0f8e8764afaac7568bdaecaee0f37c9b0d" => :x86_64_linux
   end
 
   uses_from_macos "zlib"
