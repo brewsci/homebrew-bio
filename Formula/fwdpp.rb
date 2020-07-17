@@ -9,8 +9,9 @@ class Fwdpp < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "5ac03ce334689ebd1f516eb86b3ae0fb7b8f0181ab18d2342230b77cf4693edb" => :sierra
-    sha256 "b0cb4ea0d175ce870981dc7e66439fb990283eade34fd37076e119fe48c67c77" => :x86_64_linux
+    cellar :any
+    sha256 "469109b8eea18249546acedf8a9fd680489fd012a1844c9e484063736f84b83d" => :catalina
+    sha256 "ffd5505630ad506d74ced9ece2ea81ee4583669ce6f32a32a190977e5b55947d" => :x86_64_linux
   end
 
   # build fails on Yosemite
