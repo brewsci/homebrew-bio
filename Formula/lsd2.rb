@@ -8,8 +8,8 @@ class Lsd2 < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "feba97e5dc1630bf6574efcdce71c4d589437f85964df534fb646207032dad47" => :catalina
-    sha256 "f077847fbfbe4f247a92ed9dc6ef5e85147488752a5466a2668cc159a5471204" => :x86_64_linux
+    sha256 "ffe5a0cd4fc81d4120ed1ac0769e863a54c361adfbd191b5accfc3fd676469c7" => :catalina
+    sha256 "4433c4c8550fdb5a329532888461cbdd733256fa5232cacc1882a395f34d31c3" => :x86_64_linux
   end
 
   def install
