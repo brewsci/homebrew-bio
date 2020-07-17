@@ -9,8 +9,8 @@ class AbyssExplorer < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "31a7d44cd130d195138d2ac617f0f504c23e3f5acf11fa41622c38ba9c267a69" => :sierra
-    sha256 "998383b13779fb6ccad8dec1a59fe19e1f8e1958c81f271a971bb6b3a0fdeaab" => :x86_64_linux
+    sha256 "44e6a1c361f36b0a7316b4bfa45371f571743fb7ad19df0dc76bddd1dcd22d8e" => :catalina
+    sha256 "4e1f8ad29d192da909ac2ec6ea32eb7644e2dd9107e166c29aeef5a7d7f0fcdd" => :x86_64_linux
   end
 
   depends_on :java
