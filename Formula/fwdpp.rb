@@ -4,6 +4,7 @@ class Fwdpp < Formula
   homepage "https://molpopgen.github.io/fwdpp/"
   url "https://github.com/molpopgen/fwdpp/archive/0.6.1.tar.gz"
   sha256 "aba56a6e4ddc67f55859b5446154a10fe830bfe70ad49565368eae045272e7d1"
+  revision 1
   head "https://github.com/molpopgen/fwdpp.git"
 
   bottle do
