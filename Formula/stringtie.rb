@@ -9,8 +9,8 @@ class Stringtie < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "6a0d778a7396ca1644b4c05df3baf8beceae4204a32011044c1f1619ff20917f" => :catalina
-    sha256 "2bdbcf4c21747d487ac02d2f98cb1cbc653b730e6c8bf288a87c2cf8a25ed7e0" => :x86_64_linux
+    sha256 "f3bd8bfd0a67b5e281367af47bbbe2edac651bcdfd0fa1a5fb4b59ecbb3fa86d" => :catalina
+    sha256 "2caf601a36af8448066dac8da2c64947398ba12e8716039fd8817e146f584ec5" => :x86_64_linux
   end
 
   uses_from_macos "zlib"
