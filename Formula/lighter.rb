@@ -9,8 +9,8 @@ class Lighter < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "2ecffb0c39e834aaf6920665ed5250aeb476f5be0507dbb7f11341bdcf1d9ff4" => :sierra
-    sha256 "8ac5bd70228901bcd647c46de6589ee0dcc507d71a7642d0794c4cdc31a2584c" => :x86_64_linux
+    sha256 "0796241a173d658165a7e11203e947339154d31fb35bc7c45408485863525069" => :catalina
+    sha256 "126982bdb4ec055ef1aaadc2e968e6f27331e1da78c19c2e044468aa359397e6" => :x86_64_linux
   end
 
   uses_from_macos "zlib"
