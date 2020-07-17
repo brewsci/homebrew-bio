@@ -6,10 +6,10 @@ class Kalign < Formula
   sha256 "8fed279d9f58d8263c839f449f9dd0f083dacb54c1dffcc2a9bc14bb9916b8ab"
 
   bottle do
-    cellar :any_skip_relocation
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "95037a99f07ac7ba3729252ee0432f593196adcf375fd71ade1ed9c2e3a0e64b" => :mojave
-    sha256 "88b0d12ec4a6a70bb819036c8277bb89eff01fedf7991d6652c489ea86935fc0" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "2f68f59172ef17a85e0d9a568b7e425cab1fb2a1b79d164ab7b13dc380fdaac5" => :catalina
+    sha256 "f37d14ced6a5aa58b2375f6e14827dd111ab0fffdb28786fa741663aaf085e33" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
