@@ -8,8 +8,8 @@ class Phyml < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "a578ab66e19ae5062fb6e61008220c9576d723c974f2da2f76b9b0bd4fe50dbd" => :sierra
-    sha256 "601324d1a3ab1a474f468dd22e60be48a65fb716b591d6ba5a7c904fd839c902" => :x86_64_linux
+    sha256 "adac7f68bc36a7bd0b4954749d2293af62ea6d9fe91febed13d84f514f089ed9" => :catalina
+    sha256 "7253c8ac68f4f24790adc53d49c9030fd0113fe8f33c482375c47874386ce43e" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
