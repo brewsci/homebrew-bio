@@ -3,11 +3,11 @@ class Groot < Formula
   desc "Resistome profiler for Graphing Resistance Out Of meTagenomes"
   homepage "https://github.com/will-rowe/groot"
   if OS.mac?
-    url "https://github.com/will-rowe/groot/releases/download/0.8.5/groot_osx.gz"
-    sha256 "484417279ea50117496f095a3f42febe868cd7f4391c5e6c91e393c72f1e1945"
+    url "https://github.com/will-rowe/groot/releases/download/1.1.2/groot_osx.gz"
+    sha256 "49b3d29b3d87227ba1c1339c6e6f401e740da0f5a58032f706c94fcb56581c9b"
   elsif OS.linux?
-    url "https://github.com/will-rowe/groot/releases/download/0.8.5/groot_linux.gz"
-    sha256 "700dbf7cc48ecce419aecfa43b9895ef9c3b0ca5362d2b26205858708aca617b"
+    url "https://github.com/will-rowe/groot/releases/download/1.1.2/groot_linux.gz"
+    sha256 "dfb033e81c90fc5a02d2e2f51e146a707e2bd589c23b43006593079e83db2b6f"
   end
 
   bottle do
