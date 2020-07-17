@@ -7,8 +7,8 @@ class Kma < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "c0e317eb258d153575e9ccfd5a765188b8b7694ae934dd4644f4de1053ca794e" => :catalina
-    sha256 "0c770407cb9eca2e1ec7bb9adf06a5e95c94bee5d3f356115a2e824c99b278c5" => :x86_64_linux
+    sha256 "4af45d0e259a34fc5310f606984abac3b2829e947e34574a881def37baa8892f" => :catalina
+    sha256 "995c5b676345eaff8f4951040670bfcc77baf77ab95f4ac22cdd26b68a58b6d6" => :x86_64_linux
   end
 
   uses_from_macos "zlib"
