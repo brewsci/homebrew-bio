@@ -2,8 +2,8 @@ class Metabat < Formula
   # cite Kang_2015: "https://doi.org/10.7717/peerj.1165"
   desc "Statistical framework for reconstructing genomes from metagenomic data"
   homepage "https://bitbucket.org/berkeleylab/metabat/"
-  url "https://bitbucket.org/berkeleylab/metabat/get/v2.13.tar.gz"
-  sha256 "aa75a2b62ec9588add4c288993821bab5312a83b1259ff0d508c215133492d74"
+  url "https://bitbucket.org/berkeleylab/metabat/get/v2.15.tar.gz"
+  sha256 "550487b66ec9b3bc53edf513d00c9deda594a584f53802165f037bde29b4d34e"
   head "https://bitbucket.org/berkeleylab/metabat.git"
 
   bottle do
