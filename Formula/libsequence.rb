@@ -8,9 +8,9 @@ class Libsequence < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "c53f302106ccc56edf1fb006b16865ad1a8830babae3ec2994711a6eaa2ad0a2" => :sierra
-    sha256 "914657f11e0f86f552d181a17737c3ef2dfbc1f0b7bc427ef3ec6ec65dccedfa" => :x86_64_linux
+    cellar :any
+    sha256 "b93b5ff4288ec661eda9b092f1a82098d3b3a55f2f4bc5f9a8e6812be1634ac9" => :catalina
+    sha256 "d0771ecd4b05d341e51dfa83ceebe5999611dac1ae3a77596184ac7b4a436f76" => :x86_64_linux
   end
 
   def install
