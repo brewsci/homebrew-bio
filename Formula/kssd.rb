@@ -7,6 +7,7 @@ class Kssd < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
+    sha256 "ef105327189bf598e7560fd87b5ab1defab47fdd63d19fe95b41a436d6b340f1" => :x86_64_linux
   end
 
   # https://github.com/yhg926/public_kssd/issues/2
