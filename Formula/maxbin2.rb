@@ -2,8 +2,8 @@ class Maxbin2 < Formula
   # cite Wu_2016: "https://doi.org/10.1093/bioinformatics/btv638"
   desc "Binning algorithm to recover genomes from metagenomic datasets"
   homepage "https://sourceforge.net/projects/maxbin2/"
-  url "https://downloads.sourceforge.net/project/maxbin2/MaxBin-2.2.6.tar.gz"
-  sha256 "2fdef85a7af175c605be51dd7b410087bf2602945ca692521c06c24d0c90cd30"
+  url "https://downloads.sourceforge.net/project/maxbin2/MaxBin-2.2.7.tar.gz"
+  sha256 "cb6429e857280c2b75823c8cd55058ed169c93bc707a46bde0c4383f2bffe09e"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
