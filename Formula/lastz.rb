@@ -8,8 +8,8 @@ class Lastz < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "2ae5c3000f42435fdb7f3f7bbd1ae5f80f799ec10ad59d37f1fe093cc94f0bf6" => :sierra
-    sha256 "9ae732027be6e7ef474170a0e372e494aca32818a67602eda7fe99f73c2eeb14" => :x86_64_linux
+    sha256 "bb384aecd906f6a8c3589afc3a11a48b7c6c3661aa8edd751e59f904e2768ab7" => :catalina
+    sha256 "5cb1a90c4e2c6d1cefa82c94a83977b1e008be94690c14cef5fef2099693424f" => :x86_64_linux
   end
 
   def install
