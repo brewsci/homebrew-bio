@@ -7,8 +7,8 @@ class DshBio < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "d9d5d0de4ff0de537b91592d62dc67dbe8168f86d2e19f6c6990f2a4d7e16849" => :catalina
-    sha256 "5a6f21293a68a0619709f3784c1bb37711fc284d912f010f001471499d18086b" => :x86_64_linux
+    sha256 "ecc8c494c76018044ed4744350e3008e2c3f4282b1111db48055a969c4b7a816" => :catalina
+    sha256 "abe84532e871dee21be522bdd11b692f7ae162f8d7a7ee95770b8bc9701b1448" => :x86_64_linux
   end
 
   depends_on :java => "1.8+"
