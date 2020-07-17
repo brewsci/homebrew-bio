@@ -1,8 +1,8 @@
 class Lastz < Formula
   desc "Align DNA sequences, a pairwise aligner"
   homepage "https://www.bx.psu.edu/~rsharris/lastz/"
-  url "https://github.com/lastz/lastz/archive/1.04.00.tar.gz"
-  sha256 "a4c2c7a77430387e96dbc9f5bdc75874334c672be90f5720956c0f211abf9f5a"
+  url "https://github.com/lastz/lastz/archive/1.04.03.tar.gz"
+  sha256 "c58ed8e37c4b0e82492b3a2b3e12447a3c40286fb8358906d19f10b0a713e9f4"
   head "https://github.com/lastz/lastz"
 
   bottle do
