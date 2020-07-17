@@ -2,8 +2,8 @@ class Jellyfish < Formula
   # cite Marcais_2011: "https://doi.org/10.1093/bioinformatics/btr011"
   desc "Fast, memory-efficient counting of DNA k-mers"
   homepage "http://www.genome.umd.edu/jellyfish.html"
-  url "https://github.com/gmarcais/Jellyfish/releases/download/v2.2.10/jellyfish-2.2.10.tar.gz"
-  sha256 "8988550dfb30ca077c7ddf77d382b87d39749a2e95c0eb459d819bbddd6097cc"
+  url "https://github.com/gmarcais/Jellyfish/releases/download/v2.3.0/jellyfish-2.3.0.tar.gz"
+  sha256 "e195b7cf7ba42a90e5e112c0ed27894cd7ac864476dc5fb45ab169f5b930ea5a"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
