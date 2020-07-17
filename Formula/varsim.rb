@@ -7,8 +7,8 @@ class Varsim < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "3c85530187825523c88c8ce2aed35c5e83c090ec32a7533c7705674655ee8f75" => :sierra
-    sha256 "200c268c51ed00026b58c6df95a7c0fb1e60b168a8c522eb8c18a8a8d4a03f1f" => :x86_64_linux
+    sha256 "c6b82592aa5824c0035de5ef5636f76a26985ed1e54e7f9b5b43c9438764e8ea" => :catalina
+    sha256 "b06e5eb42eda0e79c90354a8f7b5768c920c4c45a72a457b732f64e12d037e39" => :x86_64_linux
   end
 
   depends_on :java
