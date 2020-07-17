@@ -2,9 +2,9 @@ class Trinity < Formula
   # cite Grabherr_2011: "https://doi.org/10.1038/nbt.1883"
   desc "RNA-Seq de novo assembler"
   homepage "https://trinityrnaseq.github.io"
-  url "https://github.com/trinityrnaseq/trinityrnaseq/releases/download/v2.9.1/trinityrnaseq-v2.9.1.FULL.tar.gz"
-  version "2.9.1"
-  sha256 "98d98bc21cd5dd32b408ed52586d01a15873b49b96de3264d42616bdcfc9d455"
+  url "https://github.com/trinityrnaseq/trinityrnaseq/releases/download/v2.11.0/trinityrnaseq-v2.11.0.FULL.tar.gz"
+  version "2.11.0"
+  sha256 "230798b3c2eea7043098de3055a1fe150213929b0773e6d374fc0c7219c310c6"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
