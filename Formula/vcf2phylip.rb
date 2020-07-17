@@ -3,9 +3,8 @@ class Vcf2phylip < Formula
 
   desc "Convert SNPs in VCF format to alignment file formats"
   homepage "https://github.com/edgardomortiz/vcf2phylip"
-  url "https://github.com/edgardomortiz/vcf2phylip/archive/v2.0.tar.gz"
-  sha256 "ec16affdc1e25314d02b6fe7330221b67b6ba0c02457649519f3f260cf796d9c"
-  revision 1
+  url "https://github.com/edgardomortiz/vcf2phylip/archive/v2.3.tar.gz"
+  sha256 "fe72002a85d886df6527678c3c9f4610d1535d26c02ea0df133d10ad18e26272"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -14,7 +13,7 @@ class Vcf2phylip < Formula
     sha256 "910ce0bc45540b67fedb89fc462238abe0b2daf4f803f7a83945b39f4faf613d" => :x86_64_linux
   end
 
-  depends_on "python"
+  depends_on "python@3.8"
 
   def install
     rewrite_shebang detected_python_shebang, "vcf2phylip.py"
