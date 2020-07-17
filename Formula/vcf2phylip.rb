@@ -9,8 +9,8 @@ class Vcf2phylip < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "21244da7b9ea1b90afd4096164bfc7cfcedb6953b5368f17e9dc1754dca5764b" => :catalina
-    sha256 "910ce0bc45540b67fedb89fc462238abe0b2daf4f803f7a83945b39f4faf613d" => :x86_64_linux
+    sha256 "4bf14803c03c07a2bba536d4ea6d81ede6c074d4ba7bd5574626d4902647b0c4" => :catalina
+    sha256 "6f6121e02dfffdc964828c07f30ec6f601a3614234c3f4b69a9c2480b77d4992" => :x86_64_linux
   end
 
   depends_on "python@3.8"
