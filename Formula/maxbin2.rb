@@ -8,8 +8,8 @@ class Maxbin2 < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "a5e1ef4145979d58c09431effd1a634f20b560f1fa1bc8df5f62ae73038403d2" => :sierra
-    sha256 "a7828904c3ddcf9c4adcc367ce1f973fb39638c113ebf8ff5f400a51c3749049" => :x86_64_linux
+    sha256 "41ef87f87c8800b73611d08c43dbb5f139849bbe76782f6d9d70b9bce4b39718" => :catalina
+    sha256 "44a8bd3c9afced43635b7c7ae1663b15f67171dde17e0c5a04ce4713cbf33b33" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
