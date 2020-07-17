@@ -2,9 +2,8 @@ class Lighter < Formula
   # cite Song_2014: "https://doi.org/10.1186/s13059-014-0509-9"
   desc "Fast and memory-efficient sequencing error corrector"
   homepage "https://github.com/mourisl/Lighter"
-  url "https://github.com/mourisl/Lighter/archive/v1.1.1.tar.gz"
-  sha256 "9b29b87cd87f6d57ef8c39d22fb8679977128a1bdf557d8c161eae2816e374b7"
-  revision 2
+  url "https://github.com/mourisl/Lighter/archive/v1.1.2.tar.gz"
+  sha256 "89abc34137beffc43382fbe53deb25c3c2f5cee7e6ca2b7f669931d70065993a"
   head "https://github.com/mourisl/Lighter.git"
 
   bottle do
