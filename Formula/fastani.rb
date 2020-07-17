@@ -2,8 +2,8 @@ class Fastani < Formula
   # cite Jain_2017: "https://doi.org/10.1101/225342"
   desc "Fast Whole-Genome Similarity (ANI) Estimation"
   homepage "https://github.com/ParBLiSS/FastANI"
-  url "https://github.com/ParBLiSS/FastANI/archive/v1.1.tar.gz"
-  sha256 "88766cf09b944d4622a569aa33178b8008a699cae044ab837a16f2bd70112c86"
+  url "https://github.com/ParBLiSS/FastANI/archive/v1.31.tar.gz"
+  sha256 "3a1f2da7fa940a0650a39c5b8176f475fe74eea6beb0bc8ea1394d94defa5b3d"
   head "https://github.com/ParBLiSS/FastANI.git"
 
   bottle do
@@ -37,8 +37,7 @@ class Fastani < Formula
   end
 
   test do
-    # https://github.com/ParBLiSS/FastANI/issues/15 (returns 1 not 0)
-    assert_match "fragments", shell_output("#{bin}/fastANI --help 2>&1", 1)
+    assert_match "fragments", shell_output("#{bin}/fastANI --help 2>&1")
     system "#{bin}/fastANI",
            "-q", pkgshare/"data/Shigella_flexneri_2a_01.fna",
            "-r", pkgshare/"data/Escherichia_coli_str_K12_MG1655.fna",
