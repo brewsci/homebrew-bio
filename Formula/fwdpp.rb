@@ -2,9 +2,8 @@ class Fwdpp < Formula
   # cite Thornton_2014: "https://doi.org/10.1534/genetics.114.165019"
   desc "C++ template library for forward-time population genetic simulations"
   homepage "https://molpopgen.github.io/fwdpp/"
-  url "https://github.com/molpopgen/fwdpp/archive/0.6.1.tar.gz"
-  sha256 "aba56a6e4ddc67f55859b5446154a10fe830bfe70ad49565368eae045272e7d1"
-  revision 1
+  url "https://github.com/molpopgen/fwdpp/archive/0.8.1.tar.gz"
+  sha256 "63392c05afb46161186e462c5fbbe0610d261fadcac41b17f6e037011affdbbe"
   head "https://github.com/molpopgen/fwdpp.git"
 
   bottle do
@@ -15,7 +14,7 @@ class Fwdpp < Formula
   end
 
   # build fails on Yosemite
-  depends_on "boost" => :build
+  depends_on "boost"
   depends_on "brewsci/bio/libsequence"
   depends_on "gsl"
   depends_on :macos => :el_capitan
