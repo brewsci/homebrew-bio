@@ -9,7 +9,7 @@ class Squeakr < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "6736628a4c3690300591032f69684e8a3c8ea411086931bfedc9e1c7a6394163" => :x86_64_linux
+    sha256 "50a1277a1a0d1d4be482856f598bc35ca24105cd698ef7d0cab9b6633a6ac461" => :x86_64_linux
   end
 
   depends_on "boost"
