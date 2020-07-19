@@ -4,7 +4,7 @@ class Nanofilt < Formula
   # cite De_Coster_2018: "https://doi.org/10.1093/bioinformatics/bty149"
   desc "Filtering and trimming of long read sequencing data"
   homepage "https://github.com/wdecoster/nanofilt"
-  url "https://files.pythonhosted.org/packages/source/N/NanoFilt/NanoFilt-2.7.1.tar.gz"
+  url "https://files.pythonhosted.org/packages/77/13/f811015d65a4984db6b9f5ef722a2cfbaf577697840c68facc8cbe2a2c2c/NanoFilt-2.7.1.tar.gz"
   sha256 "78de51ecdc8a22d4edc59bc9c858812c9b861e80bc9ec7626ad8d0f6cac68b4b"
 
   bottle do
