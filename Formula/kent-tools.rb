@@ -32,7 +32,7 @@ class KentTools < Formula
     args << "PNGLIB=-L#{libpng.opt_lib} -lpng -lz"
     args << "PNGINCL=-I#{libpng.opt_include}"
     args << "MYSQLINC=#{mysql.opt_include}/mysql"
-    args << "MYSQLLIBS=-lmysqlclient -lz"
+    args << "MYSQLLIBS=-L#{mysql.opt_lib} -lmysqlclient -lz -lc++"
 
     cd build.head? ? "src" : "kent/src" do
       inreplace "parasol/makefile", "DESTDIR=${HOME}/bin", ""
