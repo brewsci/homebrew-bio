@@ -2,8 +2,8 @@ class Rcorrector < Formula
   # cite Song_2015: "https://doi.org/10.1186/s13742-015-0089-y"
   desc "Error correction for Illumina RNA-seq reads"
   homepage "https://github.com/mourisl/Rcorrector"
-  url "https://github.com/mourisl/Rcorrector/archive/v1.0.3.tar.gz"
-  sha256 "e0e4710d4ad36dd9b93158655fb2a1fd063ec4b513a505603cdf6ccfc5eb88ef"
+  url "https://github.com/mourisl/Rcorrector/archive/v1.0.4.tar.gz"
+  sha256 "ac1754d71aff09b395b3643ec4248ad498e14675a6585296b33918e3c64c2f25"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -12,8 +12,9 @@ class Rcorrector < Formula
     sha256 "089eab745eb21dd1180eabf842c13257f9c8faa5167da193a4adefe37753d165" => :x86_64_linux
   end
 
-  depends_on "jellyfish"
-  depends_on "zlib" if OS.linux?
+  depends_on "brewsci/bio/jellyfish"
+
+  uses_from_macos "zlib"
 
   def install
     system "make"
