@@ -1,8 +1,8 @@
 class KentTools < Formula
   desc "Utilities for the UCSC Genome Browser"
   homepage "https://genome.ucsc.edu/"
-  url "http://hgdownload.soe.ucsc.edu/admin/exe/userApps.v367.src.tgz"
-  sha256 "dea0d6d9f8011f6212c196b26f0549c5c09268abf179a444fec674304e70f460"
+  url "https://hgdownload.soe.ucsc.edu/admin/exe/userApps.v400.src.tgz"
+  sha256 "7190d2cae7138ba6152f3aba92d647993dfd2395a0f8f3d753b389157c2054ce"
   head "git://genome-source.cse.ucsc.edu/kent.git"
 
   bottle do
@@ -32,7 +32,7 @@ class KentTools < Formula
     args << "PNGLIB=-L#{libpng.opt_lib} -lpng -lz"
     args << "PNGINCL=-I#{libpng.opt_include}"
     args << "MYSQLINC=#{mysql.opt_include}/mysql"
-    args << "MYSQLLIBS=-lmysqlclient -lz"
+    args << "MYSQLLIBS=-L#{mysql.opt_lib} -lmysqlclient -lz -lstdc++"
 
     cd build.head? ? "src" : "kent/src" do
       inreplace "parasol/makefile", "DESTDIR=${HOME}/bin", ""
