@@ -8,8 +8,8 @@ class Rcorrector < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "cbb94eed122b82034b56e1824e4c2a6a3424cf09c608b74701d99f641b899562" => :sierra
-    sha256 "089eab745eb21dd1180eabf842c13257f9c8faa5167da193a4adefe37753d165" => :x86_64_linux
+    sha256 "7cba79de46d2af33d9b9e3672eafa567c76af946fb5335542075b3dc170b0253" => :catalina
+    sha256 "307b411eb8b5ca877ce0264abb69298627acc19089440d1dc692c1554c322fb2" => :x86_64_linux
   end
 
   depends_on "brewsci/bio/jellyfish"
