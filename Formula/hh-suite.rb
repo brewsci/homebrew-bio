@@ -18,11 +18,11 @@ class HhSuite < Formula
 
   uses_from_macos "perl"
 
-  fails_with :clang # needs openmp
-
   on_macos do
     depends_on "gcc" # needs openmp
   end
+
+  fails_with :clang # needs openmp
 
   def install
     mkdir "build" do

@@ -1,14 +1,14 @@
 class K8 < Formula
   desc "Javascript shell based on Google's V8 Javascript engine"
   homepage "https://github.com/attractivechaos/k8"
-  url "https://github.com/attractivechaos/k8/releases/download/v0.2.4/k8-0.2.4.tar.bz2"
-  sha256 "da8a99c7f1ce7f0cb23ff07ce10510e770686b906d5431442a5439743c0b3c47"
+  url "https://github.com/attractivechaos/k8/releases/download/0.2.5/k8-0.2.5.tar.bz2"
+  sha256 "a937ac44532e042cd89ac743647b592c21cfcf31679e39e5f362e81034d93d18"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "f370eb8ea7d3c82bb72e576d837d80af5ba6ab43e5e005618a90bfa3645237d0" => :sierra
-    sha256 "b5bef3ab83d502b61c846d4bf3fe757b63887eea61acb15bd6ce2296ae448a05" => :x86_64_linux
+    sha256 "5e8e387a90767bcc08dab8c7ada0fef01771cb255ef22a9077a2b07dca51522f" => :catalina
+    sha256 "1da19c67eeeea17d824875adf5847354fdea7599c286a637b8342a7e4f83dfa4" => :x86_64_linux
   end
 
   unless OS.mac?

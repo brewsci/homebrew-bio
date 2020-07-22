@@ -23,7 +23,7 @@ class Pymol < Formula
   depends_on "msgpack"
   depends_on "netcdf"
   depends_on "pyqt"
-  depends_on "python"
+  depends_on "python@3.8"
   depends_on "sip"
 
   resource "numpy" do

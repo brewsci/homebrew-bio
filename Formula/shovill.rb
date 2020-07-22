@@ -12,20 +12,20 @@ class Shovill < Formula
     sha256 "4c8964af516ab407aa754466600409e9e0dd262ed1804211729f34b20cfdc1ea" => :x86_64_linux
   end
 
+  depends_on "brewsci/bio/flash"
+  depends_on "brewsci/bio/kmc"
+  depends_on "brewsci/bio/lighter"
+  depends_on "brewsci/bio/megahit"
+  depends_on "brewsci/bio/pilon"
+  depends_on "brewsci/bio/samclip"
+  depends_on "brewsci/bio/skesa"
+  depends_on "brewsci/bio/trimmomatic"
+  depends_on "brewsci/bio/velvet"
   depends_on "bwa"
-  depends_on "flash"
-  depends_on "kmc"
-  depends_on "lighter"
-  depends_on "megahit"
   depends_on "pigz"
-  depends_on "pilon"
-  depends_on "samclip"
   depends_on "samtools"
   depends_on "seqtk"
-  depends_on "skesa"
   depends_on "spades"
-  depends_on "trimmomatic"
-  depends_on "velvet"
 
   def install
     prefix.install Dir["*"]
