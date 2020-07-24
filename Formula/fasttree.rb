@@ -17,26 +17,24 @@ class Fasttree < Formula
   # http://www.microbesonline.org/fasttree/#BranchLen
   # http://darlinglab.org/blog/2015/03/23/not-so-fast-fasttree.html
 
-  option "without-double", "Disable double precision floating point. Use single precision floating point & enable SSE"
-  option "without-openmp", "Disable multithreading support"
-  option "without-sse", "Disable SSE parallel instructions"
-
   on_macos do
-    depends_on "libomp" if build.with? "openmp"
+    depends_on "libomp"
   end
 
   def install
-    opts = %w[-O3 -finline-functions -funroll-loops]
-    if build.with? "openmp"
-      opts << "-DOPENMP"
-      if OS.mac?
-        opts << "-L#{Formula["libomp"].opt_lib}" << "-lomp"
-      else
-        opts << "-fopenmp"
-      end
+    opts = %w[
+      -O3
+      -finline-functions
+      -funroll-loops
+      -DOPENMP
+      -DUSE_DOUBLE
+      -DNO_SSE
+    ]
+    if OS.mac?
+      opts << "-L#{Formula["libomp"].opt_lib}" << "-lomp"
+    else
+      opts << "-fopenmp"
     end
-    opts << "-DUSE_DOUBLE" if build.with? "double"
-    opts << "-DNO_SSE" if build.without? "sse"
     system ENV.cc, "-o", "FastTree", "FastTree-#{version}.c", "-lm", *opts
     bin.install "FastTree"
   end
