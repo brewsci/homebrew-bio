@@ -54,7 +54,8 @@ class Parsnp < Formula
 
     system "make"
 
-    bin.install "parsnp"
+    bin.install "src/parsnp_core"
+    bin.install_symlink "parsnp_core" => "parsnp"
     pkgshare.install "examples"
     doc.install "CITATION", "LICENSE", "README.md"
   end
