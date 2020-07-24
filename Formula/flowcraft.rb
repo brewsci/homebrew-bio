@@ -4,7 +4,7 @@ class Flowcraft < Formula
   url "https://github.com/assemblerflow/flowcraft/archive/1.4.1.tar.gz"
   sha256 "ca5f698f286b6bcc6fc15cb7767ae903e06f6b7af11183917845b1be4304f11f"
   license "GPL-3.0"
-  revision 1
+  revision 2
   head "https://github.com/assemblerflow/flowcraft.git", branch: "dev"
 
   bottle do
@@ -14,8 +14,8 @@ class Flowcraft < Formula
     sha256 "81bb9ded1248cc2e277ebb3d88e100a956167f4a8f79d9018a4f2257bfdc1244" => :x86_64_linux
   end
 
-  depends_on "nextflow"
-  depends_on "python"
+  depends_on "brewsci/bio/nextflow"
+  depends_on "python@3.8"
 
   def install
     xy = Language::Python.major_minor_version "python3"
