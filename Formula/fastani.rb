@@ -20,7 +20,7 @@ class Fastani < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "libomp" => :build
+    depends_on "libomp"
   end
 
   # https://github.com/ParBLiSS/FastANI/issues/18 (don't need gsl+boost, either)
