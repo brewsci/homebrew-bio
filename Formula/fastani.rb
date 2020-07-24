@@ -14,13 +14,14 @@ class Fastani < Formula
   end
 
   depends_on "autoconf" => :build
-  depends_on "gcc" => :build if OS.mac? # needs openmp
   depends_on "boost"
   depends_on "gsl"
 
   uses_from_macos "zlib"
 
-  fails_with :clang # needs openmp
+  on_macos do
+    depends_on "libomp" => :build
+  end
 
   # https://github.com/ParBLiSS/FastANI/issues/18 (don't need gsl+boost, either)
 
@@ -37,7 +38,7 @@ class Fastani < Formula
   end
 
   test do
-    assert_match "fragments", shell_output("#{bin}/fastANI --help 2>&1")
+    assert_match "fragment length", shell_output("#{bin}/fastANI --help 2>&1")
     system "#{bin}/fastANI",
            "-q", pkgshare/"data/Shigella_flexneri_2a_01.fna",
            "-r", pkgshare/"data/Escherichia_coli_str_K12_MG1655.fna",
