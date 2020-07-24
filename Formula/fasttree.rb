@@ -21,15 +21,20 @@ class Fasttree < Formula
   option "without-openmp", "Disable multithreading support"
   option "without-sse", "Disable SSE parallel instructions"
 
-  if build.with? "openmp"
-    on_macos do
-      depends_on "libomp"
-    end
+  on_macos do
+    depends_on "libomp" if build.with? "openmp"
   end
 
   def install
     opts = %w[-O3 -finline-functions -funroll-loops]
-    opts << "-DOPENMP" << "-L#{Formula["libomp"].opt_lib}" << "-lomp" if build.with? "openmp"
+    if build.with? "openmp"
+      opts << "-DOPENMP"
+      if OS.mac?
+        opts << "-L#{Formula["libomp"].opt_lib}" << "-lomp"
+      else
+        opts << "-fopenmp"
+      end
+    end
     opts << "-DUSE_DOUBLE" if build.with? "double"
     opts << "-DNO_SSE" if build.without? "sse"
     system ENV.cc, "-o", "FastTree", "FastTree-#{version}.c", "-lm", *opts
