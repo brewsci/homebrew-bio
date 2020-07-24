@@ -2,8 +2,8 @@ class Iqtree2 < Formula
   # cite Nguyen_2015: "https://doi.org/10.1093/molbev/msu300"
   desc "Efficient phylogenomic software by maximum likelihood"
   homepage "http://www.iqtree.org/"
-  url "https://github.com/Cibiv/IQ-TREE/archive/v2.0.6.tar.gz"
-  sha256 "535ca86c7655e68785c5efbfb020006ed7d7de0e2f17e9f31383202ff81f3a85"
+  url "https://github.com/Cibiv/IQ-TREE/archive/v2.0.7.tar.gz"
+  sha256 "e0c00c040c9dd448aa15b8e17964a414b86eaeb024bef0b13767fe0c68730ae5"
   license "GPL-2.0"
 
   bottle do
