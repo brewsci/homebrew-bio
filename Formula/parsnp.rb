@@ -25,10 +25,8 @@ class Parsnp < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "gcc" # needs openmp
+    depends_on "libomp"
   end
-
-  fails_with :clang # needs openmp
 
   def install
     # remove binaries
