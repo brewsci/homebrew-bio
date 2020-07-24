@@ -2,8 +2,8 @@ class Beast2 < Formula
   # cite Bouckaert_2014: "https://doi.org/10.1371/journal.pcbi.1003537"
   desc "Bayesian evolutionary analysis by sampling trees"
   homepage "https://www.beast2.org/"
-  url "https://github.com/CompEvol/beast2/archive/v2.6.2.tar.gz"
-  sha256 "5200318c6d1a0705a8ee861638e61aa064ca9d7801f685e73d82f8fc9ca515fb"
+  url "https://github.com/CompEvol/beast2/archive/v2.6.3.tar.gz"
+  sha256 "7528d3f4732bd2066079eb9001161deda20afc59424ec58fca844e56785dc6a9"
   license "LGPL-2.1"
 
   bottle do
