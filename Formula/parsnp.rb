@@ -41,6 +41,7 @@ class Parsnp < Formula
     # see: https://github.com/brewsci/homebrew-bio/pull/362
     cd "muscle" do
       ENV.deparallelize
+      system "./autogen.sh"
       system "./configure", "--prefix=#{Dir.pwd}"
       system "make", "install"
     end
@@ -55,7 +56,7 @@ class Parsnp < Formula
 
     system "make"
 
-    bin.install "src/parsnp"
+    bin.install "parsnp"
     pkgshare.install "examples"
     doc.install "CITATION", "LICENSE", "README.md"
   end
