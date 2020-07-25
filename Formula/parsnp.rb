@@ -20,7 +20,6 @@ class Parsnp < Formula
 
   depends_on "brewsci/bio/fasttree"
   depends_on "brewsci/bio/harvest-tools"
-  depends_on "brewsci/bio/libmuscle"
 
   uses_from_macos "zlib"
 
@@ -29,23 +28,29 @@ class Parsnp < Formula
   end
 
   def install
-    libmuscle = Formula["brewsci/bio/libmuscle"]
-
     # remove binaries
     rm Dir["bin/*"]
 
     # https://github.com/marbl/parsnp/issues/52
     inreplace "src/parsnp.cpp", "1.0.1", version.to_s
 
+    cd "muscle" do
+      ENV.deparallelize
+      system "./autogen.sh"
+      system "./configure", "--prefix=#{prefix}"
+      system "make", "install"
+      (doc/"muscle").install "AUTHORS", "ChangeLog"
+    end
+
     inreplace "configure.ac",
               "-I$with_libmuscle",
-              "-I$with_libmuscle/include/libMUSCLE-#{libmuscle.version}"
+              "-I$with_libmuscle/include/libMUSCLE-3.7"
 
     system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}", "--with-libmuscle=#{libmuscle.opt_prefix}"
+    system "./configure", "--prefix=#{prefix}", "--with-libmuscle=#{prefix}"
 
     # https://github.com/marbl/parsnp/issues/57
-    libr = " -lMUSCLE-#{libmuscle.version}"
+    libr = " -lMUSCLE-3.7"
     inreplace "src/Makefile", libr, ""
     inreplace "src/Makefile", "LIBS =", "LIBS =#{libr}"
 
