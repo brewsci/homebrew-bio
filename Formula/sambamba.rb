@@ -1,7 +1,7 @@
 class Sambamba < Formula
   # cite Tarasov_2015: "https://doi.org/10.1093/bioinformatics/btv098"
   desc "Tools for working with SAM/BAM data"
-  homepage "https://lomereiter.github.io/sambamba"
+  homepage "https://lomereiter.github.io/sambamba/"
   url "https://github.com/biod/sambamba.git",
       :tag      => "v0.7.1",
       :revision => "851c5b5a9ffe1895d860900104122ab81bb89f21"
