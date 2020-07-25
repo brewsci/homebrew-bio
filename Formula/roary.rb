@@ -8,9 +8,9 @@ class Roary < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "42756c86160f232c78b00aab596587d9726779f72ccd85e15d778371b9efb800" => :catalina
-    sha256 "68842be0ec83d5d0292006df13ae08aa864a66548551d18ee1118f54d545b958" => :x86_64_linux
+    cellar :any
+    sha256 "94907f6c61003dd602970c9c878fc7171bf2be0ddfee3d1db2ebd5a04869837a" => :catalina
+    sha256 "74f824cff0367696af1bafe8c74f61dc17f3115506734a6f5604e91d96e2d830" => :x86_64_linux
   end
 
   depends_on "cpanminus" => :build
