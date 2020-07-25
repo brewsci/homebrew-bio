@@ -29,26 +29,19 @@ class Parsnp < Formula
   end
 
   def install
+    libmuscle = Formula["brewsci/bio/libmuscle"]
+
     # remove binaries
     rm Dir["bin/*"]
 
     # https://github.com/marbl/parsnp/issues/52
     inreplace "src/parsnp.cpp", "1.0.1", version.to_s
 
-    # we still build this, but runtime will link against libmuscle
-    # see: https://github.com/brewsci/homebrew-bio/pull/362
-    cd "muscle" do
-      ENV.deparallelize
-      system "./autogen.sh"
-      system "./configure", "--prefix=#{Dir.pwd}"
-      system "make", "install"
-    end
-
     system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}"
+    system "./configure", "--prefix=#{prefix}", "--with-libmuscle=#{libmuscle.opt_prefix}"
 
     # https://github.com/marbl/parsnp/issues/57
-    libr = " -lMUSCLE-3.7"
+    libr = " -lMUSCLE-#{libmuscle.version}"
     inreplace "src/Makefile", libr, ""
     inreplace "src/Makefile", "LIBS =", "LIBS =#{libr}"
 
