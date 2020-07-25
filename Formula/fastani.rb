@@ -9,8 +9,8 @@ class Fastani < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "ff8d6d9662eae0bc5eb25bcb47ecb43cb56e1526d7a9235c0d40ddbe0e096f92" => :sierra
-    sha256 "71f8d0311cae9c1f6ee05cdf1dae0e6edb88920a9d261275201ce59096753da8" => :x86_64_linux
+    sha256 "682a759bbd381799d6230fad33d75eed4e11a56023579233b955c6ed1ddc6a42" => :catalina
+    sha256 "37054c44ef24bd932b14d5933cc962c2cd92bea796f4be0bab0ca92dc7d0a452" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
