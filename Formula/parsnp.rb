@@ -37,6 +37,10 @@ class Parsnp < Formula
     # https://github.com/marbl/parsnp/issues/52
     inreplace "src/parsnp.cpp", "1.0.1", version.to_s
 
+    inreplace "configure.ac",
+              "-I$with_libmuscle",
+              "-I$with_libmuscle/include/libMUSCLE-#{libmuscle.version}"
+
     system "./autogen.sh"
     system "./configure", "--prefix=#{prefix}", "--with-libmuscle=#{libmuscle.opt_prefix}"
 
