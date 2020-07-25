@@ -1,8 +1,8 @@
 class StadenIoLib < Formula
   desc "Staden Package io_lib"
   homepage "https://staden.sourceforge.io/"
-  url "https://github.com/jkbonfield/io_lib/releases/download/io_lib-1-14-11/io_lib-1.14.11.tar.gz"
-  sha256 "a172cb66416794fdd9c1fc443f722f7e3439b52c99510b9a60f828392b9989e4"
+  url "https://github.com/jkbonfield/io_lib/releases/download/io_lib-1-14-13/io_lib-1.14.13.tar.gz"
+  sha256 "5641c02f98342f689274ed9b71e57d26fbf8216730619bde3a663214ce2ae8b0"
   head "https://github.com/jkbonfield/io_lib.git"
 
   bottle do
@@ -14,11 +14,9 @@ class StadenIoLib < Formula
 
   depends_on "xz"
 
-  unless OS.mac?
-    depends_on "bzip2"
-    depends_on "curl"
-    depends_on "zlib"
-  end
+  uses_from_macos "bzip2"
+  uses_from_macos "curl"
+  uses_from_macos "zlib"
 
   def install
     system "./configure", "--disable-debug",
@@ -28,6 +26,11 @@ class StadenIoLib < Formula
     system "make", "install"
 
     pkgshare.install "tests"
+
+    # Avoid references to Homebrew shims
+    os = OS.mac? ? "mac" : "linux"
+    inreplace pkgshare/"tests/Makefile", HOMEBREW_LIBRARY/"Homebrew/shims/#{os}/super/", "/usr/bin/"
+    rm pkgshare/"tests/cram_io_test"
   end
 
   test do
