@@ -1,9 +1,10 @@
 class Libmuscle < Formula
   desc "C/C++ API to the muscle alignment software"
   homepage "https://github.com/marbl/parsnp"
-  url "https://github.com/marbl/parsnp/archive/v1.2.tar.gz"
+  url "https://github.com/marbl/parsnp/archive/v1.5.2.tar.gz"
   version "3.7"
-  sha256 "c2cbefcf961925c3368476420e28a63741376773f948094ed845a32291bda436"
+  sha256 "780ddb5fd8c626bf77d31af8e620436ca942801de942c682d1f246bbbdcf2c3d"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -15,6 +16,7 @@ class Libmuscle < Formula
   def install
     ENV.deparallelize
     cd "muscle" do
+      system "./autogen.sh"
       system "./configure", "--prefix=#{prefix}"
       system "make", "install"
       rm bin/"muscle"
@@ -23,6 +25,6 @@ class Libmuscle < Formula
   end
 
   test do
-    assert_predicate lib/"libMUSCLE-3.7.a", :exist?
+    assert_predicate lib/"libMUSCLE-#{version}.a", :exist?
   end
 end
