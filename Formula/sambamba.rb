@@ -8,9 +8,9 @@ class Sambamba < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "70df7afcd3a125442c3303e85d1af3608a3ecb317783f3da81094dc3d12ae33a" => :sierra
-    sha256 "d82fb6275ee8f516ed30c6d0797adf2ce5acb504f81fd5888bbaa367555dae7e" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "6ddf6f0fc0f344cd7b22b640710f1ee73b0a7edffca2d671188681f99babb297" => :catalina
+    sha256 "9f2a305a8b3b6ae83548eefd8766ecde5c7e71b1d7a29fad3c6a52adb70aaaed" => :x86_64_linux
   end
 
   depends_on "ldc" => :build
