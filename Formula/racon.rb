@@ -21,16 +21,15 @@ class Racon < Formula
     depends_on "libomp"
   end
 
-  # update spoa from 3.0.2 to 3.1.1 to fix error:
-  # 'invalid_argument' is not a member of 'std'
-  # see https://github.com/lbcb-sci/racon/issues/18
-  # and https://github.com/lbcb-sci/racon/issues/23
+  # Update spoa from 3.0.2 to 3.1.1 to fix 'invalid_argument' error
+  # https://github.com/rvaser/spoa/pull/28
   resource "spoa" do
     url "https://github.com/rvaser/spoa.git",
       :revision => "06d58ef50ab19184bb1d905443e091310de9ce2c"
   end
 
   def install
+    rm_rf "vendor/spoa"
     (buildpath/"vendor/spoa").install resource("spoa")
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
