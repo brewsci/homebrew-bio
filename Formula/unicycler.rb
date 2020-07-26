@@ -4,7 +4,8 @@ class Unicycler < Formula
   homepage "https://github.com/rrwick/Unicycler"
   url "https://github.com/rrwick/Unicycler/archive/v0.4.7.tar.gz"
   sha256 "a8cf65e46dc2694b0fbd4e9190c73a1f300921457aadfab27a1792b785620d63"
-  head "https://github.com/rrwick/Unicycler/releases"
+  revision 1
+  head "https://github.com/rrwick/Unicycler.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -15,9 +16,9 @@ class Unicycler < Formula
 
   depends_on "blast"
   depends_on "bowtie2"
-  depends_on "pilon"
-  depends_on "python"
-  depends_on "racon"
+  depends_on "brewsci/bio/pilon"
+  depends_on "brewsci/bio/racon"
+  depends_on "python@3.8"
   depends_on "samtools"
   depends_on "spades"
 
