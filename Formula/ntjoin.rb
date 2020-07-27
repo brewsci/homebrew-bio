@@ -34,7 +34,7 @@ class Ntjoin < Formula
     libexec_src.install "src/indexlr"
     libexec_bin = Pathname.new("#{libexec}/bin/bin")
     libexec_bin.install Dir["bin/*"]
-    bin.env_script_all_files libexec/"bin", :PYTHONPATH => Dir[libexec/"lib/python*/site-packages"].first
+    bin.env_script_all_files libexec/"bin", PYTHONPATH: Dir[libexec/"lib/python*/site-packages"].first
     doc.install "README.md"
   end
 
