@@ -13,7 +13,7 @@ class Adam < Formula
   end
 
   head do
-    url "https://github.com/bigdatagenomics/adam.git", :shallow => false
+    url "https://github.com/bigdatagenomics/adam.git", shallow: false
     depends_on "maven" => :build
   end
 
