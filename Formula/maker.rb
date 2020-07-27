@@ -57,7 +57,7 @@ class Maker < Formula
     rm_r "src"
     libexec.install Dir["*"]
     %w[gff3_merge maker].each do |name|
-      (bin/name).write_env_script("#{libexec}/bin/#{name}", :PERL5LIB => ENV["PERL5LIB"])
+      (bin/name).write_env_script("#{libexec}/bin/#{name}", PERL5LIB: ENV["PERL5LIB"])
     end
 
     # Fix audit: Files were found with references to the Homebrew shims directory.
