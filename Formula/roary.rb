@@ -47,7 +47,7 @@ class Roary < Formula
 
     Dir[libexec/"*"].each do |exe|
       name = File.basename exe
-      (bin/name).write_env_script(exe, :PERL5LIB => ENV["PERL5LIB"])
+      (bin/name).write_env_script(exe, PERL5LIB: ENV["PERL5LIB"])
     end
   end
 
