@@ -13,7 +13,7 @@ class Nextflow < Formula
     sha256 "05ae7affdcba74c5eeff7c8bf7f6eaae396e3dc1263d4e70d2e00bbd6366e6ec" => :x86_64_linux
   end
 
-  depends_on :java => "1.8"
+  depends_on java: "1.8"
 
   def install
     bin.install "nextflow"
