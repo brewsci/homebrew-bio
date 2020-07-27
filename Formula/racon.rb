@@ -25,7 +25,7 @@ class Racon < Formula
   # https://github.com/rvaser/spoa/pull/28
   resource "spoa" do
     url "https://github.com/rvaser/spoa.git",
-      :revision => "06d58ef50ab19184bb1d905443e091310de9ce2c"
+      revision: "06d58ef50ab19184bb1d905443e091310de9ce2c"
   end
 
   def install
