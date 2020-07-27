@@ -20,7 +20,7 @@ class Trinity < Formula
   depends_on "brewsci/bio/salmon"
   depends_on "brewsci/bio/trimmomatic"
   depends_on "htslib"
-  depends_on :java => "1.8+"
+  depends_on java: "1.8+"
   depends_on "samtools"
 
   uses_from_macos "zlib"
@@ -52,7 +52,7 @@ class Trinity < Formula
     rm_r Dir["**/build"]
     rm_r Dir["**/src"]
     libexec.install Dir["*"]
-    (bin/"Trinity").write_env_script(libexec/"Trinity", :PERL5LIB => libexec/"PerlLib")
+    (bin/"Trinity").write_env_script(libexec/"Trinity", PERL5LIB: libexec/"PerlLib")
   end
 
   test do
