@@ -20,7 +20,7 @@ class Flowcraft < Formula
   def install
     xy = Language::Python.major_minor_version "python3"
     ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
-    system "python3", "setup.py", "install", "--prefix=#{libexec}"
+    system "pip3", "install", "--prefix=#{libexec}", "."
     (bin/"flowcraft").write_env_script libexec/"bin/flowcraft", PYTHONPATH: ENV["PYTHONPATH"]
   end
 
