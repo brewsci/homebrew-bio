@@ -32,7 +32,7 @@ class Circos < Formula
       "Math::VecStat", "Number::Format", "Readonly", "SVG", "Set::IntSpan",
       "Statistics::Basic", "Text::Format"
 
-    (bin/"circos").write_env_script("#{libexec}/bin/circos", :PERL5LIB => ENV["PERL5LIB"])
+    (bin/"circos").write_env_script("#{libexec}/bin/circos", PERL5LIB: ENV["PERL5LIB"])
   end
 
   test do
