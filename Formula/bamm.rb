@@ -15,7 +15,7 @@ class Bamm < Formula
 
   depends_on "cmake" => :build
 
-  fails_with :gcc => "4.8" do
+  fails_with gcc: "4.8" do
     cause "Error: Enable multithreading to use std::thread"
   end
 
