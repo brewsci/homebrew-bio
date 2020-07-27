@@ -8,9 +8,8 @@ class Parsnp < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "b0e844a937884f368e4b1294e0d356155dd3371bdfe37c778826c0c59b310246" => :sierra
-    sha256 "0717e9aa5c6fdff91bb340b415694849813465beae6103fa949c64a774d9a453" => :x86_64_linux
+    sha256 "a314260f40f1935bddabd3c0918615a966a928d9d4943946553df64374342312" => :catalina
+    sha256 "c88a39e77c87877394c668db346bfedf2559e4f13f3b54b590db5b999375976d" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
