@@ -60,7 +60,7 @@ class Edirect < Formula
     libexec.install Dir["*"]
     Dir[libexec/"*"].each do |script|
       name = File.basename script
-      (bin/name).write_env_script(script, :PERL5LIB => ENV["PERL5LIB"])
+      (bin/name).write_env_script(script, PERL5LIB: ENV["PERL5LIB"])
     end
     bin.install resource("xtract")
     bin.install resource("rchive")
