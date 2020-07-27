@@ -35,7 +35,7 @@ class DasTool < Formula
     system "unzip", "db.zip", "-d", "db"
 
     libexec.install "DAS_Tool", "src", "db", "lib"
-    (bin/"DAS_Tool").write_env_script libexec/"DAS_Tool", :R_LIBS_SITE => libexec/"lib/R"
+    (bin/"DAS_Tool").write_env_script libexec/"DAS_Tool", R_LIBS_SITE: libexec/"lib/R"
     ln_s libexec/"src/Fasta_to_Scaffolds2Bin.sh", bin/"Fasta_to_Scaffolds2Bin"
   end
 
