@@ -31,7 +31,7 @@ class Maxbin2 < Formula
     (libexec/"src").install "src/MaxBin"
     rm_r "src"
     libexec.install Dir["*"]
-    (bin/"maxbin2").write_env_script libexec/"run_MaxBin.pl", :PERL5LIB => ENV["PERL5LIB"]
+    (bin/"maxbin2").write_env_script libexec/"run_MaxBin.pl", PERL5LIB: ENV["PERL5LIB"]
   end
 
   def caveats
