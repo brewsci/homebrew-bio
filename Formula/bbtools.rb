@@ -11,7 +11,7 @@ class Bbtools < Formula
     sha256 "edebab140175eb6a45b4707549b563bb61fd65023f410662713b5718d2dda620" => :x86_64_linux
   end
 
-  depends_on :java => "1.7+"
+  depends_on java: "1.7+"
 
   def install
     if OS.mac?
