@@ -72,8 +72,8 @@ class Busco < Formula
     # Remove virtualenv_install_with_resources link and write our own
     rm bin/"busco"
     (bin/"busco").write_env_script libexec/"bin/busco",
-      :BUSCO_CONFIG_FILE    => libexec/"config.ini",
-      :AUGUSTUS_CONFIG_PATH => "#{Formula["augustus"].prefix}/config/"
+      BUSCO_CONFIG_FILE:    libexec/"config.ini",
+      AUGUSTUS_CONFIG_PATH: "#{Formula["augustus"].prefix}/config/"
   end
 
   def caveats
