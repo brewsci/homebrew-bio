@@ -28,7 +28,7 @@ class Pirate < Formula
     ENV.prepend "PERL5LIB", Formula["bioperl"].libexec/"lib/perl5"
     libexec.install Dir["*"]
     %w[PIRATE].each do |name|
-      (bin/name).write_env_script("#{libexec}/bin/#{name}", :PERL5LIB => ENV["PERL5LIB"])
+      (bin/name).write_env_script("#{libexec}/bin/#{name}", PERL5LIB: ENV["PERL5LIB"])
     end
   end
 
