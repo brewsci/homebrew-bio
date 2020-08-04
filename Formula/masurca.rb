@@ -4,6 +4,7 @@ class Masurca < Formula
   homepage "https://masurca.blogspot.com/"
   url "https://github.com/alekseyzimin/masurca/releases/download/v3.4.1/MaSuRCA-3.4.1.tar.gz"
   sha256 "a00b941901d8d332c7fa17670ab68eb767cf476a96d8bf721493a37294f5287f"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
