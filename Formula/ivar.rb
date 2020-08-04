@@ -4,6 +4,7 @@ class Ivar < Formula
   homepage "https://github.com/andersen-lab/ivar"
   url "https://github.com/andersen-lab/ivar/archive/v1.2.2.tar.gz"
   sha256 "b09a5b871e1b7b8babb69b96609e7ac28db33c1a2b6febe6eb3b8a5dc1e41f44"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
