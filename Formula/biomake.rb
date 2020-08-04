@@ -4,6 +4,7 @@ class Biomake < Formula
   homepage "https://github.com/evoldoers/biomake"
   url "https://github.com/evoldoers/biomake/archive/v0.1.5.tar.gz"
   sha256 "630009c52472b97dfb22304330fe809abd5e038e8b0b6aa084c7fc437b8cd6a0"
+  license "BSD-3-Clause"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
