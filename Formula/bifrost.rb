@@ -4,6 +4,7 @@ class Bifrost < Formula
   homepage "https://github.com/pmelsted/bifrost"
   url "https://github.com/pmelsted/bifrost/archive/v1.0.4.tar.gz"
   sha256 "94ac84861c36bc3fb9ea7b4a630ce391c79236289e5fab7aa627dc07b286f013"
+  license "BSD-2-Clause"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
