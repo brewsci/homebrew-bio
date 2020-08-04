@@ -4,6 +4,7 @@ class Bazam < Formula
   homepage "https://github.com/ssadedin/bazam"
   url "https://github.com/ssadedin/bazam/releases/download/1.0.1/bazam.jar"
   sha256 "396e584c95e2184025f9b9eca7377c376894f3afb4572856387866ab59c741e8"
+  license "LGPL-2.1"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
