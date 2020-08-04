@@ -4,6 +4,7 @@ class Mreps < Formula
   homepage "https://github.com/gregorykucherov/mreps"
   url "https://github.com/gregorykucherov/mreps/archive/2.6.01.tar.gz"
   sha256 "fde80804d7d4381b09d2dcf85bc6b01f8b06577972ce6123ca934de0fa0ea938"
+  license "GPL-2.0"
 
   bottle do
     cellar :any_skip_relocation
