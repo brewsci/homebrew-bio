@@ -17,7 +17,7 @@ class Fwdpp < Formula
   depends_on "boost"
   depends_on "brewsci/bio/libsequence"
   depends_on "gsl"
-  depends_on :macos => :el_capitan
+  depends_on macos: :el_capitan
 
   def install
     system "./configure", "--prefix=#{prefix}"

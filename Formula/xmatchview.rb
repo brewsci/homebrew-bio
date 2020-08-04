@@ -28,7 +28,7 @@ class Xmatchview < Formula
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
     system "pip3", "install", "--no-cache-dir", "--prefix=#{libexec}", "pillow", "--no-binary=pillow"
     prefix.install Dir["xmatchview*py"]
-    prefix.env_script_all_files libexec/"bin", :PYTHONPATH => Dir[libexec/"lib/python*/site-packages"].first
+    prefix.env_script_all_files libexec/"bin", PYTHONPATH: Dir[libexec/"lib/python*/site-packages"].first
     bin.install_symlink "../xmatchview.py", "../xmatchview-conifer.py"
     chmod 0555, Dir[prefix/"xmatchview*py"]
     prefix.install "test"

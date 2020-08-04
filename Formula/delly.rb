@@ -3,8 +3,8 @@ class Delly < Formula
   desc "Structural variant discovery by paired-end and split-read analysis"
   homepage "https://github.com/tobiasrausch/delly"
   url "https://github.com/tobiasrausch/delly.git",
-      :tag      => "v0.8.3",
-      :revision => "56ab2900da269568dc327045913ae77ff3919df1"
+      tag:      "v0.8.3",
+      revision: "56ab2900da269568dc327045913ae77ff3919df1"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

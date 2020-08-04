@@ -19,7 +19,7 @@ class Ngmaster < Formula
     xy = Language::Python.major_minor_version "python3"
     ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
     system "python3", "setup.py", "install", "--prefix=#{libexec}"
-    (bin/"ngmaster").write_env_script libexec/"bin/ngmaster", :PYTHONPATH => ENV["PYTHONPATH"]
+    (bin/"ngmaster").write_env_script libexec/"bin/ngmaster", PYTHONPATH: ENV["PYTHONPATH"]
   end
 
   test do

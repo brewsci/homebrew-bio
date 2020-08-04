@@ -12,7 +12,7 @@ class Cannoli < Formula
   end
 
   head do
-    url "https://github.com/bigdatagenomics/cannoli.git", :shallow => false
+    url "https://github.com/bigdatagenomics/cannoli.git", shallow: false
     depends_on "maven" => :build
   end
 

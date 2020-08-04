@@ -79,7 +79,7 @@ class Lrsim < Formula
     prefix.install "DWGSIMSrc/dwgsim", "extractReads", "msortSrc/msort", "SURVIVORSrc/Debug/SURVIVOR",
       "faFilter.pl", "simulateLinkedReads.pl",
       "4M-with-alts-february-2016.txt"
-    (bin/"simulateLinkedReads").write_env_script(prefix/"simulateLinkedReads.pl", :PERL5LIB => ENV["PERL5LIB"])
+    (bin/"simulateLinkedReads").write_env_script(prefix/"simulateLinkedReads.pl", PERL5LIB: ENV["PERL5LIB"])
     prefix.install_symlink HOMEBREW_PREFIX/"bin/samtools"
   end
 

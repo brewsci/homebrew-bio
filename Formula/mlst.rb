@@ -26,7 +26,7 @@ class Mlst < Formula
     libexec.install Dir["*"]
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
     system "cpanm", "--self-contained", "-l", libexec, "Moo", "List::MoreUtils", "JSON"
-    (bin/"mlst").write_env_script("#{libexec}/bin/mlst", :PERL5LIB => ENV["PERL5LIB"])
+    (bin/"mlst").write_env_script("#{libexec}/bin/mlst", PERL5LIB: ENV["PERL5LIB"])
   end
 
   test do

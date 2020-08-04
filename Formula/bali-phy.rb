@@ -22,9 +22,9 @@ class BaliPhy < Formula
   depends_on "gcc@8" unless OS.mac? # for C++17
 
   # C++17
-  fails_with :gcc => "5"
-  fails_with :gcc => "6"
-  fails_with :gcc => "7"
+  fails_with gcc: "5"
+  fails_with gcc: "6"
+  fails_with gcc: "7"
 
   def install
     flags = %w[-C build install]

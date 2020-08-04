@@ -14,7 +14,7 @@ class Gatk < Formula
     sha256 "e623b8e92370031f256c19b11a22b240e56f02633cf45c1e847184c451df818c" => :x86_64_linux
   end
 
-  depends_on :java => "1.8"
+  depends_on java: "1.8"
   depends_on "python@3.8"
 
   resource "count_reads.bam" do

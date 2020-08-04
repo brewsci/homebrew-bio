@@ -4,7 +4,7 @@ class Exabayes < Formula
   homepage "https://sco.h-its.org/exelixis/web/software/exabayes/"
   url "https://sco.h-its.org/exelixis/resource/download/software/exabayes-1.5.tar.gz"
   sha256 "e401f1b4645e67e8879d296807131d0ab79bba81a1cd5afea14d7c3838b095a2"
-  head "https://github.com/aberer/exabayes.git", :branch => "devel"
+  head "https://github.com/aberer/exabayes.git", branch: "devel"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

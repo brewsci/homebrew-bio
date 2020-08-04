@@ -27,8 +27,8 @@ class Biobloomtools < Formula
     # build sdsl-lite using gcc
     resource "sdsl" do
       url "https://github.com/simongog/sdsl-lite.git",
-      :revision => "0546faf0552142f06ff4b201b671a5769dd007ad",
-      :tag      => "v2.1.1"
+      revision: "0546faf0552142f06ff4b201b671a5769dd007ad",
+      tag:      "v2.1.1"
     end
   else
     depends_on "sdsl-lite" => :build

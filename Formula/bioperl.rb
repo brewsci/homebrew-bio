@@ -24,7 +24,7 @@ class Bioperl < Formula
     bin.env_script_all_files libexec, "PERL5LIB" => ENV["PERL5LIB"]
     Dir[libexec/"bin/bp_*.pl"].each do |executable|
       name = File.basename executable
-      (bin/name).write_env_script executable, :PERL5LIB => ENV["PERL5LIB"]
+      (bin/name).write_env_script executable, PERL5LIB: ENV["PERL5LIB"]
     end
   end
 

@@ -28,7 +28,7 @@ class Transdecoder < Formula
       ENV["PERL5LIB"] = libexec/"lib/perl5"
       system "cpanm", "--self-contained", "-l", libexec, "URI::Escape"
       executables.each do |executable|
-        (bin/executable).write_env_script(prefix/executable, :PERL5LIB => ENV["PERL5LIB"])
+        (bin/executable).write_env_script(prefix/executable, PERL5LIB: ENV["PERL5LIB"])
       end
     end
   end
