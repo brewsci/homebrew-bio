@@ -4,6 +4,7 @@ class Astral < Formula
   homepage "https://github.com/smirarab/ASTRAL"
   url "https://github.com/smirarab/ASTRAL/archive/v5.7.1.tar.gz"
   sha256 "8aa6fd4324efca325d3dde432517090fac314bea95f407b1dd59977181fec77e"
+  license "Apache-2.0"
   head "https://github.com/smirarab/ASTRAL.git"
 
   bottle do
