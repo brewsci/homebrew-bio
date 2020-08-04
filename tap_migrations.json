@@ -1,4 +1,5 @@
 {
   "beagle": "homebrew/core",
-  "raxml-ng": "homebrew/core"
+  "raxml-ng": "homebrew/core",
+  "vsearch": "homebrew/core"
 }

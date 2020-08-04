@@ -3,15 +3,15 @@ class SeqanAT3 < Formula
   # cite Reinert_2017: "https://doi.org/10.1016/j.jbiotec.2017.07.017"
   desc "The modern C++ library for sequence analysis"
   homepage "https://www.seqan.de"
-  url "https://github.com/seqan/seqan3/archive/3.0.0.tar.gz"
-  sha256 "7841620cf21d72865d9f2ea731d2d2fef4f1c61c8462f574f4ff79eb4df600ce"
+  url "https://github.com/seqan/seqan3/archive/3.0.1.tar.gz"
+  sha256 "fcf481c7989c2438857ac58eaac3a5c21447c3936bbaf9b2f9f20847da50258b"
   head "https://github.com/seqan/seqan3.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "a1a8dc4e5bb64b19e4267c4ed23be3a6db8ce6e23f7278e0d1e1b9858a14cb56" => :catalina
-    sha256 "4085365e99e200e876c473a1530c46d3369ad7c8896f70b22d377360c2310fe6" => :x86_64_linux
+    sha256 "a221a1a4c196e733656015d81a21bbfbc87ecb5c86f9710d66ff7ff99de69323" => :catalina
+    sha256 "b576cf25561c3d8ad3f6cb38b0231f7fee572899b5fe6c8475cf96d73ffbbd5b" => :x86_64_linux
   end
 
   depends_on "cmake" => :build

@@ -22,7 +22,7 @@ class Emboss < Formula
 
   depends_on "mysql"      => :optional
   depends_on "postgresql" => :optional
-  depends_on :x11         => :optional
+  depends_on x11: :optional
 
   uses_from_macos "zlib"
 

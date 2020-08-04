@@ -21,11 +21,11 @@ class Discovardenovo < Formula
   fails_with :clang # needs openmp
 
   # error: reference to 'align' is ambiguous
-  fails_with :gcc => "5"
+  fails_with gcc: "5"
 
   # error: could not convert 'kmer_shape_zebra<K>::getStringId()'
   # from 'String' {aka 'FeudalString<char>'} to 'KmerShapeId'
-  fails_with :gcc => "9"
+  fails_with gcc: "9"
 
   def install
     # Fix for case insensitive file systems. error: '::memchr' has not been declared

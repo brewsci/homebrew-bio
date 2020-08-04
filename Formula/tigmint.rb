@@ -34,7 +34,7 @@ class Tigmint < Formula
       "git+https://github.com/daler/pybedtools.git"
     system "pip3", "install", "--prefix=#{libexec}", "-r", "requirements.txt"
     bin.install Dir["bin/*"]
-    bin.env_script_all_files libexec/"bin", :PYTHONPATH => Dir[libexec/"lib/python*/site-packages"].first
+    bin.env_script_all_files libexec/"bin", PYTHONPATH: Dir[libexec/"lib/python*/site-packages"].first
   end
 
   test do

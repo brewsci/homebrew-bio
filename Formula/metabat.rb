@@ -2,14 +2,14 @@ class Metabat < Formula
   # cite Kang_2015: "https://doi.org/10.7717/peerj.1165"
   desc "Statistical framework for reconstructing genomes from metagenomic data"
   homepage "https://bitbucket.org/berkeleylab/metabat/"
-  url "https://bitbucket.org/berkeleylab/metabat/get/v2.13.tar.gz"
-  sha256 "aa75a2b62ec9588add4c288993821bab5312a83b1259ff0d508c215133492d74"
+  url "https://bitbucket.org/berkeleylab/metabat/get/v2.15.tar.gz"
+  sha256 "550487b66ec9b3bc53edf513d00c9deda594a584f53802165f037bde29b4d34e"
   head "https://bitbucket.org/berkeleylab/metabat.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "a4f61a63b2ec1344807d0da324626b15b1a49a710e471238f05fe158cf20dceb" => :x86_64_linux
+    sha256 "4fcd6b616061cd662956ca9ccb57dcfc5e61e10024d9313ee0a3e9ae89adcea5" => :x86_64_linux
   end
 
   depends_on :linux unless build.head?

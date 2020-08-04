@@ -45,7 +45,7 @@ class Nullarbor < Formula
 
     libexec.install Dir["*"]
     %w[nullarbor.pl nullarbor-report.pl].each do |name|
-      (bin/name).write_env_script("#{libexec}/bin/#{name}", :PERL5LIB => ENV["PERL5LIB"])
+      (bin/name).write_env_script("#{libexec}/bin/#{name}", PERL5LIB: ENV["PERL5LIB"])
     end
   end
 

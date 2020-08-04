@@ -1,21 +1,21 @@
 class Abricate < Formula
   desc "Find antimicrobial resistance and virulence genes in contigs"
   homepage "https://github.com/tseemann/abricate"
-  url "https://github.com/tseemann/abricate/archive/v1.0.0.tar.gz"
-  sha256 "bf2fc2a8a3b81e2a1fc3d4fe709bdc8bba73c53150362df5dbcc06412b1cc678"
+  url "https://github.com/tseemann/abricate/archive/v1.0.1.tar.gz"
+  sha256 "5edc6b45a0ff73dcb4f1489a64cb3385d065a6f29185406197379522226a5d20"
   head "https://github.com/tseemann/abricate.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "d7153879084316c88d0cb63ecd67af403a6bb189ec7090b623bc8a092595d9d6" => :catalina
-    sha256 "90d725dce929665bd7cb9d2baa2686ff687d56c6e32a486388782c06a3b84671" => :x86_64_linux
+    sha256 "9aa025868b88f8c74aacc177dc6f672bf436654390baea43eaa2bef3de2c561e" => :catalina
+    sha256 "6c0477d78fe6c1cef673f51569500b9fbb100502ec99359ad168d5f1d56f5686" => :x86_64_linux
   end
 
   depends_on "cpanminus" => :build
-  depends_on "any2fasta"
-  depends_on "bioperl"
   depends_on "blast"
+  depends_on "brewsci/bio/any2fasta"
+  depends_on "brewsci/bio/bioperl"
   depends_on "openssl@1.1" # for Net::SSLeay
   depends_on "perl" # MacOS version too old
 
@@ -32,7 +32,7 @@ class Abricate < Formula
 
     libexec.install Dir["*"]
     %w[abricate abricate-get_db].each do |name|
-      (bin/name).write_env_script("#{libexec}/bin/#{name}", :PERL5LIB => ENV["PERL5LIB"])
+      (bin/name).write_env_script("#{libexec}/bin/#{name}", PERL5LIB: ENV["PERL5LIB"])
     end
   end
 
