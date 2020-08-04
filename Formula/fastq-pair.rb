@@ -4,6 +4,7 @@ class FastqPair < Formula
   homepage "https://github.com/linsalrob/fastq-pair"
   url "https://github.com/linsalrob/fastq-pair/archive/v1.0.tar.gz"
   sha256 "74fd5bae4d85cc02245ff1b03f31fa3788c50966d829b107076a806ae061da3b"
+  license "MIT"
   head "https://github.com/linsalrob/fastq-pair.git"
 
   bottle do
