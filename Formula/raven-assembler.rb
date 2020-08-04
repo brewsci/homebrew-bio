@@ -3,6 +3,7 @@ class RavenAssembler < Formula
   homepage "https://github.com/lbcb-sci/raven"
   url "https://github.com/lbcb-sci/raven/releases/download/0.0.0/raven-v0.0.0.tar.gz"
   sha256 "6ca62a0152e130216da2959099ca152aa21d6758770b74c430f515ff755c1b2d"
+  license "MIT"
 
   bottle do
     cellar :any_skip_relocation
