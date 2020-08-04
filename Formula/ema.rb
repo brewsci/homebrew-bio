@@ -4,6 +4,7 @@ class Ema < Formula
   homepage "http://ema.csail.mit.edu"
   url "https://github.com/arshajii/ema.git",
     tag: "v0.6.2", revision: "893be3470e613043bf75fefdc73396d40c3bc2bc"
+  license "MIT"
   head "https://github.com/arshajii/ema.git"
 
   bottle do
