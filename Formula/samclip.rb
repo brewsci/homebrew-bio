@@ -3,6 +3,7 @@ class Samclip < Formula
   homepage "https://github.com/tseemann/samclip"
   url "https://github.com/tseemann/samclip/archive/v0.4.0.tar.gz"
   sha256 "8196b705b0319b168949f42818eb3a6bcf96119a24daa950fa0d908d3111d127"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
