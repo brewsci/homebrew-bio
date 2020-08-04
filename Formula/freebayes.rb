@@ -5,6 +5,7 @@ class Freebayes < Formula
   url "https://github.com/ekg/freebayes.git",
       tag:      "v1.3.2",
       revision: "54bf40915ae7e46798503471ac57f593efdb5493"
+  license "MIT"
   head "https://github.com/ekg/freebayes.git"
 
   bottle do
