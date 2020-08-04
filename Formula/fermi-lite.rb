@@ -4,6 +4,7 @@ class FermiLite < Formula
   homepage "https://github.com/lh3/fermi-lite"
   url "https://github.com/lh3/fermi-lite/archive/v0.1.tar.gz"
   sha256 "661053bc7213b575912fc7be9cdfebc1c92a10319594a8e8f18542c9e2adda6e"
+  license "MIT"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
