@@ -4,6 +4,7 @@ class Samblaster < Formula
   homepage "https://github.com/GregoryFaust/samblaster"
   url "https://github.com/GregoryFaust/samblaster/archive/v.0.1.26.tar.gz"
   sha256 "6b42a53d64a3ed340852028546693a24c860f236fd70e90c2b24fde9dcc4fd63"
+  license "MIT"
   head "https://github.com/GregoryFaust/samblaster"
 
   bottle do
