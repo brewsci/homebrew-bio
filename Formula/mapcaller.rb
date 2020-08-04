@@ -3,6 +3,7 @@ class Mapcaller < Formula
   homepage "https://github.com/hsinnan75/MapCaller"
   url "https://github.com/hsinnan75/MapCaller/archive/v0.9.9.39.tar.gz"
   sha256 "554c1d4fd1d2978ddcc657e758bc052874d31421cada2124e42f62588b527578"
+  license "MIT"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
