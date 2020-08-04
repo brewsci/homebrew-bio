@@ -5,6 +5,7 @@ class BaliPhy < Formula
   homepage "http://www.bali-phy.org/"
   url "https://github.com/bredelings/BAli-Phy/archive/3.5.0.tar.gz"
   sha256 "4938eacf1d07749d6d7ebbdbd151c7d634089c8178efc6bcbf70e7825de73409"
+  license "GPL-2.0"
   head "https://github.com/bredelings/BAli-Phy.git"
 
   bottle do
