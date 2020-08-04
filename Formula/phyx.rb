@@ -4,6 +4,7 @@ class Phyx < Formula
   homepage "https://github.com/FePhyFoFum/phyx"
   url "https://github.com/FePhyFoFum/phyx/archive/v1.01.tar.gz"
   sha256 "edc1d6f20cc606b086f54c74631ec434ed49d76c2f3feea5302cd02da27e054a"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
