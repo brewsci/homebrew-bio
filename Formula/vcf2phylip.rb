@@ -5,6 +5,7 @@ class Vcf2phylip < Formula
   homepage "https://github.com/edgardomortiz/vcf2phylip"
   url "https://github.com/edgardomortiz/vcf2phylip/archive/v2.3.tar.gz"
   sha256 "fe72002a85d886df6527678c3c9f4610d1535d26c02ea0df133d10ad18e26272"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
