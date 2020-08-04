@@ -4,6 +4,7 @@ class Roary < Formula
   homepage "https://sanger-pathogens.github.io/Roary/"
   url "https://github.com/sanger-pathogens/Roary/archive/v3.13.0.tar.gz"
   sha256 "375f83c8750b0f4dea5b676471e73e94f3710bc3a327ec88b59f25eae1c3a1e8"
+  license "GPL-3.0"
   revision 1
 
   bottle do
