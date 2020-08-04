@@ -4,6 +4,7 @@ class Lsd2 < Formula
   homepage "https://github.com/tothuhien/lsd2"
   url "https://github.com/tothuhien/lsd2/archive/v1.7.1.tar.gz"
   sha256 "575e71f7736e127ba8360e08cb1fbfd297e7519c41381ef6057b48d142cacf74"
+  license "GPL-2.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
