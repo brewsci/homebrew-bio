@@ -4,6 +4,7 @@ class Beast2 < Formula
   homepage "https://www.beast2.org/"
   url "https://github.com/CompEvol/beast2/archive/v2.6.2.tar.gz"
   sha256 "5200318c6d1a0705a8ee861638e61aa064ca9d7801f685e73d82f8fc9ca515fb"
+  license "LGPL-2.1"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
