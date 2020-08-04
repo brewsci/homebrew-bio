@@ -4,6 +4,7 @@ class Kalign < Formula
   homepage "https://github.com/TimoLassmann/kalign"
   url "https://github.com/TimoLassmann/kalign/archive/v3.2.3.tar.gz"
   sha256 "8fed279d9f58d8263c839f449f9dd0f083dacb54c1dffcc2a9bc14bb9916b8ab"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
