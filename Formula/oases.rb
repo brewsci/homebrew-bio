@@ -4,6 +4,7 @@ class Oases < Formula
   homepage "https://www.ebi.ac.uk/~zerbino/oases/"
   url "https://www.ebi.ac.uk/~zerbino/oases/oases_0.2.08.tgz"
   sha256 "a90d469bd19d355edf6193dcf321f77216389d2831a849d4c151c1c0c771ab36"
+  license "GPL-3.0"
   head "https://github.com/dzerbino/oases"
 
   bottle do
