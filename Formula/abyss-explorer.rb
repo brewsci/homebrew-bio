@@ -4,6 +4,7 @@ class AbyssExplorer < Formula
   homepage "https://github.com/bcgsc/ABySS-explorer"
   url "https://github.com/bcgsc/ABySS-explorer/releases/download/v2.1.0/ABySS-explorer-2.1.0.tar.gz"
   sha256 "3f22d6d2a0bc5127453d6c9b7b6ddb609d602a3495384f73e603fe6b2967b3a7"
+  license "GPL-3.0"
   head "https://github.com/bcgsc/ABySS-explorer.git"
 
   bottle do
