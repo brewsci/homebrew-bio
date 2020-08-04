@@ -4,6 +4,7 @@ class Fastp < Formula
   homepage "https://github.com/OpenGene/fastp"
   url "https://github.com/OpenGene/fastp/archive/v0.20.1.tar.gz"
   sha256 "e1b663717850bed7cb560c0c540e9a05dd9448ec76978faaf853a6959fd5b1b3"
+  license "MIT"
   head "https://github.com/OpenGene/fastp.git"
 
   bottle do
