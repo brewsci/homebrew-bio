@@ -4,6 +4,7 @@ class Phyml < Formula
   homepage "http://www.atgc-montpellier.fr/phyml/"
   url "https://github.com/stephaneguindon/phyml/archive/v3.3.20200621.tar.gz"
   sha256 "a8243923ee08c74cab609a4b086ade66c6156fc2b24450e2a500108dc644c867"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
