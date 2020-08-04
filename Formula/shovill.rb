@@ -3,6 +3,7 @@ class Shovill < Formula
   homepage "https://github.com/tseemann/shovill"
   url "https://github.com/tseemann/shovill/archive/v1.1.0.tar.gz"
   sha256 "b7323e6586238821202cf9644963e584e7397a5cee23e564d00b07fcb344ecd2"
+  license "GPL-3.0"
   head "https://github.com/tseemann/shovill.git"
 
   bottle do
