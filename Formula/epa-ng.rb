@@ -4,6 +4,7 @@ class EpaNg < Formula
   homepage "https://github.com/Pbdas/epa-ng"
   url "https://github.com/Pbdas/epa-ng/archive/v0.3.7.tar.gz"
   sha256 "780f031aa5edb256eb5604d76d0c6cee067de205ae32534d7c61f3a30b5e4c67"
+  license "AGPL-3.0"
   head "https://github.com/Pbdas/epa-ng.git"
 
   bottle do
