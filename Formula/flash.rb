@@ -4,6 +4,7 @@ class Flash < Formula
   homepage "https://ccb.jhu.edu/software/FLASH/"
   url "https://downloads.sourceforge.net/project/flashpage/FLASH-1.2.11.tar.gz"
   sha256 "685ca6f7fedda07434d8ee03c536f4763385671c4509c5bb48beb3055fd236ac"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
