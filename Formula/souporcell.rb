@@ -4,6 +4,7 @@ class Souporcell < Formula
   homepage "https://github.com/wheaton5/souporcell"
   url "https://github.com/wheaton5/souporcell/archive/2.0.tar.gz"
   sha256 "308b0fc4edc410cf13a9d8e8572e80fd6ceadeb981703383f31b2fcaa138bf1c"
+  license "MIT"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
