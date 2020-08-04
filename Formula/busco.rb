@@ -8,6 +8,7 @@ class Busco < Formula
   homepage "https://busco.ezlab.org"
   url "https://gitlab.com/ezlab/busco/repository/4.1.1/archive.tar.bz2"
   sha256 "8c9bbdb9f04b89910f8eb8b4e48398faf9e9cb9ca9cabf9b5cd6c6f36c597936"
+  license "MIT"
   head "https://gitlab.com/ezlab/busco.git"
 
   bottle do
