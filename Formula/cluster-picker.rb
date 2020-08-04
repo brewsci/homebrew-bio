@@ -4,6 +4,7 @@ class ClusterPicker < Formula
   homepage "http://hiv.bio.ed.ac.uk/software.html"
   url "https://github.com/emmahodcroft/cluster-picker-and-cluster-matcher/raw/master/release/ClusterPicker_1.2.5.jar"
   sha256 "8698b2c1d57d53843534780f860827f09b6bce9a323e2363085597c00e20cbb7"
+  license "GPL-3.0"
 
   bottle do
     cellar :any_skip_relocation
