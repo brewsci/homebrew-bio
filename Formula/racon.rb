@@ -4,6 +4,7 @@ class Racon < Formula
   homepage "https://github.com/lbcb-sci/racon"
   url "https://github.com/lbcb-sci/racon/releases/download/1.4.13/racon-v1.4.13.tar.gz"
   sha256 "4220e98bf84768483bd94eef62a0821cffc74f4e7139c74685c08161909263b0"
+  license "MIT"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
