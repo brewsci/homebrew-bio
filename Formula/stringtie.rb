@@ -4,6 +4,7 @@ class Stringtie < Formula
   homepage "https://ccb.jhu.edu/software/stringtie/"
   url "https://github.com/gpertea/stringtie/releases/download/v2.1.4/stringtie-2.1.4.tar.gz"
   sha256 "a08383edc9d41340b2c932084f64ea09280ce53f758ec3464fc9a8cf6f7eb6b1"
+  license "MIT"
   head "https://github.com/gpertea/stringtie.git"
 
   bottle do
