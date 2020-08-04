@@ -3,6 +3,7 @@ class Ska < Formula
   homepage "https://github.com/simonrharris/SKA/releases"
   url "https://github.com/simonrharris/SKA/archive/v1.0.tar.gz"
   sha256 "fc6110c22c756158b190f50dc11d596265f9b0d09c28725b2b23ed22e2e4fbff"
+  license "MIT"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
