@@ -5,6 +5,7 @@ class Sepp < Formula
   homepage "https://github.com/smirarab/sepp"
   url "https://github.com/smirarab/sepp/archive/4.3.10.tar.gz"
   sha256 "24d8d410138563017e6f2f1263d5e34427f5bbddb875b72a036f7c879cef203b"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
