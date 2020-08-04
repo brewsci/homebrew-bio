@@ -3,6 +3,7 @@ class Varsim < Formula
   homepage "https://github.com/bioinform/varsim"
   url "https://github.com/bioinform/varsim/releases/download/v0.8.4/varsim-0.8.4.tar.gz"
   sha256 "36d2dd6ccd60cd97ea60fdab918d21cb520894d7d38276b837c39ef587977696"
+  license "BSD-2-Clause"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
