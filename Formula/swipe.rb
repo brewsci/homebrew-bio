@@ -4,6 +4,7 @@ class Swipe < Formula
   homepage "http://dna.uio.no/swipe/"
   url "https://github.com/torognes/swipe/archive/v2.1.0.tar.gz"
   sha256 "9706cc1419bba9e4d77e2afb3565ac4f0f34abc294c5c2d0914325ab3207859f"
+  license "AGPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
