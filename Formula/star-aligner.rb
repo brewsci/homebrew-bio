@@ -17,9 +17,9 @@ class StarAligner < Formula
 
   uses_from_macos "zlib"
 
-  fails_with :clang # needs openmp
-
-  depends_on "gcc" => :build if OS.mac? # needs openmp, linked statically
+  on_macos do
+    depends_on "libomp"
+  end
 
   def install
     cd "source" do
