@@ -28,7 +28,6 @@ class Fasttree < Formula
       -funroll-loops
       -DOPENMP
       -DUSE_DOUBLE
-      -DNO_SSE
     ]
     if OS.mac?
       opts << "-L#{Formula["libomp"].opt_lib}" << "-lomp"
