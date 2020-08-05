@@ -4,6 +4,7 @@ class Fasttree < Formula
   homepage "http://microbesonline.org/fasttree/"
   url "http://microbesonline.org/fasttree/FastTree-2.1.11.c"
   sha256 "9026ae550307374be92913d3098f8d44187d30bea07902b9dcbfb123eaa2050f"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -16,20 +17,23 @@ class Fasttree < Formula
   # http://www.microbesonline.org/fasttree/#BranchLen
   # http://darlinglab.org/blog/2015/03/23/not-so-fast-fasttree.html
 
-  option "without-double", "Disable double precision floating point. Use single precision floating point & enable SSE"
-  option "without-openmp", "Disable multithreading support"
-  option "without-sse", "Disable SSE parallel instructions"
-
-  if build.with? "openmp"
-    fails_with :clang # needs openmp
-    depends_on "gcc" if OS.mac? # needs openmp
+  on_macos do
+    depends_on "libomp"
   end
 
   def install
-    opts = %w[-O3 -finline-functions -funroll-loops]
-    opts << "-DOPENMP" << "-fopenmp" if build.with? "openmp"
-    opts << "-DUSE_DOUBLE" if build.with? "double"
-    opts << "-DNO_SSE" if build.without? "sse"
+    opts = %w[
+      -O3
+      -finline-functions
+      -funroll-loops
+      -DOPENMP
+      -DUSE_DOUBLE
+    ]
+    if OS.mac?
+      opts << "-L#{Formula["libomp"].opt_lib}" << "-lomp"
+    else
+      opts << "-fopenmp"
+    end
     system ENV.cc, "-o", "FastTree", "FastTree-#{version}.c", "-lm", *opts
     bin.install "FastTree"
   end
