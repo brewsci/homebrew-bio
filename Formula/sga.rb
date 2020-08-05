@@ -21,8 +21,9 @@ class Sga < Formula
   uses_from_macos "zlib"
 
   # Fix error: call to 'abs' is ambiguous
+  # https://github.com/jts/sga/pull/148
   patch do
-    url "https://github.com/jts/sga/pull/148.patch?full_index=1"
+    url "https://github.com/jts/sga/commit/ff74c3ee8120eff911e004d09c2fd14142c0fe75.patch?full_index=1"
     sha256 "257de28dec7c8fdfa8029bff0b14fc336f39a40984f8e7fc85903099d64887f0"
   end
 
