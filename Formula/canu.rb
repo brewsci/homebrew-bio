@@ -1,7 +1,7 @@
 class Canu < Formula
   # cite Koren_2017: "https://doi.org/10.1101/gr.215087.116"
   desc "Single molecule sequence assembler"
-  homepage "https://canu.readthedocs.org/en/latest/"
+  homepage "https://canu.readthedocs.io/en/latest/"
   url "https://github.com/marbl/canu/archive/v1.9.tar.gz"
   sha256 "6b086ab6086c050752166500378bc4b3b3543d4c617863e894d296171cee3385"
   head "https://github.com/marbl/canu.git"
