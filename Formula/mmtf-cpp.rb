@@ -4,6 +4,7 @@ class MmtfCpp < Formula
   homepage "https://github.com/rcsb/mmtf-cpp"
   url "https://github.com/rcsb/mmtf-cpp/archive/v1.0.0.tar.gz"
   sha256 "881f69c4bb56605fa63fd5ca50842facc4947f686cbf678ad04930674d714f40"
+  license "MIT"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

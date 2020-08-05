@@ -4,6 +4,7 @@ class Uniqtag < Formula
   homepage "https://github.com/sjackman/uniqtag"
   url "https://github.com/sjackman/uniqtag/archive/1.0.tar.gz"
   sha256 "8ff0dd850c15ff3468707ae38a171deb6518866a699964a1aeeec9c90ded7313"
+  license "MIT"
   head "https://github.com/sjackman/uniqtag.git"
 
   uses_from_macos "ruby"

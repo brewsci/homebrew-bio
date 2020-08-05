@@ -3,6 +3,7 @@ class Filtlong < Formula
   homepage "https://github.com/rrwick/Filtlong"
   url "https://github.com/rrwick/Filtlong/archive/v0.2.0.tar.gz"
   sha256 "a4afb925d7ced8d083be12ca58911bb16d5348754e7c2f6431127138338ee02a"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

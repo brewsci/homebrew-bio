@@ -4,6 +4,7 @@ class Lighter < Formula
   homepage "https://github.com/mourisl/Lighter"
   url "https://github.com/mourisl/Lighter/archive/v1.1.2.tar.gz"
   sha256 "89abc34137beffc43382fbe53deb25c3c2f5cee7e6ca2b7f669931d70065993a"
+  license "GPL-3.0"
   head "https://github.com/mourisl/Lighter.git"
 
   bottle do

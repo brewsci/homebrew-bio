@@ -4,6 +4,7 @@ class CdHit < Formula
   homepage "http://cd-hit.org"
   url "https://github.com/weizhongli/cdhit/archive/V4.8.1.tar.gz"
   sha256 "f8bc3cdd7aebb432fcd35eed0093e7a6413f1e36bbd2a837ebc06e57cdb20b70"
+  license "GPL-2.0"
   head "https://github.com/weizhongli/cdhit.git"
 
   bottle do

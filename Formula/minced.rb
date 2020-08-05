@@ -3,6 +3,7 @@ class Minced < Formula
   homepage "https://github.com/ctSkennerton/minced"
   url "https://github.com/ctSkennerton/minced/releases/download/0.4.0/minced.jar"
   sha256 "b643d7e56335c0ce9fb95aee7958accb7ebc50ce385f4e12a5abc5547bf7fad6"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

@@ -3,6 +3,7 @@ class Repaq < Formula
   homepage "https://github.com/OpenGene/repaq"
   url "https://github.com/OpenGene/repaq/archive/v0.2.0.tar.gz"
   sha256 "60c0a0449d45a3cd346f67cd6db93a961ff7f9d41e787f5c39834d0b1ad3a1bc"
+  license "MIT"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

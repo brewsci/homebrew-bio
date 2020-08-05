@@ -3,6 +3,7 @@ class Bam2fastx < Formula
   homepage "https://github.com/PacificBiosciences/bam2fastx"
   url "https://github.com/PacificBiosciences/bam2fastx/archive/1.3.0.tar.gz"
   sha256 "be5639807f1ffd2fb972e570068173971026300a79e879384fbf6ad20b5ab762"
+  license "BSD-3-Clause-Clear"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

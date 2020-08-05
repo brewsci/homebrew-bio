@@ -4,6 +4,7 @@ class R8s < Formula
   homepage "http://ceiba.biosci.arizona.edu/r8s/"
   url "https://downloads.sourceforge.net/project/r8s/r8s1.81.tar.gz"
   sha256 "9e89d7851d74d74487d147b77177a717e6c659b485c9b67f516340a6ed595080"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

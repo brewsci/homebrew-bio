@@ -3,6 +3,7 @@ class Ngmaster < Formula
   homepage "https://github.com/MDU-PHL/ngmaster"
   url "https://github.com/MDU-PHL/ngmaster/archive/v0.5.6.tar.gz"
   sha256 "908b8504804026554a0ec357933b773f6f47b98a0ce5fff77894e743d34200bc"
+  license "GPL-2.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

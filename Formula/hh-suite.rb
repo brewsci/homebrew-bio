@@ -4,6 +4,7 @@ class HhSuite < Formula
   homepage "https://github.com/soedinglab/hh-suite"
   url "https://github.com/soedinglab/hh-suite/archive/v3.2.0.tar.gz"
   sha256 "6b870dcfbc1ffb9dd664a45415fcd13cf5970f49d1c7b824160c260fa138e6d6"
+  license "GPL-3.0"
   revision 1
 
   bottle do

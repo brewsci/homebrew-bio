@@ -4,6 +4,7 @@ class EMem < Formula
   homepage "https://www.csd.uwo.ca/~ilie/E-MEM/"
   url "https://github.com/lucian-ilie/E-MEM/archive/v1.0.1.tar.gz"
   sha256 "70a5a1e8b4e190d117b8629fff3493a4762708c8c0fe9eae84da918136ceafea"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

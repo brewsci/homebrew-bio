@@ -4,6 +4,7 @@ class Ntcard < Formula
   homepage "https://github.com/bcgsc/ntCard"
   url "https://github.com/bcgsc/ntCard/releases/download/1.2.1/ntcard-1.2.1.tar.gz"
   sha256 "2d635dec6e293780a5ae2b7bb422ff5cc825a03270b507f5061cbf0f09ee7076"
+  license "MIT"
 
   head "https://github.com/bcgsc/ntCard"
 

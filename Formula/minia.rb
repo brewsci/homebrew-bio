@@ -4,6 +4,7 @@ class Minia < Formula
   homepage "http://minia.genouest.org/"
   url "https://github.com/GATB/minia/releases/download/v3.2.1/minia-v3.2.1-Source.tar.gz"
   sha256 "c431915f034bc58887f9a14f6f65be2c83e0faae312ef330c3a11c6ba131162c"
+  license "AGPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

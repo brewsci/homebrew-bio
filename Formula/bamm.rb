@@ -4,6 +4,7 @@ class Bamm < Formula
   homepage "http://bamm-project.org"
   url "https://github.com/macroevolution/bamm/archive/v2.5.0.tar.gz"
   sha256 "526eef85ef011780ee21fe65cbc10ecc62efe54044102ae40bdef49c2985b4f4"
+  license "GPL-2.0"
   head "https://github.com/macroevolution/bamm.git"
 
   bottle do

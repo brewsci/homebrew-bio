@@ -3,6 +3,7 @@ class Lastz < Formula
   homepage "https://www.bx.psu.edu/~rsharris/lastz/"
   url "https://github.com/lastz/lastz/archive/1.04.03.tar.gz"
   sha256 "c58ed8e37c4b0e82492b3a2b3e12447a3c40286fb8358906d19f10b0a713e9f4"
+  license "MIT"
   head "https://github.com/lastz/lastz"
 
   bottle do

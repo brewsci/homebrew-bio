@@ -6,6 +6,7 @@ class Bowtie < Formula
   homepage "https://bowtie-bio.sourceforge.io/"
   url "https://github.com/BenLangmead/bowtie/archive/v1.2.3.tar.gz"
   sha256 "86402114caeacbb3a3030509cb59f0b7e96361c7b3ee2dd50e2cd68200898823"
+  license "Artistic-2.0"
   revision 1
   head "https://github.com/BenLangmead/bowtie.git"
 

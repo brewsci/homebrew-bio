@@ -4,6 +4,7 @@ class Nextflow < Formula
   homepage "https://www.nextflow.io/"
   url "https://github.com/nextflow-io/nextflow/releases/download/v19.04.1/nextflow"
   sha256 "21318d8b64095a548f6baf0ef2811f33452e4f9f8a502a46a0aab7815ee34c69"
+  license "Apache-2.0"
   head "https://github.com/nextflow-io/nextflow.git"
 
   bottle do

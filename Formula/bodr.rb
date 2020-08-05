@@ -3,6 +3,7 @@ class Bodr < Formula
   homepage "https://www.sourceforge.net/projects/bodr"
   url "https://downloads.sourceforge.net/project/bodr/bodr/10/bodr-10.tar.bz2"
   sha256 "738a0f0e263cdc088581d0a67a0ea16ec586ceb424704d0ff73bdb5da5d4ee81"
+  license "CC0-1.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

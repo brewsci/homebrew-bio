@@ -3,6 +3,7 @@ class Dehomopolymerate < Formula
   homepage "https://github.com/tseemann/dehomopolymerate"
   url "https://github.com/tseemann/dehomopolymerate/archive/v0.4.0.tar.gz"
   sha256 "89b825e8092600cd8a81c81db6b40c1f206ea6b0f1853a15185aefaf24d02383"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

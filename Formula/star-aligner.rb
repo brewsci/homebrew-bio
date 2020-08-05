@@ -5,6 +5,7 @@ class StarAligner < Formula
   url "https://github.com/alexdobin/STAR/archive/2.7.3a.tar.gz"
   version "2.7.3a"
   sha256 "de204175351dc5f5ecc40cf458f224617654bdb8e00df55f0bb03a5727bf26f9"
+  license "MIT"
   head "https://github.com/alexdobin/STAR.git"
 
   bottle do

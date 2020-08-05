@@ -4,6 +4,7 @@ class Fastani < Formula
   homepage "https://github.com/ParBLiSS/FastANI"
   url "https://github.com/ParBLiSS/FastANI/archive/v1.31.tar.gz"
   sha256 "3a1f2da7fa940a0650a39c5b8176f475fe74eea6beb0bc8ea1394d94defa5b3d"
+  license "Apache-2.0"
   head "https://github.com/ParBLiSS/FastANI.git"
 
   bottle do

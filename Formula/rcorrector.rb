@@ -4,6 +4,7 @@ class Rcorrector < Formula
   homepage "https://github.com/mourisl/Rcorrector"
   url "https://github.com/mourisl/Rcorrector/archive/v1.0.4.tar.gz"
   sha256 "ac1754d71aff09b395b3643ec4248ad498e14675a6585296b33918e3c64c2f25"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

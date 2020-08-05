@@ -4,6 +4,7 @@ class Subread < Formula
   homepage "https://academic.oup.com/nar/article/41/10/e108/1075719"
   url "https://cfhcable.dl.sourceforge.net/project/subread/subread-2.0.1/subread-2.0.1-source.tar.gz"
   sha256 "d808eb5b1823c572cb45a97c95a3c5acb3d8e29aa47ec74e3ca1eb345787c17b"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

@@ -4,6 +4,7 @@ class Ntedit < Formula
   homepage "https://github.com/bcgsc/ntEdit"
   url "https://github.com/bcgsc/ntEdit/archive/v1.3.2.tar.gz"
   sha256 "acbd491416efb6c6ba17fe7ed3d11b62ca352f6b55713044859728c464ed00dc"
+  license "GPL-3.0"
   head "https://github.com/bcgsc/ntEdit.git"
 
   bottle do

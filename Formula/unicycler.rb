@@ -4,6 +4,7 @@ class Unicycler < Formula
   homepage "https://github.com/rrwick/Unicycler"
   url "https://github.com/rrwick/Unicycler/archive/v0.4.7.tar.gz"
   sha256 "a8cf65e46dc2694b0fbd4e9190c73a1f300921457aadfab27a1792b785620d63"
+  license "GPL-3.0"
   revision 1
   head "https://github.com/rrwick/Unicycler.git"
 

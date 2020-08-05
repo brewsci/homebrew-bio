@@ -4,6 +4,7 @@ class Pirate < Formula
   homepage "https://github.com/SionBayliss/PIRATE"
   url "https://github.com/SionBayliss/PIRATE/archive/v1.0.4.tar.gz"
   sha256 "ed2bad7d73d5c445f565fd7532265b75dad079594d589ece87ae738b712f6bd3"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

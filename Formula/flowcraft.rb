@@ -3,6 +3,7 @@ class Flowcraft < Formula
   homepage "https://github.com/assemblerflow/flowcraft"
   url "https://github.com/assemblerflow/flowcraft/archive/1.4.1.tar.gz"
   sha256 "ca5f698f286b6bcc6fc15cb7767ae903e06f6b7af11183917845b1be4304f11f"
+  license "GPL-3.0"
   revision 1
   head "https://github.com/assemblerflow/flowcraft.git", branch: "dev"
 

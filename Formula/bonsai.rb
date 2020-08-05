@@ -3,6 +3,7 @@ class Bonsai < Formula
   homepage "https://github.com/dnbaker/bonsai"
   url "https://github.com/dnbaker/bonsai/archive/v0.3.tar.gz"
   sha256 "f89efdf87c4d4a20bf3b8d4e9a11120b44b2b6b3055698c1e48d7790088618b3"
+  license "MIT"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

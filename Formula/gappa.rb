@@ -5,6 +5,7 @@ class Gappa < Formula
   homepage "https://github.com/lczech/gappa"
   url "https://github.com/lczech/gappa/archive/v0.6.0.tar.gz"
   sha256 "d11fd5823ab6de4a195e76ff8ecb7f6b36f76c3a6d9e13238d52446ade80ba70"
+  license "GPL-3.0"
   head "https://github.com/lczech/gappa.git"
 
   bottle do

@@ -4,6 +4,7 @@ class Miniasm < Formula
   homepage "https://github.com/lh3/miniasm"
   url "https://github.com/lh3/miniasm/archive/v0.3.tar.gz"
   sha256 "9b688454f30f99cf1a0b0b1316821ad92fbd44d83ff0b35b2403ee8692ba093d"
+  license "MIT"
   head "https://github.com/lh3/miniasm.git"
 
   bottle do
