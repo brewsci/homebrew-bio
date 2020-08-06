@@ -11,8 +11,8 @@ class StarAligner < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "6f38f571a24b2fa0baec2674da051d51dd74c84823c9ef1e3537a15565d21559" => :mojave
-    sha256 "17ebb8d1e4f79aad4158bb61573c6522c2a2407fccd2bae43d1d8044cd651981" => :x86_64_linux
+    sha256 "f93b98624ad490ec9aa0d3e44f2323040c37e87210d7a14b29aa65f31eb4808e" => :catalina
+    sha256 "53ea9c1f680542443d38d58d393b22660afec15a497ac4e78c706e380abe918d" => :x86_64_linux
   end
 
   uses_from_macos "zlib"
