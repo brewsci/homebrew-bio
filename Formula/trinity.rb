@@ -33,11 +33,6 @@ class Trinity < Formula
   cxxstdlib_check :skip
 
   def install
-    if OS.mac?
-      ENV.append "LDFLAGS", "-L#{Formula["libomp"].opt_lib}"
-      ENV.append "LDFLAGS", "-lomp"
-    end
-
     inreplace "Trinity" do |s|
       s.gsub! "$ROOTDIR/trinity-plugins/Trimmomatic/trimmomatic.jar",
         Dir["#{Formula["trimmomatic"].libexec}/trimmomatic*"].first
@@ -48,8 +43,11 @@ class Trinity < Formula
     inreplace "util/misc/run_jellyfish.pl",
       '$JELLYFISH_DIR = $FindBin::RealBin . "/../../trinity-plugins/jellyfish-1.1.3";',
       "$JELLYFISH_DIR = \"#{Formula["jellyfish"].opt_prefix}\";"
+    
+    args = []
+    args << "LDFLAGS=-L#{Formula["libomp"].opt_lib} -lomp" if OS.mac?
 
-    system "make", "all", "plugins", "test"
+    system "make", "all", "plugins", "test", *args
     rm Dir["**/config.log"]
     rm Dir["**/*.tar.gz"]
     rm_r Dir["**/build"]
