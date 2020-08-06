@@ -5,8 +5,10 @@ class Flye < Formula
   desc "Fast and accurate de novo assembler for single molecule sequencing reads"
   homepage "https://github.com/fenderglass/Flye"
   url "https://github.com/fenderglass/Flye/archive/2.8-1.tar.gz"
-  version "2.8-1"
+  version "2.8"
   sha256 "bb9f7e38812f7f5eacae20c15c675babeebd640f4f030f5d9a07b052466ebf34"
+  license "BSD-3-Clause"
+  revision 1
   head "https://github.com/fenderglass/Flye.git", branch: "flye"
 
   bottle do
