@@ -33,6 +33,11 @@ class Trinity < Formula
   cxxstdlib_check :skip
 
   def install
+    if OS.mac?
+      ENV.append "LDFLAGS", "-L#{Formula["libomp"].opt_lib}"
+      ENV.append "LDFLAGS", "-lomp"
+    end
+
     inreplace "Trinity" do |s|
       s.gsub! "$ROOTDIR/trinity-plugins/Trimmomatic/trimmomatic.jar",
         Dir["#{Formula["trimmomatic"].libexec}/trimmomatic*"].first
