@@ -24,6 +24,7 @@ class StarAligner < Formula
   def install
     cd "source" do
       if OS.mac?
+        inreplace "Makefile", "-static-libgcc", ""
         system "make", "STARforMacStatic", "STARlongForMacStatic"
       else
         system "make", "STAR", "STARlong"
