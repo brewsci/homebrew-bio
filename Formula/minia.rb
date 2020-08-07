@@ -21,9 +21,17 @@ class Minia < Formula
     ENV["CC"] = ENV.cc
     ENV["CXX"] = ENV.cxx
     mkdir "build" do
-      args = std_cmake_args
-      args << "-DSKIP_DOC=1"
+      args = std_cmake_args + [
+        "-DSKIP_DOC=1",
+        "-DCMAKE_C_COMPILER=#{ENV.cc}",
+        "-DCMAKE_CXX_COMPILER=#{ENV.cxx}",
+      ]
       system "cmake", "..", *args
+      inreplace [
+        "../src/build_info.hpp",
+        "ext/gatb-core/include/gatb/system/api/build_info.hpp",
+        "ext/gatb-core/thirdparty/hdf5/CMakeFiles/h5cc",
+      ], "#{HOMEBREW_LIBRARY}/Homebrew/shims/mac/super/clang", ENV.cc
       system "make"
       system "make", "install"
     end
