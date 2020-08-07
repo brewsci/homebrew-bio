@@ -51,7 +51,7 @@ class Trinity < Formula
       ENV.append "CXXFLAGS", "-lomp"
     end
 
-    system "make", "all", "plugins", "test", *args
+    system "make", "all", "plugins", "test"#, *args
     rm Dir["**/config.log"]
     rm Dir["**/*.tar.gz"]
     rm_r Dir["**/build"]
