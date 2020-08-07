@@ -17,7 +17,9 @@ class Minced < Formula
   def install
     jar = "minced.jar"
     libexec.install jar
-    bin.write_jar_script libexec/jar, "minced"
+    (libexec/"bin").write_jar_script libexec/jar, "minced"
+    (libexec/"bin/minced").chmod 0755
+    (bin/"minced").write_env_script libexec/"bin/minced", PATH: "#{Formula["openjdk"].opt_bin}:$PATH"
   end
 
   test do
