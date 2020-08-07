@@ -18,8 +18,10 @@ class Mothur < Formula
   depends_on "readline" unless OS.mac?
 
   def install
-    boost = Formula["boost"]
+    # Fixed in https://github.com/mothur/mothur/pull/736
     inreplace "Makefile", "./make", "make"
+
+    boost = Formula["boost"]
     system "make", "USEBOOST=yes", "BOOST_LIBRARY_DIR=#{boost.opt_lib}", "BOOST_INCLUDE_DIR=#{boost.opt_include}"
     bin.install "mothur", "uchime"
   end
