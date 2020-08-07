@@ -9,8 +9,8 @@ class Beast2 < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "9df205ac16df2f7a2ef1cb0856ef80424566ea1c419af55d1ebab69d740dfbff" => :catalina
-    sha256 "99b53f437e0b421f6df437c8c48cca98f940891a6bf01f43edbcb305b8df5547" => :x86_64_linux
+    sha256 "91b1bb0fcd2ddc4fb60777946c9ce057e0a01125096a0557c20ce4b6ecd4ab3c" => :catalina
+    sha256 "0f9fea00d1f42297827baa50bf394be9c425da3343affe67ee46cc58d675edef" => :x86_64_linux
   end
 
   depends_on "ant" => :build
