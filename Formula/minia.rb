@@ -18,11 +18,10 @@ class Minia < Formula
   uses_from_macos "zlib"
 
   def install
+    ENV["CC"] = ENV.cc
+    ENV["CXX"] = ENV.cxx
     mkdir "build" do
-      args = std_cmake_args + [
-        "-DCMAKE_C_COMPILER=#{ENV.cc}",
-        "-DCMAKE_CXX_COMPILER=#{ENV.cxx}",
-      ]
+      args = std_cmake_args
       args << "-DSKIP_DOC=1"
       system "cmake", "..", *args
       system "make"
