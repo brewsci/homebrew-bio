@@ -18,9 +18,11 @@ class Minia < Formula
   uses_from_macos "zlib"
 
   def install
-    inreplace "src/build_info.hpp.in", "${CMAKE_C_COMPILER}", ENV.cc
     mkdir "build" do
-      args = std_cmake_args
+      args = std_cmake_args + [
+        "-DCMAKE_C_COMPILER=#{ENV.cc}",
+        "-DCMAKE_CXX_COMPILER=#{ENV.cxx}",
+      ]
       args << "-DSKIP_DOC=1"
       system "cmake", "..", *args
       system "make"
