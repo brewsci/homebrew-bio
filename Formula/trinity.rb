@@ -43,9 +43,13 @@ class Trinity < Formula
     inreplace "util/misc/run_jellyfish.pl",
       '$JELLYFISH_DIR = $FindBin::RealBin . "/../../trinity-plugins/jellyfish-1.1.3";',
       "$JELLYFISH_DIR = \"#{Formula["jellyfish"].opt_prefix}\";"
-    
-    args = []
-    args << "LDFLAGS=-L#{Formula["libomp"].opt_lib} -lomp" if OS.mac?
+
+    # args = []
+    # args << "CXXFLAGS=-L#{Formula["libomp"].opt_lib} -lomp" if OS.mac?
+    if OS.mac?
+      ENV.append "CXXFLAGS", "-L#{Formula["libomp"].opt_lib}"
+      ENV.append "CXXFLAGS", "-lomp"
+    end
 
     system "make", "all", "plugins", "test", *args
     rm Dir["**/config.log"]
