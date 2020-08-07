@@ -8,7 +8,6 @@ class Flye < Formula
   version "2.8"
   sha256 "bb9f7e38812f7f5eacae20c15c675babeebd640f4f030f5d9a07b052466ebf34"
   license "BSD-3-Clause"
-  revision 1
   head "https://github.com/fenderglass/Flye.git", branch: "flye"
 
   bottle do
