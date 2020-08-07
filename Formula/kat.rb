@@ -18,7 +18,7 @@ class Kat < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
 
-  depends_on "matplotlib"
+  depends_on "brewsci/bio/matplotlib"
   depends_on "scipy"
 
   resource "tabulate" do
