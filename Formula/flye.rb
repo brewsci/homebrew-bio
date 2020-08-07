@@ -13,8 +13,8 @@ class Flye < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "fc4bf0891ac1f34c951b1418f95cbc8d565aa1cce6f26d63dda9e7a9fd7f3e5e" => :catalina
-    sha256 "cba8b65c9b9f81a59d6cd455557fe357a305a6a842ee38745c81fc283d4a2473" => :x86_64_linux
+    sha256 "0c461022fa8f1b41ac6ea79bb320a913c09da9cb89930c912e0be0edddf253c7" => :catalina
+    sha256 "1f0c23f01533968deab9bc997bd116cea9a11b1941f325981370d9899815cc83" => :x86_64_linux
   end
 
   depends_on "python@3.8"
