@@ -27,18 +27,19 @@ class Kat < Formula
   end
 
   def install
-    resources.each do |r|
-      r.stage do
-        system "python3", *Language::Python.setup_install_args(libexec)
-      end
-    end
-
+    # Disable unsupported compiler flags on macOS
     inreplace [
       "deps/boost/tools/build/src/tools/darwin.py",
       "deps/boost/tools/build/src/tools/darwin.jam",
     ] do |s|
       s.gsub! "-fcoalesce-templates", ""
       s.gsub! "-Wno-long-double", ""
+    end
+
+    resources.each do |r|
+      r.stage do
+        system "python3", *Language::Python.setup_install_args(libexec)
+      end
     end
 
     system "./build_boost.sh"
