@@ -96,7 +96,7 @@ class Matplotlib < Formula
     end
     (lib/"python#{xy}/site-packages/homebrew-matplotlib.pth").write "#{site_packages}\n"
 
-    system "pip3", "install", "--prefix=#{libexec}", "."
+    system "pip3", "install", "--prefix=#{prefix}", "."
   end
 
   test do
