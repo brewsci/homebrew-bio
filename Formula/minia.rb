@@ -19,10 +19,10 @@ class Minia < Formula
 
   def install
     mkdir "build" do
-      args = std_cmake_args + [
-        "-DSKIP_DOC=1",
-        "-DCMAKE_C_COMPILER=/usr/bin/#{OS.mac? ? "clang" : "gcc"}",
-        "-DCMAKE_CXX_COMPILER=/usr/bin/#{OS.mac? ? "clang++" : "g++"}",
+      args = std_cmake_args + %W[
+        -DSKIP_DOC=1
+        -DCMAKE_C_COMPILER=/usr/bin/#{OS.mac? ? "clang" : "gcc"}
+        -DCMAKE_CXX_COMPILER=/usr/bin/#{OS.mac? ? "clang++" : "g++"}
       ]
       system "cmake", "..", *args
       system "make"
