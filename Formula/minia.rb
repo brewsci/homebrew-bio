@@ -18,27 +18,29 @@ class Minia < Formula
   uses_from_macos "zlib"
 
   def install
-    ENV["CC"] = ENV.cc
-    ENV["CXX"] = ENV.cxx
+    # ENV["CC"] = ENV.cc
+    # ENV["CXX"] = ENV.cxx
     mkdir "build" do
+      cc = OS.mac? ? "/usr/bin/clang" : "/usr/bin/gcc"
+      cxx = OS.mac? ? "/usr/bin/clang++" : "/usr/bin/g++"
       args = std_cmake_args + [
         "-DSKIP_DOC=1",
-        "-DCMAKE_C_COMPILER=#{ENV.cc}",
-        "-DCMAKE_CXX_COMPILER=#{ENV.cxx}",
+        "-DCMAKE_C_COMPILER=#{cc}",
+        "-DCMAKE_CXX_COMPILER=#{cxx}",
       ]
       system "cmake", "..", *args
-      os = OS.mac? ? "mac" : "linux"
-      files = [
-        "../src/build_info.hpp",
-        "CMakeCache.txt",
-        "CMakeFiles/#{Formula["cmake"].version}/CMakeCCompiler.cmake",
-        "CMakeFiles/#{Formula["cmake"].version}/CMakeCXXCompiler.cmake",
-        "ext/gatb-core/include/gatb/system/api/build_info.hpp",
-        "ext/gatb-core/thirdparty/hdf5/CMakeFiles/h5cc",
-        "ext/gatb-core/thirdparty/hdf5/DartConfiguration.tcl",
-        "ext/gatb-core/thirdparty/hdf5/libhdf5.settings",
-      ]
-      inreplace files, "#{HOMEBREW_LIBRARY}/Homebrew/shims/#{os}/super/", "/usr/bin/"
+      # os = OS.mac? ? "mac" : "linux"
+      # files = [
+      #   "../src/build_info.hpp",
+      #   "CMakeCache.txt",
+      #   "CMakeFiles/#{Formula["cmake"].version}/CMakeCCompiler.cmake",
+      #   "CMakeFiles/#{Formula["cmake"].version}/CMakeCXXCompiler.cmake",
+      #   "ext/gatb-core/include/gatb/system/api/build_info.hpp",
+      #   "ext/gatb-core/thirdparty/hdf5/CMakeFiles/h5cc",
+      #   "ext/gatb-core/thirdparty/hdf5/DartConfiguration.tcl",
+      #   "ext/gatb-core/thirdparty/hdf5/libhdf5.settings",
+      # ]
+      # inreplace files, "#{HOMEBREW_LIBRARY}/Homebrew/shims/#{os}/super/", "/usr/bin/"
       system "make"
       system "make", "install"
     end
