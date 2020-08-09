@@ -2,9 +2,9 @@ class Trinity < Formula
   # cite Grabherr_2011: "https://doi.org/10.1038/nbt.1883"
   desc "RNA-Seq de novo assembler"
   homepage "https://trinityrnaseq.github.io"
-  url "https://github.com/trinityrnaseq/trinityrnaseq/releases/download/v2.11.0/trinityrnaseq-v2.11.0.FULL.tar.gz"
-  version "2.11.0"
-  sha256 "230798b3c2eea7043098de3055a1fe150213929b0773e6d374fc0c7219c310c6"
+  url "https://github.com/trinityrnaseq/trinityrnaseq/releases/download/v2.10.0/trinityrnaseq-v2.10.0.FULL.tar.gz"
+  version "2.10.0"
+  sha256 "4b349456363c84d36fee5f3608f608101510bfa5ae607a0939c8391aa931fd50"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -26,11 +26,13 @@ class Trinity < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "libomp"
+    depends_on "gcc" # needs openmp
   end
 
   # Trinity doesn't link to eXpress, which depends on Boost, built with C++11
   cxxstdlib_check :skip
+
+  fails_with :clang # needs openmp
 
   def install
     inreplace "Trinity" do |s|
@@ -44,14 +46,7 @@ class Trinity < Formula
       '$JELLYFISH_DIR = $FindBin::RealBin . "/../../trinity-plugins/jellyfish-1.1.3";',
       "$JELLYFISH_DIR = \"#{Formula["jellyfish"].opt_prefix}\";"
 
-    # args = []
-    # args << "CXXFLAGS=-L#{Formula["libomp"].opt_lib} -lomp" if OS.mac?
-    if OS.mac?
-      ENV.append "CXXFLAGS", "-L#{Formula["libomp"].opt_lib}"
-      ENV.append "CXXFLAGS", "-lomp"
-    end
-
-    system "make", "all", "plugins", "test" #, *args
+    system "make", "all", "plugins", "test"
     rm Dir["**/config.log"]
     rm Dir["**/*.tar.gz"]
     rm_r Dir["**/build"]
