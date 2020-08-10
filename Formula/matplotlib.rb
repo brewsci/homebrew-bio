@@ -21,8 +21,8 @@ end
 class Matplotlib < Formula
   desc "Python 2D plotting library"
   homepage "https://matplotlib.org"
-  url "https://files.pythonhosted.org/packages/eb/a0/31b6ba00bc4dcbc06f0b80d1ad6119a9cc3081ecb04a00117f6c1ca3a084/matplotlib-2.2.3.tar.gz"
-  sha256 "7355bf757ecacd5f0ac9dd9523c8e1a1103faadf8d33c22664178e17533f8ce5"
+  url "https://files.pythonhosted.org/packages/10/5f/10c310c943f29e67976dcc26dccf9305a5a9bc7483e631ee74a0f95aa5b2/matplotlib-2.2.5.tar.gz"
+  sha256 "a3037a840cd9dfdc2df9fee8af8f76ca82bfab173c0f9468193ca7a89a2b60ea"
   head "https://github.com/matplotlib/matplotlib.git"
 
   bottle do
@@ -38,7 +38,7 @@ class Matplotlib < Formula
   depends_on "freetype"
   depends_on "libpng"
   depends_on "numpy"
-  depends_on "python"
+  depends_on "python@3.8"
 
   resource "setuptools" do
     url "https://files.pythonhosted.org/packages/dc/8c/7c9869454bdc53e72fb87ace63eac39336879eef6f2bf96e946edbf03e90/setuptools-33.1.1.zip"
@@ -96,7 +96,7 @@ class Matplotlib < Formula
     end
     (lib/"python#{xy}/site-packages/homebrew-matplotlib.pth").write "#{site_packages}\n"
 
-    system "python3", *Language::Python.setup_install_args(prefix)
+    system "pip3", "install", "--prefix=#{prefix}", "."
   end
 
   test do
