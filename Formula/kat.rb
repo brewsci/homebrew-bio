@@ -5,7 +5,7 @@ class Kat < Formula
   url "https://github.com/TGAC/KAT/archive/Release-2.4.1.tar.gz"
   sha256 "068bd63b022588058d2ecae817140ca67bba81a9949c754c6147175d73b32387"
   license "GPL-3.0"
-  revision 2
+  revision 3
   head "https://github.com/TGAC/KAT.git"
 
   bottle do
@@ -18,7 +18,7 @@ class Kat < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
 
-  depends_on "matplotlib"
+  depends_on "brewsci/bio/matplotlib"
   depends_on "scipy"
 
   resource "tabulate" do
@@ -27,6 +27,15 @@ class Kat < Formula
   end
 
   def install
+    # Disable unsupported compiler flags on macOS
+    inreplace [
+      "deps/boost/tools/build/src/tools/darwin.py",
+      "deps/boost/tools/build/src/tools/darwin.jam",
+    ] do |s|
+      s.gsub! "-fcoalesce-templates", ""
+      s.gsub! "-Wno-long-double", ""
+    end
+
     resources.each do |r|
       r.stage do
         system "python3", *Language::Python.setup_install_args(libexec)
