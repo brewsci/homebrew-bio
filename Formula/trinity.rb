@@ -2,9 +2,9 @@ class Trinity < Formula
   # cite Grabherr_2011: "https://doi.org/10.1038/nbt.1883"
   desc "RNA-Seq de novo assembler"
   homepage "https://trinityrnaseq.github.io"
-  url "https://github.com/trinityrnaseq/trinityrnaseq/releases/download/v2.10.0/trinityrnaseq-v2.10.0.FULL.tar.gz"
-  version "2.10.0"
-  sha256 "4b349456363c84d36fee5f3608f608101510bfa5ae607a0939c8391aa931fd50"
+  url "https://github.com/trinityrnaseq/trinityrnaseq/releases/download/v2.11.0/trinityrnaseq-v2.11.0.FULL.tar.gz"
+  version "2.11.0"
+  sha256 "230798b3c2eea7043098de3055a1fe150213929b0773e6d374fc0c7219c310c6"
   license "BSD-3-Clause"
 
   bottle do
@@ -39,6 +39,16 @@ class Trinity < Formula
 
   def install
     ENV.cxx11
+
+    rm_r "Butterfly/Butterfly"
+    rm_r "trinity-plugins/bamsifter/htslib"
+
+    inreplace "trinity-plugins/bamsifter/Makefile" do |s|
+      s.gsub! "sift_bam_max_cov: sift_bam_max_cov.cpp htslib/version.h",
+              "sift_bam_max_cov: sift_bam_max_cov.cpp"
+      s.gsub! "-L./htslib/build/lib/", "-L#{Formula["htslib"].opt_lib}"
+      s.gsub! "-I./htslib/build/include", "-I#{Formula["htslib"].opt_include}"
+    end
 
     # Fix error: 'string' is not a member of 'std'
     inreplace "trinity-plugins/bamsifter/sift_bam_max_cov.cpp",
