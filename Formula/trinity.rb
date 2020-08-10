@@ -13,7 +13,10 @@ class Trinity < Formula
     sha256 "369b95ac0b090cdacfffc31791c5eb88a37c5ddc5ee163b3c1f2cbaadf189dd6" => :x86_64_linux
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
   depends_on "cmake" => :build
+  depends_on "libtool"  => :build
   depends_on "bowtie2"
   depends_on "brewsci/bio/express"
   depends_on "brewsci/bio/jellyfish"
