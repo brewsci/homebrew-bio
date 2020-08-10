@@ -38,6 +38,11 @@ class Trinity < Formula
   fails_with :clang # needs openmp
 
   def install
+    # Fix error: 'string' is not a member of 'std'
+    inreplace "trinity-plugins/bamsifter/sift_bam_max_cov.cpp",
+              "#include <string.h>",
+              "#include <string.h> \n #include <string>"
+
     inreplace "Trinity" do |s|
       s.gsub! "$ROOTDIR/trinity-plugins/Trimmomatic/trimmomatic.jar",
         Dir["#{Formula["trimmomatic"].libexec}/trimmomatic*"].first
