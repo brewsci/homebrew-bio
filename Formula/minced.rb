@@ -1,8 +1,8 @@
 class Minced < Formula
   desc "Mining CRISPRs in Environmental Datasets"
   homepage "https://github.com/ctSkennerton/minced"
-  url "https://github.com/ctSkennerton/minced/releases/download/0.4.0/minced.jar"
-  sha256 "b643d7e56335c0ce9fb95aee7958accb7ebc50ce385f4e12a5abc5547bf7fad6"
+  url "https://github.com/ctSkennerton/minced/archive/0.4.2.tar.gz"
+  sha256 "35b6ee22fe6bdc26a31d0203a7dcc6bd1a19fd6733c60d80ceb44431884af165"
   license "GPL-3.0"
 
   bottle do
@@ -15,6 +15,7 @@ class Minced < Formula
   depends_on :java
 
   def install
+    system "make"
     jar = "minced.jar"
     libexec.install jar
     bin.write_jar_script libexec/jar, "minced"
