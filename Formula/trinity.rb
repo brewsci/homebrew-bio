@@ -5,6 +5,7 @@ class Trinity < Formula
   url "https://github.com/trinityrnaseq/trinityrnaseq/releases/download/v2.10.0/trinityrnaseq-v2.10.0.FULL.tar.gz"
   version "2.10.0"
   sha256 "4b349456363c84d36fee5f3608f608101510bfa5ae607a0939c8391aa931fd50"
+  license "BSD-3-Clause"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -16,7 +17,6 @@ class Trinity < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "cmake" => :build
-  depends_on "libtool"  => :build
   depends_on "bowtie2"
   depends_on "brewsci/bio/express"
   depends_on "brewsci/bio/jellyfish"
@@ -38,6 +38,8 @@ class Trinity < Formula
   fails_with :clang # needs openmp
 
   def install
+    ENV.cxx11
+
     # Fix error: 'string' is not a member of 'std'
     inreplace "trinity-plugins/bamsifter/sift_bam_max_cov.cpp",
               "#include <string.h>",
