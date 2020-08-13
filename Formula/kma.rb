@@ -1,8 +1,8 @@
 class Kma < Formula
   desc "Align long and short reads to redundant sequence databases"
   homepage "https://bitbucket.org/genomicepidemiology/kma"
-  url "https://bitbucket.org/genomicepidemiology/kma/get/1.3.2.zip"
-  sha256 "0623a8845f710c4081554ee2de10b6b56911349fbab3b60ec59b17d9c9cf262a"
+  url "https://bitbucket.org/genomicepidemiology/kma/get/1.3.3.zip"
+  sha256 "18fcd36c597dc4697607a330665566ae6fe6cb911bfc5d3a895cf39095bae6a6"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
