@@ -2,9 +2,8 @@ class Wiggletools < Formula
   # cite Zerbino_2013: "https://doi.org/10.1093/bioinformatics/btt737"
   desc "Compute genome-wide statistics with composable iterators"
   homepage "https://github.com/Ensembl/WiggleTools"
-  url "https://github.com/Ensembl/WiggleTools/archive/v1.2.3.tar.gz"
-  sha256 "2adc6c0f1738e604aa20a60b1c79ea36bc8cd030a2b6039b8e5ddc31c2bf846c"
-  revision 1
+  url "https://github.com/Ensembl/WiggleTools/archive/v1.2.4.tar.gz"
+  sha256 "3d21a107321aa0ab6c96a2dae585a61e8dfca566a8c18e15b677c05b3ec64ead"
   head "https://github.com/Ensembl/WiggleTools.git"
 
   bottle do
