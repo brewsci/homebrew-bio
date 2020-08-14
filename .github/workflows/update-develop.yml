@@ -1,0 +1,38 @@
+name: Update develop
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  update-develop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+        with:
+          fetch-depth: 100
+      - name: Update develop
+        run: |
+          set -eu
+          sha1='${{github.event.head_commit.id}}'
+          echo sha1="$sha1"
+          echo '${{github.event.head_commit.message}}'
+          git config --global user.name "LinuxbrewTestBot"
+          git config --global user.email "testbot@linuxbrew.sh"
+          cd "$GITHUB_WORKSPACE"
+          short_sha="$(echo "$sha1" | cut -c 1-7)"
+          git branch -f "develop-$short_sha"
+          git fetch origin develop
+          git checkout develop
+          git reset --hard origin/develop
+          git merge -m "Merge master" "develop-$short_sha"
+          git status
+          if ! git push "https://LinuxbrewTestBot:${{secrets.HOMEBREW_GITHUB_API_TOKEN}}@github.com/${{github.repository}}" develop:master develop; then
+            git push --force origin "develop-$short_sha"
+            mkdir ~/bin
+            curl -fsL https://github.com/github/hub/releases/download/v2.14.1/hub-linux-amd64-2.14.1.tgz \
+              | tar xzO hub-linux-amd64-2.14.1/bin/hub >~/bin/hub
+            chmod +x ~/bin/hub
+            git reset --hard origin/develop
+            GITHUB_TOKEN='${{secrets.HOMEBREW_GITHUB_API_TOKEN}}' ~/bin/hub pull-request -b develop -h "develop-$short_sha" -m "Update develop to commit $short_sha" --no-edit
+          fi
