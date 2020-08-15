@@ -24,6 +24,7 @@ class GenomePainter < Formula
   end
 
   def install
+    inreplace "configure.ac", "[gomp]", "[omp]" if OS.mac?
     system "./autogen.sh"
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
