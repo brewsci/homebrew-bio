@@ -5,6 +5,7 @@ class Nonpareil < Formula
 
   url "https://github.com/lmrodriguezr/nonpareil/archive/v3.3.4.tar.gz"
   sha256 "d91e83b3017fbafadf974355e32305d3896847ea3b671d5d98c553f01018f806"
+  license "Artistic-2.0"
   head "https://github.com/lmrodriguezr/nonpareil.git"
 
   bottle do

@@ -4,6 +4,7 @@ class Rails < Formula
   homepage "https://github.com/bcgsc/RAILS"
   url "https://github.com/bcgsc/RAILS/archive/v1.5.1.tar.gz"
   sha256 "ec7307df042bd3fad2d99d0e89039a661f3fb613f3f26adcd5d481ed1cb94996"
+  license "GPL-3.0"
   head "https://github.com/bcgsc/RAILS.git"
 
   bottle do

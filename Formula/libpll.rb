@@ -4,6 +4,7 @@ class Libpll < Formula
   homepage "https://github.com/xflouris/libpll"
   url "https://github.com/xflouris/libpll/archive/0.3.2.tar.gz"
   sha256 "45107d59d87be921c522478bb3688beee60dc79154e0b4a183af01122c597132"
+  license "AGPL-3.0"
   head "https://github.com/xflouris/libpll.git"
 
   bottle do

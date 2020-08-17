@@ -6,6 +6,7 @@ class Cutadapt < Formula
   url "https://github.com/marcelm/cutadapt.git",
     tag:      "v2.10",
     revision: "9ce76e87d2f96c5369b054dbbd6ad83fa0c15f34"
+  license "MIT"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

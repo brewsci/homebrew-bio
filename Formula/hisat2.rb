@@ -4,6 +4,7 @@ class Hisat2 < Formula
   homepage "https://daehwankimlab.github.io/hisat2/"
   url "https://github.com/DaehwanKimLab/hisat2/archive/v2.2.0.tar.gz"
   sha256 "429882d90ad9c600a986279b3ca5d78573caacf3bf0d780c802c006d4fcf0a01"
+  license "GPL-3.0"
   head "https://github.com/DaehwanKimLab/hisat2.git"
 
   bottle do

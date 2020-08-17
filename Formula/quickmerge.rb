@@ -4,6 +4,7 @@ class Quickmerge < Formula
   homepage "https://github.com/mahulchak/quickmerge"
   url "https://github.com/mahulchak/quickmerge/archive/v0.3.tar.gz"
   sha256 "13169366bdaeef5462bda35dd3c213d8ec818db8f34c173ac336d5ce98ac92b3"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

@@ -4,6 +4,7 @@ class Dwgsim < Formula
   url "https://github.com/nh13/DWGSIM.git",
     tag:      "dwgsim.0.1.12",
     revision: "4fd56bf39dbba3801856fa0512aed68726e3ca6e"
+  license "GPL-2.0"
   head "https://github.com/nh13/DWGSIM.git"
 
   bottle do

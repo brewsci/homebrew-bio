@@ -3,6 +3,7 @@ class Wtdbg2 < Formula
   homepage "https://github.com/ruanjue/wtdbg2"
   url "https://github.com/ruanjue/wtdbg2/archive/v2.5.tar.gz"
   sha256 "a2ffc8503d29f491a9a38ef63230d5b3c96db78377b5d25c91df511d0df06413"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

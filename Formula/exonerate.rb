@@ -4,6 +4,7 @@ class Exonerate < Formula
   homepage "https://www.ebi.ac.uk/about/vertebrate-genomics/software/exonerate"
   url "ftp.ebi.ac.uk/pub/software/vertebrategenomics/exonerate/exonerate-2.4.0.tar.gz"
   sha256 "f849261dc7c97ef1f15f222e955b0d3daf994ec13c9db7766f1ac7e77baa4042"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

@@ -3,6 +3,7 @@ class Smalt < Formula
   homepage "https://www.sanger.ac.uk/science/tools/smalt-0"
   url "https://downloads.sourceforge.net/project/smalt/smalt-0.7.6.tar.gz"
   sha256 "89ccdfe471edba3577b43de9ebfdaedb5cd6e26b02bf4000c554253433796b31"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

@@ -4,6 +4,7 @@ class Kraken2 < Formula
   # URL hack is to bypass audit for word "beta"
   url "https://github.com/DerrickWood/kraken2/archive/v2.0.9-b%65ta.tar.gz"
   sha256 "0287cf4df4b5d5511a9132d9ab37a8d76864bae445579efb9cb76db7e9c09eba"
+  license "MIT"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

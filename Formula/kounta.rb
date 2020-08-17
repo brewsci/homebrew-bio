@@ -3,6 +3,7 @@ class Kounta < Formula
   homepage "https://github.com/tseemann/kounta"
   url "https://github.com/tseemann/kounta/archive/v0.2.3.tar.gz"
   sha256 "adf17fb77afb66a8756d002fafc6497ac2249cb18f102d9ad8eb90851d423fb2"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

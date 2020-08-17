@@ -4,6 +4,7 @@ class RtgTools < Formula
   homepage "https://www.realtimegenomics.com/products/rtg-tools"
   url "https://github.com/RealTimeGenomics/rtg-tools/releases/download/3.11/rtg-tools-3.11-nojre.zip"
   sha256 "f9ca3fa5a7d2c737490560970fee4cfa185490542283fb005ec77b77690c133e"
+  license "BSD-2-Clause"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

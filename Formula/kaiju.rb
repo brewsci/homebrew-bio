@@ -4,6 +4,7 @@ class Kaiju < Formula
   homepage "http://kaiju.binf.ku.dk/"
   url "https://github.com/bioinformatics-centre/kaiju/archive/v1.7.3.tar.gz"
   sha256 "174ab6b6841d3d9164ec06f76a219a391d461d271b4a00fe8cf9cd87e689b05e"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

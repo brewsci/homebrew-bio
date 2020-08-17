@@ -2,6 +2,7 @@ class Unikmer < Formula
   desc "Manipulate small kmers without frequency information"
   homepage "https://github.com/shenwei356/unikmer"
   version "0.11.0"
+  license "MIT"
   if OS.mac?
     url "https://github.com/shenwei356/unikmer/releases/download/v0.11.0/unikmer_darwin_amd64.tar.gz"
     sha256 "6e13d2990d6f662cea81568c9b04d2f59dd6b3679e7db56ba4c66bc73a8b1eaf"

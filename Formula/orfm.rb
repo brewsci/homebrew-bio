@@ -4,6 +4,7 @@ class Orfm < Formula
   homepage "https://github.com/wwood/OrfM"
   url "https://github.com/wwood/OrfM/releases/download/v0.7.1/orfm-0.7.1.tar.gz"
   sha256 "19f39c72bcc48127b757613c5eef4abae95ee6c82dccf96b041db527b27f319a"
+  license "LGPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

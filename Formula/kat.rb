@@ -4,20 +4,21 @@ class Kat < Formula
   homepage "https://github.com/TGAC/KAT"
   url "https://github.com/TGAC/KAT/archive/Release-2.4.1.tar.gz"
   sha256 "068bd63b022588058d2ecae817140ca67bba81a9949c754c6147175d73b32387"
-  revision 2
+  license "GPL-3.0"
+  revision 3
   head "https://github.com/TGAC/KAT.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "716d18717e180adaeca2eadea2a9de1a6e799387e828c69e0beeb9ca348ba629" => :sierra
-    sha256 "e3dd3d91df335579c48e6d08decd591c302b8a42cabb7d6c5f01c6c4dc1e8c0d" => :x86_64_linux
+    sha256 "395fea7e48ae8295cd51387cb11537c67586bbfe7912f27a5b56eb0620980f92" => :catalina
+    sha256 "5006a1a39cff6a90bd40c279853eb99e2366e5002614136f6a427c075a813810" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
 
-  depends_on "matplotlib"
+  depends_on "brewsci/bio/matplotlib"
   depends_on "scipy"
 
   resource "tabulate" do
@@ -26,6 +27,15 @@ class Kat < Formula
   end
 
   def install
+    # Disable unsupported compiler flags on macOS
+    inreplace [
+      "deps/boost/tools/build/src/tools/darwin.py",
+      "deps/boost/tools/build/src/tools/darwin.jam",
+    ] do |s|
+      s.gsub! "-fcoalesce-templates", ""
+      s.gsub! "-Wno-long-double", ""
+    end
+
     resources.each do |r|
       r.stage do
         system "python3", *Language::Python.setup_install_args(libexec)

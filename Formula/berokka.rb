@@ -3,6 +3,7 @@ class Berokka < Formula
   homepage "https://github.com/tseemann/berokka"
   url "https://github.com/tseemann/berokka/archive/v0.2.3.tar.gz"
   sha256 "460f4272768e205008aa8aa885d1df5bab9af2c5b404c261e00573c6a30a641f"
+  license "GPL-3.0"
   head "https://github.com/tseemann/berokka.git"
 
   bottle do

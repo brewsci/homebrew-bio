@@ -2,6 +2,7 @@ class Groot < Formula
   # cite Rowe_2018: "https://doi.org/10.1093/bioinformatics/bty387"
   desc "Resistome profiler for Graphing Resistance Out Of meTagenomes"
   homepage "https://github.com/will-rowe/groot"
+  license "MIT"
   if OS.mac?
     url "https://github.com/will-rowe/groot/releases/download/1.1.2/groot_osx.gz"
     sha256 "49b3d29b3d87227ba1c1339c6e6f401e740da0f5a58032f706c94fcb56581c9b"

@@ -3,6 +3,7 @@ class Mlst < Formula
   homepage "https://github.com/tseemann/mlst"
   url "https://github.com/tseemann/mlst/archive/v2.19.0.tar.gz"
   sha256 "74403be717f0bffd579028fd8e7c02d826f5c896e38e6078271a59f7dfce2b0e"
+  license "GPL-2.0"
   head "https://github.com/tseemann/mlst.git"
 
   bottle do

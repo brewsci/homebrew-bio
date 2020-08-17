@@ -4,6 +4,7 @@ class Porechop < Formula
   homepage "https://github.com/rrwick/Porechop"
   url "https://github.com/rrwick/Porechop/archive/v0.2.4.tar.gz"
   sha256 "44b499157d933be43f702cec198d1d693dcb9276e3c545669be63c2612493299"
+  license "GPL-3.0"
   head "https://github.com/rrwick/Porechop"
 
   bottle do

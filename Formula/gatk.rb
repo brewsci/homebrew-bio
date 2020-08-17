@@ -6,6 +6,7 @@ class Gatk < Formula
   homepage "https://software.broadinstitute.org/gatk"
   url "https://github.com/broadinstitute/gatk/releases/download/4.1.8.1/gatk-4.1.8.1.zip"
   sha256 "42e6de5059232df1ad5785c68c39a53dc1b54afe7bb086d0129f4dc95fb182bc"
+  license "BSD-3-Clause"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

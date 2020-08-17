@@ -4,6 +4,7 @@ class Iqtree < Formula
   homepage "http://www.iqtree.org/"
   url "https://github.com/Cibiv/IQ-TREE/archive/v1.6.12.tar.gz"
   sha256 "9614092de7a157de82c9cc402b19cc8bfa0cb0ffc93b91817875c2b4bb46a284"
+  license "GPL-2.0"
   version_scheme 1
 
   bottle do

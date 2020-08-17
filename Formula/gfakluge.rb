@@ -4,6 +4,7 @@ class Gfakluge < Formula
   homepage "https://github.com/edawson/gfakluge"
   url "https://github.com/edawson/gfakluge/archive/1.1.2.tar.gz"
   sha256 "4b9e2d358d87a8a0b8508b6ae076af7657f8bb5c823a73f912917c5689f72121"
+  license "MIT"
   head "https://github.com/edawson/gfakluge.git"
 
   bottle do

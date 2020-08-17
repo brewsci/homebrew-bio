@@ -4,6 +4,7 @@ class Express < Formula
   homepage "http://bio.math.berkeley.edu/eXpress/"
   url "https://github.com/adarob/eXpress/archive/1.5.3.tar.gz"
   sha256 "1c09fa067672ba2ccbac6901602f3e2d9b5e514ff1fe87f54163e94af69ff022"
+  license "Artistic-2.0"
   head "https://github.com/adarob/eXpress.git"
 
   bottle do

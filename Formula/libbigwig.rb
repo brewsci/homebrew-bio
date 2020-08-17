@@ -3,6 +3,7 @@ class Libbigwig < Formula
   homepage "https://github.com/dpryan79/libBigWig"
   url "https://github.com/dpryan79/libBigWig/archive/0.4.4.tar.gz"
   sha256 "43a2298b2ebadc48103447a3bb4426df1b38d1bec5fa564e50ed2f00cc060478"
+  license "MIT"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

@@ -4,6 +4,7 @@ class Libsequence < Formula
   homepage "https://molpopgen.github.io/libsequence/"
   url "https://github.com/molpopgen/libsequence/archive/1.9.8.tar.gz"
   sha256 "16c3ff6490861806292391195a8698fc17f4d5d30cbe3f5e5e1de1a03d1105f8"
+  license "GPL-3.0"
   head "https://github.com/molpopgen/libsequence.git"
 
   bottle do
