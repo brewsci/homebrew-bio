@@ -11,4 +11,5 @@ jobs:
       - uses: actions/checkout@main
         with:
           fetch-depth: 100
-      - run: git push origin origin/master:develop
+      - name: Update the develop branch
+        run: git push origin origin/master:develop
