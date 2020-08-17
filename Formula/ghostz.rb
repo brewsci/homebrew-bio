@@ -18,6 +18,20 @@ class Ghostz < Formula
   end
 
   def install
+    if OS.mac?
+      ENV.cxx11
+      inreplace "Makefile",
+                "-fopenmp",
+                "-L#{Formula["libomp"].opt_lib} -lomp"
+      inreplace Dir["**/*.{cpp,h}"] do |s|
+        s.gsub! "#include <tr1/",
+                "#include <",
+                false
+        s.gsub! "std::tr1::",
+                "std::",
+                false
+      end
+    end
     system "make"
     bin.install "ghostz"
     pkgshare.install Dir["test/*.fa"]
