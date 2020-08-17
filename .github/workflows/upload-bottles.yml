@@ -1,4 +1,4 @@
-name: Upload bottles
+name: Upload bottles and deploy formula.json
 
 on:
   push:
@@ -62,3 +62,16 @@ jobs:
             git reset --hard origin/master
             GITHUB_TOKEN='${{secrets.HOMEBREW_GITHUB_API_TOKEN}}' ~/bin/hub pull-request -l bottles -b master -h "pr$pr" -m "Bottles for PR $pr" --no-edit
           fi
+
+  deploy-formula-json:
+    needs: upload-bottles
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+        with:
+          fetch-depth: 0
+      - uses: "docker://homebrew/brew"
+        with:
+          args: make setup all deploy
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
