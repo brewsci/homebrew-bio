@@ -19,10 +19,16 @@ class Ghostz < Formula
 
   def install
     if OS.mac?
-      ENV.cxx11
       inreplace "Makefile",
                 "-fopenmp",
                 "-L#{Formula["libomp"].opt_lib} -lomp"
+
+      # Fix error: use of overloaded operator '==' is ambiguous (with operand
+      #            types 'std::shared_ptr<SeqmentType>' and 'long')
+      inreplace "ext/seg/src/seg.cpp",
+                "temp->next == NULL",
+                "temp->next == nullptr"
+
       inreplace Dir["**/*.{cpp,h}"] do |s|
         s.gsub! "#include <tr1/",
                 "#include <",
