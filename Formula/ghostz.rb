@@ -4,7 +4,7 @@ class Ghostz < Formula
   homepage "https://www.bi.cs.titech.ac.jp/ghostz/"
   url "https://www.bi.cs.titech.ac.jp/ghostz/releases/ghostz-1.0.2.tar.gz"
   sha256 "3e896563ab49ef620babfb7de7022d678dee2413d34b780d295eff8b984b9902"
-  revision 1
+  revision 2
 
   bottle do
     cellar :any_skip_relocation
@@ -13,11 +13,31 @@ class Ghostz < Formula
     sha256 "ce5f132a6ed9a711bffae6648b18f701f55d965e611ef7320847aee24061a19e" => :x86_64_linux
   end
 
-  depends_on "gcc" # needs openmp
-
-  fails_with :clang # needs openmp
+  on_macos do
+    depends_on "libomp"
+  end
 
   def install
+    if OS.mac?
+      inreplace "Makefile",
+                "-fopenmp",
+                "-L#{Formula["libomp"].opt_lib} -lomp"
+
+      # Fix error: use of overloaded operator '==' is ambiguous (with operand
+      #            types 'std::shared_ptr<SeqmentType>' and 'long')
+      inreplace "ext/seg/src/seg.cpp",
+                "temp->next == NULL",
+                "temp->next == nullptr"
+
+      inreplace Dir["**/*.{cpp,h}"] do |s|
+        s.gsub! "#include <tr1/",
+                "#include <",
+                false
+        s.gsub! "std::tr1::",
+                "std::",
+                false
+      end
+    end
     system "make"
     bin.install "ghostz"
     pkgshare.install Dir["test/*.fa"]
