@@ -3,7 +3,8 @@ class GenomePainter < Formula
   homepage "https://github.com/scwatts/genome_painter"
   url "https://github.com/scwatts/genome_painter/archive/v0.0.8.tar.gz"
   sha256 "434d81b4ed301f14aa3e9a55fdeeefab295264aa82410482abda23655e7a18bd"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -15,13 +16,15 @@ class GenomePainter < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "gcc" # needs openmp
 
   uses_from_macos "zlib"
 
-  fails_with :clang # needs openmp
+  on_macos do
+    depends_on "libomp"
+  end
 
   def install
+    inreplace "configure.ac", "[gomp]", "[omp]" if OS.mac?
     system "./autogen.sh"
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
