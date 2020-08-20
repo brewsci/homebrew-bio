@@ -7,10 +7,10 @@ class Ghostz < Formula
   revision 2
 
   bottle do
-    cellar :any_skip_relocation
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "45e205642232766d1206e06df7a4e52eea960663b0d520d6f943866db554e596" => :mojave
-    sha256 "ce5f132a6ed9a711bffae6648b18f701f55d965e611ef7320847aee24061a19e" => :x86_64_linux
+    cellar :any
+    sha256 "83d5a026cd37f8f8004b146c968301c627856dc5fb2a7f88489e8e2cb51866f3" => :catalina
+    sha256 "b71ef02728bee3edef32461d52e7694eb4fb99d33ec4a552bd1936a948bc8156" => :x86_64_linux
   end
 
   on_macos do
