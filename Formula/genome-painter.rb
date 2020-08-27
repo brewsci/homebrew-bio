@@ -3,25 +3,28 @@ class GenomePainter < Formula
   homepage "https://github.com/scwatts/genome_painter"
   url "https://github.com/scwatts/genome_painter/archive/v0.0.8.tar.gz"
   sha256 "434d81b4ed301f14aa3e9a55fdeeefab295264aa82410482abda23655e7a18bd"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "abb5dcc8c48f0bf65f997fb5d78b6200c8f9ad8a4493670faaf4bd0bc676cd0b" => :catalina
-    sha256 "f21a21128af05cdf73453c466b683feb79546bf9f2244495b9e14de04cb04d11" => :x86_64_linux
+    sha256 "2863469c5132cfcc1a47fdaff7539bb3454534e222b98c75dc919db08b07f002" => :catalina
+    sha256 "0c2f781971f00a75841e3a3d1813665374d89eb8d4adad5bf87cde385fd5bf95" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "gcc" # needs openmp
 
   uses_from_macos "zlib"
 
-  fails_with :clang # needs openmp
+  on_macos do
+    depends_on "libomp"
+  end
 
   def install
+    inreplace "configure.ac", "[gomp]", "[omp]" if OS.mac?
     system "./autogen.sh"
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"

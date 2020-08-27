@@ -4,7 +4,6 @@ class BwaMem2 < Formula
   url "https://github.com/bwa-mem2/bwa-mem2.git",
       tag:      "v2.0",
       revision: "cbcc183c0843d20d45c84e066177eb8d58be2f9b"
-  sha256 "2c81ad44b58af6fba2519beefd5ac1c63b81611fda522c98b68faf54f18fa445"
   head "https://github.com/bwa-mem2/bwa-mem2.git"
 
   bottle do
