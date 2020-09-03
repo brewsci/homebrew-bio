@@ -2,8 +2,8 @@ class Tigmint < Formula
   # cite Jackman_2018: "https://doi.org/10.1186/s12859-018-2425-6"
   desc "Correct misassemblies using linked or long reads"
   homepage "https://bcgsc.github.io/tigmint/"
-  url "https://github.com/bcgsc/tigmint/archive/1.2.0.tar.gz"
-  sha256 "2c2eec8dd5e40cc19ca9f5b1312793961550138d6ae258ba035d52d308483131"
+  url "https://github.com/bcgsc/tigmint/archive/1.2.1.tar.gz"
+  sha256 "d0220f2b5b9e8c7ec4f34efb223e04954fe3d741d099a92f7ed0c59c831b8420"
   license "GPL-3.0-only"
   head "https://github.com/bcgsc/tigmint.git"
 
