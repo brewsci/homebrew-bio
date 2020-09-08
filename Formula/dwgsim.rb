@@ -2,14 +2,9 @@ class Dwgsim < Formula
   desc "Whole Genome Simulator for Next-Generation Sequencing"
   homepage "https://github.com/nh13/DWGSIM"
   url "https://github.com/nh13/DWGSIM.git",
-<<<<<<< HEAD
-    :tag      => "dwgsim.0.1.12",
-    :revision => "4fd56bf39dbba3801856fa0512aed68726e3ca6e"
-=======
     tag:      "dwgsim.0.1.12",
     revision: "4fd56bf39dbba3801856fa0512aed68726e3ca6e"
   license "GPL-2.0"
->>>>>>> upstream/develop
   head "https://github.com/nh13/DWGSIM.git"
 
   bottle do

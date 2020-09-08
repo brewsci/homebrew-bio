@@ -13,15 +13,9 @@ class Ghostz < Formula
     sha256 "b71ef02728bee3edef32461d52e7694eb4fb99d33ec4a552bd1936a948bc8156" => :x86_64_linux
   end
 
-<<<<<<< HEAD
-  depends_on "gcc" # needs openmp
-
-  fails_with :clang # needs openmp
-=======
   on_macos do
     depends_on "libomp"
   end
->>>>>>> upstream/develop
 
   def install
     if OS.mac?

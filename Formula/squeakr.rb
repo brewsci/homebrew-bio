@@ -14,11 +14,7 @@ class Squeakr < Formula
   end
 
   depends_on "boost"
-<<<<<<< HEAD
-  depends_on :linux # https://github.com/splatlab/squeakr/issues/40
-=======
   depends_on :linux # https://github.com/splatlab/squeakr/issues/41
->>>>>>> upstream/develop
   depends_on "openssl@1.1"
 
   uses_from_macos "bzip2"

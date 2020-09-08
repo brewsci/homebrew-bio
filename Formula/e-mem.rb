@@ -15,16 +15,10 @@ class EMem < Formula
   end
 
   depends_on "boost" => :build
-<<<<<<< HEAD
-  depends_on "gcc" if OS.mac? # needs openmp
-
-  fails_with :clang # needs openmp
-=======
 
   on_macos do
     depends_on "libomp"
   end
->>>>>>> upstream/develop
 
   def install
     bin.mkpath

@@ -5,13 +5,8 @@ class SdslLite < Formula
 
   # Use git to get submodules.
   url "https://github.com/simongog/sdsl-lite.git",
-<<<<<<< HEAD
-    :revision => "0546faf0552142f06ff4b201b671a5769dd007ad",
-    :tag      => "v2.1.1"
-=======
     revision: "0546faf0552142f06ff4b201b671a5769dd007ad",
     tag:      "v2.1.1"
->>>>>>> upstream/develop
   revision 2
 
   bottle do

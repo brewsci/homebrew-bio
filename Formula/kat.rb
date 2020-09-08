@@ -27,8 +27,6 @@ class Kat < Formula
   end
 
   def install
-<<<<<<< HEAD
-=======
     # Disable unsupported compiler flags on macOS
     inreplace [
       "deps/boost/tools/build/src/tools/darwin.py",
@@ -38,7 +36,6 @@ class Kat < Formula
       s.gsub! "-Wno-long-double", ""
     end
 
->>>>>>> upstream/develop
     resources.each do |r|
       r.stage do
         system "python3", *Language::Python.setup_install_args(libexec)

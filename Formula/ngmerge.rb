@@ -4,10 +4,7 @@ class Ngmerge < Formula
   homepage "https://github.com/jsh58/NGmerge"
   url "https://github.com/jsh58/NGmerge/archive/v0.3.tar.gz"
   sha256 "5928f727feebd0d1bcdbee0e631ba06fbe9ce88328bd58b6c8bf4e54cc742ac3"
-<<<<<<< HEAD
-=======
   license "MIT"
->>>>>>> upstream/develop
   head "https://github.com/jsh58/NGmerge.git"
 
   bottle do
@@ -19,11 +16,6 @@ class Ngmerge < Formula
 
   uses_from_macos "zlib"
 
-<<<<<<< HEAD
-  fails_with :clang # needs openmp
-
-=======
->>>>>>> upstream/develop
   on_macos do
     depends_on "gcc" # needs openmp
   end

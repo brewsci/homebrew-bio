@@ -37,19 +37,7 @@ class Matplotlib < Formula
   depends_on "freetype"
   depends_on "libpng"
   depends_on "numpy"
-<<<<<<< HEAD
-  depends_on "python"
-
-  depends_on "cairo" => :optional
-  depends_on "py3cairo" if build.with? "cairo"
-
-  depends_on "gtk+3" => :optional
-  depends_on "pygobject3" if build.with? "gtk+3"
-
-  depends_on "pyqt" => :optional
-=======
   depends_on "python@3.8"
->>>>>>> upstream/develop
 
   resource "setuptools" do
     url "https://files.pythonhosted.org/packages/dc/8c/7c9869454bdc53e72fb87ace63eac39336879eef6f2bf96e946edbf03e90/setuptools-33.1.1.zip"

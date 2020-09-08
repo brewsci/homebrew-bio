@@ -15,17 +15,10 @@ class Fwdpp < Formula
   end
 
   # build fails on Yosemite
-<<<<<<< HEAD
-  depends_on "boost" => :build
-  depends_on "brewsci/bio/libsequence"
-  depends_on "gsl"
-  depends_on :macos => :el_capitan
-=======
   depends_on "boost"
   depends_on "brewsci/bio/libsequence"
   depends_on "gsl"
   depends_on macos: :el_capitan
->>>>>>> upstream/develop
 
   def install
     system "./configure", "--prefix=#{prefix}"

@@ -2,10 +2,7 @@ class Taxonkit < Formula
   desc "NCBI taxonomy toolkit"
   homepage "https://github.com/shenwei356/taxonkit"
   version "0.6.0"
-<<<<<<< HEAD
-=======
   license "MIT"
->>>>>>> upstream/develop
 
   if OS.mac?
     url "https://github.com/shenwei356/taxonkit/releases/download/v0.6.0/taxonkit_darwin_amd64.tar.gz"

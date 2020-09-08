@@ -17,18 +17,8 @@ class Fasttree < Formula
   # http://www.microbesonline.org/fasttree/#BranchLen
   # http://darlinglab.org/blog/2015/03/23/not-so-fast-fasttree.html
 
-<<<<<<< HEAD
-  option "without-double", "Disable double precision floating point. Use single precision floating point & enable SSE"
-  option "without-openmp", "Disable multithreading support"
-  option "without-sse", "Disable SSE parallel instructions"
-
-  if build.with? "openmp"
-    fails_with :clang # needs openmp
-    depends_on "gcc" if OS.mac? # needs openmp
-=======
   on_macos do
     depends_on "libomp"
->>>>>>> upstream/develop
   end
 
   def install

@@ -17,11 +17,6 @@ class Dida < Formula
 
   uses_from_macos "zlib"
 
-<<<<<<< HEAD
-  fails_with :clang # needs openmp
-
-=======
->>>>>>> upstream/develop
   on_macos do
     depends_on "gcc" # needs openmp
   end

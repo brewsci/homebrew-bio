@@ -14,10 +14,7 @@ class Kaiju < Formula
   end
 
   depends_on "perl" # for kaiju-gbk2faa.pl
-<<<<<<< HEAD
-=======
   depends_on "zlib" unless OS.mac?
->>>>>>> upstream/develop
 
   def install
     system "make", "-C", "src"

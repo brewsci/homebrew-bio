@@ -16,17 +16,12 @@ class GenomePainter < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "gcc" # needs openmp
 
   uses_from_macos "zlib"
 
-<<<<<<< HEAD
-  fails_with :clang # needs openmp
-=======
   on_macos do
     depends_on "libomp"
   end
->>>>>>> upstream/develop
 
   def install
     inreplace "configure.ac", "[gomp]", "[omp]" if OS.mac?

@@ -6,26 +6,16 @@ class Busco < Formula
   # cite Sim_o_2015: "https://doi.org/10.1093/bioinformatics/btv351"
   desc "Assess genome assembly completeness with single-copy orthologs"
   homepage "https://busco.ezlab.org"
-<<<<<<< HEAD
-  url "https://gitlab.com/ezlab/busco/repository/4.0.5/archive.tar.bz2"
-  sha256 "f65299b96a14ef1d909e6186107a52336b744428cdacd204fd811002e89811dc"
-=======
   url "https://gitlab.com/ezlab/busco/repository/4.1.1/archive.tar.bz2"
   sha256 "8c9bbdb9f04b89910f8eb8b4e48398faf9e9cb9ca9cabf9b5cd6c6f36c597936"
   license "MIT"
->>>>>>> upstream/develop
   head "https://gitlab.com/ezlab/busco.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-<<<<<<< HEAD
-    sha256 "9c076a4c04a883de25d4678205f3c8c353384c94dc92d602a1ccde53e1418d28" => :catalina
-    sha256 "99233ec7fd13048b37ba737b40b32eebd132dab59ca5ad6d2babef07ea3ea09e" => :x86_64_linux
-=======
     sha256 "253d2bcda073ac985bb1240b1f818b0e643abd047311eb05a12f0acabfcf9047" => :catalina
     sha256 "ddc1c727ae2ca7f465fe6a214d0124fcc7ec6244d4266f7e7272447afa0f28be" => :x86_64_linux
->>>>>>> upstream/develop
   end
 
   depends_on "augustus"
@@ -34,11 +24,7 @@ class Busco < Formula
   depends_on "hmmer"
   depends_on "numpy"
   depends_on "prodigal"
-<<<<<<< HEAD
-  depends_on "python"
-=======
   depends_on "python@3.8"
->>>>>>> upstream/develop
 
   resource "biopython" do
     url "https://files.pythonhosted.org/packages/3d/2f/d9df24de05d651c5e686ee8fea3afe3985c03ef9ca02f4cc1e7ea10aa31e/biopython-1.77.tar.gz"

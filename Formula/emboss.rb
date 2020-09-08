@@ -27,8 +27,6 @@ class Emboss < Formula
 
   uses_from_macos "zlib"
 
-  uses_from_macos "zlib"
-
   def install
     args = %W[
       --disable-debug
