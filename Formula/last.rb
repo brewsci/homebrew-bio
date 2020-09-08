@@ -4,7 +4,12 @@ class Last < Formula
   homepage "http://last.cbrc.jp/"
   url "http://last.cbrc.jp/last-1061.zip"
   sha256 "ddb6c04e3e4e84913d115d839ab1cca972af4c5bc045b830482ef7e25d677bc9"
+<<<<<<< HEAD
   head "http://last.cbrc.jp/last", :using => :hg
+=======
+  license "GPL-3.0"
+  head "http://last.cbrc.jp/last", using: :hg
+>>>>>>> upstream/develop
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

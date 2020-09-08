@@ -4,20 +4,22 @@ class Unicycler < Formula
   homepage "https://github.com/rrwick/Unicycler"
   url "https://github.com/rrwick/Unicycler/archive/v0.4.7.tar.gz"
   sha256 "a8cf65e46dc2694b0fbd4e9190c73a1f300921457aadfab27a1792b785620d63"
-  head "https://github.com/rrwick/Unicycler/releases"
+  license "GPL-3.0"
+  revision 1
+  head "https://github.com/rrwick/Unicycler.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "8ce5a702a13ed9a9948cc93bc3e56a09d8f418181d046f815e1f5c3fed5b9773" => :sierra
-    sha256 "aa9986644891bee7f1a3196515f88b8f9e3c84968f412524ca552d968a403063" => :x86_64_linux
+    cellar :any
+    sha256 "1100ca4a35cdef3a0c7b232d8e8418ee416ef74095b8fc28f8a4fccc6e4ab7ed" => :catalina
+    sha256 "870cda34ffc8986c8bdb1b24707da593b6ffa0675627b73db644d0c13f999b66" => :x86_64_linux
   end
 
   depends_on "blast"
   depends_on "bowtie2"
-  depends_on "pilon"
-  depends_on "python"
-  depends_on "racon"
+  depends_on "brewsci/bio/pilon"
+  depends_on "brewsci/bio/racon"
+  depends_on "python@3.8"
   depends_on "samtools"
   depends_on "spades"
 

@@ -7,6 +7,7 @@ class Circlator < Formula
   homepage "https://sanger-pathogens.github.io/circlator/"
   url "https://github.com/sanger-pathogens/circlator/archive/v1.5.5.tar.gz"
   sha256 "927b6c156bfba6fa02db0c1173e280f85373320814c51e084170df583e604a2a"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

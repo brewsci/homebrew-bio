@@ -2,19 +2,20 @@ class Groot < Formula
   # cite Rowe_2018: "https://doi.org/10.1093/bioinformatics/bty387"
   desc "Resistome profiler for Graphing Resistance Out Of meTagenomes"
   homepage "https://github.com/will-rowe/groot"
+  license "MIT"
   if OS.mac?
-    url "https://github.com/will-rowe/groot/releases/download/0.8.5/groot_osx.gz"
-    sha256 "484417279ea50117496f095a3f42febe868cd7f4391c5e6c91e393c72f1e1945"
+    url "https://github.com/will-rowe/groot/releases/download/1.1.2/groot_osx.gz"
+    sha256 "49b3d29b3d87227ba1c1339c6e6f401e740da0f5a58032f706c94fcb56581c9b"
   elsif OS.linux?
-    url "https://github.com/will-rowe/groot/releases/download/0.8.5/groot_linux.gz"
-    sha256 "700dbf7cc48ecce419aecfa43b9895ef9c3b0ca5362d2b26205858708aca617b"
+    url "https://github.com/will-rowe/groot/releases/download/1.1.2/groot_linux.gz"
+    sha256 "dfb033e81c90fc5a02d2e2f51e146a707e2bd589c23b43006593079e83db2b6f"
   end
 
   bottle do
-    cellar :any_skip_relocation
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "d1594f5953a4578c4c9d842d8bf115a31da9702a30809969e62fcb715e4587f2" => :sierra
-    sha256 "d29ed2ac8a75a997bd4fad81c578af10a94dc8a20f68ab98c3c779ed9f5ed2bc" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "d68dae4fdc75db0240dac1235294e34aaa5cee4437228c0a97220993ffe56a62" => :catalina
+    sha256 "57339d9d43a15d769de59a51ea39d6c8212763babd978e5ca135fd86bc9b2af4" => :x86_64_linux
   end
 
   def install

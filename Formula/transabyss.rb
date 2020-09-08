@@ -28,8 +28,8 @@ class Transabyss < Formula
 
     inreplace Dir["transabyss", "transabyss-merge"], "#!/usr/bin/env python", "#!#{Formula["python3"].bin}/python3"
     prefix.install Dir["*"]
-    (bin/"transabyss").write_env_script prefix/"transabyss", :PYTHONPATH => ENV["PYTHONPATH"]
-    (bin/"transabyss-merge").write_env_script prefix/"transabyss-merge", :PYTHONPATH => ENV["PYTHONPATH"]
+    (bin/"transabyss").write_env_script prefix/"transabyss", PYTHONPATH: ENV["PYTHONPATH"]
+    (bin/"transabyss-merge").write_env_script prefix/"transabyss-merge", PYTHONPATH: ENV["PYTHONPATH"]
   end
 
   test do

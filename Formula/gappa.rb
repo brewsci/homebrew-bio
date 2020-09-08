@@ -3,15 +3,16 @@ class Gappa < Formula
   # cite Czech_2018: "https://doi.org/10.1101/346353"
   desc "Genesis Applications for Phylogenetic Placement Analysis"
   homepage "https://github.com/lczech/gappa"
-  url "https://github.com/lczech/gappa/archive/v0.4.0.tar.gz"
-  sha256 "14470272ba00d0b0b4d7a3fd67e07c93c6af8fbe6f9d1a6a76d349080d81a860"
+  url "https://github.com/lczech/gappa/archive/v0.6.1.tar.gz"
+  sha256 "38d643706b6179347460fb535dbbb07424f38d52e38d631b293484ee1627ac65"
+  license "GPL-3.0-or-later"
   head "https://github.com/lczech/gappa.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "3631e901f4c8036bf29556d131cee2df52912c6d5494ba4d3b69090af12c8929" => :sierra
-    sha256 "3010aa16e49c604ad5bdee5101723e6672a130e67e31dd8aa98de245557cb795" => :x86_64_linux
+    cellar :any
+    sha256 "086ff9f6e2e67a9143ad7ae5e04f5c1df2141deb2e2ca197956292334c8016f7" => :catalina
+    sha256 "2ea3c16aecfd9d8c097fe82fcff5239d0ba82bb3f0d06189cf889c4e98a045e6" => :x86_64_linux
   end
 
   depends_on "cmake" => :build

@@ -1,20 +1,21 @@
 class Unikmer < Formula
   desc "Manipulate small kmers without frequency information"
   homepage "https://github.com/shenwei356/unikmer"
-  version "0.7.0"
+  version "0.11.0"
+  license "MIT"
   if OS.mac?
-    url "https://github.com/shenwei356/unikmer/releases/download/v0.7.0/unikmer_darwin_amd64.tar.gz"
-    sha256 "c21d3cf2c87689738ecee883d6abdbf33cd4d04fe17981e4749966c427b2b0a0"
+    url "https://github.com/shenwei356/unikmer/releases/download/v0.11.0/unikmer_darwin_amd64.tar.gz"
+    sha256 "6e13d2990d6f662cea81568c9b04d2f59dd6b3679e7db56ba4c66bc73a8b1eaf"
   elsif OS.linux?
-    url "https://github.com/shenwei356/unikmer/releases/download/v0.7.0/unikmer_linux_amd64.tar.gz"
-    sha256 "2a734b34632c3b548107742e9c7bdeb7da8fbc4f8f4d1598e32fc38c37fcdc81"
+    url "https://github.com/shenwei356/unikmer/releases/download/v0.11.0/unikmer_linux_amd64.tar.gz"
+    sha256 "856f55364cb7b8b6cd0380a65aa90629aa1336879daf23234e2f09d1ca62af55"
   end
 
   bottle do
-    cellar :any_skip_relocation
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "6f557483cb5d142e707bd2fe7b570a1e65173fc752085a6f1c182868a48db63d" => :sierra
-    sha256 "72b11857d78fd391aafba36b343088c486a55629bd344532e8d3e5bdb2db602e" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "0db8530f9dc5c2b16a71595d69f7fca624225f70bf4c8f67575c3bfd31ecd57b" => :catalina
+    sha256 "1c911f2be23033c8cb4d494e5f67bdfe5394d5a92cf01848f518c8343134a73a" => :x86_64_linux
   end
 
   def install

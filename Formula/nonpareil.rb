@@ -3,15 +3,16 @@ class Nonpareil < Formula
   desc "Estimates coverage in metagenomic datasets"
   homepage "http://enve-omics.ce.gatech.edu/nonpareil"
 
-  url "https://github.com/lmrodriguezr/nonpareil/archive/v3.3.1.tar.gz"
-  sha256 "6fc9caf915f80704876fcd7b0a1fb3beda664fdb840fa0866bdfa1cb76df1a34"
+  url "https://github.com/lmrodriguezr/nonpareil/archive/v3.3.4.tar.gz"
+  sha256 "d91e83b3017fbafadf974355e32305d3896847ea3b671d5d98c553f01018f806"
+  license "Artistic-2.0"
   head "https://github.com/lmrodriguezr/nonpareil.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "b787eb1c9c4b954e9aa0e738eee41cfa4fbe22a6bb25b6d532de0cc1c511ffc1" => :sierra
-    sha256 "c67480c06e4c0527fbd1565f6904f873d7d463ce8e05d319b00681dda8f6823d" => :x86_64_linux
+    sha256 "bc566819e555df1f2d78612647642e45cd52953514baf66f3412c797407bce9c" => :catalina
+    sha256 "89f6054e0ac0294ff44a5abfe61db24e7c3b6a440435fac058cec1bdc9f51af0" => :x86_64_linux
   end
 
   depends_on "r"

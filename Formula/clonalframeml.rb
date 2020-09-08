@@ -4,6 +4,7 @@ class Clonalframeml < Formula
   homepage "https://github.com/xavierdidelot/ClonalFrameML"
   url "https://github.com/xavierdidelot/ClonalFrameML/archive/v1.12.tar.gz"
   sha256 "ef76705c1a0f1343184f956cd0bdc96c2cfdbb998177330b09b6df84c74c2de6"
+  license "GPL-3.0"
   head "https://github.com/xavierdidelot/ClonalFrameML.git"
 
   bottle do

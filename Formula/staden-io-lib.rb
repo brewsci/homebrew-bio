@@ -1,24 +1,22 @@
 class StadenIoLib < Formula
   desc "Staden Package io_lib"
   homepage "https://staden.sourceforge.io/"
-  url "https://github.com/jkbonfield/io_lib/releases/download/io_lib-1-14-11/io_lib-1.14.11.tar.gz"
-  sha256 "a172cb66416794fdd9c1fc443f722f7e3439b52c99510b9a60f828392b9989e4"
+  url "https://github.com/jkbonfield/io_lib/releases/download/io_lib-1-14-13/io_lib-1.14.13.tar.gz"
+  sha256 "5641c02f98342f689274ed9b71e57d26fbf8216730619bde3a663214ce2ae8b0"
   head "https://github.com/jkbonfield/io_lib.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "9466bcd62e1a1cf4fe17361a43e220704df0a1069bc3243e8494e46af960af65" => :sierra
-    sha256 "194a6acbe5fb3024bcc73dc35a4781309c69901d841f901fae280d72a5183267" => :x86_64_linux
+    cellar :any
+    sha256 "7f2660ade78da28992e2b40e7920bb16585f5de7fcfb14344f974c84bdcfc849" => :catalina
+    sha256 "ec45d0b6f055089c5bc95c798e7be60e39699aa664fad44e9ea9dda862b26054" => :x86_64_linux
   end
 
   depends_on "xz"
 
-  unless OS.mac?
-    depends_on "bzip2"
-    depends_on "curl"
-    depends_on "zlib"
-  end
+  uses_from_macos "bzip2"
+  uses_from_macos "curl"
+  uses_from_macos "zlib"
 
   def install
     system "./configure", "--disable-debug",
@@ -28,6 +26,11 @@ class StadenIoLib < Formula
     system "make", "install"
 
     pkgshare.install "tests"
+
+    # Avoid references to Homebrew shims
+    os = OS.mac? ? "mac" : "linux"
+    inreplace pkgshare/"tests/Makefile", HOMEBREW_LIBRARY/"Homebrew/shims/#{os}/super/", "/usr/bin/"
+    rm pkgshare/"tests/cram_io_test"
   end
 
   test do

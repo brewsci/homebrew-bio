@@ -13,7 +13,7 @@ class Snpeff < Formula
     sha256 "e3088b0a1dcd51a33e74867cdb157a3bfa470101fbd71c61e3f8e00c04118dd5" => :x86_64_linux
   end
 
-  depends_on :java => "1.8+"
+  depends_on java: "1.8+"
 
   def install
     # snpEff and SnpSift

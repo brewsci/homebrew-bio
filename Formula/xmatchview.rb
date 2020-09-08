@@ -4,6 +4,10 @@ class Xmatchview < Formula
   homepage "https://github.com/bcgsc/xmatchview"
   url "https://github.com/bcgsc/xmatchview/archive/v1.2.3.tar.gz"
   sha256 "774dd0f07946511b853eed167d3fbff56f72fa0ee0f4a586207904246789042e"
+<<<<<<< HEAD
+=======
+  license "GPL-3.0"
+>>>>>>> upstream/develop
   head "https://github.com/bcgsc/xmatchview.git"
 
   bottle do
@@ -28,7 +32,7 @@ class Xmatchview < Formula
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
     system "pip3", "install", "--no-cache-dir", "--prefix=#{libexec}", "pillow", "--no-binary=pillow"
     prefix.install Dir["xmatchview*py"]
-    prefix.env_script_all_files libexec/"bin", :PYTHONPATH => Dir[libexec/"lib/python*/site-packages"].first
+    prefix.env_script_all_files libexec/"bin", PYTHONPATH: Dir[libexec/"lib/python*/site-packages"].first
     bin.install_symlink "../xmatchview.py", "../xmatchview-conifer.py"
     chmod 0555, Dir[prefix/"xmatchview*py"]
     prefix.install "test"

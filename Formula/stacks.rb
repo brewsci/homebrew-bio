@@ -5,6 +5,7 @@ class Stacks < Formula
   homepage "http://catchenlab.life.illinois.edu/stacks/"
   url "catchenlab.life.illinois.edu/stacks/source/stacks-2.41.tar.gz"
   sha256 "78be911e083482aea321824b21bbd1cf7548aaf67768ca2073b280257f068260"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

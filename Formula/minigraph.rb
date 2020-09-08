@@ -1,15 +1,16 @@
 class Minigraph < Formula
   desc "Proof-of-concept seq-to-graph mapper and graph generator"
   homepage "https://lh3.github.io/minigraph"
-  url "https://github.com/lh3/minigraph/archive/v0.2.tar.gz"
-  sha256 "5474b8faf44e202a86670bb68919cbcc6012f1b66b76b5eebd2aaee969a097cd"
+  url "https://github.com/lh3/minigraph/archive/v0.10.tar.gz"
+  sha256 "993c8077c7263166fe3386d29f37a20726fa27011d3365363c646cfbe88441f1"
+  license "MIT"
   head "https://github.com/lh3/minigraph.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "e426ffbb8e00b96381a63acfc657ee130b0baa0e74d27cd7c9794f908dd54a32" => :sierra
-    sha256 "91a8efd4052fd54d4456180a2a994ded487d799e9cd5f3efb457f79ae01a348c" => :x86_64_linux
+    sha256 "9dcb1abd6ccc96b5910276f3690542be85ab68bb6c33c0c096736a17f13fc01c" => :catalina
+    sha256 "fadf58602f216a3f4faac81eaad58fe0bdda70e4200fa102a5c6cfd2c528d49e" => :x86_64_linux
   end
 
   depends_on "k8"

@@ -6,6 +6,7 @@ class Emboss < Formula
   mirror "http://mirrors.mit.edu/gentoo-distfiles/distfiles/EMBOSS-6.6.0.tar.gz"
   mirror "https://science-annex.org/pub/emboss/EMBOSS-6.6.0.tar.gz"
   sha256 "7184a763d39ad96bb598bfd531628a34aa53e474db9e7cac4416c2a40ab10c6e"
+  license "GPL-2.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -22,7 +23,9 @@ class Emboss < Formula
 
   depends_on "mysql"      => :optional
   depends_on "postgresql" => :optional
-  depends_on :x11         => :optional
+  depends_on x11: :optional
+
+  uses_from_macos "zlib"
 
   uses_from_macos "zlib"
 

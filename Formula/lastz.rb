@@ -1,15 +1,16 @@
 class Lastz < Formula
   desc "Align DNA sequences, a pairwise aligner"
   homepage "https://www.bx.psu.edu/~rsharris/lastz/"
-  url "https://github.com/lastz/lastz/archive/1.04.00.tar.gz"
-  sha256 "a4c2c7a77430387e96dbc9f5bdc75874334c672be90f5720956c0f211abf9f5a"
+  url "https://github.com/lastz/lastz/archive/1.04.03.tar.gz"
+  sha256 "c58ed8e37c4b0e82492b3a2b3e12447a3c40286fb8358906d19f10b0a713e9f4"
+  license "MIT"
   head "https://github.com/lastz/lastz"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "2ae5c3000f42435fdb7f3f7bbd1ae5f80f799ec10ad59d37f1fe093cc94f0bf6" => :sierra
-    sha256 "9ae732027be6e7ef474170a0e372e494aca32818a67602eda7fe99f73c2eeb14" => :x86_64_linux
+    sha256 "bb384aecd906f6a8c3589afc3a11a48b7c6c3661aa8edd751e59f904e2768ab7" => :catalina
+    sha256 "5cb1a90c4e2c6d1cefa82c94a83977b1e008be94690c14cef5fef2099693424f" => :x86_64_linux
   end
 
   def install

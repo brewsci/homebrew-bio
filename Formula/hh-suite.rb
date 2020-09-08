@@ -4,6 +4,10 @@ class HhSuite < Formula
   homepage "https://github.com/soedinglab/hh-suite"
   url "https://github.com/soedinglab/hh-suite/archive/v3.2.0.tar.gz"
   sha256 "6b870dcfbc1ffb9dd664a45415fcd13cf5970f49d1c7b824160c260fa138e6d6"
+<<<<<<< HEAD
+=======
+  license "GPL-3.0"
+>>>>>>> upstream/develop
   revision 1
 
   bottle do
@@ -18,12 +22,20 @@ class HhSuite < Formula
 
   uses_from_macos "perl"
 
+<<<<<<< HEAD
   fails_with :clang # needs openmp
 
+=======
+>>>>>>> upstream/develop
   on_macos do
     depends_on "gcc" # needs openmp
   end
 
+<<<<<<< HEAD
+=======
+  fails_with :clang # needs openmp
+
+>>>>>>> upstream/develop
   def install
     mkdir "build" do
       system "cmake", "..", *std_cmake_args

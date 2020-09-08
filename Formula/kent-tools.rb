@@ -1,15 +1,14 @@
 class KentTools < Formula
   desc "Utilities for the UCSC Genome Browser"
   homepage "https://genome.ucsc.edu/"
-  url "http://hgdownload.soe.ucsc.edu/admin/exe/userApps.v367.src.tgz"
-  sha256 "dea0d6d9f8011f6212c196b26f0549c5c09268abf179a444fec674304e70f460"
+  url "https://hgdownload.soe.ucsc.edu/admin/exe/userApps.v401.src.tgz"
+  sha256 "3608689a07a6327f5695672a804ef5f35c9d680c114b0ee947ca2a4f3b768514"
   head "git://genome-source.cse.ucsc.edu/kent.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "efad1b89d2d833d7f57e835a7ae4abe5725a997e80202faabaaf6903d351bf01" => :x86_64_linux
-    sha256 "9caec5fc38f9552f2569550c88a816735dda7fefc05335795e09dd4923a0473d" => :sierra
+    sha256 "8e1df6949537b6f6888f38705ff35348561815f4fe1a3b6c58e6c4d7e257c834" => :catalina
+    sha256 "815c5bdf836a96b6b419dadc4fa0b1122229d4fd1147bb7d582cb8416f730567" => :x86_64_linux
   end
 
   depends_on "libpng"
@@ -32,7 +31,7 @@ class KentTools < Formula
     args << "PNGLIB=-L#{libpng.opt_lib} -lpng -lz"
     args << "PNGINCL=-I#{libpng.opt_include}"
     args << "MYSQLINC=#{mysql.opt_include}/mysql"
-    args << "MYSQLLIBS=-lmysqlclient -lz"
+    args << "MYSQLLIBS=-L#{mysql.opt_lib} -lmysqlclient -lz -lstdc++"
 
     cd build.head? ? "src" : "kent/src" do
       inreplace "parasol/makefile", "DESTDIR=${HOME}/bin", ""

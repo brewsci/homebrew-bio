@@ -4,6 +4,7 @@ class Iva < Formula
   homepage "https://github.com/sanger-pathogens/iva"
   url "https://github.com/sanger-pathogens/iva/archive/v1.0.9.tar.gz"
   sha256 "91ba402d0feacc88b3e34e71b4f10e0552702887e6e416076e57f95f6aaf7fad"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -57,7 +58,7 @@ class Iva < Formula
 
     system "python3", *Language::Python.setup_install_args(libexec)
     bin.install Dir[libexec/"bin/*"]
-    bin.env_script_all_files(libexec/"bin", :PYTHONPATH => ENV["PYTHONPATH"])
+    bin.env_script_all_files(libexec/"bin", PYTHONPATH: ENV["PYTHONPATH"])
   end
 
   test do

@@ -4,6 +4,7 @@ class Circos < Formula
   homepage "http://circos.ca"
   url "http://circos.ca/distribution/circos-0.69-9.tgz"
   sha256 "34d8d7ebebf3f553d62820f8f4a0a57814b610341f836b4740c46c3057f789d2"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -32,7 +33,7 @@ class Circos < Formula
       "Math::VecStat", "Number::Format", "Readonly", "SVG", "Set::IntSpan",
       "Statistics::Basic", "Text::Format"
 
-    (bin/"circos").write_env_script("#{libexec}/bin/circos", :PERL5LIB => ENV["PERL5LIB"])
+    (bin/"circos").write_env_script("#{libexec}/bin/circos", PERL5LIB: ENV["PERL5LIB"])
   end
 
   test do

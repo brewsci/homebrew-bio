@@ -2,16 +2,14 @@ class Parsnp < Formula
   # cite Treangen_2014: "https://doi.org/10.1186/s13059-014-0524-x"
   desc "Microbial core genome alignment and SNP detection"
   homepage "https://github.com/marbl/parsnp"
-  url "https://github.com/marbl/parsnp/archive/v1.2.tar.gz"
-  sha256 "c2cbefcf961925c3368476420e28a63741376773f948094ed845a32291bda436"
-  revision 3
+  url "https://github.com/marbl/parsnp/archive/v1.5.2.tar.gz"
+  sha256 "780ddb5fd8c626bf77d31af8e620436ca942801de942c682d1f246bbbdcf2c3d"
   head "https://github.com/marbl/parsnp.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "b0e844a937884f368e4b1294e0d356155dd3371bdfe37c778826c0c59b310246" => :sierra
-    sha256 "0717e9aa5c6fdff91bb340b415694849813465beae6103fa949c64a774d9a453" => :x86_64_linux
+    sha256 "a314260f40f1935bddabd3c0918615a966a928d9d4943946553df64374342312" => :catalina
+    sha256 "c88a39e77c87877394c668db346bfedf2559e4f13f3b54b590db5b999375976d" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
@@ -19,17 +17,14 @@ class Parsnp < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
 
-  depends_on "fasttree"
-  depends_on "harvest-tools"
-  depends_on "libmuscle"
+  depends_on "brewsci/bio/fasttree"
+  depends_on "brewsci/bio/harvest-tools"
 
-  if OS.mac?
-    depends_on "gcc"
-  else
-    depends_on "zlib"
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "libomp"
   end
-
-  fails_with :clang # needs openmp
 
   def install
     # remove binaries
@@ -38,16 +33,20 @@ class Parsnp < Formula
     # https://github.com/marbl/parsnp/issues/52
     inreplace "src/parsnp.cpp", "1.0.1", version.to_s
 
-    # we still build this, but runtime will link against libmuscle
-    # see: https://github.com/brewsci/homebrew-bio/pull/362
     cd "muscle" do
       ENV.deparallelize
-      system "./configure", "--prefix=#{Dir.pwd}"
+      system "./autogen.sh"
+      system "./configure", "--prefix=#{prefix}"
       system "make", "install"
+      (doc/"muscle").install "AUTHORS", "ChangeLog"
     end
 
+    inreplace "configure.ac",
+              "-I$with_libmuscle",
+              "-I$with_libmuscle/include/libMUSCLE-3.7"
+
     system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}"
+    system "./configure", "--prefix=#{prefix}", "--with-libmuscle=#{prefix}"
 
     # https://github.com/marbl/parsnp/issues/57
     libr = " -lMUSCLE-3.7"
@@ -56,7 +55,8 @@ class Parsnp < Formula
 
     system "make"
 
-    bin.install "src/parsnp"
+    bin.install "src/parsnp_core"
+    bin.install_symlink "parsnp_core" => "parsnp"
     pkgshare.install "examples"
     doc.install "CITATION", "LICENSE", "README.md"
   end

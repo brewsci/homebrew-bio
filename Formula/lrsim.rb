@@ -3,6 +3,7 @@ class Lrsim < Formula
   homepage "https://github.com/aquaskyline/LRSIM"
   url "https://github.com/aquaskyline/LRSIM/archive/1.0.tar.gz"
   sha256 "89623fba2ce624da4e2c8ce8a99b1a46eb3bc03a8c38044c64f4b8a0d0d9721e"
+  license "MIT"
   revision 1
 
   bottle do
@@ -79,7 +80,7 @@ class Lrsim < Formula
     prefix.install "DWGSIMSrc/dwgsim", "extractReads", "msortSrc/msort", "SURVIVORSrc/Debug/SURVIVOR",
       "faFilter.pl", "simulateLinkedReads.pl",
       "4M-with-alts-february-2016.txt"
-    (bin/"simulateLinkedReads").write_env_script(prefix/"simulateLinkedReads.pl", :PERL5LIB => ENV["PERL5LIB"])
+    (bin/"simulateLinkedReads").write_env_script(prefix/"simulateLinkedReads.pl", PERL5LIB: ENV["PERL5LIB"])
     prefix.install_symlink HOMEBREW_PREFIX/"bin/samtools"
   end
 

@@ -4,6 +4,7 @@ class Wish < Formula
   url "https://github.com/soedinglab/WIsH/archive/f3cc533aca6d1066e7816740d4d9afae1b3dfd98.tar.gz"
   version "1.0"
   sha256 "379ff91f32c4c1afc546b42688940622b4455ef72b1b411200bd5db02610e165"
+  license "GPL-3.0"
   head "https://github.com/soedinglab/WIsH.git"
 
   bottle do

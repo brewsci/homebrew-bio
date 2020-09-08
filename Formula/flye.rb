@@ -4,15 +4,17 @@ class Flye < Formula
   # cite Kolmogorov_2018: "https://doi.org/10.1101/247148"
   desc "Fast and accurate de novo assembler for single molecule sequencing reads"
   homepage "https://github.com/fenderglass/Flye"
-  url "https://github.com/fenderglass/Flye/archive/2.7.tar.gz"
-  sha256 "4d595f53bd68c820b43509ce6ee7284847237e70a3b4bc16c57170bb538d3947"
-  head "https://github.com/fenderglass/Flye.git", :branch => "flye"
+  url "https://github.com/fenderglass/Flye/archive/2.8-1.tar.gz"
+  version "2.8"
+  sha256 "bb9f7e38812f7f5eacae20c15c675babeebd640f4f030f5d9a07b052466ebf34"
+  license "BSD-3-Clause"
+  head "https://github.com/fenderglass/Flye.git", branch: "flye"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "9c0d8e1bb12f0bba3837437c77fb56501c74509249c69ae56063659e4a2e377b" => :catalina
-    sha256 "354c486e6585dbb1b73573cabc47dcf4e5bc8fc485f6b27016dc9eace1be0ad3" => :x86_64_linux
+    sha256 "0c461022fa8f1b41ac6ea79bb320a913c09da9cb89930c912e0be0edddf253c7" => :catalina
+    sha256 "1f0c23f01533968deab9bc997bd116cea9a11b1941f325981370d9899815cc83" => :x86_64_linux
   end
 
   depends_on "python@3.8"

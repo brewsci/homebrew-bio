@@ -1,22 +1,23 @@
 class Mlst < Formula
   desc "Multi-Locus Sequence Typing of bacterial contigs"
   homepage "https://github.com/tseemann/mlst"
-  url "https://github.com/tseemann/mlst/archive/v2.18.0.tar.gz"
-  sha256 "6b72dd24e439f360d8adfb19b424eb3365048d2af3a8dfed526a686cd761afcf"
+  url "https://github.com/tseemann/mlst/archive/v2.19.0.tar.gz"
+  sha256 "74403be717f0bffd579028fd8e7c02d826f5c896e38e6078271a59f7dfce2b0e"
+  license "GPL-2.0"
   head "https://github.com/tseemann/mlst.git"
 
   bottle do
-    cellar :any_skip_relocation
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "9a2b1f281e71d728ab5665649e8f3bc9a6d724a2120981a9bb04b3bfebed6958" => :mojave
-    sha256 "1ac4febaab06562d838becb5fcaef22c5c9a60edd0bf74dcbc13b3a763cb3f15" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "1798bf97d935367e32cb7c7854b25c5d04453c4ac5c00360b3c9c2969c77d110" => :catalina
+    sha256 "1d618e68933b2866250ca1a60bb5e1e259890e17dbda5139afc03e4b64bb4a98" => :x86_64_linux
   end
 
   depends_on "cpanminus" => :build
   depends_on "pkg-config" => :build
 
-  depends_on "any2fasta"
   depends_on "blast"
+  depends_on "brewsci/bio/any2fasta"
   depends_on "perl" # needs 5.26 so can't use Mac perl
   depends_on "wget"
 
@@ -26,7 +27,7 @@ class Mlst < Formula
     libexec.install Dir["*"]
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
     system "cpanm", "--self-contained", "-l", libexec, "Moo", "List::MoreUtils", "JSON"
-    (bin/"mlst").write_env_script("#{libexec}/bin/mlst", :PERL5LIB => ENV["PERL5LIB"])
+    (bin/"mlst").write_env_script("#{libexec}/bin/mlst", PERL5LIB: ENV["PERL5LIB"])
   end
 
   test do

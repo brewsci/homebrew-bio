@@ -31,7 +31,7 @@ class Repeatmasker < Formula
       perl = HOMEBREW_PREFIX/"bin/perl"
       ENV["PERL5LIB"] = libexec/"lib/perl5"
       system "cpanm", "--self-contained", "-l", libexec, "Text::Soundex"
-      (bin/"RepeatMasker").write_env_script(libexec/"RepeatMasker", :PERL5LIB => ENV["PERL5LIB"])
+      (bin/"RepeatMasker").write_env_script(libexec/"RepeatMasker", PERL5LIB: ENV["PERL5LIB"])
     end
 
     # Configure RepeatMasker. The prompts are:

@@ -1,14 +1,15 @@
 class Varsim < Formula
   desc "High-fidelity simulation validation framework for NGS"
   homepage "https://github.com/bioinform/varsim"
-  url "https://github.com/bioinform/varsim/releases/download/v0.8.2/varsim-0.8.2.tar.gz"
-  sha256 "a41f58cc55dcda2d69ca8dabc1f50a7799b16cccaf9f34af082ed1322e1462b8"
+  url "https://github.com/bioinform/varsim/releases/download/v0.8.4/varsim-0.8.4.tar.gz"
+  sha256 "36d2dd6ccd60cd97ea60fdab918d21cb520894d7d38276b837c39ef587977696"
+  license "BSD-2-Clause"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "3c85530187825523c88c8ce2aed35c5e83c090ec32a7533c7705674655ee8f75" => :sierra
-    sha256 "200c268c51ed00026b58c6df95a7c0fb1e60b168a8c522eb8c18a8a8d4a03f1f" => :x86_64_linux
+    sha256 "c6b82592aa5824c0035de5ef5636f76a26985ed1e54e7f9b5b43c9438764e8ea" => :catalina
+    sha256 "b06e5eb42eda0e79c90354a8f7b5768c920c4c45a72a457b732f64e12d037e39" => :x86_64_linux
   end
 
   depends_on :java

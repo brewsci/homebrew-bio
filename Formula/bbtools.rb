@@ -1,17 +1,17 @@
 class Bbtools < Formula
   desc "Suite of Brian Bushnell's tools for manipulating reads"
   homepage "https://jgi.doe.gov/data-and-tools/bbtools/"
-  url "https://downloads.sourceforge.net/bbmap/BBMap_38.70.tar.gz"
-  sha256 "0185ebea542c543179eb91faa9705582b65e2d37c259665e9f900f9e6d0060e9"
+  url "https://downloads.sourceforge.net/bbmap/BBMap_38.86.tar.gz"
+  sha256 "c3e641285c70fdabbf5f05833241f6a4ee42cd244245ebf8eb32f12341fdf1de"
 
   bottle do
-    cellar :any_skip_relocation
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "3436568b7a2c36aa00a6f87665f9beeb82ad721a8bb047006ed09296fa46ea68" => :mojave
-    sha256 "3ee41c32a6c380184637465dc864500207f3d256323b93dd2cd7098bf10a7f3f" => :x86_64_linux
+    cellar :any
+    sha256 "d321c705775592719ac53b7d2e89aff8a02087c262b293ba2dc265332f5f6bb9" => :catalina
+    sha256 "edebab140175eb6a45b4707549b563bb61fd65023f410662713b5718d2dda620" => :x86_64_linux
   end
 
-  depends_on :java => "1.7+"
+  depends_on java: "1.7+"
 
   def install
     if OS.mac?

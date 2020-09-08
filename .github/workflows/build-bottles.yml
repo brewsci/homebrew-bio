@@ -16,7 +16,11 @@ jobs:
   build-linux-bottles:
     runs-on: ubuntu-latest
     container:
+<<<<<<< HEAD
       image: homebrew/ubuntu16.04
+=======
+      image: homebrew/ubuntu16.04:master
+>>>>>>> upstream/develop
     steps:
       - name: Update Homebrew
         run: brew update-reset

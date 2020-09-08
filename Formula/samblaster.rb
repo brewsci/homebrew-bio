@@ -2,15 +2,16 @@ class Samblaster < Formula
   # cite Faust_2014: "https://doi.org/10.1093/bioinformatics/btu314"
   desc "Fast duplicate marking in SAM files"
   homepage "https://github.com/GregoryFaust/samblaster"
-  url "https://github.com/GregoryFaust/samblaster/archive/v.0.1.24.tar.gz"
-  sha256 "72c42e0a346166ba00152417c82179bd5139636fea859babb06ca855af93d11f"
+  url "https://github.com/GregoryFaust/samblaster/archive/v.0.1.26.tar.gz"
+  sha256 "6b42a53d64a3ed340852028546693a24c860f236fd70e90c2b24fde9dcc4fd63"
+  license "MIT"
   head "https://github.com/GregoryFaust/samblaster"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "6cbcf31a1f314f12519ca125d28deb931589fceb7b833616b242c44c6c5e8312" => :sierra
-    sha256 "41fdd5d3bf09c1a45dc4a4aa4bfd7cee316e582f352bffa0ebe31a103e8dd814" => :x86_64_linux
+    sha256 "f386efb369c83d4cbe591579deed487be0b5ab0a504ec4e89b8f14bc4c72737c" => :catalina
+    sha256 "744611e0d8fbed9705fdfa30fb18c7a35182e9262d229a01f9ec9afe51ab7b25" => :x86_64_linux
   end
 
   def install
