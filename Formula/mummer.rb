@@ -38,9 +38,10 @@ class Mummer < Formula
   end
 
   test do
+    tools_to_skip = %w[gaps nucmer2xfig]
     TOOLS.each do |tool|
       # Skip two tools that do not have a help flag
-      next if ["gaps", "nucmer2xfig"].include? tool
+      next if tools_to_skip.include? tool
 
       assert_match /U(sage|SAGE)/, pipe_output("#{prefix}/#{tool} -h 2>&1")
     end
