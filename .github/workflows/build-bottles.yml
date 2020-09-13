@@ -8,11 +8,6 @@ env:
   HOMEBREW_NO_INSTALL_CLEANUP: 1
 
 jobs:
-  audit:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - uses: jonchang/audit-action@master
   build-linux-bottles:
     runs-on: ubuntu-latest
     container:
