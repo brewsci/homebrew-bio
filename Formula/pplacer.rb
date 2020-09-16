@@ -2,6 +2,7 @@ class Pplacer < Formula
   # cite Matsen_2010: "https://doi.org/10.1186/1471-2105-11-538"
   desc "Place query sequences on a fixed reference phylogenetic tree"
   homepage "https://matsen.fhcrc.org/pplacer/"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

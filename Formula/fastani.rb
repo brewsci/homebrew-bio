@@ -2,26 +2,29 @@ class Fastani < Formula
   # cite Jain_2017: "https://doi.org/10.1101/225342"
   desc "Fast Whole-Genome Similarity (ANI) Estimation"
   homepage "https://github.com/ParBLiSS/FastANI"
-  url "https://github.com/ParBLiSS/FastANI/archive/v1.1.tar.gz"
-  sha256 "88766cf09b944d4622a569aa33178b8008a699cae044ab837a16f2bd70112c86"
+  url "https://github.com/ParBLiSS/FastANI/archive/v1.31.tar.gz"
+  sha256 "3a1f2da7fa940a0650a39c5b8176f475fe74eea6beb0bc8ea1394d94defa5b3d"
+  license "Apache-2.0"
   head "https://github.com/ParBLiSS/FastANI.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "ff8d6d9662eae0bc5eb25bcb47ecb43cb56e1526d7a9235c0d40ddbe0e096f92" => :sierra
-    sha256 "71f8d0311cae9c1f6ee05cdf1dae0e6edb88920a9d261275201ce59096753da8" => :x86_64_linux
+    sha256 "682a759bbd381799d6230fad33d75eed4e11a56023579233b955c6ed1ddc6a42" => :catalina
+    sha256 "37054c44ef24bd932b14d5933cc962c2cd92bea796f4be0bab0ca92dc7d0a452" => :x86_64_linux
   end
 
-  fails_with :clang # needs openmp
-
   depends_on "autoconf" => :build
-  depends_on "gcc" => :build if OS.mac? # needs openmp
+  depends_on "boost"
+  depends_on "gsl"
+
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "libomp"
+  end
 
   # https://github.com/ParBLiSS/FastANI/issues/18 (don't need gsl+boost, either)
-  depends_on "gsl"
-  depends_on "boost"
-  depends_on "zlib" unless OS.mac?
 
   def install
     # https://github.com/ParBLiSS/FastANI/issues/17 (macos clang opts for gcc)
@@ -36,8 +39,7 @@ class Fastani < Formula
   end
 
   test do
-    # https://github.com/ParBLiSS/FastANI/issues/15 (returns 1 not 0)
-    assert_match "fragments", shell_output("#{bin}/fastANI --help 2>&1", 1)
+    assert_match "fragment length", shell_output("#{bin}/fastANI --help 2>&1")
     system "#{bin}/fastANI",
            "-q", pkgshare/"data/Shigella_flexneri_2a_01.fna",
            "-r", pkgshare/"data/Escherichia_coli_str_K12_MG1655.fna",

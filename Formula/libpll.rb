@@ -4,6 +4,7 @@ class Libpll < Formula
   homepage "https://github.com/xflouris/libpll"
   url "https://github.com/xflouris/libpll/archive/0.3.2.tar.gz"
   sha256 "45107d59d87be921c522478bb3688beee60dc79154e0b4a183af01122c597132"
+  license "AGPL-3.0"
   head "https://github.com/xflouris/libpll.git"
 
   bottle do
@@ -16,8 +17,9 @@ class Libpll < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "flex" => :build unless OS.mac?
-  depends_on "bison" => :build unless OS.mac?
+
+  uses_from_macos "bison" => :build
+  uses_from_macos "flex" => :build
 
   def install
     system "./autogen.sh"

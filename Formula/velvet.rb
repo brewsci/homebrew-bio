@@ -4,6 +4,7 @@ class Velvet < Formula
   homepage "https://www.ebi.ac.uk/~zerbino/velvet/"
   url "https://www.ebi.ac.uk/~zerbino/velvet/velvet_1.2.10.tgz"
   sha256 "884dd488c2d12f1f89cdc530a266af5d3106965f21ab9149e8cb5c633c977640"
+  license "GPL-2.0"
   head "https://github.com/dzerbino/velvet.git"
 
   bottle do
@@ -13,7 +14,7 @@ class Velvet < Formula
     sha256 "79ad825ef586b4627de53573503b695c7a1f4167bba3a0f9058aa1d83382934e" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     args = ["LONGSEQUENCES=1", "CATEGORIES=2", "MAXKMERLENGTH=127"]

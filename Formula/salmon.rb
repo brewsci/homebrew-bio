@@ -2,32 +2,31 @@ class Salmon < Formula
   # cite Patro_2017: "https://doi.org/10.1038/nmeth.4197"
   desc "Transcript-level quantification from RNA-seq reads"
   homepage "https://github.com/COMBINE-lab/salmon"
-  url "https://github.com/COMBINE-lab/salmon/archive/v0.9.1.tar.gz"
-  sha256 "3a32c28d217f8f0af411c77c04144b1fa4e6fd3c2f676661cc875123e4f53520"
+  url "https://github.com/COMBINE-lab/salmon/archive/v1.3.0.tar.gz"
+  sha256 "c105be481630d57e7022bf870eb040857834303abff05fe0e971dda5ed6f0236"
+  license "GPL-3.0"
   head "https://github.com/COMBINE-lab/salmon.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "48292242cc8968b741494a8b0c2115e963f8d556f69e91a93b0b06f7e01c6c19" => :sierra
-    sha256 "402f7b66bcbf4347dbfedd8e39507024ad223b31b915a42f28cec37e2254a372" => :x86_64_linux
+    sha256 "2a39a9c9053bc725a5b5d47cb35a945555f956b7846dc2d60e98ed07b686f00d" => :catalina
+    sha256 "7851373114d5aa1cd698b73a71223371e2df913280c9c8fa58b32ef9853a5bdd" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "boost" => :build
   depends_on "cmake" => :build
-  depends_on "boost"
   depends_on "tbb"
   depends_on "xz"
-  unless OS.mac?
-    depends_on "unzip" => :build
-    depends_on "zlib"
-  end
+
+  uses_from_macos "unzip" => :build
+  uses_from_macos "bzip2"
+  uses_from_macos "curl"
+  uses_from_macos "zlib"
 
   def install
-    # Reduce memory usage for CircleCI.
-    ENV["MAKEFLAGS"] = "-j4" if ENV["CIRCLECI"]
-
     system "cmake", ".", *std_cmake_args
     system "make"
     system "make", "install"

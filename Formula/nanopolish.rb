@@ -3,8 +3,9 @@ class Nanopolish < Formula
   desc "Signal-level algorithms for MinION data"
   homepage "https://github.com/jts/nanopolish"
   url "https://github.com/jts/nanopolish.git",
-      :tag      => "v0.12.0",
-      :revision => "6a1333c0106e0969a13ed8fc40153c18e8da4790"
+      tag:      "v0.12.0",
+      revision: "6a1333c0106e0969a13ed8fc40153c18e8da4790"
+  license "MIT"
   head "https://github.com/jts/nanopolish.git"
 
   bottle do
@@ -17,7 +18,7 @@ class Nanopolish < Formula
   depends_on "eigen" => :build # static link
   depends_on "wget" => :build
 
-  depends_on "gcc" if OS.mac? # for openmp
+  depends_on "gcc" if OS.mac? # needs openmp
   depends_on "hdf5"
   depends_on "htslib"
   depends_on "python@3.8" # for scripts
@@ -28,9 +29,6 @@ class Nanopolish < Formula
   fails_with :clang # needs openmp
 
   def install
-    # Reduce memory usage for CircleCI.
-    ENV["MAKEFLAGS"] = "-j8" if ENV["CIRCLECI"]
-
     # remove this when 0.12.1 comes out
     # https://github.com/jts/nanopolish/commit/466c63d24896084535e8072e20d0aabc981a9888
     inreplace "src/nanopolish_call_methylation.cpp", "<omp.h>", " <omp.h>\n#include <zlib.h>"

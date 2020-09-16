@@ -3,22 +3,22 @@ class Bcalm < Formula
   desc "De Bruijn graph compaction in low memory"
   homepage "https://github.com/GATB/bcalm"
   url "https://github.com/GATB/bcalm.git",
-      :tag      => "v2.2.0",
-      :revision => "c8ac60252fa0b2abf511f7363cff7c4342dac2ee"
+      tag:      "v2.2.2",
+      revision: "febf79a3b9e334962902b5f920114b7cc7e91881"
+  license "MIT"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "6943db20f24e6ae8e904d5cc0c023c9f03fac05ba8e6ff6c45951fd75144c024" => :sierra
-    sha256 "c13588ca561bc31e073857f2d27c0afc66e465c03358c52c9711f2af64e54f7c" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "dcc1e682e002280de1aab1401b61c6c74921ea92e9e855325546c06e5da4c7b4" => :catalina
+    sha256 "d9e93a21a9cddaf7647a8947539d6ebbfa93c904bba36498bb9f0bf1ccdcbd28" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
-  depends_on "zlib" unless OS.mac?
+
+  uses_from_macos "zlib"
 
   def install
-    # Reduce memory usage for CircleCI.
-    ENV["MAKEFLAGS"] = "-j4" if ENV["CIRCLECI"]
-
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
       system "make"

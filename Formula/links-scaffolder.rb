@@ -5,6 +5,7 @@ class LinksScaffolder < Formula
   url "https://github.com/bcgsc/LINKS/releases/download/v1.8.7/links_v1-8-7.tar.gz"
   version "1.8.7"
   sha256 "3401a2694a3545cb7bf3fb13a5854e5d1c5b87200cad998d967fe8e0fc980e1c"
+  license "GPL-3.0"
   revision 1
   head "https://github.com/bcgsc/LINKS.git"
 

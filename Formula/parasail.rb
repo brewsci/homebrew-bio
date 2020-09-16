@@ -2,14 +2,14 @@ class Parasail < Formula
   # Daily_2016: "https://doi.org/10.1186/s12859-016-0930-z"
   desc "Pairwise Sequence Alignment Library"
   homepage "https://github.com/jeffdaily/parasail"
-  url "https://github.com/jeffdaily/parasail/archive/v2.4.1.tar.gz"
-  sha256 "a0cffa81251151d1038c89ec8c5105d2c4234b88d240015fee0244e26c2a739f"
+  url "https://github.com/jeffdaily/parasail/archive/v2.4.2.tar.gz"
+  sha256 "3843055fc04743269cf22d127ae26952a7f5e6fc4f1bc29f6b6f3c156c8ca434"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "65765b5cdbd7df279b53531510747a729c6e0f8ab0fbaf6fbf3dd2df2bb96525" => :sierra
-    sha256 "8bec7c43ed7c68786b0af4d4ededf42caf78899d6bfd2ccae7a9dae9d0356ebb" => :x86_64_linux
+    cellar :any
+    sha256 "697ebb74c10b475e4aad54d39af9eb9f0dceb1e243df8a901172519b07e4cd0f" => :catalina
+    sha256 "03f04da7fd392eddf775532f8bd7211689ad482c5f29e68a0f972b6c9bbe7c84" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build

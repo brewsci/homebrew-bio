@@ -4,6 +4,7 @@ class Arcs < Formula
   homepage "https://github.com/bcgsc/arcs"
   url "https://github.com/bcgsc/arcs/releases/download/v1.1.1/arcs-1.1.1.tar.gz"
   sha256 "31422b10b57080f7058021d1c0ea6f38d3f255d4d82ca48d50f3f073d8c4792d"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -20,11 +21,9 @@ class Arcs < Formula
 
   depends_on "boost" => :build
   depends_on "google-sparsehash" => :build
-  if OS.mac?
-    depends_on "gcc" # for openmp
-  else
-    depends_on "zlib"
-  end
+  depends_on "gcc" if OS.mac? # needs openmp
+
+  uses_from_macos "zlib"
 
   fails_with :clang # needs openmp
 

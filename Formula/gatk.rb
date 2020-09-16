@@ -1,20 +1,22 @@
 class Gatk < Formula
+  include Language::Python::Shebang
+
   # cite McKenna_2010: "https://doi.org/10.1101/gr.107524.110"
   desc "Genome Analysis Toolkit: Variant Discovery in High-Throughput Sequencing"
   homepage "https://software.broadinstitute.org/gatk"
-  url "https://github.com/broadinstitute/gatk/releases/download/4.1.5.0/gatk-4.1.5.0.zip"
-  sha256 "6fc152c2cae0cc54c7c4cfdfd865a64f7054a820f7d02ca2549511af1dd9882b"
+  url "https://github.com/broadinstitute/gatk/releases/download/4.1.8.1/gatk-4.1.8.1.zip"
+  sha256 "42e6de5059232df1ad5785c68c39a53dc1b54afe7bb086d0129f4dc95fb182bc"
+  license "BSD-3-Clause"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "2d322abdd5f5e6f7d481d42ee58832bc29ade6637e18fd00169c129155c97296" => :catalina
-    sha256 "c30f43ea293caea495e70480f7f01174bff7dc3d1f3b49d2d817f315b96f136d" => :x86_64_linux
+    sha256 "fc14b1d8b41bb370fa56e50cc50b83e5e73c317d658e1d36d0ba974e029409a0" => :catalina
+    sha256 "e623b8e92370031f256c19b11a22b240e56f02633cf45c1e847184c451df818c" => :x86_64_linux
   end
 
-  depends_on :java => "1.8"
-
-  uses_from_macos "python@2"
+  depends_on java: "1.8"
+  depends_on "python@3.8"
 
   resource "count_reads.bam" do
     url "https://github.com/broadinstitute/gatk/blob/626c88732c02b0fd5f395db20c91bf2784ec54b9/src/test/resources/org/broadinstitute/hellbender/tools/count_reads.bam?raw=true"
@@ -27,6 +29,8 @@ class Gatk < Formula
     prefix.install "gatk-package-#{version}-spark.jar"
     prefix.install "gatk-package-#{version}-local.jar"
     bash_completion.install "gatk-completion.sh"
+    bins = ["#{prefix}/gatk", "#{prefix}/dataproc-cluster-ui"]
+    bins.find { |f| rewrite_shebang detected_python_shebang, f }
     bin.install_symlink "#{prefix}/gatk"
     bin.install_symlink "#{prefix}/dataproc-cluster-ui"
   end

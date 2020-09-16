@@ -2,25 +2,36 @@ class Racon < Formula
   # cite Vaser_2017: "https://doi.org/10.1101/gr.214270.116"
   desc "Compute consensus sequence of a genome assembly of long uncorrected reads"
   homepage "https://github.com/lbcb-sci/racon"
-  url "https://github.com/lbcb-sci/racon/releases/download/1.4.10/racon-v1.4.10.tar.gz"
-  sha256 "016fb3affb977303a5f5ad27339a7044fa3d9b89a6ea3c7734479f864155a0c2"
+  url "https://github.com/lbcb-sci/racon/releases/download/1.4.13/racon-v1.4.13.tar.gz"
+  sha256 "4220e98bf84768483bd94eef62a0821cffc74f4e7139c74685c08161909263b0"
+  license "MIT"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "6ab2eda0ac6f54a9096972bea2b413d2d692bceb28b090eb97571ed02531e2b4" => :catalina
-    sha256 "42aba44f505ae524b7e7aa22827994db66495c76caa35caea938286dda6be851" => :x86_64_linux
+    sha256 "9a36412582dbf860ad19aa1d9795af7f6f6c326e4642fc0a8d6325431f363d5d" => :catalina
+    sha256 "d5925954884d8e3f99266f30a7d28dfc0113740fa5baca55ccc90d3c3683d73a" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
-  depends_on "gcc" if OS.mac? # for openmp
-  depends_on "python"
+  depends_on "python@3.8"
 
   uses_from_macos "zlib"
 
-  fails_with :clang # needs openmp
+  on_macos do
+    depends_on "libomp"
+  end
+
+  # Update spoa from 3.0.2 to 3.1.1 to fix 'invalid_argument' error
+  # https://github.com/rvaser/spoa/pull/28
+  resource "spoa" do
+    url "https://github.com/rvaser/spoa.git",
+      revision: "06d58ef50ab19184bb1d905443e091310de9ce2c"
+  end
 
   def install
+    rm_rf "vendor/spoa"
+    (buildpath/"vendor/spoa").install resource("spoa")
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
       system "make"

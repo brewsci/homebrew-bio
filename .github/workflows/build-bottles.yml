@@ -2,17 +2,25 @@ name: Build bottles
 
 on: pull_request
 
+env:
+  HOMEBREW_NO_ANALYTICS: 1
+  HOMEBREW_NO_AUTO_UPDATE: 1
+  HOMEBREW_NO_INSTALL_CLEANUP: 1
+
 jobs:
-  build-linux-bottles:
+  audit:
     runs-on: ubuntu-latest
-    container:
-      image: homebrew/brew
-    env:
-      HOMEBREW_NO_ANALYTICS: 1
-      HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
       - uses: actions/checkout@master
       - uses: jonchang/audit-action@master
+  build-linux-bottles:
+    runs-on: ubuntu-latest
+    container:
+      image: homebrew/ubuntu16.04:master
+    steps:
+      - name: Update Homebrew
+        run: brew update-reset
+      - uses: actions/checkout@master
       - name: Build bottles
         run: |
           mkdir -p "$(dirname $(brew --repo ${{github.repository}}))"
@@ -28,9 +36,6 @@ jobs:
           path: ${{runner.temp}}/bottles
   build-macos-bottles:
     runs-on: macos-latest
-    env:
-      HOMEBREW_NO_ANALYTICS: 1
-      HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
       - name: Update Homebrew
         run: brew update-reset
@@ -41,7 +46,7 @@ jobs:
           cp -a "$GITHUB_WORKSPACE" "$(brew --repo ${{github.repository}})"
           mkdir ~/bottles
           cd ~/bottles
-          brew test-bot --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
+          brew test-bot --cleanup --root-url=https://linuxbrew.bintray.com/bottles-bio
           cp -a ~/bottles $RUNNER_TEMP/
       - name: Upload bottles
         uses: actions/upload-artifact@v1

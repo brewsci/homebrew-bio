@@ -8,6 +8,7 @@ class Pymol < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
+    sha256 "14fe2ca191b6461477fe69d5aec46c965502a0dc1a6ce6d90d824379c77cb473" => :mojave
     sha256 "8621be3863ecfbf5e0140240d8a5bd648aea59a175a45766a57b64b089956db9" => :x86_64_linux
   end
 
@@ -79,8 +80,6 @@ class Pymol < Formula
       --use-msgpackc=c++11
     ]
     args << "--osx-frameworks" if OS.mac?
-    # Reduce memory usage for CircleCI.
-    args << "--jobs=4" if ENV["CIRCLECI"]
     system "python3", "setup.py", "install", *args
 
     bin.install libexec/"bin/pymol"

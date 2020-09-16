@@ -2,6 +2,7 @@ class Gblocks < Formula
   # cite Castresana_2000: "https://doi.org/10.1093/oxfordjournals.molbev.a026334"
   desc "Select conserved blocks from multiple alignments"
   homepage "http://molevol.cmima.csic.es/castresana/Gblocks.html"
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
@@ -16,7 +17,6 @@ class Gblocks < Formula
     url "http://molevol.cmima.csic.es/castresana/Gblocks/Gblocks_Linux64_0.91b.tar.Z"
     sha256 "563658f03cc5e76234a8aa705bdc149398defec813d3a0c172b5f94c06c880dc"
   end
-  version "0.91b"
 
   depends_on "patchelf" => :build unless OS.mac?
 

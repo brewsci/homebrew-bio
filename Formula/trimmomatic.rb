@@ -4,6 +4,7 @@ class Trimmomatic < Formula
   homepage "http://www.usadellab.org/cms/?page=trimmomatic"
   url "http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.39.zip"
   sha256 "2f97e3a237378d55c221abfc38e4b11ea232c8a41d511b8b4871f00c0476abca"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

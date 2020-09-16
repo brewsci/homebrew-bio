@@ -4,6 +4,7 @@ class Pandaseq < Formula
   homepage "https://github.com/neufeld/pandaseq"
   url "https://github.com/neufeld/pandaseq/archive/v2.11.tar.gz"
   sha256 "6e3e35d88c95f57d612d559e093656404c1d48c341a8baa6bef7bb0f09fc8f82"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

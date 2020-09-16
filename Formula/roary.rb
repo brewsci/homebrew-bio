@@ -4,27 +4,29 @@ class Roary < Formula
   homepage "https://sanger-pathogens.github.io/Roary/"
   url "https://github.com/sanger-pathogens/Roary/archive/v3.13.0.tar.gz"
   sha256 "375f83c8750b0f4dea5b676471e73e94f3710bc3a327ec88b59f25eae1c3a1e8"
+  license "GPL-3.0"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "42756c86160f232c78b00aab596587d9726779f72ccd85e15d778371b9efb800" => :catalina
-    sha256 "68842be0ec83d5d0292006df13ae08aa864a66548551d18ee1118f54d545b958" => :x86_64_linux
+    cellar :any
+    sha256 "94907f6c61003dd602970c9c878fc7171bf2be0ddfee3d1db2ebd5a04869837a" => :catalina
+    sha256 "74f824cff0367696af1bafe8c74f61dc17f3115506734a6f5604e91d96e2d830" => :x86_64_linux
   end
 
   depends_on "cpanminus" => :build
 
   depends_on "bedtools"
-  depends_on "bioperl"
   depends_on "blast"
-  depends_on "cd-hit"
-  depends_on "fasttree"
-  depends_on "kraken"
+  depends_on "brewsci/bio/bioperl"
+  depends_on "brewsci/bio/cd-hit"
+  depends_on "brewsci/bio/fasttree"
+  depends_on "brewsci/bio/kraken"
+  depends_on "brewsci/bio/mcl"
+  depends_on "brewsci/bio/prank"
   depends_on "mafft"
-  depends_on "mcl"
   depends_on "parallel"
   depends_on "perl" # needs brewed bioperl
-  depends_on "prank"
 
   uses_from_macos "libxml2"
 
@@ -46,7 +48,7 @@ class Roary < Formula
 
     Dir[libexec/"*"].each do |exe|
       name = File.basename exe
-      (bin/name).write_env_script(exe, :PERL5LIB => ENV["PERL5LIB"])
+      (bin/name).write_env_script(exe, PERL5LIB: ENV["PERL5LIB"])
     end
   end
 

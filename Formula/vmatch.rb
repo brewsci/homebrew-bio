@@ -1,6 +1,7 @@
 class Vmatch < Formula
   desc "Large scale sequence analysis software"
   homepage "http://www.vmatch.de/"
+  license "ISC"
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation

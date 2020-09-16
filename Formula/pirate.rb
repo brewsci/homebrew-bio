@@ -2,34 +2,34 @@ class Pirate < Formula
   # cite Bayliss_2019: "https://doi.org/10.1101/598391"
   desc "Pangenome analysis and threshold evaluation toolbox"
   homepage "https://github.com/SionBayliss/PIRATE"
-  url "https://github.com/SionBayliss/PIRATE/archive/v1.0.2.tar.gz"
-  sha256 "4295f0c3380f1df58fb10792ee8e031c5521e449a6d4e4d289bd8cbf493b33d8"
+  url "https://github.com/SionBayliss/PIRATE/archive/v1.0.4.tar.gz"
+  sha256 "ed2bad7d73d5c445f565fd7532265b75dad079594d589ece87ae738b712f6bd3"
+  license "GPL-3.0"
 
   bottle do
-    cellar :any_skip_relocation
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "4e9fe8d9e3cc185c25f3eb012273fddfa1c94b70022260a03c4bd9196ace595d" => :sierra
-    sha256 "55e990b75e9fde5b11fd07dcd0289d11ea6e152ba77576de3264284873ab5fc9" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "feaab3d43e87e689002721f5c5ed97317360abff0dab99b8d71c8bd246002933" => :catalina
+    sha256 "3a8e4979d6c6f0609133acdf0d9d87765ec1535feef86954dd612fa9a6052a39" => :x86_64_linux
   end
 
-  depends_on "bioperl"
   depends_on "blast"
-  depends_on "cd-hit"
+  depends_on "brewsci/bio/bioperl"
+  depends_on "brewsci/bio/cd-hit"
+  depends_on "brewsci/bio/fasttree"
+  depends_on "brewsci/bio/mcl"
   depends_on "diamond"
-  depends_on "fasttree"
   depends_on "mafft"
-  depends_on "mcl"
   depends_on "parallel"
-  unless OS.mac?
-    depends_on "perl"
-    depends_on "unzip"
-  end
+
+  uses_from_macos "perl"
+  uses_from_macos "unzip"
 
   def install
     ENV.prepend "PERL5LIB", Formula["bioperl"].libexec/"lib/perl5"
     libexec.install Dir["*"]
     %w[PIRATE].each do |name|
-      (bin/name).write_env_script("#{libexec}/bin/#{name}", :PERL5LIB => ENV["PERL5LIB"])
+      (bin/name).write_env_script("#{libexec}/bin/#{name}", PERL5LIB: ENV["PERL5LIB"])
     end
   end
 

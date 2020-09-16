@@ -4,6 +4,7 @@ class Gemma < Formula
   homepage "https://github.com/genetics-statistics/gemma"
   url "https://github.com/genetics-statistics/GEMMA/archive/0.98.1.tar.gz"
   sha256 "6beeed4a9e727a96fdea9e86e39bbe9cbc9f0540ad3a1053814e95b0863a7e6b"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -13,10 +14,10 @@ class Gemma < Formula
   end
 
   depends_on "eigen" => :build
-
   depends_on "gsl"
   depends_on "openblas"
-  depends_on "zlib" unless OS.mac?
+
+  uses_from_macos "zlib"
 
   def install
     # https://github.com/brewsci/homebrew-bio/pull/479

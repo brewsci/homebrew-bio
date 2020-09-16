@@ -4,6 +4,7 @@ class Kraken < Formula
   homepage "https://ccb.jhu.edu/software/kraken/"
   url "https://github.com/DerrickWood/kraken/archive/v1.1.1.tar.gz"
   sha256 "73e48f40418f92b8cf036ca1da727ca3941da9b78d4c285b81ba3267326ac4ee"
+  license "GPL-3.0"
   head "https://github.com/DerrickWood/kraken.git"
 
   bottle do
@@ -13,8 +14,9 @@ class Kraken < Formula
     sha256 "a4533e0f5e6dda9546b71f59ce77653f838f9aa59468ca1f6730f838a966523b" => :x86_64_linux
   end
 
+  depends_on "gcc" if OS.mac? # needs openmp
+
   fails_with :clang # needs openmp
-  depends_on "gcc" if OS.mac? # for openmp
 
   def install
     libexec.mkdir

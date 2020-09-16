@@ -4,6 +4,7 @@ class Miniasm < Formula
   homepage "https://github.com/lh3/miniasm"
   url "https://github.com/lh3/miniasm/archive/v0.3.tar.gz"
   sha256 "9b688454f30f99cf1a0b0b1316821ad92fbd44d83ff0b35b2403ee8692ba093d"
+  license "MIT"
   head "https://github.com/lh3/miniasm.git"
 
   bottle do
@@ -13,7 +14,7 @@ class Miniasm < Formula
     sha256 "28cd7ae2c914864a0f2c594b24390c137f40f208d7400700ea12295a2dc801fb" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     system "make"

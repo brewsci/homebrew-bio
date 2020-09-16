@@ -14,7 +14,8 @@ class Bioperl < Formula
   end
 
   depends_on "cpanminus" => :build
-  depends_on "perl" unless OS.mac?
+
+  uses_from_macos "perl"
 
   def install
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
@@ -23,7 +24,7 @@ class Bioperl < Formula
     bin.env_script_all_files libexec, "PERL5LIB" => ENV["PERL5LIB"]
     Dir[libexec/"bin/bp_*.pl"].each do |executable|
       name = File.basename executable
-      (bin/name).write_env_script executable, :PERL5LIB => ENV["PERL5LIB"]
+      (bin/name).write_env_script executable, PERL5LIB: ENV["PERL5LIB"]
     end
   end
 

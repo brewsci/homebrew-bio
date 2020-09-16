@@ -3,6 +3,7 @@ class Salmid < Formula
   homepage "https://github.com/hcdenbakker/SalmID"
   url "https://github.com/hcdenbakker/SalmID/archive/0.1.23.tar.gz"
   sha256 "aadcee6a7ba87ff4681129e86238d5edb7617dc4adf291e651b05ccb6d450cc9"
+  license "MIT"
   version_scheme 1
 
   bottle do
@@ -22,7 +23,7 @@ class Salmid < Formula
 
     inreplace Dir["SalmID*py"], "#!/usr/bin/env python", "#!#{Formula["python3"].bin}/python3"
     bin.install Dir["bin/*"]
-    (bin/"SalmID.py").write_env_script libexec/"bin/SalmID.py", :PYTHONPATH => ENV["PYTHONPATH"]
+    (bin/"SalmID.py").write_env_script libexec/"bin/SalmID.py", PYTHONPATH: ENV["PYTHONPATH"]
   end
 
   test do

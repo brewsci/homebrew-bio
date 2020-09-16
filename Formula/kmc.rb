@@ -14,16 +14,13 @@ class Kmc < Formula
   end
 
   depends_on "gcc"
-  uses_from_macos "zlib"
   uses_from_macos "bzip2"
+  uses_from_macos "zlib"
 
   # Fix error: 'ext/algorithm' file not found
   fails_with :clang
 
   def install
-    # Reduce memory usage below 4 GB for Circle CI.
-    ENV["MAKEFLAGS"] = "-j4" if ENV["CIRCLECI"]
-
     args = %W[CC=#{ENV.cxx} KMC_BIN_DIR=#{bin}]
     args << (OS.mac? ? "-fmakefile_mac" : "-fmakefile")
 

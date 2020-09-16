@@ -4,6 +4,7 @@ class Ntcard < Formula
   homepage "https://github.com/bcgsc/ntCard"
   url "https://github.com/bcgsc/ntCard/releases/download/1.2.1/ntcard-1.2.1.tar.gz"
   sha256 "2d635dec6e293780a5ae2b7bb422ff5cc825a03270b507f5061cbf0f09ee7076"
+  license "MIT"
 
   head "https://github.com/bcgsc/ntCard"
 
@@ -16,7 +17,7 @@ class Ntcard < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "gcc" if OS.mac? # for openmp
+  depends_on "gcc" if OS.mac? # needs openmp
 
   fails_with :clang # needs openmp
 

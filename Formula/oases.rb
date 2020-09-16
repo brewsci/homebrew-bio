@@ -4,6 +4,7 @@ class Oases < Formula
   homepage "https://www.ebi.ac.uk/~zerbino/oases/"
   url "https://www.ebi.ac.uk/~zerbino/oases/oases_0.2.08.tgz"
   sha256 "a90d469bd19d355edf6193dcf321f77216389d2831a849d4c151c1c0c771ab36"
+  license "GPL-3.0"
   head "https://github.com/dzerbino/oases"
 
   bottle do
@@ -15,7 +16,6 @@ class Oases < Formula
 
   depends_on "velvet"
 
-  uses_from_macos "python@2"
   uses_from_macos "zlib"
 
   resource "velvet" do
@@ -47,6 +47,6 @@ class Oases < Formula
 
   test do
     assert_match "Zerbino", shell_output("#{bin}/oases 2>&1", 1)
-    assert_match "KMERGE", shell_output("#{bin}/oases_pipeline.py 2>&1", 1)
+    assert_match "KMERGE", shell_output("python2.7 #{bin}/oases_pipeline.py 2>&1", 1) if which "python2.7"
   end
 end

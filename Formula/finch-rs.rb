@@ -2,6 +2,7 @@ class FinchRs < Formula
   # Bovee_2018: "https://doi.org/10.21105/joss.00505"
   desc "Genomic minhashing implementation in Rust"
   homepage "https://github.com/onecodex/finch-rs"
+  license "MIT"
   if OS.mac?
     url "https://github.com/onecodex/finch-rs/releases/download/v0.3.0/finch-mac64-v0.3.0.zip"
     sha256 "06535290f528901868f566beadce71ae89d3b3e238b805317318e6109f756fe0"

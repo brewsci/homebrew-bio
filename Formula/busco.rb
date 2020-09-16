@@ -6,16 +6,16 @@ class Busco < Formula
   # cite Sim_o_2015: "https://doi.org/10.1093/bioinformatics/btv351"
   desc "Assess genome assembly completeness with single-copy orthologs"
   homepage "https://busco.ezlab.org"
-  url "https://gitlab.com/ezlab/busco/repository/4.0.4/archive.tar.gz"
-  sha256 "1d42e4b3a53a7e4f3c4c15485ffcc4dac9fd6cbb3a4ac410ca90774c34d4dcb1"
-  revision 1
+  url "https://gitlab.com/ezlab/busco/repository/4.1.1/archive.tar.bz2"
+  sha256 "8c9bbdb9f04b89910f8eb8b4e48398faf9e9cb9ca9cabf9b5cd6c6f36c597936"
+  license "MIT"
   head "https://gitlab.com/ezlab/busco.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "132bc5b295087ba78bf8bb324aac0680f859982c141c3d0fad9328b0f862ef71" => :catalina
-    sha256 "8ac68071f81ab2db3f19bf99608dcb785dee1e4f9a04bd2686d99ec1651eb080" => :x86_64_linux
+    sha256 "253d2bcda073ac985bb1240b1f818b0e643abd047311eb05a12f0acabfcf9047" => :catalina
+    sha256 "ddc1c727ae2ca7f465fe6a214d0124fcc7ec6244d4266f7e7272447afa0f28be" => :x86_64_linux
   end
 
   depends_on "augustus"
@@ -24,11 +24,11 @@ class Busco < Formula
   depends_on "hmmer"
   depends_on "numpy"
   depends_on "prodigal"
-  depends_on "python"
+  depends_on "python@3.8"
 
   resource "biopython" do
-    url "https://files.pythonhosted.org/packages/ff/f4/0ce39bebcbb0ff619426f2bbe86e60bc549ace318c5a9113ae480ab2adc7/biopython-1.76.tar.gz"
-    sha256 "3873cb98dad5e28d5e3f2215a012565345a398d3d2c4eebf7cd701757b828c72"
+    url "https://files.pythonhosted.org/packages/3d/2f/d9df24de05d651c5e686ee8fea3afe3985c03ef9ca02f4cc1e7ea10aa31e/biopython-1.77.tar.gz"
+    sha256 "fb1936e9ca9e7af8de1050e84375f23328e04b801063edf0ad73733494d8ec42"
   end
 
   def install
@@ -73,8 +73,8 @@ class Busco < Formula
     # Remove virtualenv_install_with_resources link and write our own
     rm bin/"busco"
     (bin/"busco").write_env_script libexec/"bin/busco",
-      :BUSCO_CONFIG_FILE    => libexec/"config.ini",
-      :AUGUSTUS_CONFIG_PATH => "#{Formula["augustus"].prefix}/config/"
+      BUSCO_CONFIG_FILE:    libexec/"config.ini",
+      AUGUSTUS_CONFIG_PATH: "#{Formula["augustus"].prefix}/config/"
   end
 
   def caveats

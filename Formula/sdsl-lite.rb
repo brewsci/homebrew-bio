@@ -5,8 +5,8 @@ class SdslLite < Formula
 
   # Use git to get submodules.
   url "https://github.com/simongog/sdsl-lite.git",
-    :revision => "0546faf0552142f06ff4b201b671a5769dd007ad",
-    :tag      => "v2.1.1"
+    revision: "0546faf0552142f06ff4b201b671a5769dd007ad",
+    tag:      "v2.1.1"
   revision 2
 
   bottle do
@@ -19,8 +19,6 @@ class SdslLite < Formula
   depends_on "cmake" => :build
 
   def install
-    # Reduce memory usage for Circle CI
-    ENV["MAKEFLAGS"] = "-j8" if ENV["CIRCLECI"]
     ENV.cxx11
     system "./install.sh", prefix
     pkgshare.install "examples", "extras", "tutorial"

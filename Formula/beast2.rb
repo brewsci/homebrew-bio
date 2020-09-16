@@ -2,14 +2,15 @@ class Beast2 < Formula
   # cite Bouckaert_2014: "https://doi.org/10.1371/journal.pcbi.1003537"
   desc "Bayesian evolutionary analysis by sampling trees"
   homepage "https://www.beast2.org/"
-  url "https://github.com/CompEvol/beast2/archive/v2.6.1.tar.gz"
-  sha256 "4d5314c7226b0a1e506be8b94239257e8de6746888519bf2159063b21dd171a8"
+  url "https://github.com/CompEvol/beast2/archive/v2.6.3.tar.gz"
+  sha256 "7528d3f4732bd2066079eb9001161deda20afc59424ec58fca844e56785dc6a9"
+  license "LGPL-2.1"
 
   bottle do
-    cellar :any_skip_relocation
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "d172b12ab67807d7d3f1e61769782b24c47bf912a8ba27c2333311a7e6166f32" => :sierra
-    sha256 "36ebbabeb1f1e7b7f33ee8f6aebb2f438237539ea38e9607390ecf3d49b0391a" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "91b1bb0fcd2ddc4fb60777946c9ce057e0a01125096a0557c20ce4b6ecd4ab3c" => :catalina
+    sha256 "0f9fea00d1f42297827baa50bf394be9c425da3343affe67ee46cc58d675edef" => :x86_64_linux
   end
 
   depends_on "ant" => :build
@@ -19,6 +20,9 @@ class Beast2 < Formula
     # Homebrew renames the unpacked source folder, but build.xml
     # assumes that it won't be renamed.
     inreplace "build.xml", "../beast2/", ""
+    # Targeting Java 6 is no longer supported.
+    inreplace "build.xml", 'source="1.6"', 'source="1.7"'
+    inreplace "build.xml", 'target="1.6"', 'target="1.7"'
     system "ant", "linux"
 
     cd "release/Linux/beast" do

@@ -4,6 +4,7 @@ class Tigmint < Formula
   homepage "https://bcgsc.github.io/tigmint/"
   url "https://github.com/bcgsc/tigmint/archive/1.1.2.tar.gz"
   sha256 "1cff0c5087f9f8f9cf0f129539585e1e5ae7288922b5f5f4ff36f2d936846783"
+  license "GPL-3.0"
   revision 2
   head "https://github.com/bcgsc/tigmint.git"
 
@@ -34,7 +35,7 @@ class Tigmint < Formula
       "git+https://github.com/daler/pybedtools.git"
     system "pip3", "install", "--prefix=#{libexec}", "-r", "requirements.txt"
     bin.install Dir["bin/*"]
-    bin.env_script_all_files libexec/"bin", :PYTHONPATH => Dir[libexec/"lib/python*/site-packages"].first
+    bin.env_script_all_files libexec/"bin", PYTHONPATH: Dir[libexec/"lib/python*/site-packages"].first
   end
 
   test do

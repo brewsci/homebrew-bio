@@ -1,0 +1,15 @@
+name: Update develop
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  update-develop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+        with:
+          fetch-depth: 100
+      - name: Update the develop branch
+        run: git push origin origin/master:develop

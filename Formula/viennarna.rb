@@ -12,11 +12,11 @@ class Viennarna < Formula
     sha256 "d76e232d798fdd980cb5a7abac2dcd0c40f70b71923abf4cb1ce92fbe3e04638" => :x86_64_linux
   end
 
-  depends_on "gcc" if OS.mac? # for OpenMP
+  depends_on "gcc" if OS.mac? # needs openmp
   depends_on "perl"
   depends_on "python"
 
-  fails_with :clang # needs OpenMP
+  fails_with :clang # needs openmp
 
   def install
     system "./configure",

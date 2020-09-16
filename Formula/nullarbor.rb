@@ -3,6 +3,7 @@ class Nullarbor < Formula
   homepage "https://github.com/tseemann/nullarbor"
   url "https://github.com/tseemann/nullarbor/archive/v2.0.20191013.tar.gz"
   sha256 "7c547057eef8545f30e2173863dbfee0d85fe100c88f0aa9c706229fa30f57f2"
+  license "GPL-2.0"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
@@ -45,7 +46,7 @@ class Nullarbor < Formula
 
     libexec.install Dir["*"]
     %w[nullarbor.pl nullarbor-report.pl].each do |name|
-      (bin/name).write_env_script("#{libexec}/bin/#{name}", :PERL5LIB => ENV["PERL5LIB"])
+      (bin/name).write_env_script("#{libexec}/bin/#{name}", PERL5LIB: ENV["PERL5LIB"])
     end
   end
 

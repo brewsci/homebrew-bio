@@ -17,7 +17,7 @@ class Snap < Formula
     system "make"
     bin.install %w[exonpairs fathom forge hmm-info snap]
     bin.install Dir["*.pl"]
-    bin.env_script_all_files libexec, :ZOE => opt_prefix
+    bin.env_script_all_files libexec, ZOE: opt_prefix
     prefix.install %w[DNA HMM Zoe 00README LICENSE example.zff]
   end
 

@@ -3,6 +3,7 @@ class LightAssembler < Formula
   homepage "https://github.com/SaraEl-Metwally/LightAssembler"
   url "https://github.com/SaraEl-Metwally/LightAssembler/archive/v1.0.0.tar.gz"
   sha256 "a04807a761d932fcef29c2d05cac9030fe325689e2e6b64e415873e69712c379"
+  license "GPL-3.0"
   head "https://github.com/SaraEl-Metwally/LightAssembler.git"
   # cite El-MetWally_2016: "https://doi.org/10.1093/bioinformatics/btw470"
 
@@ -12,7 +13,7 @@ class LightAssembler < Formula
     sha256 "f229cf9f21614d98e3a18610df63ead630d8f12b3439404a0fe42c8d91886142" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     system "make", "k=127"

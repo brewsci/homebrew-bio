@@ -3,6 +3,7 @@ class Minimap < Formula
   homepage "https://github.com/lh3/minimap"
   url "https://github.com/lh3/minimap/archive/v0.2.tar.gz"
   sha256 "cfcf77cfe2d8d64b16ea60e0139363190eca4853da9dca9d872c38fe80bf5d68"
+  license "MIT"
   head "https://github.com/lh3/minimap.git"
 
   bottle do
@@ -12,7 +13,7 @@ class Minimap < Formula
     sha256 "de577da73870b816261d2bf2a1f90d4dc95c9d2be6404ab45c3c0ddbbb2f6fcc" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     system "make"

@@ -1,23 +1,24 @@
 class Hisat2 < Formula
   # cite Kim_2015: "https://doi.org/10.1038/nmeth.3317"
   desc "Graph-based alignment to a population of genomes"
-  homepage "https://ccb.jhu.edu/software/hisat2/"
-  url "https://github.com/infphilo/hisat2/archive/0f01dc6397a.tar.gz"
-  version "2.1.0"
-  sha256 "1e878745c8b5bf93d88986add1dcd450611ab3406a8e046e941fcf67349df664"
-  head "https://github.com/infphilo/hisat2.git"
+  homepage "https://daehwankimlab.github.io/hisat2/"
+  url "https://github.com/DaehwanKimLab/hisat2/archive/v2.2.0.tar.gz"
+  sha256 "429882d90ad9c600a986279b3ca5d78573caacf3bf0d780c802c006d4fcf0a01"
+  license "GPL-3.0"
+  head "https://github.com/DaehwanKimLab/hisat2.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "8cd78c6f9d9ac19a25c1768d7825686272a0edd05cdad3f93fa152d31470c8cf" => :sierra
-    sha256 "63de0abb3432c7f2f5b1141c002885016c960d1575d7bb7e13d59f0e28e5075d" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "fa0b379de74c8f9b952d57693a93d8d7f664ca476d970608a25f3d1786c3d94e" => :catalina
+    sha256 "0266c2eaad48f32bbe1b8ba9ed39e6fae3d9c1fbfb70f285d9bf2960d5093842" => :x86_64_linux
   end
 
   fails_with :clang
 
   def install
     system "make"
+    rm "HISAT2-genotype.png"
     bin.install "hisat2", Dir["hisat2-*"]
     doc.install Dir["doc/*"]
   end

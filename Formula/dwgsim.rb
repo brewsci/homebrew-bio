@@ -2,8 +2,9 @@ class Dwgsim < Formula
   desc "Whole Genome Simulator for Next-Generation Sequencing"
   homepage "https://github.com/nh13/DWGSIM"
   url "https://github.com/nh13/DWGSIM.git",
-    :tag      => "dwgsim.0.1.12",
-    :revision => "4fd56bf39dbba3801856fa0512aed68726e3ca6e"
+    tag:      "dwgsim.0.1.12",
+    revision: "4fd56bf39dbba3801856fa0512aed68726e3ca6e"
+  license "GPL-2.0"
   head "https://github.com/nh13/DWGSIM.git"
 
   bottle do
@@ -13,11 +14,8 @@ class Dwgsim < Formula
     sha256 "dd36a513fa17141d0a98a59b985f7965c80498b30c1fa2d8dabba3cc1d42929a" => :x86_64_linux
   end
 
-  unless OS.mac?
-    # dwgsim builds a vendored copy of samtools, which requires (static) ncurses.
-    depends_on "ncurses" => :build
-    depends_on "zlib"
-  end
+  uses_from_macos "ncurses" => :build
+  uses_from_macos "zlib"
 
   def install
     system "make"

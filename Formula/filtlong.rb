@@ -3,6 +3,7 @@ class Filtlong < Formula
   homepage "https://github.com/rrwick/Filtlong"
   url "https://github.com/rrwick/Filtlong/archive/v0.2.0.tar.gz"
   sha256 "a4afb925d7ced8d083be12ca58911bb16d5348754e7c2f6431127138338ee02a"
+  license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -11,7 +12,7 @@ class Filtlong < Formula
     sha256 "446414903f438e372b2548d88f2c601c428f5f105ddd39d457312959e7f73ece" => :x86_64_linux
   end
 
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "zlib"
 
   def install
     system "make"

@@ -4,6 +4,7 @@ class Peat < Formula
   homepage "https://github.com/jhhung/PEAT"
   url "https://github.com/jhhung/PEAT/archive/v1.2.5.tar.gz"
   sha256 "5a44f888dcbae4b537141246a2e991249ae34930d553e1b0a10684309ac03e52"
+  license "GPL-2.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -21,9 +22,6 @@ class Peat < Formula
   uses_from_macos "zlib"
 
   def install
-    # Reduce memory usage for CircleCI.
-    ENV["MAKEFLAGS"] = "-j4" if ENV["CIRCLECI"]
-
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
       system "make"
