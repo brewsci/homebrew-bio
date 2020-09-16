@@ -2,13 +2,12 @@ class Bifrost < Formula
   # cite Holley_2019: "https://doi.org/10.1101/695338"
   desc "Highly parallel build/index of coloured/compacted de Bruijn graphs"
   homepage "https://github.com/pmelsted/bifrost"
-  url "https://github.com/pmelsted/bifrost/archive/v1.0.3.tar.gz"
-  sha256 "22f3637e524ba707b33d9351f544731d46fa30795e41c223ef0592f90b3be422"
+  url "https://github.com/pmelsted/bifrost/archive/v1.0.5.tar.gz"
+  sha256 "47360fe757b4aeec438deb38449dcaad607fc7421e7d6bf819112c8ed58c0d5d"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "f1f8cddd35acd9bcc2484cb4ceda170b43743fef6e705e72f55f90525511fbcd" => :catalina
     sha256 "0661fb88ce00d23aa5505284e68aedc63eb4922719b06c8af4f49e76aaafdf6e" => :x86_64_linux
   end
 
@@ -25,7 +24,6 @@ class Bifrost < Formula
   end
 
   test do
-    # no way to determine version https://github.com/pmelsted/bifrost/issues/14
-    assert_match "bloom", shell_output("#{bin}/Bifrost 2>&1")
+    assert_match "Usage", shell_output("#{bin}/Bifrost --help 2>&1")
   end
 end
