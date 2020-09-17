@@ -2,8 +2,8 @@ class Hisat2 < Formula
   # cite Kim_2015: "https://doi.org/10.1038/nmeth.3317"
   desc "Graph-based alignment to a population of genomes"
   homepage "https://daehwankimlab.github.io/hisat2/"
-  url "https://github.com/DaehwanKimLab/hisat2/archive/v2.2.0.tar.gz"
-  sha256 "429882d90ad9c600a986279b3ca5d78573caacf3bf0d780c802c006d4fcf0a01"
+  url "https://github.com/DaehwanKimLab/hisat2/archive/v2.2.1.tar.gz"
+  sha256 "f3f4f867d0a6b1f880d64efc19deaa5788c62050e0a4d614ce98b3492f702599"
   license "GPL-3.0"
   head "https://github.com/DaehwanKimLab/hisat2.git"
 
@@ -19,7 +19,7 @@ class Hisat2 < Formula
   def install
     system "make"
     rm "HISAT2-genotype.png"
-    bin.install "hisat2", Dir["hisat2-*"]
+    bin.install "hisat2", Dir["hisat2-*"], Dir["hisat2_*.py"]
     doc.install Dir["doc/*"]
   end
 
