@@ -10,7 +10,6 @@
     "homepage": "https://abacas.sourceforge.io",
     "versions": {
       "stable": "1.3.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -72,7 +71,6 @@
     "homepage": "https://github.com/tseemann/abricate",
     "versions": {
       "stable": "1.0.1",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -141,7 +139,6 @@
     "homepage": "https://github.com/bcgsc/ABySS-explorer",
     "versions": {
       "stable": "2.1.0",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -203,7 +200,6 @@
     "homepage": "https://github.com/bigdatagenomics/adam",
     "versions": {
       "stable": "0.32.0",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -265,7 +261,6 @@
     "homepage": "https://github.com/sc932/ALE",
     "versions": {
       "stable": "0.0.20180904",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -327,7 +322,6 @@
     "homepage": "https://github.com/EvolBioInf/andi",
     "versions": {
       "stable": "0.13",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -395,7 +389,6 @@
     "homepage": "https://github.com/tseemann/any2fasta",
     "versions": {
       "stable": "0.4.2",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -455,7 +448,6 @@
     "homepage": "https://www.poissonboltzmann.org/",
     "versions": {
       "stable": "1.5",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -522,7 +514,6 @@
     "homepage": "http://mbio-serv2.mbioekol.lu.se/ARAGORN/",
     "versions": {
       "stable": "1.2.38",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -582,7 +573,6 @@
     "homepage": "https://github.com/bcgsc/arcs",
     "versions": {
       "stable": "1.1.1",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -647,7 +637,6 @@
     "homepage": "https://github.com/bcgsc/arks",
     "versions": {
       "stable": "1.0.4",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -714,7 +703,6 @@
     "homepage": "https://www.niehs.nih.gov/research/resources/software/biostatistics/art/index.cfm",
     "versions": {
       "stable": "20160605",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -776,7 +764,6 @@
     "homepage": "https://www.sanger.ac.uk/science/tools/artemis",
     "versions": {
       "stable": "17.0.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -838,7 +825,6 @@
     "homepage": "https://example.com/",
     "versions": {
       "stable": "3.7.7",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -900,7 +886,6 @@
     "homepage": "https://github.com/smirarab/ASTRAL",
     "versions": {
       "stable": "5.7.1",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -962,7 +947,6 @@
     "homepage": "http://www.bali-phy.org/",
     "versions": {
       "stable": "3.5.0",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -1030,7 +1014,6 @@
     "homepage": "https://github.com/PacificBiosciences/bam2fastx",
     "versions": {
       "stable": "1.3.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -1099,7 +1082,6 @@
     "homepage": "http://bamm-project.org",
     "versions": {
       "stable": "2.5.0",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -1161,7 +1143,6 @@
     "homepage": "https://rrwick.github.io/Bandage/",
     "versions": {
       "stable": "0.8.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -1231,7 +1212,6 @@
     "homepage": "https://github.com/tseemann/barrnap",
     "versions": {
       "stable": "0.9",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -1294,7 +1274,6 @@
     "homepage": "https://github.com/ssadedin/bazam",
     "versions": {
       "stable": "1.0.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -1356,7 +1335,6 @@
     "homepage": "https://jgi.doe.gov/data-and-tools/bbtools/",
     "versions": {
       "stable": "38.86",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -1418,7 +1396,6 @@
     "homepage": "https://github.com/GATB/bcalm",
     "versions": {
       "stable": "2.2.2",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -1482,7 +1459,6 @@
     "homepage": "https://www.beast2.org/",
     "versions": {
       "stable": "2.6.3",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -1546,7 +1522,6 @@
     "homepage": "https://github.com/tseemann/berokka",
     "versions": {
       "stable": "0.2.3",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -1610,7 +1585,6 @@
     "homepage": "https://github.com/lh3/bfc",
     "versions": {
       "stable": "r181",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -1672,7 +1646,6 @@
     "homepage": "https://github.com/pmelsted/bifrost",
     "versions": {
       "stable": "1.0.4",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -1733,16 +1706,15 @@
     "versioned_formulae": [],
     "desc": "BioBloom Tools (BBT): Bloom filter for bioinformatics",
     "license": null,
-    "homepage": "http://www.bcgsc.ca/platform/bioinfo/software/biobloomtools/",
+    "homepage": "https://www.bcgsc.ca/platform/bioinfo/software/biobloomtools/",
     "versions": {
-      "stable": "2.3.2",
-      "devel": null,
+      "stable": "2.3.3",
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/bcgsc/biobloom/releases/download/2.3.2/biobloomtools-2.3.2.tar.gz",
+        "url": "https://github.com/bcgsc/biobloom/releases/download/2.3.3/biobloomtools-2.3.3.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -1756,13 +1728,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/biobloomtools-2.3.2.sierra.bottle.tar.gz",
-            "sha256": "4181eb16f11624fc6f5750a9d8dda2f948866ddfdf6551ebe486a6f221e9cde0"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/biobloomtools-2.3.3.catalina.bottle.tar.gz",
+            "sha256": "0ee92de1bc3bc3e22572154e84db05b1120953a1758ec90ae50685dc601c3551"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/biobloomtools-2.3.2.x86_64_linux.bottle.tar.gz",
-            "sha256": "a495e45dd593d6c015da6840579409b91dc1d95c3fba721623af07e04ac0024e"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/biobloomtools-2.3.3.x86_64_linux.bottle.tar.gz",
+            "sha256": "6c1cb00f8060a9c59ab37bf3d58e8c8bbfb522a5c26ad714c2c07623bc672522"
           }
         }
       }
@@ -1802,7 +1774,6 @@
     "homepage": "https://github.com/evoldoers/biomake",
     "versions": {
       "stable": "0.1.5",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -1864,7 +1835,6 @@
     "homepage": "https://bioperl.org",
     "versions": {
       "stable": "1.007002",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -1928,7 +1898,6 @@
     "homepage": "https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download",
     "versions": {
       "stable": "2.2.26",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -1988,7 +1957,6 @@
     "homepage": "https://blast.ncbi.nlm.nih.gov/",
     "versions": {
       "stable": "2.2.31",
-      "devel": null,
       "head": null,
       "bottle": false
     },
@@ -2037,7 +2005,6 @@
     "homepage": "https://genome.ucsc.edu/FAQ/FAQblat.html",
     "versions": {
       "stable": "36",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -2103,7 +2070,6 @@
     "homepage": "https://www.sourceforge.net/projects/bodr",
     "versions": {
       "stable": "10",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -2166,7 +2132,6 @@
     "homepage": "https://github.com/dnbaker/bonsai",
     "versions": {
       "stable": "0.3",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -2230,7 +2195,6 @@
     "homepage": "https://bowtie-bio.sourceforge.io/",
     "versions": {
       "stable": "1.2.3",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -2293,7 +2257,6 @@
     "homepage": "https://ccb.jhu.edu/software/bracken/index.shtml",
     "versions": {
       "stable": "2.6.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -2353,7 +2316,6 @@
     "homepage": "https://barricklab.org/twiki/bin/view/Lab/ToolsBacterialGenomeResequencing",
     "versions": {
       "stable": "0.35.2",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -2422,7 +2384,6 @@
     "homepage": "https://busco.ezlab.org",
     "versions": {
       "stable": "4.1.1",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -2490,7 +2451,6 @@
     "homepage": "https://github.com/bwa-mem2/bwa-mem2",
     "versions": {
       "stable": "2.0",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -2552,7 +2512,6 @@
     "homepage": "https://github.com/bigdatagenomics/cannoli",
     "versions": {
       "stable": "0.10.0",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -2614,7 +2573,6 @@
     "homepage": "https://canu.readthedocs.io/en/latest/",
     "versions": {
       "stable": "1.9",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -2674,7 +2632,6 @@
     "homepage": "http://seq.cs.iastate.edu/cap3.html",
     "versions": {
       "stable": "2015-02-11",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -2736,7 +2693,6 @@
     "homepage": "http://cd-hit.org",
     "versions": {
       "stable": "4.8.1",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -2798,7 +2754,6 @@
     "homepage": "http://www.ccb.jhu.edu/software/centrifuge",
     "versions": {
       "stable": "1.0.3",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -2862,7 +2817,6 @@
     "homepage": "https://sanger-pathogens.github.io/circlator/",
     "versions": {
       "stable": "1.5.5",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -2930,7 +2884,6 @@
     "homepage": "http://circos.ca",
     "versions": {
       "stable": "0.69-9",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -2996,7 +2949,6 @@
     "homepage": "https://github.com/xavierdidelot/ClonalFrameML",
     "versions": {
       "stable": "1.12",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -3056,7 +3008,6 @@
     "homepage": "http://www.clustal.org/omega/",
     "versions": {
       "stable": "1.2.4",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -3118,7 +3069,6 @@
     "homepage": "http://www.clustal.org/clustal2/",
     "versions": {
       "stable": "2.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -3178,7 +3128,6 @@
     "homepage": "http://hiv.bio.ed.ac.uk/software.html",
     "versions": {
       "stable": "1.2.5",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -3240,7 +3189,6 @@
     "homepage": "http://stat.sys.i.kyoto-u.ac.jp/prog/consel/",
     "versions": {
       "stable": "0.20",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -3300,7 +3248,6 @@
     "homepage": "https://github.com/jkbonfield/crumble",
     "versions": {
       "stable": "0.8.3",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -3362,7 +3309,6 @@
     "homepage": "https://github.com/marcelm/cutadapt",
     "versions": {
       "stable": "2.10",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -3424,7 +3370,6 @@
     "homepage": "https://github.com/cmks/DAS_Tool",
     "versions": {
       "stable": "1.1.2",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -3492,7 +3437,6 @@
     "homepage": "https://github.com/tseemann/dehomopolymerate",
     "versions": {
       "stable": "0.4.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -3554,7 +3498,6 @@
     "homepage": "https://github.com/tobiasrausch/delly",
     "versions": {
       "stable": "0.8.3",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -3623,7 +3566,6 @@
     "homepage": "https://www.bcgsc.ca/platform/bioinfo/software/dida",
     "versions": {
       "stable": "1.0.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -3686,7 +3628,6 @@
     "homepage": "https://www.broadinstitute.org/software/discovar/blog/",
     "versions": {
       "stable": "52488",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -3755,7 +3696,6 @@
     "homepage": "https://github.com/c2-d2/disty",
     "versions": {
       "stable": "0.1.0",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -3817,7 +3757,6 @@
     "homepage": "https://github.com/heuermh/dishevelled-bio",
     "versions": {
       "stable": "1.3.4",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -3879,7 +3818,6 @@
     "homepage": "https://github.com/nh13/DWGSIM",
     "versions": {
       "stable": "0.1.12",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -3943,7 +3881,6 @@
     "homepage": "https://www.csd.uwo.ca/~ilie/E-MEM/",
     "versions": {
       "stable": "1.0.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -4005,7 +3942,6 @@
     "homepage": "https://github.com/EddyRivasLab/easel",
     "versions": {
       "stable": "0.46",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -4068,14 +4004,13 @@
     "license": null,
     "homepage": "https://www.ncbi.nlm.nih.gov/books/NBK179288/",
     "versions": {
-      "stable": "12.4",
-      "devel": null,
+      "stable": "13.8",
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/12.4.20191101/edirect-12.4.20191101.tar.gz",
+        "url": "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/13.8.20200827/edirect-13.8.20200827.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -4085,17 +4020,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any_skip_relocation",
+        "cellar": ":any",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "mojave": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/edirect-12.4.mojave.bottle.tar.gz",
-            "sha256": "37abb2f97bb0260af84499300935e4fec412fcf385d1f2e303eb681876b47877"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/edirect-13.8.catalina.bottle.tar.gz",
+            "sha256": "d24f466c08c865c1866212c03969c0597512ede63f0193e1dd1fef31f8e6de16"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/edirect-12.4.x86_64_linux.bottle.tar.gz",
-            "sha256": "e2fcc5996db0db2bb916e14d4925883d542271c397bf949f6c45d27b9aa4cc4d"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/edirect-13.8.x86_64_linux.bottle.tar.gz",
+            "sha256": "ef5637b3c12ad99ef415c38c441f00537b0bea6bffb615253cc3ca477d0b741d"
           }
         }
       }
@@ -4135,7 +4070,6 @@
     "homepage": "http://www.cbcb.umd.edu/software/elph/",
     "versions": {
       "stable": "1.0.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -4195,7 +4129,6 @@
     "homepage": "http://ema.csail.mit.edu",
     "versions": {
       "stable": "0.6.2",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -4257,7 +4190,6 @@
     "homepage": "https://emboss.sourceforge.io/",
     "versions": {
       "stable": "6.6.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -4351,7 +4283,6 @@
     "homepage": "https://github.com/Pbdas/epa-ng",
     "versions": {
       "stable": "0.3.7",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -4417,7 +4348,6 @@
     "homepage": "https://sco.h-its.org/exelixis/web/software/exabayes/",
     "versions": {
       "stable": "1.5",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -4488,7 +4418,6 @@
     "homepage": "https://www.ebi.ac.uk/about/vertebrate-genomics/software/exonerate",
     "versions": {
       "stable": "2.4.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -4552,7 +4481,6 @@
     "homepage": "http://bio.math.berkeley.edu/eXpress/",
     "versions": {
       "stable": "1.5.3",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -4620,7 +4548,6 @@
     "homepage": "https://faculty.virginia.edu/wrpearson/fasta/",
     "versions": {
       "stable": "36.3.8h",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -4682,7 +4609,6 @@
     "homepage": "https://github.com/ParBLiSS/FastANI",
     "versions": {
       "stable": "1.31",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -4748,7 +4674,6 @@
     "homepage": "https://github.com/OpenGene/fastp",
     "versions": {
       "stable": "0.20.1",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -4810,7 +4735,6 @@
     "homepage": "https://github.com/linsalrob/fastq-pair",
     "versions": {
       "stable": "1.0",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -4872,7 +4796,6 @@
     "homepage": "http://microbesonline.org/fasttree/",
     "versions": {
       "stable": "2.1.11",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -4932,7 +4855,6 @@
     "homepage": "https://sourceforge.net/projects/fastuniq/",
     "versions": {
       "stable": "1.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -4992,7 +4914,6 @@
     "homepage": "https://github.com/lh3/fermi-lite",
     "versions": {
       "stable": "0.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -5054,7 +4975,6 @@
     "homepage": "http://tree.bio.ed.ac.uk/software/figtree/",
     "versions": {
       "stable": "1.4.4",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -5116,7 +5036,6 @@
     "homepage": "https://github.com/rrwick/Filtlong",
     "versions": {
       "stable": "0.2.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -5178,7 +5097,6 @@
     "homepage": "https://github.com/onecodex/finch-rs",
     "versions": {
       "stable": "0.3.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -5242,7 +5160,6 @@
     "homepage": "https://ccb.jhu.edu/software/FLASH/",
     "versions": {
       "stable": "1.2.11",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -5304,7 +5221,6 @@
     "homepage": "https://github.com/assemblerflow/flowcraft",
     "versions": {
       "stable": "1.4.1",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -5367,7 +5283,6 @@
     "homepage": "https://github.com/fenderglass/Flye",
     "versions": {
       "stable": "2.8",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -5429,7 +5344,6 @@
     "homepage": "https://omics.informatics.indiana.edu/FragGeneScan/",
     "versions": {
       "stable": "1.31",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -5491,7 +5405,6 @@
     "homepage": "https://github.com/ekg/freebayes",
     "versions": {
       "stable": "1.3.2",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -5560,7 +5473,6 @@
     "homepage": "https://molpopgen.github.io/fwdpp/",
     "versions": {
       "stable": "0.8.1",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -5632,7 +5544,6 @@
     "homepage": "https://github.com/lczech/gappa",
     "versions": {
       "stable": "0.6.1",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -5696,7 +5607,6 @@
     "homepage": "https://software.broadinstitute.org/gatk",
     "versions": {
       "stable": "4.1.8.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -5761,7 +5671,6 @@
     "homepage": "http://molevol.cmima.csic.es/castresana/Gblocks.html",
     "versions": {
       "stable": "0.91b",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -5823,7 +5732,6 @@
     "homepage": "https://github.com/genetics-statistics/gemma",
     "versions": {
       "stable": "0.98.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -5889,7 +5797,6 @@
     "homepage": "https://www.ebi.ac.uk/~birney/wise2/",
     "versions": {
       "stable": "2.4.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -5953,7 +5860,6 @@
     "homepage": "https://github.com/scwatts/genome_painter",
     "versions": {
       "stable": "0.0.8",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -6019,7 +5925,6 @@
     "homepage": "http://cube.univie.ac.at/gepard",
     "versions": {
       "stable": "1.40",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -6077,7 +5982,6 @@
     "homepage": "https://github.com/edawson/gfakluge",
     "versions": {
       "stable": "1.1.2",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -6139,7 +6043,6 @@
     "homepage": "https://sjackman.ca/gfalint/",
     "versions": {
       "stable": "1.0.0",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -6199,7 +6102,6 @@
     "homepage": "https://github.com/lh3/gfa1",
     "versions": {
       "stable": "0.0.53",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -6261,7 +6163,6 @@
     "homepage": "https://www.bi.cs.titech.ac.jp/ghostz/",
     "versions": {
       "stable": "1.0.2",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -6321,7 +6222,6 @@
     "homepage": "http://research-pub.gene.com/gmap/",
     "versions": {
       "stable": "2019-09-12",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -6385,7 +6285,6 @@
     "homepage": "https://github.com/will-rowe/groot",
     "versions": {
       "stable": "1.1.2",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -6445,7 +6344,6 @@
     "homepage": "https://www.cs.unc.edu/Research/compgeom/gzstream/",
     "versions": {
       "stable": "1.5",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -6507,7 +6405,6 @@
     "homepage": "https://github.com/marbl/harvest-tools",
     "versions": {
       "stable": "1.3",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -6573,7 +6470,6 @@
     "homepage": "https://github.com/soedinglab/hh-suite",
     "versions": {
       "stable": "3.2.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -6638,7 +6534,6 @@
     "homepage": "https://daehwankimlab.github.io/hisat2/",
     "versions": {
       "stable": "2.2.0",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -6698,7 +6593,6 @@
     "homepage": "http://hmmer.org/",
     "versions": {
       "stable": "2.4i",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -6762,7 +6656,6 @@
     "homepage": "https://huttenhower.sph.harvard.edu/humann",
     "versions": {
       "stable": "0.11.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -6827,7 +6720,6 @@
     "homepage": "https://i.cs.hku.hk/~alse/hkubrg/projects/idba/",
     "versions": {
       "stable": "1.1.3",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -6890,7 +6782,6 @@
     "homepage": "http://bioinfolab.unl.edu/~cstrope/iSG/",
     "versions": {
       "stable": "2.1.03",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -6957,7 +6848,6 @@
     "homepage": "http://abacus.gene.ucl.ac.uk/software/indelible/",
     "versions": {
       "stable": "1.03",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -7017,7 +6907,6 @@
     "homepage": "http://eddylab.org/infernal/",
     "versions": {
       "stable": "1.1.3",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -7077,7 +6966,6 @@
     "homepage": "http://www.iqtree.org/",
     "versions": {
       "stable": "1.6.12",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -7143,7 +7031,6 @@
     "homepage": "http://www.iqtree.org/",
     "versions": {
       "stable": "2.0.7",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -7210,7 +7097,6 @@
     "homepage": "http://hgwdev.cse.ucsc.edu/~kent/src/",
     "versions": {
       "stable": "33",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -7272,7 +7158,6 @@
     "homepage": "https://github.com/sanger-pathogens/iva",
     "versions": {
       "stable": "1.0.9",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -7339,7 +7224,6 @@
     "homepage": "https://github.com/andersen-lab/ivar",
     "versions": {
       "stable": "1.2.2",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -7406,7 +7290,6 @@
     "homepage": "http://www.genome.umd.edu/jellyfish.html",
     "versions": {
       "stable": "2.3.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -7466,7 +7349,6 @@
     "homepage": "https://imedea.uib-csic.es/jspecies/index.html",
     "versions": {
       "stable": "1.2.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -7526,7 +7408,6 @@
     "homepage": "https://github.com/attractivechaos/k8",
     "versions": {
       "stable": "0.2.5",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -7590,7 +7471,6 @@
     "homepage": "http://kaiju.binf.ku.dk/",
     "versions": {
       "stable": "1.7.3",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -7653,7 +7533,6 @@
     "homepage": "https://github.com/TimoLassmann/kalign",
     "versions": {
       "stable": "3.2.3",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -7718,7 +7597,6 @@
     "homepage": "https://github.com/TGAC/KAT",
     "versions": {
       "stable": "2.4.1",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -7785,7 +7663,6 @@
     "homepage": "https://genome.ucsc.edu/",
     "versions": {
       "stable": "401",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -7852,7 +7729,6 @@
     "homepage": "https://bitbucket.org/genomicepidemiology/kma",
     "versions": {
       "stable": "1.3.3",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -7916,7 +7792,6 @@
     "homepage": "http://sun.aei.polsl.pl/kmc/",
     "versions": {
       "stable": "3.1.1",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -7980,7 +7855,6 @@
     "homepage": "http://kmergenie.bx.psu.edu/",
     "versions": {
       "stable": "1.7048",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -8044,7 +7918,6 @@
     "homepage": "https://github.com/tseemann/kounta",
     "versions": {
       "stable": "0.2.3",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -8108,7 +7981,6 @@
     "homepage": "http://guanine.evolbio.mpg.de/cgi-bin/kr2/kr.cgi.pl",
     "versions": {
       "stable": "2.0.2",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -8170,7 +8042,6 @@
     "homepage": "https://ccb.jhu.edu/software/kraken/",
     "versions": {
       "stable": "1.1.1",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -8230,7 +8101,6 @@
     "homepage": "https://github.com/DerrickWood/kraken2",
     "versions": {
       "stable": "2.0.9",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -8293,7 +8163,6 @@
     "homepage": "https://github.com/yhg926/public_kssd",
     "versions": {
       "stable": "1.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -8359,7 +8228,6 @@
     "homepage": "http://last.cbrc.jp/",
     "versions": {
       "stable": "1061",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -8423,7 +8291,6 @@
     "homepage": "https://www.bx.psu.edu/~rsharris/lastz/",
     "versions": {
       "stable": "1.04.03",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -8483,7 +8350,6 @@
     "homepage": "https://github.com/tseemann/legsta",
     "versions": {
       "stable": "0.5.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -8546,7 +8412,6 @@
     "homepage": "https://github.com/dpryan79/libBigWig",
     "versions": {
       "stable": "0.4.4",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -8609,7 +8474,6 @@
     "homepage": "https://github.com/y-256/libdivsufsort",
     "versions": {
       "stable": "2.0.1",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -8671,7 +8535,6 @@
     "homepage": "https://github.com/COMBINE-lab/libgff",
     "versions": {
       "stable": "2.0.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -8735,7 +8598,6 @@
     "homepage": "https://github.com/xflouris/libpll",
     "versions": {
       "stable": "0.3.2",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -8801,7 +8663,6 @@
     "homepage": "https://molpopgen.github.io/libsequence/",
     "versions": {
       "stable": "1.9.8",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -8861,7 +8722,6 @@
     "homepage": "https://github.com/SaraEl-Metwally/LightAssembler",
     "versions": {
       "stable": "1.0.0",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -8923,7 +8783,6 @@
     "homepage": "https://github.com/mourisl/Lighter",
     "versions": {
       "stable": "1.1.2",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -8985,7 +8844,6 @@
     "homepage": "https://www.bcgsc.ca/platform/bioinfo/software/links",
     "versions": {
       "stable": "1.8.7",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -9049,7 +8907,6 @@
     "homepage": "https://csb5.github.io/lofreq/",
     "versions": {
       "stable": "2.1.3.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -9116,7 +8973,6 @@
     "homepage": "https://github.com/aquaskyline/LRSIM",
     "versions": {
       "stable": "1.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -9179,7 +9035,6 @@
     "homepage": "https://github.com/tothuhien/lsd2",
     "versions": {
       "stable": "1.7.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -9239,7 +9094,6 @@
     "homepage": "https://ncbi.github.io/magicblast/",
     "versions": {
       "stable": "1.3.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -9306,7 +9160,6 @@
     "homepage": "https://www.yandell-lab.org/software/maker.html",
     "versions": {
       "stable": "2.31.11",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -9384,7 +9237,6 @@
     "homepage": "https://github.com/hsinnan75/MapCaller",
     "versions": {
       "stable": "0.9.9.39",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -9449,7 +9301,6 @@
     "homepage": "https://github.com/marbl/Mash",
     "versions": {
       "stable": "2.2.2",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -9518,7 +9369,6 @@
     "homepage": "https://masurca.blogspot.com/",
     "versions": {
       "stable": "3.4.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -9590,7 +9440,6 @@
     "homepage": "https://matplotlib.org",
     "versions": {
       "stable": "2.2.5",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -9668,7 +9517,6 @@
     "homepage": "https://sourceforge.net/projects/maxbin2/",
     "versions": {
       "stable": "2.2.7",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -9739,7 +9587,6 @@
     "homepage": "https://micans.org/mcl",
     "versions": {
       "stable": "14-137",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -9799,7 +9646,6 @@
     "homepage": "https://github.com/voutcn/megahit",
     "versions": {
       "stable": "1.2.9",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -9865,7 +9711,6 @@
     "homepage": "http://meme-suite.org",
     "versions": {
       "stable": "5.1.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -9933,7 +9778,6 @@
     "homepage": "https://bitbucket.org/berkeleylab/metabat/",
     "versions": {
       "stable": "2.15",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -10003,7 +9847,6 @@
     "homepage": "https://huttenhower.sph.harvard.edu/metaphlan",
     "versions": {
       "stable": "1.7.8",
-      "devel": null,
       "head": null,
       "bottle": false
     },
@@ -10050,7 +9893,6 @@
     "homepage": "https://github.com/marbl/MHAP",
     "versions": {
       "stable": "2.1.3",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -10112,7 +9954,6 @@
     "homepage": "https://github.com/ctSkennerton/minced",
     "versions": {
       "stable": "0.4.2",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -10174,7 +10015,6 @@
     "homepage": "http://minia.genouest.org/",
     "versions": {
       "stable": "3.2.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -10238,7 +10078,6 @@
     "homepage": "https://github.com/lh3/miniasm",
     "versions": {
       "stable": "0.3",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -10300,7 +10139,6 @@
     "homepage": "https://lh3.github.io/minigraph",
     "versions": {
       "stable": "0.10",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -10363,7 +10201,6 @@
     "homepage": "https://github.com/lh3/minimap",
     "versions": {
       "stable": "0.2",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -10425,7 +10262,6 @@
     "homepage": "https://github.com/lh3/minimap2",
     "versions": {
       "stable": "2.17",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -10488,7 +10324,6 @@
     "homepage": "https://github.com/hangelwen/miR-PREFeR",
     "versions": {
       "stable": "0.24",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -10559,7 +10394,6 @@
     "homepage": "https://github.com/tseemann/mlst",
     "versions": {
       "stable": "2.19.0",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -10628,7 +10462,6 @@
     "homepage": "https://github.com/rcsb/mmtf-cpp",
     "versions": {
       "stable": "1.0.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -10693,7 +10526,6 @@
     "homepage": "https://github.com/brentp/mosdepth",
     "versions": {
       "stable": "0.2.9",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -10757,7 +10589,6 @@
     "homepage": "https://mothur.org/",
     "versions": {
       "stable": "1.44.2",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -10820,7 +10651,6 @@
     "homepage": "https://faculty.franklin.uga.edu/lliu/content/mp-est",
     "versions": {
       "stable": "2.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -10882,7 +10712,6 @@
     "homepage": "http://www.iqtree.org/mpboot/",
     "versions": {
       "stable": "1.1.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -10949,7 +10778,6 @@
     "homepage": "https://nbisweden.github.io/MrBayes/",
     "versions": {
       "stable": "3.2.7",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -11019,7 +10847,6 @@
     "homepage": "https://github.com/gregorykucherov/mreps",
     "versions": {
       "stable": "2.6.01",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -11079,7 +10906,6 @@
     "homepage": "https://mummer.sourceforge.io/",
     "versions": {
       "stable": "3.23",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -11141,7 +10967,6 @@
     "homepage": "https://www.drive5.com/muscle/",
     "versions": {
       "stable": "3.8.1551",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -11201,7 +11026,6 @@
     "homepage": "https://github.com/wdecoster/nanofilt",
     "versions": {
       "stable": "2.7.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -11265,7 +11089,6 @@
     "homepage": "https://github.com/jts/nanopolish",
     "versions": {
       "stable": "0.12.0",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -11334,7 +11157,6 @@
     "homepage": "http://cegg.unige.ch/newick_utils",
     "versions": {
       "stable": "1.6",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -11400,7 +11222,6 @@
     "homepage": "https://www.nextflow.io/",
     "versions": {
       "stable": "20.07.1",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -11462,7 +11283,6 @@
     "homepage": "https://github.com/Cibiv/NextGenMap/wiki",
     "versions": {
       "stable": "0.5.5",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -11524,7 +11344,6 @@
     "homepage": "https://github.com/MDU-PHL/ngmaster",
     "versions": {
       "stable": "0.5.6",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -11588,7 +11407,6 @@
     "homepage": "https://github.com/jsh58/NGmerge",
     "versions": {
       "stable": "0.3",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -11650,7 +11468,6 @@
     "homepage": "http://enve-omics.ce.gatech.edu/nonpareil",
     "versions": {
       "stable": "3.3.4",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -11719,7 +11536,6 @@
     "homepage": "https://github.com/bcgsc/ntCard",
     "versions": {
       "stable": "1.2.1",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -11782,7 +11598,6 @@
     "homepage": "https://github.com/bcgsc/ntEdit",
     "versions": {
       "stable": "1.3.2",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -11844,7 +11659,6 @@
     "homepage": "https://github.com/bcgsc/ntHits",
     "versions": {
       "stable": "0.0.1",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -11907,7 +11721,6 @@
     "homepage": "https://github.com/bcgsc/ntJoin",
     "versions": {
       "stable": "1.0.3",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -11975,7 +11788,6 @@
     "homepage": "https://github.com/tseemann/nullarbor",
     "versions": {
       "stable": "2.0.20191013",
-      "devel": null,
       "head": null,
       "bottle": false
     },
@@ -12049,7 +11861,6 @@
     "homepage": "https://github.com/sequencing/NxTrim",
     "versions": {
       "stable": "0.4.3",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -12113,7 +11924,6 @@
     "homepage": "https://www.ebi.ac.uk/~zerbino/oases/",
     "versions": {
       "stable": "0.2.08",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -12176,7 +11986,6 @@
     "homepage": "https://omabrowser.org/standalone/",
     "versions": {
       "stable": "2.4.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -12241,7 +12050,6 @@
     "homepage": "https://github.com/wwood/OrfM",
     "versions": {
       "stable": "0.7.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -12307,7 +12115,6 @@
     "homepage": "http://abacus.gene.ucl.ac.uk/software/paml.html",
     "versions": {
       "stable": "4.9i",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -12367,7 +12174,6 @@
     "homepage": "https://github.com/neufeld/pandaseq",
     "versions": {
       "stable": "2.11",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -12436,7 +12242,6 @@
     "homepage": "https://github.com/sanger-pathogens/panito",
     "versions": {
       "stable": "0.0.1",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -12503,7 +12308,6 @@
     "homepage": "https://github.com/jeffdaily/parasail",
     "versions": {
       "stable": "2.4.2",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -12570,7 +12374,6 @@
     "homepage": "https://github.com/marbl/parsnp",
     "versions": {
       "stable": "1.5.2",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -12639,7 +12442,6 @@
     "homepage": "https://www.pathvisio.org/",
     "versions": {
       "stable": "3.3.0",
-      "devel": null,
       "head": null,
       "bottle": false
     },
@@ -12686,7 +12488,6 @@
     "homepage": "https://github.com/jhhung/PEAT",
     "versions": {
       "stable": "1.2.5",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -12753,7 +12554,6 @@
     "homepage": "https://github.com/jonchang/phlawd",
     "versions": {
       "stable": "3.4b",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -12819,7 +12619,6 @@
     "homepage": "http://evolution.genetics.washington.edu/phylip.html",
     "versions": {
       "stable": "3.697",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -12879,7 +12678,6 @@
     "homepage": "http://megasun.bch.umontreal.ca/People/lartillot/www/download.html",
     "versions": {
       "stable": "4.1e",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -12939,7 +12737,6 @@
     "homepage": "http://www.atgc-montpellier.fr/phyml/",
     "versions": {
       "stable": "3.3.20200621",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -13004,7 +12801,6 @@
     "homepage": "https://github.com/FePhyFoFum/phyx",
     "versions": {
       "stable": "1.01",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -13067,7 +12863,6 @@
     "homepage": "https://github.com/broadinstitute/pilon/wiki",
     "versions": {
       "stable": "1.23",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -13129,7 +12924,6 @@
     "homepage": "https://github.com/SionBayliss/PIRATE",
     "versions": {
       "stable": "1.0.4",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -13200,7 +12994,6 @@
     "homepage": "https://github.com/rrwick/Porechop",
     "versions": {
       "stable": "0.2.4",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -13262,7 +13055,6 @@
     "homepage": "https://github.com/maplesond/portcullis",
     "versions": {
       "stable": "1.1.0",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -13332,7 +13124,6 @@
     "homepage": "https://matsen.fhcrc.org/pplacer/",
     "versions": {
       "stable": "1.1.alpha17",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -13394,7 +13185,6 @@
     "homepage": "http://wasabiapp.org/software/prank/",
     "versions": {
       "stable": "170427",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -13457,7 +13247,6 @@
     "homepage": "https://github.com/tseemann/prokka",
     "versions": {
       "stable": "1.14.6",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -13529,7 +13318,6 @@
     "homepage": "https://github.com/bcthomas/pullseq",
     "versions": {
       "stable": "1.0.2",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -13594,7 +13382,6 @@
     "homepage": "https://pymol.org/",
     "versions": {
       "stable": "2.3.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -13667,7 +13454,6 @@
     "homepage": "https://quast.sourceforge.io/",
     "versions": {
       "stable": "5.0.2",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -13730,7 +13516,6 @@
     "homepage": "https://github.com/mahulchak/quickmerge",
     "versions": {
       "stable": "0.3",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -13792,7 +13577,6 @@
     "homepage": "https://github.com/khowe/quicktree",
     "versions": {
       "stable": "2.5",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -13852,7 +13636,6 @@
     "homepage": "https://homes.cs.washington.edu/~dcjones/quip",
     "versions": {
       "stable": "1.1.8",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -13915,7 +13698,6 @@
     "homepage": "https://sourceforge.net/projects/weinberg-r2r",
     "versions": {
       "stable": "1.0.6",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -13977,7 +13759,6 @@
     "homepage": "http://ceiba.biosci.arizona.edu/r8s/",
     "versions": {
       "stable": "1.81",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -14039,7 +13820,6 @@
     "homepage": "https://github.com/lbcb-sci/racon",
     "versions": {
       "stable": "1.4.13",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -14104,7 +13884,6 @@
     "homepage": "https://github.com/bcgsc/RAILS",
     "versions": {
       "stable": "1.5.1",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -14168,7 +13947,6 @@
     "homepage": "https://birc.au.dk/Software/RapidNJ/",
     "versions": {
       "stable": "2.3.2",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -14230,7 +14008,6 @@
     "homepage": "https://github.com/mbhall88/rasusa",
     "versions": {
       "stable": "0.3.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -14292,7 +14069,6 @@
     "homepage": "https://github.com/lbcb-sci/raven",
     "versions": {
       "stable": "0.0.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -14354,7 +14130,6 @@
     "homepage": "https://sco.h-its.org/exelixis/web/software/raxml/index.html",
     "versions": {
       "stable": "8.2.12",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -14423,7 +14198,6 @@
     "homepage": "https://github.com/mourisl/Rcorrector",
     "versions": {
       "stable": "1.0.4",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -14486,7 +14260,6 @@
     "homepage": "https://realphy.unibas.ch/fcgi/realphy",
     "versions": {
       "stable": "1.12",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -14550,7 +14323,6 @@
     "homepage": "https://github.com/OpenGene/repaq",
     "versions": {
       "stable": "0.2.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -14612,7 +14384,6 @@
     "homepage": "http://www.repeatmasker.org/",
     "versions": {
       "stable": "4.0.7",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -14680,7 +14451,6 @@
     "homepage": "http://www.repeatmasker.org/RMBlast.html",
     "versions": {
       "stable": "2.2.28",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -14745,7 +14515,6 @@
     "homepage": "https://sanger-pathogens.github.io/Roary/",
     "versions": {
       "stable": "3.13.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -14820,7 +14589,6 @@
     "homepage": "https://www.realtimegenomics.com/products/rtg-tools",
     "versions": {
       "stable": "3.11",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -14884,7 +14652,6 @@
     "homepage": "https://github.com/hcdenbakker/SalmID",
     "versions": {
       "stable": "0.1.23",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -14946,7 +14713,6 @@
     "homepage": "https://github.com/COMBINE-lab/salmon",
     "versions": {
       "stable": "1.3.0",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -15018,7 +14784,6 @@
     "homepage": "https://lomereiter.github.io/sambamba/",
     "versions": {
       "stable": "0.7.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -15083,7 +14848,6 @@
     "homepage": "https://github.com/GregoryFaust/samblaster",
     "versions": {
       "stable": "0.1.26",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -15143,7 +14907,6 @@
     "homepage": "https://github.com/tseemann/samclip",
     "versions": {
       "stable": "0.4.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -15203,7 +14966,6 @@
     "homepage": "https://github.com/simongog/sdsl-lite",
     "versions": {
       "stable": "2.1.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -15265,7 +15027,6 @@
     "homepage": "https://github.com/smirarab/sepp",
     "versions": {
       "stable": "4.3.10",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -15328,7 +15089,6 @@
     "homepage": "http://tree.bio.ed.ac.uk/software/seqgen/",
     "versions": {
       "stable": "1.3.4",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -15388,7 +15148,6 @@
     "homepage": "https://www.seqan.de/",
     "versions": {
       "stable": "2.4.0",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -15452,7 +15211,6 @@
     "homepage": "https://www.seqan.de",
     "versions": {
       "stable": "3.0.1",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -15516,7 +15274,6 @@
     "homepage": "https://bioinf.shenwei.me/seqkit/",
     "versions": {
       "stable": "0.13.2",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -15576,7 +15333,6 @@
     "homepage": "https://github.com/jts/sga",
     "versions": {
       "stable": "0.10.15",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -15643,7 +15399,6 @@
     "homepage": "https://github.com/tseemann/shovill",
     "versions": {
       "stable": "1.1.0",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -15718,7 +15473,6 @@
     "homepage": "http://bioinf.spbau.ru/sibelia",
     "versions": {
       "stable": "3.0.7",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -15783,7 +15537,6 @@
     "homepage": "https://sourceforge.net/projects/simulatepcr/",
     "versions": {
       "stable": "1.2",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -15849,7 +15602,6 @@
     "homepage": "https://github.com/simonrharris/SKA/releases",
     "versions": {
       "stable": "1.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -15911,7 +15663,6 @@
     "homepage": "https://github.com/ncbi/SKESA",
     "versions": {
       "stable": "2.4.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -15974,7 +15725,6 @@
     "homepage": "https://www.sanger.ac.uk/science/tools/smalt-0",
     "versions": {
       "stable": "0.7.6",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -16034,7 +15784,6 @@
     "homepage": "http://korflab.ucdavis.edu/software.html",
     "versions": {
       "stable": "2013-11-29",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -16094,7 +15843,6 @@
     "homepage": "https://github.com/tseemann/snippy",
     "versions": {
       "stable": "4.6.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -16172,7 +15920,6 @@
     "homepage": "http://lowelab.ucsc.edu/snoscan/",
     "versions": {
       "stable": "0.9.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -16232,7 +15979,6 @@
     "homepage": "https://github.com/tseemann/snp-dists",
     "versions": {
       "stable": "0.7.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -16294,7 +16040,6 @@
     "homepage": "https://github.com/sanger-pathogens/snp-sites",
     "versions": {
       "stable": "2.5.1",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -16362,7 +16107,6 @@
     "homepage": "https://snpeff.sourceforge.io/",
     "versions": {
       "stable": "4.3t",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -16426,7 +16170,6 @@
     "homepage": "https://solexaqa.sourceforge.io/",
     "versions": {
       "stable": "3.1.7.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -16489,7 +16232,6 @@
     "homepage": "https://bioinfo.lifl.fr/RNA/sortmerna/",
     "versions": {
       "stable": "2.1",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -16551,7 +16293,6 @@
     "homepage": "https://github.com/wheaton5/souporcell",
     "versions": {
       "stable": "2.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -16613,7 +16354,6 @@
     "homepage": "https://github.com/splatlab/squeakr",
     "versions": {
       "stable": "0.7",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -16682,7 +16422,6 @@
     "homepage": "http://catchenlab.life.illinois.edu/stacks/",
     "versions": {
       "stable": "2.41",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -16744,7 +16483,6 @@
     "homepage": "https://staden.sourceforge.io/",
     "versions": {
       "stable": "1.14.13",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -16809,7 +16547,6 @@
     "homepage": "https://github.com/alexdobin/STAR",
     "versions": {
       "stable": "2.7.5c",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -16871,7 +16608,6 @@
     "homepage": "https://ccb.jhu.edu/software/stringtie/",
     "versions": {
       "stable": "2.1.4",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -16933,7 +16669,6 @@
     "homepage": "https://academic.oup.com/nar/article/41/10/e108/1075719",
     "versions": {
       "stable": "2.0.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -16995,7 +16730,6 @@
     "homepage": "https://git.metabarcoding.org/obitools/sumaclust/wikis/home",
     "versions": {
       "stable": "1.0.31",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -17055,7 +16789,6 @@
     "homepage": "http://dna.uio.no/swipe/",
     "versions": {
       "stable": "2.1.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -17115,7 +16848,6 @@
     "homepage": "https://github.com/shenwei356/taxonkit",
     "versions": {
       "stable": "0.6.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -17175,7 +16907,6 @@
     "homepage": "https://www.ncbi.nlm.nih.gov/genbank/tbl2asn2/",
     "versions": {
       "stable": "25.8",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -17240,7 +16971,6 @@
     "homepage": "https://bcgsc.github.io/tigmint/",
     "versions": {
       "stable": "1.1.2",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -17303,7 +17033,6 @@
     "homepage": "https://github.com/bcgsc/transabyss",
     "versions": {
       "stable": "2.0.1",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -17372,7 +17101,6 @@
     "homepage": "https://transdecoder.github.io/",
     "versions": {
       "stable": "5.5.0",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -17436,7 +17164,6 @@
     "homepage": "https://github.com/blackrim/treePL/wiki",
     "versions": {
       "stable": "2018.05.22",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -17498,7 +17225,6 @@
     "homepage": "https://tandem.bu.edu/trf/trf.html",
     "versions": {
       "stable": "4.09",
-      "devel": null,
       "head": null,
       "bottle": false
     },
@@ -17543,7 +17269,6 @@
     "homepage": "https://github.com/lh3/trimadap",
     "versions": {
       "stable": "0.1.11",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -17605,7 +17330,6 @@
     "homepage": "http://trimal.cgenomics.org/",
     "versions": {
       "stable": "1.4.1",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -17665,7 +17389,6 @@
     "homepage": "http://www.usadellab.org/cms/?page=trimmomatic",
     "versions": {
       "stable": "0.39",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -17729,7 +17452,6 @@
     "homepage": "https://trinityrnaseq.github.io",
     "versions": {
       "stable": "2.11.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -17803,7 +17525,6 @@
     "homepage": "http://lowelab.ucsc.edu/tRNAscan-SE/",
     "versions": {
       "stable": "2.0.4",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -17865,7 +17586,6 @@
     "homepage": "https://github.com/rrwick/Unicycler",
     "versions": {
       "stable": "0.4.7",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -17933,7 +17653,6 @@
     "homepage": "https://github.com/shenwei356/unikmer",
     "versions": {
       "stable": "0.11.0",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -17993,7 +17712,6 @@
     "homepage": "https://github.com/sjackman/uniqtag",
     "versions": {
       "stable": "1.0",
-      "devel": null,
       "head": "HEAD",
       "bottle": false
     },
@@ -18038,7 +17756,6 @@
     "homepage": "https://dkoboldt.github.io/varscan/",
     "versions": {
       "stable": "2.4.3",
-      "devel": null,
       "head": null,
       "bottle": false
     },
@@ -18083,7 +17800,6 @@
     "homepage": "https://github.com/bioinform/varsim",
     "versions": {
       "stable": "0.8.4",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -18145,7 +17861,6 @@
     "homepage": "https://github.com/edgardomortiz/vcf2phylip",
     "versions": {
       "stable": "2.3",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -18207,7 +17922,6 @@
     "homepage": "https://github.com/ekg/vcflib",
     "versions": {
       "stable": "1.0.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -18273,7 +17987,6 @@
     "homepage": "https://www.ebi.ac.uk/~zerbino/velvet/",
     "versions": {
       "stable": "1.2.10",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -18335,7 +18048,6 @@
     "homepage": "https://github.com/tseemann/VelvetOptimiser",
     "versions": {
       "stable": "2.2.6",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -18399,7 +18111,6 @@
     "homepage": "https://github.com/lindenb/verticalize",
     "versions": {
       "stable": "1.0.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -18459,7 +18170,6 @@
     "homepage": "https://www.tbi.univie.ac.at/~ronny/RNA/",
     "versions": {
       "stable": "2.4.14",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -18522,7 +18232,6 @@
     "homepage": "https://github.com/rega-cev/virulign",
     "versions": {
       "stable": "1.0.2",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -18584,7 +18293,6 @@
     "homepage": "http://www.vmatch.de/",
     "versions": {
       "stable": "2.3.1",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -18646,7 +18354,6 @@
     "homepage": "https://genome.sph.umich.edu/wiki/Vt",
     "versions": {
       "stable": "0.5772",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -18708,7 +18415,6 @@
     "homepage": "https://github.com/enasequence/webin-cli",
     "versions": {
       "stable": "1.8.11",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -18770,7 +18476,6 @@
     "homepage": "https://github.com/Ensembl/WiggleTools",
     "versions": {
       "stable": "1.2.3",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -18836,7 +18541,6 @@
     "homepage": "https://github.com/soedinglab/WIsH/",
     "versions": {
       "stable": "1.0",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -18898,7 +18602,6 @@
     "homepage": "https://github.com/ruanjue/wtdbg2",
     "versions": {
       "stable": "2.5",
-      "devel": null,
       "head": null,
       "bottle": true
     },
@@ -18966,7 +18669,6 @@
     "homepage": "https://github.com/bcgsc/xmatchview",
     "versions": {
       "stable": "1.2.3",
-      "devel": null,
       "head": "HEAD",
       "bottle": true
     },
@@ -19032,7 +18734,6 @@
     "homepage": "https://github.com/cmbi/xssp",
     "versions": {
       "stable": "3.0.9",
-      "devel": null,
       "head": null,
       "bottle": true
     },
