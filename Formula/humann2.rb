@@ -1,6 +1,6 @@
 class Humann2 < Formula
   # cite Abubucker_2012: "https://doi.org/10.1371/journal.pcbi.1002358"
-  desc "HUMAnN2: The HMP Unified Metabolic Analysis Network"
+  desc "HMP Unified Metabolic Analysis Network"
   homepage "https://huttenhower.sph.harvard.edu/humann"
 
   url "https://bitbucket.org/biobakery/humann2/get/0.11.1.tar.bz2"

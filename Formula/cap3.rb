@@ -1,6 +1,6 @@
 class Cap3 < Formula
   # cite Huang_1999: "https://doi.org/10.1101/gr.9.9.868"
-  desc "CAP3: A DNA Sequence Assembly Program"
+  desc "DNA Sequence Assembly Program"
   homepage "http://seq.cs.iastate.edu/cap3.html"
   if OS.mac?
     url "http://seq.cs.iastate.edu/CAP3/cap3.macosx.intel64.tar"

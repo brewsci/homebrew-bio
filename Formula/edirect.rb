@@ -1,15 +1,15 @@
 class Edirect < Formula
   desc "Access NCBI databases via the command-line"
   homepage "https://www.ncbi.nlm.nih.gov/books/NBK179288/"
-  url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/12.4.20191101/edirect-12.4.20191101.tar.gz"
-  version "12.4"
-  sha256 "a88f6fa9518267def78e3092217c5a75fbbc63f39242c3e41011bb41e95656fc"
+  url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/13.8.20200827/edirect-13.8.20200827.tar.gz"
+  version "13.8"
+  sha256 "2f9f7441af1bae0c39a5c09567dc46ebe60bb8bad0e399a196284038633dc735"
 
   bottle do
-    cellar :any_skip_relocation
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "37abb2f97bb0260af84499300935e4fec412fcf385d1f2e303eb681876b47877" => :mojave
-    sha256 "e2fcc5996db0db2bb916e14d4925883d542271c397bf949f6c45d27b9aa4cc4d" => :x86_64_linux
+    cellar :any
+    sha256 "d24f466c08c865c1866212c03969c0597512ede63f0193e1dd1fef31f8e6de16" => :catalina
+    sha256 "ef5637b3c12ad99ef415c38c441f00537b0bea6bffb615253cc3ca477d0b741d" => :x86_64_linux
   end
 
   depends_on "cpanminus" => :build
@@ -20,21 +20,21 @@ class Edirect < Formula
 
   resource "xtract" do
     if OS.mac?
-      url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/12.4.20191101/xtract.Darwin"
-      sha256 "416de277a14fbd9e82b3dafad5f9cabbeb34beedc9b283da10e7691d6088ec6f"
+      url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/13.8.20200827/xtract.Darwin"
+      sha256 "349f209aa4f77173959a562ea55f32d957bc57f1b2b3fdf7eeca03b88d42ab66"
     else
-      url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/12.4.20191101/xtract.Linux"
-      sha256 "63d69e9e93afd1ba8950bd1a15fc0f5f7bac2a196f386705258b84e4951ddcfe"
+      url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/13.8.20200827/xtract.Linux"
+      sha256 "9a53c7f07104194d8328cdf711de6150ae0e4de89d6895dac3b61be083b9bfcc"
     end
   end
 
   resource "rchive" do
     if OS.mac?
-      url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/12.4.20191101/rchive.Darwin"
-      sha256 "1d135b88cd7c0cc0737e020831a5cb82d320b7ed4dc8e06a88820d6695c5b025"
+      url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/13.8.20200827/rchive.Darwin"
+      sha256 "0d9123cacd04737f0389e1a47cd89662df113eaaf41261d5212b8430ce4308c8"
     else
-      url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/12.4.20191101/rchive.Linux"
-      sha256 "edbfad815ed8d1a275fb7d9c75ef284d9423cd39c4fdf7c7a5c017a70bf88ad7"
+      url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/13.8.20200827/rchive.Linux"
+      sha256 "9ec04876460db44a82840186f983d017b464eeafc013da7c5e21c39c35df3701"
     end
   end
 

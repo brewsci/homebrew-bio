@@ -3,7 +3,7 @@ class Quast < Formula
   # cite Mikheenko_2015: "https://doi.org/10.1093/bioinformatics/btv697"
   # cite Mikheenko_2016: "https://doi.org/10.1093/bioinformatics/btw379"
   # cite Mikheenko_2018: "https://doi.org/10.1093/bioinformatics/bty266"
-  desc "QUAST: Quality Assessment Tool for Genome Assemblies"
+  desc "Quality Assessment Tool for Genome Assemblies"
   homepage "https://quast.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/quast/quast-5.0.2.tar.gz"
   sha256 "cdb8f83e20cc38f218ff7172b454280fcb1c7e2dff74e1f8618cacc53d46b48e"
