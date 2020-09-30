@@ -1,5 +1,5 @@
 class BwaMem2 < Formula
-  desc "The next version of bwa-mem short read aligner"
+  desc "Next version of bwa-mem short read aligner"
   homepage "https://github.com/bwa-mem2/bwa-mem2"
   url "https://github.com/bwa-mem2/bwa-mem2.git",
       tag:      "v2.0",

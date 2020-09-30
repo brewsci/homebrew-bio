@@ -1,6 +1,6 @@
 class Metaphlan < Formula
   # cite Segata_2012: "https://doi.org/10.1038/nmeth.2066"
-  desc "MetaPhlAn: Metagenomic Phylogenetic Analysis"
+  desc "Metagenomic Phylogenetic Analysis"
   homepage "https://huttenhower.sph.harvard.edu/metaphlan"
   url "https://bitbucket.org/nsegata/metaphlan/get/default.tar.bz2"
   version "1.7.8"

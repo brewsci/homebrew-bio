@@ -1,7 +1,7 @@
 class SeqanAT3 < Formula
   # cite D_ring_2008: "https://doi.org/10.1186/1471-2105-9-11"
   # cite Reinert_2017: "https://doi.org/10.1016/j.jbiotec.2017.07.017"
-  desc "The modern C++ library for sequence analysis"
+  desc "Modern C++ library for sequence analysis"
   homepage "https://www.seqan.de"
   url "https://github.com/seqan/seqan3/archive/3.0.1.tar.gz"
   sha256 "fcf481c7989c2438857ac58eaac3a5c21447c3936bbaf9b2f9f20847da50258b"
