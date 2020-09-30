@@ -1,6 +1,6 @@
 class MmtfCpp < Formula
   # cite Bradley_2017: "https://doi.org/10.1371/journal.pcbi.1005575"
-  desc "The pure C++ implementation of the MMTF API, decoder and encoder"
+  desc "Pure C++ implementation of the MMTF API, decoder and encoder"
   homepage "https://github.com/rcsb/mmtf-cpp"
   url "https://github.com/rcsb/mmtf-cpp/archive/v1.0.0.tar.gz"
   sha256 "881f69c4bb56605fa63fd5ca50842facc4947f686cbf678ad04930674d714f40"

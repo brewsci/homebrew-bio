@@ -1,6 +1,6 @@
 class Realphy < Formula
   # cite Berteis_2014: "https://doi.org/10.1093/molbev/msu088"
-  desc "The Reference sequence Alignment based Phylogeny"
+  desc "Reference sequence Alignment based Phylogeny"
   homepage "https://realphy.unibas.ch/fcgi/realphy"
   url "https://realphy.unibas.ch/downloads/REALPHY_v112_exec.zip"
   version "1.12"

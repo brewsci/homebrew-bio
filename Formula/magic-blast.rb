@@ -1,5 +1,5 @@
 class MagicBlast < Formula
-  desc "Magic BLAST read mapper"
+  desc "Map RNA or DNA sequencing against a whole genome or transcriptome"
   homepage "https://ncbi.github.io/magicblast/"
   if OS.mac?
     url "ftp://ftp.ncbi.nlm.nih.gov/blast/executables/magicblast/1.3.0/ncbi-magicblast-1.3.0-x64-macosx.tar.gz"
