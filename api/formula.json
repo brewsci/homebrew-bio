@@ -1704,7 +1704,7 @@
     "oldname": null,
     "aliases": [],
     "versioned_formulae": [],
-    "desc": "BioBloom Tools (BBT): Bloom filter for bioinformatics",
+    "desc": "BBT: Bloom filter for bioinformatics",
     "license": null,
     "homepage": "https://www.bcgsc.ca/platform/bioinfo/software/biobloomtools/",
     "versions": {
@@ -2446,7 +2446,7 @@
     "oldname": null,
     "aliases": [],
     "versioned_formulae": [],
-    "desc": "The next version of bwa-mem short read aligner",
+    "desc": "Next version of bwa-mem short read aligner",
     "license": null,
     "homepage": "https://github.com/bwa-mem2/bwa-mem2",
     "versions": {
@@ -2627,7 +2627,7 @@
     "oldname": null,
     "aliases": [],
     "versioned_formulae": [],
-    "desc": "CAP3: A DNA Sequence Assembly Program",
+    "desc": "DNA Sequence Assembly Program",
     "license": null,
     "homepage": "http://seq.cs.iastate.edu/cap3.html",
     "versions": {
@@ -6651,7 +6651,7 @@
     "oldname": null,
     "aliases": [],
     "versioned_formulae": [],
-    "desc": "HUMAnN2: The HMP Unified Metabolic Analysis Network",
+    "desc": "HMP Unified Metabolic Analysis Network",
     "license": null,
     "homepage": "https://huttenhower.sph.harvard.edu/humann",
     "versions": {
@@ -9089,7 +9089,7 @@
     "oldname": null,
     "aliases": [],
     "versioned_formulae": [],
-    "desc": "Magic BLAST read mapper",
+    "desc": "Map RNA or DNA sequencing against a whole genome or transcriptome",
     "license": null,
     "homepage": "https://ncbi.github.io/magicblast/",
     "versions": {
@@ -9842,7 +9842,7 @@
     "oldname": null,
     "aliases": [],
     "versioned_formulae": [],
-    "desc": "MetaPhlAn: Metagenomic Phylogenetic Analysis",
+    "desc": "Metagenomic Phylogenetic Analysis",
     "license": null,
     "homepage": "https://huttenhower.sph.harvard.edu/metaphlan",
     "versions": {
@@ -10457,7 +10457,7 @@
     "oldname": null,
     "aliases": [],
     "versioned_formulae": [],
-    "desc": "The pure C++ implementation of the MMTF API, decoder and encoder",
+    "desc": "Pure C++ implementation of the MMTF API, decoder and encoder",
     "license": "MIT",
     "homepage": "https://github.com/rcsb/mmtf-cpp",
     "versions": {
@@ -13449,7 +13449,7 @@
     "oldname": null,
     "aliases": [],
     "versioned_formulae": [],
-    "desc": "QUAST: Quality Assessment Tool for Genome Assemblies",
+    "desc": "Quality Assessment Tool for Genome Assemblies",
     "license": null,
     "homepage": "https://quast.sourceforge.io/",
     "versions": {
@@ -14255,7 +14255,7 @@
     "oldname": null,
     "aliases": [],
     "versioned_formulae": [],
-    "desc": "The Reference sequence Alignment based Phylogeny",
+    "desc": "Reference sequence Alignment based Phylogeny",
     "license": "GPL-3.0",
     "homepage": "https://realphy.unibas.ch/fcgi/realphy",
     "versions": {
@@ -15206,7 +15206,7 @@
       "seqan"
     ],
     "versioned_formulae": [],
-    "desc": "The modern C++ library for sequence analysis",
+    "desc": "Modern C++ library for sequence analysis",
     "license": null,
     "homepage": "https://www.seqan.de",
     "versions": {
@@ -16227,7 +16227,7 @@
     "oldname": null,
     "aliases": [],
     "versioned_formulae": [],
-    "desc": "SortMeRNA: filter metatranscriptomic ribosomal RNA",
+    "desc": "Filter metatranscriptomic ribosomal RNA",
     "license": "GPL-3.0",
     "homepage": "https://bioinfo.lifl.fr/RNA/sortmerna/",
     "versions": {
