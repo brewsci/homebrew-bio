@@ -1,6 +1,6 @@
 class Biobloomtools < Formula
   # cite Chu_2014: "https://doi.org/10.1093/bioinformatics/btu558"
-  desc "Bloom filter for bioinformatics"
+  desc "BBT: Bloom filter for bioinformatics"
   homepage "https://www.bcgsc.ca/platform/bioinfo/software/biobloomtools/"
   url "https://github.com/bcgsc/biobloom/releases/download/2.3.3/biobloomtools-2.3.3.tar.gz"
   sha256 "cd3ca08677aae4cf99da30fdec87a23b12a8320c6d0e21df9d0c3b26b62b6153"
