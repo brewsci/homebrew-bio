@@ -4,6 +4,7 @@ class Mpboot < Formula
   homepage "http://www.iqtree.org/mpboot/"
   url "http://www.iqtree.org/mpboot/mpboot-1.1.0-Source.tar.gz"
   sha256 "164ceb7839b7fc7fa81ee44ee4b2fd4921fd9389f860f2132a3d19e9e37fa61f"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"

@@ -2,16 +2,16 @@ class Hisat2 < Formula
   # cite Kim_2015: "https://doi.org/10.1038/nmeth.3317"
   desc "Graph-based alignment to a population of genomes"
   homepage "https://daehwankimlab.github.io/hisat2/"
-  url "https://github.com/DaehwanKimLab/hisat2/archive/v2.2.0.tar.gz"
-  sha256 "429882d90ad9c600a986279b3ca5d78573caacf3bf0d780c802c006d4fcf0a01"
+  url "https://github.com/DaehwanKimLab/hisat2/archive/v2.2.1.tar.gz"
+  sha256 "f3f4f867d0a6b1f880d64efc19deaa5788c62050e0a4d614ce98b3492f702599"
   license "GPL-3.0"
   head "https://github.com/DaehwanKimLab/hisat2.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "fa0b379de74c8f9b952d57693a93d8d7f664ca476d970608a25f3d1786c3d94e" => :catalina
-    sha256 "0266c2eaad48f32bbe1b8ba9ed39e6fae3d9c1fbfb70f285d9bf2960d5093842" => :x86_64_linux
+    cellar :any
+    sha256 "2b5b75097703eca1abde911453cf0751395f52d07c7e9d437becd35b8f5b3290" => :catalina
+    sha256 "81d4a8bdf5de5751f06def926c8f7b39b2ee9e1d48905fbe7084cdaa0238f8b1" => :x86_64_linux
   end
 
   fails_with :clang
@@ -19,7 +19,7 @@ class Hisat2 < Formula
   def install
     system "make"
     rm "HISAT2-genotype.png"
-    bin.install "hisat2", Dir["hisat2-*"]
+    bin.install "hisat2", Dir["hisat2-*"], Dir["hisat2_*.py"]
     doc.install Dir["doc/*"]
   end
 
