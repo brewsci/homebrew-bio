@@ -6533,13 +6533,13 @@
     "license": "GPL-3.0",
     "homepage": "https://daehwankimlab.github.io/hisat2/",
     "versions": {
-      "stable": "2.2.0",
+      "stable": "2.2.1",
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/DaehwanKimLab/hisat2/archive/v2.2.0.tar.gz",
+        "url": "https://github.com/DaehwanKimLab/hisat2/archive/v2.2.1.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -6549,17 +6549,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any_skip_relocation",
+        "cellar": ":any",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/hisat2-2.2.0.catalina.bottle.tar.gz",
-            "sha256": "fa0b379de74c8f9b952d57693a93d8d7f664ca476d970608a25f3d1786c3d94e"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/hisat2-2.2.1.catalina.bottle.tar.gz",
+            "sha256": "2b5b75097703eca1abde911453cf0751395f52d07c7e9d437becd35b8f5b3290"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/hisat2-2.2.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "0266c2eaad48f32bbe1b8ba9ed39e6fae3d9c1fbfb70f285d9bf2960d5093842"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/hisat2-2.2.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "81d4a8bdf5de5751f06def926c8f7b39b2ee9e1d48905fbe7084cdaa0238f8b1"
           }
         }
       }
@@ -10722,7 +10722,7 @@
         "revision": null
       }
     },
-    "revision": 0,
+    "revision": 1,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -10732,11 +10732,11 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/mpboot-1.1.0.catalina.bottle.tar.gz",
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mpboot-1.1.0_1.catalina.bottle.tar.gz",
             "sha256": "9f81b4335359b8427fee1737fca2939f63ff62cc0f03097302c9837a99736fdd"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/mpboot-1.1.0.x86_64_linux.bottle.tar.gz",
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mpboot-1.1.0_1.x86_64_linux.bottle.tar.gz",
             "sha256": "1b0598dc6c2b93a62554e4d5189fb2a5b683f0e812706e7c9a4f61c9fcd227fb"
           }
         }
@@ -16966,22 +16966,22 @@
     "oldname": null,
     "aliases": [],
     "versioned_formulae": [],
-    "desc": "Correct misassemblies using linked reads",
-    "license": "GPL-3.0",
+    "desc": "Correct misassemblies using linked or long reads",
+    "license": "GPL-3.0-only",
     "homepage": "https://bcgsc.github.io/tigmint/",
     "versions": {
-      "stable": "1.1.2",
+      "stable": "1.2.1",
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/bcgsc/tigmint/archive/1.1.2.tar.gz",
+        "url": "https://github.com/bcgsc/tigmint/archive/1.2.1.tar.gz",
         "tag": null,
         "revision": null
       }
     },
-    "revision": 2,
+    "revision": 0,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -16990,13 +16990,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/tigmint-1.1.2_2.sierra.bottle.tar.gz",
-            "sha256": "9a292eab8ee0a550a48441c4eb873682a4109b59c412a058bd37c3e6f898fc33"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/tigmint-1.2.1.catalina.bottle.tar.gz",
+            "sha256": "1f919b447553c75b731b405a70a5b0973995c1add24fb41ab5ceca8e1ea3d5f0"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/tigmint-1.1.2_2.x86_64_linux.bottle.tar.gz",
-            "sha256": "c115d2d29ba6216fa4a3a858510ff17a8b57efc96c427e9b66d98fc3c29e00e0"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/tigmint-1.2.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "3970ada8c1db11a0c98358bcc9887593afa52f8a97343807e34d4a91790f5cd0"
           }
         }
       }
@@ -17007,7 +17007,8 @@
     "build_dependencies": [],
     "dependencies": [
       "bedtools",
-      "python"
+      "minimap2",
+      "python@3.8"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
