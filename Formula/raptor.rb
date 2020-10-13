@@ -9,6 +9,13 @@ class Raptor < Formula
   license "BSD-3-Clause"
   head "https://github.com/seqan/raptor.git"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any
+    sha256 "8dde79c5a6b6a79286b02ba145174052dae9124d4b77feddf0546259c1f28d73" => :catalina
+    sha256 "31d9b7147732688d898dfa1766a46338fc38652d813c226570bc22a3836f496f" => :x86_64_linux
+  end
+
   depends_on "cmake" => :build
   depends_on "gcc@8"
 
