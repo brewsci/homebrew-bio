@@ -482,6 +482,7 @@
     "bottle_disabled": false,
     "options": [],
     "build_dependencies": [
+      "unzip",
       "cmake"
     ],
     "dependencies": [
@@ -2417,7 +2418,9 @@
     "keg_only": false,
     "bottle_disabled": false,
     "options": [],
-    "build_dependencies": [],
+    "build_dependencies": [
+      "unzip"
+    ],
     "dependencies": [
       "augustus",
       "brewsci/bio/blast@2.2",
@@ -2850,7 +2853,9 @@
     "keg_only": false,
     "bottle_disabled": false,
     "options": [],
-    "build_dependencies": [],
+    "build_dependencies": [
+      "unzip"
+    ],
     "dependencies": [
       "brewsci/bio/mummer",
       "bwa",
@@ -3342,7 +3347,9 @@
     "keg_only": false,
     "bottle_disabled": false,
     "options": [],
-    "build_dependencies": [],
+    "build_dependencies": [
+      "unzip"
+    ],
     "dependencies": [
       "python@3.8"
     ],
@@ -5316,7 +5323,9 @@
     "keg_only": false,
     "bottle_disabled": false,
     "options": [],
-    "build_dependencies": [],
+    "build_dependencies": [
+      "unzip"
+    ],
     "dependencies": [
       "python@3.8"
     ],
@@ -7223,13 +7232,13 @@
     "license": "GPL-3.0",
     "homepage": "https://github.com/andersen-lab/ivar",
     "versions": {
-      "stable": "1.2.2",
+      "stable": "1.2.3",
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/andersen-lab/ivar/archive/v1.2.2.tar.gz",
+        "url": "https://github.com/andersen-lab/ivar/archive/v1.2.3.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -7244,12 +7253,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ivar-1.2.2.catalina.bottle.tar.gz",
-            "sha256": "5f58bf0568e9a1fea3ef86f367aa834c2df723dd0ac86a516c4a0d0c568955c2"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ivar-1.2.3.catalina.bottle.tar.gz",
+            "sha256": "ac28808f052954afd38d7a9458fb04691f9dd21ed7f157e600efdab5eb8b1326"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ivar-1.2.2.x86_64_linux.bottle.tar.gz",
-            "sha256": "6457f2f6687d1b86b1ffd7448841d416561378302bfe288cf4504bf02dfda516"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ivar-1.2.3.x86_64_linux.bottle.tar.gz",
+            "sha256": "913b6ba7011e59d2f2708021b731c986fe499bc3647c3da0c0e7c9ceecc6b2d9"
           }
         }
       }
@@ -11535,13 +11544,13 @@
     "license": "MIT",
     "homepage": "https://github.com/bcgsc/ntCard",
     "versions": {
-      "stable": "1.2.1",
+      "stable": "1.2.2",
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/bcgsc/ntCard/releases/download/1.2.1/ntcard-1.2.1.tar.gz",
+        "url": "https://github.com/bcgsc/ntCard/releases/download/1.2.2/ntcard-1.2.2.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -11556,12 +11565,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ntcard-1.2.1.catalina.bottle.tar.gz",
-            "sha256": "a685c7ff1bacf5b3b02c70f6e8eb0e75e64c5892b41d4a6c30770ebc934c7f8e"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ntcard-1.2.2.catalina.bottle.tar.gz",
+            "sha256": "23046c62a90ea7b0eca403f3785270a19044ee2df642edbfbe1c85d1e5b7f8d6"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ntcard-1.2.1.x86_64_linux.bottle.tar.gz",
-            "sha256": "c6af69458de6e27eddb2f29f5b625babe016d3c919c140d05de7d8d27fe37fa7"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ntcard-1.2.2.x86_64_linux.bottle.tar.gz",
+            "sha256": "f9f148edfccb1d956cc02dcf055fec2cbb1725e7b2fe86d99f1f861fe734e5bb"
           }
         }
       }
@@ -12019,7 +12028,9 @@
     "keg_only": false,
     "bottle_disabled": false,
     "options": [],
-    "build_dependencies": [],
+    "build_dependencies": [
+      "unzip"
+    ],
     "dependencies": [
       "numpy",
       "python",
@@ -13089,10 +13100,10 @@
     "bottle_disabled": false,
     "options": [],
     "build_dependencies": [
+      "unzip",
       "autoconf",
       "automake",
-      "libtool",
-      "unzip"
+      "libtool"
     ],
     "dependencies": [
       "gcc",
@@ -13984,6 +13995,71 @@
       "unzip"
     ],
     "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false,
+    "deprecated": false,
+    "disabled": false
+  },
+  {
+    "name": "raptor",
+    "full_name": "brewsci/bio/raptor",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Pre-filter for querying very large collections of nucleotide sequences",
+    "license": "BSD-3-Clause",
+    "homepage": "https://github.com/seqan/raptor",
+    "versions": {
+      "stable": "1.0.1",
+      "head": "HEAD",
+      "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/seqan/raptor",
+        "tag": "raptor-v1.0.1",
+        "revision": "6f2a0cc3cdc05f9311fea0081e644f37772a26bf"
+      }
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/raptor-1.0.1.catalina.bottle.tar.gz",
+            "sha256": "8dde79c5a6b6a79286b02ba145174052dae9124d4b77feddf0546259c1f28d73"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/raptor-1.0.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "31d9b7147732688d898dfa1766a46338fc38652d813c226570bc22a3836f496f"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [
+      "cmake"
+    ],
+    "dependencies": [
+      "gcc@8",
+      "bzip2",
+      "zlib"
+    ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
     "uses_from_macos": [],
@@ -15060,7 +15136,9 @@
     "keg_only": false,
     "bottle_disabled": false,
     "options": [],
-    "build_dependencies": [],
+    "build_dependencies": [
+      "unzip"
+    ],
     "dependencies": [
       "adoptopenjdk",
       "python"
