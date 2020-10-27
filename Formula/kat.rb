@@ -2,10 +2,9 @@ class Kat < Formula
   # cite Mapleson_2016: "https://doi.org/10.1093/bioinformatics/btw663"
   desc "K-mer Analysis Toolkit (KAT) analyses k-mer spectra"
   homepage "https://github.com/TGAC/KAT"
-  url "https://github.com/TGAC/KAT/archive/Release-2.4.1.tar.gz"
-  sha256 "068bd63b022588058d2ecae817140ca67bba81a9949c754c6147175d73b32387"
+  url "https://github.com/TGAC/KAT/archive/Release-2.4.2.tar.gz"
+  sha256 "d6116cefdb5ecd9ec40898dd92362afe1a76fa560abfe0f2cd29cbe0d95cb877"
   license "GPL-3.0"
-  revision 3
   head "https://github.com/TGAC/KAT.git"
 
   bottle do
@@ -19,11 +18,12 @@ class Kat < Formula
   depends_on "libtool" => :build
 
   depends_on "brewsci/bio/matplotlib"
+  depends_on "python@3.9"
   depends_on "scipy"
 
   resource "tabulate" do
-    url "https://files.pythonhosted.org/packages/1c/a1/3367581782ce79b727954f7aa5d29e6a439dc2490a9ac0e7ea0a7115435d/tabulate-0.7.7.tar.gz"
-    sha256 "83a0b8e17c09f012090a50e1e97ae897300a72b35e0c86c0b53d3bd2ae86d8c6"
+    url "https://files.pythonhosted.org/packages/57/6f/213d075ad03c84991d44e63b6516dd7d185091df5e1d02a660874f8f7e1e/tabulate-0.8.7.tar.gz"
+    sha256 "db2723a20d04bcda8522165c73eea7c300eda74e0ce852d9022e0159d7895007"
   end
 
   def install
@@ -36,9 +36,11 @@ class Kat < Formula
       s.gsub! "-Wno-long-double", ""
     end
 
+    ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python3.9/site-packages"
+
     resources.each do |r|
       r.stage do
-        system "python3", *Language::Python.setup_install_args(libexec)
+        system Formula["python@3.9"].opt_bin/"python3", *Language::Python.setup_install_args(libexec)
       end
     end
 
