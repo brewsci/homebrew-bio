@@ -2,8 +2,8 @@ class Last < Formula
   # cite Kielbasa_2011: "https://doi.org/10.1101/gr.113985.110"
   desc "Find similar regions between sequences"
   homepage "http://last.cbrc.jp/"
-  url "http://last.cbrc.jp/last-1061.zip"
-  sha256 "ddb6c04e3e4e84913d115d839ab1cca972af4c5bc045b830482ef7e25d677bc9"
+  url "http://last.cbrc.jp/last-1133.zip"
+  sha256 "58ba97538ee3c2913bb2c485a994a2d17cdebe218fcbdf15f5a156efc205c028"
   license "GPL-3.0"
   head "http://last.cbrc.jp/last", using: :hg
 
