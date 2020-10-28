@@ -7,9 +7,7 @@ class Pymol < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "14fe2ca191b6461477fe69d5aec46c965502a0dc1a6ce6d90d824379c77cb473" => :mojave
-    sha256 "8621be3863ecfbf5e0140240d8a5bd648aea59a175a45766a57b64b089956db9" => :x86_64_linux
+    sha256 "ce4f0acf8a97da25c6a67894a6afcb69c48a78497d4d3fd2e367b134c1785472" => :x86_64_linux
   end
 
   depends_on "brewsci/bio/mmtf-cpp"
