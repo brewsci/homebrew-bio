@@ -8,6 +8,7 @@ class Mosdepth < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
+    sha256 "28f0f2a6c62cd8543a9f85404c63f861562a25c62dd21bf5c2186d81198be791" => :x86_64_linux
   end
 
   depends_on :linux
