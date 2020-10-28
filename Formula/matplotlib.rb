@@ -21,8 +21,8 @@ end
 class Matplotlib < Formula
   desc "Python 2D plotting library"
   homepage "https://matplotlib.org"
-  url "https://files.pythonhosted.org/packages/10/5f/10c310c943f29e67976dcc26dccf9305a5a9bc7483e631ee74a0f95aa5b2/matplotlib-2.2.5.tar.gz"
-  sha256 "a3037a840cd9dfdc2df9fee8af8f76ca82bfab173c0f9468193ca7a89a2b60ea"
+  url "https://files.pythonhosted.org/packages/2b/4c/fe4b36325795524f35d39edc390c89584e9a901df9e615df6f5effddaa0e/matplotlib-3.3.2.tar.gz"
+  sha256 "3d2edbf59367f03cd9daf42939ca06383a7d7803e3993eb5ff1bee8e8a3fbb6b"
   head "https://github.com/matplotlib/matplotlib.git"
 
   bottle do
@@ -37,7 +37,7 @@ class Matplotlib < Formula
   depends_on "freetype"
   depends_on "libpng"
   depends_on "numpy"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "setuptools" do
     url "https://files.pythonhosted.org/packages/dc/8c/7c9869454bdc53e72fb87ace63eac39336879eef6f2bf96e946edbf03e90/setuptools-33.1.1.zip"
@@ -80,17 +80,13 @@ class Matplotlib < Formula
       ENV.delete "SDKROOT"
     end
 
-    inreplace "setupext.py",
-              "'darwin': ['/usr/local/'",
-              "'darwin': ['#{HOMEBREW_PREFIX}'"
-
     xy = Language::Python.major_minor_version "python3"
     site_packages = libexec/"lib/python#{xy}/site-packages"
     ENV.prepend_create_path "PYTHONPATH", site_packages
 
     resources.each do |r|
       r.stage do
-        system "python3", *Language::Python.setup_install_args(libexec)
+        system Formula["python@3.9"].opt_bin/"python3", *Language::Python.setup_install_args(libexec)
       end
     end
     (lib/"python#{xy}/site-packages/homebrew-matplotlib.pth").write "#{site_packages}\n"
