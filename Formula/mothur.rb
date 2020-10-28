@@ -2,8 +2,8 @@ class Mothur < Formula
   # cite Schloss_2009: "https://doi.org/10.1128/AEM.01541-09"
   desc "16s analysis software"
   homepage "https://mothur.org/"
-  url "https://github.com/mothur/mothur/archive/v1.44.2.tar.gz"
-  sha256 "a79f55655a9519b357aa764972df8c5f183063ca8e278b46a204f5a2703e3d45"
+  url "https://github.com/mothur/mothur/archive/v1.44.3.tar.gz"
+  sha256 "a9825ccbb7f60b527f63c16e07f9dd45373bdc8ee65c8f2f0b45f8b2113b2e6f"
   license "GPL-3.0"
   head "https://github.com/mothur/mothur.git"
 
@@ -15,12 +15,12 @@ class Mothur < Formula
   end
 
   depends_on "boost"
-  depends_on "readline" unless OS.mac?
+
+  on_linux do
+    depends_on "readline"
+  end
 
   def install
-    # Fixed in https://github.com/mothur/mothur/pull/736
-    inreplace "Makefile", "./make", "make"
-
     boost = Formula["boost"]
     system "make", "USEBOOST=yes", "BOOST_LIBRARY_DIR=#{boost.opt_lib}", "BOOST_INCLUDE_DIR=#{boost.opt_include}"
     bin.install "mothur", "uchime"
