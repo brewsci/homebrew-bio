@@ -5,12 +5,12 @@ class Psmc < Formula
   url "https://github.com/lh3/psmc/archive/0.6.5.tar.gz"
   sha256 "0954b3e28dda4ae350bdb9ebe9eeb3afb3a6d4448cf794dac3b4fde895c3489b"
   license "MIT"
+
   depends_on "zlib"
 
   def install
-    system "make", "all"
-    mkdir "#{bin}/"
-    copy "psmc", "#{bin}/"
+    system "make"
+    bin.install "psmc"
   end
 
   test do
