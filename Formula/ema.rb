@@ -5,6 +5,7 @@ class Ema < Formula
   url "https://github.com/arshajii/ema.git",
     tag: "v0.6.2", revision: "893be3470e613043bf75fefdc73396d40c3bc2bc"
   license "MIT"
+  revision 1
   head "https://github.com/arshajii/ema.git"
 
   bottle do
@@ -14,13 +15,13 @@ class Ema < Formula
     sha256 "9aef677e79f0853fd815c2551bedc7c0fdaae6854b6453fe12c6844812edbb60" => :x86_64_linux
   end
 
-  fails_with :clang # needs openmp
+  uses_from_macos "zlib"
 
-  if OS.mac?
-    depends_on "gcc" # needs openmp
-  else
-    depends_on "zlib"
+  on_macos do
+    depends_on "gcc@9" # needs openmp
   end
+
+  fails_with :clang # needs openmp
 
   resource "4M-with-alts" do
     url "https://raw.githubusercontent.com/10XGenomics/supernova/master/tenkit/lib/python/tenkit/barcodes/4M-with-alts-february-2016.txt"
