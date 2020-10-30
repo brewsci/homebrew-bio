@@ -3,8 +3,8 @@ class SeqanAT3 < Formula
   # cite Reinert_2017: "https://doi.org/10.1016/j.jbiotec.2017.07.017"
   desc "Modern C++ library for sequence analysis"
   homepage "https://www.seqan.de"
-  url "https://github.com/seqan/seqan3/archive/3.0.1.tar.gz"
-  sha256 "fcf481c7989c2438857ac58eaac3a5c21447c3936bbaf9b2f9f20847da50258b"
+  url "https://github.com/seqan/seqan3/releases/download/3.0.2/seqan3-3.0.2-Source.tar.xz"
+  sha256 "bab1a9cd0c01fd486842e0fa7a5b41c1bf6d2c43fdadf4c543956923deb62ee9"
   head "https://github.com/seqan/seqan3.git"
 
   bottle do
@@ -15,15 +15,23 @@ class SeqanAT3 < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "doxygen" => :build
   depends_on "xz" => :build
+  depends_on "gcc@9"
+
+  # requires c++17 and concepts
+  fails_with :clang do
+    cause "seqan3 requires concepts and c++17 support"
+  end
+
+  fails_with gcc: "4.9" # requires C++17
+  fails_with gcc: "5" # requires C++17
+  fails_with gcc: "6" # requires C++17
 
   def install
-    system "cmake", "test/documentation/"
-    system "make", "doc_usr"
-
-    include.install "include/seqan3"
-    doc.install Dir["#{buildpath}/doc_usr/html/*"]
+    mkdir "build" do
+      system "cmake", "..", *std_cmake_args
+      system "make", "install"
+    end
   end
 
   test do
