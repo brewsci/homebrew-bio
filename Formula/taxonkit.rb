@@ -1,15 +1,15 @@
 class Taxonkit < Formula
   desc "NCBI taxonomy toolkit"
   homepage "https://github.com/shenwei356/taxonkit"
-  version "0.6.1"
+  version "0.6.2"
   license "MIT"
 
   if OS.mac?
-    url "https://github.com/shenwei356/taxonkit/releases/download/v0.6.1/taxonkit_darwin_amd64.tar.gz"
-    sha256 "a564d8065f31f0376023056f97d04e2d76418d7f525535298b434a29cbce80bf"
+    url "https://github.com/shenwei356/taxonkit/releases/download/v0.6.2/taxonkit_darwin_amd64.tar.gz"
+    sha256 "a4b6a36fd9c174a6a29469d8e9d66ccd9f1e0dc0e1a12a446c6dc838bc02cd2a"
   else
-    url "https://github.com/shenwei356/taxonkit/releases/download/v0.6.1/taxonkit_linux_amd64.tar.gz"
-    sha256 "67feff2a4127217f2673cf30f44b09d30e1ce67755f47df7a4e3509b8051e1ab"
+    url "https://github.com/shenwei356/taxonkit/releases/download/v0.6.2/taxonkit_linux_amd64.tar.gz"
+    sha256 "88b37f35f939be2ab81156e40ddc850290a079251d7b3d807419025235d9084e"
   end
 
   bottle do
