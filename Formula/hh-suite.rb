@@ -2,10 +2,9 @@ class HhSuite < Formula
   # cite Steinegger_2019: "https://doi.org/10.1186/s12859-019-3019-7"
   desc "Remote protein homology detection suite"
   homepage "https://github.com/soedinglab/hh-suite"
-  url "https://github.com/soedinglab/hh-suite/archive/v3.2.0.tar.gz"
-  sha256 "6b870dcfbc1ffb9dd664a45415fcd13cf5970f49d1c7b824160c260fa138e6d6"
-  license "GPL-3.0"
-  revision 1
+  url "https://github.com/soedinglab/hh-suite/archive/v3.3.0.tar.gz"
+  sha256 "dd67f7f3bf601e48c9c0bc4cf1fbe3b946f787a808bde765e9436a48d27b0964"
+  license "GPL-3.0-only"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -15,7 +14,7 @@ class HhSuite < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "python"
+  depends_on "python@3.9"
 
   uses_from_macos "perl"
 
