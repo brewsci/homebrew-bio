@@ -2,8 +2,8 @@ class BwaMem2 < Formula
   desc "Next version of bwa-mem short read aligner"
   homepage "https://github.com/bwa-mem2/bwa-mem2"
   url "https://github.com/bwa-mem2/bwa-mem2.git",
-      tag:      "v2.0",
-      revision: "cbcc183c0843d20d45c84e066177eb8d58be2f9b"
+      tag:      "v2.1",
+      revision: "f0d047bbce7ea862f5c18e437f20a109883555e1"
   head "https://github.com/bwa-mem2/bwa-mem2.git"
 
   bottle do
@@ -22,11 +22,11 @@ class BwaMem2 < Formula
       "extern errno_t memset_s",
       "//xxx extern errno_t memset_s"
 
-    system "make"
+    system "make", "arch=native"
     bin.install "bwa-mem2"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/bwa-mem2 version 2>&1")
+    assert_match "Usage", shell_output("#{bin}/bwa-mem2 2>&1", 1)
   end
 end
