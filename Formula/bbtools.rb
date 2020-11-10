@@ -1,8 +1,8 @@
 class Bbtools < Formula
   desc "Suite of Brian Bushnell's tools for manipulating reads"
   homepage "https://jgi.doe.gov/data-and-tools/bbtools/"
-  url "https://downloads.sourceforge.net/bbmap/BBMap_38.86.tar.gz"
-  sha256 "c3e641285c70fdabbf5f05833241f6a4ee42cd244245ebf8eb32f12341fdf1de"
+  url "https://downloads.sourceforge.net/bbmap/BBMap_38.87.tar.gz"
+  sha256 "22ab642b8af88faf208a56763158da895004c5231df572d3163ce52fbfb63240"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
