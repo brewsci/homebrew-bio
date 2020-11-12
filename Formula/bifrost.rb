@@ -3,13 +3,14 @@ class Bifrost < Formula
   desc "Construction, indexing and querying of colored/compacted de Bruijn graphs"
   homepage "https://github.com/pmelsted/bifrost"
   url "https://github.com/pmelsted/bifrost/archive/v1.0.5.tar.gz"
+  sha256 "47360fe757b4aeec438deb38449dcaad607fc7421e7d6bf819112c8ed58c0d5d"
   license "BSD-2-Clause"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "47360fe757b4aeec438deb38449dcaad607fc7421e7d6bf819112c8ed58c0d5d" => :catalina
-    sha256 "47360fe757b4aeec438deb38449dcaad607fc7421e7d6bf819112c8ed58c0d5d" => :x86_64_linux
+    cellar :any
+    sha256 "32feacf248a6aeaacb0356ff67683c0ea4925bd8bba1fbf3d191044757654e80" => :catalina
+    sha256 "a036fa50004f01367a8e7cc95a90e9ca4303f01dc1d80f1ab8fd7f2e5632a0f4" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
@@ -25,6 +26,6 @@ class Bifrost < Formula
   end
 
   test do
-    assert_match "bloom", shell_output("#{bin}/Bifrost 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/Bifrost --version 2>&1")
   end
 end
