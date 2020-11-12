@@ -9,8 +9,8 @@ class Kaiju < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "fea3e2ce6a05f64e12c0eba6494264a2b01952a438b23c291a5fc72a44b200ce" => :catalina
-    sha256 "1d97a6cc795d700df20b48edfdc0f329dc0b7628fe1e17dab7874a7820f3f3a4" => :x86_64_linux
+    sha256 "f824e839bfd8223ce256523658f21e85c835a40c0168e3e02496fffecd422af3" => :catalina
+    sha256 "5713783ed8f98eb0d91f4f30920e3396436b440aa42619e18170146940eb524d" => :x86_64_linux
   end
 
   depends_on "perl" # for kaiju-gbk2faa.pl
