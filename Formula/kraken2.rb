@@ -8,8 +8,8 @@ class Kraken2 < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "b89edf3c230158ea9ac3df0f5ce37b4b44a615577940f375926839f8bd267dad" => :catalina
-    sha256 "0145a2ff1d8ba837b22167cf8c1dcdc04ae13c1114ad7f7df2dfb256dd2c2857" => :x86_64_linux
+    sha256 "8e469574030fe11f7076f10ee76486f6b7625541cfb0c3c03002c8122651488b" => :catalina
+    sha256 "0a75134a1be173c1472899b6714aa5a31bc03a12b64fe20c6817e4b64e9b2442" => :x86_64_linux
   end
 
   depends_on "blast" # for segmasker + dustmasker
