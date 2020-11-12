@@ -1,9 +1,8 @@
 class Kraken2 < Formula
   desc "Taxonomic sequence classification system"
   homepage "https://github.com/DerrickWood/kraken2"
-  # URL hack is to bypass audit for word "beta"
-  url "https://github.com/DerrickWood/kraken2/archive/v2.0.9-b%65ta.tar.gz"
-  sha256 "0287cf4df4b5d5511a9132d9ab37a8d76864bae445579efb9cb76db7e9c09eba"
+  url "https://github.com/DerrickWood/kraken2/archive/v2.1.1.tar.gz"
+  sha256 "8f3e928cdb32b9e8e6f55b44703d1557b2a5fc3f30f63e8d16e465e19a81dee4"
   license "MIT"
 
   bottle do
