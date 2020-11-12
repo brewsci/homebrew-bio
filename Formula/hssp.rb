@@ -5,6 +5,13 @@ class Hssp < Formula
   url "https://github.com/cmbi/hssp/archive/3.1.5.tar.gz"
   sha256 "9462608ce6b5b92f13a3a8d94b780d85a3cac68ab38449116193754cc22dc5d0"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any
+    sha256 "4ce38b0b1e31fc6d6a227f45c669fc207a86452c651308d20086a8b2a7727544" => :catalina
+    sha256 "13ed6f5a89db289af9b00aad4c61162b9b22150fd800d6cbee3345a980ac6e27" => :x86_64_linux
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "boost"
