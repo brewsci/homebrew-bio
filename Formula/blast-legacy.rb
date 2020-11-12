@@ -13,7 +13,7 @@ class BlastLegacy < Formula
   bottle do
     cellar :any_skip_relocation
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "cb62bf738ed68725b0711f9259ad4cfb8273d6b445cc3b2dabc0de3c6a9d4af8" => :sierra_or_later
+    sha256 "cb62bf738ed68725b0711f9259ad4cfb8273d6b445cc3b2dabc0de3c6a9d4af8" => :sierra
     sha256 "bf4932732f4f8a1f174db415e0fee1912e6ceb73b46ef907d44f9ed47df66857" => :x86_64_linux
   end
 

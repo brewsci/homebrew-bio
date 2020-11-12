@@ -1,22 +1,18 @@
 class Libsequence < Formula
-  # cite "https://doi.org/10.1093/bioinformatics/btg316"
+  # cite Thornton_2003: "https://doi.org/10.1093/bioinformatics/btg316"
   desc "C++ library for evolutionary genetics"
   homepage "https://molpopgen.github.io/libsequence/"
-  url "https://github.com/molpopgen/libsequence/archive/1.9.2.tar.gz"
-  sha256 "e7232c969bf9dabab86cd6c592c80de521cc15287252e3a996e63d24028cdd40"
+  url "https://github.com/molpopgen/libsequence/archive/1.9.8.tar.gz"
+  sha256 "16c3ff6490861806292391195a8698fc17f4d5d30cbe3f5e5e1de1a03d1105f8"
+  license "GPL-3.0"
   head "https://github.com/molpopgen/libsequence.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "008f6df3aab70d8ce22ff09a3d32ec8f516a209860288967736af1672d70283e" => :sierra_or_later
-    sha256 "67a4094bd6e38d335b0100d634539f5bfbdb9814075ef651ea7a2e6559d968fd" => :x86_64_linux
+    cellar :any
+    sha256 "b93b5ff4288ec661eda9b092f1a82098d3b3a55f2f4bc5f9a8e6812be1634ac9" => :catalina
+    sha256 "d0771ecd4b05d341e51dfa83ceebe5999611dac1ae3a77596184ac7b4a436f76" => :x86_64_linux
   end
-
-  depends_on "boost"
-  depends_on "gsl"
-  depends_on "tbb"
-
-  needs :cxx11
 
   def install
     ENV.cxx11

@@ -2,18 +2,18 @@ class Adam < Formula
   # cite Nothaft_2015: "https://doi.org/10.1145/2723372.2742787"
   desc "Genomics analysis platform built on Apache Avro, Apache Spark and Parquet"
   homepage "https://github.com/bigdatagenomics/adam"
-  url "https://search.maven.org/remotecontent?filepath=org/bdgenomics/adam/adam-distribution-spark2_2.11/0.23.0/adam-distribution-spark2_2.11-0.23.0-bin.tar.gz"
-  sha256 "08e43ab689977787635b1c92b056b387e3d19fd2ae173fbaf5cf3a7c948188a5"
+  url "https://search.maven.org/remotecontent?filepath=org/bdgenomics/adam/adam-distribution-spark3_2.12/0.32.0/adam-distribution-spark3_2.12-0.32.0-bin.tar.gz"
+  sha256 "c8a556656c43131f31dfc70c15fca8533f665c5ebeb8450742ee945daa3c3660"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "c7f6a6d8ee7d73c255a17ba442f4c0d841e1e6eba3d6f72b84f81d2d1e8ae589" => :sierra_or_later
-    sha256 "81364913e52d15dc450b214d17355c44c00d115b3349c475e0fe7c5f0b82c982" => :x86_64_linux
+    sha256 "907b6eae8a10b1c4502524fd3f23272971b8c073629e7e3ac52d028bfa3cb741" => :catalina
+    sha256 "5beb6730a2c4320c3570ee993d27e4e8bf53091854869b9f7986c5d34007d119" => :x86_64_linux
   end
 
   head do
-    url "https://github.com/bigdatagenomics/adam.git", :shallow => false
+    url "https://github.com/bigdatagenomics/adam.git", shallow: false
     depends_on "maven" => :build
   end
 

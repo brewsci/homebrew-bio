@@ -1,29 +1,28 @@
 class Mothur < Formula
-  # cite "https://doi.org/10.1128/AEM.01541-09"
+  # cite Schloss_2009: "https://doi.org/10.1128/AEM.01541-09"
   desc "16s analysis software"
-  homepage "https://www.mothur.org/"
-  url "https://github.com/mothur/mothur/archive/v1.39.5.tar.gz"
-  sha256 "9f1cd691e9631a2ab7647b19eb59cd21ea643f29b22cde73d7f343372dfee342"
-  revision 3
+  homepage "https://mothur.org/"
+  url "https://github.com/mothur/mothur/archive/v1.44.3.tar.gz"
+  sha256 "a9825ccbb7f60b527f63c16e07f9dd45373bdc8ee65c8f2f0b45f8b2113b2e6f"
+  license "GPL-3.0"
   head "https://github.com/mothur/mothur.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "f84eb202ece9707303b56d212bbaeb790585aa07cac67a8ba245820b55f14d1b" => :sierra_or_later
-    sha256 "f6d2b89152695f6e05a678eca7d497cf584097e1a3ee50246ac38264be6ab640" => :x86_64_linux
+    cellar :any
+    sha256 "c620df4847160e97694e4871c6b7b856262e07f72a1f36a78ef39cd2c1dc2032" => :catalina
+    sha256 "890a3599359b95cebf84704a746e57c14cad3a3bedd682f7fc6d013034b00497" => :x86_64_linux
   end
 
   depends_on "boost"
-  depends_on "readline" unless OS.mac?
+
+  on_linux do
+    depends_on "readline"
+  end
 
   def install
-    # Reduce memory usage for Circle CI.
-    ENV["MAKEFLAGS"] = "-j8" if ENV["CIRCLECI"]
-
     boost = Formula["boost"]
-    inreplace "Makefile", '"\"Enter_your_boost_library_path_here\""', boost.opt_lib
-    inreplace "Makefile", '"\"Enter_your_boost_include_path_here\""', boost.opt_include
-    system "make"
+    system "make", "USEBOOST=yes", "BOOST_LIBRARY_DIR=#{boost.opt_lib}", "BOOST_INCLUDE_DIR=#{boost.opt_include}"
     bin.install "mothur", "uchime"
   end
 
