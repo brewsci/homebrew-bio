@@ -22,7 +22,7 @@ jobs:
           cp -a "$GITHUB_WORKSPACE" "$(brew --repo ${{github.repository}})"
           mkdir ~/bottles
           cd ~/bottles
-          brew test-bot --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
+          brew test-bot --skip-recursive-dependents --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
           cp -a ~/bottles $RUNNER_TEMP/
       - name: Upload bottles
         uses: actions/upload-artifact@v1
