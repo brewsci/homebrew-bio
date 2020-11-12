@@ -14,7 +14,7 @@ class Percolator < Formula
   depends_on "xsd"
 
   def install
-    system "cmake", ".", *std_cmake_args, "-DXML_SUPPORT=ON"
+    system "cmake", ".", *std_cmake_args, "-DXML_SUPPORT=ON", "-DCMAKE_EXE_LINKER_FLAGS='-licuuc -lcurl'", "-DCMAKE_CXX_FLAGS='-lcurl -std=c++11'"
     system "make", "install"
   end
 
