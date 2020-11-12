@@ -9,8 +9,8 @@ class Bifrost < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "32feacf248a6aeaacb0356ff67683c0ea4925bd8bba1fbf3d191044757654e80" => :catalina
-    sha256 "a036fa50004f01367a8e7cc95a90e9ca4303f01dc1d80f1ab8fd7f2e5632a0f4" => :x86_64_linux
+    sha256 "70a8e2edd2e43078e21be35a9356bec272f48dffe5a1d79f3f951f2dddf2668f" => :catalina
+    sha256 "106658498fe0187dc5e44d78906b9ba6c2ec67a8394106aa298de92d1bd4673c" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
