@@ -2,8 +2,8 @@ class Ivar < Formula
   # cite Grubaugh_2019: "https://doi.org/10.1101/383513"
   desc "Viral amplicon-based sequencing pipeline"
   homepage "https://github.com/andersen-lab/ivar"
-  url "https://github.com/andersen-lab/ivar/archive/v1.2.3.tar.gz"
-  sha256 "58d412e9b43bee9bf7685de9df098228cbb779fadae6bea63548aaaf2eea5a3f"
+  url "https://github.com/andersen-lab/ivar/archive/v1.3.tar.gz"
+  sha256 "7bc720418e0f990c2e9ae896b5a10111d20af9d9f0dd2a693d1c544015060443"
   license "GPL-3.0"
 
   bottle do
