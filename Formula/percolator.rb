@@ -7,12 +7,13 @@ class Percolator < Formula
   license :cannot_represent
 
   depends_on "cmake" => :build
+  depends_on "boost" => :build
   depends_on "icu4c"
   depends_on "xerces-c"
   depends_on "xsd"
 
   def install
-    system "cmake", ".", *std_cmake_args, "-D XML_SUPPORT=ON"
+    system "cmake", ".", *std_cmake_args, "-DXML_SUPPORT=ON"
     system "make", "install"
   end
 
