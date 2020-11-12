@@ -12,7 +12,7 @@ class Percolator < Formula
   depends_on "xsd"
 
   def install
-    system "cmake", ".", *std_cmake_args, "-D XML_SUPPORT=ON"
+    system "cmake", ".", *std_cmake_args, "-DXML_SUPPORT=ON"
     system "make", "install"
   end
 
