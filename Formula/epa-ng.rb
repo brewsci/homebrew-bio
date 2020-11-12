@@ -10,8 +10,8 @@ class EpaNg < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "042e63929c6496d9c5fe6ff99d98664254d5958fd79eb2d810b573aab6bf8359" => :catalina
-    sha256 "047d85f86681ca76b93f45d25f78b5b8b6cf607b9b0bc3dab70748ab03f5e771" => :x86_64_linux
+    sha256 "24bf0668e2555f23cb00eeab26fc3c63f5ff1911bbd6cf57a8fe68cc46e11ef0" => :catalina
+    sha256 "71b2578583040741c1e4de704489d5b10a097985037edf8508bd7b203cb72382" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
