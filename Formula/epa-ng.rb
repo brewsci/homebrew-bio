@@ -2,8 +2,8 @@ class EpaNg < Formula
   # cite Barbera_2018: "https://doi.org/10.1093/sysbio/syy054"
   desc "Massively parallel phylogenetic placement of genetic sequences"
   homepage "https://github.com/Pbdas/epa-ng"
-  url "https://github.com/Pbdas/epa-ng/archive/v0.3.7.tar.gz"
-  sha256 "780f031aa5edb256eb5604d76d0c6cee067de205ae32534d7c61f3a30b5e4c67"
+  url "https://github.com/Pbdas/epa-ng/archive/v0.3.8.tar.gz"
+  sha256 "d1db23919f49cfad202b18623e5eb30c3d6cedcc1705b944221daea8131cbb74"
   license "AGPL-3.0"
   head "https://github.com/Pbdas/epa-ng.git"
 
