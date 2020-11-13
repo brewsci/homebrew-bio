@@ -7,7 +7,6 @@ on:
 jobs:
   upload-bottles:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[skip upload]')"
     container:
       image: homebrew/ubuntu16.04:master
     env:
@@ -29,6 +28,10 @@ jobs:
           echo sha1='${{github.event.head_commit.id}}'
           echo '${{github.event.head_commit.message}}'
           pr="$(echo '${{github.event.head_commit.message}}' | sed 's/^.*#\([0-9]*\).*/\1/;q')"
+          if [[ $(curl -fs -H 'Accept: application/vnd.github.antiope-preview+json' https://api.github.com/repos/${{github.repository}}/pulls/$pr \
+            | jq '.labels[] | select(.name == "skip upload")') ]]; then
+            exit
+          fi
           mkdir -p "$(dirname $(brew --repo ${{github.repository}}))"
           cp -a "$GITHUB_WORKSPACE" "$(brew --repo ${{github.repository}})"
           rm -rf .git *
