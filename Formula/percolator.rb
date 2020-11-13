@@ -8,10 +8,11 @@ class Percolator < Formula
 
   depends_on "boost" => :build
   depends_on "cmake" => :build
+  depends_on "gcc" => :build
+  depends_on "xerces-c" => :build
+  depends_on "xsd" => :build
   depends_on "curl"
   depends_on "icu4c"
-  depends_on "xerces-c"
-  depends_on "xsd"
 
   def install
     system "cmake", ".", *std_cmake_args, "-DXML_SUPPORT=ON", "-DCMAKE_EXE_LINKER_FLAGS='-licuuc -licudata -lcurl'", "-DCMAKE_CXX_FLAGS='-lcurl -std=c++11'"
