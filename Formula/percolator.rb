@@ -15,7 +15,8 @@ class Percolator < Formula
   depends_on "icu4c"
 
   def install
-    system "cmake", ".", *std_cmake_args, "-DXML_SUPPORT=ON", "-DCMAKE_EXE_LINKER_FLAGS='-licuuc -licudata -lcurl'", "-DCMAKE_CXX_FLAGS='-lcurl -std=c++11'"
+    system "cmake", ".", *std_cmake_args, "-DXML_SUPPORT=ON",
+           "-DCMAKE_EXE_LINKER_FLAGS='-licuuc -licudata -lcurl'", "-DCMAKE_CXX_FLAGS='-lcurl -std=c++11'"
     system "make", "install"
   end
 
