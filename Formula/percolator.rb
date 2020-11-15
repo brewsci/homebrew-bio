@@ -14,6 +14,14 @@ class Percolator < Formula
   depends_on "curl"
   depends_on "icu4c"
 
+  on_macos do
+    depends_on "tokyo-cabinet"
+    depends_on "lbzip2"
+    depends_on "pbzip2"
+    depends_on "lzlib"
+    depends_on "libomp"
+  end
+
   def install
     system "cmake", ".", *std_cmake_args, "-DXML_SUPPORT=ON",
            "-DCMAKE_EXE_LINKER_FLAGS='-licuuc -licudata -lcurl'", "-DCMAKE_CXX_FLAGS='-lcurl -std=c++11'"
