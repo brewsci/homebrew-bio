@@ -29,7 +29,7 @@ jobs:
           echo '${{github.event.head_commit.message}}'
           pr="$(echo '${{github.event.head_commit.message}}' | sed 's/^.*#\([0-9]*\).*/\1/;q')"
           if [[ $(curl -fs -H 'Accept: application/vnd.github.antiope-preview+json' https://api.github.com/repos/${{github.repository}}/pulls/$pr \
-            | jq '.labels[] | select(.name == "skip upload")') ]]; then
+            | jq '.labels[] | select(.name == "ci-skip-upload")') ]]; then
             echo Skipping upload...
             exit
           fi
