@@ -584,7 +584,7 @@
         "revision": null
       }
     },
-    "revision": 0,
+    "revision": 1,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -594,12 +594,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/arcs-1.1.1.catalina.bottle.tar.gz",
-            "sha256": "c8075e27fb5d1c6f4cc3091f0480089137d4f6b0570fb7a550d34f2ebbc61b36"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/arcs-1.1.1_1.catalina.bottle.tar.gz",
+            "sha256": "d683a22fb63e36d4cbcf11847b9700d85c454a90e77915615bcccae95d0c2475"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/arcs-1.1.1.x86_64_linux.bottle.tar.gz",
-            "sha256": "40e0c50ce2615b6f2df8a8e60ffa008af3ab74b68e1bf12c52d1dbb1b4a0f0dc"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/arcs-1.1.1_1.x86_64_linux.bottle.tar.gz",
+            "sha256": "84a56e57a9a1c904361dc2100e279a41f9992b208737061276cce50273df0ff9"
           }
         }
       }
@@ -1335,13 +1335,13 @@
     "license": null,
     "homepage": "https://jgi.doe.gov/data-and-tools/bbtools/",
     "versions": {
-      "stable": "38.86",
+      "stable": "38.87",
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://downloads.sourceforge.net/bbmap/BBMap_38.86.tar.gz",
+        "url": "https://downloads.sourceforge.net/bbmap/BBMap_38.87.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -1356,12 +1356,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/bbtools-38.86.catalina.bottle.tar.gz",
-            "sha256": "d321c705775592719ac53b7d2e89aff8a02087c262b293ba2dc265332f5f6bb9"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bbtools-38.87.catalina.bottle.tar.gz",
+            "sha256": "1a682ddc8c91764867417564a23d07ee8d166e1e754aa1b17bbb82326723f219"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/bbtools-38.86.x86_64_linux.bottle.tar.gz",
-            "sha256": "edebab140175eb6a45b4707549b563bb61fd65023f410662713b5718d2dda620"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bbtools-38.87.x86_64_linux.bottle.tar.gz",
+            "sha256": "1e0f94031afe0957c5db853a8fe7914facf0c93bbe0127d55f4ab8bcf906f548"
           }
         }
       }
@@ -1642,17 +1642,17 @@
     "oldname": null,
     "aliases": [],
     "versioned_formulae": [],
-    "desc": "Highly parallel build/index of coloured/compacted de Bruijn graphs",
+    "desc": "Construction, indexing and querying of colored/compacted de Bruijn graphs",
     "license": "BSD-2-Clause",
     "homepage": "https://github.com/pmelsted/bifrost",
     "versions": {
-      "stable": "1.0.4",
+      "stable": "1.0.5",
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/pmelsted/bifrost/archive/v1.0.4.tar.gz",
+        "url": "https://github.com/pmelsted/bifrost/archive/v1.0.5.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -1667,12 +1667,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/bifrost-1.0.4.catalina.bottle.tar.gz",
-            "sha256": "32feacf248a6aeaacb0356ff67683c0ea4925bd8bba1fbf3d191044757654e80"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bifrost-1.0.5.catalina.bottle.tar.gz",
+            "sha256": "70a8e2edd2e43078e21be35a9356bec272f48dffe5a1d79f3f951f2dddf2668f"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/bifrost-1.0.4.x86_64_linux.bottle.tar.gz",
-            "sha256": "a036fa50004f01367a8e7cc95a90e9ca4303f01dc1d80f1ab8fd7f2e5632a0f4"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bifrost-1.0.5.x86_64_linux.bottle.tar.gz",
+            "sha256": "106658498fe0187dc5e44d78906b9ba6c2ec67a8394106aa298de92d1bd4673c"
           }
         }
       }
@@ -2195,33 +2195,33 @@
     "license": "Artistic-2.0",
     "homepage": "https://bowtie-bio.sourceforge.io/",
     "versions": {
-      "stable": "1.2.3",
+      "stable": "1.3.0",
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/BenLangmead/bowtie/archive/v1.2.3.tar.gz",
+        "url": "https://github.com/BenLangmead/bowtie/archive/v1.3.0.tar.gz",
         "tag": null,
         "revision": null
       }
     },
-    "revision": 1,
+    "revision": 0,
     "version_scheme": 0,
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/bowtie-1.2.3_1.catalina.bottle.tar.gz",
-            "sha256": "7fa2de70af58f8e5da3a0eb5e2027c21f71d9771ce434d3c5e76095587540300"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bowtie-1.3.0.catalina.bottle.tar.gz",
+            "sha256": "097544d5656a7fab72b8d36e08bc7e2be4032fdd573fa205ad4da9ad5d7bf56a"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/bowtie-1.2.3_1.x86_64_linux.bottle.tar.gz",
-            "sha256": "da870f5995114f425d58663e971f01ea8aa88d41224b6eafdca348362614836b"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bowtie-1.3.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "cf888db0331e61e96ebc6ea51418af5a1f9045d83c49c560d65cb396a448ac4d"
           }
         }
       }
@@ -2316,13 +2316,13 @@
     "license": null,
     "homepage": "https://barricklab.org/twiki/bin/view/Lab/ToolsBacterialGenomeResequencing",
     "versions": {
-      "stable": "0.35.2",
+      "stable": "0.35.4",
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/barricklab/breseq/releases/download/v0.35.2/breseq-0.35.2-Source.tar.gz",
+        "url": "https://github.com/barricklab/breseq/releases/download/v0.35.4/breseq-0.35.4-Source.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -2337,12 +2337,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/breseq-0.35.2.catalina.bottle.tar.gz",
-            "sha256": "916426c42c395eb07772c99247fe3c81e663720ed912b00fae49f65bad6d7093"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/breseq-0.35.4.catalina.bottle.tar.gz",
+            "sha256": "332352bb4d28e1074f4421aa68262cbc378c34e320dd5d6415c93fc91d54e126"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/breseq-0.35.2.x86_64_linux.bottle.tar.gz",
-            "sha256": "52404b89da79d0faa257c1ed493505be5dd50e37e39c9463b8d446e37884bbe8"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/breseq-0.35.4.x86_64_linux.bottle.tar.gz",
+            "sha256": "bc033dd9a09e76e1bdacbdb1cc357e755cece4063226d254e5b601297dc02287"
           }
         }
       }
@@ -2384,13 +2384,13 @@
     "license": "MIT",
     "homepage": "https://busco.ezlab.org",
     "versions": {
-      "stable": "4.1.1",
+      "stable": "4.1.4",
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://gitlab.com/ezlab/busco/repository/4.1.1/archive.tar.bz2",
+        "url": "https://gitlab.com/ezlab/busco/repository/4.1.4/archive.tar.bz2",
         "tag": null,
         "revision": null
       }
@@ -2405,12 +2405,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-4.1.1.catalina.bottle.tar.gz",
-            "sha256": "253d2bcda073ac985bb1240b1f818b0e643abd047311eb05a12f0acabfcf9047"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-4.1.4.catalina.bottle.tar.gz",
+            "sha256": "f9a62517ec79bd2f2c9cff93e54b439492c6817881073c8078f0681ea8dd3deb"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-4.1.1.x86_64_linux.bottle.tar.gz",
-            "sha256": "ddc1c727ae2ca7f465fe6a214d0124fcc7ec6244d4266f7e7272447afa0f28be"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/busco-4.1.4.x86_64_linux.bottle.tar.gz",
+            "sha256": "1bce16b5608a8389835c63d8eecfb55b0c7a73ad28815f6eeb79d701b3d0f28a"
           }
         }
       }
@@ -2428,7 +2428,7 @@
       "hmmer",
       "numpy",
       "prodigal",
-      "python@3.8"
+      "python@3.9"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -3504,15 +3504,15 @@
     "license": null,
     "homepage": "https://github.com/tobiasrausch/delly",
     "versions": {
-      "stable": "0.8.3",
+      "stable": "0.8.5",
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
         "url": "https://github.com/tobiasrausch/delly.git",
-        "tag": "v0.8.3",
-        "revision": "56ab2900da269568dc327045913ae77ff3919df1"
+        "tag": "v0.8.5",
+        "revision": "0881a99c06b579586f6350f27bf85fe2a1e20ff6"
       }
     },
     "revision": 0,
@@ -3520,17 +3520,17 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any_skip_relocation",
+        "cellar": ":any",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/delly-0.8.3.catalina.bottle.tar.gz",
-            "sha256": "58c163c66ccc974146287df238ddbfb073c54486636ab12578b57997710b5347"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/delly-0.8.5.catalina.bottle.tar.gz",
+            "sha256": "cef13a263a84ec23a8708f909345c1cdbfa000135d9c21dc0a00b45d91f1aed6"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/delly-0.8.3.x86_64_linux.bottle.tar.gz",
-            "sha256": "6f65366a9da00ccad5206d0bb5c13ee6a7d304cde81db49609b31ab51dcae13b"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/delly-0.8.5.x86_64_linux.bottle.tar.gz",
+            "sha256": "9453aaa771a707a430ac9f82a41ef086df4572b55244fa1a0a9d2471c6db52b5"
           }
         }
       }
@@ -3800,6 +3800,71 @@
     "build_dependencies": [],
     "dependencies": [
       "adoptopenjdk"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false,
+    "deprecated": false,
+    "disabled": false
+  },
+  {
+    "name": "dssp",
+    "full_name": "brewsci/bio/dssp",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Create DSSP files",
+    "license": null,
+    "homepage": "https://github.com/cmbi/dssp",
+    "versions": {
+      "stable": "3.1.4",
+      "head": null,
+      "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/cmbi/dssp/archive/3.1.4.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/dssp-3.1.4.catalina.bottle.tar.gz",
+            "sha256": "6ebb2d6959f7db323d0645e964ccdbc20a666bf9579aea4673291f06ed3ace82"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/dssp-3.1.4.x86_64_linux.bottle.tar.gz",
+            "sha256": "f838bdac491bd122ee73017146a2840f0ddcd450b38e9ac72c158365aa1e9a73"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [
+      "autoconf",
+      "automake"
+    ],
+    "dependencies": [
+      "boost",
+      "bzip2"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -4289,13 +4354,13 @@
     "license": "AGPL-3.0",
     "homepage": "https://github.com/Pbdas/epa-ng",
     "versions": {
-      "stable": "0.3.7",
+      "stable": "0.3.8",
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/Pbdas/epa-ng/archive/v0.3.7.tar.gz",
+        "url": "https://github.com/Pbdas/epa-ng/archive/v0.3.8.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -4310,12 +4375,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/epa-ng-0.3.7.catalina.bottle.tar.gz",
-            "sha256": "042e63929c6496d9c5fe6ff99d98664254d5958fd79eb2d810b573aab6bf8359"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/epa-ng-0.3.8.catalina.bottle.tar.gz",
+            "sha256": "24bf0668e2555f23cb00eeab26fc3c63f5ff1911bbd6cf57a8fe68cc46e11ef0"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/epa-ng-0.3.7.x86_64_linux.bottle.tar.gz",
-            "sha256": "047d85f86681ca76b93f45d25f78b5b8b6cf607b9b0bc3dab70748ab03f5e771"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/epa-ng-0.3.8.x86_64_linux.bottle.tar.gz",
+            "sha256": "71b2578583040741c1e4de704489d5b10a097985037edf8508bd7b203cb72382"
           }
         }
       }
@@ -4615,13 +4680,13 @@
     "license": "Apache-2.0",
     "homepage": "https://github.com/ParBLiSS/FastANI",
     "versions": {
-      "stable": "1.31",
+      "stable": "1.32",
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/ParBLiSS/FastANI/archive/v1.31.tar.gz",
+        "url": "https://github.com/ParBLiSS/FastANI/archive/v1.32.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -4636,12 +4701,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/fastani-1.31.catalina.bottle.tar.gz",
-            "sha256": "682a759bbd381799d6230fad33d75eed4e11a56023579233b955c6ed1ddc6a42"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/fastani-1.32.catalina.bottle.tar.gz",
+            "sha256": "0d8721627bff0445b2f2afc64b4c07f0ea4843bbd36c233dcea71b9a846196c2"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/fastani-1.31.x86_64_linux.bottle.tar.gz",
-            "sha256": "37054c44ef24bd932b14d5933cc962c2cd92bea796f4be0bab0ca92dc7d0a452"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/fastani-1.32.x86_64_linux.bottle.tar.gz",
+            "sha256": "fc7e91f02a9b213c8a5d423dffda31ab89e18d3d9abf49352d54f9417c53f91f"
           }
         }
       }
@@ -6162,6 +6227,65 @@
     "disabled": false
   },
   {
+    "name": "gffcompare",
+    "full_name": "brewsci/bio/gffcompare",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Classify, merge, tracking and annotation of GFF files",
+    "license": "MIT",
+    "homepage": "https://github.com/gpertea/gffcompare",
+    "versions": {
+      "stable": "0.12.1",
+      "head": "HEAD",
+      "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/gpertea/gffcompare/releases/download/v0.12.1/gffcompare-0.12.1.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/gffcompare-0.12.1.catalina.bottle.tar.gz",
+            "sha256": "2f54276ea7daef17a81e190e879561bd78bbf21d55f1b4b3e95e5daf451aa002"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/gffcompare-0.12.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "a319df4c6334df1792496c3aed4bcfeb411c967510d54110abbb13208eebe37c"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false,
+    "deprecated": false,
+    "disabled": false
+  },
+  {
     "name": "ghostz",
     "full_name": "brewsci/bio/ghostz",
     "oldname": null,
@@ -6475,21 +6599,21 @@
     "aliases": [],
     "versioned_formulae": [],
     "desc": "Remote protein homology detection suite",
-    "license": "GPL-3.0",
+    "license": "GPL-3.0-only",
     "homepage": "https://github.com/soedinglab/hh-suite",
     "versions": {
-      "stable": "3.2.0",
+      "stable": "3.3.0",
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/soedinglab/hh-suite/archive/v3.2.0.tar.gz",
+        "url": "https://github.com/soedinglab/hh-suite/archive/v3.3.0.tar.gz",
         "tag": null,
         "revision": null
       }
     },
-    "revision": 1,
+    "revision": 0,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -6499,12 +6623,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/hh-suite-3.2.0_1.catalina.bottle.tar.gz",
-            "sha256": "145cff156ee16d6ab8cf0b335cc93b53fc4d4c028a9b6733b02585f8f0565791"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/hh-suite-3.3.0.catalina.bottle.tar.gz",
+            "sha256": "cf7755f126cea9f05843022ec5b7e7d193722c568bbecd3bc41f88ac7d32ac28"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/hh-suite-3.2.0_1.x86_64_linux.bottle.tar.gz",
-            "sha256": "c14d716a6c586cd1e6fe2cd2745bf3d4606f810a89eff0cc14cdfe70cb624a2a"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/hh-suite-3.3.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "5a573d69a999513ead717a21b8d0bca07889c174bb1431bb74f4aa05ff879f48"
           }
         }
       }
@@ -6516,7 +6640,7 @@
       "cmake"
     ],
     "dependencies": [
-      "python",
+      "python@3.9",
       "perl"
     ],
     "recommended_dependencies": [],
@@ -6645,6 +6769,71 @@
         "contexts": []
       }
     ],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false,
+    "deprecated": false,
+    "disabled": false
+  },
+  {
+    "name": "hssp",
+    "full_name": "brewsci/bio/hssp",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Create HSSP file",
+    "license": null,
+    "homepage": "https://github.com/cmbi/xssp",
+    "versions": {
+      "stable": "3.1.5",
+      "head": null,
+      "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/cmbi/hssp/archive/3.1.5.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/hssp-3.1.5.catalina.bottle.tar.gz",
+            "sha256": "4ce38b0b1e31fc6d6a227f45c669fc207a86452c651308d20086a8b2a7727544"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/hssp-3.1.5.x86_64_linux.bottle.tar.gz",
+            "sha256": "13ed6f5a89db289af9b00aad4c61162b9b22150fd800d6cbee3345a980ac6e27"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [
+      "autoconf",
+      "automake"
+    ],
+    "dependencies": [
+      "boost",
+      "bzip2"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
     "conflicts_with": [],
     "caveats": null,
     "installed": [],
@@ -7232,13 +7421,13 @@
     "license": "GPL-3.0",
     "homepage": "https://github.com/andersen-lab/ivar",
     "versions": {
-      "stable": "1.2.3",
+      "stable": "1.3",
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/andersen-lab/ivar/archive/v1.2.3.tar.gz",
+        "url": "https://github.com/andersen-lab/ivar/archive/v1.3.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -7253,12 +7442,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ivar-1.2.3.catalina.bottle.tar.gz",
-            "sha256": "ac28808f052954afd38d7a9458fb04691f9dd21ed7f157e600efdab5eb8b1326"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ivar-1.3.catalina.bottle.tar.gz",
+            "sha256": "7f7d05e1565b69cde419d85626487bb0775364b255f51159b5c2be127f0240c1"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ivar-1.2.3.x86_64_linux.bottle.tar.gz",
-            "sha256": "913b6ba7011e59d2f2708021b731c986fe499bc3647c3da0c0e7c9ceecc6b2d9"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ivar-1.3.x86_64_linux.bottle.tar.gz",
+            "sha256": "a2b146005d4a65c00ce45ea3c2a82e819d6a7a7611d2799fb43eee414af600c9"
           }
         }
       }
@@ -7479,13 +7668,13 @@
     "license": "GPL-3.0",
     "homepage": "http://kaiju.binf.ku.dk/",
     "versions": {
-      "stable": "1.7.3",
+      "stable": "1.7.4",
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/bioinformatics-centre/kaiju/archive/v1.7.3.tar.gz",
+        "url": "https://github.com/bioinformatics-centre/kaiju/archive/v1.7.4.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -7500,12 +7689,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/kaiju-1.7.3.catalina.bottle.tar.gz",
-            "sha256": "fea3e2ce6a05f64e12c0eba6494264a2b01952a438b23c291a5fc72a44b200ce"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/kaiju-1.7.4.catalina.bottle.tar.gz",
+            "sha256": "f824e839bfd8223ce256523658f21e85c835a40c0168e3e02496fffecd422af3"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/kaiju-1.7.3.x86_64_linux.bottle.tar.gz",
-            "sha256": "1d97a6cc795d700df20b48edfdc0f329dc0b7628fe1e17dab7874a7820f3f3a4"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/kaiju-1.7.4.x86_64_linux.bottle.tar.gz",
+            "sha256": "5713783ed8f98eb0d91f4f30920e3396436b440aa42619e18170146940eb524d"
           }
         }
       }
@@ -7541,13 +7730,13 @@
     "license": "GPL-3.0",
     "homepage": "https://github.com/TimoLassmann/kalign",
     "versions": {
-      "stable": "3.2.3",
+      "stable": "3.3",
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/TimoLassmann/kalign/archive/v3.2.3.tar.gz",
+        "url": "https://github.com/TimoLassmann/kalign/archive/v3.3.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -7562,12 +7751,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/kalign-3.2.3.catalina.bottle.tar.gz",
-            "sha256": "2f68f59172ef17a85e0d9a568b7e425cab1fb2a1b79d164ab7b13dc380fdaac5"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/kalign-3.3.catalina.bottle.tar.gz",
+            "sha256": "6851604ef61179f22485d7a230de5eaf4025b4b85756d948c10ff96a61a33f9d"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/kalign-3.2.3.x86_64_linux.bottle.tar.gz",
-            "sha256": "f37d14ced6a5aa58b2375f6e14827dd111ab0fffdb28786fa741663aaf085e33"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/kalign-3.3.x86_64_linux.bottle.tar.gz",
+            "sha256": "30dc86c27dc8bf5281e9a156aab83931c8401f859a1a4bae10ebd24d066ce67c"
           }
         }
       }
@@ -7737,13 +7926,13 @@
     "license": null,
     "homepage": "https://bitbucket.org/genomicepidemiology/kma",
     "versions": {
-      "stable": "1.3.3",
+      "stable": "1.3.6",
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://bitbucket.org/genomicepidemiology/kma/get/1.3.3.zip",
+        "url": "https://bitbucket.org/genomicepidemiology/kma/get/1.3.6.zip",
         "tag": null,
         "revision": null
       }
@@ -7758,12 +7947,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/kma-1.3.3.catalina.bottle.tar.gz",
-            "sha256": "1ac1b89fc3e971452dbab07c2853f5bb0a9f54a8e3aa7e93b8b4bf4bb639c582"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/kma-1.3.6.catalina.bottle.tar.gz",
+            "sha256": "e8986aca613c9b2c302cf25484d17d1e7f1dfef0d395d9b142f52cda3171fffc"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/kma-1.3.3.x86_64_linux.bottle.tar.gz",
-            "sha256": "f547bbac1954b231161e8d5f4d65f70058f1fe6e7620e1b3889b4e1427f8caa9"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/kma-1.3.6.x86_64_linux.bottle.tar.gz",
+            "sha256": "95351af4a7d8e9ece5040641c8c53a4e28938f73e966dbd1670743ea1c677c82"
           }
         }
       }
@@ -8109,13 +8298,13 @@
     "license": "MIT",
     "homepage": "https://github.com/DerrickWood/kraken2",
     "versions": {
-      "stable": "2.0.9",
+      "stable": "2.1.1",
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/DerrickWood/kraken2/archive/v2.0.9-b%65ta.tar.gz",
+        "url": "https://github.com/DerrickWood/kraken2/archive/v2.1.1.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -8130,12 +8319,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/kraken2-2.0.9.catalina.bottle.tar.gz",
-            "sha256": "b89edf3c230158ea9ac3df0f5ce37b4b44a615577940f375926839f8bd267dad"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/kraken2-2.1.1.catalina.bottle.tar.gz",
+            "sha256": "8e469574030fe11f7076f10ee76486f6b7625541cfb0c3c03002c8122651488b"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/kraken2-2.0.9.x86_64_linux.bottle.tar.gz",
-            "sha256": "0145a2ff1d8ba837b22167cf8c1dcdc04ae13c1114ad7f7df2dfb256dd2c2857"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/kraken2-2.1.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "0a75134a1be173c1472899b6714aa5a31bc03a12b64fe20c6817e4b64e9b2442"
           }
         }
       }
@@ -8236,13 +8425,13 @@
     "license": "GPL-3.0",
     "homepage": "http://last.cbrc.jp/",
     "versions": {
-      "stable": "1061",
+      "stable": "1133",
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "http://last.cbrc.jp/last-1061.zip",
+        "url": "http://last.cbrc.jp/last-1133.zip",
         "tag": null,
         "revision": null
       }
@@ -8257,12 +8446,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/last-1061.catalina.bottle.tar.gz",
-            "sha256": "26a9965e1ac0c66c7ca8e77947356b13304b61080e1b1d7f81d783e092977398"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/last-1133.catalina.bottle.tar.gz",
+            "sha256": "66dccf49e7f904abd138fbfc83d0bdaf4800884a76d2f8aa55bc625432b2295d"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/last-1061.x86_64_linux.bottle.tar.gz",
-            "sha256": "37812f372df4253a73c1d24a4df7a14582d3a85963e2273655a611a23ac57e2f"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/last-1133.x86_64_linux.bottle.tar.gz",
+            "sha256": "36f3304a2a5d139dc3192c6126b8ed281fa7882ad2712f65e9576139dfb2dad8"
           }
         }
       }
@@ -10534,13 +10723,13 @@
     "license": "MIT",
     "homepage": "https://github.com/brentp/mosdepth",
     "versions": {
-      "stable": "0.2.9",
+      "stable": "0.3.1",
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/brentp/mosdepth/releases/download/v0.2.9/mosdepth",
+        "url": "https://github.com/brentp/mosdepth/releases/download/v0.3.1/mosdepth",
         "tag": null,
         "revision": null
       }
@@ -10555,8 +10744,8 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/mosdepth-0.2.9.x86_64_linux.bottle.tar.gz",
-            "sha256": "3f26c70c2d74e872b3b925ad5701cb3c39d9b7b216fda9cad5f436c7967bd91e"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mosdepth-0.3.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "28f0f2a6c62cd8543a9f85404c63f861562a25c62dd21bf5c2186d81198be791"
           }
         }
       }
@@ -10597,13 +10786,13 @@
     "license": "GPL-3.0",
     "homepage": "https://mothur.org/",
     "versions": {
-      "stable": "1.44.2",
+      "stable": "1.44.3",
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/mothur/mothur/archive/v1.44.2.tar.gz",
+        "url": "https://github.com/mothur/mothur/archive/v1.44.3.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -10618,12 +10807,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/mothur-1.44.2.catalina.bottle.tar.gz",
-            "sha256": "c0c11054955bb00d49c7b0e0d4eec7e3314cad1596e26878d6d99f39cf5b2c96"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mothur-1.44.3.catalina.bottle.tar.gz",
+            "sha256": "c620df4847160e97694e4871c6b7b856262e07f72a1f36a78ef39cd2c1dc2032"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/mothur-1.44.2.x86_64_linux.bottle.tar.gz",
-            "sha256": "6dd047aa176b43cff1d5058bc684eb9b350bdb26e77cf75ef7d6e089a5e0f488"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mothur-1.44.3.x86_64_linux.bottle.tar.gz",
+            "sha256": "890a3599359b95cebf84704a746e57c14cad3a3bedd682f7fc6d013034b00497"
           }
         }
       }
@@ -11726,16 +11915,16 @@
     "aliases": [],
     "versioned_formulae": [],
     "desc": "Genome assembly scaffolder using minimizer graphs",
-    "license": "GPL-3.0",
+    "license": "GPL-3.0-only",
     "homepage": "https://github.com/bcgsc/ntJoin",
     "versions": {
-      "stable": "1.0.3",
+      "stable": "1.0.4",
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/bcgsc/ntJoin/releases/download/v1.0.3/ntJoin-1.0.3.tar.gz",
+        "url": "https://github.com/bcgsc/ntJoin/releases/download/v1.0.4/ntJoin-1.0.4.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -11750,12 +11939,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ntjoin-1.0.3.catalina.bottle.tar.gz",
-            "sha256": "e72ac6df9db1734acf60f33e810ab209740b95d350a788963e49b6fdd54af497"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ntjoin-1.0.4.catalina.bottle.tar.gz",
+            "sha256": "7e770fb38403ea191a5a9e1d10de0ef4eb214eaea7afe39811a2b94121bb4fff"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ntjoin-1.0.3.x86_64_linux.bottle.tar.gz",
-            "sha256": "ea4c57a7950d1643fa39a559d7cb330a3ed8f3605a211c1256d706e91a43198d"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ntjoin-1.0.4.x86_64_linux.bottle.tar.gz",
+            "sha256": "9c7b5396ee17176d074a4dcfdb0d31221f066068298bcccc615b959ed2557c9a"
           }
         }
       }
@@ -13319,6 +13508,67 @@
     "disabled": false
   },
   {
+    "name": "psmc",
+    "full_name": "brewsci/bio/psmc",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Implementation of the Pairwise Sequentially Markovian Coalescent (PSMC) model",
+    "license": "MIT",
+    "homepage": "https://github.com/lh3/psmc",
+    "versions": {
+      "stable": "0.6.5",
+      "head": null,
+      "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/lh3/psmc/archive/0.6.5.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/psmc-0.6.5.catalina.bottle.tar.gz",
+            "sha256": "27f4f32c8217f4f2278557e11b3a438da2c18f2be7d271e7a0f9f1d5659fb9e9"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/psmc-0.6.5.x86_64_linux.bottle.tar.gz",
+            "sha256": "ce3be20a3670f14e31c13222446f8c6fd2ae533c696405a8226d254058a7f525"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [
+      "zlib"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false,
+    "deprecated": false,
+    "disabled": false
+  },
+  {
     "name": "pullseq",
     "full_name": "brewsci/bio/pullseq",
     "oldname": null,
@@ -13392,13 +13642,13 @@
     "license": null,
     "homepage": "https://pymol.org/",
     "versions": {
-      "stable": "2.3.0",
+      "stable": "2.4.0",
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/schrodinger/pymol-open-source/archive/v2.3.0.tar.gz",
+        "url": "https://github.com/schrodinger/pymol-open-source/archive/v2.4.0.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -13408,17 +13658,13 @@
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": "/home/linuxbrew/.linuxbrew/Cellar",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "mojave": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/pymol-2.3.0.mojave.bottle.tar.gz",
-            "sha256": "14fe2ca191b6461477fe69d5aec46c965502a0dc1a6ce6d90d824379c77cb473"
-          },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/pymol-2.3.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "8621be3863ecfbf5e0140240d8a5bd648aea59a175a45766a57b64b089956db9"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/pymol-2.4.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "ce4f0acf8a97da25c6a67894a6afcb69c48a78497d4d3fd2e367b134c1785472"
           }
         }
       }
@@ -13430,15 +13676,19 @@
       "unzip"
     ],
     "dependencies": [
+      "brewsci/bio/mmtf-cpp",
+      "catch2",
+      "ffmpeg",
       "freeglut",
       "freetype",
       "glew",
       "glm",
       "libpng",
-      "mmtf-cpp",
       "msgpack",
+      "netcdf",
+      "numpy",
       "pyqt",
-      "python",
+      "python@3.9",
       "sip"
     ],
     "recommended_dependencies": [],
@@ -15220,7 +15470,9 @@
     "full_name": "brewsci/bio/seqan@2",
     "oldname": null,
     "aliases": [],
-    "versioned_formulae": [],
+    "versioned_formulae": [
+      "seqan@3"
+    ],
     "desc": "C++ library of sequence algorithms and data structures",
     "license": null,
     "homepage": "https://www.seqan.de/",
@@ -15283,18 +15535,20 @@
     "aliases": [
       "seqan"
     ],
-    "versioned_formulae": [],
+    "versioned_formulae": [
+      "seqan@2"
+    ],
     "desc": "Modern C++ library for sequence analysis",
     "license": null,
     "homepage": "https://www.seqan.de",
     "versions": {
-      "stable": "3.0.1",
+      "stable": "3.0.2",
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/seqan/seqan3/archive/3.0.1.tar.gz",
+        "url": "https://github.com/seqan/seqan3/releases/download/3.0.2/seqan3-3.0.2-Source.tar.xz",
         "tag": null,
         "revision": null
       }
@@ -15309,12 +15563,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/seqan%403-3.0.1.catalina.bottle.tar.gz",
-            "sha256": "a221a1a4c196e733656015d81a21bbfbc87ecb5c86f9710d66ff7ff99de69323"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/seqan%403-3.0.2.catalina.bottle.tar.gz",
+            "sha256": "2b09a9199ca88289ae9d7572ea159481e23cb57a419fec0c3e77647179f22a1a"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/seqan%403-3.0.1.x86_64_linux.bottle.tar.gz",
-            "sha256": "b576cf25561c3d8ad3f6cb38b0231f7fee572899b5fe6c8475cf96d73ffbbd5b"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/seqan%403-3.0.2.x86_64_linux.bottle.tar.gz",
+            "sha256": "067d5789a5501d6ac6668fc8323cedc0a3cfd0252de6ee2478d754695d0d4f1a"
           }
         }
       }
@@ -15323,11 +15577,12 @@
     "bottle_disabled": false,
     "options": [],
     "build_dependencies": [
-      "cmake",
-      "doxygen",
-      "xz"
+      "xz",
+      "cmake"
     ],
-    "dependencies": [],
+    "dependencies": [
+      "gcc@9"
+    ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
     "uses_from_macos": [],
@@ -15351,13 +15606,13 @@
     "license": "MIT",
     "homepage": "https://bioinf.shenwei.me/seqkit/",
     "versions": {
-      "stable": "0.13.2",
+      "stable": "0.14.0",
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/shenwei356/seqkit/releases/download/v0.13.2/seqkit_linux_amd64.tar.gz",
+        "url": "https://github.com/shenwei356/seqkit/releases/download/v0.14.0/seqkit_linux_amd64.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -15372,12 +15627,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/seqkit-0.13.2.catalina.bottle.tar.gz",
-            "sha256": "ebfc70d323aa3ed82d0ae46c5665ae8125db73e769b4f35e721366f87403e7d0"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/seqkit-0.14.0.catalina.bottle.tar.gz",
+            "sha256": "48b2bcd5bb7e30f810aa517eef0d357391b968eb3120baff42a02f6c3432a18c"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/seqkit-0.13.2.x86_64_linux.bottle.tar.gz",
-            "sha256": "8f008246e91a161695d78589115e9166d628778ca21772dff3b449d230ecf1b1"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/seqkit-0.14.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "2b311ca6b3a6f5febf6baeafcefd6524d05de38c3bf0eaa26b32472c8f51ad92"
           }
         }
       }
@@ -16925,13 +17180,13 @@
     "license": "MIT",
     "homepage": "https://github.com/shenwei356/taxonkit",
     "versions": {
-      "stable": "0.6.0",
+      "stable": "0.6.2",
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/shenwei356/taxonkit/releases/download/v0.6.0/taxonkit_linux_amd64.tar.gz",
+        "url": "https://github.com/shenwei356/taxonkit/releases/download/v0.6.2/taxonkit_linux_amd64.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -16946,12 +17201,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/taxonkit-0.6.0.catalina.bottle.tar.gz",
-            "sha256": "365c36072b1574851918593780efbcc8d9cb3fa5773e0720b66aa1edd7c26fd8"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/taxonkit-0.6.2.catalina.bottle.tar.gz",
+            "sha256": "8d884f4bbba6e7962b835cf50c4b08d5a7f8262b5ac47a2f774cfae0e4772dd7"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/taxonkit-0.6.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "2cf8a967879c0768e6fcc132470ba5ae0897576828f1364724d52028dde43d1c"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/taxonkit-0.6.2.x86_64_linux.bottle.tar.gz",
+            "sha256": "22b6a81fd7d5de9d3f59826d886b24d139a24f83aaaaefe8e4b91f54a6928483"
           }
         }
       }
@@ -18744,16 +18999,16 @@
     "aliases": [],
     "versioned_formulae": [],
     "desc": "Smith-waterman alignment visualization",
-    "license": "GPL-3.0",
+    "license": "GPL-3.0-only",
     "homepage": "https://github.com/bcgsc/xmatchview",
     "versions": {
-      "stable": "1.2.3",
+      "stable": "1.2.5",
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/bcgsc/xmatchview/archive/v1.2.3.tar.gz",
+        "url": "https://github.com/bcgsc/xmatchview/archive/v1.2.5.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -18768,12 +19023,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/xmatchview-1.2.3.catalina.bottle.tar.gz",
-            "sha256": "3f69176e6aee0b04a146b13eecc2f4744a6735d18279638fc3e237b4c1369960"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/xmatchview-1.2.5.catalina.bottle.tar.gz",
+            "sha256": "bb684917be20bc4eee532f574c2822f8661f370ef990605ac30e032a6ea37f32"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/xmatchview-1.2.3.x86_64_linux.bottle.tar.gz",
-            "sha256": "13c6109f7a538b4278a468af00ea362ad4d2427ad5e1b9b927f1cfa0b979b985"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/xmatchview-1.2.5.x86_64_linux.bottle.tar.gz",
+            "sha256": "3ad14591f734285d827c0d63d82ee9fb887c91f70f7c2c678b0f3db308027b38"
           }
         }
       }
@@ -18812,13 +19067,13 @@
     "license": null,
     "homepage": "https://github.com/cmbi/xssp",
     "versions": {
-      "stable": "3.0.9",
+      "stable": "3.0.10",
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/cmbi/xssp/releases/download/3.0.9/xssp-3.0.9.tar.gz",
+        "url": "https://github.com/cmbi/xssp/releases/download/3.0.10/xssp-3.0.10.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -18832,13 +19087,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "sierra": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/xssp-3.0.9.sierra.bottle.tar.gz",
-            "sha256": "c0833e3e3db899b28dd9515e1d3ffb791528d2934d25226dbf4eaf0f0428b34f"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/xssp-3.0.10.catalina.bottle.tar.gz",
+            "sha256": "da26ad34a5cb1fdff5cb02392d988b64e9141739e143567faa340eda2224e0c1"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/xssp-3.0.9.x86_64_linux.bottle.tar.gz",
-            "sha256": "890f4a0285987df828d271ad333b597181358c75b65026d94dccf3d7c6d49531"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/xssp-3.0.10.x86_64_linux.bottle.tar.gz",
+            "sha256": "e5c633a52565607cedbbe1d0d14255ecdc56deeb4401b6a7ea823baf09639006"
           }
         }
       }
@@ -18864,7 +19119,7 @@
     "linked_keg": null,
     "pinned": false,
     "outdated": false,
-    "deprecated": false,
+    "deprecated": true,
     "disabled": false
   }
 ]
