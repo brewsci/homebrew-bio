@@ -23,6 +23,7 @@ jobs:
         with:
           fetch-depth: 100
       - name: Upload bottles
+        shell: bash
         run: |
           #!/bin/bash
           set -eu
