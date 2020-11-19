@@ -2,15 +2,15 @@ class Breseq < Formula
   # Deatherage_2014: "https://doi.org/10.1007/978-1-4939-0554-6_12"
   desc "Find mutations in microbes from short reads"
   homepage "https://barricklab.org/twiki/bin/view/Lab/ToolsBacterialGenomeResequencing"
-  url "https://github.com/barricklab/breseq/releases/download/v0.35.2/breseq-0.35.2-Source.tar.gz"
-  sha256 "ad9529a4a8f52e71df2e5386e8b39a66610835dcf9cbc8cec706791c2593ef4d"
+  url "https://github.com/barricklab/breseq/releases/download/v0.35.4/breseq-0.35.4-Source.tar.gz"
+  sha256 "762f7b6aac26bddb5a39724e103267bd48d597d74fa7a8006d2bf0bd68fe86b4"
   head "https://github.com/barricklab/breseq.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "916426c42c395eb07772c99247fe3c81e663720ed912b00fae49f65bad6d7093" => :catalina
-    sha256 "52404b89da79d0faa257c1ed493505be5dd50e37e39c9463b8d446e37884bbe8" => :x86_64_linux
+    sha256 "332352bb4d28e1074f4421aa68262cbc378c34e320dd5d6415c93fc91d54e126" => :catalina
+    sha256 "bc033dd9a09e76e1bdacbdb1cc357e755cece4063226d254e5b601297dc02287" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build

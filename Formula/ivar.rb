@@ -2,15 +2,15 @@ class Ivar < Formula
   # cite Grubaugh_2019: "https://doi.org/10.1101/383513"
   desc "Viral amplicon-based sequencing pipeline"
   homepage "https://github.com/andersen-lab/ivar"
-  url "https://github.com/andersen-lab/ivar/archive/v1.2.3.tar.gz"
-  sha256 "58d412e9b43bee9bf7685de9df098228cbb779fadae6bea63548aaaf2eea5a3f"
+  url "https://github.com/andersen-lab/ivar/archive/v1.3.tar.gz"
+  sha256 "7bc720418e0f990c2e9ae896b5a10111d20af9d9f0dd2a693d1c544015060443"
   license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "ac28808f052954afd38d7a9458fb04691f9dd21ed7f157e600efdab5eb8b1326" => :catalina
-    sha256 "913b6ba7011e59d2f2708021b731c986fe499bc3647c3da0c0e7c9ceecc6b2d9" => :x86_64_linux
+    sha256 "7f7d05e1565b69cde419d85626487bb0775364b255f51159b5c2be127f0240c1" => :catalina
+    sha256 "a2b146005d4a65c00ce45ea3c2a82e819d6a7a7611d2799fb43eee414af600c9" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build

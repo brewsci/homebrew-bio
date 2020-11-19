@@ -1,17 +1,16 @@
-class Xssp < Formula
+class Dssp < Formula
   # cite Touw_2015: "https://doi.org/10.1093/nar/gku1028"
-  desc "Create DSSP and HSSP files"
-  homepage "https://github.com/cmbi/xssp"
-  url "https://github.com/cmbi/xssp/releases/download/3.0.10/xssp-3.0.10.tar.gz"
-  sha256 "b475d6fa62098df0e54c8dbdaa0b32de93bf5a393335f73f9b5a7e95f3090d2a"
-
-  deprecate! because: "has been replaced by brewsci/bio/dssp and brewsci/bio/hssp"
+  # cite Kabsch_1983: "https://doi.org/10.1002/bip.360221211"
+  desc "Create DSSP files"
+  homepage "https://github.com/cmbi/dssp"
+  url "https://github.com/cmbi/dssp/archive/3.1.4.tar.gz"
+  sha256 "496282b4b5defc55d111190ab9f1b615a9574a2f090e7cf5444521c747b272d4"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "da26ad34a5cb1fdff5cb02392d988b64e9141739e143567faa340eda2224e0c1" => :catalina
-    sha256 "e5c633a52565607cedbbe1d0d14255ecdc56deeb4401b6a7ea823baf09639006" => :x86_64_linux
+    sha256 "6ebb2d6959f7db323d0645e964ccdbc20a666bf9579aea4673291f06ed3ace82" => :catalina
+    sha256 "f838bdac491bd122ee73017146a2840f0ddcd450b38e9ac72c158365aa1e9a73" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build

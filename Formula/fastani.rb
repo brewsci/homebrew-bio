@@ -2,16 +2,16 @@ class Fastani < Formula
   # cite Jain_2017: "https://doi.org/10.1101/225342"
   desc "Fast Whole-Genome Similarity (ANI) Estimation"
   homepage "https://github.com/ParBLiSS/FastANI"
-  url "https://github.com/ParBLiSS/FastANI/archive/v1.31.tar.gz"
-  sha256 "3a1f2da7fa940a0650a39c5b8176f475fe74eea6beb0bc8ea1394d94defa5b3d"
+  url "https://github.com/ParBLiSS/FastANI/archive/v1.32.tar.gz"
+  sha256 "f66b3bb5b272aa3db4deae782e47020fa9aae63eecbbd6fd93df876237d3b2e5"
   license "Apache-2.0"
   head "https://github.com/ParBLiSS/FastANI.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "682a759bbd381799d6230fad33d75eed4e11a56023579233b955c6ed1ddc6a42" => :catalina
-    sha256 "37054c44ef24bd932b14d5933cc962c2cd92bea796f4be0bab0ca92dc7d0a452" => :x86_64_linux
+    sha256 "0d8721627bff0445b2f2afc64b4c07f0ea4843bbd36c233dcea71b9a846196c2" => :catalina
+    sha256 "fc7e91f02a9b213c8a5d423dffda31ab89e18d3d9abf49352d54f9417c53f91f" => :x86_64_linux
   end
 
   depends_on "autoconf" => :build

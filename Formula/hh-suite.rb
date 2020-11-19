@@ -2,20 +2,19 @@ class HhSuite < Formula
   # cite Steinegger_2019: "https://doi.org/10.1186/s12859-019-3019-7"
   desc "Remote protein homology detection suite"
   homepage "https://github.com/soedinglab/hh-suite"
-  url "https://github.com/soedinglab/hh-suite/archive/v3.2.0.tar.gz"
-  sha256 "6b870dcfbc1ffb9dd664a45415fcd13cf5970f49d1c7b824160c260fa138e6d6"
-  license "GPL-3.0"
-  revision 1
+  url "https://github.com/soedinglab/hh-suite/archive/v3.3.0.tar.gz"
+  sha256 "dd67f7f3bf601e48c9c0bc4cf1fbe3b946f787a808bde765e9436a48d27b0964"
+  license "GPL-3.0-only"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "145cff156ee16d6ab8cf0b335cc93b53fc4d4c028a9b6733b02585f8f0565791" => :catalina
-    sha256 "c14d716a6c586cd1e6fe2cd2745bf3d4606f810a89eff0cc14cdfe70cb624a2a" => :x86_64_linux
+    sha256 "cf7755f126cea9f05843022ec5b7e7d193722c568bbecd3bc41f88ac7d32ac28" => :catalina
+    sha256 "5a573d69a999513ead717a21b8d0bca07889c174bb1431bb74f4aa05ff879f48" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
-  depends_on "python"
+  depends_on "python@3.9"
 
   uses_from_macos "perl"
 

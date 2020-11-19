@@ -2,15 +2,15 @@ class Ntjoin < Formula
   # cite Coombe_2020: "https://doi.org/10.1101/2020.01.13.905240"
   desc "Genome assembly scaffolder using minimizer graphs"
   homepage "https://github.com/bcgsc/ntJoin"
-  url "https://github.com/bcgsc/ntJoin/releases/download/v1.0.3/ntJoin-1.0.3.tar.gz"
-  sha256 "61b5afce7c38e9763777dc1ca5db3944eb76c64c22d2baf61c5f0383a3a74a9c"
-  license "GPL-3.0"
+  url "https://github.com/bcgsc/ntJoin/releases/download/v1.0.4/ntJoin-1.0.4.tar.gz"
+  sha256 "3d369ddc67573281cfe2361252f6839e5f0bfd110bbee0f13f2e3508a041800c"
+  license "GPL-3.0-only"
   head "https://github.com/bcgsc/ntJoin.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "e72ac6df9db1734acf60f33e810ab209740b95d350a788963e49b6fdd54af497" => :catalina
-    sha256 "ea4c57a7950d1643fa39a559d7cb330a3ed8f3605a211c1256d706e91a43198d" => :x86_64_linux
+    sha256 "7e770fb38403ea191a5a9e1d10de0ef4eb214eaea7afe39811a2b94121bb4fff" => :catalina
+    sha256 "9c7b5396ee17176d074a4dcfdb0d31221f066068298bcccc615b959ed2557c9a" => :x86_64_linux
   end
 
   depends_on "bedtools"

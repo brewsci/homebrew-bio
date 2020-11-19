@@ -2,15 +2,15 @@ class Kaiju < Formula
   # Menzel_2016: "https://doi.org/10.1038/ncomms11257"
   desc "Fast taxonomic classification of metagenomic sequencing reads"
   homepage "http://kaiju.binf.ku.dk/"
-  url "https://github.com/bioinformatics-centre/kaiju/archive/v1.7.3.tar.gz"
-  sha256 "174ab6b6841d3d9164ec06f76a219a391d461d271b4a00fe8cf9cd87e689b05e"
+  url "https://github.com/bioinformatics-centre/kaiju/archive/v1.7.4.tar.gz"
+  sha256 "4d04648fcdf960ff6c9fc324671cab87a80076c02747edb3c8a553608f8892aa"
   license "GPL-3.0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "fea3e2ce6a05f64e12c0eba6494264a2b01952a438b23c291a5fc72a44b200ce" => :catalina
-    sha256 "1d97a6cc795d700df20b48edfdc0f329dc0b7628fe1e17dab7874a7820f3f3a4" => :x86_64_linux
+    sha256 "f824e839bfd8223ce256523658f21e85c835a40c0168e3e02496fffecd422af3" => :catalina
+    sha256 "5713783ed8f98eb0d91f4f30920e3396436b440aa42619e18170146940eb524d" => :x86_64_linux
   end
 
   depends_on "perl" # for kaiju-gbk2faa.pl

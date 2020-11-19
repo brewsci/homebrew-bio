@@ -1,14 +1,14 @@
 class Mosdepth < Formula
   desc "Fast BAM/CRAM depth calculator"
   homepage "https://github.com/brentp/mosdepth"
-  url "https://github.com/brentp/mosdepth/releases/download/v0.2.9/mosdepth"
-  sha256 "a73283fb1a7465601a4d2d738f6f832f2fd84bf9181e0d4d2b91453da385177c"
+  url "https://github.com/brentp/mosdepth/releases/download/v0.3.1/mosdepth"
+  sha256 "ea08b7b59d1a425cf9a0f27681e5f947679c8747eede7b8389e42038fb442618"
   license "MIT"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "3f26c70c2d74e872b3b925ad5701cb3c39d9b7b216fda9cad5f436c7967bd91e" => :x86_64_linux
+    sha256 "28f0f2a6c62cd8543a9f85404c63f861562a25c62dd21bf5c2186d81198be791" => :x86_64_linux
   end
 
   depends_on :linux
