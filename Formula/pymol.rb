@@ -70,7 +70,7 @@ class Pymol < Formula
 
     ENV.append "CPPFLAGS", "-I#{Formula["freetype"].opt_include}"
 
-    # Note: openvr support is not included.
+    # openvr support is not included.
     args = %W[
       --install-scripts=#{libexec}/bin
       --install-lib=#{libexec}/lib/python#{xy}/site-packages
