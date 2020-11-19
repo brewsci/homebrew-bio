@@ -24,6 +24,7 @@ jobs:
           fetch-depth: 100
       - name: Upload bottles
         run: |
+          #!/bin/bash
           set -eu
           echo sha1='${{github.event.head_commit.id}}'
           echo '${{github.event.head_commit.message}}'
