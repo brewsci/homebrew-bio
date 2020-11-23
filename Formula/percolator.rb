@@ -23,8 +23,14 @@ class Percolator < Formula
   end
 
   def install
-    system "cmake", ".", *std_cmake_args, "-DXML_SUPPORT=ON",
-           "-DCMAKE_EXE_LINKER_FLAGS='-licuuc -licudata -lcurl'", "-DCMAKE_CXX_FLAGS='-lcurl -std=c++11'"
+    if OS.mac?
+      system "cmake", ".", *std_cmake_args, "-DXML_SUPPORT=ON",
+             "-DCMAKE_EXE_LINKER_FLAGS='-licuuc -licudata -lcurl -framework CoreServices -framework CoreFoundation'",
+             "-DCMAKE_CXX_FLAGS='-lcurl -std=c++11'"
+    else
+      system "cmake", ".", *std_cmake_args, "-DXML_SUPPORT=ON",
+             "-DCMAKE_EXE_LINKER_FLAGS='-licuuc -licudata -lcurl'", "-DCMAKE_CXX_FLAGS='-lcurl -std=c++11'"
+    end
     system "make", "install"
   end
 
