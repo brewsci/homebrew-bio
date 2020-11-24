@@ -2,9 +2,9 @@ class Ntedit < Formula
   # cite Warren_2019: "https://doi.org/10.1093/bioinformatics/btz400"
   desc "Scalable genome assembly polishing"
   homepage "https://github.com/bcgsc/ntEdit"
-  url "https://github.com/bcgsc/ntEdit/archive/v1.3.2.tar.gz"
-  sha256 "acbd491416efb6c6ba17fe7ed3d11b62ca352f6b55713044859728c464ed00dc"
-  license "GPL-3.0"
+  url "https://github.com/bcgsc/ntEdit/archive/v1.3.3.tar.gz"
+  sha256 "46deaf46559c894d92caf57aa8ebbab12007c497b6f56494712571134ddd0a67"
+  license "GPL-3.0-only"
   head "https://github.com/bcgsc/ntEdit.git"
 
   bottle do
