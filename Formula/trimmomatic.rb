@@ -13,7 +13,7 @@ class Trimmomatic < Formula
     sha256 "a8ef297af91bf7e1ccb35092d054e9aefb2d2cb811a53b53756667a89756a61b" => :x86_64_linux
   end
 
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     cmd = "trimmomatic"
