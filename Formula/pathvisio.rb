@@ -4,10 +4,11 @@ class Pathvisio < Formula
   homepage "https://www.pathvisio.org/"
   url "https://www.pathvisio.org/data/releases/3.3.0/pathvisio_bin-3.3.0.zip"
   sha256 "403b10e185061799225e1bf04998827edf87c442f2f872811d306997d8ecf672"
+  revision 1
 
   bottle :unneeded
 
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     libexec.install "LICENSE-2.0.txt", "NOTICE.txt", "pathvisio.jar", "pathvisio.sh"
