@@ -13,7 +13,7 @@ class Bazam < Formula
     sha256 "08d9d9e0560074dafa59cc6347fa714d717bdefe69cf90f88ce017ead1344919" => :x86_64_linux
   end
 
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     jar = "bazam.jar"
