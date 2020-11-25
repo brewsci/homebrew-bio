@@ -5,6 +5,7 @@ class ClusterPicker < Formula
   url "https://github.com/emmahodcroft/cluster-picker-and-cluster-matcher/raw/master/release/ClusterPicker_1.2.5.jar"
   sha256 "8698b2c1d57d53843534780f860827f09b6bce9a323e2363085597c00e20cbb7"
   license "GPL-3.0"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
@@ -13,7 +14,7 @@ class ClusterPicker < Formula
     sha256 "db273226399a88119c8790292b7262fe933012b58620dabe53868348f9fee34d" => :x86_64_linux
   end
 
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     jar = Dir["*.jar"].first
