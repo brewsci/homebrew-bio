@@ -14,14 +14,14 @@ class AbyssExplorer < Formula
     sha256 "4e1f8ad29d192da909ac2ec6ea32eb7644e2dd9107e166c29aeef5a7d7f0fcdd" => :x86_64_linux
   end
 
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     libexec.install "ABySS-explorer.jar", "lib"
     (bin / "abyss-explorer").write <<~EOS
       #!/bin/sh
       set -eu
-      exec java -jar #{libexec}/ABySS-explorer.jar "$@"
+      exec #{Formula["openjdk"]/bin}/java -jar #{libexec}/ABySS-explorer.jar "$@"
     EOS
   end
 
