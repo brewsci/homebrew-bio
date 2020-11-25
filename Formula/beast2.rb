@@ -5,6 +5,7 @@ class Beast2 < Formula
   url "https://github.com/CompEvol/beast2/archive/v2.6.3.tar.gz"
   sha256 "7528d3f4732bd2066079eb9001161deda20afc59424ec58fca844e56785dc6a9"
   license "LGPL-2.1"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -14,7 +15,7 @@ class Beast2 < Formula
   end
 
   depends_on "ant" => :build
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     # Homebrew renames the unpacked source folder, but build.xml
