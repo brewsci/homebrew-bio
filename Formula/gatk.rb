@@ -7,6 +7,7 @@ class Gatk < Formula
   url "https://github.com/broadinstitute/gatk/releases/download/4.1.8.1/gatk-4.1.8.1.zip"
   sha256 "42e6de5059232df1ad5785c68c39a53dc1b54afe7bb086d0129f4dc95fb182bc"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -15,7 +16,7 @@ class Gatk < Formula
     sha256 "e623b8e92370031f256c19b11a22b240e56f02633cf45c1e847184c451df818c" => :x86_64_linux
   end
 
-  depends_on java: "1.8"
+  depends_on "openjdk@8"
   depends_on "python@3.8"
 
   resource "count_reads.bam" do
