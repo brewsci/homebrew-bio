@@ -5,6 +5,7 @@ class AbyssExplorer < Formula
   url "https://github.com/bcgsc/ABySS-explorer/releases/download/v2.1.0/ABySS-explorer-2.1.0.tar.gz"
   sha256 "3f22d6d2a0bc5127453d6c9b7b6ddb609d602a3495384f73e603fe6b2967b3a7"
   license "GPL-3.0"
+  revision 1
   head "https://github.com/bcgsc/ABySS-explorer.git"
 
   bottle do
@@ -14,14 +15,14 @@ class AbyssExplorer < Formula
     sha256 "4e1f8ad29d192da909ac2ec6ea32eb7644e2dd9107e166c29aeef5a7d7f0fcdd" => :x86_64_linux
   end
 
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     libexec.install "ABySS-explorer.jar", "lib"
     (bin / "abyss-explorer").write <<~EOS
       #!/bin/sh
       set -eu
-      exec java -jar #{libexec}/ABySS-explorer.jar "$@"
+      exec #{Formula["openjdk"]/bin}/java -jar #{libexec}/ABySS-explorer.jar "$@"
     EOS
   end
 
