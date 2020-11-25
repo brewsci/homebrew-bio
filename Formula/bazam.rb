@@ -5,6 +5,7 @@ class Bazam < Formula
   url "https://github.com/ssadedin/bazam/releases/download/1.0.1/bazam.jar"
   sha256 "396e584c95e2184025f9b9eca7377c376894f3afb4572856387866ab59c741e8"
   license "LGPL-2.1"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -13,7 +14,7 @@ class Bazam < Formula
     sha256 "08d9d9e0560074dafa59cc6347fa714d717bdefe69cf90f88ce017ead1344919" => :x86_64_linux
   end
 
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     jar = "bazam.jar"
