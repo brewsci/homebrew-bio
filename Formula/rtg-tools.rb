@@ -5,6 +5,7 @@ class RtgTools < Formula
   url "https://github.com/RealTimeGenomics/rtg-tools/releases/download/3.11/rtg-tools-3.11-nojre.zip"
   sha256 "f9ca3fa5a7d2c737490560970fee4cfa185490542283fb005ec77b77690c133e"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -13,7 +14,7 @@ class RtgTools < Formula
     sha256 "ce63fdebf09a933feb1bb707d150eab6d929337353de6cf543ca1eae7f8926e7" => :x86_64_linux
   end
 
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     # avoid question about sending stats back to base
