@@ -3,6 +3,7 @@ class Bbtools < Formula
   homepage "https://jgi.doe.gov/data-and-tools/bbtools/"
   url "https://downloads.sourceforge.net/bbmap/BBMap_38.87.tar.gz"
   sha256 "22ab642b8af88faf208a56763158da895004c5231df572d3163ce52fbfb63240"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -11,7 +12,7 @@ class Bbtools < Formula
     sha256 "1e0f94031afe0957c5db853a8fe7914facf0c93bbe0127d55f4ab8bcf906f548" => :x86_64_linux
   end
 
-  depends_on java: "1.7+"
+  depends_on "openjdk"
 
   def install
     if OS.mac?
