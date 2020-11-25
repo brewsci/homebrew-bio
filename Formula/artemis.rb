@@ -4,7 +4,7 @@ class Artemis < Formula
   homepage "https://www.sanger.ac.uk/science/tools/artemis"
   url "ftp://ftp.sanger.ac.uk/pub/resources/software/artemis/v17/v17.0.1/artemis-v17.0.1.jar"
   sha256 "8703fd02df01084c8dcb06abf181b378cdf4dd9ba70d71fbd950c2056fefe932"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -13,7 +13,7 @@ class Artemis < Formula
     sha256 "87d973ba74d1738917f1c99acd608a1bd617e2d5c888d6ebc4067ec22dcb646d" => :x86_64_linux
   end
 
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     jar = "artemis-v#{version}.jar"
