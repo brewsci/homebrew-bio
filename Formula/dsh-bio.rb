@@ -4,6 +4,7 @@ class DshBio < Formula
   url "https://search.maven.org/remotecontent?filepath=org/dishevelled/dsh-bio-tools/1.4/dsh-bio-tools-1.4-bin.tar.gz"
   sha256 "5ae307725cb3de630d45b656eccce0fc9ef2a33e57db42b184a371d578e7106c"
   license "LGPL-3.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -12,7 +13,7 @@ class DshBio < Formula
     sha256 "b88996865d3bca29dcea9362021862a8487adb0869bced1a82164150d952992a" => :x86_64_linux
   end
 
-  depends_on java: "1.8+"
+  depends_on "openjdk"
 
   def install
     rm Dir["bin/*.bat"] # Remove all windows files
