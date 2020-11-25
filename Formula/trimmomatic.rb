@@ -5,6 +5,7 @@ class Trimmomatic < Formula
   url "http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.39.zip"
   sha256 "2f97e3a237378d55c221abfc38e4b11ea232c8a41d511b8b4871f00c0476abca"
   license "GPL-3.0"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -13,7 +14,7 @@ class Trimmomatic < Formula
     sha256 "a8ef297af91bf7e1ccb35092d054e9aefb2d2cb811a53b53756667a89756a61b" => :x86_64_linux
   end
 
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     cmd = "trimmomatic"
