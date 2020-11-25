@@ -6,6 +6,7 @@ class Sepp < Formula
   url "https://github.com/smirarab/sepp/archive/4.3.10.tar.gz"
   sha256 "24d8d410138563017e6f2f1263d5e34427f5bbddb875b72a036f7c879cef203b"
   license "GPL-3.0"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -14,12 +15,12 @@ class Sepp < Formula
     sha256 "b81115b45f3c8075931cbf0fefef35a9357f1ff8878353c6a2f45ad8bb7234db" => :x86_64_linux
   end
 
-  depends_on :java
+  depends_on "openjdk"
   depends_on "python"
 
   resource "DendroPy" do
-    url "https://files.pythonhosted.org/packages/f5/21/17e4fbb1c2a68421eec43930b1e118660c7483229f1b28ba4402e8856884/DendroPy-4.4.0.tar.gz"
-    sha256 "f0a0e2ce78b3ed213d6c1791332d57778b7f63d602430c1548a5d822acf2799c"
+    url "https://files.pythonhosted.org/packages/e0/f3/222e939e250e71234031d182e58704fff1c3296140f91f70d7ef8b3e17a6/DendroPy-4.5.1.tar.gz"
+    sha256 "3503b170ba4830239dfa93371d210367a3be5825c3cb23ad7504a0feb3be7dbe"
   end
 
   def install
