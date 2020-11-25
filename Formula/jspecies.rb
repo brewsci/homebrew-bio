@@ -4,6 +4,7 @@ class Jspecies < Formula
   homepage "https://imedea.uib-csic.es/jspecies/index.html"
   url "https://imedea.uib-csic.es/jspecies/jars/jspecies1.2.1.jar"
   sha256 "6820b60413fec2e0df128a9c9815d2e057429a42346fe6cb237330b49069eb66"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -13,7 +14,7 @@ class Jspecies < Formula
 
   depends_on "brewsci/bio/blast-legacy"
   depends_on "brewsci/bio/mummer"
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     jar = "jspecies#{version}.jar"
