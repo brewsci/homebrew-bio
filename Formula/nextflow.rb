@@ -5,6 +5,7 @@ class Nextflow < Formula
   url "https://github.com/nextflow-io/nextflow/releases/download/v20.07.1/nextflow"
   sha256 "de4db5747a801af645d9b021c7b36f4a25c3ce1a8fda7705a5f37e8f9357443a"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/nextflow-io/nextflow.git"
 
   bottle do
@@ -14,10 +15,11 @@ class Nextflow < Formula
     sha256 "88f2bab19c5a735bfc714f64c9bcbd6293d2883713b4dee8ea5b171d6be5bcef" => :x86_64_linux
   end
 
-  depends_on java: "1.8"
+  depends_on "openjdk@8"
 
   def install
-    bin.install "nextflow"
+    libexec.install "nextflow"
+    (bin/"nextflow").write_env_script libexec/"nextflow", Language::Java.java_home_env("1.8")
   end
 
   test do
