@@ -4,6 +4,7 @@ class WebinCli < Formula
   url "https://github.com/enasequence/webin-cli/releases/download/v1.8.11/webin-cli-1.8.11.jar"
   sha256 "50862324dcc98aeef23f9789e6eac9eb37bd04378baaf2d17dfa97644c1a1e66"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -12,7 +13,7 @@ class WebinCli < Formula
     sha256 "cfb18450e818a8b6b984c34fb11d5fa3ed4d55385ebe3a9a2d5ae82dfad9a89b" => :x86_64_linux
   end
 
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     exe = "webin-cli"
