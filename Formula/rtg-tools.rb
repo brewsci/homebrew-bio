@@ -13,7 +13,7 @@ class RtgTools < Formula
     sha256 "ce63fdebf09a933feb1bb707d150eab6d929337353de6cf543ca1eae7f8926e7" => :x86_64_linux
   end
 
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     # avoid question about sending stats back to base
