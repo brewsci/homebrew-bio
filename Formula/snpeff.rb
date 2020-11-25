@@ -5,6 +5,7 @@ class Snpeff < Formula
   url "https://downloads.sourceforge.net/project/snpeff/snpEff_v4_3t_core.zip"
   version "4.3t"
   sha256 "d55a7389a78312947c1e7dadf5e6897b42d3c6e942e7c1b8ec68bb35d2ae2244"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -13,7 +14,7 @@ class Snpeff < Formula
     sha256 "e3088b0a1dcd51a33e74867cdb157a3bfa470101fbd71c61e3f8e00c04118dd5" => :x86_64_linux
   end
 
-  depends_on java: "1.8+"
+  depends_on "openjdk"
 
   def install
     # snpEff and SnpSift
