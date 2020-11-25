@@ -5,6 +5,7 @@ class Astral < Formula
   url "https://github.com/smirarab/ASTRAL/archive/v5.7.1.tar.gz"
   sha256 "8aa6fd4324efca325d3dde432517090fac314bea95f407b1dd59977181fec77e"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/smirarab/ASTRAL.git"
 
   bottle do
@@ -14,7 +15,7 @@ class Astral < Formula
     sha256 "0e0f15952cbf659a6a6654c5f11fbc4fe96d74f6c3c6843baba33d89073eacca" => :x86_64_linux
   end
 
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     inreplace "make.sh" do |s|
