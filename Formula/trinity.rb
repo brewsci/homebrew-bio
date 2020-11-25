@@ -5,6 +5,7 @@ class Trinity < Formula
   url "https://github.com/trinityrnaseq/trinityrnaseq/releases/download/v2.11.0/trinityrnaseq-v2.11.0.FULL.tar.gz"
   sha256 "230798b3c2eea7043098de3055a1fe150213929b0773e6d374fc0c7219c310c6"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -22,7 +23,7 @@ class Trinity < Formula
   depends_on "brewsci/bio/salmon"
   depends_on "brewsci/bio/trimmomatic"
   depends_on "htslib"
-  depends_on java: "1.8+"
+  depends_on "openjdk"
   depends_on "samtools"
 
   uses_from_macos "zlib"
