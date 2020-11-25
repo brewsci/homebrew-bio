@@ -6,6 +6,7 @@ class Realphy < Formula
   version "1.12"
   sha256 "ce6cf85f6b16565eb22b13f5e675a644281ef994cd136e40811de3d06781f0c5"
   license "GPL-3.0"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -14,7 +15,7 @@ class Realphy < Formula
     sha256 "4598375bc8dc2a4d6b7cde0a99ef0292697aae147687cfd4306de922b1fefc98" => :x86_64_linux
   end
 
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     jar = "RealPhy_v112.jar"
