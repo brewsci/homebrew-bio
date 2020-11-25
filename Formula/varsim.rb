@@ -4,6 +4,7 @@ class Varsim < Formula
   url "https://github.com/bioinform/varsim/releases/download/v0.8.4/varsim-0.8.4.tar.gz"
   sha256 "36d2dd6ccd60cd97ea60fdab918d21cb520894d7d38276b837c39ef587977696"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -12,7 +13,7 @@ class Varsim < Formula
     sha256 "b06e5eb42eda0e79c90354a8f7b5768c920c4c45a72a457b732f64e12d037e39" => :x86_64_linux
   end
 
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     jar = "VarSim.jar"
