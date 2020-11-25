@@ -14,7 +14,7 @@ class Mhap < Formula
     sha256 "17714c9a0a868298fe64d13cae37640ecae28323e9fc748c5696af93326a8e35" => :x86_64_linux
   end
 
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     jar = "mhap-#{version}.jar"
