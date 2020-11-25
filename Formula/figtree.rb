@@ -3,6 +3,7 @@ class Figtree < Formula
   homepage "http://tree.bio.ed.ac.uk/software/figtree/"
   url "https://github.com/rambaut/figtree/releases/download/v1.4.4/FigTree_v1.4.4.tgz"
   sha256 "529b867657b29e369cf81cd361e6a76bd713d488a63b91932df2385800423aa8"
+  revision 1
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
@@ -11,7 +12,7 @@ class Figtree < Formula
     sha256 "0dfa41c23b48cef3c43359faa55552ccc927f68fbcaf3749168c6de4c64c1c76" => :x86_64_linux
   end
 
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     prefix.install "lib/figtree.jar", "images"
