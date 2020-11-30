@@ -13,7 +13,7 @@ class Jspecies < Formula
 
   depends_on "brewsci/bio/blast-legacy"
   depends_on "brewsci/bio/mummer"
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     jar = "jspecies#{version}.jar"

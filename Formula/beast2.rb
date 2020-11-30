@@ -14,7 +14,7 @@ class Beast2 < Formula
   end
 
   depends_on "ant" => :build
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     # Homebrew renames the unpacked source folder, but build.xml

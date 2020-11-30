@@ -13,7 +13,7 @@ class ClusterPicker < Formula
     sha256 "db273226399a88119c8790292b7262fe933012b58620dabe53868348f9fee34d" => :x86_64_linux
   end
 
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     jar = Dir["*.jar"].first

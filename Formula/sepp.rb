@@ -14,7 +14,7 @@ class Sepp < Formula
     sha256 "b81115b45f3c8075931cbf0fefef35a9357f1ff8878353c6a2f45ad8bb7234db" => :x86_64_linux
   end
 
-  depends_on :java
+  depends_on "openjdk"
   depends_on "python"
 
   resource "DendroPy" do

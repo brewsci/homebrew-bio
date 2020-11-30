@@ -12,7 +12,7 @@ class DshBio < Formula
     sha256 "b88996865d3bca29dcea9362021862a8487adb0869bced1a82164150d952992a" => :x86_64_linux
   end
 
-  depends_on java: "1.8+"
+  depends_on "openjdk"
 
   def install
     rm Dir["bin/*.bat"] # Remove all windows files

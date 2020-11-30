@@ -14,7 +14,7 @@ class Astral < Formula
     sha256 "0e0f15952cbf659a6a6654c5f11fbc4fe96d74f6c3c6843baba33d89073eacca" => :x86_64_linux
   end
 
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     inreplace "make.sh" do |s|
