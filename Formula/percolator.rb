@@ -23,7 +23,8 @@ class Percolator < Formula
 
     mkdir "build" do
       system "cmake", "..", *std_cmake_args, "-DXML_SUPPORT=ON",
-             "-DCMAKE_CXX_FLAGS='-lcurl -std=c++11'"
+             "-DCMAKE_CXX_FLAGS='-lcurl -std=c++11'",
+             "-DCMAKE_EXE_LINKER_FLAGS='-lcurl'"
       system "make", "install"
     end
   end
