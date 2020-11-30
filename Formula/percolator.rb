@@ -10,8 +10,8 @@ class Percolator < Formula
   depends_on "boost" => :build
   depends_on "cmake" => :build
   #depends_on "gcc" => :build
-  #depends_on "xerces-c" => :build
-  #depends_on "xsd" => :build
+  depends_on "xerces-c" => :build
+  depends_on "xsd" => :build
   #depends_on "curl"
   #depends_on "icu4c"
 
