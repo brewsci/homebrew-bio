@@ -18,7 +18,7 @@ class Percolator < Formula
 
     if OS.mac?
       inreplace "CommonCMake.txt", /(?<=if\(UNIX OR APPLE OR MINGW\).)/m,
-                "set(CMAKE_EXE_LINKER_FLAGS='-framework CoreServices -framework CoreFoundation'"
+                "set(CMAKE_EXE_LINKER_FLAGS='-framework CoreServices -framework CoreFoundation')"
     end
 
     mkdir "build" do
