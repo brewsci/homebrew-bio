@@ -26,7 +26,8 @@ class Percolator < Formula
   def install
      inreplace "CPack.txt", "set(CMAKE_INSTALL_PREFIX /usr/local)", ""
      mkdir "build" do
-       system "cmake", "..", *std_cmake_args, "-DXML_SUPPORT=ON"
+       system "cmake", "..", *std_cmake_args, "-DXML_SUPPORT=ON",
+              "-DCMAKE_CXX_FLAGS='-lcurl -std=c++11'"
        system "make", "install"
      end
   end
