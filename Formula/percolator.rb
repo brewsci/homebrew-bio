@@ -11,15 +11,15 @@ class Percolator < Formula
   depends_on "cmake" => :build
   depends_on "xerces-c" => :build
   depends_on "xsd" => :build
-  #depends_on "curl"
-  
+  depends_on "curl"
+
   def install
-     inreplace "CPack.txt", "set(CMAKE_INSTALL_PREFIX /usr/local)", ""
-     mkdir "build" do
-       system "cmake", "..", *std_cmake_args, "-DXML_SUPPORT=ON",
-              "-DCMAKE_CXX_FLAGS='-lcurl -std=c++11'"
-       system "make", "install"
-     end
+    inreplace "CPack.txt", "set(CMAKE_INSTALL_PREFIX /usr/local)", ""
+    mkdir "build" do
+      system "cmake", "..", *std_cmake_args, "-DXML_SUPPORT=ON",
+             "-DCMAKE_CXX_FLAGS='-lcurl -std=c++11'"
+      system "make", "install"
+    end
   end
 
   test do
