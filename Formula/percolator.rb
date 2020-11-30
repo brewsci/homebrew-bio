@@ -15,6 +15,12 @@ class Percolator < Formula
 
   def install
     inreplace "CPack.txt", "set(CMAKE_INSTALL_PREFIX /usr/local)", ""
+
+    if OS.mac?
+      inreplace "CommonCMake.txt", /(?<=if\(UNIX OR APPLE OR MINGW\).)/m,
+                "set(CMAKE_EXE_LINKER_FLAGS='-framework CoreServices -framework CoreFoundation'"
+    end
+
     mkdir "build" do
       system "cmake", "..", *std_cmake_args, "-DXML_SUPPORT=ON",
              "-DCMAKE_CXX_FLAGS='-lcurl -std=c++11'"
