@@ -18,6 +18,14 @@ class Percolator < Formula
     end
   end
 
+  def caveats
+    <<~EOS
+      Note: This version of percolator does not include XML support.
+      To install the full version on Mac OS, consult the official percolator Github
+      repository at https://github.com/percolator/percolator
+    EOS
+  end
+
   test do
     assert_match "Usage", shell_output("#{bin}/percolator --help 2>&1")
   end
