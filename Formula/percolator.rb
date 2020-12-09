@@ -7,6 +7,12 @@ class Percolator < Formula
   sha256 "5b746bdc0119a40f96bc090e02e27670f91eeb341736911750b170da7e5c06bb"
   license all_of: ["Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "MIT"]
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "9946c885c0596ffdb1ddcd73ec4f9e93e780c87ab1a891541753f5cae22f3d09" => :catalina
+    sha256 "4b1a53dd1bed88db9b43b9ecf83cd708aa7704b7a4e77b7ec0a10d76c7f59d2a" => :x86_64_linux
+  end
+
   depends_on "boost" => :build
   depends_on "cmake" => :build
 
