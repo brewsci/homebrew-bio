@@ -7,6 +7,13 @@ class Tmalign < Formula
   sha256 "d5a8f21fc66a8d006b4c2f7e9e609809acdc3a17cb157616809e954d75c73871"
   license "MIT"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "3b1b24110784030937f12d3943b57a096f3c88573972597d0bd105f1a9690ec3" => :catalina
+    sha256 "bcdbb8bef4985e3ce2efb7c1fea4e0222db5f7203cacad9d92ff29f2dc0cfb80" => :x86_64_linux
+  end
+
   def install
     # install cpp version
     if OS.mac?
