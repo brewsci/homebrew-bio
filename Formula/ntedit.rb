@@ -10,8 +10,8 @@ class Ntedit < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "a4c63a643c870a954b0e478aa53a401e28a6ea1b7de21657d7e71d311cdb59a1" => :catalina
-    sha256 "ab5ef6cec1bb0d773ec1ae9992fa53c365af134a450c5bfeb5eaaeea893a4adc" => :x86_64_linux
+    sha256 "c6b971225ada7472390713dfbaa78ed282516f1f3f4a070d2ec18de6f4b9415b" => :catalina
+    sha256 "ef92eab23addd3ca6f86f76a6aa01dfc9b905d59f5cbf3d22b14f89ecad29fc5" => :x86_64_linux
   end
 
   depends_on "gcc" if OS.mac? # needs openmp
