@@ -6,6 +6,13 @@ class Mican < Formula
   sha256 "35040d7c26b455e793133879fcfdbc1b233368cdf992e26e4a40330f9c0de757"
   license "CC-BY-2.0"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "6cdaa93ef59208462e6c1053137fdb5bef77b2005253ffc3d8e1035c1181eb5f" => :catalina
+    sha256 "4969b98b7842df6837fcffa4bb1e3f207e4714b9f4a1857c316fdd960941be06" => :x86_64_linux
+  end
+
   def install
     # remove pre-built binaries
     rm ["mican_linux_64", "mican"]
