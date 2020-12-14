@@ -6,8 +6,8 @@ class Oma < Formula
   # cite Altenhoff_2014: "https://doi.org/10.1093/nar/gku1158"
   desc "Standalone package to infer orthologs with the OMA algorithm"
   homepage "https://omabrowser.org/standalone/"
-  url "https://omabrowser.org/standalone/OMA.2.4.1.tgz"
-  sha256 "a01f6f6ef219f53bfa1a48386ecaa7fdec022da6efb6cafed8778d65e0107a11"
+  url "https://omabrowser.org/standalone/OMA.2.4.2.tgz"
+  sha256 "73cc51300ecd162970a37b2ccb8992b66f710fafc76a00eab04b4d3857d19477"
 
   bottle do
     cellar :any_skip_relocation
@@ -23,13 +23,13 @@ class Oma < Formula
   uses_from_macos "libxslt"
 
   resource "biopython" do
-    url "https://files.pythonhosted.org/packages/33/55/becf2b99556588d22b542f3412990bfc79b674e198d9bc58f7bbc333439e/biopython-1.75.tar.gz"
-    sha256 "5060e4ef29c2bc214749733634051be5b8d11686c6590fa155c3443dcaa89906"
+    url "https://files.pythonhosted.org/packages/89/c5/7fe326081276f74a4073f6d6b13cfa7a04ba322a3ff1d84027f4773980b8/biopython-1.78.tar.gz"
+    sha256 "1ee0a0b6c2376680fea6642d5080baa419fd73df104a62d58a8baf7a8bbe4564"
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/e4/19/8dfeef50623892577dc05245093e090bb2bab4c8aed5cad5b03208959563/lxml-4.4.2.tar.gz"
-    sha256 "eff69ddbf3ad86375c344339371168640951c302450c5d3e9936e98d6459db06"
+    url "https://files.pythonhosted.org/packages/db/f7/43fecb94d66959c1e23aa53d6161231dca0e93ec500224cf31b3c4073e37/lxml-4.6.2.tar.gz"
+    sha256 "cd11c7e8d21af997ee8079037fff88f16fda188a9776eb4b81c7e4c9c0a7d7fc"
   end
 
   def install
