@@ -4,8 +4,8 @@ class Raptor < Formula
   homepage "https://github.com/seqan/raptor"
   url "https://github.com/seqan/raptor",
     using:    :git,
-    tag:      "raptor-v1.0.1",
-    revision: "6f2a0cc3cdc05f9311fea0081e644f37772a26bf"
+    tag:      "raptor-v1.1.0",
+    revision: "f5fae1cbecc6d08446e75bb111f085b3cfac9ab6"
   license "BSD-3-Clause"
   head "https://github.com/seqan/raptor.git"
 
@@ -17,7 +17,7 @@ class Raptor < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "gcc@8"
+  depends_on "gcc@9"
 
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
