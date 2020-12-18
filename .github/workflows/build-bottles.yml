@@ -1,6 +1,9 @@
 name: Build bottles
 
-on: pull_request
+on:
+  pull_request:
+    paths:
+      - 'Formula/*'
 
 env:
   HOMEBREW_NO_ANALYTICS: 1
@@ -8,45 +11,23 @@ env:
   HOMEBREW_NO_INSTALL_CLEANUP: 1
 
 jobs:
-  build-linux-bottles:
-    runs-on: ubuntu-latest
-    container:
-      image: homebrew/ubuntu16.04:master
+  build-bottles:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-16.04
+          - macos-10.15
+          - macos-11.0
+    runs-on: ${{matrix.os}}
     steps:
-      - name: Update Homebrew
-        run: brew update-reset
-      - uses: actions/checkout@master
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
       - name: Build bottles
-        run: |
-          mkdir -p "$(dirname $(brew --repo ${{github.repository}}))"
-          cp -a "$GITHUB_WORKSPACE" "$(brew --repo ${{github.repository}})"
-          mkdir ~/bottles
-          cd ~/bottles
-          brew test-bot --skip-recursive-dependents --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
-          cp -a ~/bottles $RUNNER_TEMP/
+        run: brew test-bot --skip-recursive-dependents --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
       - name: Upload bottles
-        uses: actions/upload-artifact@v1
+        if: always()
+        uses: actions/upload-artifact@v2
         with:
           name: bottles
-          path: ${{runner.temp}}/bottles
-  build-macos-bottles:
-    runs-on: macos-latest
-    env:
-      HOMEBREW_FORCE_VENDOR_RUBY: 1
-    steps:
-      - name: Update Homebrew
-        run: brew update-reset
-      - uses: actions/checkout@master
-      - name: Build bottles
-        run: |
-          mkdir -p "$(dirname $(brew --repo ${{github.repository}}))"
-          cp -a "$GITHUB_WORKSPACE" "$(brew --repo ${{github.repository}})"
-          mkdir ~/bottles
-          cd ~/bottles
-          brew test-bot --cleanup --root-url=https://linuxbrew.bintray.com/bottles-bio
-          cp -a ~/bottles $RUNNER_TEMP/
-      - name: Upload bottles
-        uses: actions/upload-artifact@v1
-        with:
-          name: bottles
-          path: ${{runner.temp}}/bottles
+          path: '*.bottle.*'
