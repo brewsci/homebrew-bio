@@ -12,8 +12,8 @@ class Raptor < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "8dde79c5a6b6a79286b02ba145174052dae9124d4b77feddf0546259c1f28d73" => :catalina
-    sha256 "31d9b7147732688d898dfa1766a46338fc38652d813c226570bc22a3836f496f" => :x86_64_linux
+    sha256 "def1790f20a7e914f8759d0168abefa8dbf8bb637a46e4abbbb8023aa7b453eb" => :catalina
+    sha256 "4e8e33bfdaadf1621ea46807d3c4b9245ff734b6b3d71ab2e16c406b252fa5dd" => :x86_64_linux
   end
 
   depends_on "cmake" => :build
