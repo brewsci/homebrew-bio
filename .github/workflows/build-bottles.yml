@@ -23,6 +23,8 @@ jobs:
     steps:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
+      - name: Update Homebrew
+        run: brew update-reset
       - name: Build bottles
         run: brew test-bot --skip-recursive-dependents --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
       - name: Upload bottles
