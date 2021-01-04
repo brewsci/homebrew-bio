@@ -23,7 +23,6 @@ class Emboss < Formula
 
   depends_on "mysql"      => :optional
   depends_on "postgresql" => :optional
-  depends_on x11: :optional
 
   uses_from_macos "zlib"
 
@@ -37,7 +36,7 @@ class Emboss < Formula
       --enable-64
       --with-thread
     ]
-    args << "--without-x" if build.without? "x11"
+    args << "--without-x"
     args << "--with-mysql" if build.with? "mysql"
     args << "--with-postgresql" if build.with? "postgresql"
 

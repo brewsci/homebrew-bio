@@ -14,7 +14,7 @@ class Realphy < Formula
     sha256 "4598375bc8dc2a4d6b7cde0a99ef0292697aae147687cfd4306de922b1fefc98" => :x86_64_linux
   end
 
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     jar = "RealPhy_v112.jar"

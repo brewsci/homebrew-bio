@@ -13,7 +13,7 @@ class Pilon < Formula
     sha256 "37157f6eb70104f6d4cd972c995db5004988295f349126f6208ce584345ff6ba" => :x86_64_linux
   end
 
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     opts = "-Xmx1000m -Xms20m"

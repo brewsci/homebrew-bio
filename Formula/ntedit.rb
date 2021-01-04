@@ -2,16 +2,16 @@ class Ntedit < Formula
   # cite Warren_2019: "https://doi.org/10.1093/bioinformatics/btz400"
   desc "Scalable genome assembly polishing"
   homepage "https://github.com/bcgsc/ntEdit"
-  url "https://github.com/bcgsc/ntEdit/archive/v1.3.2.tar.gz"
-  sha256 "acbd491416efb6c6ba17fe7ed3d11b62ca352f6b55713044859728c464ed00dc"
-  license "GPL-3.0"
+  url "https://github.com/bcgsc/ntEdit/archive/v1.3.4.tar.gz"
+  sha256 "948d7221cc929b0ed8c1b6d4e112700ee783dd1b39547f09cd8b60750f0f179d"
+  license "GPL-3.0-only"
   head "https://github.com/bcgsc/ntEdit.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    sha256 "ca1bc15d3add4caff031d05c1aaac1f72140b779ac2358cde0d6b6eef86ac4f9" => :catalina
-    sha256 "d030be57e3e285fd2921bdf235eff946a6b4a87fd424da0c4a38cc11da719e45" => :x86_64_linux
+    sha256 "c6b971225ada7472390713dfbaa78ed282516f1f3f4a070d2ec18de6f4b9415b" => :catalina
+    sha256 "ef92eab23addd3ca6f86f76a6aa01dfc9b905d59f5cbf3d22b14f89ecad29fc5" => :x86_64_linux
   end
 
   depends_on "gcc" if OS.mac? # needs openmp

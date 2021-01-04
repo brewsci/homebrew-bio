@@ -5,9 +5,7 @@ class Varscan < Formula
   url "https://github.com/dkoboldt/varscan/raw/master/VarScan.v2.4.3.jar"
   sha256 "dc0e908ebe6a429fdd2d0f80f26c428cfc71f65429dc1816d41230b649168ff3"
 
-  bottle :unneeded
-
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     jar = "VarScan.v#{version}.jar"

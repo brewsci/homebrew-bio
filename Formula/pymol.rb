@@ -7,6 +7,7 @@ class Pymol < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 "43117639a4e1be67b1d1dc30c420be36b66addf95b0df57dd33d46d4b2082dbe" => :catalina
     sha256 "ce4f0acf8a97da25c6a67894a6afcb69c48a78497d4d3fd2e367b134c1785472" => :x86_64_linux
   end
 

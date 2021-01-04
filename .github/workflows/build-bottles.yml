@@ -31,6 +31,8 @@ jobs:
           path: ${{runner.temp}}/bottles
   build-macos-bottles:
     runs-on: macos-latest
+    env:
+      HOMEBREW_FORCE_VENDOR_RUBY: 1
     steps:
       - name: Update Homebrew
         run: brew update-reset

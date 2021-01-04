@@ -12,7 +12,7 @@ class WebinCli < Formula
     sha256 "cfb18450e818a8b6b984c34fb11d5fa3ed4d55385ebe3a9a2d5ae82dfad9a89b" => :x86_64_linux
   end
 
-  depends_on :java
+  depends_on "openjdk"
 
   def install
     exe = "webin-cli"
