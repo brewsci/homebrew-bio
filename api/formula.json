@@ -58,7 +58,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "abricate",
@@ -126,7 +130,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "abyss-explorer",
@@ -174,7 +182,7 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "adoptopenjdk"
+      "openjdk"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -187,7 +195,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "adam",
@@ -248,7 +260,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "ale",
@@ -309,7 +325,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "andi",
@@ -376,7 +396,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "any2fasta",
@@ -435,7 +459,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "apbspdb2pqr",
@@ -502,7 +530,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "aragorn",
@@ -561,7 +593,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "arcs",
@@ -625,7 +661,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "arks",
@@ -691,7 +731,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "art",
@@ -752,7 +796,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "artemis",
@@ -800,7 +848,7 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "adoptopenjdk"
+      "openjdk"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -813,7 +861,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "ascp",
@@ -874,7 +926,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "astral",
@@ -922,7 +978,7 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "adoptopenjdk"
+      "openjdk"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -935,7 +991,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "bali-phy",
@@ -1002,7 +1062,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "bam2fastx",
@@ -1070,7 +1134,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "bamm",
@@ -1131,7 +1199,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "bandage",
@@ -1200,7 +1272,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "barrnap",
@@ -1262,7 +1338,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "bazam",
@@ -1310,7 +1390,7 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "adoptopenjdk"
+      "openjdk"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -1323,7 +1403,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "bbtools",
@@ -1371,7 +1455,7 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "adoptopenjdk"
+      "openjdk"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -1384,7 +1468,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "bcalm",
@@ -1447,7 +1535,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "beast2",
@@ -1497,7 +1589,7 @@
       "ant"
     ],
     "dependencies": [
-      "adoptopenjdk"
+      "openjdk"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -1510,7 +1602,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "berokka",
@@ -1573,7 +1669,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "bfc",
@@ -1634,7 +1734,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "bifrost",
@@ -1697,7 +1801,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "biobloomtools",
@@ -1762,7 +1870,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "biomake",
@@ -1823,7 +1935,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "bioperl",
@@ -1886,7 +2002,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "blast-legacy",
@@ -1945,7 +2065,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "blast@2.2",
@@ -1993,7 +2117,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "blat",
@@ -2058,7 +2186,80 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
+  },
+  {
+    "name": "bmdca",
+    "full_name": "brewsci/bio/bmdca",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Boltzmann-machine Direct Coupling Analysis",
+    "license": "GPL-3.0-only",
+    "homepage": "https://github.com/ranganathanlab/bmDCA/",
+    "versions": {
+      "stable": "0.8.12",
+      "head": null,
+      "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/ranganathanlab/bmDCA/archive/v0.8.12.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bmdca-0.8.12.catalina.bottle.tar.gz",
+            "sha256": "e54c657f4faca1b85724c4ffbad00d1eed25c72b8bb407ceb5d474644771b453"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/bmdca-0.8.12.x86_64_linux.bottle.tar.gz",
+            "sha256": "6f1dbb4b20111704690b1654a7e607108e9ddcbd979eafe80a9a2dd10e368bb2"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [
+      "autoconf",
+      "automake",
+      "pkg-config"
+    ],
+    "dependencies": [
+      "armadillo"
+    ],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false,
+    "deprecated": false,
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "bodr",
@@ -2120,7 +2321,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "bonsai",
@@ -2183,7 +2388,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "bowtie",
@@ -2245,7 +2454,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "bracken",
@@ -2304,7 +2517,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "breseq",
@@ -2372,7 +2589,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "busco",
@@ -2441,7 +2662,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "bwa-mem2",
@@ -2502,7 +2727,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "cannoli",
@@ -2563,7 +2792,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "canu",
@@ -2622,7 +2855,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "cap3",
@@ -2683,7 +2920,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "cd-hit",
@@ -2744,7 +2985,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "centrifuge",
@@ -2807,7 +3052,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "circlator",
@@ -2876,7 +3125,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "circos",
@@ -2941,7 +3194,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "clonalframeml",
@@ -3000,7 +3257,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "clustal-omega",
@@ -3061,7 +3322,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "clustal-w",
@@ -3120,7 +3385,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "cluster-picker",
@@ -3168,7 +3437,7 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "adoptopenjdk"
+      "openjdk"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -3181,7 +3450,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "consel",
@@ -3240,7 +3513,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "crumble",
@@ -3301,7 +3578,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "cutadapt",
@@ -3364,7 +3645,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "das_tool",
@@ -3431,7 +3716,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "dehomopolymerate",
@@ -3492,7 +3781,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "delly",
@@ -3560,7 +3853,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "dida",
@@ -3622,7 +3919,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "discovardenovo",
@@ -3690,7 +3991,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "disty",
@@ -3751,7 +4056,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "dsh-bio",
@@ -3759,17 +4068,17 @@
     "oldname": null,
     "aliases": [],
     "versioned_formulae": [],
-    "desc": "Tools for BED, FASTA, FASTQ, GFA1/2, GFF3, SAM, and VCF files",
-    "license": "LGPL-3.0",
+    "desc": "Tools for BED, FASTA, FASTQ, GAF, GFA1/2, GFF3, PAF, SAM, and VCF files",
+    "license": "LGPL-3.0-or-later",
     "homepage": "https://github.com/heuermh/dishevelled-bio",
     "versions": {
-      "stable": "1.3.4",
+      "stable": "1.4",
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://search.maven.org/remotecontent?filepath=org/dishevelled/dsh-bio-tools/1.3.4/dsh-bio-tools-1.3.4-bin.tar.gz",
+        "url": "https://search.maven.org/remotecontent?filepath=org/dishevelled/dsh-bio-tools/1.4/dsh-bio-tools-1.4-bin.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -3784,12 +4093,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/dsh-bio-1.3.4.catalina.bottle.tar.gz",
-            "sha256": "ecc8c494c76018044ed4744350e3008e2c3f4282b1111db48055a969c4b7a816"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/dsh-bio-1.4.catalina.bottle.tar.gz",
+            "sha256": "3fcdcfb1a6084b4cae0abf1fca53a2785654b95c954435a684b99ad62ca859c0"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/dsh-bio-1.3.4.x86_64_linux.bottle.tar.gz",
-            "sha256": "abe84532e871dee21be522bdd11b692f7ae162f8d7a7ee95770b8bc9701b1448"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/dsh-bio-1.4.x86_64_linux.bottle.tar.gz",
+            "sha256": "b88996865d3bca29dcea9362021862a8487adb0869bced1a82164150d952992a"
           }
         }
       }
@@ -3799,7 +4108,7 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "adoptopenjdk"
+      "openjdk"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -3812,7 +4121,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "dssp",
@@ -3877,7 +4190,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "dwgsim",
@@ -3940,7 +4257,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "e-mem",
@@ -4001,7 +4322,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "easel",
@@ -4064,7 +4389,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "edirect",
@@ -4129,7 +4458,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "elph",
@@ -4188,7 +4521,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "ema",
@@ -4249,7 +4586,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "emboss",
@@ -4302,10 +4643,6 @@
       {
         "option": "--with-postgresql",
         "description": "Build with postgresql support"
-      },
-      {
-        "option": "--with-x11",
-        "description": "Build with x11 support"
       }
     ],
     "build_dependencies": [
@@ -4324,17 +4661,7 @@
       "postgresql"
     ],
     "uses_from_macos": [],
-    "requirements": [
-      {
-        "name": "x11",
-        "cask": "xquartz",
-        "download": "https://xquartz.macosforge.org",
-        "version": null,
-        "contexts": [
-          "optional"
-        ]
-      }
-    ],
+    "requirements": [],
     "conflicts_with": [],
     "caveats": null,
     "installed": [],
@@ -4342,7 +4669,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "epa-ng",
@@ -4407,7 +4738,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "exabayes",
@@ -4477,7 +4812,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "exonerate",
@@ -4540,7 +4879,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "express",
@@ -4607,7 +4950,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "fasta",
@@ -4668,7 +5015,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "fastani",
@@ -4733,7 +5084,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "fastp",
@@ -4794,7 +5149,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "fastq-pair",
@@ -4855,7 +5214,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "fasttree",
@@ -4914,7 +5277,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "fastuniq",
@@ -4973,7 +5340,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "fermi-lite",
@@ -5034,7 +5405,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "figtree",
@@ -5082,7 +5457,7 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "adoptopenjdk"
+      "openjdk"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -5095,7 +5470,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "filtlong",
@@ -5156,7 +5535,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "finch-rs",
@@ -5219,7 +5602,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "flash",
@@ -5280,7 +5667,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "flowcraft",
@@ -5342,7 +5733,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "flye",
@@ -5405,7 +5800,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "fraggenescan",
@@ -5466,7 +5865,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "freebayes",
@@ -5534,7 +5937,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "fwdpp",
@@ -5605,7 +6012,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "gappa",
@@ -5668,7 +6079,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "gatk",
@@ -5718,7 +6133,7 @@
       "unzip"
     ],
     "dependencies": [
-      "adoptopenjdk",
+      "openjdk",
       "python@3.8"
     ],
     "recommended_dependencies": [],
@@ -5732,7 +6147,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "gblocks",
@@ -5793,7 +6212,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "gemma",
@@ -5858,7 +6281,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "genewise",
@@ -5921,7 +6348,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "genome-painter",
@@ -5986,7 +6417,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "gepard",
@@ -6030,7 +6465,7 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "adoptopenjdk"
+      "openjdk"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -6043,7 +6478,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "gfakluge",
@@ -6104,7 +6543,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "gfalint",
@@ -6163,7 +6606,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "gfaview",
@@ -6224,7 +6671,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "gffcompare",
@@ -6283,7 +6734,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "ghostz",
@@ -6342,7 +6797,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "gmap-gsnap",
@@ -6405,7 +6864,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "groot",
@@ -6464,7 +6927,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "gzstream",
@@ -6525,7 +6992,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "harvest-tools",
@@ -6590,7 +7061,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "hh-suite",
@@ -6654,7 +7129,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "hisat2",
@@ -6713,7 +7192,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "hmmer2",
@@ -6776,7 +7259,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "hssp",
@@ -6841,7 +7328,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "humann2",
@@ -6905,7 +7396,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "idba",
@@ -6967,7 +7462,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "indel-seq-gen",
@@ -7033,7 +7532,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "indelible",
@@ -7092,7 +7595,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "infernal",
@@ -7151,7 +7658,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "iqtree",
@@ -7216,7 +7727,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "iqtree2",
@@ -7282,7 +7797,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "ispcr",
@@ -7343,7 +7862,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "iva",
@@ -7409,7 +7932,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "ivar",
@@ -7475,7 +8002,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "jellyfish",
@@ -7534,7 +8065,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "jspecies",
@@ -7580,7 +8115,7 @@
     "dependencies": [
       "brewsci/bio/blast-legacy",
       "brewsci/bio/mummer",
-      "adoptopenjdk"
+      "openjdk"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -7593,7 +8128,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "k8",
@@ -7656,7 +8195,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "kaiju",
@@ -7718,7 +8261,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "kalign",
@@ -7782,7 +8329,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "kat",
@@ -7848,7 +8399,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "kent-tools",
@@ -7914,7 +8469,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "kma",
@@ -7977,7 +8536,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "kmc",
@@ -8040,7 +8603,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "kmergenie",
@@ -8103,7 +8670,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "kounta",
@@ -8166,7 +8737,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "kr",
@@ -8227,7 +8802,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "kraken",
@@ -8286,7 +8865,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "kraken2",
@@ -8348,7 +8931,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "kssd",
@@ -8413,7 +9000,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "last",
@@ -8476,7 +9067,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "lastz",
@@ -8535,7 +9130,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "legsta",
@@ -8597,7 +9196,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "libbigwig",
@@ -8659,7 +9262,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "libdivsufsort",
@@ -8720,7 +9327,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "libgff",
@@ -8783,7 +9394,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "libpll",
@@ -8848,7 +9463,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "libsequence",
@@ -8907,7 +9526,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "light-assembler",
@@ -8968,7 +9591,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "lighter",
@@ -9029,7 +9656,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "links-scaffolder",
@@ -9092,7 +9723,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "lofreq",
@@ -9158,7 +9793,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "lrsim",
@@ -9220,7 +9859,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "lsd2",
@@ -9279,7 +9922,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "magic-blast",
@@ -9345,7 +9992,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "maker",
@@ -9422,7 +10073,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "mapcaller",
@@ -9486,7 +10141,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "mash",
@@ -9554,7 +10213,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "masurca",
@@ -9625,7 +10288,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "matplotlib",
@@ -9702,7 +10369,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "maxbin2",
@@ -9772,7 +10443,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "mcl",
@@ -9831,7 +10506,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "megahit",
@@ -9896,7 +10575,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "meme",
@@ -9963,7 +10646,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "metabat",
@@ -10032,7 +10719,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "metaphlan",
@@ -10078,7 +10769,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "mhap",
@@ -10126,7 +10821,7 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "adoptopenjdk"
+      "openjdk"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -10139,7 +10834,74 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
+  },
+  {
+    "name": "mican",
+    "full_name": "brewsci/bio/mican",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Structure alignment algorithm that can handle Multiple-chain complexes",
+    "license": "CC-BY-2.0",
+    "homepage": "http://www.tbp.cse.nagoya-u.ac.jp/MICAN",
+    "versions": {
+      "stable": "2019.11.27",
+      "head": null,
+      "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "http://www.tbp.cse.nagoya-u.ac.jp/MICAN/Download/mican_ver/mican_2019.11.27.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mican-2019.11.27.catalina.bottle.tar.gz",
+            "sha256": "6cdaa93ef59208462e6c1053137fdb5bef77b2005253ffc3d8e1035c1181eb5f"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/mican-2019.11.27.x86_64_linux.bottle.tar.gz",
+            "sha256": "4969b98b7842df6837fcffa4bb1e3f207e4714b9f4a1857c316fdd960941be06"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false,
+    "deprecated": false,
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "minced",
@@ -10187,7 +10949,7 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "adoptopenjdk"
+      "openjdk"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -10200,7 +10962,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "minia",
@@ -10263,7 +11029,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "miniasm",
@@ -10324,7 +11094,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "minigraph",
@@ -10386,7 +11160,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "minimap",
@@ -10447,7 +11225,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "minimap2",
@@ -10509,7 +11291,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "mir-prefer",
@@ -10579,7 +11365,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "mlst",
@@ -10647,7 +11437,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "mmtf-cpp",
@@ -10711,7 +11505,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "mosdepth",
@@ -10774,7 +11572,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "mothur",
@@ -10836,7 +11638,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "mp-est",
@@ -10897,7 +11703,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "mpboot",
@@ -10963,7 +11773,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "mrbayes",
@@ -11032,7 +11846,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "mreps",
@@ -11091,7 +11909,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "mummer",
@@ -11152,7 +11974,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "muscle",
@@ -11211,7 +12037,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "nanofilt",
@@ -11274,7 +12104,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "nanopolish",
@@ -11342,7 +12176,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "newick-utils",
@@ -11407,7 +12245,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "nextflow",
@@ -11455,7 +12297,7 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "adoptopenjdk"
+      "openjdk"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -11468,7 +12310,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "nextgenmap",
@@ -11529,7 +12375,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "ngmaster",
@@ -11592,7 +12442,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "ngmerge",
@@ -11653,7 +12507,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "nonpareil",
@@ -11721,7 +12579,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "ntcard",
@@ -11783,7 +12645,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "ntedit",
@@ -11792,16 +12658,16 @@
     "aliases": [],
     "versioned_formulae": [],
     "desc": "Scalable genome assembly polishing",
-    "license": "GPL-3.0",
+    "license": "GPL-3.0-only",
     "homepage": "https://github.com/bcgsc/ntEdit",
     "versions": {
-      "stable": "1.3.2",
+      "stable": "1.3.4",
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/bcgsc/ntEdit/archive/v1.3.2.tar.gz",
+        "url": "https://github.com/bcgsc/ntEdit/archive/v1.3.4.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -11816,12 +12682,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ntedit-1.3.2.catalina.bottle.tar.gz",
-            "sha256": "ca1bc15d3add4caff031d05c1aaac1f72140b779ac2358cde0d6b6eef86ac4f9"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ntedit-1.3.4.catalina.bottle.tar.gz",
+            "sha256": "c6b971225ada7472390713dfbaa78ed282516f1f3f4a070d2ec18de6f4b9415b"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ntedit-1.3.2.x86_64_linux.bottle.tar.gz",
-            "sha256": "d030be57e3e285fd2921bdf235eff946a6b4a87fd424da0c4a38cc11da719e45"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ntedit-1.3.4.x86_64_linux.bottle.tar.gz",
+            "sha256": "ef92eab23addd3ca6f86f76a6aa01dfc9b905d59f5cbf3d22b14f89ecad29fc5"
           }
         }
       }
@@ -11844,7 +12710,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "nthits",
@@ -11906,7 +12776,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "ntjoin",
@@ -11918,13 +12792,13 @@
     "license": "GPL-3.0-only",
     "homepage": "https://github.com/bcgsc/ntJoin",
     "versions": {
-      "stable": "1.0.4",
+      "stable": "1.0.5",
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/bcgsc/ntJoin/releases/download/v1.0.4/ntJoin-1.0.4.tar.gz",
+        "url": "https://github.com/bcgsc/ntJoin/releases/download/v1.0.5/ntJoin-1.0.5.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -11939,12 +12813,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ntjoin-1.0.4.catalina.bottle.tar.gz",
-            "sha256": "7e770fb38403ea191a5a9e1d10de0ef4eb214eaea7afe39811a2b94121bb4fff"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ntjoin-1.0.5.catalina.bottle.tar.gz",
+            "sha256": "0a506472405b5e9eb6a61526628b1f00012e13e33aee7b3cc1501365b603cd49"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/ntjoin-1.0.4.x86_64_linux.bottle.tar.gz",
-            "sha256": "9c7b5396ee17176d074a4dcfdb0d31221f066068298bcccc615b959ed2557c9a"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/ntjoin-1.0.5.x86_64_linux.bottle.tar.gz",
+            "sha256": "c50f7fa87e732104f42f3f9d897bf23c487dc552d8c0269fe78f6f2183be5372"
           }
         }
       }
@@ -11973,7 +12847,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "nullarbor",
@@ -12046,7 +12924,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "nxtrim",
@@ -12109,7 +12991,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "oases",
@@ -12171,7 +13057,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "oma",
@@ -12183,13 +13073,13 @@
     "license": null,
     "homepage": "https://omabrowser.org/standalone/",
     "versions": {
-      "stable": "2.4.1",
+      "stable": "2.4.2",
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://omabrowser.org/standalone/OMA.2.4.1.tgz",
+        "url": "https://omabrowser.org/standalone/OMA.2.4.2.tgz",
         "tag": null,
         "revision": null
       }
@@ -12203,13 +13093,13 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
-          "mojave": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/oma-2.4.1.mojave.bottle.tar.gz",
-            "sha256": "8d9dc53917ab9fc923cb5f42650d4690ea919339082cc5df368b5927d5857db2"
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/oma-2.4.2.catalina.bottle.tar.gz",
+            "sha256": "729dcb8eb4c80b0c5a0609c6dde988435f104a08c74df0b2891bc1f382dde221"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/oma-2.4.1.x86_64_linux.bottle.tar.gz",
-            "sha256": "d41b7f1cf868eeb797170329bbad3a09faf5ab11e2fdee60e1bbb5507ce51388"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/oma-2.4.2.x86_64_linux.bottle.tar.gz",
+            "sha256": "43580d201fff38e760fc4109df638faef4e370ce7e75c88c3df07c9dc3312b5e"
           }
         }
       }
@@ -12237,7 +13127,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "orfm",
@@ -12302,7 +13196,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "paml",
@@ -12361,7 +13259,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "pandaseq",
@@ -12429,7 +13331,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "panito",
@@ -12495,7 +13401,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "parasail",
@@ -12561,7 +13471,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "parsnp",
@@ -12629,7 +13543,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "pathvisio",
@@ -12656,13 +13574,13 @@
     "version_scheme": 0,
     "bottle": {},
     "keg_only": false,
-    "bottle_disabled": true,
+    "bottle_disabled": false,
     "options": [],
     "build_dependencies": [
       "unzip"
     ],
     "dependencies": [
-      "adoptopenjdk"
+      "openjdk"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -12675,7 +13593,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "peat",
@@ -12741,7 +13663,77 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
+  },
+  {
+    "name": "percolator",
+    "full_name": "brewsci/bio/percolator",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Semi-supervised learning for peptide identification from shotgun proteomics data",
+    "license": "Apache-2.0 and BSD-2-Clause and BSD-3-Clause and MIT",
+    "homepage": "http://percolator.ms",
+    "versions": {
+      "stable": "3.05",
+      "head": null,
+      "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://github.com/percolator/percolator/archive/rel-3-05.tar.gz",
+        "tag": null,
+        "revision": null
+      }
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": "/home/linuxbrew/.linuxbrew/Cellar",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/percolator-3.05.catalina.bottle.tar.gz",
+            "sha256": "9946c885c0596ffdb1ddcd73ec4f9e93e780c87ab1a891541753f5cae22f3d09"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/percolator-3.05.x86_64_linux.bottle.tar.gz",
+            "sha256": "4b1a53dd1bed88db9b43b9ecf83cd708aa7704b7a4e77b7ec0a10d76c7f59d2a"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [
+      "boost",
+      "cmake"
+    ],
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": "Note: This version of percolator does not include XML support.\nTo install the full version on Mac OS, consult the official percolator Github\nrepository at https://github.com/percolator/percolator\n",
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false,
+    "deprecated": false,
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "phlawd",
@@ -12806,7 +13798,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "phylip",
@@ -12865,7 +13861,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "phylobayes",
@@ -12924,7 +13924,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "phyml",
@@ -12988,7 +13992,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "phyx",
@@ -13050,7 +14058,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "pilon",
@@ -13098,7 +14110,7 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "adoptopenjdk"
+      "openjdk"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -13111,7 +14123,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "pirate",
@@ -13181,7 +14197,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "porechop",
@@ -13242,7 +14262,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "portcullis",
@@ -13311,7 +14335,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "pplacer",
@@ -13372,7 +14400,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "prank",
@@ -13434,7 +14466,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "prokka",
@@ -13505,7 +14541,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "psmc",
@@ -13566,7 +14606,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "pullseq",
@@ -13630,7 +14674,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "pymol",
@@ -13662,6 +14710,10 @@
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/pymol-2.4.0.catalina.bottle.tar.gz",
+            "sha256": "43117639a4e1be67b1d1dc30c420be36b66addf95b0df57dd33d46d4b2082dbe"
+          },
           "x86_64_linux": {
             "url": "https://linuxbrew.bintray.com/bottles-bio/pymol-2.4.0.x86_64_linux.bottle.tar.gz",
             "sha256": "ce4f0acf8a97da25c6a67894a6afcb69c48a78497d4d3fd2e367b134c1785472"
@@ -13702,7 +14754,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "quast",
@@ -13764,7 +14820,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "quickmerge",
@@ -13825,7 +14885,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "quicktree",
@@ -13884,7 +14948,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "quip",
@@ -13946,7 +15014,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "r2r",
@@ -14007,7 +15079,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "r8s",
@@ -14068,7 +15144,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "racon",
@@ -14132,7 +15212,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "rails",
@@ -14195,7 +15279,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "rapidnj",
@@ -14256,7 +15344,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "raptor",
@@ -14268,15 +15360,15 @@
     "license": "BSD-3-Clause",
     "homepage": "https://github.com/seqan/raptor",
     "versions": {
-      "stable": "1.0.1",
+      "stable": "1.1.0",
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
         "url": "https://github.com/seqan/raptor",
-        "tag": "raptor-v1.0.1",
-        "revision": "6f2a0cc3cdc05f9311fea0081e644f37772a26bf"
+        "tag": "raptor-v1.1.0",
+        "revision": "f5fae1cbecc6d08446e75bb111f085b3cfac9ab6"
       }
     },
     "revision": 0,
@@ -14289,12 +15381,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/raptor-1.0.1.catalina.bottle.tar.gz",
-            "sha256": "8dde79c5a6b6a79286b02ba145174052dae9124d4b77feddf0546259c1f28d73"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/raptor-1.1.0.catalina.bottle.tar.gz",
+            "sha256": "def1790f20a7e914f8759d0168abefa8dbf8bb637a46e4abbbb8023aa7b453eb"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/raptor-1.0.1.x86_64_linux.bottle.tar.gz",
-            "sha256": "31d9b7147732688d898dfa1766a46338fc38652d813c226570bc22a3836f496f"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/raptor-1.1.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "4e8e33bfdaadf1621ea46807d3c4b9245ff734b6b3d71ab2e16c406b252fa5dd"
           }
         }
       }
@@ -14306,7 +15398,7 @@
       "cmake"
     ],
     "dependencies": [
-      "gcc@8",
+      "gcc@9",
       "bzip2",
       "zlib"
     ],
@@ -14321,7 +15413,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "rasusa",
@@ -14382,7 +15478,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "raven-assembler",
@@ -14443,7 +15543,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "raxml",
@@ -14511,7 +15615,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "rcorrector",
@@ -14573,7 +15681,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "realphy",
@@ -14623,7 +15735,7 @@
       "unzip"
     ],
     "dependencies": [
-      "adoptopenjdk"
+      "openjdk"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -14636,7 +15748,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "repaq",
@@ -14697,7 +15813,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "repeatmasker",
@@ -14764,7 +15884,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "rmblast",
@@ -14828,7 +15952,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "roary",
@@ -14902,7 +16030,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "rtg-tools",
@@ -14952,7 +16084,7 @@
       "unzip"
     ],
     "dependencies": [
-      "adoptopenjdk"
+      "openjdk"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -14965,7 +16097,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "salmid",
@@ -15026,7 +16162,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "salmon",
@@ -15097,7 +16237,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "sambamba",
@@ -15161,7 +16305,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "samblaster",
@@ -15220,7 +16368,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "samclip",
@@ -15279,7 +16431,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "sdsl-lite",
@@ -15340,7 +16496,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "sepp",
@@ -15390,7 +16550,7 @@
       "unzip"
     ],
     "dependencies": [
-      "adoptopenjdk",
+      "openjdk",
       "python"
     ],
     "recommended_dependencies": [],
@@ -15404,7 +16564,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "seq-gen",
@@ -15463,7 +16627,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "seqan@2",
@@ -15526,7 +16694,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "seqan@3",
@@ -15594,7 +16766,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "seqkit",
@@ -15653,7 +16829,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "sga",
@@ -15719,7 +16899,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "shovill",
@@ -15793,7 +16977,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "sibelia",
@@ -15857,7 +17045,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "simulate-pcr",
@@ -15922,7 +17114,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "ska",
@@ -15983,7 +17179,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "skesa",
@@ -16045,7 +17245,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "smalt",
@@ -16104,7 +17308,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "snap",
@@ -16163,7 +17371,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "snippy",
@@ -16240,7 +17452,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "snoscan",
@@ -16299,7 +17515,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "snp-dists",
@@ -16360,7 +17580,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "snp-sites",
@@ -16427,7 +17651,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "snpeff",
@@ -16477,7 +17705,7 @@
       "unzip"
     ],
     "dependencies": [
-      "adoptopenjdk"
+      "openjdk"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -16490,7 +17718,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "solexaqa",
@@ -16552,7 +17784,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "sortmerna",
@@ -16613,7 +17849,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "souporcell",
@@ -16674,7 +17914,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "squeakr",
@@ -16742,7 +17986,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "stacks",
@@ -16803,7 +18051,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "staden-io-lib",
@@ -16867,7 +18119,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "star-aligner",
@@ -16928,7 +18184,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "stringtie",
@@ -16989,7 +18249,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "subread",
@@ -17050,7 +18314,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "sumaclust",
@@ -17109,7 +18377,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "swipe",
@@ -17168,7 +18440,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "taxonkit",
@@ -17227,7 +18503,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "tbl2asn",
@@ -17291,7 +18571,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "tigmint",
@@ -17354,7 +18638,74 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
+  },
+  {
+    "name": "tmalign",
+    "full_name": "brewsci/bio/tmalign",
+    "oldname": null,
+    "aliases": [],
+    "versioned_formulae": [],
+    "desc": "Protein structure alignment algorithm based on the TM-score",
+    "license": "MIT",
+    "homepage": "https://zhanglab.ccmb.med.umich.edu/TM-align/",
+    "versions": {
+      "stable": "20190822",
+      "head": null,
+      "bottle": true
+    },
+    "urls": {
+      "stable": {
+        "url": "https://zhanglab.ccmb.med.umich.edu/TM-align/TMalign.cpp",
+        "tag": null,
+        "revision": null
+      }
+    },
+    "revision": 0,
+    "version_scheme": 0,
+    "bottle": {
+      "stable": {
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
+        "prefix": "/home/linuxbrew/.linuxbrew",
+        "root_url": "https://linuxbrew.bintray.com/bottles-bio",
+        "files": {
+          "catalina": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/tmalign-20190822.catalina.bottle.tar.gz",
+            "sha256": "3b1b24110784030937f12d3943b57a096f3c88573972597d0bd105f1a9690ec3"
+          },
+          "x86_64_linux": {
+            "url": "https://linuxbrew.bintray.com/bottles-bio/tmalign-20190822.x86_64_linux.bottle.tar.gz",
+            "sha256": "bcdbb8bef4985e3ce2efb7c1fea4e0222db5f7203cacad9d92ff29f2dc0cfb80"
+          }
+        }
+      }
+    },
+    "keg_only": false,
+    "bottle_disabled": false,
+    "options": [],
+    "build_dependencies": [],
+    "dependencies": [],
+    "recommended_dependencies": [],
+    "optional_dependencies": [],
+    "uses_from_macos": [],
+    "requirements": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "installed": [],
+    "linked_keg": null,
+    "pinned": false,
+    "outdated": false,
+    "deprecated": false,
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "transabyss",
@@ -17422,7 +18773,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "transdecoder",
@@ -17485,7 +18840,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "treepl",
@@ -17546,7 +18905,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "trf",
@@ -17590,7 +18953,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "trimadap",
@@ -17651,7 +19018,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "trimal",
@@ -17710,7 +19081,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "trimmomatic",
@@ -17760,7 +19135,7 @@
       "unzip"
     ],
     "dependencies": [
-      "adoptopenjdk"
+      "openjdk"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -17773,7 +19148,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "trinity",
@@ -17831,7 +19210,7 @@
       "brewsci/bio/salmon",
       "brewsci/bio/trimmomatic",
       "htslib",
-      "adoptopenjdk",
+      "openjdk",
       "samtools",
       "zlib"
     ],
@@ -17846,7 +19225,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "trnascan",
@@ -17907,7 +19290,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "unicycler",
@@ -17974,7 +19361,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "unikmer",
@@ -18033,7 +19424,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "uniqtag",
@@ -18077,7 +19472,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "varscan",
@@ -18104,11 +19503,11 @@
     "version_scheme": 0,
     "bottle": {},
     "keg_only": false,
-    "bottle_disabled": true,
+    "bottle_disabled": false,
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "adoptopenjdk"
+      "openjdk"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -18121,7 +19520,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "varsim",
@@ -18169,7 +19572,7 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "adoptopenjdk"
+      "openjdk"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -18182,7 +19585,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "vcf2phylip",
@@ -18243,7 +19650,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "vcflib",
@@ -18308,7 +19719,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "velvet",
@@ -18369,7 +19784,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "velvetoptimiser",
@@ -18432,7 +19851,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "verticalize",
@@ -18491,7 +19914,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "viennarna",
@@ -18553,7 +19980,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "virulign",
@@ -18614,7 +20045,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "vmatch",
@@ -18675,7 +20110,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "vt",
@@ -18736,7 +20175,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "webin-cli",
@@ -18784,7 +20227,7 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "adoptopenjdk"
+      "openjdk"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -18797,7 +20240,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "wiggletools",
@@ -18809,18 +20256,18 @@
     "license": null,
     "homepage": "https://github.com/Ensembl/WiggleTools",
     "versions": {
-      "stable": "1.2.3",
+      "stable": "1.2.7",
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/Ensembl/WiggleTools/archive/v1.2.3.tar.gz",
+        "url": "https://github.com/Ensembl/WiggleTools/archive/v1.2.7.tar.gz",
         "tag": null,
         "revision": null
       }
     },
-    "revision": 1,
+    "revision": 0,
     "version_scheme": 0,
     "bottle": {
       "stable": {
@@ -18830,11 +20277,11 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/wiggletools-1.2.3_1.catalina.bottle.1.tar.gz",
+            "url": "https://linuxbrew.bintray.com/bottles-bio/wiggletools-1.2.7.catalina.bottle.1.tar.gz",
             "sha256": "ebbd8e7c64cf65aabbdf7cdeefac77a1e905ad88c578b4192e333c6e48347d81"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/wiggletools-1.2.3_1.x86_64_linux.bottle.1.tar.gz",
+            "url": "https://linuxbrew.bintray.com/bottles-bio/wiggletools-1.2.7.x86_64_linux.bottle.1.tar.gz",
             "sha256": "8f7b446e085dee1e9ebed51632a31d663eb9236778830a615a6ed281b76f0233"
           }
         }
@@ -18862,7 +20309,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "wish",
@@ -18923,7 +20374,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "wtdbg2",
@@ -18990,7 +20445,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "xmatchview",
@@ -19055,7 +20514,11 @@
     "pinned": false,
     "outdated": false,
     "deprecated": false,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": null,
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   },
   {
     "name": "xssp",
@@ -19120,6 +20583,10 @@
     "pinned": false,
     "outdated": false,
     "deprecated": true,
-    "disabled": false
+    "deprecation_date": null,
+    "deprecation_reason": "has been replaced by brewsci/bio/dssp and brewsci/bio/hssp",
+    "disabled": false,
+    "disable_date": null,
+    "disable_reason": null
   }
 ]
