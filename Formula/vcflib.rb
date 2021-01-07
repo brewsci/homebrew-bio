@@ -11,6 +11,7 @@ class Vcflib < Formula
     sha256 "f10f5737f8ecb6bf5ba530d10a86bb7576843c7e49f401c6018e660cf8027001" => :x86_64_linux
   end
 
+  depends_on "cmake" => :build
   depends_on "gcc" if OS.mac?
   depends_on "python"
   depends_on "xz"
