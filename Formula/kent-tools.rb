@@ -5,6 +5,11 @@ class KentTools < Formula
   sha256 "3608689a07a6327f5695672a804ef5f35c9d680c114b0ee947ca2a4f3b768514"
   head "git://genome-source.cse.ucsc.edu/kent.git"
 
+  livecheck do
+    url "https://hgdownload.soe.ucsc.edu/admin/exe/"
+    regex(/href=.*?userApps[._-]v?(\d+)\.src\.t/i)
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     sha256 "8e1df6949537b6f6888f38705ff35348561815f4fe1a3b6c58e6c4d7e257c834" => :catalina
