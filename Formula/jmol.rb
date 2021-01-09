@@ -21,8 +21,11 @@ class Jmol < Formula
     end
     chmod 0755, "jmol.sh"
     bin.install "jmol.sh" => "jmol"
-    env = { JMOL_HOME: libexec }
-    env.merge! Language::Java.overridable_java_home_env
+    env = {
+      JMOL_HOME: libexec,
+      JAVA_HOME: Formula["openjdk"].opt_prefix,
+      PATH: "#{Formula["openjdk"].opt_bin}:$PATH",
+    }
     bin.env_script_all_files libexec/"bin", env
   end
 
