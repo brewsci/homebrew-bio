@@ -4,6 +4,12 @@ class Easel < Formula
   url "https://github.com/EddyRivasLab/easel/archive/easel-0.46.tar.gz"
   sha256 "6648ab45346c2cef4a5d4086de8e43e44f0c0f367cf92df08f4f9c88c179da42"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+    regex(%r{href=.*?/tag/easel[._-]v?(\d+(?:\.\d+)+)["' >]}i)
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
