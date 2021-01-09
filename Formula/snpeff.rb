@@ -6,6 +6,12 @@ class Snpeff < Formula
   version "4.3t"
   sha256 "d55a7389a78312947c1e7dadf5e6897b42d3c6e942e7c1b8ec68bb35d2ae2244"
 
+  livecheck do
+    url "https://sourceforge.net/projects/snpeff/files/"
+    strategy :page_match
+    regex(/href=.*?snpEff[._-]v?(\d+(?:[._-]\d+)+[a-z]?)[._-]core\.zip/i)
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
