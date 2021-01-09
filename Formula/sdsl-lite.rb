@@ -9,6 +9,11 @@ class SdslLite < Formula
     tag:      "v2.1.1"
   revision 2
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
