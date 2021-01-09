@@ -19,7 +19,7 @@ class Jmol < Formula
     else
       libexec.install Dir["*.jar"]
     end
-    bin.install "jmol.sh"
+    bin.install "jmol.sh" => "jmol"
     env = { JMOL_HOME: libexec }
     env.merge! Language::Java.overridable_java_home_env
     bin.env_script_all_files libexec/"bin", env
