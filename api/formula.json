@@ -211,13 +211,13 @@
     "license": null,
     "homepage": "https://github.com/bigdatagenomics/adam",
     "versions": {
-      "stable": "0.32.0",
+      "stable": "0.33.0",
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://search.maven.org/remotecontent?filepath=org/bdgenomics/adam/adam-distribution-spark3_2.12/0.32.0/adam-distribution-spark3_2.12-0.32.0-bin.tar.gz",
+        "url": "https://search.maven.org/remotecontent?filepath=org/bdgenomics/adam/adam-distribution-spark3_2.12/0.33.0/adam-distribution-spark3_2.12-0.33.0-bin.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -232,12 +232,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/adam-0.32.0.catalina.bottle.tar.gz",
-            "sha256": "907b6eae8a10b1c4502524fd3f23272971b8c073629e7e3ac52d028bfa3cb741"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/adam-0.33.0.catalina.bottle.tar.gz",
+            "sha256": "ea041d65c96d402165dd140e5bdda5c304905fada259009e995679904cf9183a"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/adam-0.32.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "5beb6730a2c4320c3570ee993d27e4e8bf53091854869b9f7986c5d34007d119"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/adam-0.33.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "d5e8054a38850a7c7d181f62c35c40d146b98339e29e22f7e4e7633bc3203a61"
           }
         }
       }
@@ -2743,13 +2743,13 @@
     "license": null,
     "homepage": "https://github.com/bigdatagenomics/cannoli",
     "versions": {
-      "stable": "0.10.0",
+      "stable": "0.11.1",
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://search.maven.org/remotecontent?filepath=org/bdgenomics/cannoli/cannoli-distribution-spark3_2.12/0.10.0/cannoli-distribution-spark3_2.12-0.10.0-bin.tar.gz",
+        "url": "https://search.maven.org/remotecontent?filepath=org/bdgenomics/cannoli/cannoli-distribution-spark3_2.12/0.11.1/cannoli-distribution-spark3_2.12-0.11.1-bin.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -2764,12 +2764,12 @@
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/cannoli-0.10.0.catalina.bottle.tar.gz",
-            "sha256": "85a5f347721f071b0b04122bb781f188fb595f260d14cac2bb00f6e4749dcd1e"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/cannoli-0.11.1.catalina.bottle.tar.gz",
+            "sha256": "716924507f69a2d5d0fa8b08e4b5434f78a3c99e70f8ef6fa0b3c1905569d23f"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/cannoli-0.10.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "dd93565b80fb944b9ecd016a4bf8e90373fc939cdf6d6f3db0df041c1f97a3f0"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/cannoli-0.11.1.x86_64_linux.bottle.tar.gz",
+            "sha256": "d080c149240aa7b000cc4b1e047a3850f86b48caf751f32ff445ee9ee5cb55ff"
           }
         }
       }
@@ -20256,13 +20256,13 @@
     "license": null,
     "homepage": "https://github.com/Ensembl/WiggleTools",
     "versions": {
-      "stable": "1.2.7",
+      "stable": "1.2.8",
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/Ensembl/WiggleTools/archive/v1.2.7.tar.gz",
+        "url": "https://github.com/Ensembl/WiggleTools/archive/v1.2.8.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -20271,18 +20271,18 @@
     "version_scheme": 0,
     "bottle": {
       "stable": {
-        "rebuild": 1,
+        "rebuild": 0,
         "cellar": ":any",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://linuxbrew.bintray.com/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/wiggletools-1.2.7.catalina.bottle.1.tar.gz",
-            "sha256": "ebbd8e7c64cf65aabbdf7cdeefac77a1e905ad88c578b4192e333c6e48347d81"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/wiggletools-1.2.8.catalina.bottle.tar.gz",
+            "sha256": "6a426c5c44bc2f8c2651e650f8502fa069b7eb86d696c35a5dbf82ca992461cf"
           },
           "x86_64_linux": {
-            "url": "https://linuxbrew.bintray.com/bottles-bio/wiggletools-1.2.7.x86_64_linux.bottle.1.tar.gz",
-            "sha256": "8f7b446e085dee1e9ebed51632a31d663eb9236778830a615a6ed281b76f0233"
+            "url": "https://linuxbrew.bintray.com/bottles-bio/wiggletools-1.2.8.x86_64_linux.bottle.tar.gz",
+            "sha256": "22cf764321e896b7ee0abab938892e460f37e7f543bd6f1e086c5e895070b4a2"
           }
         }
       }
