@@ -2,9 +2,13 @@ class Humann2 < Formula
   # cite Abubucker_2012: "https://doi.org/10.1371/journal.pcbi.1002358"
   desc "HMP Unified Metabolic Analysis Network"
   homepage "https://huttenhower.sph.harvard.edu/humann"
+  url "https://github.com/biobakery/humann/archive/2.8.2.tar.gz"
+  sha256 "feed2823a00523056c21c09a89d00a00bfb5e6e8caaaef7e24ba10309cccfb57"
+  license "MIT"
 
-  url "https://bitbucket.org/biobakery/humann2/get/0.11.1.tar.bz2"
-  sha256 "c84e98a486b995ad9a934f06d9ffd180d36e768d01b366ada98e31011510011a"
+  livecheck do
+    skip "2.x versions are no longer developed"
+  end
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
