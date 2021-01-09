@@ -35,10 +35,7 @@ class Phyx < Formula
 
   test do
     assert_match "Usage", shell_output("#{bin}/pxseqgen --help")
-    # This test times out for unknown reasons on CircleCI with Linux.
-    unless ENV["CIRCLECI"] && OS.linux?
-      system "#{bin}/pxseqgen", "-t", "#{pkgshare}/pxseqgen_example/seqgen_test.tre", "-o", "output.fa"
-      File.exist? "output.fa"
-    end
+    system "#{bin}/pxseqgen", "-t", "#{pkgshare}/pxseqgen_example/seqgen_test.tre", "-o", "output.fa"
+    assert_predicate testpath/"output.fa", :exist?
   end
 end
