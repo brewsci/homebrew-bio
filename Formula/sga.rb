@@ -7,6 +7,11 @@ class Sga < Formula
   revision 1
   head "https://github.com/jts/sga.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     sha256 "c557433d9f39a90ecdcc0eaccae50f590d1913d79faa23ed5625329ac61c348c" => :sierra
