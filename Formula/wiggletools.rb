@@ -2,16 +2,15 @@ class Wiggletools < Formula
   # cite Zerbino_2013: "https://doi.org/10.1093/bioinformatics/btt737"
   desc "Compute genome-wide statistics with composable iterators"
   homepage "https://github.com/Ensembl/WiggleTools"
-  url "https://github.com/Ensembl/WiggleTools/archive/v1.2.7.tar.gz"
-  sha256 "62eb04eed3f1be3b2adbcc7627cae44093680aa73a48f99d8621cfd85a92750c"
+  url "https://github.com/Ensembl/WiggleTools/archive/v1.2.8.tar.gz"
+  sha256 "0c2119480208ae09ea3eba249c1a3a69bcccbdb97dcd1fb2e55f3deee0404b73"
   head "https://github.com/Ensembl/WiggleTools.git"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
-    rebuild 1
-    sha256 "ebbd8e7c64cf65aabbdf7cdeefac77a1e905ad88c578b4192e333c6e48347d81" => :catalina
-    sha256 "8f7b446e085dee1e9ebed51632a31d663eb9236778830a615a6ed281b76f0233" => :x86_64_linux
+    sha256 "6a426c5c44bc2f8c2651e650f8502fa069b7eb86d696c35a5dbf82ca992461cf" => :catalina
+    sha256 "22cf764321e896b7ee0abab938892e460f37e7f543bd6f1e086c5e895070b4a2" => :x86_64_linux
   end
 
   depends_on "gsl"
