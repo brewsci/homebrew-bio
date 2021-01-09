@@ -6,6 +6,11 @@ class Bioperl < Formula
   sha256 "17aa3aaab2f381bbcaffdc370002eaf28f2c341b538068d6586b2276a76464a1"
   revision 3
 
+  livecheck do
+    url :stable
+    regex(/href=["']?BioPerl[._-]v?(\d+\.\d+(?:\.\d+)+(?:\.?_\d+)?)\.t/i)
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
