@@ -1,10 +1,9 @@
 class Jmol < Formula
-  desc "An open-source Java viewer for chemical structures in 3D."
-  homepage "http://jmol.sourceforge.net/"
-  license "LGPL 2.0"
+  desc "Open-source Java viewer for chemical structures in 3D"
+  homepage "https://jmol.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/jmol/Jmol/Version%2014.31/Jmol%2014.31.2/Jmol-14.31.2-binary.zip"
-  version "14.31.2"
-  sha256 "5a574b7e9b74d3bee5573bc9342a6ab1cdb849cbf08e81ac084e11cfb8721cae"
+  sha256 "d7135c117eb230c08c3f26fd5afff9bb446c9c05fc1e27d898e46b99c59944b5"
+  license "LGPL-2.1-or-later"
 
   head do
     url "https://svn.code.sf.net/p/jmol/code/trunk/Jmol"
@@ -14,14 +13,16 @@ class Jmol < Formula
   depends_on "openjdk"
 
   def install
-    system "ant" if build.head?
-    (bin/"jmol").write <<~EOS
-      #!/bin/sh
-      JMOL_HOME=#{prefix} exec #{prefix}/jmol.sh "$*"
-    EOS
-    chmod 0755, "jmol.sh"
-    prefix.install "jmol.sh", Dir["*.jar"]
-    prefix.install Dir["build/*.jar"] if build.head?
+    if build.head?
+      system "ant"
+      libexec.install Dir["build/*.jar"]
+    else
+      libexec.install Dir["*.jar"]
+    end
+    bin.install "jmol.sh"
+    env = { JMOL_HOME: libexec }
+    env.merge! Language::Java.overridable_java_home_env
+    bin.env_script_all_files libexec/"bin", env
   end
 
   test do
