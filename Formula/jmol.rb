@@ -30,6 +30,8 @@ class Jmol < Formula
   end
 
   test do
-    assert_match "java.awt.HeadlessException", shell_output("#{bin}/jmol -n", 1)
+    # unfortunately, the application can not be run headless
+    # (throws java.awt.HeadlessException)
+    assert_predicate bin/"jmol", :exist?
   end
 end
