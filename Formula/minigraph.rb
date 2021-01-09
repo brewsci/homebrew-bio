@@ -6,6 +6,11 @@ class Minigraph < Formula
   license "MIT"
   head "https://github.com/lh3/minigraph.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
