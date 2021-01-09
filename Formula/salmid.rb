@@ -6,6 +6,11 @@ class Salmid < Formula
   license "MIT"
   version_scheme 1
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
