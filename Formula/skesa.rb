@@ -5,6 +5,12 @@ class Skesa < Formula
   url "https://github.com/ncbi/SKESA/archive/2.4.0.tar.gz"
   sha256 "c07b56dfa394c013e519d5a246b7dee03db41d8ac912ab9ca02cf4d20bf13b15"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+    regex(%r{href=.*?/tag/(?:skesa[._-])?v?(\d+(?:\.\d+)+[a-z]?)(?:[._-]|["' >])}i)
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
