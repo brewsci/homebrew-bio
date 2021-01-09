@@ -24,14 +24,12 @@ class Jmol < Formula
     env = {
       JMOL_HOME: libexec,
       JAVA_HOME: Formula["openjdk"].opt_prefix,
-      PATH: "#{Formula["openjdk"].opt_bin}:$PATH",
+      PATH:      "#{Formula["openjdk"].opt_bin}:$PATH",
     }
     bin.env_script_all_files libexec/"bin", env
   end
 
   test do
-    # unfortunately, the application can not be run headless
-    # (throws java.awt.HeadlessException), but this should work otherwise
-    system "jmol", "-n"
+    assert_match "java.awt.HeadlessException", shell_output("#{bin}/jmol -n", 1)
   end
 end
