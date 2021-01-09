@@ -6,6 +6,11 @@ class Minimap2 < Formula
   sha256 "b68ac8882d33cc63e9e3246775062aeb159b6990ff7f38099172c3fe6f8a2742"
   head "https://github.com/lh3/minimap2.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
