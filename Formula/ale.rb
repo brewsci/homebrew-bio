@@ -7,6 +7,15 @@ class Ale < Formula
   sha256 "123457834c173f10710a0b4c2fcefd8c6fa62af11f6ad311f199c242c49e8f68"
   head "https://github.com/sc932/ALE.git"
 
+  livecheck do
+    url :stable
+    regex(%r{href=.*?/tag/(\d{8})["' >]}i)
+    strategy :github_latest do |page, regex|
+      version = page[regex, 1]
+      version.present? ? "0.0.#{version}" : []
+    end
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
