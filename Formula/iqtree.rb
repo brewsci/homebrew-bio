@@ -7,6 +7,10 @@ class Iqtree < Formula
   license "GPL-2.0"
   version_scheme 1
 
+  livecheck do
+    skip "1.x versions are no longer developed"
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
