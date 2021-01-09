@@ -8,6 +8,12 @@ class Kat < Formula
   revision 3
   head "https://github.com/TGAC/KAT.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+    regex(%r{href=.*?/tag/Release[._-]v?(\d+(?:\.\d+)+)["' >]}i)
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     sha256 "395fea7e48ae8295cd51387cb11537c67586bbfe7912f27a5b56eb0620980f92" => :catalina
