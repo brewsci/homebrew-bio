@@ -7,6 +7,12 @@ class Treepl < Formula
   sha256 "a974497f3abfbc4d6671f0bf5ea2001ad09c03ccc8d9d3d77bb800269241c59c"
   head "https://github.com/blackrim/treePL.git"
 
+  livecheck do
+    url "https://github.com/blackrim/treePL/commits"
+    strategy :page_match
+    regex(/datetime=.*?(\d{4}-\d{2}-\d{2})T/i)
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any
