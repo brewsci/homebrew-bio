@@ -5,6 +5,12 @@ class Bodr < Formula
   sha256 "738a0f0e263cdc088581d0a67a0ea16ec586ceb424704d0ff73bdb5da5d4ee81"
   license "CC0-1.0"
 
+  livecheck do
+    url "https://sourceforge.net/projects/bodr/files/bodr/"
+    strategy :page_match
+    regex(%r{href=.*?bodr/v?(\d+)/?["' >]}i)
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
