@@ -5,6 +5,8 @@ class Gfaview < Formula
   version "0.0.53"
   sha256 "0f12908a48ad7d9b3fd7b9b32d0d3c8fa2c672c14317085c7a5fb96aef18a4b5"
 
+  deprecate! date: "2021-01-09", because: :repo_archived
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
