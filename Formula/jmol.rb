@@ -5,6 +5,13 @@ class Jmol < Formula
   sha256 "d7135c117eb230c08c3f26fd5afff9bb446c9c05fc1e27d898e46b99c59944b5"
   license "LGPL-2.1-or-later"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any_skip_relocation
+    sha256 "d020951d5998754f470349628a43d786ed184a756429283f4c11340d5e5427d1" => :catalina
+    sha256 "60347d4d3849260c8d921e6e5da181ce9c3bc36b7bb9cad2ad8ea9b785f9c166" => :x86_64_linux
+  end
+
   head do
     url "https://svn.code.sf.net/p/jmol/code/trunk/Jmol"
     depends_on "ant" => :build
