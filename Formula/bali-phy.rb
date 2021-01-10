@@ -8,6 +8,11 @@ class BaliPhy < Formula
   license "GPL-2.0"
   head "https://github.com/bredelings/BAli-Phy.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation

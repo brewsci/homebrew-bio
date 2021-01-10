@@ -8,6 +8,11 @@ class Vt < Formula
   revision 2
   head "https://github.com/atks/vt.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any

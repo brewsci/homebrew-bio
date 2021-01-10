@@ -7,6 +7,11 @@ class Bmdca < Formula
   sha256 "542991c51ba1e9d74b500e09e80d43f716fe4214a24d71f580a24df667762049"
   license "GPL-3.0-only"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any

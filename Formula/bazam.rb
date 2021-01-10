@@ -6,6 +6,11 @@ class Bazam < Formula
   sha256 "396e584c95e2184025f9b9eca7377c376894f3afb4572856387866ab59c741e8"
   license "LGPL-2.1"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation

@@ -7,6 +7,11 @@ class Bfc < Formula
   sha256 "4f510557ea5fb9ed179bc21d9ffc85c0ae346525b56e3b72bf6204d64f6bfb8b"
   license "MIT"
 
+  livecheck do
+    url "https://raw.githubusercontent.com/lh3/bfc/master/bfc.c"
+    regex(/^#define BFC_VERSION "(r\d+)"$/i)
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation

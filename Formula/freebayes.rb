@@ -8,6 +8,11 @@ class Freebayes < Formula
   license "MIT"
   head "https://github.com/ekg/freebayes.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any

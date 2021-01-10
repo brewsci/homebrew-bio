@@ -6,6 +6,12 @@ class Fasta < Formula
   version "36.3.8h"
   sha256 "916b327ac996151c808bd7066dea59c4ecb6035fc27c27fa8f011d49548867d6"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+    regex(%r{href=.*?/tag/(?:fasta[._-])?v?(\d+(?:\.\d+)+[a-z]?)(?:[._-]|["' >])}i)
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation

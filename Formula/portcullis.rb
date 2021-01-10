@@ -9,6 +9,11 @@ class Portcullis < Formula
   revision 1
   head "https://github.com/maplesond/portcullis.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     sha256 "52b593d877a74a1268a9bb75e40dc9fcd3ecc5e197d84dffec2fc01c0ec4bd79" => :sierra

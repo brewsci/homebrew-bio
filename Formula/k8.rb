@@ -4,6 +4,11 @@ class K8 < Formula
   url "https://github.com/attractivechaos/k8/releases/download/0.2.5/k8-0.2.5.tar.bz2"
   sha256 "a937ac44532e042cd89ac743647b592c21cfcf31679e39e5f362e81034d93d18"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
