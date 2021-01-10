@@ -6,6 +6,15 @@ class Trimadap < Formula
   sha256 "0aad29cc8f2fb65b464785b5787a29c0e0a6eab59f08eea82dffe15165151d4f"
   head "https://github.com/lh3/trimadap.git"
 
+  livecheck do
+    url "https://raw.githubusercontent.com/lh3/trimadap/master/trimadap-mt.c"
+    regex(/^#define VERSION "r(\d+)"$/i)
+    strategy :page_match do |page, regex|
+      version = page[regex, 1]
+      version.present? ? "0.1.#{version}" : []
+    end
+  end
+
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
