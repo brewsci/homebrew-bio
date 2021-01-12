@@ -12,6 +12,7 @@ class Vcflib < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "pkg-config" => :build
   depends_on "gcc" if OS.mac?
   depends_on "python"
   depends_on "xz"
