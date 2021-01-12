@@ -21,9 +21,15 @@ class Vcflib < Formula
   uses_from_macos "bzip2"
   uses_from_macos "perl"
   uses_from_macos "zlib"
+  
+  resource "tabixpp" do
+    url "https://github.com/ekg/tabixpp/archive/v1.1.0.tar.gz"
+    sha256 "56c8f1b07190aba5e1d0b738e380e726d380f0ad8b2d0df133200b0ab1f8ed88"
+  end
 
   def install
-    system "make"
+    (buildpath/"tabixpp").install resource("tabixpp")
+    system "make", "CMAKE_FLAGS=-DCMAKE_CXX_FLAGS=-I#{buildpath}/tabixpp"
     pkgshare.install Dir["bin/*.R"]
     pkgshare.install Dir["bin/*.r"]
     rm Dir["bin/*.R"]
