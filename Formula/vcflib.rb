@@ -2,7 +2,7 @@ class Vcflib < Formula
   desc "Command-line tools for manipulating VCF files"
   homepage "https://github.com/ekg/vcflib"
   url "https://github.com/ekg/vcflib.git",
-    tag: "v1.0.2",
+    tag:      "v1.0.2",
     revision: "da9929c00938b1d1b042e8ce42514211ef34875d"
 
   bottle do
