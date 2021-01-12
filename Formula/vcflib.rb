@@ -2,7 +2,8 @@ class Vcflib < Formula
   desc "Command-line tools for manipulating VCF files"
   homepage "https://github.com/ekg/vcflib"
   url "https://github.com/ekg/vcflib.git",
-    tag: "v1.0.2", revision: "da9929c00938b1d1b042e8ce42514211ef34875d"
+    tag: "v1.0.2",
+    revision: "da9929c00938b1d1b042e8ce42514211ef34875d"
 
   bottle do
     cellar :any_skip_relocation
@@ -13,15 +14,13 @@ class Vcflib < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "gcc" if OS.mac?
+  depends_on "htslib"
   depends_on "python"
   depends_on "xz"
 
   uses_from_macos "bzip2"
   uses_from_macos "perl"
   uses_from_macos "zlib"
-
-  fails_with :clang # error: ordered comparison between pointer and zero
 
   def install
     system "make"
