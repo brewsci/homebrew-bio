@@ -11,7 +11,7 @@ class Simpleitk < Formula
   def install
     # Superbuild does only work in an out-of-source build, create a new folder
     mkdir "../SimpleITK-build" do
-      system "cmake", "../SimpleITK-2.0.2/SuperBuild"
+      system "cmake", "../SimpleITK-2.0.2/SuperBuild", "-DCMAKE_POLICY_DEFAULT_CMP0114=NEW"
     end
   end
 
