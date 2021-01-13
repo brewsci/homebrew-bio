@@ -10,6 +10,8 @@ class Simpleitk < Formula
   def install
     # Superbuild does only work in an out-of-source build, create a new folder
     mkdir "SimpleITK-build" do
+      system "pwd"
+      system "ls"
       system "cmake", "../SuperBuild/"
     end
   end
