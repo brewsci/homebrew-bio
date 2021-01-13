@@ -1,4 +1,4 @@
-class SimpleITK < Formula
+class Simpleitk < Formula
   desc "Simplified layer built on top of ITK"
   homepage "https://simpleitk.org/"
   url "https://github.com/SimpleITK/SimpleITK/releases/download/v2.0.2/SimpleITK-2.0.2.tar.gz"
