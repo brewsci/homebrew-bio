@@ -1,0 +1,40 @@
+name: update-tracker
+
+on:
+  pull_request:
+    branches:
+      - develop
+    types: [closed]
+  workflow_dispatch:
+    inputs:
+      formula_name:
+        description: 'Formula name'
+        required: true
+        default: ''
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+
+    if: github.event.pull_request.merged == true && contains( github.event.pull_request.labels.*.name, 'new formula')
+    steps:
+    - name: Get formula name
+      uses: actions/github-script@v3
+      with:
+        script: |
+          let formulaName = core.getInput('formula_name');
+          if (formulaName === '') {
+              formulaName = github.event.head_commit.message.split(' ')[0];
+          }
+          const comment = `
+          🎉 New formula ${formulaName} in Brewsci/bio for Linux and macOS!
+          🍺 brew install brewsci/bio/${formulaName}
+          <!-- 🏡 project website -->
+          <!-- 📖 project DOI link -->
+          `
+          github.issues.createComment({
+              issue_number: 1,
+              // owner: context.repo.owner,
+              // repo: context.repo.repo,
+              body: comment,
+          })
