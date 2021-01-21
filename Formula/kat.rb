@@ -25,12 +25,8 @@ class Kat < Formula
   depends_on "libtool" => :build
 
   depends_on "brewsci/bio/matplotlib"
+  depends_on "numpy"
   depends_on "scipy"
-
-  resource "tabulate" do
-    url "https://files.pythonhosted.org/packages/1c/a1/3367581782ce79b727954f7aa5d29e6a439dc2490a9ac0e7ea0a7115435d/tabulate-0.7.7.tar.gz"
-    sha256 "83a0b8e17c09f012090a50e1e97ae897300a72b35e0c86c0b53d3bd2ae86d8c6"
-  end
 
   def install
     # Disable unsupported compiler flags on macOS
@@ -40,12 +36,6 @@ class Kat < Formula
     ] do |s|
       s.gsub! "-fcoalesce-templates", ""
       s.gsub! "-Wno-long-double", ""
-    end
-
-    resources.each do |r|
-      r.stage do
-        system "python3", *Language::Python.setup_install_args(libexec)
-      end
     end
 
     system "./build_boost.sh"
