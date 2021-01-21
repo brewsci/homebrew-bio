@@ -37,8 +37,13 @@ class Jmol < Formula
   end
 
   test do
-    # unfortunately, the application can not be run headless
-    # (throws java.awt.HeadlessException)
-    assert_predicate bin/"jmol", :exist?
+    on_macos do
+      assert_match version.to_s, shell_output("#{bin}/jmol -n")
+    end
+
+    on_linux do
+      # unfortunately, the application can not be run headless
+      assert_match "java.awt.HeadlessException", shell_output("#{bin}/jmol -n 2>&1", 1) if ENV["CI"]
+    end
   end
 end
