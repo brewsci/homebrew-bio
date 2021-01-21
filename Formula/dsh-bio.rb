@@ -17,7 +17,13 @@ class DshBio < Formula
   def install
     rm Dir["bin/*.bat"] # Remove all windows files
     libexec.install Dir["*"]
-    bin.write_exec_script Dir["#{libexec}/bin/*"]
+    Dir["#{libexec}/bin/*"].each do |exe|
+      (bin/exe.basename).write <<~EOS
+        #!/bin/bash
+        export JAVA_HOME="${JAVA_HOME:-#{Formula["openjdk"].opt_prefix}}"
+        exec "#{exe}" "$@"
+      EOS
+    end
   end
 
   test do
