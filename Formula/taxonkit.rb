@@ -15,8 +15,8 @@ class Taxonkit < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
     cellar :any_skip_relocation
-    sha256 "1003d7128892ceb220db276f3ff63f39df885282c297aaba0661150f4896b6a8" => :catalina
-    sha256 "08741bc649f65882a787119ca61eb53db8ad6da4ad8a03e86664e1ce6d62af65" => :x86_64_linux
+    sha256 "4fffd2577fdfa919527f9809ad2cd9df282f4b7478f8f59609795118d4bb3760" => :catalina
+    sha256 "1daf3375212b879b155ba096e5d5cede503591692bbdc9f90d68a268a36e8371" => :x86_64_linux
   end
 
   def install
