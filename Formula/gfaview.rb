@@ -12,6 +12,7 @@ class Gfaview < Formula
     sha256 "d1937935c3ac96c9cc46ed1b2186c2d3968d99d648890c65fc9eb17e1d44721f" => :x86_64_linux
   end
 
+  # See https://github.com/brewsci/homebrew-bio/pull/1242
   deprecate! date: "2021-01-09", because: :repo_archived
 
   uses_from_macos "zlib"
