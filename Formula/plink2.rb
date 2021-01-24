@@ -7,6 +7,13 @@ class Plink2 < Formula
   sha256 "e00ef16ac5abeb6b4c4d77846bd655fafc62669fbebf8cd2e941f07b3111907e"
   head "https://github.com/chrchang/plink-ng.git"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    cellar :any
+    sha256 "5c6ac77111c1eeeab30af40e8a1c14391a182a10e2535f9ebe0a58ee62f70828" => :catalina
+    sha256 "23f851b712db8ddf8e5587623b12599833c288aca026fa4790ee5384f0a870ba" => :x86_64_linux
+  end
+
   depends_on "openblas"
   uses_from_macos "zlib"
 
