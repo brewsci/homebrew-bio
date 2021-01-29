@@ -16,8 +16,9 @@ class Kat < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "395fea7e48ae8295cd51387cb11537c67586bbfe7912f27a5b56eb0620980f92" => :catalina
-    sha256 "5006a1a39cff6a90bd40c279853eb99e2366e5002614136f6a427c075a813810" => :x86_64_linux
+    rebuild 1
+    sha256 catalina: "3de60b22d45daa5e28f03bb4f577c1ff14409f46f3fddb19407737b42e8392df"
+    sha256 x86_64_linux: "232a183bdce0f0a9565fc39aacf8cfe4ec019e4c86cf6f64a9177e96ca64bbd2"
   end
 
   depends_on "autoconf" => :build
