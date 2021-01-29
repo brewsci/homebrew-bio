@@ -3,8 +3,8 @@ class Matplotlib < Formula
 
   desc "Python 2D plotting library"
   homepage "https://matplotlib.org"
-  url "https://files.pythonhosted.org/packages/7b/b3/7c48f648bf83f39d4385e0169d1b68218b838e185047f7f613b1cfc57947/matplotlib-3.3.3.tar.gz"
-  sha256 "b1b60c6476c4cfe9e5cf8ab0d3127476fd3d5f05de0f343a452badaad0e4bdec"
+  url "https://files.pythonhosted.org/packages/22/d4/e7ca532e68a9357742604e1e4ae35d9c09a4a810de39a9d80402bd12f50f/matplotlib-3.3.4.tar.gz"
+  sha256 "3e477db76c22929e4c6876c44f88d790aacdf3c3f8f3a90cb1975c0bf37825b0"
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
