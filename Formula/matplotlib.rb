@@ -8,8 +8,8 @@ class Matplotlib < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "609aaf08da967a0a7729bfb9502f29f9303617154612195f0b2100c4dd2797a7" => :catalina
-    sha256 "d118af398ad5341b4eb16f3e44195ceae12295311a819b6e0c6b14e8558c2c52" => :x86_64_linux
+    sha256 cellar: :any, catalina: "9bf624c16d6330f4bcebaba5411ae116d012f6903c36eebc0b6d7e48f275f281"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ec088b401c215bdfbb7a3387b27c7cb931b9b368f1ac23e963c43b94dfa152e0"
   end
 
   depends_on "libjpeg"      # Pillow
