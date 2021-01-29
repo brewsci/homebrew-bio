@@ -43,6 +43,10 @@ class Kat < Formula
       s.gsub! "-Wno-long-double", ""
     end
 
+    resource("tabulate").stage do
+      system "python3", *Language::Python.setup_install_args(libexec)
+    end
+
     system "./build_boost.sh"
     system "./autogen.sh"
     system "./configure",
