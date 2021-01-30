@@ -24,6 +24,7 @@ class Kat < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
 
+  depends_on "boost"
   depends_on "brewsci/bio/matplotlib"
   depends_on "numpy"
   depends_on "scipy"
@@ -43,13 +44,20 @@ class Kat < Formula
       s.gsub! "-Wno-long-double", ""
     end
 
+    # Use Homebrew boost
+    boost = Formula["boost"]
+    inreplace "lib/Makefile.am", "$(top_builddir)/deps/boost/build/lib", boost.opt_lib
+    inreplace ["src/Makefile.am", "tests/Makefile.am"] do |s|
+      s.gsub! "$(top_builddir)/deps/boost/build/lib", boost.opt_lib
+      s.gsub! "$(top_srcdir)/deps/boost/build/include", boost.opt_include
+    end
+
     xy = Language::Python.major_minor_version "python3"
     ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python#{xy}/site-packages"
     resource("tabulate").stage do
       system "python3", *Language::Python.setup_install_args(libexec/"vendor")
     end
 
-    system "./build_boost.sh"
     system "./autogen.sh"
     system "./configure",
       "--disable-silent-rules",
