@@ -24,10 +24,8 @@ class Arcs < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "gcc@9" # needs openmp
+    depends_on "libomp"
   end
-
-  fails_with :clang # needs openmp
 
   def install
     system "./autogen.sh" if build.head?
