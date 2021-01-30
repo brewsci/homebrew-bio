@@ -2,8 +2,8 @@ class Gemma < Formula
   # cite Zhou_2012: "http://dx.doi.org/10.1038/ng.2310"
   desc "Linear mixed models (LMMs) for genome-wide association (GWA)"
   homepage "https://github.com/genetics-statistics/gemma"
-  url "https://github.com/genetics-statistics/GEMMA/archive/0.98.1.tar.gz"
-  sha256 "6beeed4a9e727a96fdea9e86e39bbe9cbc9f0540ad3a1053814e95b0863a7e6b"
+  url "https://github.com/genetics-statistics/GEMMA/archive/v0.98.4.tar.gz"
+  sha256 "4f57a045d3289afaf31f818bf411ac46c5ee6f78ff8c9c4117963ca54e0bb9f0"
   license "GPL-3.0"
 
   livecheck do
