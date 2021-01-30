@@ -1,4 +1,6 @@
 class Kat < Formula
+  include Language::Python::Virtualenv
+
   # cite Mapleson_2016: "https://doi.org/10.1093/bioinformatics/btw663"
   desc "K-mer Analysis Toolkit (KAT) analyses k-mer spectra"
   homepage "https://github.com/TGAC/KAT"
@@ -51,20 +53,23 @@ class Kat < Formula
       s.gsub! "$(top_srcdir)/deps/boost/build/include", boost.opt_include
     end
 
+    venv = virtualenv_create(libexec/"vendor", "python3")
+    venv.pip_install resources
+
     xy = Language::Python.major_minor_version "python3"
     ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python#{xy}/site-packages"
-    resource("tabulate").stage do
-      system "python3", *Language::Python.setup_install_args(libexec/"vendor")
-    end
 
     system "./autogen.sh"
     system "./configure",
       "--disable-silent-rules",
-      "--disable-dependency-tracking",
       "--disable-pykat-install",
-      "--prefix=#{prefix}"
+      *std_configure_args
     system "make"
     system "make", "install"
+
+    matplotlib = Formula["brewsci/bio/matplotlib"]
+    ENV.prepend_create_path "PYTHONPATH", matplotlib.opt_libexec/"lib/python#{xy}/site-packages"
+    bin.env_script_all_files libexec, PYTHONPATH: ENV["PYTHONPATH"]
   end
 
   test do
