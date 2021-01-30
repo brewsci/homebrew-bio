@@ -43,8 +43,10 @@ class Kat < Formula
       s.gsub! "-Wno-long-double", ""
     end
 
+    xy = Language::Python.major_minor_version "python3"
+    ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python#{xy}/site-packages"
     resource("tabulate").stage do
-      system "python3", *Language::Python.setup_install_args(libexec)
+      system "python3", *Language::Python.setup_install_args(libexec/"vendor")
     end
 
     system "./build_boost.sh"
