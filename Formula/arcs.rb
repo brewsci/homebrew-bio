@@ -28,6 +28,11 @@ class Arcs < Formula
   end
 
   def install
+    on_macos do
+      ENV.append "LDFLAGS", "-L#{Formula["libomp"].opt_lib} -lomp"
+      ENV.append "CPPFLAGS", "-I#{HOMEBREW_PREFIX}/include -Xpreprocessor -fopenmp -lomp"
+    end
+
     system "./autogen.sh" if build.head?
     system "./configure",
       "--disable-dependency-tracking",
