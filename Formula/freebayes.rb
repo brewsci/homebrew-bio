@@ -3,8 +3,8 @@ class Freebayes < Formula
   desc "Bayesian variant discovery and genotyping"
   homepage "https://github.com/ekg/freebayes"
   url "https://github.com/ekg/freebayes.git",
-      tag:      "v1.3.2",
-      revision: "54bf40915ae7e46798503471ac57f593efdb5493"
+      tag:      "v1.3.4",
+      revision: "972a37a6f365ee5ba507d1c76924fff59b36fd54"
   license "MIT"
   head "https://github.com/ekg/freebayes.git"
 
