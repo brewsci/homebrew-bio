@@ -21,10 +21,9 @@ class Bbtools < Formula
     end
     prefix.install %w[current jni resources]
     # shell scripts look for ./{current,jni,resources} files, so keep shell scripts
-    # in ./#{prefix} but place symlinks in the ../bin dir for brew to export #{bin}
-    bin.mkpath
-    prefix.install Dir["*.sh"]
-    bin.install_symlink Dir["#{prefix}/*.sh"]
+    # in #{prefix} but place symlinks in the ../bin dir for brew to export #{bin}
+    bin.install Dir["*.sh"]
+    bin.env_script_all_files prefix, JAVA_HOME: "${JAVA_HOME:-#{Formula["openjdk"].opt_prefix}}"
     doc.install %w[license.txt README.md docs/changelog.txt docs/Legal.txt docs/readme.txt docs/ToolDescriptions.txt]
   end
 
