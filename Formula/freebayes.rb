@@ -39,13 +39,6 @@ class Freebayes < Formula
     # Reported 21 Jul 2014 https://github.com/ekg/freebayes/issues/83
     inreplace "vcflib/smithwaterman/Makefile", "-Wl,-s", "" if OS.mac?
 
-    # Fixes bug ../vcflib/scripts/vcffirstheader: file not found
-    # Reported 1 Apr 2017 https://github.com/ekg/freebayes/issues/376
-    inreplace "scripts/freebayes-parallel" do |s|
-      s.gsub! "../vcflib/scripts/vcffirstheader", "vcffirstheader"
-      s.gsub! "../vcflib/bin/vcfstreamsort", "vcfstreamsort"
-    end
-
     system "make"
 
     bin.install "bin/freebayes"
