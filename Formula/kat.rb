@@ -28,7 +28,7 @@ class Kat < Formula
   depends_on "brewsci/bio/matplotlib"
   depends_on "numpy"
   depends_on "scipy"
-  
+
   resource "tabulate" do
     url "https://files.pythonhosted.org/packages/57/6f/213d075ad03c84991d44e63b6516dd7d185091df5e1d02a660874f8f7e1e/tabulate-0.8.7.tar.gz"
     sha256 "db2723a20d04bcda8522165c73eea7c300eda74e0ce852d9022e0159d7895007"
@@ -44,7 +44,6 @@ class Kat < Formula
       s.gsub! "-Wno-long-double", ""
     end
 
-    # Use Homebrew boost
     boost = Formula["boost"]
     inreplace "lib/Makefile.am", "$(top_builddir)/deps/boost/build/lib", boost.opt_lib
     inreplace ["src/Makefile.am", "tests/Makefile.am"] do |s|
