@@ -7,8 +7,8 @@ class Jmol < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 cellar: :any_skip_relocation, catalina: "dd9142c72f77f5e059237016431c94501b06c1e9c3a0d497f2f5ff5aabcc38bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ff7e125e752c0edca5d7176d41c8070bce367beb09651de0eec81f820f75f5b0"
+    sha256 cellar: :any_skip_relocation, catalina: "fd7d18ef8ceeb0cb2d2a7fe6abeef12c231631cb203131e0ddabdeb633d155b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5061f8b6bc9fac4da7709ecb4efab366426ba9da9ee5f2412c297323256676ad"
   end
 
   head do
