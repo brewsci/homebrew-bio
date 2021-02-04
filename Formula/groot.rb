@@ -13,9 +13,8 @@ class Groot < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "d68dae4fdc75db0240dac1235294e34aaa5cee4437228c0a97220993ffe56a62" => :catalina
-    sha256 "57339d9d43a15d769de59a51ea39d6c8212763babd978e5ca135fd86bc9b2af4" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, catalina:     "d68dae4fdc75db0240dac1235294e34aaa5cee4437228c0a97220993ffe56a62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "57339d9d43a15d769de59a51ea39d6c8212763babd978e5ca135fd86bc9b2af4"
   end
 
   def install

@@ -8,9 +8,8 @@ class HhSuite < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "cf7755f126cea9f05843022ec5b7e7d193722c568bbecd3bc41f88ac7d32ac28" => :catalina
-    sha256 "5a573d69a999513ead717a21b8d0bca07889c174bb1431bb74f4aa05ff879f48" => :x86_64_linux
+    sha256 cellar: :any, catalina:     "cf7755f126cea9f05843022ec5b7e7d193722c568bbecd3bc41f88ac7d32ac28"
+    sha256 cellar: :any, x86_64_linux: "5a573d69a999513ead717a21b8d0bca07889c174bb1431bb74f4aa05ff879f48"
   end
 
   depends_on "cmake" => :build

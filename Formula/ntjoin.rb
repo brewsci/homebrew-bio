@@ -9,8 +9,8 @@ class Ntjoin < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "0a506472405b5e9eb6a61526628b1f00012e13e33aee7b3cc1501365b603cd49" => :catalina
-    sha256 "c50f7fa87e732104f42f3f9d897bf23c487dc552d8c0269fe78f6f2183be5372" => :x86_64_linux
+    sha256 catalina:     "0a506472405b5e9eb6a61526628b1f00012e13e33aee7b3cc1501365b603cd49"
+    sha256 x86_64_linux: "c50f7fa87e732104f42f3f9d897bf23c487dc552d8c0269fe78f6f2183be5372"
   end
 
   depends_on "bedtools"

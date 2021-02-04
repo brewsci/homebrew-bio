@@ -8,9 +8,8 @@ class Consel < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "a27d35514c4c834befc6bf71f9beb91a09369190c73830c34f6fecba817857be" => :sierra
-    sha256 "d8a7fd3a42022107b4fd61b490be3cfbc2248ccae15fd580853ab705ad9b6e2b" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, sierra:       "a27d35514c4c834befc6bf71f9beb91a09369190c73830c34f6fecba817857be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d8a7fd3a42022107b4fd61b490be3cfbc2248ccae15fd580853ab705ad9b6e2b"
   end
 
   def install

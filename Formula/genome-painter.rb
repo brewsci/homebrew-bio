@@ -8,9 +8,8 @@ class GenomePainter < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "2863469c5132cfcc1a47fdaff7539bb3454534e222b98c75dc919db08b07f002" => :catalina
-    sha256 "0c2f781971f00a75841e3a3d1813665374d89eb8d4adad5bf87cde385fd5bf95" => :x86_64_linux
+    sha256 cellar: :any, catalina:     "2863469c5132cfcc1a47fdaff7539bb3454534e222b98c75dc919db08b07f002"
+    sha256 cellar: :any, x86_64_linux: "0c2f781971f00a75841e3a3d1813665374d89eb8d4adad5bf87cde385fd5bf95"
   end
 
   depends_on "autoconf" => :build

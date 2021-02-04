@@ -7,9 +7,8 @@ class Solexaqa < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "bb6cc746542b42234d0444bf2ae13bd3d7360e11c4582687bac2c30d7e167188" => :sierra
-    sha256 "f3618d54e63db3fda2e442d2a8a38afb1db0c2c7f695e2e1013ae6cef1e86ff2" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, sierra:       "bb6cc746542b42234d0444bf2ae13bd3d7360e11c4582687bac2c30d7e167188"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f3618d54e63db3fda2e442d2a8a38afb1db0c2c7f695e2e1013ae6cef1e86ff2"
   end
 
   depends_on "boost" => :build

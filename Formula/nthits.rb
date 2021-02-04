@@ -8,9 +8,8 @@ class Nthits < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "4d51d461f5bb9f4b18f43b5dae781f4f47906680968ea5249d0877ba453653bd" => :sierra
-    sha256 "7c19716fbc5c4fe7709c4cbe14b2bc5f1cb7ec1f871dc956db2f380ca9d2cb74" => :x86_64_linux
+    sha256 cellar: :any, sierra:       "4d51d461f5bb9f4b18f43b5dae781f4f47906680968ea5249d0877ba453653bd"
+    sha256 cellar: :any, x86_64_linux: "7c19716fbc5c4fe7709c4cbe14b2bc5f1cb7ec1f871dc956db2f380ca9d2cb74"
   end
 
   depends_on "autoconf" => :build

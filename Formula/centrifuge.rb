@@ -13,8 +13,7 @@ class Centrifuge < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "cd12f24f14e0fd03e3b534bce48f4c1fd54652473b95daf306bdace8aa101af9" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cd12f24f14e0fd03e3b534bce48f4c1fd54652473b95daf306bdace8aa101af9"
   end
 
   depends_on "gcc" if OS.mac? # needs openmp

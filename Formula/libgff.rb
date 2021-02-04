@@ -6,9 +6,8 @@ class Libgff < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "fe14582a9d6be713cae7378e060d5d91408449aeea98ba720754a491beed8cda" => :catalina
-    sha256 "b313f0cd8a8532ba0c330bfc22a11e4cbbfb21dad02f400934e87fd48e4a8482" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, catalina:     "fe14582a9d6be713cae7378e060d5d91408449aeea98ba720754a491beed8cda"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b313f0cd8a8532ba0c330bfc22a11e4cbbfb21dad02f400934e87fd48e4a8482"
   end
 
   depends_on "cmake" => :build

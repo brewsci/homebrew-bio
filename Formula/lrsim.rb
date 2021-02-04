@@ -8,9 +8,8 @@ class Lrsim < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "70b0c317721735ec3db62b6b809d2fd4a16f199c5cbe0f3597cc86c9744d3cbf" => :sierra
-    sha256 "5aaa80b18c061fd7306579fae32a5d503c9a732e05b63c4f9f9713adfa6ab05b" => :x86_64_linux
+    sha256 cellar: :any, sierra:       "70b0c317721735ec3db62b6b809d2fd4a16f199c5cbe0f3597cc86c9744d3cbf"
+    sha256 cellar: :any, x86_64_linux: "5aaa80b18c061fd7306579fae32a5d503c9a732e05b63c4f9f9713adfa6ab05b"
   end
 
   depends_on "samtools"

@@ -15,9 +15,8 @@ class Vt < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "43c34b6bf2d3209088a1e6ce61e37844ef3bbf08b871861214714ce10b18f707" => :sierra
-    sha256 "a2f0c3b7e3078719d39b7d257d964f19d327e3a3638c9e1397d804588da811f6" => :x86_64_linux
+    sha256 cellar: :any, sierra:       "43c34b6bf2d3209088a1e6ce61e37844ef3bbf08b871861214714ce10b18f707"
+    sha256 cellar: :any, x86_64_linux: "a2f0c3b7e3078719d39b7d257d964f19d327e3a3638c9e1397d804588da811f6"
   end
 
   depends_on "gcc" if OS.mac? # Fix error: static_assert failed

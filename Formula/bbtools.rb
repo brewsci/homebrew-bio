@@ -6,9 +6,8 @@ class Bbtools < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "1a682ddc8c91764867417564a23d07ee8d166e1e754aa1b17bbb82326723f219" => :catalina
-    sha256 "1e0f94031afe0957c5db853a8fe7914facf0c93bbe0127d55f4ab8bcf906f548" => :x86_64_linux
+    sha256 cellar: :any, catalina:     "1a682ddc8c91764867417564a23d07ee8d166e1e754aa1b17bbb82326723f219"
+    sha256 cellar: :any, x86_64_linux: "1e0f94031afe0957c5db853a8fe7914facf0c93bbe0127d55f4ab8bcf906f548"
   end
 
   depends_on "openjdk"

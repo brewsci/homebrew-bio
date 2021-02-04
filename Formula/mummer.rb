@@ -8,9 +8,8 @@ class Mummer < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "2642a41271e0a4d0522c3d1890d1dfc6ced4ad03aa90ba31c37210f0a96a2e41" => :sierra
-    sha256 "22df96cb1a3e421e5af2e432e3cfc10834ee13fa1e2916aae6a820dbcddcf8c5" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, sierra:       "2642a41271e0a4d0522c3d1890d1dfc6ced4ad03aa90ba31c37210f0a96a2e41"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "22df96cb1a3e421e5af2e432e3cfc10834ee13fa1e2916aae6a820dbcddcf8c5"
   end
 
   depends_on "tcsh" unless OS.mac?

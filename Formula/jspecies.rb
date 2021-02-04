@@ -7,8 +7,7 @@ class Jspecies < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "fdad5b757d32a71e196a65e6b241d30472e55c16634e0f7e777f840817bc8cc9" => :sierra
+    sha256 cellar: :any_skip_relocation, sierra: "fdad5b757d32a71e196a65e6b241d30472e55c16634e0f7e777f840817bc8cc9"
   end
 
   depends_on "brewsci/bio/blast-legacy"

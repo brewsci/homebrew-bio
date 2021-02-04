@@ -9,8 +9,7 @@ class Hmmer2 < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "7cbccc680a07e5421f3a582e5bf8d2c73c9a930b77823360e794aecf7928c51d" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7cbccc680a07e5421f3a582e5bf8d2c73c9a930b77823360e794aecf7928c51d"
   end
 
   keg_only "hmmer2 conflicts with hmmer 3.x"

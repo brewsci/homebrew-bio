@@ -7,9 +7,8 @@ class Abacas < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "3c46bf2eeb2ef4de53a4778bb72d5dfd182f810f2e4191d345d30848180e8549" => :sierra
-    sha256 "a486b8b94ea27fe8734d443487fb1a9530f5525c4416c0b94dd5a8be8d7949e9" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, sierra:       "3c46bf2eeb2ef4de53a4778bb72d5dfd182f810f2e4191d345d30848180e8549"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a486b8b94ea27fe8734d443487fb1a9530f5525c4416c0b94dd5a8be8d7949e9"
   end
 
   depends_on "mummer"

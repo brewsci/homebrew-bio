@@ -9,9 +9,8 @@ class Stacks < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "9387a6190454b83f17ac5c179abc67382592fa64d00b8c0f6293a5b0100ca117" => :sierra
-    sha256 "06ca98f340aeacd4b0f47d7f3025b73b868289f0f8ff861306c15d13bfc3755b" => :x86_64_linux
+    sha256 cellar: :any, sierra:       "9387a6190454b83f17ac5c179abc67382592fa64d00b8c0f6293a5b0100ca117"
+    sha256 cellar: :any, x86_64_linux: "06ca98f340aeacd4b0f47d7f3025b73b868289f0f8ff861306c15d13bfc3755b"
   end
 
   depends_on "gcc" if OS.mac? # needs openmp
