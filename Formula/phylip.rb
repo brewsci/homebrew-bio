@@ -7,9 +7,8 @@ class Phylip < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "408a84406e51f2306176eaa97865e6737f270300a12825d50b3f34ee15102679" => :sierra
-    sha256 "bbadb5138e4d3bb0824497d97996252a5e266dd99cb95a87551061c57392a518" => :x86_64_linux
+    sha256 cellar: :any, sierra:       "408a84406e51f2306176eaa97865e6737f270300a12825d50b3f34ee15102679"
+    sha256 cellar: :any, x86_64_linux: "bbadb5138e4d3bb0824497d97996252a5e266dd99cb95a87551061c57392a518"
   end
 
   def install

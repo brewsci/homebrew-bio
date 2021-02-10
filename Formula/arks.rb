@@ -8,9 +8,8 @@ class Arks < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "9a3c4628f6b9cdb438082551316ff918c2eacfe2fb303766b652e6daede6a537" => :sierra
-    sha256 "e862be3388e4dc1731de0d3d9e2836a0f5538fa71a11092f5e8edfab4c603d6c" => :x86_64_linux
+    sha256 cellar: :any, sierra:       "9a3c4628f6b9cdb438082551316ff918c2eacfe2fb303766b652e6daede6a537"
+    sha256 cellar: :any, x86_64_linux: "e862be3388e4dc1731de0d3d9e2836a0f5538fa71a11092f5e8edfab4c603d6c"
   end
 
   depends_on "autoconf" => :build

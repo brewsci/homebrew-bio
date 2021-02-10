@@ -8,9 +8,8 @@ class Dssp < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "6ebb2d6959f7db323d0645e964ccdbc20a666bf9579aea4673291f06ed3ace82" => :catalina
-    sha256 "f838bdac491bd122ee73017146a2840f0ddcd450b38e9ac72c158365aa1e9a73" => :x86_64_linux
+    sha256 cellar: :any, catalina:     "6ebb2d6959f7db323d0645e964ccdbc20a666bf9579aea4673291f06ed3ace82"
+    sha256 cellar: :any, x86_64_linux: "f838bdac491bd122ee73017146a2840f0ddcd450b38e9ac72c158365aa1e9a73"
   end
 
   depends_on "autoconf" => :build

@@ -6,9 +6,8 @@ class Nextgenmap < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "acdb87a47abc42331556aafa75815511dc6844173973d50ee54854ec90648138" => :sierra
-    sha256 "e7af4a31a9ad956bd07b2c324535da4e973b37e67c4c203acdec728a52e45c58" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, sierra:       "acdb87a47abc42331556aafa75815511dc6844173973d50ee54854ec90648138"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e7af4a31a9ad956bd07b2c324535da4e973b37e67c4c203acdec728a52e45c58"
   end
 
   depends_on "cmake" => :build

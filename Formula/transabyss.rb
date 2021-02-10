@@ -8,7 +8,7 @@ class Transabyss < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "c3adcd840c6bdebae3a6a0018138ee47d8ca0da01713ba35973bf89b3e2a39a8" => :x86_64_linux
+    sha256 x86_64_linux: "c3adcd840c6bdebae3a6a0018138ee47d8ca0da01713ba35973bf89b3e2a39a8"
   end
 
   depends_on "abyss"

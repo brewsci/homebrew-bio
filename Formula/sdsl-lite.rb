@@ -16,9 +16,8 @@ class SdslLite < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "e44e437f1f32ce5fb6de0cfc5aec132bfc09322ad71c211a8bb77bc332d4325c" => :sierra
-    sha256 "34182f95fd635533ba8f686b5ebafe411204dbcb3969a6b2e92f2e22c4d778bb" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, sierra:       "e44e437f1f32ce5fb6de0cfc5aec132bfc09322ad71c211a8bb77bc332d4325c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "34182f95fd635533ba8f686b5ebafe411204dbcb3969a6b2e92f2e22c4d778bb"
   end
 
   depends_on "cmake" => :build

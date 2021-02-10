@@ -7,9 +7,8 @@ class R2r < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "a4ad8532873cf38876d39dc09307d8df5d38c24449a05d66acf5d8e4aa857be8" => :catalina
-    sha256 "4b2d4f909b7c0041838e6a53e70be2dcfafbbf97bdd4a1460e6c9b987a7fae7a" => :x86_64_linux
+    sha256 cellar: :any, catalina:     "a4ad8532873cf38876d39dc09307d8df5d38c24449a05d66acf5d8e4aa857be8"
+    sha256 cellar: :any, x86_64_linux: "4b2d4f909b7c0041838e6a53e70be2dcfafbbf97bdd4a1460e6c9b987a7fae7a"
   end
 
   depends_on "nlopt"

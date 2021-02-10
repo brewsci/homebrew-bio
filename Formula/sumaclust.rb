@@ -6,9 +6,8 @@ class Sumaclust < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "928976d827f0c435404389a8fbe9404ef3540662036fd4537702a2708484fced" => :sierra
-    sha256 "6ab6841a4dfbb7967f8a3e432f02bd7081d26cbdd894f7873eefbb94cacd027c" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, sierra:       "928976d827f0c435404389a8fbe9404ef3540662036fd4537702a2708484fced"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "6ab6841a4dfbb7967f8a3e432f02bd7081d26cbdd894f7873eefbb94cacd027c"
   end
 
   def install

@@ -6,9 +6,8 @@ class Crumble < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "7e410246c46034874e6812737679b52a096ed932078a0a25a5fc50b1fda4ee35" => :catalina
-    sha256 "1f190dcc641889565cd072f02efd334ed9a23dbcb191c2f5b0a081420de3cbb3" => :x86_64_linux
+    sha256 cellar: :any, catalina:     "7e410246c46034874e6812737679b52a096ed932078a0a25a5fc50b1fda4ee35"
+    sha256 cellar: :any, x86_64_linux: "1f190dcc641889565cd072f02efd334ed9a23dbcb191c2f5b0a081420de3cbb3"
   end
 
   depends_on "htslib"

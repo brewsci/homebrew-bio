@@ -6,8 +6,7 @@ class Discovardenovo < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "ff015936c5bf261b15066451482245f60eece7fb14b385664374883cad1f1a36" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ff015936c5bf261b15066451482245f60eece7fb14b385664374883cad1f1a36"
   end
 
   depends_on "gcc@4.9" => :build

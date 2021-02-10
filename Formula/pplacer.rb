@@ -21,9 +21,8 @@ class Pplacer < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "67bc8639e0f54daa1c141b906814578cd26f9510f9803297c337b4a0c241f577" => :sierra
-    sha256 "a3defbdaf841d3fb1297cb1175a29b7ecee7f964cd6e25cf95a1de7a4946a105" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, sierra:       "67bc8639e0f54daa1c141b906814578cd26f9510f9803297c337b4a0c241f577"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a3defbdaf841d3fb1297cb1175a29b7ecee7f964cd6e25cf95a1de7a4946a105"
   end
 
   depends_on "gsl" if OS.mac?

@@ -12,8 +12,8 @@ class KentTools < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "8e1df6949537b6f6888f38705ff35348561815f4fe1a3b6c58e6c4d7e257c834" => :catalina
-    sha256 "815c5bdf836a96b6b419dadc4fa0b1122229d4fd1147bb7d582cb8416f730567" => :x86_64_linux
+    sha256 catalina:     "8e1df6949537b6f6888f38705ff35348561815f4fe1a3b6c58e6c4d7e257c834"
+    sha256 x86_64_linux: "815c5bdf836a96b6b419dadc4fa0b1122229d4fd1147bb7d582cb8416f730567"
   end
 
   depends_on "libpng"

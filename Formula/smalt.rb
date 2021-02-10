@@ -7,9 +7,8 @@ class Smalt < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "cd6b0f671a4a141122aab57c88d3d73164b0730391dfebb7f3e9e3696bb3a124" => :sierra
-    sha256 "80e68892a948076affec7e1157924798eb01ae4f15e78103eb2d809cb30aa92c" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, sierra:       "cd6b0f671a4a141122aab57c88d3d73164b0730391dfebb7f3e9e3696bb3a124"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "80e68892a948076affec7e1157924798eb01ae4f15e78103eb2d809cb30aa92c"
   end
 
   resource "manual" do
