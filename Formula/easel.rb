@@ -12,9 +12,8 @@ class Easel < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "c0ad8899059f44836c4358008f6ab0f8c0ab450dedb6dcd032c01dbf23c01e12" => :catalina
-    sha256 "b3721d487dd864d06b3816fb8dc73c62747f881e64b441b844c6e6e29d894cc4" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, catalina:     "c0ad8899059f44836c4358008f6ab0f8c0ab450dedb6dcd032c01dbf23c01e12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b3721d487dd864d06b3816fb8dc73c62747f881e64b441b844c6e6e29d894cc4"
   end
 
   depends_on "autoconf" => :build

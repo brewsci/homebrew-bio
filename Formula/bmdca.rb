@@ -14,9 +14,8 @@ class Bmdca < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "e54c657f4faca1b85724c4ffbad00d1eed25c72b8bb407ceb5d474644771b453" => :catalina
-    sha256 "6f1dbb4b20111704690b1654a7e607108e9ddcbd979eafe80a9a2dd10e368bb2" => :x86_64_linux
+    sha256 cellar: :any, catalina:     "e54c657f4faca1b85724c4ffbad00d1eed25c72b8bb407ceb5d474644771b453"
+    sha256 cellar: :any, x86_64_linux: "6f1dbb4b20111704690b1654a7e607108e9ddcbd979eafe80a9a2dd10e368bb2"
   end
 
   depends_on "autoconf" => :build

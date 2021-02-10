@@ -6,9 +6,8 @@ class Figtree < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "46dded66c63bcc052039c5de56c770831ee21077c801be8b64bb428bf25b1f80" => :sierra
-    sha256 "0dfa41c23b48cef3c43359faa55552ccc927f68fbcaf3749168c6de4c64c1c76" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, sierra:       "46dded66c63bcc052039c5de56c770831ee21077c801be8b64bb428bf25b1f80"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0dfa41c23b48cef3c43359faa55552ccc927f68fbcaf3749168c6de4c64c1c76"
   end
 
   depends_on "openjdk"

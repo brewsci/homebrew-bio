@@ -10,9 +10,8 @@ class Gatk < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "fc14b1d8b41bb370fa56e50cc50b83e5e73c317d658e1d36d0ba974e029409a0" => :catalina
-    sha256 "e623b8e92370031f256c19b11a22b240e56f02633cf45c1e847184c451df818c" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, catalina:     "fc14b1d8b41bb370fa56e50cc50b83e5e73c317d658e1d36d0ba974e029409a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e623b8e92370031f256c19b11a22b240e56f02633cf45c1e847184c451df818c"
   end
 
   depends_on "openjdk"

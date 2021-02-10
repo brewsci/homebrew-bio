@@ -13,9 +13,8 @@ class Skesa < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "6da28be7b7ca7600d5d900094fd1d5d41bf3b376a8b24121912e2256f8115319" => :catalina
-    sha256 "bc2b4247e6b192d5c0ddf318d24f62a12ed7a4fd4597b403abfc5183090c4dd1" => :x86_64_linux
+    sha256 cellar: :any, catalina:     "6da28be7b7ca7600d5d900094fd1d5d41bf3b376a8b24121912e2256f8115319"
+    sha256 cellar: :any, x86_64_linux: "bc2b4247e6b192d5c0ddf318d24f62a12ed7a4fd4597b403abfc5183090c4dd1"
   end
 
   depends_on "boost"

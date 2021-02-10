@@ -7,9 +7,8 @@ class SimulatePcr < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "df52352b2edbe4af87cc652c2de48e2852d7901135f03bde85f11e85c3e72bd5" => :sierra
-    sha256 "33c1468a21e303ee370f22fdc0277c269bbb392bf77bc550ea70273898544cfc" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, sierra:       "df52352b2edbe4af87cc652c2de48e2852d7901135f03bde85f11e85c3e72bd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "33c1468a21e303ee370f22fdc0277c269bbb392bf77bc550ea70273898544cfc"
   end
 
   depends_on "cpanminus" => :build

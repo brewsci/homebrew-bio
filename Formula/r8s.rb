@@ -8,9 +8,8 @@ class R8s < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "471af1c1ebb7c44ac985fdcfb4e545440e9c6dbc978c84772eb084f1cdcad749" => :sierra
-    sha256 "fb55772378ba1d0a41291c1cc58c2b5e892f749799920050fdab2dd5365803f2" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, sierra:       "471af1c1ebb7c44ac985fdcfb4e545440e9c6dbc978c84772eb084f1cdcad749"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fb55772378ba1d0a41291c1cc58c2b5e892f749799920050fdab2dd5365803f2"
   end
 
   depends_on "gcc" # for gfortran

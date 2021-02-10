@@ -8,9 +8,8 @@ class Pirate < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "feaab3d43e87e689002721f5c5ed97317360abff0dab99b8d71c8bd246002933" => :catalina
-    sha256 "3a8e4979d6c6f0609133acdf0d9d87765ec1535feef86954dd612fa9a6052a39" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, catalina:     "feaab3d43e87e689002721f5c5ed97317360abff0dab99b8d71c8bd246002933"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3a8e4979d6c6f0609133acdf0d9d87765ec1535feef86954dd612fa9a6052a39"
   end
 
   depends_on "blast"

@@ -8,9 +8,8 @@ class Blat < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "176a5d7844d4a0b9609a4677c5937012f18bc8ab5456c6e909ad0ec931a45ad8" => :sierra
-    sha256 "8ee3683323642e0e0d3fc1fbd4c7d84b3358a8b74af5833bb6fe1a086690ebbe" => :x86_64_linux
+    sha256 cellar: :any, sierra:       "176a5d7844d4a0b9609a4677c5937012f18bc8ab5456c6e909ad0ec931a45ad8"
+    sha256 cellar: :any, x86_64_linux: "8ee3683323642e0e0d3fc1fbd4c7d84b3358a8b74af5833bb6fe1a086690ebbe"
   end
 
   depends_on "libpng"

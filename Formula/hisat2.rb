@@ -14,9 +14,8 @@ class Hisat2 < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "2b5b75097703eca1abde911453cf0751395f52d07c7e9d437becd35b8f5b3290" => :catalina
-    sha256 "81d4a8bdf5de5751f06def926c8f7b39b2ee9e1d48905fbe7084cdaa0238f8b1" => :x86_64_linux
+    sha256 cellar: :any, catalina:     "2b5b75097703eca1abde911453cf0751395f52d07c7e9d437becd35b8f5b3290"
+    sha256 cellar: :any, x86_64_linux: "81d4a8bdf5de5751f06def926c8f7b39b2ee9e1d48905fbe7084cdaa0238f8b1"
   end
 
   fails_with :clang

@@ -13,9 +13,8 @@ class Minigraph < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "9dcb1abd6ccc96b5910276f3690542be85ab68bb6c33c0c096736a17f13fc01c" => :catalina
-    sha256 "fadf58602f216a3f4faac81eaad58fe0bdda70e4200fa102a5c6cfd2c528d49e" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, catalina:     "9dcb1abd6ccc96b5910276f3690542be85ab68bb6c33c0c096736a17f13fc01c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fadf58602f216a3f4faac81eaad58fe0bdda70e4200fa102a5c6cfd2c528d49e"
   end
 
   depends_on "k8"
