@@ -9,12 +9,11 @@ class Slim < Formula
   depends_on "cmake" => :build
 
   def install
-    ENV.cxx11
-    mkdir "SLiM_build"
-    cd "SLiM_build"
-    system "cmake", "-DCMAKE_BUILD_TYPE=Release", "..", *std_cmake_args
-    system "make"
-    system "make", "install"
+    mkdir "SLiM_build" do
+      system "cmake", "-DCMAKE_BUILD_TYPE=Release", "..", *std_cmake_args
+      system "make"
+      system "make", "install"
+    end
   end
 
   test do
