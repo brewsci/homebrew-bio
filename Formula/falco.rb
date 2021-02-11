@@ -1,11 +1,12 @@
 class Falco < Formula
+  # cite deSena_2021: "https://doi.org/10.12688/f1000research.21142.2"
   desc "C++ implementation of FastQC for quality control of sequencing data"
   homepage "https://github.com/smithlabcode/falco"
   url "https://github.com/smithlabcode/falco/releases/download/v0.2.4/falco-0.2.4.tar.gz"
   sha256 "fe3cddc0cf3805de673d14ad510f2344e8d12aab02dc899235dac45bb55ddfc3"
   license "GPL-3.0-or-later"
 
-  uses_from_macos "zlib" => :build
+  uses_from_macos "zlib"
 
   def install
     system "./configure", "--disable-debug",
