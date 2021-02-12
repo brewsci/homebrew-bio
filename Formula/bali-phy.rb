@@ -15,8 +15,8 @@ class BaliPhy < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "ee924ade4462c55d1c7ef15f36746f827da87015a13950cc8be88856ad2eb9f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1e5e46ba81196fbb97b837cb2736fb57b64f40ceef4023a15f85b48de8efa1e8"
+    sha256 cellar: :any,                 catalina:     "272d54b06c0906e3fe6041c156d6fb748d0f2c27ff1c32d4271543fb302368a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4d1dd23a90021c9a833c0d7a51a454481eb862acfd832e7f53be5eeea5a36f1b"
   end
 
   depends_on "meson" => :build
