@@ -42,7 +42,10 @@ class Jmol < Formula
 
     on_linux do
       # unfortunately, the application can not be run headless
-      assert_match "java.awt.HeadlessException", shell_output("#{bin}/jmol -n 2>&1", 1) if ENV["CI"]
+      if ENV["HOMEBREW_GITHUB_ACTIONS"]
+        assert_match "java.awt.HeadlessException",
+shell_output("#{bin}/jmol -n 2>&1", 1)
+      end
     end
   end
 end
