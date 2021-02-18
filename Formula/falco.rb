@@ -6,6 +6,12 @@ class Falco < Formula
   sha256 "fe3cddc0cf3805de673d14ad510f2344e8d12aab02dc899235dac45bb55ddfc3"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "98dd1ff596681054096e0292182b37c003743f84f328295cd1ffa022b3d56efe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "25bbeffa99ebc66777c484992e09a93e04630a621796387c60dcab32c6f46e27"
+  end
+
   uses_from_macos "zlib"
 
   def install
