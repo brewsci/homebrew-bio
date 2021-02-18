@@ -8,6 +8,12 @@ class Raster3d < Formula
   sha256 "f566b499fee341db3a95229672c6afdbdb69da7faabdbe34f6e0d332d766160c"
   license "Artistic-2.0"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 cellar: :any, catalina:     "aa224cf7f584811b12f0af4e405aa8c262511883df47511e3db3fc0ee82220e2"
+    sha256               x86_64_linux: "1d1919339d6408189c107a6c834a4299fd7fb349f1d31b66573bee996d53149b"
+  end
+
   depends_on xcode: :build
   depends_on "gcc@9"
   depends_on "gd"
