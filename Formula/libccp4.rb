@@ -5,6 +5,12 @@ class Libccp4 < Formula
   sha256 "280b473d950cdf8837ef66147ec581104298b892399bd856f13b096f2395dbe5"
   license "LGPL-3.0-only"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    sha256 catalina:     "d0f3af6c79081b20e973cd671664bb7879ef218abbb1f31b7321c10a5ce7e186"
+    sha256 x86_64_linux: "0b6df378d3b55d9b43fc2a2c5cbc2f4421f6d204585f00431f47634c08621477"
+  end
+
   depends_on "pkg-config" => [:build, :test]
   depends_on xcode: :build
 
