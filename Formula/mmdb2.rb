@@ -6,7 +6,7 @@ class Mmdb2 < Formula
   license all_of: ["GPL-3.0-only", "LGPL-3.0-only"]
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    root_url "https://archive.org/download/brewsci/bottles-bio"
     sha256 cellar: :any_skip_relocation, catalina:     "8894b970173f65fbea636a9c5df831b292fc75c2c43ceeae00b60ce694fb41b9"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "e439c80170a0a0bf4e5f4c01af422643b8a85fd5d4b6a202ac71d537d3de6e46"
   end

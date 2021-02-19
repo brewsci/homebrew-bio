@@ -12,7 +12,7 @@ class Minimap2 < Formula
   end
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    root_url "https://archive.org/download/brewsci/bottles-bio"
     sha256 cellar: :any_skip_relocation, sierra:       "cf78c0b192a7766dcebc18df96ef90492af999dae1903bcdbf360c150936abda"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "8db660e19fb613e93dbcf0ebfecd4b7741bb349906e00e0a7aa73009809e806b"
   end

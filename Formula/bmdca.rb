@@ -13,7 +13,7 @@ class Bmdca < Formula
   end
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    root_url "https://archive.org/download/brewsci/bottles-bio"
     sha256 cellar: :any, catalina:     "e54c657f4faca1b85724c4ffbad00d1eed25c72b8bb407ceb5d474644771b453"
     sha256 cellar: :any, x86_64_linux: "6f1dbb4b20111704690b1654a7e607108e9ddcbd979eafe80a9a2dd10e368bb2"
   end

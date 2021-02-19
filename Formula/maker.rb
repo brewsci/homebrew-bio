@@ -8,7 +8,7 @@ class Maker < Formula
   sha256 "ebb66e798a6a996e4797878c1cb6154914b8e9ae0393381d3904af5782b3b0a5"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    root_url "https://archive.org/download/brewsci/bottles-bio"
     sha256 cellar: :any_skip_relocation, mojave:       "b6d7f905e818e0624a726a4ae270340b4bd950ea5cf92c6172f16f843e509446"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "bb1c95a44a03f74fcf2777058f57bf99aa52099d911a04c1ae355aa0a09fd4c4"
   end

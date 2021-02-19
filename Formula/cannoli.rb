@@ -11,7 +11,7 @@ class Cannoli < Formula
   end
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    root_url "https://archive.org/download/brewsci/bottles-bio"
     sha256 cellar: :any_skip_relocation, catalina:     "716924507f69a2d5d0fa8b08e4b5434f78a3c99e70f8ef6fa0b3c1905569d23f"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "d080c149240aa7b000cc4b1e047a3850f86b48caf751f32ff445ee9ee5cb55ff"
   end

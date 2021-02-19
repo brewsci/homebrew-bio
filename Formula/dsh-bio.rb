@@ -6,7 +6,7 @@ class DshBio < Formula
   license "LGPL-3.0-or-later"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    root_url "https://archive.org/download/brewsci/bottles-bio"
     sha256 cellar: :any_skip_relocation, catalina:     "616321b8730090585d15c6b400dfd70529977c88a54997ab94f455f1b47d6846"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "ddd1b2ec7e0d79cd135974502b1358c87c8366af48ebe08309577d95959d8dd3"
   end
