@@ -32,6 +32,6 @@ class Minimap2 < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/minimap2 --version 2>&1")
-    assert_match /\d/, shell_output("#{bin}/paftools version 2>&1")
+    assert_match(/\d/, shell_output("#{bin}/paftools version 2>&1"))
   end
 end

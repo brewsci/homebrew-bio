@@ -24,6 +24,6 @@ class Biomake < Formula
   test do
     assert_match "Options", shell_output("#{bin}/biomake -h")
     (testpath/"Makefile").write "default: ; echo Homebrew"
-    assert_match /^Homebrew$/, shell_output("#{bin}/biomake")
+    assert_match(/^Homebrew$/, shell_output("#{bin}/biomake"))
   end
 end
