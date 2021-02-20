@@ -22,10 +22,10 @@ class Astral < Formula
 
   def install
     inreplace "make.sh" do |s|
-      s.gsub! /version=.*/, "version=#{version}"
+      s.gsub!(/version=.*/, "version=#{version}")
       s.gsub! "-source 1.6", "-source 1.7"
       s.gsub! "-target 1.6", "-target 1.7"
-      s.gsub! /^zip/, "echo" # no need to zip anything
+      s.gsub!(/^zip/, "echo") # no need to zip anything
     end
     system "./make.sh"
     libexec.install "lib", "astral.#{version}.jar"

@@ -47,7 +47,7 @@ class Bioperl < Formula
       bp_tree2pag.pl bp_unflatten_seq.pl
     ]
     tests.each do |executable|
-      assert_match /Usage|usage|NAME|Unknown option|Can't open -h/, shell_output("#{executable} -h </dev/null 2>&1")
+      assert_match(/Usage|usage|NAME|Unknown option|Can't open -h/, shell_output("#{executable} -h </dev/null 2>&1"))
     end
   end
 end

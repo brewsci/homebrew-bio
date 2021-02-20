@@ -31,6 +31,6 @@ class Trimadap < Formula
   end
 
   test do
-    assert_match /^1 +ATCTCGTATGCCGTCTTCTGCTTG$/, shell_output("#{bin}/trimadap #{doc}/test.fa 2>&1")
+    assert_match(/^1 +ATCTCGTATGCCGTCTTCTGCTTG$/, shell_output("#{bin}/trimadap #{doc}/test.fa 2>&1"))
   end
 end

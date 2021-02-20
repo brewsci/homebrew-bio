@@ -24,7 +24,7 @@ class Snpeff < Formula
     # snpEff and SnpSift
     cd "snpEff" do
       inreplace "scripts/snpEff" do |s|
-        s.gsub! /^jardir=.*/, "jardir=#{libexec}"
+        s.gsub!(/^jardir=.*/, "jardir=#{libexec}")
         s.gsub! "${jardir}/snpEff.config", "#{pkgshare}/snpEff.config"
       end
       bin.install "scripts/snpEff"

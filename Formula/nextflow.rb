@@ -26,6 +26,6 @@ class Nextflow < Formula
 
   test do
     system bin/"nextflow", "-download"
-    assert_match /hello\n$/, pipe_output("#{bin}/nextflow -q run -", "println 'hello'")
+    assert_match(/hello\n$/, pipe_output("#{bin}/nextflow -q run -", "println 'hello'"))
   end
 end
