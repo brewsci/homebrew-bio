@@ -54,7 +54,7 @@ jobs:
             brew pr-upload --bintray-org=linuxbrew --root-url=https://archive.org/download/brewsci/bottles-bio
             for i in *.bottle*.tar.gz; do
               sha256sum $i
-              curl -f -X PUT -H "Authorization: AWS ${{secrets.HOMEBREW_ARCHIVE_KEY}}" -T $i http://brewsci.s3.us.archive.org/bottles-bio/$i
+              curl -f -X PUT -H "Authorization: AWS ${{secrets.HOMEBREW_ARCHIVE_KEY}}" -T $i http://brewsci.s3.us.archive.org/bottles-bio/${i/--/-}
             done
           fi
           cd "$(brew --repo ${{github.repository}})"
