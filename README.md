@@ -2,7 +2,7 @@
 
 # Brewsci/bio
 
-Bioinformatics formulae for the [Linuxbrew](http://linuxbrew.sh) and [Homebrew](https://brew.sh) package managers.
+Bioinformatics formulae for the [Homebrew](https://brew.sh) package manager.
 
 ## How do I install a formula?
 

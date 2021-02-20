@@ -49,8 +49,8 @@ jobs:
             file bottles.zip
             unzip bottles.zip
             git -C "$(brew --repo ${{github.repository}})" status
-            git config --global user.name "LinuxbrewTestBot"
-            git config --global user.email "testbot@linuxbrew.sh"
+            git config --global user.name "Brewsci"
+            git config --global user.email "linux@brew.sh"
             brew pr-upload --bintray-org=linuxbrew --root-url=https://archive.org/download/brewsci/bottles-bio
             for i in *.bottle*.tar.gz; do
               sha256sum $i
