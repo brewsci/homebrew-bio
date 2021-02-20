@@ -9,7 +9,7 @@ class Cutadapt < Formula
   license "MIT"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    root_url "https://archive.org/download/brewsci/bottles-bio"
     sha256 cellar: :any_skip_relocation, catalina:     "5f6a49a7ff02dd80c1945a436a85ad82bfc94983726bfc38fa22f5cf7ef39d28"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "58bc4e0007eafa31bb2d8928f17a7616fca976e0c1e2dfaf5043ab9d491194f0"
   end

@@ -12,7 +12,7 @@ class Bioperl < Formula
   end
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    root_url "https://archive.org/download/brewsci/bottles-bio"
     sha256 cellar: :any_skip_relocation, sierra:       "36b08831cc85e3550ee622b3d1c485f6bf9d2dcfd87ef9a9c33ba72f9bae8f94"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "7a3a5d0a2179fe45c2d407f13bac0d5c484e2d80639a094baa353167ab4abf9d"
   end

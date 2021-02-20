@@ -8,7 +8,7 @@ class Arcs < Formula
   revision 1
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    root_url "https://archive.org/download/brewsci/bottles-bio"
     sha256 cellar: :any, catalina:     "d683a22fb63e36d4cbcf11847b9700d85c454a90e77915615bcccae95d0c2475"
     sha256 cellar: :any, x86_64_linux: "84a56e57a9a1c904361dc2100e279a41f9992b208737061276cce50273df0ff9"
   end

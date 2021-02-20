@@ -12,7 +12,7 @@ class Adam < Formula
   end
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    root_url "https://archive.org/download/brewsci/bottles-bio"
     sha256 cellar: :any_skip_relocation, catalina:     "ea041d65c96d402165dd140e5bdda5c304905fada259009e995679904cf9183a"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "d5e8054a38850a7c7d181f62c35c40d146b98339e29e22f7e4e7633bc3203a61"
   end

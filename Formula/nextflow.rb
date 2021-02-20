@@ -13,7 +13,7 @@ class Nextflow < Formula
   end
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
+    root_url "https://archive.org/download/brewsci/bottles-bio"
     sha256 cellar: :any_skip_relocation, catalina:     "6cb66055fa3db10517866c52b5e63b041445117a279701e865284c62585f94d1"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "88f2bab19c5a735bfc714f64c9bcbd6293d2883713b4dee8ea5b171d6be5bcef"
   end
