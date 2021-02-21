@@ -5,6 +5,12 @@ class Clipper4coot < Formula
   sha256 "7c7774f224b59458e0faa104d209da906c129523fa737e81eb3b99ec772b81e0"
   license "LGPL-2.1-only"
 
+  bottle do
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any,                 catalina:     "bdcc7e7c4414730de854b163f3f10c77391b8887aa92a80a48f0b1cfba2595ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "adb31c33be056d462bff85d6f58dc236bbc2db60c8acb3d89f694555245347be"
+  end
+
   depends_on "binutils" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on "brewsci/bio/libccp4"
