@@ -4,8 +4,8 @@ class Gatk < Formula
   # cite McKenna_2010: "https://doi.org/10.1101/gr.107524.110"
   desc "Genome Analysis Toolkit: Variant Discovery in High-Throughput Sequencing"
   homepage "https://software.broadinstitute.org/gatk"
-  url "https://github.com/broadinstitute/gatk/releases/download/4.1.8.1/gatk-4.1.8.1.zip"
-  sha256 "42e6de5059232df1ad5785c68c39a53dc1b54afe7bb086d0129f4dc95fb182bc"
+  url "https://github.com/broadinstitute/gatk/releases/download/4.2.0.0/gatk-4.2.0.0.zip"
+  sha256 "dd11cc8e3bc7a23c2c226366428f0908c902765eabbc1c641c736c06b80aaf78"
   license "BSD-3-Clause"
 
   bottle do
