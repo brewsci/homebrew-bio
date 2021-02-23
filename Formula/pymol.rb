@@ -9,8 +9,8 @@ class Pymol < Formula
 
   bottle do
     root_url "https://archive.org/download/brewsci/bottles-bio"
-    sha256 catalina:     "43117639a4e1be67b1d1dc30c420be36b66addf95b0df57dd33d46d4b2082dbe"
-    sha256 x86_64_linux: "ce4f0acf8a97da25c6a67894a6afcb69c48a78497d4d3fd2e367b134c1785472"
+    sha256 cellar: :any, catalina:     "7ed8b8b9a016e0e84a911bec38c08704c7e494541888bc96ea0e448e84588cdd"
+    sha256               x86_64_linux: "69f06cbd8855f5d3f201a98a2ee71c25cc9c4c01451b2a7ef0ee08bca7664fc7"
   end
 
   depends_on "brewsci/bio/mmtf-cpp"
