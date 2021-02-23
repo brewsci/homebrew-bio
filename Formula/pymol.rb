@@ -4,6 +4,8 @@ class Pymol < Formula
   homepage "https://pymol.org/"
   url "https://github.com/schrodinger/pymol-open-source/archive/v2.4.0.tar.gz"
   sha256 "5ede4ce2e8f53713c5ee64f5905b2d29bf01e4391da7e536ce8909d6b9116581"
+  revision 1
+  head "https://github.com/schrodinger/pymol-open-source.git"
 
   bottle do
     root_url "https://archive.org/download/brewsci/bottles-bio"
@@ -13,12 +15,13 @@ class Pymol < Formula
 
   depends_on "brewsci/bio/mmtf-cpp"
   depends_on "catch2"
-  depends_on "ffmpeg" # enable export a mp4 movie
+  depends_on "ffmpeg" # enable export mp4 movies
   depends_on "freeglut"
   depends_on "freetype"
   depends_on "glew"
   depends_on "glm"
   depends_on "libpng"
+  depends_on "libxml2"
   depends_on "msgpack"
   depends_on "netcdf"
   depends_on "numpy"
@@ -29,11 +32,6 @@ class Pymol < Formula
   resource "mmtf-python" do
     url "https://files.pythonhosted.org/packages/13/ea/c6a302ccdfdcc1ab200bd2b7561e574329055d2974b1fb7939a7aa374da3/mmtf-python-1.1.2.tar.gz"
     sha256 "a5caa7fcd2c1eaa16638b5b1da2d3276cbd3ed3513f0c2322957912003b6a8df"
-  end
-
-  resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/81/9c/0036c66234482044070836cc622266839e2412f8108849ab0bfdeaab8578/msgpack-0.6.1.tar.gz"
-    sha256 "4008c72f5ef2b7936447dcb83db41d97e9791c83221be13d5e19db0796df1972"
   end
 
   resource "msgpack-python" do
@@ -52,7 +50,7 @@ class Pymol < Formula
   end
 
   def install
-    xy = Language::Python.major_minor_version "python3"
+    xy = Language::Python.major_minor_version Formula["python@3.9"].opt_bin/"python3"
     ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
 
     # install other resources
@@ -63,15 +61,12 @@ class Pymol < Formula
     end
 
     # To circumvent an installation error "libxml/xmlwriter.h not found".
-    unless OS.mac?
-      ENV.append "LDFLAGS", "-L#{Formula["libxml2"].opt_lib}"
-      ENV.append "CPPFLAGS", "-I#{Formula["libxml2"].opt_include}/libxml2"
-      ENV.append "CPPFLAGS", "-I#{Formula["freetype"].opt_include}/freetype2"
-    end
+    ENV.append "LDFLAGS", "-L#{Formula["libxml2"].opt_lib}"
+    ENV.append "CPPFLAGS", "-I#{Formula["libxml2"].opt_include}/libxml2"
+    # CPPFLAGS freetype2 required.
+    ENV.append "CPPFLAGS", "-I#{Formula["freetype"].opt_include}/freetype2"
 
-    ENV.append "CPPFLAGS", "-I#{Formula["freetype"].opt_include}"
-
-    # openvr support is not included.
+    # openvr support not included.
     args = %W[
       --install-scripts=#{libexec}/bin
       --install-lib=#{libexec}/lib/python#{xy}/site-packages
