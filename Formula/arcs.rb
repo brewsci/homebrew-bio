@@ -8,8 +8,8 @@ class Arcs < Formula
 
   bottle do
     root_url "https://archive.org/download/brewsci/bottles-bio"
-    sha256 cellar: :any, catalina:     "d683a22fb63e36d4cbcf11847b9700d85c454a90e77915615bcccae95d0c2475"
-    sha256 cellar: :any, x86_64_linux: "84a56e57a9a1c904361dc2100e279a41f9992b208737061276cce50273df0ff9"
+    sha256 cellar: :any, catalina:     "20c0513d21d726a3cdf1d0016dc3072a7a2a78f34c6905373c1c2ccac9e9f736"
+    sha256 cellar: :any, x86_64_linux: "38fdc0f3ab018cc03d4de8089df3ec7a3d02751d098b46f9d24bdd0fcb492a24"
   end
 
   head do
