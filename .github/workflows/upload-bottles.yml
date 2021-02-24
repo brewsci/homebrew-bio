@@ -10,8 +10,7 @@ jobs:
     container:
       image: homebrew/ubuntu16.04:master
     env:
-      HOMEBREW_BINTRAY_USER: linuxbrewtestbot
-      HOMEBREW_BINTRAY_KEY: ${{secrets.HOMEBREW_BINTRAY_KEY}}
+      HOMEBREW_INTERNET_ARCHIVE_KEY: ${{secrets.HOMEBREW_INTERNET_ARCHIVE_KEY}}
       HOMEBREW_NO_ANALYTICS: 1
       HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
@@ -51,11 +50,7 @@ jobs:
             git -C "$(brew --repo ${{github.repository}})" status
             git config --global user.name "Brewsci"
             git config --global user.email "linux@brew.sh"
-            brew pr-upload --bintray-org=linuxbrew --root-url=https://archive.org/download/brewsci/bottles-bio
-            for i in *.bottle*.tar.gz; do
-              sha256sum $i
-              curl -f -X PUT -H "Authorization: AWS ${{secrets.HOMEBREW_ARCHIVE_KEY}}" -T $i http://brewsci.s3.us.archive.org/bottles-bio/${i/--/-}
-            done
+            brew pr-upload --archive-item=brewsci --root-url=https://archive.org/download/brewsci/bottles-bio
           fi
           cd "$(brew --repo ${{github.repository}})"
           git branch -f "pr$pr"
