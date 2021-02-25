@@ -13,8 +13,8 @@ class Gemma < Formula
 
   bottle do
     root_url "https://archive.org/download/brewsci/bottles-bio"
-    sha256 cellar: :any, sierra:       "552f7f77c75747d9d0457706cb480fed17063f633d088e099ef3aac44b4aea4f"
-    sha256 cellar: :any, x86_64_linux: "4a65d64d34e24e2ac644bd9ad4eca53adca4c395d6fee82a3d78d4e3a1052247"
+    sha256 cellar: :any,                 catalina:     "7e27d603f4afdd48b01b7db2e3fc2a7d401450932585652047a79f0875b0a50a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "70df4511ba6de74ebb2f0f6efcd6d02b48d7797a27c36dec95afd05574e7ee44"
   end
 
   depends_on "eigen" => :build
