@@ -4,6 +4,7 @@ class Clipper4coot < Formula
   url "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/clipper-2.1.20180802.tar.gz"
   sha256 "7c7774f224b59458e0faa104d209da906c129523fa737e81eb3b99ec772b81e0"
   license "LGPL-2.1-only"
+  revision 1
 
   bottle do
     root_url "https://archive.org/download/brewsci/bottles-bio"
@@ -39,27 +40,31 @@ class Clipper4coot < Formula
         "--prefix=#{prefix}/fftw2",
         "--enable-shared",
         "--enable-float",
+        "--disable-static",
       ]
       simd_args = []
       simd_args << "--enable-sse2" << "--enable-avx" if Hardware::CPU.intel?
       system "./configure", *(args + simd_args)
-      system "make", "-j#{ENV.make_jobs}", "install"
+      system "make", "install"
     end
 
     # install clipper using fftw2 described above
     ENV["CXXFLAGS"] = "-g -O2 -fno-strict-aliasing -Wno-narrowing"
     ENV.append "LDFLAGS", "-L#{prefix}/fftw2/lib"
     ENV.append "CPPFLAGS", "-I#{prefix}/fftw2/include"
-    args = %W[
-      --prefix=#{prefix}
-      --enable-mmdb
-      --enable-ccp4
-      --enable-cif
-      --enable-minimol
-      --enable-cns
+    # --enable-shared is required for coot
+    args = [
+      "--prefix=#{prefix}",
+      "--enable-mmdb",
+      "--enable-ccp4",
+      "--enable-cif",
+      "--enable-minimol",
+      "--enable-cns",
+      "--enable-shared",
+      "--disable-static",
     ]
     system "./configure", *args
-    system "make", "-j#{ENV.make_jobs}", "install"
+    system "make", "install"
   end
 
   test do
