@@ -8,8 +8,8 @@ class Clipper4coot < Formula
 
   bottle do
     root_url "https://archive.org/download/brewsci/bottles-bio"
-    sha256 cellar: :any,                 catalina:     "bdcc7e7c4414730de854b163f3f10c77391b8887aa92a80a48f0b1cfba2595ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "adb31c33be056d462bff85d6f58dc236bbc2db60c8acb3d89f694555245347be"
+    sha256 cellar: :any,                 catalina:     "b59b536495ee9b1691296458c4f0125c68c76de5e729738430621504492e1896"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ce93bf961cd711153db05d726dbc9a0662c1e2d0d7af075ec99bb95015f71f43"
   end
 
   depends_on "binutils" => :build
