@@ -4,6 +4,7 @@ class Mmdb2 < Formula
   url "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/mmdb2-2.0.20.tar.gz"
   sha256 "bd86716a1005b161e7b6a7c93902a7cc1220efa9d757e1f6bdf6532e766624e3"
   license all_of: ["GPL-3.0-only", "LGPL-3.0-only"]
+  revision 1
 
   bottle do
     root_url "https://archive.org/download/brewsci/bottles-bio"
@@ -14,7 +15,12 @@ class Mmdb2 < Formula
   depends_on "pkg-config" => [:build, :test]
 
   def install
-    system "./configure", "--prefix=#{prefix}"
+    args = %W[
+      --prefix=#{prefix}
+      --enable-shared
+      --disable-static
+    ]
+    system "./configure", *args
     system "make", "install"
   end
 
