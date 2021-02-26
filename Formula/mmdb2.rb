@@ -8,8 +8,8 @@ class Mmdb2 < Formula
 
   bottle do
     root_url "https://archive.org/download/brewsci/bottles-bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "8894b970173f65fbea636a9c5df831b292fc75c2c43ceeae00b60ce694fb41b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e439c80170a0a0bf4e5f4c01af422643b8a85fd5d4b6a202ac71d537d3de6e46"
+    sha256 cellar: :any,                 catalina:     "70b301e437f12834fd9d52b1d0fa4f5e90ae7855a0cf491d69b8733a64e3a938"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "864b30f348f65f3999eb51745604fd12c51a25bb1582ababc237f20221f8ada7"
   end
 
   depends_on "pkg-config" => [:build, :test]
