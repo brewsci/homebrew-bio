@@ -2,8 +2,8 @@ class Viennarna < Formula
   # cite Lorenz_2011: "https://doi.org/10.1186/1748-7188-6-26"
   desc "Prediction and comparison of RNA secondary structures"
   homepage "https://www.tbi.univie.ac.at/~ronny/RNA/"
-  url "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.14.tar.gz"
-  sha256 "ba9cfc8a48e457fc891628f3229a3924de31714460dc4a4dec081868f802cc28"
+  url "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.17.tar.gz"
+  sha256 "b1e608f6f37cdf4adbcdd1f86fd9ebfcc1e663d58488e0f8173a58879480c121"
 
   bottle do
     root_url "https://archive.org/download/brewsci/bottles-bio"
