@@ -7,10 +7,9 @@ class Phyx < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "561513bd343850933d8f034617bb6990100bb8ffbd5f3a6fc7c8145c43401f25" => :mojave
-    sha256 "0b324a7fa20c5f57d4de10ae5034c2885ad7006c04c24107bef67a33a3c1131f" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, mojave:       "561513bd343850933d8f034617bb6990100bb8ffbd5f3a6fc7c8145c43401f25"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0b324a7fa20c5f57d4de10ae5034c2885ad7006c04c24107bef67a33a3c1131f"
   end
 
   depends_on "armadillo"

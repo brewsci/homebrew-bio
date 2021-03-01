@@ -8,10 +8,9 @@ class EMem < Formula
   revision 1
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "ff057c192242eb21d9392b1e616eaa579b301b90c608a49ce3a90e6d65015f79" => :catalina
-    sha256 "badf5104b21d2f5d99031c6b65af178071b022d11c187f76b6ad2fe684b660bc" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "ff057c192242eb21d9392b1e616eaa579b301b90c608a49ce3a90e6d65015f79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "badf5104b21d2f5d99031c6b65af178071b022d11c187f76b6ad2fe684b660bc"
   end
 
   depends_on "boost" => :build

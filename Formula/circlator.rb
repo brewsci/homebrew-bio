@@ -9,11 +9,16 @@ class Circlator < Formula
   sha256 "927b6c156bfba6fa02db0c1173e280f85373320814c51e084170df583e604a2a"
   license "GPL-3.0"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)(?:[._-]|["' >])}i)
+  end
+
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "3768e23648fdacd33e43f562dcaf6a7cbe20006e3f4a2c03f5f3c62e400fd216" => :sierra
-    sha256 "310c5d97d4320ffbde5f0aedbcc7e05d03b721452714cf0e5dd21e5f3e1767f0" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, sierra:       "3768e23648fdacd33e43f562dcaf6a7cbe20006e3f4a2c03f5f3c62e400fd216"
+    sha256 cellar: :any, x86_64_linux: "310c5d97d4320ffbde5f0aedbcc7e05d03b721452714cf0e5dd21e5f3e1767f0"
   end
 
   depends_on "brewsci/bio/mummer"

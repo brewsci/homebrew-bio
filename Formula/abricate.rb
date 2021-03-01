@@ -7,10 +7,9 @@ class Abricate < Formula
   head "https://github.com/tseemann/abricate.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "9aa025868b88f8c74aacc177dc6f672bf436654390baea43eaa2bef3de2c561e" => :catalina
-    sha256 "6c0477d78fe6c1cef673f51569500b9fbb100502ec99359ad168d5f1d56f5686" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "9aa025868b88f8c74aacc177dc6f672bf436654390baea43eaa2bef3de2c561e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "6c0477d78fe6c1cef673f51569500b9fbb100502ec99359ad168d5f1d56f5686"
   end
 
   depends_on "cpanminus" => :build

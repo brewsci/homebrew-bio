@@ -10,10 +10,9 @@ class Oma < Formula
   sha256 "73cc51300ecd162970a37b2ccb8992b66f710fafc76a00eab04b4d3857d19477"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "729dcb8eb4c80b0c5a0609c6dde988435f104a08c74df0b2891bc1f382dde221" => :catalina
-    sha256 "43580d201fff38e760fc4109df638faef4e370ce7e75c88c3df07c9dc3312b5e" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "729dcb8eb4c80b0c5a0609c6dde988435f104a08c74df0b2891bc1f382dde221"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "43580d201fff38e760fc4109df638faef4e370ce7e75c88c3df07c9dc3312b5e"
   end
 
   depends_on "numpy"

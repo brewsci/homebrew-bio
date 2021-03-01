@@ -7,10 +7,9 @@ class Quickmerge < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "dac4d13b6bce25546570e2302721ca3b26c6c99fd1e13d189d5ee4c79d0259cb" => :sierra
-    sha256 "980b2b1f9113b394deac9ddb5ce0acf978d19a5ce57b7d8e80bbec28a744f8ff" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, sierra:       "dac4d13b6bce25546570e2302721ca3b26c6c99fd1e13d189d5ee4c79d0259cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "980b2b1f9113b394deac9ddb5ce0acf978d19a5ce57b7d8e80bbec28a744f8ff"
   end
 
   depends_on "mummer"

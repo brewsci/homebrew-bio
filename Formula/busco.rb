@@ -12,10 +12,9 @@ class Busco < Formula
   head "https://gitlab.com/ezlab/busco.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "f9a62517ec79bd2f2c9cff93e54b439492c6817881073c8078f0681ea8dd3deb" => :catalina
-    sha256 "1bce16b5608a8389835c63d8eecfb55b0c7a73ad28815f6eeb79d701b3d0f28a" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "f9a62517ec79bd2f2c9cff93e54b439492c6817881073c8078f0681ea8dd3deb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1bce16b5608a8389835c63d8eecfb55b0c7a73ad28815f6eeb79d701b3d0f28a"
   end
 
   depends_on "augustus"

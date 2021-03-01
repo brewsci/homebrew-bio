@@ -8,10 +8,9 @@ class Stringtie < Formula
   head "https://github.com/gpertea/stringtie.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "f3bd8bfd0a67b5e281367af47bbbe2edac651bcdfd0fa1a5fb4b59ecbb3fa86d" => :catalina
-    sha256 "2caf601a36af8448066dac8da2c64947398ba12e8716039fd8817e146f584ec5" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "f3bd8bfd0a67b5e281367af47bbbe2edac651bcdfd0fa1a5fb4b59ecbb3fa86d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2caf601a36af8448066dac8da2c64947398ba12e8716039fd8817e146f584ec5"
   end
 
   uses_from_macos "zlib"

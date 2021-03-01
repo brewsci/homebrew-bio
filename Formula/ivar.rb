@@ -7,10 +7,9 @@ class Ivar < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "7f7d05e1565b69cde419d85626487bb0775364b255f51159b5c2be127f0240c1" => :catalina
-    sha256 "a2b146005d4a65c00ce45ea3c2a82e819d6a7a7611d2799fb43eee414af600c9" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, catalina:     "7f7d05e1565b69cde419d85626487bb0775364b255f51159b5c2be127f0240c1"
+    sha256 cellar: :any, x86_64_linux: "a2b146005d4a65c00ce45ea3c2a82e819d6a7a7611d2799fb43eee414af600c9"
   end
 
   depends_on "autoconf" => :build

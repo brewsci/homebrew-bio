@@ -7,10 +7,9 @@ class Delly < Formula
       revision: "0881a99c06b579586f6350f27bf85fe2a1e20ff6"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "cef13a263a84ec23a8708f909345c1cdbfa000135d9c21dc0a00b45d91f1aed6" => :catalina
-    sha256 "9453aaa771a707a430ac9f82a41ef086df4572b55244fa1a0a9d2471c6db52b5" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, catalina:     "cef13a263a84ec23a8708f909345c1cdbfa000135d9c21dc0a00b45d91f1aed6"
+    sha256 cellar: :any, x86_64_linux: "9453aaa771a707a430ac9f82a41ef086df4572b55244fa1a0a9d2471c6db52b5"
   end
 
   depends_on "autoconf" => :build

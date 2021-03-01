@@ -7,10 +7,9 @@ class Peat < Formula
   license "GPL-2.0"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "6de0b86edd00c6efee1c5f8d2b8370a6bbd46b30fc136d4bd1bfc6a1b2a5a10f" => :sierra
-    sha256 "1aa583f4dbcf1ecd7a769a2d01a4403368b4e72528eb27f6ad8854e6e8674b37" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, sierra:       "6de0b86edd00c6efee1c5f8d2b8370a6bbd46b30fc136d4bd1bfc6a1b2a5a10f"
+    sha256 cellar: :any, x86_64_linux: "1aa583f4dbcf1ecd7a769a2d01a4403368b4e72528eb27f6ad8854e6e8674b37"
   end
 
   depends_on "cmake" => :build

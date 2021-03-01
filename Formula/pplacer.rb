@@ -4,13 +4,6 @@ class Pplacer < Formula
   homepage "https://matsen.fhcrc.org/pplacer/"
   license "GPL-3.0"
 
-  bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "67bc8639e0f54daa1c141b906814578cd26f9510f9803297c337b4a0c241f577" => :sierra
-    sha256 "a3defbdaf841d3fb1297cb1175a29b7ecee7f964cd6e25cf95a1de7a4946a105" => :x86_64_linux
-  end
-
   # We use binaries to avoid compiling OCaml code
   if OS.mac?
     url "https://github.com/matsen/pplacer/releases/download/v1.1.alpha17/pplacer-Darwin-v1.1.alpha17.zip"
@@ -18,6 +11,18 @@ class Pplacer < Formula
   else
     url "https://github.com/matsen/pplacer/releases/download/v1.1.alpha17/pplacer-Linux-v1.1.alpha17.zip"
     sha256 "3dc8e20fa8642d01daadde5bf9e36df2c180abec8f85c0b2f296f7852b63537c"
+  end
+
+  livecheck do
+    url :stable
+    strategy :github_latest
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+(?:\.(?:(?:alpha|beta|rc|r)\d+)+)?)["' >]}i)
+  end
+
+  bottle do
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, sierra:       "67bc8639e0f54daa1c141b906814578cd26f9510f9803297c337b4a0c241f577"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a3defbdaf841d3fb1297cb1175a29b7ecee7f964cd6e25cf95a1de7a4946a105"
   end
 
   depends_on "gsl" if OS.mac?

@@ -7,10 +7,9 @@ class Velvetoptimiser < Formula
   head "https://github.com/tseemann/VelvetOptimiser.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "81bbe7d594044c2ef8ac652705c0ee1fc402369391381c696e0038adbbba1f73" => :sierra
-    sha256 "cce69e42775482486576e639f7fc096ea5f7852fdf064f70d01de81461d15db6" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, sierra:       "81bbe7d594044c2ef8ac652705c0ee1fc402369391381c696e0038adbbba1f73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cce69e42775482486576e639f7fc096ea5f7852fdf064f70d01de81461d15db6"
   end
 
   depends_on "brewsci/bio/bioperl"

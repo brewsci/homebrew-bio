@@ -6,10 +6,9 @@ class Ska < Formula
   license "MIT"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "fbd0265e5781a5ab96d69bf46d1616b1e8b9c53eef03316cb25ceeed50d90d73" => :sierra
-    sha256 "caafb54652a88112431cbc92b5885602b3e97dc9722364dd168b252fa2d5b04b" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, sierra:       "fbd0265e5781a5ab96d69bf46d1616b1e8b9c53eef03316cb25ceeed50d90d73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "caafb54652a88112431cbc92b5885602b3e97dc9722364dd168b252fa2d5b04b"
   end
 
   uses_from_macos "zlib"

@@ -8,10 +8,9 @@ class AbyssExplorer < Formula
   head "https://github.com/bcgsc/ABySS-explorer.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "44e6a1c361f36b0a7316b4bfa45371f571743fb7ad19df0dc76bddd1dcd22d8e" => :catalina
-    sha256 "4e1f8ad29d192da909ac2ec6ea32eb7644e2dd9107e166c29aeef5a7d7f0fcdd" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "44e6a1c361f36b0a7316b4bfa45371f571743fb7ad19df0dc76bddd1dcd22d8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4e1f8ad29d192da909ac2ec6ea32eb7644e2dd9107e166c29aeef5a7d7f0fcdd"
   end
 
   depends_on "openjdk"
@@ -29,6 +28,6 @@ class AbyssExplorer < Formula
     assert_predicate bin/"abyss-explorer", :executable?
     assert_predicate libexec/"ABySS-explorer.jar", :exist?
     # This test fails on CI, though it succeeds locally.
-    assert_match "Build", shell_output("#{bin}/abyss-explorer --version") unless ENV["CI"]
+    assert_match "Build", shell_output("#{bin}/abyss-explorer --version") unless ENV["HOMEBREW_GITHUB_ACTIONS"]
   end
 end

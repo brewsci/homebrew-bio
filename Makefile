@@ -17,8 +17,8 @@ all: api/formula.json
 setup:
 	sudo chown $(USER): $(HOME)
 	sudo chown -R $(USER): .
-	git config --global user.name LinuxbrewTestBot
-	git config --global user.email testbot@linuxbrew.sh
+	git config --global user.name Brewsci
+	git config --global user.email linux@brew.sh
 
 formula.json:
 	brew install jq

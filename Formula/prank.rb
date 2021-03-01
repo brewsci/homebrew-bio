@@ -6,10 +6,9 @@ class Prank < Formula
   head "https://github.com/ariloytynoja/prank-msa.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "4a2850440399401f741ab36b3dc259bf58ab9172b0ad748f6b7d3036e2382384" => :sierra
-    sha256 "f5636af90d0bb5adcc132bd20c4f08763453411068768af1f2275ff0e6455abb" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, sierra:       "4a2850440399401f741ab36b3dc259bf58ab9172b0ad748f6b7d3036e2382384"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f5636af90d0bb5adcc132bd20c4f08763453411068768af1f2275ff0e6455abb"
   end
 
   depends_on "exonerate"

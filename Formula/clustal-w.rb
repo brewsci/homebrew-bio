@@ -7,11 +7,10 @@ class ClustalW < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
+    root_url "https://archive.org/download/brewsci/bottles-bio"
     rebuild 1
-    sha256 "cd8e60b3e5302663fb451e97fcdb957b0cf1827d2a74a217278f42c201a71625" => :catalina
-    sha256 "bcb7a339eb760fc0f14613ae2d231d1e15ade239fa3aefb2d02fb00705ffe92c" => :x86_64_linux
+    sha256 cellar: :any_skip_relocation, catalina:     "cd8e60b3e5302663fb451e97fcdb957b0cf1827d2a74a217278f42c201a71625"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "bcb7a339eb760fc0f14613ae2d231d1e15ade239fa3aefb2d02fb00705ffe92c"
   end
 
   def install

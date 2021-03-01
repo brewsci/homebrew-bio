@@ -7,10 +7,9 @@ class Kalign < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "6851604ef61179f22485d7a230de5eaf4025b4b85756d948c10ff96a61a33f9d" => :catalina
-    sha256 "30dc86c27dc8bf5281e9a156aab83931c8401f859a1a4bae10ebd24d066ce67c" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "6851604ef61179f22485d7a230de5eaf4025b4b85756d948c10ff96a61a33f9d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "30dc86c27dc8bf5281e9a156aab83931c8401f859a1a4bae10ebd24d066ce67c"
   end
 
   depends_on "autoconf" => :build

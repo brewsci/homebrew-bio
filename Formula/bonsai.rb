@@ -6,10 +6,9 @@ class Bonsai < Formula
   license "MIT"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "189b70f92aa7b714bc645f5ab759646e0871181a8a6b463dfd3fe11b989fc300" => :sierra
-    sha256 "13dd340ff0ff41c70d77d01e9e9e54a90783d98409492428861fbfea31f02762" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, sierra:       "189b70f92aa7b714bc645f5ab759646e0871181a8a6b463dfd3fe11b989fc300"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "13dd340ff0ff41c70d77d01e9e9e54a90783d98409492428861fbfea31f02762"
   end
 
   unless OS.mac?

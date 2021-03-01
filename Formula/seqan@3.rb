@@ -8,10 +8,9 @@ class SeqanAT3 < Formula
   head "https://github.com/seqan/seqan3.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "2b09a9199ca88289ae9d7572ea159481e23cb57a419fec0c3e77647179f22a1a" => :catalina
-    sha256 "067d5789a5501d6ac6668fc8323cedc0a3cfd0252de6ee2478d754695d0d4f1a" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "2b09a9199ca88289ae9d7572ea159481e23cb57a419fec0c3e77647179f22a1a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "067d5789a5501d6ac6668fc8323cedc0a3cfd0252de6ee2478d754695d0d4f1a"
   end
 
   depends_on "cmake" => :build

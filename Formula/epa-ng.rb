@@ -8,10 +8,9 @@ class EpaNg < Formula
   head "https://github.com/Pbdas/epa-ng.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "24bf0668e2555f23cb00eeab26fc3c63f5ff1911bbd6cf57a8fe68cc46e11ef0" => :catalina
-    sha256 "71b2578583040741c1e4de704489d5b10a097985037edf8508bd7b203cb72382" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "24bf0668e2555f23cb00eeab26fc3c63f5ff1911bbd6cf57a8fe68cc46e11ef0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "71b2578583040741c1e4de704489d5b10a097985037edf8508bd7b203cb72382"
   end
 
   depends_on "cmake" => :build

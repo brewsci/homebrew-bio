@@ -7,10 +7,9 @@ class Iqtree2 < Formula
   license "GPL-2.0"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "b9d0f98622e3223771bbdd6c86861a37d240dfa9bdc357888b589802b0eb8056" => :catalina
-    sha256 "06d8c6b11ddb0b991ed2b1e237a4c900be94a632dc4ba4deb442a241dbf4f996" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, catalina:     "b9d0f98622e3223771bbdd6c86861a37d240dfa9bdc357888b589802b0eb8056"
+    sha256 cellar: :any, x86_64_linux: "06d8c6b11ddb0b991ed2b1e237a4c900be94a632dc4ba4deb442a241dbf4f996"
   end
 
   depends_on "boost" => :build

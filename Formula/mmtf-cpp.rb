@@ -7,10 +7,9 @@ class MmtfCpp < Formula
   license "MIT"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "8b39cff9ba4c472eed266632996266fdf4533c28600ee629ad4fe5b433dccca3" => :sierra
-    sha256 "13fdd052921a4c7404dcb224c1dc426d8bf468349ddb401afb3d6932167ee3c5" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, sierra:       "8b39cff9ba4c472eed266632996266fdf4533c28600ee629ad4fe5b433dccca3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "13fdd052921a4c7404dcb224c1dc426d8bf468349ddb401afb3d6932167ee3c5"
   end
 
   depends_on "cmake" => :build

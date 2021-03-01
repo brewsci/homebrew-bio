@@ -22,7 +22,7 @@ jobs:
           cp -a "$GITHUB_WORKSPACE" "$(brew --repo ${{github.repository}})"
           mkdir ~/bottles
           cd ~/bottles
-          brew test-bot --skip-recursive-dependents --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
+          brew test-bot --skip-recursive-dependents --root-url=https://archive.org/download/brewsci/bottles-bio --git-name=Brewsci --git-email=linux@brew.sh
           cp -a ~/bottles $RUNNER_TEMP/
       - name: Upload bottles
         uses: actions/upload-artifact@v1
@@ -43,7 +43,7 @@ jobs:
           cp -a "$GITHUB_WORKSPACE" "$(brew --repo ${{github.repository}})"
           mkdir ~/bottles
           cd ~/bottles
-          brew test-bot --cleanup --root-url=https://linuxbrew.bintray.com/bottles-bio
+          brew test-bot --cleanup --root-url=https://archive.org/download/brewsci/bottles-bio
           cp -a ~/bottles $RUNNER_TEMP/
       - name: Upload bottles
         uses: actions/upload-artifact@v1

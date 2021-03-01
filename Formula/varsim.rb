@@ -6,10 +6,9 @@ class Varsim < Formula
   license "BSD-2-Clause"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "c6b82592aa5824c0035de5ef5636f76a26985ed1e54e7f9b5b43c9438764e8ea" => :catalina
-    sha256 "b06e5eb42eda0e79c90354a8f7b5768c920c4c45a72a457b732f64e12d037e39" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "c6b82592aa5824c0035de5ef5636f76a26985ed1e54e7f9b5b43c9438764e8ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b06e5eb42eda0e79c90354a8f7b5768c920c4c45a72a457b732f64e12d037e39"
   end
 
   depends_on "openjdk"

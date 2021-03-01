@@ -6,10 +6,9 @@ class Mapcaller < Formula
   license "MIT"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "a1b5b8de122ebbfbfcfd68dcd2c33f10c2df5874993c1eb895ef762a5f923c8a" => :catalina
-    sha256 "1078f7ff4afb2ecf4ffa4d022358d344301467134e4eff8fcdcfbc637643078d" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, catalina:     "a1b5b8de122ebbfbfcfd68dcd2c33f10c2df5874993c1eb895ef762a5f923c8a"
+    sha256 cellar: :any, x86_64_linux: "1078f7ff4afb2ecf4ffa4d022358d344301467134e4eff8fcdcfbc637643078d"
   end
 
   depends_on "xz"

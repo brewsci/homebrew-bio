@@ -9,11 +9,15 @@ class Bowtie < Formula
   license "Artistic-2.0"
   head "https://github.com/BenLangmead/bowtie.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "097544d5656a7fab72b8d36e08bc7e2be4032fdd573fa205ad4da9ad5d7bf56a" => :catalina
-    sha256 "cf888db0331e61e96ebc6ea51418af5a1f9045d83c49c560d65cb396a448ac4d" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "097544d5656a7fab72b8d36e08bc7e2be4032fdd573fa205ad4da9ad5d7bf56a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cf888db0331e61e96ebc6ea51418af5a1f9045d83c49c560d65cb396a448ac4d"
   end
 
   depends_on "python"

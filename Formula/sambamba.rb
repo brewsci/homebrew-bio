@@ -8,10 +8,9 @@ class Sambamba < Formula
   license "GPL-2.0"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "6ddf6f0fc0f344cd7b22b640710f1ee73b0a7edffca2d671188681f99babb297" => :catalina
-    sha256 "9f2a305a8b3b6ae83548eefd8766ecde5c7e71b1d7a29fad3c6a52adb70aaaed" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "6ddf6f0fc0f344cd7b22b640710f1ee73b0a7edffca2d671188681f99babb297"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9f2a305a8b3b6ae83548eefd8766ecde5c7e71b1d7a29fad3c6a52adb70aaaed"
   end
 
   depends_on "ldc" => :build

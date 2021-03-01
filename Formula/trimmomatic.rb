@@ -7,10 +7,9 @@ class Trimmomatic < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "b3252323576db7ff5833ce397c962c1e42e4a95da47f546c77c4e0dfc8d0eadb" => :sierra
-    sha256 "a8ef297af91bf7e1ccb35092d054e9aefb2d2cb811a53b53756667a89756a61b" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, sierra:       "b3252323576db7ff5833ce397c962c1e42e4a95da47f546c77c4e0dfc8d0eadb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a8ef297af91bf7e1ccb35092d054e9aefb2d2cb811a53b53756667a89756a61b"
   end
 
   depends_on "openjdk"

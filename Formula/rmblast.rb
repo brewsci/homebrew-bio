@@ -11,10 +11,9 @@ class Rmblast < Formula
   revision 1
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "bd7e6df63714fb2cc07ea1bc5dc3fcfb23364d8f86a66fd6bf8af333d8a18dc1" => :sierra
-    sha256 "e4179700df3ad81604cb6031a9d82e971d3fa88ac0c9b6d8f949af3b8be3edb8" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, sierra:       "bd7e6df63714fb2cc07ea1bc5dc3fcfb23364d8f86a66fd6bf8af333d8a18dc1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e4179700df3ad81604cb6031a9d82e971d3fa88ac0c9b6d8f949af3b8be3edb8"
   end
 
   unless OS.mac?

@@ -6,10 +6,9 @@ class Mcl < Formula
   sha256 "b5786897a8a8ca119eb355a5630806a4da72ea84243dba85b19a86f14757b497"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "5620623bbe8674f6c69ab21084b1dae29cfdf7cd07273efe1b9deba8ec6a4db5" => :sierra
-    sha256 "8535c8aec04127d0e51bf5c469c2127ec8143ce5afc37c9e038a853ab6fb2a20" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, sierra:       "5620623bbe8674f6c69ab21084b1dae29cfdf7cd07273efe1b9deba8ec6a4db5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8535c8aec04127d0e51bf5c469c2127ec8143ce5afc37c9e038a853ab6fb2a20"
   end
 
   def install

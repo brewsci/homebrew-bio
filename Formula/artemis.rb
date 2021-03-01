@@ -7,10 +7,9 @@ class Artemis < Formula
   revision 1
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "afe9a473decfdaac3d4d4da8feb0d9731f4bd0079f65e59d17bce0d9c0bd4e4a" => :sierra
-    sha256 "87d973ba74d1738917f1c99acd608a1bd617e2d5c888d6ebc4067ec22dcb646d" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, sierra:       "afe9a473decfdaac3d4d4da8feb0d9731f4bd0079f65e59d17bce0d9c0bd4e4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "87d973ba74d1738917f1c99acd608a1bd617e2d5c888d6ebc4067ec22dcb646d"
   end
 
   depends_on "openjdk"

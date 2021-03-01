@@ -8,11 +8,15 @@ class Nanopolish < Formula
   license "MIT"
   head "https://github.com/jts/nanopolish.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "96585ee4d83de6848fcb18f15499b07bc90bb3b1dec358aa1040d307d2c64df3" => :catalina
-    sha256 "024891195b39013008a3a2d03946617697602335077d36930e975091232ca8b8" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, catalina:     "96585ee4d83de6848fcb18f15499b07bc90bb3b1dec358aa1040d307d2c64df3"
+    sha256 cellar: :any, x86_64_linux: "024891195b39013008a3a2d03946617697602335077d36930e975091232ca8b8"
   end
 
   depends_on "eigen" => :build # static link

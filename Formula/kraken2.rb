@@ -6,10 +6,9 @@ class Kraken2 < Formula
   license "MIT"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "8e469574030fe11f7076f10ee76486f6b7625541cfb0c3c03002c8122651488b" => :catalina
-    sha256 "0a75134a1be173c1472899b6714aa5a31bc03a12b64fe20c6817e4b64e9b2442" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, catalina:     "8e469574030fe11f7076f10ee76486f6b7625541cfb0c3c03002c8122651488b"
+    sha256 cellar: :any, x86_64_linux: "0a75134a1be173c1472899b6714aa5a31bc03a12b64fe20c6817e4b64e9b2442"
   end
 
   depends_on "blast" # for segmasker + dustmasker

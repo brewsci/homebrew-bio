@@ -8,10 +8,9 @@ class Trimal < Formula
   head "https://github.com/scapella/trimal"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "e1796872ec4389f87131dea98c4596aa387090d4eb476f1e1472e3763bbc09ed" => :sierra
-    sha256 "e10f7b254386950ff2944caf0b1eb924d0854618485c7cb534ba5f058dc56b17" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, sierra:       "e1796872ec4389f87131dea98c4596aa387090d4eb476f1e1472e3763bbc09ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e10f7b254386950ff2944caf0b1eb924d0854618485c7cb534ba5f058dc56b17"
   end
 
   def install

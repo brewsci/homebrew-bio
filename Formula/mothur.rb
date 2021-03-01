@@ -8,10 +8,9 @@ class Mothur < Formula
   head "https://github.com/mothur/mothur.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "c620df4847160e97694e4871c6b7b856262e07f72a1f36a78ef39cd2c1dc2032" => :catalina
-    sha256 "890a3599359b95cebf84704a746e57c14cad3a3bedd682f7fc6d013034b00497" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, catalina:     "c620df4847160e97694e4871c6b7b856262e07f72a1f36a78ef39cd2c1dc2032"
+    sha256 cellar: :any, x86_64_linux: "890a3599359b95cebf84704a746e57c14cad3a3bedd682f7fc6d013034b00497"
   end
 
   depends_on "boost"

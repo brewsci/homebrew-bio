@@ -4,10 +4,9 @@ class Gblocks < Formula
   homepage "http://molevol.cmima.csic.es/castresana/Gblocks.html"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "a6f6c638a2dc041e4d70e720e9f04fcc9f04531f7835c2f0bc9eaae9a8f58519" => :sierra
-    sha256 "71b816d5bb6eeba02476889a81970ffdddd195dee73b0b2d1fea7852d9ea19b2" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, sierra:       "a6f6c638a2dc041e4d70e720e9f04fcc9f04531f7835c2f0bc9eaae9a8f58519"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "71b816d5bb6eeba02476889a81970ffdddd195dee73b0b2d1fea7852d9ea19b2"
   end
 
   if OS.mac?

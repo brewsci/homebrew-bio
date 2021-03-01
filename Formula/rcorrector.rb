@@ -7,10 +7,9 @@ class Rcorrector < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "7cba79de46d2af33d9b9e3672eafa567c76af946fb5335542075b3dc170b0253" => :catalina
-    sha256 "307b411eb8b5ca877ce0264abb69298627acc19089440d1dc692c1554c322fb2" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "7cba79de46d2af33d9b9e3672eafa567c76af946fb5335542075b3dc170b0253"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "307b411eb8b5ca877ce0264abb69298627acc19089440d1dc692c1554c322fb2"
   end
 
   depends_on "brewsci/bio/jellyfish"

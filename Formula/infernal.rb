@@ -6,10 +6,9 @@ class Infernal < Formula
   sha256 "3b98a6a3a0e7b01aa077a0caf1e958223c4d8f80a69a4eb602ca59a3475da85e"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "90dde134e8db249856e3432376d4d5f8658f2a8abc2390beed3030908de03d49" => :catalina
-    sha256 "01baed72ace481f680194bec8c1df2e7f90282f8ba731412e92e8dcfc0ed17ad" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "90dde134e8db249856e3432376d4d5f8658f2a8abc2390beed3030908de03d49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "01baed72ace481f680194bec8c1df2e7f90282f8ba731412e92e8dcfc0ed17ad"
   end
 
   def install

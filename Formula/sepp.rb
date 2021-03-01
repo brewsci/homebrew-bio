@@ -8,10 +8,9 @@ class Sepp < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "45b005e6beaadc6a631d11f4f32301b55beda6c2a41222a59e96cdb271ee5814" => :mojave
-    sha256 "b81115b45f3c8075931cbf0fefef35a9357f1ff8878353c6a2f45ad8bb7234db" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, mojave:       "45b005e6beaadc6a631d11f4f32301b55beda6c2a41222a59e96cdb271ee5814"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b81115b45f3c8075931cbf0fefef35a9357f1ff8878353c6a2f45ad8bb7234db"
   end
 
   depends_on "openjdk"

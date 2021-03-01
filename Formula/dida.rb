@@ -8,9 +8,9 @@ class Dida < Formula
   revision 2
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "be712df11ffeb8d647d62e68d38209cd1e90494ea5227ff6c8f35d08cdfd13d9" => :sierra
-    sha256 "be67b9e1b268441b1ded890789aa081ee133f1c532ac3145c423726f2a96a44e" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 sierra:       "be712df11ffeb8d647d62e68d38209cd1e90494ea5227ff6c8f35d08cdfd13d9"
+    sha256 x86_64_linux: "be67b9e1b268441b1ded890789aa081ee133f1c532ac3145c423726f2a96a44e"
   end
 
   depends_on "open-mpi"

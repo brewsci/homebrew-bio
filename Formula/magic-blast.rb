@@ -10,10 +10,9 @@ class MagicBlast < Formula
   end
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "234d29db8f7b47403f0cc4ba4823824ed60d72945365dc2bb5de3eb49cb24114" => :sierra
-    sha256 "e05ba857997f6f75a69d5f423202ae9d99b48a122b3c219c6021f99badbbf07b" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, sierra:       "234d29db8f7b47403f0cc4ba4823824ed60d72945365dc2bb5de3eb49cb24114"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e05ba857997f6f75a69d5f423202ae9d99b48a122b3c219c6021f99badbbf07b"
   end
 
   unless OS.mac?

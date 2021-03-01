@@ -10,10 +10,9 @@ class LinksScaffolder < Formula
   head "https://github.com/bcgsc/LINKS.git"
 
   bottle do
-    cellar :any_skip_relocation
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "f00d027ea4ae9195eb35590128e07514a0d558829d682358b0bd66592e50f821" => :sierra
-    sha256 "dc7326911e2fb969cf4ad5720a95a3d924aff737fd547fb16db89346a473a691" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, sierra:       "f00d027ea4ae9195eb35590128e07514a0d558829d682358b0bd66592e50f821"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "dc7326911e2fb969cf4ad5720a95a3d924aff737fd547fb16db89346a473a691"
   end
 
   depends_on "swig" => :build

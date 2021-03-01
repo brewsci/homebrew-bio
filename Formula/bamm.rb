@@ -8,10 +8,9 @@ class Bamm < Formula
   head "https://github.com/macroevolution/bamm.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "fd57d0a4cee9311723afa3ce19cd828fce43f529c79a70b74c1ee9bf0857812d" => :sierra
-    sha256 "ea25ffe317ad5d39f8c3c1f4d1d565de1f053a41654333873869f912ca0a4fda" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, sierra:       "fd57d0a4cee9311723afa3ce19cd828fce43f529c79a70b74c1ee9bf0857812d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ea25ffe317ad5d39f8c3c1f4d1d565de1f053a41654333873869f912ca0a4fda"
   end
 
   depends_on "cmake" => :build

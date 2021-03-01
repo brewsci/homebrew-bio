@@ -6,10 +6,9 @@ class Jellyfish < Formula
   sha256 "e195b7cf7ba42a90e5e112c0ed27894cd7ac864476dc5fb45ab169f5b930ea5a"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "54cda3e960e08fbf2120a13876ab6c47b0d583c3b043800281e4df14e58e4abc" => :catalina
-    sha256 "2813f495b7438e162844005526ae6393f496ea5033a04e35192f33d7923e874d" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, catalina:     "54cda3e960e08fbf2120a13876ab6c47b0d583c3b043800281e4df14e58e4abc"
+    sha256 cellar: :any, x86_64_linux: "2813f495b7438e162844005526ae6393f496ea5033a04e35192f33d7923e874d"
   end
 
   def install

@@ -7,10 +7,9 @@ class Mpboot < Formula
   revision 1
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "9f81b4335359b8427fee1737fca2939f63ff62cc0f03097302c9837a99736fdd" => :catalina
-    sha256 "1b0598dc6c2b93a62554e4d5189fb2a5b683f0e812706e7c9a4f61c9fcd227fb" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "9f81b4335359b8427fee1737fca2939f63ff62cc0f03097302c9837a99736fdd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1b0598dc6c2b93a62554e4d5189fb2a5b683f0e812706e7c9a4f61c9fcd227fb"
   end
 
   option "with-avx", "Enable AVX SIMD instructions instead of SSE4"

@@ -8,11 +8,15 @@ class Freebayes < Formula
   license "MIT"
   head "https://github.com/ekg/freebayes.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "04d29c063def9219df5ae557876fdd4095cfde34e540e2a28acd1109a79f34bf" => :catalina
-    sha256 "07f3e4dd360c93efb848b5e4a420a0b32f8ce85d85f21652975aa382716657a9" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, catalina:     "04d29c063def9219df5ae557876fdd4095cfde34e540e2a28acd1109a79f34bf"
+    sha256 cellar: :any, x86_64_linux: "07f3e4dd360c93efb848b5e4a420a0b32f8ce85d85f21652975aa382716657a9"
   end
 
   depends_on "cmake" => :build

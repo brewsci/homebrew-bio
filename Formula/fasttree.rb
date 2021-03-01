@@ -7,10 +7,9 @@ class Fasttree < Formula
   revision 1
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "00e170051838803db512a523803daf59f01144a126ad5f5eafd7d80bc42bb0cf" => :catalina
-    sha256 "304bf00600d673074d03a03411e05ca9706bf8ca5b3b894831995a9a5cb9f98b" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, catalina:     "00e170051838803db512a523803daf59f01144a126ad5f5eafd7d80bc42bb0cf"
+    sha256 cellar: :any, x86_64_linux: "304bf00600d673074d03a03411e05ca9706bf8ca5b3b894831995a9a5cb9f98b"
   end
 
   # 26 Aug 2017; Community mostly wants USE_DOUBLE; make it default now
@@ -48,6 +47,6 @@ class Fasttree < Formula
       >3
       LCLYTHIGRNIYYGSYLYSETWNTGIMLLLITMATAFMGTTLPWGQMSFWGATVITNLFSAIPYIGTNLV
     EOS
-    assert_match /1:0.\d+,2:0.\d+,3:0.\d+/, shell_output("#{bin}/FastTree test.fa 2>&1")
+    assert_match(/1:0.\d+,2:0.\d+,3:0.\d+/, shell_output("#{bin}/FastTree test.fa 2>&1"))
   end
 end

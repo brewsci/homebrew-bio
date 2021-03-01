@@ -7,10 +7,9 @@ class BwaMem2 < Formula
   head "https://github.com/bwa-mem2/bwa-mem2.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "ccaf67262f2f7e7f711d6f482ad004161c66aef0c55cadcb7ec4907a228f074d" => :catalina
-    sha256 "943583113491f963bd0e8460994ec17a95f19208a62b07a8d514d18e648ddf7d" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "ccaf67262f2f7e7f711d6f482ad004161c66aef0c55cadcb7ec4907a228f074d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "943583113491f963bd0e8460994ec17a95f19208a62b07a8d514d18e648ddf7d"
   end
 
   uses_from_macos "zlib"

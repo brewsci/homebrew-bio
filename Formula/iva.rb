@@ -6,11 +6,15 @@ class Iva < Formula
   sha256 "91ba402d0feacc88b3e34e71b4f10e0552702887e6e416076e57f95f6aaf7fad"
   license "GPL-3.0"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "49a1baf28d5f8e89175dc01f08e3e6a9b8439e493ade3f58a162cc9561b3ced1" => :sierra
-    sha256 "eea163ae65cacbfca08005e99169d79ec7b641996b23751af0492176784576a6" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, sierra:       "49a1baf28d5f8e89175dc01f08e3e6a9b8439e493ade3f58a162cc9561b3ced1"
+    sha256 cellar: :any, x86_64_linux: "eea163ae65cacbfca08005e99169d79ec7b641996b23751af0492176784576a6"
   end
 
   depends_on "kmc"

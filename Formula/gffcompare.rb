@@ -7,10 +7,9 @@ class Gffcompare < Formula
   head "https://github.com/gpertea/gffcompare.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "2f54276ea7daef17a81e190e879561bd78bbf21d55f1b4b3e95e5daf451aa002" => :catalina
-    sha256 "a319df4c6334df1792496c3aed4bcfeb411c967510d54110abbb13208eebe37c" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "2f54276ea7daef17a81e190e879561bd78bbf21d55f1b4b3e95e5daf451aa002"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a319df4c6334df1792496c3aed4bcfeb411c967510d54110abbb13208eebe37c"
   end
 
   def install

@@ -7,10 +7,9 @@ class Exabayes < Formula
   head "https://github.com/aberer/exabayes.git", branch: "devel"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "77fda7581253a180c1ccd75db4e160ca1be097a2884946efe292c7307e401db4" => :sierra
-    sha256 "739036d04fcb054c2456b8148a9667e80636a3e1b5b03dcee1d1add9dc2c6464" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, sierra:       "77fda7581253a180c1ccd75db4e160ca1be097a2884946efe292c7307e401db4"
+    sha256 cellar: :any, x86_64_linux: "739036d04fcb054c2456b8148a9667e80636a3e1b5b03dcee1d1add9dc2c6464"
   end
 
   depends_on "autoconf" => :build

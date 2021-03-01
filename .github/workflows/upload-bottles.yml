@@ -10,8 +10,7 @@ jobs:
     container:
       image: homebrew/ubuntu16.04:master
     env:
-      HOMEBREW_BINTRAY_USER: linuxbrewtestbot
-      HOMEBREW_BINTRAY_KEY: ${{secrets.HOMEBREW_BINTRAY_KEY}}
+      HOMEBREW_INTERNET_ARCHIVE_KEY: ${{secrets.HOMEBREW_INTERNET_ARCHIVE_KEY}}
       HOMEBREW_NO_ANALYTICS: 1
       HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
@@ -49,9 +48,9 @@ jobs:
             file bottles.zip
             unzip bottles.zip
             git -C "$(brew --repo ${{github.repository}})" status
-            git config --global user.name "LinuxbrewTestBot"
-            git config --global user.email "testbot@linuxbrew.sh"
-            brew pr-upload --bintray-org=linuxbrew --root-url=https://linuxbrew.bintray.com/bottles-bio
+            git config --global user.name "Brewsci"
+            git config --global user.email "linux@brew.sh"
+            brew pr-upload --archive-item=brewsci --root-url=https://archive.org/download/brewsci/bottles-bio
           fi
           cd "$(brew --repo ${{github.repository}})"
           git branch -f "pr$pr"

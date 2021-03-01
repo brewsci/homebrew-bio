@@ -7,10 +7,9 @@ class Minia < Formula
   license "AGPL-3.0"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "0aa4268b6671d25ab642c61e5c848708c65385f28424096a2c16e8a25e1882c5" => :sierra
-    sha256 "987ae35c73a400c072f82b5e801fc660eb14c5c9c25ac3b82f5df6c7614c2ce7" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, sierra:       "0aa4268b6671d25ab642c61e5c848708c65385f28424096a2c16e8a25e1882c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "987ae35c73a400c072f82b5e801fc660eb14c5c9c25ac3b82f5df6c7614c2ce7"
   end
 
   depends_on "cmake" => :build

@@ -7,10 +7,9 @@ class RtgTools < Formula
   license "BSD-2-Clause"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "2c49d03dc7de14197a22c6a964ca89a941f57c7a05157919784cd6a31e4da198" => :catalina
-    sha256 "ce63fdebf09a933feb1bb707d150eab6d929337353de6cf543ca1eae7f8926e7" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "2c49d03dc7de14197a22c6a964ca89a941f57c7a05157919784cd6a31e4da198"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ce63fdebf09a933feb1bb707d150eab6d929337353de6cf543ca1eae7f8926e7"
   end
 
   depends_on "openjdk"

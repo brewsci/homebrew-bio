@@ -6,10 +6,9 @@ class GmapGsnap < Formula
   sha256 "1bf242eef2ad0ab0280c41fc28b44a5107e90bcba64b37cf1579e1793e892505"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "9e68cba9eb57c3ef57f1de83fff06967a2fd7f48740288e0bef75b0392fe71d3" => :mojave
-    sha256 "19a643b9dc76c497865d910dd38f758ea56ba0c08954cbb212aba5490f0d907b" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, mojave:       "9e68cba9eb57c3ef57f1de83fff06967a2fd7f48740288e0bef75b0392fe71d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "19a643b9dc76c497865d910dd38f758ea56ba0c08954cbb212aba5490f0d907b"
   end
 
   depends_on "samtools"

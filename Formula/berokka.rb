@@ -7,10 +7,9 @@ class Berokka < Formula
   head "https://github.com/tseemann/berokka.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "90c798a58c208954333c4cc029603a7fa27a906314fedd8a73e508619c234896" => :catalina
-    sha256 "c1b33a40dc324edcaa1cd2cebcb223fa0f9e24ef443cc7b426454ef1bff3893b" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "90c798a58c208954333c4cc029603a7fa27a906314fedd8a73e508619c234896"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c1b33a40dc324edcaa1cd2cebcb223fa0f9e24ef443cc7b426454ef1bff3893b"
   end
 
   depends_on "blast"

@@ -6,10 +6,9 @@ class Prokka < Formula
   sha256 "f730b5400ea9e507bfe6c5f3d22ce61960a897195c11571c2e1308ce2533faf8"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "992e481c64fb2c63e228f0bf8b1a98926fd7461305d371625736bf53ce863d1f" => :catalina
-    sha256 "33840d6123d3d8713a223a136455ec57028fc28564d7f386b10c981158166935" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "992e481c64fb2c63e228f0bf8b1a98926fd7461305d371625736bf53ce863d1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "33840d6123d3d8713a223a136455ec57028fc28564d7f386b10c981158166935"
   end
 
   depends_on "aragorn"

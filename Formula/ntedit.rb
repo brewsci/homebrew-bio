@@ -8,10 +8,9 @@ class Ntedit < Formula
   head "https://github.com/bcgsc/ntEdit.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "c6b971225ada7472390713dfbaa78ed282516f1f3f4a070d2ec18de6f4b9415b" => :catalina
-    sha256 "ef92eab23addd3ca6f86f76a6aa01dfc9b905d59f5cbf3d22b14f89ecad29fc5" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, catalina:     "c6b971225ada7472390713dfbaa78ed282516f1f3f4a070d2ec18de6f4b9415b"
+    sha256 cellar: :any, x86_64_linux: "ef92eab23addd3ca6f86f76a6aa01dfc9b905d59f5cbf3d22b14f89ecad29fc5"
   end
 
   depends_on "gcc" if OS.mac? # needs openmp

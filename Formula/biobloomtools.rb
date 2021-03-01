@@ -6,10 +6,9 @@ class Biobloomtools < Formula
   sha256 "cd3ca08677aae4cf99da30fdec87a23b12a8320c6d0e21df9d0c3b26b62b6153"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "0ee92de1bc3bc3e22572154e84db05b1120953a1758ec90ae50685dc601c3551" => :catalina
-    sha256 "6c1cb00f8060a9c59ab37bf3d58e8c8bbfb522a5c26ad714c2c07623bc672522" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, catalina:     "0ee92de1bc3bc3e22572154e84db05b1120953a1758ec90ae50685dc601c3551"
+    sha256 cellar: :any, x86_64_linux: "6c1cb00f8060a9c59ab37bf3d58e8c8bbfb522a5c26ad714c2c07623bc672522"
   end
 
   head do

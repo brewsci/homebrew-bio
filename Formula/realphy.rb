@@ -8,10 +8,9 @@ class Realphy < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "5105472e7cb9ff1c7f269f0296d57bf221ba7061b10659ec33b5dcf947ecc61e" => :sierra
-    sha256 "4598375bc8dc2a4d6b7cde0a99ef0292697aae147687cfd4306de922b1fefc98" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, sierra:       "5105472e7cb9ff1c7f269f0296d57bf221ba7061b10659ec33b5dcf947ecc61e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4598375bc8dc2a4d6b7cde0a99ef0292697aae147687cfd4306de922b1fefc98"
   end
 
   depends_on "openjdk"

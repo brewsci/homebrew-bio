@@ -7,11 +7,16 @@ class Treepl < Formula
   sha256 "a974497f3abfbc4d6671f0bf5ea2001ad09c03ccc8d9d3d77bb800269241c59c"
   head "https://github.com/blackrim/treePL.git"
 
+  livecheck do
+    url "https://github.com/blackrim/treePL/commits"
+    strategy :page_match
+    regex(/datetime=.*?(\d{4}-\d{2}-\d{2})T/i)
+  end
+
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "e62bff49272a105c8b9d0157f4b59953821c5d8556eb6ed231d4860c08554565" => :catalina
-    sha256 "78fddd7315e9747af2b3b9510a03154e6a0008dbd90df60e6d3d1ebf36dcb8ba" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, catalina:     "e62bff49272a105c8b9d0157f4b59953821c5d8556eb6ed231d4860c08554565"
+    sha256 cellar: :any, x86_64_linux: "78fddd7315e9747af2b3b9510a03154e6a0008dbd90df60e6d3d1ebf36dcb8ba"
   end
 
   depends_on "libomp" if OS.mac?

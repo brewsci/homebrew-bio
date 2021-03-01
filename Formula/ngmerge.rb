@@ -8,10 +8,9 @@ class Ngmerge < Formula
   head "https://github.com/jsh58/NGmerge.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "d24a87d8ef03468e83a8ef10a594a4c3bf9588945a1c817294d8b831d704cc59" => :catalina
-    sha256 "57587c4834b4ba04d472b69f0ccfa92ebf1f068c27b43ba21fe165fe06dbe52f" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, catalina:     "d24a87d8ef03468e83a8ef10a594a4c3bf9588945a1c817294d8b831d704cc59"
+    sha256 cellar: :any, x86_64_linux: "57587c4834b4ba04d472b69f0ccfa92ebf1f068c27b43ba21fe165fe06dbe52f"
   end
 
   uses_from_macos "zlib"

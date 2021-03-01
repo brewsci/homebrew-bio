@@ -9,10 +9,9 @@ class CdHit < Formula
   head "https://github.com/weizhongli/cdhit.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "47631dc21a652818238471695e530caa3c949841638bbb1453907c006f4f57ee" => :catalina
-    sha256 "9e7bee44f6ee0b8299b24a894322bec6e9d79b28b95bee7bd8d7e0b8d59de83a" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, catalina:     "47631dc21a652818238471695e530caa3c949841638bbb1453907c006f4f57ee"
+    sha256 cellar: :any, x86_64_linux: "9e7bee44f6ee0b8299b24a894322bec6e9d79b28b95bee7bd8d7e0b8d59de83a"
   end
 
   uses_from_macos "zlib"

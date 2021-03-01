@@ -8,10 +8,17 @@ class Kat < Formula
   revision 3
   head "https://github.com/TGAC/KAT.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+    regex(%r{href=.*?/tag/Release[._-]v?(\d+(?:\.\d+)+)["' >]}i)
+  end
+
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "395fea7e48ae8295cd51387cb11537c67586bbfe7912f27a5b56eb0620980f92" => :catalina
-    sha256 "5006a1a39cff6a90bd40c279853eb99e2366e5002614136f6a427c075a813810" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    rebuild 1
+    sha256 catalina:     "3de60b22d45daa5e28f03bb4f577c1ff14409f46f3fddb19407737b42e8392df"
+    sha256 x86_64_linux: "232a183bdce0f0a9565fc39aacf8cfe4ec019e4c86cf6f64a9177e96ca64bbd2"
   end
 
   depends_on "autoconf" => :build
@@ -19,12 +26,8 @@ class Kat < Formula
   depends_on "libtool" => :build
 
   depends_on "brewsci/bio/matplotlib"
+  depends_on "numpy"
   depends_on "scipy"
-
-  resource "tabulate" do
-    url "https://files.pythonhosted.org/packages/1c/a1/3367581782ce79b727954f7aa5d29e6a439dc2490a9ac0e7ea0a7115435d/tabulate-0.7.7.tar.gz"
-    sha256 "83a0b8e17c09f012090a50e1e97ae897300a72b35e0c86c0b53d3bd2ae86d8c6"
-  end
 
   def install
     # Disable unsupported compiler flags on macOS
@@ -34,12 +37,6 @@ class Kat < Formula
     ] do |s|
       s.gsub! "-fcoalesce-templates", ""
       s.gsub! "-Wno-long-double", ""
-    end
-
-    resources.each do |r|
-      r.stage do
-        system "python3", *Language::Python.setup_install_args(libexec)
-      end
     end
 
     system "./build_boost.sh"

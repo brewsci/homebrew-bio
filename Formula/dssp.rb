@@ -7,10 +7,9 @@ class Dssp < Formula
   sha256 "496282b4b5defc55d111190ab9f1b615a9574a2f090e7cf5444521c747b272d4"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "6ebb2d6959f7db323d0645e964ccdbc20a666bf9579aea4673291f06ed3ace82" => :catalina
-    sha256 "f838bdac491bd122ee73017146a2840f0ddcd450b38e9ac72c158365aa1e9a73" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, catalina:     "6ebb2d6959f7db323d0645e964ccdbc20a666bf9579aea4673291f06ed3ace82"
+    sha256 cellar: :any, x86_64_linux: "f838bdac491bd122ee73017146a2840f0ddcd450b38e9ac72c158365aa1e9a73"
   end
 
   depends_on "autoconf" => :build

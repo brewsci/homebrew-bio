@@ -9,10 +9,9 @@ class Unicycler < Formula
   head "https://github.com/rrwick/Unicycler.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "1100ca4a35cdef3a0c7b232d8e8418ee416ef74095b8fc28f8a4fccc6e4ab7ed" => :catalina
-    sha256 "870cda34ffc8986c8bdb1b24707da593b6ffa0675627b73db644d0c13f999b66" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, catalina:     "1100ca4a35cdef3a0c7b232d8e8418ee416ef74095b8fc28f8a4fccc6e4ab7ed"
+    sha256 cellar: :any, x86_64_linux: "870cda34ffc8986c8bdb1b24707da593b6ffa0675627b73db644d0c13f999b66"
   end
 
   depends_on "blast"

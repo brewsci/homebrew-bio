@@ -7,9 +7,9 @@ class Trnascan < Formula
   version_scheme 1
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "4b9b41b0218c8eca4a3ee120b308e690d26e2b452cafad34ace553287a656b0c" => :catalina
-    sha256 "cd9c6db9ce48711d817ffd2bca2dd6993d60973fb0c80f66f20103060701ca2b" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 catalina:     "4b9b41b0218c8eca4a3ee120b308e690d26e2b452cafad34ace553287a656b0c"
+    sha256 x86_64_linux: "cd9c6db9ce48711d817ffd2bca2dd6993d60973fb0c80f66f20103060701ca2b"
   end
 
   depends_on "infernal"

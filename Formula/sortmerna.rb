@@ -8,10 +8,9 @@ class Sortmerna < Formula
   head "https://github.com/biocore/sortmerna.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "aa26fd0b1316228b17fcb700bab6a2121af7806435c1657c9cbbf8724ce1f47d" => :sierra
-    sha256 "b412dde11f5cb06f8c4a1aa3d78719d0647ffe5a2e9ff81df960903346269bd1" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, sierra:       "aa26fd0b1316228b17fcb700bab6a2121af7806435c1657c9cbbf8724ce1f47d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b412dde11f5cb06f8c4a1aa3d78719d0647ffe5a2e9ff81df960903346269bd1"
   end
 
   uses_from_macos "zlib"

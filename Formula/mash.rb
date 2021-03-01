@@ -7,10 +7,9 @@ class Mash < Formula
   head "https://github.com/marbl/Mash.git"
 
   bottle do
-    cellar :any_skip_relocation
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "ceded4203723c07f1468254f7f1281031bfd8163e948fb1b165659064f7ef5a6" => :mojave
-    sha256 "4d75b04ef71f547af960aab06fe485dd53dd830695508fb0f2f33e1cfd5461b9" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, mojave:       "ceded4203723c07f1468254f7f1281031bfd8163e948fb1b165659064f7ef5a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4d75b04ef71f547af960aab06fe485dd53dd830695508fb0f2f33e1cfd5461b9"
   end
 
   depends_on "autoconf" => :build

@@ -5,10 +5,9 @@ class Elph < Formula
   sha256 "6d944401d2457d75815a34dbb5780f05df569eb1edfd00909b33c4c4c4ff40b9"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "6fc80e2e63f9a1f2cc468557001af523f6e16796a5547428d99be2fae1292f96" => :sierra
-    sha256 "8c2dba8b5fd0b8a575f166123c25063b4efdb26d6eb8a209e9f1d1dee890590c" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, sierra:       "6fc80e2e63f9a1f2cc468557001af523f6e16796a5547428d99be2fae1292f96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8c2dba8b5fd0b8a575f166123c25063b4efdb26d6eb8a209e9f1d1dee890590c"
   end
 
   def install

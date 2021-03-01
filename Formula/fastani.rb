@@ -8,10 +8,9 @@ class Fastani < Formula
   head "https://github.com/ParBLiSS/FastANI.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "0d8721627bff0445b2f2afc64b4c07f0ea4843bbd36c233dcea71b9a846196c2" => :catalina
-    sha256 "fc7e91f02a9b213c8a5d423dffda31ab89e18d3d9abf49352d54f9417c53f91f" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, catalina:     "0d8721627bff0445b2f2afc64b4c07f0ea4843bbd36c233dcea71b9a846196c2"
+    sha256 cellar: :any, x86_64_linux: "fc7e91f02a9b213c8a5d423dffda31ab89e18d3d9abf49352d54f9417c53f91f"
   end
 
   depends_on "autoconf" => :build

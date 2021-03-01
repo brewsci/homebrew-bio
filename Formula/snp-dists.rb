@@ -6,10 +6,9 @@ class SnpDists < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "642483d9173b5996dda4bd9676a99cd6b7e38f80352957bd19fc96be20ccd3ff" => :catalina
-    sha256 "1e6bd8de0a2fc72365256c8b7ce8fcb2d3f53a108ecc719f57d417796ea45e5c" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "642483d9173b5996dda4bd9676a99cd6b7e38f80352957bd19fc96be20ccd3ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1e6bd8de0a2fc72365256c8b7ce8fcb2d3f53a108ecc719f57d417796ea45e5c"
   end
 
   uses_from_macos "zlib"

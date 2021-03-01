@@ -10,10 +10,9 @@ class Raptor < Formula
   head "https://github.com/seqan/raptor.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "def1790f20a7e914f8759d0168abefa8dbf8bb637a46e4abbbb8023aa7b453eb" => :catalina
-    sha256 "4e8e33bfdaadf1621ea46807d3c4b9245ff734b6b3d71ab2e16c406b252fa5dd" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, catalina:     "def1790f20a7e914f8759d0168abefa8dbf8bb637a46e4abbbb8023aa7b453eb"
+    sha256 cellar: :any, x86_64_linux: "4e8e33bfdaadf1621ea46807d3c4b9245ff734b6b3d71ab2e16c406b252fa5dd"
   end
 
   depends_on "cmake" => :build

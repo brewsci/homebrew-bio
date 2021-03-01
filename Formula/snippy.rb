@@ -6,10 +6,9 @@ class Snippy < Formula
   license "GPL-2.0"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "8c0d0939812e84c244a2f87a92d42ae79fa9c001ee3a4ea8f00fefa4dd2fd15b" => :catalina
-    sha256 "c7a253e55f63fa2969d95ff81908f7fc61a6b1b09cc46b9d796511071396251b" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "8c0d0939812e84c244a2f87a92d42ae79fa9c001ee3a4ea8f00fefa4dd2fd15b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c7a253e55f63fa2969d95ff81908f7fc61a6b1b09cc46b9d796511071396251b"
   end
 
   depends_on "bcftools"

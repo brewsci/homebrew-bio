@@ -6,10 +6,9 @@ class StadenIoLib < Formula
   head "https://github.com/jkbonfield/io_lib.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "7f2660ade78da28992e2b40e7920bb16585f5de7fcfb14344f974c84bdcfc849" => :catalina
-    sha256 "ec45d0b6f055089c5bc95c798e7be60e39699aa664fad44e9ea9dda862b26054" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, catalina:     "7f2660ade78da28992e2b40e7920bb16585f5de7fcfb14344f974c84bdcfc849"
+    sha256 cellar: :any, x86_64_linux: "ec45d0b6f055089c5bc95c798e7be60e39699aa664fad44e9ea9dda862b26054"
   end
 
   depends_on "xz"

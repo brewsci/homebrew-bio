@@ -7,10 +7,9 @@ class Shovill < Formula
   head "https://github.com/tseemann/shovill.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "7348bc9750cc3ed0ec6cec4c1aa55c2e36475e2d791d6edc383429d0677f4ee6" => :catalina
-    sha256 "4c8964af516ab407aa754466600409e9e0dd262ed1804211729f34b20cfdc1ea" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "7348bc9750cc3ed0ec6cec4c1aa55c2e36475e2d791d6edc383429d0677f4ee6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4c8964af516ab407aa754466600409e9e0dd262ed1804211729f34b20cfdc1ea"
   end
 
   depends_on "brewsci/bio/flash"

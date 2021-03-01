@@ -7,10 +7,9 @@ class Lsd2 < Formula
   license "GPL-2.0"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "ffe5a0cd4fc81d4120ed1ac0769e863a54c361adfbd191b5accfc3fd676469c7" => :catalina
-    sha256 "4433c4c8550fdb5a329532888461cbdd733256fa5232cacc1882a395f34d31c3" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "ffe5a0cd4fc81d4120ed1ac0769e863a54c361adfbd191b5accfc3fd676469c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4433c4c8550fdb5a329532888461cbdd733256fa5232cacc1882a395f34d31c3"
   end
 
   def install

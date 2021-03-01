@@ -7,10 +7,9 @@ class ClustalOmega < Formula
   license "GPL-2.0"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "1f67880767ddb90a20c34dc57d1cb29c41bd712dadb07ebabedb1e72aefae3c6" => :sierra
-    sha256 "e63bbab0368c0dc91debd75153396a11639716506560c61dc1251cfd7b5d39ee" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, sierra:       "1f67880767ddb90a20c34dc57d1cb29c41bd712dadb07ebabedb1e72aefae3c6"
+    sha256 cellar: :any, x86_64_linux: "e63bbab0368c0dc91debd75153396a11639716506560c61dc1251cfd7b5d39ee"
   end
 
   depends_on "argtable"

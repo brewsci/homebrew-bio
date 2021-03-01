@@ -8,10 +8,9 @@ class Samblaster < Formula
   head "https://github.com/GregoryFaust/samblaster"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "f386efb369c83d4cbe591579deed487be0b5ab0a504ec4e89b8f14bc4c72737c" => :catalina
-    sha256 "744611e0d8fbed9705fdfa30fb18c7a35182e9262d229a01f9ec9afe51ab7b25" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "f386efb369c83d4cbe591579deed487be0b5ab0a504ec4e89b8f14bc4c72737c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "744611e0d8fbed9705fdfa30fb18c7a35182e9262d229a01f9ec9afe51ab7b25"
   end
 
   def install

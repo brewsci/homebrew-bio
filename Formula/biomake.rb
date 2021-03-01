@@ -7,10 +7,9 @@ class Biomake < Formula
   license "BSD-3-Clause"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "392c08b1568213df278806f7565c254ebadae455e010803e3b748efffbbd73e5" => :sierra
-    sha256 "7f74baac28c1761084e6a22c7595ba9002201540633e149e7e43270838f6cb0b" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, sierra:       "392c08b1568213df278806f7565c254ebadae455e010803e3b748efffbbd73e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7f74baac28c1761084e6a22c7595ba9002201540633e149e7e43270838f6cb0b"
   end
 
   depends_on "swi-prolog"
@@ -25,6 +24,6 @@ class Biomake < Formula
   test do
     assert_match "Options", shell_output("#{bin}/biomake -h")
     (testpath/"Makefile").write "default: ; echo Homebrew"
-    assert_match /^Homebrew$/, shell_output("#{bin}/biomake")
+    assert_match(/^Homebrew$/, shell_output("#{bin}/biomake"))
   end
 end

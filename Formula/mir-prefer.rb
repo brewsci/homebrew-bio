@@ -8,10 +8,9 @@ class MirPrefer < Formula
   head "https://github.com/hangelwen/miR-PREFeR.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "2152b59ff4a486a8fbc2b30048165ed96f9aeab02dedbd1d18cfcad5179bee93" => :sierra
-    sha256 "43d16a0495132ea407473ca736a7c5f83298649a936665d9784c062d1f79c3b9" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, sierra:       "2152b59ff4a486a8fbc2b30048165ed96f9aeab02dedbd1d18cfcad5179bee93"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "43d16a0495132ea407473ca736a7c5f83298649a936665d9784c062d1f79c3b9"
   end
 
   depends_on :macos # needs python@2

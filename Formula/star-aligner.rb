@@ -9,10 +9,9 @@ class StarAligner < Formula
   head "https://github.com/alexdobin/STAR.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "d4a0361a3d5cc993b0fe1944ace244108be668cb32640e04ac1606c1bbec97fe" => :catalina
-    sha256 "570c4c40b3b9068af98763e6f1bc1c9da3ea77a0787caf005cb29a8b14b0a34c" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "d4a0361a3d5cc993b0fe1944ace244108be668cb32640e04ac1606c1bbec97fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "570c4c40b3b9068af98763e6f1bc1c9da3ea77a0787caf005cb29a8b14b0a34c"
   end
 
   uses_from_macos "zlib"

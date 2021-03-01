@@ -8,10 +8,9 @@ class Miniasm < Formula
   head "https://github.com/lh3/miniasm.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "8af4181f510ce974fd6054c61a682d1c0e3a81849dcfcb26fcc662df9cb061cd" => :sierra
-    sha256 "28cd7ae2c914864a0f2c594b24390c137f40f208d7400700ea12295a2dc801fb" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, sierra:       "8af4181f510ce974fd6054c61a682d1c0e3a81849dcfcb26fcc662df9cb061cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "28cd7ae2c914864a0f2c594b24390c137f40f208d7400700ea12295a2dc801fb"
   end
 
   uses_from_macos "zlib"

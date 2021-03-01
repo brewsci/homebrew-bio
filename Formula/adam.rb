@@ -5,11 +5,16 @@ class Adam < Formula
   url "https://search.maven.org/remotecontent?filepath=org/bdgenomics/adam/adam-distribution-spark3_2.12/0.33.0/adam-distribution-spark3_2.12-0.33.0-bin.tar.gz"
   sha256 "e973c0136544659648669e1ebe29bab6c49863752dfa595722ff36d2647e054d"
 
+  livecheck do
+    url :homepage
+    strategy :github_latest
+    regex(%r{href=.*?/tag/adam-parent-spark\d+[_-]\d+(?:\.\d+)+[_-]v?(\d+(?:\.\d+)+)["' >]}i)
+  end
+
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "ea041d65c96d402165dd140e5bdda5c304905fada259009e995679904cf9183a" => :catalina
-    sha256 "d5e8054a38850a7c7d181f62c35c40d146b98339e29e22f7e4e7633bc3203a61" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "ea041d65c96d402165dd140e5bdda5c304905fada259009e995679904cf9183a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d5e8054a38850a7c7d181f62c35c40d146b98339e29e22f7e4e7633bc3203a61"
   end
 
   head do

@@ -7,10 +7,9 @@ class Racon < Formula
   license "MIT"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "9a36412582dbf860ad19aa1d9795af7f6f6c326e4642fc0a8d6325431f363d5d" => :catalina
-    sha256 "d5925954884d8e3f99266f30a7d28dfc0113740fa5baca55ccc90d3c3683d73a" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "9a36412582dbf860ad19aa1d9795af7f6f6c326e4642fc0a8d6325431f363d5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d5925954884d8e3f99266f30a7d28dfc0113740fa5baca55ccc90d3c3683d73a"
   end
 
   depends_on "cmake" => :build

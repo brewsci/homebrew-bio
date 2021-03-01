@@ -8,10 +8,9 @@ class Libsequence < Formula
   head "https://github.com/molpopgen/libsequence.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "b93b5ff4288ec661eda9b092f1a82098d3b3a55f2f4bc5f9a8e6812be1634ac9" => :catalina
-    sha256 "d0771ecd4b05d341e51dfa83ceebe5999611dac1ae3a77596184ac7b4a436f76" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, catalina:     "b93b5ff4288ec661eda9b092f1a82098d3b3a55f2f4bc5f9a8e6812be1634ac9"
+    sha256 cellar: :any, x86_64_linux: "d0771ecd4b05d341e51dfa83ceebe5999611dac1ae3a77596184ac7b4a436f76"
   end
 
   def install

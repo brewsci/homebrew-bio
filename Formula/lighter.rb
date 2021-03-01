@@ -8,10 +8,9 @@ class Lighter < Formula
   head "https://github.com/mourisl/Lighter.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "0796241a173d658165a7e11203e947339154d31fb35bc7c45408485863525069" => :catalina
-    sha256 "126982bdb4ec055ef1aaadc2e968e6f27331e1da78c19c2e044468aa359397e6" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "0796241a173d658165a7e11203e947339154d31fb35bc7c45408485863525069"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "126982bdb4ec055ef1aaadc2e968e6f27331e1da78c19c2e044468aa359397e6"
   end
 
   uses_from_macos "zlib"

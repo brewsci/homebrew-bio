@@ -7,21 +7,25 @@ class Astral < Formula
   license "Apache-2.0"
   head "https://github.com/smirarab/ASTRAL.git"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "639cf19cf7371e03cbb4092a3d5ec470628817dd3878f9ac0bb20b9b20ed1eba" => :catalina
-    sha256 "0e0f15952cbf659a6a6654c5f11fbc4fe96d74f6c3c6843baba33d89073eacca" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "639cf19cf7371e03cbb4092a3d5ec470628817dd3878f9ac0bb20b9b20ed1eba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0e0f15952cbf659a6a6654c5f11fbc4fe96d74f6c3c6843baba33d89073eacca"
   end
 
   depends_on "openjdk"
 
   def install
     inreplace "make.sh" do |s|
-      s.gsub! /version=.*/, "version=#{version}"
+      s.gsub!(/version=.*/, "version=#{version}")
       s.gsub! "-source 1.6", "-source 1.7"
       s.gsub! "-target 1.6", "-target 1.7"
-      s.gsub! /^zip/, "echo" # no need to zip anything
+      s.gsub!(/^zip/, "echo") # no need to zip anything
     end
     system "./make.sh"
     libexec.install "lib", "astral.#{version}.jar"

@@ -7,9 +7,9 @@ class Pandaseq < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "a9e047bdfd18226644594b687f9daf13a7570f4e16f4a2c3860334932adee5a9" => :mojave
-    sha256 "7c5ba5be45e1505bbb4a6b7ca6d46a634a06edb302f8c76544b2feea36626b5e" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 mojave:       "a9e047bdfd18226644594b687f9daf13a7570f4e16f4a2c3860334932adee5a9"
+    sha256 x86_64_linux: "7c5ba5be45e1505bbb4a6b7ca6d46a634a06edb302f8c76544b2feea36626b5e"
   end
 
   depends_on "autoconf" => :build

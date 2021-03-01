@@ -7,10 +7,9 @@ class Swipe < Formula
   license "AGPL-3.0"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "04d5c4e737d41d1fca5d8b848d3bfdfac96e9c7defeeae73fcb5ad40944ff439" => :sierra
-    sha256 "fe6052456ecb3759d84019038262b07bff3a665ed114d73b614275220728d3c0" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, sierra:       "04d5c4e737d41d1fca5d8b848d3bfdfac96e9c7defeeae73fcb5ad40944ff439"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fe6052456ecb3759d84019038262b07bff3a665ed114d73b614275220728d3c0"
   end
 
   def install

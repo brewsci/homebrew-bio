@@ -7,10 +7,9 @@ class Lastz < Formula
   head "https://github.com/lastz/lastz"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "bb384aecd906f6a8c3589afc3a11a48b7c6c3661aa8edd751e59f904e2768ab7" => :catalina
-    sha256 "5cb1a90c4e2c6d1cefa82c94a83977b1e008be94690c14cef5fef2099693424f" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "bb384aecd906f6a8c3589afc3a11a48b7c6c3661aa8edd751e59f904e2768ab7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5cb1a90c4e2c6d1cefa82c94a83977b1e008be94690c14cef5fef2099693424f"
   end
 
   def install

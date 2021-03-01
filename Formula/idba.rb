@@ -8,10 +8,9 @@ class Idba < Formula
   head "https://github.com/loneknightpy/idba.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "e46bf1a3c2148adc2234d41cb1a213e5d067aa7cda1799712db83908cfbc71da" => :sierra
-    sha256 "0b0bb52ff5136db2addc8619c957d2aebc55a6efc03aec8785efd48bd72fc7ff" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, sierra:       "e46bf1a3c2148adc2234d41cb1a213e5d067aa7cda1799712db83908cfbc71da"
+    sha256 cellar: :any, x86_64_linux: "0b0bb52ff5136db2addc8619c957d2aebc55a6efc03aec8785efd48bd72fc7ff"
   end
 
   depends_on "autoconf" => :build

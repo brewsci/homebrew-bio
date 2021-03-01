@@ -11,9 +11,9 @@ class Ascp < Formula
   version "3.7.7"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "c78e4351309f0c0e543420d421d559f87f3b66c31a1212200263ea7c77752093" => :sierra
-    sha256 "00416de41eae2e20018d28197714d868f12009c7012d9c914e74392cff80bbdc" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 sierra:       "c78e4351309f0c0e543420d421d559f87f3b66c31a1212200263ea7c77752093"
+    sha256 x86_64_linux: "00416de41eae2e20018d28197714d868f12009c7012d9c914e74392cff80bbdc"
   end
 
   depends_on "patchelf" => :build unless OS.mac?

@@ -6,11 +6,15 @@ class Bioperl < Formula
   sha256 "17aa3aaab2f381bbcaffdc370002eaf28f2c341b538068d6586b2276a76464a1"
   revision 3
 
+  livecheck do
+    url :stable
+    regex(/href=["']?BioPerl[._-]v?(\d+\.\d+(?:\.\d+)+(?:\.?_\d+)?)\.t/i)
+  end
+
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "36b08831cc85e3550ee622b3d1c485f6bf9d2dcfd87ef9a9c33ba72f9bae8f94" => :sierra
-    sha256 "7a3a5d0a2179fe45c2d407f13bac0d5c484e2d80639a094baa353167ab4abf9d" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, sierra:       "36b08831cc85e3550ee622b3d1c485f6bf9d2dcfd87ef9a9c33ba72f9bae8f94"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7a3a5d0a2179fe45c2d407f13bac0d5c484e2d80639a094baa353167ab4abf9d"
   end
 
   depends_on "cpanminus" => :build
@@ -43,7 +47,7 @@ class Bioperl < Formula
       bp_tree2pag.pl bp_unflatten_seq.pl
     ]
     tests.each do |executable|
-      assert_match /Usage|usage|NAME|Unknown option|Can't open -h/, shell_output("#{executable} -h </dev/null 2>&1")
+      assert_match(/Usage|usage|NAME|Unknown option|Can't open -h/, shell_output("#{executable} -h </dev/null 2>&1"))
     end
   end
 end

@@ -7,10 +7,9 @@ class DasTool < Formula
   head "https://github.com/cmks/DAS_Tool.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "af7fc1d026f60d560b6e6ec396e8e71a64d26688d1f92022c99c986db692a405" => :catalina
-    sha256 "6485d66355c2354db7f21ca23869bb5715bdc9d8ee79aa64d5a3eb6c202b982a" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, catalina:     "af7fc1d026f60d560b6e6ec396e8e71a64d26688d1f92022c99c986db692a405"
+    sha256 cellar: :any, x86_64_linux: "6485d66355c2354db7f21ca23869bb5715bdc9d8ee79aa64d5a3eb6c202b982a"
   end
 
   if OS.mac?

@@ -7,10 +7,9 @@ class Subread < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "f763ea04f616a72c4b61b04ea345a8577f283b0da29d91714241b70e3b0705f5" => :catalina
-    sha256 "96a086816e5094e5ff5c2ae7d4f11a0f8e8764afaac7568bdaecaee0f37c9b0d" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "f763ea04f616a72c4b61b04ea345a8577f283b0da29d91714241b70e3b0705f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "96a086816e5094e5ff5c2ae7d4f11a0f8e8764afaac7568bdaecaee0f37c9b0d"
   end
 
   uses_from_macos "zlib"

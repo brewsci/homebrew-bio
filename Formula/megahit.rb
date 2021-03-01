@@ -8,10 +8,9 @@ class Megahit < Formula
   head "https://github.com/voutcn/megahit.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "be4a9c2e1a53605dd1ea800783343ef14214f88a07b08ec7e5c601be47701a72" => :catalina
-    sha256 "95ca23bbbe59d007edec3d972a95afbc626b0a740430d088fddd79837e5589cf" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, catalina:     "be4a9c2e1a53605dd1ea800783343ef14214f88a07b08ec7e5c601be47701a72"
+    sha256 cellar: :any, x86_64_linux: "95ca23bbbe59d007edec3d972a95afbc626b0a740430d088fddd79837e5589cf"
   end
 
   depends_on "cmake" => :build

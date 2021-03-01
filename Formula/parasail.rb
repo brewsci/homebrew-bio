@@ -6,10 +6,9 @@ class Parasail < Formula
   sha256 "3843055fc04743269cf22d127ae26952a7f5e6fc4f1bc29f6b6f3c156c8ca434"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "697ebb74c10b475e4aad54d39af9eb9f0dceb1e243df8a901172519b07e4cd0f" => :catalina
-    sha256 "03f04da7fd392eddf775532f8bd7211689ad482c5f29e68a0f972b6c9bbe7c84" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, catalina:     "697ebb74c10b475e4aad54d39af9eb9f0dceb1e243df8a901172519b07e4cd0f"
+    sha256 cellar: :any, x86_64_linux: "03f04da7fd392eddf775532f8bd7211689ad482c5f29e68a0f972b6c9bbe7c84"
   end
 
   depends_on "autoconf" => :build

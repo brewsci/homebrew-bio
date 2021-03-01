@@ -8,10 +8,9 @@ class Ema < Formula
   head "https://github.com/arshajii/ema.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "146c172575768d79936b1475d4a596d2599d8483b0e8ebd24b8808b227c4480c" => :sierra
-    sha256 "9aef677e79f0853fd815c2551bedc7c0fdaae6854b6453fe12c6844812edbb60" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, sierra:       "146c172575768d79936b1475d4a596d2599d8483b0e8ebd24b8808b227c4480c"
+    sha256 cellar: :any, x86_64_linux: "9aef677e79f0853fd815c2551bedc7c0fdaae6854b6453fe12c6844812edbb60"
   end
 
   fails_with :clang # needs openmp

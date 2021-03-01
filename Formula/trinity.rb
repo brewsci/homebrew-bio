@@ -7,10 +7,9 @@ class Trinity < Formula
   license "BSD-3-Clause"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any
-    sha256 "aa8ad40994e918b6c20f053501ed87c4fb5585468d6f4c971ba88c788189dd42" => :catalina
-    sha256 "964414c050baa9ddb52ef211438197bc95c91e76adc778861fcbda1c366c1afe" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any, catalina:     "aa8ad40994e918b6c20f053501ed87c4fb5585468d6f4c971ba88c788189dd42"
+    sha256 cellar: :any, x86_64_linux: "964414c050baa9ddb52ef211438197bc95c91e76adc778861fcbda1c366c1afe"
   end
 
   depends_on "autoconf" => :build

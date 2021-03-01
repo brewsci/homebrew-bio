@@ -8,10 +8,9 @@ class Flowcraft < Formula
   head "https://github.com/assemblerflow/flowcraft.git", branch: "dev"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "b00d9a38dba24638665dfb23815b381ec7b4b41ab82d3b132483aa82b29ae4aa" => :catalina
-    sha256 "45938c7344382686e14ef63d568e1ef74ad9155285cf9fe584127bb837484c4e" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "b00d9a38dba24638665dfb23815b381ec7b4b41ab82d3b132483aa82b29ae4aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "45938c7344382686e14ef63d568e1ef74ad9155285cf9fe584127bb837484c4e"
   end
 
   depends_on "brewsci/bio/nextflow"

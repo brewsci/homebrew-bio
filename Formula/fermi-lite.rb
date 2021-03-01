@@ -7,9 +7,9 @@ class FermiLite < Formula
   license "MIT"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    sha256 "7f5893730da8f22a792c26c7c4885a1a97d7f3074a4aba97ffc26c08cd869793" => :sierra
-    sha256 "0bdc4c570af402f510dee46e368b538dacb43d36ebfe479d5e4a5ca6321a62be" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 sierra:       "7f5893730da8f22a792c26c7c4885a1a97d7f3074a4aba97ffc26c08cd869793"
+    sha256 x86_64_linux: "0bdc4c570af402f510dee46e368b538dacb43d36ebfe479d5e4a5ca6321a62be"
   end
 
   uses_from_macos "zlib"

@@ -8,10 +8,9 @@ class Wish < Formula
   head "https://github.com/soedinglab/WIsH.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "0fe6f09eef78b511617714b71dcb5450486e76f56e45fc33ed39a626b37e4ada" => :sierra
-    sha256 "0d279486aaffe2c0660a94867bd60d8d102bafd63c8608660cefdf65a854a813" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, sierra:       "0fe6f09eef78b511617714b71dcb5450486e76f56e45fc33ed39a626b37e4ada"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0d279486aaffe2c0660a94867bd60d8d102bafd63c8608660cefdf65a854a813"
   end
 
   depends_on "cmake" => :build

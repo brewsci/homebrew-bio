@@ -8,10 +8,9 @@ class Kraken < Formula
   head "https://github.com/DerrickWood/kraken.git"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-bio"
-    cellar :any_skip_relocation
-    sha256 "fcefe1f392f6c3e9821b24cd8d096c90e8348a25fd577bfecdf507ff863462ef" => :catalina
-    sha256 "a4533e0f5e6dda9546b71f59ce77653f838f9aa59468ca1f6730f838a966523b" => :x86_64_linux
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "fcefe1f392f6c3e9821b24cd8d096c90e8348a25fd577bfecdf507ff863462ef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a4533e0f5e6dda9546b71f59ce77653f838f9aa59468ca1f6730f838a966523b"
   end
 
   depends_on "gcc" if OS.mac? # needs openmp
