@@ -15,7 +15,7 @@ class Gatk < Formula
   end
 
   depends_on "openjdk"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "count_reads.bam" do
     url "https://github.com/broadinstitute/gatk/blob/626c88732c02b0fd5f395db20c91bf2784ec54b9/src/test/resources/org/broadinstitute/hellbender/tools/count_reads.bam?raw=true"
