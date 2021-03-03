@@ -10,8 +10,8 @@ class Gatk < Formula
 
   bottle do
     root_url "https://archive.org/download/brewsci/bottles-bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "fc14b1d8b41bb370fa56e50cc50b83e5e73c317d658e1d36d0ba974e029409a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e623b8e92370031f256c19b11a22b240e56f02633cf45c1e847184c451df818c"
+    sha256 cellar: :any_skip_relocation, catalina:     "e55337c2d7d735c6546bd03873dfc07bac3c3540c492315b7c20d22a2244c752"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e4b4117555b904663ca90c00945cc29f7767742bb6c3a37078c0f077db52261d"
   end
 
   depends_on "openjdk"
