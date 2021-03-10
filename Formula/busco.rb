@@ -30,6 +30,11 @@ class Busco < Formula
     sha256 "1ee0a0b6c2376680fea6642d5080baa419fd73df104a62d58a8baf7a8bbe4564"
   end
 
+  resource "pandas" do
+    url "https://files.pythonhosted.org/packages/8a/6f/7fcef020b5b305862cacf376183eaa0f907f2fa42f0b687b2a9a2c6cda4d/pandas-1.2.3.tar.gz"
+    sha256 "df6f10b85aef7a5bb25259ad651ad1cc1d6bb09000595cab47e718cbac250b1d"
+  end
+
   def install
     virtualenv_install_with_resources
     # Save the original config file somewhere and write our own
