@@ -13,8 +13,8 @@ class Busco < Formula
 
   bottle do
     root_url "https://archive.org/download/brewsci/bottles-bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "f9a62517ec79bd2f2c9cff93e54b439492c6817881073c8078f0681ea8dd3deb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1bce16b5608a8389835c63d8eecfb55b0c7a73ad28815f6eeb79d701b3d0f28a"
+    sha256 cellar: :any_skip_relocation, catalina:     "ef4c090b77cf96cd74e98185f55dc870b496f5c536b00b86349653cfbdd91ce3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8b36d35b412c8556fa84ee31d6b7adc1fa6d9c3b0586f42f72849007f866cd8e"
   end
 
   depends_on "augustus"
