@@ -10,8 +10,8 @@ class Idba < Formula
 
   bottle do
     root_url "https://archive.org/download/brewsci/bottles-bio"
-    sha256 cellar: :any, sierra:       "e46bf1a3c2148adc2234d41cb1a213e5d067aa7cda1799712db83908cfbc71da"
-    sha256 cellar: :any, x86_64_linux: "0b0bb52ff5136db2addc8619c957d2aebc55a6efc03aec8785efd48bd72fc7ff"
+    sha256 cellar: :any,                 catalina:     "094b46cbcb3fe54222cb940f605d5e656864c654f231294c890e98528378eea2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3c0b9b2d9a30c1833985040eae10e212ea78faa7c1dc37b52a661a2b9a194913"
   end
 
   depends_on "autoconf" => :build
