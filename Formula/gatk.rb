@@ -4,18 +4,18 @@ class Gatk < Formula
   # cite McKenna_2010: "https://doi.org/10.1101/gr.107524.110"
   desc "Genome Analysis Toolkit: Variant Discovery in High-Throughput Sequencing"
   homepage "https://software.broadinstitute.org/gatk"
-  url "https://github.com/broadinstitute/gatk/releases/download/4.1.8.1/gatk-4.1.8.1.zip"
-  sha256 "42e6de5059232df1ad5785c68c39a53dc1b54afe7bb086d0129f4dc95fb182bc"
+  url "https://github.com/broadinstitute/gatk/releases/download/4.2.0.0/gatk-4.2.0.0.zip"
+  sha256 "dd11cc8e3bc7a23c2c226366428f0908c902765eabbc1c641c736c06b80aaf78"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://archive.org/download/brewsci/bottles-bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "fc14b1d8b41bb370fa56e50cc50b83e5e73c317d658e1d36d0ba974e029409a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e623b8e92370031f256c19b11a22b240e56f02633cf45c1e847184c451df818c"
+    sha256 cellar: :any_skip_relocation, catalina:     "e55337c2d7d735c6546bd03873dfc07bac3c3540c492315b7c20d22a2244c752"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e4b4117555b904663ca90c00945cc29f7767742bb6c3a37078c0f077db52261d"
   end
 
   depends_on "openjdk"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "count_reads.bam" do
     url "https://github.com/broadinstitute/gatk/blob/626c88732c02b0fd5f395db20c91bf2784ec54b9/src/test/resources/org/broadinstitute/hellbender/tools/count_reads.bam?raw=true"
