@@ -17,9 +17,8 @@ class Kat < Formula
 
   bottle do
     root_url "https://archive.org/download/brewsci/bottles-bio"
-    rebuild 1
-    sha256 catalina:     "3de60b22d45daa5e28f03bb4f577c1ff14409f46f3fddb19407737b42e8392df"
-    sha256 x86_64_linux: "232a183bdce0f0a9565fc39aacf8cfe4ec019e4c86cf6f64a9177e96ca64bbd2"
+    sha256 catalina:     "3ff4992ce2cbddf2477d370f8d446f2d75eef359641df08872876a35f3f97cb8"
+    sha256 x86_64_linux: "2875e854a4dc362ede09d287f586757303efd930e1d114dbce4bb423e134eb94"
   end
 
   depends_on "autoconf" => :build
