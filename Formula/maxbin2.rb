@@ -41,6 +41,6 @@ class Maxbin2 < Formula
   end
 
   test do
-    assert_match "Usage", shell_output("perl #{libexec}/run_MaxBin.pl 2>&1")
+    assert_match "Usage", shell_output("#{bin}/maxbin2 2>&1")
   end
 end
