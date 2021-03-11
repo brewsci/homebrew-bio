@@ -7,8 +7,8 @@ class Jmol < Formula
 
   bottle do
     root_url "https://archive.org/download/brewsci/bottles-bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "5c7aa7766d2726fe4738dea9d691ea5b1b853849bbf43d37ec155790845b6116"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e85fb24aea6d643c36516c1cfc0bfe3b1bff07d13d109c8b584f70e2622a27b1"
+    sha256 cellar: :any_skip_relocation, catalina:     "d5f09c0af26371837f4b496ed1e1518f10ec6292b285323afa10aa92d80f8fc5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1d57c57eb109ef0ac49ed39bc3ae3f880d769436e1ee25e0c796884463f2c873"
   end
 
   head do
