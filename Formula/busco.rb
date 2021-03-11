@@ -6,8 +6,8 @@ class Busco < Formula
   # cite Sim_o_2015: "https://doi.org/10.1093/bioinformatics/btv351"
   desc "Assess genome assembly completeness with single-copy orthologs"
   homepage "https://busco.ezlab.org"
-  url "https://gitlab.com/ezlab/busco/repository/4.1.4/archive.tar.bz2"
-  sha256 "a5954f788fa00c613bc55210731c27d2665e1302ac8b840f180b96a9926d51a9"
+  url "https://gitlab.com/ezlab/busco/-/archive/5.0.0/busco-5.0.0.tar.gz"
+  sha256 "0d4ff765a751a5d22771bece2c1992b1e780da57504501a82752f307be86dcef"
   license "MIT"
   head "https://gitlab.com/ezlab/busco.git"
 
@@ -28,6 +28,26 @@ class Busco < Formula
   resource "biopython" do
     url "https://files.pythonhosted.org/packages/89/c5/7fe326081276f74a4073f6d6b13cfa7a04ba322a3ff1d84027f4773980b8/biopython-1.78.tar.gz"
     sha256 "1ee0a0b6c2376680fea6642d5080baa419fd73df104a62d58a8baf7a8bbe4564"
+  end
+
+  resource "pandas" do
+    url "https://files.pythonhosted.org/packages/8a/6f/7fcef020b5b305862cacf376183eaa0f907f2fa42f0b687b2a9a2c6cda4d/pandas-1.2.3.tar.gz"
+    sha256 "df6f10b85aef7a5bb25259ad651ad1cc1d6bb09000595cab47e718cbac250b1d"
+  end
+
+  resource "pytz" do
+    url "https://files.pythonhosted.org/packages/b0/61/eddc6eb2c682ea6fd97a7e1018a6294be80dba08fa28e7a3570148b4612d/pytz-2021.1.tar.gz"
+    sha256 "83a4a90894bf38e243cf052c8b58f381bfe9a7a483f6a9cab140bc7f702ac4da"
+  end
+
+  resource "python-dateutil" do
+    url "https://files.pythonhosted.org/packages/be/ed/5bbc91f03fa4c839c4c7360375da77f9659af5f7086b7a7bdda65771c8e0/python-dateutil-2.8.1.tar.gz"
+    sha256 "73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c"
+  end
+
+  resource "six" do
+    url "https://files.pythonhosted.org/packages/6b/34/415834bfdafca3c5f451532e8a8d9ba89a21c9743a0c59fbd0205c7f9426/six-1.15.0.tar.gz"
+    sha256 "30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259"
   end
 
   def install
