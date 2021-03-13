@@ -5,6 +5,7 @@ class Fastani < Formula
   url "https://github.com/ParBLiSS/FastANI/archive/v1.32.tar.gz"
   sha256 "f66b3bb5b272aa3db4deae782e47020fa9aae63eecbbd6fd93df876237d3b2e5"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/ParBLiSS/FastANI.git"
 
   bottle do
@@ -20,6 +21,7 @@ class Fastani < Formula
   uses_from_macos "zlib"
 
   on_macos do
+    depends_on "gcc@9"
     depends_on "libomp"
   end
 
@@ -33,6 +35,7 @@ class Fastani < Formula
       "--prefix=#{prefix}",
       "--with-gsl=#{Formula["gsl"].opt_prefix}",
       "--with-boost=#{Formula["boost"].opt_prefix}"
+    system "gzip", "-9f", *Dir["data/*.fna"]
     system "make", "install"
     pkgshare.install "data", "scripts"
   end
@@ -40,8 +43,8 @@ class Fastani < Formula
   test do
     assert_match "fragment length", shell_output("#{bin}/fastANI --help 2>&1")
     system "#{bin}/fastANI",
-           "-q", pkgshare/"data/Shigella_flexneri_2a_01.fna",
-           "-r", pkgshare/"data/Escherichia_coli_str_K12_MG1655.fna",
+           "-q", pkgshare/"data/Shigella_flexneri_2a_01.fna.gz",
+           "-r", pkgshare/"data/Escherichia_coli_str_K12_MG1655.fna.gz",
            "-o", testpath/"out",
            "--matrix"
     assert_predicate testpath/"out", :exist?
