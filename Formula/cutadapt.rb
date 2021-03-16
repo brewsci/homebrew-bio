@@ -14,7 +14,7 @@ class Cutadapt < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "58bc4e0007eafa31bb2d8928f17a7616fca976e0c1e2dfaf5043ab9d491194f0"
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "cython" do
     url "https://files.pythonhosted.org/packages/6c/9f/f501ba9d178aeb1f5bf7da1ad5619b207c90ac235d9859961c11829d0160/Cython-0.29.21.tar.gz"
