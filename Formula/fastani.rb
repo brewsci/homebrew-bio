@@ -10,8 +10,8 @@ class Fastani < Formula
 
   bottle do
     root_url "https://archive.org/download/brewsci/bottles-bio"
-    sha256 cellar: :any, catalina:     "0d8721627bff0445b2f2afc64b4c07f0ea4843bbd36c233dcea71b9a846196c2"
-    sha256 cellar: :any, x86_64_linux: "fc7e91f02a9b213c8a5d423dffda31ab89e18d3d9abf49352d54f9417c53f91f"
+    sha256 cellar: :any,                 catalina:     "8a87f5ac2d028d5ce7ca725d0bf997cc4b19088e0a484f4e7a8be244966cbfe2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ca81474d0cfc36a53ba106540fce4d5f6bd033008089ade6579bdc03d2cb3285"
   end
 
   depends_on "autoconf" => :build
