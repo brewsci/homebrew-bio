@@ -14,16 +14,12 @@ class Nanofilt < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "f1a2c76d6bf5cc0b9e1f8fe1f585c6fdbb7f674a3a8b2d4340f284b95338553b"
   end
 
+  depends_on "numpy"
   depends_on "python@3.9"
 
   resource "biopython" do
     url "https://files.pythonhosted.org/packages/89/c5/7fe326081276f74a4073f6d6b13cfa7a04ba322a3ff1d84027f4773980b8/biopython-1.78.tar.gz"
     sha256 "1ee0a0b6c2376680fea6642d5080baa419fd73df104a62d58a8baf7a8bbe4564"
-  end
-
-  resource "numpy" do
-    url "https://files.pythonhosted.org/packages/d2/48/f445be426ccd9b2fb64155ac6730c7212358882e589cd3717477d739d9ff/numpy-1.20.1.zip"
-    sha256 "3bc63486a870294683980d76ec1e3efc786295ae00128f9ea38e2c6e74d5a60a"
   end
 
   resource "pandas" do
