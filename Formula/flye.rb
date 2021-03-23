@@ -4,9 +4,8 @@ class Flye < Formula
   # cite Kolmogorov_2018: "https://doi.org/10.1101/247148"
   desc "Fast and accurate de novo assembler for single molecule sequencing reads"
   homepage "https://github.com/fenderglass/Flye"
-  url "https://github.com/fenderglass/Flye/archive/2.8-1.tar.gz"
-  version "2.8"
-  sha256 "bb9f7e38812f7f5eacae20c15c675babeebd640f4f030f5d9a07b052466ebf34"
+  url "https://github.com/fenderglass/Flye/archive/2.8.3.tar.gz"
+  sha256 "070f9fbee28eef8e8f87aaecc048053f50a8102a3715e71b16c9c46819a4e07c"
   license "BSD-3-Clause"
   head "https://github.com/fenderglass/Flye.git", branch: "flye"
 
@@ -16,7 +15,7 @@ class Flye < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "1f0c23f01533968deab9bc997bd116cea9a11b1941f325981370d9899815cc83"
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   def install
     # Uses internal parallelization for builds
