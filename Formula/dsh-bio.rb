@@ -7,9 +7,8 @@ class DshBio < Formula
 
   bottle do
     root_url "https://archive.org/download/brewsci/bottles-bio"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, catalina:     "7bcf5fbdca9723385ea257092d4bc5b9d051b2aad315ada4808fcb39d756c93b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "80a22439485ccfe318db475dd29e0fd7a21f3fc284b3a243c517cc27218411db"
+    sha256 cellar: :any_skip_relocation, catalina:     "767746c546a8d035e3781ce692733e87813016b8ac09374a9915de6ae575314e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0971113bf271dd0887e203005df71a295d42860112c4484ce8adc4d48fe0eb9c"
   end
 
   depends_on "openjdk"
