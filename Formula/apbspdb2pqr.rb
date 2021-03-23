@@ -6,7 +6,7 @@ class Apbspdb2pqr < Formula
   homepage "https://www.poissonboltzmann.org/"
   # pull from git tag to get submodules
   url "https://github.com/Electrostatics/apbs-pdb2pqr.git",
-      tag:      "apbs-1.5",
+      tag:      "vAPBS-1.5.0",
       revision: "aa353941cfadc09ccd113075d261a427864c2979"
   head "https://github.com/Electrostatics/apbs-pdb2pqr.git"
 
@@ -19,7 +19,7 @@ class Apbspdb2pqr < Formula
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "eigen"
-  depends_on "python"
+  depends_on "python@3.9"
   depends_on "swig"
 
   def install
@@ -48,9 +48,12 @@ class Apbspdb2pqr < Formula
 
     # PDB2PQR part
     cd "pdb2pqr" do
-      inreplace "pdb2pqr.py.in", "@WHICHPYTHON@", "/usr/bin/env python"
-      system "python", "scons/scons.py", "PREFIX=#{prefix}/pdb2pqr", "APBS=#{bin}/apbs", "BUILD_PDB2PKA=False"
-      system "python", "scons/scons.py", "install"
+      # convert scons.py by using 2to3
+      system Formula["python@3.9"].opt_bin/"2to3-3.9", "-w", "scons/scons.py"
+      inreplace "pdb2pqr.py.in", "@WHICHPYTHON@", Formula["python@3.9"].opt_bin/"python3"
+      system Formula["python@3.9"].opt_bin/"python3", "scons/scons.py", "PREFIX=#{prefix}/pdb2pqr",
+                                                      "APBS=#{bin}/apbs", "BUILD_PDB2PKA=False"
+      system Formula["python@3.9"].opt_bin/"python3", "scons/scons.py", "install"
       cp_r %w[main.py
               main_cgi.py
               pka.py
