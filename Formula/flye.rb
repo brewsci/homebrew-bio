@@ -11,7 +11,9 @@ class Flye < Formula
 
   bottle do
     root_url "https://archive.org/download/brewsci/bottles-bio"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "60afa3a5d5d03c0e3c29f8ab76e8f8262d158282b125c6edbd9f817be06eef59"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, catalina:     "3af2356ee422f2dd8f7c2610157d1c5352c71f03049b59bbbfd0a5f7707a59cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7f3794f7718a3aff68894a45d0c4431494021382506a72d948021fe88451f0b8"
   end
 
   depends_on "python@3.9"
