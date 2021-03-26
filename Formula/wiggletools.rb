@@ -4,6 +4,7 @@ class Wiggletools < Formula
   homepage "https://github.com/Ensembl/WiggleTools"
   url "https://github.com/Ensembl/WiggleTools/archive/refs/tags/v1.2.10.tar.gz"
   sha256 "082ee703ad3a5379a70d885002a18d0bf285bb2eff16a9388f640093b630303b"
+  license "Apache-2.0"
   head "https://github.com/Ensembl/WiggleTools.git"
 
   bottle do
