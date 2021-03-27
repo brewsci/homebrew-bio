@@ -1,14 +1,14 @@
 class Jmol < Formula
   desc "Open-source Java viewer for chemical structures in 3D"
   homepage "https://jmol.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/jmol/Jmol/Version%2014.31/Jmol%2014.31.32/Jmol-14.31.32-binary.zip"
-  sha256 "a63096a53388fa2e35139ec97651d4e1be1ffec9e3259e219d07b1b7e7829c52"
+  url "https://downloads.sourceforge.net/project/jmol/Jmol/Version%2014.31/Jmol%2014.31.34/Jmol-14.31.34-binary.zip"
+  sha256 "be75170594061c0a60bbd710d234ed4b30c9c308428c4b463ddab51039743119"
   license "LGPL-2.1-or-later"
 
   bottle do
     root_url "https://archive.org/download/brewsci/bottles-bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "5c7aa7766d2726fe4738dea9d691ea5b1b853849bbf43d37ec155790845b6116"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e85fb24aea6d643c36516c1cfc0bfe3b1bff07d13d109c8b584f70e2622a27b1"
+    sha256 cellar: :any_skip_relocation, catalina:     "d5f09c0af26371837f4b496ed1e1518f10ec6292b285323afa10aa92d80f8fc5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1d57c57eb109ef0ac49ed39bc3ae3f880d769436e1ee25e0c796884463f2c873"
   end
 
   head do
