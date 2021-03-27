@@ -215,13 +215,13 @@
     "license": null,
     "homepage": "https://github.com/bigdatagenomics/adam",
     "versions": {
-      "stable": "0.33.0",
+      "stable": "0.34.0",
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://search.maven.org/remotecontent?filepath=org/bdgenomics/adam/adam-distribution-spark3_2.12/0.33.0/adam-distribution-spark3_2.12-0.33.0-bin.tar.gz",
+        "url": "https://search.maven.org/remotecontent?filepath=org/bdgenomics/adam/adam-distribution-spark3_2.12/0.34.0/adam-distribution-spark3_2.12-0.34.0-bin.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -236,12 +236,12 @@
         "root_url": "https://archive.org/download/brewsci/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://archive.org/download/brewsci/bottles-bio/adam-0.33.0.catalina.bottle.tar.gz",
-            "sha256": "ea041d65c96d402165dd140e5bdda5c304905fada259009e995679904cf9183a"
+            "url": "https://archive.org/download/brewsci/bottles-bio/adam-0.34.0.catalina.bottle.tar.gz",
+            "sha256": "f6d0f054e4c33368eda8f39b60b777fd0a5dc6df585b4e138edf08f5f072c86a"
           },
           "x86_64_linux": {
-            "url": "https://archive.org/download/brewsci/bottles-bio/adam-0.33.0.x86_64_linux.bottle.tar.gz",
-            "sha256": "d5e8054a38850a7c7d181f62c35c40d146b98339e29e22f7e4e7633bc3203a61"
+            "url": "https://archive.org/download/brewsci/bottles-bio/adam-0.34.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "ac202dac08582fc68079230223d39839e9588f5d8292dafc7da2e3ac2f8e7eb1"
           }
         }
       }
@@ -2782,13 +2782,13 @@
     "license": null,
     "homepage": "https://github.com/bigdatagenomics/cannoli",
     "versions": {
-      "stable": "0.11.1",
+      "stable": "0.12.0",
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://search.maven.org/remotecontent?filepath=org/bdgenomics/cannoli/cannoli-distribution-spark3_2.12/0.11.1/cannoli-distribution-spark3_2.12-0.11.1-bin.tar.gz",
+        "url": "https://search.maven.org/remotecontent?filepath=org/bdgenomics/cannoli/cannoli-distribution-spark3_2.12/0.12.0/cannoli-distribution-spark3_2.12-0.12.0-bin.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -2803,12 +2803,12 @@
         "root_url": "https://archive.org/download/brewsci/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://archive.org/download/brewsci/bottles-bio/cannoli-0.11.1.catalina.bottle.tar.gz",
-            "sha256": "716924507f69a2d5d0fa8b08e4b5434f78a3c99e70f8ef6fa0b3c1905569d23f"
+            "url": "https://archive.org/download/brewsci/bottles-bio/cannoli-0.12.0.catalina.bottle.tar.gz",
+            "sha256": "50feecf46705edd872d336c64f259f4b6b5fda41bcc162281fbb1f9b11aa9248"
           },
           "x86_64_linux": {
-            "url": "https://archive.org/download/brewsci/bottles-bio/cannoli-0.11.1.x86_64_linux.bottle.tar.gz",
-            "sha256": "d080c149240aa7b000cc4b1e047a3850f86b48caf751f32ff445ee9ee5cb55ff"
+            "url": "https://archive.org/download/brewsci/bottles-bio/cannoli-0.12.0.x86_64_linux.bottle.tar.gz",
+            "sha256": "edca7dd1a8d501e76fbdc09ecb844122ca6e91490e899c8344539b6a8a174121"
           }
         }
       }
@@ -3715,15 +3715,15 @@
     "license": "MIT",
     "homepage": "https://github.com/marcelm/cutadapt",
     "versions": {
-      "stable": "2.10",
+      "stable": "3.3",
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
         "url": "https://github.com/marcelm/cutadapt.git",
-        "tag": "v2.10",
-        "revision": "9ce76e87d2f96c5369b054dbbd6ad83fa0c15f34"
+        "tag": "v3.3",
+        "revision": "27a6817a842c29f4108e1e96cc93c83d694fcdff"
       }
     },
     "revision": 0,
@@ -3736,12 +3736,12 @@
         "root_url": "https://archive.org/download/brewsci/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://archive.org/download/brewsci/bottles-bio/cutadapt-2.10.catalina.bottle.tar.gz",
-            "sha256": "5f6a49a7ff02dd80c1945a436a85ad82bfc94983726bfc38fa22f5cf7ef39d28"
+            "url": "https://archive.org/download/brewsci/bottles-bio/cutadapt-3.3.catalina.bottle.tar.gz",
+            "sha256": "c1e86a4fec5c96237a0b9d8592f7614909d33c905f07c4d845cba04ea63c213c"
           },
           "x86_64_linux": {
-            "url": "https://archive.org/download/brewsci/bottles-bio/cutadapt-2.10.x86_64_linux.bottle.tar.gz",
-            "sha256": "58bc4e0007eafa31bb2d8928f17a7616fca976e0c1e2dfaf5043ab9d491194f0"
+            "url": "https://archive.org/download/brewsci/bottles-bio/cutadapt-3.3.x86_64_linux.bottle.tar.gz",
+            "sha256": "512fbab17fc9c222faac52097c43626f5bef95b174c5e2825ddf5254b92b7ad7"
           }
         }
       }
@@ -3751,7 +3751,7 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "python@3.8"
+      "python@3.9"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -4198,13 +4198,13 @@
     "license": "LGPL-3.0-or-later",
     "homepage": "https://github.com/heuermh/dishevelled-bio",
     "versions": {
-      "stable": "2.0.2",
+      "stable": "2.0.3",
       "head": null,
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://search.maven.org/remotecontent?filepath=org/dishevelled/dsh-bio-tools/2.0.2/dsh-bio-tools-2.0.2-bin.tar.gz",
+        "url": "https://search.maven.org/remotecontent?filepath=org/dishevelled/dsh-bio-tools/2.0.3/dsh-bio-tools-2.0.3-bin.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -4213,18 +4213,18 @@
     "version_scheme": 0,
     "bottle": {
       "stable": {
-        "rebuild": 1,
+        "rebuild": 0,
         "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://archive.org/download/brewsci/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://archive.org/download/brewsci/bottles-bio/dsh-bio-2.0.2.catalina.bottle.1.tar.gz",
-            "sha256": "7bcf5fbdca9723385ea257092d4bc5b9d051b2aad315ada4808fcb39d756c93b"
+            "url": "https://archive.org/download/brewsci/bottles-bio/dsh-bio-2.0.3.catalina.bottle.tar.gz",
+            "sha256": "767746c546a8d035e3781ce692733e87813016b8ac09374a9915de6ae575314e"
           },
           "x86_64_linux": {
-            "url": "https://archive.org/download/brewsci/bottles-bio/dsh-bio-2.0.2.x86_64_linux.bottle.1.tar.gz",
-            "sha256": "80a22439485ccfe318db475dd29e0fd7a21f3fc284b3a243c517cc27218411db"
+            "url": "https://archive.org/download/brewsci/bottles-bio/dsh-bio-2.0.3.x86_64_linux.bottle.tar.gz",
+            "sha256": "0971113bf271dd0887e203005df71a295d42860112c4484ce8adc4d48fe0eb9c"
           }
         }
       }
@@ -5316,22 +5316,22 @@
         "revision": null
       }
     },
-    "revision": 0,
+    "revision": 1,
     "version_scheme": 0,
     "bottle": {
       "stable": {
         "rebuild": 0,
-        "cellar": ":any",
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://archive.org/download/brewsci/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://archive.org/download/brewsci/bottles-bio/fastani-1.32.catalina.bottle.tar.gz",
-            "sha256": "0d8721627bff0445b2f2afc64b4c07f0ea4843bbd36c233dcea71b9a846196c2"
+            "url": "https://archive.org/download/brewsci/bottles-bio/fastani-1.32_1.catalina.bottle.tar.gz",
+            "sha256": "8a87f5ac2d028d5ce7ca725d0bf997cc4b19088e0a484f4e7a8be244966cbfe2"
           },
           "x86_64_linux": {
-            "url": "https://archive.org/download/brewsci/bottles-bio/fastani-1.32.x86_64_linux.bottle.tar.gz",
-            "sha256": "fc7e91f02a9b213c8a5d423dffda31ab89e18d3d9abf49352d54f9417c53f91f"
+            "url": "https://archive.org/download/brewsci/bottles-bio/fastani-1.32_1.x86_64_linux.bottle.tar.gz",
+            "sha256": "ca81474d0cfc36a53ba106540fce4d5f6bd033008089ade6579bdc03d2cb3285"
           }
         }
       }
@@ -6030,17 +6030,17 @@
     "oldname": null,
     "aliases": [],
     "versioned_formulae": [],
-    "desc": "Fast and accurate de novo assembler for single molecule sequencing reads",
+    "desc": "De novo assembler for single molecule sequencing reads using repeat graphs",
     "license": "BSD-3-Clause",
     "homepage": "https://github.com/fenderglass/Flye",
     "versions": {
-      "stable": "2.8",
+      "stable": "2.8.3",
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/fenderglass/Flye/archive/2.8-1.tar.gz",
+        "url": "https://github.com/fenderglass/Flye/archive/2.8.3.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -6049,18 +6049,18 @@
     "version_scheme": 0,
     "bottle": {
       "stable": {
-        "rebuild": 0,
+        "rebuild": 1,
         "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://archive.org/download/brewsci/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://archive.org/download/brewsci/bottles-bio/flye-2.8.catalina.bottle.tar.gz",
-            "sha256": "0c461022fa8f1b41ac6ea79bb320a913c09da9cb89930c912e0be0edddf253c7"
+            "url": "https://archive.org/download/brewsci/bottles-bio/flye-2.8.3.catalina.bottle.1.tar.gz",
+            "sha256": "3af2356ee422f2dd8f7c2610157d1c5352c71f03049b59bbbfd0a5f7707a59cc"
           },
           "x86_64_linux": {
-            "url": "https://archive.org/download/brewsci/bottles-bio/flye-2.8.x86_64_linux.bottle.tar.gz",
-            "sha256": "1f0c23f01533968deab9bc997bd116cea9a11b1941f325981370d9899815cc83"
+            "url": "https://archive.org/download/brewsci/bottles-bio/flye-2.8.3.x86_64_linux.bottle.1.tar.gz",
+            "sha256": "7f3794f7718a3aff68894a45d0c4431494021382506a72d948021fe88451f0b8"
           }
         }
       }
@@ -6070,7 +6070,7 @@
     "options": [],
     "build_dependencies": [],
     "dependencies": [
-      "python@3.8"
+      "python@3.9"
     ],
     "recommended_dependencies": [],
     "optional_dependencies": [],
@@ -8421,11 +8421,11 @@
         "files": {
           "catalina": {
             "url": "https://archive.org/download/brewsci/bottles-bio/jmol-14.31.34.catalina.bottle.tar.gz",
-            "sha256": "5c7aa7766d2726fe4738dea9d691ea5b1b853849bbf43d37ec155790845b6116"
+            "sha256": "d5f09c0af26371837f4b496ed1e1518f10ec6292b285323afa10aa92d80f8fc5"
           },
           "x86_64_linux": {
             "url": "https://archive.org/download/brewsci/bottles-bio/jmol-14.31.34.x86_64_linux.bottle.tar.gz",
-            "sha256": "e85fb24aea6d643c36516c1cfc0bfe3b1bff07d13d109c8b584f70e2622a27b1"
+            "sha256": "1d57c57eb109ef0ac49ed39bc3ae3f880d769436e1ee25e0c796884463f2c873"
           }
         }
       }
@@ -15385,22 +15385,22 @@
         "revision": null
       }
     },
-    "revision": 2,
+    "revision": 3,
     "version_scheme": 0,
     "bottle": {
       "stable": {
-        "rebuild": 1,
-        "cellar": "/home/linuxbrew/.linuxbrew/Cellar",
+        "rebuild": 0,
+        "cellar": ":any_skip_relocation",
         "prefix": "/home/linuxbrew/.linuxbrew",
         "root_url": "https://archive.org/download/brewsci/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://archive.org/download/brewsci/bottles-bio/pymol-2.4.0_2.catalina.bottle.1.tar.gz",
-            "sha256": "12b63c0572b512c2639d2366b3c6cdab15128cf7b71f1a5ff1633fe0f90e4d67"
+            "url": "https://archive.org/download/brewsci/bottles-bio/pymol-2.4.0_3.catalina.bottle.tar.gz",
+            "sha256": "1d910eb9d8ebe48d54f3ed62d4ff9ad1b94e7d8095f843f776938f0e53d2e5a5"
           },
           "x86_64_linux": {
-            "url": "https://archive.org/download/brewsci/bottles-bio/pymol-2.4.0_2.x86_64_linux.bottle.1.tar.gz",
-            "sha256": "88d616fb0c1a5430441cd00af1bc34d7d04406db029f737d75d7165dea605080"
+            "url": "https://archive.org/download/brewsci/bottles-bio/pymol-2.4.0_3.x86_64_linux.bottle.tar.gz",
+            "sha256": "fa39a87d14a11d955dc45ab164fe903b1355e62a64085a906e743e591e28bee5"
           }
         }
       }
@@ -15422,7 +15422,7 @@
       "msgpack",
       "netcdf",
       "numpy",
-      "pyqt",
+      "pyqt@5",
       "python@3.9",
       "sip"
     ],
@@ -21238,13 +21238,13 @@
     "license": null,
     "homepage": "https://github.com/Ensembl/WiggleTools",
     "versions": {
-      "stable": "1.2.8",
+      "stable": "1.2.10",
       "head": "HEAD",
       "bottle": true
     },
     "urls": {
       "stable": {
-        "url": "https://github.com/Ensembl/WiggleTools/archive/v1.2.8.tar.gz",
+        "url": "https://github.com/Ensembl/WiggleTools/archive/refs/tags/v1.2.10.tar.gz",
         "tag": null,
         "revision": null
       }
@@ -21259,11 +21259,11 @@
         "root_url": "https://archive.org/download/brewsci/bottles-bio",
         "files": {
           "catalina": {
-            "url": "https://archive.org/download/brewsci/bottles-bio/wiggletools-1.2.8.catalina.bottle.1.tar.gz",
+            "url": "https://archive.org/download/brewsci/bottles-bio/wiggletools-1.2.10.catalina.bottle.1.tar.gz",
             "sha256": "ac725d8c138b6856b9165de7372d8a93e095c44bed92174d79c8252b95a038b6"
           },
           "x86_64_linux": {
-            "url": "https://archive.org/download/brewsci/bottles-bio/wiggletools-1.2.8.x86_64_linux.bottle.1.tar.gz",
+            "url": "https://archive.org/download/brewsci/bottles-bio/wiggletools-1.2.10.x86_64_linux.bottle.1.tar.gz",
             "sha256": "cc4901b957a523c60317e766e89af6c4c5831583d41607d575b8963c6c6062f7"
           }
         }
