@@ -6,6 +6,12 @@ class Krona < Formula
   sha256 "56efc028b6226a1aea8ec4e9f049836b07d4833e7e4d5b9189118ed51a47c9c0"
   license "BSD-3-Clause"
 
+  bottle do
+    root_url "https://archive.org/download/brewsci/bottles-bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "70f28f3e1555927c085f0f50de11b4c20057398766bc6f3e37790d3416f0fed4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9a46952c87598ce809c4bdd18ffc6837bf12a265eab78e4181b55aa486ed689a"
+  end
+
   def install
     prefix.install %w[data img lib src taxonomy scripts], Dir["*.sh"]
     scripts = prefix/"scripts"
