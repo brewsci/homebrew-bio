@@ -4,7 +4,7 @@ class Krona < Formula
   homepage "https://github.com/marbl/Krona/wiki"
   url "https://github.com/marbl/Krona/releases/download/v2.8/KronaTools-2.8.tar"
   sha256 "56efc028b6226a1aea8ec4e9f049836b07d4833e7e4d5b9189118ed51a47c9c0"
-  license :cannot_represent
+  license "BSD-3-Clause"
 
   def install
     prefix.install %w[data img lib src taxonomy scripts], Dir["*.sh"]
