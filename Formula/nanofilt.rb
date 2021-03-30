@@ -10,8 +10,8 @@ class Nanofilt < Formula
 
   bottle do
     root_url "https://archive.org/download/brewsci/bottles-bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "bbf3e5519315971faac2ef4f24b4eb26b3b7814963cc43957deeea388cd380d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f1a2c76d6bf5cc0b9e1f8fe1f585c6fdbb7f674a3a8b2d4340f284b95338553b"
+    sha256 cellar: :any_skip_relocation, catalina:     "ed128c5f1dd588cd8b2ba87d2f51098aa40d9ae2382ad9bfb4a7b4dca641946d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0e5ac69d718bc2e2073fc240d166d60e7b114a501004e41d7ae17185b5d9d939"
   end
 
   depends_on "numpy"
