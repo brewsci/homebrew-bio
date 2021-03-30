@@ -3,8 +3,8 @@ class Nanopolish < Formula
   desc "Signal-level algorithms for MinION data"
   homepage "https://github.com/jts/nanopolish"
   url "https://github.com/jts/nanopolish.git",
-      tag:      "v0.12.0",
-      revision: "6a1333c0106e0969a13ed8fc40153c18e8da4790"
+      tag:      "v0.13.2",
+      revision: "46b65bbabf670ea42a9e446540a6e81efc2e4c58"
   license "MIT"
   head "https://github.com/jts/nanopolish.git"
 
@@ -25,7 +25,7 @@ class Nanopolish < Formula
   depends_on "gcc" if OS.mac? # needs openmp
   depends_on "hdf5"
   depends_on "htslib"
-  depends_on "python@3.8" # for scripts
+  depends_on "python@3.9" # for scripts
 
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
@@ -33,10 +33,6 @@ class Nanopolish < Formula
   fails_with :clang # needs openmp
 
   def install
-    # remove this when 0.12.1 comes out
-    # https://github.com/jts/nanopolish/commit/466c63d24896084535e8072e20d0aabc981a9888
-    inreplace "src/nanopolish_call_methylation.cpp", "<omp.h>", " <omp.h>\n#include <zlib.h>"
-
     system "make", "EIGEN=1", "HDF5=1", "HTS=1", "EIGEN_INCLUDE=-I#{Formula["eigen"].opt_include}/eigen3"
     prefix.install "scripts", "nanopolish"
     bin.install_symlink "../nanopolish"
