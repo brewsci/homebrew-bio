@@ -19,24 +19,8 @@ class Nanopolish < Formula
     sha256 cellar: :any, x86_64_linux: "024891195b39013008a3a2d03946617697602335077d36930e975091232ca8b8"
   end
 
-  depends_on "eigen" => :build # static link
-  depends_on "wget" => :build
-
-  depends_on "gcc" if OS.mac? # needs openmp
-  depends_on "hdf5"
-  depends_on "htslib"
-  depends_on "python@3.9" # for scripts
-
-  uses_from_macos "bzip2"
-  uses_from_macos "zlib"
-
-  fails_with :clang # needs openmp
-
   def install
-    system "make", "EIGEN=1", "HDF5=1", "HTS=1", "EIGEN_INCLUDE=-I#{Formula["eigen"].opt_include}/eigen3"
-    prefix.install "scripts", "nanopolish"
-    bin.install_symlink "../nanopolish"
-    pkgshare.install "test"
+    system "make"
   end
 
   test do
