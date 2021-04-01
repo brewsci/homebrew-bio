@@ -9,6 +9,8 @@ class Biointerchange < Formula
   depends_on "openssl@1.1" => :build # linked statically
   depends_on "python@3.9"
 
+  uses_from_macos "curl" => :build # linked statically
+
   def install
     # NOTE: Cannot parallelize, because of ExternalProject in CMakeLists.txt
     ENV.deparallelize
