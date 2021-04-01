@@ -6,14 +6,8 @@ class Biointerchange < Formula
   license "MIT"
 
   depends_on "cmake" => :build
-  depends_on "googletest" => :test
-  depends_on "curl"
-  depends_on "gettext"
-  depends_on "openssl@1.1"
+  depends_on "openssl@1.1" => :build # linked statically
   depends_on "python@3.9"
-  on_macos do
-    depends_on "libiconv"
-  end
 
   def install
     # NOTE: Cannot parallelize, because of ExternalProject in CMakeLists.txt
