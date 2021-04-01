@@ -1,12 +1,10 @@
 class Biointerchange < Formula
-  desc "Genomic linked data converter: an interchange GFF, GVF, VCF files via JSON"
+  desc "Genomic linked-data converter: an interchange GFF, GVF, VCF files via JSON-LD"
   homepage "https://github.com/BioInterchange/BioInterchangeC"
   url "http://indie.kim/assets/biointerchange/biointerchange-2.0.5.tar.gz"
   sha256 "36fcd19b39063fab87fb9f24a0752769ada91e81b82eb354ceb65d5147128141"
   license "MIT"
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
   depends_on "cmake" => :build
   depends_on "googletest" => :test
   depends_on "curl"
