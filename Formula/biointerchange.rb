@@ -11,6 +11,10 @@ class Biointerchange < Formula
 
   uses_from_macos "curl" => :build # linked statically
 
+  on_macos do
+    depends_on "libiconv" => :build # linked statically
+  end
+
   def install
     # NOTE: Cannot parallelize, because of ExternalProject in CMakeLists.txt
     ENV.deparallelize
