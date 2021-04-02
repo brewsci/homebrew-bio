@@ -12,6 +12,7 @@ class Biointerchange < Formula
   uses_from_macos "curl" => :build # linked statically
 
   on_macos do
+    depends_on "gettext" => :build # linked statically
     depends_on "libiconv" => :build # linked statically
   end
 
