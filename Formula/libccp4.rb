@@ -6,7 +6,7 @@ class Libccp4 < Formula
   license "LGPL-3.0-only"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 catalina:     "d0f3af6c79081b20e973cd671664bb7879ef218abbb1f31b7321c10a5ce7e186"
     sha256 x86_64_linux: "0b6df378d3b55d9b43fc2a2c5cbc2f4421f6d204585f00431f47634c08621477"
   end

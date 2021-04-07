@@ -7,7 +7,7 @@ class BwaMem2 < Formula
   head "https://github.com/bwa-mem2/bwa-mem2.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "ccaf67262f2f7e7f711d6f482ad004161c66aef0c55cadcb7ec4907a228f074d"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "943583113491f963bd0e8460994ec17a95f19208a62b07a8d514d18e648ddf7d"
   end

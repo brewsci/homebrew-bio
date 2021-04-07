@@ -14,7 +14,7 @@ class Treepl < Formula
   end
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any, catalina:     "e62bff49272a105c8b9d0157f4b59953821c5d8556eb6ed231d4860c08554565"
     sha256 cellar: :any, x86_64_linux: "78fddd7315e9747af2b3b9510a03154e6a0008dbd90df60e6d3d1ebf36dcb8ba"
   end

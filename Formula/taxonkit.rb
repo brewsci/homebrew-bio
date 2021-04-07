@@ -13,7 +13,7 @@ class Taxonkit < Formula
   end
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "5a8008fd08f9a3f128a5c4587e1ac74a6a1e6051ba68219519e95090560020de"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "5993c7abb48fa449d40b99ba221df7490f7d795f2230a86f2ea0a0dcb6d2f59b"
   end

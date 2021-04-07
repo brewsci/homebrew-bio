@@ -8,7 +8,7 @@ class Fastp < Formula
   head "https://github.com/OpenGene/fastp.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "f693c70a18ff037dde2e745b321b2327557131c7a60be8ed3b9ee7b0fc5be140"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "e0425b440fdc6b152c7a5426a41a437fc58995e67b0fab29864ed896cf2cc1c6"
   end

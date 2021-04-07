@@ -6,7 +6,7 @@ class Xssp < Formula
   sha256 "b475d6fa62098df0e54c8dbdaa0b32de93bf5a393335f73f9b5a7e95f3090d2a"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any, catalina:     "da26ad34a5cb1fdff5cb02392d988b64e9141739e143567faa340eda2224e0c1"
     sha256 cellar: :any, x86_64_linux: "e5c633a52565607cedbbe1d0d14255ecdc56deeb4401b6a7ea823baf09639006"
   end

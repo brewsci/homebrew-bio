@@ -16,7 +16,7 @@ class Circlator < Formula
   end
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any, sierra:       "3768e23648fdacd33e43f562dcaf6a7cbe20006e3f4a2c03f5f3c62e400fd216"
     sha256 cellar: :any, x86_64_linux: "310c5d97d4320ffbde5f0aedbcc7e05d03b721452714cf0e5dd21e5f3e1767f0"
   end

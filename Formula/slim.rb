@@ -7,7 +7,7 @@ class Slim < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "f33ea710cb58c11264d0dd99598076466d5b3933c631de0a59be0650e1046f8b"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "03a4ae3d6ab3dd077833d196938cb9f1fe0258b102f2c3f800b7f326993ef0d0"
   end

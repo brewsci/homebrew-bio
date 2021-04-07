@@ -7,7 +7,7 @@ class Faqcs < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "258fb769595a3a22700bb2f102092803a419cd723f6ee43874807af3c3a7a42d"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "34097faab16f1a1d2fe1f227a39facd5e32e4addf3984624dd50fa95069b30dd"
   end

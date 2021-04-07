@@ -8,7 +8,7 @@ class Xmatchview < Formula
   head "https://github.com/bcgsc/xmatchview.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 catalina:     "bb684917be20bc4eee532f574c2822f8661f370ef990605ac30e032a6ea37f32"
     sha256 x86_64_linux: "3ad14591f734285d827c0d63d82ee9fb887c91f70f7c2c678b0f3db308027b38"
   end

@@ -8,7 +8,7 @@ class Tigmint < Formula
   head "https://github.com/bcgsc/tigmint.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 catalina:     "9c665ffbbb313933785f00bb1f15fef98e70bf5c84441cc28bbacad9f470a43e"
     sha256 x86_64_linux: "3437b978409d01efed62881345bccc820a13d7225dce898d95a3d3ded10bd499"
   end

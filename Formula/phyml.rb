@@ -7,7 +7,7 @@ class Phyml < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "adac7f68bc36a7bd0b4954749d2293af62ea6d9fe91febed13d84f514f089ed9"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "7253c8ac68f4f24790adc53d49c9030fd0113fe8f33c482375c47874386ce43e"
   end

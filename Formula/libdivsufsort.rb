@@ -7,7 +7,7 @@ class Libdivsufsort < Formula
   head "https://github.com/y-256/libdivsufsort.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "d0b2553d3c658e81530f399f93c01044fe5de7f3924cc0058a57761095a31c4e"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "1f8809025776d0c921c65b0c89d9d9191120108d7d5103227e39444624623168"
   end

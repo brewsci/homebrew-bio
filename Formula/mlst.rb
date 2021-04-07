@@ -7,7 +7,7 @@ class Mlst < Formula
   head "https://github.com/tseemann/mlst.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "1798bf97d935367e32cb7c7854b25c5d04453c4ac5c00360b3c9c2969c77d110"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "1d618e68933b2866250ca1a60bb5e1e259890e17dbda5139afc03e4b64bb4a98"
   end

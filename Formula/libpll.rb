@@ -8,7 +8,7 @@ class Libpll < Formula
   head "https://github.com/xflouris/libpll.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any, sierra:       "6c0db69ccdf356afb339511e1acd31664f2c5742aba5ce0045c7ff6eecdeed6a"
     sha256 cellar: :any, x86_64_linux: "58b69c916fcea6f08e91ce956b5f426416506cf70a0ca13763bf3578b0a014fb"
   end

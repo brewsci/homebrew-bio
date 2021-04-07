@@ -7,7 +7,7 @@ class Arks < Formula
   head "https://github.com/bcgsc/arks.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any, sierra:       "9a3c4628f6b9cdb438082551316ff918c2eacfe2fb303766b652e6daede6a537"
     sha256 cellar: :any, x86_64_linux: "e862be3388e4dc1731de0d3d9e2836a0f5538fa71a11092f5e8edfab4c603d6c"
   end

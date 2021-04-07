@@ -6,7 +6,7 @@ class Wtdbg2 < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "a745e86dde75d8ec852dbd2fbf0c145d921d413274854e69ba1249374275f488"
   end
 

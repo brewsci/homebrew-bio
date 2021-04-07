@@ -12,7 +12,7 @@ class Salmid < Formula
   end
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "259fc770fe9540514d125b042b296e983e91f8466cf7732959f7d6e695b4f245"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "7c8b74c883ec1c0c5e83dc053ce622638d4249851ac72803e8de217eaa4d913a"
   end

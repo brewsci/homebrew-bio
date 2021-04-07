@@ -12,7 +12,7 @@ class HarvestTools < Formula
   end
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 sierra:       "bea665dabd577ff78847689683634e581ae160fa114c6236f1cebadac9ba28d7"
     sha256 x86_64_linux: "fd5f92ca90802aa2f5174b175d39aa72558f67ba2d199eacb22baf86ca2d9955"
   end

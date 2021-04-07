@@ -7,7 +7,7 @@ class Kmergenie < Formula
   revision 1
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "3eee36e39911e3578cb1c4e824be9d342937246a48e604561c0ab88782f3e1a4"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "3924e202b8e447adb1e08a341db269b8eeb390198d4a6d8a6b033925be1e9b30"
   end

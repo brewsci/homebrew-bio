@@ -6,7 +6,7 @@ class Fastuniq < Formula
   sha256 "9ebf251566d097226393fb5aa9db30a827e60c7a4bd9f6e06022b4af4cee0eae"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "d1102d51ef9544219812a378b24ef165cf1780ba7c2e8806373acc9d5741977b"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "ee48dc9e66808e87057362b7a5f8fbc7debe1b63aa521b8817cbe1c5a02dc684"
   end

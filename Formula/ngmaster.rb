@@ -6,7 +6,7 @@ class Ngmaster < Formula
   license "GPL-2.0"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "dc8748c713ff3337044763bef882f037a5586b01fe7affc1dec7524b52a5def4"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "5744a66095f4317395ccdbe243f00b06e25e16d1840c89b03cd4793f29e7a27c"
   end

@@ -7,7 +7,7 @@ class Bandage < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "2f9db41fa2cc366255bc4cf5d58db949f0765db087021adf6d701a44b4a2f6ab"
   end
 

@@ -10,7 +10,7 @@ class Quast < Formula
   head "https://github.com/ablab/quast.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "96cbef2a8207cb7e5335482f745ef619ceca992729d3ad853495bb2e396700d2"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "8a091a5df4a4895c1c3de153adaeb27473d72c6693855214bc648a9f3a3bff59"
   end

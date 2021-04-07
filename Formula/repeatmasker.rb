@@ -7,7 +7,7 @@ class Repeatmasker < Formula
   revision 4
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 sierra:       "7fcee4e987b113ca2661261d9e93748dff492004c7e954c50e357026a2701cb7"
     sha256 x86_64_linux: "eaa8d9c36550b03924859a3ef41a6dfcf5b08b2f8c501e20f07db532026a0d00"
   end

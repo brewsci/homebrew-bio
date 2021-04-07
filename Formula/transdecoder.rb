@@ -6,7 +6,7 @@ class Transdecoder < Formula
   head "https://github.com/TransDecoder/TransDecoder.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "e042f955488ce81913380ae2090db14f5384ed90e2c9c823b31ff2a92f50feac"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "13f7d49edfe061c813960bbb59a7c7c27f6eac82a9c058b34bf1d1f52d095c06"
   end

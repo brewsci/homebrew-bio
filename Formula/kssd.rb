@@ -5,7 +5,7 @@ class Kssd < Formula
   sha256 "bdf42a9a280126c41736aa9ee480d2948e32f9027e97607fe18473db59187bf4"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "ef105327189bf598e7560fd87b5ab1defab47fdd63d19fe95b41a436d6b340f1"
   end
 

@@ -8,7 +8,7 @@ class Ntjoin < Formula
   head "https://github.com/bcgsc/ntJoin.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any, catalina:     "e3c44075e84098fe741e7077ace402bd89c36b1afcf3ce037f97b52013c8d978"
     sha256               x86_64_linux: "e7d417d1b32ca86a2ba30b6a82d1943362ba56f76b71eb0659f0f419409718c1"
   end

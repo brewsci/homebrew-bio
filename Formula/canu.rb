@@ -7,7 +7,7 @@ class Canu < Formula
   head "https://github.com/marbl/canu.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, mojave:       "6042a89505e9c8e553289361dfb2f7d99d3168d4234e97a35e5c91eb38c0820d"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "e211e9b9c1c3ba20669050606188b5025042ca9a03e2034f7fe135afc5431fc0"
   end

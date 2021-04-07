@@ -20,7 +20,7 @@ class Pplacer < Formula
   end
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "67bc8639e0f54daa1c141b906814578cd26f9510f9803297c337b4a0c241f577"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "a3defbdaf841d3fb1297cb1175a29b7ecee7f964cd6e25cf95a1de7a4946a105"
   end

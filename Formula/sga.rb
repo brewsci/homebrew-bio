@@ -13,7 +13,7 @@ class Sga < Formula
   end
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 sierra:       "c557433d9f39a90ecdcc0eaccae50f590d1913d79faa23ed5625329ac61c348c"
     sha256 x86_64_linux: "7caa32dd5ce43febeffa62f307d35988eaee298b133c3e6f8948a703fa3194e1"
   end

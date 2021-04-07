@@ -6,7 +6,7 @@ class Bam2fastx < Formula
   license "BSD-3-Clause-Clear"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any, sierra:       "5e1053af2b9f378b5176e16bf65387d5e0ddfbec6468a5e21640f39b501bdf16"
     sha256 cellar: :any, x86_64_linux: "2990674c01b517325aeab3d132436bd5bba1bee063112117206ff0ac3b50eb29"
   end

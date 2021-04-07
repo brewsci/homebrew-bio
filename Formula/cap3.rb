@@ -12,7 +12,7 @@ class Cap3 < Formula
   version "2015-02-11"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "99ecfe1010263867a187ed2c4e74af9b3ece721ec95c2974ae0a98bc054804e1"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "a886d7d77eb147b14095f22efc1f2cfa4b595810658cb47ffc99512010ddf24e"
   end

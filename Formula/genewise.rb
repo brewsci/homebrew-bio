@@ -7,7 +7,7 @@ class Genewise < Formula
   revision 1
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any, sierra:       "6fdc8a97b8c15df77d6c6a7cb545ce9f2fa21c14e010e041b5d8eff64b5c20c1"
     sha256 cellar: :any, x86_64_linux: "67e56af99ac88549d06a08338a0e953a355d61ab31abd5ce0708a16baab98d75"
   end

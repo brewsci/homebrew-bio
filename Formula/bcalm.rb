@@ -8,7 +8,7 @@ class Bcalm < Formula
   license "MIT"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "dcc1e682e002280de1aab1401b61c6c74921ea92e9e855325546c06e5da4c7b4"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "d9e93a21a9cddaf7647a8947539d6ebbfa93c904bba36498bb9f0bf1ccdcbd28"
   end

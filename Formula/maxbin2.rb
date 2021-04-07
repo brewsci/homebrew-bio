@@ -6,7 +6,7 @@ class Maxbin2 < Formula
   sha256 "cb6429e857280c2b75823c8cd55058ed169c93bc707a46bde0c4383f2bffe09e"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any, catalina:     "41ef87f87c8800b73611d08c43dbb5f139849bbe76782f6d9d70b9bce4b39718"
     sha256 cellar: :any, x86_64_linux: "44a8bd3c9afced43635b7c7ae1663b15f67171dde17e0c5a04ce4713cbf33b33"
   end

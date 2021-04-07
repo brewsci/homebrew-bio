@@ -9,7 +9,7 @@ class Emboss < Formula
   license "GPL-2.0"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 sierra:       "57219a42bac24b44d5d1ae5f9eb4f24039f984f23235f3cbcd589980289131a4"
     sha256 x86_64_linux: "dd11bf961d44c707a75be24535d8bac8e1fa2eaf6d983888e185d8723e6c798c"
   end

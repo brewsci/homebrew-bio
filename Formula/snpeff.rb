@@ -13,7 +13,7 @@ class Snpeff < Formula
   end
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "4cf8bb993288038ba82132a6ed0ae7794d447e20944a8882da1bf1fba0757149"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "e3088b0a1dcd51a33e74867cdb157a3bfa470101fbd71c61e3f8e00c04118dd5"
   end

@@ -5,7 +5,7 @@ class Discovardenovo < Formula
   sha256 "445445a3b75e17e276a6119434f13784a5a661a9c7277f5e10f3b6b3b8ac5771"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "ff015936c5bf261b15066451482245f60eece7fb14b385664374883cad1f1a36"
   end
 

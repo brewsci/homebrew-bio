@@ -12,7 +12,7 @@ class Groot < Formula
   end
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "d68dae4fdc75db0240dac1235294e34aaa5cee4437228c0a97220993ffe56a62"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "57339d9d43a15d769de59a51ea39d6c8212763babd978e5ca135fd86bc9b2af4"
   end

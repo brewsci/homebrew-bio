@@ -13,7 +13,7 @@ class Astral < Formula
   end
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "639cf19cf7371e03cbb4092a3d5ec470628817dd3878f9ac0bb20b9b20ed1eba"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "0e0f15952cbf659a6a6654c5f11fbc4fe96d74f6c3c6843baba33d89073eacca"
   end

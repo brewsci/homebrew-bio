@@ -12,7 +12,7 @@ class Unikmer < Formula
   end
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "0db8530f9dc5c2b16a71595d69f7fca624225f70bf4c8f67575c3bfd31ecd57b"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "1c911f2be23033c8cb4d494e5f67bdfe5394d5a92cf01848f518c8343134a73a"
   end
