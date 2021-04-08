@@ -1,8 +1,8 @@
 class Varsim < Formula
   desc "High-fidelity simulation validation framework for NGS"
   homepage "https://github.com/bioinform/varsim"
-  url "https://github.com/bioinform/varsim/releases/download/v0.8.4/varsim-0.8.4.tar.gz"
-  sha256 "36d2dd6ccd60cd97ea60fdab918d21cb520894d7d38276b837c39ef587977696"
+  url "https://github.com/bioinform/varsim/releases/download/v0.8.6/varsim-0.8.6.tar.gz"
+  sha256 "19c35be253fda9e5799cbed123b2e34ae227499a1707e795e7c7099562023c50"
   license "BSD-2-Clause"
 
   bottle do
