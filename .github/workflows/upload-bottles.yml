@@ -17,6 +17,8 @@ jobs:
       - uses: actions/checkout@master
         with:
           fetch-depth: 100
+      - name: Update Homebrew
+        run: brew update
       - name: Upload bottles
         shell: bash
         run: |
