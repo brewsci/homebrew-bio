@@ -11,7 +11,6 @@ class Uniqtag < Formula
 
   def install
     system "make", "install", "prefix=#{prefix}"
-    doc.install "README.md"
   end
 
   test do
