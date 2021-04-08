@@ -8,7 +8,7 @@ class Wiggletools < Formula
   head "https://github.com/Ensembl/WiggleTools.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any,                 catalina:     "f11c3f6a73ffa46cf999f120002d0aa145a0a857acfc3e8d112406f3cab97e4d"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "5278da6176b6e6cf16049949a3351bc0993c9d4e4393f2666716f4b302d0b5ef"
   end

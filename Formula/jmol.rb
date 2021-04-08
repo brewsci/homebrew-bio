@@ -6,7 +6,7 @@ class Jmol < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "d5f09c0af26371837f4b496ed1e1518f10ec6292b285323afa10aa92d80f8fc5"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "1d57c57eb109ef0ac49ed39bc3ae3f880d769436e1ee25e0c796884463f2c873"
   end

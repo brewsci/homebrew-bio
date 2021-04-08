@@ -6,7 +6,7 @@ class DshBio < Formula
   license "LGPL-3.0-or-later"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "767746c546a8d035e3781ce692733e87813016b8ac09374a9915de6ae575314e"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "0971113bf271dd0887e203005df71a295d42860112c4484ce8adc4d48fe0eb9c"
   end

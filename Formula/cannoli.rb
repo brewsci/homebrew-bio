@@ -11,7 +11,7 @@ class Cannoli < Formula
   end
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "50feecf46705edd872d336c64f259f4b6b5fda41bcc162281fbb1f9b11aa9248"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "edca7dd1a8d501e76fbdc09ecb844122ca6e91490e899c8344539b6a8a174121"
   end

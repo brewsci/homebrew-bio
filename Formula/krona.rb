@@ -7,7 +7,7 @@ class Krona < Formula
   license "BSD-3-Clause"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "70f28f3e1555927c085f0f50de11b4c20057398766bc6f3e37790d3416f0fed4"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "9a46952c87598ce809c4bdd18ffc6837bf12a265eab78e4181b55aa486ed689a"
   end

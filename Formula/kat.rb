@@ -16,7 +16,7 @@ class Kat < Formula
   end
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 catalina:     "3ff4992ce2cbddf2477d370f8d446f2d75eef359641df08872876a35f3f97cb8"
     sha256 x86_64_linux: "2875e854a4dc362ede09d287f586757303efd930e1d114dbce4bb423e134eb94"
   end

@@ -12,7 +12,7 @@ class Busco < Formula
   head "https://gitlab.com/ezlab/busco.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "ef4c090b77cf96cd74e98185f55dc870b496f5c536b00b86349653cfbdd91ce3"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "8b36d35b412c8556fa84ee31d6b7adc1fa6d9c3b0586f42f72849007f866cd8e"
   end

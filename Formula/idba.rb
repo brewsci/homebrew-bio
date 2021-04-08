@@ -9,7 +9,7 @@ class Idba < Formula
   head "https://github.com/loneknightpy/idba.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any,                 catalina:     "094b46cbcb3fe54222cb940f605d5e656864c654f231294c890e98528378eea2"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "3c0b9b2d9a30c1833985040eae10e212ea78faa7c1dc37b52a661a2b9a194913"
   end

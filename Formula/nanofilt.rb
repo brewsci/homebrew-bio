@@ -9,7 +9,7 @@ class Nanofilt < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "ed128c5f1dd588cd8b2ba87d2f51098aa40d9ae2382ad9bfb4a7b4dca641946d"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "0e5ac69d718bc2e2073fc240d166d60e7b114a501004e41d7ae17185b5d9d939"
   end

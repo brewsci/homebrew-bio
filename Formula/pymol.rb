@@ -8,7 +8,7 @@ class Pymol < Formula
   head "https://github.com/schrodinger/pymol-open-source.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any,                 catalina:     "1d910eb9d8ebe48d54f3ed62d4ff9ad1b94e7d8095f843f776938f0e53d2e5a5"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "fa39a87d14a11d955dc45ab164fe903b1355e62a64085a906e743e591e28bee5"
   end

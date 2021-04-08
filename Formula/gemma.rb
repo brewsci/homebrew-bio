@@ -12,7 +12,7 @@ class Gemma < Formula
   end
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any,                 catalina:     "7e27d603f4afdd48b01b7db2e3fc2a7d401450932585652047a79f0875b0a50a"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "70df4511ba6de74ebb2f0f6efcd6d02b48d7797a27c36dec95afd05574e7ee44"
   end

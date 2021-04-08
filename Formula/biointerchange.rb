@@ -6,7 +6,7 @@ class Biointerchange < Formula
   license "MIT"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any,                 catalina:     "d0613db1933c9336345d411442ec8422c42101d747122f6f01ff0598e07c2281"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "e4457fbc917fbec9f798c18225d2d8c2daee4d8daab0000d0f44efa823887ac4"
   end

@@ -10,7 +10,7 @@ class Flye < Formula
   head "https://github.com/fenderglass/Flye.git", branch: "flye"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     rebuild 1
     sha256 cellar: :any_skip_relocation, catalina:     "3af2356ee422f2dd8f7c2610157d1c5352c71f03049b59bbbfd0a5f7707a59cc"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "7f3794f7718a3aff68894a45d0c4431494021382506a72d948021fe88451f0b8"

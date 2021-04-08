@@ -7,7 +7,7 @@ class Arcs < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any, catalina:     "20c0513d21d726a3cdf1d0016dc3072a7a2a78f34c6905373c1c2ccac9e9f736"
     sha256 cellar: :any, x86_64_linux: "38fdc0f3ab018cc03d4de8089df3ec7a3d02751d098b46f9d24bdd0fcb492a24"
   end

@@ -7,7 +7,7 @@ class Paml < Formula
   sha256 "9b00fbd37fe825129a160599372ba4c8e88b22d14c0388044a711fb281a0191d"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "f38a4f56221825dfd56ee64855fc3731c97e38347b3aabafee63541c1926240e"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "0bb90b5cac3f74c0d03d26fbde658dcd2edca8ea8847662da0e682c56c028cf5"
   end

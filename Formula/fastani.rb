@@ -9,7 +9,7 @@ class Fastani < Formula
   head "https://github.com/ParBLiSS/FastANI.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any,                 catalina:     "8a87f5ac2d028d5ce7ca725d0bf997cc4b19088e0a484f4e7a8be244966cbfe2"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "ca81474d0cfc36a53ba106540fce4d5f6bd033008089ade6579bdc03d2cb3285"
   end
