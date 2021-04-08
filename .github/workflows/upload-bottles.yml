@@ -6,19 +6,13 @@ on:
 
 jobs:
   upload-bottles:
-    runs-on: ubuntu-latest
-    container:
-      image: homebrew/ubuntu16.04:master
+    runs-on: ubuntu-20.04
     env:
       HOMEBREW_GITHUB_PACKAGES_USER: LinuxbrewTestBot
       HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{secrets.HOMEBREW_GITHUB_PACKAGES_TOKEN}}
       HOMEBREW_NO_ANALYTICS: 1
       HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
-      - name: Install dependencies
-        run: |
-          apt update
-          apt install -y jq unzip
       - uses: actions/checkout@master
         with:
           fetch-depth: 100
