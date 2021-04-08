@@ -7,8 +7,8 @@ class Varsim < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "c6b82592aa5824c0035de5ef5636f76a26985ed1e54e7f9b5b43c9438764e8ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b06e5eb42eda0e79c90354a8f7b5768c920c4c45a72a457b732f64e12d037e39"
+    sha256 cellar: :any_skip_relocation, catalina:     "859f4d7fea5f23d2aad2a418a0fd05544541f1bc7d6808557be8e910d2f56b39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3e6cd67468b26c7346146c52dee3f8568ffe58b47b0c3d4510a6672afd60aabe"
   end
 
   depends_on "openjdk"
