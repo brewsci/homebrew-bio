@@ -10,8 +10,8 @@ class Cutadapt < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "c1e86a4fec5c96237a0b9d8592f7614909d33c905f07c4d845cba04ea63c213c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "512fbab17fc9c222faac52097c43626f5bef95b174c5e2825ddf5254b92b7ad7"
+    sha256 cellar: :any_skip_relocation, catalina:     "031f770a86176d2b900fe82cc1dc4e265b08c6c7378ba34b593788105ad6d313"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "11fe25398bea539c79d92993b100aea921d821c10b10d11c96684a801716d956"
   end
 
   depends_on "python@3.9"
