@@ -11,6 +11,12 @@ class Varscan < Formula
     regex(/href=.*?VarScan[._-]v?(\d+(?:\.\d+)+)\.jar/i)
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "54a78df4e18651c18647c55b16783cf350d92b996943660cc1c2769f5e511fb2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "94c247d9491f48ff0bbd71eacd38be4d07b33986015715b53668c083a793508f"
+  end
+
   depends_on "openjdk"
 
   def install
