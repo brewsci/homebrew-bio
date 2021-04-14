@@ -4,7 +4,9 @@ class HhSuite < Formula
   homepage "https://github.com/soedinglab/hh-suite"
   url "https://github.com/soedinglab/hh-suite/archive/v3.3.0.tar.gz"
   sha256 "dd67f7f3bf601e48c9c0bc4cf1fbe3b946f787a808bde765e9436a48d27b0964"
-  license "GPL-3.0-only"
+  license "GPL-3.0-or-later"
+  revision 1
+  head "https://github.com/soedinglab/hh-suite.git"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -13,33 +15,45 @@ class HhSuite < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.9"
+  depends_on "libomp"
+  depends_on "open-mpi"
 
   uses_from_macos "perl"
 
-  on_macos do
-    depends_on "gcc" # needs openmp
-  end
-
-  fails_with :clang # needs openmp
-
   def install
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args
-      system "make", "install"
+    args = *std_cmake_args << "-DCHECK_MPI=1"
+    args << if Hardware::CPU.arm?
+      "-DHAVE_ARM8=1"
+    else
+      "-DHAVE_SSE4_1=1"
     end
+
+    if OS.mac?
+      libomp = Formula["libomp"]
+      args << "-DOpenMP_C_FLAGS=-Xpreprocessor\ -fopenmp\ -I#{libomp.opt_include}"
+      args << "-DOpenMP_C_LIB_NAMES=omp"
+      args << "-DOpenMP_CXX_FLAGS=-Xpreprocessor\ -fopenmp\ -I#{libomp.opt_include}"
+      args << "-DOpenMP_CXX_LIB_NAMES=omp"
+      args << "-DOpenMP_omp_LIBRARY=#{libomp.opt_lib}/libomp.a"
+    end
+
+    system "cmake", ".", *args
+    system "make", "install"
+    cp "scripts/reformat.pl", bin
+    rm_rf "scripts"
+    pkgshare.install ["data/query.a3m", "data/test.sh"]
   end
 
   def caveats
-    "HH-suite requires at least SSE4.1 CPU instruction support." unless Hardware::CPU.sse4?
+    "HH-suite requires at least SSE4.1 CPU instruction support." if !Hardware::CPU.sse4? && !Hardware::CPU.arm?
   end
 
   test do
-    assert_match "Usage", shell_output("#{bin}/hhalign -h")
-    assert_match "Usage", shell_output("#{bin}/hhblits -h")
-    assert_match "Usage", shell_output("#{bin}/hhconsensus -h")
-    assert_match "Usage", shell_output("#{bin}/hhfilter -h")
-    assert_match "Usage", shell_output("#{bin}/hhmake -h")
-    assert_match "Usage", shell_output("#{bin}/hhsearch -h")
+    cp pkgshare/"query.a3m", testpath
+    cp pkgshare/"test.sh", testpath
+    ENV["OMPI_ALLOW_RUN_AS_ROOT"] = "1"
+    ENV["OMPI_ALLOW_RUN_AS_ROOT_CONFIRM"] = "1"
+    system "./test.sh"
+    assert_equal 0, $CHILD_STATUS.exitstatus
   end
 end
