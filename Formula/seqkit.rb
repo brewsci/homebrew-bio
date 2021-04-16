@@ -4,13 +4,13 @@ class Seqkit < Formula
   homepage "https://bioinf.shenwei.me/seqkit/"
   # We use binaries to avoid compiling Go code
   if OS.mac?
-    url "https://github.com/shenwei356/seqkit/releases/download/v0.15.0/seqkit_darwin_amd64.tar.gz"
-    sha256 "5428cf6e2d04efd0adc0fa045a3f90fd37c34235630be2819aef0de25901f12a"
+    url "https://github.com/shenwei356/seqkit/releases/download/v0.16.0/seqkit_darwin_amd64.tar.gz"
+    sha256 "44376dabce69c71fe79d2ace91e49ff145c54046a34b23386c92eb574fe42dbe"
   else
-    url "https://github.com/shenwei356/seqkit/releases/download/v0.15.0/seqkit_linux_amd64.tar.gz"
-    sha256 "bf305e7d5b4fbe14a6e87ebf6aa454117dd3cf030cb9473d01161c0a1987a182"
+    url "https://github.com/shenwei356/seqkit/releases/download/v0.16.0/seqkit_linux_amd64.tar.gz"
+    sha256 "fb59aaf7c4fcb74b61dfaab8bbdcad47333b98040c2a1408974786619e686c66"
   end
-  version "0.15.0"
+  version "0.16.0"
   license "MIT"
 
   bottle do
