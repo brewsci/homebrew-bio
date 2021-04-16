@@ -15,8 +15,8 @@ class Seqkit < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "831fc5b89602adc8cfaa943c40522a345a020d3487b5d06b89d3aaf36a9e408b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4f3585065b3098939f201c2b081a0539ef59ffadfa8b162f8c0b471849483296"
+    sha256 cellar: :any_skip_relocation, catalina:     "d93ab217d4c07aa96ee4493cb6823ba15876a0b7ec4701533610324754da0e5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8c0c32149e8b91d2b4e0bbfefd9e786e7e34566754fb5872236b1789777ef9af"
   end
 
   def install
