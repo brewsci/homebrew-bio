@@ -4,7 +4,7 @@ class Pymol < Formula
   homepage "https://pymol.org/"
   url "https://github.com/schrodinger/pymol-open-source/archive/v2.4.0.tar.gz"
   sha256 "5ede4ce2e8f53713c5ee64f5905b2d29bf01e4391da7e536ce8909d6b9116581"
-  revision 4
+  revision 5
   head "https://github.com/schrodinger/pymol-open-source.git"
 
   bottle do
@@ -70,11 +70,14 @@ class Pymol < Formula
       --testing
     ]
     system Formula["python@3.9"].opt_bin/"python3", "setup.py", "install", *args
-
+    site_packages = "lib/python#{xy}/site-packages"
+    pth_contents = "import site; site.addsitedir('#{libexec/site_packages}')\n"
+    (prefix/site_packages/"homebrew-pymol.pth").write pth_contents
     bin.install libexec/"bin/pymol"
   end
 
   test do
     system "#{bin}/pymol", "-c"
+    system Formula["python@3.9"].opt_bin/"python3", "-c", "import pymol"
   end
 end
