@@ -9,8 +9,8 @@ class Ntedit < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, catalina:     "c6b971225ada7472390713dfbaa78ed282516f1f3f4a070d2ec18de6f4b9415b"
-    sha256 cellar: :any, x86_64_linux: "ef92eab23addd3ca6f86f76a6aa01dfc9b905d59f5cbf3d22b14f89ecad29fc5"
+    sha256 cellar: :any,                 catalina:     "299b5fb39c237e03266945ad75736673417553b044f26d69ead428c75fff9681"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8c7e9babe2457e46d6729e70babf7a182bffd4ea743d5a305d3ef837faf1fc58"
   end
 
   depends_on "gcc" if OS.mac? # needs openmp
