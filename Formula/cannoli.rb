@@ -1,8 +1,8 @@
 class Cannoli < Formula
   desc "Big Data Genomics ADAM Pipe API wrappers for bioinformatics tools"
   homepage "https://github.com/bigdatagenomics/cannoli"
-  url "https://search.maven.org/remotecontent?filepath=org/bdgenomics/cannoli/cannoli-distribution-spark3_2.12/0.12.0/cannoli-distribution-spark3_2.12-0.12.0-bin.tar.gz"
-  sha256 "cebc4776aaf55cc9333716f3001d5f6c97cbe8be0faa260ad8b027246c71ae72"
+  url "https://search.maven.org/remotecontent?filepath=org/bdgenomics/cannoli/cannoli-distribution-spark3_2.12/0.13.0/cannoli-distribution-spark3_2.12-0.13.0-bin.tar.gz"
+  sha256 "9e55ff81d56ed4307d35b743405f98a52b3081696c3c2ed56004340611204aab"
 
   livecheck do
     url :homepage
