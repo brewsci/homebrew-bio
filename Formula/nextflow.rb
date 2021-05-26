@@ -2,8 +2,8 @@ class Nextflow < Formula
   # cite Tommaso_2017: "https://doi.org/10.1038/nbt.3820"
   desc "Data-driven computational pipelines"
   homepage "https://www.nextflow.io/"
-  url "https://github.com/nextflow-io/nextflow/releases/download/v20.07.1/nextflow"
-  sha256 "de4db5747a801af645d9b021c7b36f4a25c3ce1a8fda7705a5f37e8f9357443a"
+  url "https://github.com/nextflow-io/nextflow/releases/download/v21.04.1/nextflow"
+  sha256 "840ca394237e0f4d9f34642ff77c0ac92361319bcc9d9441f3d99f7b6d48ae7d"
   license "Apache-2.0"
   head "https://github.com/nextflow-io/nextflow.git"
 
