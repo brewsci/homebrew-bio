@@ -9,8 +9,8 @@ class SeqanAT3 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "2b09a9199ca88289ae9d7572ea159481e23cb57a419fec0c3e77647179f22a1a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "067d5789a5501d6ac6668fc8323cedc0a3cfd0252de6ee2478d754695d0d4f1a"
+    sha256 cellar: :any_skip_relocation, catalina:     "88c2c9c0d6678bff857625320c7ff963ee2fb3246291c2fbd9b5e38b7fd3765f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "24252dca489cb6db2a216cd615aa9e0458ace94b352a2954a73bfcdfbb8c283b"
   end
 
   depends_on "cmake" => :build
