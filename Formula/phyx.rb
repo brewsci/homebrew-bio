@@ -8,8 +8,8 @@ class Phyx < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, mojave:       "561513bd343850933d8f034617bb6990100bb8ffbd5f3a6fc7c8145c43401f25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0b324a7fa20c5f57d4de10ae5034c2885ad7006c04c24107bef67a33a3c1131f"
+    sha256 cellar: :any,                 catalina:     "b433239f9accbc0ab79a29fe3e92d5f5bb5d66ead811c63290bb21b3138ea69c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "99288389255c20864427241afa2d7427dcd4d91cc1a9b4244d9215eca24fdb66"
   end
 
   depends_on "autoconf" => :build
