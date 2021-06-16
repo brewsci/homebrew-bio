@@ -9,8 +9,8 @@ class Tigmint < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 catalina:     "9c665ffbbb313933785f00bb1f15fef98e70bf5c84441cc28bbacad9f470a43e"
-    sha256 x86_64_linux: "3437b978409d01efed62881345bccc820a13d7225dce898d95a3d3ded10bd499"
+    sha256 cellar: :any,                 catalina:     "2c8d98f0d9180641c0ed6a37ef5462b4aa532be2de7449d932aa145f7fcb9ec3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ab6f031d9ab16c78a936491906c892b88d1c1912fc1877cdf2caf4313ee14ee8"
   end
 
   depends_on "bedtools"
