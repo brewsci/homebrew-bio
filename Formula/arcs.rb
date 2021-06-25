@@ -20,7 +20,6 @@ class Arcs < Formula
 
   depends_on "boost" => :build
   depends_on "google-sparsehash" => :build
-  depends_on "links-scaffolder"
 
   uses_from_macos "zlib"
 
