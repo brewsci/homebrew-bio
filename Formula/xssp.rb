@@ -11,7 +11,7 @@ class Xssp < Formula
     sha256 cellar: :any, x86_64_linux: "e5c633a52565607cedbbe1d0d14255ecdc56deeb4401b6a7ea823baf09639006"
   end
 
-  deprecate! because: "has been replaced by brewsci/bio/dssp and brewsci/bio/hssp"
+  deprecate! because: "has been replaced by brewsci/bio/dssp and brewsci/bio/hssp", date: "2020-11-19"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
