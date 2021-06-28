@@ -2,8 +2,8 @@ class Ntjoin < Formula
   # cite Coombe_2020: "https://doi.org/10.1101/2020.01.13.905240"
   desc "Genome assembly scaffolder using minimizer graphs"
   homepage "https://github.com/bcgsc/ntJoin"
-  url "https://github.com/bcgsc/ntJoin/releases/download/v1.0.6/ntJoin-1.0.6.tar.gz"
-  sha256 "d8931400c9d90dd355528be6cfd01b3294ef81875d0a718ded3774735060b96b"
+  url "https://github.com/bcgsc/ntJoin/releases/download/v1.0.7/ntJoin-1.0.7.tar.gz"
+  sha256 "5b9e7d7fec3d23fac9c43a7069170e3ea3cc813c7722ad6bfdcd0f6c8e51a291"
   license "GPL-3.0-only"
   head "https://github.com/bcgsc/ntJoin.git"
 
