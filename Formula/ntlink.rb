@@ -7,6 +7,12 @@ class Ntlink < Formula
   license "GPL-3.0-only"
   head "https://github.com/bcgsc/ntLink.git"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "4ea6168c077875deedbc254c27b7dcf271504a4112aa777f3b020b9c5fe5f044"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "01d149c1fc8809b02c3ddc5f47a1fec36869bffaa2db2e239a7015a60a060adf"
+  end
+
   depends_on "abyss"
   depends_on "numpy"
   depends_on "python@3.8"
