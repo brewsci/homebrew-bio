@@ -10,8 +10,8 @@ class Ema < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, sierra:       "146c172575768d79936b1475d4a596d2599d8483b0e8ebd24b8808b227c4480c"
-    sha256 cellar: :any, x86_64_linux: "9aef677e79f0853fd815c2551bedc7c0fdaae6854b6453fe12c6844812edbb60"
+    sha256 cellar: :any,                 catalina:     "a151d79e6e17971cb7e9e0edd480900ebeedcd5bc952d0bde24273c76a412dbe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c6f4bfa74c1252a1f1e7b338c5ad0160bf7a384746eb9905ecb91d344b3dd483"
   end
 
   fails_with :clang # needs openmp
