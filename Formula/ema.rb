@@ -5,6 +5,7 @@ class Ema < Formula
   url "https://github.com/arshajii/ema.git",
     tag: "v0.6.2", revision: "893be3470e613043bf75fefdc73396d40c3bc2bc"
   license "MIT"
+  revision 1
   head "https://github.com/arshajii/ema.git"
 
   bottle do
@@ -29,15 +30,18 @@ class Ema < Formula
 
   def install
     # Fix error: This file requires compiler and library support for the ISO C++ 2011 standard.
-    ENV.deparallelize
+    # Need patch: https://github.com/lh3/bwa/issues/314
+    inreplace "bwa/Makefile", "-Wno-unused-function -O2", "-Wno-unused-function -O2 -fcommon"
+    inreplace "bwa/rle.h", "const uint8_t rle_auxtab[8];", "extern const uint8_t rle_auxtab[8];"
 
+    ENV.deparallelize
     system "make"
     bin.install "ema"
     prefix.install resource("4M-with-alts")
   end
 
   def caveats
-    "The barcode whitelist is available at\n#{prefix/"4M-with-alts-february-2016.txt"}"
+    "The barcode allowlist is available at\n#{prefix/"4M-with-alts-february-2016.txt"}"
   end
 
   test do
