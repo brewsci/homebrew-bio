@@ -7,8 +7,8 @@ class Jmol < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "708cf57c551bd3dea6b38b8d22f51fafa233d23f085bb7429281cf3abf042729"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "61264b11a6a35b754d041ca4b6a9ee9e171e001de2be2ff0b36ff253ae2ebb47"
+    sha256 cellar: :any_skip_relocation, catalina:     "a5d434170f14785a7fb0dc60d26c30b3d1af511997c1650086673732ff437d4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a5570351f7a7abee7792df1cab4d5c3a3a2b0e807bc71b69ba1e1e4730666b35"
   end
 
   head do
