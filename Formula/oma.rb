@@ -6,8 +6,8 @@ class Oma < Formula
   # cite Altenhoff_2014: "https://doi.org/10.1093/nar/gku1158"
   desc "Standalone package to infer orthologs with the OMA algorithm"
   homepage "https://omabrowser.org/standalone/"
-  url "https://omabrowser.org/standalone/OMA.2.4.2.tgz"
-  sha256 "73cc51300ecd162970a37b2ccb8992b66f710fafc76a00eab04b4d3857d19477"
+  url "https://omabrowser.org/standalone/OMA.2.5.0.tgz"
+  sha256 "30f5f4e73152c07a61a811ce982bdba2a5e1d236312cc16faa0b388b759e937e"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
