@@ -2,7 +2,7 @@ class Kalign < Formula
   # cite Lassmann_2019: "https://doi.org/10.1093/bioinformatics/btz795"
   desc "SIMD accelerated multiple sequence alignment"
   homepage "https://github.com/TimoLassmann/kalign"
-  url "hhttps://github.com/TimoLassmann/kalign/archive/v3.3.1.tar.gz"
+  url "https://github.com/TimoLassmann/kalign/archive/v3.3.1.tar.gz"
   sha256 "7f10acf9a3fa15deabbc0304e7c14efa25cea39108318c9f02b47257de2d7390"
   license "GPL-3.0"
 
