@@ -8,8 +8,8 @@ class Kalign < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "6851604ef61179f22485d7a230de5eaf4025b4b85756d948c10ff96a61a33f9d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "30dc86c27dc8bf5281e9a156aab83931c8401f859a1a4bae10ebd24d066ce67c"
+    sha256 cellar: :any_skip_relocation, catalina:     "176d55fb00ad9c6497048b311525948747f475ed1a20ec14b82c465061deeaec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0296db9227e230d5e65e5f3d044fec6dfcac288a8f10fc29a18dd3a1f4b68245"
   end
 
   depends_on "autoconf" => :build
