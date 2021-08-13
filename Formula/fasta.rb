@@ -31,6 +31,6 @@ class Fasta < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/fasta36 -h 2>&1")
+    assert_match version.to_s.gsub(/.\d+.\d+.\d+$/, ''), shell_output("#{bin}/fasta36 -h 2>&1")
   end
 end
