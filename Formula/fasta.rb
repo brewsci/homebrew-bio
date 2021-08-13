@@ -1,7 +1,7 @@
 class Fasta < Formula
   # cite Pearson_1990: "https://doi.org/10.1016/0076-6879(90)83007-V"
   desc "Classic FASTA sequence alignment suite"
-  homepage "https://faculty.virginia.edu/wrpearson/fasta/"
+  homepage "https://fasta.bioch.virginia.edu/"
   url "https://github.com/wrpearson/fasta36/archive/v36.3.8h_04-May-2020.tar.gz"
   version "36.3.8h.2020.05.04"
   sha256 "d13ec06a040e4d77bf6913af44b705d3ecc921131da018e71d24daf47d3664d3"
