@@ -2,8 +2,8 @@ class Rasusa < Formula
   # cite Hall_2019: "https://doi.org/10.5281/zenodo.3546168"
   desc "Randomly subsample sequencing reads to a specified coverage"
   homepage "https://github.com/mbhall88/rasusa"
-  url "https://github.com/mbhall88/rasusa/archive/0.4.1.tar.gz"
-  sha256 "63aec59cc31081e728179163350271a09dba4cc4f563aeb8057efef763dfc674"
+  url "https://github.com/mbhall88/rasusa/archive/0.4.2.tar.gz"
+  sha256 "79065999cb603d85adf682526d37173f72f27a8c8ac46709f075d0ae6b8af5f2"
   license "MIT"
 
   bottle do
