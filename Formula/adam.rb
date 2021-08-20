@@ -2,8 +2,8 @@ class Adam < Formula
   # cite Nothaft_2015: "https://doi.org/10.1145/2723372.2742787"
   desc "Genomics analysis platform built on Apache Avro, Apache Spark and Parquet"
   homepage "https://github.com/bigdatagenomics/adam"
-  url "https://search.maven.org/remotecontent?filepath=org/bdgenomics/adam/adam-distribution-spark3_2.12/0.35.0/adam-distribution-spark3_2.12-0.35.0-bin.tar.gz"
-  sha256 "26de0c559e43688d3c13ef336fa513c8a84b4d259abe7938b91292d42e5a6efa"
+  url "https://search.maven.org/remotecontent?filepath=org/bdgenomics/adam/adam-distribution-spark3_2.12/0.36.0/adam-distribution-spark3_2.12-0.36.0-bin.tar.gz"
+  sha256 "870bba5906b9800261c1502010adbbeb5b592f589ea0279945b2f3f4beaa3cc5"
 
   livecheck do
     url :homepage
