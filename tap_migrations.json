@@ -1,5 +1,6 @@
 {
   "beagle": "homebrew/core",
   "raxml-ng": "homebrew/core",
+  "seqkit": "homebrew/core",
   "vsearch": "homebrew/core"
 }
