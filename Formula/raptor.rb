@@ -1,11 +1,11 @@
 class Raptor < Formula
-  # cite Seiler_2020: "https://doi.org/10.1101/2020.10.08.330985"
+  # cite Seiler_2021: "https://doi.org/10.1016/j.isci.2021.102782"
   desc "Pre-filter for querying very large collections of nucleotide sequences"
   homepage "https://github.com/seqan/raptor"
   url "https://github.com/seqan/raptor",
     using:    :git,
-    tag:      "raptor-v1.1.0",
-    revision: "f5fae1cbecc6d08446e75bb111f085b3cfac9ab6"
+    tag:      "raptor-v2.0.0",
+    revision: "12c6b50d772de709fc265d2bd15bfa3b267cd18c"
   license "BSD-3-Clause"
   head "https://github.com/seqan/raptor.git"
 
@@ -21,13 +21,19 @@ class Raptor < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  # No C++17 and concepts or C++20 support
+  # Requires gcc>=9, clang does not yet work.
   fails_with :clang
   fails_with gcc: "5"
   fails_with gcc: "6"
+  fails_with gcc: "7"
+  fails_with gcc: "8"
 
   def install
-    system "cmake", ".", "-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_CXX_FLAGS=-mavx2", *std_cmake_args
+    system "cmake", ".",
+           "-DCMAKE_BUILD_TYPE=Release",
+           "-DCMAKE_CXX_FLAGS=-mavx2",
+           "-DRAPTOR_NATIVE_BUILD=OFF",
+           *std_cmake_args
     system "make"
     bin.install "bin/raptor"
   end
