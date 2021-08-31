@@ -12,7 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: homebrew/ubuntu16.04:master
-      options: --user root
     steps:
       - name: Update Homebrew
         run: brew update-reset
