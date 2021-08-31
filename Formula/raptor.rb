@@ -11,8 +11,8 @@ class Raptor < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, catalina:     "def1790f20a7e914f8759d0168abefa8dbf8bb637a46e4abbbb8023aa7b453eb"
-    sha256               x86_64_linux: "4e8e33bfdaadf1621ea46807d3c4b9245ff734b6b3d71ab2e16c406b252fa5dd"
+    sha256 cellar: :any,                 catalina:     "89c60f658bb475794b4f83b2faf6188c54194c85a7c735d39b21df39c9ca394a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "78b5a2a065e813d6c4f4944eb4e3f6752bcd647ee9cea28cc7abf9cd2f41c6d5"
   end
 
   depends_on "cmake" => :build
