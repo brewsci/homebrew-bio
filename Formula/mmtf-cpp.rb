@@ -5,6 +5,7 @@ class MmtfCpp < Formula
   url "https://github.com/rcsb/mmtf-cpp/archive/v1.0.0.tar.gz"
   sha256 "881f69c4bb56605fa63fd5ca50842facc4947f686cbf678ad04930674d714f40"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -14,7 +15,7 @@ class MmtfCpp < Formula
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
-  depends_on "msgpack"
+  depends_on "msgpack-cxx"
 
   resource "173Dmmtf" do
     url "https://mmtf.rcsb.org/v1.0/full/173D.mmtf.gz"
