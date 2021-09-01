@@ -5,6 +5,9 @@ class Dssp < Formula
   homepage "https://github.com/cmbi/dssp"
   url "https://github.com/cmbi/dssp/archive/3.1.4.tar.gz"
   sha256 "496282b4b5defc55d111190ab9f1b615a9574a2f090e7cf5444521c747b272d4"
+  license "GPL-3.0-only"
+  revision 1
+  head "https://github.com/cmbi/dssp.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
