@@ -2,9 +2,8 @@ class Pymol < Formula
   include Language::Python::Virtualenv
   desc "Open-source PyMOL molecular visualization system"
   homepage "https://pymol.org/"
-  url "https://github.com/schrodinger/pymol-open-source/archive/v2.4.0.tar.gz"
-  sha256 "5ede4ce2e8f53713c5ee64f5905b2d29bf01e4391da7e536ce8909d6b9116581"
-  revision 5
+  url "https://github.com/schrodinger/pymol-open-source/archive/v2.5.0.tar.gz"
+  sha256 "aa828bf5719bd9a14510118a93182a6e0cadc03a574ba1e327e1e9780a0e80b3"
   head "https://github.com/schrodinger/pymol-open-source.git"
 
   bottle do
@@ -22,7 +21,7 @@ class Pymol < Formula
   depends_on "glm"
   depends_on "libpng"
   depends_on "libxml2"
-  depends_on "msgpack"
+  depends_on "msgpack-cxx"
   depends_on "netcdf"
   depends_on "numpy"
   depends_on "pyqt@5"
