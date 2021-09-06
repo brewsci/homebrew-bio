@@ -1,5 +1,6 @@
 {
   "abricate": "homebrew/core",
+  "bbtools": "homebrew/core",
   "beagle": "homebrew/core",
   "bioperl": "homebrew/core",
   "mrbayes": "homebrew/core",
