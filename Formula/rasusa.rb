@@ -8,8 +8,8 @@ class Rasusa < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "ab6a549dd47a972ef941f27d46c8f3a2aa5f451d71a685c29a114dafe9b032a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "66ceec6218531d4cddd83bbc5e72b9bd96e146622fcde708ae916129ce20995e"
+    sha256 cellar: :any_skip_relocation, catalina:     "ceb547824d4bf648073cd1936cc808887b232e814e6241561165379eb2159462"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b8fcd7eb559031f0dbbb837b757044fec7ac46f3b9e464ad360aa157dd9f83b9"
   end
 
   depends_on "rust" => :build
