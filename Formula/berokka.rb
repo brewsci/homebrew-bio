@@ -12,8 +12,8 @@ class Berokka < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "c1b33a40dc324edcaa1cd2cebcb223fa0f9e24ef443cc7b426454ef1bff3893b"
   end
 
+  depends_on "bioperl"
   depends_on "blast"
-  depends_on "brewsci/bio/bioperl"
 
   uses_from_macos "perl"
 
