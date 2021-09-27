@@ -20,8 +20,8 @@ class Maker < Formula
 
   depends_on "cpanminus" => :build
   depends_on "augustus"
+  depends_on "bioperl"
   depends_on "blast"
-  depends_on "brewsci/bio/bioperl"
   depends_on "brewsci/bio/exonerate"
   depends_on "brewsci/bio/repeatmasker"
   depends_on "brewsci/bio/snap"
