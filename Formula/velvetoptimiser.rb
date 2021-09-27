@@ -4,6 +4,7 @@ class Velvetoptimiser < Formula
   url "https://github.com/tseemann/VelvetOptimiser/archive/2.2.6.tar.gz"
   sha256 "b407db61b58ed983760b80a3a40c8f8a355851ecfab3e61a551bed29bf5b40b3"
   license "GPL-2.0"
+  revision 1
   head "https://github.com/tseemann/VelvetOptimiser.git"
 
   bottle do
@@ -12,7 +13,7 @@ class Velvetoptimiser < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "cce69e42775482486576e639f7fc096ea5f7852fdf064f70d01de81461d15db6"
   end
 
-  depends_on "brewsci/bio/bioperl"
+  depends_on "bioperl"
   depends_on "brewsci/bio/velvet"
 
   uses_from_macos "perl"
