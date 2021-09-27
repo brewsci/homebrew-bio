@@ -14,10 +14,9 @@ class Roary < Formula
   end
 
   depends_on "cpanminus" => :build
-
   depends_on "bedtools"
+  depends_on "bioperl"
   depends_on "blast"
-  depends_on "brewsci/bio/bioperl"
   depends_on "brewsci/bio/cd-hit"
   depends_on "brewsci/bio/fasttree"
   depends_on "brewsci/bio/kraken"
