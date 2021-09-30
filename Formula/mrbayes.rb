@@ -23,10 +23,9 @@ class Mrbayes < Formula
   depends_on "open-mpi" => :optional
 
   def install
-    args = ["--prefix=#{prefix}"]
-    args << "--with-mpi=" + (build.with?("open-mpi") ? "yes" : "no")
-
-    system "./configure", *args
+    system "./configure",
+      "--prefix=#{prefix}",
+      "--with-mpi=#{build.with?("open-mpi") ? "yes" : "no"}"
     system "make"
     system "make", "install"
 
