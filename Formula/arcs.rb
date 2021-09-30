@@ -28,7 +28,7 @@ class Arcs < Formula
   end
 
   def install
-    on_macos do
+    if OS.mac?
       ENV.append "LDFLAGS", "-L#{Formula["libomp"].opt_lib} -lomp"
       ENV.append "CPPFLAGS", "-I#{HOMEBREW_PREFIX}/include -Xpreprocessor -fopenmp -lomp"
     end
