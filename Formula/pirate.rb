@@ -5,6 +5,7 @@ class Pirate < Formula
   url "https://github.com/SionBayliss/PIRATE/archive/v1.0.4.tar.gz"
   sha256 "ed2bad7d73d5c445f565fd7532265b75dad079594d589ece87ae738b712f6bd3"
   license "GPL-3.0"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -12,8 +13,8 @@ class Pirate < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "3a8e4979d6c6f0609133acdf0d9d87765ec1535feef86954dd612fa9a6052a39"
   end
 
+  depends_on "bioperl"
   depends_on "blast"
-  depends_on "brewsci/bio/bioperl"
   depends_on "brewsci/bio/cd-hit"
   depends_on "brewsci/bio/fasttree"
   depends_on "brewsci/bio/mcl"
