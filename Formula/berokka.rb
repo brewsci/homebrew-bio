@@ -9,8 +9,8 @@ class Berokka < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "90c798a58c208954333c4cc029603a7fa27a906314fedd8a73e508619c234896"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c1b33a40dc324edcaa1cd2cebcb223fa0f9e24ef443cc7b426454ef1bff3893b"
+    sha256 cellar: :any_skip_relocation, catalina:     "a3059b1c5cc90f4bcd9ea1d13dfe0e8cf10e5d9493f1814cfc69e8b5c466215c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4f64bd4240a6c221748151e18de43a5d379d6da5f23366331a3dc3993241e99b"
   end
 
   depends_on "bioperl"
