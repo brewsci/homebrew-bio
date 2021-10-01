@@ -8,8 +8,8 @@ class Maxbin2 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, catalina:     "41ef87f87c8800b73611d08c43dbb5f139849bbe76782f6d9d70b9bce4b39718"
-    sha256 cellar: :any, x86_64_linux: "44a8bd3c9afced43635b7c7ae1663b15f67171dde17e0c5a04ce4713cbf33b33"
+    sha256 cellar: :any,                 catalina:     "c9962df409e8f0e3bb11b3a893f2af95cbbb128ac86614c7f7423f5c8fe50f1d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "35cdda24886eedb68cb2f17c1d4a8922a684aa02a28dd2698cc5a4b4db1f47a1"
   end
 
   depends_on "cmake" => :build
