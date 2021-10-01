@@ -4,6 +4,7 @@ class Maxbin2 < Formula
   homepage "https://sourceforge.net/projects/maxbin2/"
   url "https://downloads.sourceforge.net/project/maxbin2/MaxBin-2.2.7.tar.gz"
   sha256 "cb6429e857280c2b75823c8cd55058ed169c93bc707a46bde0c4383f2bffe09e"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -13,8 +14,8 @@ class Maxbin2 < Formula
 
   depends_on "cmake" => :build
   depends_on "cpanminus" => :build
+  depends_on "bioperl"
   depends_on "bowtie2"
-  depends_on "brewsci/bio/bioperl"
   depends_on "brewsci/bio/fraggenescan"
   depends_on "brewsci/bio/idba"
   depends_on "hmmer"
