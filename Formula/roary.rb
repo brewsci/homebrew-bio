@@ -5,7 +5,7 @@ class Roary < Formula
   url "https://github.com/sanger-pathogens/Roary/archive/v3.13.0.tar.gz"
   sha256 "375f83c8750b0f4dea5b676471e73e94f3710bc3a327ec88b59f25eae1c3a1e8"
   license "GPL-3.0"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -14,10 +14,9 @@ class Roary < Formula
   end
 
   depends_on "cpanminus" => :build
-
   depends_on "bedtools"
+  depends_on "bioperl"
   depends_on "blast"
-  depends_on "brewsci/bio/bioperl"
   depends_on "brewsci/bio/cd-hit"
   depends_on "brewsci/bio/fasttree"
   depends_on "brewsci/bio/kraken"
