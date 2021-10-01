@@ -8,8 +8,8 @@ class SimulatePcr < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, sierra:       "df52352b2edbe4af87cc652c2de48e2852d7901135f03bde85f11e85c3e72bd5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "33c1468a21e303ee370f22fdc0277c269bbb392bf77bc550ea70273898544cfc"
+    sha256 cellar: :any,                 catalina:     "94c61331f686467bc1d901e79c4f140313f01f94b3c65855a72716dc1a35e586"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c74c5e247d9fcc9d8e9a4a60e363e8a8b2c5029496141cdeb7bc5cb218d565d5"
   end
 
   depends_on "cpanminus" => :build
