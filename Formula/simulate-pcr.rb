@@ -4,6 +4,7 @@ class SimulatePcr < Formula
   homepage "https://sourceforge.net/projects/simulatepcr/"
   url "https://downloads.sourceforge.net/project/simulatepcr/simulate_PCR-v1.2.tar.gz"
   sha256 "022d1cc595d78a03b6a8a982865650f99d9fa067997bfea574c2416cc462e982"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -12,8 +13,8 @@ class SimulatePcr < Formula
   end
 
   depends_on "cpanminus" => :build
+  depends_on "bioperl"
   depends_on "blast"
-  depends_on "brewsci/bio/bioperl"
 
   uses_from_macos "perl"
 
