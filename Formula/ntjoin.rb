@@ -2,8 +2,8 @@ class Ntjoin < Formula
   # cite Coombe_2020: "https://doi.org/10.1101/2020.01.13.905240"
   desc "Genome assembly scaffolder using minimizer graphs"
   homepage "https://github.com/bcgsc/ntJoin"
-  url "https://github.com/bcgsc/ntJoin/releases/download/v1.0.7/ntJoin-1.0.7.tar.gz"
-  sha256 "5b9e7d7fec3d23fac9c43a7069170e3ea3cc813c7722ad6bfdcd0f6c8e51a291"
+  url "https://github.com/bcgsc/ntJoin/releases/download/v1.0.8/ntJoin-1.0.8.tar.gz"
+  sha256 "371f0f922b7f80dd9e3c5a6d57f97c0f16b6b705eecaa6e150afe6f6a10d0897"
   license "GPL-3.0-only"
   head "https://github.com/bcgsc/ntJoin.git"
 
@@ -29,7 +29,7 @@ class Ntjoin < Formula
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
     inreplace "requirements.txt", "python-igraph", "python-igraph==0.7.1.post6"
     inreplace "bin/ntjoin_assemble.py", "/usr/bin/env python3", Formula["python@3.8"].bin/"python3.8"
-    system "pip3", "install", "--prefix=#{libexec}", "-r", "requirements.txt"
+    system "pip3", "install", "--prefix=#{libexec}", "-r", "requirements.txt", "--no-binary=pysam"
     bin.install "ntJoin"
     libexec_src = Pathname.new("#{libexec}/bin/src")
     libexec_src.install "src/indexlr"
