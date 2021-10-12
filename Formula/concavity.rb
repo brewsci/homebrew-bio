@@ -6,6 +6,8 @@ class Concavity < Formula
   sha256 "012461354b6cf6bcef50606f619bcf1e0b0f4681f190f81233869ebd2c88b89d"
   license "GPL-3.0-or-later"
 
+  depends_on "freeglut"
+
   def install
     system "make"
     bin.install Dir["bin/*/concavity"]
