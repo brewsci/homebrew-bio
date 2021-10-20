@@ -3,6 +3,7 @@
   "bbtools": "homebrew/core",
   "beagle": "homebrew/core",
   "bioperl": "homebrew/core",
+  "jellyfish": "homebrew/core",
   "lastz": "homebrew/core",
   "mrbayes": "homebrew/core",
   "raxml-ng": "homebrew/core",
