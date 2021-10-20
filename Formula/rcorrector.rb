@@ -12,7 +12,7 @@ class Rcorrector < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "307b411eb8b5ca877ce0264abb69298627acc19089440d1dc692c1554c322fb2"
   end
 
-  depends_on "brewsci/bio/jellyfish"
+  depends_on "jellyfish"
 
   uses_from_macos "zlib"
 
