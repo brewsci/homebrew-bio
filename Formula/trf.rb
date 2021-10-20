@@ -12,7 +12,6 @@ class Trf < Formula
   version "4.09"
 
   # The license does not permit redistribution. https://tandem.bu.edu/trf/trf.license.html
-  bottle :unneeded
 
   depends_on "patchelf" => :build unless OS.mac?
 
