@@ -2,8 +2,8 @@ class Ntlink < Formula
   # cite Coombe_2021: "https://doi.org/10.1101/2021.06.17.448848"
   desc "Assembly scaffolder using long reads and minimizers"
   homepage "https://bcgsc.ca/resources/software/ntlink"
-  url "https://github.com/bcgsc/ntLink/releases/download/v1.1.0/ntLink-1.1.0.tar.gz"
-  sha256 "836b70e13cd0ba07d24698b350a666f23e2ae921af04868b61b548c6e0a8ea01"
+  url "https://github.com/bcgsc/ntLink/releases/download/v1.1.1/ntLink-1.1.1.tar.gz"
+  sha256 "349b5d0b5c4022e4b45b845b8678ea1527526cbd77e4706c057baf5817ee24ab"
   license "GPL-3.0-only"
   head "https://github.com/bcgsc/ntLink.git"
 
