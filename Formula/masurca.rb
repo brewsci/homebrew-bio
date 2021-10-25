@@ -12,7 +12,7 @@ class Masurca < Formula
   end
 
   depends_on "boost" => :build
-  depends_on "brewsci/bio/jellyfish"
+  depends_on "jellyfish"
   depends_on :linux
   depends_on "parallel"
   depends_on "perl"

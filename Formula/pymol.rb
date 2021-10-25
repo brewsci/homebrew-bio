@@ -2,15 +2,14 @@ class Pymol < Formula
   include Language::Python::Virtualenv
   desc "Open-source PyMOL molecular visualization system"
   homepage "https://pymol.org/"
-  url "https://github.com/schrodinger/pymol-open-source/archive/v2.4.0.tar.gz"
-  sha256 "5ede4ce2e8f53713c5ee64f5905b2d29bf01e4391da7e536ce8909d6b9116581"
-  revision 5
+  url "https://github.com/schrodinger/pymol-open-source/archive/v2.5.0.tar.gz"
+  sha256 "aa828bf5719bd9a14510118a93182a6e0cadc03a574ba1e327e1e9780a0e80b3"
   head "https://github.com/schrodinger/pymol-open-source.git"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 catalina:     "d4e4d5b97c552fb0ae81c97acda09ef6f22889d01ebd2591498f6cbdaeafa607"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "dc508a5df4e784253d2ebd2c3b84d1ee34a543a3d5863a3afbf4982b92088af5"
+    sha256 cellar: :any,                 catalina:     "3ad1319e459e63e9b4c117cf30513fff43d672d6419deb4a6a1ac2c72219e5de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "196365715bdf0dd75a6fc3249b4983a053f44eaa8068c34f3d774fd23b019f41"
   end
 
   depends_on "brewsci/bio/mmtf-cpp"
@@ -22,7 +21,7 @@ class Pymol < Formula
   depends_on "glm"
   depends_on "libpng"
   depends_on "libxml2"
-  depends_on "msgpack"
+  depends_on "msgpack-cxx"
   depends_on "netcdf"
   depends_on "numpy"
   depends_on "pyqt@5"

@@ -21,7 +21,7 @@ class Phyx < Formula
 
   def install
     cd "src" do
-      on_linux do
+      if OS.linux?
         # Disable opportunistic linking to libmvec,
         # which causes runtime errors on glibc > 2.19 and < 2.22
         inreplace "Makefile.in", "-ftree-vectorize", "-fno-tree-vectorize"

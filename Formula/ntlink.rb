@@ -2,15 +2,15 @@ class Ntlink < Formula
   # cite Coombe_2021: "https://doi.org/10.1101/2021.06.17.448848"
   desc "Assembly scaffolder using long reads and minimizers"
   homepage "https://bcgsc.ca/resources/software/ntlink"
-  url "https://github.com/bcgsc/ntLink/releases/download/v1.0.1/ntLink-1.0.1.tar.gz"
-  sha256 "7ef760875728e123de04a7630dc263e9f273ba8673e2c47e0ecacf3e5e8a2243"
+  url "https://github.com/bcgsc/ntLink/releases/download/v1.1.0/ntLink-1.1.0.tar.gz"
+  sha256 "836b70e13cd0ba07d24698b350a666f23e2ae921af04868b61b548c6e0a8ea01"
   license "GPL-3.0-only"
   head "https://github.com/bcgsc/ntLink.git"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "4ea6168c077875deedbc254c27b7dcf271504a4112aa777f3b020b9c5fe5f044"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "01d149c1fc8809b02c3ddc5f47a1fec36869bffaa2db2e239a7015a60a060adf"
+    sha256 cellar: :any_skip_relocation, catalina:     "a8528aadec6789f1894fc2a84ee6502c30c50a74da7ca4724011155a69c2f0a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "6d1bafdad06329a84615e9e279f7d54132bf3c6f6af13ea11eea1018321c2d10"
   end
 
   depends_on "abyss"
