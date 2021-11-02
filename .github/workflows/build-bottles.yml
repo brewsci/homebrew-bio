@@ -31,7 +31,7 @@ jobs:
           name: bottles
           path: ${{runner.temp}}/bottles
   build-macos-bottles:
-    runs-on: macos-latest
+    runs-on: macos-10.15
     env:
       HOMEBREW_FORCE_VENDOR_RUBY: 1
     steps:
