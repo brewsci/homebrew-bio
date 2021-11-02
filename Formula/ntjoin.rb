@@ -9,8 +9,8 @@ class Ntjoin < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 catalina:     "e5b0830a1932e804b8efbd4d5be6b748a2739c9f7bd9fc53f0731bd4cc18c8c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "322a2bd3ea0edf6b1c66cc5f4ea8df0419c3bdc9cc011ea6e3114664523a86c8"
+    sha256 cellar: :any,                 catalina:     "d6593fd8196195d07d6566cdcf7158cf0d6bdc4daa54c38f2b75c5ec13dea109"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1e680f9301f7469784959cbf3aa39c882de413f74afdbdb3142e8e5808a4e7b3"
   end
 
   depends_on "bedtools"
