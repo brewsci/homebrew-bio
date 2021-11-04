@@ -3,18 +3,21 @@ class Fpocket < Formula
   homepage "https://github.com/Discngine/fpocket"
   url "https://github.com/Discngine/fpocket/archive/refs/heads/master.tar.gz"
   version "4.0"
-  sha256 "41d8e24bb33daaceb89a4a83ced28d86674ad16d7c8ba672169279e6c2fd68eb"
+  sha256 "8995617b3510ee7a0eeb0d15860932fdbcb2318872d8e803a0265a71aac58952"
   license "MIT"
 
   depends_on "netcdf"
 
   def install
-    system "make", "ARCH=MACOSXX86_64"
+    system "make" if OS.linux?
+    system "make", "ARCH=MACOSXX86_64" if OS.mac?
     bin.install Dir["bin/*pocket"]
   end
 
   test do
-    system "python", "-m", "pip", "install", "pytest"
-    system "pytest", "tests/"
+    assert_match "***** POCKET HUNTING BEGINS *****", shell_output("#{bin}/fpocket")
   end
 end
+
+
+
