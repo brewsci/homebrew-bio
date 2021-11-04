@@ -3,7 +3,7 @@ class Fpocket < Formula
   homepage "https://github.com/Discngine/fpocket"
   url "https://github.com/Discngine/fpocket/archive/refs/heads/master.tar.gz"
   version "4.0"
-  sha256 "8ee461ca1f47f316de9c690340dd2e8ef488914fca7c97225ab21b35bfb160f6"
+  sha256 "41d8e24bb33daaceb89a4a83ced28d86674ad16d7c8ba672169279e6c2fd68eb"
   license "MIT"
 
   depends_on "netcdf"
