@@ -18,4 +18,3 @@ class Fpocket < Formula
     system "pytest", "tests/"
   end
 end
-
