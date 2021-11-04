@@ -7,6 +7,7 @@ class Fpocket < Formula
   license "MIT"
 
   depends_on "netcdf"
+  depends_on "qhull"
 
   def install
     system "make" if OS.linux?
