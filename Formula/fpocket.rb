@@ -18,6 +18,3 @@ class Fpocket < Formula
     assert_match "***** POCKET HUNTING BEGINS *****", shell_output("#{bin}/fpocket")
   end
 end
-
-
-
