@@ -6,6 +6,12 @@ class Gemmi < Formula
   license "MPL-2.0"
   head "https://github.com/project-gemmi/gemmi.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "3676d5b56a21b80d744f875a8dc7fca1da342a4f617d447aa481891890960a71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3866f4a81a539f0a09b044ecea211c8951a83444906d3c2ce303266beff6ac62"
+  end
+
   depends_on "cmake" => :build
 
   uses_from_macos "zlib"
