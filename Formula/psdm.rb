@@ -7,8 +7,8 @@ class Psdm < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "ceb547824d4bf648073cd1936cc808887b232e814e6241561165379eb2159462"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b8fcd7eb559031f0dbbb837b757044fec7ac46f3b9e464ad360aa157dd9f83b9"
+    sha256 cellar: :any_skip_relocation, catalina:     "5078e02e21545870e94086213fd34b674d702b247d67985357bc54773010dd73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4b4b2cc9cad3bf693a005cd1ccc98a8ed886c6875f1f7563504c6a3ea964147f"
   end
 
   depends_on "rust" => :build
