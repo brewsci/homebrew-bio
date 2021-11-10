@@ -26,7 +26,7 @@ class Tigmint < Formula
     inreplace "bin/tigmint-cut", "/usr/bin/env python3", Formula["python@3.9"].bin/"python3.9"
     inreplace "bin/tigmint_molecule.py", "/usr/bin/env python3", Formula["python@3.9"].bin/"python3.9"
     inreplace "bin/tigmint_molecule_paf.py", "/usr/bin/env python3", Formula["python@3.9"].bin/"python3.9"
-    system "pip3", "install", "--prefix=#{libexec}", "-r", "requirements.txt"
+    system "pip3", "install", "--prefix=#{libexec}", "-r", "requirements.txt", "--no-binary=pysam"
     bin.install Dir["bin/*"]
     system "make", "-C", "src"
     libexec_src = Pathname.new("#{libexec}/src")
