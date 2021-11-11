@@ -3,8 +3,8 @@ class SeqanAT3 < Formula
   # cite Reinert_2017: "https://doi.org/10.1016/j.jbiotec.2017.07.017"
   desc "Modern C++ library for sequence analysis"
   homepage "https://www.seqan.de"
-  url "https://github.com/seqan/seqan3/releases/download/3.0.3/seqan3-3.0.3-Source.tar.xz"
-  sha256 "42fca82e7e03ba2ed2026be739cd5e0be785152f872fdd0bac13b6f836035fc0"
+  url "https://github.com/seqan/seqan3/releases/download/3.1.0/seqan3-3.1.0-Source.tar.xz"
+  sha256 "0b37b1c3450e19c0ebe42c052c3f87babb8074bd772f10a553949c312c285726"
   head "https://github.com/seqan/seqan3.git"
 
   bottle do
