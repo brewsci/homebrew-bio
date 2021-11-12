@@ -7,8 +7,8 @@ class DshBio < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "9497cb0a33b75adf770c519d321b7ab2c349bb5e44e347afe9a3c3d46c8e61d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "39c146aea66ba1d64ab07587abfea71783f0cb696c2f803a4b2fd7e06306ba91"
+    sha256 cellar: :any_skip_relocation, catalina:     "c17fdd3a27c571770a54b2c1e8d99bf1794bd6545e43b771983f8b9b2f01f48c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e25b8ea4afd9243d4fa20fb2fb55e02393aff042348c65c14f67b5a317aac43c"
   end
 
   depends_on "openjdk"
