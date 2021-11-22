@@ -5,7 +5,7 @@ class HhSuite < Formula
   url "https://github.com/soedinglab/hh-suite/archive/v3.3.0.tar.gz"
   sha256 "dd67f7f3bf601e48c9c0bc4cf1fbe3b946f787a808bde765e9436a48d27b0964"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/soedinglab/hh-suite.git"
 
   bottle do
@@ -34,7 +34,7 @@ class HhSuite < Formula
       args << "-DOpenMP_C_LIB_NAMES=omp"
       args << "-DOpenMP_CXX_FLAGS=-Xpreprocessor\ -fopenmp\ -I#{libomp.opt_include}"
       args << "-DOpenMP_CXX_LIB_NAMES=omp"
-      args << "-DOpenMP_omp_LIBRARY=#{libomp.opt_lib}/libomp.a"
+      args << "-DOpenMP_omp_LIBRARY=#{libomp.opt_lib}/libomp.dylib"
     end
 
     system "cmake", ".", *args
