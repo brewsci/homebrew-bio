@@ -1,9 +1,9 @@
 class Edirect < Formula
   desc "Access NCBI databases via the command-line"
   homepage "https://www.ncbi.nlm.nih.gov/books/NBK179288/"
-  url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/15.3.20210707/edirect.tar.gz"
-  version "15.3"
-  sha256 "48c3bd6ea6f8b9d3136b9a4e1b63910314d14df308f6744c01a4df77e898e628"
+  url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/16.2.20211103/edirect.tar.gz"
+  version "16.2"
+  sha256 "db1e75b4ecbb9dac6fbee905830f7d8f22b9769878e7fcef1b48ff2bfc484d13"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -12,7 +12,7 @@ class Edirect < Formula
   end
 
   depends_on "cpanminus" => :build
-  depends_on "openssl@1.1"
+  depends_on "openssl"
 
   uses_from_macos "perl"
   uses_from_macos "zlib"
@@ -20,40 +20,40 @@ class Edirect < Formula
   # macOS CIRCLE-CI often fails on https accesses. Use ftp accesses.
   resource "xtract" do
     if OS.mac? && Hardware::CPU.arm?
-      url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/15.3.20210707/xtract.Silicon.gz"
-      sha256 "37317b1ec2f2d3abfa9a7eaed60730d1a7ee8b1125718348d3b3133d9f401431"
+      url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/16.2.20211103/xtract.Silicon.gz"
+      sha256 "bf688a60d71436ebdb89b5c379fbc846c0db6248eaa71a09beaf8c9cce799358"
     elsif OS.mac?
-      url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/15.3.20210707/xtract.Darwin.gz"
-      sha256 "19f898637e33fa085af0b21d773d35d74ec0f404e02379bcaa7f7c507fcbd884"
+      url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/16.2.20211103/xtract.Darwin.gz"
+      sha256 "bdef978e624a5e7be9bf8f750cfd71b13c78f3bfe0a1fbb68a0b12364e34e35e"
     else
-      url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/15.3.20210707/xtract.Linux.gz"
-      sha256 "998713ac9ba0b0fa258821aef05c83a046bf3131f22bf13c0a2495b31c55bbd5"
+      url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/16.2.20211103/xtract.Linux.gz"
+      sha256 "edb1ec540a071d67f0253e7ecb327c39d58385c07f5b1a2817735a52315280f0"
     end
   end
 
   resource "rchive" do
     if OS.mac? && Hardware::CPU.arm?
-      url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/15.3.20210707/rchive.Silicon.gz"
-      sha256 "b12f6930e4fd6873e89607187f8c5ba78bb63921b84d10f3710adbec2f644908"
+      url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/16.2.20211103/rchive.Silicon.gz"
+      sha256 "26d409abc54546b303fd0b36bd3acb105504ac5dc1029bd3a3e2b2bf9e2b6f55"
     elsif OS.mac?
-      url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/15.3.20210707/rchive.Darwin.gz"
-      sha256 "002cc1e57d1545ba173d7498ad1dcefbf3d5965f91d0b3d6e03e1bc38b9d2873"
+      url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/16.2.20211103/rchive.Darwin.gz"
+      sha256 "45cf159995a026cd65e0a996110a81f76bfa4a84ef507e51fd22a9baf43bd4fd"
     else
-      url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/15.3.20210707/rchive.Linux.gz"
-      sha256 "1c56a5da7432e95fb53be5aeba940f7345fd0cb4f6bf2121294dd534919f6f40"
+      url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/16.2.20211103/rchive.Linux.gz"
+      sha256 "511b8f1150943541d634cb79cc9de78be1fe741a79d10b4d1ebb1fc6ed1d1a29"
     end
   end
 
   resource "transmute" do
     if OS.mac? && Hardware::CPU.arm?
-      url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/15.3.20210707/transmute.Silicon.gz"
-      sha256 "97a5d95b9840e5316bfec7f318d2721802fd7cf2b528fb207278dd5d48a1bc63"
+      url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/16.2.20211103/transmute.Silicon.gz"
+      sha256 "1d7b2f061cd75eab3087b8d4bb2fb024bd68676563884e9df6fcec4ed221f5e5"
     elsif OS.mac?
-      url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/15.3.20210707/transmute.Darwin.gz"
-      sha256 "38efb39d177557fbe94f0f039c47d68861a78b1139376c01abb41aedd658660e"
+      url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/16.2.20211103/transmute.Darwin.gz"
+      sha256 "2a6bda5215e6eecde22b9006bd04687941e0ff35eaa8a25bacb859a072b901a8"
     else
-      url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/15.3.20210707/transmute.Linux.gz"
-      sha256 "fd59d926daeec62c80717546a9615edee65fce7ee2c417dbc88ac9611caf4bb9"
+      url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/16.2.20211103/transmute.Linux.gz"
+      sha256 "8bb83618bb38574745cf0e34d3ed2576ce0219ccd8e9d1f855a75b3ec71b57f1"
     end
   end
 
