@@ -2,7 +2,7 @@ class Vcflib < Formula
   desc "Command-line tools for manipulating VCF files"
   homepage "https://github.com/ekg/vcflib"
   url "https://github.com/ekg/vcflib.git",
-    tag: "v1.0.1", revision: "d150a89fa4f717634b06e1c78a37794d2c10c94c"
+    tag: "v1.0.3", revision: "6ba0d27ff6ba8380f3d92fcfd07bd847a751d705"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -10,24 +10,31 @@ class Vcflib < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "f10f5737f8ecb6bf5ba530d10a86bb7576843c7e49f401c6018e660cf8027001"
   end
 
-  depends_on "gcc" if OS.mac?
+  depends_on "cmake" => :build
+
+  depends_on "htslib"
   depends_on "python"
+  depends_on "tabixpp"
   depends_on "xz"
 
   uses_from_macos "bzip2"
   uses_from_macos "perl"
   uses_from_macos "zlib"
 
-  fails_with :clang # error: ordered comparison between pointer and zero
-
   def install
-    system "make"
-    pkgshare.install Dir["bin/*.R"]
-    pkgshare.install Dir["bin/*.r"]
-    rm Dir["bin/*.R"]
-    rm Dir["bin/*.r"]
-    bin.install Dir["bin/*"]
-    bin.install "fastahack/fastahack"
+    mkdir "build" do
+      system "cmake", "..", *std_cmake_args, "-DHTSLIB_LOCAL:BOOL=FALSE"
+      system "make"
+      system "make", "install"
+    end
+
+    pkgshare.install Dir["scripts/*.R"]
+    pkgshare.install Dir["scripts/*.r"]
+    rm Dir["scripts/*.R"]
+    rm Dir["scripts/*.r"]
+    bin.install Dir["scripts/*"]
+
+    mv prefix/"man", share
     pkgshare.install "samples"
   end
 
