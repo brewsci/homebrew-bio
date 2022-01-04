@@ -12,8 +12,7 @@ class Apbspdb2pqr < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, sierra:       "20632b132bd4b3f2d5b76810b20d95a2980071f870957273b5d803a78586ef50"
-    sha256 cellar: :any, x86_64_linux: "0a100baae07f10c659ce97c7750fe610fefe57bc84067e0d0fdccf5fa7cac09b"
+    sha256 cellar: :any, catalina: "25eb86048f815141416062d5e17b94a913437166060c7a310f0cb204dbe6e1e3"
   end
 
   depends_on "cmake" => :build
