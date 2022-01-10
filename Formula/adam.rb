@@ -13,8 +13,8 @@ class Adam < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "f967183ddfa75cb2fd371303fa89c747f2bd039bb3ae417da132c5a14d957af8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3ded81170353f7d15c11d0aca1e930f99f2c29cd73a3282fd8169c736526466f"
+    sha256 cellar: :any_skip_relocation, catalina:     "06e1b4022cedc5dac1f5d000591397bfaa48d28c2b5077f6c800da26834a34e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ba384809ee683c40f4bfe1e08f8996d30f87dc5b34bd5ddd953df42a7a67c146"
   end
 
   head do
