@@ -12,8 +12,8 @@ class Cannoli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "d0f6989b04baa1e448b0d00dbc2f58cbfd83221a46f5a6cbd565e69bcce51fb9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c9f1365ba64bd0262c83cbac578b50697f6ec0ed4d036e3e5443eeb54ee3273a"
+    sha256 cellar: :any_skip_relocation, catalina:     "23fe1316373ee3c3f0535f5828d9f3571769b2c4f81e18c59cc2c70065741783"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9fbdacbf448f1f67de4051206e6421914488f4ebb3ff275b38c16c678d705478"
   end
 
   head do
