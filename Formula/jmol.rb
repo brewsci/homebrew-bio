@@ -1,8 +1,8 @@
 class Jmol < Formula
   desc "Open-source Java viewer for chemical structures in 3D"
   homepage "https://jmol.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/jmol/Jmol/Version%2014.32/Jmol%2014.32.10/Jmol-14.32.10-binary.zip"
-  sha256 "a7d0d1f16dcd740108eb1bb4c653cd31597085cd616455463fc22cb85f12e74e"
+  url "https://downloads.sourceforge.net/project/jmol/Jmol/Version%2014.32/Jmol%2014.32.14/Jmol-14.32.14-binary.zip"
+  sha256 "79b84b361fa6635b2d0307f38a7e06f2a45191a2681246d0b7004141edd97324"
   license "LGPL-2.1-or-later"
 
   bottle do
