@@ -2,53 +2,29 @@ class LinksScaffolder < Formula
   # cite Warren_2015: "https://doi.org/10.1186/s13742-015-0076-3"
   desc "Long Interval Nucleotide K-mer Scaffolder"
   homepage "https://www.bcgsc.ca/platform/bioinfo/software/links"
-  url "https://github.com/bcgsc/LINKS/releases/download/v1.8.7/links_v1-8-7.tar.gz"
-  version "1.8.7"
-  sha256 "3401a2694a3545cb7bf3fb13a5854e5d1c5b87200cad998d967fe8e0fc980e1c"
+  url "https://github.com/bcgsc/LINKS/releases/download/v2.0.1/links-v2.0.1.tar.gz"
+  sha256 "f6f664b854b9dcc51a399af8d5ce2634f788ccdbc35e7d2732c927ca50bc7f70"
   license "GPL-3.0"
-  revision 1
-  head "https://github.com/bcgsc/LINKS.git"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, sierra:       "f00d027ea4ae9195eb35590128e07514a0d558829d682358b0bd66592e50f821"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "dc7326911e2fb969cf4ad5720a95a3d924aff737fd547fb16db89346a473a691"
+  head do
+    url "https://github.com/bcgsc/LINKS.git", branch: "master"
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
   end
 
-  depends_on "swig" => :build
-  depends_on "perl"
-
   def install
-    if OS.mac?
-      # Error: no known conversion from 'size_t' (aka 'unsigned long') to 'uint64_t &' (aka 'unsigned long long &')
-      cd "lib/bloomfilter" do
-        inreplace ["BloomFilter.hpp",
-                   "nthash.hpp",
-                   "ntHashIterator.hpp",
-                   "swig/BloomFilter.i",
-                   "KmerBloomFilter.hpp"],
-          "size_t", "uint64_t"
-      end
-    end
-
-    cd "lib/bloomfilter/swig" do
-      so = OS.mac? ? "bundle" : "so"
-      perl = Dir[Formula["perl"].lib/"perl5/*/*/CORE"][0]
-      cxxflags = (ENV.cxxflags || "").split
-      system "swig", "-Wall", "-c++", "-perl5", "BloomFilter.i"
-      system ENV.cxx, *cxxflags, "-c", "-fPIC", "-I#{perl}", "BloomFilter_wrap.cxx"
-      system ENV.cxx, *cxxflags, "-shared", "-o", "BloomFilter.#{so}", "BloomFilter_wrap.o", "-L#{perl}", "-lperl"
-      libexec.install "BloomFilter.pm", "BloomFilter.#{so}"
-    end
-
-    inreplace "LINKS", "/usr/bin/env perl", Formula["perl"].bin/"perl"
-    inreplace "LINKS", "$FindBin::Bin/./lib/bloomfilter/swig", "$FindBin::RealBin/../libexec"
-    bin.install "LINKS"
-    prefix.install "test"
-    prefix.install "tools"
+    system "./autogen.sh" if build.head?
+    system "./configure",
+      "--disable-dependency-tracking",
+      "--disable-silent-rules",
+      "--prefix=#{prefix}"
+    system "make", "install"
   end
 
   test do
-    assert_match "Usage", shell_output("#{bin}/LINKS", 255)
+    assert_match "Usage:", shell_output("#{bin}/LINKS", 1)
+    assert_match "Usage:", shell_output("#{bin}/LINKS-make")
+    assert_match "Usage:", shell_output("#{bin}/LINKS_CPP", 255)
+    assert_match "Usage:", shell_output("#{bin}/LINKS.pl", 255)
   end
 end
