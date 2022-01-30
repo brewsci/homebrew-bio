@@ -8,7 +8,8 @@ class Apbspdb2pqr < Formula
   url "https://github.com/Electrostatics/apbs-pdb2pqr.git",
       tag:      "vAPBS-3.0.0",
       revision: "fc70e91c3d836ff1db284c0381de6e0f119a2515"
-  head "https://github.com/Electrostatics/apbs-pdb2pqr.git"
+  head "https://github.com/Electrostatics/apbs-pdb2pqr.git",
+       branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
