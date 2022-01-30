@@ -4,7 +4,7 @@ class Andi < Formula
   homepage "https://github.com/EvolBioInf/andi"
   url "https://github.com/EvolBioInf/andi/archive/v0.14.tar.gz"
   sha256 "2c9e11524f38e74fe3f981e6acd9527c1a1ca30994a30c5e86808ba5165a25b7"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
