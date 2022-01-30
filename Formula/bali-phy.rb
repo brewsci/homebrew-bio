@@ -6,7 +6,7 @@ class BaliPhy < Formula
   url "https://github.com/bredelings/BAli-Phy/archive/3.6.1.tar.gz"
   sha256 "6591f39d5708f5c34fca244f20326c6cba30bb32c80b72c6ae2e7e23bafcf11a"
   license "GPL-2.0-or-later"
-  head "https://github.com/bredelings/BAli-Phy.git"
+  head "https://github.com/bredelings/BAli-Phy.git", branch: "master"
 
   livecheck do
     url :stable
