@@ -6,8 +6,8 @@ class Apbspdb2pqr < Formula
   homepage "https://www.poissonboltzmann.org/"
   # pull from git tag to get submodules
   url "https://github.com/Electrostatics/apbs-pdb2pqr.git",
-      tag:      "vAPBS-1.5.0",
-      revision: "aa353941cfadc09ccd113075d261a427864c2979"
+      tag:      "vAPBS-3.0.0",
+      revision: "fc70e91c3d836ff1db284c0381de6e0f119a2515"
   head "https://github.com/Electrostatics/apbs-pdb2pqr.git"
 
   bottle do
