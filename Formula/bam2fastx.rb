@@ -1,8 +1,8 @@
 class Bam2fastx < Formula
   desc "Convert and demultiplex PacBio BAM files to fasta and fastq format"
   homepage "https://github.com/PacificBiosciences/bam2fastx"
-  url "https://github.com/PacificBiosciences/bam2fastx/archive/1.3.0.tar.gz"
-  sha256 "be5639807f1ffd2fb972e570068173971026300a79e879384fbf6ad20b5ab762"
+  url "https://github.com/PacificBiosciences/bam2fastx/archive/1.3.1.tar.gz"
+  sha256 "4a6e305a631002b2da5bc57341a85f5cf424be832c2c80a6775d0d86965f8ed1"
   license "BSD-3-Clause-Clear"
 
   bottle do
