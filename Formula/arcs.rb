@@ -2,8 +2,8 @@ class Arcs < Formula
   # cite Yeo_2017: "https://doi.org/10.1093/bioinformatics/btx675"
   desc "Scaffold genome sequence assemblies using linked or long reads"
   homepage "https://github.com/bcgsc/arcs"
-  url "https://github.com/bcgsc/arcs/releases/download/v1.2.2/arcs-1.2.2.tar.gz"
-  sha256 "9c3490eb77be198d28ca55eb10bae617f694f0abee0484d3f599e3354e97450b"
+  url "https://github.com/bcgsc/arcs/releases/download/v1.2.3/arcs-1.2.3.tar.gz"
+  sha256 "191c863e4fb556bdbad20e8dfa675cb35e209b9198ab06bb8e7b948d9469a066"
   license "GPL-3.0-only"
 
   bottle do
