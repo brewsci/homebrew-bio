@@ -3,10 +3,10 @@ class BaliPhy < Formula
   # cite Redelings_2014: "https://dx.doi.org/10.1093/molbev/msu174"
   desc "Bayesian co-estimation of phylogenies and multiple alignments"
   homepage "http://www.bali-phy.org/"
-  url "https://github.com/bredelings/BAli-Phy/archive/3.6.0.tar.gz"
-  sha256 "88f1922f80d0376ec2a0929d72d69258eac3dfba0eef13aab3f9c460db1ac0b6"
+  url "https://github.com/bredelings/BAli-Phy/archive/3.6.1.tar.gz"
+  sha256 "6591f39d5708f5c34fca244f20326c6cba30bb32c80b72c6ae2e7e23bafcf11a"
   license "GPL-2.0-or-later"
-  head "https://github.com/bredelings/BAli-Phy.git"
+  head "https://github.com/bredelings/BAli-Phy.git", branch: "master"
 
   livecheck do
     url :stable
