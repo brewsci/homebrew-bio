@@ -5,6 +5,12 @@ class Maxit < Formula
   sha256 "373540082e02203e6b6ba43190d393da854641521d9b3843157f785273001523"
   license :cannot_represent
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 catalina:     "6efdbb45e6a34ff8e9efb7a930fedf69a1e7afd86acd60744269cc9f6346c548"
+    sha256 x86_64_linux: "4c1fdb7e5d113bb4a36b95bb894bab33d9bacdc4b6320ec358846e52bca38590"
+  end
+
   depends_on "bison" => :build
   depends_on "flex" => :build
   depends_on "tcsh" => :build
