@@ -4,6 +4,7 @@ class Maxit < Formula
   url "https://sw-tools.rcsb.org/apps/MAXIT/maxit-v11.100-prod-src.tar.gz"
   sha256 "373540082e02203e6b6ba43190d393da854641521d9b3843157f785273001523"
   license :cannot_represent
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -23,10 +24,8 @@ class Maxit < Formula
     # fix env variable "RCSBROOT" to HOMEBREW PREFIX
     inreplace "maxit-v10.1/src/maxit.C", "rcsbroot = getenv(\"RCSBROOT\")", "rcsbroot = \"#{prefix}\""
     inreplace "maxit-v10.1/src/process_entry.C", "rcsbroot = getenv(\"RCSBROOT\")", "rcsbroot = \"#{prefix}\""
-    # inreplace "connect-v3.3/src/connect_main.C", "root_dir = getenv(\"RCSBROOT\")", "root_dir = \"#{prefix}\""
-    # Do not delete tempfile
+    # some tricks to circumvent CI errors
     inreplace "cifparse-obj-v7.0/Makefile", "mv", "cp"
-    # trick to circumvent a CI error on Linux
     inreplace "binary.csh", "./data/binary", "#{prefix}/data/binary"
     inreplace "Makefile", "@sh -c './binary.csh'", "@tcsh binary.csh" if OS.linux?
 
