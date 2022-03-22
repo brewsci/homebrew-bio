@@ -21,18 +21,21 @@ class Maxit < Formula
   def install
     ENV.deparallelize
     # fix env variable "RCSBROOT" to HOMEBREW PREFIX
-    inreplace "maxit-v10.1/src/maxit.C", "rcsbroot = getenv(\"RCSBROOT\")", "rcsbroot = \"#{bin}\""
-    inreplace "maxit-v10.1/src/process_entry.C", "rcsbroot = getenv(\"RCSBROOT\")", "rcsbroot = \"#{bin}\""
-    inreplace "connect-v3.3/src/connect_main.C", "root_dir = getenv(\"RCSBROOT\")", "root_dir = \"#{bin}\""
-    # Do not delete TMPLIB
+    inreplace "maxit-v10.1/src/maxit.C", "rcsbroot = getenv(\"RCSBROOT\")", "rcsbroot = \"#{prefix}\""
+    inreplace "maxit-v10.1/src/process_entry.C", "rcsbroot = getenv(\"RCSBROOT\")", "rcsbroot = \"#{prefix}\""
+    # inreplace "connect-v3.3/src/connect_main.C", "root_dir = getenv(\"RCSBROOT\")", "root_dir = \"#{prefix}\""
+    # Do not delete tempfile
     inreplace "cifparse-obj-v7.0/Makefile", "mv", "cp"
     # trick to circumvent a CI error on Linux
+    inreplace "binary.csh", "./data/binary", "#{prefix}/data/binary"
     inreplace "Makefile", "@sh -c './binary.csh'", "@tcsh binary.csh" if OS.linux?
 
     system "make", "binary"
     # install bin and data directories
     bin.install "bin/maxit", "bin/process_entry"
     prefix.install "data"
+    (prefix/"data/binary/").install "variant.odb"
+    (prefix/"data/binary/").install "component.odb"
   end
 
   test do
