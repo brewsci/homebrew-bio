@@ -8,8 +8,8 @@ class Maxit < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 catalina:     "6efdbb45e6a34ff8e9efb7a930fedf69a1e7afd86acd60744269cc9f6346c548"
-    sha256 x86_64_linux: "4c1fdb7e5d113bb4a36b95bb894bab33d9bacdc4b6320ec358846e52bca38590"
+    sha256 catalina:     "b7ed9b4bfe9e8a5b6ee4bbf5c5d9c1f6f4676c1b3a6b0b6a4e58f2374fb7f8c5"
+    sha256 x86_64_linux: "c16b20edbe1385c03836ff151723eb7b226e247536ac36ac3aed6d9a5d7e237e"
   end
 
   depends_on "bison" => :build
