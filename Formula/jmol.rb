@@ -1,8 +1,8 @@
 class Jmol < Formula
   desc "Open-source Java viewer for chemical structures in 3D"
   homepage "https://jmol.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/jmol/Jmol/Version%2014.32/Jmol%2014.32.41/Jmol-14.32.41-binary.zip"
-  sha256 "3334943927ac7a857ee3bb94941f390bbf2f164442658c0bc54fe84bb62d371b"
+  url "https://downloads.sourceforge.net/project/jmol/Jmol/Version%2014.32/Jmol%2014.32.44/Jmol-14.32.44-binary.zip"
+  sha256 "744ffed7584ea1d6b645d5a79ab6790e82307c8fdce046b84941134cb8f8a416"
   license "LGPL-2.1-or-later"
 
   bottle do
@@ -36,16 +36,12 @@ class Jmol < Formula
   end
 
   test do
-    on_macos do
-      assert_match version.to_s, shell_output("#{bin}/jmol -n")
-    end
+    assert_match version.to_s, shell_output("#{bin}/jmol -n") if OS.mac?
 
-    on_linux do
+    if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
       # unfortunately, the application can not be run headless
-      if ENV["HOMEBREW_GITHUB_ACTIONS"]
-        assert_match "java.awt.HeadlessException",
+      assert_match "java.awt.HeadlessException",
 shell_output("#{bin}/jmol -n 2>&1", 1)
-      end
     end
   end
 end
