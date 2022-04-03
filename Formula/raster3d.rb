@@ -7,6 +7,7 @@ class Raster3d < Formula
   url "http://www.bmsc.washington.edu/raster3d/Raster3D_3.0-7.tar.gz"
   sha256 "f566b499fee341db3a95229672c6afdbdb69da7faabdbe34f6e0d332d766160c"
   license "Artistic-2.0"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -14,8 +15,7 @@ class Raster3d < Formula
     sha256               x86_64_linux: "1d1919339d6408189c107a6c834a4299fd7fb349f1d31b66573bee996d53149b"
   end
 
-  depends_on xcode: :build
-  depends_on "gcc@9"
+  depends_on "gcc"
   depends_on "gd"
   depends_on "imagemagick"
   depends_on "jpeg"
@@ -28,8 +28,6 @@ class Raster3d < Formula
     inreplace "Makefile.incl" do |s|
       s.gsub! "prefix  = /usr/local", "prefix  = #{prefix}"
       s.gsub! "mandir  = $(prefix)/man/manl", "mandir  = #{man}/manl"
-      s.gsub! "CC = gcc", "CC = #{Formula["gcc@9"].opt_bin}/gcc-9" # Use GNU compiler
-      s.gsub! "FC = gfortran", "FC = #{Formula["gcc@9"].opt_bin}/gfortran-9" # Use GNU compiler
     end
 
     # Need SDKROOT for macOS
