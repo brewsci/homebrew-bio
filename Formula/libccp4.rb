@@ -9,8 +9,8 @@ class Libccp4 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 catalina:     "0dfb55369a7a1a5e21d0482d3c7be4fb54ae85a73832b099d5e05ffe743b4661"
-    sha256 x86_64_linux: "8ce81039e40b020ff27e3f5094bea1c50eff11c6d828977f0dcb0a5f9168eeb5"
+    sha256 catalina:     "a1016c5a263c1527dd3ecdb7a9e4c744a67d414567349b82c0df6f690412b5b0"
+    sha256 x86_64_linux: "c6f12a9841cc3be933a7fce40bb5bdc93b96b3b63d135d5fef24229777fd331d"
   end
 
   depends_on "pkg-config" => [:build, :test]
