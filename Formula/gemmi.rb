@@ -8,8 +8,8 @@ class Gemmi < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "3676d5b56a21b80d744f875a8dc7fca1da342a4f617d447aa481891890960a71"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3866f4a81a539f0a09b044ecea211c8951a83444906d3c2ce303266beff6ac62"
+    sha256 cellar: :any_skip_relocation, catalina:     "0d61b3b9d065e2aa1cc404f0656ecad79db74970b4d1ca937c2842fcf5b1e024"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e12d0fc99ceabf787593b472d94cd5bc791f22818aefe9784e17669e483839f2"
   end
 
   depends_on "cmake" => :build
