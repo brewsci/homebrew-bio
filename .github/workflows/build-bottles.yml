@@ -17,6 +17,8 @@ jobs:
       - name: Update Homebrew
         run: brew update-reset
       - uses: actions/checkout@master
+        with:
+          fetch-depth: 0
       - name: Build bottles
         run: |
           mkdir -p "$(dirname $(brew --repo ${{github.repository}}))"
@@ -38,6 +40,8 @@ jobs:
       - name: Update Homebrew
         run: brew update-reset
       - uses: actions/checkout@master
+        with:
+          fetch-depth: 0
       - name: Build bottles
         run: |
           mkdir -p "$(dirname $(brew --repo ${{github.repository}}))"
