@@ -13,6 +13,7 @@ class Tabixpp < Formula
   end
 
   def install
+    inreplace "Makefile", "libtabixpp.so.$(SOVERSION)", "libtabixpp.$(SOVERSION).dylib" if OS.mac?
     system "make", "install", "HTS_HEADERS=", "HTS_LIB=", "DESTDIR=#{prefix}", "PREFIX="
 
     prefix.install "test"
