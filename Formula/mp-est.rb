@@ -24,6 +24,6 @@ class MpEst < Formula
 
   test do
     Dir["#{pkgshare}/example/{control,testgenetree}"].each { |f| cp f, testpath }
-    system "#{bin}/mpest", "control"
+    system bin/"mpest", "control"
   end
 end

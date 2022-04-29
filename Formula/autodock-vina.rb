@@ -46,7 +46,7 @@ class AutodockVina < Formula
   end
 
   test do
-    system "#{bin}/vina", "--help"
-    system "#{bin}/vina_split", "--help"
+    system bin/"vina", "--help"
+    system bin/"vina_split", "--help"
   end
 end

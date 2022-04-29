@@ -41,7 +41,7 @@ class Fastani < Formula
 
   test do
     assert_match "fragment length", shell_output("#{bin}/fastANI --help 2>&1")
-    system "#{bin}/fastANI",
+    system bin/"fastANI",
            "-q", pkgshare/"data/Shigella_flexneri_2a_01.fna.gz",
            "-r", pkgshare/"data/Escherichia_coli_str_K12_MG1655.fna.gz",
            "-o", testpath/"out",

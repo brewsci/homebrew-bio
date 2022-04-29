@@ -19,6 +19,6 @@ class Fastahack < Formula
   test do
     cp_r Dir[prefix/"test/*"], testpath
 
-    system opt_bin/"fastahack", "correct.fasta"
+    system bin/"fastahack", "correct.fasta"
   end
 end

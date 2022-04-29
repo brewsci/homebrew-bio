@@ -36,7 +36,7 @@ class Phyx < Formula
 
   test do
     assert_match "Usage", shell_output("#{bin}/pxseqgen --help")
-    system "#{bin}/pxseqgen", "-t", "#{pkgshare}/pxseqgen_example/seqgen_test.tre", "-o", "output.fa"
+    system bin/"pxseqgen", "-t", "#{pkgshare}/pxseqgen_example/seqgen_test.tre", "-o", "output.fa"
     assert_predicate testpath/"output.fa", :exist?
   end
 end

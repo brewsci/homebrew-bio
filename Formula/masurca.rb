@@ -32,6 +32,6 @@ class Masurca < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/masurca --version 2>&1")
-    system "#{bin}/masurca", "-h"
+    system bin/"masurca", "-h"
   end
 end

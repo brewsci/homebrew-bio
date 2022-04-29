@@ -47,8 +47,8 @@ class Snippy < Formula
     assert_match version.to_s, shell_output("#{bin}/snippy-core --version 2>&1")
     assert_match version.to_s, shell_output("#{bin}/snippy-vcf_to_tab --version 2>&1")
     assert_match version.to_s, shell_output("#{bin}/snippy-clean_full_aln --version 2>&1")
-    system "#{bin}/snippy-multi", "--help"
-    system "#{bin}/snippy", "--check"
-    system "#{bin}/snippy-core", "--check"
+    system bin/"snippy-multi", "--help"
+    system bin/"snippy", "--check"
+    system bin/"snippy-core", "--check"
   end
 end

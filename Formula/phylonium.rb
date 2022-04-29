@@ -41,7 +41,7 @@ class Phylonium < Formula
     resource("simf").stage do
       system "c++", "-std=c++14", "-Wall", "-Wextra", "simf.cxx", "-o", "simf"
       system "./simf", "-s", "1729", "-l", "100000", "-p", "simple"
-      system "#{bin}/phylonium simple0.fasta simple1.fasta > /dev/null"
+      system bin/"phylonium simple0.fasta simple1.fasta > /dev/null"
       rm "simple0.fasta"
       rm "simple1.fasta"
     end

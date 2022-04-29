@@ -38,6 +38,6 @@ class Paml < Formula
 
   test do
     cp Dir[doc/"examples/DatingSoftBound/*.*"], testpath
-    system "#{bin}/infinitesites"
+    system bin/"infinitesites"
   end
 end

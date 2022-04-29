@@ -29,6 +29,6 @@ class Bamm < Formula
 
   test do
     cp Dir["#{pkgshare}/diversification/whales/*"], "."
-    system "#{bin}/bamm", "-c", "divcontrol.txt"
+    system bin/"bamm", "-c", "divcontrol.txt"
   end
 end

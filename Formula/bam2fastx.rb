@@ -43,7 +43,7 @@ class Bam2fastx < Formula
   end
 
   test do
-    system "#{bin}/bam2fasta", pkgshare/"data/RSII.bam", "-o", "fa"
-    system "#{bin}/bam2fastq", pkgshare/"data/RSII.bam", "-o", "fq"
+    system bin/"bam2fasta", pkgshare/"data/RSII.bam", "-o", "fa"
+    system bin/"bam2fastq", pkgshare/"data/RSII.bam", "-o", "fq"
   end
 end

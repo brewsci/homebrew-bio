@@ -25,6 +25,6 @@ class Humann2 < Formula
   end
 
   test do
-    system "#{bin}/humann2", "--version"
+    system bin/"humann2", "--version"
   end
 end

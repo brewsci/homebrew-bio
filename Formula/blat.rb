@@ -34,7 +34,7 @@ class Blat < Formula
       >spam
       CLYTHIGRNIYYGSY
     EOS
-    system "#{bin}/blat", "-prot", "db.fa", "query.fa", "out.psl"
+    system bin/"blat", "-prot", "db.fa", "query.fa", "out.psl"
     assert_match "spam", File.read("#{testpath}/out.psl")
   end
 end

@@ -51,6 +51,6 @@ class Vcflib < Formula
     assert_match "biallelic snps:\t6", shell_output("#{bin}/vcfstats #{pkgshare}/samples/sample.vcf 2>&1")
     assert_match "chr\t0\t1\t.", shell_output("echo 'chr 1 . T' | #{bin}/vcf2bed.py")
     assert_match "genotypes", shell_output("#{bin}/vcfgtcompare.sh 2>&1")
-    system "#{bin}/vcffirstheader < /dev/null"
+    system bin/"vcffirstheader < /dev/null"
   end
 end

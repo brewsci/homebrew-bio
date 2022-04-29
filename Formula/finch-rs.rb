@@ -24,7 +24,7 @@ class FinchRs < Formula
     exe = "finch"
     bin.install exe
     if OS.linux?
-      system "patchelf",
+      system Formula["patchelf"].opt_bin/"patchelf",
         "--set-interpreter", HOMEBREW_PREFIX/"lib/ld.so",
         "--set-rpath", HOMEBREW_PREFIX/"lib",
         bin/exe

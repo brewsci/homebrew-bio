@@ -17,6 +17,6 @@ class Metaphlan < Formula
   end
 
   test do
-    system "#{bin}/metaphlan", "--version"
+    system bin/"metaphlan", "--version"
   end
 end

@@ -75,7 +75,7 @@ class Trinity < Formula
 
   test do
     cp_r Dir["#{libexec}/sample_data/test_Trinity_Assembly/*.fq.gz"], "."
-    system "#{bin}/Trinity",
+    system bin/"Trinity",
       "--no_distributed_trinity_exec", "--bypass_java_version_check",
       "--seqType", "fq", "--max_memory", "1G", "--SS_lib_type", "RF",
       "--left", "reads.left.fq.gz,reads2.left.fq.gz",

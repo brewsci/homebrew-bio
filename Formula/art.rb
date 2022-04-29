@@ -33,8 +33,8 @@ class Art < Formula
   end
 
   test do
-    system "#{bin}/art_illumina | grep 'MiSeq'"
-    system "#{bin}/art_SOLiD | grep 'F3-F5'"
-    system "#{bin}/art_454 | grep 'FLX'"
+    system bin/"art_illumina | grep 'MiSeq'"
+    system bin/"art_SOLiD | grep 'F3-F5'"
+    system bin/"art_454 | grep 'FLX'"
   end
 end

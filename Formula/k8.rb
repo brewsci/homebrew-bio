@@ -24,7 +24,7 @@ class K8 < Formula
     exe = OS.mac? ? "k8-Darwin" : "k8-Linux"
     bin.install exe => "k8"
     if OS.linux?
-      system "patchelf",
+      system Formula["patchelf"].opt_bin/"patchelf",
         "--set-interpreter", HOMEBREW_PREFIX/"lib/ld.so",
         "--set-rpath", HOMEBREW_PREFIX/"lib",
         bin/"k8"

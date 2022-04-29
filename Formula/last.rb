@@ -23,7 +23,7 @@ class Last < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/lastal -V")
-    system "#{bin}/lastdb", testpath/"db", pkgshare/"examples/mouseMito.fa"
+    system bin/"lastdb", testpath/"db", pkgshare/"examples/mouseMito.fa"
     assert_predicate testpath/"db.suf", :exist?
     assert_match "lambda=",
       shell_output("#{bin}/lastal #{testpath}/db #{pkgshare}/examples/chickenMito.fa")

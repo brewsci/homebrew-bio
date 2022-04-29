@@ -34,6 +34,6 @@ class Astral < Formula
   end
 
   test do
-    system bin/"astral", "-i", pkgshare/"test_data/simulated_14taxon.gene.tre"
+    system bin/"astral", "-i", opt_pkgshare/"test_data/simulated_14taxon.gene.tre"
   end
 end

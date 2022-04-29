@@ -32,11 +32,11 @@ class Tbl2asn < Formula
   def install
     bin.install Dir["tbl2asn*"].first => "tbl2asn"
     unless OS.mac?
-      system "patchelf",
+      system Formula["patchelf"].opt_bin/"patchelf",
         "--set-interpreter", HOMEBREW_PREFIX/"lib/ld.so",
         "--set-rpath", HOMEBREW_PREFIX/"lib",
         bin/"tbl2asn"
-      # Normally we would use patchelf to make this change but it seems
+      # Normally we would use system Formula["patchelf"].opt_bin/"patchelf", to make this change but it seems
       # broken for this use-case. Use the Stick of Correction instead.
       inreplace bin/"tbl2asn", "libidn.so.11", "libidn.so.12"
     end

@@ -35,7 +35,7 @@ class Megahit < Formula
 
   test do
     outdir = "megahit.outdir"
-    system "#{bin}/megahit", "--12", "#{pkgshare}/test_data/r2.il.fa.bz2", "-o", outdir
+    system bin/"megahit", "--12", "#{pkgshare}/test_data/r2.il.fa.bz2", "-o", outdir
     assert_predicate testpath/"#{outdir}/final.contigs.fa", :exist?
     assert_match version.to_s, shell_output("#{bin}/megahit_toolkit dumpversion 2>&1")
   end

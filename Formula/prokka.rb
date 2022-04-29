@@ -41,14 +41,14 @@ class Prokka < Formula
   end
 
   def post_install
-    system "#{bin}/prokka", "--setupdb"
+    system bin/"prokka", "--setupdb"
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/prokka --version 2>&1")
     assert_match "Kingdoms:", shell_output("#{bin}/prokka --listdb 2>&1")
     assert_match "genetic", shell_output("#{bin}/prokka-genbank_to_fasta_db --help 2>&1", 1)
-    system "#{bin}/prokka", "--cpus=2", "--prefix=prokka",
+    system bin/"prokka", "--cpus=2", "--prefix=prokka",
       "--outdir=#{testpath}/prokka", "#{prefix}/test/plasmid.fna"
     assert_predicate testpath/"prokka/prokka.gff", :exist?
   end

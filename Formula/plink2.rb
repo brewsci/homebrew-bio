@@ -28,7 +28,7 @@ class Plink2 < Formula
   end
 
   test do
-    system "#{bin}/plink2", "--dummy", "513", "1423", "0.02", "--out", "dummy_cc1"
+    system bin/"plink2", "--dummy", "513", "1423", "0.02", "--out", "dummy_cc1"
     assert_predicate testpath/"dummy_cc1.bed", :exist?
   end
 end

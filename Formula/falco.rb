@@ -42,7 +42,7 @@ class Falco < Formula
       +
       @BCFFFFFHHHCFBHHIJJJICFGIIGIHHG3CEGEBA;@AEGHE:BEB<A@=B@@AAD>:?3>>:ABD5;BDBDACDACDBAC39C>@ACCDDCEEEDD
     EOS
-    system "#{bin}/falco", "#{testpath}/test.fq"
+    system bin/"falco", "#{testpath}/test.fq"
     assert_predicate testpath/"summary.txt", :exist?
     assert_predicate testpath/"fastqc_report.html", :exist?
   end

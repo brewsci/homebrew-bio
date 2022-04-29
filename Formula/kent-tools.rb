@@ -71,7 +71,7 @@ class KentTools < Formula
       >test
       ACTG
     EOS
-    system "#{bin}/faOneRecord test.fa test > out.fa"
+    system bin/"faOneRecord test.fa test > out.fa"
     compare_file "test.fa", "out.fa"
   end
 end

@@ -60,7 +60,7 @@ class Exabayes < Formula
     args = build.with?("open-mpi") ? %W[mpirun -np 2 #{bin}/exabayes] : %W["#{bin}/yggdrasil -T 2]
     args += %w[-f aln.phy -m DNA -n test -s 100 -c config.nex]
     system(*args)
-    system "#{bin}/sdsf", "-f", "ExaBayes_topologies.run-0.test", "ExaBayes_topologies.run-1.test"
-    system "#{bin}/consense", "-n", "cons", "-f", "ExaBayes_topologies.run-0.test", "ExaBayes_topologies.run-1.test"
+    system bin/"sdsf", "-f", "ExaBayes_topologies.run-0.test", "ExaBayes_topologies.run-1.test"
+    system bin/"consense", "-n", "cons", "-f", "ExaBayes_topologies.run-0.test", "ExaBayes_topologies.run-1.test"
   end
 end

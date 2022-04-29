@@ -26,7 +26,7 @@ class Mothur < Formula
   end
 
   test do
-    system "#{bin}/mothur", "-h"
-    system "#{bin}/uchime", "--help"
+    system bin/"mothur", "-h"
+    system bin/"uchime", "--help"
   end
 end

@@ -20,6 +20,6 @@ class Phylobayes < Formula
 
   test do
     cp Dir[pkgshare/"brpo/*"], testpath
-    system "#{bin}/pb", "-t", "brpo.tree", "-d", "brpo.ali", "-x", "1", "10", "test"
+    system bin/"pb", "-t", "brpo.tree", "-d", "brpo.ali", "-x", "1", "10", "test"
   end
 end

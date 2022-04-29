@@ -18,6 +18,6 @@ class Kollector < Formula
   end
 
   test do
-    system "#{bin}/kollector", "-h"
+    system bin/"kollector", "-h"
   end
 end

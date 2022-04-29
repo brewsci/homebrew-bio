@@ -23,7 +23,7 @@ class BlastAT22 < Formula
     if OS.linux?
       bins = Dir[bin/"*"].reject { |f| f.end_with? ".pl" }
       bins.each do |f|
-        system "patchelf", f,
+        system Formula["patchelf"].opt_bin/"patchelf", f,
           "--set-interpreter", HOMEBREW_PREFIX/"lib/ld.so",
           "--set-rpath", [HOMEBREW_PREFIX/"lib", Formula["bzip2"].lib, Formula["zlib"].lib].join(":")
       end

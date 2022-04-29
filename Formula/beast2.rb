@@ -43,17 +43,17 @@ class Beast2 < Formula
       This install coexists with BEAST 1.x as all scripts are suffixed with '-2':
           beast-2 -help
 
-      To use the unprefixed versions, add #{libexec}/bin to your PATH.
+      To use the unprefixed versions, add `#{libexec}/bin` to your PATH.
     EOS
   end
 
   test do
-    cp pkgshare/"examples/testCalibration.xml", testpath
+    cp opt_pkgshare/"examples/testCalibration.xml", testpath
     # Run fewer generations to speed up tests
     inreplace "testCalibration.xml", "10000000", "1000000"
 
-    system "#{bin}/beast-2", "-java", "-seed", "1000", "testCalibration.xml"
-    system "#{bin}/treeannotator-2", "test.1000.trees", "out.tre"
-    system "#{bin}/loganalyser-2", "test.1000.log"
+    system bin/"beast-2", "-java", "-seed", "1000", "testCalibration.xml"
+    system bin/"treeannotator-2", "test.1000.trees", "out.tre"
+    system bin/"loganalyser-2", "test.1000.log"
   end
 end

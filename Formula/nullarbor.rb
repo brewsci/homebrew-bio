@@ -53,6 +53,6 @@ class Nullarbor < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/nullarbor.pl --version 2>&1")
     assert_match version.to_s, shell_output("#{bin}/nullarbor-report.pl --version 2>&1")
-    system "#{bin}/nullarbor.pl", "--check"
+    system bin/"nullarbor.pl", "--check"
   end
 end

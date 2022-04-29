@@ -24,7 +24,7 @@ class Vmatch < Formula
     bin.install exes
     unless OS.mac?
       exes.each do |exe|
-        system "patchelf",
+        system Formula["patchelf"].opt_bin/"patchelf",
           "--set-interpreter", HOMEBREW_PREFIX/"lib/ld.so",
           "--set-rpath", HOMEBREW_PREFIX/"lib",
           bin/exe

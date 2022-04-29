@@ -28,10 +28,10 @@ class Quast < Formula
     inreplace "#{bin}/../icarus.py", "#!/usr/bin/env python", "#!/usr/bin/env python3"
 
     # Compile the bundled aligner so that `brew test quast` does not fail.
-    system "#{bin}/quast", "--test"
+    system bin/"quast", "--test"
   end
 
   test do
-    system "#{bin}/quast", "--test"
+    system bin/"quast", "--test"
   end
 end

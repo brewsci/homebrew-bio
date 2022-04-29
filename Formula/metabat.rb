@@ -76,7 +76,7 @@ class Metabat < Formula
   test do
     cp_r pkgshare/"test", testpath
     cd "test" do
-      system "#{bin}/jgi_summarize_bam_contig_depths",
+      system bin/"jgi_summarize_bam_contig_depths",
              "--outputDepth", "depth.txt",
              "contigs-1000.fastq.bam"
       assert_match "NODE_1_length_5374_cov_8.558988	5404	14.2158	14.2158	16.817", File.read("depth.txt")

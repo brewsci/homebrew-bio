@@ -17,10 +17,10 @@ class AbyssExplorer < Formula
 
   def install
     libexec.install "ABySS-explorer.jar", "lib"
-    (bin / "abyss-explorer").write <<~EOS
+    (bin/"abyss-explorer").write <<~EOS
       #!/bin/sh
       set -eu
-      exec #{Formula["openjdk"]/bin}/java -jar #{libexec}/ABySS-explorer.jar "$@"
+      exec "#{Formula["openjdk"].opt_bin}/java" -jar "#{libexec}/ABySS-explorer.jar" "$@"
     EOS
   end
 

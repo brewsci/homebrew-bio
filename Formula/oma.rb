@@ -47,7 +47,7 @@ class Oma < Formula
   end
 
   test do
-    system "#{bin}/oma", "-p"
+    system bin/"oma", "-p"
     File.exist?("parameters.drw")
     inreplace "parameters.drw" do |p|
       p.gsub! "DoGroupFunctionPrediction := true", "DoGroupFunctionPrediction := false"
@@ -68,7 +68,7 @@ class Oma < Formula
       >s2_2
       MTIHNVSLFTTIFNIFKFCVLYITSSLGISLERFIKCRKVKNINDIVSE
     EOS
-    system "#{bin}/oma"
+    system bin/"oma"
     assert_predicate testpath/"Output/HierarchicalGroups.orthoxml", :exist?
   end
 end

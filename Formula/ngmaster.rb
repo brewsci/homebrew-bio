@@ -24,6 +24,6 @@ class Ngmaster < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/ngmaster --version 2>&1")
-    system "#{bin}/ngmaster", "--test"
+    system bin/"ngmaster", "--test"
   end
 end

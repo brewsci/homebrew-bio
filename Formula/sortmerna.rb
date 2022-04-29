@@ -25,6 +25,6 @@ class Sortmerna < Formula
   end
 
   test do
-    system "#{bin}/sortmerna", "--version"
+    system bin/"sortmerna", "--version"
   end
 end

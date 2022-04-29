@@ -20,6 +20,6 @@ class Psmc < Formula
   end
 
   test do
-    system "#{bin}/psmc", "1"
+    system bin/"psmc", "1"
   end
 end

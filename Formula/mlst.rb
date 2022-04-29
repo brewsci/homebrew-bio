@@ -33,11 +33,11 @@ class Mlst < Formula
     tdir = libexec/"test"
     assert_match version.to_s, shell_output("#{bin}/mlst --version")
     assert_match "senterica", shell_output("#{bin}/mlst --list 2>&1")
-    system "#{bin}/mlst", "--check"
-    system "#{bin}/mlst -q #{tdir}/example.fna.gz | grep -w 184"
-    system "#{bin}/mlst -q #{tdir}/example.gbk.gz | grep -w 184"
+    system bin/"mlst", "--check"
+    system bin/"mlst -q #{tdir}/example.fna.gz | grep -w 184"
+    system bin/"mlst -q #{tdir}/example.gbk.gz | grep -w 184"
     system "gzip -d -c #{tdir}/example.fna.gz | #{bin}/mlst -q /dev/stdin | grep -w 184"
     system "gzip -d -c #{tdir}/example.gbk.gz | #{bin}/mlst -q /dev/stdin | grep -w 184"
-    system "#{bin}/mlst -q --csv #{tdir}/example.fna.gz | grep ',184,'"
+    system bin/"mlst -q --csv #{tdir}/example.fna.gz | grep ',184,'"
   end
 end

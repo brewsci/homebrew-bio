@@ -26,6 +26,6 @@ class Berokka < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/berokka --version")
-    system "#{bin}/berokka", "--check"
+    system bin/"berokka", "--check"
   end
 end

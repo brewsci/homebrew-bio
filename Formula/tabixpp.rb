@@ -26,6 +26,6 @@ class Tabixpp < Formula
   end
 
   test do
-    system opt_bin/"tabix++", prefix/"test/vcf_file.vcf.gz"
+    system bin/"tabix++", prefix/"test/vcf_file.vcf.gz"
   end
 end

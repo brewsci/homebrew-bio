@@ -22,8 +22,8 @@ class Consel < Formula
 
   test do
     cp pkgshare/"example/mu1.vt", testpath
-    system "#{bin}/randrep", "-m", "mu1"
-    system "#{bin}/consel", "mu1"
-    system "#{bin}/catpv", "mu1"
+    system bin/"randrep", "-m", "mu1"
+    system bin/"consel", "mu1"
+    system bin/"catpv", "mu1"
   end
 end

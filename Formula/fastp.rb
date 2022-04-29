@@ -23,7 +23,7 @@ class Fastp < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/fastp --version 2>&1")
-    system "#{bin}/fastp", "-i", pkgshare/"testdata/R1.fq", "-o", testpath/"out.fq"
+    system bin/"fastp", "-i", pkgshare/"testdata/R1.fq", "-o", testpath/"out.fq"
     File.exist?("out.fq")
   end
 end

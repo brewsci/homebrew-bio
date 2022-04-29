@@ -24,7 +24,7 @@ class Bonsai < Formula
       bin.install_symlink bin/"bonsai_sz" => "bonsai_z"
     else
       Dir["#{bin}/*"].each do |exe|
-        system "patchelf",
+        system Formula["patchelf"].opt_bin/"patchelf",
                "--set-interpreter", HOMEBREW_PREFIX/"lib/ld.so",
                "--set-rpath", HOMEBREW_PREFIX/"lib",
                exe

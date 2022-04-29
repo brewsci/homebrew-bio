@@ -88,7 +88,7 @@ class Maker < Formula
   end
 
   test do
-    system "#{bin}/maker", "--version"
+    system bin/"maker", "--version"
   end
 end
 

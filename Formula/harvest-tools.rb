@@ -36,7 +36,7 @@ class HarvestTools < Formula
   end
 
   test do
-    system "#{bin}/harvesttools", "-f", pkgshare/"test/test2.fna",
+    system bin/"harvesttools", "-f", pkgshare/"test/test2.fna",
                                   "-x", pkgshare/"test/test2.xmfa",
                                   "-v", pkgshare/"test/test2.vcf",
                                   "-o", testpath/"out.ggr"

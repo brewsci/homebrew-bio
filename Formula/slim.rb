@@ -23,7 +23,7 @@ class Slim < Formula
   end
 
   test do
-    system "#{bin}/slim", "-testEidos"
-    system "#{bin}/slim", "-testSLiM"
+    system bin/"slim", "-testEidos"
+    system bin/"slim", "-testSLiM"
   end
 end

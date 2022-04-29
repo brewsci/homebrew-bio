@@ -57,8 +57,8 @@ class Treepl < Formula
   test do
     cp_r opt_pkgshare/"examples", testpath
     cd testpath/"examples" do
-      system "#{bin}/treePL", "clock.cppr8s"
-      system "#{bin}/treePL", "test.cppr8s"
+      system bin/"treePL", "clock.cppr8s"
+      system bin/"treePL", "test.cppr8s"
     end
   end
 end

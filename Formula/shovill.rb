@@ -34,6 +34,6 @@ class Shovill < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/shovill --version 2>&1")
     assert_match "Illumina", shell_output("#{bin}/shovill --help 2>&1")
-    system "#{bin}/shovill", "--check"
+    system bin/"shovill", "--check"
   end
 end
