@@ -8,8 +8,8 @@ class LinksScaffolder < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, sierra:       "f00d027ea4ae9195eb35590128e07514a0d558829d682358b0bd66592e50f821"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "dc7326911e2fb969cf4ad5720a95a3d924aff737fd547fb16db89346a473a691"
+    sha256 cellar: :any_skip_relocation, catalina:     "eecf3bfbb2f0e0d32f49253946c79c13b991b58b6700caef0254c1e6551ee576"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3330b665b5bd31d7c86bde867f73b6b557ed3dc6756763492469135e4d264214"
   end
 
   head do
