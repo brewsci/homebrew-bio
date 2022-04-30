@@ -15,8 +15,8 @@ class Freebayes < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, catalina:     "04d29c063def9219df5ae557876fdd4095cfde34e540e2a28acd1109a79f34bf"
-    sha256 cellar: :any, x86_64_linux: "07f3e4dd360c93efb848b5e4a420a0b32f8ce85d85f21652975aa382716657a9"
+    sha256 cellar: :any, catalina:     "f30e08110945d50f49909d61fec86ec45f8efadf52c0a460b0cfe658df8fe3d0"
+    sha256               x86_64_linux: "a4454368c4a8bb579a75b01f1c6ed2d192727824048d31fe175c0c734080368a"
   end
 
   depends_on "meson" => :build
