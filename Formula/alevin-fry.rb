@@ -12,6 +12,7 @@ class AlevinFry < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "942c9e2b42cb2e6ea640f0f6c7daa829c0cff991fce0a516823d20b734d337fd"
   end
 
+  depends_on "cmake" => :build
   depends_on "rust" => :build
 
   def install
