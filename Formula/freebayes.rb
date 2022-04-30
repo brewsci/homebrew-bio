@@ -3,8 +3,8 @@ class Freebayes < Formula
   desc "Bayesian variant discovery and genotyping"
   homepage "https://github.com/ekg/freebayes"
   url "https://github.com/ekg/freebayes.git",
-      tag:      "v1.3.2",
-      revision: "54bf40915ae7e46798503471ac57f593efdb5493"
+      tag:      "v1.3.6",
+      revision: "084dce52e54af5adbd1e2b0a67f3733dd8bfddc0"
   license "MIT"
   head "https://github.com/ekg/freebayes.git"
 
@@ -19,7 +19,9 @@ class Freebayes < Formula
     sha256 cellar: :any, x86_64_linux: "07f3e4dd360c93efb848b5e4a420a0b32f8ce85d85f21652975aa382716657a9"
   end
 
-  depends_on "cmake" => :build
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
+  depends_on "pkg-config" => :build
 
   depends_on "parallel"
   depends_on "python"
@@ -30,29 +32,25 @@ class Freebayes < Formula
   uses_from_macos "zlib"
 
   def install
-    # make -j N results in: make: *** [all] Error 2
-    # Reported 16 Jan 2017 https://github.com/ekg/freebayes/issues/356
-    ENV.deparallelize
-
-    # Works around ld: internal error: atom not found in symbolIndex
-    # Reported 21 Jul 2014 https://github.com/ekg/freebayes/issues/83
-    inreplace "vcflib/smithwaterman/Makefile", "-Wl,-s", "" if OS.mac?
-
-    # Fixes bug ../vcflib/scripts/vcffirstheader: file not found
-    # Reported 1 Apr 2017 https://github.com/ekg/freebayes/issues/376
-    inreplace "scripts/freebayes-parallel" do |s|
-      s.gsub! "../vcflib/scripts/vcffirstheader", "vcffirstheader"
-      s.gsub! "../vcflib/bin/vcfstreamsort", "vcfstreamsort"
+    system "meson", *std_meson_args, "build/", "--prefix=#{prefix}", "--buildtype=release"
+    cd "build" do
+      system "ninja"
+      system "ninja", "install"
     end
 
-    system "make"
-
-    bin.install "bin/freebayes"
-    bin.install "bin/bamleftalign"
     bin.install "scripts/freebayes-parallel"
-    bin.install "scripts/coverage_to_regions.py"
-    bin.install "scripts/generate_freebayes_region_scripts.sh"
-    bin.install "scripts/fasta_generate_regions.py"
+
+    rm "scripts/bgziptabix"
+    rm "scripts/vcffirstheader"
+    rm "scripts/update_version.sh"
+    pkgshare.install Dir["scripts/*"]
+  end
+
+  def caveats
+    <<~EOS
+      The freebayes scripts can be found in
+      #{HOMEBREW_PREFIX}/share/freebayes/
+    EOS
   end
 
   test do
