@@ -14,7 +14,7 @@ class Cutadapt < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "11fe25398bea539c79d92993b100aea921d821c10b10d11c96684a801716d956"
   end
 
-  depends_on "python@3.9"
+  depends_on "python@3.10"
 
   resource "dnaio" do
     url "https://files.pythonhosted.org/packages/75/32/710e24c5bb31ad680969a042428dedfa5741aee987afc2c7d177d3e4928f/dnaio-0.5.0.tar.gz"

@@ -16,7 +16,7 @@ class Flye < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "7f3794f7718a3aff68894a45d0c4431494021382506a72d948021fe88451f0b8"
   end
 
-  depends_on "python@3.9"
+  depends_on "python@3.10"
 
   def install
     # Uses internal parallelization for builds

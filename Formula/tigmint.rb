@@ -5,6 +5,7 @@ class Tigmint < Formula
   url "https://github.com/bcgsc/tigmint/releases/download/v1.2.5/tigmint-1.2.5.tar.gz"
   sha256 "15a56748f19732462c0445fe9df2f737a4bf8caa97dbc0fe6e943e3fd1c6b5f0"
   license "GPL-3.0-only"
+  revision 1
   head "https://github.com/bcgsc/tigmint.git"
 
   bottle do
@@ -16,16 +17,16 @@ class Tigmint < Formula
   depends_on "bedtools"
   depends_on "minimap2"
   depends_on "numpy"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
   depends_on "samtools"
 
   def install
     ENV.prepend_path "PATH", libexec/"bin"
     xy = Language::Python.major_minor_version "python3"
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
-    inreplace "bin/tigmint-cut", "/usr/bin/env python3", Formula["python@3.9"].bin/"python3.9"
-    inreplace "bin/tigmint_molecule.py", "/usr/bin/env python3", Formula["python@3.9"].bin/"python3.9"
-    inreplace "bin/tigmint_molecule_paf.py", "/usr/bin/env python3", Formula["python@3.9"].bin/"python3.9"
+    inreplace "bin/tigmint-cut", "/usr/bin/env python3", Formula["python@3.10"].bin/"python3.9"
+    inreplace "bin/tigmint_molecule.py", "/usr/bin/env python3", Formula["python@3.10"].bin/"python3.9"
+    inreplace "bin/tigmint_molecule_paf.py", "/usr/bin/env python3", Formula["python@3.10"].bin/"python3.9"
     system "pip3", "install", "--prefix=#{libexec}", "-r", "requirements.txt", "--no-binary=pysam"
     bin.install Dir["bin/*"]
     system "make", "-C", "src"

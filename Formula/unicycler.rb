@@ -5,7 +5,7 @@ class Unicycler < Formula
   url "https://github.com/rrwick/Unicycler/archive/v0.4.7.tar.gz"
   sha256 "a8cf65e46dc2694b0fbd4e9190c73a1f300921457aadfab27a1792b785620d63"
   license "GPL-3.0"
-  revision 1
+  revision 2
   head "https://github.com/rrwick/Unicycler.git"
 
   bottle do
@@ -18,7 +18,7 @@ class Unicycler < Formula
   depends_on "bowtie2"
   depends_on "brewsci/bio/pilon"
   depends_on "brewsci/bio/racon"
-  depends_on "python@3.8"
+  depends_on "python@3.10"
   depends_on "samtools"
   depends_on "spades"
 

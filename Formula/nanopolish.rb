@@ -25,7 +25,7 @@ class Nanopolish < Formula
   depends_on "gcc" if OS.mac? # needs openmp
   depends_on "hdf5"
   depends_on "htslib"
-  depends_on "python@3.8" # for scripts
+  depends_on "python@3.10" # for scripts
 
   uses_from_macos "bzip2"
   uses_from_macos "zlib"

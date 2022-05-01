@@ -6,6 +6,7 @@ class Vcf2phylip < Formula
   url "https://github.com/edgardomortiz/vcf2phylip/archive/v2.3.tar.gz"
   sha256 "fe72002a85d886df6527678c3c9f4610d1535d26c02ea0df133d10ad18e26272"
   license "GPL-3.0"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -13,7 +14,7 @@ class Vcf2phylip < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "6f6121e02dfffdc964828c07f30ec6f601a3614234c3f4b69a9c2480b77d4992"
   end
 
-  depends_on "python@3.8"
+  depends_on "python@3.10"
 
   def install
     rewrite_shebang detected_python_shebang, "vcf2phylip.py"

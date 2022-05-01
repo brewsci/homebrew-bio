@@ -23,7 +23,7 @@ class Busco < Formula
   depends_on "hmmer"
   depends_on "numpy"
   depends_on "prodigal"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
 
   resource "biopython" do
     url "https://files.pythonhosted.org/packages/89/c5/7fe326081276f74a4073f6d6b13cfa7a04ba322a3ff1d84027f4773980b8/biopython-1.78.tar.gz"

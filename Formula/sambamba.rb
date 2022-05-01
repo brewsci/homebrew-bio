@@ -6,6 +6,7 @@ class Sambamba < Formula
       tag:      "v0.7.1",
       revision: "851c5b5a9ffe1895d860900104122ab81bb89f21"
   license "GPL-2.0"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -14,7 +15,7 @@ class Sambamba < Formula
   end
 
   depends_on "ldc" => :build
-  depends_on "python@3.8" => :build
+  depends_on "python@3.10" => :build
 
   uses_from_macos "zlib"
 

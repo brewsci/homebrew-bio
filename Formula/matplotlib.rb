@@ -16,7 +16,7 @@ class Matplotlib < Formula
   depends_on "libtiff"      # Pillow
   depends_on "little-cms2"  # Pillow
   depends_on "numpy"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
   depends_on "webp"         # Pillow
 
   resource "Cycler" do
@@ -50,7 +50,7 @@ class Matplotlib < Formula
   end
 
   def install
-    system Formula["python@3.9"].opt_bin/"python3", *Language::Python.setup_install_args(prefix)
+    system Formula["python@3.10"].opt_bin/"python3", *Language::Python.setup_install_args(prefix)
     venv = virtualenv_create(libexec, "python3")
     venv.pip_install "wheel"
 

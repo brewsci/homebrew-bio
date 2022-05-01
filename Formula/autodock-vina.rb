@@ -7,6 +7,7 @@ class AutodockVina < Formula
   url "https://github.com/ccsb-scripps/AutoDock-Vina/archive/refs/tags/v1.2.3.tar.gz"
   sha256 "22f85b2e770b6acc363429153b9551f56e0a0d88d25f747a40d2f55a263608e0"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/ccsb-scripps/AutoDock-Vina.git", branch: "develop"
 
   bottle do
@@ -17,10 +18,10 @@ class AutodockVina < Formula
 
   depends_on "swig" => :build
   depends_on "boost"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
 
   def install
-    xy = Language::Python.major_minor_version Formula["python@3.9"].opt_bin/"python3"
+    xy = Language::Python.major_minor_version Formula["python@3.10"].opt_bin/"python3"
     ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
     binaries = ["vina", "vina_split"]
     if OS.mac?

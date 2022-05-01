@@ -13,7 +13,7 @@ class Ngmaster < Formula
 
   depends_on "ispcr"
   depends_on "numpy"
-  depends_on "python@3.8"
+  depends_on "python@3.10"
 
   def install
     xy = Language::Python.major_minor_version "python3"

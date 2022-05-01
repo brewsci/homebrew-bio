@@ -13,7 +13,7 @@ class Biointerchange < Formula
 
   depends_on "cmake" => :build
   depends_on "openssl@1.1" => :build # linked statically
-  depends_on "python@3.9"
+  depends_on "python@3.10"
 
   uses_from_macos "curl" => :build # linked statically
 
