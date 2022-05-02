@@ -8,6 +8,12 @@ class Apbs < Formula
   license "MIT"
   head "https://github.com/Electrostatics/apbs.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any,                 catalina:     "fcf4489af35463fef6f74f8119ef297e21047bf1897ef7f3b0682fa84d4bf1d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b4607ecd1c9b0cabc617e21816dd5a9cc3f2a3b22fdb489307d92981159bcf68"
+  end
+
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "swig" => :build
