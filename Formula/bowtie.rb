@@ -4,8 +4,8 @@ class Bowtie < Formula
   # cite Langmead_2009: "https://doi.org/10.1186/gb-2009-10-3-r25"
   desc "Ultrafast memory-efficient short read aligner"
   homepage "https://bowtie-bio.sourceforge.io/"
-  url "https://github.com/BenLangmead/bowtie/archive/v1.3.0.tar.gz"
-  sha256 "d7c2d982a67884909f284a0ff150b56b20127cd7a1ced461c3c4c03e6a6374c5"
+  url "https://github.com/BenLangmead/bowtie/archive/refs/tags/v1.3.1.tar.gz"
+  sha256 "147d9fe9652f7c5f351bfc0eb012e06981986fb43bd6bdfe88a95c02eabc6573"
   license "Artistic-2.0"
   head "https://github.com/BenLangmead/bowtie.git"
 
@@ -16,8 +16,8 @@ class Bowtie < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "097544d5656a7fab72b8d36e08bc7e2be4032fdd573fa205ad4da9ad5d7bf56a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "cf888db0331e61e96ebc6ea51418af5a1f9045d83c49c560d65cb396a448ac4d"
+    sha256 cellar: :any_skip_relocation, catalina:     "42de0f90a500103a2736bf4728d267a0e729096bc8ce45b6d3ef9a21cd86d87d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a4bd1d75bc2a132f22122093a993a53c174a3a80045df118016b58dbdca4a869"
   end
 
   depends_on "python"
