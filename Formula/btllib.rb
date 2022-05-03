@@ -10,6 +10,7 @@ class Btllib < Formula
   depends_on "libomp" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
+  depends_on "python@3.8" => :build
 
   # Runtime dependencies
   depends_on "bzip2"
