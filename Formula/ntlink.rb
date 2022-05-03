@@ -2,8 +2,8 @@ class Ntlink < Formula
   # cite Coombe_2021: "https://doi.org/10.1186/s12859-021-04451-7"
   desc "Assembly scaffolder using long reads and minimizers"
   homepage "https://bcgsc.ca/resources/software/ntlink"
-  url "https://github.com/bcgsc/ntLink/releases/download/v1.1.3/ntLink-1.1.3.tar.gz"
-  sha256 "bcc24d6a2eadad773eec5dca14d29f4ff5b9d71f28ae12cb4b1e12c9132b9c7e"
+  url "https://github.com/bcgsc/ntLink/releases/download/v1.2.1/ntLink-1.2.1.tar.gz"
+  sha256 "a57e7a30f89ac4d364032b777d71346c850ca5719e471d5b2de5a91d424cc19a"
   license "GPL-3.0-only"
   head "https://github.com/bcgsc/ntLink.git"
 
@@ -34,13 +34,25 @@ class Ntlink < Formula
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
     inreplace "bin/ntlink_pair.py", "/usr/bin/env python3", Formula["python@3.10"].bin/"python3.10"
     inreplace "bin/ntlink_stitch_paths.py", "/usr/bin/env python3", Formula["python@3.10"].bin/"python3.10"
-    system "pip3", "install", "--prefix=#{libexec}", "-r", "requirements.txt", "--no-binary=:all:"
+    inreplace "bin/ntlink_overlap_sequences.py", "/usr/bin/env python3", Formula["python@3.10"].bin/"python3.10"
+    inreplace "bin/ntlink_filter_sequences.py", "/usr/bin/env python3", Formula["python@3.10"].bin/"python3.10"
+    inreplace "bin/ntlink_patch_gaps.py", "/usr/bin/env python3", Formula["python@3.10"].bin/"python3.10"
+    inreplace "ntLink", "PYTHONPATH=$(ntlink_path)/src/btllib/install/lib/btllib/python",
+    "PYTHONPATH_ntlink=$(ntlink_path)/src/btllib/install/lib/btllib/python:$(PYTHONPATH)"
+    inreplace "ntLink", "PYTHONPATH=$(PYTHONPATH)", "PYTHONPATH=$(PYTHONPATH_ntlink)"
+    if OS.linux?
+      system "pip3", "install", "--prefix=#{libexec}", "-r", "requirements.txt", "--no-binary=:all:"
+    else
+      system "pip3", "install", "--prefix=#{libexec}", "-r", "requirements.txt"
+    end
     bin.install "ntLink"
     libexec_src = Pathname.new("#{libexec}/src")
     libexec_src.install "src/indexlr"
+    libexec_src.install "src/btllib"
     libexec_bin = Pathname.new("#{libexec}/bin")
     libexec_bin.install Dir["bin/*"]
     bin.env_script_all_files libexec, PYTHONPATH: Dir[libexec/"lib/python*/site-packages"].first
+    rm_rf "#{libexec}/src/btllib/subprojects/sdsl-lite/Make.helper"
     doc.install "README.md"
   end
 
