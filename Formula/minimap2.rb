@@ -22,7 +22,11 @@ class Minimap2 < Formula
   uses_from_macos "zlib"
 
   def install
-    system "make"
+    if Hardware::CPU.arm? && OS.mac?
+      system "make", "arm_neon=1", "aarch64=1"
+    else
+      system "make"
+    end
     bin.install "minimap2"
     bin.install "misc/paftools.js"
     bin.install_symlink "paftools.js" => "paftools"
