@@ -13,8 +13,9 @@ class Minimap2 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "971cc33d2cafd5d2a99273aa5931986a4422f3590f235c36b514126023cb6744"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3448c9801e3e5a55c251b196141e1d71160069db7702ac11e764934c151aee8a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, catalina:     "7be2334fd489cc7e33085f04e3ef2b587e5de5db77bb4a771d5ac1a7d41e09f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9529104f9b6dd5e871ee3d1ca8d90bb0b7d4ec916a5fc89edc5ad5987c5ad780"
   end
 
   depends_on "brewsci/bio/k8" # for paftools.js
