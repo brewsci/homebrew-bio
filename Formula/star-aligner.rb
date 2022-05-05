@@ -2,9 +2,9 @@ class StarAligner < Formula
   # cite Dobin_2012: "https://doi.org/10.1093/bioinformatics/bts635"
   desc "RNA-seq aligner"
   homepage "https://github.com/alexdobin/STAR"
-  url "https://github.com/alexdobin/STAR/archive/2.7.5c.tar.gz"
-  version "2.7.5c"
-  sha256 "980285422ea0a1c8d3b244a141a60368e6b69ba3c2b6e7cb81c52922c124dfd2"
+  url "https://github.com/alexdobin/STAR/archive/2.7.10a.tar.gz"
+  version "2.7.10a"
+  sha256 "af0df8fdc0e7a539b3ec6665dce9ac55c33598dfbc74d24df9dae7a309b0426a"
   license "MIT"
   head "https://github.com/alexdobin/STAR.git"
 
