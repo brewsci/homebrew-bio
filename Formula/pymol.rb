@@ -4,7 +4,8 @@ class Pymol < Formula
   homepage "https://pymol.org/"
   url "https://github.com/schrodinger/pymol-open-source/archive/v2.5.0.tar.gz"
   sha256 "aa828bf5719bd9a14510118a93182a6e0cadc03a574ba1e327e1e9780a0e80b3"
-  head "https://github.com/schrodinger/pymol-open-source.git"
+  revision 1
+  head "https://github.com/schrodinger/pymol-open-source.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -13,7 +14,6 @@ class Pymol < Formula
   end
 
   depends_on "brewsci/bio/mmtf-cpp"
-  depends_on "catch2"
   depends_on "ffmpeg"
   depends_on "freeglut"
   depends_on "freetype"
@@ -29,8 +29,8 @@ class Pymol < Formula
   depends_on "sip"
 
   resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/59/04/87fc6708659c2ed3b0b6d4954f270b6e931def707b227c4554f99bd5401e/msgpack-1.0.2.tar.gz"
-    sha256 "fae04496f5bc150eefad4e9571d1a76c55d021325dcd484ce45065ebbdd00984"
+    url "https://files.pythonhosted.org/packages/61/3c/2206f39880d38ca7ad8ac1b28d2d5ca81632d163b2d68ef90e46409ca057/msgpack-1.0.3.tar.gz"
+    sha256 "51fdc7fb93615286428ee7758cecc2f374d5ff363bdd884c7ea622a7a327a81e"
   end
 
   resource "mmtf-python" do
@@ -66,7 +66,6 @@ class Pymol < Formula
       --install-lib=#{libexec}/lib/python#{xy}/site-packages
       --glut
       --use-msgpackc=c++11
-      --testing
     ]
     system Formula["python@3.9"].opt_bin/"python3", "setup.py", "install", *args
     site_packages = "lib/python#{xy}/site-packages"
