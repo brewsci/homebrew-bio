@@ -1,14 +1,14 @@
 class Rmblast < Formula
   desc "RepeatMasker compatible version of the standard NCBI BLAST suite"
-  homepage "http://www.repeatmasker.org/RMBlast.html"
+  homepage "https://www.repeatmasker.org/RMBlast.html"
+  version "2.11.0"
   if OS.mac?
-    url "https://ftp.ncbi.nlm.nih.gov/blast/executables/rmblast/LATEST/ncbi-rmblastn-2.2.28-universal-macosx.tar.gz"
-    sha256 "f94e91487b752eb24386c3571250a3394ec7a00e7a5370dd103f574c721b9c81"
+    url "https://www.repeatmasker.org/rmblast-#{version}+-x64-macosx.tar.gz"
+    sha256 "e89159dd4532caf49c34b7e78d67e0ef0cb95622f64fbf285c182a9343db5046"
   else
-    url "https://ftp.ncbi.nlm.nih.gov/blast/executables/rmblast/LATEST/ncbi-rmblastn-2.2.28-x64-linux.tar.gz"
-    sha256 "e6503ad25a6760d2d2931f17efec80ba879877b4042a1d10a60820ec21a61cfe"
+    url "https://www.repeatmasker.org/rmblast-#{version}+-x64-linux.tar.gz"
+    sha256 "3e0a37fd6ec01a4c02acbf161e6d517725a5af783b610da5c7139066f0f1e6df"
   end
-  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -21,6 +21,8 @@ class Rmblast < Formula
     depends_on "bzip2"
     depends_on "zlib"
   end
+
+  keg_only "rmblast conflicts with blast"
 
   def install
     prefix.install Dir["*"]
