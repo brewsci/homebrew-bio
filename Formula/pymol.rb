@@ -4,7 +4,7 @@ class Pymol < Formula
   homepage "https://pymol.org/"
   url "https://github.com/schrodinger/pymol-open-source/archive/v2.5.0.tar.gz"
   sha256 "aa828bf5719bd9a14510118a93182a6e0cadc03a574ba1e327e1e9780a0e80b3"
-  revision 2
+  revision 3
   head "https://github.com/schrodinger/pymol-open-source.git", branch: "master"
 
   bottle do
@@ -23,8 +23,8 @@ class Pymol < Formula
   depends_on "libxml2"
   depends_on "netcdf"
   depends_on "numpy"
-  depends_on "pyqt"
-  depends_on "python-tk@3.9"
+  depends_on "pyqt@5"
+  depends_on "python@3.9"
   depends_on "sip"
 
   resource "msgpack" do
