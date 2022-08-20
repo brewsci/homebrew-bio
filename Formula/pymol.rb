@@ -4,7 +4,7 @@ class Pymol < Formula
   homepage "https://pymol.org/"
   url "https://github.com/schrodinger/pymol-open-source/archive/v2.5.0.tar.gz"
   sha256 "aa828bf5719bd9a14510118a93182a6e0cadc03a574ba1e327e1e9780a0e80b3"
-  revision 3
+  revision 4
   head "https://github.com/schrodinger/pymol-open-source.git", branch: "master"
 
   bottle do
@@ -24,8 +24,12 @@ class Pymol < Formula
   depends_on "netcdf"
   depends_on "numpy"
   depends_on "pyqt@5"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
   depends_on "sip"
+
+  on_macos do
+    depends_on "libomp"
+  end
 
   resource "msgpack" do
     url "https://files.pythonhosted.org/packages/61/3c/2206f39880d38ca7ad8ac1b28d2d5ca81632d163b2d68ef90e46409ca057/msgpack-1.0.3.tar.gz"
@@ -43,13 +47,13 @@ class Pymol < Formula
   end
 
   def install
-    xy = Language::Python.major_minor_version Formula["python@3.9"].opt_bin/"python3"
-    ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
+    python = "python3.10"
+    ENV.prepend_path "PYTHONPATH", Formula["numpy"].opt_prefix/Language::Python.site_packages(python)
 
     # install other resources
     resources.each do |r|
       r.stage do
-        system Formula["python@3.9"].opt_bin/"python3", *Language::Python.setup_install_args(libexec)
+        system python, *Language::Python.setup_install_args(libexec, python)
       end
     end
 
@@ -58,23 +62,22 @@ class Pymol < Formula
     ENV.append "CPPFLAGS", "-I#{Formula["libxml2"].opt_include}/libxml2"
     # CPPFLAGS freetype2 required.
     ENV.append "CPPFLAGS", "-I#{Formula["freetype"].opt_include}/freetype2"
+    site_packages = Language::Python.site_packages(python)
 
-    # openvr support not included.
     args = %W[
       --install-scripts=#{libexec}/bin
-      --install-lib=#{libexec}/lib/python#{xy}/site-packages
+      --install-lib=#{libexec/Language::Python.site_packages(python)}
       --glut
+      --use-openmp=yes
       --use-msgpackc=c++11
     ]
-    system Formula["python@3.9"].opt_bin/"python3", "setup.py", "install", *args
-    site_packages = "lib/python#{xy}/site-packages"
-    pth_contents = "import site; site.addsitedir('#{libexec/site_packages}')\n"
-    (prefix/site_packages/"homebrew-pymol.pth").write pth_contents
+    system python, "setup.py", "install", *args
+    (prefix/site_packages/"homebrew-pymol.pth").write libexec/site_packages
     bin.install libexec/"bin/pymol"
   end
 
   test do
     system "#{bin}/pymol", "-c"
-    system Formula["python@3.9"].opt_bin/"python3", "-c", "import pymol"
+    system Formula["python@3.10"].opt_bin/"python3", "-c", "import pymol"
   end
 end
