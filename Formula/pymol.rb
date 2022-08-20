@@ -9,8 +9,8 @@ class Pymol < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, catalina:     "38571d7a49158f70f5855456f72940898b67a7ee868b2863d85b2210d148479d"
-    sha256               x86_64_linux: "99bd622738ba0dd7180e25987f47bf69ff62e3450ba5b4baf4c16ce5a8ffa830"
+    sha256 cellar: :any, catalina:     "5672652144cce38472c4e599eb4148d57ed5b4c52819bb951b5cddffa63f2ef9"
+    sha256               x86_64_linux: "4061f0ac6b93afaae09dd923599e6b8851d1f1f13f14d3aaf55de6281dee51e2"
   end
 
   depends_on "brewsci/bio/mmtf-cpp"
