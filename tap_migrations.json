@@ -6,6 +6,7 @@
   "jellyfish": "homebrew/core",
   "lastz": "homebrew/core",
   "mrbayes": "homebrew/core",
+  "pymol": "homebrew/core",
   "raxml-ng": "homebrew/core",
   "seqkit": "homebrew/core",
   "vsearch": "homebrew/core"
