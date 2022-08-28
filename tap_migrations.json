@@ -4,6 +4,7 @@
   "beagle": "homebrew/core",
   "bioperl": "homebrew/core",
   "jellyfish": "homebrew/core",
+  "kalign": "homebrew/core",
   "lastz": "homebrew/core",
   "mrbayes": "homebrew/core",
   "pymol": "homebrew/core",
