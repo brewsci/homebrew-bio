@@ -1,9 +1,9 @@
 class Kmc < Formula
   # cite Deorowicz_2015: "https://doi.org/10.1093/bioinformatics/btv022"
   desc "Fast and frugal disk based k-mer counter"
-  homepage "http://sun.aei.polsl.pl/kmc/"
-  url "https://github.com/refresh-bio/KMC/archive/v3.1.1.tar.gz"
-  sha256 "d7cdf37d90a07d1a432b7427436f962914b5f63a1b6dbb9a116609a1c64d1324"
+  homepage "https://github.com/refresh-bio/KMC"
+  url "https://github.com/refresh-bio/KMC/archive/v3.2.1.tar.gz"
+  sha256 "7db333091a754508163a097c41720cf32a80abe160bef60f3fc82c8da1d67896"
   head "https://github.com/marekkokot/KMC.git"
 
   bottle do
@@ -21,10 +21,8 @@ class Kmc < Formula
 
   def install
     args = %W[CC=#{ENV.cxx} KMC_BIN_DIR=#{bin}]
-    args << (OS.mac? ? "-fmakefile_mac" : "-fmakefile")
-
     system "make", *args, "kmc", "kmc_dump", "kmc_tools"
-
+    bin.install Dir["bin/kmc*"]
     doc.install Dir["*.pdf"]
   end
 
