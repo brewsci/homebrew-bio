@@ -1,14 +1,9 @@
 class Rmblast < Formula
   desc "RepeatMasker compatible version of the standard NCBI BLAST suite"
   homepage "https://www.repeatmasker.org/RMBlast.html"
+  url "https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.11.0/ncbi-blast-2.11.0+-src.tar.gz"
   version "2.11.0"
-  if OS.mac?
-    url "https://www.repeatmasker.org/rmblast-#{version}+-x64-macosx.tar.gz"
-    sha256 "e89159dd4532caf49c34b7e78d67e0ef0cb95622f64fbf285c182a9343db5046"
-  else
-    url "https://www.repeatmasker.org/rmblast-#{version}+-x64-linux.tar.gz"
-    sha256 "3e0a37fd6ec01a4c02acbf161e6d517725a5af783b610da5c7139066f0f1e6df"
-  end
+  sha256 "d88e1858ae7ce553545a795a2120e657a799a6d334f2a07ef0330cc3e74e1954"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -16,20 +11,34 @@ class Rmblast < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "e4179700df3ad81604cb6031a9d82e971d3fa88ac0c9b6d8f949af3b8be3edb8"
   end
 
-  unless OS.mac?
-    depends_on "patchelf" => :build
-    depends_on "bzip2"
-    depends_on "zlib"
-  end
-
   keg_only "rmblast conflicts with blast"
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
+  uses_from_macos "bzip2"
+  uses_from_macos "sqlite"
+  uses_from_macos "zlib"
+
+  patch do
+    url "https://www.repeatmasker.org/isb-2.11.0+-rmblast.patch.gz"
+    sha256 "0fc27781c2ea2f17645247e2f3775b5d18c56f0b62761a865347be745ea4f6be"
+  end
+
   def install
-    prefix.install Dir["*"]
-    unless OS.mac?
-      system "patchelf", bin/"rmblastn",
-        "--set-interpreter", HOMEBREW_PREFIX/"lib/ld.so",
-        "--set-rpath", HOMEBREW_PREFIX
+    cd "c++" do
+      cd "src/build-system" do
+        # Hack to fix weird nested autoconf scripts
+        mkdir "src/build-system"
+        system "autoreconf", "-fvi"
+        mv "src/build-system/config.h.in", "."
+      end
+      args = std_configure_args - %w[--disable-debug --disable-dependency-tracking]
+      args += %w[--without-debug --with-mt --without-krb5 --without-openssl
+                 --with-projects=scripts/projects/rmblastn/project.lst]
+      system "./configure", *args
+      system "make"
+      system "make", "install"
     end
   end
 
