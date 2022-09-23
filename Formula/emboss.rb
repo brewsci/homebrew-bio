@@ -11,8 +11,8 @@ class Emboss < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 sierra:       "57219a42bac24b44d5d1ae5f9eb4f24039f984f23235f3cbcd589980289131a4"
-    sha256 x86_64_linux: "dd11bf961d44c707a75be24535d8bac8e1fa2eaf6d983888e185d8723e6c798c"
+    sha256 big_sur:      "5009f9093ca395f5b905a5cc65a8173056f28bccba378cc1fcfdcdfc4458f4be"
+    sha256 x86_64_linux: "2fd2530f68175c115e478a262323bdba8871b9407873723af2c164067c096e99"
   end
 
   depends_on "autoconf" => :build
