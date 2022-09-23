@@ -18,7 +18,7 @@ class Ntlink < Formula
   depends_on "cmake" => :build
   depends_on "abyss"
   depends_on "btllib"
-  depends_on "python@3.8"
+  depends_on "python@3.10"
   depends_on "xz"
 
   uses_from_macos "libxml2"
