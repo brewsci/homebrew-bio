@@ -8,8 +8,8 @@ class Ale < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, sierra:       "78ac2d51e396bd5225c2887f7198074aba2f4de6be5d8f67e9d94f7bdd6981ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8d003ad08edfe031ce31d0305a901bcb3dcda4c8d3b7f6a31b4cd6c27a385587"
+    sha256 cellar: :any_skip_relocation, big_sur:      "fc74edfce72237bd489075d20a267f45a818e45a2db4123bf02db9351d060406"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "13876fb6d4410929cdcb5ee55945372898905c86ae01eccc4394507a8e67205b"
   end
 
   uses_from_macos "zlib"
