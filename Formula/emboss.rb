@@ -7,6 +7,7 @@ class Emboss < Formula
   mirror "https://science-annex.org/pub/emboss/EMBOSS-6.6.0.tar.gz"
   sha256 "7184a763d39ad96bb598bfd531628a34aa53e474db9e7cac4416c2a40ab10c6e"
   license "GPL-2.0"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -21,8 +22,8 @@ class Emboss < Formula
   depends_on "libharu"
   depends_on "libpng"
 
-  depends_on "mysql"      => :optional
-  depends_on "postgresql" => :optional
+  depends_on "mysql" => :optional
+  depends_on "postgresql@14" => :optional
 
   uses_from_macos "zlib"
 
