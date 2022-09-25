@@ -29,7 +29,7 @@ class Ntjoin < Formula
     xy = Language::Python.major_minor_version "python3"
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
     inreplace "requirements.txt", "python-igraph", "python-igraph==0.7.1.post6"
-    inreplace "bin/ntjoin_assemble.py", "/usr/bin/env python3", Formula["python@3.10"].bin/"python3.8"
+    inreplace "bin/ntjoin_assemble.py", "/usr/bin/env python3", Formula["python@3.10"].bin/"python3.10"
     system "pip3", "install", "--prefix=#{libexec}", "-r", "requirements.txt", "--no-binary=pysam"
     bin.install "ntJoin"
     libexec_src = Pathname.new("#{libexec}/bin/src")
