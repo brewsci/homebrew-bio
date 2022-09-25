@@ -11,8 +11,7 @@ class Iva < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, sierra:       "49a1baf28d5f8e89175dc01f08e3e6a9b8439e493ade3f58a162cc9561b3ced1"
-    sha256 cellar: :any, x86_64_linux: "eea163ae65cacbfca08005e99169d79ec7b641996b23751af0492176784576a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "74d66980f3f4d7ff31d7937fb84bb62d93eba219fbe6215bc123861bf5c05432"
   end
 
   depends_on "brewsci/bio/kmc"
