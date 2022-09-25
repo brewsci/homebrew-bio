@@ -1,15 +1,13 @@
 class Iva < Formula
+  include Language::Python::Virtualenv
+
   # cite Hunt_2015: "https://doi.org/10.1093/bioinformatics/btv120"
   desc "Iterative Virus Assembler"
   homepage "https://github.com/sanger-pathogens/iva"
-  url "https://github.com/sanger-pathogens/iva/archive/v1.0.9.tar.gz"
-  sha256 "91ba402d0feacc88b3e34e71b4f10e0552702887e6e416076e57f95f6aaf7fad"
-  license "GPL-3.0"
-
-  livecheck do
-    url :stable
-    strategy :github_latest
-  end
+  url "https://github.com/sanger-pathogens/iva/archive/refs/tags/v1.0.11.tar.gz"
+  sha256 "fc33e24926de84efc2eda9ad753e5f0facd191c7298e3c0dfe3016af25fb110f"
+  license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -17,52 +15,46 @@ class Iva < Formula
     sha256 cellar: :any, x86_64_linux: "eea163ae65cacbfca08005e99169d79ec7b641996b23751af0492176784576a6"
   end
 
-  depends_on "kmc"
-  depends_on "mummer"
+  depends_on "brewsci/bio/kmc"
+  depends_on "brewsci/bio/mummer"
+  depends_on "brewsci/bio/smalt"
+  depends_on "libdeflate"
   depends_on "numpy"
-  depends_on "python"
+  depends_on "python@3.10"
   depends_on "samtools"
-  depends_on "smalt"
 
   resource "cython" do
-    url "https://files.pythonhosted.org/packages/21/89/ca320e5b45d381ae0df74c4b5694f1471c1b2453c5eb4bac3449f5970481/Cython-0.28.5.tar.gz"
-    sha256 "b64575241f64f6ec005a4d4137339fb0ba5e156e826db2fdb5f458060d9979e0"
+    url "https://files.pythonhosted.org/packages/4c/76/1e41fbb365ad20b6efab2e61b0f4751518444c953b390f9b2d36cf97eea0/Cython-0.29.32.tar.gz"
+    sha256 "8733cf4758b79304f2a4e39ebfac5e92341bce47bcceb26c1254398b2f8c1af7"
   end
 
   resource "decorator" do
-    url "https://github.com/micheles/decorator/archive/4.3.1.tar.gz"
-    sha256 "c1aab27d3f44ce8d3cb8c8c034180b2053d0cea4a011d2a58b9f85129bc3c7b0"
+    url "https://files.pythonhosted.org/packages/66/0c/8d907af351aa16b42caae42f9d6aa37b900c67308052d10fdce809f8d952/decorator-5.1.1.tar.gz"
+    sha256 "637996211036b6385ef91435e4fae22989472f9d571faba8927ba8253acbc330"
   end
 
   resource "networkx" do
-    url "https://github.com/networkx/networkx/archive/networkx-2.1.tar.gz"
-    sha256 "46aab610cdf15e680d944cafbf926a1d638f0cd2f1336b0f978b768a37d037f4"
+    url "https://files.pythonhosted.org/packages/d9/c6/ad9dc9195c0e5d8879d2a28667aa45e087631576b40f9c954a086693a36d/networkx-2.8.6.tar.gz"
+    sha256 "bd2b7730300860cbd2dafe8e5af89ff5c9a65c3975b352799d87a6238b4301a6"
   end
 
   resource "pyfastaq" do
-    url "https://files.pythonhosted.org/packages/91/5e/cd2a8b4e3b601b89b9af2ecd706ffade96b6b2c89b2f8d50ab8a8bac3fed/pyfastaq-3.16.0.tar.gz"
-    sha256 "368f3f1752668283f5d1aac4ea80e9595a57dc92a7d4925d723407f862af0e4e"
+    url "https://files.pythonhosted.org/packages/28/9d/afbedb1994c9e9076d2bf87865ad74ed60a28cde651ce58952ac53534f28/pyfastaq-3.17.0.tar.gz"
+    sha256 "40c6dc0cea72c0ab91d10e5627a26dea1783b7e5e3edcfff8e1dc960bfd71cdc"
   end
 
   resource "pysam" do
-    url "https://github.com/pysam-developers/pysam/archive/v0.15.0.1.tar.gz"
-    sha256 "b169ffbe0efb39fd193779e5982da1de86e392dfe66c6bc49d79aa34fe58b46b"
+    url "https://files.pythonhosted.org/packages/a0/10/f6d705984838f8620ff597dd99d3904aea7727b4824bee22de8f44b4ebd4/pysam-0.19.1.tar.gz"
+    sha256 "dee403cbdf232170c1e11cc24c76e7dd748fc672ad38eb0414f3b9d569b1448f"
+  end
+
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/df/9e/d1a7217f69310c1db8fdf8ab396229f55a699ce34a203691794c5d1cad0c/packaging-21.3.tar.gz"
+    sha256 "dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb"
   end
 
   def install
-    version = Language::Python.major_minor_version "python3"
-    ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python#{version}/site-packages"
-    ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python#{version}/site-packages"
-
-    %w[cython pysam pyfastaq decorator networkx].each do |r|
-      resource(r).stage do
-        system "python3", *Language::Python.setup_install_args(libexec/"vendor")
-      end
-    end
-
-    system "python3", *Language::Python.setup_install_args(libexec)
-    bin.install Dir[libexec/"bin/*"]
-    bin.env_script_all_files(libexec/"bin", PYTHONPATH: ENV["PYTHONPATH"])
+    virtualenv_install_with_resources
   end
 
   test do
