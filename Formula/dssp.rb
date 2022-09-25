@@ -10,8 +10,7 @@ class Dssp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 catalina:     "35408932044ec98f856214e9d09b05c576f4af0aa281b6028c769ef24da5780d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d9402c5aa18fd3f754e03a4d862ac3271593fbad60875153d9db418f0b4b7e73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "07a24bf1799e10c07b891b1bb3d09cc85c85774710c16ad174491099397fbc13"
   end
 
   depends_on "boost" => :build
