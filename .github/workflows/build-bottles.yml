@@ -18,7 +18,7 @@ jobs:
       HOMEBREW_FORCE_VENDOR_RUBY: 1
     steps:
       - name: Activate Homebrew
-        if: runner.os == "Linux"
+        if: runner.os == 'Linux'
         run: eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
       - name: Set up Homebrew
