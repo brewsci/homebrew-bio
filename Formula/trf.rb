@@ -6,6 +6,12 @@ class Trf < Formula
   sha256 "516015b625473350c3d1c9b83cac86baea620c8418498ab64c0a67029c3fb28a"
   license "AGPL-3.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, big_sur:      "de05c4192f049253aa589c89ded482390b6dcd151b6ccf3e26041079bd9f6c88"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "75eb2ebae1c474538e8103cd0facaccc15cd080456df480a8c03ad08d1fec758"
+  end
+
   def install
     mkdir "build" do
       system "../configure", *std_configure_args
