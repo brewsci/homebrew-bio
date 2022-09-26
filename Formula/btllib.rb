@@ -1,18 +1,15 @@
 class Btllib < Formula
   desc "Bioinformatics Technology Lab common code library in C++ with Python wrappers"
   homepage "https://bcgsc.github.io/btllib/"
-  url "https://github.com/bcgsc/btllib/releases/download/v1.4.4/btllib-1.4.4.tar.gz"
-  sha256 "40ff89060210d9640b3d7b9b26725e20841ba7bc6517b96767114953a13d074f"
+  url "https://github.com/bcgsc/btllib/releases/download/v1.4.8/btllib-1.4.8.tar.gz"
+  sha256 "a0aed3ab73baffc01102f685a9376e2eb68c978a2f6ddcd1697d1aa65feffcbe"
   license "GPL-3.0-or-later"
 
-  # Build dependencies
   depends_on "cmake" => :build
   depends_on "libomp" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "python@3.8" => :build
-
-  # Runtime dependencies
+  depends_on "python@3.10" => :build
   depends_on "bzip2"
   depends_on "gnu-tar"
   depends_on "gzip"
@@ -22,6 +19,10 @@ class Btllib < Formula
   depends_on "wget"
   depends_on "xz"
   depends_on "zip"
+
+  def python3
+    "python3.10"
+  end
 
   def install
     system "./compile"
@@ -34,12 +35,12 @@ class Btllib < Formula
 
     rm_rf Dir["#{lib}/btllib/python/btllib/__pycache__"]
     cd "#{lib}/btllib/python" do
-      system "python3", *Language::Python.setup_install_args(prefix)
+      system python3, *Language::Python.setup_install_args(prefix)
     end
   end
 
   test do
     system "indexlr", "--help"
-    system "python3", "-c", "'import btllib'"
+    system python3, "-c", "'import btllib'"
   end
 end
