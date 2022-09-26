@@ -1,5 +1,5 @@
 class Ntlink < Formula
-  include Language::Python::Shebang
+  include Language::Python::Virtualenv
 
   # cite Coombe_2021: "https://doi.org/10.1186/s12859-021-04451-7"
   desc "Assembly scaffolder using long reads and minimizers"
