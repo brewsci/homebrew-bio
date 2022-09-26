@@ -1,14 +1,9 @@
 class Rmblast < Formula
   desc "RepeatMasker compatible version of the standard NCBI BLAST suite"
-  homepage "http://www.repeatmasker.org/RMBlast.html"
-  if OS.mac?
-    url "https://ftp.ncbi.nlm.nih.gov/blast/executables/rmblast/LATEST/ncbi-rmblastn-2.2.28-universal-macosx.tar.gz"
-    sha256 "f94e91487b752eb24386c3571250a3394ec7a00e7a5370dd103f574c721b9c81"
-  else
-    url "https://ftp.ncbi.nlm.nih.gov/blast/executables/rmblast/LATEST/ncbi-rmblastn-2.2.28-x64-linux.tar.gz"
-    sha256 "e6503ad25a6760d2d2931f17efec80ba879877b4042a1d10a60820ec21a61cfe"
-  end
-  revision 1
+  homepage "https://www.repeatmasker.org/RMBlast.html"
+  url "https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.11.0/ncbi-blast-2.11.0+-src.tar.gz"
+  version "2.11.0"
+  sha256 "d88e1858ae7ce553545a795a2120e657a799a6d334f2a07ef0330cc3e74e1954"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -16,18 +11,34 @@ class Rmblast < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "e4179700df3ad81604cb6031a9d82e971d3fa88ac0c9b6d8f949af3b8be3edb8"
   end
 
-  unless OS.mac?
-    depends_on "patchelf" => :build
-    depends_on "bzip2"
-    depends_on "zlib"
+  keg_only "rmblast conflicts with blast"
+
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
+  uses_from_macos "bzip2"
+  uses_from_macos "sqlite"
+  uses_from_macos "zlib"
+
+  patch do
+    url "https://www.repeatmasker.org/isb-2.11.0+-rmblast.patch.gz"
+    sha256 "0fc27781c2ea2f17645247e2f3775b5d18c56f0b62761a865347be745ea4f6be"
   end
 
   def install
-    prefix.install Dir["*"]
-    unless OS.mac?
-      system "patchelf", bin/"rmblastn",
-        "--set-interpreter", HOMEBREW_PREFIX/"lib/ld.so",
-        "--set-rpath", HOMEBREW_PREFIX
+    cd "c++" do
+      cd "src/build-system" do
+        # Hack to fix weird nested autoconf scripts
+        mkdir "src/build-system"
+        system "autoreconf", "-fvi"
+        mv "src/build-system/config.h.in", "."
+      end
+      args = std_configure_args - %w[--disable-debug --disable-dependency-tracking]
+      args += %w[--without-debug --with-mt --without-krb5 --without-openssl
+                 --with-projects=scripts/projects/rmblastn/project.lst]
+      system "./configure", *args
+      system "make"
+      system "make", "install"
     end
   end
 
