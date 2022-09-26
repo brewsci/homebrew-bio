@@ -8,8 +8,8 @@ class Kmc < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, sierra:       "357369318d5619a941285eca62a1b260ae2d519c4fe27f326b26277d70d97451"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a14014ca6943cd93069815a57e40ae2147d01c32e10109b8009e5198ef0aba32"
+    sha256 cellar: :any,                 big_sur:      "79dc862a0ee19b5617e021b2f74b3168144bd7951c99eaeb524994b65fee771d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cb51b8cbbedfba92900e56910d4b8ecd6754891dcdc1a7a0d47d6335ace73076"
   end
 
   depends_on "gcc"
