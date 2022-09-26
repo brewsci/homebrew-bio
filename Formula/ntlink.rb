@@ -18,26 +18,20 @@ class Ntlink < Formula
   depends_on "cmake" => :build
   depends_on "abyss"
   depends_on "btllib"
+  depends_on "numpy"
   depends_on "python@3.10"
   depends_on "xz"
 
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
 
-  def install
-    ENV.prepend_path "PATH", libexec/"bin"
-    xy = Language::Python.major_minor_version "python3"
-    ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
-    inreplace "requirements.txt", "btllib", ""
+  resource "python-igraph" do
+    url "https://files.pythonhosted.org/packages/a3/74/dcd4c842370491f7db2c3152c6cc7febf296b01e8b2aedc45506f8486c04/igraph-0.10.1.tar.gz"
+    sha256 "65165883cc506ec7c6d8b68e620954810935ef033138aa3a92cba6089339cae6"
+  end
 
-    system "pip3", "install", "--prefix=#{libexec}", "-r", "requirements.txt"
-    bin.install "ntLink"
-    bin.install "ntLink_rounds"
-    libexec_bin = Pathname.new("#{libexec}/bin")
-    libexec_bin.install Dir["bin/*"]
-    libexec_bin.find { |f| rewrite_shebang detected_python_shebang, f }
-    bin.env_script_all_files libexec, PYTHONPATH: Dir[libexec/"lib/python*/site-packages"].first
-    doc.install "README.md"
+  def install
+    virtualenv_install_with_resources
   end
 
   test do
