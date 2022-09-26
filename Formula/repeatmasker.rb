@@ -82,8 +82,14 @@ class Repeatmasker < Formula
   end
 
   test do
-    (testpath/"test.fa").write ">seq\nGGGCTAGATTAGCACCACATACATCGCTCA"
+    (testpath/"test.fa").write <<~EOFASTA
+      >Alu
+      GCCGGGCGCGGTGGCGCGTGCCTGTAGTCCCAGCTACTCGGGAGGCTGAGG
+      CTGGAGGATCGCTTGAGTCCAGGAGTTCTGGGCTGTAGTGCGCTATGCCGA
+      TCGGAATAGCCACTGCACTCCAGCCTGGGCAACATAGCGAGACCCCGTCTC
+    EOFASTA
+
     system bin/"RepeatMasker", "test.fa"
-    assert_predicate testpath/"test.masked", :exist?
+    assert_match "NNNNNNNNNNNNNNNNNNNN", (testpath/"test.masked").read
   end
 end
