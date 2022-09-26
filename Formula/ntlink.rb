@@ -30,8 +30,18 @@ class Ntlink < Formula
     sha256 "65165883cc506ec7c6d8b68e620954810935ef033138aa3a92cba6089339cae6"
   end
 
+  def python3
+    "python3.10"
+  end
+
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, python3)
+    venv.pip_install resources
+    venv.pip_install buildpath
+    (libexec/"bin").install %w[ntLink ntLink_rounds]
+    %w[ntLink ntLink_rounds].each do |f|
+      (bin/f).write_env_script libexec/"bin"/f, PYTHONPATH: libexec/"lib"/python3/"site-packages"
+    end
   end
 
   test do
