@@ -18,7 +18,9 @@ jobs:
         with:
           fetch-depth: 100
       - name: Update Homebrew
-        run: brew update
+        run: |
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          brew update
       - name: Upload bottles
         shell: bash
         run: |
