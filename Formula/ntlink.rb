@@ -11,8 +11,7 @@ class Ntlink < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "fb0bcfbd83bde98d3f5fb4f8f770694a8571dbba7f99c16fa40c7c3767400c09"
-    sha256                               x86_64_linux: "e46685a82eba43812a8b6e79b175466f0da1dceea8d9eec7476ed3c92cfc766f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "78167d0890a14c3c107f049d4b568ca4a2a2944914a21efb03948b3a81e24b07"
   end
 
   depends_on "cmake" => :build
