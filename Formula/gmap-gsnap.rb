@@ -2,8 +2,14 @@ class GmapGsnap < Formula
   # cite Wu_2010: "https://doi.org/10.1093/bioinformatics/btq057"
   desc "Genomic Mapping & Alignment Program for RNA/EST/Short-read sequences"
   homepage "http://research-pub.gene.com/gmap/"
-  url "http://research-pub.gene.com/gmap/src/gmap-gsnap-2019-09-12.tar.gz"
-  sha256 "1bf242eef2ad0ab0280c41fc28b44a5107e90bcba64b37cf1579e1793e892505"
+  url "http://research-pub.gene.com/gmap/src/gmap-gsnap-2023-02-17.tar.gz"
+  sha256 "d54abb6bc59da46823f5a1a9d94872a6b90468699112a6f375ddc7b91340db06"
+
+  livecheck do
+    url :homepage
+    strategy :page_match
+    regex(/href=.*?gmap-gsnap-(\d\d\d\d-\d\d-\d\d)\.t/i)
+  end
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -17,8 +23,7 @@ class GmapGsnap < Formula
   uses_from_macos "zlib"
 
   def install
-    # homebrew currently supports SSE4.2 and don't want to force AVX-512
-    system "./configure", "--prefix=#{prefix}", "--with-simd-level=sse42"
+    system "./configure", "--prefix=#{prefix}"
     system "make"
     ENV.deparallelize
     system "make", "check"
@@ -37,6 +42,7 @@ class GmapGsnap < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/gmap --version 2>&1")
     assert_match version.to_s, shell_output("#{bin}/gsnap --version 2>&1")
   end
 end
