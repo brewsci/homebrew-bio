@@ -90,6 +90,6 @@ class Repeatmasker < Formula
     EOFASTA
 
     system bin/"RepeatMasker", "test.fa"
-    assert_match "NNNNNNNNNNNNNNNNNNNN", (testpath/"test.masked").read
+    assert_match "NNNNNNNNNNNNNNNNNNNN", (testpath/"test.fa.masked").read
   end
 end
