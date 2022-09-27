@@ -73,8 +73,8 @@ class Repeatmasker < Formula
 
   def caveats
     <<~EOS
-      RepeatMasker is installed with a minimal repeat library by default. To
-      download the complete libraries, see the instructions in the INSTALL file:
+      RepeatMasker was installed with a minimal repeat library. To download
+      the complete libraries, follow the instructions here:
         #{libexec}/INSTALL
       The default aligner is RMBlast. Change this by running:
         cd #{libexec} && ./configure
