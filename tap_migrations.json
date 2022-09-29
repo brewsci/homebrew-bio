@@ -9,6 +9,7 @@
   "mrbayes": "homebrew/core",
   "pymol": "homebrew/core",
   "raxml-ng": "homebrew/core",
+  "sambamba": "homebrew/core",
   "seqkit": "homebrew/core",
   "vsearch": "homebrew/core"
 }
