@@ -10,7 +10,8 @@ class Dssp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "07a24bf1799e10c07b891b1bb3d09cc85c85774710c16ad174491099397fbc13"
+    sha256 big_sur:      "d8a65bc59e75ee3d3dc5a93ff3340bfbab41bc67a2807f5740b64094cdbcb8d4"
+    sha256 x86_64_linux: "672a1047263ff4d0e014a857dff17698138d3e5fc77c2bdc865c77ea1e90a1f0"
   end
 
   depends_on "cmake" => :build
