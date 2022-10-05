@@ -3,8 +3,8 @@ class Dssp < Formula
   # cite Kabsch_1983: "https://doi.org/10.1002/bip.360221211"
   desc "Assign secondary structure to proteins"
   homepage "https://github.com/PDB-REDO/dssp"
-  url "https://github.com/PDB-REDO/dssp/archive/refs/tags/v4.0.3.tar.gz"
-  sha256 "1be8a7c4c69a81b34dfacff98499c6a4184f60e1d4f38fe472d37bab57090609"
+  url "https://github.com/PDB-REDO/dssp/archive/refs/tags/v4.0.5.tar.gz"
+  sha256 "759f8fd32c57dfc7c3eed5535d3bc04db13f7de1a5deda8862cebfafcbca84b0"
   license "BSD-2-Clause"
   head "https://github.com/PDB-REDO/dssp.git", branch: "trunk"
 
@@ -20,8 +20,8 @@ class Dssp < Formula
   uses_from_macos "zlib"
 
   resource "libcifpp" do
-    url "https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v2.0.4.tar.gz"
-    sha256 "e31ad85cc6ab1add7aee17be23babd694cbb587d4c0804008541aec72060fd36"
+    url "https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v4.2.2.tar.gz"
+    sha256 "458050db52416866033b5557939bc9221bce84f9ffe95cfe1680548db9b2ba39"
   end
 
   resource "testdata" do
@@ -31,13 +31,13 @@ class Dssp < Formula
 
   def install
     resource("libcifpp").stage do
-      system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: buildpath/"libcifpp")
+      # libcifpp should be installed in 'prefix' directory since the path of dic files are always required.
+      system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: prefix/"libcifpp")
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
-      pkgshare.install Dir[buildpath/"libcifpp/share/libcifpp/*.dic"]
     end
 
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-Dcifpp_DIR=#{buildpath/"libcifpp/lib/cmake/cifpp"}"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-Dcifpp_DIR=#{prefix/"libcifpp/lib/cmake/cifpp"}"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
