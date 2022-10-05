@@ -13,8 +13,8 @@ class Dssp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "07a24bf1799e10c07b891b1bb3d09cc85c85774710c16ad174491099397fbc13"
   end
 
-  depends_on "boost" => :build
   depends_on "cmake" => :build
+  depends_on "boost"
   depends_on "icu4c"
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
