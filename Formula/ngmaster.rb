@@ -15,10 +15,13 @@ class Ngmaster < Formula
   depends_on "numpy"
   depends_on "python@3.10"
 
+  def python3
+    "python3.10"
+  end
+
   def install
-    xy = Language::Python.major_minor_version "python3"
-    ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
-    system "python3", "setup.py", "install", "--prefix=#{libexec}"
+    ENV.prepend_create_path "PYTHONPATH", libexec/"lib/#{python3}/site-packages"
+    system python3, "setup.py", "install", "--prefix=#{libexec}"
     (bin/"ngmaster").write_env_script libexec/"bin/ngmaster", PYTHONPATH: ENV["PYTHONPATH"]
   end
 

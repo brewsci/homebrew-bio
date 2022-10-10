@@ -49,22 +49,25 @@ class Matplotlib < Formula
     sha256 "30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259"
   end
 
+  def python3
+    "python3.10"
+  end
+
   def install
-    system Formula["python@3.10"].opt_bin/"python3", *Language::Python.setup_install_args(prefix)
+    system Formula[python3].opt_bin/"python3", *Language::Python.setup_install_args(prefix)
     venv = virtualenv_create(libexec, "python3")
     venv.pip_install "wheel"
 
-    xy = Language::Python.major_minor_version "python3"
-    site_packages = libexec/"lib/python#{xy}/site-packages"
+    site_packages = libexec/"lib/#{python3}/site-packages"
     ENV.prepend_create_path "PYTHONPATH", site_packages
     venv.pip_install resources
-    (lib/"python#{xy}/site-packages/homebrew-matplotlib.pth").write "#{site_packages}\n"
+    (lib/"#{python3}/site-packages/homebrew-matplotlib.pth").write "#{site_packages}\n"
 
     venv.pip_install_and_link buildpath
   end
 
   test do
     ENV["PYTHONDONTWRITEBYTECODE"] = "1"
-    system "python3", "-c", "import matplotlib"
+    system python3, "-c", "import matplotlib"
   end
 end

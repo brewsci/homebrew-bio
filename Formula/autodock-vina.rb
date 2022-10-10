@@ -20,9 +20,12 @@ class AutodockVina < Formula
   depends_on "boost"
   depends_on "python@3.10"
 
+  def python3
+    "python3.10"
+  end
+
   def install
-    xy = Language::Python.major_minor_version Formula["python@3.10"].opt_bin/"python3"
-    ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
+    ENV.prepend_create_path "PYTHONPATH", libexec/"lib/#{python3}/site-packages"
     binaries = ["vina", "vina_split"]
     if OS.mac?
       cd "build/mac/release" do

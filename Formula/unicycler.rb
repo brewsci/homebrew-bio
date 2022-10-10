@@ -22,8 +22,12 @@ class Unicycler < Formula
   depends_on "samtools"
   depends_on "spades"
 
+  def python3
+    "python3.10"
+  end
+
   def install
-    system "python3", "setup.py", "install", "--prefix=#{prefix}"
+    system python3, "setup.py", "install", "--prefix=#{prefix}"
   end
 
   test do

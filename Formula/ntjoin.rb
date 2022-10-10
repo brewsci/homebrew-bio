@@ -23,13 +23,16 @@ class Ntjoin < Formula
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
 
+  def python3
+    "python3.10"
+  end
+
   def install
     system "make", "-C", "src"
     ENV.prepend_path "PATH", libexec/"bin"
-    xy = Language::Python.major_minor_version "python3"
-    ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
+    ENV.prepend_path "PYTHONPATH", libexec/"lib/#{python3}/site-packages"
     inreplace "requirements.txt", "python-igraph", "python-igraph==0.7.1.post6"
-    inreplace "bin/ntjoin_assemble.py", "/usr/bin/env python3", Formula["python@3.10"].bin/"python3.10"
+    inreplace "bin/ntjoin_assemble.py", "/usr/bin/env python3", Formula[python3].bin/"python3"
     system "pip3", "install", "--prefix=#{libexec}", "-r", "requirements.txt", "--no-binary=pysam"
     bin.install "ntJoin"
     libexec_src = Pathname.new("#{libexec}/bin/src")

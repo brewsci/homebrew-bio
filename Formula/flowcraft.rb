@@ -16,9 +16,12 @@ class Flowcraft < Formula
   depends_on "brewsci/bio/nextflow"
   depends_on "python@3.10"
 
+  def python3
+    "python3.10"
+  end
+
   def install
-    xy = Language::Python.major_minor_version "python3"
-    ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
+    ENV.prepend_create_path "PYTHONPATH", libexec/"lib/#{python3}/site-packages"
     system "pip3", "install", "--prefix=#{libexec}", "."
     (bin/"flowcraft").write_env_script libexec/"bin/flowcraft", PYTHONPATH: ENV["PYTHONPATH"]
   end

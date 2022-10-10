@@ -36,13 +36,13 @@ class Gatk < Formula
 
   def caveats
     <<~EOS
-      This brew installation does not include the necessary python dependencies to run certain gatk tools.
+      This brew installation does not include the necessary Python dependencies to run certain gatk tools.
       Similarly, it does not install the necessary version of R and its packages for certain plotting functions to work.
 
       See the GATK readme for detailed installation instructions.
          https://github.com/broadinstitute/gatk
 
-      The recommended way of running the tools with complex python dependencies is to use the pre-built docker images instead of attempting to install them locally.
+      The recommended way of running the tools with complex Python dependencies is to use the pre-built docker images instead of attempting to install them locally.
       Gatk dockers are available on docker hub:
          https://hub.docker.com/r/broadinstitute/gatk/tags/
     EOS

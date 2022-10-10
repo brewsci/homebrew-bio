@@ -20,13 +20,16 @@ class Tigmint < Formula
   depends_on "python@3.10"
   depends_on "samtools"
 
+  def python3
+    "python3.10"
+  end
+
   def install
     ENV.prepend_path "PATH", libexec/"bin"
-    xy = Language::Python.major_minor_version "python3"
-    ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
-    inreplace "bin/tigmint-cut", "/usr/bin/env python3", Formula["python@3.10"].bin/"python3.10"
-    inreplace "bin/tigmint_molecule.py", "/usr/bin/env python3", Formula["python@3.10"].bin/"python3.10"
-    inreplace "bin/tigmint_molecule_paf.py", "/usr/bin/env python3", Formula["python@3.10"].bin/"python3.10"
+    ENV.prepend_path "PYTHONPATH", libexec/"lib/#{python3}/site-packages"
+    inreplace "bin/tigmint-cut", "/usr/bin/env python3", Formula[python3].bin/"python3"
+    inreplace "bin/tigmint_molecule.py", "/usr/bin/env python3", Formula[python3].bin/"python3"
+    inreplace "bin/tigmint_molecule_paf.py", "/usr/bin/env python3", Formula[python3].bin/"python3"
     system "pip3", "install", "--prefix=#{libexec}", "-r", "requirements.txt", "--no-binary=pysam"
     bin.install Dir["bin/*"]
     system "make", "-C", "src"
