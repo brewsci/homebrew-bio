@@ -7,8 +7,8 @@ class Bam2fastx < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, sierra:       "5e1053af2b9f378b5176e16bf65387d5e0ddfbec6468a5e21640f39b501bdf16"
-    sha256 cellar: :any, x86_64_linux: "2990674c01b517325aeab3d132436bd5bba1bee063112117206ff0ac3b50eb29"
+    sha256 cellar: :any, big_sur:      "9a1d282d835b6e909347af9371ffda3b226e9fd2a3e7597776fd5d27ceebf767"
+    sha256               x86_64_linux: "14cb097cc61e1a8f74be2ab82eee373f0dc08df4b66766df2cd08a37dd9f31f6"
   end
 
   depends_on "boost" => :build
