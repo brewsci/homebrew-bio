@@ -1,8 +1,8 @@
 class Libbigwig < Formula
   desc "C library for processing the big UCSC fomats"
   homepage "https://github.com/dpryan79/libBigWig"
-  url "https://github.com/dpryan79/libBigWig/archive/0.4.4.tar.gz"
-  sha256 "43a2298b2ebadc48103447a3bb4426df1b38d1bec5fa564e50ed2f00cc060478"
+  url "https://github.com/dpryan79/libBigWig/archive/refs/tags/0.4.7.tar.gz"
+  sha256 "8e057797011d93fa00e756600898af4fe6ca2d48959236efc9f296abe94916d9"
   license "MIT"
 
   bottle do
@@ -11,17 +11,26 @@ class Libbigwig < Formula
     sha256 cellar: :any, x86_64_linux: "f85dc5dd0b892d1bcaeb4bec2623085f3a15e73adc115aa2fac119889d42131e"
   end
 
+  depends_on "cmake" => :build
+  depends_on "pkg-config" => :build
   uses_from_macos "curl"
   uses_from_macos "zlib"
 
   def install
-    curl = Formula["curl"]
-    system "make", "install", "prefix=#{prefix}", "INCLUDES=-I#{curl.opt_include}", "LDLIBS=-L#{curl.opt_lib}"
+    # Static build
+    system "cmake", "-S", ".", "-B", "build_static", *std_cmake_args
+    system "cmake", "--build", "build_static"
+    system "cmake", "--install", "build_static"
+
+    # Shared build
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DBUILD_SHARED_LIBS=ON"
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
     (testpath/"libbigwig.c").write <<~EOS
-      #include "bigWig.h"
+      #include "libbigwig/bigWig.h"
       #include <stdio.h>
       #include <inttypes.h>
       #include <stdlib.h>
