@@ -3,17 +3,19 @@ class Gatk < Formula
 
   # cite McKenna_2010: "https://doi.org/10.1101/gr.107524.110"
   desc "Genome Analysis Toolkit: Variant Discovery in High-Throughput Sequencing"
-  homepage "https://gatk.broadinstitute.org"
+  homepage "https://software.broadinstitute.org/gatk"
   url "https://github.com/broadinstitute/gatk/releases/download/4.3.0.0/gatk-4.3.0.0.zip"
   sha256 "e2c27229b34c3e22445964adf00639a0909887bbfcc040f6910079177bc6e2dd"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "e55337c2d7d735c6546bd03873dfc07bac3c3540c492315b7c20d22a2244c752"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e4b4117555b904663ca90c00945cc29f7767742bb6c3a37078c0f077db52261d"
   end
 
   depends_on "openjdk"
-  depends_on "python@3.10"
+  depends_on "python@3.9"
 
   resource "count_reads.bam" do
     url "https://github.com/broadinstitute/gatk/blob/626c88732c02b0fd5f395db20c91bf2784ec54b9/src/test/resources/org/broadinstitute/hellbender/tools/count_reads.bam?raw=true"
