@@ -3,7 +3,7 @@ class Gatk < Formula
 
   # cite McKenna_2010: "https://doi.org/10.1101/gr.107524.110"
   desc "Genome Analysis Toolkit: Variant Discovery in High-Throughput Sequencing"
-  homepage "https://gatk.broadinstitute.org/"
+  homepage "https://github.com/broadinstitute/gatk"
   url "https://github.com/broadinstitute/gatk/releases/download/4.3.0.0/gatk-4.3.0.0.zip"
   sha256 "e2c27229b34c3e22445964adf00639a0909887bbfcc040f6910079177bc6e2dd"
   license "BSD-3-Clause"
