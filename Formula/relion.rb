@@ -20,7 +20,7 @@ class Relion < Formula
   end
 
   def install
-    args = *std_cmake_args << "-DGUI=NO" << "-DFETCH_TORCH_MODELS=OFF"
+    args = *std_cmake_args << "-DFETCH_TORCH_MODELS=OFF"
     if OS.mac?
       libomp = Formula["libomp"]
       args << "-DOpenMP_C_FLAGS=-Xpreprocessor\ -fopenmp\ -Wno-unused-command-line-argument\ -I#{libomp.opt_include}"
