@@ -15,8 +15,8 @@ class Treepl < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, catalina:     "e62bff49272a105c8b9d0157f4b59953821c5d8556eb6ed231d4860c08554565"
-    sha256 cellar: :any, x86_64_linux: "78fddd7315e9747af2b3b9510a03154e6a0008dbd90df60e6d3d1ebf36dcb8ba"
+    sha256 cellar: :any,                 big_sur:      "fd7d35fb25cc1a9c3fdebd7dba0cf265b5dce2922dc940dd9928bfd527e2c25a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0203b30c984251057539f869c0bba826ad3519ff4b1e16726ceb5172f302cf44"
   end
 
   depends_on "nlopt"
