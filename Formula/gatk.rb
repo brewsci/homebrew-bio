@@ -17,7 +17,7 @@ class Gatk < Formula
   depends_on "openjdk"
   depends_on "python@3.10"
 
-  resource "count_reads.bam" do
+  resource "homebrew-count_reads.bam" do
     url "https://github.com/broadinstitute/gatk/blob/626c88732c02b0fd5f395db20c91bf2784ec54b9/src/test/resources/org/broadinstitute/hellbender/tools/count_reads.bam?raw=true"
     sha256 "656e36331a39a3641565ef7810a529ac51270b4132007d7b94e6efff99133a2c"
   end
@@ -49,7 +49,7 @@ class Gatk < Formula
   end
   test do
     assert_match "Usage", shell_output("#{bin}/gatk --help 2>&1")
-    testpath.install resource("count_reads.bam")
+    testpath.install resource("homebrew-count_reads.bam")
     assert_equal "Tool returned:\n8",
                   shell_output("#{bin}/gatk CountReads -I count_reads.bam --tmp-dir #{testpath}").strip
   end
