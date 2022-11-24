@@ -32,7 +32,7 @@ class Relion < Formula
 
     system "cmake", ".", *args
     system "make", "install"
-    chmod 0755, bin.glob("*")
+    chmod 0755, bin/"relion_class_ranker.py"
   end
 
   test do
