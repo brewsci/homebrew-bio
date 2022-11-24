@@ -32,7 +32,7 @@ class Relion < Formula
 
     system "cmake", ".", *args
     system "make", "install"
-    
+
     # Add Python shebang
     pyfile = bin/"relion_class_ranker.py"
     pylines = pyfile.read.lines
