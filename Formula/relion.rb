@@ -23,9 +23,9 @@ class Relion < Formula
     args = *std_cmake_args << "-DFETCH_TORCH_MODELS=OFF"
     if OS.mac?
       libomp = Formula["libomp"]
-      args << "-DOpenMP_C_FLAGS=-Xpreprocessor\ -fopenmp\ -Wno-unused-command-line-argument\ -I#{libomp.opt_include}"
+      args << "-DOpenMP_C_FLAGS=-Xpreprocessor\ -fopenmp\ -I#{libomp.opt_include}"
       args << "-DOpenMP_C_LIB_NAMES=omp"
-      args << "-DOpenMP_CXX_FLAGS=-Xpreprocessor\ -fopenmp\ -Wno-unused-command-line-argument\ -I#{libomp.opt_include}"
+      args << "-DOpenMP_CXX_FLAGS=-Xpreprocessor\ -fopenmp\ -I#{libomp.opt_include}"
       args << "-DOpenMP_CXX_LIB_NAMES=omp"
       args << "-DOpenMP_omp_LIBRARY=#{libomp.opt_lib}/libomp.a"
     end
@@ -36,6 +36,6 @@ class Relion < Formula
 
   test do
     assert_match "Done creating mask!", shell_output("#{bin}/relion_mask_create --denovo --box_size 10 2>&1").strip
-    assert_match "mask.mrc : (x,y,z,n)= 10 x 10 x 10 x 1", shell_output("#{bin}/relion_image_handler --stats --i mask.mrc").strip
+    assert_match "(x,y,z,n)= 10 x 10 x 10 x 1", shell_output("#{bin}/relion_image_handler --stats --i mask.mrc").strip
   end
 end
