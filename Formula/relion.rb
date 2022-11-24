@@ -32,6 +32,7 @@ class Relion < Formula
 
     system "cmake", ".", *args
     system "make", "install"
+    chmod 0755, bin.glob("*")
   end
 
   test do
