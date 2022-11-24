@@ -32,7 +32,13 @@ class Relion < Formula
 
     system "cmake", ".", *args
     system "make", "install"
-    chmod 0755, bin/"relion_class_ranker.py"
+    
+    # Add Python shebang
+    pyfile = bin/"relion_class_ranker.py"
+    pylines = pyfile.read.lines
+    pylines.unshift "#!/usr/bin/env python3\n"
+    pyfile.atomic_write pylines.join
+    chmod 0755, pyfile
   end
 
   test do
