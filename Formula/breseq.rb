@@ -8,8 +8,8 @@ class Breseq < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "332352bb4d28e1074f4421aa68262cbc378c34e320dd5d6415c93fc91d54e126"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "bc033dd9a09e76e1bdacbdb1cc357e755cece4063226d254e5b601297dc02287"
+    sha256 cellar: :any_skip_relocation, big_sur:      "ddae4324ddf2115371a2b7a0ebd8fa58601a866d564219e380a43227a72f8fcb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "223054d348e87ce188f24b173c22b3dd51bc5dc247269537838a95375e988a0f"
   end
 
   depends_on "autoconf" => :build
