@@ -39,8 +39,8 @@ class Raptor < Formula
   end
 
   test do
-    system "raptor", "--version"
-    system "raptor", "build", "--help"
-    system "raptor", "search", "--help"
+    system "#{bin}/raptor", "--version"
+    system "#{bin}/raptor", "build", "--help"
+    system "#{bin}/raptor", "search", "--help"
   end
 end
