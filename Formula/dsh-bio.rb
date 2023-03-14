@@ -1,8 +1,8 @@
 class DshBio < Formula
   desc "Tools for BED, FASTA, FASTQ, GAF, GFA1/2, GFF3, PAF, SAM, and VCF files"
   homepage "https://github.com/heuermh/dishevelled-bio"
-  url "https://search.maven.org/remotecontent?filepath=org/dishevelled/dsh-bio-tools/2.1/dsh-bio-tools-2.1-bin.tar.gz"
-  sha256 "cbe0bcf9f37fb61e614de5339d3bb8c7183f87c4afcc9a59f11d369a15a2ca12"
+  url "https://search.maven.org/remotecontent?filepath=org/dishevelled/dsh-bio-tools/2.2/dsh-bio-tools-2.2-bin.tar.gz"
+  sha256 "059a5d11f266676027034fa4db7df27c6196223c83355cd16d80c98ce9bf7eab"
   license "LGPL-3.0-or-later"
 
   bottle do
