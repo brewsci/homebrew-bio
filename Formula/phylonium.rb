@@ -39,7 +39,7 @@ class Phylonium < Formula
     assert_match version.to_s, shell_output("#{bin}/phylonium --version 2>&1")
 
     resource("simf").stage do
-      system "#{ENV.cxx}", "-std=c++14", "-Wall", "-Wextra", "simf.cxx", "-o", "simf"
+      system ENV.cxx.to_s, "-std=c++14", "-Wall", "-Wextra", "simf.cxx", "-o", "simf"
       system "./simf", "-s", "1729", "-l", "100000", "-p", "simple"
       system "#{bin}/phylonium simple0.fasta simple1.fasta > /dev/null"
       rm "simple0.fasta"
