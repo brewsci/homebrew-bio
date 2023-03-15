@@ -2,8 +2,8 @@ class Phylonium < Formula
   # cite Kl_tzl_2019: "https://doi.org/10.1093/bioinformatics/btz903"
   desc "Fast and Accurate Estimation of Evolutionary Distances"
   homepage "https://github.com/EvolBioInf/phylonium"
-  url "https://github.com/EvolBioInf/phylonium/archive/refs/tags/v1.5.tar.gz"
-  sha256 "5cfab29b8753f5b38e6363fa1ba387578863e3bbb8fd1a9722abdc32d1c90686"
+  url "https://github.com/EvolBioInf/phylonium/archive/refs/tags/v1.6.tar.gz"
+  sha256 "5d5279090fc9efd81710477c8e57a162d257d4104ba6eb86718a21a1da48dc3e"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -39,7 +39,7 @@ class Phylonium < Formula
     assert_match version.to_s, shell_output("#{bin}/phylonium --version 2>&1")
 
     resource("simf").stage do
-      system "c++", "-std=c++14", "-Wall", "-Wextra", "simf.cxx", "-o", "simf"
+      system ENV.cxx, "-std=c++14", "-Wall", "-Wextra", "simf.cxx", "-o", "simf"
       system "./simf", "-s", "1729", "-l", "100000", "-p", "simple"
       system "#{bin}/phylonium simple0.fasta simple1.fasta > /dev/null"
       rm "simple0.fasta"
