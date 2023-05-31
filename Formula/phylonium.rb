@@ -12,7 +12,7 @@ class Phylonium < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "c95ab5543a4e21dd8b1a77fc5a94303737f478ea4030e52030727dcc79e6870a"
   end
 
-  depends_on "autoconf" => :build
+  depends_on "autoconf" => [:build, :test]
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
@@ -39,7 +39,7 @@ class Phylonium < Formula
     assert_match version.to_s, shell_output("#{bin}/phylonium --version 2>&1")
 
     resource("simf").stage do
-      system "c++", "-std=c++14", "-Wall", "-Wextra", "simf.cxx", "-o", "simf"
+      system ENV.cxx.to_s, "-std=c++14", "-Wall", "-Wextra", "simf.cxx", "-o", "simf"
       system "./simf", "-s", "1729", "-l", "100000", "-p", "simple"
       system "#{bin}/phylonium simple0.fasta simple1.fasta > /dev/null"
       rm "simple0.fasta"

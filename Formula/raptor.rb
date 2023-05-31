@@ -1,11 +1,12 @@
 class Raptor < Formula
   # cite Seiler_2021: "https://doi.org/10.1016/j.isci.2021.102782"
+  # cite Mehringer_2023: "https://doi.org/10.1186/s13059-023-02971-4"
   desc "Pre-filter for querying very large collections of nucleotide sequences"
   homepage "https://github.com/seqan/raptor"
   url "https://github.com/seqan/raptor",
     using:    :git,
-    tag:      "raptor-v2.0.0",
-    revision: "12c6b50d772de709fc265d2bd15bfa3b267cd18c"
+    tag:      "raptor-v3.0.0",
+    revision: "684a7188f4c6fec5eb97ea57d98d4a66fd834267"
   license "BSD-3-Clause"
   head "https://github.com/seqan/raptor.git"
 
@@ -16,17 +17,18 @@ class Raptor < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "gcc@9"
+  depends_on "gcc@12"
 
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  # Requires gcc>=9, clang does not yet work.
+  # Requires gcc>=10, clang does not yet work.
   fails_with :clang
   fails_with gcc: "5"
   fails_with gcc: "6"
   fails_with gcc: "7"
   fails_with gcc: "8"
+  fails_with gcc: "9"
 
   def install
     system "cmake", ".",
@@ -39,8 +41,8 @@ class Raptor < Formula
   end
 
   test do
-    system "raptor", "--version"
-    system "raptor", "build", "--help"
-    system "raptor", "search", "--help"
+    system "#{bin}/raptor", "--version"
+    system "#{bin}/raptor", "build", "--help"
+    system "#{bin}/raptor", "search", "--help"
   end
 end
