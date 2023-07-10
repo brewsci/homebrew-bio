@@ -2,7 +2,7 @@ class BaliPhy < Formula
   # cite Suchard_2006: "http://dx.doi.org/10.1093/bioinformatics/btl175"
   # cite Redelings_2014: "https://dx.doi.org/10.1093/molbev/msu174"
   desc "Bayesian co-estimation of phylogenies and multiple alignments"
-  homepage "http://www.bali-phy.org/"
+  homepage "https://www.bali-phy.org/"
   url "https://github.com/bredelings/BAli-Phy/archive/3.6.1.tar.gz"
   sha256 "6591f39d5708f5c34fca244f20326c6cba30bb32c80b72c6ae2e7e23bafcf11a"
   license "GPL-2.0-or-later"
