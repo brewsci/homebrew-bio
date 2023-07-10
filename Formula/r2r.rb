@@ -1,7 +1,7 @@
 class R2r < Formula
   # cite Weinberg_2011: "https://doi.org/10.1186/1471-2105-12-3"
   desc "Software to speed depiction of aesthetic consensus RNA secondary structures"
-  homepage "https://sourceforge.net/projects/weinberg-r2r"
+  homepage "https://sourceforge.net/projects/weinberg-r2r/"
   url "https://downloads.sourceforge.net/project/weinberg-r2r/R2R-1.0.6.tgz"
   sha256 "1ba8f51db92866ebe1aeb3c056f17489bceefe2f67c5c0bbdfbddc0eee17743d"
 
