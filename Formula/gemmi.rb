@@ -1,8 +1,8 @@
 class Gemmi < Formula
   desc "Macromolecular crystallography library and utilities"
   homepage "https://project-gemmi.github.io/"
-  url "https://github.com/project-gemmi/gemmi/archive/refs/tags/v0.5.6.tar.gz"
-  sha256 "56b9534cecb4b2df42cfc5d65d79e23bce700a452cc5cb4f2c31e9115e31c7c4"
+  url "https://github.com/project-gemmi/gemmi/archive/refs/tags/v0.6.2.tar.gz"
+  sha256 "d225548ddf4289d7adb9a0cce725cf4853474b9903399080f4770c77d4c18929"
   license "MPL-2.0"
   head "https://github.com/project-gemmi/gemmi.git", branch: "master"
 
