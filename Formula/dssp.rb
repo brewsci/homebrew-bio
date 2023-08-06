@@ -63,7 +63,7 @@ class Dssp < Formula
   test do
     resource("testdata").unpack testpath
     cp Dir[pkgshare/"*.dic"], testpath
-    system bin/"mkdssp", "-i", "1cbs.cif", "-o", "test.dssp"
+    system bin/"mkdssp", "1cbs.cif", "test.dssp"
     assert_match "CELLULAR RETINOIC ACID BINDING PROTEIN TYPE II", (testpath/"test.dssp").read
   end
 end
