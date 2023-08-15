@@ -13,7 +13,7 @@ class Libzeep < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "yarn" => :build
+  depends_on "pkg-config" => :build
   depends_on "boost"
   depends_on "howard-hinnant-date"
 
