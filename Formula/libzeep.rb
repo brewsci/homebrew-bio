@@ -8,8 +8,8 @@ class Libzeep < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 monterey:     "41258503b8ea048bc91779fc59f3a3bd1f3151de7ecdf1a0526c2e97a0984068"
-    sha256 x86_64_linux: "87d38a0169af31362912fe3774d142cea5a5c84b5e42266d570b4dc628d03a71"
+    sha256 cellar: :any_skip_relocation, monterey:     "a3dea66429a4da315f1951c45b6febd841bb3dbfda0e4727cff69fea59e5ca66"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8712c2089d5d8d8beeb8858a42c987790bf6e2569ba1022c44843501358cd50a"
   end
 
   depends_on "cmake" => :build
