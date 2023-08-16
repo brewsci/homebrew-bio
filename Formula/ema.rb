@@ -1,7 +1,7 @@
 class Ema < Formula
   # cite Shajii_2017: "https://doi.org/10.1101/220236"
   desc "Fast and accurate alignment of linked reads"
-  homepage "http://ema.csail.mit.edu"
+  homepage "https://ema.csail.mit.edu"
   url "https://github.com/arshajii/ema.git",
     tag: "v0.6.2", revision: "893be3470e613043bf75fefdc73396d40c3bc2bc"
   license "MIT"
