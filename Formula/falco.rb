@@ -2,8 +2,8 @@ class Falco < Formula
   # cite deSena_2021: "https://doi.org/10.12688/f1000research.21142.2"
   desc "C++ implementation of FastQC for quality control of sequencing data"
   homepage "https://github.com/smithlabcode/falco"
-  url "https://github.com/smithlabcode/falco/releases/download/v0.2.4/falco-0.2.4.tar.gz"
-  sha256 "fe3cddc0cf3805de673d14ad510f2344e8d12aab02dc899235dac45bb55ddfc3"
+  url "https://github.com/smithlabcode/falco/releases/download/v1.2.1/falco-1.2.1.tar.gz"
+  sha256 "33de8aafac45c7aea055ed7ab837d0a39d12dcf782816cea8a6c648acb911057"
   license "GPL-3.0-or-later"
 
   bottle do
