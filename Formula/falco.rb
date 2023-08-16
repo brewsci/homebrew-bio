@@ -8,8 +8,8 @@ class Falco < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "98dd1ff596681054096e0292182b37c003743f84f328295cd1ffa022b3d56efe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "25bbeffa99ebc66777c484992e09a93e04630a621796387c60dcab32c6f46e27"
+    sha256 cellar: :any_skip_relocation, monterey:     "6eef92c3969b186ebc3133a8762fa9ba534c0618dd8c947ab7cb07524133551e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1f1bce178223383d01286a20f134667b29f6fd413b7d21f316c7d53705a3acb6"
   end
 
   uses_from_macos "zlib"
