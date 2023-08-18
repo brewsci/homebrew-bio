@@ -1,8 +1,9 @@
 class Btllib < Formula
+  # cite Nikolić_2022: "https://doi.org/10.21105/joss.04720"
   desc "Bioinformatics Technology Lab common code library in C++ with Python wrappers"
   homepage "https://bcgsc.github.io/btllib/"
-  url "https://github.com/bcgsc/btllib/releases/download/v1.4.8/btllib-1.4.8.tar.gz"
-  sha256 "a0aed3ab73baffc01102f685a9376e2eb68c978a2f6ddcd1697d1aa65feffcbe"
+  url "https://github.com/bcgsc/btllib/releases/download/v1.6.2/btllib-1.6.2.tar.gz"
+  sha256 "06af0bccd68443bc6351d1d6d46599ae2a6e94752ae5fdf973067a77740d751c"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -11,32 +12,37 @@ class Btllib < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "libomp" => :build
+  depends_on "doxygen" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "python@3.10" => :build
-  depends_on "bzip2"
-  depends_on "gnu-tar"
-  depends_on "gzip"
-  depends_on "lrzip"
-  depends_on "pigz"
+  depends_on "python@3.11" => :build
+  depends_on "swig" => :build
+  depends_on "gcovr"
   depends_on "samtools"
   depends_on "wget"
-  depends_on "xz"
-  depends_on "zip"
+
+  uses_from_macos "bzip2"
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "libomp"
+  end
+
+  fails_with gcc: "5"
 
   def python3
-    "python3.10"
+    "python3.11"
   end
 
   def install
-    system "./compile"
-    bin.install Dir["install/bin/*"]
-    include.install Dir["install/include/*"]
-    lib.install Dir["install/lib/*"]
+    ENV.cxx11
 
-    ENV.append_to_cflags "-I#{include}"
-    ENV.append_to_cflags "-L#{lib}"
+    if OS.mac?
+      libomp = Formula["libomp"]
+      ENV.append "CXXFLAGS", "-Xpreprocessor -fopenmp -I#{libomp.opt_include} -L#{libomp.opt_lib} -lomp"
+    end
+
+    system "./compile", "--prefix=#{prefix}"
 
     rm_rf Dir["#{lib}/btllib/python/btllib/__pycache__"]
     cd "#{lib}/btllib/python" do
