@@ -1,10 +1,10 @@
 class Kaiju < Formula
   # Menzel_2016: "https://doi.org/10.1038/ncomms11257"
   desc "Fast taxonomic classification of metagenomic sequencing reads"
-  homepage "http://kaiju.binf.ku.dk/"
-  url "https://github.com/bioinformatics-centre/kaiju/archive/v1.7.4.tar.gz"
-  sha256 "4d04648fcdf960ff6c9fc324671cab87a80076c02747edb3c8a553608f8892aa"
-  license "GPL-3.0"
+  homepage "https://kaiju.binf.ku.dk/"
+  url "https://github.com/bioinformatics-centre/kaiju/archive/v1.9.2.tar.gz"
+  sha256 "58d922358dfa4a608be888ec5c9e615b45b1e4be50615429183b0c5355e89c78"
+  license "GPL-3.0-only"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -12,8 +12,8 @@ class Kaiju < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "5713783ed8f98eb0d91f4f30920e3396436b440aa42619e18170146940eb524d"
   end
 
-  depends_on "perl" # for kaiju-gbk2faa.pl
-  depends_on "zlib" unless OS.mac?
+  uses_from_macos "perl"
+  uses_from_macos "zlib"
 
   def install
     system "make", "-C", "src"
