@@ -8,8 +8,8 @@ class Kaiju < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "f824e839bfd8223ce256523658f21e85c835a40c0168e3e02496fffecd422af3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5713783ed8f98eb0d91f4f30920e3396436b440aa42619e18170146940eb524d"
+    sha256 cellar: :any_skip_relocation, monterey:     "544fe33129ffc09e488eecc1a70ecf69b1d1f477d6692d2fa9cbf98b1f0b1558"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f0308b0f34baa5d661c80ef1affeba2a2b89bdde06acf4f088524959ff71a284"
   end
 
   uses_from_macos "perl"
