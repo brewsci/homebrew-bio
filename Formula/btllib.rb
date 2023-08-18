@@ -8,7 +8,8 @@ class Btllib < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5b4f469db9939fa95912de0834913cf8c62c96abcf3b87bad6967a56296fd4dd"
+    sha256 cellar: :any,                 monterey:     "3b74945052ebe8f26c124317889c7e6ea9fbf5961e92f0c0325dbe37e427ab38"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1179e283868e96842b722025c5ceccc03396df65fad09691a7de49267e3c8daf"
   end
 
   depends_on "cmake" => :build
