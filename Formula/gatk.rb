@@ -4,8 +4,8 @@ class Gatk < Formula
   # cite McKenna_2010: "https://doi.org/10.1101/gr.107524.110"
   desc "Genome Analysis Toolkit: Variant Discovery in High-Throughput Sequencing"
   homepage "https://github.com/broadinstitute/gatk"
-  url "https://github.com/broadinstitute/gatk/releases/download/4.3.0.0/gatk-4.3.0.0.zip"
-  sha256 "e2c27229b34c3e22445964adf00639a0909887bbfcc040f6910079177bc6e2dd"
+  url "https://github.com/broadinstitute/gatk/releases/download/4.4.0.0/gatk-4.4.0.0.zip"
+  sha256 "444600f7b38b46ad0b3606b7d40ce921e0ff1910a50165872f1c73c7c4a1a390"
   license "BSD-3-Clause"
 
   bottle do
@@ -14,7 +14,7 @@ class Gatk < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "e4b4117555b904663ca90c00945cc29f7767742bb6c3a37078c0f077db52261d"
   end
 
-  depends_on "openjdk"
+  depends_on "openjdk@17"
   depends_on "python@3.10"
 
   resource "homebrew-count_reads.bam" do
