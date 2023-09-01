@@ -6,6 +6,7 @@ class Maker < Formula
   homepage "https://www.yandell-lab.org/software/maker.html"
   url "http://yandell.topaz.genetics.utah.edu/maker_downloads/static/maker-2.31.11.tgz"
   sha256 "129ce1d33df8ae29d417f0dac0df756398c5b76bdd58213233e94e735fe38c37"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -25,8 +26,8 @@ class Maker < Formula
   depends_on "brewsci/bio/exonerate"
   depends_on "brewsci/bio/repeatmasker"
   depends_on "brewsci/bio/snap"
+  depends_on "perl"
 
-  uses_from_macos "perl"
   uses_from_macos "sqlite"
 
   # Build MAKER with MPI support, but do not force the dependency on the user.
@@ -44,8 +45,7 @@ class Maker < Formula
     ENV.prepend "PERL5LIB", Formula["bioperl"].libexec/"lib/perl5"
     ENV.prepend_create_path "PERL5LIB", prefix/"perl5/lib/perl5"
     system "cpanm", "-l", prefix/"perl5",
-      "IO::All", "Perl::Unsafe::Signals", "Want", "forks", "forks::shared"
-    system "cpanm", "-l", prefix/"perl5", "Bit::Vector", "DBD::SQLite", "Inline::C" unless OS.mac?
+      "Bit::Vector", "DBD::SQLite", "forks", "forks::shared", "Inline::C", "IO::All", "Perl::Unsafe::Signals", "Want"
 
     cd "src" do
       mpi = build.with?("open-mpi") ? "yes" : "no"
