@@ -1,15 +1,15 @@
 class Gemmi < Formula
   desc "Macromolecular crystallography library and utilities"
   homepage "https://project-gemmi.github.io/"
-  url "https://github.com/project-gemmi/gemmi/archive/refs/tags/v0.5.6.tar.gz"
-  sha256 "56b9534cecb4b2df42cfc5d65d79e23bce700a452cc5cb4f2c31e9115e31c7c4"
+  url "https://github.com/project-gemmi/gemmi/archive/refs/tags/v0.6.2.tar.gz"
+  sha256 "d225548ddf4289d7adb9a0cce725cf4853474b9903399080f4770c77d4c18929"
   license "MPL-2.0"
   head "https://github.com/project-gemmi/gemmi.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "d0ae9d973afab1bc37c0079d447f080550603c04a4a23b0f68a2fef4a5ea8577"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "65b9c863e7275021537f3a7d692179caadf6c9bd22f1152fab01cf6cf3c7cdc5"
+    sha256 cellar: :any_skip_relocation, big_sur:      "82e51bfe5546627f6c4dc146433f3c2205b300e3b87ef9ae0ef991064b7c71b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "da60be6893256526f4520810199d93a408f2477ee0673073fd70532f664d00a8"
   end
 
   depends_on "cmake" => :build

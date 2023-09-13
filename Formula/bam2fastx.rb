@@ -1,32 +1,31 @@
 class Bam2fastx < Formula
   desc "Convert and demultiplex PacBio BAM files to fasta and fastq format"
   homepage "https://github.com/PacificBiosciences/bam2fastx"
-  url "https://github.com/PacificBiosciences/bam2fastx/archive/1.3.0.tar.gz"
-  sha256 "be5639807f1ffd2fb972e570068173971026300a79e879384fbf6ad20b5ab762"
+  url "https://github.com/PacificBiosciences/bam2fastx/archive/refs/tags/1.3.1.tar.gz"
+  sha256 "4a6e305a631002b2da5bc57341a85f5cf424be832c2c80a6775d0d86965f8ed1"
   license "BSD-3-Clause-Clear"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, sierra:       "5e1053af2b9f378b5176e16bf65387d5e0ddfbec6468a5e21640f39b501bdf16"
-    sha256 cellar: :any, x86_64_linux: "2990674c01b517325aeab3d132436bd5bba1bee063112117206ff0ac3b50eb29"
+    sha256 cellar: :any, big_sur:      "9a1d282d835b6e909347af9371ffda3b226e9fd2a3e7597776fd5d27ceebf767"
+    sha256               x86_64_linux: "14cb097cc61e1a8f74be2ab82eee373f0dc08df4b66766df2cd08a37dd9f31f6"
   end
 
   depends_on "boost" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "python" => :build
   depends_on "htslib"
   uses_from_macos "zlib"
 
   resource "pbbam" do
-    url "https://github.com/PacificBiosciences/pbbam/archive/0.23.0.tar.gz"
-    sha256 "a9c812324fb925a84108b346befae1cf96192fa0708a547c39c70e0e3f40479e"
+    url "https://github.com/PacificBiosciences/pbbam/archive/refs/tags/v2.1.0.tar.gz"
+    sha256 "605944f09654d964ce12c31d67e6766dfb1513f730ef5d4b74829b2b84dd464f"
   end
 
   resource "pbcopper" do
-    url "https://github.com/PacificBiosciences/pbcopper/archive/v0.4.2.tar.gz"
-    sha256 "9f5a7c03c3691cdc883239bdf1cb6b9c6bfe411403dc0111cd782df71848c81d"
+    url "https://github.com/PacificBiosciences/pbcopper/archive/refs/tags/v2.0.0.tar.gz"
+    sha256 "9edbef2fc6e3885c1206b6a9cdf7287bfa826b2b758992526d2f4d3c9b57431e"
   end
 
   def install
@@ -35,7 +34,7 @@ class Bam2fastx < Formula
     end
 
     mkdir "build" do
-      system "meson", "--prefix=#{prefix}", "--wrap-mode=nodownload", ".."
+      system "meson", *std_meson_args, "--wrap-mode=nodownload", "-Dtests=false", ".."
       system "ninja", "-v"
       system "ninja", "install", "-v"
     end

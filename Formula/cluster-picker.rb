@@ -1,7 +1,7 @@
 class ClusterPicker < Formula
   # cite RagonnetCronin_2013: "https://doi.org/10.1186/1471-2105-14-317"
   desc "Pick/describe HIV clusters in phylogenetic trees"
-  homepage "http://hiv.bio.ed.ac.uk/software.html"
+  homepage "https://hiv.bio.ed.ac.uk/software.html"
   url "https://github.com/emmahodcroft/cluster-picker-and-cluster-matcher/raw/master/release/ClusterPicker_1.2.5.jar"
   sha256 "8698b2c1d57d53843534780f860827f09b6bce9a323e2363085597c00e20cbb7"
   license "GPL-3.0"

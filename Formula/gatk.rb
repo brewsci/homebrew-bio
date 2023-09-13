@@ -3,9 +3,9 @@ class Gatk < Formula
 
   # cite McKenna_2010: "https://doi.org/10.1101/gr.107524.110"
   desc "Genome Analysis Toolkit: Variant Discovery in High-Throughput Sequencing"
-  homepage "https://software.broadinstitute.org/gatk"
-  url "https://github.com/broadinstitute/gatk/releases/download/4.2.0.0/gatk-4.2.0.0.zip"
-  sha256 "dd11cc8e3bc7a23c2c226366428f0908c902765eabbc1c641c736c06b80aaf78"
+  homepage "https://github.com/broadinstitute/gatk"
+  url "https://github.com/broadinstitute/gatk/releases/download/4.3.0.0/gatk-4.3.0.0.zip"
+  sha256 "e2c27229b34c3e22445964adf00639a0909887bbfcc040f6910079177bc6e2dd"
   license "BSD-3-Clause"
 
   bottle do
@@ -15,9 +15,9 @@ class Gatk < Formula
   end
 
   depends_on "openjdk"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
 
-  resource "count_reads.bam" do
+  resource "homebrew-count_reads.bam" do
     url "https://github.com/broadinstitute/gatk/blob/626c88732c02b0fd5f395db20c91bf2784ec54b9/src/test/resources/org/broadinstitute/hellbender/tools/count_reads.bam?raw=true"
     sha256 "656e36331a39a3641565ef7810a529ac51270b4132007d7b94e6efff99133a2c"
   end
@@ -49,7 +49,7 @@ class Gatk < Formula
   end
   test do
     assert_match "Usage", shell_output("#{bin}/gatk --help 2>&1")
-    testpath.install resource("count_reads.bam")
+    testpath.install resource("homebrew-count_reads.bam")
     assert_equal "Tool returned:\n8",
                   shell_output("#{bin}/gatk CountReads -I count_reads.bam --tmp-dir #{testpath}").strip
   end
