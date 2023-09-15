@@ -1,9 +1,9 @@
 class Viennarna < Formula
   # cite Lorenz_2011: "https://doi.org/10.1186/1748-7188-6-26"
   desc "Prediction and comparison of RNA secondary structures"
-  homepage "https://www.tbi.univie.ac.at/~ronny/RNA/"
-  url "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_4_x/ViennaRNA-2.4.17.tar.gz"
-  sha256 "b1e608f6f37cdf4adbcdd1f86fd9ebfcc1e663d58488e0f8173a58879480c121"
+  homepage "https://www.tbi.univie.ac.at/RNA/"
+  url "https://github.com/ViennaRNA/ViennaRNA/releases/download/v2.6.3/ViennaRNA-2.6.3.tar.gz"
+  sha256 "6c10a68f1a73db8122aa45d68889988ea47ed1ecbee08829ac2fc6b9bb72570d"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -11,20 +11,35 @@ class Viennarna < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "64232367b889c918417a97f8274fca437556e18d89ce227898a56516e5b977ea"
   end
 
-  depends_on "gcc" if OS.mac? # needs openmp
-  depends_on "perl"
-  depends_on "python"
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "doxygen" => :build
+  depends_on "gengetopt" => :build
+  depends_on "help2man" => :build
+  depends_on "libtool"  => :build
+  depends_on "pkg-config" => :build
+  depends_on "swig" => :build
+  depends_on "lapack"
+  depends_on "mpfr"
 
-  fails_with :clang # needs openmp
+  uses_from_macos "flex" => :build
+  uses_from_macos "perl"
 
   def install
+    # Fix the error: RNA_wrap.cpp:763:10: fatal error: 'EXTERN.h' file not found
+    # https://github.com/ViennaRNA/ViennaRNA/issues/111
+    if OS.mac?
+      perl = DevelopmentTools.locate("perl")
+      perl_archlib = Utils.safe_popen_read(perl.to_s, "-MConfig", "-e", "print $Config{archlib}")
+      ENV["CPATH"] = "#{MacOS.sdk_path_if_needed}/#{perl_archlib}/CORE"
+    end
+
+    system "autoreconf", "-ivf"
     system "./configure",
-      "--disable-debug",
-      "--disable-dependency-tracking",
-      "--without-python",
-      "--prefix=#{prefix}"
-    system "make"
-    ENV.deparallelize
+      "--prefix=#{prefix}",
+      "--with-cluster",
+      "--with-kinwalker",
+      "--without-python"
     system "make", "install"
   end
 
