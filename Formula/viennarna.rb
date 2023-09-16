@@ -21,6 +21,7 @@ class Viennarna < Formula
   depends_on "swig" => :build
   depends_on "lapack"
   depends_on "mpfr"
+  depends_on "python@3.11"
 
   uses_from_macos "flex" => :build
   uses_from_macos "perl"
