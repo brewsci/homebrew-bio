@@ -3,7 +3,7 @@ class StarAligner < Formula
   desc "RNA-seq aligner"
   homepage "https://github.com/alexdobin/STAR"
   url "https://github.com/alexdobin/STAR/archive/refs/tags/2.7.10a_alpha_220818.tar.gz"
-  version "2.7.10a+220818"
+  version "2.7.10"
   sha256 "0df439b1623ff9b4f51887cbcbf524127eaf7ac3cc8d06ce6564d5ff957e8dab"
   license "MIT"
   head "https://github.com/alexdobin/STAR.git"
