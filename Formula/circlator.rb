@@ -21,6 +21,7 @@ class Circlator < Formula
     sha256 cellar: :any, x86_64_linux: "310c5d97d4320ffbde5f0aedbcc7e05d03b721452714cf0e5dd21e5f3e1767f0"
   end
 
+  depends_on arch: :x86_64 # spades is not supported on ARM
   depends_on "brewsci/bio/mummer"
   depends_on "bwa"
   depends_on "prodigal"
@@ -35,7 +36,7 @@ class Circlator < Formula
     sha256 "b64575241f64f6ec005a4d4137339fb0ba5e156e826db2fdb5f458060d9979e0"
   end
 
-  resource "et_xmlfile" do
+  resource "et-xmlfile" do
     url "https://files.pythonhosted.org/packages/22/28/a99c42aea746e18382ad9fb36f64c1c1f04216f41797f2f0fa567da11388/et_xmlfile-1.0.1.tar.gz"
     sha256 "614d9722d572f6246302c4491846d2c393c199cfa4edc9af593437691683335b"
   end
