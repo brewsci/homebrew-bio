@@ -4,33 +4,34 @@ class Ntlink < Formula
   # cite Coombe_2021: "https://doi.org/10.1186/s12859-021-04451-7"
   desc "Assembly scaffolder using long reads and minimizers"
   homepage "https://bcgsc.ca/resources/software/ntlink"
-  url "https://github.com/bcgsc/ntLink/releases/download/v1.3.4/ntLink-1.3.4.tar.gz"
-  sha256 "e36635639afafedc7b956ab4e5c8a4136b9516f781f44cac00b0ad96931fddc5"
+  url "https://github.com/bcgsc/ntLink/archive/refs/tags/v1.3.9.tar.gz"
+  sha256 "3a6fe7ca9c7a0226cf51b7e55804e235ac2b959e82a30f9bce55b9caea5bb03b"
   license "GPL-3.0-only"
   head "https://github.com/bcgsc/ntLink.git"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "78167d0890a14c3c107f049d4b568ca4a2a2944914a21efb03948b3a81e24b07"
+    sha256 cellar: :any,                 monterey:     "174b8d115b21054c2339615fe83dfc85f36942189aebe765f6b9df6490a13133"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1c2cb1bf98e99920151560ccad880d38193f6717978861dd3c79673c4be67456"
   end
 
   depends_on "cmake" => :build
   depends_on "abyss"
   depends_on "btllib"
   depends_on "numpy"
-  depends_on "python@3.10"
+  depends_on "python@3.11"
   depends_on "xz"
 
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
 
-  resource "python-igraph" do
+  resource "igraph" do
     url "https://files.pythonhosted.org/packages/a3/74/dcd4c842370491f7db2c3152c6cc7febf296b01e8b2aedc45506f8486c04/igraph-0.10.1.tar.gz"
     sha256 "65165883cc506ec7c6d8b68e620954810935ef033138aa3a92cba6089339cae6"
   end
 
   def python3
-    "python3.10"
+    "python3.11"
   end
 
   def install
