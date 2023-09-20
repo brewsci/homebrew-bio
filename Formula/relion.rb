@@ -1,8 +1,8 @@
 class Relion < Formula
   desc "Image-processing software for cryo-electron microscopy"
   homepage "https://github.com/3dem/relion"
-  url "https://github.com/3dem/relion/archive/refs/tags/4.0.0.tar.gz"
-  sha256 "b52cfb75faf59ca4f702a77d206fdec18f1d97512eb7a1b6fd6a0eaca749c0f6"
+  url "https://github.com/3dem/relion/archive/4.0.1.tar.gz"
+  sha256 "0ebbd94ad922d7f457e3f3b81f5660e2691a845d9a53f0f1c9fbeb4e54cd5c17"
   license "GPL-2.0-only"
   head "https://github.com/3dem/relion.git", branch: "master"
 
@@ -20,13 +20,16 @@ class Relion < Formula
   depends_on "libtiff"
   depends_on "libxft"
   depends_on "open-mpi"
+  depends_on "pbzip2"
+  depends_on "xz"
+  depends_on "zstd"
 
   on_macos do
     depends_on "libomp"
   end
 
   def install
-    args = *std_cmake_args << "-DFETCH_TORCH_MODELS=OFF"
+    args = "-DFETCH_TORCH_MODELS=OFF"
     if OS.mac?
       libomp = Formula["libomp"]
       args << "-DOpenMP_C_FLAGS=-Xpreprocessor -fopenmp -I#{libomp.opt_include}"
@@ -36,8 +39,9 @@ class Relion < Formula
       args << "-DOpenMP_omp_LIBRARY=#{libomp.opt_lib}/libomp.a"
     end
 
-    system "cmake", ".", *args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
     # Add Python shebang
     pyfile = bin/"relion_class_ranker.py"
