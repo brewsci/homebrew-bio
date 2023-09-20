@@ -28,7 +28,8 @@ class Relion < Formula
   end
 
   def install
-    args = "-DFETCH_TORCH_MODELS=OFF"
+    args = []
+    args << "-DFETCH_TORCH_MODELS=OFF"
     if OS.mac?
       libomp = Formula["libomp"]
       args << "-DOpenMP_C_FLAGS=-Xpreprocessor -fopenmp -I#{libomp.opt_include}"
