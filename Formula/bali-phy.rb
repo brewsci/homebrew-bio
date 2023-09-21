@@ -1,11 +1,11 @@
 class BaliPhy < Formula
-  # cite Suchard_2006: "http://dx.doi.org/10.1093/bioinformatics/btl175"
   # cite Redelings_2014: "https://dx.doi.org/10.1093/molbev/msu174"
+  # cite Redelings_2021: "https://doi.org/10.1093/bioinformatics/btab129"
   desc "Bayesian co-estimation of phylogenies and multiple alignments"
   homepage "https://www.bali-phy.org/"
   url "https://github.com/bredelings/BAli-Phy.git",
-    tag:      "4.0-beta5",
-    revision: "8fa2cad455025e8e4f1c76b163b0f89fada4409c"
+    tag:      "4.0-beta6",
+    revision: "131b69187bfaca8f55db1960166276ca30fbe71e"
   license "GPL-2.0-or-later"
   head "https://github.com/bredelings/BAli-Phy.git", branch: "master"
 
