@@ -11,8 +11,8 @@ class Oma < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "62859a53f9fa4f56d227089e6010e131c20c84dbc3de0d66bbdc3f07e6cf7913"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0d440610328984f5fc89d12d41dd25325659526a5cdbb32260f969c339de6992"
+    sha256 cellar: :any_skip_relocation, monterey:     "5c7d45fb493156defbf5082151e843f0dce3977d3464c4230fbf05d6b91f22d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b1c873f9cc4a6d468c491fdfa8216eca5b9cb97190ddccd87dec111da4cbfeeb"
   end
 
   depends_on "numpy"
