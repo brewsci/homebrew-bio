@@ -11,8 +11,8 @@ class AutodockVina < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 catalina:     "34c63eafaa1fed7aa322060b2e7f4226a9807ea5ab138e1c3d36c364a3c1eddf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "752706c4bfde2ce4f437b0eaa6be4f10e6da801b2f771fe8d904c6c51a90266b"
+    sha256 cellar: :any_skip_relocation, monterey:     "6a9087f278e22e682e3b738b0b827e55857f699a0f816b31784dbab735d23a2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fd128def6aceeaf0d142c0269ff628b345658c687fc2eeacd23c85cf3b2dc14f"
   end
 
   depends_on "swig" => :build
