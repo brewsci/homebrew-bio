@@ -31,7 +31,6 @@ class AutodockVina < Formula
           s.gsub! "BASE=/usr/local", "BASE=#{prefix}"
           s.gsub! "$(BASE)/include", Formula["boost"].opt_include
           s.gsub! "GPP=/usr/bin/clang++", "GPP=#{ENV.cxx}"
-          s.gsub! "BOOST_STATIC=y", "BOOST_STATIC=n"
         end
         system "make"
         bin.install binaries
@@ -41,7 +40,6 @@ class AutodockVina < Formula
         inreplace "Makefile" do |s|
           s.gsub! "BASE=/usr/local", "BASE=#{prefix}"
           s.gsub! "$(BASE)/include", Formula["boost"].opt_include
-          s.gsub! "BOOST_STATIC=y", "BOOST_STATIC=n"
         end
         system "make"
         bin.install binaries
