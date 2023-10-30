@@ -4,11 +4,10 @@ class Raster3d < Formula
   # cite Merritt_1997: "https://doi.org/10.1016/s0076-6879(97)77028-9"
   desc "Set of tools for generating high quality raster images of proteins"
   homepage "http://www.bmsc.washington.edu/raster3d"
-  url "https://web.archive.org/web/20211024200400/http://www.bmsc.washington.edu/raster3d/Raster3D_3.0-7.tar.gz"
-  mirror "http://www.bmsc.washington.edu/raster3d/Raster3D_3.0-7.tar.gz"
+  url "http://www.bmsc.washington.edu/raster3d/Raster3D_3.0-7.tar.gz"
   sha256 "f566b499fee341db3a95229672c6afdbdb69da7faabdbe34f6e0d332d766160c"
   license "Artistic-2.0"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -28,6 +27,8 @@ class Raster3d < Formula
 
     inreplace "Makefile.incl" do |s|
       s.gsub! "prefix  = /usr/local", "prefix  = #{prefix}"
+      s.gsub! "INCDIRS  =	-I/usr/include -I/usr/local/include", "INCDIRS  = -I#{HOMEBREW_PREFIX}/include"
+      s.gsub! "LIBDIRS  =	-L/usr/local/lib", "LIBDIRS  = -L#{HOMEBREW_PREFIX}/lib"
       s.gsub! "mandir  = $(prefix)/man/manl", "mandir  = #{man}/manl"
     end
 
