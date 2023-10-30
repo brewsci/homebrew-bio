@@ -2,7 +2,7 @@ class Percolator < Formula
   # cite K_ll_2007: "https://doi.org/10.1038/nmeth1113"
   desc "Semi-supervised learning for peptide identification from shotgun proteomics data"
   homepage "http://percolator.ms"
-  url "https://github.com/percolator/percolator/archive/rel-3-05.tar.gz"
+  url "https://github.com/percolator/percolator/archive/refs/tags/rel-3-05.tar.gz"
   version "3.05"
   sha256 "5b746bdc0119a40f96bc090e02e27670f91eeb341736911750b170da7e5c06bb"
   license all_of: ["Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "MIT"]

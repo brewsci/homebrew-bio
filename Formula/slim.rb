@@ -2,7 +2,7 @@ class Slim < Formula
   # cite Haller_2019: "https://doi.org/10.1093/molbev/msy228"
   desc "Forward simulator for population genetics and evolutionary biology"
   homepage "https://messerlab.org/slim/"
-  url "https://github.com/MesserLab/SLiM/archive/v3.5.tar.gz"
+  url "https://github.com/MesserLab/SLiM/archive/refs/tags/v3.5.tar.gz"
   sha256 "7f6f9b33416d0f5a6ab4e004f8f2cb5251b57ae270da7f4b3054b2135765a376"
   license "GPL-3.0-or-later"
 

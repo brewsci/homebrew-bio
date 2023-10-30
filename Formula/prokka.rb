@@ -2,7 +2,7 @@ class Prokka < Formula
   # cite Seemann_2014: "https://doi.org/10.1093/bioinformatics/btu153"
   desc "Rapid annotation of prokaryotic genomes"
   homepage "https://github.com/tseemann/prokka"
-  url "https://github.com/tseemann/prokka/archive/v1.14.6.tar.gz"
+  url "https://github.com/tseemann/prokka/archive/refs/tags/v1.14.6.tar.gz"
   sha256 "f730b5400ea9e507bfe6c5f3d22ce61960a897195c11571c2e1308ce2533faf8"
 
   bottle do

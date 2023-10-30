@@ -1,7 +1,7 @@
 class Libgff < Formula
   desc "Ligntweight C++ library for parsing GFF/GTF files"
   homepage "https://github.com/COMBINE-lab/libgff"
-  url "https://github.com/COMBINE-lab/libgff/archive/v2.0.0.tar.gz"
+  url "https://github.com/COMBINE-lab/libgff/archive/refs/tags/v2.0.0.tar.gz"
   sha256 "7656b19459a7ca7d2fd0fcec4f2e0fd0deec1b4f39c703a114e8f4c22d82a99c"
 
   bottle do

@@ -2,7 +2,7 @@ class Sga < Formula
   # cite Simpson_2011: "https://doi.org/10.1101/gr.126953.111"
   desc "De novo genome assembler based on the concept of string graphs"
   homepage "https://github.com/jts/sga"
-  url "https://github.com/jts/sga/archive/v0.10.15.tar.gz"
+  url "https://github.com/jts/sga/archive/refs/tags/v0.10.15.tar.gz"
   sha256 "1b18996e6ec47985bc4889a8cbc3cd4dd3a8c7d385ae9f450bd474e36342558b"
   revision 1
   head "https://github.com/jts/sga.git"

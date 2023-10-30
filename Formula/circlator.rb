@@ -5,7 +5,7 @@ class Circlator < Formula
 
   desc "Tool to circularize genome assemblies"
   homepage "https://sanger-pathogens.github.io/circlator/"
-  url "https://github.com/sanger-pathogens/circlator/archive/v1.5.5.tar.gz"
+  url "https://github.com/sanger-pathogens/circlator/archive/refs/tags/v1.5.5.tar.gz"
   sha256 "927b6c156bfba6fa02db0c1173e280f85373320814c51e084170df583e604a2a"
   license "GPL-3.0"
 
@@ -62,7 +62,7 @@ class Circlator < Formula
   end
 
   resource "pysam" do
-    url "https://github.com/pysam-developers/pysam/archive/v0.15.0.1.tar.gz"
+    url "https://github.com/pysam-developers/pysam/archive/refs/tags/v0.15.0.1.tar.gz"
     sha256 "b169ffbe0efb39fd193779e5982da1de86e392dfe66c6bc49d79aa34fe58b46b"
   end
 

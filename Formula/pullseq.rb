@@ -1,7 +1,7 @@
 class Pullseq < Formula
   desc "Utility program for extracting sequences from a fasta/fastq file"
   homepage "https://github.com/bcthomas/pullseq"
-  url "https://github.com/bcthomas/pullseq/archive/1.0.2.tar.gz"
+  url "https://github.com/bcthomas/pullseq/archive/refs/tags/1.0.2.tar.gz"
   sha256 "a295d7e0e2d64ed05d293d795d1716376707e465f2c42ede6454f27db586c85f"
   head "https://github.com/bcthomas/pullseq.git"
 

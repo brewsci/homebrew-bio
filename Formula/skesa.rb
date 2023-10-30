@@ -2,7 +2,7 @@ class Skesa < Formula
   # cite Souvorov_2018: "https://doi.org/10.1186/s13059-018-1540-z"
   desc "Strategic Kmer Extension for Scrupulous Assemblies"
   homepage "https://github.com/ncbi/SKESA"
-  url "https://github.com/ncbi/SKESA/archive/2.4.0.tar.gz"
+  url "https://github.com/ncbi/SKESA/archive/refs/tags/2.4.0.tar.gz"
   sha256 "c07b56dfa394c013e519d5a246b7dee03db41d8ac912ab9ca02cf4d20bf13b15"
 
   livecheck do
@@ -61,7 +61,7 @@ index ffe6af1..bdc2af8 100644
 -            *this = *this + (std::find(bin2NT.begin(), bin2NT.end(), *i) - bin2NT.begin());
 -        }
 -    }
--    
- 
+-
+
      /**Construct from a different size IntegerTemplate
         Will clip (or add) extra nucs on the LEFT of the string

@@ -2,7 +2,7 @@ class Sibelia < Formula
   # cite Minkin_2013: "https://doi.org/10.1007/978-3-642-40453-5_17"
   desc "Synteny Block ExpLoration tool"
   homepage "http://bioinf.spbau.ru/sibelia"
-  url "https://github.com/bioinf/Sibelia/archive/v3.0.7.tar.gz"
+  url "https://github.com/bioinf/Sibelia/archive/refs/tags/v3.0.7.tar.gz"
   sha256 "bfc530190967cadd2d1e9779eeb1700f494c115049da878116c4540c5586e813"
 
   bottle do

@@ -2,7 +2,7 @@ class DasTool < Formula
   # cite Sieber_2018: "https://doi.org/10.1038/s41564-018-0171-1"
   desc "Genomic binning refiner"
   homepage "https://github.com/cmks/DAS_Tool"
-  url "https://github.com/cmks/DAS_Tool/archive/1.1.2.tar.gz"
+  url "https://github.com/cmks/DAS_Tool/archive/refs/tags/1.1.2.tar.gz"
   sha256 "0cb13aadb8727a7a1fd08b25336d59f742f6a6384a8bff894cb79b6a5661c613"
   head "https://github.com/cmks/DAS_Tool.git"
 

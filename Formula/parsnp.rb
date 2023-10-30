@@ -2,7 +2,7 @@ class Parsnp < Formula
   # cite Treangen_2014: "https://doi.org/10.1186/s13059-014-0524-x"
   desc "Microbial core genome alignment and SNP detection"
   homepage "https://github.com/marbl/parsnp"
-  url "https://github.com/marbl/parsnp/archive/v1.5.2.tar.gz"
+  url "https://github.com/marbl/parsnp/archive/refs/tags/v1.5.2.tar.gz"
   sha256 "780ddb5fd8c626bf77d31af8e620436ca942801de942c682d1f246bbbdcf2c3d"
   head "https://github.com/marbl/parsnp.git"
 

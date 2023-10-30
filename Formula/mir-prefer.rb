@@ -2,7 +2,7 @@ class MirPrefer < Formula
   # cite Lei_2014: "https://doi.org/10.1093/bioinformatics/btu380"
   desc "MicroRNA prediction from small RNA-seq data"
   homepage "https://github.com/hangelwen/miR-PREFeR"
-  url "https://github.com/hangelwen/miR-PREFeR/archive/v0.24.tar.gz"
+  url "https://github.com/hangelwen/miR-PREFeR/archive/refs/tags/v0.24.tar.gz"
   sha256 "457545478e2d3bc7497d350f3972cf0855b82fa7cb0263a6d91756732f487faf"
   revision 1
   head "https://github.com/hangelwen/miR-PREFeR.git"

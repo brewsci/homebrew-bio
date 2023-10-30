@@ -2,7 +2,7 @@ class EMem < Formula
   # cite Khiste_2015: "https://doi.org/10.1093/bioinformatics/btu687"
   desc "Efficiently compute MEMs between large genomes"
   homepage "https://www.csd.uwo.ca/~ilie/E-MEM/"
-  url "https://github.com/lucian-ilie/E-MEM/archive/v1.0.1.tar.gz"
+  url "https://github.com/lucian-ilie/E-MEM/archive/refs/tags/v1.0.1.tar.gz"
   sha256 "70a5a1e8b4e190d117b8629fff3493a4762708c8c0fe9eae84da918136ceafea"
   license "GPL-3.0-or-later"
   revision 1

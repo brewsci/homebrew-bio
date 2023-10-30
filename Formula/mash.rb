@@ -2,7 +2,7 @@ class Mash < Formula
   # cite Ondov_2016: "https://doi.org/10.1186/s13059-016-0997-x"
   desc "Fast genome distance estimation using MinHash"
   homepage "https://github.com/marbl/Mash"
-  url "https://github.com/marbl/Mash/archive/v2.2.2.tar.gz"
+  url "https://github.com/marbl/Mash/archive/refs/tags/v2.2.2.tar.gz"
   sha256 "e4c2d702fd0254f689256b2d8f7d3cc3a68db3ea45b60f0a662ce926a4f5fc22"
   head "https://github.com/marbl/Mash.git"
 

@@ -2,7 +2,7 @@ class Rcorrector < Formula
   # cite Song_2015: "https://doi.org/10.1186/s13742-015-0089-y"
   desc "Error correction for Illumina RNA-seq reads"
   homepage "https://github.com/mourisl/Rcorrector"
-  url "https://github.com/mourisl/Rcorrector/archive/v1.0.4.tar.gz"
+  url "https://github.com/mourisl/Rcorrector/archive/refs/tags/v1.0.4.tar.gz"
   sha256 "ac1754d71aff09b395b3643ec4248ad498e14675a6585296b33918e3c64c2f25"
   license "GPL-3.0"
 

@@ -1,7 +1,7 @@
 class Snippy < Formula
   desc "Rapid bacterial SNP calling and core genome alignments"
   homepage "https://github.com/tseemann/snippy"
-  url "https://github.com/tseemann/snippy/archive/v4.6.0.tar.gz"
+  url "https://github.com/tseemann/snippy/archive/refs/tags/v4.6.0.tar.gz"
   sha256 "7264e3819e249387effd3eba170ff49404b1cf7347dfa25944866f5aeb6b11c3"
   license "GPL-2.0"
 

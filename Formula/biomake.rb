@@ -2,7 +2,7 @@ class Biomake < Formula
   # cite Holmes_2016: "https://doi.org/10.1101/093245"
   desc "GNU-Make-like utility for managing builds and complex workflows"
   homepage "https://github.com/evoldoers/biomake"
-  url "https://github.com/evoldoers/biomake/archive/v0.1.5.tar.gz"
+  url "https://github.com/evoldoers/biomake/archive/refs/tags/v0.1.5.tar.gz"
   sha256 "630009c52472b97dfb22304330fe809abd5e038e8b0b6aa084c7fc437b8cd6a0"
   license "BSD-3-Clause"
 
