@@ -2,7 +2,7 @@ class Ngmerge < Formula
   # cite Gaspar_2018: "https://doi.org/10.1186/s12859-018-2579-2"
   desc "Merging paired-end reads and removing adapters"
   homepage "https://github.com/jsh58/NGmerge"
-  url "https://github.com/jsh58/NGmerge/archive/v0.3.tar.gz"
+  url "https://github.com/jsh58/NGmerge/archive/refs/tags/v0.3.tar.gz"
   sha256 "5928f727feebd0d1bcdbee0e631ba06fbe9ce88328bd58b6c8bf4e54cc742ac3"
   license "MIT"
   head "https://github.com/jsh58/NGmerge.git"

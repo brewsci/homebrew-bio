@@ -1,7 +1,7 @@
 class Quicktree < Formula
   desc "Phylogenetic neighbor-joining tree builder"
   homepage "https://github.com/khowe/quicktree"
-  url "https://github.com/khowe/quicktree/archive/v2.5.tar.gz"
+  url "https://github.com/khowe/quicktree/archive/refs/tags/v2.5.tar.gz"
   sha256 "731aa845ce3f1f0645bd0df2b54df75f78fce065d6a3ddc47fedf4bdcb11c248"
   license "Apache-2.0"
 

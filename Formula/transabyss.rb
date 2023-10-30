@@ -2,7 +2,7 @@ class Transabyss < Formula
   # cite Robertson_2010: "https://doi.org/10.1038/nmeth.1517"
   desc "De novo assembly of RNA-seq data using ABySS"
   homepage "https://github.com/bcgsc/transabyss"
-  url "https://github.com/bcgsc/transabyss/archive/2.0.1.tar.gz"
+  url "https://github.com/bcgsc/transabyss/archive/refs/tags/2.0.1.tar.gz"
   sha256 "9101107d1df5ae86dd6a87d26181bb4c1967724e2560bc3b8ca44c30ce85ce12"
   head "https://github.com/bcgsc/transabyss.git"
 

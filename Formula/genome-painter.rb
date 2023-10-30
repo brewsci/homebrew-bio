@@ -1,7 +1,7 @@
 class GenomePainter < Formula
   desc "Paint genomes with taxa-specific k-mer probabilities"
   homepage "https://github.com/scwatts/genome_painter"
-  url "https://github.com/scwatts/genome_painter/archive/v0.0.8.tar.gz"
+  url "https://github.com/scwatts/genome_painter/archive/refs/tags/v0.0.8.tar.gz"
   sha256 "434d81b4ed301f14aa3e9a55fdeeefab295264aa82410482abda23655e7a18bd"
   license "GPL-3.0-or-later"
   revision 1

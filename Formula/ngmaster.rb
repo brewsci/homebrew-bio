@@ -1,7 +1,7 @@
 class Ngmaster < Formula
   desc "NG-MAST genotyping for Neisseria gonorrhoeae"
   homepage "https://github.com/MDU-PHL/ngmaster"
-  url "https://github.com/MDU-PHL/ngmaster/archive/v0.5.6.tar.gz"
+  url "https://github.com/MDU-PHL/ngmaster/archive/refs/tags/v0.5.6.tar.gz"
   sha256 "908b8504804026554a0ec357933b773f6f47b98a0ce5fff77894e743d34200bc"
   license "GPL-2.0"
 

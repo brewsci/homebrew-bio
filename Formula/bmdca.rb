@@ -3,7 +3,7 @@ class Bmdca < Formula
   # cite Russ_2020: "https://doi.org/10.1126/science.aba3304"
   desc "Boltzmann-machine Direct Coupling Analysis"
   homepage "https://github.com/ranganathanlab/bmDCA/"
-  url "https://github.com/ranganathanlab/bmDCA/archive/v0.8.12.tar.gz"
+  url "https://github.com/ranganathanlab/bmDCA/archive/refs/tags/v0.8.12.tar.gz"
   sha256 "542991c51ba1e9d74b500e09e80d43f716fe4214a24d71f580a24df667762049"
   license "GPL-3.0-only"
 

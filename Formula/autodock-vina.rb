@@ -4,7 +4,7 @@ class AutodockVina < Formula
   include Language::Python::Virtualenv
   desc "Docking and virtual screening program"
   homepage "https://github.com/ccsb-scripps/AutoDock-Vina/"
-  url "https://github.com/ccsb-scripps/AutoDock-Vina/archive/v1.2.5.tar.gz"
+  url "https://github.com/ccsb-scripps/AutoDock-Vina/archive/refs/tags/v1.2.5.tar.gz"
   sha256 "38aec306bff0e47522ca8f581095ace9303ae98f6a64031495a9ff1e4b2ff712"
   license "Apache-2.0"
   head "https://github.com/ccsb-scripps/AutoDock-Vina.git", branch: "develop"

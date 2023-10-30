@@ -4,7 +4,7 @@ class Kat < Formula
   # cite Mapleson_2016: "https://doi.org/10.1093/bioinformatics/btw663"
   desc "K-mer Analysis Toolkit (KAT) analyses k-mer spectra"
   homepage "https://github.com/TGAC/KAT"
-  url "https://github.com/TGAC/KAT/archive/Release-2.4.2.tar.gz"
+  url "https://github.com/TGAC/KAT/archive/refs/tags/Release-2.4.2.tar.gz"
   sha256 "d6116cefdb5ecd9ec40898dd92362afe1a76fa560abfe0f2cd29cbe0d95cb877"
   license "GPL-3.0"
   head "https://github.com/TGAC/KAT.git"

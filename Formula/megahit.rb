@@ -2,7 +2,7 @@ class Megahit < Formula
   # cite Li_2015: "https://doi.org/10.1093/bioinformatics/btv033"
   desc "Ultra-fast SMP/GPU succinct DBG metagenome assembly"
   homepage "https://github.com/voutcn/megahit"
-  url "https://github.com/voutcn/megahit/archive/v1.2.9.tar.gz"
+  url "https://github.com/voutcn/megahit/archive/refs/tags/v1.2.9.tar.gz"
   sha256 "09026eb07cc4e2d24f58b0a13f7a826ae8bb73da735a47cb1cbe6e4693118852"
   license "GPL-3.0"
   head "https://github.com/voutcn/megahit.git"
