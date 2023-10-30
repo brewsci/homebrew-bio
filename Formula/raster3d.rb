@@ -11,8 +11,8 @@ class Raster3d < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 catalina:     "10306db851da078f3d948dfc85d22f09aee8bc0276418328ebcf63c6ca8f7523"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "dcad2e4c62531b8926f4777728e81df12c199f2e302961c01f29501c33196bf2"
+    sha256 cellar: :any,                 monterey:     "3638617b2836308831b08c24f4ec7cfccc242194501db85da4b6b502e3dd28f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "24bb4867e9b4fce841a4db39d20a26823d0e8c9d4575d63c9e87f9b667204aae"
   end
 
   depends_on "gcc"
