@@ -2,7 +2,7 @@ class Pirate < Formula
   # cite Bayliss_2019: "https://doi.org/10.1101/598391"
   desc "Pangenome analysis and threshold evaluation toolbox"
   homepage "https://github.com/SionBayliss/PIRATE"
-  url "https://github.com/SionBayliss/PIRATE/archive/v1.0.4.tar.gz"
+  url "https://github.com/SionBayliss/PIRATE/archive/refs/tags/v1.0.4.tar.gz"
   sha256 "ed2bad7d73d5c445f565fd7532265b75dad079594d589ece87ae738b712f6bd3"
   license "GPL-3.0"
   revision 1

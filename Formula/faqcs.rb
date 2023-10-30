@@ -2,7 +2,7 @@ class Faqcs < Formula
   # cite Lo_2014: "https://doi.org/10.1186/s12859-014-0366-2"
   desc "Quality Control of Next Generation Sequencing Data"
   homepage "https://github.com/LANL-Bioinformatics/FaQCs"
-  url "https://github.com/LANL-Bioinformatics/FaQCs/archive/2.10.tar.gz"
+  url "https://github.com/LANL-Bioinformatics/FaQCs/archive/refs/tags/2.10.tar.gz"
   sha256 "0458e3500adab5257ba11d1db5402adfc52feb936da39c0a26089cbfc1007832"
   license "GPL-3.0-or-later"
 

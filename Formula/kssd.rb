@@ -1,7 +1,7 @@
 class Kssd < Formula
   desc "K-mer substring space sampling/shuffling decomposition"
   homepage "https://github.com/yhg926/public_kssd"
-  url "https://github.com/yhg926/public_kssd/archive/v1.1.tar.gz"
+  url "https://github.com/yhg926/public_kssd/archive/refs/tags/v1.1.tar.gz"
   sha256 "bdf42a9a280126c41736aa9ee480d2948e32f9027e97607fe18473db59187bf4"
 
   bottle do

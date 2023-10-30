@@ -2,7 +2,7 @@ class Parasail < Formula
   # Daily_2016: "https://doi.org/10.1186/s12859-016-0930-z"
   desc "Pairwise Sequence Alignment Library"
   homepage "https://github.com/jeffdaily/parasail"
-  url "https://github.com/jeffdaily/parasail/archive/v2.4.2.tar.gz"
+  url "https://github.com/jeffdaily/parasail/archive/refs/tags/v2.4.2.tar.gz"
   sha256 "3843055fc04743269cf22d127ae26952a7f5e6fc4f1bc29f6b6f3c156c8ca434"
 
   bottle do

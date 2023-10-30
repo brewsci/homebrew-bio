@@ -1,7 +1,7 @@
 class Any2fasta < Formula
   desc "Convert various sequence formats to FASTA"
   homepage "https://github.com/tseemann/any2fasta"
-  url "https://github.com/tseemann/any2fasta/archive/v0.4.2.tar.gz"
+  url "https://github.com/tseemann/any2fasta/archive/refs/tags/v0.4.2.tar.gz"
   sha256 "e4cb2ddccda6298f5b0aee0c10184a75307a08b584d2abbfbf0d59d37b197e73"
   license "GPL-3.0"
 

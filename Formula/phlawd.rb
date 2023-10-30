@@ -2,7 +2,7 @@ class Phlawd < Formula
   # cite Smith_2009: "https://doi.org/10.1186/1471-2148-9-37"
   desc "Phylogenetic dataset construction"
   homepage "https://github.com/jonchang/phlawd"
-  url "https://github.com/jonchang/phlawd/archive/3.4b.tar.gz"
+  url "https://github.com/jonchang/phlawd/archive/refs/tags/3.4b.tar.gz"
   version "3.4b"
   sha256 "a0fea43866e425f7fed5f74bcb8c391484a10b486f3f03d5b7bbc4df84dd84b8"
   license "GPL-2.0"

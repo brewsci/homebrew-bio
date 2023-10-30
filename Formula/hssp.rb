@@ -2,7 +2,7 @@ class Hssp < Formula
   # cite Touw_2015: "https://doi.org/10.1093/nar/gku1028"
   desc "Create HSSP file"
   homepage "https://github.com/cmbi/xssp"
-  url "https://github.com/cmbi/hssp/archive/3.1.5.tar.gz"
+  url "https://github.com/cmbi/hssp/archive/refs/tags/3.1.5.tar.gz"
   sha256 "9462608ce6b5b92f13a3a8d94b780d85a3cac68ab38449116193754cc22dc5d0"
 
   bottle do

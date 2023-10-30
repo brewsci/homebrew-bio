@@ -2,7 +2,7 @@ class SnpSites < Formula
   # cite Page_2016: "https://doi.org/10.1099/mgen.0.000056"
   desc "Find SNP sites in a multi FASTA alignment file"
   homepage "https://github.com/sanger-pathogens/snp-sites"
-  url "https://github.com/sanger-pathogens/snp-sites/archive/v2.5.1.tar.gz"
+  url "https://github.com/sanger-pathogens/snp-sites/archive/refs/tags/v2.5.1.tar.gz"
   sha256 "913f79302e5d3127aea382756abc9ffeb05e26ce00022f43a6ea16a55cdd7a7e"
   revision 1
   head "https://github.com/sanger-pathogens/snp-sites.git"

@@ -1,7 +1,7 @@
 class Barrnap < Formula
   desc "BAsic Rapid Ribosomal RNA Predictor"
   homepage "https://github.com/tseemann/barrnap"
-  url "https://github.com/tseemann/barrnap/archive/0.9.tar.gz"
+  url "https://github.com/tseemann/barrnap/archive/refs/tags/0.9.tar.gz"
   sha256 "36c27cd4350531d98b3b2fb7d294a2d35c15b7365771476456d7873ba33cce15"
 
   bottle do

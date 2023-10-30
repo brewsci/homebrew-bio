@@ -1,7 +1,7 @@
 class Nthits < Formula
   desc "Identifying repeats in high-throughput sequencing data"
   homepage "https://github.com/bcgsc/ntHits"
-  url "https://github.com/bcgsc/ntHits/archive/ntHits-v0.0.1.tar.gz"
+  url "https://github.com/bcgsc/ntHits/archive/refs/tags/ntHits-v0.0.1.tar.gz"
   sha256 "33d32d2607b9bd87055c381e6584b85a191a89a4b3c7d03921cfcb3c12d30797"
   license "MIT"
   head "https://github.com/bcgsc/ntHits.git"

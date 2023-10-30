@@ -2,7 +2,7 @@ class Roary < Formula
   # cite Page_2015: "https://doi.org/10.1093/bioinformatics/btv421"
   desc "High speed stand alone pan-genome pipeline"
   homepage "https://sanger-pathogens.github.io/Roary/"
-  url "https://github.com/sanger-pathogens/Roary/archive/v3.13.0.tar.gz"
+  url "https://github.com/sanger-pathogens/Roary/archive/refs/tags/v3.13.0.tar.gz"
   sha256 "375f83c8750b0f4dea5b676471e73e94f3710bc3a327ec88b59f25eae1c3a1e8"
   license "GPL-3.0"
   revision 2

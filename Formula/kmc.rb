@@ -2,7 +2,7 @@ class Kmc < Formula
   # cite Deorowicz_2015: "https://doi.org/10.1093/bioinformatics/btv022"
   desc "Fast and frugal disk based k-mer counter"
   homepage "https://github.com/refresh-bio/KMC"
-  url "https://github.com/refresh-bio/KMC/archive/v3.2.1.tar.gz"
+  url "https://github.com/refresh-bio/KMC/archive/refs/tags/v3.2.1.tar.gz"
   sha256 "7db333091a754508163a097c41720cf32a80abe160bef60f3fc82c8da1d67896"
   head "https://github.com/marekkokot/KMC.git"
 

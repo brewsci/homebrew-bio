@@ -2,7 +2,7 @@ class Swipe < Formula
   # Rognes 2011: "https://doi.org/10.1186/1471-2105-12-221"
   desc "Smith-Waterman database searches with inter-sequence SIMD parallelisation"
   homepage "http://dna.uio.no/swipe/"
-  url "https://github.com/torognes/swipe/archive/v2.1.0.tar.gz"
+  url "https://github.com/torognes/swipe/archive/refs/tags/v2.1.0.tar.gz"
   sha256 "9706cc1419bba9e4d77e2afb3565ac4f0f34abc294c5c2d0914325ab3207859f"
   license "AGPL-3.0"
 

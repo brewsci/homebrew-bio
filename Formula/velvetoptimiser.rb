@@ -1,7 +1,7 @@
 class Velvetoptimiser < Formula
   desc "Automatically optimise Velvet genome assemblies"
   homepage "https://github.com/tseemann/VelvetOptimiser"
-  url "https://github.com/tseemann/VelvetOptimiser/archive/2.2.6.tar.gz"
+  url "https://github.com/tseemann/VelvetOptimiser/archive/refs/tags/2.2.6.tar.gz"
   sha256 "b407db61b58ed983760b80a3a40c8f8a355851ecfab3e61a551bed29bf5b40b3"
   license "GPL-2.0"
   revision 1

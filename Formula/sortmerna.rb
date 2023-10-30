@@ -2,7 +2,7 @@ class Sortmerna < Formula
   # cite Kopylova_2012: "https://doi.org/10.1093/bioinformatics/bts611"
   desc "Filter metatranscriptomic ribosomal RNA"
   homepage "https://bioinfo.lifl.fr/RNA/sortmerna/"
-  url "https://github.com/biocore/sortmerna/archive/2.1b.tar.gz"
+  url "https://github.com/biocore/sortmerna/archive/refs/tags/2.1b.tar.gz"
   sha256 "b3d122776c323813971b35991cda21a2c2f3ce817daba68a4c4e09d4367c0abe"
   license "GPL-3.0"
   head "https://github.com/biocore/sortmerna.git"
