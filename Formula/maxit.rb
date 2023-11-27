@@ -2,7 +2,7 @@ class Maxit < Formula
   desc "Assists in the processing and curation of macromolecular structure data"
   homepage "https://sw-tools.rcsb.org/apps/MAXIT"
   url "https://sw-tools.rcsb.org/apps/MAXIT/maxit-v11.100-prod-src.tar.gz"
-  sha256 "373540082e02203e6b6ba43190d393da854641521d9b3843157f785273001523"
+  sha256 "e5c6656ea00a6716ca4c390cbd527ebb67a4837ea81c516220853fbb15c8af1d"
   license :cannot_represent
   revision 1
 
