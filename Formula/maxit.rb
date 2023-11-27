@@ -4,7 +4,7 @@ class Maxit < Formula
   url "https://sw-tools.rcsb.org/apps/MAXIT/maxit-v11.100-prod-src.tar.gz"
   sha256 "e5c6656ea00a6716ca4c390cbd527ebb67a4837ea81c516220853fbb15c8af1d"
   license :cannot_represent
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -33,8 +33,6 @@ class Maxit < Formula
     # install bin and data directories
     bin.install "bin/maxit", "bin/process_entry"
     prefix.install "data"
-    (prefix/"data/binary/").install "variant.odb"
-    (prefix/"data/binary/").install "component.odb"
   end
 
   test do
