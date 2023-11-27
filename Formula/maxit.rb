@@ -27,7 +27,6 @@ class Maxit < Formula
     # some tricks to circumvent CI errors
     inreplace "cifparse-obj-v7.0/Makefile", "mv", "cp"
     inreplace "binary.csh", "./data/binary", "#{prefix}/data/binary"
-    inreplace "Makefile", "@sh -c './binary.csh'", "@tcsh binary.csh" if OS.linux?
 
     system "make", "binary"
     # install bin and data directories
