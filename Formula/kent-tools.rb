@@ -1,12 +1,12 @@
 class KentTools < Formula
   desc "Utilities for the UCSC Genome Browser"
   homepage "https://genome.ucsc.edu/"
-  url "https://hgdownload.soe.ucsc.edu/admin/exe/userApps.v401.src.tgz"
-  sha256 "3608689a07a6327f5695672a804ef5f35c9d680c114b0ee947ca2a4f3b768514"
+  url "https://hgdownload.soe.ucsc.edu/admin/exe/userApps.archive/userApps.v457.src.tgz"
+  sha256 "fa52259d4998fea75555fe7952c79d2f9a572e3be52a4274e6bb2db706d152fc"
   head "git://genome-source.cse.ucsc.edu/kent.git"
 
   livecheck do
-    url "https://hgdownload.soe.ucsc.edu/admin/exe/"
+    url "https://hgdownload.soe.ucsc.edu/admin/exe/userApps.archive/"
     regex(/href=.*?userApps[._-]v?(\d+)\.src\.t/i)
   end
 
@@ -17,8 +17,7 @@ class KentTools < Formula
   end
 
   depends_on "libpng"
-  depends_on "mysql@5.7"
-  depends_on "openssl@1.1"
+  depends_on "mysql"
 
   uses_from_macos "rsync"
   uses_from_macos "zlib"
@@ -29,7 +28,7 @@ class KentTools < Formula
 
   def install
     libpng = Formula["libpng"]
-    mysql = Formula["mysql@5.7"]
+    mysql = Formula["mysql"]
 
     args = ["userApps", "BINDIR=#{bin}", "SCRIPTS=#{bin}"]
     args << "MACHTYPE=#{`uname -m`.chomp}"
