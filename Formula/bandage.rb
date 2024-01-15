@@ -14,8 +14,7 @@ class Bandage < Formula
   depends_on :linux
   depends_on "qt"
   depends_on "patchelf" => :build unless OS.mac?
-
-  uses_from_macos "zlib"
+  depends_on "zlib"
 
   def install
     bin.install "Bandage"

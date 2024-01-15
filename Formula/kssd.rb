@@ -11,8 +11,7 @@ class Kssd < Formula
 
   # https://github.com/yhg926/public_kssd/issues/2
   depends_on :linux
-
-  uses_from_macos "zlib"
+  depends_on "zlib"
 
   def install
     system "make"

@@ -12,12 +12,12 @@ class Masurca < Formula
   end
 
   depends_on "boost" => :build
+  depends_on "bzip2"
   depends_on "jellyfish"
   depends_on :linux
   depends_on "parallel"
   depends_on "perl"
-  uses_from_macos "bzip2"
-  uses_from_macos "zlib"
+  depends_on "zlib"
 
   def install
     ENV.deparallelize
