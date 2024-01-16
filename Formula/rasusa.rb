@@ -2,7 +2,7 @@ class Rasusa < Formula
   # cite Hall_2022: "https://doi.org/10.21105/joss.03941"
   desc "Randomly subsample sequencing reads to a specified coverage"
   homepage "https://github.com/mbhall88/rasusa"
-  url "https://github.com/mbhall88/rasusa/archive/0.7.0.tar.gz"
+  url "https://github.com/mbhall88/rasusa/archive/refs/tags/0.7.0.tar.gz"
   sha256 "5884bddeb1c40791c02677afb080c4e938ef422924f1a5d5a0fa5c4a17f4d9fe"
   license "MIT"
 

@@ -2,7 +2,7 @@ class Fastani < Formula
   # cite Jain_2017: "https://doi.org/10.1101/225342"
   desc "Fast Whole-Genome Similarity (ANI) Estimation"
   homepage "https://github.com/ParBLiSS/FastANI"
-  url "https://github.com/ParBLiSS/FastANI/archive/v1.32.tar.gz"
+  url "https://github.com/ParBLiSS/FastANI/archive/refs/tags/v1.32.tar.gz"
   sha256 "f66b3bb5b272aa3db4deae782e47020fa9aae63eecbbd6fd93df876237d3b2e5"
   license "Apache-2.0"
   revision 1

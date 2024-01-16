@@ -2,7 +2,7 @@ class Idba < Formula
   # cite Peng_2012: "https://doi.org/10.1093/bioinformatics/bts174"
   desc "Iterative De Bruijn Graph De Novo Assembler for sequence assembly"
   homepage "https://i.cs.hku.hk/~alse/hkubrg/projects/idba/"
-  url "https://github.com/loneknightpy/idba/archive/1.1.3.tar.gz"
+  url "https://github.com/loneknightpy/idba/archive/refs/tags/1.1.3.tar.gz"
   sha256 "6b1746a29884f4fa17b110d94d9ead677ab5557c084a93b16b6a043dbb148709"
   license "GPL-2.0-or-later"
   revision 3

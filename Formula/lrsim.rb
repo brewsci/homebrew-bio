@@ -1,7 +1,7 @@
 class Lrsim < Formula
   desc "10x Genomics Reads Simulator"
   homepage "https://github.com/aquaskyline/LRSIM"
-  url "https://github.com/aquaskyline/LRSIM/archive/1.0.tar.gz"
+  url "https://github.com/aquaskyline/LRSIM/archive/refs/tags/1.0.tar.gz"
   sha256 "89623fba2ce624da4e2c8ce8a99b1a46eb3bc03a8c38044c64f4b8a0d0d9721e"
   license "MIT"
   revision 1

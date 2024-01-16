@@ -2,7 +2,7 @@ class Squeakr < Formula
   # cite Pandey_2017: "https://doi.org/10.1093/bioinformatics/btx636"
   desc "Exact and Approximate k-mer Counting System"
   homepage "https://github.com/splatlab/squeakr"
-  url "https://github.com/splatlab/squeakr/archive/V0.7.tar.gz"
+  url "https://github.com/splatlab/squeakr/archive/refs/tags/V0.7.tar.gz"
   sha256 "61f0493e5d27a7d629a87841052d174491018bb81e1876879f402d3b6885a9ff"
   license "BSD-3-Clause"
   head "https://github.com/splatlab/squeakr.git"
@@ -13,11 +13,10 @@ class Squeakr < Formula
   end
 
   depends_on "boost"
+  depends_on "bzip2"
   depends_on :linux # https://github.com/splatlab/squeakr/issues/41
   depends_on "openssl@1.1"
-
-  uses_from_macos "bzip2"
-  uses_from_macos "zlib"
+  depends_on "zlib"
 
   def install
     inreplace "Makefile", "-lboost_system", "-lboost_system-mt"

@@ -1,7 +1,7 @@
 class Easel < Formula
   desc "Multiple sequence alignment toolset"
   homepage "https://github.com/EddyRivasLab/easel"
-  url "https://github.com/EddyRivasLab/easel/archive/easel-0.46.tar.gz"
+  url "https://github.com/EddyRivasLab/easel/archive/refs/tags/easel-0.46.tar.gz"
   sha256 "6648ab45346c2cef4a5d4086de8e43e44f0c0f367cf92df08f4f9c88c179da42"
 
   livecheck do

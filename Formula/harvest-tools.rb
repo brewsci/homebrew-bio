@@ -2,7 +2,7 @@ class HarvestTools < Formula
   # cite Treangen_2014: "https://doi.org/10.1186/s13059-014-0524-x"
   desc "Utility for creating and interfacing with Gingr files"
   homepage "https://github.com/marbl/harvest-tools"
-  url "https://github.com/marbl/harvest-tools/archive/v1.3.tar.gz"
+  url "https://github.com/marbl/harvest-tools/archive/refs/tags/v1.3.tar.gz"
   sha256 "ffbcf0a115c74507695fd6cee4a9d5ba27a700db36b32d226521ef8dd3309264"
   head "https://github.com/marbl/harvest-tools.git"
 

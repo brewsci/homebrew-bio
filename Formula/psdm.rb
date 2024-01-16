@@ -1,7 +1,7 @@
 class Psdm < Formula
   desc "Compute a pairwise SNP distance matrix from one or two alignment(s)"
   homepage "https://github.com/mbhall88/psdm"
-  url "https://github.com/mbhall88/psdm/archive/0.1.0.tar.gz"
+  url "https://github.com/mbhall88/psdm/archive/refs/tags/0.1.0.tar.gz"
   sha256 "d3cc162c392f9086050a84c8ec7c32f498b6db924e651861e797fa9f94040946"
   license "MIT"
 

@@ -2,7 +2,7 @@ class Ale < Formula
   # cite Clark_2013: "https://doi.org/10.1093/bioinformatics/bts723"
   desc "Assembly Likelihood Estimator"
   homepage "https://github.com/sc932/ALE"
-  url "https://github.com/sc932/ALE/archive/20220503.tar.gz"
+  url "https://github.com/sc932/ALE/archive/refs/tags/20220503.tar.gz"
   sha256 "b04a047fd3b11c0e84718bea20fe7d03f50f80a542d3b18e66c5b95983b9e559"
   head "https://github.com/sc932/ALE.git"
 

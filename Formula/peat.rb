@@ -2,7 +2,7 @@ class Peat < Formula
   # cite Li_2015: "https://doi.org/10.1186/1471-2105-16-S1-S2"
   desc "Paired-end trimmer with automatic adapter discovery"
   homepage "https://github.com/jhhung/PEAT"
-  url "https://github.com/jhhung/PEAT/archive/v1.2.5.tar.gz"
+  url "https://github.com/jhhung/PEAT/archive/refs/tags/v1.2.5.tar.gz"
   sha256 "5a44f888dcbae4b537141246a2e991249ae34930d553e1b0a10684309ac03e52"
   license "GPL-2.0"
 

@@ -2,7 +2,7 @@ class Lofreq < Formula
   # cite Wilm_2012: "https://10.1093/nar/gks918"
   desc "Low frequency variant calling in populations"
   homepage "https://csb5.github.io/lofreq/"
-  url "https://github.com/CSB5/lofreq/archive/v2.1.3.1.tar.gz"
+  url "https://github.com/CSB5/lofreq/archive/refs/tags/v2.1.3.1.tar.gz"
   sha256 "72ad0165a226ad8601297d5e01d139574f30d0637c70dec543f8d513c26958eb"
 
   bottle do
@@ -23,12 +23,12 @@ class Lofreq < Formula
   # See: https://github.com/CSB5/lofreq/issues/52
 
   resource "samtools" do
-    url "https://github.com/samtools/samtools/archive/1.1.tar.gz"
+    url "https://github.com/samtools/samtools/archive/refs/tags/1.1.tar.gz"
     sha256 "cee231e33b7290be8e07dea43a99b885d9df79d957625ac84879b47ff91cda69"
   end
 
   resource "htslib" do
-    url "https://github.com/samtools/htslib/archive/1.1.tar.gz"
+    url "https://github.com/samtools/htslib/archive/refs/tags/1.1.tar.gz"
     sha256 "eb0a7918862336518afcaf62e3d7da8b7f87053fd40d88f2d1ab689f7f25923f"
   end
 

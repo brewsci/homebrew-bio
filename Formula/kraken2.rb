@@ -1,7 +1,7 @@
 class Kraken2 < Formula
   desc "Taxonomic sequence classification system"
   homepage "https://github.com/DerrickWood/kraken2"
-  url "https://github.com/DerrickWood/kraken2/archive/v2.1.2.tar.gz"
+  url "https://github.com/DerrickWood/kraken2/archive/refs/tags/v2.1.2.tar.gz"
   sha256 "e5f431e8bc3d5493a79e1d8125f4aacbad24f9ea2cc9657b66da06a32bef6ff3"
   license "MIT"
 

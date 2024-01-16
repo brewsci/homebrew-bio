@@ -4,16 +4,15 @@ class Raster3d < Formula
   # cite Merritt_1997: "https://doi.org/10.1016/s0076-6879(97)77028-9"
   desc "Set of tools for generating high quality raster images of proteins"
   homepage "http://www.bmsc.washington.edu/raster3d"
-  url "https://web.archive.org/web/20211024200400/http://www.bmsc.washington.edu/raster3d/Raster3D_3.0-7.tar.gz"
-  mirror "http://www.bmsc.washington.edu/raster3d/Raster3D_3.0-7.tar.gz"
+  url "http://www.bmsc.washington.edu/raster3d/Raster3D_3.0-7.tar.gz"
   sha256 "f566b499fee341db3a95229672c6afdbdb69da7faabdbe34f6e0d332d766160c"
   license "Artistic-2.0"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 catalina:     "10306db851da078f3d948dfc85d22f09aee8bc0276418328ebcf63c6ca8f7523"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "dcad2e4c62531b8926f4777728e81df12c199f2e302961c01f29501c33196bf2"
+    sha256 cellar: :any,                 monterey:     "3638617b2836308831b08c24f4ec7cfccc242194501db85da4b6b502e3dd28f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "24bb4867e9b4fce841a4db39d20a26823d0e8c9d4575d63c9e87f9b667204aae"
   end
 
   depends_on "gcc"
@@ -28,6 +27,8 @@ class Raster3d < Formula
 
     inreplace "Makefile.incl" do |s|
       s.gsub! "prefix  = /usr/local", "prefix  = #{prefix}"
+      s.gsub! "INCDIRS  =	-I/usr/include -I/usr/local/include", "INCDIRS  = -I#{HOMEBREW_PREFIX}/include"
+      s.gsub! "LIBDIRS  =	-L/usr/local/lib", "LIBDIRS  = -L#{HOMEBREW_PREFIX}/lib"
       s.gsub! "mandir  = $(prefix)/man/manl", "mandir  = #{man}/manl"
     end
 

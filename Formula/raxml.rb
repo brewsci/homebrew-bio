@@ -2,7 +2,7 @@ class Raxml < Formula
   # cite Stamatakis_2014: "https://doi.org/10.1093/bioinformatics/btu033"
   desc "Maximum likelihood analysis of large phylogenies"
   homepage "https://sco.h-its.org/exelixis/web/software/raxml/index.html"
-  url "https://github.com/stamatak/standard-RAxML/archive/v8.2.12.tar.gz"
+  url "https://github.com/stamatak/standard-RAxML/archive/refs/tags/v8.2.12.tar.gz"
   sha256 "338f81b52b54e16090e193daf36c1d4baa9b902705cfdc7f4497e3e09718533b"
   head "https://github.com/stamatak/standard-RAxML.git"
 

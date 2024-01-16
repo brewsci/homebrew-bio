@@ -1,7 +1,7 @@
 class Nextgenmap < Formula
   desc "Sensitive aligner for short reads with high mismatch rate"
   homepage "https://github.com/Cibiv/NextGenMap/wiki"
-  url "https://github.com/Cibiv/NextGenMap/archive/v0.5.5.tar.gz"
+  url "https://github.com/Cibiv/NextGenMap/archive/refs/tags/v0.5.5.tar.gz"
   sha256 "c205e6cb312d2f495106435f10fb446e6fb073dd1474f4f74ab5980ba9803661"
 
   bottle do

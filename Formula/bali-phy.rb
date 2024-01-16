@@ -4,8 +4,8 @@ class BaliPhy < Formula
   desc "Bayesian co-estimation of phylogenies and multiple alignments"
   homepage "https://www.bali-phy.org/"
   url "https://github.com/bredelings/BAli-Phy.git",
-    tag:      "4.0-beta6",
-    revision: "131b69187bfaca8f55db1960166276ca30fbe71e"
+    tag:      "4.0-beta7",
+    revision: "1d1403ae0dfb77e6a23bf2c091d6a3d66924e74b"
   license "GPL-2.0-or-later"
   head "https://github.com/bredelings/BAli-Phy.git", branch: "master"
 
@@ -16,8 +16,8 @@ class BaliPhy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 monterey:     "d86ab38385953c23a83a7e11fd676df02fe956b1e659e96094fdf1de1dd5b96b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ffeb87efaa6fbad9b1dbc4c3bc70d942eb40178c1b5bccae2c95b2c9cc147b87"
+    sha256 cellar: :any,                 monterey:     "77e691f0d1f40b3af0a7748414c6be94842e8e03b848027f8cb3940dd011b5dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0d2e8b2dec53fd97c51b1953a75ae55ea22d80987072c745b851deeb95fb0813"
   end
 
   depends_on "meson" => :build
