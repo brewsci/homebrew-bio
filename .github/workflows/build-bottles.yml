@@ -51,5 +51,5 @@ jobs:
         if: always() && github.event_name == 'pull_request'
         uses: actions/upload-artifact@main
         with:
-          name: bottles
+          name: bottles-${{ runner.os }}
           path: '*.bottle.*'
