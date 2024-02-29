@@ -52,7 +52,7 @@ jobs:
         if: always() && github.event_name == 'pull_request'
         uses: actions/upload-artifact@v4
         with:
-          name: bottles-${{ runner.os }}
+          name: bottles-${{ matrix.os }}
           path: '*.bottle.*'
 
   merge:
@@ -62,5 +62,5 @@ jobs:
       - name: Merge Artifacts
         uses: actions/upload-artifact/merge@v4
         with:
-          name: all-my-files
-          pattern: my-artifact-*
+          name: all-bottles
+          pattern: bottles-*
