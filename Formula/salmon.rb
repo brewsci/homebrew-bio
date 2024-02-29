@@ -19,6 +19,7 @@ class Salmon < Formula
   depends_on "cmake" => :build
   depends_on "tbb"
   depends_on "xz"
+  depends_on "zstd"
 
   uses_from_macos "unzip" => :build
   uses_from_macos "bzip2"
@@ -26,7 +27,10 @@ class Salmon < Formula
   uses_from_macos "zlib"
 
   def install
-    system "cmake", ".", *std_cmake_args
+    args = *std_cmake_args
+    # https://github.com/COMBINE-lab/salmon/issues/664
+    args << "-DNO_IPO=TRUE" if OS.linux?
+    system "cmake", ".", *args
     system "make"
     system "make", "install"
   end
