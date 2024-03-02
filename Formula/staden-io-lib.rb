@@ -7,8 +7,7 @@ class StadenIoLib < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, catalina:     "7f2660ade78da28992e2b40e7920bb16585f5de7fcfb14344f974c84bdcfc849"
-    sha256 cellar: :any, x86_64_linux: "ec45d0b6f055089c5bc95c798e7be60e39699aa664fad44e9ea9dda862b26054"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4cc0c0843a328ef4303c6653c5903a64b0b63334562b057b2b0dc409c3d9a2cd"
   end
 
   depends_on "autoconf" => :build
