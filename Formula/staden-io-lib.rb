@@ -40,9 +40,10 @@ class StadenIoLib < Formula
     pkgshare.install "tests"
 
     # Avoid references to Homebrew shims
-    os = OS.mac? ? "mac" : "linux"
-    inreplace pkgshare/"tests/Makefile", HOMEBREW_LIBRARY/"Homebrew/shims/#{os}/super/", "/usr/bin/"
-    rm pkgshare/"tests/cram_io_test"
+    if OS.linux?
+      inreplace pkgshare/"tests/Makefile", HOMEBREW_LIBRARY/"Homebrew/shims/linux/super/", "/usr/bin/"
+      rm pkgshare/"tests/cram_io_test"
+    end
   end
 
   test do
