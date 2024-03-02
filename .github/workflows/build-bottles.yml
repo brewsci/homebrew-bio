@@ -11,9 +11,9 @@ jobs:
   build-bottles:
     strategy:
       fail-fast: false
-      max-parallel: 2
+      max-parallel: 4
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        os: [macos-14, macos-14-large, macos-13, macos-13-large, ubuntu-latest]
     runs-on: ${{ matrix.os }}
     env:
       HOMEBREW_FORCE_VENDOR_RUBY: 1
