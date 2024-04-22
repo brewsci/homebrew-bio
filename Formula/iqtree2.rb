@@ -11,8 +11,7 @@ class Iqtree2 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, catalina:     "b9d0f98622e3223771bbdd6c86861a37d240dfa9bdc357888b589802b0eb8056"
-    sha256 cellar: :any, x86_64_linux: "06d8c6b11ddb0b991ed2b1e237a4c900be94a632dc4ba4deb442a241dbf4f996"
+    sha256 cellar: :any, arm64_sonoma: "e3ed429dda7582a3a4d536da661379292d0465885b101e624e6c856241ffc1f3"
   end
 
   depends_on "boost" => :build
