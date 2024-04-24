@@ -5,8 +5,10 @@ class Libsbml < Formula
   sha256 "a196cab964b0b41164d4118ef20523696510bbfd264a029df00091305a1af540"
   license "LGPL-2.1-only"
 
+  depends_on "check" => :build
   depends_on "cmake" => :build
-  depends_on "check"
+  depends_on "pkg-config" => :build
+  depends_on "swig" => :build
 
   if OS.mac?
     uses_from_macos "bzip2"
