@@ -10,12 +10,10 @@ class Libsbml < Formula
 
   if OS.mac?
     uses_from_macos "bzip2"
-    uses_from_macos "libiconv"
     uses_from_macos "libxml2"
     uses_from_macos "zlib"
   else
     depends_on "bzip2"
-    depends_on "libiconv"
     depends_on "libxml2"
     depends_on "zlib"
   end
