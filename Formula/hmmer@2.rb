@@ -8,6 +8,11 @@ class HmmerAT2 < Formula
   sha256 "d20e1779fcdff34ab4e986ea74a6c4ac5c5f01da2993b14e92c94d2f076828b4"
   license "GPL-2.0-only"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "5cc327d2483411bffa29c2d9141834ad17e4690e8806c6f32c52966f413f0c35"
+  end
+
   resource "config.sub" do
     url "http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD"
     sha256 "fe3a2f32fbaff57848732549f48d983fd6526024ec2f0f5a9dc75c2f4359a3a6"
