@@ -4,28 +4,37 @@ class Hmmer2 < Formula
   # cite Eddy_2011: "https://doi.org/10.1371/journal.pcbi.1002195"
   desc "Profile HMM models for protein sequences"
   homepage "http://hmmer.org/"
-  url "http://eddylab.org/software/hmmer/2.4i/hmmer-2.4i.tar.gz"
-  sha256 "73cb85c2197017fa7a25482556ed250bdeed256974b99b0c25e02854e710a886"
+  url "http://eddylab.org/software/hmmer/hmmer-2.3.2.tar.gz"
+  sha256 "d20e1779fcdff34ab4e986ea74a6c4ac5c5f01da2993b14e92c94d2f076828b4"
+  license "GPL-2.0-only"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7cbccc680a07e5421f3a582e5bf8d2c73c9a930b77823360e794aecf7928c51d"
+  resource "config.sub" do
+    url "http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD"
+    sha256 "fe3a2f32fbaff57848732549f48d983fd6526024ec2f0f5a9dc75c2f4359a3a6"
   end
 
-  keg_only "hmmer2 conflicts with hmmer 3.x"
-
-  # fast_algorithms.c:49:10: fatal error: 'ppc_intrinsics.h' file not found
-  depends_on :linux
+  resource "config.guess" do
+    url "http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb=HEAD"
+    sha256 "641cae3c0c74c49354d3ede009f3febd80febe1501a77c1d9fac8d42cc45b6cb"
+  end
 
   def install
-    system "./configure", "--prefix=#{prefix}", "--mandir=#{man}",
-                          "--enable-threads", "--enable-lfs", "--disable-altivec"
+    # patch to Makefile.in
+    inreplace "Makefile.in", "cp src/$$file $(BINDIR)/", "cp src/$$file $(BINDIR)/\"$${file}2\""
+    # download config.sub and config.guess from newer autoconf-archive
+    # so we can build on newer macOS
+    buildpath.install resource("config.sub")
+    buildpath.install resource("config.guess")
+
+    system "./configure", "--prefix=#{prefix}", "--enable-threads", "--enable-lfs"
     system "make"
-    system "make", "install"
+    system "make", "install", "--always-make"
     pkgshare.install "tutorial", "testsuite"
   end
 
   test do
-    assert_match "threshold", shell_output("#{bin}/hmmpfam 2>&1", 1)
+    cd pkgshare/"tutorial" do
+      assert_match "IYIGNL......NRELTEGDILTVFS.....E.YGVP..VDVILSRD", shell_output("#{bin}/hmmalign2 rrm.hmm rrm.sto")
+    end
   end
 end
