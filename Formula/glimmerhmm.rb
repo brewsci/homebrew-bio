@@ -5,6 +5,11 @@ class Glimmerhmm < Formula
   url "https://ccb.jhu.edu/software/glimmerhmm/dl/GlimmerHMM-3.0.4c.tar.gz"
   sha256 "31ee2ceb8f31338205b2de626d83d0f92d2cd55a04d48a6803193a2d0ad1b4a3"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "cff30c2d426bddd67a34b235dbac2ad919cbae5e9283b78066c91d5c23540efe"
+  end
+
   def install
     # fatal error: 'malloc.h' file not found
     inreplace %w[train/utils.cpp], "malloc.h", "stdlib.h"
