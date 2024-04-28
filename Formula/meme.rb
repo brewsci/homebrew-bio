@@ -15,9 +15,9 @@ class Meme < Formula
   depends_on "open-mpi"
   depends_on "python@3.12"
 
-  uses_from_macos "perl"
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
+  uses_from_macos "perl"
   uses_from_macos "zlib"
 
   on_linux do
