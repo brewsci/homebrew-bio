@@ -6,6 +6,11 @@ class MemeAT4 < Formula
   sha256 "49ff80f842b59d328588acfcd1d15bf94c55fed661d22b0f95f37430cc363a06"
   license :cannot_represent
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 arm64_sonoma: "30cab441b4bdb76254d05f8c00f00e6fb3d0b3000657c6ace0bd3d98aa7a1260"
+  end
+
   keg_only :versioned_formula
 
   depends_on "ghostscript"
