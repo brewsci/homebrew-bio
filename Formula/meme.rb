@@ -8,7 +8,7 @@ class Meme < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 x86_64_linux: "b66235d3ce6851c700bc395dff15f2346234b6e84d750dd9d4d92945a999e01a"
+    sha256 arm64_sonoma: "2871ce858b7ef924f9cdaf02474059999a908d50ef31765d8fb69c86bc72d45a"
   end
 
   depends_on "ghostscript"
