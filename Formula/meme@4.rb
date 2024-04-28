@@ -23,6 +23,10 @@ class MemeAT4 < Formula
   end
 
   def install
+    ENV.append "CFLAGS", "-fcommon -fgnu89-inline"
+    ENV.append "LDFLAGS", "-Wl,--allow-multiple-definition" if OS.linux?
+    inreplace "src/mast.h", "#include <sys/types.h>\n", "#include <sys/types.h>\n#include <sys/wait.h>\n"
+
     unless OS.mac?
       ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
       perl_resources = %w[XML::Parser]
