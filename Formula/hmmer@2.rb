@@ -7,14 +7,12 @@ class HmmerAT2 < Formula
   url "http://eddylab.org/software/hmmer/hmmer-2.3.2.tar.gz"
   sha256 "d20e1779fcdff34ab4e986ea74a6c4ac5c5f01da2993b14e92c94d2f076828b4"
   license "GPL-2.0-only"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, arm64_sonoma: "cfdc3cb5570e778127ec603bc18a2211cea4b322c13dba8d2dcfea7453f0f38a"
   end
-
-  keg_only :versioned_formula
 
   resource "config.sub" do
     url "http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD"
@@ -27,8 +25,9 @@ class HmmerAT2 < Formula
   end
 
   def install
-    # patch to Makefile.in
+    # patch to Makefile.in to coexist with HMMER 3.x
     inreplace "Makefile.in", "cp src/$$file $(BINDIR)/", "cp src/$$file $(BINDIR)/\"$${file}2\""
+    inreplace "Makefile.in", "man$(MANSUFFIX)/$$file.$(MANSUFFIX)", "man$(MANSUFFIX)/\"$${file}2\".$(MANSUFFIX)"
     # download config.sub and config.guess from newer autoconf-archive
     # so we can build on newer macOS
     buildpath.install resource("config.sub")
