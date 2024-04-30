@@ -166,7 +166,7 @@ class Antismash < Formula
     venv.pip_install resources
     site_packages = Language::Python.site_packages(python3)
 
-    system python3, "-m", "pip", "install", *std_pip_args, "."
+    venv.pip_install_and_link buildpath
     (prefix/site_packages/"homebrew-antismash.pth").write venv.site_packages
   end
 
