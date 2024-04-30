@@ -9,7 +9,7 @@ class MemeAT4112 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 arm64_sonoma: "aa4d033aa8db84ccc99dc30e925827fecb26e5c714a39c08ebe230d0f7a3ec6a"
+    sha256 arm64_sonoma: "1feff8a77d27f0afe63e792e5c72533136792903e75322099dd3622661633517"
   end
 
   depends_on "ghostscript"
