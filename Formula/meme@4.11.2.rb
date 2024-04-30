@@ -5,6 +5,7 @@ class MemeAT4112 < Formula
   url "https://meme-suite.org/meme/meme-software/4.11.2/meme_4.11.2_2.tar.gz"
   sha256 "377238c2a9dda64e01ffae8ecdbc1492c100df9b0f84132d50c1cf2f68921b22"
   license :cannot_represent
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -46,7 +47,7 @@ class MemeAT4112 < Formula
       "--disable-dependency-tracking",
       "--prefix=#{prefix}",
       "--with-mpidir=#{Formula["open-mpi"].opt_prefix}",
-      "--with-url=https://meme-suite.org/meme" \
+      "--with-url=https://meme-suite.org/meme",
       "--with-python3=#{Formula["python@3.12"].opt_bin}/python3",
       "--with-gs=#{Formula["ghostscript"].opt_bin}/gs"
 
