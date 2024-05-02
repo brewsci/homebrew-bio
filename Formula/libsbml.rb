@@ -8,23 +8,23 @@ class Libsbml < Formula
   depends_on "check" => :build
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "swig" => :build
 
-  if OS.mac?
-    uses_from_macos "bzip2"
-    uses_from_macos "libxml2"
-    uses_from_macos "zlib"
-  else
-    depends_on "bzip2"
-    depends_on "libxml2"
-    depends_on "zlib"
-  end
+  uses_from_macos "bzip2"
+  uses_from_macos "libxml2"
 
   def install
     args = %w[
+      -DWITH_SWIG=OFF
+      -DWITH_ZLIB=OFF
+      -DWITH_BZIP2=ON
+      -DENABLE_COMP=ON
       -DENABLE_FBC=ON
       -DENABLE_GROUPS=ON
-      -DWITH_LIBXML=TRUE
+      -DENABLE_L3V2EXTENDEDMATH=ON
+      -DENABLE_LAYOUT=ON
+      -DENABLE_MULTI=ON
+      -DENABLE_QUAL=ON
+      -DENABLE_RENDER=ON
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
