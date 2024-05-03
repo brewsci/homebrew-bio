@@ -13,6 +13,8 @@ class Libsbml < Formula
   uses_from_macos "libxml2"
 
   def install
+    # avoid an error "invalid conversion from ‘const xmlError*’"
+    ENV.append_to_cflags "-fpermissive" if OS.linux?
     args = %w[
       -DWITH_SWIG=OFF
       -DWITH_ZLIB=OFF
