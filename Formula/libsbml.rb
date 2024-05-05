@@ -28,7 +28,7 @@ class Libsbml < Formula
       -DENABLE_QUAL=ON
       -DENABLE_RENDER=ON
     ]
-
+    args << "-DLIBSBML_DEPENDENCY_DIR=#{HOMEBREW_PREFIX}"
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
