@@ -3,8 +3,10 @@ class MemeAT4112 < Formula
   desc "Tools for motif discovery"
   homepage "https://meme-suite.org"
   url "https://meme-suite.org/meme/meme-software/4.11.2/meme_4.11.2_2.tar.gz"
+  version "4.11.2"
   sha256 "377238c2a9dda64e01ffae8ecdbc1492c100df9b0f84132d50c1cf2f68921b22"
   license :cannot_represent
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -19,6 +21,8 @@ class MemeAT4112 < Formula
   uses_from_macos "libxslt"
   uses_from_macos "perl"
   uses_from_macos "zlib"
+
+  fails_with gcc: "5"
 
   resource "XML::Parser" do
     url "https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.47.tar.gz"
