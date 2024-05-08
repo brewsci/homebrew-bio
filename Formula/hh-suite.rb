@@ -10,8 +10,7 @@ class HhSuite < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 catalina:     "7f80ecc9a25f0db8279b837dd0bc07061d6da2c2991cb50aba56e887670d887c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "72ff32d4d23b5f7861984cae8ce1a24059b27ca1fd4a0a8a526edbbf27502332"
+    sha256 cellar: :any, arm64_sonoma: "952e16b615d47caa3baccd80fb27b0c28eecf46540211ec78ffa5c7d7dad87ff"
   end
 
   depends_on "cmake" => :build
