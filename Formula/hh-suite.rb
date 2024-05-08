@@ -5,7 +5,7 @@ class HhSuite < Formula
   url "https://github.com/soedinglab/hh-suite/archive/refs/tags/v3.3.0.tar.gz"
   sha256 "dd67f7f3bf601e48c9c0bc4cf1fbe3b946f787a808bde765e9436a48d27b0964"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
   head "https://github.com/soedinglab/hh-suite.git"
 
   bottle do
@@ -37,6 +37,9 @@ class HhSuite < Formula
       args << "-DOpenMP_omp_LIBRARY=#{libomp.opt_lib}/libomp.dylib"
     end
 
+    # Fix an error: no member named 'ptr_fun' in namespace 'std'
+    inreplace "src/a3m_compress.cpp", "std::not1(std::ptr_fun<int, int>(std::isspace)))",
+                                      "[](unsigned char ch) { return !std::isspace(ch); })"
     system "cmake", ".", *args
     system "make", "install"
     cp "scripts/reformat.pl", bin
