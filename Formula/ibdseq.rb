@@ -6,6 +6,11 @@ class Ibdseq < Formula
   sha256 "a835c7282444d8920109362ca012f9a9ac1eb54665d34fb0ca0380a3e0fed8ec"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "3fb363f468ec272a142e0618cdbdbdfaad93e0631033ab9dd85384e1b081ab30"
+  end
+
   depends_on "openjdk"
 
   def install
