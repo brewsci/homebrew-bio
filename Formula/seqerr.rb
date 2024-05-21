@@ -6,6 +6,11 @@ class Seqerr < Formula
   sha256 "91aefa26289c8dc7e1984ac2742f96906b8a8996a9673f6bbae12946f77300d2"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "2f55adb56dbabdbd5f3eac5ca9b69f5f04d7acb4b4c15922e9dfef082e927c5b"
+  end
+
   depends_on "openjdk"
 
   def install
