@@ -4,8 +4,8 @@ class BaliPhy < Formula
   desc "Bayesian co-estimation of phylogenies and multiple alignments"
   homepage "https://www.bali-phy.org/"
   url "https://github.com/bredelings/BAli-Phy.git",
-    tag:      "4.0-beta9",
-    revision: "f86d5a453af1e40f53597bdfa58a1f3d4b4eb827"
+    tag:      "4.0-beta11",
+    revision: "52255f775469844c82bbff2c69b63abbff54527e"
   license "GPL-2.0-or-later"
   head "https://github.com/bredelings/BAli-Phy.git", branch: "master"
 
@@ -19,6 +19,7 @@ class BaliPhy < Formula
     sha256 cellar: :any, arm64_sonoma: "5bbbb43e83128398483585a9107243a3b50b73fc6c97c57e033c8fa21f2a4984"
   end
 
+  depends_on "eigen" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pandoc" => :build
