@@ -9,10 +9,10 @@ class BaliPhy < Formula
   license "GPL-2.0-or-later"
   head "https://github.com/bredelings/BAli-Phy.git", branch: "master"
 
-  livecheck do
-    url :stable
-    strategy :github_latest
-  end
+#  livecheck do
+#    url :stable
+#    strategy :github_latest
+#  end
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
