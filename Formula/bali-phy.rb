@@ -4,21 +4,22 @@ class BaliPhy < Formula
   desc "Bayesian co-estimation of phylogenies and multiple alignments"
   homepage "https://www.bali-phy.org/"
   url "https://github.com/bredelings/BAli-Phy.git",
-    tag:      "4.0-beta9",
-    revision: "f86d5a453af1e40f53597bdfa58a1f3d4b4eb827"
+    tag:      "4.0-beta12",
+    revision: "8ef9ee35ebc04f9bc50f2ad80774011fdc7d180e"
   license "GPL-2.0-or-later"
   head "https://github.com/bredelings/BAli-Phy.git", branch: "master"
 
-  livecheck do
-    url :stable
-    strategy :github_latest
-  end
+  #  livecheck do
+  #    url :stable
+  #    strategy :github_latest
+  #  end
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any, arm64_sonoma: "5bbbb43e83128398483585a9107243a3b50b73fc6c97c57e033c8fa21f2a4984"
   end
 
+  depends_on "eigen" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pandoc" => :build
@@ -43,5 +44,6 @@ class BaliPhy < Formula
   test do
     system "#{bin}/bali-phy", "--version"
     system "#{bin}/bali-phy", "#{doc}/examples/5S-rRNA/5d.fasta", "--iter=150"
+    system "#{bin}/bp-analyze", "5d-1"
   end
 end
