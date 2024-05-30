@@ -7,6 +7,11 @@ class Kissplice < Formula
       revision: "00cb99c3b1971866089ef0439526647d328115d0"
   license "CECILL-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "5479f0d92565cdeba11acac46c87675f91cb6c746d1f6c84866519f7b5e33e12"
+  end
+
   depends_on "cmake" => :build
   depends_on "python@3.12" # Python application but only uses standard packages
 
