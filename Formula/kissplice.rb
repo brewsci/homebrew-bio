@@ -8,7 +8,7 @@ class Kissplice < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "5479f0d92565cdeba11acac46c87675f91cb6c746d1f6c84866519f7b5e33e12"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "696804a2e4dbf3b27d6b31bfcb30a7823345c1b8026bf034b389b6cb474e5282"
   end
 
   depends_on "cmake" => :build
