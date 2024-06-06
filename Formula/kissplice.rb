@@ -2,9 +2,8 @@ class Kissplice < Formula
   # cite Sacomoto_2012: https://doi.org/10.1186/1471-2105-13-S6-S5
   desc "Local transcriptome assembler for SNPs, indels and AS events"
   homepage "https://kissplice.prabi.fr"
-  url "https://gitlab.inria.fr/erable/kissplice.git",
-      tag:      "2.6.5",
-      revision: "00cb99c3b1971866089ef0439526647d328115d0"
+  url "https://gitlab.inria.fr/erable/kissplice/-/archive/2.6.7/kissplice-2.6.7.tar.gz"
+  sha256 "1904ffb3620a1073c5026915d19ec5fe21b9f23001995e4e1d906a64a817efe8"
   license "CECILL-2.0"
 
   bottle do
@@ -41,13 +40,12 @@ class Kissplice < Formula
   end
 
   test do
-    resource "git" do
-      url "https://gitlab.inria.fr/erable/kissplice.git",
-          tag:      "2.6.5",
-          revision: "00cb99c3b1971866089ef0439526647d328115d0"
+    resource "data" do
+      url "https://gitlab.inria.fr/erable/kissplice/-/archive/2.6.7/kissplice-2.6.7.tar.gz"
+      sha256 "1904ffb3620a1073c5026915d19ec5fe21b9f23001995e4e1d906a64a817efe8"
     end
 
-    resource("git").stage do
+    resource("data").stage do
       # Run sample example from the git data
       system "#{bin}/kissplice",
         "-r", "sample_example/mock1.fq", "-r", "sample_example/mock2.fq",
