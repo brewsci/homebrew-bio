@@ -4,8 +4,8 @@ class BaliPhy < Formula
   desc "Bayesian co-estimation of phylogenies and multiple alignments"
   homepage "https://www.bali-phy.org/"
   url "https://github.com/bredelings/BAli-Phy.git",
-    tag:      "4.0-beta13",
-    regision: "fde41a113fa66c9885a09149c925e5ba0c3b5a87"
+    tag:      "4.0-beta14",
+    revision: "e9b964b227176c1cc10825c13f911db4ae55b5be"
   license "GPL-2.0-or-later"
   head "https://github.com/bredelings/BAli-Phy.git", branch: "master"
 
