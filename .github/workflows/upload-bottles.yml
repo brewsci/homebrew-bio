@@ -32,19 +32,19 @@ jobs:
           echo sha1='${{github.event.head_commit.id}}'
           echo "$COMMIT_MESSAGE"
           pr="$(echo "$COMMIT_MESSAGE" | sed 's/^.*#\([0-9]*\).*/\1/;q')"
-          mkdir -p "$(dirname $(brew --repo ${{github.repository}}))"
+          mkdir -p "$(dirname "$(brew --repo ${{github.repository}})")"
           cp -a "$GITHUB_WORKSPACE" "$(brew --repo ${{github.repository}})"
           rm -rf .git *
           git -C "$(brew --repo ${{github.repository}})" fetch origin "pull/$pr/head:pr-head"
           sha1="$(git -C "$(brew --repo ${{github.repository}})" rev-parse pr-head)"
           echo pr="$pr" sha1="$sha1"
-          if [[ -n "$(curl -fs -H 'Accept: application/vnd.github.antiope-preview+json' https://api.github.com/repos/${{github.repository}}/pulls/$pr \
+          if [[ -n "$(curl -fs -H 'Accept: application/vnd.github.antiope-preview+json' "https://api.github.com/repos/${{github.repository}}/pulls/$pr" \
             | jq '.labels[] | select(.name == "ci-skip-upload")')" ]]; then
             echo Skipping upload...
           else
-            run_id=$(curl -fs -H 'Accept: application/vnd.github.antiope-preview+json' https://api.github.com/repos/${{github.repository}}/actions/workflows/build-bottles.yml/runs \
-              | jq ".workflow_runs[] | select(.head_sha == \"$sha1\").id")
-            artifact_id="$(curl -fs -H 'Accept: application/vnd.github.antiope-preview+json' https://api.github.com/repos/${{github.repository}}/actions/runs/$run_id/artifacts \
+            run_id="$(curl -fs -H 'Accept: application/vnd.github.antiope-preview+json' https://api.github.com/repos/${{github.repository}}/actions/workflows/build-bottles.yml/runs \
+              | jq ".workflow_runs[] | select(.head_sha == \"$sha1\").id")"
+            artifact_id="$(curl -fs -H 'Accept: application/vnd.github.antiope-preview+json' "https://api.github.com/repos/${{github.repository}}/actions/runs/$run_id/artifacts" \
               | jq '.artifacts[0].id')"
             echo run_id="$run_id" artifact_id="$artifact_id"
             curl -fL -o bottles.zip "https://${{secrets.HOMEBREW_GITHUB_API_TOKEN}}@api.github.com/repos/${{github.repository}}/actions/artifacts/$artifact_id/zip"
