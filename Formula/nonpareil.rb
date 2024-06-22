@@ -43,7 +43,7 @@ class Nonpareil < Formula
     if build.with? :"open-mpi"
       system "mpirun", "-c", 1, bin/"nonpareil-mpi",
                        "-s", "#{testpath}/test.fasta.gz", "-T", "alignment",
-                       "-b", "#{testpath}/test", "-f", "fasta"
+                       "-b", "#{testpath}/test", "-f", "fasta", "-X", "50"
     end
   end
 end
