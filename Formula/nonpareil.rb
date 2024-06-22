@@ -24,7 +24,8 @@ class Nonpareil < Formula
     system "make", "nonpareil"
     system "make", "nonpareil-mpi" if build.with? :"open-mpi"
     system "make", "prefix=#{prefix}", "mandir=#{man1}", "install"
-    libexec.install "test/test.fasta"
+    libexec.install "test/test.fasta.gz"
+    libexec.install "test/test.fastq.gz"
   end
 
   def r_major_minor
@@ -32,15 +33,17 @@ class Nonpareil < Formula
   end
 
   test do
-    cp libexec/"test.fasta", testpath
-    system bin/"nonpareil", "-s", "#{testpath}/test.fasta", "-T", "alignment",
+    cp libexec/"test.fasta.gz", testpath
+    cp libexec/"test.fastq.gz", testpath
+    system bin/"nonpareil", "-s", "#{testpath}/test.fasta.gz",
+                            "-T", "alignment", "-f", "fasta", "-X", "50",
                             "-b", "#{testpath}/test"
-    system bin/"nonpareil", "-s", "#{testpath}/test.fasta", "-T", "kmer",
-                            "-b", "#{testpath}/test", "-X", "50"
+    system bin/"nonpareil", "-s", "#{testpath}/test.fastq.gz", "-T", "kmer",
+                            "-b", "#{testpath}/test", "-X", "50", "-f", "fastq", "-X", "50"
     if build.with? :"open-mpi"
       system "mpirun", "-c", 1, bin/"nonpareil-mpi",
-                       "-s", "#{testpath}/test.fasta", "-T", "alignment",
-                       "-b", "#{testpath}/test"
+                       "-s", "#{testpath}/test.fasta.gz", "-T", "alignment",
+                       "-b", "#{testpath}/test", "-f", "fasta"
     end
   end
 end
