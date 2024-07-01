@@ -10,19 +10,25 @@ env:
 jobs:
   build-bottles:
     strategy:
+      fail-fast: false
+      max-parallel: 4
       matrix:
-        os: [ubuntu-22.04, macos-11]
+        os: [macos-14, macos-13, ubuntu-latest]
     runs-on: ${{ matrix.os }}
     env:
       HOMEBREW_FORCE_VENDOR_RUBY: 1
     steps:
+      - name: Activate Homebrew
+        if: runner.os == 'Linux'
+        run: echo "/home/linuxbrew/.linuxbrew/bin" >> $GITHUB_PATH
+
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
       - name: Cache Homebrew Bundler RubyGems
         id: cache
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: ${{ steps.set-up-homebrew.outputs.gems-path }}
           key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
@@ -44,7 +50,17 @@ jobs:
 
       - name: Upload bottles as artifact
         if: always() && github.event_name == 'pull_request'
-        uses: actions/upload-artifact@main
+        uses: actions/upload-artifact@v4
         with:
-          name: bottles
+          name: bottles-${{ matrix.os }}
           path: '*.bottle.*'
+
+  merge:
+    runs-on: ubuntu-latest
+    needs: build-bottles
+    steps:
+      - name: Merge Artifacts
+        uses: actions/upload-artifact/merge@v4
+        with:
+          name: all-bottles
+          pattern: bottles-*

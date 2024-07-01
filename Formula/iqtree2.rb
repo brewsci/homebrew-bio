@@ -2,31 +2,29 @@ class Iqtree2 < Formula
   # cite Nguyen_2015: "https://doi.org/10.1093/molbev/msu300"
   desc "Efficient phylogenomic software by maximum likelihood"
   homepage "http://www.iqtree.org/"
-  url "https://github.com/Cibiv/IQ-TREE/archive/v2.0.7.tar.gz"
-  sha256 "e0c00c040c9dd448aa15b8e17964a414b86eaeb024bef0b13767fe0c68730ae5"
-  license "GPL-2.0"
+  # pull from git tag to get submodules
+  url "https://github.com/iqtree/iqtree2.git",
+    tag:      "v.2.3.3",
+    revision: "dbd102a38662f6d2337f40b0064e26c6a6b3d3b0"
+  license "GPL-2.0-only"
+  head "https://github.com/iqtree/iqtree2.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, catalina:     "b9d0f98622e3223771bbdd6c86861a37d240dfa9bdc357888b589802b0eb8056"
-    sha256 cellar: :any, x86_64_linux: "06d8c6b11ddb0b991ed2b1e237a4c900be94a632dc4ba4deb442a241dbf4f996"
+    sha256 cellar: :any, arm64_sonoma: "e3ed429dda7582a3a4d536da661379292d0465885b101e624e6c856241ffc1f3"
   end
 
   depends_on "boost" => :build
   depends_on "cmake" => :build
-  depends_on "eigen" => :build # header only C++ library
-  depends_on "gsl"   => :build # static linking
-  depends_on "gcc" if OS.mac? # needs openmp
-
+  depends_on "eigen" => :build
+  depends_on "gsl"   => :build
+  depends_on "libomp" if OS.mac?
+  depends_on "llvm" if OS.mac?
   uses_from_macos "zlib"
 
-  fails_with :clang # needs openmp
-
   def install
-    # Should be fixed in 2.0.8
-    inreplace "CMakeLists.txt", "--target=x86_64-apple-macos10.7", "-mmacosx-version-min=10.7"
-
     mkdir "build" do
+      ENV.append_path "PREFIX_PATH", buildpath/"lsd2"
       system "cmake", "..", *std_cmake_args
       system "make", "install"
     end

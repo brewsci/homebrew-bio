@@ -1,46 +1,69 @@
 class Dssp < Formula
   # cite Touw_2015: "https://doi.org/10.1093/nar/gku1028"
   # cite Kabsch_1983: "https://doi.org/10.1002/bip.360221211"
-  desc "Create DSSP files"
-  homepage "https://github.com/cmbi/dssp"
-  url "https://github.com/cmbi/dssp/archive/3.1.4.tar.gz"
-  sha256 "496282b4b5defc55d111190ab9f1b615a9574a2f090e7cf5444521c747b272d4"
-  license "GPL-3.0-only"
-  revision 1
-  head "https://github.com/cmbi/dssp.git", branch: "master"
+  desc "Assign secondary structure to proteins"
+  homepage "https://github.com/PDB-REDO/dssp"
+  url "https://github.com/PDB-REDO/dssp/archive/refs/tags/v4.4.0.tar.gz"
+  sha256 "43494840d774e690dd4b7cfe0f4c1398426abf9499cc00770c882b1e7ec8cdd4"
+  license "BSD-2-Clause"
+  head "https://github.com/PDB-REDO/dssp.git", branch: "trunk"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 catalina:     "35408932044ec98f856214e9d09b05c576f4af0aa281b6028c769ef24da5780d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d9402c5aa18fd3f754e03a4d862ac3271593fbad60875153d9db418f0b4b7e73"
+    sha256 monterey:     "41258503b8ea048bc91779fc59f3a3bd1f3151de7ecdf1a0526c2e97a0984068"
+    sha256 x86_64_linux: "87d38a0169af31362912fe3774d142cea5a5c84b5e42266d570b4dc628d03a71"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
+  depends_on "cmake" => :build
+  depends_on "eigen" => :build
   depends_on "boost"
-
+  depends_on "icu4c"
   uses_from_macos "bzip2"
+  uses_from_macos "zlib"
 
-  resource "pdb" do
-    url "https://files.rcsb.org/download/3ZZZ.pdb.gz"
-    sha256 "9c3dfd81b7bf2f991f69dd1de0df5ea16eaa6d050409b65bfbe2d1a5ad44c11a"
+  resource "libcifpp" do
+    url "https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v5.1.0.1.tar.gz"
+    sha256 "ae2cdf7851d1be4ef1fa5bdaf9abbc7d01df9d0935ae8baf9d6335577445d74b"
   end
 
-  # This formula does not contain libzeep.
-  # If libzeep is not detected, then `mkhssp --fetch-dbrefs` is disabled.
-  def install
-    system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}",
-           "--with-boost=#{Formula["boost"].opt_prefix}"
+  resource "libmcfp" do
+    url "https://github.com/mhekkel/libmcfp/archive/refs/tags/v1.2.4.tar.gz"
+    sha256 "97f7e6271d81fc6b562bd89e7e306315f63d3e3c65d68468217e40ad15ea5164"
+  end
 
-    system "make"
-    system "make", "install"
+  resource "testdata" do
+    url "https://github.com/PDB-REDO/dssp/raw/fa880e3d88f842703f680185fffc4de540284b25/test/1cbs.cif.gz"
+    sha256 "c6a2e4716f843bd608c06cfa4b6a369a56a6021ae16e5f876237b8a73d0dcb5e"
+  end
+
+  def install
+    resource("libcifpp").stage do
+      # libcifpp should be installed in 'prefix' directory since the path of dic files are always required.
+      system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: prefix/"libcifpp")
+      system "cmake", "--build", "build"
+      system "cmake", "--install", "build"
+    end
+
+    resource("libmcfp").stage do
+      # libcifpp should be installed in 'prefix' directory since the path of dic files are always required.
+      system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: prefix/"libmcfp")
+      system "cmake", "--build", "build"
+      system "cmake", "--install", "build"
+    end
+
+    system "cmake", "-S", ".", "-B", "build",
+                    "-Dcifpp_DIR=#{prefix/"libcifpp/lib/cmake/cifpp"}",
+                    "-Dlibmcfp_DIR=#{prefix/"libmcfp/lib/cmake/libmcfp"}",
+                    "-DCMAKE_BUILD_TYPE=Release",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
-    resource("pdb").stage do
-      system bin/"mkdssp", "-i", "3zzz.pdb", "-o", testpath/"test.dssp"
-    end
-    assert_match "POLYPYRIMIDINE", (testpath/"test.dssp").read
+    resource("testdata").unpack testpath
+    cp Dir[pkgshare/"*.dic"], testpath
+    system bin/"mkdssp", "1cbs.cif", "test.dssp"
+    assert_match "CELLULAR RETINOIC ACID BINDING PROTEIN TYPE II", (testpath/"test.dssp").read
   end
 end

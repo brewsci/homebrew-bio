@@ -2,7 +2,7 @@ class Virulign < Formula
   # cite Libin_2018: "https://doi.org/10.1093/bioinformatics/bty851"
   desc "Fast codon-correct alignment and annotation of viral genomes"
   homepage "https://github.com/rega-cev/virulign"
-  url "https://github.com/rega-cev/virulign/archive/v1.0.2.tar.gz"
+  url "https://github.com/rega-cev/virulign/archive/refs/tags/v1.0.2.tar.gz"
   sha256 "3e6934d5b5f37ff60b3aed94472b8076a6e79ea870f7e0ad5c4208a4d13d3c09"
   license "GPL-2.0"
 

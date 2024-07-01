@@ -2,7 +2,7 @@ class Xmatchview < Formula
   # cite L_Warren_2018: "https://doi.org/10.21105/joss.00497"
   desc "Smith-waterman alignment visualization"
   homepage "https://github.com/bcgsc/xmatchview"
-  url "https://github.com/bcgsc/xmatchview/archive/v1.2.5.tar.gz"
+  url "https://github.com/bcgsc/xmatchview/archive/refs/tags/v1.2.5.tar.gz"
   sha256 "c262440b100e46b362306afd07da59b79fa7b5e38d2f898550fd87b338aec819"
   license "GPL-3.0-only"
   head "https://github.com/bcgsc/xmatchview.git"

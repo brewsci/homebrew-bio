@@ -8,8 +8,9 @@ class Phylonium < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 catalina:     "73708c4c216ba237e3bf79ac6270c405861f18fd0f5120fe2893ea6345fa12ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c95ab5543a4e21dd8b1a77fc5a94303737f478ea4030e52030727dcc79e6870a"
+    rebuild 1
+    sha256 cellar: :any,                 big_sur:      "b13c1533fd0f9f74663223f7e690e4bf0a5ebf749d0fe2a3ee11c4c01dc0741d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a993f505a59996367da6c91a046a2af82de55feb4302ca3543e7e368c80712f1"
   end
 
   depends_on "autoconf" => :build
@@ -39,7 +40,7 @@ class Phylonium < Formula
     assert_match version.to_s, shell_output("#{bin}/phylonium --version 2>&1")
 
     resource("simf").stage do
-      system "c++", "-std=c++14", "-Wall", "-Wextra", "simf.cxx", "-o", "simf"
+      system ENV.cxx.to_s, "-std=c++14", "-Wall", "-Wextra", "simf.cxx", "-o", "simf"
       system "./simf", "-s", "1729", "-l", "100000", "-p", "simple"
       system "#{bin}/phylonium simple0.fasta simple1.fasta > /dev/null"
       rm "simple0.fasta"

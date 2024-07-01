@@ -2,14 +2,14 @@ class Breseq < Formula
   # Deatherage_2014: "https://doi.org/10.1007/978-1-4939-0554-6_12"
   desc "Find mutations in microbes from short reads"
   homepage "https://barricklab.org/twiki/bin/view/Lab/ToolsBacterialGenomeResequencing"
-  url "https://github.com/barricklab/breseq/releases/download/v0.37.0/breseq-0.37.0-Source.tar.gz"
-  sha256 "e2ccd8703b27b5b81b24783e2c290c3ea6b91cf581967e2511a95a67d7708ab2"
+  url "https://github.com/barricklab/breseq/releases/download/v0.37.1/breseq-0.37.1-Source.tar.gz"
+  sha256 "96131a55271225f7d7e130ef25adea04608dc8e142d2268c85be627c761fcd1b"
   head "https://github.com/barricklab/breseq.git"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "332352bb4d28e1074f4421aa68262cbc378c34e320dd5d6415c93fc91d54e126"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "bc033dd9a09e76e1bdacbdb1cc357e755cece4063226d254e5b601297dc02287"
+    sha256 cellar: :any_skip_relocation, big_sur:      "ddae4324ddf2115371a2b7a0ebd8fa58601a866d564219e380a43227a72f8fcb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "223054d348e87ce188f24b173c22b3dd51bc5dc247269537838a95375e988a0f"
   end
 
   depends_on "autoconf" => :build

@@ -5,7 +5,7 @@ class Circlator < Formula
 
   desc "Tool to circularize genome assemblies"
   homepage "https://sanger-pathogens.github.io/circlator/"
-  url "https://github.com/sanger-pathogens/circlator/archive/v1.5.5.tar.gz"
+  url "https://github.com/sanger-pathogens/circlator/archive/refs/tags/v1.5.5.tar.gz"
   sha256 "927b6c156bfba6fa02db0c1173e280f85373320814c51e084170df583e604a2a"
   license "GPL-3.0"
 
@@ -21,6 +21,7 @@ class Circlator < Formula
     sha256 cellar: :any, x86_64_linux: "310c5d97d4320ffbde5f0aedbcc7e05d03b721452714cf0e5dd21e5f3e1767f0"
   end
 
+  depends_on arch: :x86_64 # spades is not supported on ARM
   depends_on "brewsci/bio/mummer"
   depends_on "bwa"
   depends_on "prodigal"
@@ -35,7 +36,7 @@ class Circlator < Formula
     sha256 "b64575241f64f6ec005a4d4137339fb0ba5e156e826db2fdb5f458060d9979e0"
   end
 
-  resource "et_xmlfile" do
+  resource "et-xmlfile" do
     url "https://files.pythonhosted.org/packages/22/28/a99c42aea746e18382ad9fb36f64c1c1f04216f41797f2f0fa567da11388/et_xmlfile-1.0.1.tar.gz"
     sha256 "614d9722d572f6246302c4491846d2c393c199cfa4edc9af593437691683335b"
   end
@@ -61,7 +62,7 @@ class Circlator < Formula
   end
 
   resource "pysam" do
-    url "https://github.com/pysam-developers/pysam/archive/v0.15.0.1.tar.gz"
+    url "https://github.com/pysam-developers/pysam/archive/refs/tags/v0.15.0.1.tar.gz"
     sha256 "b169ffbe0efb39fd193779e5982da1de86e392dfe66c6bc49d79aa34fe58b46b"
   end
 

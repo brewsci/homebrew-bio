@@ -4,7 +4,7 @@ class Flye < Formula
   # cite Kolmogorov_2018: "https://doi.org/10.1101/247148"
   desc "De novo assembler for single molecule sequencing reads using repeat graphs"
   homepage "https://github.com/fenderglass/Flye"
-  url "https://github.com/fenderglass/Flye/archive/2.8.3.tar.gz"
+  url "https://github.com/fenderglass/Flye/archive/refs/tags/2.8.3.tar.gz"
   sha256 "070f9fbee28eef8e8f87aaecc048053f50a8102a3715e71b16c9c46819a4e07c"
   license "BSD-3-Clause"
   head "https://github.com/fenderglass/Flye.git", branch: "flye"

@@ -2,7 +2,7 @@ class Trimal < Formula
   # cite Capella_2009: "https://doi.org/10.1093/bioinformatics/btp348"
   desc "Automated alignment trimming in phylogenetic analyses"
   homepage "http://trimal.cgenomics.org/"
-  url "https://github.com/scapella/trimal/archive/v1.4.1.tar.gz"
+  url "https://github.com/scapella/trimal/archive/refs/tags/v1.4.1.tar.gz"
   sha256 "cb8110ca24433f85c33797b930fa10fe833fa677825103d6e7f81dd7551b9b4e"
   license "GPL-3.0"
   head "https://github.com/scapella/trimal"
