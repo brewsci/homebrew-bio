@@ -31,7 +31,9 @@ jobs:
           set -eu
           echo sha1='${{github.event.head_commit.id}}'
           echo "$COMMIT_MESSAGE"
-          pr="$(echo "$COMMIT_MESSAGE" | sed 's/^.*#\([0-9]*\).*/\1/;q')"
+          # pr="$(echo "$COMMIT_MESSAGE" | sed 's/^.*#\([0-9]*\).*/\1/;q')"
+          pr="${COMMIT_MESSAGE##*#}"
+          pr="${pr%%[^0-9]*}"
           mkdir -p "$(dirname "$(brew --repo ${{github.repository}})")"
           cp -a "$GITHUB_WORKSPACE" "$(brew --repo ${{github.repository}})"
           rm -rf -- .git *
