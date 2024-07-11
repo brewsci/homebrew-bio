@@ -11,12 +11,12 @@ class Mcl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "8535c8aec04127d0e51bf5c469c2127ec8143ce5afc37c9e038a853ab6fb2a20"
   end
 
+  uses_from_macos "perl"
+
   resource "cff" do
     url "https://micans.org/mcl/src/cimfomfa-22-273.tar.gz"
     sha256 "b0f0549fda1d288ddd22a2675581636a6f4bde0f01e956fcf452d0f815b4964f"
   end
-
-  uses_from_macos "perl"
 
   def install
     # Avoid `-flat_namespace` flag.
@@ -50,7 +50,7 @@ class Mcl < Formula
     # Install the R script in libexec
     libexec.install "rcl/rcl-qm.R"
     # Create a wrapper script to call the R script
-      (bin/"rcl-qm.R").write <<~EOS
+    (bin/"rcl-qm.R").write <<~EOS
       #!/bin/bash
       Rscript "#{libexec}/rcl-qm.R" "$@"
     EOS
