@@ -11,6 +11,8 @@ class Mcl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "8535c8aec04127d0e51bf5c469c2127ec8143ce5afc37c9e038a853ab6fb2a20"
   end
 
+  depends_on "pkg-config" => [:build, :test]
+
   uses_from_macos "perl"
 
   resource "cff" do
@@ -29,8 +31,9 @@ class Mcl < Formula
     end
     cd cff_dir do
       args = [
-        "--prefix=#{prefix}/cimfomfa",
+        "--prefix=#{prefix}",
         "--enable-shared",
+        "--disable-static",
       ]
       # Hack for M1 Mac
       if Hardware::CPU.arm? && OS.mac?
@@ -41,11 +44,11 @@ class Mcl < Formula
     end
 
     bin.mkpath
-    ENV.append "LDFLAGS", "-L#{prefix}/cimfomfa/lib"
-    ENV.append "CPPFLAGS", "-I#{prefix}/cimfomfa/include"
+    ENV.append "LDFLAGS", "-L#{prefix}/lib"
+    ENV.append "CPPFLAGS", "-I#{prefix}/include"
     # remove rcl-qm.R from the list of scripts to install
     inreplace "rcl/Makefile.in", "rcl-dot-resmap.pl rcl-qm.R rcl-relevel.pl", "rcl-dot-resmap.pl rcl-relevel.pl"
-    system "./configure", "--prefix=#{prefix}", "--enable-rcl"
+    system "./configure", "--prefix=#{prefix}", "--enable-rcl", "--disable-static", "--enable-shared"
     system "make", "install"
     # Install the R script in libexec
     libexec.install "rcl/rcl-qm.R"
