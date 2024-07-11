@@ -26,7 +26,7 @@ class Muscle < Formula
       if OS.mac?
         bin.install "Darwin/muscle"
       else
-        bin.install "linux/muscle"
+        bin.install "Linux/muscle"
       end
     end
   end
