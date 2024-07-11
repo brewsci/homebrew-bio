@@ -6,7 +6,7 @@ class MemeAT4112 < Formula
   version "4.11.2"
   sha256 "377238c2a9dda64e01ffae8ecdbc1492c100df9b0f84132d50c1cf2f68921b22"
   license :cannot_represent
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
