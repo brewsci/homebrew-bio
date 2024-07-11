@@ -7,8 +7,9 @@ class Mmdb2 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 catalina:     "70b301e437f12834fd9d52b1d0fa4f5e90ae7855a0cf491d69b8733a64e3a938"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "864b30f348f65f3999eb51745604fd12c51a25bb1582ababc237f20221f8ada7"
+    sha256 cellar: :any,                 arm64_sonoma: "e4f2b345366f463026a76d6998b4ecd9f7ec81e5beed1e0ca131b1b9b3e92d09"
+    sha256 cellar: :any,                 ventura:      "057dc30ebc07fbb25268aebec5e7966374c097456f251ae8e68d9da18283ffad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4775e106c2a1b7fe8a4d70c64ab2de1cc4cc02b95a8405dafabb2e94c8be58c8"
   end
 
   depends_on "pkg-config" => [:build, :test]
