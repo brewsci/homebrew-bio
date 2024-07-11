@@ -5,6 +5,7 @@ class Relion < Formula
   sha256 "0ebbd94ad922d7f457e3f3b81f5660e2691a845d9a53f0f1c9fbeb4e54cd5c17"
   license "GPL-2.0-only"
   head "https://github.com/3dem/relion.git", branch: "master"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
