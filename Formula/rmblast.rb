@@ -7,8 +7,9 @@ class Rmblast < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 big_sur:      "168462e3c3a8e41bffed4f1e8c644209fc507c6f97096b0b8665a5a16b65b0c0"
-    sha256 x86_64_linux: "c5023c4da86fd2573fbcfe8dae72384840e84c3d12fd3a8c569818b01446c081"
+    sha256 arm64_sonoma: "598e95cfa3296e63d9a572e1c774c0b83b7c82f2c667d64c81750c85ee72b23e"
+    sha256 ventura:      "c7406153055695416f4026cca69829f35154d080c5e82427e16c1d745f9dfd0e"
+    sha256 x86_64_linux: "df884375c110e6920697fa0faa075bbe3b316790d48c99c244d6117dc84ff52f"
   end
 
   keg_only "rmblast conflicts with blast"
