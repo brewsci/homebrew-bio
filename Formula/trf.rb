@@ -5,6 +5,7 @@ class Trf < Formula
   url "https://github.com/Benson-Genomics-Lab/TRF/archive/refs/tags/v4.09.1.tar.gz"
   sha256 "516015b625473350c3d1c9b83cac86baea620c8418498ab64c0a67029c3fb28a"
   license "AGPL-3.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
