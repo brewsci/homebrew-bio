@@ -8,7 +8,9 @@ class Glimmerhmm < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "cff30c2d426bddd67a34b235dbac2ad919cbae5e9283b78066c91d5c23540efe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "ab610b0f2686681869e6976f30ac58d3ff8f6526055ba7020f74435b51d50fca"
+    sha256 cellar: :any_skip_relocation, ventura:      "6a81afa731017f6f7af7e51ebdbbc168f3172a62108e136626bcee762a224e49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8e8d27f3d62f20079d27b651c95949b02daf0ca136bc691af79eaced0a661e34"
   end
 
   def install
