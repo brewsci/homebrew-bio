@@ -11,7 +11,9 @@ class HmmerAT2 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "a3cbbaff1d99dd83802007e2a0959a640bdefba7e17a1b415d8a0e271c6969d7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "e085cdd6135a07d8ad97164c7f80d9cd418d5fe9e18a0d2a1c942cd17c659568"
+    sha256 cellar: :any_skip_relocation, ventura:      "d3313b53e9e61134a77d9d22e475b89b1691fa602a8c7eda80b4702ded9fb8b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c8e94b77c2ec4600e29b41f7615053327a545c454d068f87e9ca219cf85bf643"
   end
 
   resource "config.sub" do
