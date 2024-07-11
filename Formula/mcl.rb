@@ -44,8 +44,8 @@ class Mcl < Formula
     end
 
     bin.mkpath
-    ENV.append "LDFLAGS", "-L#{prefix}/lib"
-    ENV.append "CPPFLAGS", "-I#{prefix}/include"
+    ENV.append "LDFLAGS", "-L#{lib}"
+    ENV.append "CPPFLAGS", "-I#{include}"
     # remove rcl-qm.R from the list of scripts to install
     inreplace "rcl/Makefile.in", "rcl-dot-resmap.pl rcl-qm.R rcl-relevel.pl", "rcl-dot-resmap.pl rcl-relevel.pl"
     system "./configure", "--prefix=#{prefix}", "--enable-rcl", "--disable-static", "--enable-shared"
