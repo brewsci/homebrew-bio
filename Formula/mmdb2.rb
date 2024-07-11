@@ -4,7 +4,6 @@ class Mmdb2 < Formula
   url "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/mmdb2-2.0.22.tar.gz"
   sha256 "a9646933ce9f34633e1ae4901f2383af0e5318d6490851328f5b6aa06195ab51"
   license all_of: ["GPL-3.0-only", "LGPL-3.0-only"]
-  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
