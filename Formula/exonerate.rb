@@ -9,8 +9,9 @@ class Exonerate < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, sierra:       "fcadadfecae574f5d9aee1b1adad4a23bd24f682bc6f76358a27512025207325"
-    sha256 cellar: :any, x86_64_linux: "ab0093c6b90759419d20b4905100517df0eb4b8f79ec9ef68671f6aa4473a5fc"
+    sha256 cellar: :any,                 arm64_sonoma: "48db64ea5771edec8a069e3692759d36d70994330dabe897c26b004056836591"
+    sha256 cellar: :any,                 ventura:      "7a26d42f92d5d8a8e54f25008ef6d22c78c26ea387e05fe8e142f29a2679e648"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0d6a5573b23008395efa8226fefb5ffeafcbc7e486d5f60e73fb8104e3fb1069"
   end
 
   depends_on "pkg-config" => :build
