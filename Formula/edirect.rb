@@ -6,9 +6,10 @@ class Edirect < Formula
   sha256 "28d9cc2d353323375a2102e9031e229943d1f1f975f140d0815db3e5a111f235"
 
   bottle do
-    root_url "http://vivace.bi.a.u-tokyo.ac.jp"
-    sha256 cellar: :any,                 arm64_sonoma:   "f95e3d2e6a16a83dcc5b01272d04c035728bb9d03fa8a8b35e28ff5d7f3074bb"
-    sha256 cellar: :any,                 sonoma:         "b2caec3628c5b6b9a1742f80b09113a86b2543170047f04b72e9caf167ea90b8"
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any,                 arm64_sonoma: "f2a3904ab141a63abf3bf6d24522908b0775f401347baa9bfeb0caf01f699945"
+    sha256 cellar: :any,                 ventura:      "1a74e2f00b2786c5e118d684298cc1550a7f6f5f9f6c9e2b29e1fd223d29ba98"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ffd700208bfd426e870907abdd82a46d0b4d3517ab6d21a4efdaca61679b26d4"
   end
 
   depends_on "cpanminus" => :build
