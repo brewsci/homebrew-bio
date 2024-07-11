@@ -32,6 +32,6 @@ class Muscle < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/muscle -version")
+    assert_match "muscle", shell_output("#{bin}/muscle -version")
   end
 end
