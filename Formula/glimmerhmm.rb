@@ -4,6 +4,7 @@ class Glimmerhmm < Formula
   homepage "https://ccb.jhu.edu/software/glimmerhmm/"
   url "https://ccb.jhu.edu/software/glimmerhmm/dl/GlimmerHMM-3.0.4c.tar.gz"
   sha256 "31ee2ceb8f31338205b2de626d83d0f92d2cd55a04d48a6803193a2d0ad1b4a3"
+  rebuild 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
