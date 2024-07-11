@@ -9,8 +9,9 @@ class Trf < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, big_sur:      "de05c4192f049253aa589c89ded482390b6dcd151b6ccf3e26041079bd9f6c88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "75eb2ebae1c474538e8103cd0facaccc15cd080456df480a8c03ad08d1fec758"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "2d3dfef83f9cf594adb29e844670e2b4d65c3ff653fe0b9d16a66dc84c1e1307"
+    sha256 cellar: :any_skip_relocation, ventura:      "cbdfefdd27900ac8e0395217972cbcfe08ac8e4c4b629b57669672dc0eddfeef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "86759341581e33a708de7861b66f0d6e7b01ca7fd5f84224339c54444803aef9"
   end
 
   def install
