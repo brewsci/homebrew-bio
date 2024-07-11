@@ -7,7 +7,7 @@ class Raster3d < Formula
   url "http://www.bmsc.washington.edu/raster3d/Raster3D_3.0-7.tar.gz"
   sha256 "f566b499fee341db3a95229672c6afdbdb69da7faabdbe34f6e0d332d766160c"
   license "Artistic-2.0"
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
