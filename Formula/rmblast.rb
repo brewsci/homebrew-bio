@@ -17,6 +17,8 @@ class Rmblast < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "lmdb"
+  depends_on "sqlite"
+  depends_on "zstd"
 
   uses_from_macos "cpio" => :build
   uses_from_macos "bzip2"
