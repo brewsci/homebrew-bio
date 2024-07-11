@@ -8,8 +8,9 @@ class Fasttree < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, catalina:     "00e170051838803db512a523803daf59f01144a126ad5f5eafd7d80bc42bb0cf"
-    sha256 cellar: :any, x86_64_linux: "304bf00600d673074d03a03411e05ca9706bf8ca5b3b894831995a9a5cb9f98b"
+    sha256 cellar: :any,                 arm64_sonoma: "2c89c53d229d845f69c2b14f5db56176a404b67c57a5e92d8748339bcf02b507"
+    sha256 cellar: :any,                 ventura:      "f4997e05aee22777fa2c09963043936d3217e61179f413466410b0b01436ea55"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a8d0c50b4ff8f5fc3826c1bb388df78ff44e06ff64f76ab990fba58edad2c55a"
   end
 
   # 26 Aug 2017; Community mostly wants USE_DOUBLE; make it default now
