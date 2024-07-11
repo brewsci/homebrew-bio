@@ -7,8 +7,9 @@ class Mcl < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, sierra:       "5620623bbe8674f6c69ab21084b1dae29cfdf7cd07273efe1b9deba8ec6a4db5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8535c8aec04127d0e51bf5c469c2127ec8143ce5afc37c9e038a853ab6fb2a20"
+    sha256 cellar: :any,                 arm64_sonoma: "bbda52b14d3194981785eaf50e6d1473e3cdc5b51ecc676d215d3c984f21e7ed"
+    sha256 cellar: :any,                 ventura:      "761725b5936e6b534addabafd0ba78940ab32364261e311035dabe7986e73c2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "6ab9655dbe9db5fb900fc198d8d8a04f349dc2b22823608b0cd1875f17504a5f"
   end
 
   depends_on "pkg-config" => [:build, :test]
