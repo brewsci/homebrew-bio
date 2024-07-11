@@ -2,9 +2,9 @@ class Usalign < Formula
   # cite Zhang_2022: "https://doi.org/10.1038/s41592-022-01585-1"
   desc "Universal structure alignment of monomeric, complex proteins and nucleic acids"
   homepage "https://github.com/pylelab/USalign"
-  url "https://github.com/pylelab/USalign/archive/38fb294ed437fa7216f1c50f5103bab0be43fc10.tar.gz"
-  version "20220924"
-  sha256 "f895cf020a73fbdda266225d2a15adbb7d55b9709f7e5a600838418871c4b3a7"
+  url "https://github.com/pylelab/USalign/archive/8b191c9ab338745611804fcbc088f0403b1d2a8c.tar.gz"
+  version "20240706"
+  sha256 "8a53946397c15034195c6b18c921b489f2a20595b13dd3066dfa5d4fcc43f5a8"
   license :cannot_represent
   head "https://github.com/pylelab/USalign.git", branch: "master"
 
