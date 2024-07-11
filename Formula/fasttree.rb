@@ -4,7 +4,7 @@ class Fasttree < Formula
   homepage "http://microbesonline.org/fasttree/"
   url "http://microbesonline.org/fasttree/FastTree-2.1.11.c"
   sha256 "9026ae550307374be92913d3098f8d44187d30bea07902b9dcbfb123eaa2050f"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
