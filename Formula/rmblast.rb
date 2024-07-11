@@ -36,7 +36,7 @@ class Rmblast < Formula
   def install
     cd "c++" do
       # Fix -flat_namespace being used on Big Sur and later.
-      inreplace "src/build-system/configure", "-flat_namespace", "" if MacOS.version >= :big_sur
+      inreplace "src/build-system/configure", "-flat_namespace", ""
       # Boost is only used for unit tests.
       args = %W[
         --prefix=#{prefix}
