@@ -9,8 +9,9 @@ class Muscle < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, sierra:       "facb165df0b74683682971e5570332a1dcb111720f853fb3ecae4de63509c3a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "bb3bd2fc6f97b35f5427dbbe75aa8dc8fefc6bc49566f000d669004c641cde8e"
+    sha256 cellar: :any,                 arm64_sonoma: "b66447831e7d256df3d29ead75ac644de58f51e4f67108dbdd2e4381061bcef5"
+    sha256 cellar: :any,                 ventura:      "a7cbbf549aeefad4d119689a477651b8ffb41f9a0f7f9144035001e7bd1687f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4ed1a5e590267e5e55bcf966b444dc4afe29339e6e680883b56d66f588f82caf"
   end
 
   depends_on "libomp" if OS.mac?
