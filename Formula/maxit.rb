@@ -1,10 +1,9 @@
 class Maxit < Formula
   desc "Assists in the processing and curation of macromolecular structure data"
   homepage "https://sw-tools.rcsb.org/apps/MAXIT"
-  url "https://sw-tools.rcsb.org/apps/MAXIT/maxit-v11.100-prod-src.tar.gz"
-  sha256 "e5c6656ea00a6716ca4c390cbd527ebb67a4837ea81c516220853fbb15c8af1d"
+  url "https://sw-tools.rcsb.org/apps/MAXIT/maxit-v11.200-prod-src.tar.gz"
+  sha256 "658e236c6310cf7e55218a0500f82050ef86074f5d5b3f61d2a161b04a38cc39"
   license :cannot_represent
-  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
