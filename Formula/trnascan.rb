@@ -3,7 +3,7 @@ class Trnascan < Formula
   desc "Search for tRNA genes in genomic sequence"
   homepage "https://lowelab.ucsc.edu/tRNAscan-SE/"
   url "https://github.com/UCSC-LoweLab/tRNAscan-SE/archive/refs/tags/v2.0.12.tar.gz"
-  sha256 "96fa4af507cd918c1c623763d9260bd6ed055d091662b44314426f6bbf447251"
+  sha256 "4b255c2c5e0255381194166f857ab2ea21c55aa7de409e201333ba615aa3dc61"
   version_scheme 1
 
   bottle do
