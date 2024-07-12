@@ -4,8 +4,8 @@ class Trnascan < Formula
   homepage "http://lowelab.ucsc.edu/tRNAscan-SE/"
   url "http://trna.ucsc.edu/software/trnascan-se-2.0.12.tar.gz"
   sha256 "96fa4af507cd918c1c623763d9260bd6ed055d091662b44314426f6bbf447251"
-  version_scheme 1
   revision 1
+  version_scheme 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
