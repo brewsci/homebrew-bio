@@ -1,9 +1,10 @@
 class Aragorn < Formula
   # cite Laslett_2004: "https://doi.org/10.1093/nar/gkh152"
   desc "Detect tRNA and tmRNA genes in contigs"
-  homepage "http://mbio-serv2.mbioekol.lu.se/ARAGORN/"
-  url "http://mbio-serv2.mbioekol.lu.se/ARAGORN/Downloads/aragorn1.2.38.tgz"
-  sha256 "4b84e3397755fb22cc931c0e7b9d50eaba2a680df854d7a35db46a13cecb2126"
+  homepage "https://www.trna.se/ARAGORN/"
+  url "https://www.trna.se/ARAGORN/Downloads/aragorn1.2.41.c"
+  sha256 "92a31cc5c0b0ad16d4d7b01991989b775f07d2815df135fe6e3eab88f5e97f4a"
+  license "GPL-3.0-only"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -15,7 +16,6 @@ class Aragorn < Formula
     mv "aragorn#{version}.c", "aragorn.c"
     system "make", "aragorn"
     bin.install "aragorn"
-    man1.install "aragorn.1"
   end
 
   test do
