@@ -2,7 +2,7 @@ class Trnascan < Formula
   # cite Lowe_1997: "https://doi.org/10.1093/nar/25.5.0955"
   desc "Search for tRNA genes in genomic sequence"
   homepage "https://lowelab.ucsc.edu/tRNAscan-SE/"
-  url "https://trna.ucsc.edu/software/trnascan-se-2.0.12.tar.gz"
+  url "http://trna.ucsc.edu/software/trnascan-se-2.0.12.tar.gz"
   sha256 "96fa4af507cd918c1c623763d9260bd6ed055d091662b44314426f6bbf447251"
   version_scheme 1
 
@@ -15,7 +15,6 @@ class Trnascan < Formula
   depends_on "automake" => :build
 
   depends_on "brewsci/bio/infernal"
-  uses_from_macos "curl"
 
   def install
     # Fix the error: bin/sstofa: No such file or directory
