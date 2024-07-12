@@ -1,7 +1,7 @@
 class Trnascan < Formula
   # cite Lowe_1997: "https://doi.org/10.1093/nar/25.5.0955"
   desc "Search for tRNA genes in genomic sequence"
-  homepage "https://lowelab.ucsc.edu/tRNAscan-SE/"
+  homepage "https://github.com/UCSC-LoweLab/tRNAscan-SE/"
   url "https://github.com/UCSC-LoweLab/tRNAscan-SE/archive/refs/tags/v2.0.12.tar.gz"
   sha256 "4b255c2c5e0255381194166f857ab2ea21c55aa7de409e201333ba615aa3dc61"
   version_scheme 1
