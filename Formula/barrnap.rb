@@ -3,6 +3,7 @@ class Barrnap < Formula
   homepage "https://github.com/tseemann/barrnap"
   url "https://github.com/tseemann/barrnap/archive/refs/tags/0.9.tar.gz"
   sha256 "36c27cd4350531d98b3b2fb7d294a2d35c15b7365771476456d7873ba33cce15"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -14,7 +15,12 @@ class Barrnap < Formula
   depends_on "hmmer"
 
   def install
-    prefix.install Dir["*"]
+    # install only bin directory
+    # nhmmer is written in "depends_on"
+    bin.install Dir["bin/*"]
+    prefix.install "examples"
+    prefix.install "build"
+    prefix.install "db"
   end
 
   test do
