@@ -15,7 +15,12 @@ class Barrnap < Formula
   depends_on "hmmer"
 
   def install
-    prefix.install Dir["*"]
+    # install only bin directory
+    # nhmmer is written in "depends_on"
+    bin.install Dir["bin/*"]
+    prefix.install "examples"
+    prefix.install "build"
+    prefix.install "db"
   end
 
   test do
