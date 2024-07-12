@@ -15,6 +15,7 @@ class Trnascan < Formula
   depends_on "automake" => :build
 
   depends_on "brewsci/bio/infernal"
+  uses_from_macos "curl"
 
   def install
     # Fix the error: bin/sstofa: No such file or directory
