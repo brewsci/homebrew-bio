@@ -1,8 +1,8 @@
 class Kaiju < Formula
   # Menzel_2016: "https://doi.org/10.1038/ncomms11257"
   desc "Fast taxonomic classification of metagenomic sequencing reads"
-  homepage "https://kaiju.binf.ku.dk/"
-  url "https://github.com/bioinformatics-centre/kaiju/archive/refs/tags/v1.9.2.tar.gz"
+  homepage "https://bioinformatics-centre.github.io/kaiju/"
+  url "https://github.com/bioinformatics-centre/kaiju/archive/refs/tags/v1.10.1.tar.gz"
   sha256 "58d922358dfa4a608be888ec5c9e615b45b1e4be50615429183b0c5355e89c78"
   license "GPL-3.0-only"
 
