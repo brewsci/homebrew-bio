@@ -4,7 +4,7 @@ class Trnascan < Formula
   homepage "https://github.com/UCSC-LoweLab/tRNAscan-SE/"
   url "https://github.com/UCSC-LoweLab/tRNAscan-SE/archive/refs/tags/v2.0.12.tar.gz"
   sha256 "4b255c2c5e0255381194166f857ab2ea21c55aa7de409e201333ba615aa3dc61"
-  version_scheme 1
+  version_scheme 2
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
