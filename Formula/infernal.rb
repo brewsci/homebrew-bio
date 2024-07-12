@@ -7,8 +7,9 @@ class Infernal < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "90dde134e8db249856e3432376d4d5f8658f2a8abc2390beed3030908de03d49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "01baed72ace481f680194bec8c1df2e7f90282f8ba731412e92e8dcfc0ed17ad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "5c56694194bb015695910aaa8937b66066d52cfb73ec1164e95956419e35830d"
+    sha256 cellar: :any_skip_relocation, ventura:      "cea100f2dc5cf8bc05c5a891f04a0232d85aec6b756069f358c9c658ce4693a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "34fbc91c80b970caacdbe787a23c34d4152cc358c2fd96d57521dba1bb80a675"
   end
 
   def install
