@@ -8,7 +8,9 @@ class Trnascan < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 x86_64_linux: "8b1bdd752cc3f7a0ce29e968f367c8282314e194ae1574ae53df1453123c6eaa"
+    sha256 arm64_sonoma: "48a1fb2c2e5b1a6800b54595d151cadcbfe05d7884be32564044335b00a407aa"
+    sha256 ventura:      "1a64402cd1405c0eb87f142a260db98c997cf1009fc0cb2e3d448600053e6d84"
+    sha256 x86_64_linux: "a34a902899f2beec19f991255616ef02ab191ddba909a321d2d79089bcce6a77"
   end
 
   depends_on "autoconf" => :build
