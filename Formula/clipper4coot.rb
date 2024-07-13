@@ -8,8 +8,9 @@ class Clipper4coot < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 catalina:     "59a95fd391ef958374698000125b2bea0577ceb2d99f6af9f6f1f3ea05ae4a68"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "45f6f41305ce655b0e8517b2fb03e180f03c9f85d5553317f1b0b0eea6fbf8fc"
+    sha256 cellar: :any,                 arm64_sonoma: "0d57aaf0c4f2a9f6e2748f64feeeebd58325990666a5d7aeb839654175339ecd"
+    sha256 cellar: :any,                 ventura:      "645047561b9703330ea8c39af5d18d590fc795ffd0c72c0e5126b752b60724c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a3087239eaa8340fd47536277f62c176b77d270f012eaf31000b188ac4d877d6"
   end
 
   depends_on "pkg-config" => [:build, :test]
