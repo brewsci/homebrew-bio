@@ -8,8 +8,9 @@ class Pirate < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "facd878921745ef898e0bba2d3fe115be1a9cc46a36886bc0b135b1e9c3450bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "05b6c3b5fbe5db6c0d8f39dab4b31fd5343bd00db69edb093e4f8cd999f11136"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "f9c3d3f37065a05791b6c561888fbe9e3f532320a45c312018ae4130cd3fb853"
+    sha256 cellar: :any_skip_relocation, ventura:      "f9c3d3f37065a05791b6c561888fbe9e3f532320a45c312018ae4130cd3fb853"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2a810a4b27460809759ab9c9f2a62a4d58660b6281c9fd87a92b0cbc981c9883"
   end
 
   depends_on "bioperl"
