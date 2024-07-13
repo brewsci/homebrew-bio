@@ -5,8 +5,8 @@ class Kraken < Formula
   url "https://github.com/DerrickWood/kraken/archive/refs/tags/v1.1.1.tar.gz"
   sha256 "73e48f40418f92b8cf036ca1da727ca3941da9b78d4c285b81ba3267326ac4ee"
   license "GPL-3.0-or-later"
-  head "https://github.com/DerrickWood/kraken.git", branch: "master"
   revision 1
+  head "https://github.com/DerrickWood/kraken.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
