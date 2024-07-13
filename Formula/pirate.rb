@@ -4,7 +4,7 @@ class Pirate < Formula
   homepage "https://github.com/SionBayliss/PIRATE"
   url "https://github.com/SionBayliss/PIRATE/archive/refs/tags/v1.0.5.tar.gz"
   sha256 "d5d7e657558eadae301a3198bccfd5ee04daddab1a872049d8a74cb71c35f20b"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
