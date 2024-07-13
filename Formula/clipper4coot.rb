@@ -27,6 +27,8 @@ class Clipper4coot < Formula
   end
 
   def install
+    # required to prevent flat namespace issues on macOS
+    ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s if OS.mac?
     # install legacy fftw version 2.1.5, only single precision.
     fftw2_dir = buildpath/"fftw2"
     resource("libfftw2").stage do
@@ -44,8 +46,8 @@ class Clipper4coot < Formula
       if Hardware::CPU.arm? && OS.mac?
         args << "--build=arm-apple-#{OS.kernel_name.downcase}#{OS.kernel_version.major}"
       end
-      # Avoid -flat_namespace usage on macOS
       inreplace "./configure", "-flat_namespace -undefined suppress", "-undefined dynamic_lookup" if OS.mac?
+      ENV.append "CPPFLAGS", "-I#{fftw2_dir}/fftw2/fftw" unless OS.mac?
       system "./configure", *args
       system "make", "install"
     end
