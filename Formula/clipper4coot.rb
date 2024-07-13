@@ -12,6 +12,8 @@ class Clipper4coot < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "45f6f41305ce655b0e8517b2fb03e180f03c9f85d5553317f1b0b0eea6fbf8fc"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on "brewsci/bio/libccp4"
   depends_on "brewsci/bio/mmdb2"
@@ -36,6 +38,7 @@ class Clipper4coot < Formula
       cp_r ".", fftw2_dir
     end
     cd fftw2_dir do
+      system "autoreconf", "-fvi"
       args = [
         "--prefix=#{prefix}/fftw2",
         "--enable-shared",
@@ -47,7 +50,7 @@ class Clipper4coot < Formula
         args << "--build=arm-apple-#{OS.kernel_name.downcase}#{OS.kernel_version.major}"
       end
       inreplace "./configure", "-flat_namespace -undefined suppress", "-undefined dynamic_lookup" if OS.mac?
-      ENV.append "CPPFLAGS", "-I#{fftw2_dir}/fftw" unless OS.mac?
+      # ENV.append "CPPFLAGS", "-I#{fftw2_dir}/fftw" unless OS.mac?
       system "./configure", *args
       system "make", "install"
     end
