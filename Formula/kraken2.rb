@@ -14,6 +14,7 @@ class Kraken2 < Formula
   depends_on "blast" # for segmasker + dustmasker
 
   uses_from_macos "perl"
+  uses_from_macos "zlib"
 
   on_macos do
     depends_on "libomp"
