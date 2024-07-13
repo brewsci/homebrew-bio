@@ -4,7 +4,8 @@ class Hisat2 < Formula
   homepage "https://daehwankimlab.github.io/hisat2/"
   url "https://github.com/DaehwanKimLab/hisat2/archive/refs/tags/v2.2.1.tar.gz"
   sha256 "f3f4f867d0a6b1f880d64efc19deaa5788c62050e0a4d614ce98b3492f702599"
-  license "GPL-3.0"
+  license "GPL-3.0-only"
+  revision 1
   head "https://github.com/DaehwanKimLab/hisat2.git"
 
   livecheck do
