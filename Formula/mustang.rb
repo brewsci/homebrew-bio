@@ -16,7 +16,7 @@ class Mustang < Formula
 
   def install
     inreplace "Makefile", "-traditional", "" if OS.mac?
-    inreplace "Makefile", "mustang-#{version.to_s}", "mustang"
+    inreplace "Makefile", "mustang-#{version}", "mustang"
     system "make"
     bin.install "bin/mustang"
     man1.install "man/mustang.1"
