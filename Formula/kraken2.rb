@@ -7,8 +7,9 @@ class Kraken2 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 catalina:     "6673d5d0c9e848621e56caf1002e24143870968f694d989c6d6b0745ddcfa43e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "256d5d41998c45593e8797169bbcf404d3ba6a9713b9579408fef7712d84772e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "88f2cfc70b244a8bd65837cc4c58e6b0043ce25e1e16f2178434871b4a193a1f"
+    sha256 cellar: :any_skip_relocation, ventura:      "51f5be2bc4fe02609a12571a389cad7eae91e72776c794c0698d86948e512834"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c07bc66da3cbb7d716327f62c5e16ec4944f363a7a18a64dc6424197dcce6fbb"
   end
 
   depends_on "blast" # for segmasker + dustmasker
