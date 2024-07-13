@@ -47,7 +47,7 @@ class Clipper4coot < Formula
         args << "--build=arm-apple-#{OS.kernel_name.downcase}#{OS.kernel_version.major}"
       end
       inreplace "./configure", "-flat_namespace -undefined suppress", "-undefined dynamic_lookup" if OS.mac?
-      ENV.append "CPPFLAGS", "-I#{fftw2_dir}/fftw2/fftw" unless OS.mac?
+      ENV.append "CPPFLAGS", "-I#{fftw2_dir}/fftw" unless OS.mac?
       system "./configure", *args
       system "make", "install"
     end
