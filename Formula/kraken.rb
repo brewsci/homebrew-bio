@@ -10,8 +10,9 @@ class Kraken < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "fcefe1f392f6c3e9821b24cd8d096c90e8348a25fd577bfecdf507ff863462ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a4533e0f5e6dda9546b71f59ce77653f838f9aa59468ca1f6730f838a966523b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "021da2b6e256d07ef98730717f2e49679f31370e9e288138ff3195c3fb24239d"
+    sha256 cellar: :any_skip_relocation, ventura:      "2e5194d2b3ef4204461fa466ebc00eae65729f25a59ba6f45a04ae1bba6bea0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a65a8057b3366ff21b193ae1b6750e82d594ccf3635d4afa48af172b4f3ae51d"
   end
 
   on_macos do
