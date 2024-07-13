@@ -9,8 +9,9 @@ class Fastani < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 catalina:     "8a87f5ac2d028d5ce7ca725d0bf997cc4b19088e0a484f4e7a8be244966cbfe2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ca81474d0cfc36a53ba106540fce4d5f6bd033008089ade6579bdc03d2cb3285"
+    sha256 cellar: :any,                 arm64_sonoma: "f5b9dcfd5df5e9a14cc05025b7b3dee6b5978d5a8c7517b6f7b9bab5a7eb82eb"
+    sha256 cellar: :any,                 ventura:      "49f020c561fd674cf61702631fcbc8fde29675cb9e64d34cf827e92cf5b33b04"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2cacbeb0b1a6194ca2d0f5e389d639a5b4766e86cbde33834e97af90758516ea"
   end
 
   depends_on "cmake" => :build
