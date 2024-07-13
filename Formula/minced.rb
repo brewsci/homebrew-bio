@@ -4,6 +4,7 @@ class Minced < Formula
   url "https://github.com/ctSkennerton/minced/archive/refs/tags/0.4.2.tar.gz"
   sha256 "35b6ee22fe6bdc26a31d0203a7dcc6bd1a19fd6733c60d80ceb44431884af165"
   license "GPL-3.0"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
