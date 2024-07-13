@@ -4,8 +4,9 @@ class Salmon < Formula
   homepage "https://github.com/COMBINE-lab/salmon"
   url "https://github.com/COMBINE-lab/salmon/archive/refs/tags/v1.10.1.tar.gz"
   sha256 "babd9ccc189cfea07566d8a11d047f25fad5b446b4b69257bc6ad8869f8b7707"
-  license "GPL-3.0"
-  head "https://github.com/COMBINE-lab/salmon.git"
+  license "GPL-3.0-or-later"
+  revision 1
+  head "https://github.com/COMBINE-lab/salmon.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
