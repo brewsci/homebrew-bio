@@ -1,8 +1,8 @@
 class Kraken2 < Formula
   desc "Taxonomic sequence classification system"
   homepage "https://github.com/DerrickWood/kraken2"
-  url "https://github.com/DerrickWood/kraken2/archive/refs/tags/v2.1.2.tar.gz"
-  sha256 "e5f431e8bc3d5493a79e1d8125f4aacbad24f9ea2cc9657b66da06a32bef6ff3"
+  url "https://github.com/DerrickWood/kraken2/archive/refs/tags/v2.1.3.tar.gz"
+  sha256 "5269fa14adfb02e38c2da2e605e909a432d76c680d73e2e0e80e27ccd04d7c69"
   license "MIT"
 
   bottle do
@@ -12,11 +12,12 @@ class Kraken2 < Formula
   end
 
   depends_on "blast" # for segmasker + dustmasker
-  depends_on "gcc@11" if OS.mac? # needs openmp
 
   uses_from_macos "perl"
 
-  fails_with :clang # needs openmp
+  on_macos do
+    depends_on "libomp"
+  end
 
   def install
     libexec.mkdir
