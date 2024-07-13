@@ -2,8 +2,8 @@ class Mustang < Formula
   # cite Konagurthu_2006: "https://doi.org/10.1002/prot.20921"
   desc "Multiple structural alignment algorithm"
   homepage "https://lcb.infotech.monash.edu/mustang/"
-  url "https://lcb.infotech.monash.edu/mustang/mustang_v3.2.3.tgz"
-  sha256 "f1c8d64acc04c70e30b3128c370e485438eb38db96b1b3180d31eaa24a52704a"
+  url "https://lcb.infotech.monash.edu/mustang/mustang_v3.2.4.tgz"
+  sha256 "c05e91c955f491a1fddc404a36ef963b057fd725bcc6d22ef6df1c23b26ce237"
   license "BSD-3-Clause"
 
   bottle do
