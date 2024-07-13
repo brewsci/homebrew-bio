@@ -23,6 +23,8 @@ class Gatk < Formula
   end
 
   def install
+    # use openjdk@17's java for gatk
+    inreplace "gatk", "\"java\"", "\"#{Formula["openjdk@17"].opt_bin}/java\""
     prefix.install "gatk"
     prefix.install "scripts/dataproc-cluster-ui"
     prefix.install "gatk-package-#{version}-spark.jar"
@@ -48,7 +50,6 @@ class Gatk < Formula
     EOS
   end
   test do
-    ENV["JAVA_HOME"] = Formula["openjdk@17"].opt_prefix
     assert_match "Usage", shell_output("#{bin}/gatk --help 2>&1")
     testpath.install resource("homebrew-count_reads.bam")
     assert_equal "Tool returned:\n8",
