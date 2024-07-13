@@ -4,8 +4,9 @@ class Kraken < Formula
   homepage "https://ccb.jhu.edu/software/kraken/"
   url "https://github.com/DerrickWood/kraken/archive/refs/tags/v1.1.1.tar.gz"
   sha256 "73e48f40418f92b8cf036ca1da727ca3941da9b78d4c285b81ba3267326ac4ee"
-  license "GPL-3.0"
-  head "https://github.com/DerrickWood/kraken.git"
+  license "GPL-3.0-or-later"
+  head "https://github.com/DerrickWood/kraken.git", branch: "master"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -13,9 +14,9 @@ class Kraken < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "a4533e0f5e6dda9546b71f59ce77653f838f9aa59468ca1f6730f838a966523b"
   end
 
-  depends_on "gcc" if OS.mac? # needs openmp
-
-  fails_with :clang # needs openmp
+  on_macos do
+    depends_on "libomp"
+  end
 
   def install
     libexec.mkdir
