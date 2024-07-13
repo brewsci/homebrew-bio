@@ -12,8 +12,8 @@ class Clipper4coot < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "45f6f41305ce655b0e8517b2fb03e180f03c9f85d5553317f1b0b0eea6fbf8fc"
   end
 
-  depends_on "texinfo" => :build
   depends_on "pkg-config" => [:build, :test]
+  depends_on "texinfo" => :build
   depends_on "brewsci/bio/libccp4"
   depends_on "brewsci/bio/mmdb2"
 
