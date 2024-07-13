@@ -4,7 +4,7 @@ class Clipper4coot < Formula
   url "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/clipper-2.1.20180802.tar.gz"
   sha256 "7c7774f224b59458e0faa104d209da906c129523fa737e81eb3b99ec772b81e0"
   license "LGPL-2.1-only"
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
