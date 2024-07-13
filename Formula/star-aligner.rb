@@ -10,8 +10,9 @@ class StarAligner < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, big_sur:      "3f2c5f07695b96f91d70165232c6b3011e7b1d7cdd9684e67214a11bfea9f9b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "aff1dc125eb4d50961b110519420cf840c603cf29f2aa58a21aee1427d1f3799"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "8a4f1c52339018e7d94366939b7a2c3506ec73c758c5676065ef4381237dc16d"
+    sha256 cellar: :any_skip_relocation, ventura:      "546a1c946a8bdb4b53a7a21f63e69982bef409e9243c68dbcd9e83cd1ddd87dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "424189a12e3a925fca8f94c4e09fc127bf9835d49a29048846c03cda131cb20a"
   end
 
   uses_from_macos "zlib"
