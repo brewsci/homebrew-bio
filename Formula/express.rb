@@ -26,7 +26,11 @@ class Express < Formula
     # require C++17 for absl and protobuf
     inreplace "CMakeLists.txt", "set(CMAKE_CXX_STANDARD 11)", "set(CMAKE_CXX_STANDARD 17)"
     # use dynamic linking for protobuf
-    inreplace "src/CMakeLists.txt", "libprotobuf.a", "libprotobuf.dylib"
+    if OS.mac?
+      inreplace "src/CMakeLists.txt", "libprotobuf.a", "libprotobuf.dylib"
+    else
+      inreplace "src/CMakeLists.txt", "libprotobuf.a", "libprotobuf.so"
+    end
     # Use Homebrew's bamtools instead of the vendored copy
     mkdir "bamtools"
     ln_s Formula["bamtools"].include/"bamtools", "bamtools/include"
