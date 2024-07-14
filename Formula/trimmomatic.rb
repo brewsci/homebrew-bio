@@ -10,8 +10,9 @@ class Trimmomatic < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, sierra:       "b3252323576db7ff5833ce397c962c1e42e4a95da47f546c77c4e0dfc8d0eadb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a8ef297af91bf7e1ccb35092d054e9aefb2d2cb811a53b53756667a89756a61b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "be7e3d045721d59ba82d26b23dcb8c0db6db0ca2df8fbbb6384ce10639f43e83"
+    sha256 cellar: :any_skip_relocation, ventura:      "7f20cf2339746cabcc3cc7d82b9edd5043e24e68b8c9b268ae0456a242f9afa4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "95b8e0d4a264cf3e0f5a74b4de6ff208c3da74cf3f1701371b2d729135dbe685"
   end
 
   depends_on "ant" => :build
