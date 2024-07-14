@@ -49,7 +49,7 @@ class Trimmomatic < Formula
       "LEADING:3",
       "TRAILING:3",
       "SLIDINGWINDOW:4:15",
-      "MINLEN:36"
+      "MINLEN:36",
     ].join(" ")
     assert_match "Completed successfully", shell_output("#{command} 2>&1")
   end
