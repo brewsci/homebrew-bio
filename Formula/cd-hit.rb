@@ -5,13 +5,14 @@ class CdHit < Formula
   url "https://github.com/weizhongli/cdhit/archive/refs/tags/V4.8.1.tar.gz"
   sha256 "f8bc3cdd7aebb432fcd35eed0093e7a6413f1e36bbd2a837ebc06e57cdb20b70"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/weizhongli/cdhit.git"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, catalina:     "47631dc21a652818238471695e530caa3c949841638bbb1453907c006f4f57ee"
-    sha256 cellar: :any, x86_64_linux: "9e7bee44f6ee0b8299b24a894322bec6e9d79b28b95bee7bd8d7e0b8d59de83a"
+    sha256 cellar: :any,                 arm64_sonoma: "8a044d33938f14d7c9160ed65a161289b3673a66631b9dd36e778c7e42867a31"
+    sha256 cellar: :any,                 ventura:      "d94fa0f1f70421bd5e1e7088bde1621cf51ce050a29065ac13e66b63ccbb6f5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1fc9c35d1302967c4b5c61bf99260f6aed1087770d6044f309e93dd990bfbab4"
   end
 
   uses_from_macos "zlib"

@@ -19,31 +19,36 @@ jobs:
           fetch-depth: 100
       - name: Update Homebrew
         run: |
-          echo "/home/linuxbrew/.linuxbrew/bin" >> $GITHUB_PATH
+          echo "/home/linuxbrew/.linuxbrew/bin" >> "$GITHUB_PATH"
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           brew update
       - name: Upload bottles
         shell: bash
+        env:
+          COMMIT_MESSAGE: ${{github.event.head_commit.message}}
         run: |
           #!/bin/bash
           set -eu
           echo sha1='${{github.event.head_commit.id}}'
-          echo '${{github.event.head_commit.message}}'
-          pr="$(echo '${{github.event.head_commit.message}}' | sed 's/^.*#\([0-9]*\).*/\1/;q')"
-          mkdir -p "$(dirname $(brew --repo ${{github.repository}}))"
+          echo "$COMMIT_MESSAGE"
+          # pr="$(echo "$COMMIT_MESSAGE" | sed 's/^.*#\([0-9]*\).*/\1/;q')"
+          pr="${COMMIT_MESSAGE##*#}"
+          pr="${pr%%[^0-9]*}"
+          mkdir -p "$(dirname "$(brew --repo ${{github.repository}})")"
           cp -a "$GITHUB_WORKSPACE" "$(brew --repo ${{github.repository}})"
-          rm -rf .git *
+          rm -rf -- .git *
           git -C "$(brew --repo ${{github.repository}})" fetch origin "pull/$pr/head:pr-head"
           sha1="$(git -C "$(brew --repo ${{github.repository}})" rev-parse pr-head)"
           echo pr="$pr" sha1="$sha1"
-          if [[ -n "$(curl -fs -H 'Accept: application/vnd.github.antiope-preview+json' https://api.github.com/repos/${{github.repository}}/pulls/$pr \
+          if [[ -n "$(curl -fs -H 'Accept: application/vnd.github.antiope-preview+json' "https://api.github.com/repos/${{github.repository}}/pulls/$pr" \
             | jq '.labels[] | select(.name == "ci-skip-upload")')" ]]; then
             echo Skipping upload...
           else
-            run_id=$(curl -fs -H 'Accept: application/vnd.github.antiope-preview+json' https://api.github.com/repos/${{github.repository}}/actions/workflows/build-bottles.yml/runs \
-              | jq ".workflow_runs[] | select(.head_sha == \"$sha1\").id")
-            artifact_id="$(curl -fs -H 'Accept: application/vnd.github.antiope-preview+json' https://api.github.com/repos/${{github.repository}}/actions/runs/$run_id/artifacts \
-              | jq '.artifacts[0].id')"
+            run_id="$(curl -fs -H 'Accept: application/vnd.github.antiope-preview+json' https://api.github.com/repos/${{github.repository}}/actions/workflows/build-bottles.yml/runs \
+              | jq ".workflow_runs[] | select(.head_sha == \"$sha1\").id")"
+            # artifacts[-1] is "all-bottles"
+            artifact_id="$(curl -fs -H 'Accept: application/vnd.github.antiope-preview+json' "https://api.github.com/repos/${{github.repository}}/actions/runs/$run_id/artifacts" \
+              | jq '.artifacts[-1].id')"
             echo run_id="$run_id" artifact_id="$artifact_id"
             curl -fL -o bottles.zip "https://${{secrets.HOMEBREW_GITHUB_API_TOKEN}}@api.github.com/repos/${{github.repository}}/actions/artifacts/$artifact_id/zip"
             file bottles.zip

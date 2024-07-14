@@ -4,18 +4,19 @@ class Gatk < Formula
   # cite McKenna_2010: "https://doi.org/10.1101/gr.107524.110"
   desc "Genome Analysis Toolkit: Variant Discovery in High-Throughput Sequencing"
   homepage "https://github.com/broadinstitute/gatk"
-  url "https://github.com/broadinstitute/gatk/releases/download/4.3.0.0/gatk-4.3.0.0.zip"
-  sha256 "e2c27229b34c3e22445964adf00639a0909887bbfcc040f6910079177bc6e2dd"
+  url "https://github.com/broadinstitute/gatk/releases/download/4.6.0.0/gatk-4.6.0.0.zip"
+  sha256 "a5d31e34630f355e5a119894f2587fec47049fedff04300f6633c31ef14c3a66"
   license "BSD-3-Clause"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "e55337c2d7d735c6546bd03873dfc07bac3c3540c492315b7c20d22a2244c752"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e4b4117555b904663ca90c00945cc29f7767742bb6c3a37078c0f077db52261d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "d81a70caac03277e9ba239032a63b1d8858f9e3eb23b227d230f031e2e1142aa"
+    sha256 cellar: :any_skip_relocation, ventura:      "d81a70caac03277e9ba239032a63b1d8858f9e3eb23b227d230f031e2e1142aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "080a08db8745f97d5641082e10345a85029047782ac204e3bfb841c145dc9fb4"
   end
 
-  depends_on "openjdk"
-  depends_on "python@3.10"
+  depends_on "openjdk@17"
+  depends_on "python@3.12"
 
   resource "homebrew-count_reads.bam" do
     url "https://github.com/broadinstitute/gatk/blob/626c88732c02b0fd5f395db20c91bf2784ec54b9/src/test/resources/org/broadinstitute/hellbender/tools/count_reads.bam?raw=true"
@@ -23,6 +24,8 @@ class Gatk < Formula
   end
 
   def install
+    # use openjdk@17's java for gatk
+    inreplace "gatk", "\"java\"", "\"#{Formula["openjdk@17"].opt_bin}/java\""
     prefix.install "gatk"
     prefix.install "scripts/dataproc-cluster-ui"
     prefix.install "gatk-package-#{version}-spark.jar"

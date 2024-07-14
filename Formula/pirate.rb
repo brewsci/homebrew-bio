@@ -2,15 +2,15 @@ class Pirate < Formula
   # cite Bayliss_2019: "https://doi.org/10.1101/598391"
   desc "Pangenome analysis and threshold evaluation toolbox"
   homepage "https://github.com/SionBayliss/PIRATE"
-  url "https://github.com/SionBayliss/PIRATE/archive/refs/tags/v1.0.4.tar.gz"
-  sha256 "ed2bad7d73d5c445f565fd7532265b75dad079594d589ece87ae738b712f6bd3"
-  license "GPL-3.0"
-  revision 1
+  url "https://github.com/SionBayliss/PIRATE/archive/refs/tags/v1.0.5.tar.gz"
+  sha256 "d5d7e657558eadae301a3198bccfd5ee04daddab1a872049d8a74cb71c35f20b"
+  license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "facd878921745ef898e0bba2d3fe115be1a9cc46a36886bc0b135b1e9c3450bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "05b6c3b5fbe5db6c0d8f39dab4b31fd5343bd00db69edb093e4f8cd999f11136"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "f9c3d3f37065a05791b6c561888fbe9e3f532320a45c312018ae4130cd3fb853"
+    sha256 cellar: :any_skip_relocation, ventura:      "f9c3d3f37065a05791b6c561888fbe9e3f532320a45c312018ae4130cd3fb853"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2a810a4b27460809759ab9c9f2a62a4d58660b6281c9fd87a92b0cbc981c9883"
   end
 
   depends_on "bioperl"
@@ -34,9 +34,8 @@ class Pirate < Formula
   end
 
   test do
-    exe = bin/"PIRATE"
-    assert_match version.to_s, shell_output("#{exe} --version 2>&1")
-    assert_match "pangenome", shell_output("#{exe} --help 2>&1")
-    system exe, "--check"
+    assert_match version.to_s, shell_output("#{bin}/PIRATE --version 2>&1")
+    assert_match "pangenome", shell_output("#{bin}/PIRATE --help 2>&1")
+    system "#{bin}/PIRATE", "--check"
   end
 end

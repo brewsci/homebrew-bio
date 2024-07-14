@@ -4,11 +4,13 @@ class Minced < Formula
   url "https://github.com/ctSkennerton/minced/archive/refs/tags/0.4.2.tar.gz"
   sha256 "35b6ee22fe6bdc26a31d0203a7dcc6bd1a19fd6733c60d80ceb44431884af165"
   license "GPL-3.0"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "35f37fa7307c465cb85346e04d14b60def08d5285d034b27f6b0a38452a7c6e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "834a142ba163149ba2436f3a5991c9b06b4c21b06a0f1b438b40d31f5910cc6a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "fba8ea3d793146f3ca2827bad829e68ef8250cd1fdb809ff865a381d249114c7"
+    sha256 cellar: :any_skip_relocation, ventura:      "115c1a2e803f0afc03a919f3f4b571e8ac1ddaf91fafac3753d69ad440fdb371"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "696a4a6ef8f6b32566c7de3cca2ab873788e69cca709834aca8020aad734878d"
   end
 
   depends_on "openjdk"

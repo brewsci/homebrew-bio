@@ -7,12 +7,13 @@ class Raster3d < Formula
   url "http://www.bmsc.washington.edu/raster3d/Raster3D_3.0-7.tar.gz"
   sha256 "f566b499fee341db3a95229672c6afdbdb69da7faabdbe34f6e0d332d766160c"
   license "Artistic-2.0"
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 monterey:     "3638617b2836308831b08c24f4ec7cfccc242194501db85da4b6b502e3dd28f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "24bb4867e9b4fce841a4db39d20a26823d0e8c9d4575d63c9e87f9b667204aae"
+    sha256 cellar: :any,                 arm64_sonoma: "bee2e4e6d1d2a45362b79531593e0dcd87d3d91880e14ecf4f4382dd99c01c94"
+    sha256 cellar: :any,                 ventura:      "85922e4f1bed55896e2b9a5c232e2de3c20379bdc6e681db0269faa70e79281e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "471eaf158d04dfa8509b49327b845d962785250f47a3fa3c7c735a3b23b6c4fd"
   end
 
   depends_on "gcc"

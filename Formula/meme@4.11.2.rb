@@ -6,11 +6,13 @@ class MemeAT4112 < Formula
   version "4.11.2"
   sha256 "377238c2a9dda64e01ffae8ecdbc1492c100df9b0f84132d50c1cf2f68921b22"
   license :cannot_represent
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 arm64_sonoma: "c652229c1caed00f56b01e4330d0e7e27677b8f5358775c6aa15b58ad7353a43"
+    sha256 arm64_sonoma: "877e547a30c94569448b291146c6f8f60b6d13850e14ed3e10e5951fcd722b7c"
+    sha256 ventura:      "1fca1932f82c2935ff2bb88841476f0d0fdaecb9e35c25016b044a7c2ba84a2c"
+    sha256 x86_64_linux: "9428789fc191419d40ca71cf4886928865b17c0e0ca79c8ec04bc86ff7b7184c"
   end
 
   depends_on "ghostscript"

@@ -4,12 +4,15 @@ class Salmon < Formula
   homepage "https://github.com/COMBINE-lab/salmon"
   url "https://github.com/COMBINE-lab/salmon/archive/refs/tags/v1.10.1.tar.gz"
   sha256 "babd9ccc189cfea07566d8a11d047f25fad5b446b4b69257bc6ad8869f8b7707"
-  license "GPL-3.0"
-  head "https://github.com/COMBINE-lab/salmon.git"
+  license "GPL-3.0-or-later"
+  revision 1
+  head "https://github.com/COMBINE-lab/salmon.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ceb8c8b591adc2c3cd877212020fea603851df7607a01a1cf77d5a5d233d8546"
+    sha256 cellar: :any,                 arm64_sonoma: "aecd4f72006bab62051730695db0702338a1d93f6d88201851b7939fcf1061ef"
+    sha256 cellar: :any,                 ventura:      "70efc2ac6db2dd206f82c193ce55f1422fc404431199e13209ba0d176c598893"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c8da03dad28446849757146ecf18e175abbc8ae7dfb340f004bacd983a8a1190"
   end
 
   depends_on "autoconf" => :build
