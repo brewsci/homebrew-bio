@@ -1,10 +1,12 @@
 class Trimmomatic < Formula
   # cite Bolger_2014: "https://doi.org/10.1093/bioinformatics/btu170"
   desc "Flexible read trimming tool for Illumina data"
-  homepage "http://www.usadellab.org/cms/?page=trimmomatic"
-  url "http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.39.zip"
-  sha256 "2f97e3a237378d55c221abfc38e4b11ea232c8a41d511b8b4871f00c0476abca"
-  license "GPL-3.0"
+  homepage "https://github.com/usadellab/Trimmomatic"
+  url "https://github.com/usadellab/Trimmomatic/archive/refs/tags/v0.39.tar.gz"
+  sha256 "a05e28c3391d6ef55dec40de76bb19ca828c4896f3d6ad72e9659ed6a2229e34"
+  license "GPL-3.0-or-later"
+  revision 1
+  head "https://github.com/usadellab/Trimmomatic.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -12,24 +14,43 @@ class Trimmomatic < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "a8ef297af91bf7e1ccb35092d054e9aefb2d2cb811a53b53756667a89756a61b"
   end
 
-  depends_on "openjdk"
+  depends_on "ant" => :build
+  depends_on "openjdk@11"
 
   def install
-    cmd = "trimmomatic"
-    jar = "#{cmd}-0.39.jar"
-    libexec.install jar
-    bin.write_jar_script libexec/jar, cmd
+    ENV["JAVA_HOME"] = Formula["openjdk@11"].opt_prefix
+    # Set source and target versions to 1.8
+    inreplace "build.xml", "source=\"1.5\" target=\"1.5\"", "source=\"1.8\" target=\"1.8\""
+    system "ant"
+    system "unzip", "-o", "-d", "dist", "dist/Trimmomatic-#{version}.zip"
+    libexec.install Dir["dist/Trimmomatic-#{version}"]
+    bin.write_jar_script libexec/"Trimmomatic-#{version}/trimmomatic-#{version}.jar", "trimmomatic", java_version: "11"
     pkgshare.install "adapters"
   end
 
   def caveats
     <<~EOS
       FASTA file of adapter sequences are located here:
-      #{pkgshare}/adapters
+      #{libexec}/Trimmomatic-#{version}/adapters
     EOS
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/trimmomatic -version 2>&1")
+    (testpath/"test.fq").write <<~EOS
+      @U00096.2:1-70
+      AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC
+      +
+      IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII0000000000
+    EOS
+    command = [
+      "#{bin}/trimmomatic SE -phred33 #{testpath}/test.fq",
+      "/dev/null",
+      "ILLUMINACLIP:#{libexec}/Trimmomatic-#{version}/adapters/TruSeq3-SE.fa:2:30:10",
+      "LEADING:3",
+      "TRAILING:3",
+      "SLIDINGWINDOW:4:15",
+      "MINLEN:36"
+    ].join(" ")
+    assert_match "Completed successfully", shell_output("#{command} 2>&1")
   end
 end
