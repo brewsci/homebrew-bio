@@ -10,8 +10,9 @@ class Nonpareil < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "bc566819e555df1f2d78612647642e45cd52953514baf66f3412c797407bce9c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "89f6054e0ac0294ff44a5abfe61db24e7c3b6a440435fac058cec1bdc9f51af0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "d10bbd4cb945d724a270691472c5e97c8354e4494b53666ee45b5c100809be4d"
+    sha256 cellar: :any_skip_relocation, ventura:      "55d99f81cb3978924e85bf4eeaf9b03beb149ae7e8dc34af6edb887f41068e37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "dc80ce691025162aaa5911a64432822c49dcf9be4973db332e5cee9a5a04c4e3"
   end
 
   depends_on "r"
