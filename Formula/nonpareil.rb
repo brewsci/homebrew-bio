@@ -3,8 +3,8 @@ class Nonpareil < Formula
   desc "Estimates coverage in metagenomic datasets"
   homepage "http://enve-omics.ce.gatech.edu/nonpareil"
 
-  url "https://github.com/lmrodriguezr/nonpareil/archive/refs/tags/v3.3.4.tar.gz"
-  sha256 "d91e83b3017fbafadf974355e32305d3896847ea3b671d5d98c553f01018f806"
+  url "https://github.com/lmrodriguezr/nonpareil/archive/refs/tags/v3.5.4.tar.gz"
+  sha256 "41ea9c1378e85787142b29c7cdf8d352073764a620f818333492266e6bbec1cd"
   license "Artistic-2.0"
   head "https://github.com/lmrodriguezr/nonpareil.git"
 
@@ -24,7 +24,8 @@ class Nonpareil < Formula
     system "make", "nonpareil"
     system "make", "nonpareil-mpi" if build.with? :"open-mpi"
     system "make", "prefix=#{prefix}", "mandir=#{man1}", "install"
-    libexec.install "test/test.fasta"
+    libexec.install "test/test.fasta.gz"
+    libexec.install "test/test.fastq.gz"
   end
 
   def r_major_minor
@@ -32,15 +33,17 @@ class Nonpareil < Formula
   end
 
   test do
-    cp libexec/"test.fasta", testpath
-    system bin/"nonpareil", "-s", "#{testpath}/test.fasta", "-T", "alignment",
+    cp libexec/"test.fasta.gz", testpath
+    cp libexec/"test.fastq.gz", testpath
+    system bin/"nonpareil", "-s", "#{testpath}/test.fasta.gz",
+                            "-T", "alignment", "-f", "fasta", "-X", "50",
                             "-b", "#{testpath}/test"
-    system bin/"nonpareil", "-s", "#{testpath}/test.fasta", "-T", "kmer",
-                            "-b", "#{testpath}/test", "-X", "50"
+    system bin/"nonpareil", "-s", "#{testpath}/test.fastq.gz", "-T", "kmer",
+                            "-b", "#{testpath}/test", "-X", "50", "-f", "fastq", "-X", "50"
     if build.with? :"open-mpi"
       system "mpirun", "-c", 1, bin/"nonpareil-mpi",
-                       "-s", "#{testpath}/test.fasta", "-T", "alignment",
-                       "-b", "#{testpath}/test"
+                       "-s", "#{testpath}/test.fasta.gz", "-T", "alignment",
+                       "-b", "#{testpath}/test", "-f", "fasta", "-X", "50"
     end
   end
 end
