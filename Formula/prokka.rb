@@ -4,6 +4,7 @@ class Prokka < Formula
   homepage "https://github.com/tseemann/prokka"
   url "https://github.com/tseemann/prokka/archive/refs/tags/v1.14.6.tar.gz"
   sha256 "f730b5400ea9e507bfe6c5f3d22ce61960a897195c11571c2e1308ce2533faf8"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
