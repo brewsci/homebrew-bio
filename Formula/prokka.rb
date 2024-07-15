@@ -8,8 +8,9 @@ class Prokka < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "992e481c64fb2c63e228f0bf8b1a98926fd7461305d371625736bf53ce863d1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "33840d6123d3d8713a223a136455ec57028fc28564d7f386b10c981158166935"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "ff9fb6fc4bc1f9b0f29cecf2ae8b88320ad1deee7a77c6e51f15d39594d0b295"
+    sha256 cellar: :any_skip_relocation, ventura:      "ff9fb6fc4bc1f9b0f29cecf2ae8b88320ad1deee7a77c6e51f15d39594d0b295"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "618b46c4c3c25fc9cc64f73836cd1d6ffd177d46ce6789f95cd9b9fa5eba8629"
   end
 
   depends_on "bioperl"
