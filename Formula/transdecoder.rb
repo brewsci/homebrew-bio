@@ -1,8 +1,8 @@
 class Transdecoder < Formula
   desc "Identifies candidate coding regions within transcript sequences"
   homepage "https://transdecoder.github.io/"
-  url "https://github.com/TransDecoder/TransDecoder/archive/refs/tags/TransDecoder-v5.5.0.tar.gz"
-  sha256 "c800d9226350817471e9f51267c91f7cab99dbc9b26c980527fc1019e7d90a76"
+  url "https://github.com/TransDecoder/TransDecoder/archive/refs/tags/TransDecoder-v5.7.1.tar.gz"
+  sha256 "41dd5e95f6ba946ff21340417d867e5e99f123b4035779b25d3cffd20b828a30"
   head "https://github.com/TransDecoder/TransDecoder.git"
 
   bottle do
@@ -33,7 +33,11 @@ class Transdecoder < Formula
   end
 
   test do
-    assert_match "Transdecoder", shell_output("#{bin}/TransDecoder.LongOrfs 2>&1", 255)
-    assert_match "Transdecoder", shell_output("#{bin}/TransDecoder.Predict 2>&1", 255)
+    resource "homebrew-testdata" do
+      url "https://github.com/TransDecoder/TransDecoder/raw/master/sample_data/pasa_example/genome.fasta.gz"
+      sha256 "2fcbbf2ca33846c3b4bf72eec7b82c19374df9bf12287422e69ec4c2758796d6"
+    end
+    resource("homebrew-testdata").stage testpath
+    assert_match "Done preparing long ORFs", shell_output("#{bin}/TransDecoder.LongOrfs -t genome.fasta 2>&1")
   end
 end
