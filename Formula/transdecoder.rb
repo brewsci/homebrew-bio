@@ -7,8 +7,9 @@ class Transdecoder < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, sierra:       "e042f955488ce81913380ae2090db14f5384ed90e2c9c823b31ff2a92f50feac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "13f7d49edfe061c813960bbb59a7c7c27f6eac82a9c058b34bf1d1f52d095c06"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "c0a52e2d69ba65076859eeed4156b5b7a101a4291fa657fe552ec7fea3cafd74"
+    sha256 cellar: :any_skip_relocation, ventura:      "69944e4dd330b1215b7fb5f020ac03c84c5cb96eea41a9ff9a75b968d9fe25ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d9bace09bb5173746e31241a462a8b5dd4962469d4673864d99afd45cefc6cb0"
   end
 
   depends_on "cpanminus" => :build unless OS.mac?
