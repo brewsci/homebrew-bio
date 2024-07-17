@@ -7,6 +7,13 @@ class Coot < Formula
   sha256 "8837bf97d5c68052dfdac901025e37d327e57c66fa1c54b8883a0d133a154d0a"
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only", "GPL-2.0-or-later"]
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 arm64_sonoma: "20fd763bb2d262d8da7fbcb6881d30c4c6fb8605aa58c8b333a5024b10fd66b4"
+    sha256 ventura:      "16a79f054b6fc99ad35d2242dcdbc19495ce5cabe72b820f3253899fe9fa04a1"
+    sha256 x86_64_linux: "2bb85845ebbf3cea57d4e231e85c0f6c760d0fdb7ba54cb1e32049f3eeb0fe0c"
+  end
+
   head do
     url "https://github.com/pemsley/coot.git", branch: "main"
     depends_on "autoconf" => :build
