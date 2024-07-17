@@ -50,6 +50,11 @@ class Coot < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "curl"
+  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "elfutils"
+  end
 
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
@@ -149,6 +154,8 @@ class Coot < Formula
 
   # test block is not tested now.
   test do
+    ENV["XDG_DATA_HOME"] = testpath
+    ENV.prepend_path "XDG_DATA_DIRS", HOMEBREW_PREFIX/"share"
     assert_match "Usage: coot", shell_output("#{bin}/coot --help 2>&1")
   end
 end
