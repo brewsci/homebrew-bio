@@ -154,7 +154,7 @@ class Coot < Formula
 
   # test block is not tested now.
   test do
-    ENV["XDG_DATA_HOME"] = testpath
+    ENV["XDG_STATE_HOME"] = testpath
     ENV.prepend_path "XDG_DATA_DIRS", HOMEBREW_PREFIX/"share"
     assert_match "Usage: coot", shell_output("#{bin}/coot --help 2>&1")
   end
