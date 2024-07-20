@@ -4,7 +4,7 @@ class Parsnp < Formula
   homepage "https://github.com/marbl/parsnp"
   url "https://github.com/marbl/parsnp/archive/refs/tags/v2.0.5.tar.gz"
   sha256 "1d23695d0d624fa17e02c43b1d730200e526c17a48615593f75ee8fc35402489"
-  head "https://github.com/marbl/parsnp.git"
+  head "https://github.com/marbl/parsnp.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
