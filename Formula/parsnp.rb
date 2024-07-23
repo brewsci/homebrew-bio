@@ -36,19 +36,19 @@ class Parsnp < Formula
     cd "muscle" do
       ENV.deparallelize
       system "./autogen.sh"
-      system "./configure", "--prefix=#{prefix}/muscle"
+      system "./configure", "--prefix=#{prefix}"
       system "make", "install"
       (doc/"muscle").install "AUTHORS", "ChangeLog"
     end
 
     system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}", "--with-libmuscle=#{prefix}/muscle/include"
+    system "./configure", "--prefix=#{prefix}", "--with-libmuscle=#{prefix}/include"
 
     # https://github.com/marbl/parsnp/issues/57
     libr = " -lMUSCLE-3.7"
     inreplace "src/Makefile", libr, ""
     inreplace "src/Makefile", "LIBS =", "LIBS =#{libr}"
-    inreplace "src/Makefile", "LDFLAGS = ", "LDFLAGS = -L#{prefix}/muscle/lib"
+    inreplace "src/Makefile", "LDFLAGS = ", "LDFLAGS = -L#{prefix}/lib"
 
     system "make"
 
