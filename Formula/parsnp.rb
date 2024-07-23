@@ -42,13 +42,13 @@ class Parsnp < Formula
     end
 
     system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}", "--with-libmuscle=#{prefix}/include"
+    system "./configure", "--prefix=#{prefix}", "--with-libmuscle=#{include}"
 
     # https://github.com/marbl/parsnp/issues/57
     libr = " -lMUSCLE-3.7"
     inreplace "src/Makefile", libr, ""
     inreplace "src/Makefile", "LIBS =", "LIBS =#{libr}"
-    inreplace "src/Makefile", "LDFLAGS = ", "LDFLAGS = -L#{prefix}/lib"
+    inreplace "src/Makefile", "LDFLAGS = ", "LDFLAGS = -L#{lib}"
 
     system "make"
 
