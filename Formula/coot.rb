@@ -3,8 +3,8 @@ class Coot < Formula
 
   desc "Crystallographic Object-Oriented Toolkit"
   homepage "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/"
-  url "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/source/releases/coot-1.1.09.tar.gz"
-  sha256 "8837bf97d5c68052dfdac901025e37d327e57c66fa1c54b8883a0d133a154d0a"
+  url "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/source/releases/coot-1.1.10.tar.gz"
+  sha256 "447caa7bdd6f87b738d20f8db15aa278476c308e22506004ed145e04f85e0413"
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only", "GPL-2.0-or-later"]
 
   bottle do
@@ -63,11 +63,6 @@ class Coot < Formula
     depends_on "elfutils"
   end
 
-  resource "certifi" do
-    url "https://files.pythonhosted.org/packages/98/98/c2ff18671db109c9f10ed27f5ef610ae05b73bd876664139cf95bd1429aa/certifi-2023.7.22.tar.gz"
-    sha256 "539cc1d13202e33ca466e88b2807e29f4c13049d6d87031a3c110744495cb082"
-  end
-
   resource "charset-normalizer" do
     url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
     sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
@@ -86,16 +81,6 @@ class Coot < Formula
   resource "reference-structures" do
     url "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/reference-structures.tar.gz"
     sha256 "44db38506f0f90c097d4855ad81a82a36b49cd1e3ffe7d6ee4728b15109e281a"
-  end
-
-  resource "requests" do
-    url "https://files.pythonhosted.org/packages/9d/be/10918a2eac4ae9f02f6cfe6414b7a155ccd8f7f9d4380d62fd5b955065c3/requests-2.31.0.tar.gz"
-    sha256 "942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"
-  end
-
-  resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/af/47/b215df9f71b4fdba1025fc05a77db2ad243fa0926755a52c5e71659f4e3c/urllib3-2.0.7.tar.gz"
-    sha256 "c97dfde1f7bd43a71c8d2a58e369e9b2bf692d1334ea9f9cae55add7d0dd0f84"
   end
 
   def python3
@@ -119,7 +104,7 @@ class Coot < Formula
     xy = Language::Python.major_minor_version python3
     # Install Python dependencies
     venv = virtualenv_create(libexec, python3)
-    %w[certifi charset-normalizer idna requests urllib3].each do |r|
+    %w[charset-normalizer idna].each do |r|
       venv.pip_install resource(r)
     end
     (lib/"python#{xy}/site-packages/homebrew-coot.pth").write "#{libexec/"lib/python#{xy}/site-packages"}\n"
@@ -132,8 +117,6 @@ class Coot < Formula
     rdkit_prefix = Formula["rdkit"].opt_prefix
     fftw2_prefix = Formula["clipper4coot"].opt_prefix/"fftw2"
 
-    # Fix libdwarf version
-    inreplace "./configure", "libdwarf >= 0.7", "libdwarf <= 0.11" unless build.head?
     args = %W[
       --prefix=#{prefix}
       --with-enhanced-ligand-tools
@@ -149,8 +132,6 @@ class Coot < Formula
     ENV.append_to_cflags "-fPIC" if OS.linux?
     system "./configure", *args
     system "make"
-    # Add shebang to coot
-    inreplace "src/coot", "\nexport LC_ALL=C", "#!/bin/bash\nexport LC_ALL=C" unless build.head?
     ENV.deparallelize { system "make", "install" }
     bin.install_symlink libexec/"Maccoot"
     # install reference data
