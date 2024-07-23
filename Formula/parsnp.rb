@@ -8,8 +8,9 @@ class Parsnp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 catalina:     "a314260f40f1935bddabd3c0918615a966a928d9d4943946553df64374342312"
-    sha256 x86_64_linux: "c88a39e77c87877394c668db346bfedf2559e4f13f3b54b590db5b999375976d"
+    sha256 cellar: :any,                 arm64_sonoma: "d00efe0566c3c017d36630032599b252e5a19a78c01279fd8bbfba7abdf2045f"
+    sha256 cellar: :any,                 ventura:      "6357c9eac4ac96eebaf8825cbb06eafcd26a30c0a0838b4e673889544683b9dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "36a5646f5c4c611c5e1b384541b06f490bb424f34a8e98439ab1e294a708b922"
   end
 
   depends_on "autoconf" => :build
