@@ -1,6 +1,4 @@
 class Coot < Formula
-  include Language::Python::Virtualenv
-
   desc "Crystallographic Object-Oriented Toolkit"
   homepage "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/"
   url "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/source/releases/coot-1.1.10.tar.gz"
@@ -63,16 +61,6 @@ class Coot < Formula
     depends_on "elfutils"
   end
 
-  resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/cf/ac/e89b2f2f75f51e9859979b56d2ec162f7f893221975d244d8d5277aa9489/charset-normalizer-3.3.0.tar.gz"
-    sha256 "63563193aec44bce707e0c5ca64ff69fa72ed7cf34ce6e11d5127555756fd2f6"
-  end
-
-  resource "idna" do
-    url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
-    sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
-  end
-
   resource "monomers" do
     url "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/refmac-monomer-library.tar.gz"
     sha256 "03562eec612103a48bd114cfe0d171943e88f94b84610d16d542cda138e5f36b"
@@ -102,11 +90,6 @@ class Coot < Formula
 
     # Get Python location
     xy = Language::Python.major_minor_version python3
-    # Install Python dependencies
-    venv = virtualenv_create(libexec, python3)
-    %w[charset-normalizer idna].each do |r|
-      venv.pip_install resource(r)
-    end
     (lib/"python#{xy}/site-packages/homebrew-coot.pth").write "#{libexec/"lib/python#{xy}/site-packages"}\n"
     ENV.prepend_path "PYTHONPATH", Formula["numpy"].opt_prefix/Language::Python.site_packages(python3)
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
