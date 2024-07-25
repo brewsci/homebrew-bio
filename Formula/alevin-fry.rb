@@ -8,8 +8,9 @@ class AlevinFry < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "fcefc4ca295178d0069934d8227c488ea06fbe473efb50dbbc72a300b800298c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "942c9e2b42cb2e6ea640f0f6c7daa829c0cff991fce0a516823d20b734d337fd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "ea5c9c6ef1adecf97875211fab2bdd4eca3175ebc693d1c5a5702867d6e6abda"
+    sha256 cellar: :any_skip_relocation, ventura:      "ae61f6c811a3daec4a5590285a2f93c6b6f05524fc3402da60c5dfbdd92568f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "14789b61015dd5db0f129efbd7864dda49530694226c851464bba6feea1bbd87"
   end
 
   depends_on "cmake" => :build
