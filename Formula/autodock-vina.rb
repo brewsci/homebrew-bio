@@ -30,8 +30,8 @@ class AutodockVina < Formula
     inreplace "src/split/split.cpp", "#include <boost/filesystem/convenience.hpp> ", ""
     inreplace "src/lib/vina.h", "#include <boost/filesystem/convenience.hpp> ", ""
     inreplace "src/lib/parallel_progress.h" do |s|
-      s.gsub! "#include <boost/process.hpp>", "#include <boost/timer/progress_display.hpp>"
-      s.gsub! "src/lib/parallel_progress.h", "boost::progress_display", "boost::timer::progress_display"
+      s.gsub! "#include <boost/progress.hpp>", "#include <boost/timer/progress_display.hpp>"
+      s.gsub! "boost::progress_display", "boost::timer::progress_display"
     end
     if OS.mac?
       cd "build/mac/release" do
