@@ -1,9 +1,9 @@
 class AlevinFry < Formula
-  # cite Zakeri_2021: "https://doi.org/10.1101/2021.02.10.430656"
+  # cite He_2022: "https://doi.org/10.1038/s41592-022-01408-3"
   desc "Efficient and flexible tool for processing single-cell sequencing data"
   homepage "https://alevin-fry.readthedocs.io"
-  url "https://github.com/COMBINE-lab/alevin-fry/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "20572fffc8001a7d41ab8eb2af8cdb09b0443379ff6f9d4ef5a092c7db9fd265"
+  url "https://github.com/COMBINE-lab/alevin-fry/archive/refs/tags/v0.10.0.tar.gz"
+  sha256 "6c6becd07f63794d63fdf7c40f56289f01de093c403db3b593f72312cb2617bc"
   license "BSD-3-Clause"
 
   bottle do
@@ -12,6 +12,7 @@ class AlevinFry < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "942c9e2b42cb2e6ea640f0f6c7daa829c0cff991fce0a516823d20b734d337fd"
   end
 
+  depends_on "cmake" => :build
   depends_on "rust" => :build
 
   def install
