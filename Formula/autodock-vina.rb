@@ -7,6 +7,7 @@ class AutodockVina < Formula
   url "https://github.com/ccsb-scripps/AutoDock-Vina/archive/refs/tags/v1.2.5.tar.gz"
   sha256 "38aec306bff0e47522ca8f581095ace9303ae98f6a64031495a9ff1e4b2ff712"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/ccsb-scripps/AutoDock-Vina.git", branch: "develop"
 
   bottle do
@@ -17,14 +18,21 @@ class AutodockVina < Formula
 
   depends_on "swig" => :build
   depends_on "boost"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   def install
-    xy = Language::Python.major_minor_version Formula["python@3.11"].opt_bin/"python3"
+    xy = Language::Python.major_minor_version Formula["python@3.12"].opt_bin/"python3"
     ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
     binaries = ["vina", "vina_split"]
     inreplace "build/makefile_common", "$(BASE)", Formula["boost"].opt_prefix
     inreplace "build/makefile_common", "${BASE}", Formula["boost"].opt_prefix
+    # deprecated boost/filesystem/convenience.hpp and progress.hpp since boost 1.85
+    inreplace "src/split/split.cpp", "#include <boost/filesystem/convenience.hpp> ", ""
+    inreplace "src/lib/vina.h", "#include <boost/filesystem/convenience.hpp> ", ""
+    inreplace "src/lib/parallel_progress.h" do |s|
+      s.gsub! "#include <boost/process.hpp>", "#include <boost/timer/progress_display.hpp>"
+      s.gsub! "src/lib/parallel_progress.h", "boost::progress_display", "boost::timer::progress_display"
+    end
     if OS.mac?
       cd "build/mac/release" do
         inreplace "Makefile" do |s|
