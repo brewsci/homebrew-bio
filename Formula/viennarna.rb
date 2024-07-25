@@ -7,8 +7,9 @@ class Viennarna < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 catalina:     "4edf24ac8964ff748439cf211a3f3d4a34a51ef28d2429de42a607d451f2fd6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "64232367b889c918417a97f8274fca437556e18d89ce227898a56516e5b977ea"
+    sha256 cellar: :any,                 arm64_sonoma: "8b6df1b73b8f0df52d391c94fbe27e17838dacc525415a2976a04f4038bbcf53"
+    sha256 cellar: :any,                 ventura:      "621dc4aa92b99fb3c0d30fb6377b2d0007b116164398d88ccec2bf442ed92e31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "72ddd1730d2d720566c5a59465a9b43dd5aa1834e771db452fd7b8ca4618edbe"
   end
 
   depends_on "autoconf" => :build
