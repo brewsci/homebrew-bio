@@ -20,6 +20,6 @@ class AlevinFry < Formula
   end
 
   test do
-    assert_match "USAGE", shell_output("#{bin}/alevin-fry --help")
+    assert_match "Usage", shell_output("#{bin}/alevin-fry --help")
   end
 end
