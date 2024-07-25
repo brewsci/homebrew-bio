@@ -9,9 +9,9 @@ class Salmon < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sonoma: "aecd4f72006bab62051730695db0702338a1d93f6d88201851b7939fcf1061ef"
-    sha256 cellar: :any,                 ventura:      "70efc2ac6db2dd206f82c193ce55f1422fc404431199e13209ba0d176c598893"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c8da03dad28446849757146ecf18e175abbc8ae7dfb340f004bacd983a8a1190"
+    sha256 cellar: :any,                 arm64_sonoma: "eaafca7561e27ce1ddbcb8b170c2cf82093b2f12529cfe94cf1cb0071614ed58"
+    sha256 cellar: :any,                 ventura:      "6ab82d777178b9867a0608a79faa56c40e1e51bbff77af46f49c504ae4139af0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "bf775b016c08d685ac43c88e60f5b2f8bb9897f8a0404403233a0b8e80f97602"
   end
 
   depends_on "autoconf" => :build
