@@ -17,8 +17,9 @@ class Bowtie < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "42de0f90a500103a2736bf4728d267a0e729096bc8ce45b6d3ef9a21cd86d87d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a4bd1d75bc2a132f22122093a993a53c174a3a80045df118016b58dbdca4a869"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "a53659f87fd1c9477ca39d60ccf59702db275f84bafd559689ef70a018ab41ca"
+    sha256 cellar: :any_skip_relocation, ventura:      "d4ef054f693e33c664220566ff59331b8eb923ce06c632954ef75e7ad2d2aed6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "21c1424f1b8d9de37be6f44c5bee0075b8e3487b1e5206f6c6ce8650efde6339"
   end
 
   depends_on "python@3.12"
