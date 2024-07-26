@@ -31,6 +31,7 @@ class Bowtie < Formula
     # ./VERSION:1:1: error: expected unqualified-id
     rm "VERSION" # VERSION file is not used
     ENV["VERSION"] = version
+    inreplace "processor_support.h", "#elif defined(__GNUC__)", "#elif defined(__GNUC__) && !defined(__arm64__)"
     if OS.mac? && DevelopmentTools.clang_build_version >= 1500
       # Work around a bug in Xcode 15's new linker (FB13038083)
       toolchain_path = "/Library/Developer/CommandLineTools"
