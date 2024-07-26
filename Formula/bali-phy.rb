@@ -16,7 +16,9 @@ class BaliPhy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, arm64_sonoma: "bf6417d52db70ed8a875b8795d0369cd0c04c3b427f0609cc77f8aad035ca6ab"
+    sha256 cellar: :any,                 arm64_sonoma: "a2c9894f3692d271daf9e7caeb9a2b8b379a8b5175d9106d166a38a5817f0b51"
+    sha256 cellar: :any,                 ventura:      "dad1175ce693d81e3764702a98e55b30020dc043fa07644e80118883e5ff003a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cfdcbf2c55478c05fbfd9ea91a1ade34a0cee6874bf721f7cf3864f16d1119d2"
   end
 
   depends_on "eigen" => :build
