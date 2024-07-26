@@ -7,6 +7,7 @@ class Bowtie < Formula
   url "https://github.com/BenLangmead/bowtie/archive/refs/tags/v1.3.1.tar.gz"
   sha256 "147d9fe9652f7c5f351bfc0eb012e06981986fb43bd6bdfe88a95c02eabc6573"
   license "Artistic-2.0"
+  revision 1
   head "https://github.com/BenLangmead/bowtie.git"
 
   livecheck do
@@ -20,10 +21,22 @@ class Bowtie < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "a4bd1d75bc2a132f22122093a993a53c174a3a80045df118016b58dbdca4a869"
   end
 
-  depends_on "python"
+  depends_on "python@3.12"
   depends_on "tbb"
 
+  uses_from_macos "zlib"
+
   def install
+    # Fix compilation error
+    # ./VERSION:1:1: error: expected unqualified-id
+    rm "VERSION" # VERSION file is not used
+    ENV["VERSION"] = version
+    if OS.mac? && DevelopmentTools.clang_build_version >= 1500
+      # Work around a bug in Xcode 15's new linker (FB13038083)
+      toolchain_path = "/Library/Developer/CommandLineTools"
+      ENV.append_path "CPLUS_INCLUDE_PATH", "#{toolchain_path}/SDKs/MacOSX.sdk/usr/include/c++/v1"
+    end
+
     system "make", "install", "prefix=#{prefix}"
     bin.find { |f| rewrite_shebang detected_python_shebang, f }
 
