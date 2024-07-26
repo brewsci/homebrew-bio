@@ -31,9 +31,10 @@ class Bowtie < Formula
     # ./VERSION:1:1: error: expected unqualified-id
     rm "VERSION" # VERSION file is not used
     ENV["VERSION"] = version
-    inreplace "processor_support.h", "#elif defined(__GNUC__)", "#elif defined(__GNUC__) && !defined(__arm64__)"
+    # POPCNT is not supported on ARM
+    ENV["POPCNT_CAPABILITY"] = "0" if Hardware::CPU.arm?
     if OS.mac? && DevelopmentTools.clang_build_version >= 1500
-      # Work around a bug in Xcode 15's new linker (FB13038083)
+      # Workaround a bug in Xcode 15's new linker (FB13038083)
       toolchain_path = "/Library/Developer/CommandLineTools"
       ENV.append_path "CPLUS_INCLUDE_PATH", "#{toolchain_path}/SDKs/MacOSX.sdk/usr/include/c++/v1"
     end
