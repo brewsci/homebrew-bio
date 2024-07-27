@@ -17,8 +17,9 @@ class Hisat2 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, catalina:     "2b5b75097703eca1abde911453cf0751395f52d07c7e9d437becd35b8f5b3290"
-    sha256 cellar: :any, x86_64_linux: "81d4a8bdf5de5751f06def926c8f7b39b2ee9e1d48905fbe7084cdaa0238f8b1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "c20ceca0fc0a7156dea5c5f77aa4e873eb62dc572d7c3a4dfaa59446c7f4772b"
+    sha256 cellar: :any_skip_relocation, ventura:      "fdbf80320dd91bd6c5d241158eed6e642ec73179515dac6174c111536e4657ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e60d0fa07fd0fb8ccd8172eaf4ab481169f64a6abb6d41dc7f41c692fa1c0fad"
   end
 
   depends_on "python@3.12"
