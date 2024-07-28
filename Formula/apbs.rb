@@ -11,7 +11,9 @@ class Apbs < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f79f67a6738e76011c74b42c72f0e6c132e6fa00a88979510682453aec632b57"
+    sha256 cellar: :any,                 arm64_sonoma: "099bf06c1c2f52bde9ff12cffefa8cab18fa4eeb6c2e822f3954290e0216d968"
+    sha256 cellar: :any,                 ventura:      "9b612610d1915c82cedb0dca50dcd186739dba51706d42900661a6e366e33138"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3d2358e55b7cea604916ecddc2e84550e2f6a3f4020d5c5045b0894537139ca4"
   end
 
   depends_on "boost" => :build
