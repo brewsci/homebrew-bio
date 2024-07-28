@@ -5,7 +5,8 @@ class Apbs < Formula
   url "https://github.com/Electrostatics/apbs.git",
     tag:      "v3.4.1",
     revision: "f24dd7629a41e253287bbb643589cd2afb776484"
-  license "MIT"
+  license all_of: ["LGPL-2.1-or-later", "BSD-3-Clause"]
+  revision 1
   head "https://github.com/Electrostatics/apbs.git", branch: "main"
 
   bottle do
@@ -20,6 +21,11 @@ class Apbs < Formula
   depends_on "python@3.12"
   depends_on "suite-sparse"
   depends_on "superlu"
+
+  on_macos do
+    depends_on "gettext"
+    depends_on "libiconv"
+  end
 
   resource "fetk" do
     url "https://github.com/Electrostatics/FETK/archive/refs/tags/1.9.3.tar.gz"
