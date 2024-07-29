@@ -6,7 +6,7 @@ class Apbs < Formula
     tag:      "v3.4.1",
     revision: "f24dd7629a41e253287bbb643589cd2afb776484"
   license all_of: ["LGPL-2.1-or-later", "BSD-3-Clause"]
-  revision 1
+  revision 2
   head "https://github.com/Electrostatics/apbs.git", branch: "main"
 
   bottle do
@@ -61,7 +61,7 @@ class Apbs < Formula
     # failed if additional modules and python are enabled
     args = std_cmake_args + %W[
       -DHOMEBREW_ALLOW_FETCHCONTENT=OFF
-      -DBUILD_TOOLS=OFF
+      -DBUILD_TOOLS=ON
       -DENABLE_GEOFLOW=OFF
       -DENABLE_BEM=OFF
       -DAPBS_STATIC_BUILD=ON
@@ -76,6 +76,15 @@ class Apbs < Formula
     system "cmake", "-S", ".", "-B", "build", *args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+  end
+
+  def caveats
+    <<~EOS
+      Some useful tools have been also installed in #{prefix}/share/apbs/tools.
+      You may want to add the following to your .bashrc or .zshrc to use these tools:
+        export APBS_TOOLS_HOME=#{prefix}/share/apbs/tools/
+        export PATH=${PATH}:${APBS_TOOLS_HOME}/bin
+    EOS
   end
 
   test do
