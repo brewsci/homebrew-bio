@@ -5,6 +5,7 @@ class SeqanAT2 < Formula
   homepage "https://www.seqan.de/"
   url "https://github.com/seqan/seqan/releases/download/seqan-v2.4.0/seqan-library-2.4.0.tar.xz"
   sha256 "dd97b1514ab83acb7d7be911b157979e188e8ca72cc61c430c1e0fd03bcd41a5"
+  revision 1
   head "https://github.com/seqan/seqan.git"
 
   bottle do
