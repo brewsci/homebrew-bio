@@ -10,8 +10,9 @@ class SeqanAT2 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "1fe83b7b478611b6fc28fe4eb7bc34e8d7846c6bc8dda57ae37d3e4e40d9e821"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f4ab354e5fc7f7cf50afd231f1f38a5efcb716bb89347ffa2474aa46e61f3cb6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "4527296ec60eeb08aa0dd9e5cb3d213a1f5f2c3c176fff2f6640ee2dd243f956"
+    sha256 cellar: :any_skip_relocation, ventura:      "8ddaecc16fd76991183396c4d8bb17b2f40ba61e2430e0decabface368618919"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3e01ca06d8600b42480d510c7f29a8e42d987a93d03d79f51ba658a5dd4d8309"
   end
 
   def install
