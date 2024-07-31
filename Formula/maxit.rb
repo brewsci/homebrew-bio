@@ -7,7 +7,9 @@ class Maxit < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 x86_64_linux: "2699a66a7c31bbb86b4ce939822d2d1cec3a393b917a13f6f0956f62b62d1577"
+    sha256 arm64_sonoma: "968ca571fba5c26a0ce0fbd1b0cd84bdbb5cffbb19d53ff1507c96208e3deb78"
+    sha256 ventura:      "77968c77f78b75212fa0ba88b757877859f5f73f4cd3fab61ac0fa60646c5256"
+    sha256 x86_64_linux: "a7e35b587ca07d9d443280a74a370df109089f9301048a937f5e9efb153135ec"
   end
 
   def install
