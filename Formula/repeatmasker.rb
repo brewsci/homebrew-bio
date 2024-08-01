@@ -73,10 +73,6 @@ class Repeatmasker < Formula
       the complete libraries, follow the instructions here:
         #{libexec}/INSTALL
       The default aligner is RMBlast. Change this by running:
-        cd #{libexec}
-        export PYTHONPATH=#{libexec}/lib/python3.12/site-packages
-        ./configure -perlbin #{Formula["perl"].bin/"perl"} -trf_prgm #{Formula["trf"].bin/"trf"} -rmblast_dir #{Formula["rmblast"].bin} \\
-        -hmmer_dir #{Formula["hmmer"].bin} -libdir #{libexec}/Libraries
     EOS
   end
 
