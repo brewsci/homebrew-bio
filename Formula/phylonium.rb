@@ -8,9 +8,9 @@ class Phylonium < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any,                 big_sur:      "b13c1533fd0f9f74663223f7e690e4bf0a5ebf749d0fe2a3ee11c4c01dc0741d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a993f505a59996367da6c91a046a2af82de55feb4302ca3543e7e368c80712f1"
+    sha256 cellar: :any,                 arm64_sonoma: "2dce8f585ab2d46410e93f321d9f5fffcfda9b337f1d53af3d3d9f4fa25e9855"
+    sha256 cellar: :any,                 ventura:      "e6a5b438f8d9a17a15c47b692cf5ea980715a80a7bf1e3ef77e7ec726d9a098e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "af27e76f884665486e4a40327b18fe6cda71c524ba932d32cfe99ce405526327"
   end
 
   depends_on "autoconf" => :build
