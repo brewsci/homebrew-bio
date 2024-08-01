@@ -48,6 +48,10 @@ class Repeatmasker < Formula
     which("perl")
   end
 
+  def hmmer
+    Formula["hmmer"].opt_prefix
+  end
+
   def install
     # Install Python dependencies
     venv = virtualenv_create(libexec, python3)
@@ -81,7 +85,7 @@ class Repeatmasker < Formula
         export PYTHONPATH=#{libexec}/lib/python3.12/site-packages
         ./configure -perlbin #{perl} -trf_prgm #{Formula["trf"].bin/"trf"} \\
         -rmblast_dir #{Formula["rmblast"].bin} \\
-        -hmmer_dir #{Formula["hmmer"].bin} -libdir #{libexec}/Libraries
+        -hmmer_dir #{hmmer}/"bin" -libdir #{libexec}/Libraries
     EOS
   end
 
