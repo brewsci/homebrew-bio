@@ -49,6 +49,7 @@ class Repeatmasker < Formula
   end
 
   def install
+    hmmer_bin = Formula["hmmer"].bin
     # Install Python dependencies
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resource("h5py")
@@ -80,7 +81,7 @@ class Repeatmasker < Formula
         cd #{libexec}
         export PYTHONPATH=#{libexec}/lib/python3.12/site-packages
         ./configure -perlbin #{perl} -trf_prgm #{Formula["trf"].bin/"trf"} -rmblast_dir #{Formula["rmblast"].bin} \\
-        -hmmer_dir #{Formula["hmmer"].bin} -libdir #{libexec}/Libraries
+        -hmmer_dir #{hmmer_bin} -libdir #{libexec}/Libraries
     EOS
   end
 
