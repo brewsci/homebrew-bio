@@ -48,8 +48,11 @@ class Repeatmasker < Formula
     which("perl")
   end
 
+  def hmmer_bin
+    Formula["hmmer"].bin
+  end
+
   def install
-    hmmer_bin = Formula["hmmer"].bin
     # Install Python dependencies
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resource("h5py")
