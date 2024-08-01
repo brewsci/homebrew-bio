@@ -8,6 +8,13 @@ class Repeatmasker < Formula
   sha256 "85c8bf61dd8411d140674cfa74e7642b41878fd63a7a779845e35162828f0d74"
   license "OSL-2.1"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any,                 arm64_sonoma: "781f0bcc32d3e3476cf354dd1163c4e16275e768af457e573792ec978025d31e"
+    sha256 cellar: :any,                 ventura:      "34004dfb693a34eb7b7cd1a0cc0fed2ddc8f17e836586f23e48491f0b319bb2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7d4976d1550987b560918643f1d2a075e1c060eb94dab7dc227af72d4bc14a98"
+  end
+
   depends_on "cmake" => :build
   depends_on "cpanminus" => :build
   depends_on "ninja" => :build
