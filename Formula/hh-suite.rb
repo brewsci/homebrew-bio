@@ -42,7 +42,7 @@ class HhSuite < Formula
     system "cmake", ".", *args
     system "make", "install"
     cp "scripts/reformat.pl", bin
-    rm_rf "scripts"
+    rm_r "scripts"
     pkgshare.install ["data/query.a3m", "data/test.sh"]
   end
 

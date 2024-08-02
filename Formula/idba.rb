@@ -35,7 +35,7 @@ class Idba < Formula
     system "./configure", "--prefix=#{prefix}"
     system "make"
     system "make", "check"
-    rm_rf Dir["bin/*.dSYM"] if OS.mac?
+    rm_r Dir["bin/*.dSYM"] if OS.mac?
     # system "make", "install"  # currently does not install everything
     bin.install Dir["bin/idba*"].select { |x| File.executable? x }
     libexec.install Dir["bin/*"].select { |x| File.executable? x }

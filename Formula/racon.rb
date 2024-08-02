@@ -29,7 +29,7 @@ class Racon < Formula
   end
 
   def install
-    rm_rf "vendor/spoa"
+    rm_r "vendor/spoa"
     (buildpath/"vendor/spoa").install resource("spoa")
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
