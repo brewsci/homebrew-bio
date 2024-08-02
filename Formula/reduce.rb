@@ -5,6 +5,13 @@ class Reduce < Formula
   sha256 "62e61cce221fff76b5834031302d91fe703a19945a42e16620d4fb860604daf4"
   license "BSD-4-Clause-UC"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "123d1d666fcc44ff484c293d287e913e8b23c98158e96c9d49447b7cf510eb93"
+    sha256 cellar: :any_skip_relocation, ventura:      "d3d14773905e8bffad53ed565510b514c571e0eadba77a3157a37a435a8bb83f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0aa39a9f1f020a4f294fa8fdf6cf68a214313095e15847559ef842cea9aa41df"
+  end
+
   depends_on "cmake" => :build
   depends_on "python@3.12"
 
