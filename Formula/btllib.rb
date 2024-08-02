@@ -45,7 +45,7 @@ class Btllib < Formula
 
     system "./compile", "--prefix=#{prefix}"
 
-    rm_rf Dir["#{lib}/btllib/python/btllib/__pycache__"]
+    rm_r Dir["#{lib}/btllib/python/btllib/__pycache__"]
     cd "#{lib}/btllib/python" do
       system python3, *Language::Python.setup_install_args(prefix)
     end
