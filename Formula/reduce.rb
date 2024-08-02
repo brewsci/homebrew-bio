@@ -5,7 +5,6 @@ class Reduce < Formula
   sha256 "62e61cce221fff76b5834031302d91fe703a19945a42e16620d4fb860604daf4"
   license "BSD-4-Clause-UC"
 
-  depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "python@3.12"
 
