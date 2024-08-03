@@ -97,7 +97,7 @@ class BwaMem2 < Formula
     # include FETK installed in the prefix directory
     cflags = "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
-    system "make", "CFLAGS=#{cflags}", "arch=native"
+    system "make", "arch=native", "CFLAGS=#{cflags}"
     bin.install "bwa-mem2"
   end
 
