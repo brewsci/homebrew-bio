@@ -77,11 +77,12 @@ class BwaMem2 < Formula
       inreplace "src/bandedSWA.h", "#include <smmintrin.h>", "#include \"sse2neon.h\""
     end
 
-    # fix
+    # Use safestringlib v1.2.0 instead of the bundled version
     inreplace "Makefile", "-Lext/safestringlib -lsafestring",
                           "-Lsafestringlib-1.2.0/build/ -lsafestring_static"
     inreplace "Makefile", "-Lext/safestringlib/ -lsafestring",
                           "-Lsafestringlib-1.2.0/build/ -lsafestring_static"
+    # fix build error with latest compilers
     inreplace "src/FMI_search.cpp" do |s|
       s.gsub! "_mm_prefetch((const char *)", "_mm_prefetch(reinterpret_cast<const char*>"
       s.gsub! "_mm_prefetch(&sa_ls_word[pos >> SA_COMPX]",
@@ -102,8 +103,8 @@ class BwaMem2 < Formula
     inreplace "ext/safestringlib/safeclib/safeclib_private.h",
               "#include \"safe_lib.h\"", "#include <safe_lib.h>"
 
-    # include FETK installed in the prefix directory
     cflags = "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
+    # arch=avx2 for Linux, but it's not best for all CPUs.
     arch = OS.mac? ? "native" : "avx2"
     system "make", "arch=#{arch}", "CFLAGS=#{cflags}"
     bin.install "bwa-mem2"
