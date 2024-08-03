@@ -62,7 +62,6 @@ class BwaMem2 < Formula
               "SAFE_STR_LIB= safestringlib-1.2.0/build/libsafestring_static.a"
       s.gsub! "-Iext/safestringlib/include",
               "-Isafestringlib-1.2.0/include"
-      s.gsub! " -msse4.1", ""
     end
 
     # use sse2neon for Apple Silicon
@@ -105,8 +104,8 @@ class BwaMem2 < Formula
 
     # include FETK installed in the prefix directory
     cflags = "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
-
-    system "make", "arch=native", "CFLAGS=#{cflags}"
+    arch = OS.mac? ? "native" : "avx2"
+    system "make", "arch=#{arch}", "CFLAGS=#{cflags}"
     bin.install "bwa-mem2"
   end
 
