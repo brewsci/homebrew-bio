@@ -62,6 +62,7 @@ class BwaMem2 < Formula
               "SAFE_STR_LIB= safestringlib-1.2.0/build/libsafestring_static.a"
       s.gsub! "-Iext/safestringlib/include",
               "-Isafestringlib-1.2.0/include"
+      s.gsub! " -msse4.1", ""
     end
 
     # use sse2neon for Apple Silicon
