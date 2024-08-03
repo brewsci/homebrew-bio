@@ -31,11 +31,19 @@ class BwaMem2 < Formula
     sha256 "cbba705412b8a1139be752759490606a988eee0483a3c0ee65aa0a03c1c9c9e8"
   end
 
+  resource "patch2" do
+    url "https://gist.githubusercontent.com/YoshitakaMo/c4cabc8e1e4b618047507bc354dbb51e/raw/1265ecf70a976476bd3e55d06804b94f9969310e/bandedSWA.cpp.patch"
+    sha256 "cdc13b153a23beb890d258eeb41d13aa0b777c1747bdefa49c399634c176cda7"
+  end
+
   def install
     # patch for fastmap.cpp
     system "dos2unix", "src/fastmap.cpp"
+    system "dos2unix", "src/bandedSWA.cpp"
     buildpath.install resource("patch")
+    buildpath.install resource("patch2")
     system "patch", "-p1", "src/fastmap.cpp", "fastmap.patch"
+    system "patch", "-p1", "src/bandedSWA.cpp", "bandedSWA.cpp.patch"
     # patch for src/utils.h to fix build error
     # https://aur.archlinux.org/cgit/aur.git/tree/gcc_rdtsc.patch?h=bwa-mem2
     inreplace "src/utils.h", "defined(__GNUC__) && !defined(__clang__)",
