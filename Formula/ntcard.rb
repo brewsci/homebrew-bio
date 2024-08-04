@@ -17,6 +17,8 @@ class Ntcard < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
 
+  uses_from_macos "zlib"
+
   on_macos do
     depends_on "libomp"
   end
