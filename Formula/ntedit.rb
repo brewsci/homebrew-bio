@@ -11,7 +11,9 @@ class Ntedit < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "27d8d71efb28f0a9c79864baad70159e74ff8acca347b72290f72372f551a765"
+    sha256 cellar: :any,                 arm64_sonoma: "54771a29bbe24b12ce9eb2777cd998951b4a266b5148fa84e48291f81f82bd83"
+    sha256 cellar: :any,                 ventura:      "29f208b0d952247887a750103501ba434f046639f7e5eacfeb42a66360653d7f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ace420c2e043c8aa2c7c296b194ff6b23519f91e684cd4df4871440d6fb010c5"
   end
 
   depends_on "autoconf" => :build
