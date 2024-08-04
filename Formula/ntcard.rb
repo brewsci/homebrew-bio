@@ -10,8 +10,10 @@ class Ntcard < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, catalina:     "23046c62a90ea7b0eca403f3785270a19044ee2df642edbfbe1c85d1e5b7f8d6"
-    sha256 cellar: :any, x86_64_linux: "f9f148edfccb1d956cc02dcf055fec2cbb1725e7b2fe86d99f1f861fe734e5bb"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma: "a71e7ef21aaa1dc67992b4462453a8842f89e177026e5ece76cd7519b70dd462"
+    sha256 cellar: :any,                 ventura:      "9d420e7c2e48c90aed2d618c8a9f6619647de5ad290f5e85b456365a2097bb34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f88449ff54d3c8c1982c248df042c2f4e23c977f6b327c70c6ab0106313e3b1e"
   end
 
   depends_on "autoconf" => :build
