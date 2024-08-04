@@ -16,17 +16,26 @@ class Ntcard < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "gcc" if OS.mac? # needs openmp
 
-  fails_with :clang # needs openmp
+  on_macos do
+    depends_on "libomp"
+  end
 
   def install
     system "./autogen.sh"
-    system "./configure",
+    args = [
       "--disable-debug",
       "--disable-dependency-tracking",
       "--disable-silent-rules",
-      "--prefix=#{prefix}"
+    ]
+    if OS.mac?
+      args += [
+        "ac_cv_prog_c_openmp=-Xpreprocessor -fopenmp",
+        "ac_cv_prog_cxx_openmp=-Xpreprocessor -fopenmp",
+        "LDFLAGS=-lomp -lz",
+      ]
+    end
+    system "./configure", *std_configure_args, *args
     system "make", "install"
   end
 
