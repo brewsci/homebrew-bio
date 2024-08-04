@@ -6,6 +6,7 @@ class Ntedit < Formula
       tag:      "v2.0.2",
       revision: "9496cd4d9dd36bd0ea602c02f4a5f64858caa6ba"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://github.com/bcgsc/ntEdit.git"
 
   bottle do
@@ -18,6 +19,7 @@ class Ntedit < Formula
   depends_on "cmake" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
+  depends_on xcode: :build
   depends_on "boost"
   depends_on "brewsci/bio/btllib"
   depends_on "brewsci/bio/ntcard"
