@@ -25,6 +25,10 @@ class Ntlink < Formula
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
 
+  on_macos do
+    depends_on "libomp"
+  end
+
   resource "igraph" do
     url "https://files.pythonhosted.org/packages/5f/a0/1f70c34a96dcb0acf428319e83655e92ab2955d73a33f711852a5fb79681/igraph-0.11.6.tar.gz"
     sha256 "837f233256c3319f2a35a6a80d94eafe47b43791ef4c6f9e9871061341ac8e28"
