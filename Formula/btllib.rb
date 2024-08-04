@@ -1,10 +1,13 @@
 class Btllib < Formula
   # cite Nikolić_2022: "https://doi.org/10.21105/joss.04720"
+  include Language::Python::Virtualenv
   desc "Bioinformatics Technology Lab common code library in C++ with Python wrappers"
   homepage "https://bcgsc.github.io/btllib/"
-  url "https://github.com/bcgsc/btllib/releases/download/v1.6.2/btllib-1.6.2.tar.gz"
-  sha256 "06af0bccd68443bc6351d1d6d46599ae2a6e94752ae5fdf973067a77740d751c"
+  url "https://github.com/bcgsc/btllib.git",
+      tag:      "v1.7.3",
+      revision: "1a7c07a3f0b49d1b06feccb97c40625633b53bc3"
   license "GPL-3.0-or-later"
+  head "https://github.com/bcgsc/btllib.git"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -16,7 +19,9 @@ class Btllib < Formula
   depends_on "doxygen" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "python@3.11" => :build
+  depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
+  depends_on "python@3.12" => :build
   depends_on "swig" => :build
   depends_on "gcovr"
   depends_on "samtools"
@@ -29,15 +34,11 @@ class Btllib < Formula
     depends_on "libomp"
   end
 
-  fails_with gcc: "5"
-
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
-    ENV.cxx11
-
     if OS.mac?
       libomp = Formula["libomp"]
       ENV.append "CXXFLAGS", "-Xpreprocessor -fopenmp -I#{libomp.opt_include} -L#{libomp.opt_lib} -lomp"
