@@ -11,8 +11,9 @@ class Btllib < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 monterey:     "3b74945052ebe8f26c124317889c7e6ea9fbf5961e92f0c0325dbe37e427ab38"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1179e283868e96842b722025c5ceccc03396df65fad09691a7de49267e3c8daf"
+    sha256 cellar: :any,                 arm64_sonoma: "76d3094e97e95b10cd6bfcd9272bcd957856a60e6f378e53cca6537315bfa604"
+    sha256 cellar: :any,                 ventura:      "cafbdd7cc1de9361943dcac28f42fdf1bfd1811356745b76604817b7c20f567c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f4e09b734fc392306e9df9d9451d83f478507acf0eccc722f9a34fccc1c0fbde"
   end
 
   depends_on "cmake" => :build
