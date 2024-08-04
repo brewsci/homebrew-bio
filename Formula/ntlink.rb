@@ -4,8 +4,8 @@ class Ntlink < Formula
   # cite Coombe_2021: "https://doi.org/10.1186/s12859-021-04451-7"
   desc "Assembly scaffolder using long reads and minimizers"
   homepage "https://bcgsc.ca/resources/software/ntlink"
-  url "https://github.com/bcgsc/ntLink/archive/refs/tags/v1.3.9.tar.gz"
-  sha256 "3a6fe7ca9c7a0226cf51b7e55804e235ac2b959e82a30f9bce55b9caea5bb03b"
+  url "https://github.com/bcgsc/ntLink/archive/refs/tags/v1.3.10.tar.gz"
+  sha256 "248ccae217dd7ed2e4664c6b48235f8db2ba24d8896b8315f6e657f19d5f7085"
   license "GPL-3.0-only"
   head "https://github.com/bcgsc/ntLink.git"
 
@@ -19,19 +19,19 @@ class Ntlink < Formula
   depends_on "abyss"
   depends_on "btllib"
   depends_on "numpy"
-  depends_on "python@3.11"
+  depends_on "python@3.12"
   depends_on "xz"
 
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
 
   resource "igraph" do
-    url "https://files.pythonhosted.org/packages/a3/74/dcd4c842370491f7db2c3152c6cc7febf296b01e8b2aedc45506f8486c04/igraph-0.10.1.tar.gz"
-    sha256 "65165883cc506ec7c6d8b68e620954810935ef033138aa3a92cba6089339cae6"
+    url "https://files.pythonhosted.org/packages/5f/a0/1f70c34a96dcb0acf428319e83655e92ab2955d73a33f711852a5fb79681/igraph-0.11.6.tar.gz"
+    sha256 "837f233256c3319f2a35a6a80d94eafe47b43791ef4c6f9e9871061341ac8e28"
   end
 
   def python3
-    "python3.11"
+    "python3.12"
   end
 
   def install
