@@ -1,5 +1,6 @@
 class Btllib < Formula
   # cite Nikolić_2022: "https://doi.org/10.21105/joss.04720"
+  include Language::Python::Virtualenv
   desc "Bioinformatics Technology Lab common code library in C++ with Python wrappers"
   homepage "https://bcgsc.github.io/btllib/"
   url "https://github.com/bcgsc/btllib.git",
@@ -18,6 +19,8 @@ class Btllib < Formula
   depends_on "doxygen" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
+  depends_on "pkg-config" => :build
+  depends_on "python-setuptools" => :build
   depends_on "python@3.12" => :build
   depends_on "swig" => :build
   depends_on "gcovr"
