@@ -8,8 +8,9 @@ class Tabixpp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 catalina:     "5dbe2f53c4055cfd8104b70ce7f59a868ea691d28f18c5ab181c751964811fdd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "fef2b7232b66f4851fba14c0c24ff5f4e579077ddf7b516af9b1d694f5264318"
+    sha256 cellar: :any,                 arm64_sonoma: "3375f908215fb077a8d2f633d0312a1d460ccb58e34fd313ff55376132372222"
+    sha256 cellar: :any,                 ventura:      "a9242b67130b567b1209814cfb26c04bbe5c04530063b9a1691e666e6feb80d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "28e6351fff814e8c951ef1c9518dd668667f9483e011b25c8ae2bbf518bd4d3e"
   end
 
   depends_on "htslib"
