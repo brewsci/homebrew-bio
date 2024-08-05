@@ -7,6 +7,13 @@ class Wfa2Lib < Formula
   sha256 "2609d5f267f4dd91dce1776385b5a24a2f1aa625ac844ce0c3571c69178afe6e"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any,                 arm64_sonoma: "4ded90bfd98b912ccd50f14518a45e43c992f4d47345d43fd4140fc1bdfe23c3"
+    sha256 cellar: :any,                 ventura:      "7c9e4326a339dc71d42f7119386c542c712b09883f188fcd09b30c2d75b7b324"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "649043ab1dd5f5591e501dd6f5aba145276db07664cea4d0a40f5484304e5a8d"
+  end
+
   depends_on "bindgen" => :build
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
