@@ -1,8 +1,10 @@
 class Tabixpp < Formula
   desc "C++ wrapper to tabix indexer"
   homepage "https://github.com/vcflib/tabixpp"
-  url "https://github.com/vcflib/tabixpp.git",
-    tag: "v1.1.1", revision: "6c5860e778f11aed98c3a906cace543f3b9f4734"
+  url "https://github.com/vcflib/tabixpp/archive/refs/tags/v1.1.2.tar.gz"
+  sha256 "c850299c3c495221818a85c9205c60185c8ed9468d5ec2ed034470bb852229dc"
+  license "GPL-3.0-or-later"
+  head "https://github.com/vcflib/tabixpp.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -11,17 +13,29 @@ class Tabixpp < Formula
   end
 
   depends_on "htslib"
+  depends_on "xz" # For LZMA
 
-  patch do
-    # https://github.com/vcflib/tabixpp/pull/26
-    url "https://github.com/vcflib/tabixpp/commit/4cebc981b35c67486e7454064c54cddf547fd58a.patch?full_index=1"
-    sha256 "d08f2eb62fb7be5457adb4615c7fbda587993899e8d18a9b8ed0647144c8f3f9"
-  end
+  uses_from_macos "curl"
+  uses_from_macos "zlib"
 
   def install
-    inreplace "Makefile", "libtabixpp.so.$(SOVERSION)", "libtabixpp.$(SOVERSION).dylib" if OS.mac?
-    system "make", "install", "HTS_HEADERS=", "HTS_LIB=", "DESTDIR=#{prefix}", "PREFIX="
-
+    if OS.mac?
+      inreplace "Makefile" do |s|
+        s.gsub! "libtabix.so.$(SOVERSION)", "libtabix.$(SOVERSION).dylib"
+        s.gsub! "-Wl,-soname", "-Wl,-install_name"
+      end
+    end
+    # Use brewed htslib
+    inreplace "Makefile", "-Wl,", "-L#{Formula["htslib"].opt_lib} -lhts -Wl,"
+    hts_headers = Formula["htslib"].opt_include/"htslib"
+    hts_lib = Formula["htslib"].opt_lib/"libhts.#{OS.mac? ? "dylib" : "a"}"
+    libpath = "-L#{Formula["htslib"].opt_lib}"
+    system "make", "install",
+           "HTS_HEADERS=#{hts_headers}",
+           "HTS_LIB=#{hts_lib}",
+           "LIBPATH=#{libpath}",
+           "DESTDIR= ",
+           "PREFIX=#{prefix}"
     prefix.install "test"
   end
 
