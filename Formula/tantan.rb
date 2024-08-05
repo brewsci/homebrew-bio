@@ -7,6 +7,13 @@ class Tantan < Formula
   license "GPL-3.0-or-later"
   head "https://gitlab.com/mcfrith/tantan.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "3c65534e2fe582a10e9f8d815d238643d5df0b706681e35fcf30e3c7c8118d38"
+    sha256 cellar: :any_skip_relocation, ventura:      "df806da047b3215dc87620252fda2099ae783f16655874128058065040f7ec99"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ba52222561bcd666820de2a208ec32f9725140480f3fc5b8da2527a20184b8dd"
+  end
+
   uses_from_macos "zlib"
 
   def install
