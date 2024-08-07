@@ -1,6 +1,5 @@
 class Ntlink < Formula
   include Language::Python::Virtualenv
-
   # cite Coombe_2021: "https://doi.org/10.1186/s12859-021-04451-7"
   desc "Assembly scaffolder using long reads and minimizers"
   homepage "https://bcgsc.ca/resources/software/ntlink"
@@ -16,7 +15,7 @@ class Ntlink < Formula
 
   depends_on "cmake" => :build
   depends_on "abyss"
-  depends_on "btllib"
+  depends_on "brewsci/bio/btllib"
   depends_on "numpy"
   depends_on "python@3.12"
   depends_on "xz"
