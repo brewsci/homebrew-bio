@@ -6,7 +6,7 @@ class Freebayes < Formula
       tag:      "v1.3.6",
       revision: "084dce52e54af5adbd1e2b0a67f3733dd8bfddc0"
   license "MIT"
-  head "https://github.com/ekg/freebayes.git"
+  head "https://github.com/ekg/freebayes.git", branch: "master"
 
   livecheck do
     url :stable
@@ -31,13 +31,13 @@ class Freebayes < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  patch :DATA
   def install
-    # Fix compilation error with c++17
-    inreplace ["contrib/SeqLib/SeqLib/GenomicRegionCollection.cpp",
-               "contrib/vcflib/contrib/intervaltree/catch.hpp",
-               "contrib/vcflib/src/pVst.cpp"], "std::random_shuffle", "std::shuffle"
-
+    # fix build error: ‘numeric_limits’ is not a member of ‘std’
+    if OS.linux?
+      inreplace "intervaltree/IntervalTree.h",
+                "#include <cassert>",
+                "#include <cassert>\n#include <limits>\n#include <utility>"
+    end
     system "meson", *std_meson_args, "build/", "--prefix=#{prefix}"
     cd "build" do
       system "ninja"
@@ -64,25 +64,3 @@ class Freebayes < Formula
     assert_match "chunks", shell_output("#{bin}/freebayes-parallel 2>&1")
   end
 end
-__END__
-diff --git a/contrib/vcflib/src/Variant.h b/contrib/vcflib/src/Variant.h
-index 0b44039..a7e145b 100644
---- a/contrib/vcflib/src/Variant.h
-+++ b/contrib/vcflib/src/Variant.h
-@@ -647,12 +647,13 @@ private:
-      * the maps we're going to be using will be case-insensitive
-      * so that "fileFormat" and "fileformat" hash to the same item.
-      */
--    struct stringcasecmp : binary_function<string, string, bool> {
--        struct charcasecmp : public std::binary_function<unsigned char, unsigned char, bool> {
-+    struct stringcasecmp {
-+        struct charcasecmp {
-             bool operator() (const unsigned char& c1, const unsigned char& c2) const {
--                return tolower (c1) < tolower (c2);
-+                return std::tolower(c1) < std::tolower(c2);
-             }
-         };
-+
-         bool operator() (const std::string & s1, const std::string & s2) const {
-             return std::lexicographical_compare(s1.begin(), s1.end(), s2.begin(), s2.end(), charcasecmp());
-         }
