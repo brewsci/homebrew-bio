@@ -9,8 +9,9 @@ class Vcflib < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 catalina:     "b5cb4439fd442391b5339b3cf5ae3cca87edd3443a5e28a0708c7a9dbc91e1cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "47f04c252cb344b3debdfdf8b65e0db0a086d18f4f3437514078579b48251000"
+    sha256 cellar: :any,                 arm64_sonoma: "1cdb8390f4fd060d45bb8581cc6a92506e4d2ef1241f927edefd292050f5fe76"
+    sha256 cellar: :any,                 ventura:      "1758ff3007bebf97b21ee593f0999c71d74c85bab1c4281a39c36384db8da6ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "249c40de2a83598bb1e1a37d166cece1841a6bb8188d87b6ccd1df4b1573a775"
   end
 
   depends_on "cmake" => :build
