@@ -6,6 +6,13 @@ class Veryfasttree < Formula
   license "GPL-3.0-only"
   head "https://github.com/citiususc/veryfasttree.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any,                 arm64_sonoma: "9fd027b60078be523d5606f10aa80a58ba2de5dd4d286de2aa80e7a6668ca446"
+    sha256 cellar: :any,                 ventura:      "2fb6eff6d23a315dc56f4e9bb0102cecff3243c3b3a39b27e7c600699b9a00e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e1aab8ce49030994171374cf3907d420d9ef9e0082461ce27ffc509af011c514"
+  end
+
   depends_on "cmake" => :build
 
   on_macos do
