@@ -6,6 +6,7 @@ class Freebayes < Formula
       tag:      "v1.3.6",
       revision: "084dce52e54af5adbd1e2b0a67f3733dd8bfddc0"
   license "MIT"
+  revision 1
   head "https://github.com/ekg/freebayes.git", branch: "master"
 
   livecheck do
