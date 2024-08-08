@@ -18,7 +18,7 @@ class Snpeff < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "e3088b0a1dcd51a33e74867cdb157a3bfa470101fbd71c61e3f8e00c04118dd5"
   end
 
-  depends_on "openjdk"
+  depends_on "openjdk@11"
 
   def install
     # snpEff and SnpSift
