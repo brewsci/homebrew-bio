@@ -5,7 +5,7 @@ class SnpSites < Formula
   url "https://github.com/sanger-pathogens/snp-sites/archive/refs/tags/v2.5.1.tar.gz"
   sha256 "913f79302e5d3127aea382756abc9ffeb05e26ce00022f43a6ea16a55cdd7a7e"
   revision 1
-  head "https://github.com/sanger-pathogens/snp-sites.git"
+  head "https://github.com/sanger-pathogens/snp-sites.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -15,15 +15,14 @@ class SnpSites < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "check" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
 
   uses_from_macos "zlib"
 
   def install
-    system "autoreconf", "-i"
-    system "./configure", "--prefix=#{prefix}"
+    system "autoreconf", "-fvi"
+    system "./configure", *std_configure_args
     system "make", "install"
     pkgshare.install "tests/data"
   end
