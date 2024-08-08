@@ -14,8 +14,10 @@ class Snpeff < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, sierra:       "4cf8bb993288038ba82132a6ed0ae7794d447e20944a8882da1bf1fba0757149"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e3088b0a1dcd51a33e74867cdb157a3bfa470101fbd71c61e3f8e00c04118dd5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "00eec264d4fc0b2580e05e8c193e03a1e4390882007b010f22d9b29601274051"
+    sha256 cellar: :any_skip_relocation, ventura:      "00eec264d4fc0b2580e05e8c193e03a1e4390882007b010f22d9b29601274051"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c2ef3288fd929d83ea39c33c68a4f4354cdf265e3e7f3b9f8c6fb4a2be348c4e"
   end
 
   depends_on "openjdk@11"
