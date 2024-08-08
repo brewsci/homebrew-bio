@@ -9,8 +9,9 @@ class Plink2 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, catalina:     "5c6ac77111c1eeeab30af40e8a1c14391a182a10e2535f9ebe0a58ee62f70828"
-    sha256 cellar: :any, x86_64_linux: "23f851b712db8ddf8e5587623b12599833c288aca026fa4790ee5384f0a870ba"
+    sha256 cellar: :any,                 arm64_sonoma: "ea7c863dafde5bc757b6db986e81b01f730eafa0e698204ad625c9d0e9bf7f62"
+    sha256 cellar: :any,                 ventura:      "96b1711ed2eedb7d3b2daa023f5956f6772b321ff5b36cdb93cc3503f528e67b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9512c33fd71a714cc054dfe9ece9692cb417176683ba62802e3c3bea65b1f355"
   end
 
   depends_on "openblas"
