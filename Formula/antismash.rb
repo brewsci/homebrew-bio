@@ -16,6 +16,13 @@ class Antismash < Formula
   license "AGPL-3.0-or-later"
   head "https://github.com/antismash/antismash.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any,                 arm64_sonoma: "2ff34ee73fed805df8886ccd8df52f44954f6571f5784a08f9445c62f2af8080"
+    sha256 cellar: :any,                 ventura:      "afaa9fe5de6ba026dc2b24ef5846cdb19c00b3628c395576388e42c626426b7b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e55dbefa5f83597be56a296f7e34c4de395e949d57f9428de5d725824224511e"
+  end
+
   depends_on "cmake" => :build # scikit-learn
   depends_on "meson" => :build
   depends_on "ninja" => :build
