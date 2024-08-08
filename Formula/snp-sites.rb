@@ -9,8 +9,10 @@ class SnpSites < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "e6479d546058d193564ba724fec92872a997403816db0476d0d5b12d5659b2b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b85086e6c5714775f2311f7647c571e97057ab761de0aada0afc2f0a8af5e9d7"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma: "c3747d156344b5ce2404ed8096faccc98ea748a3d9e35971dfb04b38f4832f33"
+    sha256 cellar: :any,                 ventura:      "8091b0451723403cf1984a6323c500bca0c3547241bcbdcd50e3054e649e2121"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3c43b7263b98270d9db37b5a7ad334396ab0bd804956e020c7410f9d8181431e"
   end
 
   depends_on "autoconf" => :build
