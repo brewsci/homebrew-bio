@@ -1,9 +1,11 @@
 class Meme < Formula
+  # cite Bailey_2006: "https://doi.org/10.1093/nar/gkl198"
   # cite Bailey_2009: "https://doi.org/10.1093/nar/gkp335"
-  desc "Tools for motif discovery"
+  # cite Bailey_2015: "https://doi.org/10.1093/nar/gkv416"
+  desc "Motif-based sequence analysis tools"
   homepage "https://meme-suite.org"
-  url "https://meme-suite.org/meme/meme-software/5.5.5/meme-5.5.5.tar.gz"
-  sha256 "bebb4a176e72d62e3a2d5ba5f22439185bbc4bbf4769604fbca12dff8e1f739f"
+  url "https://meme-suite.org/meme/meme-software/5.5.6/meme-5.5.6.tar.gz"
+  sha256 "8f719002c3a2177f6bb9da6861098ccf4f08b3006f002a88bb3afe9473596c67"
   license :cannot_represent
 
   bottle do
@@ -42,8 +44,6 @@ class Meme < Formula
       "--disable-dependency-tracking",
       "--prefix=#{prefix}",
       "--with-mpidir=#{Formula["open-mpi"].opt_prefix}",
-      "--enable-web" \
-      "--with-url=https://meme-suite.org/meme" \
       "--with-python=#{Formula["python@3.12"].opt_bin}/python3",
       "--with-gs=#{Formula["ghostscript"].opt_bin}/gs"
 
