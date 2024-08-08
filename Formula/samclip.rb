@@ -7,8 +7,10 @@ class Samclip < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "f1eef22d3337796057f2f1fd45b63a893b408bc543ebd740a0869d7bf98a4280"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "10ed4d3fb055a47767520c453b4952dcaca8dc734784e05749c24f3d59ebc695"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "7e53a56211ca0080b6d656e7362fe3389d303b94eec05ea4b66c61083cb4e3ab"
+    sha256 cellar: :any_skip_relocation, ventura:      "7e53a56211ca0080b6d656e7362fe3389d303b94eec05ea4b66c61083cb4e3ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fa6e252b0d41c34b3745d991d702681721d70c887a7576ca66d1365f724802d4"
   end
 
   def install
