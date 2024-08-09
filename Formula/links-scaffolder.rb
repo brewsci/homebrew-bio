@@ -6,7 +6,7 @@ class LinksScaffolder < Formula
       tag:      "v2.0.1",
       revision: "fc9229fb78f378b7bbf04e371da818eb418e7435"
   license "GPL-3.0-only"
-  head "https://github.com/bcgsc/LINKS.git"
+  head "https://github.com/bcgsc/LINKS.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
