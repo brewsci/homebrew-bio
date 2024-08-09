@@ -12,8 +12,9 @@ class Racon < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "9a36412582dbf860ad19aa1d9795af7f6f6c326e4642fc0a8d6325431f363d5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d5925954884d8e3f99266f30a7d28dfc0113740fa5baca55ccc90d3c3683d73a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "bc9a20e8ac1a30b63b820ef024ec00aeaf13dc612121981ba9afb08ecba8161c"
+    sha256 cellar: :any_skip_relocation, ventura:      "ea4352f961a0f338f34c480ce55b660a407a119a5751b3fd41711a736c1738f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ff3e580c0e8789d9e3027d2545fe539ad067f713937094a7ebc6c849700204e0"
   end
 
   depends_on "cmake" => :build
