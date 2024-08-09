@@ -30,7 +30,6 @@ class Racon < Formula
     system "cmake", ".", "-S", ".", "-B", "build", "-Dracon_build_wrapper=ON", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    bin.install "build/bin/racon_test"
     chmod 0755, Dir["scripts/*.py"]
     libexec.install Dir["scripts/*.py"]
     rewrite_shebang detected_python_shebang, *libexec.children
