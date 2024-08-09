@@ -30,6 +30,7 @@ class Racon < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     bin.install "build/bin/racon_test"
+    chmod 0755, Dir["scripts/*.py"]
     libexec.install Dir["scripts/*.py"]
     rewrite_shebang detected_python_shebang, *libexec.children
     bin.install_symlink libexec/"racon_preprocess.py" => "racon_preprocess"
