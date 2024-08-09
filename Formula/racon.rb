@@ -1,10 +1,14 @@
 class Racon < Formula
   # cite Vaser_2017: "https://doi.org/10.1101/gr.214270.116"
+  include Language::Python::Shebang
+
   desc "Compute consensus sequence of a genome assembly of long uncorrected reads"
   homepage "https://github.com/lbcb-sci/racon"
-  url "https://github.com/lbcb-sci/racon/releases/download/1.4.13/racon-v1.4.13.tar.gz"
-  sha256 "4220e98bf84768483bd94eef62a0821cffc74f4e7139c74685c08161909263b0"
+  url "https://github.com/lbcb-sci/racon.git",
+      tag:      "1.5.0",
+      revision: "a2cfcac281d312a73912a97d6d960404f516c389"
   license "MIT"
+  head "https://github.com/lbcb-sci/racon.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -13,7 +17,7 @@ class Racon < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.8"
+  depends_on "python@3.12"
 
   uses_from_macos "zlib"
 
@@ -21,22 +25,15 @@ class Racon < Formula
     depends_on "libomp"
   end
 
-  # Update spoa from 3.0.2 to 3.1.1 to fix 'invalid_argument' error
-  # https://github.com/rvaser/spoa/pull/28
-  resource "spoa" do
-    url "https://github.com/rvaser/spoa.git",
-      revision: "06d58ef50ab19184bb1d905443e091310de9ce2c"
-  end
-
   def install
-    rm_r "vendor/spoa"
-    (buildpath/"vendor/spoa").install resource("spoa")
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args
-      system "make"
-      system "make", "install"
-    end
-    bin.install Dir["scripts/*.py"]
+    system "cmake", ".", "-S", ".", "-B", "build", "-Dracon_build_wrapper=ON", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    bin.install "build/bin/racon_test"
+    libexec.install Dir["scripts/*.py"]
+    rewrite_shebang detected_python_shebang, *libexec.children
+    bin.install_symlink libexec/"racon_preprocess.py" => "racon_preprocess"
+    bin.install_symlink libexec/"racon_wrapper.py" => "racon_wrapper"
   end
 
   test do
