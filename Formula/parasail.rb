@@ -27,7 +27,7 @@ class Parasail < Formula
     system "./configure", *std_configure_args
     system "make", "check"
     system "make", "install"
-    prefix.install "test"
+    prefix.install "tests"
   end
 
   test do
