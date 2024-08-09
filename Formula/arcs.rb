@@ -19,8 +19,8 @@ class Arcs < Formula
   depends_on "google-sparsehash" => :build
   depends_on "libtool" => :build
   depends_on "abyss"
+  depends_on "brewsci/bio/btllib"
   depends_on "brewsci/bio/links-scaffolder"
-  depends_on "btllib"
   depends_on "minimap2"
 
   uses_from_macos "zlib"
@@ -58,7 +58,7 @@ class Arcs < Formula
     end
     resource "test_reads" do
       url "https://github.com/bcgsc/arcs/raw/master/Examples/arcs-long_test-demo/test_reads.fa.gz"
-      sha256 "772b377c325f39c71ea0c436cf3c83f17693b9468b330c79e012a0b7ec3d4829"
+      sha256 "b42398c5828420ec54f0013f90148a2e82348e1fa8d591f1680741f47689a926"
     end
 
     assert_match "Usage", shell_output("#{bin}/arcs --help")
