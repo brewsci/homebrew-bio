@@ -7,8 +7,9 @@ class Parasail < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, catalina:     "697ebb74c10b475e4aad54d39af9eb9f0dceb1e243df8a901172519b07e4cd0f"
-    sha256 cellar: :any, x86_64_linux: "03f04da7fd392eddf775532f8bd7211689ad482c5f29e68a0f972b6c9bbe7c84"
+    sha256 cellar: :any,                 arm64_sonoma: "faeab0fcabddb2c01aa4074c33fdd0dd25741ecb0926cee06ca7cbdae0326446"
+    sha256 cellar: :any,                 ventura:      "ff35f0aeacce8b24808147f6b8e37698976bde5fd3f2ec583e8c93fa69429214"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f6338c1b45986fcc9cd499dfd4dbf265468a759f747d25d6adbb7a9177c9f120"
   end
 
   depends_on "autoconf" => :build
