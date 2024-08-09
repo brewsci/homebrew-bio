@@ -22,6 +22,8 @@ class Unicycler < Formula
   depends_on "samtools"
   depends_on "spades"
 
+  uses_from_macos "zlib"
+
   def install
     system "python3", "setup.py", "install", "--prefix=#{prefix}"
   end
