@@ -9,8 +9,9 @@ class Arcs < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 catalina:     "320d8b7397b75cbaeb3432f4ce1d887e411cb7c65d4930fa9eb120b69ce33ef9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3bd8cffcd05ac8c85e486b7c4f782c748de79df5d2feed438a82dc49cb25cf76"
+    sha256 cellar: :any,                 arm64_sonoma: "d6d4536008e61ba55614865e454b3e9da42959c964b5bf518bc12a8185c6ed09"
+    sha256 cellar: :any,                 ventura:      "140c9ca15158945483cf3eae41fddf6b9f492b93aaadf2589df420f5e5274b8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "36f08c0a46d651ba6b3034d1563e4c8460989a01f06ab699599c9631f8927703"
   end
 
   depends_on "autoconf" => :build
