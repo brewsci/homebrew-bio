@@ -22,7 +22,7 @@ class LinksScaffolder < Formula
   def install
     system "./autogen.sh"
     system "./configure", *std_configure_args
-    inreplace "bin/LINKS.pl", "/usr/bin/env perl", Formula["perl"].bin/"perl"
+    inreplace "bin/LINKS.pl", "/usr/bin/env perl", Formula["perl"].bin/"perl" if OS.linux?
     system "make", "install"
   end
 
