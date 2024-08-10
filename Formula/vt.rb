@@ -14,8 +14,9 @@ class Vt < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, sierra:       "43c34b6bf2d3209088a1e6ce61e37844ef3bbf08b871861214714ce10b18f707"
-    sha256 cellar: :any, x86_64_linux: "a2f0c3b7e3078719d39b7d257d964f19d327e3a3638c9e1397d804588da811f6"
+    sha256 cellar: :any,                 arm64_sonoma: "5838f5ad5dcdcc8f27f60444a452a01e8df91147efae0525fc80e142a0ebd22c"
+    sha256 cellar: :any,                 ventura:      "7a92a5529ce1b54e317fd496a879509b9b41c3a78bc02b697f40e7ae126e56a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fad5567852e9d0941ea76483536bb4f41c8af974573b94d61baad5c2abec9d31"
   end
 
   depends_on "htslib"
