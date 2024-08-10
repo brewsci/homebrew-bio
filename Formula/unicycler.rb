@@ -11,8 +11,9 @@ class Unicycler < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, catalina:     "1100ca4a35cdef3a0c7b232d8e8418ee416ef74095b8fc28f8a4fccc6e4ab7ed"
-    sha256 cellar: :any, x86_64_linux: "870cda34ffc8986c8bdb1b24707da593b6ffa0675627b73db644d0c13f999b66"
+    sha256 cellar: :any,                 arm64_sonoma: "ad72c229557048a678e649894d5fd1dfe6f7df4cce2e100d97a86b9f82e57fe3"
+    sha256 cellar: :any,                 ventura:      "d1cb88104f5ac20e7d969d2ed2fa5a31c3f7b1d15d818013db8a1b61ac206a80"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f4e8a570596991e2cde0e29d4a730d3736d1b68f7865cf2e6b40548e1f28c9a1"
   end
 
   depends_on "blast"
