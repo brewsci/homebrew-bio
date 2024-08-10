@@ -1,7 +1,7 @@
 class Vt < Formula
   # Tan_2015: "https://doi.org/10.1093/bioinformatics/btv112"
   desc "Toolset for short variant discovery from NGS data"
-  homepage "https://genome.sph.umich.edu/wiki/Vt"
+  homepage "https://github.com/atks"
   url "https://github.com/atks/vt/archive/refs/tags/0.57721.tar.gz"
   sha256 "8f06d464ec5458539cfa30f81a034f47fe7f801146fe8ca80c14a3816b704e17"
   license "MIT"
