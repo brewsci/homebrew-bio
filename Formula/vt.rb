@@ -1,12 +1,11 @@
 class Vt < Formula
   # Tan_2015: "https://doi.org/10.1093/bioinformatics/btv112"
   desc "Toolset for short variant discovery from NGS data"
-  homepage "https://genome.sph.umich.edu/wiki/Vt"
-  url "https://github.com/atks/vt/archive/refs/tags/0.5772.tar.gz"
-  sha256 "b147520478a2f7c536524511e48133d0360e88282c7159821813738ccbda97e7"
+  homepage "https://github.com/atks"
+  url "https://github.com/atks/vt/archive/refs/tags/0.57721.tar.gz"
+  sha256 "8f06d464ec5458539cfa30f81a034f47fe7f801146fe8ca80c14a3816b704e17"
   license "MIT"
-  revision 2
-  head "https://github.com/atks/vt.git"
+  head "https://github.com/atks/vt.git", branch: "master"
 
   livecheck do
     url :stable
@@ -19,11 +18,16 @@ class Vt < Formula
     sha256 cellar: :any, x86_64_linux: "a2f0c3b7e3078719d39b7d257d964f19d327e3a3638c9e1397d804588da811f6"
   end
 
-  depends_on "gcc" if OS.mac? # Fix error: static_assert failed
+  depends_on "htslib"
+  depends_on "openssl@1.1"
+  depends_on "xz"
 
+  uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  fails_with :clang # Fix error: static_assert failed
+  on_macos do
+    depends_on "libomp"
+  end
 
   def install
     system "make"
