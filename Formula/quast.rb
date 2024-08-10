@@ -12,8 +12,9 @@ class Quast < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, sierra:       "96cbef2a8207cb7e5335482f745ef619ceca992729d3ad853495bb2e396700d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8a091a5df4a4895c1c3de153adaeb27473d72c6693855214bc648a9f3a3bff59"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "3ababe186c325885e8257fd42d7050753f3478819194bfbc8681f96182c9bdd4"
+    sha256 cellar: :any_skip_relocation, ventura:      "3439d7d65a77d8b1e4602983cb6183ec9540d5413d39288e984f9d16ca4b3505"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5335e8773c82d7ea1c4244d89ca6f13862683dc3c79744f1ee878c2f6b1dd335"
   end
 
   depends_on "pkg-config" => :build
