@@ -29,6 +29,16 @@ class Quast < Formula
   uses_from_macos "perl"
   uses_from_macos "zlib"
 
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/51/65/50db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4/packaging-24.1.tar.gz"
+    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
+  end
+
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/65/d8/10a70e86f6c28ae59f101a9de6d77bf70f147180fbf40c3af0f64080adc3/setuptools-70.3.0.tar.gz"
+    sha256 "f171bab1dfbc86b132997f26a119f6056a57950d058587841a0082e8830f9dc5"
+  end
+
   resource "simplejson" do
     url "https://files.pythonhosted.org/packages/79/79/3ccb95bb4154952532f280f7a41979fbfb0fbbaee4d609810ecb01650afa/simplejson-3.19.2.tar.gz"
     sha256 "9eb442a2442ce417801c912df68e1f6ccfcd41577ae7274953ab3ad24ef7d82c"
@@ -47,14 +57,18 @@ class Quast < Formula
       s.gsub! "platform_suffix = '_osx' if qconfig.platform_name == 'macosx' else '_linux'", ""
       s.gsub! "return join(sambamba_dirpath, fname + platform_suffix)",
               "return get_path_to_program(fname, sambamba_dirpath)"
+      s.gsub! "from distutils.dir_util import copy_tree", "from setuptools import copy_tree"
     end
+    # To be compatible with python 3.12
+    inreplace "quast_libs/qconfig.py", "from distutils.version import LooseVersion",
+                                       "from packaging.version import Version as LooseVersion"
     # Use Homebrew's barrnap
     inreplace "quast_libs/run_barrnap.py",
               "barrnap_fpath = join(qconfig.LIBS_LOCATION, 'barrnap', 'bin', 'barrnap')",
               "barrnap_fpath = \"#{Formula["brewsci/bio/barrnap"].opt_bin}/barrnap\""
     ENV.prepend_create_path "PYTHONPATH", libexec/Language::Python.site_packages(python3)
     venv = virtualenv_create(libexec, python3)
-    venv.pip_install resource("simplejson")
+    venv.pip_install resources
     venv.pip_install buildpath
     # install *.py scripts
     bin.install Dir[libexec/"bin/*.py"]
