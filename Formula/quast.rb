@@ -3,11 +3,12 @@ class Quast < Formula
   # cite Mikheenko_2015: "https://doi.org/10.1093/bioinformatics/btv697"
   # cite Mikheenko_2016: "https://doi.org/10.1093/bioinformatics/btw379"
   # cite Mikheenko_2018: "https://doi.org/10.1093/bioinformatics/bty266"
+  include Language::Python::Virtualenv
   desc "Quality Assessment Tool for Genome Assemblies"
   homepage "https://quast.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/quast/quast-5.0.2.tar.gz"
-  sha256 "cdb8f83e20cc38f218ff7172b454280fcb1c7e2dff74e1f8618cacc53d46b48e"
-  head "https://github.com/ablab/quast.git"
+  url "https://github.com/ablab/quast/archive/refs/tags/quast_5.2.0.tar.gz"
+  sha256 "db903a6e4dd81384687f1c38d47cbe0f51bdf7f6d5e5c0bd30c13796391f4f04"
+  head "https://github.com/ablab/quast.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -15,23 +16,62 @@ class Quast < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "8a091a5df4a4895c1c3de153adaeb27473d72c6693855214bc648a9f3a3bff59"
   end
 
-  depends_on "python"
+  depends_on "pkg-config" => :build
+  depends_on "brewsci/bio/barrnap"
+  depends_on "brewsci/bio/glimmerhmm"
+  depends_on "bwa"
+  depends_on "minimap2"
+  depends_on "openjdk@11"
+  depends_on "python-matplotlib"
+  depends_on "python@3.12"
+  depends_on "sambamba"
 
+  uses_from_macos "perl"
   uses_from_macos "zlib"
 
-  def install
-    prefix.install Dir["*"]
-    bin.install_symlink "../quast.py", "../metaquast.py", "../quast-lg.py", "../icarus.py",
-      "quast.py" => "quast", "metaquast.py" => "metaquast", "quast-lg.py" => "quast-lg", "icarus.py" => "icarus"
-    inreplace "#{bin}/../quast.py", "#!/usr/bin/env python", "#!/usr/bin/env python3"
-    inreplace "#{bin}/../metaquast.py", "#!/usr/bin/env python", "#!/usr/bin/env python3"
-    inreplace "#{bin}/../icarus.py", "#!/usr/bin/env python", "#!/usr/bin/env python3"
+  resource "simplejson" do
+    url "https://files.pythonhosted.org/packages/79/79/3ccb95bb4154952532f280f7a41979fbfb0fbbaee4d609810ecb01650afa/simplejson-3.19.2.tar.gz"
+    sha256 "9eb442a2442ce417801c912df68e1f6ccfcd41577ae7274953ab3ad24ef7d82c"
+  end
 
-    # Compile the bundled aligner so that `brew test quast` does not fail.
-    system "#{bin}/quast", "--test"
+  def python3
+    which("python3.12")
+  end
+
+  def install
+    # Remove bundled non-native binaries
+    rm_r ["quast_libs/barrnap", "quast_libs/genemark", "quast_libs/genemark-es",
+          "quast_libs/sambamba", "quast_libs/site_packages/simplejson"]
+    # Use Homebrew's sambamba binaries
+    inreplace "quast_libs/ra_utils/misc.py" do |s|
+      s.gsub! "platform_suffix = '_osx' if qconfig.platform_name == 'macosx' else '_linux'", ""
+      s.gsub! "return join(sambamba_dirpath, fname + platform_suffix)",
+              "return get_path_to_program(fname, sambamba_dirpath)"
+    end
+    # Use Homebrew's barrnap
+    inreplace "quast_libs/run_barrnap.py",
+              "barrnap_fpath = join(qconfig.LIBS_LOCATION, 'barrnap', 'bin', 'barrnap')",
+              "barrnap_fpath = \"#{Formula["brewsci/bio/barrnap"].opt_bin}/barrnap\""
+    ENV.prepend_create_path "PYTHONPATH", libexec/Language::Python.site_packages(python3)
+    venv = virtualenv_create(libexec, python3)
+    venv.pip_install resource("simplejson")
+    venv.pip_install buildpath
+    # install *.py scripts
+    bin.install Dir[libexec/"bin/*.py"]
+    bin.env_script_all_files(libexec/"bin", JAVA_HOME:  Formula["openjdk@11"].opt_prefix,
+                                            PYTHONPATH: ENV["PYTHONPATH"])
+    prefix.install "test_data"
   end
 
   test do
-    system "#{bin}/quast", "--test"
+    cp_r "#{prefix}/test_data", testpath
+    system "#{bin}/quast.py", "#{testpath}/test_data/contigs_1.fasta",
+           "#{testpath}/test_data/contigs_2.fasta",
+           "-r", "#{testpath}/test_data/reference.fasta.gz",
+           "-g", "#{testpath}/test_data/genes.txt",
+           "-1", "#{testpath}/test_data/reads1.fastq.gz",
+           "-2", "#{testpath}/test_data/reads2.fastq.gz",
+           "-o", "output", "-t", "1", "--debug", "--glimmer"
+    assert_predicate testpath/"output/report.pdf", :exist?
   end
 end
