@@ -11,8 +11,9 @@ class Cutadapt < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "031f770a86176d2b900fe82cc1dc4e265b08c6c7378ba34b593788105ad6d313"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "11fe25398bea539c79d92993b100aea921d821c10b10d11c96684a801716d956"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "dab2c1902b604737600c91677011316c14e0b853fa5c41359b64e35a684a81b3"
+    sha256 cellar: :any_skip_relocation, ventura:      "472aeab251d5bd2f291fa38207eb73cfa6829abb235e21fdc5cd6a8892d0cbf3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4fa6304e5243642aa00ad573ff7b6cd42baaa9a781ea4d74bac9675a8c502946"
   end
 
   depends_on "cython" => :build
