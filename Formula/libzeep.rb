@@ -29,7 +29,7 @@ class Libzeep < Formula
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
     end
-    inreplace "CMakelists.txt", "date 3.0.1 QUIET NAMES date", "date 3.0.0 REQUIRED NAMES date"
+    inreplace "CMakeLists.txt", "date 3.0.1 QUIET NAMES date", "date 3.0.0 REQUIRED NAMES date"
     date_cmake_prefix = Formula["howard-hinnant-date"].opt_lib/"cmake"
     system "cmake", "-S", ".", "-B", "build",
                   "-Dlibmcfp_DIR=#{prefix/"libmcfp/lib/cmake/libmcfp"}",
