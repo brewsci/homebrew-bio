@@ -8,8 +8,9 @@ class Snippy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "8c0d0939812e84c244a2f87a92d42ae79fa9c001ee3a4ea8f00fefa4dd2fd15b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c7a253e55f63fa2969d95ff81908f7fc61a6b1b09cc46b9d796511071396251b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "3e503b0f04987aaf52fe47873d9e9ee4d0f58a975c55d1dbcde9623da6725343"
+    sha256 cellar: :any_skip_relocation, ventura:      "3e503b0f04987aaf52fe47873d9e9ee4d0f58a975c55d1dbcde9623da6725343"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5e35fa4c6e7a79a0a9da19a8cbee8694006a17de5e113c8036cf123ff48d0b4a"
   end
 
   depends_on "bcftools"
