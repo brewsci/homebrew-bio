@@ -1,5 +1,5 @@
 class Libmcfp < Formula
-  desc "Header only library that can collect configuration options from command line arguments"
+  desc "Header only Library to collect configuration options from command-line arguments"
   homepage "https://github.com/mhekkel/libmcfp/"
   url "https://github.com/mhekkel/libmcfp/archive/refs/tags/v1.3.3.tar.gz"
   sha256 "d35e83e660c3cb443d20246fea39e78d2a11faebe3205ab838614f0280c308d0"
