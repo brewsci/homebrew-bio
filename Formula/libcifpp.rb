@@ -6,7 +6,6 @@ class Libcifpp < Formula
   license "BSD-2-Clause"
   head "https://github.com/PDB-REDO/libcifpp.git", branch: "trunk"
 
-  depends_on "catch2" => :build
   depends_on "cmake" => :build
   depends_on "eigen" => :build
   depends_on "boost"
@@ -14,13 +13,7 @@ class Libcifpp < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  resource "components" do
-    url "https://files.pdbj.org/pub/pdb/data/monomers/components.cif.gz"
-    sha256 "4254e52df384c40512940cd2f6d8d7ed25b6e6902f8c562498edb90ddfd775ab"
-  end
-
   def install
-    cp resource("components").cached_download, buildpath/"rsrc/components.cif.gz"
     system "cmake", "-S", ".", "-B", "build",
                     *std_cmake_args
     system "cmake", "--build", "build"
