@@ -6,6 +6,13 @@ class Libmcfp < Formula
   license "BSD-2-Clause"
   head "https://github.com/mhekkel/libmcfp.git", branch: "trunk"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "80dc2b04ffaec57a45a3abcd7e1eb8715a10565db083a6978c465042e558ba30"
+    sha256 cellar: :any_skip_relocation, ventura:      "80dc2b04ffaec57a45a3abcd7e1eb8715a10565db083a6978c465042e558ba30"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "07e1fb49d52d31eb6d3f119271f2b529f456cc845488bbf5fc350b48f38911d5"
+  end
+
   depends_on "cmake" => :build
 
   def install
