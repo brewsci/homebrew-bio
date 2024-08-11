@@ -59,8 +59,9 @@ class Snippy < Formula
       snippy-vcf_to_tab
     ]
     binaries.each do |name|
-      (bin/name).write_env_script("#{libexec}/bin/#{name}", JAVA_HOME:  Formula["openjdk@11"].opt_prefix,
-                                                            PERL5LIB:   ENV["PERL5LIB"])
+      (bin/name).write_env_script("#{libexec}/bin/#{name}",
+                                   JAVA_HOME: Formula["openjdk@11"].opt_prefix,
+                                   PERL5LIB:  ENV["PERL5LIB"])
     end
 
     mkdir_p libexec/"binaries/noarch"
