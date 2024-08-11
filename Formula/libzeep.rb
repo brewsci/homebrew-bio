@@ -114,7 +114,7 @@ class Libzeep < Formula
         return result;
       }
     EOS
-    system ENV.cxx, "test.cpp",  "-o", "test",
+    system ENV.cxx, "test.cpp", "-o", "test",
                     "-std=c++17", "-I#{include}",
                     "-I#{Formula["boost"].opt_include}",
                     "-L#{lib}", "-lzeep"
