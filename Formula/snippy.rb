@@ -4,6 +4,7 @@ class Snippy < Formula
   url "https://github.com/tseemann/snippy/archive/refs/tags/v4.6.0.tar.gz"
   sha256 "7264e3819e249387effd3eba170ff49404b1cf7347dfa25944866f5aeb6b11c3"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
