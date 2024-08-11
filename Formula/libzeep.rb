@@ -1,8 +1,8 @@
 class Libzeep < Formula
   desc "Web application framework written in C++"
   homepage "https://github.com/mhekkel/libzeep"
-  url "https://github.com/mhekkel/libzeep/archive/refs/tags/v6.0.1.tar.gz"
-  sha256 "0788bcd4122046d403220b23979dc2e33564adcc6f279c7529ffd2bff3212045"
+  url "https://github.com/mhekkel/libzeep/archive/refs/tags/v6.0.13.tar.gz"
+  sha256 "4d304986b39a54975bae263f8de9e1ecedd8e2b05bee7a9b637225dae63a6e56"
   license "BSL-1.0"
   head "https://github.com/mhekkel/libzeep.git", branch: "trunk"
 
@@ -18,8 +18,8 @@ class Libzeep < Formula
   depends_on "howard-hinnant-date"
 
   resource "libmcfp" do
-    url "https://github.com/mhekkel/libmcfp/archive/refs/tags/v1.2.4.tar.gz"
-    sha256 "97f7e6271d81fc6b562bd89e7e306315f63d3e3c65d68468217e40ad15ea5164"
+    url "https://github.com/mhekkel/libmcfp/archive/refs/tags/v1.3.3.tar.gz"
+    sha256 "d35e83e660c3cb443d20246fea39e78d2a11faebe3205ab838614f0280c308d0"
   end
 
   def install
@@ -29,8 +29,11 @@ class Libzeep < Formula
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
     end
-
+    inreplace "CMakelists.txt", "date 3.0.1 QUIET NAMES date", "date 3.0.0 REQUIRED NAMES date"
+    date_cmake_prefix = Formula["howard-hinnant-date"].opt_lib/"cmake"
     system "cmake", "-S", ".", "-B", "build",
+                  "-Dlibmcfp_DIR=#{prefix/"libmcfp/lib/cmake/libmcfp"}",
+                  "-DCMAKE_MODULE_PATH=#{date_cmake_prefix}",
                   "-DCMAKE_BUILD_TYPE=Release",
                   *std_cmake_args
     system "cmake", "--build", "build"
