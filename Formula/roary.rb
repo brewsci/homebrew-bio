@@ -22,10 +22,11 @@ class Roary < Formula
   depends_on "brewsci/bio/mcl"
   depends_on "brewsci/bio/prank"
   depends_on "mafft"
+  depends_on "openssl@3"
   depends_on "parallel"
+  depends_on "perl"
 
   uses_from_macos "libxml2"
-  uses_from_macos "perl"
 
   def install
     libexec.install Dir["bin/*"]
@@ -37,7 +38,7 @@ class Roary < Formula
     rm_r buildpath/"bin"
     bin.mkpath
 
-    ENV.prepend "PERL5LIB", Formula["bioperl"].libexec/"lib/perl5"
+    ENV.prepend "PERL5LIB", Formula["perl"].libexec/"lib/perl5"
     ENV.prepend_create_path "PERL5LIB", prefix/"perl5/lib/perl5"
 
     # --notest because https://github.com/sanger-pathogens/Roary/issues/386
