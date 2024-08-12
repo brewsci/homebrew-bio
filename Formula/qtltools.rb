@@ -14,17 +14,20 @@ class Qtltools < Formula
   depends_on "gsl"
   depends_on "htslib"
   depends_on "libdeflate"
+  depends_on "openssl@3"
   depends_on "pcre2"
   depends_on "r"
   depends_on "xz" # for lzma
 
   uses_from_macos "bzip2"
+  uses_from_macos "curl"
   uses_from_macos "zlib"
 
   def install
     inreplace "Makefile" do |s|
       s.gsub! "prefix      = /usr/local", "prefix = #{prefix}"
       s.gsub! "autocompdir = /usr/local/etc/bash_completion.d", "autocompdir = #{prefix}/etc/bash_completion.d"
+      s.gsub! "autocompdir = /etc/bash_completion.d", "autocompdir = #{prefix}/etc/bash_completion.d"
     end
     args = [
       "BOOST_INC=#{Formula["boost"].opt_include}",
@@ -33,7 +36,7 @@ class Qtltools < Formula
       "RMATH_LIB=#{Formula["r"].opt_lib}",
       "HTSLD_INC=#{Formula["htslib"].opt_include}",
       "HTSLD_LIB=#{Formula["htslib"].opt_lib}",
-      "LIB_FLAGS=-lz -lgsl -lbz2 -llzma -lgslcblas -lm -lpthread -lcurl -lhts -ldeflate",
+      "LIB_FLAGS=-lz -lgsl -lbz2 -llzma -lgslcblas -lm -lpthread -lcurl -lhts -ldeflate -lssl -lcrypto",
     ]
     system "make", *args
     system "make", "install"
@@ -48,8 +51,10 @@ class Qtltools < Formula
       url "https://github.com/qtltools/qtltools/raw/master/example_files/genes.50percent.chr22.bed.gz.tbi"
       sha256 "dbbde52b174e6e702142aa2b7118e161ba48b11f2d2f3ef7a87307203e6d4602"
     end
-    cp resource("testdata").cached_download, "genes.50percent.chr22.bed.gz"
-    cp resource("testdata_index").cached_download, "genes.50percent.chr22.bed.gz.tbi"
+    resource("testdata").fetch
+    cp resource("testdata").cached_download, testpath/"genes.50percent.chr22.bed.gz"
+    resource("testdata_index").fetch
+    cp resource("testdata_index").cached_download, testpath/"genes.50percent.chr22.bed.gz.tbi"
     system "#{bin}/QTLtools", "pca", "--bed", "genes.50percent.chr22.bed.gz", "--scale",
           "--center", "--out", "genes.50percent.chr22"
     assert_predicate testpath/"genes.50percent.chr22.pca_stats", :exist?
