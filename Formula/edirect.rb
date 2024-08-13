@@ -16,6 +16,7 @@ class Edirect < Formula
   depends_on "go" => :build
   depends_on "openssl@3"
 
+  uses_from_macos "expat"
   uses_from_macos "perl"
   uses_from_macos "zlib"
 
