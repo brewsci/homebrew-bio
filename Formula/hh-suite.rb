@@ -5,7 +5,7 @@ class HhSuite < Formula
   url "https://github.com/soedinglab/hh-suite/archive/refs/tags/v3.3.0.tar.gz"
   sha256 "dd67f7f3bf601e48c9c0bc4cf1fbe3b946f787a808bde765e9436a48d27b0964"
   license "GPL-3.0-or-later"
-  revision 3
+  revision 4
   head "https://github.com/soedinglab/hh-suite.git"
 
   bottle do
@@ -41,8 +41,8 @@ class HhSuite < Formula
                                       "[](unsigned char ch) { return !std::isspace(ch); })"
     system "cmake", ".", *args
     system "make", "install"
-    cp "scripts/reformat.pl", bin
-    rm_r "scripts"
+    prefix.install "scripts"
+    bin.install_symlink prefix/"scripts/reformat.pl"
     pkgshare.install ["data/query.a3m", "data/test.sh"]
   end
 
