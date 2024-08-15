@@ -1,10 +1,10 @@
 class Centrifuge < Formula
   # cite Kim_2016: "https://doi.org/10.1101/gr.210641.116"
   desc "Rapid sensitive classification of metagenomic sequences"
-  homepage "http://www.ccb.jhu.edu/software/centrifuge"
-  url "https://github.com/infphilo/centrifuge/archive/refs/tags/v1.0.3.tar.gz"
-  sha256 "71340f5c0c20dd4f7c4d98ea87f9edcbb1443fff8434e816a5465cbebaca9343"
-  license "GPL-3.0"
+  homepage "https://www.ccb.jhu.edu/software/centrifuge"
+  url "https://github.com/DaehwanKimLab/centrifuge/archive/refs/tags/v1.0.4.1.tar.gz"
+  sha256 "638cc6701688bfdf81173d65fa95332139e11b215b2d25c030f8ae873c34e5cc"
+  license "GPL-3.0-or-later"
 
   livecheck do
     url :stable
@@ -16,14 +16,23 @@ class Centrifuge < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "cd12f24f14e0fd03e3b534bce48f4c1fd54652473b95daf306bdace8aa101af9"
   end
 
-  depends_on "gcc" if OS.mac? # needs openmp
-
-  # classifier.h:431:45: error: the value of 'rank' is not usable in a constant expression
-  depends_on :linux
-
-  fails_with :clang # needs openmp
+  on_macos do
+    depends_on "libomp"
+  end
 
   def install
+    # VERSION info is not required for the build
+    rm "VERSION"
+    if OS.mac? && Hardware::CPU.arm?
+      # POPCNT_CAPABILITY is not supported on ARM
+      inreplace "Makefile", "POPCNT_CAPABILITY ?= 1", "POPCNT_CAPABILITY ?= 0"
+      # tweaks for processor_support.h
+      inreplace "processor_support.h" do |s|
+        s.gsub! "#elif defined(__GNUC__)", "#elif defined(__GNUC__) && (defined(__amd64__) || defined(__i386__))"
+        s.gsub! 'std::cerr << "ERROR: please define __cpuid() for this build.\n"; ', ""
+        s.gsub! "assert(0);", "return false;"
+      end
+    end
     system "make"
     bin.install "centrifuge", Dir["centrifuge-*"]
     pkgshare.install "example", "indices", "evaluation"
