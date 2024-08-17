@@ -18,10 +18,12 @@ class Bustools < Formula
   end
 
   test do
-    system("#{bin}/bustools fromtext -o #{testpath}/tc2mid.bus #{prefix}/test_cases/tc0002CollapseInput.txt")
-    system("#{bin}/bustools collapse -o #{testpath}/tc2mid2 -t #{prefix}/test_cases/transcripts.txt -g #{prefix}/test_cases/transcripts_to_genes.txt -e #{prefix}/test_cases/matrix.ec #{testpath}/tc2mid.bus")
-    system("#{bin}/bustools text -o #{testpath}/tc0002output.txt #{testpath}/tc2mid2.bus")
+    system "#{bin}/bustools", "fromtext", "-o", "#{testpath}/tc2mid.bus", "#{prefix}/test_cases/tc0002CollapseInput.txt"
+    system "#{bin}/bustools", "collapse", "-o", "#{testpath}/tc2mid2", "-t", "#{prefix}/test_cases/transcripts.txt",
+           "-g", "#{prefix}/test_cases/transcripts_to_genes.txt", "-e", "#{prefix}/test_cases/matrix.ec",
+           "#{testpath}/tc2mid.bus"
+    system "#{bin}/bustools", "text", "-o", "#{testpath}/tc0002output.txt", "#{testpath}/tc2mid2.bus"
     cmd = "diff -w -B -s #{prefix}/test_cases/tc0002ExpResult.txt #{testpath}/tc0002output.txt"
-    assert_match "Files #{prefix}/test_cases/tc0002ExpResult.txt and #{testpath}/tc0002output.txt are identical", shell_output(cmd)
+    assert_match "identical", shell_output(cmd)
   end
 end
