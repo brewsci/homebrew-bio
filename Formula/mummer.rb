@@ -12,7 +12,8 @@ class Mummer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "22df96cb1a3e421e5af2e432e3cfc10834ee13fa1e2916aae6a820dbcddcf8c5"
   end
 
-  depends_on "tcsh" unless OS.mac?
+  depends_on "tcsh"
+  uses_from_macos "perl"
 
   # Fix the error: Can't use 'defined(%hash)'
   patch do
