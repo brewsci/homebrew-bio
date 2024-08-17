@@ -8,8 +8,9 @@ class Bifrost < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, catalina:     "70a8e2edd2e43078e21be35a9356bec272f48dffe5a1d79f3f951f2dddf2668f"
-    sha256 cellar: :any, x86_64_linux: "106658498fe0187dc5e44d78906b9ba6c2ec67a8394106aa298de92d1bd4673c"
+    sha256 cellar: :any,                 arm64_sonoma: "d4a93e9b4ba5c0704d537f5c7a776dc86525777d1d3b60cc13ffc385568a81b7"
+    sha256 cellar: :any,                 ventura:      "c0b75e0e04b6c8231e88d8d515ef0fa2dcefa9ee787defcbed41a657fc001267"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c92a906dd7fafee1211c1a1fe745a5a8395d397a16bf295ed71279964f91c7a7"
   end
 
   depends_on "cmake" => :build
