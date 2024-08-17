@@ -18,7 +18,8 @@ class Bustools < Formula
   end
 
   test do
-    system "#{bin}/bustools", "fromtext", "-o", "#{testpath}/tc2mid.bus", "#{prefix}/test_cases/tc0002CollapseInput.txt"
+    system "#{bin}/bustools", "fromtext",
+           "-o", "#{testpath}/tc2mid.bus", "#{prefix}/test_cases/tc0002CollapseInput.txt"
     system "#{bin}/bustools", "collapse", "-o", "#{testpath}/tc2mid2", "-t", "#{prefix}/test_cases/transcripts.txt",
            "-g", "#{prefix}/test_cases/transcripts_to_genes.txt", "-e", "#{prefix}/test_cases/matrix.ec",
            "#{testpath}/tc2mid.bus"
