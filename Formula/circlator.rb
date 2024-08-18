@@ -22,6 +22,7 @@ class Circlator < Formula
   end
 
   depends_on arch: :x86_64 # spades is not supported on ARM
+  depends_on "brewsci/bio/mummer"
   depends_on "bwa"
   depends_on "prodigal"
   depends_on "python"

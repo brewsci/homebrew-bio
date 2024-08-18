@@ -12,7 +12,7 @@ class Quickmerge < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "980b2b1f9113b394deac9ddb5ce0acf978d19a5ce57b7d8e80bbec28a744f8ff"
   end
 
-  # Remove depends_on "brewsci/bio/mummer"
+  depends_on "mummer"
 
   def install
     system "make", "-C", "merger"
