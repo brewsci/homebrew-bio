@@ -19,7 +19,6 @@ class Circlator < Formula
     sha256 cellar: :any, x86_64_linux: "310c5d97d4320ffbde5f0aedbcc7e05d03b721452714cf0e5dd21e5f3e1767f0"
   end
 
-  # depends_on "brewsci/bio/mummer"
   depends_on arch: :x86_64 # spades is not supported on ARM
   depends_on "bwa"
   depends_on "openssl@3"

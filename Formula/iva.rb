@@ -14,7 +14,6 @@ class Iva < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "74d66980f3f4d7ff31d7937fb84bb62d93eba219fbe6215bc123861bf5c05432"
   end
 
-  # depends_on "brewsci/bio/mummer"
   depends_on "brewsci/bio/kmc"
   depends_on "brewsci/bio/smalt"
   depends_on "libdeflate"
