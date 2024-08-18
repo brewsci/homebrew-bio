@@ -1,13 +1,11 @@
 class Circlator < Formula
   # cite Hunt_2015: "https://doi.org/10.1186/s13059-015-0849-0"
-
   include Language::Python::Virtualenv
-
   desc "Tool to circularize genome assemblies"
   homepage "https://sanger-pathogens.github.io/circlator/"
   url "https://github.com/sanger-pathogens/circlator/archive/refs/tags/v1.5.5.tar.gz"
   sha256 "927b6c156bfba6fa02db0c1173e280f85373320814c51e084170df583e604a2a"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
 
   livecheck do
     url :stable
@@ -21,11 +19,12 @@ class Circlator < Formula
     sha256 cellar: :any, x86_64_linux: "310c5d97d4320ffbde5f0aedbcc7e05d03b721452714cf0e5dd21e5f3e1767f0"
   end
 
+  # depends_on "brewsci/bio/mummer"
   depends_on arch: :x86_64 # spades is not supported on ARM
-  depends_on "brewsci/bio/mummer"
   depends_on "bwa"
+  depends_on "openssl@3"
   depends_on "prodigal"
-  depends_on "python"
+  depends_on "python@3.12"
   depends_on "samtools"
   depends_on "spades"
 
@@ -71,7 +70,7 @@ class Circlator < Formula
   end
 
   test do
-    ENV.prepend_path "PATH", Formula["python"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", Formula["python@3.12"].opt_libexec/"bin"
     output = shell_output("#{bin}/circlator test outdir")
     assert_match "Finished run on test data OK", output
   end
