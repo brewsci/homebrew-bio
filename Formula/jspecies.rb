@@ -10,8 +10,8 @@ class Jspecies < Formula
     sha256 cellar: :any_skip_relocation, sierra: "fdad5b757d32a71e196a65e6b241d30472e55c16634e0f7e777f840817bc8cc9"
   end
 
+  # remove "brewsci/bio/mummer"
   depends_on "brewsci/bio/blast-legacy"
-  depends_on "brewsci/bio/mummer"
   depends_on "openjdk"
 
   def install
