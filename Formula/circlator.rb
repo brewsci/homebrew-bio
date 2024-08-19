@@ -10,8 +10,10 @@ class Circlator < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, sierra:       "3768e23648fdacd33e43f562dcaf6a7cbe20006e3f4a2c03f5f3c62e400fd216"
-    sha256 cellar: :any, x86_64_linux: "310c5d97d4320ffbde5f0aedbcc7e05d03b721452714cf0e5dd21e5f3e1767f0"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma: "011b738c33fc114b5da57a35430e9370d95d01166f729041fd46ff4a0d919aff"
+    sha256 cellar: :any,                 ventura:      "713cf77d2eb247cedf3626dbaa1b2e0022d538135f1938f704268cb0835a1596"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d54a96a81958db06d8a5205463902e139558a3e597e5c2e2e9f14ffd64bc4e39"
   end
 
   depends_on "brewsci/bio/mummer"
