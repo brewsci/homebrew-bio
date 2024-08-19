@@ -49,8 +49,12 @@ class Mummer < Formula
       --enable-swig
     ]
     if OS.mac?
+      # build with OpenMP support
       args << "ax_cv_cxx_openmp=-Xpreprocessor"
       args << "LDFLAGS=-lomp"
+      # error on ruby-2.6.0/universal-darwin22/ruby/config.h,
+      # C++11 requires a space between literal and identifier [-Wreserved-user-defined-literal]
+      ENV.append "CXXFLAGS", "-Wno-reserved-user-defined-literal"
     end
     system "./configure", *args
     system "make"
