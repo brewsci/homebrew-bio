@@ -10,8 +10,9 @@ class Mummer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, sierra:       "2642a41271e0a4d0522c3d1890d1dfc6ced4ad03aa90ba31c37210f0a96a2e41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "22df96cb1a3e421e5af2e432e3cfc10834ee13fa1e2916aae6a820dbcddcf8c5"
+    sha256 cellar: :any,                 arm64_sonoma: "131eec04e0701f61a42ed8109f5a0354e04fc07721442f0317708a94b69762e4"
+    sha256 cellar: :any,                 ventura:      "19a2f80268ac020ca0803f41549fcef4eb0cb4c715a8547127f735eee6e720f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "6332f331f2fdf1d2c14b1f617185719a84227422619e6d86d75e0bce6c81f820"
   end
 
   depends_on "autoconf" => :build
