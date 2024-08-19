@@ -15,7 +15,6 @@ class Iva < Formula
   end
 
   depends_on "brewsci/bio/kmc"
-  depends_on "brewsci/bio/mummer"
   depends_on "brewsci/bio/smalt"
   depends_on "libdeflate"
   depends_on "numpy"
