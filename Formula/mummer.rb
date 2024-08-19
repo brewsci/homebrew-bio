@@ -18,6 +18,7 @@ class Mummer < Formula
   depends_on "automake" => :build
   depends_on "gettext" => :build
   depends_on "libtool" => :build
+  depends_on "python-setuptools" => :build
   depends_on "swig" => :build
   depends_on "perl" # for EXTERN.h
   depends_on "python@3.12"
