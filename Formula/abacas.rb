@@ -11,6 +11,8 @@ class Abacas < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "a486b8b94ea27fe8734d443487fb1a9530f5525c4416c0b94dd5a8be8d7949e9"
   end
 
+  depends_on "brewsci/bio/mummer"
+
   def install
     inreplace "abacas.1.3.1.pl", "/usr/local/bin/perl", "/usr/bin/env perl"
     bin.install "abacas.1.3.1.pl" => "abacas"
