@@ -8,12 +8,6 @@ class Circlator < Formula
   sha256 "c9c9d5cad0badb8b1c7707dce80235397cbd3846f8b686974b968f109a5222c6"
   license "GPL-3.0-or-later"
 
-  livecheck do
-    url :stable
-    strategy :github_latest
-    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)(?:[._-]|["' >])}i)
-  end
-
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any, sierra:       "3768e23648fdacd33e43f562dcaf6a7cbe20006e3f4a2c03f5f3c62e400fd216"
