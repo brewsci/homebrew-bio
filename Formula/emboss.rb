@@ -2,10 +2,8 @@ class Emboss < Formula
   # cite Rice_2000: "https://doi.org/10.1016/S0168-9525(00)02024-2"
   desc "European Molecular Biology Open Software Suite"
   homepage "https://emboss.sourceforge.io/"
-  url "ftp://emboss.open-bio.org/pub/EMBOSS/EMBOSS-6.6.0.tar.gz"
-  mirror "http://mirrors.mit.edu/gentoo-distfiles/distfiles/EMBOSS-6.6.0.tar.gz"
-  mirror "https://science-annex.org/pub/emboss/EMBOSS-6.6.0.tar.gz"
-  sha256 "7184a763d39ad96bb598bfd531628a34aa53e474db9e7cac4416c2a40ab10c6e"
+  url "https://github.com/kimrutherford/EMBOSS/archive/refs/tags/EMBOSS-6.6.0.tar.gz"
+  sha256 "85f53a19125735e4a49fc25620d507fd86bf189e49096578924fe04893f2f7a9"
   license "GPL-2.0-or-later"
   revision 1
 
@@ -20,12 +18,10 @@ class Emboss < Formula
   depends_on "libtool"    => :build
   depends_on "pkg-config" => :build
 
+  depends_on "brewsci/bio/clustal-w"
   depends_on "gd"
   depends_on "libharu"
   depends_on "libpng"
-
-  depends_on "mysql" => :optional
-  depends_on "postgresql@14" => :optional
 
   uses_from_macos "zlib"
 
@@ -40,15 +36,31 @@ class Emboss < Formula
       --docdir=#{doc}
       --enable-64
       --with-thread
+      --with-hpdf=#{Formula["libharu"].opt_prefix}
+      --with-pngdriver=#{HOMEBREW_PREFIX}
+      --without-x
     ]
-    args << "--without-x"
-    args << "--with-mysql" if build.with? "mysql"
-    args << "--with-postgresql" if build.with? "postgresql"
 
     system "./configure", *args
     system "make", "install"
   end
 
+  def caveats
+    <<~EOS
+      If you have copied the binaries to another directory instead, or
+      made other changes to the file locations, you can also use
+      environment variables or the embossrc file(s) to tell the programs
+      where to look
+
+      You may need to use this command:
+        export EMBOSS_ACDROOT=$(brew --prefix)/share/EMBOSS/acd
+
+        or in your site emboss.default file (in the share/EMBOSS install
+      directory or under emboss/ in the original source directory) or in
+      ~/.embossrc file put
+        export EMBOSS_ACDROOT=$(brew --prefix)/share/EMBOSS/acd
+    EOS
+  end
   test do
     assert_match "5\n", shell_output("#{bin}/seqcount -auto -filter #{share}/EMBOSS/test/data/tranalign.pep")
   end
