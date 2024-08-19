@@ -13,7 +13,7 @@ class Quickmerge < Formula
   end
 
   depends_on "brewsci/bio/mummer"
-  
+
   def install
     system "make", "-C", "merger"
     bin.install "merger/quickmerge"
