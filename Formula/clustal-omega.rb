@@ -4,7 +4,7 @@ class ClustalOmega < Formula
   homepage "http://www.clustal.org/omega/"
   url "http://www.clustal.org/omega/clustal-omega-1.2.4.tar.gz"
   sha256 "8683d2286d663a46412c12a0c789e755e7fd77088fb3bc0342bb71667f05a3ee"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -15,7 +15,7 @@ class ClustalOmega < Formula
   depends_on "argtable"
 
   def install
-    system "./configure", "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 
