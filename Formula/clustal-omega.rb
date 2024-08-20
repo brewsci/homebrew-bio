@@ -8,8 +8,10 @@ class ClustalOmega < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, sierra:       "1f67880767ddb90a20c34dc57d1cb29c41bd712dadb07ebabedb1e72aefae3c6"
-    sha256 cellar: :any, x86_64_linux: "e63bbab0368c0dc91debd75153396a11639716506560c61dc1251cfd7b5d39ee"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma: "d46f7c88cc991b00f6ae70a4a3f5d0a8df72af463933cbca67061440d3be2345"
+    sha256 cellar: :any,                 ventura:      "3d35823db663fc55de82e6a30bd70a149aa35028d71a6ace84363757a3bf2564"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7a59a6ab424fe245c3e19e4f128ec31d6a6a5130770ddc13236e0812a306dadf"
   end
 
   depends_on "argtable"
