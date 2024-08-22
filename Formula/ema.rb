@@ -9,8 +9,9 @@ class Ema < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 catalina:     "a151d79e6e17971cb7e9e0edd480900ebeedcd5bc952d0bde24273c76a412dbe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c6f4bfa74c1252a1f1e7b338c5ad0160bf7a384746eb9905ecb91d344b3dd483"
+    sha256 cellar: :any,                 arm64_sonoma: "795f7aec1a15a29c26fe74397e6ac5f250227db026ea44b6e448b8ee75f15260"
+    sha256 cellar: :any,                 ventura:      "86edbafa9e7d41e290bb65cd80cf004debafbf3c3912b1b89f51c175b17238aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7d21ebb7d33f5f19d1390359fc260214504f579f7cfa919344b74f2390db379f"
   end
 
   depends_on "pigz"
