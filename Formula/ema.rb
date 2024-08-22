@@ -3,9 +3,8 @@ class Ema < Formula
   desc "Fast and accurate alignment of linked reads"
   homepage "https://ema.csail.mit.edu"
   url "https://github.com/arshajii/ema.git",
-    tag: "v0.6.2", revision: "893be3470e613043bf75fefdc73396d40c3bc2bc"
+    tag: "v0.7.0", revision: "2e0d8a2a00b08c246a125566cd9ee636879cc457"
   license "MIT"
-  revision 1
   head "https://github.com/arshajii/ema.git"
 
   bottle do
@@ -14,12 +13,14 @@ class Ema < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "c6f4bfa74c1252a1f1e7b338c5ad0160bf7a384746eb9905ecb91d344b3dd483"
   end
 
-  fails_with :clang # needs openmp
+  depends_on "pigz"
+  depends_on "sambamba"
+  depends_on "samtools"
 
-  if OS.mac?
-    depends_on "gcc" # needs openmp
-  else
-    depends_on "zlib"
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "libomp"
   end
 
   resource "4M-with-alts" do
@@ -29,13 +30,18 @@ class Ema < Formula
   end
 
   def install
-    # Fix error: This file requires compiler and library support for the ISO C++ 2011 standard.
-    # Need patch: https://github.com/lh3/bwa/issues/314
-    inreplace "bwa/Makefile", "-Wno-unused-function -O2", "-Wno-unused-function -O2 -fcommon"
-    inreplace "bwa/rle.h", "const uint8_t rle_auxtab[8];", "extern const uint8_t rle_auxtab[8];"
-
-    ENV.deparallelize
-    system "make"
+    if OS.mac?
+      inreplace "Makefile" do |s|
+        s.gsub! "-lm -lz -lpthread", "-lm -lz -lpthread -lomp"
+        s.gsub! "CFLAGS = -std=gnu99 -march=x86-64 -O3 -fopenmp",
+                "CFLAGS = -std=gnu99 -march=native -O3 -Xpreprocessor -fopenmp"
+        s.gsub! "LFLAGS = -lstdc++ -march=x86-64 -O3 -flto -fopenmp",
+                "LFLAGS = -lstdc++ -march=native -O3 -flto -Xpreprocessor -fopenmp"
+        s.gsub! "CPPFLAGS = -c -std=c++11 -O3 -march=x86-64 -pthread",
+                "CPPFLAGS = -std=c++11 -O3 -march=native -Xpreprocessor -fopenmp"
+      end
+    end
+    system "make", "CC=#{ENV.cc}", "CXX=#{ENV.cxx}"
     bin.install "ema"
     prefix.install resource("4M-with-alts")
   end
