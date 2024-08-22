@@ -16,7 +16,6 @@ class Smalt < Formula
   depends_on "gettext" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.12"
   depends_on "samtools"
 
   uses_from_macos "zlib"
