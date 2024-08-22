@@ -38,11 +38,13 @@ class Smalt < Formula
       system "make", "install"
     end
 
+    # add ldflags to find the libbambamc
+    ldflags = "-Wl,-rpath -Wl,#{prefix}/bambamc/lib -L#{prefix}/bambamc/lib"
     args = std_configure_args + %W[
       --with-bambamc=yes
       PKG_CONFIG_PATH=#{prefix}/bambamc/lib/pkgconfig
       CFLAGS=-I#{prefix}/bambamc/include
-      LDFLAGS=-L#{prefix}/bambamc/lib
+      LDFLAGS=#{ldflags}
       LIBS=-lbambamc
     ]
     # No longer used -lbam in the latest samtools
