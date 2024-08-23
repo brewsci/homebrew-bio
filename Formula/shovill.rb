@@ -14,8 +14,6 @@ class Shovill < Formula
 
   depends_on "brewsci/bio/flash"
   depends_on "brewsci/bio/kmc"
-  depends_on "brewsci/bio/lighter"
-  depends_on "brewsci/bio/megahit"
   depends_on "brewsci/bio/pilon"
   depends_on "brewsci/bio/samclip"
   depends_on "brewsci/bio/skesa"
