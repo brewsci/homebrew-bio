@@ -11,7 +11,6 @@ class Kounta < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "bd468d88c9e66bb63a3fd490c30398516e1ed78b119047d33917a00a9da6bc5a"
   end
 
-  depends_on "kmc"
   depends_on "parallel"
   depends_on "perl" # need 5.26 or later
 
