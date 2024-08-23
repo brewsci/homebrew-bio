@@ -17,6 +17,8 @@ class Kmc < Formula
   depends_on "gcc"
   uses_from_macos "zlib"
 
+  fails_with gcc: "11"
+
   def install
     if OS.mac?
       inreplace "Makefile" do |s|
@@ -27,8 +29,9 @@ class Kmc < Formula
       # On Linux, we need to link against libstdc++
       inreplace "Makefile", "-static -Wl,", "-lstdc++ -Wl,"
     end
-    cxx = Formula["gcc"].opt_bin/"gcc-#{Formula["gcc"].version_suffix}"
-    args = %W[CC=#{cxx} KMC_BIN_DIR=#{bin}]
+    gcc_major_ver = Formula["gcc"].any_installed_version.major
+    cc = Formula["gcc"].opt_bin/"gcc-#{gcc_major_ver}"
+    args = %W[CC=#{cc} KMC_BIN_DIR=#{bin}]
     system "make", *args, "kmc", "kmc_dump", "kmc_tools"
     bin.install Dir["bin/kmc*"]
     doc.install Dir["*.pdf"]
