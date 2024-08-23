@@ -10,6 +10,7 @@ class Libsbml < Formula
     sha256 cellar: :any, arm64_sonoma: "12c4d6ccdf5e1812905fa6eb0ea7e7453a041550339f54f4c325dafe7ca2abdb"
   end
 
+  depends_on "check" => :build
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
 
