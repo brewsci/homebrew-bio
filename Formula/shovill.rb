@@ -13,6 +13,7 @@ class Shovill < Formula
   end
 
   depends_on "brewsci/bio/flash"
+  depends_on "brewsci/bio/kmc"
   depends_on "brewsci/bio/lighter"
   depends_on "brewsci/bio/megahit"
   depends_on "brewsci/bio/pilon"
