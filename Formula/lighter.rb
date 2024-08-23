@@ -2,10 +2,10 @@ class Lighter < Formula
   # cite Song_2014: "https://doi.org/10.1186/s13059-014-0509-9"
   desc "Fast and memory-efficient sequencing error corrector"
   homepage "https://github.com/mourisl/Lighter"
-  url "https://github.com/mourisl/Lighter/archive/refs/tags/v1.1.2.tar.gz"
-  sha256 "89abc34137beffc43382fbe53deb25c3c2f5cee7e6ca2b7f669931d70065993a"
-  license "GPL-3.0"
-  head "https://github.com/mourisl/Lighter.git"
+  url "https://github.com/mourisl/Lighter/archive/refs/tags/v1.1.3.tar.gz"
+  sha256 "c8a251c410805f82dad77e40661f0faf14ec82dedb3ff717094ba8ff4ef94465"
+  license "GPL-3.0-or-later"
+  head "https://github.com/mourisl/Lighter.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -16,8 +16,6 @@ class Lighter < Formula
   uses_from_macos "zlib"
 
   def install
-    # Miscompiles with -Os, see https://github.com/mourisl/Lighter/issues/24
-    ENV.O2
     system "make"
     bin.install "lighter"
   end
