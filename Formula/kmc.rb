@@ -9,8 +9,9 @@ class Kmc < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 big_sur:      "79dc862a0ee19b5617e021b2f74b3168144bd7951c99eaeb524994b65fee771d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "cb51b8cbbedfba92900e56910d4b8ecd6754891dcdc1a7a0d47d6335ace73076"
+    sha256 cellar: :any,                 arm64_sonoma: "24d1279462ee5a954416c883be93d8dd7d4636c9812dabf66039a8be3957aa35"
+    sha256 cellar: :any,                 ventura:      "cb7a250182a374d9d8bbf64a9119f212c72b1c4e532f86baf3bd9209a51c2b1d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "eae18036038bd8d86937fc10abb769e3f61fcf3b8b484d5eefd5761378411146"
   end
 
   depends_on "pybind11" => :build
