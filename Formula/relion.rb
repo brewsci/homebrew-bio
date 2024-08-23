@@ -1,10 +1,9 @@
 class Relion < Formula
   desc "Image-processing software for cryo-electron microscopy"
   homepage "https://github.com/3dem/relion"
-  url "https://github.com/3dem/relion/archive/refs/tags/4.0.1.tar.gz"
-  sha256 "0ebbd94ad922d7f457e3f3b81f5660e2691a845d9a53f0f1c9fbeb4e54cd5c17"
+  url "https://github.com/3dem/relion/archive/refs/tags/4.0.2.tar.gz"
+  sha256 "7ccc941a6a885bd850efa8867ea908254d8dc260cf72cc24c375bb9f1d56bf91"
   license "GPL-2.0-only"
-  revision 1
   head "https://github.com/3dem/relion.git", branch: "master"
 
   bottle do
@@ -18,6 +17,7 @@ class Relion < Formula
   depends_on "fftw"
   depends_on "fltk"
   depends_on "ghostscript"
+  depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "libxft"
