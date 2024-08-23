@@ -6,8 +6,9 @@ class Kma < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "e8986aca613c9b2c302cf25484d17d1e7f1dfef0d395d9b142f52cda3171fffc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "95351af4a7d8e9ece5040641c8c53a4e28938f73e966dbd1670743ea1c677c82"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "1803cdd3e950817947b43c10c24bc4932833df288623838e2833621f5ccb2a81"
+    sha256 cellar: :any_skip_relocation, ventura:      "800401e4775a5891720bf9272fc984376ca7e689abad36c07bd5b16fee150eda"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ae07d03f57f0e964ee8c0a420f7f6ff9de7045bafb9c33dda2743cb5ab40cedd"
   end
 
   uses_from_macos "zlib"
