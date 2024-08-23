@@ -17,6 +17,7 @@ class Relion < Formula
   depends_on "fftw"
   depends_on "fltk"
   depends_on "ghostscript"
+  depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "libxft"
