@@ -9,8 +9,10 @@ class Porechop < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, sierra:       "9582147a653c87fb61b94ef8f001da7d45455a87f445297bc7020520cb1be319"
-    sha256 cellar: :any, x86_64_linux: "7f19dfbdbc11a540a7b1760b41781ac4456299db8bbe707575f9c7a8f4674358"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma: "126ed1f86d3ba023ae5b5500a22256719a8d325273ca3ecd637d918ad1f44f0c"
+    sha256 cellar: :any,                 ventura:      "a7848b8f3c171559526b6664a84bedb72a746be50a38040e83073bd2a72abc90"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c538b9b7f8304ff1970f0bc9b2ee32fd87b6d6dc7441c4bee5832293f5a122d1"
   end
 
   depends_on "python@3.12"
