@@ -2,9 +2,10 @@ class Breseq < Formula
   # Deatherage_2014: "https://doi.org/10.1007/978-1-4939-0554-6_12"
   desc "Find mutations in microbes from short reads"
   homepage "https://barricklab.org/twiki/bin/view/Lab/ToolsBacterialGenomeResequencing"
-  url "https://github.com/barricklab/breseq/releases/download/v0.37.1/breseq-0.37.1-Source.tar.gz"
-  sha256 "96131a55271225f7d7e130ef25adea04608dc8e142d2268c85be627c761fcd1b"
-  head "https://github.com/barricklab/breseq.git"
+  url "https://github.com/barricklab/breseq/archive/refs/tags/v0.39.0.tar.gz"
+  sha256 "5aa1bd9af71899e1358cfb9b8440c16cc908f185d9178a401a5a4d3f0c7ee861"
+  license all_of: ["GPL-3.0-or-later", "GPL-2.0-or-later"]
+  head "https://github.com/barricklab/breseq.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -23,9 +24,9 @@ class Breseq < Formula
   uses_from_macos "gzip"
 
   def install
-    system "./configure", "--prefix=#{prefix}", "--without-libunwind"
+    system "autoreconf", "-fvi"
+    system "./configure", *std_configure_args
     system "make"
-    system "make", "test"
     system "make", "install"
   end
 
