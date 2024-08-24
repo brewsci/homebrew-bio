@@ -9,8 +9,9 @@ class Breseq < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, big_sur:      "ddae4324ddf2115371a2b7a0ebd8fa58601a866d564219e380a43227a72f8fcb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "223054d348e87ce188f24b173c22b3dd51bc5dc247269537838a95375e988a0f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "04ed3f727686f7ed67101cd0c1832d0dc2cc57bc35fc50272cfb9cdbb03f4134"
+    sha256 cellar: :any_skip_relocation, ventura:      "c3dbfc70ba65b0151232a76f184c302113ed41f7492db1cb2d512f1dd93dfa7b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "12a0d972e0214c34e1f4c27e7785fe4066efda2f6b758b6c1304f9bfdc645682"
   end
 
   depends_on "autoconf" => :build
