@@ -19,13 +19,13 @@ class Breseq < Formula
   depends_on "pkg-config" => :build
 
   depends_on "bowtie2"
-  depends_on "libunwind"
   depends_on "r"
 
   uses_from_macos "gzip"
   uses_from_macos "zlib"
 
   on_linux do
+    depends_on "libunwind"
     depends_on "llvm"
   end
 
