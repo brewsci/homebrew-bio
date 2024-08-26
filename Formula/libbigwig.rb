@@ -1,8 +1,8 @@
 class Libbigwig < Formula
   desc "C library for processing the big UCSC fomats"
   homepage "https://github.com/dpryan79/libBigWig"
-  url "https://github.com/dpryan79/libBigWig/archive/refs/tags/0.4.4.tar.gz"
-  sha256 "43a2298b2ebadc48103447a3bb4426df1b38d1bec5fa564e50ed2f00cc060478"
+  url "https://github.com/dpryan79/libBigWig/archive/refs/tags/0.4.7.tar.gz"
+  sha256 "8e057797011d93fa00e756600898af4fe6ca2d48959236efc9f296abe94916d9"
   license "MIT"
 
   bottle do
@@ -15,6 +15,7 @@ class Libbigwig < Formula
   uses_from_macos "zlib"
 
   def install
+    inreplace "Makefile", "libBigWig.so", "libBigWig.dylib" if OS.mac?
     curl = Formula["curl"]
     system "make", "install", "prefix=#{prefix}", "INCLUDES=-I#{curl.opt_include}", "LDLIBS=-L#{curl.opt_lib}"
   end
