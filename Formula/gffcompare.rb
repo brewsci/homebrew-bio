@@ -14,7 +14,6 @@ class Gffcompare < Formula
 
   def install
     ENV.deparallelize
-    system "make"
     system "make", "release"
     bin.install "gffcompare", "trmap"
     doc.install "LICENSE", "README.md"
