@@ -9,8 +9,9 @@ class Wiggletools < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 catalina:     "f11c3f6a73ffa46cf999f120002d0aa145a0a857acfc3e8d112406f3cab97e4d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5278da6176b6e6cf16049949a3351bc0993c9d4e4393f2666716f4b302d0b5ef"
+    sha256 cellar: :any,                 arm64_sonoma: "0a38a3e0270bdb648672f6d98c488bae292aa2f49da7f6c2ef9b61cb48b27008"
+    sha256 cellar: :any,                 ventura:      "5c1c1092538ad14e5459d69558ec8ae037a54aeff12f98dc7ac3b4e30bf3fdf7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fd4c1dfcf35e55dc6315d180fa15309dfd45688549a0521748023b8cbf7016f8"
   end
 
   depends_on "python@3.12" => :test
