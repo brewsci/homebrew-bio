@@ -1,10 +1,10 @@
 class Gffcompare < Formula
   desc "Classify, merge, tracking and annotation of GFF files"
   homepage "https://github.com/gpertea/gffcompare"
-  url "https://github.com/gpertea/gffcompare/releases/download/v0.12.1/gffcompare-0.12.1.tar.gz"
-  sha256 "3d9b26ba0080fd619a45be8d2a8f853b84408d02f46ee66c103bf024f27f013c"
+  url "https://github.com/gpertea/gffcompare/archive/refs/tags/v0.12.6.tar.gz"
+  sha256 "4e01344c533987a0a8227bfcca9d180504c1a1392aa343e1f6b0752341e712cf"
   license "MIT"
-  head "https://github.com/gpertea/gffcompare.git"
+  head "https://github.com/gpertea/gffcompare.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -14,13 +14,19 @@ class Gffcompare < Formula
 
   def install
     ENV.deparallelize
+    system "make"
     system "make", "release"
     bin.install "gffcompare", "trmap"
     doc.install "LICENSE", "README.md"
+    prefix.install "examples"
   end
 
   test do
     assert_match "Usage", shell_output("#{bin}/gffcompare --help 2>&1")
     assert_match "Usage", shell_output("#{bin}/trmap --help 2>&1")
+    cp_r prefix/"examples", testpath
+    system "#{bin}/gffcompare", "-r", "#{testpath}/examples/annotation.gff",
+                                      "#{testpath}/examples/transcripts.gtf"
+    assert_predicate testpath/"examples/gffcmp.transcripts.gtf.tmap", :exist?
   end
 end
