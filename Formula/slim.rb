@@ -8,8 +8,9 @@ class Slim < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "f33ea710cb58c11264d0dd99598076466d5b3933c631de0a59be0650e1046f8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "03a4ae3d6ab3dd077833d196938cb9f1fe0258b102f2c3f800b7f326993ef0d0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "a8edf1645d3aa3644e74926430ec39c6f448dea279e1d6c2791f5b50f4fc83e5"
+    sha256 cellar: :any_skip_relocation, ventura:      "bbf271857faa3076dfda21a3d8246f7efad52dbfbe3b280f21cbf4e5f543ac22"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "672addea0a8f042e74793056056150aad2b6525a010681fdbfd97e26d5de5953"
   end
 
   depends_on "cmake" => :build
