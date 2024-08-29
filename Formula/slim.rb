@@ -2,8 +2,8 @@ class Slim < Formula
   # cite Haller_2019: "https://doi.org/10.1093/molbev/msy228"
   desc "Forward simulator for population genetics and evolutionary biology"
   homepage "https://messerlab.org/slim/"
-  url "https://github.com/MesserLab/SLiM/archive/refs/tags/v3.5.tar.gz"
-  sha256 "7f6f9b33416d0f5a6ab4e004f8f2cb5251b57ae270da7f4b3054b2135765a376"
+  url "https://github.com/MesserLab/SLiM/archive/refs/tags/v4.2.2.tar.gz"
+  sha256 "bb63b73e878fb6c15a49f33c3bf1a67047ebb6a11e3d17f930780461dd450400"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -15,11 +15,9 @@ class Slim < Formula
   depends_on "cmake" => :build
 
   def install
-    mkdir "SLiM_build" do
-      system "cmake", "-DCMAKE_BUILD_TYPE=Release", "..", *std_cmake_args
-      system "make"
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
