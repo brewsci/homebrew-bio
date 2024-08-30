@@ -6,6 +6,14 @@ class Gffread < Formula
   license "MIT"
   head "https://github.com/gpertea/gffread.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "67780198e1d8fd8ade0b651d47e7fe80160bb48dc8f52410a4d8f9d26d7c66e3"
+    sha256 cellar: :any_skip_relocation, ventura:      "8436ff2e3f16882a7bd443ea12c099a58a443e7e8711038d6b7f2a6c9608bd75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "204ac3950029564edbef84a248aadcb4fb56dd43716fe0c398677f2444c253ef"
+  end
+
   def install
     system "make", "release", "CXX=#{ENV.cxx}", "LINKER=#{ENV.cxx}"
     bin.install "gffread"
