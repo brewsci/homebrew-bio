@@ -2,8 +2,8 @@ class Falco < Formula
   # cite deSena_2021: "https://doi.org/10.12688/f1000research.21142.2"
   desc "C++ implementation of FastQC for quality control of sequencing data"
   homepage "https://github.com/smithlabcode/falco"
-  url "https://github.com/smithlabcode/falco/releases/download/v1.2.1/falco-1.2.1.tar.gz"
-  sha256 "33de8aafac45c7aea055ed7ab837d0a39d12dcf782816cea8a6c648acb911057"
+  url "https://github.com/smithlabcode/falco/releases/download/v1.2.3/falco-1.2.3.tar.gz"
+  sha256 "b2d4da736efecfa669ad555fbb69862bc7fb57dcf32efcb6c151c47f98b32b8a"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -15,10 +15,7 @@ class Falco < Formula
   uses_from_macos "zlib"
 
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make", "all"
     system "make", "install"
   end
