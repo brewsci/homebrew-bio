@@ -97,7 +97,7 @@ class Eastr < Formula
   end
 
   test do
-    assert_match "Usage", shell_output("#{bin}/eastr --help")
+    assert_match "usage", shell_output("#{bin}/eastr --help")
   end
 end
 __END__
