@@ -78,6 +78,11 @@ class Eastr < Formula
       system "make"
       bin.install "vacuum", "junction_extractor"
     end
+    # pkg_resources is not available in Python 3.12
+    inreplace "EASTR/utils.py" do |s|
+      s.gsub! "import pkg_resources", "import importlib.resources as resources"
+      s.gsub! "pkg_resources.resource_filename", "resources.files"
+    end
     virtualenv_install_with_resources
   end
 
