@@ -9,6 +9,8 @@ class Oarfish < Formula
   head "https://github.com/COMBINE-lab/oarfish.git", branch: "main"
 
   depends_on "rust" => :build
+  uses_from_macos "xz"
+  uses_from_macos "zlib"
 
   def install
     system "cargo", "install", *std_cargo_args
