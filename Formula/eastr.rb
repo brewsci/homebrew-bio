@@ -10,6 +10,13 @@ class Eastr < Formula
   license "MIT"
   head "https://github.com/ishinder/EASTR.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any,                 arm64_sonoma: "194dde41aa46e6bcdff27cf88baa680e10db184838838998dfbc6bc359dbf4d6"
+    sha256 cellar: :any,                 ventura:      "3bf95d99e07930e471e67faf10b5bf3f01254550174b9fffc77ff41ba3709656"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "384a0efd0d7f179580ea8a8443a4f16f1f06ea38dc9e26d84d961f219b2f2f0f"
+  end
+
   depends_on "cmake" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
