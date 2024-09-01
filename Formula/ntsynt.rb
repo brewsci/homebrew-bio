@@ -14,16 +14,26 @@ class Ntsynt < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "rust" => :build
+  depends_on "pigz" => :test
+  depends_on "bedtools"
   depends_on "btllib"
   depends_on "cbc"
   depends_on "certifi"
   depends_on "cython"
   depends_on "htslib"
+  depends_on "libdeflate"
   depends_on "libyaml"
   depends_on "numpy"
+  depends_on "openssl@3"
   depends_on "python@3.12"
   depends_on "samtools"
   depends_on "seqtk"
+  depends_on "xz"
+
+  uses_from_macos "bzip2"
+  uses_from_macos "curl"
+  uses_from_macos "libxml2"
+  uses_from_macos "zlib"
 
   on_macos do
     depends_on "libomp"
@@ -316,14 +326,37 @@ class Ntsynt < Formula
   def install
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resources
-    # Remove the bundled CBC solver
+    # Remove the bundled CBC solver (Ref: homebrew-core/Formula/snakemake.rb)
     rm_r(venv.site_packages/"pulp/solverdir/cbc")
-    # Use venv's python3
-    inreplace "bin/ntsynt_run_pipeline.smk", "python3 {params.path_to_script}",
-                                             "#{venv.root}/bin/python3 {params.path_to_script}"
+    # Use venv's python3 and snakemake
+    inreplace "bin/ntsynt_run_pipeline.smk",
+              "python3 {params.path_to_script}",
+              "#{venv.root}/bin/python3 {params.path_to_script}"
+    inreplace "bin/ntSynt",
+              "snakemake -s", "#{venv.root}/bin/snakemake -s"
     inreplace "bin/meson.build", "install_dir : 'bin'", "install_dir : 'libexec'"
     inreplace "scripts/install-ntjoin", "${MESON_INSTALL_PREFIX}/bin",
                                         "${MESON_INSTALL_PREFIX}/libexec"
+    # pkg_resources is deprecated in Python 3.12
+    inreplace libexec/"lib/python3.12/site-packages/wrapt/importer.py" do |s|
+      s.gsub! "import pkg_resources",
+              "group_entry_points = importlib.metadata.entry_points().get(group, [])"
+      s.gsub! "pkg_resources.iter_entry_points(group=group)",
+              "group_entry_points"
+    end
+    inreplace libexec/"lib/python3.12/site-packages/ncls/__init__.py" do |s|
+      s.gsub! "import pkg_resources",
+              "import importlib.metadata"
+      s.gsub! "pkg_resources.get_distribution(\"ncls\").version",
+              "importlib.metadata.version(\"ncls\")"
+    end
+    inreplace libexec/"lib/python3.12/site-packages/stopit/__init__.py" do |s|
+      s.gsub! "import pkg_resources",
+              "import importlib.metadata"
+      s.gsub! "pkg_resources.get_distribution(__name__).version",
+              "importlib.metadata.version(__name__)"
+    end
+
     system "meson", "setup", "build", "--prefix", prefix, "--bindir", libexec
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
