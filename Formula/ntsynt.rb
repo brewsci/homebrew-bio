@@ -10,6 +10,13 @@ class Ntsynt < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/bcgsc/ntSynt.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any,                 arm64_sonoma: "3d33550be2b8c7285daace3d11c15ce36017484848d1c01c91bc5fae2c5af51c"
+    sha256 cellar: :any,                 ventura:      "502dc7cedad7c31045435975c34046f4a7b269329b071804a19a598c170d0bfd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2df7654b98427724b552f43eaaf83dc800e4c6e0454849d43715039811ed1ee3"
+  end
+
   depends_on "cmake" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
