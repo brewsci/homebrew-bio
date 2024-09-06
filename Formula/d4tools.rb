@@ -7,6 +7,13 @@ class D4tools < Formula
   license "MIT"
   head "https://github.com/38/d4-format.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any,                 arm64_sonoma: "978cb404061b2a7d8c9faede802ae431c18dc66f4b15233dcad12fcd1a121553"
+    sha256 cellar: :any,                 ventura:      "0f9c810503ff45c392a3877422a8371eea45788ba5024db52f00b5be3e9afddd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "79bf2718735b308a8d15511a2ff85c5e21cf6a29a173d69ee631eb533ebb83a5"
+  end
+
   depends_on "rust" => :build
   depends_on "rustup"
 
