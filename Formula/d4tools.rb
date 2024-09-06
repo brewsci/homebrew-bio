@@ -17,6 +17,7 @@ class D4tools < Formula
     cd "d4binding" do
       inreplace "install.sh", "PREFIX=/opt/local", "PREFIX=#{prefix}"
       system "./install.sh"
+      rm "#{lib}/libd4binding.d"
     end
   end
 
