@@ -27,6 +27,7 @@ class Coot < Formula
   depends_on "boost"
   depends_on "boost-python3"
   depends_on "brewsci/bio/clipper4coot"
+  depends_on "brewsci/bio/gemmi"
   depends_on "brewsci/bio/libccp4"
   depends_on "brewsci/bio/mmdb2"
   depends_on "brewsci/bio/raster3d"
