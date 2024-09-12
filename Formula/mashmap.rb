@@ -5,6 +5,13 @@ class Mashmap < Formula
   sha256 "7719dd6b3c25e650e16218252eaae7dbf424a10890d717ec3ad0920b102fd05a"
   license :cannot_represent
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any,                 arm64_sonoma: "e5ef6543486bd96e79f5ffab35c16b6e924a479f39963a2897ba45678fbd4c59"
+    sha256 cellar: :any,                 ventura:      "96fc14fd16eb49a482cbf9b486240e7bc2cead242247763326e1dd9cbe7d2715"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8b6ad74d8d7704e6ca0d2fd8c6b9e219e1f84be34d657d8e7dab52a81d345a58"
+  end
+
   depends_on "cmake" => :build
   depends_on "gsl"
   depends_on "htslib"
