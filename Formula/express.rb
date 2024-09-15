@@ -24,7 +24,6 @@ class Express < Formula
   uses_from_macos "zlib"
 
   def install
-    # require C++17 for absl and protobuf
     inreplace "CMakeLists.txt", "set(CMAKE_CXX_STANDARD 11)", "set(CMAKE_CXX_STANDARD 17)"
     # use dynamic linking for protobuf
     if OS.mac?
