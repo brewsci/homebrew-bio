@@ -13,7 +13,7 @@ class HarvestTools < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any,                 arm64_sonoma: "e6f8f808f8b93802a19217a82e925ea6681e5e63fb6752231ea2cdf7ec7ad071"
     sha256 cellar: :any,                 ventura:      "040638c8058b989e5b6530acfabcb3c24cfe79aff3eaf4efcc136efc9f612c41"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "6b94f93cfd7b288f0088477e75129e3848e8eaeb9dff3dfe942764a73c61d9fe"
