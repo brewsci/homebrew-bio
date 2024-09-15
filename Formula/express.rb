@@ -24,6 +24,7 @@ class Express < Formula
   uses_from_macos "zlib"
 
   def install
+    # use C++17
     inreplace "CMakeLists.txt", "set(CMAKE_CXX_STANDARD 11)", "set(CMAKE_CXX_STANDARD 17)"
     # use dynamic linking for protobuf
     if OS.mac?
