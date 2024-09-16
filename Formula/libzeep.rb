@@ -8,9 +8,9 @@ class Libzeep < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "7f4f625f4ae81531e00cd1db07dd8142e6615abee831cf7d6e08f71c8972790f"
-    sha256 cellar: :any_skip_relocation, ventura:      "9d08e2b8b8d82c9f1aa9e8a00ed79f831797e17fa0f2a18b14f507754c6b5bdb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7f841271c5bf46671abcf3dde898b71a80772d1a6df6b22048de592f22c533a1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "0521653f916c7f3e6c2fdc76bfb9d0969d6ea5f3541851e063b01fa28fc5e472"
+    sha256 cellar: :any_skip_relocation, ventura:      "2434fd5c12771f11ecf17ec0ef102dd72f2d4d62c273df515a8cef33290a581a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9cc95fef2bd1bc1249341dc292eb4aeaaa9443aacc6353b47765b5a6a20e7883"
   end
 
   depends_on "cmake" => :build
