@@ -1,8 +1,8 @@
 class Libcifpp < Formula
   desc "Library containing code to manipulate mmCIF and PDB files"
   homepage "https://pdb-redo.github.io/libcifpp/"
-  url "https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v7.0.4.tar.gz"
-  sha256 "324eda2f6874df32671cd984c7249bfae025ca3fe1bfd875cbef35b046408b88"
+  url "https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v7.0.5.tar.gz"
+  sha256 "5de29b28e422c27464f346dc2dd238e514b06dd588590af7ec4139f03817f5a0"
   license "BSD-2-Clause"
   head "https://github.com/PDB-REDO/libcifpp.git", branch: "trunk"
 
