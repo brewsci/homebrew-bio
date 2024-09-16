@@ -17,7 +17,7 @@ class Alfred < Formula
   def install
     system "make", "all"
     system "make", "install", "prefix=#{prefix}"
-    prefix.install ["example", "maps", "scripts", "gtf", "motif"]
+    prefix.install %w["example" "maps" "scripts" "gtf" "motif"]
   end
 
   test do
