@@ -9,8 +9,9 @@ class Delly < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, catalina:     "cef13a263a84ec23a8708f909345c1cdbfa000135d9c21dc0a00b45d91f1aed6"
-    sha256 cellar: :any, x86_64_linux: "9453aaa771a707a430ac9f82a41ef086df4572b55244fa1a0a9d2471c6db52b5"
+    sha256 cellar: :any,                 arm64_sonoma: "d33c86732db4f26512c8dd3c6349a9b886b94e3fa1a2c6dab573dab551b17107"
+    sha256 cellar: :any,                 ventura:      "09422a9ca5568985086099ce7aad406c437f1fce52a7ebe5599ec05cfe6edb89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "09ccc3cedffb49cbdcb8650d4dcc4573ef1c68923b3861201f40cb8ed1cd6a6e"
   end
 
   depends_on "autoconf" => :build
