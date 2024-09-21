@@ -7,6 +7,13 @@ class Libcuemol2 < Formula
   license :cannot_represent
   head "https://github.com/CueMol/cuemol2.git", branch: "develop"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any,                 arm64_sonoma: "f4eeb3c1dfb0dd3500c2f41262d77786e05299ba8e450be30153a1f5fa291d6a"
+    sha256 cellar: :any,                 ventura:      "187173da23a40ece3bcbe7c8bb9d0bbf31a02861393900272ed94195e19492d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e2a81239d0aa96057a1978c05cb9a0d8cc0b499b2a5820ebfef279e56bc589e2"
+  end
+
   depends_on "bison" => :build # needs bison >= 3.7.4
   depends_on "cmake" => :build
   depends_on "boost"
