@@ -62,6 +62,6 @@ class Libcuemol2 < Formula
   end
 
   test do
-    system "false"
+    assert_match "Usage: blendpng", shell_output("#{bin}/blendpng --help")
   end
 end
