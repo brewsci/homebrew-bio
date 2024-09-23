@@ -1,10 +1,10 @@
 class Percolator < Formula
   # cite K_ll_2007: "https://doi.org/10.1038/nmeth1113"
   desc "Semi-supervised learning for peptide identification from shotgun proteomics data"
-  homepage "http://percolator.ms"
-  url "https://github.com/percolator/percolator/archive/refs/tags/rel-3-05.tar.gz"
-  version "3.05"
-  sha256 "5b746bdc0119a40f96bc090e02e27670f91eeb341736911750b170da7e5c06bb"
+  homepage "https://github.com/percolator/percolator"
+  url "https://github.com/percolator/percolator/archive/refs/tags/rel-3-07-01.tar.gz"
+  version "3.7.1"
+  sha256 "f1c9833063cb4e99c51a632efc3f80c6b8f48a43fd440ea3eb0968af5c84b97a"
   license all_of: ["Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "MIT"]
 
   bottle do
@@ -18,10 +18,9 @@ class Percolator < Formula
 
   def install
     inreplace "CPack.txt", "set(CMAKE_INSTALL_PREFIX /usr/local)", ""
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   def caveats
