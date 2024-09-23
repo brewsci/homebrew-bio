@@ -3,10 +3,9 @@ class Ntedit < Formula
   desc "Scalable genome assembly polishing"
   homepage "https://github.com/bcgsc/ntEdit"
   url "https://github.com/bcgsc/ntEdit.git",
-      tag:      "v2.0.2",
-      revision: "9496cd4d9dd36bd0ea602c02f4a5f64858caa6ba"
+      tag:      "v2.0.3",
+      revision: "d004dbc6166f044d7d576dac3f8f7c81c180e008"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/bcgsc/ntEdit.git"
 
   bottle do
