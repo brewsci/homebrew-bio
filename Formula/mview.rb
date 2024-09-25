@@ -8,15 +8,14 @@ class Mview < Formula
   depends_on "perl"
 
   def install
-
     # To make MVIEW_HOME and MVIEW_LIB in mview script work
     inreplace "bin/mview" do |s|
       s.gsub!(
-        %q($MVIEW_HOME = "/home/brown/HOME/work/MView/dev";),
+        '$MVIEW_HOME = "/home/brown/HOME/work/MView/dev";',
         %Q($MVIEW_HOME = "#{prefix}";),
       )
       s.gsub!(
-        %q($MVIEW_LIB = "$MVIEW_HOME/lib";),
+        '$MVIEW_LIB = "$MVIEW_HOME/lib";',
         %Q($MVIEW_LIB = "$MVIEW_HOME/lib/mview#{version}";),
       )
     end
