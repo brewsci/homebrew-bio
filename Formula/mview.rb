@@ -30,7 +30,13 @@ class Mview < Formula
   end
 
   test do
-    system "wget", "https://rest.uniprot.org/uniprotkb/Q16602.fasta"
-    system "#{bin}/mview", "-in", "fasta", "Q16602.fasta", "-width", "77"
+    resource "homebrew-testdata" do
+      url "https://rest.uniprot.org/uniprotkb/Q16602.fasta"
+      sha256 "2505efe05f4b908be942c416b0a5f3dc5e983219258280513b8ac1333d755acf"
+    end
+
+    resource("homebrew-testdata").stage testpath
+    output = shell_output("#{bin}/mview -in fasta Q16602.fasta -width 77")
+    assert_match "MEKKCTLYFLVLLPFFMILVTAELEE", output
   end
 end
