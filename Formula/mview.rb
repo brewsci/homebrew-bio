@@ -1,5 +1,5 @@
 class Mview < Formula
-  desc "Extracts and reformats the results of sequence database searches or multiple alignments"
+  desc "Extracts and reformats the results of sequence searches or alignments"
   homepage "https://desmid.github.io/mview"
   url "https://github.com/desmid/mview/archive/refs/tags/v1.68.tar.gz"
   sha256 "4c3c75ba7f3cead82e641a83f3ad43b38169fef16aa8b9c8414e35f1eb1081c7"
