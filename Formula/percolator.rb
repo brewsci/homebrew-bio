@@ -1,16 +1,17 @@
 class Percolator < Formula
   # cite K_ll_2007: "https://doi.org/10.1038/nmeth1113"
   desc "Semi-supervised learning for peptide identification from shotgun proteomics data"
-  homepage "http://percolator.ms"
-  url "https://github.com/percolator/percolator/archive/refs/tags/rel-3-05.tar.gz"
-  version "3.05"
-  sha256 "5b746bdc0119a40f96bc090e02e27670f91eeb341736911750b170da7e5c06bb"
+  homepage "https://github.com/percolator/percolator"
+  url "https://github.com/percolator/percolator/archive/refs/tags/rel-3-07-01.tar.gz"
+  version "3.7.1"
+  sha256 "f1c9833063cb4e99c51a632efc3f80c6b8f48a43fd440ea3eb0968af5c84b97a"
   license all_of: ["Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "MIT"]
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 catalina:     "9946c885c0596ffdb1ddcd73ec4f9e93e780c87ab1a891541753f5cae22f3d09"
-    sha256 x86_64_linux: "4b1a53dd1bed88db9b43b9ecf83cd708aa7704b7a4e77b7ec0a10d76c7f59d2a"
+    sha256                               arm64_sonoma: "aaf57f007b6c9ec4a2e66a72c6ccae893b31472d3e8df1cba7c7bea140fbc3be"
+    sha256                               ventura:      "1cf29b9f4524b895998a2c938eba562799e45cc9362c02258bb8b6bb5f31d827"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7bbecafa85ca86efdcd5c634ef47a86fa56f00fa1be505061bb3f5642a0b210e"
   end
 
   depends_on "boost" => :build
@@ -18,10 +19,9 @@ class Percolator < Formula
 
   def install
     inreplace "CPack.txt", "set(CMAKE_INSTALL_PREFIX /usr/local)", ""
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   def caveats

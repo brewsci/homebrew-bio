@@ -3,17 +3,16 @@ class Ntedit < Formula
   desc "Scalable genome assembly polishing"
   homepage "https://github.com/bcgsc/ntEdit"
   url "https://github.com/bcgsc/ntEdit.git",
-      tag:      "v2.0.2",
-      revision: "9496cd4d9dd36bd0ea602c02f4a5f64858caa6ba"
+      tag:      "v2.0.3",
+      revision: "d004dbc6166f044d7d576dac3f8f7c81c180e008"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/bcgsc/ntEdit.git"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sonoma: "54771a29bbe24b12ce9eb2777cd998951b4a266b5148fa84e48291f81f82bd83"
-    sha256 cellar: :any,                 ventura:      "29f208b0d952247887a750103501ba434f046639f7e5eacfeb42a66360653d7f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ace420c2e043c8aa2c7c296b194ff6b23519f91e684cd4df4871440d6fb010c5"
+    sha256 cellar: :any,                 arm64_sonoma: "cf201c8f86565a89d5a5b732ed049c482d9e275492a7d60d1bbe8ef0c25ccc40"
+    sha256 cellar: :any,                 ventura:      "54cd9d824f98847b6398df3998fa88f4ed4c65edace82bd58c25bf1d2c794b7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d5f9b84d888fd3df1caad6cd3921d3ed05ce0cfcead3a0578d23b773d06aed39"
   end
 
   depends_on "autoconf" => :build

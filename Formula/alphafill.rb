@@ -48,6 +48,7 @@ class Alphafill < Formula
       pdb-fasta=#{testpath}/pdb-redo.fa
       ligands=#{share}/alphafill/af-ligands.cif
     EOS
+    ENV["LIBCIFPP_DATA_DIR"] = "#{Formula["brewsci/bio/libcifpp"].opt_share}/libcifpp"
     system "#{bin}/alphafill", "create-index"
     assert_match ">pdb-entity|2CBS|1|R13\nPNFSGNW", File.read("#{testpath}/pdb-redo.fa")
     system "#{bin}/alphafill", "process", "--config", "#{testpath}/alphafill.conf",
