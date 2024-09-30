@@ -7,6 +7,13 @@ class Metabuli < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/steineggerlab/Metabuli.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "75e2588b17eb85a8db7ab1b59c2aab66c156a8912644b98dbc648a03340f345c"
+    sha256 cellar: :any_skip_relocation, ventura:      "1b110d073d1cccc55b67fc70024bf9e122080e06267c079bd41cd000cd4347c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "93348547d2a71880d608e6f5d9ed0c57f31bf1baf7a056d5ae4cc5d517a65d97"
+  end
+
   depends_on "cmake" => :build
 
   uses_from_macos "bzip2"
