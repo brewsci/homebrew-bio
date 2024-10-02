@@ -1,5 +1,5 @@
 class Metabuli < Formula
-  # cite van Kim_2024: "https://doi.org/10.1038/s41592-024-02273-y""
+  # cite Kim_2024: "https://doi.org/10.1038/s41592-024-02273-y""
   desc "Specific and sensitive metagenomic classification"
   homepage "https://github.com/steineggerlab/Metabuli"
   url "https://github.com/steineggerlab/Metabuli/archive/refs/tags/1.0.8.tar.gz"
