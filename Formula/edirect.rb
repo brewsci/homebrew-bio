@@ -7,9 +7,9 @@ class Edirect < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 arm64_sonoma: "a7ce182a7746c9a8629ec00d95018e99a4f245f4e747d3f1397cf4f87d642638"
-    sha256 ventura:      "2a11b0689446e7df053ce49f895aaccfa50871388fe93a0990b0fbeecb5c32fd"
-    sha256 x86_64_linux: "012b5a7fc4fefab3025437b28e6ee08b0a9e6554242bf01a4ba2c189558c1b6c"
+    sha256 arm64_sonoma: "515b061df514fa20a13eb2965998f33c6efd85484d3a20ece4fc0f5e9e6da0a9"
+    sha256 ventura:      "c3c27a1d549884bb5d78f605f2a893e0c9657dc13a9deec114617005599f0695"
+    sha256 x86_64_linux: "836b1c7a5dfe5ca5e7d0d2bf90ae83cce92c8af09fd3613a3e1bcae66a52692b"
   end
 
   depends_on "cpanminus" => :build
