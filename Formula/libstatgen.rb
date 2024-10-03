@@ -5,6 +5,13 @@ class Libstatgen < Formula
   sha256 "075dcd891409c48d76c0c66186c0cc479bc3cd50bba093e7f318e1d1d19961ff"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "233ed2d61e2848a3f7107b023726d31bc04acadbfdf8ed8c4ac5e028f6544acf"
+    sha256 cellar: :any_skip_relocation, ventura:      "c37d8e369f6fbfb56e1ac300dd40c1243fd26dec20d7afa4a4d46ce9ef6f5019"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ccac0a756beeea2bbce670411a46e4fb9a5a20f690636dd5099638bc9742032f"
+  end
+
   depends_on "openssl@3"
 
   uses_from_macos "zlib"
