@@ -1,9 +1,9 @@
 class Edirect < Formula
   desc "Access NCBI databases via the command-line"
   homepage "https://www.ncbi.nlm.nih.gov/books/NBK179288/"
-  url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/22.4.20240812/edirect-22.4.20240812.tar.gz"
-  version "22.4"
-  sha256 "3320e0b0859b85ecd21248323c792d671bfed8c9c60b1f414a3e0e3c648d8681"
+  url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/22.7.20240930/edirect-22.7.20240930.tar.gz"
+  version "22.7"
+  sha256 "e291bb04f3e11dd72d30120238397d3dfeb5e0e0fba0f56e1bc0838b0457d964"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
