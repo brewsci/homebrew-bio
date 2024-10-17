@@ -6,13 +6,6 @@ class Libzeep < Formula
   license "BSL-1.0"
   head "https://github.com/mhekkel/libzeep.git", branch: "trunk"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "0521653f916c7f3e6c2fdc76bfb9d0969d6ea5f3541851e063b01fa28fc5e472"
-    sha256 cellar: :any_skip_relocation, ventura:      "2434fd5c12771f11ecf17ec0ef102dd72f2d4d62c273df515a8cef33290a581a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9cc95fef2bd1bc1249341dc292eb4aeaaa9443aacc6353b47765b5a6a20e7883"
-  end
-
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "howard-hinnant-date"
