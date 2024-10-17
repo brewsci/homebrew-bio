@@ -6,6 +6,15 @@ class Phylonium < Formula
   sha256 "87fc0828c4c96dc9b84e0bac640e7e1aaba749a9f218e1d4c4fbaa02d80412a0"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "d72be69e38594126add296fbd4f701e28f3dea8221217961c306a8039b2fdd69"
+    sha256 cellar: :any,                 arm64_sonoma:  "b29c064be8fad29f4f34b48fcc91a9d6ebe72caa38d5fdce9d8ab80399e8f12a"
+    sha256 cellar: :any,                 ventura:       "59043ba635f659976719233307fad34fa74f687268fdcddc605bd6f344687ee7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16f8f434f2d683569f13c2a1e2d33250fb50006557903d1990c47c5dc2ba1f79"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
