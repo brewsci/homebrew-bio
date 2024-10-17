@@ -7,14 +7,6 @@ class HhSuite < Formula
   license "GPL-3.0-or-later"
   revision 4
   head "https://github.com/soedinglab/hh-suite.git"
-
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sonoma: "70322a1ad44f06d9cfc17afc5f09012aec5ea0869f7ca4ab24bfcd027af42890"
-    sha256 cellar: :any,                 ventura:      "70fa496100fa3affcdf76f111c22ac6f1799c78d0fb71f48491386cd9d3167c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "73897f353c9d6600ffbfd200ca3211bbed422d6cab142e9ee80bbe01903c7bae"
-  end
-
   depends_on "cmake" => :build
   depends_on "libomp"
   depends_on "open-mpi"
