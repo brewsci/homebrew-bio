@@ -8,11 +8,6 @@ class Foldseek < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/steineggerlab/foldseek.git", branch: "master"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "401fe7d71726287be0d95e173bb4b22cd2275b0544b81dc7037da3791627a636"
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "rust" => :build
 
