@@ -20,7 +20,7 @@ class Apbs < Formula
   depends_on "cmake" => :build
   depends_on "metis"
   depends_on "openblas"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "suite-sparse"
   depends_on "superlu"
 
@@ -68,7 +68,7 @@ class Apbs < Formula
       -DENABLE_OPENMP=OFF
       -DAPBS_LIBS=mc;maloc
       -DENABLE_PYTHON=OFF
-      -DPYTHON_VERSION=3.12
+      -DPYTHON_VERSION=3.13
       -DCMAKE_MODULE_PATH=#{fetk_cmake_prefix}
       -DCMAKE_C_FLAGS=#{cflags.join(" ")}
       -DCMAKE_EXE_LINKER_FLAGS=-L#{prefix}/fetk/lib
