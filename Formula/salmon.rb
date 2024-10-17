@@ -7,6 +7,15 @@ class Salmon < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/COMBINE-lab/salmon.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "7848bf107e84581e266a23668b9a8abb67d620101f8a37e352ccbe9e8cf5c6a7"
+    sha256 cellar: :any,                 arm64_sonoma:  "0571a9cae7fe97a04669dd76c78e7222cf6214caa91b426f4e1c2e8cddbb4040"
+    sha256 cellar: :any,                 ventura:       "2de62df335d4bdcb9bb3fd3946960bf248c491e810f83f51ed52f35a821cb451"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8bfb7680361ebe1832dedb87a31dd5f23fc262400c01922f5d986e6e9aa3a006"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "boost" => :build
