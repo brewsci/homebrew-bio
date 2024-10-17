@@ -33,6 +33,7 @@ class Coot < Formula
   depends_on "brewsci/bio/raster3d"
   depends_on "brewsci/bio/ssm"
   depends_on "cairo"
+  depends_on "coordgen"
   depends_on "dwarfutils"
   depends_on "freetype"
   depends_on "gdk-pixbuf"
@@ -50,7 +51,7 @@ class Coot < Formula
   depends_on "pango"
   depends_on "py3cairo"
   depends_on "pygobject3"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "rdkit"
   depends_on "sqlite"
 
@@ -73,7 +74,7 @@ class Coot < Formula
   end
 
   def python3
-    "python3.12"
+    "python3.13"
   end
 
   def install
@@ -114,6 +115,12 @@ class Coot < Formula
     ]
 
     ENV.append_to_cflags "-fPIC" if OS.linux?
+    # Use libcoordgen instead of RDKitcoordgen
+    inreplace "configure", "RDKitcoordgen", "coordgen"
+    # patch
+    inreplace "src/key-bindings.cc",
+              "PyObject *result_py = PyEval_CallObject(function_py, arg_list);",
+              "PyObject *result_py = PyObject_Call(function_py, arg_list, nullptr);"
     system "./configure", *args
     system "make"
     ENV.deparallelize { system "make", "install" }
