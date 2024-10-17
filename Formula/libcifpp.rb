@@ -6,6 +6,15 @@ class Libcifpp < Formula
   license "BSD-2-Clause"
   head "https://github.com/PDB-REDO/libcifpp.git", branch: "trunk"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 1
+    sha256 arm64_sequoia: "585b63ef61340a385ff448a8454ba4da3ef6d48f474f0a5ef77a30af86e1cf8a"
+    sha256 arm64_sonoma:  "7fdec8dc7803235bb92e0bffb4e6f37e8ca2f47bffd39936057fb5d4c4928e2a"
+    sha256 ventura:       "babc751dfed5dc44f38437c762c701bcfcb2ef206e977ef6826b1e3df375cd0a"
+    sha256 x86_64_linux:  "04763e420660a3e582a1115da016d4fe4be75e3de8c1321f1b7900939b396205"
+  end
+
   depends_on "cmake" => :build
   depends_on "eigen" => :build
   depends_on "boost"
