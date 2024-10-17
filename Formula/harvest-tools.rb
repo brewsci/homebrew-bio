@@ -11,14 +11,6 @@ class HarvestTools < Formula
     strategy :github_latest
   end
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sonoma: "893e2f9008d89e15c76c9bd1eae1297180eecd79dc47ccb3cbc69ddb665d9778"
-    sha256 cellar: :any,                 ventura:      "452c907f2877afd61dad85f51a4635229efcfe4de98a3dd54cca4c3978360168"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "262e4984ee9727c1c5d17d693275b0cf922900977c5ee26c19a7326ca112c697"
-  end
-
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
