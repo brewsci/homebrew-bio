@@ -16,11 +16,6 @@ class Gemmi < Formula
 
   uses_from_macos "zlib"
 
-  resource "homebrew-testdata" do
-    url "https://raw.githubusercontent.com/project-gemmi/gemmi/master/tests/5i55.cif"
-    sha256 "cae937745acc22d1c3bdd21cc6fa3c36a3d9f271494c22e3e3a3ce512c72fb1d"
-  end
-
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
@@ -28,6 +23,10 @@ class Gemmi < Formula
   end
 
   test do
+    resource "homebrew-testdata" do
+      url "https://raw.githubusercontent.com/project-gemmi/gemmi/master/tests/5i55.cif"
+      sha256 "cae937745acc22d1c3bdd21cc6fa3c36a3d9f271494c22e3e3a3ce512c72fb1d"
+    end
     resource("homebrew-testdata").stage testpath/"example"
     assert_match "_atom_site.B_iso_or_equiv\t1\t218", shell_output("#{bin}/gemmi tags example/5i55.cif")
   end
