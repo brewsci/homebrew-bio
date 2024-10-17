@@ -10,10 +10,11 @@ class Express < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma: "ac9d63d80441417211f2d996e03b24ea35074847d6a0da72e47490f938b6c609"
-    sha256 cellar: :any,                 ventura:      "8b5be34c488b5f49d90e824f3d08fb09243fe6ada6f4cac50bcea84d9039bb70"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2a4c3d451d42587d89b43135cc87f0a39e32b1b59b517f91360e9e402bdef4bc"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "42ed010fb5426dbef93bc7b2101b38785027cfc6518b75ff16009bccb831fbe8"
+    sha256 cellar: :any,                 arm64_sonoma:  "ed45148ff4b4d54bdfacec7e2cf93836c954f23b8f8637f82782c4a3f27c82e4"
+    sha256 cellar: :any,                 ventura:       "894efc80e310dbbbbe4b92e72dc6e6cc17b04ea64f004adc52be19a3d1feb3cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e761594ec5e1fd11e4c814fa76b364eeb85ec8fae2e8196732004f3eb3cdd0db"
   end
 
   depends_on "bamtools" => :build
