@@ -7,13 +7,6 @@ class Libccp4 < Formula
   revision 2
   head "https://github.com/cctbx/ccp4io.git", branch: "master"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 arm64_sonoma: "36ecf6529774cc6ccee9898c3479da2f05cdb788c64eea6634dd208ad9f47ba4"
-    sha256 ventura:      "887f422cc4ffb2cb469386ebec0c20177c29553a0cafe8d7af74dd594c954016"
-    sha256 x86_64_linux: "c45597f3e540bff35b80e11bb45b5816dd7c779d202b5e6c6e5356111684dc63"
-  end
-
   depends_on "pkg-config" => [:build, :test]
 
   uses_from_macos "m4"
