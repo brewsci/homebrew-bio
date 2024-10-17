@@ -7,6 +7,15 @@ class Stringtie < Formula
   license "MIT"
   head "https://github.com/gpertea/stringtie.git"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "b30f2f061f36ea355f8a579d0ac171304ddf89225c5f198c7c1ed293e2a3ddad"
+    sha256 cellar: :any,                 arm64_sonoma:  "fb42c05cf1812d2320a283b01e530dd285b888bad17dee8aead039ccf08ce5da"
+    sha256 cellar: :any,                 ventura:       "39bf1edf0bb309c1fd5e71be765ba7a140fe7c3c3e7f7d34a27956e43f8064da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c16d903fe021faf8b8ab0ef1a3c9bfa0145986c0093a7fad9482d2de1ad5e69"
+  end
+
   depends_on "htslib"
   depends_on "libdeflate" # for libdeflate
   depends_on "xz" # for liblzma
