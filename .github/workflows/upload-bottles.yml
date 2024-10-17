@@ -6,7 +6,7 @@ on:
 
 jobs:
   upload-bottles:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     env:
       HOMEBREW_FORCE_HOMEBREW_ON_LINUX: 1
       HOMEBREW_GITHUB_PACKAGES_USER: LinuxbrewTestBot
