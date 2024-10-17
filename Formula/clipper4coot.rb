@@ -6,13 +6,6 @@ class Clipper4coot < Formula
   license "LGPL-2.1-only"
   revision 3
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sonoma: "0d57aaf0c4f2a9f6e2748f64feeeebd58325990666a5d7aeb839654175339ecd"
-    sha256 cellar: :any,                 ventura:      "645047561b9703330ea8c39af5d18d590fc795ffd0c72c0e5126b752b60724c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a3087239eaa8340fd47536277f62c176b77d270f012eaf31000b188ac4d877d6"
-  end
-
   depends_on "pkg-config" => [:build, :test]
   depends_on "texinfo" => :build
   depends_on "brewsci/bio/libccp4"
