@@ -11,6 +11,15 @@ class Centrifuge < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "955ef1e942dad58705da3afc2ae956785292e050846154bdbd328ab57f722d1a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7dc697c747bce878b0c7007ea412a119d71786e78c286e74c0a1a061afc7d93"
+    sha256 cellar: :any_skip_relocation, ventura:       "3f1292366364b43bd5d1c935970fe644ea231f501e82133a42643d6d004b630f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8e23e041df68b21337d591e09e87a17b9e774cdfad9d7940976880c7f008691"
+  end
+
   on_macos do
     depends_on "libomp"
   end
