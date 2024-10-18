@@ -6,14 +6,6 @@ class ClustalW < Formula
   sha256 "e052059b87abfd8c9e695c280bfba86a65899138c82abccd5b00478a80f49486"
   license "LGPL-3.0-only"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "0cb61565028df333416695380f206587b94814dbb6d232ac539fc04ba40f85e6"
-    sha256 cellar: :any_skip_relocation, ventura:      "7d2437c7c93c54a41ade8fbd73b2263f228fefe9ec82b8498f21b580f572b58b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b96e6e3ed8d23bb1772c912b5d8767b735cb283f22868a1f28be69823121ebdb"
-  end
-
   def install
     # missing #include <string> - reported to clustalw@ucd.ie Dec 11 2015
     inreplace "src/general/VectorOutOfRange.h",
