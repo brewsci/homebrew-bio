@@ -8,13 +8,6 @@ class Canu < Formula
   sha256 "e4d0c7b82149114f442ccd39e18f7fe2061c63b28d53700ad896e022b73b7404"
   license "GPL-2.0-or-later"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sonoma: "5fe57242514614202be41d3021a48104a6bfac99d003c069cd311a0c7250d1c3"
-    sha256 cellar: :any,                 ventura:      "d603bb0ae2a85c0ba21ba4e720e9f65acc1e9f877f0b51ca49ee1da6dffbc27e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0b489b58c950737cb960394920a90193ff8fb2fe7847e6af8c100730b26e543f"
-  end
-
   depends_on "boost" => :build
   depends_on "gnuplot"
   depends_on "minimap2"
