@@ -6,13 +6,6 @@ class Mosdepth < Formula
   sha256 "9171ea9a6ddaccd0091db5b85fa9e6cb79516bbe005c47ffc8dcfe49c978eb69"
   license "MIT"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sonoma: "af6103cef2557c8713f613f434d5304b6a785fc48dbcb665165a85d2aa7b0099"
-    sha256 cellar: :any,                 ventura:      "2e354b459f5c1052699c78c851feb88f2fddf84cdb2c062e1d1dfe568f7f8329"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "287fef1d12d212f6dc764a358b5f6b9d726be51770b60b5ed51228c93f31fef3"
-  end
-
   depends_on "nim" => :build
   depends_on "brewsci/bio/d4tools"
   depends_on "bwa"
