@@ -7,6 +7,15 @@ class Alphafill < Formula
   license "BSD-2-Clause"
   head "https://github.com/PDB-REDO/alphafill.git", branch: "trunk"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 1
+    sha256 arm64_sequoia: "14a4f1588d63784f115108d8790a582839cbf112be29bf6e9dba479bc34943e8"
+    sha256 arm64_sonoma:  "bd151620e2c2a1d807d8e17f90862e3b30b228d1d6c9ba40c1d22c28ed71c844"
+    sha256 ventura:       "33dced5b45d30fa169dfb3ec8756e722ed307a0eb6911ac99c6fd0307f26e758"
+    sha256 x86_64_linux:  "1173db7569de93c3ce22bb8ef33ebe561bcf7f38ecb75523669c6afe10bf768b"
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "boost"
