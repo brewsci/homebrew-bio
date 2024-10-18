@@ -7,13 +7,6 @@ class Bustools < Formula
   license "BSD-2-Clause"
   head "https://github.com/BUStools/bustools.git", branch: "master"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "b86b4caf9e1f412d524ce564354d3a7492e932624555c44a34fd5ae5c838998c"
-    sha256 cellar: :any_skip_relocation, ventura:      "e01ea0c4d743a64e8f460cc204c7233681c9c1c302d4116d0f745d72d944b2a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "744516aab838192ebefb49baca7110bda35161035dce6158c10a617ac150da18"
-  end
-
   depends_on "cmake" => :build
   uses_from_macos "zlib"
 
