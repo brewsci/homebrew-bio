@@ -8,6 +8,15 @@ class Gatk < Formula
   sha256 "a5d31e34630f355e5a119894f2587fec47049fedff04300f6633c31ef14c3a66"
   license "BSD-3-Clause"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b5c1b2457f688407ae81a12f9596d88a49085bd26e36dfb6e1991dfdbfae100"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b5c1b2457f688407ae81a12f9596d88a49085bd26e36dfb6e1991dfdbfae100"
+    sha256 cellar: :any_skip_relocation, ventura:       "8b5c1b2457f688407ae81a12f9596d88a49085bd26e36dfb6e1991dfdbfae100"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02887f7ee4056e7aa5f62bdf49428d34822dce1fe3b88d0355b39201db202b53"
+  end
+
   depends_on "openjdk@17"
   depends_on "python@3.12"
 
