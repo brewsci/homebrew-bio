@@ -2,8 +2,8 @@ class Delly < Formula
   # cite Rausch_2012: "https://doi.org/10.1093/bioinformatics/bts378"
   desc "Structural variant discovery by paired-end and split-read analysis"
   homepage "https://github.com/dellytools/delly"
-  url "https://github.com/dellytools/delly/archive/refs/tags/v1.2.8.tar.gz"
-  sha256 "f7f67b6c01d3840376a4da89b9157cacea77eda2b078a4aa6502403b3fd8dffd"
+  url "https://github.com/dellytools/delly/archive/refs/tags/v1.3.1.tar.gz"
+  sha256 "914a29c301556746031586c5880e70ad7f31bd7899cc4e47b23ee4d5426761ae"
   license "BSD-3-Clause"
   head "https://github.com/tobiasrausch/delly.git", branch: "master"
 
