@@ -10,9 +10,10 @@ class Ntedit < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sonoma: "cf201c8f86565a89d5a5b732ed049c482d9e275492a7d60d1bbe8ef0c25ccc40"
-    sha256 cellar: :any,                 ventura:      "54cd9d824f98847b6398df3998fa88f4ed4c65edace82bd58c25bf1d2c794b7e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d5f9b84d888fd3df1caad6cd3921d3ed05ce0cfcead3a0578d23b773d06aed39"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma: "3c524f037f9702ca3f99434e5ebcf5701d0e534cab20feb7ed449ebf0555ff89"
+    sha256 cellar: :any,                 ventura:      "84b95036e70746061e363431a2363a7eba4d06ad5c6740866232f6b759ee2f0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "bff0a41afff79b7d1ea6d5dd5e06042617f28176b16d5328cb1da711f716f1f5"
   end
 
   depends_on "autoconf" => :build
