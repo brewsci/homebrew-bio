@@ -25,7 +25,7 @@ class Ntedit < Formula
   depends_on "brewsci/bio/btllib"
   depends_on "brewsci/bio/ntcard"
   depends_on "brewsci/bio/nthits"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "snakemake"
 
   uses_from_macos "perl"
@@ -37,7 +37,7 @@ class Ntedit < Formula
 
   def install
     inreplace "run-ntedit", "#!/usr/bin/env python3",
-                            "#!#{Formula["snakemake"].opt_libexec}/bin/python3.12"
+                            "#!#{Formula["snakemake"].opt_libexec}/bin/python3.13"
     system "meson", "setup", "build", "--prefix", prefix
     cd "build" do
       system "ninja", "install"
