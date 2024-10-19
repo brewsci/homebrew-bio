@@ -9,9 +9,11 @@ class Bustools < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "b86b4caf9e1f412d524ce564354d3a7492e932624555c44a34fd5ae5c838998c"
-    sha256 cellar: :any_skip_relocation, ventura:      "e01ea0c4d743a64e8f460cc204c7233681c9c1c302d4116d0f745d72d944b2a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "744516aab838192ebefb49baca7110bda35161035dce6158c10a617ac150da18"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a565e30ad847ae81c9c8a998193d91f8025c10aaca218b6c7e51c998db9d16d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "09499bb96bb4eea55e28b20720992b6832e9bfc21d202875c7da2ebe5c896afb"
+    sha256 cellar: :any_skip_relocation, ventura:       "e01ea0c4d743a64e8f460cc204c7233681c9c1c302d4116d0f745d72d944b2a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "744516aab838192ebefb49baca7110bda35161035dce6158c10a617ac150da18"
   end
 
   depends_on "cmake" => :build

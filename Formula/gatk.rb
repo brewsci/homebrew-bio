@@ -10,9 +10,11 @@ class Gatk < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "d81a70caac03277e9ba239032a63b1d8858f9e3eb23b227d230f031e2e1142aa"
-    sha256 cellar: :any_skip_relocation, ventura:      "d81a70caac03277e9ba239032a63b1d8858f9e3eb23b227d230f031e2e1142aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "080a08db8745f97d5641082e10345a85029047782ac204e3bfb841c145dc9fb4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b5c1b2457f688407ae81a12f9596d88a49085bd26e36dfb6e1991dfdbfae100"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b5c1b2457f688407ae81a12f9596d88a49085bd26e36dfb6e1991dfdbfae100"
+    sha256 cellar: :any_skip_relocation, ventura:       "8b5c1b2457f688407ae81a12f9596d88a49085bd26e36dfb6e1991dfdbfae100"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02887f7ee4056e7aa5f62bdf49428d34822dce1fe3b88d0355b39201db202b53"
   end
 
   depends_on "openjdk@17"

@@ -8,9 +8,11 @@ class Aragorn < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "6ad40e4ae9cef07f117447d365c4f9ebf504552b9dbe3ecbab776ca5bbd4fd91"
-    sha256 cellar: :any_skip_relocation, ventura:      "30a3be4416f0b39accc6df7bc13fca54a57447c9d4c24d3d21522fb828475858"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c599f7030cb9d41f2737e8dcefabd966e158113ee8808af82cbd99e83e42115b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "981b5d66a239d7886bcbf1158a9379a04f20459061b662afcd14fef8efc4cf30"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "76a0b73235373b1dd5613f9d43ee5b9330a7822680c7dea0cda014800ad896ee"
+    sha256 cellar: :any_skip_relocation, ventura:       "cbefb172f41cc5cb20f07c451520d0e69fc79cfb77d367b01c5fbe1dde1db741"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61be229edded53f01ee879159f950df47875844f0bc1af711008677b46f4f24e"
   end
 
   def install
