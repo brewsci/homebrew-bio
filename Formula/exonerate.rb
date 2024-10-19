@@ -7,13 +7,6 @@ class Exonerate < Formula
   license "GPL-3.0-only"
   revision 1
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sonoma: "48db64ea5771edec8a069e3692759d36d70994330dabe897c26b004056836591"
-    sha256 cellar: :any,                 ventura:      "7a26d42f92d5d8a8e54f25008ef6d22c78c26ea387e05fe8e142f29a2679e648"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0d6a5573b23008395efa8226fefb5ffeafcbc7e486d5f60e73fb8104e3fb1069"
-  end
-
   depends_on "pkg-config" => :build
   depends_on "gettext"
   depends_on "glib"
