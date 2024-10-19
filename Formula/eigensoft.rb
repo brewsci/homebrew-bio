@@ -7,13 +7,6 @@ class Eigensoft < Formula
   sha256 "e3459e8ac0134da369910454854eae5c7b261e8816318ccbd2d371b4c6c35741"
   head "https://github.com/DReichLab/EIG.git", branch: "master"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sonoma: "2ebc44f8db3dc1c0279d0646ceae954736e984df13696a24a9cf1233bff844c3"
-    sha256 cellar: :any,                 ventura:      "bfa35d9a077d1e0b99a14810f4245f048e3e67eeab5f4cf2ed1e4dedf4e21d0b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7c761b63f767054849961aed16d126560ce2465a35bc0666703c99643e0e069e"
-  end
-
   depends_on "gsl"
   depends_on "openblas"
 
