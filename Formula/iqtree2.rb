@@ -4,8 +4,8 @@ class Iqtree2 < Formula
   homepage "http://www.iqtree.org/"
   # pull from git tag to get submodules
   url "https://github.com/iqtree/iqtree2.git",
-    tag:      "v2.3.5",
-    revision: "74da454bbd98d6ecb8cb955975a50de59785fbde"
+    tag:      "v2.3.6",
+    revision: "e7b30628a1ed17f999fcb68cab51cd4dbca5a9f9"
   license "GPL-2.0-only"
   head "https://github.com/iqtree/iqtree2.git", branch: "master"
 
