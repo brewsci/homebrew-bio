@@ -6,6 +6,15 @@ class Falco < Formula
   sha256 "b2d4da736efecfa669ad555fbb69862bc7fb57dcf32efcb6c151c47f98b32b8a"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "adff2b98e797cf89218037f932b325efe70b3c7aad424f0dbfa9af8ff456d858"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a489e4df839aca797e0a6102588e096139ff7275cf4aeeee2553d6aa384c8178"
+    sha256 cellar: :any_skip_relocation, ventura:       "9b1758aa47f6e3317176ce2839c2ff1e1327de7d0e83cf22c9e99a3eba9fa4fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86b5237f075fcdfa134c0c8e0d51621e67ecec0484044dbfb8534197c82b8ac1"
+  end
+
   uses_from_macos "zlib"
 
   def install
