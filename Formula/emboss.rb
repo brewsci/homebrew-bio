@@ -7,6 +7,15 @@ class Emboss < Formula
   license "GPL-2.0-or-later"
   revision 1
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 2
+    sha256 arm64_sequoia: "92bbf3dffca883d34308594f0af039ee73df2006efbff35e4d1c4761fbf7f2af"
+    sha256 arm64_sonoma:  "a404717e834c59b5637a73168d67547308ff594571b64a58847b5b7798e1711c"
+    sha256 ventura:       "2c1ce88c647244c24981ef05435b2fdb2dbb327da07b39b3b90fe60f9bfe2cea"
+    sha256 x86_64_linux:  "cac7c05c0fc882c43868ba3d9dc323af1387d68b55e67d63f4af38f8e5a2add0"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool"    => :build
