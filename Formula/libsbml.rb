@@ -5,6 +5,15 @@ class Libsbml < Formula
   sha256 "02c225d3513e1f5d6e3c0168456f568e67f006eddaab82f09b4bdf0d53d2050e"
   license "LGPL-2.1-only"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "be5e90bfa775b0063438a2e4464905cfe61af14d21da9fc17b972d55851b3055"
+    sha256 cellar: :any,                 arm64_sonoma:  "319dad5a76e564530aeaa4cf90dc0640fb5d966f4cd364f1a3b6e467bed1395f"
+    sha256 cellar: :any,                 ventura:       "fff6ae359b43ac163c8eb888b19546443ceb6175ba5236f63950ef11f20c8403"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9392a9ed0c1207b000ad8b4cda73a8ba671424ff111b94fbcf3b4b4cadc30890"
+  end
+
   depends_on "check" => :build
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
