@@ -7,6 +7,15 @@ class Ema < Formula
   license "MIT"
   head "https://github.com/arshajii/ema.git"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "98fe1be93c7d53d8c1386bd868f43f7ea088695d985c88b519576aae9487a7f9"
+    sha256 cellar: :any,                 arm64_sonoma:  "1bc9028e5d07cfa4b5808e0cc6eb5ab96bf2b4ca1b8ec5390e9bc4a20383d0c8"
+    sha256 cellar: :any,                 ventura:       "86edbafa9e7d41e290bb65cd80cf004debafbf3c3912b1b89f51c175b17238aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "351dc3d553210df7c64d1c93fa7878b8343391ddee1a6cbebd77438d3b1a04fe"
+  end
+
   depends_on "pigz"
   depends_on "sambamba"
   depends_on "samtools"
