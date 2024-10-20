@@ -23,7 +23,7 @@ class Ntsynt < Formula
   depends_on "rust" => :build
   depends_on "pigz" => :test
   depends_on "bedtools"
-  depends_on "btllib"
+  depends_on "brewsci/bio/btllib"
   depends_on "cbc"
   depends_on "certifi"
   depends_on "cython"
@@ -32,7 +32,7 @@ class Ntsynt < Formula
   depends_on "libyaml"
   depends_on "numpy"
   depends_on "openssl@3"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "samtools"
   depends_on "seqtk"
   depends_on "xz"
@@ -327,7 +327,7 @@ class Ntsynt < Formula
   end
 
   def python3
-    which("python3.12")
+    which("python3.13")
   end
 
   def install
@@ -344,20 +344,20 @@ class Ntsynt < Formula
     inreplace "bin/meson.build", "install_dir : 'bin'", "install_dir : 'libexec'"
     inreplace "scripts/install-ntjoin", "${MESON_INSTALL_PREFIX}/bin",
                                         "${MESON_INSTALL_PREFIX}/libexec"
-    # pkg_resources is deprecated in Python 3.12
-    inreplace libexec/"lib/python3.12/site-packages/wrapt/importer.py" do |s|
+    # pkg_resources is deprecated in Python 3.13
+    inreplace libexec/"lib/python3.13/site-packages/wrapt/importer.py" do |s|
       s.gsub! "import pkg_resources",
               "group_entry_points = importlib.metadata.entry_points().get(group, [])"
       s.gsub! "pkg_resources.iter_entry_points(group=group)",
               "group_entry_points"
     end
-    inreplace libexec/"lib/python3.12/site-packages/ncls/__init__.py" do |s|
+    inreplace libexec/"lib/python3.13/site-packages/ncls/__init__.py" do |s|
       s.gsub! "import pkg_resources",
               "import importlib.metadata"
       s.gsub! "pkg_resources.get_distribution(\"ncls\").version",
               "importlib.metadata.version(\"ncls\")"
     end
-    inreplace libexec/"lib/python3.12/site-packages/stopit/__init__.py" do |s|
+    inreplace libexec/"lib/python3.13/site-packages/stopit/__init__.py" do |s|
       s.gsub! "import pkg_resources",
               "import importlib.metadata"
       s.gsub! "pkg_resources.get_distribution(__name__).version",
