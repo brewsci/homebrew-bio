@@ -7,9 +7,11 @@ class Libsbml < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sonoma: "56cb97333f67c0f5602e9a27aae2d722c4f064a85928b79b7e0121200a0cf4c2"
-    sha256 cellar: :any,                 ventura:      "fff6ae359b43ac163c8eb888b19546443ceb6175ba5236f63950ef11f20c8403"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "02835abdca26e8195e5cfb1f0844f4a39d13b78a31e1902dd332cadba0d2cbfd"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "be5e90bfa775b0063438a2e4464905cfe61af14d21da9fc17b972d55851b3055"
+    sha256 cellar: :any,                 arm64_sonoma:  "319dad5a76e564530aeaa4cf90dc0640fb5d966f4cd364f1a3b6e467bed1395f"
+    sha256 cellar: :any,                 ventura:       "fff6ae359b43ac163c8eb888b19546443ceb6175ba5236f63950ef11f20c8403"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9392a9ed0c1207b000ad8b4cda73a8ba671424ff111b94fbcf3b4b4cadc30890"
   end
 
   depends_on "check" => :build

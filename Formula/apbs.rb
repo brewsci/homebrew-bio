@@ -11,16 +11,18 @@ class Apbs < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sonoma: "762ee742c1e2dc4c0b5252ca17a792534f54e3b84cba9baa3334cdbb2c59cac0"
-    sha256 cellar: :any,                 ventura:      "5539078158076c197c1406fd8dac4a82fbe1249c1187309b32ebb5d9de05b679"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "611ddc9f123a0e956baf8de2415f2163456d3d4df77bc97e9da385eaa609d29b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "8408ebfce6311dbc40f58a5ebd02c7aa200442504cf9015c51eecf8c3ab4bd3f"
+    sha256 cellar: :any,                 arm64_sonoma:  "3f097a8d2074385b336889d0b3ee819cd70082e0f9b0cd67eee21241561f82f3"
+    sha256 cellar: :any,                 ventura:       "7b9256ef575f32030eeb9cda3406b24547b9bac57036382189ab5fbb481f4d52"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9db17dcffcce57503753848946b357ad4cf60fef9179de5b32b1e904c0e74e17"
   end
 
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "metis"
   depends_on "openblas"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "suite-sparse"
   depends_on "superlu"
 
@@ -68,7 +70,7 @@ class Apbs < Formula
       -DENABLE_OPENMP=OFF
       -DAPBS_LIBS=mc;maloc
       -DENABLE_PYTHON=OFF
-      -DPYTHON_VERSION=3.12
+      -DPYTHON_VERSION=3.13
       -DCMAKE_MODULE_PATH=#{fetk_cmake_prefix}
       -DCMAKE_C_FLAGS=#{cflags.join(" ")}
       -DCMAKE_EXE_LINKER_FLAGS=-L#{prefix}/fetk/lib

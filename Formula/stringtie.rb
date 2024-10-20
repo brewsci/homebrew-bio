@@ -9,9 +9,11 @@ class Stringtie < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sonoma: "aefdd04958fd0313536bc2e668ea9638951022742ad5d566a4d418ea60507702"
-    sha256 cellar: :any,                 ventura:      "19ae7c56c4120fd73d95dcdde44ef7b296b137def92ad8c0aa0961688c1c1177"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "127c9085f264a966ea9a72842c99240827bf4ea658c091a47210f2707d8a0000"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "b30f2f061f36ea355f8a579d0ac171304ddf89225c5f198c7c1ed293e2a3ddad"
+    sha256 cellar: :any,                 arm64_sonoma:  "fb42c05cf1812d2320a283b01e530dd285b888bad17dee8aead039ccf08ce5da"
+    sha256 cellar: :any,                 ventura:       "39bf1edf0bb309c1fd5e71be765ba7a140fe7c3c3e7f7d34a27956e43f8064da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c16d903fe021faf8b8ab0ef1a3c9bfa0145986c0093a7fad9482d2de1ad5e69"
   end
 
   depends_on "htslib"

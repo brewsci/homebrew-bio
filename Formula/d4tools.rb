@@ -9,9 +9,11 @@ class D4tools < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sonoma: "978cb404061b2a7d8c9faede802ae431c18dc66f4b15233dcad12fcd1a121553"
-    sha256 cellar: :any,                 ventura:      "0f9c810503ff45c392a3877422a8371eea45788ba5024db52f00b5be3e9afddd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "79bf2718735b308a8d15511a2ff85c5e21cf6a29a173d69ee631eb533ebb83a5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "ab6decc49fd87b0fe22c3a3d8db84b7d24406600fee48cc8f5a4eed8fc798fe4"
+    sha256 cellar: :any,                 arm64_sonoma:  "5d8b75e4a64ca82263019a608291f213f15ab39cc9ff3e36442f6b1e69544986"
+    sha256 cellar: :any,                 ventura:       "d6813d4a90fdffc82d8dc7d2cf20b3fb27ee2ee999a6f31af738fd931995a093"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a4e643f67b17bf4606be5c4a3803582e9ed5847a503b71e8851383ba05adfb4"
   end
 
   depends_on "rust" => :build

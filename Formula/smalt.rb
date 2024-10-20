@@ -7,10 +7,11 @@ class Smalt < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma: "4b18bc47870f3ace21d77a9673065152733a056450e5ba2c7a194d7ad02a907e"
-    sha256 cellar: :any,                 ventura:      "e6f7e13138d8545fbfe5a2d3e90bc4311143a3cac795f8c32238ff0e5c36c65b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7eafffcb07befb6fe04844375628f06afcf7d8bc71a49a80fea4266172847b34"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "ae0aab6ff80de21b408853efbfdd159f36f77d71927586baa27a88303a8ab97c"
+    sha256 cellar: :any,                 arm64_sonoma:  "9d933821a8296501f9d1c6a72be228594185c90c3029ec3c288630f27dd45857"
+    sha256 cellar: :any,                 ventura:       "c05d17307e0bf1b7e71eb0666f6eb7926f418e2158f2db201fe0b754f7352e02"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "209a0fd08ad7b70f2bba9b755de9d895242d90d17118b9d94139430ed79bc292"
   end
 
   depends_on "autoconf" => :build

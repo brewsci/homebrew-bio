@@ -3,16 +3,17 @@ class Dssp < Formula
   # cite Kabsch_1983: "https://doi.org/10.1002/bip.360221211"
   desc "Assign secondary structure to proteins"
   homepage "https://github.com/PDB-REDO/dssp"
-  url "https://github.com/PDB-REDO/dssp/archive/refs/tags/v4.4.7.tar.gz"
-  sha256 "d9d4b17143cc8b58080b28c4694eb11b6e167f9ad7c2dfd238b9436500c2de8c"
+  url "https://github.com/PDB-REDO/dssp/archive/refs/tags/v4.4.10.tar.gz"
+  sha256 "b535d0410a79d612a2abea308d13d0ae2645bb925b13a86e5bb53c38b0fac723"
   license "BSD-2-Clause"
   head "https://github.com/PDB-REDO/dssp.git", branch: "trunk"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 arm64_sonoma: "c8b22661372d17a29241ba3c6cd14793eade94d42b940c3ce4db97c3eec071cb"
-    sha256 ventura:      "84d3b1fd92b42454cbf91ccedd6cd973a39fdd7649d45199e52b12821346fffc"
-    sha256 x86_64_linux: "279d70ec0350bbdecae078002fc85ced284a63a2b9a9a10d6c81106044a29168"
+    sha256 arm64_sequoia: "0d21ff263d560dc08096567a39c6ae45582766ace2f6a0fff32fa0c5f31efead"
+    sha256 arm64_sonoma:  "96e87525fdfedbb8669e52e74acdd9ae892703acde5a926df4d5ae8b9f199e3f"
+    sha256 ventura:       "a1beeb06564ff9f4554588ece5380ec3617aea9932e9f11db4cf2478d8ac591e"
+    sha256 x86_64_linux:  "0e13b1a6312ef61247e557a110fbdec60171ad56e769a4139d8d6a01f3056a55"
   end
 
   depends_on "cmake" => :build
@@ -23,8 +24,8 @@ class Dssp < Formula
   uses_from_macos "zlib"
 
   resource "libcifpp" do
-    url "https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v7.0.4.tar.gz"
-    sha256 "324eda2f6874df32671cd984c7249bfae025ca3fe1bfd875cbef35b046408b88"
+    url "https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v7.0.7.tar.gz"
+    sha256 "0e88805b4704d4a899aeee6df5aaace1d6b47d8ccb3a3f39b35bc5a3997c09ac"
   end
 
   resource "libmcfp" do
