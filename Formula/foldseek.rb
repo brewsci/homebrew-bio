@@ -24,6 +24,13 @@ class Foldseek < Formula
   end
 
   def install
+    # Rename block-aligner-c to block_aligner_c to fix rust 1.79 breaking foldseek
+    # https://github.com/steineggerlab/foldseek/commit/ca58f9b36a02d281f4971484e38ffb557c28d093
+    inreplace %w[CMakeLists.txt
+                 lib/block-aligner/c/Cargo.toml
+                 lib/block-aligner/c/Makefile
+                 lib/block-aligner/c/cbindgen.toml
+                 src/CMakeLists.txt], "block-aligner-c", "block_aligner_c"
     args = []
     if OS.mac?
       libomp = Formula["libomp"]
