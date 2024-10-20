@@ -8,11 +8,6 @@ class Foldseek < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/steineggerlab/foldseek.git", branch: "master"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "401fe7d71726287be0d95e173bb4b22cd2275b0544b81dc7037da3791627a636"
-  end
-
   depends_on "cmake" => [:build, :test]
   depends_on "rust" => :build
 
@@ -23,12 +18,16 @@ class Foldseek < Formula
     depends_on "libomp"
   end
 
-  resource "homebrew-testdata" do
-    url "https://raw.githubusercontent.com/steineggerlab/foldseek/master/example/d1asha_"
-    sha256 "b4ec14f5decc94b5363b3414db4d25e3e09039c7a6fbb585041730dcf3cc1fd8"
-  end
-
   def install
+    # Rename block-aligner-c to block_aligner_c to fix rust 1.79 breaking foldseek
+    # https://github.com/steineggerlab/foldseek/commit/ca58f9b36a02d281f4971484e38ffb557c28d093
+    unless build.head?
+      inreplace %w[CMakeLists.txt
+                   lib/block-aligner/c/Cargo.toml
+                   lib/block-aligner/c/Makefile
+                   lib/block-aligner/c/cbindgen.toml
+                   src/CMakeLists.txt], "block-aligner-c", "block_aligner_c"
+    end
     args = []
     if OS.mac?
       libomp = Formula["libomp"]
@@ -47,6 +46,10 @@ class Foldseek < Formula
   end
 
   test do
+    resource "homebrew-testdata" do
+      url "https://raw.githubusercontent.com/steineggerlab/foldseek/master/example/d1asha_"
+      sha256 "b4ec14f5decc94b5363b3414db4d25e3e09039c7a6fbb585041730dcf3cc1fd8"
+    end
     resource("homebrew-testdata").stage testpath/"example"
     system bin/"foldseek", "easy-search", "example/d1asha_", "example", "aln", "tmpFolder"
     assert_equal "d1asha_\td1asha_\t1.000\t147\t0\t0\t1\t147\t1\t147\t1.011E-22\t1061\n", File.read("aln")
