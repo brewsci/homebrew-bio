@@ -38,7 +38,7 @@ class Rdkit < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.12"
   end
 
   def postgresqls
