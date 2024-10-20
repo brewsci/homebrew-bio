@@ -8,6 +8,15 @@ class Foldseek < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/steineggerlab/foldseek.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0dd412d775cf30c54a10660d34bdde7d7831f2eae75265a8b223299f8e9f47ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2fa969cf0115606a6732288a269e94ee2ec883081223a21a7f0792c58c67c1a8"
+    sha256 cellar: :any_skip_relocation, ventura:       "d06bb40102fdb91449b6782f00f2f312f1fbda6206942376acca1d577886ff51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f4e029553c2dccf2d9a44d459a188c7501ef4f5d7406adb49573cac546f92fb"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "rust" => :build
 
