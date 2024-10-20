@@ -9,6 +9,15 @@ class Qtltools < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/qtltools/qtltools.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "762c2fd611be80e195ff934e4cf1b29ddd7b58d54b7f567a363bdc3624905a0a"
+    sha256 cellar: :any,                 arm64_sonoma:  "99689e96433f50af727a7596ec22eb3b15122d4e53b589996d7cc9256e974e27"
+    sha256 cellar: :any,                 ventura:       "ef102605869a4c5afcffc24c773d7c3ae11be9ace93bd86c587218abac2199b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce20881125f72f4c4183b5aa580a4d3c24fb1941a0104d503ec5254059013159"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "boost"
   depends_on "gsl"
