@@ -21,7 +21,7 @@ class Foldseek < Formula
   def install
     # Rename block-aligner-c to block_aligner_c to fix rust 1.79 breaking foldseek
     # https://github.com/steineggerlab/foldseek/commit/ca58f9b36a02d281f4971484e38ffb557c28d093
-    if build.head?
+    unless build.head?
       inreplace %w[CMakeLists.txt
                    lib/block-aligner/c/Cargo.toml
                    lib/block-aligner/c/Makefile
