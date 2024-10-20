@@ -6,13 +6,6 @@ class Relion < Formula
   license "GPL-2.0-only"
   head "https://github.com/3dem/relion.git", branch: "master"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sonoma: "0481f6ed321a5effd31bc6779f3903d49ba404a00695792b41615ff6ba72100b"
-    sha256 cellar: :any,                 ventura:      "f3563430dc05bab22600a75e93ea10d8a0c9908952522e3eb793dcc03f3bae82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f77981d71aa43bcaab4b3bf6c407434fb643998dd1040256b482a7ac9e693538"
-  end
-
   depends_on "cmake" => :build
   depends_on "fftw"
   depends_on "fltk"
