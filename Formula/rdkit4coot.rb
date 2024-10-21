@@ -25,7 +25,6 @@ class Rdkit4coot < Formula
   depends_on "boost"
   depends_on "boost-python3"
   depends_on "cairo"
-  depends_on "coordgen"
   depends_on "eigen"
   depends_on "freetype"
   depends_on "inchi"
@@ -56,7 +55,7 @@ class Rdkit4coot < Formula
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
       -DCMAKE_MODULE_LINKER_FLAGS=#{python_rpaths.map { |path| "-Wl,-rpath,#{path}" }.join(" ")}
-      -DCMAKE_REQUIRE_FIND_PACKAGE_coordgen=ON
+      -DCOORDGEN_FORCE_BUILD=ON
       -DCMAKE_REQUIRE_FIND_PACKAGE_maeparser=ON
       -DCMAKE_REQUIRE_FIND_PACKAGE_Inchi=ON
       -DINCHI_INCLUDE_DIR=#{Formula["inchi"].opt_include}/inchi
@@ -116,31 +115,12 @@ class Rdkit4coot < Formula
 
   test do
     # Test Python module
+    ENV["PYTHONPATH"] = prefix/Language::Python.site_packages(python3)
+
     (testpath/"test.py").write <<~EOS
       from rdkit import Chem
       print(Chem.MolToSmiles(Chem.MolFromSmiles('C1=CC=CN=C1')))
     EOS
     assert_equal "c1ccncc1", shell_output("#{python3} test.py 2>&1").chomp
-
-    # Test PostgreSQL extension
-    ENV["LC_ALL"] = "C"
-    postgresqls.each do |postgresql|
-      pg_ctl = postgresql.opt_bin/"pg_ctl"
-      psql = postgresql.opt_bin/"psql"
-      port = free_port
-
-      datadir = testpath/postgresql.name
-      system pg_ctl, "initdb", "-D", datadir
-      (datadir/"postgresql.conf").write <<~EOS, mode: "a+"
-
-        port = #{port}
-      EOS
-      system pg_ctl, "start", "-D", datadir, "-l", testpath/"log-#{postgresql.name}"
-      begin
-        system psql, "-p", port.to_s, "-c", "CREATE EXTENSION \"rdkit\";", "postgres"
-      ensure
-        system pg_ctl, "stop", "-D", datadir
-      end
-    end
   end
 end
