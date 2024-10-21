@@ -15,6 +15,14 @@ class Rdkit4coot < Formula
     end
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any,                 arm64_sequoia: "8a6943ea5935c2713e05b8a1953e8919c00f23adb7b00a5a156b16cffdcd3316"
+    sha256 cellar: :any,                 arm64_sonoma:  "ec5602b57e8706efa2a56399eef8e11f39e41efcdea5010370600a6c67d196f4"
+    sha256 cellar: :any,                 ventura:       "ab56a3f5865d1f7be34b5f313b097ecaab7fe628923b660a77c890c45a5d7a5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc6da5271c27ee4cf3589301d4f61143b1785c6734dfaf7dcd77674feda35218"
+  end
+
   keg_only "provided by Homebrew core"
 
   depends_on "catch2" => :build
