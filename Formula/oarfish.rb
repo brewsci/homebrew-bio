@@ -10,9 +10,11 @@ class Oarfish < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "a4ed4db4cfbf3e85bfd97019fa4ff4189ea7663db6e7760649a187c2a53d95f5"
-    sha256 cellar: :any_skip_relocation, ventura:      "ed4f5a8cba19e51fa329ec89240d80bf65f052d1d3db74a533b67193f12acfed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "56ef87ec8fe9a87c1feffaf387c177456c0a2a04162712680d23a11e36ca70f7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0c05dbf8857ec513e25ab9ebb608ff427629e39eadb0c23f2a5a6e17808f489"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5106eaee0421cc51ba56b26c81c2b088db6d73918bc8710f8a566395bed51962"
+    sha256 cellar: :any_skip_relocation, ventura:       "5ca526ec6bf6105a6c6e80940741f4a2efb48d805d94a290e09b4282650df4e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d78f983a2c16dd5077c338e6c75edbc88f8234e353fca4722ea4b06841c278d5"
   end
 
   depends_on "rust" => :build
