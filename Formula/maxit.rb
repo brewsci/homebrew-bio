@@ -5,6 +5,15 @@ class Maxit < Formula
   sha256 "658e236c6310cf7e55218a0500f82050ef86074f5d5b3f61d2a161b04a38cc39"
   license :cannot_represent
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 1
+    sha256 arm64_sequoia: "14e0f9c4616a6e638516ef4beed6d453d4d6abfa95ba71b69e2d96a5c45f0d8e"
+    sha256 arm64_sonoma:  "f0207bcf2353bf20f5a57b425750740ce883443301c91c26054edad9a15c8148"
+    sha256 ventura:       "ac9c50b751b7255cd3a16db291d812497f31453e9d18e32eca8ae86beca0efe7"
+    sha256 x86_64_linux:  "3ac605fd8c6a64cd815771e08b3d5d0ecccf58ac3174940211c12421de7d905e"
+  end
+
   def install
     ENV.deparallelize
     cd "maxit-v10.1/src" do
