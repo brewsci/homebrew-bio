@@ -1,6 +1,7 @@
-class Rdkit < Formula
+class Rdkit4coot < Formula
   desc "Open-source chemoinformatics library"
   homepage "https://rdkit.org/"
+  # NOTE: Make sure to update RPATHs if any "@rpath-referenced libraries" show up in `brew linkage`
   url "https://github.com/rdkit/rdkit/archive/refs/tags/Release_2024_09_1.tar.gz"
   sha256 "034c00d6e9de323506834da03400761ed8c3721095114369d06805409747a60f"
   license "BSD-3-Clause"
@@ -14,7 +15,7 @@ class Rdkit < Formula
     end
   end
 
-  keg_only :provided_by_Homebrew_core
+  keg_only "provided by Homebrew core"
 
   depends_on "catch2" => :build
   depends_on "cmake" => :build
@@ -24,6 +25,7 @@ class Rdkit < Formula
   depends_on "boost"
   depends_on "boost-python3"
   depends_on "cairo"
+  depends_on "coordgen"
   depends_on "eigen"
   depends_on "freetype"
   depends_on "inchi"
@@ -31,6 +33,8 @@ class Rdkit < Formula
   depends_on "numpy"
   depends_on "py3cairo"
   depends_on "python@3.12"
+
+  conflicts_with "rdkit", because: "both install the same files"
 
   patch do
     url "https://github.com/rdkit/rdkit/commit/3ade0f8cd31be54fc267b9f5e94e8aa755f56f36.patch?full_index=1"
@@ -52,7 +56,7 @@ class Rdkit < Formula
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
       -DCMAKE_MODULE_LINKER_FLAGS=#{python_rpaths.map { |path| "-Wl,-rpath,#{path}" }.join(" ")}
-      -DCOORDGEN_FORCE_BUILD=ON
+      -DCMAKE_REQUIRE_FIND_PACKAGE_coordgen=ON
       -DCMAKE_REQUIRE_FIND_PACKAGE_maeparser=ON
       -DCMAKE_REQUIRE_FIND_PACKAGE_Inchi=ON
       -DINCHI_INCLUDE_DIR=#{Formula["inchi"].opt_include}/inchi
