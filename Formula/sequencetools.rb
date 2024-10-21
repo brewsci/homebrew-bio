@@ -7,6 +7,15 @@ class Sequencetools < Formula
   license "BSD-3-Clause"
   head "https://github.com/stschiff/sequenceTools.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b29983ab3c81cd2f90e3add58cd1b5fa31ab5b99a97bca2ac201d09b5880573"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d321b100b8c43dff965b78e360d36b66290732eb7b3ce535acbe42e4d4117acc"
+    sha256 cellar: :any_skip_relocation, ventura:       "82fd3d8019a9e0a44cc21f869d1a572db6ba51e5240495c749ba6394e03a47d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24985a0092e2455354d6dbd94791a12604580862178c175fb43079cf48dfab08"
+  end
+
   depends_on "ghc@9.6" => :build
   depends_on "haskell-stack" => :build
 
