@@ -13,7 +13,6 @@ class Maxit < Formula
     end
     # circumvent CI errors
     inreplace "cifparse-obj-v7.0/Makefile", "mv", "cp"
-
     system "make", "binary"
     # install bin and data directories
     bin.install Dir["bin/*"]
@@ -25,7 +24,6 @@ class Maxit < Formula
       url "https://files.rcsb.org/download/3QUG.pdb"
       sha256 "7b71128bedcd7ebdea42713942a30af590b3cf514726485f9aa27430c3999657"
     end
-
     resource("homebrew-testdata").stage testpath
     system bin/"maxit", "-input", "3qug.pdb", "-output", "3qug.cif", "-o", "1", "-log", "maxit.log"
     assert_match "_audit_author.name", File.read("3qug.cif")
