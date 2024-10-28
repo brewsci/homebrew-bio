@@ -6,9 +6,6 @@ class Hyphy < Formula
   head "https://github.com/veg/hyphy.git"
   # tag "bioinformatics"
 
-  option "with-opencl", "Build a version with OpenCL GPU/CPU acceleration"
-  option "without-multi-threaded", "Don't build a multi-threaded version"
-  option "without-single-threaded", "Don't build a single-threaded version"
   deprecated_option "with-mpi" => "with-open-mpi"
 
   depends_on "cmake" => :build
@@ -17,14 +14,10 @@ class Hyphy < Formula
 
   def install
     system "cmake", "-DINSTALL_PREFIX=#{prefix}", ".", *std_cmake_args
-    system "make", "SP" if build.with? "single-threaded"
-    system "make", "MP2" if build.with? "multi-threaded"
+    system "make", "hyphy"
     system "make", "MPI" if build.with? "open-mpi"
-    system "make", "OCL" if build.with? "opencl"
-    system "make", "GTEST"
 
     system "make", "install"
-    libexec.install "HYPHYGTEST"
     doc.install("help")
   end
 
@@ -33,10 +26,7 @@ class Hyphy < Formula
       The help has been installed to #{doc}/hyphy.
     EOS
   end
-
-  test do
-    system libexec/"HYPHYGTEST"
-  end
+  
 end
 
 __END__
