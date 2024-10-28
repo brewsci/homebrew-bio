@@ -18,7 +18,6 @@ class Hyphy < Formula
     system "make", "MPI" if build.with? "open-mpi"
 
     system "make", "install"
-    doc.install("help")
   end
 
   def caveats
