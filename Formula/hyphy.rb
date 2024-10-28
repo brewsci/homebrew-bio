@@ -2,7 +2,7 @@ class Hyphy < Formula
   desc "Hypothesis testing with phylogenies"
   homepage "http://www.hyphy.org/"
   url "https://github.com/veg/hyphy/archive/refs/tags/2.5.63.tar.gz"
-  sha256 "8c84340665b126742b85ed8d54354455ffc97ebd3cc689658120d7f5791adf13"
+  sha256 "86a94a601fa136443a8cd69f61e3a47b1dc85f10743d317715b1e433278e9ee0"
   head "https://github.com/veg/hyphy.git"
   # tag "bioinformatics"
 
