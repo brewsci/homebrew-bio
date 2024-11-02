@@ -12,6 +12,7 @@ class MemeAT4112 < Formula
   depends_on "open-mpi"
   depends_on "python@3.12"
 
+  uses_from_macos "expat"
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
   uses_from_macos "perl"
