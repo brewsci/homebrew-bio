@@ -4,8 +4,8 @@ class Meme < Formula
   # cite Bailey_2015: "https://doi.org/10.1093/nar/gkv416"
   desc "Motif-based sequence analysis tools"
   homepage "https://meme-suite.org"
-  url "https://meme-suite.org/meme/meme-software/5.5.6/meme-5.5.6.tar.gz"
-  sha256 "8f719002c3a2177f6bb9da6861098ccf4f08b3006f002a88bb3afe9473596c67"
+  url "https://meme-suite.org/meme/meme-software/5.5.7/meme-5.5.7.tar.gz"
+  sha256 "1dca8d0e6d1d36570c1a88ab8dbe7e4b177733fbbeacaa2e8c4674febf57aaf4"
   license :cannot_represent
 
   bottle do
@@ -17,7 +17,7 @@ class Meme < Formula
 
   depends_on "ghostscript"
   depends_on "open-mpi"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
@@ -46,7 +46,7 @@ class Meme < Formula
       "--disable-dependency-tracking",
       "--prefix=#{prefix}",
       "--with-mpidir=#{Formula["open-mpi"].opt_prefix}",
-      "--with-python=#{Formula["python@3.12"].opt_bin}/python3",
+      "--with-python=#{Formula["python@3.13"].opt_bin}/python3",
       "--with-gs=#{Formula["ghostscript"].opt_bin}/gs"
 
     system "make", "install"
