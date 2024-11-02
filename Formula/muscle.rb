@@ -7,6 +7,15 @@ class Muscle < Formula
   sha256 "2bba8b06e3ccabf6465fa26f459763b2029d7e7b9596881063e3aaba60d9e87d"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "a063eb631b2ca243a3a37a204cb2976711f9e14475e2de3ac09a1d33366f97c6"
+    sha256 cellar: :any,                 arm64_sonoma:  "727f51957a68d3ac2235404314a9073405984ce8a55a2ca93d6a584b5ba36b36"
+    sha256 cellar: :any,                 ventura:       "6160f9104b19e8883c384e3c01070125ea0ac153fdf3a3274073b41142fd060f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2690e8e9389eb9ed11ec8e15177562670cec326fc71aba75353dd3ce315d4928"
+  end
+
   depends_on "libomp" if OS.mac?
 
   def install
