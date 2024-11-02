@@ -8,9 +8,11 @@ class Mosdepth < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sonoma: "af6103cef2557c8713f613f434d5304b6a785fc48dbcb665165a85d2aa7b0099"
-    sha256 cellar: :any,                 ventura:      "2e354b459f5c1052699c78c851feb88f2fddf84cdb2c062e1d1dfe568f7f8329"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "287fef1d12d212f6dc764a358b5f6b9d726be51770b60b5ed51228c93f31fef3"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "21991572ae967d2011a1f59e304973a04f32694e9059e1927c58bcc1f008b5e4"
+    sha256 cellar: :any,                 arm64_sonoma:  "fe6de47027a06fb6c091b13fee000e358d0efbe4d02436eb6c2c7b169f9ffab8"
+    sha256 cellar: :any,                 ventura:       "a4753d9da843e1112052230fec58b56a5521c646c8604729dc82545142e45889"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "211f6d5a4fec33d0a92572fb0c53ba1b23c10ba14ad516946844aeff8a30fea1"
   end
 
   depends_on "nim" => :build

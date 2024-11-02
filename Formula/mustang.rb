@@ -8,9 +8,11 @@ class Mustang < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "e187a53e032999b93b28e66bd1d12de37a6866e8fe97e676da055c720898da1f"
-    sha256 cellar: :any_skip_relocation, ventura:      "67eea2a7c4fbeffbb131cbd483eee700909a2853184d3bea7f9d0cde79be0615"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b10e645c5cd899f971d8e1ceba0f00fcfe2f7f7933675c039c5fedda340f5f1c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea1390619429efced942ed1a148980f8f94f8c147fc46f5da25de2f911eca6d1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5559c4e4b52c230816b9809fdea89ab995d4f7ae8416a8a4abe14aeb7dce9133"
+    sha256 cellar: :any_skip_relocation, ventura:       "b3ca4c2cf4e16e09468e3a5c07054978679845a4f795c570e7e48ee2affe7371"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76f2be20067e509d8a022fc2b8d544a953a36742ab3d1c6bb2de0d7a19a88cc0"
   end
 
   uses_from_macos "zlib"

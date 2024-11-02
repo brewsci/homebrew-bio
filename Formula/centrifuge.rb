@@ -13,9 +13,11 @@ class Centrifuge < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "46d6c61b7ca0599e186b54d32d7c6b6a3c55d07e3110aaeff803b0c116bdd1f3"
-    sha256 cellar: :any_skip_relocation, ventura:      "6e4389012ec9e2ba94e363786713726cb9ef52530183ccc4c2ff9e2d290f0023"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7cbd35d7afa1f9dff91faf797f9a87395408f16b4184717e47117069b9fecaf3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "955ef1e942dad58705da3afc2ae956785292e050846154bdbd328ab57f722d1a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7dc697c747bce878b0c7007ea412a119d71786e78c286e74c0a1a061afc7d93"
+    sha256 cellar: :any_skip_relocation, ventura:       "3f1292366364b43bd5d1c935970fe644ea231f501e82133a42643d6d004b630f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8e23e041df68b21337d591e09e87a17b9e774cdfad9d7940976880c7f008691"
   end
 
   on_macos do

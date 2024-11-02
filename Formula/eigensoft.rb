@@ -9,9 +9,11 @@ class Eigensoft < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sonoma: "2ebc44f8db3dc1c0279d0646ceae954736e984df13696a24a9cf1233bff844c3"
-    sha256 cellar: :any,                 ventura:      "bfa35d9a077d1e0b99a14810f4245f048e3e67eeab5f4cf2ed1e4dedf4e21d0b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7c761b63f767054849961aed16d126560ce2465a35bc0666703c99643e0e069e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "de6d43f4c1b63723520c0ff8e946e7f2ce80012edfaab9cccea6208af2eb6b27"
+    sha256 cellar: :any,                 arm64_sonoma:  "afc1cf20c187db54420ab1c6f191778eeb8ccea925e14e657d290c5f07cc7808"
+    sha256 cellar: :any,                 ventura:       "ff25110f49e8412364c978aa03261534d094e494f38bc782f5100b4762415b07"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b14d635e50c73686d09af76e2b1b729801fb69902fe662d7492b4dd2ac01a323"
   end
 
   depends_on "gsl"

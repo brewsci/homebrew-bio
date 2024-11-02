@@ -9,9 +9,11 @@ class Germline2 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "5e1a7c3c5fefffa1e23dedcfd02ea9d36274dfa2c68f31c731b2a5fc8da2a533"
-    sha256 cellar: :any_skip_relocation, ventura:      "99c877ae5f1135801cc3fa46263c2c4110dd7b6742407d55aef63e33d16641cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ec352e28f7a90fcf256923820df86d840bb674bd9800872b43dc127920228383"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5dad3239b998d3b04195c28b42b5ad2b7dd8d3ad21523e63eb70b70373cc385"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "916405e8bc4e696a8401284458f50da48971fd879da5cea5e5201016ef572a1d"
+    sha256 cellar: :any_skip_relocation, ventura:       "f329f11a7477e539e44a6cfa67a668de9e418f7b92c7ff0497aa676a49dcb2b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73a9eeab1afc45dc9c8065387c4c55570ac0f2f0b1093f0d16a3817a300b4d9c"
   end
 
   depends_on "gawk" => :test if OS.mac?

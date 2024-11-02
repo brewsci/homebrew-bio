@@ -12,17 +12,19 @@ class AutodockVina < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "b35cfef4f97f2e7ff0ba444cdd8d8c30253e5d547a10824c906373527dbc47cb"
-    sha256 cellar: :any_skip_relocation, ventura:      "74ea7f849133c0d8cd3d2106ad7fffc785a9cac6a20dba1e0bfc9e59ffcf60b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1bb112eb8dfff5e133a04f74189e374e398329ee7a45c7147b110fb00abb9da8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8db686a32dc49d24220979d8159c49e61ae69a5b2724b10313d4ed9ff85d18a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84481205f261ae96bd35daceb6eff1d7c0476febb63a03e9e52b7ba3b81ba1c4"
+    sha256 cellar: :any_skip_relocation, ventura:       "bc26eda9837eb112eb98d50284787f52f1fb3fd95c2fd67a9b1fd837ce9d31ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6415e5153ad43f3a2ffe51d1a5e57cff7689111733efdf72a5bc2bac60ea4f6f"
   end
 
   depends_on "swig" => :build
   depends_on "boost"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   def install
-    xy = Language::Python.major_minor_version Formula["python@3.12"].opt_bin/"python3"
+    xy = Language::Python.major_minor_version Formula["python@3.13"].opt_bin/"python3"
     ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
     binaries = ["vina", "vina_split"]
     inreplace "build/makefile_common", "$(BASE)", Formula["boost"].opt_prefix
