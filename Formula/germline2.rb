@@ -7,6 +7,15 @@ class Germline2 < Formula
   license "MIT"
   head "https://github.com/gusevlab/germline2.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5dad3239b998d3b04195c28b42b5ad2b7dd8d3ad21523e63eb70b70373cc385"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "916405e8bc4e696a8401284458f50da48971fd879da5cea5e5201016ef572a1d"
+    sha256 cellar: :any_skip_relocation, ventura:       "f329f11a7477e539e44a6cfa67a668de9e418f7b92c7ff0497aa676a49dcb2b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73a9eeab1afc45dc9c8065387c4c55570ac0f2f0b1093f0d16a3817a300b4d9c"
+  end
+
   depends_on "gawk" => :test if OS.mac?
   depends_on "boost"
 
