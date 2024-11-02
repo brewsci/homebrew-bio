@@ -9,13 +9,6 @@ class HmmerAT2 < Formula
   license "GPL-2.0-only"
   revision 3
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "e085cdd6135a07d8ad97164c7f80d9cd418d5fe9e18a0d2a1c942cd17c659568"
-    sha256 cellar: :any_skip_relocation, ventura:      "d3313b53e9e61134a77d9d22e475b89b1691fa602a8c7eda80b4702ded9fb8b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c8e94b77c2ec4600e29b41f7615053327a545c454d068f87e9ca219cf85bf643"
-  end
-
   resource "config.sub" do
     url "http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD"
     sha256 "fe3a2f32fbaff57848732549f48d983fd6526024ec2f0f5a9dc75c2f4359a3a6"
