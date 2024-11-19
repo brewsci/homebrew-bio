@@ -8,10 +8,10 @@ class Libcifpp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 arm64_sequoia: "ffc4bfcfdc4cdae58f851c33be3a81a65f89fb75a8ad5a0efcf9cc923611d5de"
-    sha256 arm64_sonoma:  "357ac8a14210901240a5adf805573bcac435aff33c400a43ad171c4e7aab7b8b"
-    sha256 ventura:       "46e84668520d3429e2e79c863a83b4f8200efb9fd473ef38c7d142912b49c761"
-    sha256 x86_64_linux:  "97eb87ca7b2c2a7d10501a9571b31d19a3c80aac801c7084dca9472ac0dafb62"
+    sha256 arm64_sequoia: "ba71848350e79b4cbebf2c433b2ceed1c0617a9533f3bddce7ca9fc3797358c1"
+    sha256 arm64_sonoma:  "2bdbf57b3f936fc4b3d7ef9cbb89f045f944224888ed5ec0e767eff087143617"
+    sha256 ventura:       "5d795ba1cae7c0cf2e627872327a40a06efa1c62d0fc9253529787f1e3338773"
+    sha256 x86_64_linux:  "e6a635e7d0385c41e08354df0474b5026083d03ce2bab76eee9bfa8e8ff6e44c"
   end
 
   depends_on "cmake" => :build
