@@ -2,9 +2,9 @@ class Usalign < Formula
   # cite Zhang_2022: "https://doi.org/10.1038/s41592-022-01585-1"
   desc "Universal structure alignment of monomeric, complex proteins and nucleic acids"
   homepage "https://github.com/pylelab/USalign"
-  url "https://github.com/pylelab/USalign/archive/8b191c9ab338745611804fcbc088f0403b1d2a8c.tar.gz"
-  version "20240706"
-  sha256 "8a53946397c15034195c6b18c921b489f2a20595b13dd3066dfa5d4fcc43f5a8"
+  url "https://github.com/pylelab/USalign/archive/c39439c9b8ac81cc9717e709c9086b4adc3bab3d.tar.gz"
+  version "20241114"
+  sha256 "1a5727d9544ae0e841400945f2f5b6d58606475985369a600616d19ab7de1c20"
   license :cannot_represent
   head "https://github.com/pylelab/USalign.git", branch: "master"
 
@@ -16,9 +16,25 @@ class Usalign < Formula
   end
 
   def install
-    # install cpp version
-    system ENV.cxx, "-O3", "-ffast-math", "-lm", "-o", "USalign", "USalign.cpp"
-    bin.install "USalign"
+    binaries = %w[
+      qTMclust
+      USalign
+      TMalign
+      TMscore
+      MMalign
+      se
+      pdb2xyz
+      xyz_sfetch
+      pdb2fasta
+      pdb2ss
+      NWalign
+      HwRMSD
+      cif2pdb
+      pdbAtomName
+      addChainID
+    ]
+    system "make"
+    bin.install binaries
   end
 
   test do
