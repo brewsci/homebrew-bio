@@ -10,9 +10,10 @@ class Usalign < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "627ed3a998c2d2205359929a724b9913f22e84f35a6c9d86c85233bb35801956"
-    sha256 cellar: :any_skip_relocation, ventura:      "71e08efed94c5cfda83aa7fac49389d49ac45d112afc1066385b386fbfaced8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "19ff8e42faed17d5ff615d926c518dc4374f87584f4b3b40caeb7abadaa1c061"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa2d1940916e07affebf007286c2ecea8fcbfe5cb100bd91dafe938abac868aa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50fff5666a463bee953ec170dc725b693d103a136384a476cbecff74fbb5ccc8"
+    sha256 cellar: :any_skip_relocation, ventura:       "8c5ce97da451235a32dbeebea3f3bb9f6d4b5cfea5205bb4f2d84e888d9370f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83f8918a7f3fbfc01250c7ae08eaa276711f211f1459cf227b596e0e5703720c"
   end
 
   def install
