@@ -1,8 +1,8 @@
 class Coot < Formula
   desc "Crystallographic Object-Oriented Toolkit"
   homepage "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/"
-  url "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/source/releases/coot-1.1.10.tar.gz"
-  sha256 "447caa7bdd6f87b738d20f8db15aa278476c308e22506004ed145e04f85e0413"
+  url "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/source/releases/coot-1.1.11.tar.gz"
+  sha256 "6fd2b5a2d1bad5bdeebdb030b552b800df28c0c03608334fe69725379da8eec0"
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only", "GPL-2.0-or-later"]
 
   bottle do
@@ -29,6 +29,7 @@ class Coot < Formula
   depends_on "boost-python3"
   depends_on "brewsci/bio/clipper4coot"
   depends_on "brewsci/bio/gemmi"
+  depends_on "brewsci/bio/gtk4@4.14"
   depends_on "brewsci/bio/libccp4"
   depends_on "brewsci/bio/mmdb2"
   depends_on "brewsci/bio/raster3d"
@@ -43,7 +44,6 @@ class Coot < Formula
   depends_on "gmp"
   depends_on "graphene"
   depends_on "gsl"
-  depends_on "gtk4"
   depends_on "harfbuzz"
   depends_on "libepoxy"
   depends_on "libpng"
@@ -108,6 +108,8 @@ class Coot < Formula
       --with-enhanced-ligand-tools
       --with-boost=#{boost_prefix}
       --with-boost-libdir=#{boost_prefix}/lib
+      --with-gemmi=#{Formula["gemmi"].opt_prefix}
+      --with-glm=#{Formula["glm"].opt_prefix}
       --with-rdkit-prefix=#{rdkit_prefix}
       --with-fftw-prefix=#{fftw2_prefix}
       --with-backward
