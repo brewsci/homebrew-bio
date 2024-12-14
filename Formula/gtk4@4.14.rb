@@ -1,4 +1,4 @@
-class Gtk4AT414 < Formula
+class Gtk4 < Formula
   desc "Toolkit for creating graphical user interfaces"
   homepage "https://gtk.org/"
   url "https://download.gnome.org/sources/gtk/4.14/gtk-4.14.5.tar.xz"
@@ -13,14 +13,19 @@ class Gtk4AT414 < Formula
   depends_on "docbook" => :build
   depends_on "docbook-xsl" => :build
   depends_on "docutils" => :build
+  depends_on "gettext" => :build
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => [:build, :test]
   depends_on "sassc" => :build
+  depends_on "cairo"
+  depends_on "fontconfig"
+  depends_on "fribidi"
   depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "graphene"
+  depends_on "harfbuzz"
   depends_on "hicolor-icon-theme"
   depends_on "jpeg-turbo"
   depends_on "libepoxy"
@@ -31,9 +36,21 @@ class Gtk4AT414 < Formula
   uses_from_macos "libxslt" => :build # for xsltproc
   uses_from_macos "cups"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   on_linux do
+    depends_on "libx11"
     depends_on "libxcursor"
+    depends_on "libxdamage"
+    depends_on "libxext"
+    depends_on "libxfixes"
+    depends_on "libxi"
+    depends_on "libxinerama"
     depends_on "libxkbcommon"
+    depends_on "libxrandr"
+    depends_on "wayland"
   end
 
   def install
@@ -62,8 +79,8 @@ class Gtk4AT414 < Formula
     # Disable asserts and cast checks explicitly
     ENV.append "CPPFLAGS", "-DG_DISABLE_ASSERT -DG_DISABLE_CAST_CHECKS"
 
-    system "meson", *std_meson_args, "build", *args
-    system "meson", "compile", "-C", "build", "-v"
+    system "meson", "setup", "build", *args, *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
   end
 
@@ -82,7 +99,7 @@ class Gtk4AT414 < Formula
         return 0;
       }
     EOS
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["jpeg-turbo"].opt_lib/"pkgconfig"
+
     flags = shell_output("#{Formula["pkg-config"].opt_bin}/pkg-config --cflags --libs gtk4").strip.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
