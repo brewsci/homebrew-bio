@@ -10,6 +10,14 @@ class Gtk4AT414 < Formula
     regex(/gtk[._-](4\.([0-8]\d*?)?[02468](?:\.\d+)*?)\.t/i)
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 arm64_sequoia: "0f7ad6845e7f25b6d69bd185b5dd586a344a743029324a8a695ebb05fc809b74"
+    sha256 arm64_sonoma:  "8b5db42d59a9296b73b11b8d98803f4432f9ee2c17805ccc3de839c340338296"
+    sha256 ventura:       "59178fac56566748b4e0ea8c1aaba45eca62638b91bef29f93affcbcdc8535d3"
+    sha256 x86_64_linux:  "ac87b20522507f8b766a1c0854116ef96e376977713112683cdf816e5e808643"
+  end
+
   depends_on "docbook" => :build
   depends_on "docbook-xsl" => :build
   depends_on "docutils" => :build
