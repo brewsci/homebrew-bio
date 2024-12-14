@@ -1,4 +1,4 @@
-class Gtk4 < Formula
+class Gtk4AT414 < Formula
   desc "Toolkit for creating graphical user interfaces"
   homepage "https://gtk.org/"
   url "https://download.gnome.org/sources/gtk/4.14/gtk-4.14.5.tar.xz"
