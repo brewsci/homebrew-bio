@@ -4,6 +4,7 @@ class Coot < Formula
   url "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/source/releases/coot-1.1.11.tar.gz"
   sha256 "6fd2b5a2d1bad5bdeebdb030b552b800df28c0c03608334fe69725379da8eec0"
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only", "GPL-2.0-or-later"]
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -28,7 +29,6 @@ class Coot < Formula
   depends_on "boost-python3"
   depends_on "brewsci/bio/clipper4coot"
   depends_on "brewsci/bio/gemmi"
-  depends_on "brewsci/bio/gtk4@4.14"
   depends_on "brewsci/bio/libccp4"
   depends_on "brewsci/bio/mmdb2"
   depends_on "brewsci/bio/raster3d"
@@ -43,6 +43,7 @@ class Coot < Formula
   depends_on "gmp"
   depends_on "graphene"
   depends_on "gsl"
+  depends_on "gtk4"
   depends_on "harfbuzz"
   depends_on "libepoxy"
   depends_on "libpng"
@@ -51,7 +52,7 @@ class Coot < Formula
   depends_on "pango"
   depends_on "py3cairo"
   depends_on "pygobject3"
-  depends_on "python@3.13"
+  depends_on "python@3.12"
   depends_on "rdkit"
   depends_on "sqlite"
 
@@ -74,7 +75,7 @@ class Coot < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.12"
   end
 
   def install
@@ -98,7 +99,7 @@ class Coot < Formula
 
     # Set Boost, RDKit, and FFTW2 root
     boost_prefix = Formula["boost"].opt_prefix
-    boost_python_lib = "boost_python312-mt"
+    boost_python_lib = "boost_python312"
     rdkit_prefix = Formula["rdkit"].opt_prefix
     fftw2_prefix = Formula["clipper4coot"].opt_prefix/"fftw2"
 
@@ -114,15 +115,10 @@ class Coot < Formula
       --with-backward
       --with-libdw
       BOOST_PYTHON_LIB=#{boost_python_lib}
+      PYTHON=#{python3}
     ]
 
     ENV.append_to_cflags "-fPIC" if OS.linux?
-    # Use libcoordgen instead of RDKitcoordgen
-    inreplace "configure", "RDKitcoordgen", "coordgen"
-    # patch
-    inreplace "src/key-bindings.cc",
-              "PyObject *result_py = PyEval_CallObject(function_py, arg_list);",
-              "PyObject *result_py = PyObject_Call(function_py, arg_list, nullptr);"
     system "./configure", *args
     system "make"
     ENV.deparallelize { system "make", "install" }
