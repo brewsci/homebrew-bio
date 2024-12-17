@@ -18,6 +18,8 @@ class Gtk4AT414 < Formula
     sha256 x86_64_linux:  "ac87b20522507f8b766a1c0854116ef96e376977713112683cdf816e5e808643"
   end
 
+  keg_only "provided by Homebrew core"
+  
   depends_on "docbook" => :build
   depends_on "docbook-xsl" => :build
   depends_on "docutils" => :build
