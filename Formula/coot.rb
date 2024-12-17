@@ -4,6 +4,7 @@ class Coot < Formula
   url "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/source/releases/coot-1.1.11.tar.gz"
   sha256 "6fd2b5a2d1bad5bdeebdb030b552b800df28c0c03608334fe69725379da8eec0"
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only", "GPL-2.0-or-later"]
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -107,6 +108,7 @@ class Coot < Formula
       --with-enhanced-ligand-tools
       --with-boost=#{boost_prefix}
       --with-boost-libdir=#{boost_prefix}/lib
+      --with-coordgen=#{Formula["coordgen"].opt_prefix}
       --with-gemmi=#{Formula["gemmi"].opt_prefix}
       --with-glm=#{Formula["glm"].opt_prefix}
       --with-rdkit-prefix=#{rdkit_prefix}
@@ -117,12 +119,6 @@ class Coot < Formula
     ]
 
     ENV.append_to_cflags "-fPIC" if OS.linux?
-    # Use libcoordgen instead of RDKitcoordgen
-    inreplace "configure", "RDKitcoordgen", "coordgen"
-    # patch
-    inreplace "src/key-bindings.cc",
-              "PyObject *result_py = PyEval_CallObject(function_py, arg_list);",
-              "PyObject *result_py = PyObject_Call(function_py, arg_list, nullptr);"
     system "./configure", *args
     system "make"
     ENV.deparallelize { system "make", "install" }
