@@ -52,7 +52,7 @@ class Coot < Formula
   depends_on "pango"
   depends_on "py3cairo"
   depends_on "pygobject3"
-  depends_on "python@3.13"
+  depends_on "python@3.12"
   depends_on "rdkit"
   depends_on "sqlite"
 
@@ -75,7 +75,7 @@ class Coot < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.12"
   end
 
   def install
@@ -99,7 +99,7 @@ class Coot < Formula
 
     # Set Boost, RDKit, and FFTW2 root
     boost_prefix = Formula["boost"].opt_prefix
-    boost_python_lib = "boost_python312-mt"
+    boost_python_lib = "boost_python312"
     rdkit_prefix = Formula["rdkit"].opt_prefix
     fftw2_prefix = Formula["clipper4coot"].opt_prefix/"fftw2"
 
@@ -108,7 +108,6 @@ class Coot < Formula
       --with-enhanced-ligand-tools
       --with-boost=#{boost_prefix}
       --with-boost-libdir=#{boost_prefix}/lib
-      --with-coordgen=#{Formula["coordgen"].opt_prefix}
       --with-gemmi=#{Formula["gemmi"].opt_prefix}
       --with-glm=#{Formula["glm"].opt_prefix}
       --with-rdkit-prefix=#{rdkit_prefix}
@@ -116,6 +115,7 @@ class Coot < Formula
       --with-backward
       --with-libdw
       BOOST_PYTHON_LIB=#{boost_python_lib}
+      PYTHON=#{python3}
     ]
 
     ENV.append_to_cflags "-fPIC" if OS.linux?
