@@ -10,11 +10,11 @@ class BoostPython3AT187 < Formula
     formula "boost"
   end
 
+  keg_only :versioned_formula
+
   depends_on "numpy" => :build
   depends_on "boost"
   depends_on "python@3.12"
-
-  keg_only :versioned_formula
 
   def python3
     "python3.12"
