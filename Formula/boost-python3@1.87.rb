@@ -10,6 +10,14 @@ class BoostPython3AT187 < Formula
     formula "boost"
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any,                 arm64_sequoia: "5efbd77a69ec4c938fd5bb4c8d0e7918d7457e2f326f6acfc8f3784f0831fa3b"
+    sha256 cellar: :any,                 arm64_sonoma:  "097b19631873640deb6a556c52bb3a93e3b651730190a4173d4755a644278c33"
+    sha256 cellar: :any,                 ventura:       "4ad31281ab310f17cf5fb94af4753568556ee697b7136cdbb6bb040a5df115da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4a15cb5c2e92c3a9dc79d8a00d3b22be511c360d4f1dabd7bc79969c0ac7fa8"
+  end
+
   keg_only :versioned_formula
 
   depends_on "numpy" => :build
