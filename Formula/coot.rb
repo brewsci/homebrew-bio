@@ -4,7 +4,7 @@ class Coot < Formula
   url "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/source/releases/coot-1.1.11.tar.gz"
   sha256 "6fd2b5a2d1bad5bdeebdb030b552b800df28c0c03608334fe69725379da8eec0"
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only", "GPL-2.0-or-later"]
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -26,7 +26,7 @@ class Coot < Formula
   depends_on "pkg-config" => :build
   depends_on "adwaita-icon-theme" # display icons
   depends_on "boost"
-  depends_on "boost-python3"
+  depends_on "brewsci/bio/boost-python3@1.87"
   depends_on "brewsci/bio/clipper4coot"
   depends_on "brewsci/bio/gemmi"
   depends_on "brewsci/bio/libccp4"
