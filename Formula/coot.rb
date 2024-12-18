@@ -8,10 +8,10 @@ class Coot < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 arm64_sequoia: "17df656078b265aecae7823d4a57b58004c2157161688fefa8e52056974ab338"
-    sha256 arm64_sonoma:  "8a58d8b08270a890413d27051a8f5745cd0872aa3299c941cdf5111b79f49607"
-    sha256 ventura:       "e90329fb5db925f36301a149aa7df25c356e1c16d26c6b51864c8b36922e1670"
-    sha256 x86_64_linux:  "68549068e98ab995c9c479fee3c7184f0cb6b7fdb783d2f0f062b37ecb07062e"
+    sha256 arm64_sequoia: "2950dcd6fda2424b30e8b6f210c8557ce7b4d3af85e9a7b663d501417c65a247"
+    sha256 arm64_sonoma:  "5a1c795e062588ea956abcf5e2d4579d5dd7b006c1ea3ef9c8419249a498c473"
+    sha256 ventura:       "ececb411b5985826d0c48b498294637fe066ea4437508c9cdf1a8c47d99039d5"
+    sha256 x86_64_linux:  "af1357f1b8ffc5e7dc61d831541b700a044372a2894f36a939f7e876589113fc"
   end
 
   head do
