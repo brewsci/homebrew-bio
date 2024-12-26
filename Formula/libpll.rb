@@ -7,6 +7,12 @@ class Libpll < Formula
   license "AGPL-3.0"
   head "https://github.com/xflouris/libpll.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any, arm64_sequoia: "605e3d82ca9ed7374748911cb5b4a5fa5f074517f0b08561d17c8d339e86d241"
+    sha256 cellar: :any, arm64_sonoma:  "0744d8c03c6bb7988d6f2ff759faa942284cf76fa3e331bc59ba8e3d4ee61580"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "bison" => :build # must use v3.8.2
