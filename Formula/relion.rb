@@ -1,8 +1,8 @@
 class Relion < Formula
   desc "Image-processing software for cryo-electron microscopy"
   homepage "https://github.com/3dem/relion"
-  url "https://github.com/3dem/relion/archive/refs/tags/4.0.2.tar.gz"
-  sha256 "7ccc941a6a885bd850efa8867ea908254d8dc260cf72cc24c375bb9f1d56bf91"
+  url "https://github.com/3dem/relion/archive/refs/tags/5.0.0.tar.gz"
+  sha256 "5d02d529bfdb396204310b35963f35e5ec40ed9fd10bc88c901119ae7d7739fc"
   license "GPL-2.0-only"
   head "https://github.com/3dem/relion.git", branch: "master"
 
@@ -25,6 +25,8 @@ class Relion < Formula
   depends_on "libxft"
   depends_on "open-mpi"
   depends_on "pbzip2"
+  depends_on "python@3.13"
+  depends_on "pytorch"
   depends_on "xz"
   depends_on "zstd"
 
@@ -35,6 +37,9 @@ class Relion < Formula
   def install
     args = []
     args << "-DFETCH_TORCH_MODELS=OFF"
+    args << "-DCUDA=OFF"
+    args << "-DPYTHON_EXE_PATH=#{Formula["python@3.13"].opt_bin}/python3"
+    args << "-DTORCH_HOME_PATH=#{Formula["pytorch"].opt_prefix}"
     if OS.mac?
       libomp = Formula["libomp"]
       args << "-DOpenMP_C_FLAGS=-Xpreprocessor -fopenmp -I#{libomp.opt_include}"
@@ -43,17 +48,9 @@ class Relion < Formula
       args << "-DOpenMP_CXX_LIB_NAMES=omp"
       args << "-DOpenMP_omp_LIBRARY=#{libomp.opt_lib}/libomp.a"
     end
-
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-
-    # Add Python shebang
-    pyfile = bin/"relion_class_ranker.py"
-    pylines = pyfile.read.lines
-    pylines.unshift "#!/usr/bin/env python3\n"
-    pyfile.atomic_write pylines.join
-    chmod 0755, pyfile
   end
 
   test do
