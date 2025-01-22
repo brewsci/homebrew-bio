@@ -4,8 +4,8 @@ class BaliPhy < Formula
   desc "Bayesian co-estimation of phylogenies and multiple alignments"
   homepage "https://www.bali-phy.org/"
   url "https://github.com/bredelings/BAli-Phy.git",
-    tag:      "4.0-beta15",
-    regision: "5ae1a597b6b594357b044bbab34920606084997e"
+    tag:      "4.0-beta17",
+    regision: "33285a20bf37b12fa61344d36fb1668c850b43d0"
   license "GPL-2.0-or-later"
   head "https://github.com/bredelings/BAli-Phy.git", branch: "master"
 
@@ -36,9 +36,12 @@ class BaliPhy < Formula
   fails_with gcc: "7"
   fails_with gcc: "8"
   fails_with gcc: "9"
+  fails_with gcc: "10"
+  fails_with gcc: "11"
 
   def install
     flags = %w[-C build install]
+    ENV["BOOST_ROOT"] = Formula["boost"].opt_prefix
     system "meson", "build", "--prefix=#{prefix}", "--buildtype=release", "-Db_ndebug=true"
     system "ninja", *flags
   end
