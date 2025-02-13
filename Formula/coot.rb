@@ -1,10 +1,9 @@
 class Coot < Formula
   desc "Crystallographic Object-Oriented Toolkit"
   homepage "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/"
-  url "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/source/releases/coot-1.1.11.tar.gz"
-  sha256 "6fd2b5a2d1bad5bdeebdb030b552b800df28c0c03608334fe69725379da8eec0"
+  url "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/source/releases/coot-1.1.12.tar.gz"
+  sha256 "83e299eef2ffd7b8c6e7598348a0d694effa39a5b81029b27c55a284387d62c1"
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only", "GPL-2.0-or-later"]
-  revision 2
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -52,7 +51,7 @@ class Coot < Formula
   depends_on "pango"
   depends_on "py3cairo"
   depends_on "pygobject3"
-  depends_on "python@3.12"
+  depends_on "python@3.12" # 3.13 is not supported yet?
   depends_on "rdkit"
   depends_on "sqlite"
 
