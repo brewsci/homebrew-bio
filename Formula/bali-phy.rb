@@ -31,11 +31,11 @@ class BaliPhy < Formula
   depends_on "gcc" unless OS.mac? # for C++20
 
   on_macos do
-    depends_on "llvm" if DevelopmentTools.clang_build_version <= 1300
+    depends_on "llvm" if DevelopmentTools.clang_build_version <= 1500
   end
 
   fails_with :clang do
-    build 1300
+    build 1500
     cause "Requires C++20 support"
   end
 
@@ -45,8 +45,8 @@ class BaliPhy < Formula
   end
 
   def install
-    ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1300
-    ENV["CXX"] = Formula["llvm"].opt_bin/"clang++" if OS.mac? && DevelopmentTools.clang_build_version <= 1300
+    ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1500
+    ENV["CXX"] = Formula["llvm"].opt_bin/"clang++" if OS.mac? && DevelopmentTools.clang_build_version <= 1500
     ENV["BOOST_ROOT"] = Formula["boost"].opt_prefix
 
     flags = %w[-C build install]
