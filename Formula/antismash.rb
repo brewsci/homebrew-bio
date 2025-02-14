@@ -204,7 +204,6 @@ class Antismash < Formula
     sha256 "082433502dd922bf738de0d8bcc4fdcbf0979ff44c42bd40f5af8a282f6fa107"
   end
 
-
   def python3
     which("python3.13")
   end
