@@ -4,8 +4,8 @@ class BaliPhy < Formula
   desc "Bayesian co-estimation of phylogenies and multiple alignments"
   homepage "https://www.bali-phy.org/"
   url "https://github.com/bredelings/BAli-Phy.git",
-    tag:      "4.0-beta15",
-    regision: "5ae1a597b6b594357b044bbab34920606084997e"
+    tag:      "4.0-beta17",
+    regision: "33285a20bf37b12fa61344d36fb1668c850b43d0"
   license "GPL-2.0-or-later"
   head "https://github.com/bredelings/BAli-Phy.git", branch: "master"
 
@@ -30,14 +30,25 @@ class BaliPhy < Formula
   depends_on "cairo"
   depends_on "gcc" unless OS.mac? # for C++20
 
-  # C++20
-  fails_with gcc: "5"
-  fails_with gcc: "6"
-  fails_with gcc: "7"
-  fails_with gcc: "8"
-  fails_with gcc: "9"
+  on_macos do
+    depends_on "llvm" if DevelopmentTools.clang_build_version <= 1500
+  end
+
+  fails_with :clang do
+    build 1500
+    cause "Requires C++20 support"
+  end
+
+  fails_with :gcc do
+    version "11"
+    cause "Requires C++20 support"
+  end
 
   def install
+    ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1500
+    ENV["CXX"] = Formula["llvm"].opt_bin/"clang++" if OS.mac? && DevelopmentTools.clang_build_version <= 1500
+    ENV["BOOST_ROOT"] = Formula["boost"].opt_prefix
+
     flags = %w[-C build install]
     system "meson", "build", "--prefix=#{prefix}", "--buildtype=release", "-Db_ndebug=true"
     system "ninja", *flags
