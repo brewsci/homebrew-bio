@@ -35,6 +35,6 @@ class Alfred < Formula
     system "#{bin}/alfred", "qc", "-r", testpath/"example/E.coli.fa.gz",
                                   "-j", testpath/"ecoli.json.gz",
                                   testpath/"example/E.coli.cram"
-    assert_predicate testpath/"ecoli.json.gz", :exist?
+    assert_path_exists testpath/"ecoli.json.gz"
   end
 end

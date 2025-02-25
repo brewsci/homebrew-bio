@@ -25,7 +25,7 @@ class HapIbd < Formula
 
   test do
     assert_predicate bin/"hap-ibd", :executable?
-    assert_predicate libexec/"hap-ibd.jar", :exist?
+    assert_path_exists libexec/"hap-ibd.jar"
     assert_match(/^Syntax: java -jar hap-ibd.jar\b/, shell_output("#{bin}/hap-ibd"))
   end
 end

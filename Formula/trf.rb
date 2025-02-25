@@ -31,7 +31,7 @@ class Trf < Formula
     EOS
     shell_output("#{bin}/trf #{testpath}/test.fa 2 7 7 80 10 50 500 2>&1", 1)
     out = testpath/"test.fa.2.7.7.80.10.50.500.1.txt.html"
-    assert_predicate out, :exist?
+    assert_path_exists out
     assert_match "Length: 180", File.read(out)
   end
 end

@@ -66,7 +66,7 @@ class Qtltools < Formula
     cp resource("testdata_index").cached_download, testpath/"genes.50percent.chr22.bed.gz.tbi"
     system "#{bin}/QTLtools", "pca", "--bed", "genes.50percent.chr22.bed.gz", "--scale",
           "--center", "--out", "genes.50percent.chr22"
-    assert_predicate testpath/"genes.50percent.chr22.pca_stats", :exist?
+    assert_path_exists testpath/"genes.50percent.chr22.pca_stats"
     assert_match "prop_var", File.read("genes.50percent.chr22.pca_stats")
   end
 end

@@ -27,6 +27,6 @@ class Gffcompare < Formula
     cp_r prefix/"examples", testpath
     system "#{bin}/gffcompare", "-r", "#{testpath}/examples/annotation.gff",
                                       "#{testpath}/examples/transcripts.gtf"
-    assert_predicate testpath/"examples/gffcmp.transcripts.gtf.tmap", :exist?
+    assert_path_exists testpath/"examples/gffcmp.transcripts.gtf.tmap"
   end
 end

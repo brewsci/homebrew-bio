@@ -38,6 +38,6 @@ class ClusterPicker < Formula
     EOT
     # run
     assert_match "Reading", shell_output("#{bin}/ClusterPicker #{fa} #{nw} 0.9 2>&1")
-    assert_predicate testpath/"test_clusterPicks_log.txt", :exist?
+    assert_path_exists testpath/"test_clusterPicks_log.txt"
   end
 end

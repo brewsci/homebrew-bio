@@ -21,7 +21,7 @@ class Libgff < Formula
   end
 
   test do
-    assert_predicate lib/"libgff.a", :exist?
-    assert_predicate include/"gff.h", :exist?
+    assert_path_exists lib/"libgff.a"
+    assert_path_exists include/"gff.h"
   end
 end

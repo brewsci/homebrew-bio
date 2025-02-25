@@ -25,7 +25,7 @@ class Gzstream < Formula
   end
 
   test do
-    assert_predicate include/"gzstream.h", :exist?
-    assert_predicate lib/"libgzstream.a", :exist?
+    assert_path_exists include/"gzstream.h"
+    assert_path_exists lib/"libgzstream.a"
   end
 end
