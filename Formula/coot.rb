@@ -1,8 +1,8 @@
 class Coot < Formula
   desc "Crystallographic Object-Oriented Toolkit"
   homepage "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/"
-  url "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/source/releases/coot-1.1.12.tar.gz"
-  sha256 "83e299eef2ffd7b8c6e7598348a0d694effa39a5b81029b27c55a284387d62c1"
+  url "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/source/releases/coot-1.1.13.tar.gz"
+  sha256 "9a25b1bb6d8f71ee57e306c1fbd3c786d53e60eba275e634b9abd5297d7c9732"
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only", "GPL-2.0-or-later"]
 
   bottle do
