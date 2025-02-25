@@ -26,7 +26,7 @@ class AbyssExplorer < Formula
 
   test do
     assert_predicate bin/"abyss-explorer", :executable?
-    assert_predicate libexec/"ABySS-explorer.jar", :exist?
+    assert_path_exists libexec/"ABySS-explorer.jar"
     # This test fails on CI, though it succeeds locally.
     assert_match "Build", shell_output("#{bin}/abyss-explorer --version") unless ENV["HOMEBREW_GITHUB_ACTIONS"]
   end

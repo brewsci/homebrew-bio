@@ -30,6 +30,6 @@ class Barrnap < Formula
     assert_match "Name=16S_rRNA", shell_output("#{bin}/barrnap -q --kingdom mito #{prefix}/examples/mitochondria.fna")
     out = testpath/"hits.fa"
     system "#{bin}/barrnap", "--outseq", out, "#{prefix}/examples/small.fna"
-    assert_predicate out, :exist?
+    assert_path_exists out
   end
 end

@@ -31,6 +31,6 @@ class Mapcaller < Formula
                             "-f2", pkgshare/"test/r2.fq",
                             "-vcf", testpath/"out.vcf",
                             "-t", "2"
-    assert_predicate testpath/"out.vcf", :exist?
+    assert_path_exists testpath/"out.vcf"
   end
 end

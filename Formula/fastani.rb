@@ -46,7 +46,7 @@ class Fastani < Formula
            "-r", pkgshare/"data/Escherichia_coli_str_K12_MG1655.fna",
            "-o", testpath/"out",
            "--matrix"
-    assert_predicate testpath/"out", :exist?
-    assert_predicate testpath/"out.matrix", :exist?
+    assert_path_exists testpath/"out"
+    assert_path_exists testpath/"out.matrix"
   end
 end

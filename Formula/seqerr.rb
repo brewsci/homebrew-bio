@@ -25,7 +25,7 @@ class Seqerr < Formula
 
   test do
     assert_predicate bin/"seqerr", :executable?
-    assert_predicate libexec/"seqerr.jar", :exist?
+    assert_path_exists libexec/"seqerr.jar"
     assert_match "usage: java -jar seqerr.jar", shell_output("#{bin}/seqerr")
   end
 end

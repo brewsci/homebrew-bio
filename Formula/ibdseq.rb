@@ -25,7 +25,7 @@ class Ibdseq < Formula
 
   test do
     assert_predicate bin/"ibdseq", :executable?
-    assert_predicate libexec/"ibdseq.jar", :exist?
+    assert_path_exists libexec/"ibdseq.jar"
     assert_match "usage: java -jar ibdseq.jar", shell_output("#{bin}/ibdseq")
   end
 end

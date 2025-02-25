@@ -87,6 +87,6 @@ class Quast < Formula
            "-1", "#{testpath}/test_data/reads1.fastq.gz",
            "-2", "#{testpath}/test_data/reads2.fastq.gz",
            "-o", "output", "-t", "1", "--debug", "--glimmer"
-    assert_predicate testpath/"output/report.pdf", :exist?
+    assert_path_exists testpath/"output/report.pdf"
   end
 end

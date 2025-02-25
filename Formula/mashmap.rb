@@ -35,7 +35,7 @@ class Mashmap < Formula
           "-Y '#' " \
           "-o scerevisiae8.paf"
     system cmd
-    assert_predicate testpath/"scerevisiae8.paf", :exist?
+    assert_path_exists testpath/"scerevisiae8.paf"
     assert_match "UWOPS034614#1#chrMT", (testpath/"scerevisiae8.paf").read
   end
 end
