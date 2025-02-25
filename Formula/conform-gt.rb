@@ -25,7 +25,7 @@ class ConformGt < Formula
 
   test do
     assert_predicate bin/"conform-gt", :executable?
-    assert_predicate libexec/"conform-gt.jar", :exist?
+    assert_path_exists libexec/"conform-gt.jar"
     assert_match "usage: java -jar conform-gt.", shell_output("#{bin}/conform-gt")
   end
 end

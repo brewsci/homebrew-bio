@@ -43,7 +43,7 @@ class Raxml < Formula
     system "#{bin}/raxmlHPC-SSE3", "-f", "a", "-m", "GTRGAMMA", "-p",
                                        "12345", "-x", "12345", "-N", "100",
                                        "-s", "aln.phy", "-n", "ts"
-    assert_predicate testpath/"RAxML_bipartitions.ts", :exist?,
+    assert_path_exists testpath/"RAxML_bipartitions.ts",
                      "Failed to create RAxML_bipartitions.ts"
   end
 end

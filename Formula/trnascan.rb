@@ -39,7 +39,7 @@ class Trnascan < Formula
 
   test do
     system "#{bin}/tRNAscan-SE", "-b", "test.bed", "#{prefix}/Demo/Example1.fa"
-    assert_predicate testpath/"test.bed", :exist?
+    assert_path_exists testpath/"test.bed"
     assert_equal File.read("test.bed"), File.read(prefix/"Demo/Example1-tRNAs.bed")
   end
 end

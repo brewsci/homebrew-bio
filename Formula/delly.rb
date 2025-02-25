@@ -39,6 +39,6 @@ class Delly < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}/delly --version 2>&1")
     system "#{bin}/delly", "call", "-g", prefix/"example/ref.fa", "-o", testpath/"sr.bcf", prefix/"example/sr.bam"
-    assert_predicate testpath/"sr.bcf", :exist?
+    assert_path_exists testpath/"sr.bcf"
   end
 end

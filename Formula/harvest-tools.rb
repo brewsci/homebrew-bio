@@ -67,6 +67,6 @@ class HarvestTools < Formula
                                   "-x", pkgshare/"test/test2.xmfa",
                                   "-v", pkgshare/"test/test2.vcf",
                                   "-o", testpath/"out.ggr"
-    assert_predicate testpath/"out.ggr", :exist?
+    assert_path_exists testpath/"out.ggr"
   end
 end

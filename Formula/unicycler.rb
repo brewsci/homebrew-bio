@@ -44,7 +44,7 @@ class Unicycler < Formula
     assert_match "usage", shell_output("#{bin}/unicycler --help")
     resources.each { |r| r.stage testpath }
     system "#{bin}/unicycler", "-1", "short_reads_1.fastq", "-2", "short_reads_2.fastq", "-o", "test"
-    assert_predicate testpath/"test/assembly.gfa", :exist?
-    assert_predicate testpath/"test/assembly.fasta", :exist?
+    assert_path_exists testpath/"test/assembly.gfa"
+    assert_path_exists testpath/"test/assembly.fasta"
   end
 end

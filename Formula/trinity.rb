@@ -98,6 +98,6 @@ class Trinity < Formula
       "--seqType", "fq", "--max_memory", "1G", "--SS_lib_type", "RF",
       "--left", testpath/"reads.left.fq.gz,reads2.left.fq.gz",
       "--right", testpath/"reads.right.fq.gz,reads2.right.fq.gz"
-    assert_predicate testpath/"trinity_out_dir/both.fa", :exist?
+    assert_path_exists testpath/"trinity_out_dir/both.fa"
   end
 end

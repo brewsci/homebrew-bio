@@ -67,6 +67,6 @@ class Hisat2 < Formula
 
   test do
     system "#{bin}/hisat2-build", "-p", "12", pkgshare/"example/reference/22_20-21M.fa", "genome_index"
-    assert_predicate testpath/"genome_index.1.ht2", :exist?
+    assert_path_exists testpath/"genome_index.1.ht2"
   end
 end

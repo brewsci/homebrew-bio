@@ -69,6 +69,6 @@ class Oma < Formula
       MTIHNVSLFTTIFNIFKFCVLYITSSLGISLERFIKCRKVKNINDIVSE
     EOS
     system "#{bin}/oma"
-    assert_predicate testpath/"Output/HierarchicalGroups.orthoxml", :exist?
+    assert_path_exists testpath/"Output/HierarchicalGroups.orthoxml"
   end
 end

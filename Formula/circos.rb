@@ -37,7 +37,7 @@ class Circos < Formula
 
   test do
     system bin/"circos", "-conf", libexec/"example/etc/circos.conf", "-debug_group", "summary,timer"
-    assert_predicate testpath/"circos.png", :exist?
-    assert_predicate testpath/"circos.svg", :exist?
+    assert_path_exists testpath/"circos.png"
+    assert_path_exists testpath/"circos.svg"
   end
 end

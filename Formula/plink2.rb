@@ -42,6 +42,6 @@ class Plink2 < Formula
 
   test do
     system "#{bin}/plink2", "--dummy", "513", "1423", "0.02", "--out", "dummy_cc1"
-    assert_predicate testpath/"dummy_cc1.pvar", :exist?
+    assert_path_exists testpath/"dummy_cc1.pvar"
   end
 end

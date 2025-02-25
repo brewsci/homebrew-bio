@@ -78,21 +78,21 @@ class Eigensoft < Formula
     cp_r samples/"EIGENSTRAT", testpath
     cd "EIGENSTRAT" do
       assert_match(/^gc.perl example.chisq example.chisq.GC$/, shell_output("perl example.perl"))
-      assert_predicate Pathname.pwd/"example.pca", :exist?
-      assert_predicate Pathname.pwd/"example.pca.evec", :exist?
-      assert_predicate Pathname.pwd/"example.plot.pdf", :exist?
-      assert_predicate Pathname.pwd/"example.plot.ps", :exist?
-      assert_predicate Pathname.pwd/"example.plot.xtxt", :exist?
+      assert_path_exists Pathname.pwd/"example.pca"
+      assert_path_exists Pathname.pwd/"example.pca.evec"
+      assert_path_exists Pathname.pwd/"example.plot.pdf"
+      assert_path_exists Pathname.pwd/"example.plot.ps"
+      assert_path_exists Pathname.pwd/"example.plot.xtxt"
     end
 
     cp_r samples/"POPGEN", testpath
     cd "POPGEN" do
       assert_match(/^evec2pca.perl 2 example.evec example.ind example.pca$/, shell_output("perl example.perl"))
-      assert_predicate Pathname.pwd/"example.pca", :exist?
-      assert_predicate Pathname.pwd/"example.evec", :exist?
-      assert_predicate Pathname.pwd/"example.plot.pdf", :exist?
-      assert_predicate Pathname.pwd/"example.plot.ps", :exist?
-      assert_predicate Pathname.pwd/"example.plot.xtxt", :exist?
+      assert_path_exists Pathname.pwd/"example.pca"
+      assert_path_exists Pathname.pwd/"example.evec"
+      assert_path_exists Pathname.pwd/"example.plot.pdf"
+      assert_path_exists Pathname.pwd/"example.plot.ps"
+      assert_path_exists Pathname.pwd/"example.plot.xtxt"
     end
   end
 end

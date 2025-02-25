@@ -56,7 +56,7 @@ class Alphafill < Formula
     system "#{bin}/alphafill", "process", "--config", "#{testpath}/alphafill.conf",
            "#{prefix}/test/afdb-v4/P2/AF-P29373-F1-model_v4.cif.gz",
            "#{testpath}/out.cif.gz"
-    assert_predicate testpath/"out.cif.gz", :exist?
+    assert_path_exists testpath/"out.cif.gz"
     assert_match "RETINOIC ACID", shell_output("gunzip -c #{testpath}/out.cif.gz")
   end
 end

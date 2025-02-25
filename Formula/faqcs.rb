@@ -42,7 +42,7 @@ class Faqcs < Formula
       @BCFFFFFHHHCFBHHIJJJICFGIIGIHHG3CEGEBA;@AEGHE:BEB<A@=B@@AAD>:?3>>:ABD5;BDBDACDACDBAC39C>@ACCDDCEEEDD
     EOS
     system "#{bin}/FaQCs", "-u", "#{testpath}/test.fq", "-d", testpath, "-qc_only"
-    assert_predicate testpath/"QC.stats.txt", :exist?
-    assert_predicate testpath/"QC_qc_report.pdf", :exist?
+    assert_path_exists testpath/"QC.stats.txt"
+    assert_path_exists testpath/"QC_qc_report.pdf"
   end
 end
