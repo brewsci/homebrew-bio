@@ -4,8 +4,8 @@ class BaliPhy < Formula
   desc "Bayesian co-estimation of phylogenies and multiple alignments"
   homepage "https://www.bali-phy.org/"
   url "https://github.com/bredelings/BAli-Phy.git",
-    tag:      "4.0-beta17",
-    regision: "33285a20bf37b12fa61344d36fb1668c850b43d0"
+    tag:      "4.0",
+    revision: "6cb702d708600ebfdff41829e8be2ed9f033d336"
   license "GPL-2.0-or-later"
   head "https://github.com/bredelings/BAli-Phy.git", branch: "master"
 
@@ -27,6 +27,13 @@ class BaliPhy < Formula
   depends_on "ninja" => :build
   depends_on "pandoc" => :build
   depends_on "pkg-config" => :build
+
+  # install these packages to avoid installing meson subprojects
+  depends_on "cereal" => :build
+  depends_on "range-v3" => :build
+  depends_on "eigen" => :build
+  depends_on "fmt"
+
   depends_on "boost"
   depends_on "cairo"
   depends_on "gcc" unless OS.mac? # for C++20
@@ -51,8 +58,8 @@ class BaliPhy < Formula
     ENV["BOOST_ROOT"] = Formula["boost"].opt_prefix
 
     flags = %w[-C build install]
-    system "meson", "build", "--prefix=#{prefix}", "--buildtype=release", "-Db_ndebug=true"
-    system "ninja", *flags
+    system "meson", "setup", "build", "--prefix=#{prefix}", "--buildtype=release", "-Db_ndebug=true"
+    system "meson", *flags
   end
 
   test do
