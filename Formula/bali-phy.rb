@@ -22,20 +22,17 @@ class BaliPhy < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8195aca549207e85a206fbaaa9917d927a8dd0bbb267ddc3356b9335e41e37f9"
   end
 
+  depends_on "cereal" => :build
   depends_on "eigen" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pandoc" => :build
   depends_on "pkg-config" => :build
-
-  # install these packages to avoid installing meson subprojects
-  depends_on "cereal" => :build
   depends_on "range-v3" => :build
-  depends_on "eigen" => :build
-  depends_on "fmt"
 
   depends_on "boost"
   depends_on "cairo"
+  depends_on "fmt"
   depends_on "gcc" unless OS.mac? # for C++20
 
   on_macos do
