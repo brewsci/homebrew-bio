@@ -4,8 +4,8 @@ class BaliPhy < Formula
   desc "Bayesian co-estimation of phylogenies and multiple alignments"
   homepage "https://www.bali-phy.org/"
   url "https://github.com/bredelings/BAli-Phy.git",
-    tag:      "4.0-beta17",
-    regision: "33285a20bf37b12fa61344d36fb1668c850b43d0"
+    tag:      "4.0",
+    revision: "6cb702d708600ebfdff41829e8be2ed9f033d336"
   license "GPL-2.0-or-later"
   head "https://github.com/bredelings/BAli-Phy.git", branch: "master"
 
@@ -22,13 +22,17 @@ class BaliPhy < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8195aca549207e85a206fbaaa9917d927a8dd0bbb267ddc3356b9335e41e37f9"
   end
 
+  depends_on "cereal" => :build
   depends_on "eigen" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pandoc" => :build
   depends_on "pkg-config" => :build
+  depends_on "range-v3" => :build
+
   depends_on "boost"
   depends_on "cairo"
+  depends_on "fmt"
   depends_on "gcc" unless OS.mac? # for C++20
 
   on_macos do
@@ -50,9 +54,9 @@ class BaliPhy < Formula
     ENV["CXX"] = Formula["llvm"].opt_bin/"clang++" if OS.mac? && DevelopmentTools.clang_build_version <= 1500
     ENV["BOOST_ROOT"] = Formula["boost"].opt_prefix
 
-    flags = %w[-C build install]
-    system "meson", "build", "--prefix=#{prefix}", "--buildtype=release", "-Db_ndebug=true"
-    system "ninja", *flags
+    flags = %w[install -C build]
+    system "meson", "setup", "build", "--prefix=#{prefix}", "--buildtype=release", "-Db_ndebug=true"
+    system "meson", *flags
   end
 
   test do
