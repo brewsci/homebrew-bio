@@ -3,8 +3,8 @@ class SeqanAT3 < Formula
   # cite Reinert_2017: "https://doi.org/10.1016/j.jbiotec.2017.07.017"
   desc "Modern C++ library for sequence analysis"
   homepage "https://www.seqan.de"
-  url "https://github.com/seqan/seqan3/releases/download/3.1.0/seqan3-3.1.0-Source.tar.xz"
-  sha256 "0b37b1c3450e19c0ebe42c052c3f87babb8074bd772f10a553949c312c285726"
+  url "https://github.com/seqan/seqan3/releases/download/3.3.0/seqan3-3.3.0-Source.tar.xz"
+  sha256 "da2fb621268ebc52b9cc26087e96f4a94109db1f4f28d363d19c7c9cdbd788b1"
   head "https://github.com/seqan/seqan3.git"
 
   bottle do
@@ -15,19 +15,24 @@ class SeqanAT3 < Formula
 
   depends_on "cmake" => :build
   depends_on "xz" => :build
-  depends_on "gcc@9"
+  depends_on "gcc@13"
 
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  # requires c++17 and concepts
+  # requires c++20 and concepts
   fails_with :clang do
-    cause "seqan3 requires concepts and c++17 support"
+    cause "seqan3 requires concepts and c++20 support"
   end
 
-  fails_with gcc: "4.9" # requires C++17
-  fails_with gcc: "5" # requires C++17
-  fails_with gcc: "6" # requires C++17
+  # requires C++20
+  fails_with gcc: "4.9"
+  fails_with gcc: "5"
+  fails_with gcc: "6"
+  fails_with gcc: "7"
+  fails_with gcc: "8"
+  fails_with gcc: "9"
+  fails_with gcc: "10"
 
   def install
     mkdir "build" do
