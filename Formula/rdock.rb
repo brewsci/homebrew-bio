@@ -10,7 +10,8 @@ class Rdock < Formula
   depends_on "popt"
 
   def install
-    system "CXX=g++", "make"
+    system "export", "CXX=$(which g++-14)"
+    system "make"
     system "PREFIX=#{prefix}", "make", "install"
   end
 
