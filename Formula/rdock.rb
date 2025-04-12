@@ -15,7 +15,7 @@ class Rdock < Formula
     ENV["CXX"] = Formula["gcc"].opt_bin/"g++-14"
 
     if OS.mac?
-      system "make", "CXXFLAGS=-include stdlib.h"
+      system "make", "CXXFLAGS=-D__APPLE__ -include stdlib.h"
     else
       system "make"
     end
