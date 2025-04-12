@@ -11,7 +11,7 @@ class Rdock < Formula
 
   def install
     system "CXX=g++", "make"
-    system "PREFIX=#{prefix}", "make", "install",
+    system "PREFIX=#{prefix}", "make", "install"
   end
 
   test do
