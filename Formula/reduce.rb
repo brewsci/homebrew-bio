@@ -16,6 +16,7 @@ class Reduce < Formula
   depends_on "python@3.12"
 
   def install
+    # Refer to https://github.com/rlabduke/reduce/issues/60 for `-DHET_DICTIONARY` and `-DHET_DICTOLD` flags
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
       "-DHET_DICTIONARY=#{prefix}/reduce_wwPDB_het_dict.txt",
       "-DHET_DICTOLD=#{prefix}/reduce_get_dict.txt"
