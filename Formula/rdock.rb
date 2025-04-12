@@ -18,6 +18,8 @@ class Rdock < Formula
   end
 
   test do
-    system "make", "test"
+    cd buildpath do
+      system "make", "test"
+    end
   end
 end
