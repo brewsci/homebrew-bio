@@ -30,7 +30,7 @@ class Reduce < Formula
     end
 
     output = shell_output(bin/"reduce -Version 2>&1", 2)
-    assert_match "reduce.4.14.230914", output
+    assert_match "reduce.4.15.250408", output
     resource("homebrew-testdata").stage testpath
     system("#{bin}/reduce -NOFLIP -Quiet 3qug.pdb > 3qug_h.pdb")
     assert_match "add=1902, rem=0, adj=62", File.read("3qug_h.pdb")
