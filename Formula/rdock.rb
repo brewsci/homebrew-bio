@@ -15,11 +15,7 @@ class Rdock < Formula
     ENV["CC"] = Formula["gcc"].opt_bin/"gcc-14"
     ENV["CXX"] = Formula["gcc"].opt_bin/"g++-14"
 
-    if OS.mac?
-      system "make"
-    else
-      system "make"
-    end
+    system "make"
 
     system "make", "install", "PREFIX=#{prefix}"
   end
