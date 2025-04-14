@@ -12,13 +12,13 @@ class Rdock < Formula
   depends_on "python"
 
   patch do
-    url "https://raw.githubusercontent.com/eunos-1128/rDock/refs/heads/patch/homebrew/NMObjective.h.patch"
-    sha256 "5633b36c6a5e9f74a3855afd3e05ac9e3c7a588471e7f16ac508736ab093b6f7"
+    url "https://raw.githubusercontent.com/eunos-1128/rDock/66f167d73cbfd5be64eda2ee1ff295ce5c7d3b3f/NMObjective.h.patch"
+    sha256 "66f167d73cbfd5be64eda2ee1ff295ce5c7d3b3f"
   end
 
   patch do
-    url "https://raw.githubusercontent.com/eunos-1128/rDock/refs/heads/patch/homebrew/perl_lib.patch"
-    sha256 "5f9f80fdde788858aa8b8295ae75dddc2cb34ecbc0cdc7e5c7d38fb719ba1926"
+    url "https://raw.githubusercontent.com/eunos-1128/rDock/66f167d73cbfd5be64eda2ee1ff295ce5c7d3b3f/perl_lib.patch"
+    sha256 "66f167d73cbfd5be64eda2ee1ff295ce5c7d3b3f"
   end
 
   def install
