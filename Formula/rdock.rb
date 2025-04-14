@@ -31,6 +31,6 @@ class Rdock < Formula
 
   test do
     # TODO: Update later
-    system "rbdock", "--help"
+    system "#{bin}/rbdock", "--help"
   end
 end
