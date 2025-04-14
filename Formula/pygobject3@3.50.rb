@@ -13,6 +13,8 @@ class Pygobject3AT350 < Formula
     sha256               x86_64_linux:  "8e186639a2e0f28fd8f4d084cde2b05a8899a6f2efacf505cd4a133246cd4a07"
   end
 
+  keg_only :versioned_formula
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
