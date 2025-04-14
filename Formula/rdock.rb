@@ -11,12 +11,12 @@ class Rdock < Formula
   depends_on "popt"
   depends_on "python"
 
-  resource "patch" do
+  patch do
     url "https://raw.githubusercontent.com/eunos-1128/rDock/refs/heads/patch/homebrew/NMObjective.h.patch"
     sha256 "5633b36c6a5e9f74a3855afd3e05ac9e3c7a588471e7f16ac508736ab093b6f7"
   end
 
-  resource "patch2" do
+  patch do
     url "https://raw.githubusercontent.com/eunos-1128/rDock/refs/heads/patch/homebrew/perl_lib.patch"
     sha256 "5f9f80fdde788858aa8b8295ae75dddc2cb34ecbc0cdc7e5c7d38fb719ba1926"
   end
@@ -25,10 +25,6 @@ class Rdock < Formula
     ENV["CXX"] = Formula["gcc"].opt_bin/"g++-14"
     ENV["CXXFLAGS"] = "-std=c++14 -Wno-deprecated-declarations"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{Formula["gcc"].opt_lib}/gcc/14" if OS.mac?
-    buildpath.install resource("patch")
-    buildpath.install resource("patch2")
-    system "patch", "-p0", "-i", "NMObjective.h.patch"
-    system "patch", "-p0", "-i", "perl_lib.patch"
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
   end
