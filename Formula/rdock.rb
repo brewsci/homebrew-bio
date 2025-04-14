@@ -14,8 +14,7 @@ class Rdock < Formula
   def install
     ENV["CC"] = Formula["gcc"].opt_bin/"gcc-14"
     ENV["CXX"] = Formula["gcc"].opt_bin/"g++-14"
-
-    ENV.append "LDFLAGS", "-Wl,-rpath,#{gcc.opt_lib}/gcc/14" if OS.mac?
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{Formula["gcc"].opt_lib}/gcc/14" if OS.mac?
 
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
