@@ -12,8 +12,8 @@ class Rdock < Formula
   depends_on "python"
 
   def install
-    ENV["CC"] = Formula["gcc"].opt_bin/"gcc-14"
-    ENV["CXX"] = Formula["gcc"].opt_bin/"g++-14"
+    # ENV["CC"] = Formula["gcc"].opt_bin/"gcc-14"
+    # ENV["CXX"] = Formula["gcc"].opt_bin/"g++-14"
 
     system "make"
 
