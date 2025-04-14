@@ -33,10 +33,10 @@ class Rdock < Formula
 
     ENV["CXX_EXTRA_FLAGS"] = "-I#{Formula["popt"].opt_include}"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{Formula["gcc"].opt_lib}/gcc/14" if OS.mac?
+    cp_r "lib", "#{prefix}/lib_perl"
     rm Dir["lib/*"] if Dir.exist?("lib")
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
-    cp_r "perl_lib", prefix
     cp_r "data", prefix
   end
 
