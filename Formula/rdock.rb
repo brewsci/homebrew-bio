@@ -33,17 +33,17 @@ class Rdock < Formula
 
     ENV["CXX_EXTRA_FLAGS"] = "-I#{Formula["popt"].opt_include}"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{Formula["gcc"].opt_lib}/gcc/14" if OS.mac?
-    cp_r "lib", "#{prefix}/lib_perl"
+    cp_r "lib", "#{share}/lib"
     rm Dir["lib/*"] if Dir.exist?("lib")
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
-    cp_r "data", prefix
+    cp_r "data", share
   end
 
   def caveats
     <<~EOS
       Before running rDock programs, you need to set the `RBT_ROOT` environment variable:
-        export RBT_ROOT=#{prefix}
+        export RBT_ROOT=#{share}
     EOS
   end
 
