@@ -1,8 +1,8 @@
 class Reduce < Formula
   desc "Tool for adding and correcting hydrogens in PDB files"
   homepage "https://github.com/rlabduke/reduce"
-  url "https://github.com/rlabduke/reduce/archive/refs/tags/v4.14.tar.gz"
-  sha256 "62e61cce221fff76b5834031302d91fe703a19945a42e16620d4fb860604daf4"
+  url "https://github.com/rlabduke/reduce/archive/refs/tags/v4.15.tar.gz"
+  sha256 "f2f993e3f86ded38135d6433e0a7c2ed10fbe5da37f232c04d7316702582ed06"
   license "BSD-4-Clause-UC"
 
   bottle do
@@ -16,7 +16,10 @@ class Reduce < Formula
   depends_on "python@3.12"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # Refer to https://github.com/rlabduke/reduce/issues/60 for `-DHET_DICTIONARY` and `-DHET_DICTOLD` flags
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
+      "-DHET_DICTIONARY=#{prefix}/reduce_wwPDB_het_dict.txt",
+      "-DHET_DICTOLD=#{prefix}/reduce_get_dict.txt"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
@@ -28,9 +31,9 @@ class Reduce < Formula
     end
 
     output = shell_output(bin/"reduce -Version 2>&1", 2)
-    assert_match "reduce.4.14.230914", output
+    assert_match "reduce.4.15.250408", output
     resource("homebrew-testdata").stage testpath
     system("#{bin}/reduce -NOFLIP -Quiet 3qug.pdb > 3qug_h.pdb")
-    assert_match "add=1902, rem=0, adj=62", File.read("3qug_h.pdb")
+    assert_match "add=1978, rem=0, adj=70", File.read("3qug_h.pdb")
   end
 end
