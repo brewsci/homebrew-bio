@@ -7,8 +7,10 @@ class Rdock < Formula
   head "https://github.com/CBDD/rdock.git", branch: "main"
 
   depends_on "gcc" => :build
+  depends_on "numpy"
   depends_on "perl"
   depends_on "popt"
+  depends_on "pytest"
   depends_on "python"
 
   patch do
@@ -23,10 +25,23 @@ class Rdock < Formula
 
   def install
     ENV["CXX"] = Formula["gcc"].opt_bin/"g++-14"
-    ENV.append "CXXFLAGS", "-Wno-deprecated-declarations -I#{Formula['popt'].opt_prefix}/include"
-    ENV.append "LDFLAGS", "-L#{Formula['popt'].opt_prefix}/lib -lpopt"
+
+    inreplace "Makefile" do |s|
+      s.gsub!(/INCLUDE\s*:=/, "INCLUDE := -I#{Formula["popt"].opt_include} ")
+      s.gsub!(/LIB_DEPENDENCIES\s*:=\s*-lpopt/, "LIB_DEPENDENCIES := -L#{Formula["popt"].opt_lib} -lpopt")
+    end
+
+    ENV["CXX_EXTRA_FLAGS"] = "-I#{Formula["popt"].opt_include}"
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{Formula["gcc"].opt_lib}/gcc/14" if OS.mac?
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
+  end
+
+  def caveats
+    <<~EOS
+      Before running rDock programs, you need to set the `RBT_ROOT` environment variable:
+        export RBT_ROOT=#{prefix}
+    EOS
   end
 
   test do
