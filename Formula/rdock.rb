@@ -23,7 +23,7 @@ class Rdock < Formula
 
   def install
     ENV["CXX"] = Formula["gcc"].opt_bin/"g++-14"
-    ENV["CXXFLAGS"] = "-std=c++14 -Dmalloc_h=stdlib.h -Wno-deprecated-declarations"
+    ENV["CXXFLAGS"] = "-std=c++14 -Wno-deprecated-declarations"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{Formula["gcc"].opt_lib}/gcc/14" if OS.mac?
     buildpath.install resource("patch")
     buildpath.install resource("patch2")
