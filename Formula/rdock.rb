@@ -13,7 +13,7 @@ class Rdock < Formula
 
   def install
     ENV["CXX"] = Formula["gcc"].opt_bin/"g++-14"
-    ENV["CXXFLAGS"] = "-std=c++14"
+    ENV["CXXFLAGS"] = "-std=c++14 -Wno-deprecated-declarations"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{Formula["gcc"].opt_lib}/gcc/14" if OS.mac?
 
     system "make"
