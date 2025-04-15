@@ -28,8 +28,7 @@ class Rdock < Formula
 
     ENV["CXX_EXTRA_FLAGS"] = "-I#{Formula["popt"].opt_include}"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{Formula["gcc"].opt_lib}/gcc/14" if OS.mac?
-    (share/"lib").mkpath
-    cp_r "lib", "#{share}/lib"
+    cp_r "lib", share
     rm Dir["lib/*"] if Dir.exist?("lib")
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
