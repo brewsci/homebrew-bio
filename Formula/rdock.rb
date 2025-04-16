@@ -6,6 +6,14 @@ class Rdock < Formula
   license "LGPL-3.0-only"
   head "https://github.com/CBDD/rdock.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any,                 arm64_sequoia: "d9810213a0f5a454a7955eb63900d52928646e8ad4572b116f41d6edd2f4edc4"
+    sha256 cellar: :any,                 arm64_sonoma:  "0270a31c6083b9d0efe62428405c82aa323ae351c1901f867602620f5367238a"
+    sha256                               ventura:       "f904b8567ae0543cfe62dbbd2b3edbe8ce9265572e5dcba715527858c779779e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12a1c46c9fe86e1e5ccc8422bf8976e6c9b03649a9dadb87b18fa994fd3b4ca8"
+  end
+
   depends_on "gcc" => :build
   depends_on "numpy"
   depends_on "perl"
