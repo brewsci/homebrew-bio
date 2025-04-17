@@ -34,6 +34,7 @@ class AutodockVina < Formula
           s.gsub! "BASE=$(shell brew --prefix)", "BASE=#{prefix}"
           s.gsub! "$(BASE)/include", Formula["boost"].opt_include
           s.gsub! "GPP=/usr/bin/clang++", "GPP=#{ENV.cxx}"
+          s.gsub! "BOOST_STATIC=y", "BOOST_STATIC="
         end
         system "make"
         bin.install binaries
