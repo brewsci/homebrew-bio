@@ -19,7 +19,7 @@ class AutodockVina < Formula
   end
 
   depends_on "swig" => :build
-  depends_on "boost"
+  depends_on "boost@1.85"
   depends_on "python@3.13"
 
   def install
@@ -28,17 +28,10 @@ class AutodockVina < Formula
     binaries = ["vina", "vina_split"]
     inreplace "build/makefile_common", "$(BASE)", Formula["boost"].opt_prefix
     inreplace "build/makefile_common", "${BASE}", Formula["boost"].opt_prefix
-    # deprecated boost/filesystem/convenience.hpp and progress.hpp since boost 1.85
-    inreplace "src/split/split.cpp", "#include <boost/filesystem/convenience.hpp> ", ""
-    inreplace "src/lib/vina.h", "#include <boost/filesystem/convenience.hpp> ", ""
-    inreplace "src/lib/parallel_progress.h" do |s|
-      s.gsub! "#include <boost/progress.hpp>", "#include <boost/timer/progress_display.hpp>"
-      s.gsub! "boost::progress_display", "boost::timer::progress_display"
-    end
     if OS.mac?
       cd "build/mac/release" do
         inreplace "Makefile" do |s|
-          s.gsub! "BASE=/usr/local", "BASE=#{prefix}"
+          s.gsub! "BASE=$(shell brew --prefix)", "BASE=#{prefix}"
           s.gsub! "$(BASE)/include", Formula["boost"].opt_include
           s.gsub! "GPP=/usr/bin/clang++", "GPP=#{ENV.cxx}"
         end
@@ -48,7 +41,7 @@ class AutodockVina < Formula
     else
       cd "build/linux/release" do
         inreplace "Makefile" do |s|
-          s.gsub! "BASE=/usr/local", "BASE=#{prefix}"
+          s.gsub! "BASE=/usr", "BASE=#{prefix}"
           s.gsub! "$(BASE)/include", Formula["boost"].opt_include
         end
         system "make"
