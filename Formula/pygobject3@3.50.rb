@@ -66,6 +66,8 @@ class Pygobject3AT350 < Formula
     EOS
 
     pythons.each do |python|
+      ENV.append_path "PYTHONPATH", prefix/Language::Python.site_packages(python)
+      ENV.prepend_path "PKG_CONFIG_PATH", lib/"pkgconfig"
       system python, "test.py"
     end
   end
