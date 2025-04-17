@@ -33,7 +33,6 @@ class AutodockVina < Formula
         inreplace "Makefile" do |s|
           s.gsub! "BASE=$(shell brew --prefix)", "BASE=#{prefix}"
           s.gsub! "$(BASE)/include", Formula["boost"].opt_include
-          s.gsub! "$(BASE)/lib", Formula["boost"].opt_lib
           s.gsub! "GPP=/usr/bin/clang++", "GPP=#{ENV.cxx}"
         end
         system "make"
