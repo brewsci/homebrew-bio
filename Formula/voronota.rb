@@ -7,11 +7,11 @@ class Voronota < Formula
   version "1.29.4370"
   head "https://github.com/kliment-olechnovic/voronota.git", branch: "master"
 
-#   option "with-js",      "Enable Voronota-JS expansion"
-#   option "with-lt",      "Enable Voronota-LT expansion"
-#   option "with-gl",      "Enable Voronota-GL expansion"
-#   option "with-openmp",  "Compile with OpenMP support"
-#   option "with-mpi",     "Compile with MPI support"
+  option "with-js",      "Enable Voronota-JS expansion"
+  option "with-lt",      "Enable Voronota-LT expansion"
+  option "with-gl",      "Enable Voronota-GL expansion"
+  option "with-openmp",  "Compile with OpenMP support"
+  option "with-mpi",     "Compile with MPI support"
 
   depends_on "cmake" => :build
   depends_on "open-mpi" if build.with?("mpi")
@@ -19,7 +19,9 @@ class Voronota < Formula
 
   def install
     args = std_cmake_args + [
-      "-DPREFIX=#{prefix}",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+      "-DCMAKE_INSTALL_PREFIX=#{prefix}",
+      "-DCMAKE_BUILD_TYPE=Release",
       "-DEXPANSION_JS=#{build.with?("js")  ? "ON" : "OFF"}",
       "-DEXPANSION_LT=#{build.with?("lt")  ? "ON" : "OFF"}",
       "-DEXPANSION_GL=#{build.with?("gl")  ? "ON" : "OFF"}",
@@ -43,6 +45,6 @@ class Voronota < Formula
   end
 
   test do
-    assert_match "Usage", shell_output("#{bin}/voronota --help")
+    assert_match "Commands:", shell_output("#{bin}/voronota --help")
   end
 end
