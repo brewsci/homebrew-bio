@@ -11,11 +11,10 @@ class AutodockVina < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8db686a32dc49d24220979d8159c49e61ae69a5b2724b10313d4ed9ff85d18a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84481205f261ae96bd35daceb6eff1d7c0476febb63a03e9e52b7ba3b81ba1c4"
-    sha256 cellar: :any_skip_relocation, ventura:       "bc26eda9837eb112eb98d50284787f52f1fb3fd95c2fd67a9b1fd837ce9d31ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6415e5153ad43f3a2ffe51d1a5e57cff7689111733efdf72a5bc2bac60ea4f6f"
+    sha256 cellar: :any,                 arm64_sequoia: "3dca204c40cf2b905c6565b2639025b9fdf0ad4a647d15cef46427c5160b5eba"
+    sha256 cellar: :any,                 arm64_sonoma:  "4343e056f090acbea1369cdf6de0d4f6ad806635641e6f1bd2470ed7583b0204"
+    sha256 cellar: :any,                 ventura:       "ff552f4ef58d5b4d7bdd6b8309b016d29414c2ee801567e035ba7c3ab520c804"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3def676bdd665dd9a91660e5c1b0a7d9a2cfcfacebba5bfd4d5f7934ef66051"
   end
 
   depends_on "swig" => :build
