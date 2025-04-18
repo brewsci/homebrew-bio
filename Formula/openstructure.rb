@@ -7,6 +7,7 @@ class Openstructure < Formula
 
   depends_on "cmake" => :build
   depends_on "boost"
+  depends_on "boost-python3"
   depends_on "clustal-w"
   depends_on "eigen"
   depends_on "fftw"
@@ -48,7 +49,7 @@ class Openstructure < Formula
         -DENABLE_INFO=0
       ]
       system "cmake", "..", *args
-      system "make", "-j", ENV.make_jobs
+      system "make"
 
       resource("components").stage do
         system "stage/bin/chemdict_tool", "create",
@@ -65,7 +66,7 @@ class Openstructure < Formula
              "-DCMAKE_BUILD_TYPE=Release",
              "-DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib",
              *std_cmake_args
-      system "make", "-j", ENV.make_jobs
+      system "make"
       system "make", "check"
       system "make", "install"
     end
