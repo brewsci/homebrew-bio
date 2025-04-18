@@ -23,13 +23,15 @@ class Openstructure < Formula
   end
 
   def install
-    xy = Language::Python.major_minor_version "python3.10"
+    xy = Language::Python.major_minor_version "python3"
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
     system "pip3", "install", "--prefix=#{libexec}", "numpy", "pandas", "scipy", "networkx", "OpenMM"
 
     mkdir "build" do
       puts xy
       args = std_cmake_args + %W[
+        -DCMAKE_INSTALL_PREFIX=#{prefix}
+        -DCMAKE_BUILD_TYPE=Release
         -DOPTIMIZE=1
         -DENABLE_MM=1
         -DOPEN_MM_LIBRARY=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib
@@ -56,6 +58,7 @@ class Openstructure < Formula
       # Re-configure with compound library
       system "cmake", "..",
              "-DCMAKE_INSTALL_PREFIX=#{prefix}",
+             "-DCMAKE_BUILD_TYPE=Release",
              "-DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib",
              *std_cmake_args
       system "make", "-j", ENV.make_jobs
