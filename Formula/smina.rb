@@ -45,6 +45,7 @@ class Smina < Formula
       EOS
 
       ENV.append "CXXFLAGS", "-DBOOST_TIMER_ENABLE_DEPRECATED=1"
+      ENV.append "CXXFLAGS" "-DBOOST_DISABLE_UNORDERED_MAP"
       system "cmake", "..",
              "-DCMAKE_BUILD_TYPE=Release",
              "-DCMAKE_INSTALL_PREFIX=#{prefix}",
@@ -56,6 +57,6 @@ class Smina < Formula
   end
 
   test do
-    assert_match "Usage", shell_output("#{bin}/smina --help")
+    assert_match "Input:", shell_output("#{bin}/smina --help")
   end
 end
