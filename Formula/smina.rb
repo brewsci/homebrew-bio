@@ -27,6 +27,10 @@ class Smina < Formula
       }}
     EOS
 
+    inreplace "src/lib/CommandLine2/CommandLine.cpp" do |s|
+      s.gsub!(/\bunordered_map\b/, "std::unordered_map")
+    end
+
     inreplace "CMakeLists.txt" do |s|
       s.gsub! "set (CMAKE_CXX_STANDARD 11)", "set(CMAKE_CXX_STANDARD 14)"
       # Disable server function builds once,
