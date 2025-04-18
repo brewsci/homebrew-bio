@@ -45,7 +45,7 @@ class Smina < Formula
       EOS
 
       ENV.append "CXXFLAGS", "-DBOOST_TIMER_ENABLE_DEPRECATED=1"
-      ENV.append "CXXFLAGS" "-DBOOST_DISABLE_UNORDERED_MAP"
+      ENV.append "CXXFLAGS", "-DBOOST_DISABLE_UNORDERED_MAP"
       system "cmake", "..",
              "-DCMAKE_BUILD_TYPE=Release",
              "-DCMAKE_INSTALL_PREFIX=#{prefix}",
