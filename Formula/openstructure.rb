@@ -55,6 +55,7 @@ class Openstructure < Formula
 
       # Re-configure with compound library
       system "cmake", "..",
+             "-DCMAKE_INSTALL_PREFIX=#{prefix}",
              "-DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib",
              *std_cmake_args
       system "make", "-j", ENV.make_jobs
