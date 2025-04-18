@@ -5,7 +5,7 @@ class Smina < Formula
   url "https://github.com/eunos-1128/smina/archive/refs/tags/2024.07.10.tar.gz"
   sha256 "a3cc259877a9bca4b67759328c258dd97549c6b21b8ff15b3db877724f6a68d2"
   license "Apache-2.0"
-  head "https://git.code.sf.net/p/smina/code", branch: "master"
+  head "git://git.code.sf.net/p/smina/code", branch: "master"
 
   depends_on "cmake" => :build
   depends_on "boost"
