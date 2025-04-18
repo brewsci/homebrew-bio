@@ -13,10 +13,10 @@ class Smina < Formula
   depends_on "open-babel"
 
   def install
+    # Adapt to newer versions of Boost
     inreplace "src/main/main.cpp" do |s|
       s.gsub! "#include <boost/filesystem/convenience.hpp>", "#include <boost/filesystem.hpp>"
     end
-
     inreplace "src/lib/file.h", "#include <boost/filesystem.hpp>", <<~EOS.chomp
       #include <boost/filesystem.hpp>
       #include <boost/filesystem/operations.hpp>
@@ -27,8 +27,22 @@ class Smina < Formula
       }}
     EOS
 
-    inreplace "src/lib/CommandLine2/CommandLine.cpp" do |s|
-      s.gsub!(/\bunordered_map\b/, "std::unordered_map")
+    files = %w[
+      src/lib/builtinscoring.h
+      src/lib/flexinfo.cpp
+      src/lib/model.cpp
+      src/lib/PDBQTUtilities.cpp
+      src/lib/szv_grid.h
+      src/lib/CommandLine2/CommandLine.cpp
+      src/server/QueryManager.h
+    ]
+    files.each do |f|
+      inreplace f do |s|
+        pattern1 = "#include <boost/unordered_map.hpp>"
+        pattern2 = "#include <boost/unordered_set.hpp>"
+        s.gsub! "#include <boost/unordered_map.hpp>", "#include <unordered_map>" if s.include?(pattern1)
+        s.gsub! "#include <boost/unordered_set.hpp>", "#include <unordered_set>" if s.include?(pattern2)
+      end
     end
 
     inreplace "CMakeLists.txt" do |s|
@@ -49,7 +63,6 @@ class Smina < Formula
       EOS
 
       ENV.append "CXXFLAGS", "-DBOOST_TIMER_ENABLE_DEPRECATED=1"
-      ENV.append "CXXFLAGS", "-DBOOST_DISABLE_UNORDERED_MAP"
       system "cmake", "..",
              "-DCMAKE_BUILD_TYPE=Release",
              "-DCMAKE_INSTALL_PREFIX=#{prefix}",
