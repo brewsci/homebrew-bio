@@ -22,10 +22,14 @@ class Openstructure < Formula
     sha256 "9efba276fc378cde50a2e3dfe27390f0737059c29ea12019d20cfc978f76bf74"
   end
 
+  def python3
+    "python3.10"
+  end
+
   def install
-    xy = Language::Python.major_minor_version "python3"
+    xy = Language::Python.major_minor_version python3
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
-    system "pip3", "install", "--prefix=#{libexec}", "numpy", "pandas", "scipy", "networkx", "OpenMM"
+    system python3, "-m", "pip", "install", "--prefix=#{libexec}", "numpy", "pandas", "scipy", "networkx", "OpenMM"
 
     mkdir "build" do
       puts xy
