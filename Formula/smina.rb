@@ -8,7 +8,7 @@ class Smina < Formula
   head "git://git.code.sf.net/p/smina/code", branch: "master"
 
   depends_on "cmake" => :build
-  depends_on "boost"
+  depends_on "boost@1.85"
   depends_on "eigen"
   depends_on "open-babel"
 
