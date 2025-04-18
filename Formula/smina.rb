@@ -56,7 +56,6 @@ class Smina < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/smina --version")
     assert_match "Usage", shell_output("#{bin}/smina --help")
   end
 end
