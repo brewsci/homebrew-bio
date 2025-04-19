@@ -28,15 +28,28 @@ class Openstructure < Formula
   end
 
   def install
+    ENV.cxx11
+    ENV.libcxx if OS.mac?
+
     xy = Language::Python.major_minor_version python3
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
     system python3, "-m", "pip", "install", "--prefix=#{libexec}", "numpy", "pandas", "scipy", "networkx", "OpenMM"
 
+    inreplace "modules/seq/alg/src/hmm_pseudo_counts.cc",
+      "#include <boost/filesystem/convenience.hpp>",
+      "#include <boost/filesystem.hpp>"
+
+    # patch because beta(a,b,pol) overloads disappeared after boost>=1.80
+    binomial_h = Formula["boost"].opt_include/"boost/math/special_functions/binomial.hpp"
+    inreplace binomial_h.to_s,
+      /boost::math::beta\(\s*static_cast<T>\(k\+1\),\s*static_cast<T>\(n-k\),\s*pol\s*\)/,
+      "boost::math::beta(static_cast<T>(k+1), static_cast<T>(n-k))"
+
     mkdir "build" do
-      puts xy
       args = std_cmake_args + %W[
         -DCMAKE_INSTALL_PREFIX=#{prefix}
         -DCMAKE_BUILD_TYPE=Release
+        -DPYTHON_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/#{python3}
         -DOPTIMIZE=1
         -DENABLE_MM=1
         -DOPEN_MM_LIBRARY=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib
