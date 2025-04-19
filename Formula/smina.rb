@@ -1,4 +1,5 @@
 class Smina < Formula
+  # cite Koes DR et al. "https://doi.org/10.1021/ci300604z"
   desc "Fork of AutoDock Vina for scoring‑function development and minimization"
   homepage "https://sourceforge.net/projects/smina/"
   # Use the following mirror since the official repository does not provide a download link
@@ -38,10 +39,8 @@ class Smina < Formula
     ]
     files.each do |f|
       inreplace f do |s|
-        pattern1 = "#include <boost/unordered_map.hpp>"
-        pattern2 = "#include <boost/unordered_set.hpp>"
-        s.gsub! "#include <boost/unordered_map.hpp>", "#include <unordered_map>" if s.to_s.include?(pattern1)
-        s.gsub! "#include <boost/unordered_set.hpp>", "#include <unordered_set>" if s.to_s.include?(pattern2)
+        s.gsub!(/\bunordered_map/, "boost::unordered_map") if s.to_s.match?(/\bunordered_map/)
+        s.gsub!(/\bunordered_set/, "boost::unordered_set") if s.to_s.match?(/\bunordered_set/)
       end
     end
 
