@@ -11,6 +11,7 @@ class Voronota < Formula
   depends_on "open-mpi" => :optional
 
   def install
+    ENV.cxx11
     args = std_cmake_args + [
       "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
       "-DCMAKE_INSTALL_PREFIX=#{prefix}",
@@ -23,7 +24,6 @@ class Voronota < Formula
     if build.with?("openmp")
       if OS.mac?
         # use Apple Clang + libomp
-        ENV["CXX"] = "clang++"
         args << "-DCMAKE_CXX_FLAGS=-Xpreprocessor -fopenmp"
         args << "-DCMAKE_EXE_LINKER_FLAGS=-lomp"
       else
