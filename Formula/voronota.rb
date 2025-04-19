@@ -11,11 +11,11 @@ class Voronota < Formula
   depends_on "glew"
   depends_on "glfw"
   depends_on "glm"
-  depends_on "libomp" if OS.mac?
   depends_on "open-mpi"
 
   def install
     ENV.cxx11
+
     args = std_cmake_args + [
       "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
       "-DCMAKE_INSTALL_PREFIX=#{prefix}",
@@ -23,14 +23,9 @@ class Voronota < Formula
       "-DEXPANSION_JS=ON",
       "-DEXPANSION_LT=ON",
       "-DEXPANSION_GL=ON",
+      "-DCMAKE_CXX_COMPILER=#{ENV["CXX"]}",
+      "-DENABLE_MPI=OFF"
     ]
-
-    args << "-DCMAKE_CXX_FLAGS=-Xpreprocessor -fopenmp"
-    args << "-DCMAKE_EXE_LINKER_FLAGS=-lomp"
-
-
-    ENV["MPICXX"] = "#{Formula["open-mpi"].opt_bin}/mpic++"
-    args << "-DENABLE_MPI=ON"
 
     system "cmake", ".", *args
     system "make"
