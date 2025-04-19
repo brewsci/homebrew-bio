@@ -26,7 +26,8 @@ class Parasail < Formula
     if OS.linux?
       inreplace "tests/test_verify_traces.c" do |s|
         s.gsub! "ref_trace_table = parasail_result", "ref_trace_table = (int8_t *)parasail_result"
-        s.gsub! "size_a, size_b, ref_trace_table", "size_a, size_b, (int8_t *)ref_trace_table"
+        s.gsub! "size_a, size_b, ref_trace_table, trace_table",
+                "size_a, size_b, (int8_t *)ref_trace_table, (int8_t *)trace_table"
       end
     end
     system "autoreconf", "-fvi"
