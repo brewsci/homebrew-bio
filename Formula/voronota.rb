@@ -7,9 +7,10 @@ class Voronota < Formula
   head "https://github.com/kliment-olechnovic/voronota.git", branch: "master"
 
   depends_on "cmake" => :build
+  depends_on "glew"
   depends_on "glfw"
   depends_on "libomp" if OS.mac?
-  depends_on "open-mpi" => :optional
+  depends_on "open-mpi"
 
   def install
     ENV.cxx11
@@ -22,22 +23,18 @@ class Voronota < Formula
       "-DEXPANSION_GL=ON",
     ]
 
-    if build.with?("openmp")
-      if OS.mac?
-        # use Apple Clang + libomp
-        args << "-DCMAKE_CXX_FLAGS=-Xpreprocessor -fopenmp"
-        args << "-DCMAKE_EXE_LINKER_FLAGS=-lomp"
-      else
-        # Homebrew GCC provides OpenMP on Linux
-        ENV["CXX"] = Formula["gcc"].opt_bin/"g++"
-        args << "-DCMAKE_CXX_FLAGS=-fopenmp"
-      end
+    if OS.mac?
+      # use Apple Clang + libomp
+      args << "-DCMAKE_CXX_FLAGS=-Xpreprocessor -fopenmp"
+      args << "-DCMAKE_EXE_LINKER_FLAGS=-lomp"
+    else
+      # Homebrew GCC provides OpenMP on Linux
+      ENV["CXX"] = Formula["gcc"].opt_bin/"g++"
+      args << "-DCMAKE_CXX_FLAGS=-fopenmp"
     end
 
-    if build.with?("mpi")
-      ENV["MPICXX"] = "#{Formula["open-mpi"].opt_bin}/mpic++"
-      args << "-DENABLE_MPI=ON"
-    end
+    ENV["MPICXX"] = "#{Formula["open-mpi"].opt_bin}/mpic++"
+    args << "-DENABLE_MPI=ON"
 
     system "cmake", ".", *args
     system "make"
