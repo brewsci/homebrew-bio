@@ -1,4 +1,5 @@
 class Smina < Formula
+  # cite Koes DR et al. "https://doi.org/10.1021/ci300604z"
   desc "Fork of AutoDock Vina for scoring‑function development and minimization"
   homepage "https://sourceforge.net/projects/smina/"
   # Use the following mirror since the official repository does not provide a download link
@@ -27,22 +28,9 @@ class Smina < Formula
       }}
     EOS
 
-    files = %w[
-      src/lib/builtinscoring.h
-      src/lib/flexinfo.cpp
-      src/lib/model.cpp
-      src/lib/PDBQTUtilities.cpp
-      src/lib/szv_grid.h
-      src/lib/CommandLine2/CommandLine.cpp
-      src/server/QueryManager.h
-    ]
-    files.each do |f|
-      inreplace f do |s|
-        pattern1 = "#include <boost/unordered_map.hpp>"
-        pattern2 = "#include <boost/unordered_set.hpp>"
-        s.gsub! "#include <boost/unordered_map.hpp>", "#include <unordered_map>" if s.to_s.include?(pattern1)
-        s.gsub! "#include <boost/unordered_set.hpp>", "#include <unordered_set>" if s.to_s.include?(pattern2)
-      end
+    inreplace "src/lib/CommandLine2/CommandLine.cpp" do |s|
+      s.gsub!("unordered_map<string, Option*>", "boost::unordered_map<string, Option*>")
+      s.gsub!("unordered_set<Option*>", "boost::unordered_set<Option*>")
     end
 
     inreplace "CMakeLists.txt" do |s|
