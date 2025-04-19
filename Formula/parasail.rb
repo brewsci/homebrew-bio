@@ -16,7 +16,6 @@ class Parasail < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-
   uses_from_macos "zlib"
 
   on_macos do
