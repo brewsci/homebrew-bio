@@ -40,8 +40,8 @@ class Smina < Formula
       inreplace f do |s|
         pattern1 = "#include <boost/unordered_map.hpp>"
         pattern2 = "#include <boost/unordered_set.hpp>"
-        s.gsub! "#include <boost/unordered_map.hpp>", "#include <unordered_map>" if s.include?(pattern1)
-        s.gsub! "#include <boost/unordered_set.hpp>", "#include <unordered_set>" if s.include?(pattern2)
+        s.gsub! "#include <boost/unordered_map.hpp>", "#include <unordered_map>" if s.to_s.include?(pattern1)
+        s.gsub! "#include <boost/unordered_set.hpp>", "#include <unordered_set>" if s.to_s.include?(pattern2)
       end
     end
 
