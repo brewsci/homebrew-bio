@@ -7,8 +7,8 @@ class Voronota < Formula
   head "https://github.com/kliment-olechnovic/voronota.git", branch: "master"
 
   depends_on "cmake" => :build
-  depends_on "open-mpi" => :optional
   depends_on "libomp" if OS.mac?
+  depends_on "open-mpi" => :optional
 
   def install
     args = std_cmake_args + [
