@@ -8,6 +8,7 @@ class Voronota < Formula
 
   depends_on "cmake" => :build
   depends_on "libomp" if OS.mac?
+  depends_on "glfw"
   depends_on "open-mpi" => :optional
 
   def install
