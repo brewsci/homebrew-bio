@@ -24,7 +24,7 @@ class Voronota < Formula
       "-DEXPANSION_LT=ON",
       "-DEXPANSION_GL=ON",
       "-DCMAKE_CXX_COMPILER=#{ENV["CXX"]}",
-      "-DENABLE_MPI=OFF"
+      "-DENABLE_MPI=OFF",
     ]
 
     system "cmake", ".", *args
