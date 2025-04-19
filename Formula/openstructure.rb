@@ -6,8 +6,8 @@ class Openstructure < Formula
   license "LGPL-3.0-or-later"
 
   depends_on "cmake" => :build
-  depends_on "boost@1.85"
   depends_on "boost-python3@1.87"
+  depends_on "boost@1.85"
   depends_on "clustal-w"
   depends_on "eigen"
   depends_on "fftw"
