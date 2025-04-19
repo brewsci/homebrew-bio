@@ -41,12 +41,6 @@ class Openstructure < Formula
       "#include <boost/filesystem/convenience.hpp>",
       "#include <boost/filesystem.hpp>"
 
-    # # Patch because beta(a,b,pol) overloads disappeared after bvboost>=1.80
-    # inreplace Formula["boost"].opt_include/"boost/math/special_functions/binomial.hpp" do |s|
-    #   s.gsub! "result = static_cast<T>(k * boost::math::beta(static_cast<T>(k), static_cast<T>(n-k+1), pol))", "result = static_cast<T>(k * boost::math::beta(static_cast<T>(k), static_cast<T>(n-k+1))"
-    #   s.gsub! "result = static_cast<T>(k * boost::math::beta(static_cast<T>(k+1), static_cast<T>(n-k), pol))", "result = static_cast<T>(k * boost::math::beta(static_cast<T>(k+1), static_cast<T>(n-k))"
-    # end
-
     mkdir "build" do
       args = std_cmake_args + %W[
         -DCMAKE_INSTALL_PREFIX=#{prefix}
