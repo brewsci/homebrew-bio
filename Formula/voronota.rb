@@ -7,7 +7,6 @@ class Voronota < Formula
   head "https://github.com/kliment-olechnovic/voronota.git", branch: "master"
 
   depends_on "cmake" => :build
-  depends_on "gcc" => :build if OS.linux?
   depends_on "boost"
   depends_on "glew"
   depends_on "glfw"
@@ -26,15 +25,9 @@ class Voronota < Formula
       "-DEXPANSION_GL=ON",
     ]
 
-    if OS.mac?
-      # use Apple Clang + libomp
-      args << "-DCMAKE_CXX_FLAGS=-Xpreprocessor -fopenmp"
-      args << "-DCMAKE_EXE_LINKER_FLAGS=-lomp"
-    else
-      # Homebrew GCC provides OpenMP on Linux
-      ENV["CXX"] = Formula["gcc"].opt_bin/"g++"
-      args << "-DCMAKE_CXX_FLAGS=-fopenmp"
-    end
+    args << "-DCMAKE_CXX_FLAGS=-Xpreprocessor -fopenmp"
+    args << "-DCMAKE_EXE_LINKER_FLAGS=-lomp"
+
 
     ENV["MPICXX"] = "#{Formula["open-mpi"].opt_bin}/mpic++"
     args << "-DENABLE_MPI=ON"
