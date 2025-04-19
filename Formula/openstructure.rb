@@ -6,15 +6,15 @@ class Openstructure < Formula
   license "LGPL-3.0-or-later"
 
   depends_on "cmake" => :build
-  depends_on "boost"
-  depends_on "boost-python3"
+  depends_on "boost@1.85"
+  depends_on "boost-python3@1.87"
   depends_on "clustal-w"
   depends_on "eigen"
   depends_on "fftw"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "parasail"
-  depends_on "python@3.10"
+  depends_on "python@3.12"
   depends_on "sip"
   depends_on "sqlite3"
 
@@ -24,14 +24,16 @@ class Openstructure < Formula
   end
 
   def python3
-    "python3.10"
+    "python3.12"
   end
 
   def install
     ENV.cxx11
     ENV.libcxx if OS.mac?
+    ENV["BOOST_ROOT"] = Formula["boost"].opt_prefix
 
     xy = Language::Python.major_minor_version python3
+    ENV.prepend_path "PATH", "#{HOMEBREW_PREFIX}/bin/python#{xy}"
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
     system python3, "-m", "pip", "install", "--prefix=#{libexec}", "numpy", "pandas", "scipy", "networkx", "OpenMM"
 
@@ -39,17 +41,19 @@ class Openstructure < Formula
       "#include <boost/filesystem/convenience.hpp>",
       "#include <boost/filesystem.hpp>"
 
-    # patch because beta(a,b,pol) overloads disappeared after boost>=1.80
-    binomial_h = Formula["boost"].opt_include/"boost/math/special_functions/binomial.hpp"
-    inreplace binomial_h.to_s,
-      /boost::math::beta\(\s*static_cast<T>\(k\+1\),\s*static_cast<T>\(n-k\),\s*pol\s*\)/,
-      "boost::math::beta(static_cast<T>(k+1), static_cast<T>(n-k))"
+    # # Patch because beta(a,b,pol) overloads disappeared after bvboost>=1.80
+    # inreplace Formula["boost"].opt_include/"boost/math/special_functions/binomial.hpp" do |s|
+    #   s.gsub! "result = static_cast<T>(k * boost::math::beta(static_cast<T>(k), static_cast<T>(n-k+1), pol))", "result = static_cast<T>(k * boost::math::beta(static_cast<T>(k), static_cast<T>(n-k+1))"
+    #   s.gsub! "result = static_cast<T>(k * boost::math::beta(static_cast<T>(k+1), static_cast<T>(n-k), pol))", "result = static_cast<T>(k * boost::math::beta(static_cast<T>(k+1), static_cast<T>(n-k))"
+    # end
 
     mkdir "build" do
       args = std_cmake_args + %W[
         -DCMAKE_INSTALL_PREFIX=#{prefix}
         -DCMAKE_BUILD_TYPE=Release
-        -DPYTHON_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/#{python3}
+        -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
+        -DBoost_INCLUDE_DIR=#{Formula["boost"].opt_include}
+        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy}.so
         -DOPTIMIZE=1
         -DENABLE_MM=1
         -DOPEN_MM_LIBRARY=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib
@@ -74,11 +78,16 @@ class Openstructure < Formula
       end
 
       # Re-configure with compound library
-      system "cmake", "..",
-             "-DCMAKE_INSTALL_PREFIX=#{prefix}",
-             "-DCMAKE_BUILD_TYPE=Release",
-             "-DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib",
-             *std_cmake_args
+      args = %W[
+        ..
+        -DCMAKE_INSTALL_PREFIX=#{prefix}
+        -DCMAKE_BUILD_TYPE=Release
+        -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
+        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy}.so
+        -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
+      ] + std_cmake_args
+
+      system "cmake", *args
       system "make"
       system "make", "check"
       system "make", "install"
