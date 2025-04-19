@@ -62,6 +62,6 @@ class Smina < Formula
   end
 
   test do
-    assert_match "Input:", shell_output("#{bin}/smina --help")
+    assert_match "Input:", shell_output("#{bin}/smina --help 2>&1")
   end
 end
