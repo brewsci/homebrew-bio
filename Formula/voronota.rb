@@ -44,6 +44,6 @@ class Voronota < Formula
   end
 
   test do
-    assert_match "Commands:", shell_output("#{bin}/voronota --help 2>&1")
+    assert_match "Commands:", shell_output("#{bin}/voronota --help 2>&1", 1)
   end
 end
