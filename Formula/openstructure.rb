@@ -58,9 +58,10 @@ class Openstructure < Formula
         -DENABLE_GFX=1
         -DENABLE_GUI=0
         -DENABLE_INFO=0
+        -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
       system "cmake", "..", *args
-      system "make"
+      system "make", "VERBOSE=1"
 
       resource("components").stage do
         system "stage/bin/chemdict_tool", "create",
@@ -79,10 +80,11 @@ class Openstructure < Formula
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy}.so
         -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
+        -DCMAKE_VERBOSE_MAKEFILE=ON
       ] + std_cmake_args
 
       system "cmake", *args
-      system "make"
+      system "make", "VERBOSE=1"
       system "make", "check"
       system "make", "install"
     end
