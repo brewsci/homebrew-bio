@@ -11,7 +11,6 @@ class Voronota < Formula
   depends_on "glew"
   depends_on "glfw"
   depends_on "glm"
-  depends_on "open-mpi"
 
   def install
     ENV.cxx11
