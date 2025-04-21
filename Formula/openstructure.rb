@@ -6,6 +6,7 @@ class Openstructure < Formula
   license "LGPL-3.0-or-later"
 
   depends_on "cmake" => :build
+  depends_on "gcc" => :build  # for gfortran
   depends_on "boost-python3@1.87"
   depends_on "boost@1.85"
   depends_on "clustal-w"
@@ -15,8 +16,12 @@ class Openstructure < Formula
   depends_on "libtiff"
   depends_on "parasail"
   depends_on "python@3.12"
+  depends_on "pyqt@5"
+  depends_on "qt@5"
   depends_on "sip"
   depends_on "sqlite3"
+
+  uses_from_macos "zlib"
 
   resource "components" do
     url "https://files.wwpdb.org/pub/pdb/data/monomers/components.cif.gz"
@@ -56,8 +61,8 @@ class Openstructure < Formula
         -DENABLE_PARASAIL=1
         -DCOMPILE_TMTOOLS=1
         -DENABLE_GFX=1
-        -DENABLE_GUI=0
-        -DENABLE_INFO=0
+        -DENABLE_GUI=1
+        -DENABLE_INFO=1
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
       system "cmake", "..", *args
