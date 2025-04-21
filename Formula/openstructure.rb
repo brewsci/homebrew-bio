@@ -53,6 +53,8 @@ class Openstructure < Formula
         -DCMAKE_BUILD_TYPE=Release
         -DCMAKE_CXX_STANDARD=11
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
+        -DPython_INCLUDE_DIRS=#{Formula["python@#{xy}"].opt_prefix}/include
+        -DPython_LIBRARIES=#{Formula["python@#{xy}"].opt_prefix}/lib
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy}.#{OS.mac? ? "dylib" : "so"}
@@ -87,6 +89,8 @@ class Openstructure < Formula
         -DCMAKE_BUILD_TYPE=Release
         -DCMAKE_CXX_STANDARD=11
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
+        -DPython_INCLUDE_DIRS=#{Formula["python@#{xy}"].opt_prefix}/include
+        -DPython_LIBRARIES=#{Formula["python@#{xy}"].opt_prefix}/lib
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy}.#{OS.mac? ? "dylib" : "so"}
