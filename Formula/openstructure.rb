@@ -51,6 +51,7 @@ class Openstructure < Formula
       args = std_cmake_args + %W[
         -DCMAKE_INSTALL_PREFIX=#{prefix}
         -DCMAKE_BUILD_TYPE=Release
+        -DCMAKE_CXX_STANDARD=11
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
@@ -84,6 +85,7 @@ class Openstructure < Formula
         ..
         -DCMAKE_INSTALL_PREFIX=#{prefix}
         -DCMAKE_BUILD_TYPE=Release
+        -DCMAKE_CXX_STANDARD=11
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
