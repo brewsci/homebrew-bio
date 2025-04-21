@@ -53,8 +53,6 @@ class Openstructure < Formula
 
     mkdir "build" do
       args = std_cmake_args + %W[
-        -DPREFIX=#{prefix}
-        -DCMAKE_CXX_STANDARD=11
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DBOOST_ROOT=#{Formula["boost@1.85"].opt_prefix}
@@ -78,32 +76,32 @@ class Openstructure < Formula
       resource("components").fetch
       (buildpath/"build").install resource("components").cached_download
 
-      system "#{prefix}/stage/bin/chemdict_tool", "create",
+      system "stage/bin/chemdict_tool", "create",
               "components.cif.gz", "compounds.chemlib",
               "pdb", "-i"
-      system "#{prefix}/stage/bin/chemdict_tool", "update",
+      system "stage/bin/chemdict_tool", "update",
               buildpath/"modules/conop/data/charmm.cif",
               "compounds.chemlib", "charmm"
+
+      puts Dir.entries('.')
+      # Re-configure with compound library
+      args = %W[
+        ..
+        -DPREFIX=#{prefix}
+        -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
+        -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
+        -DBOOST_ROOT=#{Formula["boost@1.85"].opt_prefix}
+        -DBoost_INCLUDE_DIRS=#{Formula["boost@1.85"].opt_include}
+        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy}.#{lib_ext}
+        -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
+        -DCMAKE_VERBOSE_MAKEFILE=ON
+      ] + std_cmake_args
+
+      system "cmake", *args
+      system "bash", "-lc", "make VERBOSE=1 2>&1 | tee build.log"
+      system "make", "check"
+      system "make", "install"
     end
-
-    # Re-configure with compound library
-    args = %W[
-      ..
-      -DPREFIX=#{prefix}
-      -DCMAKE_CXX_STANDARD=11
-      -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
-      -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
-      -DBOOST_ROOT=#{Formula["boost@1.85"].opt_prefix}
-      -DBoost_INCLUDE_DIRS=#{Formula["boost@1.85"].opt_include}
-      -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy}.#{lib_ext}
-      -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
-      -DCMAKE_VERBOSE_MAKEFILE=ON
-    ] + std_cmake_args
-
-    system "cmake", *args
-    system "bash", "-lc", "make VERBOSE=1 2>&1 | tee build.log"
-    system "make", "check"
-    system "make", "install"
   end
 
   test do
