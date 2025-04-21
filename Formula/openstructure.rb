@@ -34,9 +34,6 @@ class Openstructure < Formula
 
   def install
     ENV.cxx11
-    ENV.libcxx if OS.mac?
-    ENV["BOOST_ROOT"] = Formula["boost"].opt_prefix
-    ENV.append "CXXFLAGS", "-std=c++11"
 
     xy = Language::Python.major_minor_version python3
     ENV.prepend_path "PATH", "#{HOMEBREW_PREFIX}/bin/python#{xy}"
@@ -56,15 +53,12 @@ class Openstructure < Formula
 
     mkdir "build" do
       args = std_cmake_args + %W[
-        -DCMAKE_INSTALL_PREFIX=#{prefix}
-        -DCMAKE_BUILD_TYPE=Release
+        -DPREFIX=#{prefix}
         -DCMAKE_CXX_STANDARD=11
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
-        -DPython_INCLUDE_DIRS=#{Formula["python@#{xy}"].opt_prefix}/include
-        -DPython_LIBRARIES=#{Formula["python@#{xy}"].opt_prefix}/lib
-        -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
-        -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
+        -DBOOST_ROOT=#{Formula["boost@1.85"].opt_prefix}
+        -DBoost_INCLUDE_DIRS=#{Formula["boost@1.85"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy}.#{lib_ext}
         -DOPTIMIZE=1
         -DENABLE_MM=1
@@ -79,39 +73,37 @@ class Openstructure < Formula
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
       system "cmake", "..", *args
-      system "make", "VERBOSE=1"
+      system "make"
 
-      resource("components").stage do
-        system "stage/bin/chemdict_tool", "create",
-               "components.cif.gz", "compounds.chemlib",
-               "pdb", "-i"
-        system "stage/bin/chemdict_tool", "update",
-               buildpath/"modules/conop/data/charmm.cif",
-               "compounds.chemlib", "charmm"
-      end
+      resource("components").fetch
+      (buildpath/"build").install resource("components").cached_download
 
-      # Re-configure with compound library
-      args = %W[
-        ..
-        -DCMAKE_INSTALL_PREFIX=#{prefix}
-        -DCMAKE_BUILD_TYPE=Release
-        -DCMAKE_CXX_STANDARD=11
-        -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
-        -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
-        -DPython_INCLUDE_DIRS=#{Formula["python@#{xy}"].opt_prefix}/include
-        -DPython_LIBRARIES=#{Formula["python@#{xy}"].opt_prefix}/lib
-        -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
-        -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
-        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy}.#{lib_ext}
-        -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
-        -DCMAKE_VERBOSE_MAKEFILE=ON
-      ] + std_cmake_args
-
-      system "cmake", *args
-      system "make", "VERBOSE=1"
-      system "make", "check"
-      system "make", "install"
+      system "#{prefix}/stage/bin/chemdict_tool", "create",
+              "components.cif.gz", "compounds.chemlib",
+              "pdb", "-i"
+      system "#{prefix}/stage/bin/chemdict_tool", "update",
+              buildpath/"modules/conop/data/charmm.cif",
+              "compounds.chemlib", "charmm"
     end
+
+    # Re-configure with compound library
+    args = %W[
+      ..
+      -DPREFIX=#{prefix}
+      -DCMAKE_CXX_STANDARD=11
+      -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
+      -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
+      -DBOOST_ROOT=#{Formula["boost@1.85"].opt_prefix}
+      -DBoost_INCLUDE_DIRS=#{Formula["boost@1.85"].opt_include}
+      -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy}.#{lib_ext}
+      -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
+      -DCMAKE_VERBOSE_MAKEFILE=ON
+    ] + std_cmake_args
+
+    system "cmake", *args
+    system "bash", "-lc", "make VERBOSE=1 2>&1 | tee build.log"
+    system "make", "check"
+    system "make", "install"
   end
 
   test do
