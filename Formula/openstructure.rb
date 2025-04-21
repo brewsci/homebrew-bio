@@ -47,6 +47,10 @@ class Openstructure < Formula
       "#include <boost/filesystem/convenience.hpp>",
       "#include <boost/filesystem.hpp>"
 
+    inreplace "modules/seq/alg/src/hmm_pseudo_counts.cc" do |s|
+      s.gsub! "boost::filesystem::extension", "boost::filesystem::path(filename).extension().string"
+    end
+
     mkdir "build" do
       args = std_cmake_args + %W[
         -DCMAKE_INSTALL_PREFIX=#{prefix}
