@@ -36,7 +36,7 @@ class Openstructure < Formula
     ENV.cxx11
     ENV.libcxx if OS.mac?
     ENV["BOOST_ROOT"] = Formula["boost"].opt_prefix
-    ENV.append "CXXFLAGS", "-std=c++11 -Wno-error=unknown-warning-option"
+    ENV.append "CXXFLAGS", "-std=c++11"
 
     xy = Language::Python.major_minor_version python3
     ENV.prepend_path "PATH", "#{HOMEBREW_PREFIX}/bin/python#{xy}"
