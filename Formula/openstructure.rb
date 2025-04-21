@@ -6,7 +6,7 @@ class Openstructure < Formula
   license "LGPL-3.0-or-later"
 
   depends_on "cmake" => :build
-  depends_on "gcc" => :build  # for gfortran
+  depends_on "gcc" => :build
   depends_on "boost-python3@1.87"
   depends_on "boost@1.85"
   depends_on "clustal-w"
@@ -20,6 +20,7 @@ class Openstructure < Formula
   depends_on "qt@5"
   depends_on "sip"
   depends_on "sqlite3"
+  depends_on "voronota"
 
   uses_from_macos "zlib"
 
