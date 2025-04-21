@@ -59,6 +59,7 @@ class Openstructure < Formula
         -DCMAKE_INSTALL_PREFIX=#{prefix}
         -DCMAKE_BUILD_TYPE=Release
         -DCMAKE_CXX_STANDARD=11
+        -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DPython_INCLUDE_DIRS=#{Formula["python@#{xy}"].opt_prefix}/include
         -DPython_LIBRARIES=#{Formula["python@#{xy}"].opt_prefix}/lib
@@ -95,6 +96,7 @@ class Openstructure < Formula
         -DCMAKE_INSTALL_PREFIX=#{prefix}
         -DCMAKE_BUILD_TYPE=Release
         -DCMAKE_CXX_STANDARD=11
+        -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DPython_INCLUDE_DIRS=#{Formula["python@#{xy}"].opt_prefix}/include
         -DPython_LIBRARIES=#{Formula["python@#{xy}"].opt_prefix}/lib
