@@ -52,7 +52,8 @@ class Openstructure < Formula
         -DCMAKE_INSTALL_PREFIX=#{prefix}
         -DCMAKE_BUILD_TYPE=Release
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
-        -DBoost_INCLUDE_DIR=#{Formula["boost"].opt_include}
+        -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
+        -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy}.so
         -DOPTIMIZE=1
         -DENABLE_MM=1
@@ -84,6 +85,8 @@ class Openstructure < Formula
         -DCMAKE_INSTALL_PREFIX=#{prefix}
         -DCMAKE_BUILD_TYPE=Release
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
+        -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
+        -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy}.so
         -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
         -DCMAKE_VERBOSE_MAKEFILE=ON
