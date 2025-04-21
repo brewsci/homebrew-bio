@@ -15,7 +15,6 @@ class Openstructure < Formula
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "parasail"
-  depends_on "pyqt@5"
   depends_on "python@3.12"
   depends_on "qt@5"
   depends_on "sip"
@@ -41,7 +40,8 @@ class Openstructure < Formula
     xy = Language::Python.major_minor_version python3
     ENV.prepend_path "PATH", "#{HOMEBREW_PREFIX}/bin/python#{xy}"
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
-    system python3, "-m", "pip", "install", "--prefix=#{libexec}", "numpy", "pandas", "scipy", "networkx", "OpenMM"
+    system python3, "-m", "pip", "install", "--prefix=#{libexec}",
+      "numpy", "pandas", "scipy", "networkx", "OpenMM", "PyQt5"
 
     inreplace "modules/seq/alg/src/hmm_pseudo_counts.cc",
       "#include <boost/filesystem/convenience.hpp>",
