@@ -51,6 +51,8 @@ class Openstructure < Formula
       s.gsub! "boost::filesystem::extension", "boost::filesystem::path(filename).extension().string"
     end
 
+    lib_ext = OS.mac? ? "dylib" : "so"
+
     mkdir "build" do
       args = std_cmake_args + %W[
         -DCMAKE_INSTALL_PREFIX=#{prefix}
@@ -61,7 +63,7 @@ class Openstructure < Formula
         -DPython_LIBRARIES=#{Formula["python@#{xy}"].opt_prefix}/lib
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
-        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy}.#{OS.mac? ? "dylib" : "so"}
+        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy}.#{lib_ext}
         -DOPTIMIZE=1
         -DENABLE_MM=1
         -DOPEN_MM_LIBRARY=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib
@@ -97,7 +99,7 @@ class Openstructure < Formula
         -DPython_LIBRARIES=#{Formula["python@#{xy}"].opt_prefix}/lib
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
-        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy}.#{OS.mac? ? "dylib" : "so"}
+        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy}.#{lib_ext}
         -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ] + std_cmake_args
