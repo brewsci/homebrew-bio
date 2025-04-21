@@ -23,7 +23,7 @@ class Openstructure < Formula
 
   uses_from_macos "zlib"
 
-  resource "components" do
+  resource "components-cif" do
     url "https://files.wwpdb.org/pub/pdb/data/monomers/components.cif.gz"
     sha256 "9efba276fc378cde50a2e3dfe27390f0737059c29ea12019d20cfc978f76bf74"
   end
@@ -36,6 +36,7 @@ class Openstructure < Formula
     ENV.cxx11
 
     xy = Language::Python.major_minor_version python3
+    xy_nodot = xy.to_s.delete(".")
     ENV.prepend_path "PATH", "#{HOMEBREW_PREFIX}/bin/python#{xy}"
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
     system python3, "-m", "pip", "install", "--prefix=#{libexec}",
@@ -52,12 +53,12 @@ class Openstructure < Formula
     lib_ext = OS.mac? ? "dylib" : "so"
 
     mkdir "build" do
-      args = std_cmake_args + %W[
+      args = %W[
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DBOOST_ROOT=#{Formula["boost@1.85"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost@1.85"].opt_include}
-        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy}.#{lib_ext}
+        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
         -DOPTIMIZE=1
         -DENABLE_MM=1
         -DOPEN_MM_LIBRARY=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib
@@ -69,12 +70,15 @@ class Openstructure < Formula
         -DENABLE_GUI=1
         -DENABLE_INFO=1
         -DCMAKE_VERBOSE_MAKEFILE=ON
-      ]
+      ] + std_cmake_args
       system "cmake", "..", *args
+      # system "make", "VERBOSE=1", "2>&1 | tee build.log"
       system "make"
+      # ENV.deparallelize { system "make" }
 
-      resource("components").fetch
-      (buildpath/"build").install resource("components").cached_download
+      resource("components-cif").fetch
+      components_cif_path = resource("components-cif").cached_download
+      cp components_cif_path, "components.cif.gz"
 
       system "stage/bin/chemdict_tool", "create",
               "components.cif.gz", "compounds.chemlib",
@@ -83,22 +87,20 @@ class Openstructure < Formula
               buildpath/"modules/conop/data/charmm.cif",
               "compounds.chemlib", "charmm"
 
-      puts Dir.entries('.')
       # Re-configure with compound library
       args = %W[
-        ..
         -DPREFIX=#{prefix}
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DBOOST_ROOT=#{Formula["boost@1.85"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost@1.85"].opt_include}
-        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy}.#{lib_ext}
+        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
         -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ] + std_cmake_args
 
-      system "cmake", *args
-      system "bash", "-lc", "make VERBOSE=1 2>&1 | tee build.log"
+      system "cmake", "..", *args
+      system "make"
       system "make", "check"
       system "make", "install"
     end
