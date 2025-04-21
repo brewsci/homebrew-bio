@@ -8,6 +8,14 @@ class Smina < Formula
   license all_of: ["Apache-2.0", "GPL-2.0-or-later"]
   head "git://git.code.sf.net/p/smina/code", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any,                 arm64_sequoia: "f96f13ae0fa70183c18b08d7e8997d9cee2c8ad647e78b81efa852da794d214c"
+    sha256 cellar: :any,                 arm64_sonoma:  "9d8cb9c272399142d07f6d3657ebc610119a7bd32a21c1e3286ab69f77af78ee"
+    sha256 cellar: :any,                 ventura:       "ee01f6a7baacfd91ffa7c688b76dcc54d3313eb3804c9973d1caa22eebfce9d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1dfbfa7c6df12fe6c4a10ea32e7475b4e5fadf5d8b54848a9617f4ca6f9aba3f"
+  end
+
   depends_on "cmake" => :build
   depends_on "boost@1.85"
   depends_on "eigen"
