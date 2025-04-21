@@ -42,12 +42,13 @@ class Openstructure < Formula
     system python3, "-m", "pip", "install", "--prefix=#{libexec}",
       "numpy", "pandas", "scipy", "networkx", "OpenMM", "PyQt5"
 
+    # Fix to match new version of Boost
     inreplace "modules/seq/alg/src/hmm_pseudo_counts.cc",
       "#include <boost/filesystem/convenience.hpp>",
       "#include <boost/filesystem.hpp>"
-
     inreplace "modules/seq/alg/src/hmm_pseudo_counts.cc" do |s|
       s.gsub! "boost::filesystem::extension", "boost::filesystem::path(filename).extension().string"
+      s.gsub! ".string(filename)", ".string()"
     end
 
     lib_ext = OS.mac? ? "dylib" : "so"
