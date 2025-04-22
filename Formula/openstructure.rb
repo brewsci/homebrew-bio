@@ -15,6 +15,7 @@ class Openstructure < Formula
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "parasail"
+  depends_on "pyqt@5"
   depends_on "python@3.13"
   depends_on "qt@5"
   depends_on "sip"
@@ -53,7 +54,7 @@ class Openstructure < Formula
     ENV.prepend_path "PATH", "#{HOMEBREW_PREFIX}/bin/python#{xy}"
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
     system "pip3", "install", "--prefix=#{libexec}",
-      "numpy", "pandas", "scipy", "networkx", "OpenMM", "PyQt5"
+      "numpy", "pandas", "scipy", "networkx", "OpenMM"
 
     lib_ext = OS.mac? ? "dylib" : "so"
 
@@ -110,7 +111,7 @@ class Openstructure < Formula
       # Set RPATH to `#{prefix}/lib`
       inreplace buildpath/"CMakeLists.txt",
         'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}"',
-        "CMAKE_INSTALL_RPATH #{lib}"
+        "CMAKE_INSTALL_RPATH #{lib}:#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib"
 
       system "cmake", "..", *args
       system "make"
