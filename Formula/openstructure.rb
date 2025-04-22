@@ -29,7 +29,7 @@ class Openstructure < Formula
   end
 
   patch do
-    url "https://raw.githubusercontent.com/eunos-1128/openstructure/5be678bd301eecd1a059bf188bb5754551a1e376/boost-1_85.patch"
+    url "https://raw.githubusercontent.com/eunos-1128/openstructure/00ccfd2f1da1f978aead48391798b5924dd2f3c5/boost.patch"
     sha256 "88a253ca45e07e4ee3bcf9436975ed060bb943194eecc0ca46f4556553c62746"
   end
 
@@ -39,15 +39,14 @@ class Openstructure < Formula
 
   def install
     ENV.cxx11
-    ENV.libcxx
 
-    # # Use g++ for compilation because clang++ fails in boost-related builds
-    # if OS.mac?
-    #   gcc = Formula["gcc"]
-    #   ENV["CXX"] = "#{gcc.opt_bin}/g++-#{gcc.version.major}"
-    #   ENV.append "CXXFLAGS", "-stdlib=libstdc++"
-    #   ENV.append "LDFLAGS",  "-stdlib=libstdc++ -L#{gcc.opt_lib}/gcc/#{gcc.version.major}"
-    # end
+    # Use g++ for compilation because clang++ fails in boost-related builds
+    if OS.mac?
+      gcc = Formula["gcc"]
+      ENV["CXX"] = "#{gcc.opt_bin}/g++-#{gcc.version.major}"
+      ENV.append "CXXFLAGS", "-stdlib=libstdc++"
+      ENV.append "LDFLAGS",  "-stdlib=libstdc++ -L#{gcc.opt_lib}/gcc/#{gcc.version.major}"
+    end
 
     xy = Language::Python.major_minor_version python3
     xy_nodot = xy.to_s.delete(".")
@@ -68,7 +67,7 @@ class Openstructure < Formula
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
         -DCMAKE_VERBOSE_MAKEFILE=1
       ]
-      args << "-DCMAKE_CXX_FLAGS=-stdlib=libc++" if OS.mac?
+      # args << "-DCMAKE_CXX_FLAGS=-stdlib=libc++" if OS.mac?
       system "cmake", "..", *args
       system "make"
 
@@ -106,7 +105,7 @@ class Openstructure < Formula
         -DENABLE_INFO=1
         -DCMAKE_VERBOSE_MAKEFILE=1
       ]
-      args << "-DCMAKE_CXX_FLAGS=-stdlib=libc++" if OS.mac?
+      # args << "-DCMAKE_CXX_FLAGS=-stdlib=libc++" if OS.mac?
 
       # Set RPATH to `#{prefix}/lib`
       inreplace buildpath/"CMakeLists.txt",
