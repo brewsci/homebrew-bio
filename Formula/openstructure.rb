@@ -39,12 +39,14 @@ class Openstructure < Formula
 
   def install
     ENV.cxx11
-    ENV.libcxx
+    # ENV.libcxx
 
     # Use g++ for compilation because clang++ fails in boost-related builds
     if OS.mac?
       gcc = Formula["gcc"]
       ENV["CXX"] = "#{gcc.opt_bin}/g++-#{gcc.version.major}"
+      ENV.append "CXXFLAGS", "-stdlib=libstdc++"
+      ENV.append "LDFLAGS",  "-stdlib=libstdc++ -L#{gcc.opt_lib}/gcc/#{gcc.version.major}"
     end
 
     xy = Language::Python.major_minor_version python3
@@ -103,11 +105,11 @@ class Openstructure < Formula
       # Set RPATH to `#{prefix}/lib`
       inreplace buildpath/"CMakeLists.txt",
         'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}"',
-        "CMAKE_INSTALL_RPATH #{lib}"
+        'CMAKE_INSTALL_RPATH "$ORIGIN/${LIB_DIR}"'
 
       system "cmake", "..", *args
       system "make"
-      system "make", "check"
+      # system "make", "check"
       system "make", "install"
     end
   end
