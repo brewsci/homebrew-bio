@@ -29,8 +29,8 @@ class Openstructure < Formula
   end
 
   patch do
-    url "https://raw.githubusercontent.com/eunos-1128/openstructure/0262de5ddb493570fb061a4891c69bc7e0d80695/boost-1_85.patch"
-    sha256 "f4fd23d187044c331449832773737c28eacc351c58f1244a769eb759feed0e14"
+    url "https://raw.githubusercontent.com/eunos-1128/openstructure/5be678bd301eecd1a059bf188bb5754551a1e376/boost-1_85.patch"
+    sha256 "88a253ca45e07e4ee3bcf9436975ed060bb943194eecc0ca46f4556553c62746"
   end
 
   def python3
@@ -45,7 +45,6 @@ class Openstructure < Formula
     if OS.mac?
       gcc = Formula["gcc"]
       ENV["CXX"] = "#{gcc.opt_bin}/g++-#{gcc.version.major}"
-      ENV.append "LDFLAGS", "-Wl,-rpath,#{gcc.opt_lib}/gcc/#{gcc.version.major}" if OS.mac?
     end
 
     xy = Language::Python.major_minor_version python3
@@ -64,9 +63,6 @@ class Openstructure < Formula
         -DBOOST_ROOT=#{Formula["boost@1.85"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost@1.85"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy_nodot}.so
-        -DOPEN_MM_LIBRARY=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib
-        -DOPEN_MM_INCLUDE_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/include
-        -DOPEN_MM_PLUGIN_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/plugins
       ]
       system "cmake", "..", *args
       system "make"
@@ -94,6 +90,8 @@ class Openstructure < Formula
         -DOPEN_MM_INCLUDE_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/include
         -DOPEN_MM_PLUGIN_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib/plugins
         -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
+        -DUSE_RPATH=1
+        -DENABLE_MM=1
         -DOPTIMIZE=1
         -DENABLE_PARASAIL=1
         -DCOMPILE_TMTOOLS=1
@@ -102,8 +100,14 @@ class Openstructure < Formula
         -DENABLE_INFO=1
       ]
 
+      # Set RPATH to `#{prefix}/lib`
+      inreplace buildpath/"CMakeLists.txt",
+        'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}',
+        "CMAKE_INSTALL_RPATH #{lib}"
+
       system "cmake", "..", *args
       system "make"
+      system "make", "check"
       system "make", "install"
     end
   end
