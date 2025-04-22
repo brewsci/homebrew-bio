@@ -113,7 +113,7 @@ class Openstructure < Formula
 
       system "cmake", "..", *args
       system "make"
-      # system "make", "check"
+      system "make", "check"
       system "make", "install"
     end
   end
