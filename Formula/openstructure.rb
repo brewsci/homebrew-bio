@@ -40,14 +40,7 @@ class Openstructure < Formula
 
   def install
     ENV.cxx11
-
-    # Use g++ for compilation because clang++ fails in boost-related builds
-    if OS.mac?
-      gcc = Formula["gcc"]
-      ENV["CXX"] = "#{gcc.opt_bin}/g++-#{gcc.version.major}"
-      ENV.append "CXXFLAGS", "-stdlib=libstdc++"
-      ENV.append "LDFLAGS",  "-stdlib=libstdc++ -L#{gcc.opt_lib}/gcc/#{gcc.version.major}"
-    end
+    ENV.libcxx
 
     xy = Language::Python.major_minor_version python3
     xy_nodot = xy.to_s.delete(".")
@@ -68,7 +61,7 @@ class Openstructure < Formula
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
         -DCMAKE_VERBOSE_MAKEFILE=1
       ]
-      # args << "-DCMAKE_CXX_FLAGS=-stdlib=libc++" if OS.mac?
+      args << "-DCMAKE_CXX_FLAGS=-stdlib=libc++" if OS.mac?
       system "cmake", "..", *args
       system "make"
 
@@ -106,9 +99,9 @@ class Openstructure < Formula
         -DENABLE_INFO=1
         -DCMAKE_VERBOSE_MAKEFILE=1
       ]
-      # args << "-DCMAKE_CXX_FLAGS=-stdlib=libc++" if OS.mac?
+      args << "-DCMAKE_CXX_FLAGS=-stdlib=libc++" if OS.mac?
 
-      # Set RPATH to `#{prefix}/lib`
+      # Set RPATH to `#{prefix}/lib and OpenMM libs`
       inreplace buildpath/"CMakeLists.txt",
         'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}"',
         "CMAKE_INSTALL_RPATH #{lib}:#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib"
