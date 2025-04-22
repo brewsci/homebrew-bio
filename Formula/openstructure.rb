@@ -55,7 +55,7 @@ class Openstructure < Formula
     system python3, "-m", "pip", "install", "--prefix=#{libexec}",
       "numpy", "pandas", "scipy", "networkx", "OpenMM", "PyQt5"
 
-    lib_ext = OS.mac? ? "dylib" : "so"
+    # lib_ext = OS.mac? ? "dylib" : "so"
 
     mkdir "build" do
       args = std_cmake_args + %W[
@@ -63,7 +63,7 @@ class Openstructure < Formula
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DBOOST_ROOT=#{Formula["boost@1.85"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost@1.85"].opt_include}
-        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
+        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy_nodot}.so
         -DOPEN_MM_LIBRARY=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib
         -DOPEN_MM_INCLUDE_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/include
         -DOPEN_MM_PLUGIN_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/plugins
@@ -89,8 +89,8 @@ class Openstructure < Formula
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DBOOST_ROOT=#{Formula["boost@1.85"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost@1.85"].opt_include}
-        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
-        -DOPEN_MM_LIBRARY=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib/libOpenMM.#{lib_ext}
+        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy_nodot}.so
+        -DOPEN_MM_LIBRARY=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib/libOpenMM.so
         -DOPEN_MM_INCLUDE_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/include
         -DOPEN_MM_PLUGIN_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib/plugins
         -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
