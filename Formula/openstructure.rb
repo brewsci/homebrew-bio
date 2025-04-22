@@ -29,8 +29,8 @@ class Openstructure < Formula
   end
 
   patch do
-    url "https://raw.githubusercontent.com/eunos-1128/openstructure/a37429f40ffc9802158444a431fc405e3724649c/boost-1_85.patch"
-    sha256 "6fc81637723677b8ee3b07a79174d6100c7c4914a367a0425d0724495de953b8"
+    url "https://raw.githubusercontent.com/eunos-1128/openstructure/79581d47093307f6f1155b937b229e6db675ea79/boost-1_85.patch"
+    sha256 "ceaad1f12755d11cf81c15a706e3c7666d3f765e672e6861b77cd1a818d4bbb0"
   end
 
   def python3
