@@ -7,8 +7,8 @@ class Openstructure < Formula
 
   depends_on "cmake" => :build
   depends_on "gcc" => :build
-  depends_on "boost-python3"
   depends_on "boost"
+  depends_on "boost-python3"
   depends_on "clustal-w"
   depends_on "eigen"
   depends_on "fftw"
