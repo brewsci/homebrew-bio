@@ -7,10 +7,11 @@ class Coot < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 arm64_sequoia: "8dfe0637dc39483425edec289aa96b68af7d5208c853b15cbcb6af92ac3fd46c"
-    sha256 arm64_sonoma:  "cfc94250c60165c2b045e867385fc4992d4e0b0931e1c2e0fe355cfdf9f0f197"
-    sha256 ventura:       "180e474f0625ba8465d02914ed4739ce5546a1ce391bf80849da1b177d28e8ff"
-    sha256 x86_64_linux:  "fb55347f2a76c2e05dbb6f258abadd90c843959e972fe5771e0f5674e19d9e07"
+    rebuild 1
+    sha256 arm64_sequoia: "ac493504de14add7689bc32a51589addd0bd7013fc087fcc2653f3588a319c20"
+    sha256 arm64_sonoma:  "44efe116c1f3ca259b06c52631857d790bf7dae3f5b0a2547ab0755a725c503c"
+    sha256 ventura:       "122134089756bd941a9b07906fba309ef8aacb538613b6b0737026048edcd14a"
+    sha256 x86_64_linux:  "7a5650b3c337f5c8c159c6413ff013fcba4663e9214328b8efa33bbf64a8074f"
   end
 
   head do
@@ -23,13 +24,14 @@ class Coot < Formula
 
   depends_on "glm" => :build
   depends_on "pkg-config" => :build
-  depends_on "adwaita-icon-theme" # display icons
+  depends_on "adwaita-icon-theme"
   depends_on "boost"
-  depends_on "brewsci/bio/boost-python3@1.87"
+  depends_on "boost-python3"
   depends_on "brewsci/bio/clipper4coot"
   depends_on "brewsci/bio/gemmi"
   depends_on "brewsci/bio/libccp4"
   depends_on "brewsci/bio/mmdb2"
+  depends_on "brewsci/bio/pygobject3@3.50"
   depends_on "brewsci/bio/raster3d"
   depends_on "brewsci/bio/ssm"
   depends_on "cairo"
@@ -50,8 +52,7 @@ class Coot < Formula
   depends_on "openblas"
   depends_on "pango"
   depends_on "py3cairo"
-  depends_on "pygobject3"
-  depends_on "python@3.12" # 3.13 is not supported yet?
+  depends_on "python@3.13"
   depends_on "rdkit"
   depends_on "sqlite"
 
@@ -74,7 +75,7 @@ class Coot < Formula
   end
 
   def python3
-    "python3.12"
+    "python3.13"
   end
 
   def install
@@ -95,10 +96,15 @@ class Coot < Formula
     (lib/"python#{xy}/site-packages/homebrew-coot.pth").write "#{libexec/"lib/python#{xy}/site-packages"}\n"
     ENV.prepend_path "PYTHONPATH", Formula["numpy"].opt_prefix/Language::Python.site_packages(python3)
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
+    # Tweak to include pygobject3@3.50
+    ENV.prepend_path "PYTHONPATH",
+                     Formula["brewsci/bio/pygobject3@3.50"].opt_prefix/Language::Python.site_packages(python3)
+    ENV.prepend_path "PKG_CONFIG_PATH",
+                     Formula["brewsci/bio/pygobject3@3.50"].opt_lib/"pkgconfig"
 
     # Set Boost, RDKit, and FFTW2 root
     boost_prefix = Formula["boost"].opt_prefix
-    boost_python_lib = "boost_python312"
+    boost_python_lib = "boost_python313"
     rdkit_prefix = Formula["rdkit"].opt_prefix
     fftw2_prefix = Formula["clipper4coot"].opt_prefix/"fftw2"
 
