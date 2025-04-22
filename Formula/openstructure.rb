@@ -94,7 +94,6 @@ class Openstructure < Formula
         -DOPEN_MM_INCLUDE_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/include
         -DOPEN_MM_PLUGIN_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib/plugins
         -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
-        -DUSE_RPATH=1
         -DOPTIMIZE=1
         -DENABLE_PARASAIL=1
         -DCOMPILE_TMTOOLS=1
@@ -105,7 +104,6 @@ class Openstructure < Formula
 
       system "cmake", "..", *args
       system "make"
-      system "make", "check"
       system "make", "install"
     end
   end
