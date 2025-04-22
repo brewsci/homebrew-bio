@@ -102,7 +102,7 @@ class Openstructure < Formula
 
       # Set RPATH to `#{prefix}/lib`
       inreplace buildpath/"CMakeLists.txt",
-        'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}',
+        'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}"',
         "CMAKE_INSTALL_RPATH #{lib}"
 
       system "cmake", "..", *args
