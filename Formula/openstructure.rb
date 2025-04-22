@@ -6,7 +6,7 @@ class Openstructure < Formula
   license "LGPL-3.0-or-later"
 
   depends_on "cmake" => :build
-  depends_on "gcc" => :build # for gfortran
+  depends_on "gcc" => :build
   depends_on "boost-python3@1.87"
   depends_on "boost@1.85"
   depends_on "clustal-w"
@@ -38,6 +38,16 @@ class Openstructure < Formula
   end
 
   def install
+    ENV.cxx11
+    ENV.libcxx
+
+    # Use g++ for compilation because clang++ fails in boost-related builds
+    if OS.mac?
+      gcc = Formula["gcc"]
+      ENV["CXX"] = "#{gcc.opt_bin}/g++-#{gcc.version.major}"
+      ENV.append "LDFLAGS", "-Wl,-rpath,#{gcc.opt_lib}/gcc/#{gcc.version.major}" if OS.mac?
+    end
+
     xy = Language::Python.major_minor_version python3
     xy_nodot = xy.to_s.delete(".")
     ENV.prepend_path "PATH", "#{HOMEBREW_PREFIX}/bin/python#{xy}"
@@ -48,24 +58,16 @@ class Openstructure < Formula
     lib_ext = OS.mac? ? "dylib" : "so"
 
     mkdir "build" do
-      args = %W[
-        -DCMAKE_CXX_STANDARD=17
+      args = std_cmake_args + %W[
+        -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DBOOST_ROOT=#{Formula["boost@1.85"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost@1.85"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
-        -DOPTIMIZE=1
-        -DENABLE_MM=1
         -DOPEN_MM_LIBRARY=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib
         -DOPEN_MM_INCLUDE_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/include
-        -DOPEN_MM_PLUGIN_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib/plugins
-        -DENABLE_PARASAIL=1
-        -DCOMPILE_TMTOOLS=1
-        -DENABLE_GFX=1
-        -DENABLE_GUI=1
-        -DENABLE_INFO=1
-        -DCMAKE_VERBOSE_MAKEFILE=ON
-      ] + std_cmake_args
+        -DOPEN_MM_PLUGIN_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/plugins
+      ]
       system "cmake", "..", *args
       system "make"
 
@@ -81,16 +83,28 @@ class Openstructure < Formula
               "compounds.chemlib", "charmm"
 
       # Re-configure with compound library
-      args = %W[
+      openmm_lib = Dir[
+        "#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib/libOpenMM*.#{lib_ext}"
+      ].first
+      args = std_cmake_args + %W[
+        -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DPREFIX=#{prefix}
-        -DCMAKE_CXX_STANDARD=17
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DBOOST_ROOT=#{Formula["boost@1.85"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost@1.85"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
+        -DOPEN_MM_LIBRARY=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib/libOpenMM.#{lib_ext}
+        -DOPEN_MM_INCLUDE_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/include
+        -DOPEN_MM_PLUGIN_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib/plugins
         -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
-        -DCMAKE_VERBOSE_MAKEFILE=ON
-      ] + std_cmake_args
+        -DUSE_RPATH=1
+        -DOPTIMIZE=1
+        -DENABLE_PARASAIL=1
+        -DCOMPILE_TMTOOLS=1
+        -DENABLE_GFX=1
+        -DENABLE_GUI=1
+        -DENABLE_INFO=1
+      ]
 
       system "cmake", "..", *args
       system "make"
