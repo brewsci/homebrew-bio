@@ -7,15 +7,15 @@ class Openstructure < Formula
 
   depends_on "cmake" => :build
   depends_on "gcc" => :build
-  depends_on "boost-python3@1.87"
-  depends_on "boost@1.85"
+  depends_on "boost-python3"
+  depends_on "boost"
   depends_on "clustal-w"
   depends_on "eigen"
   depends_on "fftw"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "parasail"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "qt@5"
   depends_on "sip"
   depends_on "sqlite3"
@@ -34,37 +34,39 @@ class Openstructure < Formula
   end
 
   def python3
-    "python3.12"
+    "python3.13"
   end
 
   def install
     ENV.cxx11
-    # ENV.libcxx
+    ENV.libcxx
 
-    # Use g++ for compilation because clang++ fails in boost-related builds
-    if OS.mac?
-      gcc = Formula["gcc"]
-      ENV["CXX"] = "#{gcc.opt_bin}/g++-#{gcc.version.major}"
-      ENV.append "CXXFLAGS", "-stdlib=libstdc++"
-      ENV.append "LDFLAGS",  "-stdlib=libstdc++ -L#{gcc.opt_lib}/gcc/#{gcc.version.major}"
-    end
+    # # Use g++ for compilation because clang++ fails in boost-related builds
+    # if OS.mac?
+    #   gcc = Formula["gcc"]
+    #   ENV["CXX"] = "#{gcc.opt_bin}/g++-#{gcc.version.major}"
+    #   ENV.append "CXXFLAGS", "-stdlib=libstdc++"
+    #   ENV.append "LDFLAGS",  "-stdlib=libstdc++ -L#{gcc.opt_lib}/gcc/#{gcc.version.major}"
+    # end
 
     xy = Language::Python.major_minor_version python3
     xy_nodot = xy.to_s.delete(".")
     ENV.prepend_path "PATH", "#{HOMEBREW_PREFIX}/bin/python#{xy}"
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
-    system python3, "-m", "pip", "install", "--prefix=#{libexec}",
+    system "pip3", "install", "--prefix=#{libexec}",
       "numpy", "pandas", "scipy", "networkx", "OpenMM", "PyQt5"
 
-    # lib_ext = OS.mac? ? "dylib" : "so"
+    lib_ext = OS.mac? ? "dylib" : "so"
 
     mkdir "build" do
       args = std_cmake_args + %W[
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
+        -DCMAKE_CXX_STANDARD=17
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
-        -DBOOST_ROOT=#{Formula["boost@1.85"].opt_prefix}
-        -DBoost_INCLUDE_DIRS=#{Formula["boost@1.85"].opt_include}
-        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy_nodot}.so
+        -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
+        -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
+        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
+        -DCMAKE_VERBOSE_MAKEFILE=1
       ]
       system "cmake", "..", *args
       system "make"
@@ -83,12 +85,13 @@ class Openstructure < Formula
       # Re-configure with compound library
       args = std_cmake_args + %W[
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
+        -DCMAKE_CXX_STANDARD=17
         -DPREFIX=#{prefix}
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
-        -DBOOST_ROOT=#{Formula["boost@1.85"].opt_prefix}
-        -DBoost_INCLUDE_DIRS=#{Formula["boost@1.85"].opt_include}
-        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3@1.87"].opt_lib}/libboost_python#{xy_nodot}.so
-        -DOPEN_MM_LIBRARY=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib/libOpenMM.so
+        -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
+        -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
+        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
+        -DOPEN_MM_LIBRARY=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib/libOpenMMCPU.#{lib_ext}
         -DOPEN_MM_INCLUDE_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/include
         -DOPEN_MM_PLUGIN_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib/plugins
         -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
@@ -100,12 +103,13 @@ class Openstructure < Formula
         -DENABLE_GFX=1
         -DENABLE_GUI=1
         -DENABLE_INFO=1
+        -DCMAKE_VERBOSE_MAKEFILE=1
       ]
 
       # Set RPATH to `#{prefix}/lib`
       inreplace buildpath/"CMakeLists.txt",
         'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}"',
-        'CMAKE_INSTALL_RPATH "$ORIGIN/${LIB_DIR}"'
+        "CMAKE_INSTALL_RPATH #{lib}"
 
       system "cmake", "..", *args
       system "make"
