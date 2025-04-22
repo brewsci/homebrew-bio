@@ -83,9 +83,6 @@ class Openstructure < Formula
               "compounds.chemlib", "charmm"
 
       # Re-configure with compound library
-      openmm_lib = Dir[
-        "#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib/libOpenMM*.#{lib_ext}"
-      ].first
       args = std_cmake_args + %W[
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DPREFIX=#{prefix}
