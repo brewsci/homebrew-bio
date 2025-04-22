@@ -61,7 +61,7 @@ class Openstructure < Formula
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
         -DCMAKE_VERBOSE_MAKEFILE=1
       ]
-      args << "-DCMAKE_CXX_FLAGS=-stdlib=libc++" if OS.mac?
+      args << "-DCXX_FLAGS=-stdlib=libc++" if OS.mac?
       system "cmake", "..", *args
       system "make"
 
@@ -99,7 +99,7 @@ class Openstructure < Formula
         -DENABLE_INFO=1
         -DCMAKE_VERBOSE_MAKEFILE=1
       ]
-      args << "-DCMAKE_CXX_FLAGS=-stdlib=libc++" if OS.mac?
+      args << "-DCXX_FLAGS=-stdlib=libc++" if OS.mac?
 
       # Set RPATH to `#{prefix}/lib and OpenMM libs`
       inreplace buildpath/"CMakeLists.txt",
