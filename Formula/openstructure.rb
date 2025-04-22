@@ -6,7 +6,7 @@ class Openstructure < Formula
   license "LGPL-3.0-or-later"
 
   depends_on "cmake" => :build
-  depends_on "gcc" => :build
+  depends_on "gcc" => :build # for gfortran
   depends_on "boost-python3@1.87"
   depends_on "boost@1.85"
   depends_on "clustal-w"
@@ -28,13 +28,16 @@ class Openstructure < Formula
     sha256 "9efba276fc378cde50a2e3dfe27390f0737059c29ea12019d20cfc978f76bf74"
   end
 
+  patch do
+    url "https://raw.githubusercontent.com/eunos-1128/openstructure/a37429f40ffc9802158444a431fc405e3724649c/boost-1_85.patch"
+    sha256 "6fc81637723677b8ee3b07a79174d6100c7c4914a367a0425d0724495de953b8"
+  end
+
   def python3
     "python3.12"
   end
 
   def install
-    ENV.cxx11
-
     xy = Language::Python.major_minor_version python3
     xy_nodot = xy.to_s.delete(".")
     ENV.prepend_path "PATH", "#{HOMEBREW_PREFIX}/bin/python#{xy}"
@@ -42,20 +45,11 @@ class Openstructure < Formula
     system python3, "-m", "pip", "install", "--prefix=#{libexec}",
       "numpy", "pandas", "scipy", "networkx", "OpenMM", "PyQt5"
 
-    # Fix to match new version of Boost
-    inreplace "modules/seq/alg/src/hmm_pseudo_counts.cc",
-      "#include <boost/filesystem/convenience.hpp>",
-      "#include <boost/filesystem.hpp>"
-    inreplace "modules/seq/alg/src/hmm_pseudo_counts.cc" do |s|
-      s.gsub! "boost::filesystem::extension", "boost::filesystem::path(filename).extension().string"
-      s.gsub! ".string(filename)", ".string()"
-    end
-
     lib_ext = OS.mac? ? "dylib" : "so"
 
     mkdir "build" do
       args = %W[
-        -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
+        -DCMAKE_CXX_STANDARD=17
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DBOOST_ROOT=#{Formula["boost@1.85"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost@1.85"].opt_include}
@@ -73,9 +67,7 @@ class Openstructure < Formula
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ] + std_cmake_args
       system "cmake", "..", *args
-      # system "make", "VERBOSE=1", "2>&1 | tee build.log"
       system "make"
-      # ENV.deparallelize { system "make" }
 
       resource("components-cif").fetch
       components_cif_path = resource("components-cif").cached_download
@@ -91,7 +83,7 @@ class Openstructure < Formula
       # Re-configure with compound library
       args = %W[
         -DPREFIX=#{prefix}
-        -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
+        -DCMAKE_CXX_STANDARD=17
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DBOOST_ROOT=#{Formula["boost@1.85"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost@1.85"].opt_include}
