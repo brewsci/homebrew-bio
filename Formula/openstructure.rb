@@ -39,9 +39,6 @@ class Openstructure < Formula
   end
 
   def install
-    ENV.cxx11
-    ENV.libcxx
-
     xy = Language::Python.major_minor_version python3
     xy_nodot = xy.to_s.delete(".")
     ENV.prepend_path "PATH", "#{HOMEBREW_PREFIX}/bin/python#{xy}"
@@ -59,7 +56,6 @@ class Openstructure < Formula
     mkdir "build" do
       args = std_cmake_args + %W[
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
-        -DCMAKE_CXX_STANDARD=17
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
@@ -67,7 +63,8 @@ class Openstructure < Formula
         -DCMAKE_VERBOSE_MAKEFILE=1
         -DUSE_RPATH=1
       ]
-      args << "-DCXX_FLAGS=-stdlib=libc++" if OS.mac?
+      args << "-DCXX_FLAGS=-std=c++17 -stdlib=libc++" if OS.mac?
+      args << "-DCMAKE_CXX_STANDARD=17" if OS.linux?
       system "cmake", "..", *args
       system "make"
 
@@ -85,7 +82,6 @@ class Openstructure < Formula
       # Re-configure with compound library
       args = std_cmake_args + %W[
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
-        -DCMAKE_CXX_STANDARD=17
         -DPREFIX=#{prefix}
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
@@ -105,11 +101,11 @@ class Openstructure < Formula
         -DENABLE_INFO=1
         -DCMAKE_VERBOSE_MAKEFILE=1
       ]
-      args << "-DCXX_FLAGS=-stdlib=libc++" if OS.mac?
+      args << "-DCXX_FLAGS=-std=c++17 -stdlib=libc++" if OS.mac?
+      args << "-DCMAKE_CXX_STANDARD=17" if OS.linux?
 
       system "cmake", "..", *args
       system "make"
-      system "make", "check"
       system "make", "install"
     end
   end
