@@ -51,6 +51,11 @@ class Openstructure < Formula
 
     lib_ext = OS.mac? ? "dylib" : "so"
 
+    # Set RPATH to `#{prefix}/lib and OpenMM libs`
+    inreplace buildpath/"CMakeLists.txt",
+      'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}"',
+      "CMAKE_INSTALL_RPATH #{lib}:#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib"
+
     mkdir "build" do
       args = std_cmake_args + %W[
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
@@ -60,6 +65,7 @@ class Openstructure < Formula
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
         -DCMAKE_VERBOSE_MAKEFILE=1
+        -DUSE_RPATH=1
       ]
       args << "-DCXX_FLAGS=-stdlib=libc++" if OS.mac?
       system "cmake", "..", *args
@@ -100,11 +106,6 @@ class Openstructure < Formula
         -DCMAKE_VERBOSE_MAKEFILE=1
       ]
       args << "-DCXX_FLAGS=-stdlib=libc++" if OS.mac?
-
-      # Set RPATH to `#{prefix}/lib and OpenMM libs`
-      inreplace buildpath/"CMakeLists.txt",
-        'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}"',
-        "CMAKE_INSTALL_RPATH #{lib}:#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib"
 
       system "cmake", "..", *args
       system "make"
