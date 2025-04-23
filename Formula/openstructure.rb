@@ -51,20 +51,23 @@ class Openstructure < Formula
     # Set RPATH to `#{prefix}/lib and OpenMM libs`
     inreplace buildpath/"CMakeLists.txt",
       'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}"',
-      "CMAKE_INSTALL_RPATH #{lib}:#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib"
+      "CMAKE_INSTALL_RPATH #{lib};#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib"
 
     mkdir "build" do
       args = std_cmake_args + %W[
-        -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
+        -DCMAKE_CXX_STANDARD=17
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
         -DCMAKE_VERBOSE_MAKEFILE=1
+        -CMAKE_CXX_STANDARD_REQUIRED=1
+        -DCMAKE_CXX_EXTENSIONS=1
         -DUSE_RPATH=1
       ]
-      args << "-DCXX_FLAGS=-std=c++17 -stdlib=libc++" if OS.mac?
-      args << "-DCMAKE_CXX_STANDARD=17" if OS.linux?
+      args << "-DCMAKE_CXX_FLAGS=-stdlib=libc++" if OS.mac?
+      args << "-DCMAKE_EXE_LINKER_FLAGS=-stdlib=libc++" if OS.mac?
+
       system "cmake", "..", *args
       system "make"
 
@@ -81,7 +84,7 @@ class Openstructure < Formula
 
       # Re-configure with compound library
       args = std_cmake_args + %W[
-        -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
+        -DCMAKE_CXX_STANDARD=17
         -DPREFIX=#{prefix}
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
@@ -101,8 +104,8 @@ class Openstructure < Formula
         -DENABLE_INFO=1
         -DCMAKE_VERBOSE_MAKEFILE=1
       ]
-      args << "-DCXX_FLAGS=-std=c++17 -stdlib=libc++" if OS.mac?
-      args << "-DCMAKE_CXX_STANDARD=17" if OS.linux?
+      args << "-DCMAKE_CXX_FLAGS=-stdlib=libc++" if OS.mac?
+      args << "-DCMAKE_EXE_LINKER_FLAGS=-stdlib=libc++" if OS.mac?
 
       system "cmake", "..", *args
       system "make"
