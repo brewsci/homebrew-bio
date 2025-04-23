@@ -66,7 +66,7 @@ class Openstructure < Formula
         -DCMAKE_CXX_EXTENSIONS=1
         -DUSE_RPATH=1
       ]
-      args << "-DCMAKE_CXX_FLAGS=-stdlib=libc++" if OS.mac?
+      args << "-DCMAKE_CXX_FLAGS=-stdlib=libc++ -DBOOST_NO_CXX98_FUNCTION_BASE" if OS.mac?
       args << "-DCMAKE_EXE_LINKER_FLAGS=-stdlib=libc++" if OS.mac?
 
       system "cmake", "..", *args
@@ -106,7 +106,7 @@ class Openstructure < Formula
         -DCMAKE_CXX_STANDARD_REQUIRED=1
         -DCMAKE_VERBOSE_MAKEFILE=1
       ]
-      args << "-DCMAKE_CXX_FLAGS=-stdlib=libc++" if OS.mac?
+      args << "-DCMAKE_CXX_FLAGS=-stdlib=libc++ -DBOOST_NO_CXX98_FUNCTION_BASE" if OS.mac?
       args << "-DCMAKE_EXE_LINKER_FLAGS=-stdlib=libc++" if OS.mac?
 
       system "cmake", "..", *args
