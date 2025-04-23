@@ -32,7 +32,7 @@ class Openstructure < Formula
   patch do
     # Patch for Homebrew packaging(boost compatibility and file locations)
     url "https://github.com/eunos-1128/openstructure/blob/0aa28b046f14640103c0d5dfc6b6477101e78dfd/homebrew.patch"
-    sha256 "dac67ba5737e859b9d2202c726ba3c8d54d05dedc44139affc84eff3eea7a2bc"
+    sha256 "29d557e52628cc7cc6b4024be41e23ff9bfb3a65d3e2709d05caddff345523a6"
   end
 
   def python3
