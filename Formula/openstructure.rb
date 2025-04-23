@@ -30,7 +30,8 @@ class Openstructure < Formula
   end
 
   patch do
-    url "https://raw.githubusercontent.com/eunos-1128/openstructure/00ccfd2f1da1f978aead48391798b5924dd2f3c5/boost.patch"
+    # Patch for Homebrew packaging(boost compatibility and file locations)
+    url "https://raw.githubusercontent.com/eunos-1128/openstructure/refs/heads/2.9.3/homebrew-patch/homebrew.patch"
     sha256 "88a253ca45e07e4ee3bcf9436975ed060bb943194eecc0ca46f4556553c62746"
   end
 
@@ -115,6 +116,6 @@ class Openstructure < Formula
   end
 
   test do
-    assert_match "Usage", shell_output("#{bin}/ost -h")
+    assert_match "Usage:", shell_output("#{bin}/ost -h 2>&1", 255)
   end
 end
