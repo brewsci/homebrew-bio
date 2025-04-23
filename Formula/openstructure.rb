@@ -33,8 +33,8 @@ class Openstructure < Formula
 
   patch do
     # Patch for Homebrew packaging(boost compatibility and file locations)
-    url "https://raw.githubusercontent.com/eunos-1128/openstructure/0aa28b046f14640103c0d5dfc6b6477101e78dfd/homebrew.patch"
-    sha256 "dac67ba5737e859b9d2202c726ba3c8d54d05dedc44139affc84eff3eea7a2bc"
+    url "https://raw.githubusercontent.com/eunos-1128/openstructure/2f7c0806c77d5149adadc36a6bc6f467e2793837/homebrew.patch"
+    sha256 "8ae8d57e204272451dbdf4fa8a9d4035dea0bbd5a3f4b4dd8636e26340cce90f"
   end
 
   def python3
@@ -42,6 +42,11 @@ class Openstructure < Formula
   end
 
   def install
+    if OS.linux?
+      gcc = Formula["gcc"]
+      ENV["CXX"] = "#{gcc.opt_bin}/g++-#{gcc.version.major}"
+    end
+
     xy = Language::Python.major_minor_version python3
     xy_nodot = xy.to_s.delete(".")
     ENV.prepend_path "PATH", "#{HOMEBREW_PREFIX}/bin/python#{xy}"
@@ -63,6 +68,7 @@ class Openstructure < Formula
 
     mkdir "build" do
       args = std_cmake_args + %W[
+        -DCMAKE_CXX_COMPILER=ENV["CXX"]
         -DCMAKE_CXX_STANDARD=17
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
@@ -92,6 +98,7 @@ class Openstructure < Formula
 
       # Re-configure with compound library
       args = std_cmake_args + %W[
+        -DCMAKE_CXX_COMPILER=ENV["CXX"]
         -DCMAKE_CXX_STANDARD=17
         -DPREFIX=#{prefix}
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
