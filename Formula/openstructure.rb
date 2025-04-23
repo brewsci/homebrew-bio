@@ -42,10 +42,12 @@ class Openstructure < Formula
   end
 
   def install
-    if OS.linux?
-      gcc = Formula["gcc"]
-      ENV["CXX"] = "#{gcc.opt_bin}/g++-#{gcc.version.major}"
-    end
+    ENV.cxx11
+
+    # if OS.linux?
+    #   gcc = Formula["gcc"]
+    #   ENV["CXX"] = "#{gcc.opt_bin}/g++-#{gcc.version.major}"
+    # end
 
     xy = Language::Python.major_minor_version python3
     xy_nodot = xy.to_s.delete(".")
@@ -74,6 +76,7 @@ class Openstructure < Formula
     ENV.prepend_path "CPPFLAGS", "-I#{temp_boost_dir}/include"
     ENV.prepend_path "LDFLAGS", "-L#{temp_boost_dir}/lib"
 
+    # Fix for boost::core::signbit
     inreplace "#{temp_boost_dir}/include/boost/lexical_cast/detail/inf_nan.hpp",
       "boost::core::signbit",
       "std::signbit"
