@@ -66,6 +66,10 @@ class Openstructure < Formula
       'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}"',
       "CMAKE_INSTALL_RPATH #{lib}"
 
+    inreplace "#{Formula["boost"].opt_include}/boost/lexical_cast/detail/inf_nan.hpp",
+      "boost::core::signbit",
+      "std::signbit"
+
     mkdir "build" do
       args = std_cmake_args + %W[
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
@@ -122,8 +126,13 @@ class Openstructure < Formula
 
       system "cmake", "..", *args
       system "make"
+      system "make", "check"
       system "make", "install"
     end
+
+    inreplace "#{Formula["boost"].opt_include}/boost/lexical_cast/detail/inf_nan.hpp",
+      "std::signbit",
+      "boost::core::signbit"
   end
 
   test do
