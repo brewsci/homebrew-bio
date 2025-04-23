@@ -70,6 +70,8 @@ class Openstructure < Formula
     mkdir_p temp_boost_dir
     boost_include_dir = Formula["boost"].include
     cp_r "#{boost_include_dir}/boost", temp_boost_dir
+    ENV.prepend_path "CXXFLAGS", "-I#{temp_boost_dir}"
+    ENV.prepend_path "CPPFLAGS", "-I#{temp_boost_dir}"
     inreplace "#{temp_boost_dir}/boost/lexical_cast/detail/inf_nan.hpp",
       "boost::core::signbit",
       "std::signbit"
@@ -78,6 +80,8 @@ class Openstructure < Formula
       args = std_cmake_args + %W[
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DCMAKE_CXX_STANDARD=17
+        -DCMAKE_CXX_FLAGS=#{ENV.cxxflags}
+        -DCMAKE_CPP_FLAGS=#{ENV.cppflags}
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{temp_boost_dir}
@@ -103,6 +107,8 @@ class Openstructure < Formula
       args = std_cmake_args + %W[
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DCMAKE_CXX_STANDARD=17
+        -DCMAKE_CXX_FLAGS=#{ENV.cxxflags}
+        -DCMAKE_CPP_FLAGS=#{ENV.cppflags}
         -DPREFIX=#{prefix}
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
