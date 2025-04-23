@@ -6,23 +6,25 @@ class Openstructure < Formula
   license "LGPL-3.0-or-later"
 
   depends_on "cmake" => :build
-  depends_on "gcc" => :build
   depends_on "boost"
   depends_on "boost-python3"
   depends_on "clustal-w"
   depends_on "eigen"
   depends_on "fftw"
+  depends_on "gcc"
   depends_on "libpng"
   depends_on "libtiff"
+  depends_on "opencl-headers"
+  depends_on "opencl-icd-loader"
   depends_on "parasail"
+  depends_on "pocl"
   depends_on "pyqt@5"
   depends_on "python@3.13"
   depends_on "qt@5"
   depends_on "sip"
   depends_on "sqlite3"
   depends_on "voronota"
-
-  uses_from_macos "zlib"
+  depends_on "zlib"
 
   resource "components-cif" do
     url "https://files.wwpdb.org/pub/pdb/data/monomers/components.cif.gz"
@@ -49,10 +51,15 @@ class Openstructure < Formula
 
     lib_ext = OS.mac? ? "dylib" : "so"
 
+    openmm_base = libexec/"lib/python#{xy}/site-packages/OpenMM.libs"
+    lib.install openmm_base/"lib/libOpenMM.#{lib_ext}"
+    lib.install Dir[openmm_base/"lib/libOpenMM*.#{lib_ext}"]
+    lib.install Dir[openmm_base/"lib/plugins/*.{#{lib_ext}}"]
+
     # Set RPATH to `#{prefix}/lib and OpenMM libs`
     inreplace buildpath/"CMakeLists.txt",
       'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}"',
-      "CMAKE_INSTALL_RPATH #{lib};#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib"
+      "CMAKE_INSTALL_RPATH #{lib}"
 
     mkdir "build" do
       args = std_cmake_args + %W[
@@ -111,7 +118,7 @@ class Openstructure < Formula
 
       system "cmake", "..", *args
       system "make"
-      # system "make", "check"
+      system "make", "check"
       system "make", "install"
     end
   end
