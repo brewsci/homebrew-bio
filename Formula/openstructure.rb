@@ -67,12 +67,14 @@ class Openstructure < Formula
       "CMAKE_INSTALL_RPATH #{lib}"
 
     temp_boost_dir = "#{buildpath}/temp_boost"
-    mkdir_p temp_boost_dir
-    boost_include_dir = Formula["boost"].include
-    cp_r "#{boost_include_dir}/boost", temp_boost_dir
-    ENV.prepend_path "CXXFLAGS", "-I#{temp_boost_dir}"
-    ENV.prepend_path "CPPFLAGS", "-I#{temp_boost_dir}"
-    inreplace "#{temp_boost_dir}/boost/lexical_cast/detail/inf_nan.hpp",
+    boost_dir = Formula["boost"].opt_prefix
+    cp_r "#{boost_dir}/.", temp_boost_dir
+
+    ENV.prepend_path "CXXFLAGS", "-I#{temp_boost_dir}/include"
+    ENV.prepend_path "CPPFLAGS", "-I#{temp_boost_dir}/include"
+    ENV.prepend_path "LDFLAGS", "-L#{temp_boost_dir}/lib"
+
+    inreplace "#{temp_boost_dir}/include/boost/lexical_cast/detail/inf_nan.hpp",
       "boost::core::signbit",
       "std::signbit"
 
@@ -82,15 +84,18 @@ class Openstructure < Formula
         -DCMAKE_CXX_STANDARD=17
         -DCMAKE_CXX_FLAGS=#{ENV.cxxflags}
         -DCMAKE_CPP_FLAGS=#{ENV.cppflags}
+        -DCMAKE_EXE_LINKER_FLAGS=#{ENV.ldflags}
+        -DCMAKE_SHARED_LINKER_FLAGS=#{ENV.ldflags}
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
-        -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
-        -DBoost_INCLUDE_DIRS=#{temp_boost_dir}
+        -DBOOST_ROOT=#{temp_boost_dir}
+        -DBoost_INCLUDE_DIRS=#{temp_boost_dir}/include
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
         -DUSE_RPATH=1
+        -DCMAKE_VERBOSE_MAKEFILE=1
       ]
 
       system "cmake", "..", *args
-      system "make"
+      system "make", "VERBOSE=1"
 
       resource("components-cif").fetch
       components_cif_path = resource("components-cif").cached_download
@@ -109,10 +114,12 @@ class Openstructure < Formula
         -DCMAKE_CXX_STANDARD=17
         -DCMAKE_CXX_FLAGS=#{ENV.cxxflags}
         -DCMAKE_CPP_FLAGS=#{ENV.cppflags}
+        -DCMAKE_EXE_LINKER_FLAGS=#{ENV.ldflags}
+        -DCMAKE_SHARED_LINKER_FLAGS=#{ENV.ldflags}
         -DPREFIX=#{prefix}
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
-        -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
-        -DBoost_INCLUDE_DIRS=#{temp_boost_dir}
+        -DBOOST_ROOT=#{temp_boost_dir}
+        -DBoost_INCLUDE_DIRS=#{temp_boost_dir}/include
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
         -DOPEN_MM_LIBRARY=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib/libOpenMM.#{lib_ext}
         -DOPEN_MM_INCLUDE_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/include
@@ -126,10 +133,11 @@ class Openstructure < Formula
         -DENABLE_GFX=1
         -DENABLE_GUI=1
         -DENABLE_INFO=1
+        -DCMAKE_VERBOSE_MAKEFILE=1
       ]
 
       system "cmake", "..", *args
-      system "make"
+      system "make", "VERBOSE=1"
       system "make", "check"
       system "make", "install"
     end
