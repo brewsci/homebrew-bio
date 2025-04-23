@@ -68,18 +68,16 @@ class Openstructure < Formula
 
     mkdir "build" do
       args = std_cmake_args + %W[
-        -DCMAKE_CXX_COMPILER=ENV["CXX"]
+        -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DCMAKE_CXX_STANDARD=17
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
-        -DCMAKE_VERBOSE_MAKEFILE=1
         -DCMAKE_CXX_STANDARD_REQUIRED=1
-        -DCMAKE_CXX_EXTENSIONS=1
         -DUSE_RPATH=1
       ]
-      args << "-DCMAKE_CXX_FLAGS=-stdlib=libc++ -DBOOST_NO_CXX98_FUNCTION_BASE" if OS.mac?
+      args << "-DCMAKE_CXX_FLAGS=-stdlib=libc++" if OS.mac?
       args << "-DCMAKE_EXE_LINKER_FLAGS=-stdlib=libc++" if OS.mac?
 
       system "cmake", "..", *args
@@ -98,7 +96,7 @@ class Openstructure < Formula
 
       # Re-configure with compound library
       args = std_cmake_args + %W[
-        -DCMAKE_CXX_COMPILER=ENV["CXX"]
+        -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DCMAKE_CXX_STANDARD=17
         -DPREFIX=#{prefix}
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
@@ -118,9 +116,8 @@ class Openstructure < Formula
         -DENABLE_GUI=1
         -DENABLE_INFO=1
         -DCMAKE_CXX_STANDARD_REQUIRED=1
-        -DCMAKE_VERBOSE_MAKEFILE=1
       ]
-      args << "-DCMAKE_CXX_FLAGS=-stdlib=libc++ -DBOOST_NO_CXX98_FUNCTION_BASE" if OS.mac?
+      args << "-DCMAKE_CXX_FLAGS=-stdlib=libc++" if OS.mac?
       args << "-DCMAKE_EXE_LINKER_FLAGS=-stdlib=libc++" if OS.mac?
 
       system "cmake", "..", *args
