@@ -61,7 +61,7 @@ class Openstructure < Formula
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
         -DCMAKE_VERBOSE_MAKEFILE=1
-        -CMAKE_CXX_STANDARD_REQUIRED=1
+        -DCMAKE_CXX_STANDARD_REQUIRED=1
         -DCMAKE_CXX_EXTENSIONS=1
         -DUSE_RPATH=1
       ]
@@ -102,6 +102,7 @@ class Openstructure < Formula
         -DENABLE_GFX=1
         -DENABLE_GUI=1
         -DENABLE_INFO=1
+        -DCMAKE_CXX_STANDARD_REQUIRED=1
         -DCMAKE_VERBOSE_MAKEFILE=1
       ]
       args << "-DCMAKE_CXX_FLAGS=-stdlib=libc++" if OS.mac?
