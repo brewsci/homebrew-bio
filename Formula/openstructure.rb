@@ -32,7 +32,7 @@ class Openstructure < Formula
   patch do
     # Patch for Homebrew packaging(boost compatibility and file locations)
     url "https://raw.githubusercontent.com/eunos-1128/openstructure/refs/heads/2.9.3/homebrew-patch/homebrew.patch"
-    sha256 "88a253ca45e07e4ee3bcf9436975ed060bb943194eecc0ca46f4556553c62746"
+    sha256 "dac67ba5737e859b9d2202c726ba3c8d54d05dedc44139affc84eff3eea7a2bc"
   end
 
   def python3
@@ -111,6 +111,7 @@ class Openstructure < Formula
 
       system "cmake", "..", *args
       system "make"
+      system "make", "check"
       system "make", "install"
     end
   end
