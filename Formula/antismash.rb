@@ -26,7 +26,7 @@ class Antismash < Formula
   depends_on "cmake" => :build # scikit-learn
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build # for nrpys
   depends_on "blast"
   depends_on "brewsci/bio/fasttree"
@@ -35,7 +35,6 @@ class Antismash < Formula
   depends_on "brewsci/bio/meme@4.11.2"
   depends_on "brewsci/bio/muscle"
   depends_on "ca-certificates"
-  depends_on "cython"
   depends_on "diamond"
   depends_on "freetype"
   depends_on "hmmer"
@@ -45,8 +44,8 @@ class Antismash < Formula
   depends_on "numpy"
   depends_on "pillow"
   depends_on "prodigal"
-  depends_on "python-matplotlib"
-  depends_on "python@3.12"
+  depends_on "python@3.12" # 3.13 is not supported yet for biopython 1.85
+  depends_on "qhull"
   depends_on "scipy"
 
   on_macos do
@@ -55,7 +54,6 @@ class Antismash < Formula
 
   on_linux do
     depends_on "patchelf" => :build
-    depends_on "ca-certificates"
   end
 
   resource "attrs" do
@@ -86,6 +84,11 @@ class Antismash < Formula
   resource "cycler" do
     url "https://files.pythonhosted.org/packages/a9/95/a3dbbb5028f35eafb79008e7522a75244477d2838f38cbb722248dabc2a8/cycler-0.12.1.tar.gz"
     sha256 "88bb128f02ba341da8ef447245a9e138fae777f6a23943da4540077d3601eb1c"
+  end
+
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/5a/25/886e197c97a4b8e254173002cdc141441e878ff29aaa7d9ba560cd6e4866/cython-3.0.12.tar.gz"
+    sha256 "b988bb297ce76c671e28c97d017b95411010f7c77fa6623dd0bb47eed1aee1bc"
   end
 
   resource "fonttools" do
@@ -133,6 +136,11 @@ class Antismash < Formula
     sha256 "d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"
   end
 
+  resource "matplotlib" do
+    url "https://files.pythonhosted.org/packages/2f/08/b89867ecea2e305f408fbb417139a8dd941ecf7b23a2e02157c36da546f0/matplotlib-3.10.1.tar.gz"
+    sha256 "e8d2d0e3881b129268585bf4765ad3ee73a4591d77b9a18c214ac7e3a79fb2ba"
+  end
+
   resource "MOODS-python" do
     url "https://files.pythonhosted.org/packages/f7/34/c623e9b57e3e3f1edf030201603d8110bf9969921790d950836176be4749/MOODS-python-1.9.4.1.tar.gz"
     sha256 "b3b5e080cb0cd13c0fd175d0ee0d453fde3e42794fa7ac39a4f6db1ac5ddb4cc"
@@ -174,8 +182,8 @@ class Antismash < Formula
   end
 
   resource "six" do
-    url "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+    url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   resource "threadpoolctl" do
@@ -189,15 +197,21 @@ class Antismash < Formula
 
   def install
     ENV.append "CPPFLAGS", "-I#{Formula["freetype"].opt_include}/freetype2" if OS.linux?
-    venv = virtualenv_create(libexec, python3)
-    venv.pip_install(resources)
-    site_packages = Language::Python.site_packages(python3)
+    venv = virtualenv_install_with_resources without: "matplotlib"
+    # `matplotlib` needs extra inputs to use system libraries.
+    # Ref: https://github.com/matplotlib/matplotlib/blob/v3.9.2/doc/install/dependencies.rst#use-system-libraries
+    resource("matplotlib").stage do
+      python = venv.root/"bin/python"
+      system python, "-m", "pip", "install", "--config-settings=setup-args=-Dsystem-freetype=true",
+                                             "--config-settings=setup-args=-Dsystem-qhull=true",
+                                             *std_pip_args(prefix: false, build_isolation: true), "."
+    end
 
     venv.pip_install_and_link buildpath
     # Fix minor warning in BCBio
     inreplace "#{libexec}/lib/python3.12/site-packages/BCBio/GFF/GFFParser.py",
               "compile(\"\\w+=\")", "compile(r\"\\w+=\")"
-    (prefix/site_packages/"homebrew-antismash.pth").write venv.site_packages
+    (prefix/Language::Python.site_packages(python3)/"homebrew-antismash.pth").write venv.site_packages
   end
 
   def caveats
