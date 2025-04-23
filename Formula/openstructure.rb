@@ -66,7 +66,13 @@ class Openstructure < Formula
       'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}"',
       "CMAKE_INSTALL_RPATH #{lib}"
 
-    inreplace "#{Formula["boost"].opt_include}/boost/lexical_cast/detail/inf_nan.hpp",
+    temp_boost_dir = "#{buildpath}/temp_boost"
+    mkdir_p temp_boost_dir
+    boost_include_dir = Formula["boost"].include
+    cp_r "#{boost_include_dir}/boost", temp_boost_dir
+    ENV.prepend_path "CXXFLAGS", "-I#{temp_boost_dir}"
+    ENV.prepend_path "CPPFLAGS", "-I#{temp_boost_dir}"
+    inreplace "#{temp_boost_dir}/boost/lexical_cast/detail/inf_nan.hpp",
       "boost::core::signbit",
       "std::signbit"
 
@@ -74,6 +80,8 @@ class Openstructure < Formula
       args = std_cmake_args + %W[
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DCMAKE_CXX_STANDARD=17
+        -DCMAKE_CXX_FLAGS=#{ENV.cxxflags}
+        -DCMAKE_CPP_FLAGS=#{ENV.cppflags}
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
@@ -81,8 +89,6 @@ class Openstructure < Formula
         -DCMAKE_CXX_STANDARD_REQUIRED=1
         -DUSE_RPATH=1
       ]
-      args << "-DCMAKE_CXX_FLAGS=-stdlib=libc++" if OS.mac?
-      args << "-DCMAKE_EXE_LINKER_FLAGS=-stdlib=libc++" if OS.mac?
 
       system "cmake", "..", *args
       system "make"
@@ -102,6 +108,8 @@ class Openstructure < Formula
       args = std_cmake_args + %W[
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DCMAKE_CXX_STANDARD=17
+        -DCMAKE_CXX_FLAGS=#{ENV.cxxflags}
+        -DCMAKE_CPP_FLAGS=#{ENV.cppflags}
         -DPREFIX=#{prefix}
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
@@ -121,18 +129,12 @@ class Openstructure < Formula
         -DENABLE_INFO=1
         -DCMAKE_CXX_STANDARD_REQUIRED=1
       ]
-      args << "-DCMAKE_CXX_FLAGS=-stdlib=libc++" if OS.mac?
-      args << "-DCMAKE_EXE_LINKER_FLAGS=-stdlib=libc++" if OS.mac?
 
       system "cmake", "..", *args
       system "make"
       system "make", "check"
       system "make", "install"
     end
-
-    inreplace "#{Formula["boost"].opt_include}/boost/lexical_cast/detail/inf_nan.hpp",
-      "std::signbit",
-      "boost::core::signbit"
   end
 
   test do
