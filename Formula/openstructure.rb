@@ -12,7 +12,7 @@ class Openstructure < Formula
   depends_on "clustal-w"
   depends_on "eigen"
   depends_on "fftw"
-  depends_on "gcc@13"
+  depends_on "gcc@12"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "llvm" if OS.mac?
@@ -45,7 +45,7 @@ class Openstructure < Formula
 
   def install
     if OS.linux?
-      gcc = Formula["gcc@13"]
+      gcc = Formula["gcc@12"]
       ENV["CXX"] = gcc.opt_bin/"g++-#{gcc.version.major}"
     else
       ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
