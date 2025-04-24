@@ -78,6 +78,10 @@ class Openstructure < Formula
 
     # Fix for boost::core::signbit
     inreplace "#{temp_boost_dir}/include/boost/lexical_cast/detail/inf_nan.hpp",
+      "#include <boost/core/cmath.hpp>",
+      "#include <boost/core/cmath.hpp>\n#include <cmath>"
+
+    inreplace "#{temp_boost_dir}/include/boost/lexical_cast/detail/inf_nan.hpp",
       "boost::core::signbit",
       "std::signbit"
 
