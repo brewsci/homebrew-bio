@@ -44,8 +44,6 @@ class Openstructure < Formula
   end
 
   def install
-    # ENV.cxx11
-
     if OS.linux?
       gcc = Formula["gcc@13"]
       ENV["CXX"] = gcc.opt_bin/"g++-#{gcc.version.major}"
@@ -62,21 +60,17 @@ class Openstructure < Formula
 
     lib_ext = OS.mac? ? "dylib" : "so"
 
-    openmm_base = libexec/"lib/python#{xy}/site-packages/OpenMM.libs"
-    lib.install openmm_base/"lib/libOpenMM.#{lib_ext}"
-    lib.install Dir[openmm_base/"lib/libOpenMM*.#{lib_ext}"]
-    lib.install Dir[openmm_base/"lib/plugins/*.{#{lib_ext}}"]
-
-    rpaths = [
-      lib,
-      openmm_base/"lib/",
-      openmm_base/"lib/plugins/",
-    ].join(";")
+    if OS.linux?
+      openmm_base = libexec/"lib/python#{xy}/site-packages/OpenMM.libs"
+      lib.install openmm_base/"lib/libOpenMM.#{lib_ext}"
+      lib.install Dir[openmm_base/"lib/libOpenMM*.#{lib_ext}"]
+      lib.install Dir[openmm_base/"lib/plugins/*.{#{lib_ext}}"]
+    end
 
     # Set RPATH to `#{prefix}/lib` and OpenMM libs
     inreplace buildpath/"CMakeLists.txt",
       'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}"',
-      "CMAKE_INSTALL_RPATH #{rpaths}"
+      "CMAKE_INSTALL_RPATH #{lib}"
 
     mkdir "build" do
       cmake_args = std_cmake_args + %W[
