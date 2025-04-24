@@ -6,6 +6,7 @@ class Openstructure < Formula
   license "LGPL-3.0-or-later"
 
   depends_on "cmake" => :build
+  depends_on "pkg-config" => :build
   depends_on "boost"
   depends_on "boost-python3"
   depends_on "clustal-w"
@@ -14,6 +15,7 @@ class Openstructure < Formula
   depends_on "gcc"
   depends_on "libpng"
   depends_on "libtiff"
+  depends_on "llvm" if OS.mac?
   depends_on "opencl-headers"
   depends_on "opencl-icd-loader"
   depends_on "parasail"
@@ -42,12 +44,14 @@ class Openstructure < Formula
   end
 
   def install
-    ENV.cxx11
+    # ENV.cxx11
 
-    # if OS.linux?
-    #   gcc = Formula["gcc"]
-    #   ENV["CXX"] = "#{gcc.opt_bin}/g++-#{gcc.version.major}"
-    # end
+    if OS.linux?
+      gcc = Formula["gcc"]
+      ENV["CXX"] = gcc.opt_bin}/"g++-#{gcc.version.major}"
+    else
+      ENV["CXX"] = Formula["llvm"].opt_bin/"clang++
+    end
 
     xy = Language::Python.major_minor_version python3
     xy_nodot = xy.to_s.delete(".")
@@ -76,22 +80,22 @@ class Openstructure < Formula
     # ENV.prepend_path "CPPFLAGS", "-I#{temp_boost_dir}/include"
     # ENV.prepend_path "LDFLAGS", "-L#{temp_boost_dir}/lib"
 
-    # Fix for boost::core::signbit
-    inreplace "#{temp_boost_dir}/include/boost/lexical_cast/detail/inf_nan.hpp",
-      "#include <boost/core/cmath.hpp>",
-      "#include <boost/core/cmath.hpp>\n#include <cmath>"
+    # # Fix for boost::core::signbit
+    # inreplace "#{temp_boost_dir}/include/boost/lexical_cast/detail/inf_nan.hpp",
+    #   "#include <boost/core/cmath.hpp>",
+    #   "#include <boost/core/cmath.hpp>\n#include <cmath>"
 
-    inreplace "#{temp_boost_dir}/include/boost/lexical_cast/detail/inf_nan.hpp",
-      "boost::core::isnan",
-      "std::isnan"
+    # inreplace "#{temp_boost_dir}/include/boost/lexical_cast/detail/inf_nan.hpp",
+    #   "boost::core::isnan",
+    #   "std::isnan"
 
-    inreplace "#{temp_boost_dir}/include/boost/lexical_cast/detail/inf_nan.hpp",
-      "boost::core::isinf",
-      "std::isinf"
+    # inreplace "#{temp_boost_dir}/include/boost/lexical_cast/detail/inf_nan.hpp",
+    #   "boost::core::isinf",
+    #   "std::isinf"
 
-    inreplace "#{temp_boost_dir}/include/boost/lexical_cast/detail/inf_nan.hpp",
-      "boost::core::signbit",
-      "std::signbit"
+    # inreplace "#{temp_boost_dir}/include/boost/lexical_cast/detail/inf_nan.hpp",
+    #   "boost::core::signbit",
+    #   "std::signbit"
 
     mkdir "build" do
       args = std_cmake_args + %W[
