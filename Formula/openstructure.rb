@@ -70,11 +70,11 @@ class Openstructure < Formula
 
     temp_boost_dir = "#{buildpath}/temp_boost"
     boost_dir = Formula["boost"].opt_prefix
-    cp_r "#{boost_dir}/*", temp_boost_dir
+    cp_r "#{boost_dir}/.", temp_boost_dir
 
-    ENV.prepend_path "CXXFLAGS", "-I#{temp_boost_dir}/include"
-    ENV.prepend_path "CPPFLAGS", "-I#{temp_boost_dir}/include"
-    ENV.prepend_path "LDFLAGS", "-L#{temp_boost_dir}/lib"
+    # ENV.prepend_path "CXXFLAGS", "-I#{temp_boost_dir}/include"
+    # ENV.prepend_path "CPPFLAGS", "-I#{temp_boost_dir}/include"
+    # ENV.prepend_path "LDFLAGS", "-L#{temp_boost_dir}/lib"
 
     puts File.read("#{temp_boost_dir}/include/boost/lexical_cast/detail/inf_nan.hpp")
     # Fix for boost::core::signbit
@@ -83,18 +83,24 @@ class Openstructure < Formula
       "#include <boost/core/cmath.hpp>\n#include <cmath>"
 
     inreplace "#{temp_boost_dir}/include/boost/lexical_cast/detail/inf_nan.hpp",
+      "boost::core::isnan",
+      "std::isnan"
+
+    inreplace "#{temp_boost_dir}/include/boost/lexical_cast/detail/inf_nan.hpp",
+      "boost::core::isinf",
+      "std::isinf"
+
+    inreplace "#{temp_boost_dir}/include/boost/lexical_cast/detail/inf_nan.hpp",
       "boost::core::signbit",
       "std::signbit"
+
     puts File.read("#{temp_boost_dir}/include/boost/lexical_cast/detail/inf_nan.hpp")
+    exit
 
     mkdir "build" do
       args = std_cmake_args + %W[
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DCMAKE_CXX_STANDARD=17
-        -DCMAKE_CXX_FLAGS=#{ENV.cxxflags}
-        -DCMAKE_CPP_FLAGS=#{ENV.cppflags}
-        -DCMAKE_EXE_LINKER_FLAGS=#{ENV.ldflags}
-        -DCMAKE_SHARED_LINKER_FLAGS=#{ENV.ldflags}
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DBOOST_ROOT=#{temp_boost_dir}
         -DBoost_INCLUDE_DIRS=#{temp_boost_dir}/include
@@ -121,10 +127,6 @@ class Openstructure < Formula
       args = std_cmake_args + %W[
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DCMAKE_CXX_STANDARD=17
-        -DCMAKE_CXX_FLAGS=#{ENV.cxxflags}
-        -DCMAKE_CPP_FLAGS=#{ENV.cppflags}
-        -DCMAKE_EXE_LINKER_FLAGS=#{ENV.ldflags}
-        -DCMAKE_SHARED_LINKER_FLAGS=#{ENV.ldflags}
         -DPREFIX=#{prefix}
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DBOOST_ROOT=#{temp_boost_dir}
@@ -140,7 +142,7 @@ class Openstructure < Formula
         -DENABLE_PARASAIL=1
         -DCOMPILE_TMTOOLS=1
         -DENABLE_GFX=1
-        -DENABLE_GUI=1
+        -DENABLE_GUI=0
         -DENABLE_INFO=1
         -DCMAKE_VERBOSE_MAKEFILE=1
       ]
