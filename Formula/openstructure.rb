@@ -12,7 +12,7 @@ class Openstructure < Formula
   depends_on "clustal-w"
   depends_on "eigen"
   depends_on "fftw"
-  depends_on "gcc"
+  depends_on "gcc@11"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "llvm" if OS.mac?
@@ -47,8 +47,8 @@ class Openstructure < Formula
     # ENV.cxx11
 
     if OS.linux?
-      gcc = Formula["gcc"]
-      ENV["CXX"] = gcc.opt_bin/"g++-11"
+      gcc = Formula["gcc@11"]
+      ENV["CXX"] = gcc.opt_bin/"g++-#{gcc.version.major}"
     else
       ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
     end
@@ -59,7 +59,7 @@ class Openstructure < Formula
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
     system python3, "-m", "pip", "install", "--prefix=#{libexec}",
       "numpy", "pandas", "scipy", "networkx"
-    system python3, "-m", "pip", "install", "--only-binary", ":all:", "OpenMM"
+    system python3, "-m", "pip", "install", "--prefix=#{libexec}", "--only-binary", ":all:", "OpenMM"
 
     lib_ext = OS.mac? ? "dylib" : "so"
 
