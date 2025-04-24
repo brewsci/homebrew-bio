@@ -76,7 +76,6 @@ class Openstructure < Formula
     # ENV.prepend_path "CPPFLAGS", "-I#{temp_boost_dir}/include"
     # ENV.prepend_path "LDFLAGS", "-L#{temp_boost_dir}/lib"
 
-    puts File.read("#{temp_boost_dir}/include/boost/lexical_cast/detail/inf_nan.hpp")
     # Fix for boost::core::signbit
     inreplace "#{temp_boost_dir}/include/boost/lexical_cast/detail/inf_nan.hpp",
       "#include <boost/core/cmath.hpp>",
@@ -93,9 +92,6 @@ class Openstructure < Formula
     inreplace "#{temp_boost_dir}/include/boost/lexical_cast/detail/inf_nan.hpp",
       "boost::core::signbit",
       "std::signbit"
-
-    puts File.read("#{temp_boost_dir}/include/boost/lexical_cast/detail/inf_nan.hpp")
-    exit
 
     mkdir "build" do
       args = std_cmake_args + %W[
