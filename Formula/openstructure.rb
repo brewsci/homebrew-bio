@@ -50,6 +50,7 @@ class Openstructure < Formula
       gcc = Formula["gcc@12"]
       ENV["CXX"] = gcc.opt_bin/"g++-#{gcc.version.major}"
     end
+    ENV.append "CXXFLAGS", "-Wno-reorder -Wunused-function"
 
     xy = Language::Python.major_minor_version python3
     xy_nodot = xy.to_s.delete(".")
@@ -75,6 +76,7 @@ class Openstructure < Formula
     mkdir "build" do
       cmake_args = std_cmake_args + %W[
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
+        -DCXX_FLAGS=#{ENV["CXXFLAGS"]}
         -DCMAKE_CXX_STANDARD=17
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DPython3_FIND_FRAMEWORK=NEVER
@@ -110,6 +112,7 @@ class Openstructure < Formula
       # Re-configure with compound library
       cmake_args = std_cmake_args + %W[
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
+        -DCXX_FLAGS=#{ENV["CXXFLAGS"]}
         -DCMAKE_CXX_STANDARD=17
         -DPREFIX=#{prefix}
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
