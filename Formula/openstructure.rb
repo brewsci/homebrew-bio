@@ -85,8 +85,11 @@ class Openstructure < Formula
         -DUSE_RPATH=ON
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
-      # cmake_args << "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup" if OS.mac?
-      # cmake_args << "-DCMAKE_MODULE_LINKER_FLAGS=-undefined dynamic_lookup" if OS.mac?
+
+      cmake_args += %W[
+        "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup"
+        "-DCMAKE_MODULE_LINKER_FLAGS=-undefined dynamic_lookup"
+      ] if OS.mac?
 
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
@@ -123,8 +126,11 @@ class Openstructure < Formula
         -DENABLE_INFO=ON
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
-      # cmake_args << "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup" if OS.mac?
-      # cmake_args << "-DCMAKE_MODULE_LINKER_FLAGS=-undefined dynamic_lookup" if OS.mac?
+
+      cmake_args += %W[
+        "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup"
+        "-DCMAKE_MODULE_LINKER_FLAGS=-undefined dynamic_lookup"
+      ] if OS.mac?
 
       cmake_args += %W[
         -DENABLE_MM=ON
@@ -132,8 +138,6 @@ class Openstructure < Formula
         -DOPEN_MM_INCLUDE_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/include
         -DOPEN_MM_PLUGIN_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib/plugins
       ] if OS.linux?
-
-
 
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
