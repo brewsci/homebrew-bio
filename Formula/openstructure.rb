@@ -12,7 +12,7 @@ class Openstructure < Formula
   depends_on "clustal-w"
   depends_on "eigen"
   depends_on "fftw"
-  depends_on "gcc@11"
+  depends_on "gcc"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "llvm" if OS.mac?
@@ -47,7 +47,7 @@ class Openstructure < Formula
     # ENV.cxx11
 
     if OS.linux?
-      gcc = Formula["gcc@11"]
+      gcc = Formula["gcc"]
       ENV["CXX"] = gcc.opt_bin/"g++-#{gcc.version.major}"
     else
       ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
@@ -58,8 +58,7 @@ class Openstructure < Formula
     ENV.prepend_path "PATH", "#{HOMEBREW_PREFIX}/bin/python#{xy}"
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
     system python3, "-m", "pip", "install", "--prefix=#{libexec}",
-      "numpy", "pandas", "scipy", "networkx"
-    system python3, "-m", "pip", "install", "--prefix=#{libexec}", "--only-binary", ":all:", "OpenMM"
+      "numpy", "pandas", "scipy", "networkx", "OpenMM"
 
     lib_ext = OS.mac? ? "dylib" : "so"
 
@@ -80,21 +79,18 @@ class Openstructure < Formula
       "CMAKE_INSTALL_RPATH #{rpaths}"
 
     mkdir "build" do
-      args = std_cmake_args + %W[
+      cmake_args = std_cmake_args + %W[
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DCMAKE_CXX_STANDARD=17
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
-        -DOPEN_MM_LIBRARY=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib/libOpenMM.#{lib_ext}
-        -DOPEN_MM_INCLUDE_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/include
-        -DOPEN_MM_PLUGIN_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib/plugins
-        -DUSE_RPATH=1
-        -DCMAKE_VERBOSE_MAKEFILE=1
+        -DUSE_RPATH=ON
+        -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
 
-      system "cmake", "..", *args
+      system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
 
       resource("components-cif").fetch
@@ -109,7 +105,7 @@ class Openstructure < Formula
               "compounds.chemlib", "charmm"
 
       # Re-configure with compound library
-      args = std_cmake_args + %W[
+      cmake_args = std_cmake_args + %W[
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DCMAKE_CXX_STANDARD=17
         -DPREFIX=#{prefix}
@@ -121,18 +117,18 @@ class Openstructure < Formula
         -DOPEN_MM_INCLUDE_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/include
         -DOPEN_MM_PLUGIN_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib/plugins
         -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
-        -DUSE_RPATH=1
-        -DENABLE_MM=1
-        -DOPTIMIZE=1
-        -DENABLE_PARASAIL=1
-        -DCOMPILE_TMTOOLS=1
-        -DENABLE_GFX=1
-        -DENABLE_GUI=0
-        -DENABLE_INFO=1
-        -DCMAKE_VERBOSE_MAKEFILE=1
+        -DUSE_RPATH=ON
+        -DOPTIMIZE=ON
+        -DENABLE_PARASAIL=ON
+        -DCOMPILE_TMTOOLS=ON
+        -DENABLE_GFX=ON
+        -DENABLE_GUI=OFF
+        -DENABLE_INFO=ON
+        -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
+      cmake_args << "-DENABLE_MM=ON" if OS.linux?
 
-      system "cmake", "..", *args
+      system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
       system "make", "check"
       system "make", "install"
