@@ -57,8 +57,9 @@ class Openstructure < Formula
     xy_nodot = xy.to_s.delete(".")
     ENV.prepend_path "PATH", "#{HOMEBREW_PREFIX}/bin/python#{xy}"
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
-    system "pip3", "install", "--prefix=#{libexec}",
-      "numpy", "pandas", "scipy", "networkx", "OpenMM"
+    system python3, "-m", "pip", "install", "--prefix=#{libexec}",
+      "numpy", "pandas", "scipy", "networkx"
+    system python3 "-m", "pip", "install", "--only-binary", ":all:", "OpenMM"
 
     lib_ext = OS.mac? ? "dylib" : "so"
 
@@ -73,7 +74,7 @@ class Openstructure < Formula
       openmm_base/"lib/plugins/",
     ].join(";")
 
-    # Set RPATH to `#{prefix}/lib`
+    # Set RPATH to `#{prefix}/lib` and OpenMM libs
     inreplace buildpath/"CMakeLists.txt",
       'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}"',
       "CMAKE_INSTALL_RPATH #{rpaths}"
