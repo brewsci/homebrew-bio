@@ -105,6 +105,9 @@ class Openstructure < Formula
         -DBOOST_ROOT=#{temp_boost_dir}
         -DBoost_INCLUDE_DIRS=#{temp_boost_dir}/include
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
+        -DOPEN_MM_LIBRARY=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib/libOpenMM.#{lib_ext}
+        -DOPEN_MM_INCLUDE_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/include
+        -DOPEN_MM_PLUGIN_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib/plugins
         -DUSE_RPATH=1
         -DCMAKE_VERBOSE_MAKEFILE=1
       ]
