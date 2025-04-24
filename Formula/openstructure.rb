@@ -77,38 +77,13 @@ class Openstructure < Formula
       'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}"',
       "CMAKE_INSTALL_RPATH #{lib}"
 
-    temp_boost_dir = "#{buildpath}/temp_boost"
-    boost_dir = Formula["boost"].opt_prefix
-    cp_r "#{boost_dir}/.", temp_boost_dir
-
-    # ENV.prepend_path "CXXFLAGS", "-I#{temp_boost_dir}/include"
-    # ENV.prepend_path "CPPFLAGS", "-I#{temp_boost_dir}/include"
-    # ENV.prepend_path "LDFLAGS", "-L#{temp_boost_dir}/lib"
-
-    # # Fix for boost::core::signbit
-    # inreplace "#{temp_boost_dir}/include/boost/lexical_cast/detail/inf_nan.hpp",
-    #   "#include <boost/core/cmath.hpp>",
-    #   "#include <boost/core/cmath.hpp>\n#include <cmath>"
-
-    # inreplace "#{temp_boost_dir}/include/boost/lexical_cast/detail/inf_nan.hpp",
-    #   "boost::core::isnan",
-    #   "std::isnan"
-
-    # inreplace "#{temp_boost_dir}/include/boost/lexical_cast/detail/inf_nan.hpp",
-    #   "boost::core::isinf",
-    #   "std::isinf"
-
-    # inreplace "#{temp_boost_dir}/include/boost/lexical_cast/detail/inf_nan.hpp",
-    #   "boost::core::signbit",
-    #   "std::signbit"
-
     mkdir "build" do
       args = std_cmake_args + %W[
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DCMAKE_CXX_STANDARD=17
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
-        -DBOOST_ROOT=#{temp_boost_dir}
-        -DBoost_INCLUDE_DIRS=#{temp_boost_dir}/include
+        -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
+        -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
         -DOPEN_MM_LIBRARY=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib/libOpenMM.#{lib_ext}
         -DOPEN_MM_INCLUDE_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/include
@@ -137,8 +112,8 @@ class Openstructure < Formula
         -DCMAKE_CXX_STANDARD=17
         -DPREFIX=#{prefix}
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
-        -DBOOST_ROOT=#{temp_boost_dir}
-        -DBoost_INCLUDE_DIRS=#{temp_boost_dir}/include
+        -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
+        -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
         -DOPEN_MM_LIBRARY=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib/libOpenMM.#{lib_ext}
         -DOPEN_MM_INCLUDE_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/include
