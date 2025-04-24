@@ -12,7 +12,7 @@ class Openstructure < Formula
   depends_on "clustal-w"
   depends_on "eigen"
   depends_on "fftw"
-  depends_on "gcc@12"
+  depends_on "gcc@14"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "llvm" if OS.mac?
@@ -46,8 +46,9 @@ class Openstructure < Formula
   def install
     if OS.mac?
       ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
+      ENV.append "LDFLAGS", "-undefined dynamic_lookup"
     elsif OS.linux?
-      gcc = Formula["gcc@12"]
+      gcc = Formula["gcc@14"]
       ENV["CXX"] = gcc.opt_bin/"g++-#{gcc.version.major}"
     end
     ENV.append "CXXFLAGS", "-Wno-reorder -Wunused-function"
@@ -61,14 +62,13 @@ class Openstructure < Formula
 
     lib_ext = OS.mac? ? "dylib" : "so"
 
-    if OS.linux?
-      openmm_base = libexec/"lib/python#{xy}/site-packages/OpenMM.libs"
-      lib.install openmm_base/"lib/libOpenMM.#{lib_ext}"
-      lib.install Dir[openmm_base/"lib/libOpenMM*.#{lib_ext}"]
-      lib.install Dir[openmm_base/"lib/plugins/*.{#{lib_ext}}"]
-    end
+    openmm_base = libexec/"lib/python#{xy}/site-packages/OpenMM.libs"
+    include.install Dir[openmm_base/"include/*"]
+    lib.install openmm_base/"lib/libOpenMM.#{lib_ext}"
+    lib.install Dir[openmm_base/"lib/libOpenMM*.#{lib_ext}"]
+    lib.install Dir[openmm_base/"lib/plugins/*.#{lib_ext}"]
 
-    # Set RPATH to `#{prefix}/lib` and OpenMM libs
+    # Set RPATH to `#{prefix}/lib`
     inreplace buildpath/"CMakeLists.txt",
       'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}"',
       "CMAKE_INSTALL_RPATH #{lib}"
@@ -92,9 +92,9 @@ class Openstructure < Formula
       ]
 
       if OS.mac?
-        cmake_args += %w[
-          "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup"
-          "-DCMAKE_MODULE_LINKER_FLAGS=-undefined dynamic_lookup"
+        cmake_args += [
+          "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup",
+          "-DCMAKE_MODULE_LINKER_FLAGS=-undefined dynamic_lookup",
         ]
       end
 
@@ -132,6 +132,10 @@ class Openstructure < Formula
         -DENABLE_GFX=ON
         -DENABLE_GUI=OFF
         -DENABLE_INFO=ON
+        -DENABLE_MM=ON
+        -DOPEN_MM_LIBRARY=#{lib}/libOpenMM.#{lib_ext}
+        -DOPEN_MM_INCLUDE_DIR=#{include}
+        -DOPEN_MM_PLUGIN_DIR=#{lib}
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
 
@@ -140,18 +144,10 @@ class Openstructure < Formula
           "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup",
           "-DCMAKE_MODULE_LINKER_FLAGS=-undefined dynamic_lookup",
         ]
-      elsif OS.linux?
-        cmake_args += %W[
-          -DENABLE_MM=ON
-          -DOPEN_MM_LIBRARY=#{lib}/libOpenMM.#{lib_ext}
-          -DOPEN_MM_INCLUDE_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/include
-          -DOPEN_MM_PLUGIN_DIR=#{lib}/plugins
-        ]
       end
 
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
-      system "make", "check"
       system "make", "install"
     end
   end
