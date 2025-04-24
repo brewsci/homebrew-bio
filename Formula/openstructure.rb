@@ -12,7 +12,7 @@ class Openstructure < Formula
   depends_on "clustal-w"
   depends_on "eigen"
   depends_on "fftw"
-  depends_on "gcc"
+  depends_on "gcc@13"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "llvm" if OS.mac?
@@ -47,7 +47,7 @@ class Openstructure < Formula
     # ENV.cxx11
 
     if OS.linux?
-      gcc = Formula["gcc"]
+      gcc = Formula["gcc@13"]
       ENV["CXX"] = gcc.opt_bin/"g++-#{gcc.version.major}"
     else
       ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
@@ -89,6 +89,8 @@ class Openstructure < Formula
         -DUSE_RPATH=ON
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
+      cmake_args << "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup" if OS.mac?
+      cmake_args << "-DCMAKE_MODULE_LINKER_FLAGS=-undefined dynamic_lookup" if OS.mac?
 
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
@@ -127,6 +129,8 @@ class Openstructure < Formula
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
       cmake_args << "-DENABLE_MM=ON" if OS.linux?
+      cmake_args << "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup" if OS.mac?
+      cmake_args << "-DCMAKE_MODULE_LINKER_FLAGS=-undefined dynamic_lookup" if OS.mac?
 
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
