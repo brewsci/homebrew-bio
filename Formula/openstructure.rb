@@ -48,7 +48,7 @@ class Openstructure < Formula
 
     if OS.linux?
       gcc = Formula["gcc"]
-      ENV["CXX"] = gcc.opt_bin/"g++-#{gcc.version.major}"
+      ENV["CXX"] = gcc.opt_bin/"g++-11"
     else
       ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
     end
@@ -59,7 +59,7 @@ class Openstructure < Formula
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
     system python3, "-m", "pip", "install", "--prefix=#{libexec}",
       "numpy", "pandas", "scipy", "networkx"
-    system python3 "-m", "pip", "install", "--only-binary", ":all:", "OpenMM"
+    system python3, "-m", "pip", "install", "--only-binary", ":all:", "OpenMM"
 
     lib_ext = OS.mac? ? "dylib" : "so"
 
