@@ -48,9 +48,9 @@ class Openstructure < Formula
 
     if OS.linux?
       gcc = Formula["gcc"]
-      ENV["CXX"] = gcc.opt_bin}/"g++-#{gcc.version.major}"
+      ENV["CXX"] = gcc.opt_bin/"g++-#{gcc.version.major}"
     else
-      ENV["CXX"] = Formula["llvm"].opt_bin/"clang++
+      ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
     end
 
     xy = Language::Python.major_minor_version python3
