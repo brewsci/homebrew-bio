@@ -44,11 +44,11 @@ class Openstructure < Formula
   end
 
   def install
-    if OS.linux?
+    if OS.mac?
+      ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
+    elsif OS.linux?
       gcc = Formula["gcc@12"]
       ENV["CXX"] = gcc.opt_bin/"g++-#{gcc.version.major}"
-    else
-      ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
     end
 
     xy = Language::Python.major_minor_version python3
@@ -86,10 +86,12 @@ class Openstructure < Formula
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
 
-      cmake_args += %W[
-        "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup"
-        "-DCMAKE_MODULE_LINKER_FLAGS=-undefined dynamic_lookup"
-      ] if OS.mac?
+      if OS.mac?
+        cmake_args += %w[
+          "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup"
+          "-DCMAKE_MODULE_LINKER_FLAGS=-undefined dynamic_lookup"
+        ]
+      end
 
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
@@ -127,17 +129,21 @@ class Openstructure < Formula
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
 
-      cmake_args += %W[
-        "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup"
-        "-DCMAKE_MODULE_LINKER_FLAGS=-undefined dynamic_lookup"
-      ] if OS.mac?
+      if OS.mac?
+        cmake_args += %w[
+          "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup"
+          "-DCMAKE_MODULE_LINKER_FLAGS=-undefined dynamic_lookup"
+        ]
+      end
 
-      cmake_args += %W[
-        -DENABLE_MM=ON
-        -DOPEN_MM_LIBRARY=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib/libOpenMM.#{lib_ext}
-        -DOPEN_MM_INCLUDE_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/include
-        -DOPEN_MM_PLUGIN_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib/plugins
-      ] if OS.linux?
+      if OS.linux?
+        cmake_args += %w[
+          -DENABLE_MM=ON
+          -DOPEN_MM_LIBRARY=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib/libOpenMM.#{lib_ext}
+          -DOPEN_MM_INCLUDE_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/include
+          -DOPEN_MM_PLUGIN_DIR=#{libexec}/lib/python#{xy}/site-packages/OpenMM.libs/lib/plugins
+        ]
+      end
 
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
