@@ -67,7 +67,12 @@ class Openstructure < Formula
     lib.install Dir[openmm_base/"lib/libOpenMM*.#{lib_ext}"]
     lib.install Dir[openmm_base/"lib/plugins/*.{#{lib_ext}}"]
 
-    # Set RPATH to `#{prefix}/lib and OpenMM libs`
+    Dir.glob("#{openmm_base}/**/*", File::FNM_DOTMATCH).each do |path|
+      puts path
+    end
+    exit
+
+    # Set RPATH to `#{prefix}/lib`
     inreplace buildpath/"CMakeLists.txt",
       'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}"',
       "CMAKE_INSTALL_RPATH #{lib}"
