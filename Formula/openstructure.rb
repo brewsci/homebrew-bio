@@ -83,6 +83,8 @@ class Openstructure < Formula
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DCMAKE_CXX_STANDARD=17
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
+        -DPython3_FIND_FRAMEWORK=NEVER
+        -DPython3_FIND_REGISTRY=NEVER
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
@@ -112,6 +114,8 @@ class Openstructure < Formula
         -DCMAKE_CXX_STANDARD=17
         -DPREFIX=#{prefix}
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
+        -DPython3_FIND_FRAMEWORK=NEVER
+        -DPython3_FIND_REGISTRY=NEVER
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
