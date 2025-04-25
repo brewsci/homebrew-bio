@@ -4,6 +4,7 @@ class Openstructure < Formula
   url "https://git.scicore.unibas.ch/schwede/openstructure/-/archive/2.9.3/openstructure-2.9.3.tar.gz"
   sha256 "b5958ada252a3912a71da0cefb0313a4291ac6b17c93d6e0a61d361ee62de92e"
   license "LGPL-3.0-or-later"
+  head "https://git.scicore.unibas.ch/schwede/openstructure.git", branch: "develop"
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
@@ -52,7 +53,7 @@ class Openstructure < Formula
       ENV.append "LDFLAGS", "-undefined dynamic_lookup"
     elsif OS.linux?
       ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
-      ENV.append "LDFLAGS", "-lstdc++"
+      # ENV.append "LDFLAGS", "-lstdc++"
     end
     ENV.append "CXXFLAGS", "-Wno-reorder -Wunused-function"
 
@@ -133,10 +134,10 @@ class Openstructure < Formula
         -DENABLE_PARASAIL=ON
         -DCOMPILE_TMTOOLS=ON
         -DENABLE_GFX=ON
-        -DENABLE_GUI=ON
+        -DENABLE_GUI=OFF
         -DENABLE_INFO=ON
         -DUSE_SHADER=ON
-        -DUSE_DOUBLE_PRECISION=ON
+        -DUSE_DOUBLE_PRECISION=OFF
         -DENABLE_MM=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
