@@ -12,21 +12,24 @@ class Openstructure < Formula
   depends_on "clustal-w"
   depends_on "eigen"
   depends_on "fftw"
-  depends_on "gcc@14"
+  depends_on "gcc"
+  depends_on "glew"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "llvm" if OS.mac?
-  depends_on "opencl-headers"
-  depends_on "opencl-icd-loader"
   depends_on "parasail"
-  depends_on "pocl"
   depends_on "pyqt@5"
   depends_on "python@3.13"
   depends_on "qt@5"
   depends_on "sip"
   depends_on "sqlite3"
   depends_on "voronota"
-  depends_on "zlib"
+  depends_on "blast" => :optional
+  depends_on "dssp" => :optional
+  depends_on "hh-suite" => :optional
+  depends_on "mmseqs2" => :optional
+
+  uses_from_macos "zlib"
 
   resource "components-cif" do
     url "https://files.wwpdb.org/pub/pdb/data/monomers/components.cif.gz"
@@ -48,8 +51,8 @@ class Openstructure < Formula
       ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
       ENV.append "LDFLAGS", "-undefined dynamic_lookup"
     elsif OS.linux?
-      gcc = Formula["gcc@14"]
-      ENV["CXX"] = gcc.opt_bin/"g++-#{gcc.version.major}"
+      ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
+      ENV.append "LDFLAGS", "-lstdc++"
     end
     ENV.append "CXXFLAGS", "-Wno-reorder -Wunused-function"
 
@@ -58,15 +61,15 @@ class Openstructure < Formula
     ENV.prepend_path "PATH", "#{HOMEBREW_PREFIX}/bin/python#{xy}"
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
     system python3, "-m", "pip", "install", "--prefix=#{libexec}",
-      "numpy", "pandas", "scipy", "networkx", "OpenMM"
+      "numpy", "pandas", "scipy", "networkx", "DockQ"
 
     lib_ext = OS.mac? ? "dylib" : "so"
 
-    openmm_base = libexec/"lib/python#{xy}/site-packages/OpenMM.libs"
-    include.install Dir[openmm_base/"include/*"]
-    lib.install openmm_base/"lib/libOpenMM.#{lib_ext}"
-    lib.install Dir[openmm_base/"lib/libOpenMM*.#{lib_ext}"]
-    lib.install Dir[openmm_base/"lib/plugins/*.#{lib_ext}"]
+    # openmm_base = libexec/"lib/python#{xy}/site-packages/OpenMM.libs"
+    # include.install Dir[openmm_base/"include/*"]
+    # lib.install openmm_base/"lib/libOpenMM.#{lib_ext}"
+    # lib.install Dir[openmm_base/"lib/libOpenMM*.#{lib_ext}"]
+    # lib.install Dir[openmm_base/"lib/plugins/*.#{lib_ext}"]
 
     # Set RPATH to `#{prefix}/lib`
     inreplace buildpath/"CMakeLists.txt",
@@ -130,12 +133,11 @@ class Openstructure < Formula
         -DENABLE_PARASAIL=ON
         -DCOMPILE_TMTOOLS=ON
         -DENABLE_GFX=ON
-        -DENABLE_GUI=OFF
+        -DENABLE_GUI=ON
         -DENABLE_INFO=ON
-        -DENABLE_MM=ON
-        -DOPEN_MM_LIBRARY=#{lib}/libOpenMM.#{lib_ext}
-        -DOPEN_MM_INCLUDE_DIR=#{include}
-        -DOPEN_MM_PLUGIN_DIR=#{lib}
+        -DUSE_SHADER=ON
+        -DUSE_DOUBLE_PRECISION=ON
+        -DENABLE_MM=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
 
@@ -148,6 +150,7 @@ class Openstructure < Formula
 
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
+      system "make", "check"
       system "make", "install"
     end
   end
