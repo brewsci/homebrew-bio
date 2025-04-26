@@ -71,7 +71,7 @@ class Openstructure < Formula
 
     py_lib = "libpython#{py_ver}.#{lib_ext}"
     py_lib_path = if OS.mac?
-      cp Formula["python@#{py_ver}"].opt_frameworks/"Python.framework/Versions/#{py_ver}/lib/#{py_lib}", lib/py_lib
+      cp Formula["python@#{py_ver}"].opt_frameworks/"Python.framework/Versions/#{py_ver}/lib/#{py_lib}", lib
       lib/py_lib
     elsif OS.linux?
       Formula["python@#{py_ver}"].opt_lib/py_lib
