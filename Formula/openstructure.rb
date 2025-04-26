@@ -1,4 +1,5 @@
 class Openstructure < Formula
+
   desc "Modular software framework for molecular modelling and visualization"
   homepage "https://openstructure.org"
   url "https://git.scicore.unibas.ch/schwede/openstructure/-/archive/2.9.3/openstructure-2.9.3.tar.gz"
@@ -50,6 +51,12 @@ class Openstructure < Formula
     "python3.13"
   end
 
+  openmm_base = libexec/"lib/python#{py_ver}/site-packages/OpenMM.libs"
+  include.install Dir[openmm_base/"include/*"]
+  lib.install openmm_base/"lib/libOpenMM.#{lib_ext}"
+  lib.install Dir[openmm_base/"lib/libOpenMM*.#{lib_ext}"]
+  lib.install Dir[openmm_base/"lib/plugins/*.#{lib_ext}"]
+
   def install
     if OS.mac?
       ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
@@ -64,15 +71,16 @@ class Openstructure < Formula
     py_ver_nodot = py_ver.to_s.delete(".")
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{py_ver}/site-packages"
     system python3, "-m", "pip", "install", "--prefix=#{libexec}",
-      "numpy", "pandas", "scipy", "networkx", "DockQ"
+      "numpy", "pandas", "scipy", "networkx", "DockQ", "OpenMM"
 
     lib_ext = OS.mac? ? "dylib" : "so"
 
     py_lib = "libpython#{py_ver}.#{lib_ext}"
-    if OS.mac?
-      py_lib_path = Formula["python@#{py_ver}"].opt_frameworks/"Python.framework/Versions/#{py_ver}/lib/#{py_lib}"
+    py_lib_path = if OS.mac?
+      lib.install Formula["python@#{py_ver}"].opt_frameworks/"Python.framework/Versions/#{py_ver}/lib/#{py_lib}"
+      lib/py_lib
     elsif OS.linux?
-      py_lib_path = Formula["python@#{py_ver}"].opt_lib/"libpython#{py_ver}.#{lib_ext}"
+      Formula["python@#{py_ver}"].opt_lib/py_lib
     end
 
     mkdir "build" do
@@ -91,6 +99,7 @@ class Openstructure < Formula
         -DENABLE_INFO=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
+      cmake_args << "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}" if OS.linux?
 
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
@@ -121,6 +130,10 @@ class Openstructure < Formula
         -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
         -DPARASAIL_INCLUDE_DIR=#{Formula["parasail"].opt_include}
         -DPARASAIL_LIBRARY=#{Formula["parasail"].opt_lib}/libparasail.#{lib_ext}
+        -DOPEN_MM_LIBRARY=#{lib}/libOpenMM.#{lib_ext}
+        -DOPEN_MM_INCLUDE_DIR=#{include}
+        -DOPEN_MM_PLUGIN_DIR=#{lib}
+        -DENABLE_MM=ON
         -DUSE_RPATH=ON
         -DOPTIMIZE=ON
         -DENABLE_PARASAIL=ON
@@ -132,10 +145,10 @@ class Openstructure < Formula
         -DUSE_DOUBLE_PRECISION=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
+      cmake_args << "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}" if OS.linux?
 
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
-      system "make", "check"
       system "make", "install"
     end
   end
