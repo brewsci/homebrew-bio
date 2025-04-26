@@ -30,7 +30,6 @@ class Openstructure < Formula
   depends_on "sip"
   depends_on "sqlite3"
   depends_on "voronota"
-  depends_on "zlib" if OS.linux?
   depends_on "blast" => :optional
   depends_on "dssp" => :optional
   depends_on "hh-suite" => :optional
@@ -59,7 +58,7 @@ class Openstructure < Formula
       ENV.append "LDFLAGS", "-undefined dynamic_lookup -pthread"
     elsif OS.linux?
       ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
-      ENV.append "LDFLAGS", "-Wl,--allow-shlib-undefined -pthread"
+      ENV.append "LDFLAGS", "-Wl,--allow-shlib-undefined -lstdc++ -pthread"
     end
 
     ENV.prepend_path "PATH", libexec/"bin"
@@ -78,7 +77,7 @@ class Openstructure < Formula
         -DCMAKE_CXX_STANDARD=17
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DPython_ROOT_DIR=#{Formula["python@#{xy}"].opt_prefix}
-        -DPython_LIBRARY=#{HOMEBREW_PREFIX}/lib/libpython#{xy}.#{lib_ext}
+        -DPython_LIBRARY=#{Formula["python@#{xy}"].opt_lib}/libpython#{xy}.#{lib_ext}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
@@ -120,7 +119,7 @@ class Openstructure < Formula
         -DPREFIX=#{prefix}
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DPython_ROOT_DIR=#{Formula["python@#{xy}"].opt_prefix}
-        -DPython_LIBRARY=#{HOMEBREW_PREFIX}/lib/libpython#{xy}.#{lib_ext}
+        -DPython_LIBRARY=#{Formula["python@#{xy}"].opt_lib}/libpython#{xy}.#{lib_ext}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
