@@ -27,7 +27,7 @@ class Openstructure < Formula
   depends_on "python@3.13"
   depends_on "qt@5"
   depends_on "sip"
-  depends_on "sqlite3"
+  depends_on "sqlite"
   depends_on "voronota"
   depends_on "blast" => :optional
   depends_on "dssp" => :optional
