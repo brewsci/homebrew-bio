@@ -51,12 +51,6 @@ class Openstructure < Formula
     "python3.13"
   end
 
-  openmm_base = libexec/"lib/python#{py_ver}/site-packages/OpenMM.libs"
-  include.install Dir[openmm_base/"include/*"]
-  lib.install openmm_base/"lib/libOpenMM.#{lib_ext}"
-  lib.install Dir[openmm_base/"lib/libOpenMM*.#{lib_ext}"]
-  lib.install Dir[openmm_base/"lib/plugins/*.#{lib_ext}"]
-
   def install
     if OS.mac?
       ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
@@ -82,6 +76,12 @@ class Openstructure < Formula
     elsif OS.linux?
       Formula["python@#{py_ver}"].opt_lib/py_lib
     end
+
+    openmm_base = libexec/"lib/python#{py_ver}/site-packages/OpenMM.libs"
+    include.install Dir[openmm_base/"include/*"]
+    lib.install openmm_base/"lib/libOpenMM.#{lib_ext}"
+    lib.install Dir[openmm_base/"lib/libOpenMM*.#{lib_ext}"]
+    lib.install Dir[openmm_base/"lib/plugins/*.#{lib_ext}"]
 
     mkdir "build" do
       cmake_args = std_cmake_args + %W[
