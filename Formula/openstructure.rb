@@ -21,7 +21,7 @@ class Openstructure < Formula
   depends_on "glm"
   depends_on "libpng"
   depends_on "libtiff"
-  depends_on "llvm" if OS.mac?
+  depends_on "llvm"
   depends_on "ocl-icd"
   depends_on "opencl-headers"
   depends_on "parasail"
@@ -37,6 +37,14 @@ class Openstructure < Formula
   depends_on "mmseqs2" => :optional
 
   uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "llvm"
+  end
+
+  on_linux do
+    depends_on "patchelf" => :build
+  end
 
   resource "components-cif" do
     url "https://files.wwpdb.org/pub/pdb/data/monomers/components.cif.gz"
@@ -63,8 +71,8 @@ class Openstructure < Formula
     end
 
     venv = virtualenv_create(libexec, python3)
-    venv.pip_install_and_link "numpy==1.26.4", "pandas==1.5.3", "scipy==1.15.2",
-      "networkx==1.15.2", "DockQ==2.1.3", "OpenMM==8.2.0"
+    venv.pip_install ["pandas", "networkx"]
+    venv.pip_install_and_link ["numpy", "scipy", "DockQ", "OpenMM"]
 
     py_ver = Language::Python.major_minor_version python3
     py_ver_nodot = py_ver.to_s.delete(".")
