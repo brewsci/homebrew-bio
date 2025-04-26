@@ -61,7 +61,6 @@ class Openstructure < Formula
       ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
       ENV.append "LDFLAGS", "-Wl,--allow-shlib-undefined -pthread"
     end
-    ENV.append "CXXFLAGS", "-Wno-reorder -Wunused-function"
 
     ENV.prepend_path "PATH", libexec/"bin"
     xy = Language::Python.major_minor_version python3
@@ -77,9 +76,6 @@ class Openstructure < Formula
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DCXX_FLAGS=#{ENV["CXXFLAGS"]}
         -DCMAKE_CXX_STANDARD=17
-        -DCMAKE_FIND_FRAMEWORK=NEVER
-        -DPython3_FIND_FRAMEWORK=NEVER
-        -DPython3_FIND_STRATEGY=LOCATION
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DPython_ROOT_DIR=#{Formula["python@#{xy}"].opt_prefix}
         -DPython_LIBRARY=#{HOMEBREW_PREFIX}/lib/libpython#{xy}.#{lib_ext}
@@ -122,9 +118,6 @@ class Openstructure < Formula
         -DCXX_FLAGS=#{ENV["CXXFLAGS"]}
         -DCMAKE_CXX_STANDARD=17
         -DPREFIX=#{prefix}
-        -DCMAKE_FIND_FRAMEWORK=NEVER
-        -DPython3_FIND_FRAMEWORK=NEVER
-        -DPython3_FIND_STRATEGY=LOCATION
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DPython_ROOT_DIR=#{Formula["python@#{xy}"].opt_prefix}
         -DPython_LIBRARY=#{HOMEBREW_PREFIX}/lib/libpython#{xy}.#{lib_ext}
@@ -154,10 +147,10 @@ class Openstructure < Formula
         ]
       end
 
-    # Set RPATH to `#{prefix}/lib`
-    inreplace buildpath/"CMakeLists.txt",
-      'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}"',
-      "CMAKE_INSTALL_RPATH #{lib}"
+    # # Set RPATH to `#{prefix}/lib`
+    # inreplace buildpath/"CMakeLists.txt",
+    #   'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}"',
+    #   "CMAKE_INSTALL_RPATH #{lib}"
 
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
