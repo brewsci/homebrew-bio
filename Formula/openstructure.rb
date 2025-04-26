@@ -1,4 +1,6 @@
 class Openstructure < Formula
+  include Language::Python::Virtualenv
+
   # cite Biasini_2013: "https://doi.org/10.1107/S0907444913007051"
   desc "Modular software framework for molecular modelling and visualization"
   homepage "https://openstructure.org"
@@ -60,19 +62,19 @@ class Openstructure < Formula
       ENV.append "LDFLAGS", "-Wl,--allow-shlib-undefined -lstdc++ -pthread"
     end
 
-    ENV.prepend_path "PATH", libexec/"bin"
+    venv = virtualenv_create(libexec, python3)
+    venv.pip_install_and_link "numpy==1.26.4", "pandas==1.5.3", "scipy==1.15.2",
+      "networkx==1.15.2", "DockQ==2.1.3", "OpenMM==8.2.0"
+
     py_ver = Language::Python.major_minor_version python3
     py_ver_nodot = py_ver.to_s.delete(".")
-    ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{py_ver}/site-packages"
-    system python3, "-m", "pip", "install", "--prefix=#{libexec}",
-      "numpy", "pandas", "scipy", "networkx", "DockQ", "OpenMM"
+    ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python#{py_ver}/site-packages"
 
     lib_ext = OS.mac? ? "dylib" : "so"
 
     py_lib = "libpython#{py_ver}.#{lib_ext}"
     py_lib_path = if OS.mac?
-      cp Formula["python@#{py_ver}"].opt_frameworks/"Python.framework/Versions/#{py_ver}/lib/#{py_lib}", lib
-      lib/py_lib
+      Formula["python@#{py_ver}"].opt_frameworks/"Python.framework/Versions/#{py_ver}/lib/#{py_lib}"
     elsif OS.linux?
       Formula["python@#{py_ver}"].opt_lib/py_lib
     end
@@ -89,8 +91,8 @@ class Openstructure < Formula
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DCXX_FLAGS=#{ENV["CXXFLAGS"]}
         -DCMAKE_CXX_STANDARD=17
-        -DPython_EXECUTABLE=#{Formula["python@#{py_ver}"].opt_prefix}/bin/python#{py_ver}
-        -DPython_ROOT_DIR=#{Formula["python@#{py_ver}"].opt_prefix}
+        -DPython_EXECUTABLE=#{libexec}/bin/python3
+        -DPython_ROOT_DIR=#{libexec}
         -DPython_LIBRARY=#{py_lib_path}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
@@ -122,8 +124,8 @@ class Openstructure < Formula
         -DCXX_FLAGS=#{ENV["CXXFLAGS"]}
         -DCMAKE_CXX_STANDARD=17
         -DPREFIX=#{prefix}
-        -DPython_EXECUTABLE=#{Formula["python@#{py_ver}"].opt_prefix}/bin/python#{py_ver}
-        -DPython_ROOT_DIR=#{Formula["python@#{py_ver}"].opt_prefix}
+        -DPython_EXECUTABLE=#{libexec}/bin/python3
+        -DPython_ROOT_DIR=#{libexec}
         -DPython_LIBRARY=#{py_lib_path}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
