@@ -42,7 +42,7 @@ class Openstructure < Formula
   end
 
   patch do
-    # Patch for Homebrew packaging(boost compatibility and file locations)
+    # Patch for Homebrew packaging (boost compatibility and file locations)
     url "https://raw.githubusercontent.com/eunos-1128/openstructure/2f7c0806c77d5149adadc36a6bc6f467e2793837/homebrew.patch"
     sha256 "8ae8d57e204272451dbdf4fa8a9d4035dea0bbd5a3f4b4dd8636e26340cce90f"
   end
@@ -69,6 +69,13 @@ class Openstructure < Formula
 
     lib_ext = OS.mac? ? "dylib" : "so"
 
+    py_lib = "libpython#{py_ver}.#{lib_ext}"
+    if OS.mac?
+      py_lib_path = Formula["python@#{py_ver}"].opt_frameworks/"Python.framework/Versions/#{py_ver}/lib/#{py_lib}"
+    elsif OS.linux?
+      py_lib_path = Formula["python@#{py_ver}"].opt_lib/"libpython#{py_ver}.#{lib_ext}"
+    end
+
     openmm_base = libexec/"lib/python#{py_ver}/site-packages/OpenMM.libs"
     include.install Dir[openmm_base/"include/*"]
     lib.install openmm_base/"lib/libOpenMM.#{lib_ext}"
@@ -82,7 +89,7 @@ class Openstructure < Formula
         -DCMAKE_CXX_STANDARD=17
         -DPython_EXECUTABLE=#{Formula["python@#{py_ver}"].opt_prefix}/bin/python#{py_ver}
         -DPython_ROOT_DIR=#{Formula["python@#{py_ver}"].opt_prefix}
-        -DPython_LIBRARY=#{Formula["python@#{py_ver}"].opt_lib}/libpython#{py_ver}.#{lib_ext}
+        -DPython_LIBRARY=#{py_lib_path}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{py_ver_nodot}.#{lib_ext}
@@ -118,7 +125,7 @@ class Openstructure < Formula
         -DPREFIX=#{prefix}
         -DPython_EXECUTABLE=#{Formula["python@#{py_ver}"].opt_prefix}/bin/python#{py_ver}
         -DPython_ROOT_DIR=#{Formula["python@#{py_ver}"].opt_prefix}
-        -DPython_LIBRARY=#{Formula["python@#{py_ver}"].opt_lib}/libpython#{py_ver}.#{lib_ext}
+        -DPython_LIBRARY=#{py_lib_path}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{py_ver_nodot}.#{lib_ext}
