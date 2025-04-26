@@ -66,11 +66,6 @@ class Openstructure < Formula
 
     lib_ext = OS.mac? ? "dylib" : "so"
 
-    # Set RPATH to `#{prefix}/lib`
-    inreplace buildpath/"CMakeLists.txt",
-      'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}"',
-      "CMAKE_INSTALL_RPATH #{lib}"
-
     mkdir "build" do
       cmake_args = std_cmake_args + %W[
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
@@ -78,15 +73,17 @@ class Openstructure < Formula
         -DCMAKE_CXX_STANDARD=17
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DCMAKE_FIND_FRAMEWORK=NEVER
+        -DPython3_FIND_FRAMEWORK=NEVER
+        -DPython3_FIND_STRATEGY=LOCATION
         -DPython_ROOT_DIR=#{Formula["python@#{xy}"].opt_prefix}
-        -DPython_LIBRARY=#{Formula["python@#{xy}"].opt_lib}/libpython#{xy}.#{lib_ext}
+        -DPython_LIBRARY=#{HOMEBREW_PREFIX}/lib/libpython#{xy}.#{lib_ext}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
         -DENABLE_GUI=OFF
         -DENABLE_GFX=OFF
         -DENABLE_INFO=OFF
-        -DUSE_RPATH=ON
+        -DUSE_RPATH=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
 
@@ -119,8 +116,10 @@ class Openstructure < Formula
         -DPREFIX=#{prefix}
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DCMAKE_FIND_FRAMEWORK=NEVER
+        -DPython3_FIND_FRAMEWORK=NEVER
+        -DPython3_FIND_STRATEGY=LOCATION
         -DPython_ROOT_DIR=#{Formula["python@#{xy}"].opt_prefix}
-        -DPython_LIBRARY=#{Formula["python@#{xy}"].opt_lib}/libpython#{xy}.#{lib_ext}
+        -DPython_LIBRARY=#{HOMEBREW_PREFIX}/lib/libpython#{xy}.#{lib_ext}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
@@ -144,6 +143,11 @@ class Openstructure < Formula
           "-DCMAKE_MODULE_LINKER_FLAGS=-undefined dynamic_lookup",
         ]
       end
+
+    # Set RPATH to `#{prefix}/lib`
+    inreplace buildpath/"CMakeLists.txt",
+      'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}"',
+      "CMAKE_INSTALL_RPATH #{lib}"
 
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
