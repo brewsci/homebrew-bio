@@ -57,9 +57,9 @@ class Openstructure < Formula
     end
     ENV.append "CXXFLAGS", "-Wno-reorder -Wunused-function"
 
+    ENV.prepend_path "PATH", libexec/"bin"
     xy = Language::Python.major_minor_version python3
     xy_nodot = xy.to_s.delete(".")
-    ENV.prepend_path "PATH", "#{HOMEBREW_PREFIX}/bin/python#{xy}"
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
     system python3, "-m", "pip", "install", "--prefix=#{libexec}",
       "numpy", "pandas", "scipy", "networkx", "DockQ"
@@ -83,8 +83,9 @@ class Openstructure < Formula
         -DCXX_FLAGS=#{ENV["CXXFLAGS"]}
         -DCMAKE_CXX_STANDARD=17
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
-        -DPython3_FIND_FRAMEWORK=NEVER
-        -DPython3_FIND_REGISTRY=NEVER
+        -DCMAKE_FIND_FRAMEWORK=NEVER
+        -DPython_ROOT_DIR=#{Formula["python@#{xy}"].opt_prefix}
+        -DPython_LIBRARY=#{Formula["python@#{xy}"].opt_lib}/libpython#{xy}.#{lib_ext}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
@@ -123,8 +124,9 @@ class Openstructure < Formula
         -DCMAKE_CXX_STANDARD=17
         -DPREFIX=#{prefix}
         -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
-        -DPython3_FIND_FRAMEWORK=NEVER
-        -DPython3_FIND_REGISTRY=NEVER
+        -DCMAKE_FIND_FRAMEWORK=NEVER
+        -DPython_ROOT_DIR=#{Formula["python@#{xy}"].opt_prefix}
+        -DPython_LIBRARY=#{Formula["python@#{xy}"].opt_lib}/libpython#{xy}.#{lib_ext}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
@@ -134,7 +136,7 @@ class Openstructure < Formula
         -DENABLE_PARASAIL=ON
         -DCOMPILE_TMTOOLS=ON
         -DENABLE_GFX=ON
-        -DENABLE_GUI=OFF
+        -DENABLE_GUI=ON
         -DENABLE_INFO=ON
         -DUSE_SHADER=ON
         -DUSE_DOUBLE_PRECISION=OFF
