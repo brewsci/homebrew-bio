@@ -75,11 +75,6 @@ class Openstructure < Formula
     lib.install Dir[openmm_base/"lib/libOpenMM*.#{lib_ext}"]
     lib.install Dir[openmm_base/"lib/plugins/*.#{lib_ext}"]
 
-    # extra_cmake_args = [
-    #   "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup",
-    #   "-DCMAKE_MODULE_LINKER_FLAGS=-undefined dynamic_lookup",
-    # ]
-
     mkdir "build" do
       cmake_args = std_cmake_args + %W[
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
@@ -100,7 +95,6 @@ class Openstructure < Formula
         -DENABLE_INFO=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
-      # cmake_args += extra_cmake_args if OS.mac?
 
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
@@ -146,7 +140,6 @@ class Openstructure < Formula
         -DUSE_DOUBLE_PRECISION=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
-      # cmake_args += extra_cmake_args if OS.mac?
 
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
