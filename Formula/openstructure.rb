@@ -15,9 +15,14 @@ class Openstructure < Formula
   depends_on "fftw"
   depends_on "gcc"
   depends_on "glew"
+  depends_on "glfw"
+  depends_on "glm"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "llvm" if OS.mac?
+  depends_on "ocl-icd"
+  depends_on "opencl-headers"
+  depends_on "opencl-icd-loader"
   depends_on "parasail"
   depends_on "pyqt@5"
   depends_on "python@3.13"
@@ -25,6 +30,7 @@ class Openstructure < Formula
   depends_on "sip"
   depends_on "sqlite3"
   depends_on "voronota"
+  depends_on "zlib" if OS.linux?
   depends_on "blast" => :optional
   depends_on "dssp" => :optional
   depends_on "hh-suite" => :optional
@@ -50,10 +56,10 @@ class Openstructure < Formula
   def install
     if OS.mac?
       ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
-      ENV.append "LDFLAGS", "-undefined dynamic_lookup"
+      ENV.append "LDFLAGS", "-undefined dynamic_lookup -pthread"
     elsif OS.linux?
       ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
-      # ENV.append "LDFLAGS", "-lstdc++"
+      ENV.append "LDFLAGS", "-Wl,--allow-shlib-undefined -pthread"
     end
     ENV.append "CXXFLAGS", "-Wno-reorder -Wunused-function"
 
@@ -71,15 +77,17 @@ class Openstructure < Formula
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DCXX_FLAGS=#{ENV["CXXFLAGS"]}
         -DCMAKE_CXX_STANDARD=17
-        -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DCMAKE_FIND_FRAMEWORK=NEVER
         -DPython3_FIND_FRAMEWORK=NEVER
         -DPython3_FIND_STRATEGY=LOCATION
+        -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DPython_ROOT_DIR=#{Formula["python@#{xy}"].opt_prefix}
         -DPython_LIBRARY=#{HOMEBREW_PREFIX}/lib/libpython#{xy}.#{lib_ext}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
+        -DPARASAIL_INCLUDE_DIR=#{Formula["parasail"].opt_include}
+        -DPARASAIL_LIBRARY=#{Formula["parasail"].opt_lib}/libparasail.#{lib_ext}
         -DENABLE_GUI=OFF
         -DENABLE_GFX=OFF
         -DENABLE_INFO=OFF
@@ -114,16 +122,18 @@ class Openstructure < Formula
         -DCXX_FLAGS=#{ENV["CXXFLAGS"]}
         -DCMAKE_CXX_STANDARD=17
         -DPREFIX=#{prefix}
-        -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DCMAKE_FIND_FRAMEWORK=NEVER
         -DPython3_FIND_FRAMEWORK=NEVER
         -DPython3_FIND_STRATEGY=LOCATION
+        -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
         -DPython_ROOT_DIR=#{Formula["python@#{xy}"].opt_prefix}
         -DPython_LIBRARY=#{HOMEBREW_PREFIX}/lib/libpython#{xy}.#{lib_ext}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
         -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
+        -DPARASAIL_INCLUDE_DIR=#{Formula["parasail"].opt_include}
+        -DPARASAIL_LIBRARY=#{Formula["parasail"].opt_lib}/libparasail.#{lib_ext}
         -DUSE_RPATH=ON
         -DOPTIMIZE=ON
         -DENABLE_PARASAIL=ON
