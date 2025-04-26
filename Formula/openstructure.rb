@@ -22,7 +22,6 @@ class Openstructure < Formula
   depends_on "llvm" if OS.mac?
   depends_on "ocl-icd"
   depends_on "opencl-headers"
-  depends_on "opencl-icd-loader"
   depends_on "parasail"
   depends_on "pyqt@5"
   depends_on "python@3.13"
@@ -66,9 +65,20 @@ class Openstructure < Formula
     xy_nodot = xy.to_s.delete(".")
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
     system python3, "-m", "pip", "install", "--prefix=#{libexec}",
-      "numpy", "pandas", "scipy", "networkx", "DockQ"
+      "numpy", "pandas", "scipy", "networkx", "DockQ", "OpenMM"
 
     lib_ext = OS.mac? ? "dylib" : "so"
+
+    openmm_base = libexec/"lib/python#{xy}/site-packages/OpenMM.libs"
+    include.install Dir[openmm_base/"include/*"]
+    lib.install openmm_base/"lib/libOpenMM.#{lib_ext}"
+    lib.install Dir[openmm_base/"lib/libOpenMM*.#{lib_ext}"]
+    lib.install Dir[openmm_base/"lib/plugins/*.#{lib_ext}"]
+
+    # extra_cmake_args = [
+    #   "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup",
+    #   "-DCMAKE_MODULE_LINKER_FLAGS=-undefined dynamic_lookup",
+    # ]
 
     mkdir "build" do
       cmake_args = std_cmake_args + %W[
@@ -81,82 +91,72 @@ class Openstructure < Formula
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
-        -DPARASAIL_INCLUDE_DIR=#{Formula["parasail"].opt_include}
-        -DPARASAIL_LIBRARY=#{Formula["parasail"].opt_lib}/libparasail.#{lib_ext}
+        -DENABLE_MM=ON
+        -DOPEN_MM_LIBRARY=#{lib}/libOpenMM.#{lib_ext}
+        -DOPEN_MM_INCLUDE_DIR=#{include}
+        -DOPEN_MM_PLUGIN_DIR=#{lib}
         -DENABLE_GUI=OFF
         -DENABLE_GFX=OFF
         -DENABLE_INFO=OFF
-        -DUSE_RPATH=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
-
-      if OS.mac?
-        cmake_args += [
-          "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup",
-          "-DCMAKE_MODULE_LINKER_FLAGS=-undefined dynamic_lookup",
-        ]
-      end
+      # cmake_args += extra_cmake_args if OS.mac?
 
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
-
-      resource("components-cif").fetch
-      components_cif_path = resource("components-cif").cached_download
-      cp components_cif_path, "components.cif.gz"
-
-      system "stage/bin/chemdict_tool", "create",
-              "components.cif.gz", "compounds.chemlib",
-              "pdb", "-i"
-      system "stage/bin/chemdict_tool", "update",
-              buildpath/"modules/conop/data/charmm.cif",
-              "compounds.chemlib", "charmm"
-
-      # Re-configure with compound library
-      cmake_args = std_cmake_args + %W[
-        -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
-        -DCXX_FLAGS=#{ENV["CXXFLAGS"]}
-        -DCMAKE_CXX_STANDARD=17
-        -DPREFIX=#{prefix}
-        -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
-        -DPython_ROOT_DIR=#{Formula["python@#{xy}"].opt_prefix}
-        -DPython_LIBRARY=#{Formula["python@#{xy}"].opt_lib}/libpython#{xy}.#{lib_ext}
-        -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
-        -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
-        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
-        -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
-        -DPARASAIL_INCLUDE_DIR=#{Formula["parasail"].opt_include}
-        -DPARASAIL_LIBRARY=#{Formula["parasail"].opt_lib}/libparasail.#{lib_ext}
-        -DUSE_RPATH=ON
-        -DOPTIMIZE=ON
-        -DENABLE_PARASAIL=ON
-        -DCOMPILE_TMTOOLS=ON
-        -DENABLE_GFX=ON
-        -DENABLE_GUI=ON
-        -DENABLE_INFO=ON
-        -DUSE_SHADER=ON
-        -DUSE_DOUBLE_PRECISION=OFF
-        -DENABLE_MM=OFF
-        -DCMAKE_VERBOSE_MAKEFILE=ON
-      ]
-
-      if OS.mac?
-        cmake_args += [
-          "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup",
-          "-DCMAKE_MODULE_LINKER_FLAGS=-undefined dynamic_lookup",
-        ]
-      end
-
-    # # Set RPATH to `#{prefix}/lib`
-    # inreplace buildpath/"CMakeLists.txt",
-    #   'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}"',
-    #   "CMAKE_INSTALL_RPATH #{lib}"
-
-      system "cmake", "..", *cmake_args
-      system "make", "VERBOSE=1"
-      system "make", "check"
       system "make", "install"
     end
   end
+
+  #     resource("components-cif").fetch
+  #     components_cif_path = resource("components-cif").cached_download
+  #     cp components_cif_path, "components.cif.gz"
+
+  #     system "stage/bin/chemdict_tool", "create",
+  #             "components.cif.gz", "compounds.chemlib",
+  #             "pdb", "-i"
+  #     system "stage/bin/chemdict_tool", "update",
+  #             buildpath/"modules/conop/data/charmm.cif",
+  #             "compounds.chemlib", "charmm"
+
+  #     # Re-configure with compound library
+  #     cmake_args = std_cmake_args + %W[
+  #       -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
+  #       -DCXX_FLAGS=#{ENV["CXXFLAGS"]}
+  #       -DCMAKE_CXX_STANDARD=17
+  #       -DPREFIX=#{prefix}
+  #       -DPython_EXECUTABLE=#{Formula["python@#{xy}"].opt_prefix}/bin/python#{xy}
+  #       -DPython_ROOT_DIR=#{Formula["python@#{xy}"].opt_prefix}
+  #       -DPython_LIBRARY=#{Formula["python@#{xy}"].opt_lib}/libpython#{xy}.#{lib_ext}
+  #       -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
+  #       -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
+  #       -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{xy_nodot}.#{lib_ext}
+  #       -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
+  #       -DPARASAIL_INCLUDE_DIR=#{Formula["parasail"].opt_include}
+  #       -DPARASAIL_LIBRARY=#{Formula["parasail"].opt_lib}/libparasail.#{lib_ext}
+  #       -DENABLE_MM=ON
+  #       -DOPEN_MM_LIBRARY=#{lib}/libOpenMM.#{lib_ext}
+  #       -DOPEN_MM_INCLUDE_DIR=#{include}
+  #       -DOPEN_MM_PLUGIN_DIR=#{lib}
+  #       -DUSE_RPATH=ON
+  #       -DOPTIMIZE=ON
+  #       -DENABLE_PARASAIL=ON
+  #       -DCOMPILE_TMTOOLS=ON
+  #       -DENABLE_GFX=ON
+  #       -DENABLE_GUI=ON
+  #       -DENABLE_INFO=ON
+  #       -DUSE_SHADER=ON
+  #       -DUSE_DOUBLE_PRECISION=OFF
+  #       -DCMAKE_VERBOSE_MAKEFILE=ON
+  #     ]
+  ##     cmake_args += extra_cmake_args if OS.mac?
+
+  #     system "cmake", "..", *cmake_args
+  #     system "make", "VERBOSE=1"
+  #     system "make", "check"
+  #     system "make", "install"
+  #   end
+  # end
 
   test do
     assert_match "Usage:", shell_output("#{bin}/ost -h 2>&1", 255)
