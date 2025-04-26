@@ -66,12 +66,6 @@ class Openstructure < Formula
 
     lib_ext = OS.mac? ? "dylib" : "so"
 
-    # openmm_base = libexec/"lib/python#{xy}/site-packages/OpenMM.libs"
-    # include.install Dir[openmm_base/"include/*"]
-    # lib.install openmm_base/"lib/libOpenMM.#{lib_ext}"
-    # lib.install Dir[openmm_base/"lib/libOpenMM*.#{lib_ext}"]
-    # lib.install Dir[openmm_base/"lib/plugins/*.#{lib_ext}"]
-
     # Set RPATH to `#{prefix}/lib`
     inreplace buildpath/"CMakeLists.txt",
       'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}"',
