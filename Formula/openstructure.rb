@@ -79,7 +79,9 @@ class Openstructure < Formula
 
     # Copy OpenMM headers, libs and plugins
     openmm_base = libexec/"lib/python#{py_ver}/site-packages/OpenMM.libs"
-    Dir[openmm_base/"include/*"].each { |f| cp_r f, include/ }
+    include.mkpath
+    lib.mkpath
+    Dir[openmm_base/"include/*"].each { |f| cp_r f, include }
     Dir[openmm_base/"lib/libOpenMM*.#{lib_ext}"].each { |f| cp f, lib }
     Dir[openmm_base/"lib/plugins/*.#{lib_ext}"].each { |f| cp f, lib }
 
