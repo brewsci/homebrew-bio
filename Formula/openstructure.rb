@@ -65,7 +65,7 @@ class Openstructure < Formula
     py_ver_nodot = py_ver.to_s.delete(".")
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{py_ver}/site-packages"
     system python3, "-m", "pip", "install", "--prefix=#{libexec}",
-      "numpy", "pandas", "scipy", "networkx", "DockQ", "OpenMM"
+      "numpy", "pandas", "scipy", "networkx", "DockQ"
 
     lib_ext = OS.mac? ? "dylib" : "so"
 
@@ -75,12 +75,6 @@ class Openstructure < Formula
     elsif OS.linux?
       py_lib_path = Formula["python@#{py_ver}"].opt_lib/"libpython#{py_ver}.#{lib_ext}"
     end
-
-    openmm_base = libexec/"lib/python#{py_ver}/site-packages/OpenMM.libs"
-    include.install Dir[openmm_base/"include/*"]
-    lib.install openmm_base/"lib/libOpenMM.#{lib_ext}"
-    lib.install Dir[openmm_base/"lib/libOpenMM*.#{lib_ext}"]
-    lib.install Dir[openmm_base/"lib/plugins/*.#{lib_ext}"]
 
     mkdir "build" do
       cmake_args = std_cmake_args + %W[
@@ -93,10 +87,6 @@ class Openstructure < Formula
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{py_ver_nodot}.#{lib_ext}
-        -DENABLE_MM=ON
-        -DOPEN_MM_LIBRARY=#{lib}/libOpenMM.#{lib_ext}
-        -DOPEN_MM_INCLUDE_DIR=#{include}
-        -DOPEN_MM_PLUGIN_DIR=#{lib}
         -DENABLE_GUI=OFF
         -DENABLE_GFX=OFF
         -DENABLE_INFO=OFF
