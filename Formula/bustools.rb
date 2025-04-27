@@ -2,8 +2,8 @@ class Bustools < Formula
   # cite Melsted_2021: "https://doi.org/10.1038/s41587-021-00870-2"
   desc "Tools for working with BUS files"
   homepage "https://github.com/BUStools/bustools"
-  url "https://github.com/BUStools/bustools/archive/refs/tags/v0.44.0.tar.gz"
-  sha256 "e9a12be416d5d3940dd0ec3bfb0be3a481f2eea7d4411df1ab24c814332d99b8"
+  url "https://github.com/BUStools/bustools/archive/refs/tags/v0.45.0.tar.gz"
+  sha256 "a4b2a60f8c8ed178caeab0bc35cdd32b62f83dfea892511aaec11338fd538d48"
   license "BSD-2-Clause"
   head "https://github.com/BUStools/bustools.git", branch: "master"
 
@@ -20,7 +20,7 @@ class Bustools < Formula
   uses_from_macos "zlib"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "test/test_cases"
