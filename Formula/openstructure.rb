@@ -21,7 +21,7 @@ class Openstructure < Formula
   depends_on "glm"
   depends_on "libpng"
   depends_on "libtiff"
-  depends_on "openblas"
+  depends_on "llvm"
   depends_on "parasail"
   depends_on "pyqt@5"
   depends_on "python@3.13"
@@ -40,8 +40,13 @@ class Openstructure < Formula
     depends_on "llvm"
   end
 
-  on_linux do
-    depends_on "patchelf" => :build
+  # on_linux do
+  #   depends_on "patchelf" => :build
+  # end
+
+  resource "DockQ" do
+    url "https://files.pythonhosted.org/packages/c1/a5/df80285b0f2e5b94562ccc1656ba8f3eaff34f7428ea04f26dad28894ae0/dockq-2.1.3.tar.gz"
+    sha256 "50c4e2b4bced3bf865b12061ec0b56e23de1383dc70b445441848224f6c72c0d"
   end
 
   resource "components-cif" do
@@ -74,19 +79,19 @@ class Openstructure < Formula
       biopython>=1.79
       networkx<3.0
       numpy<2.0
-      pandas<2.0
+      pandas<2.3
       scipy<2.0
       OpenMM<9.0
       parallelbar
     ]
-    venv.pip_install_and_link %w[DockQ==2.1.3]
+    venv.pip_install_and_link resource("DockQ")
 
     py_ver = Language::Python.major_minor_version python3
     py_ver_nodot = py_ver.to_s.delete(".")
     ENV.prepend_path "PATH", libexec/"bin/#{python3}"
     ENV.prepend_create_path "PYTHONPATH", venv.site_packages
-    prefix_site_packages_path = Language::Python.site_packages(python3)
-    (prefix_site_packages_path/"homebrew-openstructure.pth").write venv.site_packages.to_s
+    site_packages_path = Language::Python.site_packages python3
+    (prefix/site_packages_path/"homebrew-openstructure.pth").write venv.site_packages
 
     lib_ext = OS.mac? ? "dylib" : "so"
 
