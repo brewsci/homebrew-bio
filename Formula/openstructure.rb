@@ -40,10 +40,6 @@ class Openstructure < Formula
     depends_on "llvm"
   end
 
-  # on_linux do
-  #   depends_on "patchelf" => :build
-  # end
-
   resource "DockQ" do
     url "https://files.pythonhosted.org/packages/c1/a5/df80285b0f2e5b94562ccc1656ba8f3eaff34f7428ea04f26dad28894ae0/dockq-2.1.3.tar.gz"
     sha256 "50c4e2b4bced3bf865b12061ec0b56e23de1383dc70b445441848224f6c72c0d"
