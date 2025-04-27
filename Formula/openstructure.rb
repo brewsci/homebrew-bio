@@ -63,7 +63,7 @@ class Openstructure < Formula
   def install
     if OS.mac?
       ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
-      ENV.append "LDFLAGS", "-undefined dynamic_lookup -pthread"
+      ENV.append "LDFLAGS", "-undefined dynamic_lookup -bundle -pthread"
     elsif OS.linux?
       ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
       ENV.append "LDFLAGS", "-Wl,--allow-shlib-undefined -lstdc++ -pthread"
@@ -72,12 +72,12 @@ class Openstructure < Formula
     # Install python packages using virtualenv pip
     venv = virtualenv_create(libexec, python3)
     system libexec/"bin/python", "-m", "pip", "install", *%w[
-      biopython >= 1.79
-      networkx < 3.0
-      numpy < 2.0
-      pandas < 2.0
-      scipy < 2.0
-      OpenMM < 9.0
+      biopython>=1.79
+      networkx<3.0
+      numpy<2.0
+      pandas<2.0
+      scipy<2.0
+      OpenMM<9.0
       parallelbar
     ]
     venv.pip_install_and_link %w[DockQ==2.1.3]
