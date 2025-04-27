@@ -45,9 +45,9 @@ class Openstructure < Formula
   end
 
   patch do
-    # Patch for Homebrew packaging (boost compatibility and file locations)
-    url "https://raw.githubusercontent.com/eunos-1128/openstructure/2f7c0806c77d5149adadc36a6bc6f467e2793837/homebrew.patch"
-    sha256 "8ae8d57e204272451dbdf4fa8a9d4035dea0bbd5a3f4b4dd8636e26340cce90f"
+    # Patch for Homebrew packaging (make boost compatibile and fix lib dir name)
+    url "https://raw.githubusercontent.com/eunos-1128/openstructure/a708ecd95ca87e88b69656ce900c8320248f5183/homebrew.patch"
+    sha256 "6a5f4bddcbaceaa4289e18144d08e4dff7248ec58a813369176062795e47cc0e"
   end
 
   def python3
@@ -57,8 +57,6 @@ class Openstructure < Formula
   def install
     if OS.mac?
       ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
-      ENV["SDKROOT"] = MacOS.sdk_path
-      ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
       ENV.append "LDFLAGS", "-undefined dynamic_lookup -bundle -pthread"
     elsif OS.linux?
       ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
@@ -69,7 +67,7 @@ class Openstructure < Formula
     venv = virtualenv_create libexec, which(python3)
     system libexec/"bin/python", "-m", "pip", "install", *%w[
       biopython>=1.79
-      networkx
+      networkx<3.0
       numpy
       pandas
       setuptools
@@ -77,8 +75,13 @@ class Openstructure < Formula
       OpenMM
       parallelbar
       PyQt5
-      sip
     ]
+    networkx<3.0
+    numpy<2.0
+    pandas<2.3
+    setuptools
+    scipy<2.0
+    OpenMM<9.0
     venv.pip_install_and_link resource("dockq")
 
     py_ver = Language::Python.major_minor_version python3
