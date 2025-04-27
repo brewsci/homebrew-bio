@@ -9,8 +9,6 @@ class Openstructure < Formula
   license "LGPL-3.0-or-later"
 
   depends_on "cmake" => :build
-  depends_on "ninja" => :build
-  depends_on "patchelf" => :build if OS.linux?
   depends_on "pkg-config" => :build
   depends_on "boost"
   depends_on "boost-python3"
@@ -24,7 +22,6 @@ class Openstructure < Formula
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "llvm" if OS.mac?
-  depends_on "openblas"
   depends_on "parasail"
   depends_on "python@3.13"
   depends_on "qt@5"
@@ -36,11 +33,6 @@ class Openstructure < Formula
   depends_on "mmseqs2" => :optional
 
   uses_from_macos "zlib"
-
-  resource "numpy" do
-    url "https://files.pythonhosted.org/packages/65/6e/09db70a523a96d25e115e71cc56a6f9031e7b8cd166c1ac8438307c14058/numpy-1.26.4.tar.gz"
-    sha256 "2a02aba9ed12e4ac4eb3ea9421c420301a0c6460d9830d74a9df87efa4912010"
-  end
 
   resource "dockq" do
     url "https://files.pythonhosted.org/packages/c1/a5/df80285b0f2e5b94562ccc1656ba8f3eaff34f7428ea04f26dad28894ae0/dockq-2.1.3.tar.gz"
@@ -65,6 +57,8 @@ class Openstructure < Formula
   def install
     if OS.mac?
       ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
+      ENV["SDKROOT"] = MacOS.sdk_path
+      ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version
       ENV.append "LDFLAGS", "-undefined dynamic_lookup -bundle -pthread"
     elsif OS.linux?
       ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
@@ -73,20 +67,14 @@ class Openstructure < Formula
 
     # Install python packages using virtualenv pip
     venv = virtualenv_create libexec, which(python3)
-    system libexec/"bin/python", "-m", "pip", "install", "-U", *%w[
-      Cython>=0.29.34,<3.1
-      meson-python>=0.15.0,<0.16.0
-      pip
-      setuptools
-      wheel
-    ]
-    venv.pip_install resource("numpy")
     system libexec/"bin/python", "-m", "pip", "install", *%w[
       biopython>=1.79
-      networkx<3.0
-      pandas<2.3
-      scipy<2.0
-      OpenMM<9.0
+      networkx
+      numpy
+      pandas
+      setuptools
+      scipy
+      OpenMM
       parallelbar
       PyQt5
       sip
@@ -109,7 +97,6 @@ class Openstructure < Formula
       Formula["python@#{py_ver}"].opt_lib/py_lib
     end
 
-    # Install OpenMM headers, libs and plugins into `#{prefix}/lib`
     openmm_base = libexec/"lib/python#{py_ver}/site-packages/OpenMM.libs"
     include.install_symlink Dir[openmm_base/"include/**/*"]
     lib.install_symlink Dir[openmm_base/"lib/*.#{lib_ext}"]
