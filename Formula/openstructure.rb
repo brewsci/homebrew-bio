@@ -21,7 +21,7 @@ class Openstructure < Formula
   depends_on "glm"
   depends_on "libpng"
   depends_on "libtiff"
-  depends_on "llvm"
+  depends_on "llvm" if OS.mac?
   depends_on "parasail"
   depends_on "pyqt@5"
   depends_on "python@3.13"
@@ -35,10 +35,6 @@ class Openstructure < Formula
   depends_on "mmseqs2" => :optional
 
   uses_from_macos "zlib"
-
-  on_macos do
-    depends_on "llvm"
-  end
 
   resource "DockQ" do
     url "https://files.pythonhosted.org/packages/c1/a5/df80285b0f2e5b94562ccc1656ba8f3eaff34f7428ea04f26dad28894ae0/dockq-2.1.3.tar.gz"
@@ -70,7 +66,7 @@ class Openstructure < Formula
     end
 
     # Install python packages using virtualenv pip
-    venv = virtualenv_create(libexec, python3)
+    venv = virtualenv_create libexec, which(python3)
     system libexec/"bin/python", "-m", "pip", "install", *%w[
       biopython>=1.79
       networkx<3.0
@@ -84,7 +80,7 @@ class Openstructure < Formula
 
     py_ver = Language::Python.major_minor_version python3
     py_ver_nodot = py_ver.to_s.delete(".")
-    ENV.prepend_path "PATH", libexec/"bin/#{python3}"
+    ENV.prepend_path "PATH", libexec/"bin"
     ENV.prepend_create_path "PYTHONPATH", venv.site_packages
     site_packages_path = Language::Python.site_packages python3
     (prefix/site_packages_path/"homebrew-openstructure.pth").write venv.site_packages
