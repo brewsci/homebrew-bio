@@ -71,15 +71,25 @@ class Openstructure < Formula
       ENV.append "LDFLAGS", "-Wl,--allow-shlib-undefined -lstdc++ -pthread"
     end
 
+    # Install python packages using virtualenv pip
     venv = virtualenv_create(libexec, python3)
-    venv.pip_install %w[numpy pandas scipy networkx]
-    venv.pip_install_and_link %w[DockQ]
-    # Install OpenMM using virtualenv pip (only wheels available)
-    system libexec/"bin/python", "-m", "pip", "install", "OpenMM"
+    system libexec/"bin/python", "-m", "pip", "install", *%w[
+      biopython >= 1.79
+      networkx < 3.0
+      numpy < 2.0
+      pandas < 2.0
+      scipy < 2.0
+      OpenMM < 9.0
+      parallelbar
+    ]
+    venv.pip_install_and_link %w[DockQ==2.1.3]
 
     py_ver = Language::Python.major_minor_version python3
     py_ver_nodot = py_ver.to_s.delete(".")
-    ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python#{py_ver}/site-packages"
+    ENV.prepend_path "PATH", libexec/"bin/#{python3}"
+    ENV.prepend_create_path "PYTHONPATH", venv.site_packages
+    prefix_site_packages_path = Language::Python.site_packages(python3)
+    (prefix_site_packages_path/"homebrew-openstructure.pth").write venv.site_packages.to_s
 
     lib_ext = OS.mac? ? "dylib" : "so"
 
@@ -113,6 +123,7 @@ class Openstructure < Formula
         -DENABLE_INFO=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
+      -DCMAKE_SHARED_LINKER_FLAGS=-undefined\ dynamic_lookup
       cmake_args << "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}" if OS.linux?
 
       system "cmake", "..", *cmake_args
