@@ -22,6 +22,7 @@ class Openstructure < Formula
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "llvm" if OS.mac?
+  depends_on "openblas"
   depends_on "parasail"
   depends_on "python@3.13"
   depends_on "qt@5"
@@ -34,7 +35,12 @@ class Openstructure < Formula
 
   uses_from_macos "zlib"
 
-  resource "DockQ" do
+  resource "numpy-1.26.4" do
+    url "https://files.pythonhosted.org/packages/65/6e/09db70a523a96d25e115e71cc56a6f9031e7b8cd166c1ac8438307c14058/numpy-1.26.4.tar.gz"
+    sha256 "2a02aba9ed12e4ac4eb3ea9421c420301a0c6460d9830d74a9df87efa4912010"
+  end
+
+  resource "dockq-2.1.3" do
     url "https://files.pythonhosted.org/packages/c1/a5/df80285b0f2e5b94562ccc1656ba8f3eaff34f7428ea04f26dad28894ae0/dockq-2.1.3.tar.gz"
     sha256 "50c4e2b4bced3bf865b12061ec0b56e23de1383dc70b445441848224f6c72c0d"
   end
@@ -65,21 +71,25 @@ class Openstructure < Formula
 
     # Install python packages using virtualenv pip
     venv = virtualenv_create libexec, which(python3)
-    system libexec/"bin/python", "-m", "pip", "install", "-U", "pip", "setuptools", "wheel"
+    system libexec/"bin/python", "-m", "pip", "install", "-U", *%w[
+      Cython>=0.29.34,<3.1
+      meson-python>=0.15.0,<0.16.0
+      pip
+      setuptools
+      wheel
+    ]
+    venv.pip_install resource("numpy-1.26.4")
     system libexec/"bin/python", "-m", "pip", "install", *%w[
       biopython>=1.79
       networkx<3.0
-      numpy<2.0
       pandas<2.3
-      setuptools
       scipy<2.0
       OpenMM<9.0
       parallelbar
       PyQt5
       sip
-      wheel
     ]
-    venv.pip_install_and_link resource("DockQ")
+    venv.pip_install_and_link resource("dockq-2.1.3")
 
     py_ver = Language::Python.major_minor_version python3
     py_ver_nodot = py_ver.to_s.delete(".")
