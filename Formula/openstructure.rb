@@ -72,8 +72,9 @@ class Openstructure < Formula
     end
 
     venv = virtualenv_create(libexec, python3)
-    venv.pip_install ["numpy", "pandas", "scipy", "networkx", "OpenMM"]
-    venv.pip_install_and_link ["DockQ"]
+    venv.pip_install %w[numpy pandas scipy networkx]
+    venv.pip_install_and_link %w[DockQ]
+    system libexec/"bin/python", "-m", "pip", "install", "OpenMM"
 
     py_ver = Language::Python.major_minor_version python3
     py_ver_nodot = py_ver.to_s.delete(".")
