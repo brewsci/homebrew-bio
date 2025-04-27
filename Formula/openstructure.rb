@@ -65,12 +65,16 @@ class Openstructure < Formula
 
     # Install python packages using virtualenv pip
     venv = virtualenv_create libexec, which(python3)
+    system libexec/"bin/python", "-m", "pip", "install", "-U", *%w[
+      pip
+      setuptools
+      wheel
+    ]
     system libexec/"bin/python", "-m", "pip", "install", *%w[
       biopython>=1.79
       networkx<3.0
       numpy
       pandas
-      setuptools
       scipy<2.0
       OpenMM
       parallelbar
