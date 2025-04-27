@@ -21,7 +21,6 @@ class Openstructure < Formula
   depends_on "glm"
   depends_on "libpng"
   depends_on "libtiff"
-  depends_on "llvm"
   depends_on "openblas"
   depends_on "parasail"
   depends_on "pyqt@5"
