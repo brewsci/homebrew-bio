@@ -25,7 +25,6 @@ class Openstructure < Formula
   depends_on "parasail"
   depends_on "python@3.13"
   depends_on "qt@5"
-  depends_on "sip"
   depends_on "sqlite"
   depends_on "voronota"
   depends_on "blast" => :optional
@@ -76,6 +75,7 @@ class Openstructure < Formula
       OpenMM<9.0
       parallelbar
       PyQt5
+      sip
     ]
     venv.pip_install_and_link resource("DockQ")
 
