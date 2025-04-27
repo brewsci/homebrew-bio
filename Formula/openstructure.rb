@@ -23,7 +23,6 @@ class Openstructure < Formula
   depends_on "libtiff"
   depends_on "llvm" if OS.mac?
   depends_on "parasail"
-  depends_on "pyqt@5"
   depends_on "python@3.13"
   depends_on "qt@5"
   depends_on "sip"
@@ -75,6 +74,7 @@ class Openstructure < Formula
       scipy<2.0
       OpenMM<9.0
       parallelbar
+      PyQt5
     ]
     venv.pip_install_and_link resource("DockQ")
 
