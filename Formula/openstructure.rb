@@ -9,6 +9,7 @@ class Openstructure < Formula
   license "LGPL-3.0-or-later"
 
   depends_on "cmake" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "boost"
   depends_on "boost-python3"
