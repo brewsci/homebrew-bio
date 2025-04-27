@@ -74,6 +74,7 @@ class Openstructure < Formula
     venv = virtualenv_create(libexec, python3)
     venv.pip_install %w[numpy pandas scipy networkx]
     venv.pip_install_and_link %w[DockQ]
+    # Install OpenMM using virtualenv pip (only wheels available)
     system libexec/"bin/python", "-m", "pip", "install", "OpenMM"
 
     py_ver = Language::Python.major_minor_version python3
@@ -89,12 +90,12 @@ class Openstructure < Formula
       Formula["python@#{py_ver}"].opt_lib/py_lib
     end
 
-    # Copy OpenMM headers, libs and plugins
+    # Install OpenMM headers, libs and plugins into `#{prefix}/lib`
     openmm_base = libexec/"lib/python#{py_ver}/site-packages/OpenMM.libs"
-    include.mkpath
-    Dir[openmm_base/"include/*"].each { |f| cp_r f, include }
-    Dir[openmm_base/"lib/libOpenMM*.#{lib_ext}"].each { |f| cp f, lib }
-    Dir[openmm_base/"lib/plugins/*.#{lib_ext}"].each { |f| cp f, lib }
+    include.install Dir[openmm_base/"include/*"]
+    lib.install openmm_base/"lib/libOpenMM.#{lib_ext}"
+    lib.install Dir[openmm_base/"lib/libOpenMM*.#{lib_ext}"]
+    lib.install Dir[openmm_base/"lib/plugins/*.#{lib_ext}"]
 
     mkdir "build" do
       cmake_args = std_cmake_args + %W[
