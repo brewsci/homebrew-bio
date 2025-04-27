@@ -71,6 +71,7 @@ class Openstructure < Formula
       networkx<3.0
       numpy<2.0
       pandas<2.3
+      setuptools
       scipy<2.0
       OpenMM<9.0
       parallelbar
