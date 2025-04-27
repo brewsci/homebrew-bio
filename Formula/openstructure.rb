@@ -65,16 +65,19 @@ class Openstructure < Formula
 
     # Install python packages using virtualenv pip
     venv = virtualenv_create libexec, which(python3)
+    system libexec/"bin/python", "-m", "pip", "install", "-U", "pip", "setuptools", "wheel"
     system libexec/"bin/python", "-m", "pip", "install", *%w[
       biopython>=1.79
       networkx<3.0
-      numpy<1.26
+      numpy<2.0
       pandas<2.3
+      setuptools
       scipy<2.0
       OpenMM<9.0
       parallelbar
       PyQt5
       sip
+      wheel
     ]
     venv.pip_install_and_link resource("DockQ")
 
