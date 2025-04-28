@@ -25,7 +25,6 @@ class Openstructure < Formula
   depends_on "llvm" if OS.mac?
   depends_on "parasail"
   depends_on "python@3.13"
-  depends_on "qt@5"
   depends_on "sqlite"
   depends_on "voronota"
   depends_on "blast" => :optional
@@ -72,15 +71,13 @@ class Openstructure < Formula
       wheel
     ]
     system libexec/"bin/python", "-m", "pip", "install", *%w[
-      biopython
-      networkx<3.0
-      numpy
-      pandas
-      scipy<2.0
+      biopython==1.8.5
+      networkx<3.4.2
+      numpy==2.1.0
+      pandas==2.2.3
+      scipy==1.15.1
       OpenMM
-      parallelbar
-      PyQt5
-      sip<6.0
+      parallelbar==2.5
     ]
     venv.pip_install_and_link resource("dockq")
 
@@ -161,8 +158,8 @@ class Openstructure < Formula
         -DENABLE_PARASAIL=ON
         -DCOMPILE_TMTOOLS=ON
         -DENABLE_GFX=ON
-        -DENABLE_GUI=ON
-        -DENABLE_INFO=ON
+        -DENABLE_GUI=OFF
+        -DENABLE_INFO=OFF
         -DUSE_SHADER=ON
         -DUSE_DOUBLE_PRECISION=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
