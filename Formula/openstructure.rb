@@ -12,7 +12,10 @@ class Openstructure < Formula
   depends_on "pkg-config" => :build
   depends_on "boost"
   depends_on "boost-python3"
-  depends_on "clustal-w"
+  depends_on "brewsci/bio/clustal-w"
+  depends_on "brewsci/bio/parasail"
+  depends_on "brewsci/bio/usalign"
+  depends_on "brewsci/bio/voronota"
   depends_on "eigen"
   depends_on "fftw"
   depends_on "gcc"
@@ -22,14 +25,8 @@ class Openstructure < Formula
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "llvm" if OS.mac?
-  depends_on "parasail"
   depends_on "python@3.13"
   depends_on "sqlite"
-  depends_on "voronota"
-  depends_on "blast" => :optional
-  depends_on "dssp" => :optional
-  depends_on "hh-suite" => :optional
-  depends_on "mmseqs2" => :optional
 
   uses_from_macos "zlib"
 
@@ -146,8 +143,8 @@ class Openstructure < Formula
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{py_ver_nodot}.#{lib_ext}
         -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
-        -DPARASAIL_INCLUDE_DIR=#{Formula["parasail"].opt_include}
-        -DPARASAIL_LIBRARY=#{Formula["parasail"].opt_lib}/libparasail.#{lib_ext}
+        -DPARASAIL_INCLUDE_DIR=#{Formula["brewsci/bio/parasail"].opt_include}
+        -DPARASAIL_LIBRARY=#{Formula["brewsci/bio/parasail"].opt_lib}/libparasail.#{lib_ext}
         -DOPEN_MM_LIBRARY=#{lib}/libOpenMM.#{lib_ext}
         -DOPEN_MM_INCLUDE_DIR=#{include}
         -DOPEN_MM_PLUGIN_DIR=#{lib}
@@ -155,7 +152,7 @@ class Openstructure < Formula
         -DUSE_RPATH=ON
         -DOPTIMIZE=ON
         -DENABLE_PARASAIL=ON
-        -DCOMPILE_TMTOOLS=ON
+        -DCOMPILE_TMTOOLS=OFF
         -DENABLE_GFX=OFF
         -DENABLE_GUI=OFF
         -DENABLE_INFO=OFF
