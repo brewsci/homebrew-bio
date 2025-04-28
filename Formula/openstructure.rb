@@ -44,9 +44,9 @@ class Openstructure < Formula
   end
 
   patch do
-    # Patch for Homebrew packaging (make boost compatibile and fix lib dir name)
-    url "https://raw.githubusercontent.com/eunos-1128/openstructure/a708ecd95ca87e88b69656ce900c8320248f5183/homebrew.patch"
-    sha256 "6a5f4bddcbaceaa4289e18144d08e4dff7248ec58a813369176062795e47cc0e"
+    # Patch for Homebrew packaging (make openstructure src compatibile with boost@1.88 and fix CMake settings)
+    url "https://raw.githubusercontent.com/eunos-1128/openstructure/e420dc624d413df78cc5164491d71bf1753878b2/homebrew.patch"
+    sha256 "5ded86bfdba05c0411e9f30c9cc59a0a0c33e22f57305397c4e0b69f55852884"
   end
 
   def python3
@@ -56,10 +56,9 @@ class Openstructure < Formula
   def install
     if OS.mac?
       ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
-      ENV.append "LDFLAGS", "-undefined dynamic_lookup -pthread"
     elsif OS.linux?
       ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
-      ENV.append "LDFLAGS", "-Wl,--allow-shlib-undefined -lstdc++ -pthread"
+      ENV.append "LDFLAGS", "-Wl,--allow-shlib-undefined -lstdc++"
     end
 
     # Install python packages using virtualenv pip
