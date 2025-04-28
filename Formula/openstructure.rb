@@ -66,7 +66,8 @@ class Openstructure < Formula
     venv = virtualenv_create libexec, which(python3)
     system libexec/"bin/python", "-m", "pip", "install", "-U", *%w[
       pip
-      setuptools>=61
+      setuptools
+      setuptools-scm
       wheel
     ]
     system libexec/"bin/python", "-m", "pip", "install", "--only-binary=:all:", "numpy==2.1.0"
