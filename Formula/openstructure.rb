@@ -153,7 +153,7 @@ class Openstructure < Formula
       system "make", "VERBOSE=1"
       system "make", "install"
     end
-      prefix.install "examples"
+    prefix.install "examples"
   end
 
   test do
