@@ -64,9 +64,13 @@ class BoostAT176 < Formula
       link=shared,static
     ]
 
-    # Boost is using "clang++ -x c" to select C compiler which breaks C++14
-    # handling using ENV.cxx14. Using "cxxflags" and "linkflags" still works.
-    args << "cxxflags=-std=c++14"
+    # Boost is using "clang++ -x c" to select C compiler which breaks C++17
+    # handling using ENV.cxx17. Using "cxxflags" and "linkflags" still works.
+    args << if OS.mac?
+      "cxxflags=-std=c++14"
+    else
+      "cxxflags=-std=c++17"
+    end
     args << "cxxflags=-stdlib=libc++" << "linkflags=-stdlib=libc++" if ENV.compiler == :clang
 
     system "./bootstrap.sh", *bootstrap_args
@@ -94,7 +98,11 @@ class BoostAT176 < Formula
         return 0;
       }
     CPP
-    system ENV.cxx, "-I#{Formula["boost@1.76"].opt_include}", "test.cpp", "-std=c++14", "-o", "test"
+    if OS.mac?
+      system ENV.cxx, "-I#{Formula["boost@1.76"].opt_include}", "test.cpp", "-std=c++14", "-o", "test"
+    else
+      system ENV.cxx, "-I#{Formula["boost@1.76"].opt_include}", "test.cpp", "-std=c++17", "-o", "test"
+    end
     system "./test"
   end
 end
