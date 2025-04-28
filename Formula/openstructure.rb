@@ -30,14 +30,14 @@ class Openstructure < Formula
 
   uses_from_macos "zlib"
 
-  resource "dockq" do
-    url "https://files.pythonhosted.org/packages/c1/a5/df80285b0f2e5b94562ccc1656ba8f3eaff34f7428ea04f26dad28894ae0/dockq-2.1.3.tar.gz"
-    sha256 "50c4e2b4bced3bf865b12061ec0b56e23de1383dc70b445441848224f6c72c0d"
-  end
-
   resource "components-cif" do
     url "https://files.wwpdb.org/pub/pdb/data/monomers/components.cif.gz"
     sha256 "9d7c273609b1d5d1a7247e20c882a318f5dd199860e8e7dcc1374006f51f3c0c"
+  end
+
+  resource "dockq" do
+    url "https://files.pythonhosted.org/packages/c1/a5/df80285b0f2e5b94562ccc1656ba8f3eaff34f7428ea04f26dad28894ae0/dockq-2.1.3.tar.gz"
+    sha256 "50c4e2b4bced3bf865b12061ec0b56e23de1383dc70b445441848224f6c72c0d"
   end
 
   patch do
@@ -140,9 +140,9 @@ class Openstructure < Formula
         -DOPTIMIZE=ON
         -DENABLE_PARASAIL=ON
         -DCOMPILE_TMTOOLS=OFF
-        -DENABLE_GFX=ON
-        -DENABLE_GUI=ON
-        -DENABLE_INFO=ON
+        -DENABLE_GFX=OFF
+        -DENABLE_GUI=OFF
+        -DENABLE_INFO=OFF
         -DUSE_SHADER=OFF
         -DUSE_DOUBLE_PRECISION=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
