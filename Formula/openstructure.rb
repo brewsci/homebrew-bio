@@ -56,7 +56,8 @@ class Openstructure < Formula
   def install
     if OS.mac?
       ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
-      ENV.append "LDFLAGS", "-undefined dynamic_lookup -bundle -pthread"
+      # ENV.append "CXXFLAGS", "-stdlib=libc++ -I/#{Formula["llvm"].opt_include}/c++/v1"
+      ENV.append "LDFLAGS", "-undefined dynamic_lookup -pthread"
     elsif OS.linux?
       ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
       ENV.append "LDFLAGS", "-Wl,--allow-shlib-undefined -lstdc++ -pthread"
@@ -70,14 +71,14 @@ class Openstructure < Formula
       setuptools-scm
       wheel
     ]
-    system libexec/"bin/python", "-m", "pip", "install", "--only-binary=:all:", "numpy==2.1.0"
     system libexec/"bin/python", "-m", "pip", "install", *%w[
-      biopython==1.85
-      networkx==3.4.2
-      pandas==2.2.3
-      scipy==1.15.1
+      biopython
+      networkx<3.0
+      numpy<2.0
+      pandas<2.3
+      scipy<2.0
       OpenMM
-      parallelbar==2.5
+      parallelbar
     ]
     venv.pip_install_and_link resource("dockq")
 
