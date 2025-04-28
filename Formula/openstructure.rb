@@ -23,10 +23,8 @@ class Openstructure < Formula
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "llvm" if OS.mac?
-  depends_on "numpy"
   depends_on "parasail"
   depends_on "python@3.13"
-  depends_on "scipy"
   depends_on "sqlite"
   depends_on "voronota"
   depends_on "blast" => :optional
@@ -69,15 +67,19 @@ class Openstructure < Formula
     venv = virtualenv_create libexec, which(python3)
     system libexec/"bin/python", "-m", "pip", "install", "-U", *%w[
       pip
+      meson
+      meson-python
       setuptools>=61
       wheel
     ]
     system libexec/"bin/python", "-m", "pip", "install", *%w[
-      biopython
-      networkx
-      pandas
+      biopython==1.85
+      networkx==3.4.2
+      numpy==2.1.0
+      pandas==2.2.3
+      scipy==1.15.1
       OpenMM
-      parallelbar
+      parallelbar==2.5
     ]
     venv.pip_install_and_link resource("dockq")
 
