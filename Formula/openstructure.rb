@@ -42,8 +42,8 @@ class Openstructure < Formula
 
   patch do
     # Patch for Homebrew packaging (make openstructure src compatibile with boost@1.88 and fix CMake settings)
-    url "https://raw.githubusercontent.com/eunos-1128/openstructure/53c9112b3a64bf5cbc172c6fe220f0c49186913a/homebrew.patch"
-    sha256 "92953fd4da16f436b6c1cdf88b21827e9cfffb24f5b535aa65102f2746ff4cc8"
+    url "https://raw.githubusercontent.com/eunos-1128/openstructure/d128a6d096559a16544d546635d9fbefb507ed5d/homebrew.patch"
+    sha256 "511e915263c084452091faf957e2eefd41b090f41a931efda99b0741f639d62c"
   end
 
   def python3
@@ -104,6 +104,7 @@ class Openstructure < Formula
         -DENABLE_INFO=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
+
       cmake_args << "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}" if OS.linux?
 
       system "cmake", "..", *cmake_args
