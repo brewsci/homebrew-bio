@@ -56,7 +56,6 @@ class Openstructure < Formula
   def install
     if OS.mac?
       ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
-      ENV.append "CXXFLAGS", "-stdlib=libc++ -I/#{Formula["llvm"].opt_include}/c++/v1"
       ENV.append "LDFLAGS", "-undefined dynamic_lookup -pthread"
     elsif OS.linux?
       ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
