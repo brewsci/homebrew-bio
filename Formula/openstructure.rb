@@ -9,7 +9,6 @@ class Openstructure < Formula
   license "LGPL-3.0-or-later"
 
   depends_on "cmake" => :build
-  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
   depends_on "boost"
   depends_on "boost-python3"
@@ -67,15 +66,13 @@ class Openstructure < Formula
     venv = virtualenv_create libexec, which(python3)
     system libexec/"bin/python", "-m", "pip", "install", "-U", *%w[
       pip
-      meson
-      meson-python
       setuptools>=61
       wheel
     ]
+    system libexec/"bin/python", "-m", "pip", "install", "--only-binary=:all:", "numpy==2.1.0"
     system libexec/"bin/python", "-m", "pip", "install", *%w[
       biopython==1.85
       networkx==3.4.2
-      numpy==2.1.0
       pandas==2.2.3
       scipy==1.15.1
       OpenMM
