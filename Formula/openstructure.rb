@@ -71,8 +71,8 @@ class Openstructure < Formula
       wheel
     ]
     system libexec/"bin/python", "-m", "pip", "install", *%w[
-      biopython==1.8.5
-      networkx<3.4.2
+      biopython==1.85
+      networkx==3.4.2
       numpy==2.1.0
       pandas==2.2.3
       scipy==1.15.1
