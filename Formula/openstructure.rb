@@ -23,8 +23,10 @@ class Openstructure < Formula
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "llvm" if OS.mac?
+  depends_on "numpy"
   depends_on "parasail"
   depends_on "python@3.13"
+  depends_on "scipy"
   depends_on "sqlite"
   depends_on "voronota"
   depends_on "blast" => :optional
@@ -73,9 +75,7 @@ class Openstructure < Formula
     system libexec/"bin/python", "-m", "pip", "install", *%w[
       biopython
       networkx
-      numpy
       pandas
-      scipy
       OpenMM
       parallelbar
     ]
