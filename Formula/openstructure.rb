@@ -126,9 +126,6 @@ class Openstructure < Formula
         -DCXX_FLAGS=#{ENV["CXXFLAGS"]}
         -DCMAKE_CXX_STANDARD=17
         -DPREFIX=#{prefix}
-        -DPython_EXECUTABLE=#{libexec}/bin/python3
-        -DPython_ROOT_DIR=#{libexec}
-        -DPython_LIBRARY=#{py_lib_path}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{py_ver_nodot}.#{lib_ext}
@@ -143,9 +140,9 @@ class Openstructure < Formula
         -DOPTIMIZE=ON
         -DENABLE_PARASAIL=ON
         -DCOMPILE_TMTOOLS=OFF
-        -DENABLE_GFX=OFF
-        -DENABLE_GUI=OFF
-        -DENABLE_INFO=OFF
+        -DENABLE_GFX=ON
+        -DENABLE_GUI=ON
+        -DENABLE_INFO=ON
         -DUSE_SHADER=OFF
         -DUSE_DOUBLE_PRECISION=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
