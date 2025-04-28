@@ -104,7 +104,6 @@ class Openstructure < Formula
         -DENABLE_INFO=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
-
       cmake_args << "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}" if OS.linux?
 
       system "cmake", "..", *cmake_args
@@ -153,8 +152,8 @@ class Openstructure < Formula
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
       system "make", "install"
-      prefix.install "examples"
     end
+      prefix.install "examples"
   end
 
   test do
