@@ -165,10 +165,16 @@ class Openstructure < Formula
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
       system "make", "install"
+      prefix.install "examples"
     end
   end
 
   test do
     assert_match "Usage:", shell_output("#{bin}/ost -h 2>&1", 255)
+    cp_r prefix/"examples", testpath
+    system "#{bin}/ost", "compare-structures", "-m", testpath/"examples/scoring/model.pdb",
+                         "-r", testpath/"examples/scoring/reference.cif.gz",
+                         "--lddt", "--local-lddt", "--qs-score"
+    assert_path_exists testpath/"out.json"
   end
 end
