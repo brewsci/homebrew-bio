@@ -27,6 +27,7 @@ class Openstructure < Formula
   depends_on "llvm" if OS.mac?
   depends_on "python@3.13"
   depends_on "sqlite"
+  depends_on "zlib" if OS.linux?
 
   uses_from_macos "zlib"
 
@@ -56,8 +57,7 @@ class Openstructure < Formula
       ENV.append "LDFLAGS", "-undefined dynamic_lookup"
     elsif OS.linux?
       ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
-      ENV.append "LDFLAGS", "-Wl,--allow-shlib-undefined -lstdc++ -L#{Formula["zlib"].opt_lib} -lz"
-      ENV.append "CPPFLAGS", "-I#{Formula["zlib"].opt_include}"
+      ENV.append "LDFLAGS", "-Wl,--allow-shlib-undefined -lstdc++"
     end
 
     # Install python packages using virtualenv pip
