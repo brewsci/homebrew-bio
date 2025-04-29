@@ -118,6 +118,8 @@ class Openstructure < Formula
         -DENABLE_INFO=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
+      cmake_args << "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup" if OS.mac?
+      cmake_args << "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}" if OS.linux?
 
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
@@ -164,6 +166,8 @@ class Openstructure < Formula
         -DUSE_DOUBLE_PRECISION=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
+      cmake_args << "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup" if OS.mac?
+      cmake_args << "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}" if OS.linux?
 
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
