@@ -27,7 +27,6 @@ class Openstructure < Formula
   depends_on "llvm" if OS.mac?
   depends_on "python@3.13"
   depends_on "sqlite"
-  depends_on "zlib" if OS.linux?
 
   uses_from_macos "zlib"
 
@@ -117,12 +116,10 @@ class Openstructure < Formula
         -DENABLE_INFO=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
-      if OS.mac?
-        cmake_args << "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-undefined,dynamic_lookup"
-        cmake_args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-undefined,dynamic_lookup"
-        cmake_args << "-DCMAKE_MODULE_LINKER_FLAGS=-Wl,-undefined,dynamic_lookup"
+      if OS.linux?
+        cmake_args << "-DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}"
+        cmake_args << "-DZLIB_INCLUDE_DIR=#{Formula["zlib"].opt_include}"
       end
-      cmake_args << "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}" if OS.linux?
 
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
@@ -169,12 +166,10 @@ class Openstructure < Formula
         -DUSE_DOUBLE_PRECISION=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
-      if OS.mac?
-        cmake_args << "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-undefined,dynamic_lookup"
-        cmake_args << "-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-undefined,dynamic_lookup"
-        cmake_args << "-DCMAKE_MODULE_LINKER_FLAGS=-Wl,-undefined,dynamic_lookup"
+      if OS.linux?
+        cmake_args << "-DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}"
+        cmake_args << "-DZLIB_INCLUDE_DIR=#{Formula["zlib"].opt_include}"
       end
-      cmake_args << "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}" if OS.linux?
 
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
