@@ -87,13 +87,6 @@ class Openstructure < Formula
 
     lib_ext = OS.mac? ? "dylib" : "so"
 
-    py_lib = "libpython#{py_ver}.#{lib_ext}"
-    py_lib_path = if OS.mac?
-      Formula["python@#{py_ver}"].opt_frameworks/"Python.framework/Versions/#{py_ver}/lib/#{py_lib}"
-    elsif OS.linux?
-      Formula["python@#{py_ver}"].opt_lib/py_lib
-    end
-
     openmm_base = libexec/"lib/python#{py_ver}/site-packages/OpenMM.libs"
     include.install_symlink Dir[openmm_base/"include/**/*"]
     lib.install_symlink Dir[openmm_base/"lib/*.#{lib_ext}"]
@@ -107,9 +100,6 @@ class Openstructure < Formula
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{py_ver_nodot}.#{lib_ext}
-        -DPython_EXECUTABLE=#{libexec}/bin/python3
-        -DPython_ROOT_DIR=#{libexec}
-        -DPython_LIBRARY=#{py_lib_path}
         -DPython_FIND_FRAMEWORK=NEVER
         -DENABLE_GUI=OFF
         -DENABLE_GFX=OFF
@@ -144,9 +134,6 @@ class Openstructure < Formula
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{py_ver_nodot}.#{lib_ext}
-        -DPython_EXECUTABLE=#{libexec}/bin/python3
-        -DPython_ROOT_DIR=#{libexec}
-        -DPython_LIBRARY=#{py_lib_path}
         -DPython_FIND_FRAMEWORK=NEVER
         -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
         -DPARASAIL_INCLUDE_DIR=#{Formula["brewsci/bio/parasail"].opt_include}
