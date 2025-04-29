@@ -148,9 +148,9 @@ class Openstructure < Formula
         -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
         -DPARASAIL_INCLUDE_DIR=#{Formula["brewsci/bio/parasail"].opt_include}
         -DPARASAIL_LIBRARY=#{Formula["brewsci/bio/parasail"].opt_lib}/libparasail.#{lib_ext}
-        -DOPEN_MM_LIBRARY=#{lib}/libOpenMM.#{lib_ext}
-        -DOPEN_MM_INCLUDE_DIR=#{include}
-        -DOPEN_MM_PLUGIN_DIR=#{lib}
+        -DOPEN_MM_LIBRARY=#{openmm_base}/lib/libOpenMM.#{lib_ext}
+        -DOPEN_MM_INCLUDE_DIR=#{openmm_base}/include
+        -DOPEN_MM_PLUGIN_DIR=#{openmm_base}/lib/plugins
         -DENABLE_MM=ON
         -DUSE_RPATH=ON
         -DOPTIMIZE=ON
