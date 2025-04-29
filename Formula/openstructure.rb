@@ -168,10 +168,10 @@ class Openstructure < Formula
   def caveats
     <<~EOS
       You may need to install the following packages to use certain python bindings:
-        - brewsci/bio/blast
+        - blast
         - brewsci/bio/dssp
         - brewsci/bio/hh-suite
-        - brewsci/bio/mmseqs
+        - mmseqs2
     EOS
   end
 
