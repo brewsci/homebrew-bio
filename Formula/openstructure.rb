@@ -98,7 +98,7 @@ class Openstructure < Formula
       openmm_libs_base/"lib/plugins",
     ]
 
-    inreplace CMakeLists.txt,
+    inreplace "CMakeLists.txt",
       'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}"',
       "CMAKE_INSTALL_RPATH #{rpaths.join(";")}"
 
