@@ -56,7 +56,8 @@ class Openstructure < Formula
       ENV.append "LDFLAGS", "-undefined dynamic_lookup"
     elsif OS.linux?
       ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
-      ENV.append "LDFLAGS", "-Wl,--allow-shlib-undefined -lstdc++"
+      ENV.append "LDFLAGS", "-Wl,--allow-shlib-undefined -lstdc++ -L#{Formula["zlib"].opt_lib} -lz"
+      ENV.append "CPPFLAGS", "-I#{Formula["zlib"].opt_include}"
     end
 
     # Install python packages using virtualenv pip
@@ -117,7 +118,6 @@ class Openstructure < Formula
         -DENABLE_INFO=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
-      cmake_args << "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}" if OS.linux?
 
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
@@ -164,7 +164,6 @@ class Openstructure < Formula
         -DUSE_DOUBLE_PRECISION=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
-      cmake_args << "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}" if OS.linux?
 
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
