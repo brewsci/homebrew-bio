@@ -92,6 +92,16 @@ class Openstructure < Formula
     lib.install_symlink Dir[openmm_base/"lib/*.#{lib_ext}"]
     lib.install_symlink Dir[openmm_base/"lib/plugins/*.#{lib_ext}"]
 
+    rpaths = [
+      lib,
+      openmm_base/"lib",
+      openmm_base/"lib/plugins",
+    ]
+
+    inreplace CMakeLists.txt,
+      'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}"',
+      "CMAKE_INSTALL_RPATH #{rpaths.join(";")}"
+
     mkdir "build" do
       cmake_args = std_cmake_args + %W[
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
