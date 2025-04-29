@@ -87,15 +87,15 @@ class Openstructure < Formula
 
     lib_ext = OS.mac? ? "dylib" : "so"
 
-    openmm_base = libexec/"lib/python#{py_ver}/site-packages/OpenMM.libs"
-    include.install_symlink Dir[openmm_base/"include/**/*"]
-    lib.install_symlink Dir[openmm_base/"lib/*.#{lib_ext}"]
-    lib.install_symlink Dir[openmm_base/"lib/plugins/*.#{lib_ext}"]
+    openmm_libs_base = libexec/"lib/python#{py_ver}/site-packages/OpenMM.libs"
+    include.install_symlink Dir[openmm_libs_base/"include/**/*"]
+    lib.install_symlink Dir[openmm_libs_base/"lib/*.#{lib_ext}"]
+    lib.install_symlink Dir[openmm_libs_base/"lib/plugins/*.#{lib_ext}"]
 
     rpaths = [
       lib,
-      openmm_base/"lib",
-      openmm_base/"lib/plugins",
+      openmm_libs_base/"lib",
+      openmm_libs_base/"lib/plugins",
     ]
 
     inreplace CMakeLists.txt,
