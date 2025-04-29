@@ -25,6 +25,7 @@ class Openstructure < Formula
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "llvm" if OS.mac?
+  depends_on "opencl-icd-loader" if OS.linux?
   depends_on "python@3.13"
   depends_on "sqlite"
   depends_on "zlib" if OS.linux?
