@@ -172,6 +172,16 @@ class Openstructure < Formula
     prefix.install "examples"
   end
 
+  def caveats
+    <<~EOS
+      You may need to install the following packages to use certain python bindings:
+        - brewsci/bio/blast
+        - brewsci/bio/dssp
+        - brewsci/bio/hh-suite
+        - brewsci/bio/mmseqs
+    EOS
+  end
+
   test do
     assert_match "Usage:", shell_output("#{bin}/ost -h 2>&1", 255)
     cp_r prefix/"examples", testpath
