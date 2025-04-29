@@ -109,6 +109,7 @@ class Openstructure < Formula
         -DPython_EXECUTABLE=#{libexec}/bin/python3
         -DPython_ROOT_DIR=#{libexec}
         -DPython_LIBRARY=#{py_lib_path}
+        -DPython_FIND_FRAMEWORK=NEVER
         -DENABLE_GUI=OFF
         -DENABLE_GFX=OFF
         -DENABLE_INFO=OFF
@@ -142,6 +143,7 @@ class Openstructure < Formula
         -DPython_EXECUTABLE=#{libexec}/bin/python3
         -DPython_ROOT_DIR=#{libexec}
         -DPython_LIBRARY=#{py_lib_path}
+        -DPython_FIND_FRAMEWORK=NEVER
         -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
         -DPARASAIL_INCLUDE_DIR=#{Formula["brewsci/bio/parasail"].opt_include}
         -DPARASAIL_LIBRARY=#{Formula["brewsci/bio/parasail"].opt_lib}/libparasail.#{lib_ext}
