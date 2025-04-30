@@ -11,6 +11,7 @@ class Openstructure < Formula
   depends_on "cmake" => :build
   depends_on "opencl-headers" => :build if OS.linux?
   depends_on "pkg-config" => :build
+  depends_on "zlib" => :build if OS.linux?
   depends_on "boost"
   depends_on "boost-python3"
   depends_on "brewsci/bio/clustal-w"
@@ -66,7 +67,8 @@ class Openstructure < Formula
     elsif OS.linux?
       ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
       ENV.append "LDFLAGS",
-        "-Wl,--allow-shlib-undefined,--export-dynamic -lstdc++ -L#{Formula["zlib"].opt_lib}"
+        "-Wl,--allow-shlib-undefined,--export-dynamic -lstdc++"
+      ENV.prepend "LDFLAGS", "-L#{Formula["zlib"].opt_lib}"
       ENV.prepend "CPPFLAGS", "-I#{Formula["zlib"].opt_include}"
       ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["zlib"].opt_lib}/pkgconfig"
     end
