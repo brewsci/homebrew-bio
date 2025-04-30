@@ -7,6 +7,14 @@ class SipAT4 < Formula
   sha256 "b39d93e937647807bac23579edbff25fe46d16213f708370072574ab1f1b4211"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "baf40e7727c6e41f2dbfa647bdf81af3919b91886e92eb804f38afd3b309065a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "229ae5e5f5f93d060c71301bbb7b85cdde917a7909815d72ed5c64ee7514078b"
+    sha256 cellar: :any_skip_relocation, ventura:       "a0d52a0d4c8cdbc8193e3fcc1bfbba52e0c12abbb4f3d9beda3589960036cbe0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "406aefbf4788bd2ac64c8ba23d81a479d77e2f5706f99b0598ee6c335f0170d8"
+  end
+
   keg_only :versioned_formula
 
   depends_on "python-setuptools" => :build
