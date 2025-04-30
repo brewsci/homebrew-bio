@@ -96,12 +96,6 @@ class Openstructure < Formula
     (prefix/site_packages_path/"homebrew-openstructure.pth").write venv.site_packages
 
     lib_ext = OS.mac? ? "dylib" : "so"
-    py_lib = "libpython#{py_ver}.#{lib_ext}"
-    py_lib_path = if OS.mac?
-      Formula["python@#{py_ver}"].opt_frameworks/"Python.framework/Versions/#{py_ver}/lib/#{py_lib}"
-    elsif OS.linux?
-      Formula["python@#{py_ver}"].opt_lib/py_lib
-    end
 
     openmm_libs_base = libexec/"lib/python#{py_ver}/site-packages/OpenMM.libs"
 
@@ -120,9 +114,6 @@ class Openstructure < Formula
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DCXX_FLAGS=#{ENV["CXXFLAGS"]}
         -DCMAKE_CXX_STANDARD=17
-        -DPython_EXECUTABLE=#{libexec}/bin/python3
-        -DPython_ROOT_DIR=#{libexec}
-        -DPython_LIBRARY=#{py_lib_path}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{py_ver_nodot}.#{lib_ext}
@@ -158,9 +149,6 @@ class Openstructure < Formula
         -DCXX_FLAGS=#{ENV["CXXFLAGS"]}
         -DCMAKE_CXX_STANDARD=17
         -DPREFIX=#{prefix}
-        -DPython_EXECUTABLE=#{libexec}/bin/python3
-        -DPython_ROOT_DIR=#{libexec}
-        -DPython_LIBRARY=#{py_lib_path}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{py_ver_nodot}.#{lib_ext}
