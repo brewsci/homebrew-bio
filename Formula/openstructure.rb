@@ -15,6 +15,7 @@ class Openstructure < Formula
   depends_on "boost-python3"
   depends_on "brewsci/bio/clustal-w"
   depends_on "brewsci/bio/parasail"
+  depends_on "brewsci/bio/sip@4"
   depends_on "brewsci/bio/usalign"
   depends_on "brewsci/bio/voronota"
   depends_on "eigen"
@@ -28,6 +29,7 @@ class Openstructure < Formula
   depends_on "llvm" if OS.mac?
   depends_on "opencl-icd-loader" if OS.linux?
   depends_on "python@3.13"
+  depends_on "qt@5"
   depends_on "sqlite"
   depends_on "zlib" if OS.linux?
 
@@ -78,6 +80,7 @@ class Openstructure < Formula
       scipy<2.0
       OpenMM
       parallelbar
+      PyQt5
     ]
     venv.pip_install_and_link resource("dockq")
 
@@ -156,10 +159,10 @@ class Openstructure < Formula
         -DOPTIMIZE=ON
         -DENABLE_PARASAIL=ON
         -DCOMPILE_TMTOOLS=OFF
-        -DENABLE_GFX=OFF
-        -DENABLE_GUI=OFF
-        -DENABLE_INFO=OFF
-        -DUSE_SHADER=OFF
+        -DENABLE_GFX=ON
+        -DENABLE_GUI=ON
+        -DENABLE_INFO=ON
+        -DUSE_SHADER=ON
         -DUSE_DOUBLE_PRECISION=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
