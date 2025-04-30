@@ -9,7 +9,13 @@ class SipAT4 < Formula
 
   keg_only :versioned_formula
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.13"
+
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/d0/63/68dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106da/packaging-24.2.tar.gz"
+    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
+  end
 
   patch do
     url "https://sources.debian.org/data/main/s/sip4/4.19.25%2Bdfsg-5/debian/patches/py_ssize_t_clean.diff"
@@ -32,14 +38,18 @@ class SipAT4 < Formula
 
   def install
     venv = virtualenv_create libexec, which(python3)
+    venv.pip_install resources
     site_packages = prefix/Language::Python.site_packages(python3)
-    system venv.root/"bin/python", "configure.py",
-                                   "--deployment-target=#{MacOS.version}",
-                                   "--bindir=#{bin}",
-                                   "--incdir=#{include}",
-                                   "--destdir=#{site_packages}",
-                                   "--sipdir=#{share}/sip",
-                                   "--sip-module", "PyQt5.sip"
+    args = %W[
+      --bindir=#{bin}
+      --incdir=#{include}
+      --destdir=#{site_packages}
+      --sipdir=#{share}/sip
+      --sip-module
+      PyQt5.sip
+    ]
+    args << "--deployment-target=#{MacOS.version}" if OS.mac?
+    system venv.root/"bin/python", "configure.py", *args
     system "make"
     system "make", "install"
   end
@@ -77,8 +87,13 @@ class SipAT4 < Formula
         void test();
       };
     EOS
+    linker_flag = if OS.mac?
+      "-Wl,-install_name,#{testpath}/libtest.dylib"
+    else
+      "-Wl,-soname,#{testpath}/libtest.so"
+    end
 
-    system ENV.cxx, "-shared", "-Wl,-install_name,#{testpath}/libtest.dylib",
+    system ENV.cxx, "-fPIC", "-shared", linker_flag,
                     "-o", "libtest.dylib", "test.cpp"
     system bin/"sip", "-b", "test.build", "-c", ".", "test.sip"
   end
