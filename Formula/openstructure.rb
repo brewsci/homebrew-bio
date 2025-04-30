@@ -47,8 +47,8 @@ class Openstructure < Formula
 
   patch do
     # Patch for Homebrew packaging (make openstructure src compatibile with boost@1.88 and fix CMake configs)
-    url "https://raw.githubusercontent.com/eunos-1128/openstructure/05f1081c35408651ad72b7fdcbf6e5a44de5672e/homebrew.patch"
-    sha256 "8771bea089366502384f3d71bb060c1e4547ee2b9f454ba48ffef3ad56da748b"
+    url "https://raw.githubusercontent.com/eunos-1128/openstructure/cf813460126174e2b42c50b81aac5552835dc8d0/homebrew.patch"
+    sha256 "74dda6db5d692fe81ae628be70394e4722000a39ffe3c0def545c24220163dd6"
   end
 
   def python3
@@ -132,8 +132,6 @@ class Openstructure < Formula
         -DENABLE_INFO=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
-      cmake_args << "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup -Wl,-export_dynamic"
-      cmake_args << "-DCMAKE_EXE_LINKER_FLAGS=-undefined dynamic_lookup -Wl,-export_dynamic"
       if OS.linux?
         cmake_args << "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}"
         cmake_args << "-DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}"
@@ -185,8 +183,6 @@ class Openstructure < Formula
         -DUSE_DOUBLE_PRECISION=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
-      cmake_args << "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup -Wl,-export_dynamic"
-      cmake_args << "-DCMAKE_EXE_LINKER_FLAGS=-undefined dynamic_lookup -Wl,-export_dynamic"
       if OS.linux?
         cmake_args << "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}"
         cmake_args << "-DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}"
