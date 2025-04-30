@@ -123,8 +123,8 @@ class Openstructure < Formula
         -DENABLE_INFO=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
-      cmake_args << "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup -Wl,-export_dynamic -lpython#{py_ver}"
-      cmake_args << "-DCMAKE_EXE_LINKER_FLAGS=-undefined dynamic_lookup -Wl,-export_dynamic -lpython#{py_ver}"
+      cmake_args << "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup -Wl,-export_dynamic"
+      cmake_args << "-DCMAKE_EXE_LINKER_FLAGS=-undefined dynamic_lookup -Wl,-export_dynamic"
       if OS.linux?
         cmake_args << "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}"
         cmake_args << "-DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}"
@@ -173,8 +173,8 @@ class Openstructure < Formula
         -DUSE_DOUBLE_PRECISION=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
-      cmake_args << "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup -Wl,-export_dynamic -lpython#{py_ver}"
-      cmake_args << "-DCMAKE_EXE_LINKER_FLAGS=-undefined dynamic_lookup -Wl,-export_dynamic -lpython#{py_ver}"
+      cmake_args << "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup -Wl,-export_dynamic"
+      cmake_args << "-DCMAKE_EXE_LINKER_FLAGS=-undefined dynamic_lookup -Wl,-export_dynamic"
       if OS.linux?
         cmake_args << "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}"
         cmake_args << "-DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}"
