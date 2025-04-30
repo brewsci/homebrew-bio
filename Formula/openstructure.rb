@@ -33,7 +33,6 @@ class Openstructure < Formula
   depends_on "python@3.13"
   depends_on "qt@5"
   depends_on "sqlite"
-  depends_on "zlib" if OS.linux?
 
   uses_from_macos "zlib"
 
@@ -63,7 +62,9 @@ class Openstructure < Formula
       ENV.append "LDFLAGS", "-undefined dynamic_lookup"
     elsif OS.linux?
       ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
-      ENV.append "LDFLAGS", "-Wl,--allow-shlib-undefined -lstdc++"
+      ENV.append "LDFLAGS", "-Wl,--allow-shlib-undefined -lstdc++ -L#{Formula["zlib"].opt_lib}"
+      ENV.prepend "CPPFLAGS", "-I#{Formula["zlib"].opt_include}"
+      ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["zlib"].opt_lib}/pkgconfig"
     end
 
     # Install python packages using virtualenv pip
@@ -121,6 +122,7 @@ class Openstructure < Formula
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
       if OS.linux?
+        cmake_args << "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}"
         cmake_args << "-DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}"
         cmake_args << "-DZLIB_INCLUDE_DIR=#{Formula["zlib"].opt_include}"
       end
@@ -168,6 +170,7 @@ class Openstructure < Formula
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
       if OS.linux?
+        cmake_args << "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}"
         cmake_args << "-DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}"
         cmake_args << "-DZLIB_INCLUDE_DIR=#{Formula["zlib"].opt_include}"
       end
