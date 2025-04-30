@@ -46,9 +46,9 @@ class Openstructure < Formula
   end
 
   patch do
-    # Patch for Homebrew packaging (make openstructure src compatibile with boost@1.88 and fix CMake settings)
-    url "https://raw.githubusercontent.com/eunos-1128/openstructure/59cc5f1f0a503484cca6debde40955851f7bab9e/homebrew.patch"
-    sha256 "63223a58e1b57a3cb20cbcf032d434f264053d5f1002641a2b24baa6b981c4ce"
+    # Patch for Homebrew packaging (make openstructure src compatibile with boost@1.88 and fix CMake configs)
+    url "https://raw.githubusercontent.com/eunos-1128/openstructure/05f1081c35408651ad72b7fdcbf6e5a44de5672e/homebrew.patch"
+    sha256 "8771bea089366502384f3d71bb060c1e4547ee2b9f454ba48ffef3ad56da748b"
   end
 
   def python3
