@@ -35,7 +35,7 @@ class Openstructure < Formula
 
   resource "components-cif" do
     url "https://files.wwpdb.org/pub/pdb/data/monomers/components.cif.gz"
-    sha256 "9d7c273609b1d5d1a7247e20c882a318f5dd199860e8e7dcc1374006f51f3c0c"
+    sha256 "71ec068480215d86c561ee9216c21dfa1108d76eb38a3c54ddc27d28ef9c0b29"
   end
 
   resource "dockq" do
