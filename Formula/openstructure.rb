@@ -62,11 +62,11 @@ class Openstructure < Formula
     if OS.mac?
       ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
       ENV.append "LDFLAGS",
-        "-undefined dynamic_lookup -Wl,-export_dynamic -lpython#{py_ver}"
+        "-undefined dynamic_lookup -Wl,-export_dynamic"
     elsif OS.linux?
       ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
       ENV.append "LDFLAGS",
-        "-Wl,--allow-shlib-undefined,--export-dynamic -lstdc++ -lpython#{py_ver} -L#{Formula["zlib"].opt_lib}"
+        "-Wl,--allow-shlib-undefined,--export-dynamic -lstdc++ -L#{Formula["zlib"].opt_lib}"
       ENV.prepend "CPPFLAGS", "-I#{Formula["zlib"].opt_include}"
       ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["zlib"].opt_lib}/pkgconfig"
     end
@@ -123,6 +123,8 @@ class Openstructure < Formula
         -DENABLE_INFO=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
+      cmake_args << "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup -Wl,-export_dynamic -lpython#{py_ver}"
+      cmake_args << "-DCMAKE_EXE_LINKER_FLAGS=-undefined dynamic_lookup -Wl,-export_dynamic -lpython#{py_ver}"
       if OS.linux?
         cmake_args << "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}"
         cmake_args << "-DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}"
@@ -171,6 +173,8 @@ class Openstructure < Formula
         -DUSE_DOUBLE_PRECISION=OFF
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
+      cmake_args << "-DCMAKE_SHARED_LINKER_FLAGS=-undefined dynamic_lookup -Wl,-export_dynamic -lpython#{py_ver}"
+      cmake_args << "-DCMAKE_EXE_LINKER_FLAGS=-undefined dynamic_lookup -Wl,-export_dynamic -lpython#{py_ver}"
       if OS.linux?
         cmake_args << "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}"
         cmake_args << "-DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}"
