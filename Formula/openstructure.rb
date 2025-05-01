@@ -11,7 +11,6 @@ class Openstructure < Formula
   depends_on "cmake" => :build
   depends_on "opencl-headers" => :build if OS.linux?
   depends_on "pkg-config" => :build
-  depends_on "zlib" => :build if OS.linux?
   depends_on "boost"
   depends_on "boost-python3"
   depends_on "brewsci/bio/clustal-w"
@@ -21,7 +20,6 @@ class Openstructure < Formula
   depends_on "brewsci/bio/voronota"
   depends_on "eigen"
   depends_on "fftw"
-  depends_on "gcc"
   depends_on "glew"
   depends_on "glfw"
   depends_on "glm"
@@ -34,6 +32,7 @@ class Openstructure < Formula
   depends_on "python@3.13"
   depends_on "qt@5"
   depends_on "sqlite"
+  depends_on "zlib" if OS.linux?
 
   uses_from_macos "zlib"
 
@@ -105,6 +104,7 @@ class Openstructure < Formula
       lib,
       openmm_libs_base/"lib",
       openmm_libs_base/"lib/plugins",
+      Formula["zlib"].opt_lib,
     ]
 
     inreplace "CMakeLists.txt",
