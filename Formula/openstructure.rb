@@ -126,6 +126,8 @@ class Openstructure < Formula
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DCXX_FLAGS=#{ENV["CXXFLAGS"]}
         -DCMAKE_CXX_STANDARD=17
+        -DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}
+        -DCMAKE_INSTALL_RPATH_USE_LINK_PATH=ON
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{py_ver_nodot}.#{lib_ext}
@@ -162,6 +164,8 @@ class Openstructure < Formula
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DCXX_FLAGS=#{ENV["CXXFLAGS"]}
         -DCMAKE_CXX_STANDARD=17
+        -DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}
+        -DCMAKE_INSTALL_RPATH_USE_LINK_PATH=ON
         -DPREFIX=#{prefix}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
