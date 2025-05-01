@@ -33,6 +33,7 @@ class Openstructure < Formula
   depends_on "python@3.13"
   depends_on "qt@5"
   depends_on "sqlite"
+  depends_on "zlib" if OS.linux?
 
   uses_from_macos "zlib"
 
@@ -71,6 +72,9 @@ class Openstructure < Formula
       ENV.prepend "LDFLAGS", "-L#{Formula["zlib"].opt_lib}"
       ENV.prepend "CPPFLAGS", "-I#{Formula["zlib"].opt_include}"
       ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["zlib"].opt_lib}/pkgconfig"
+      ENV.prepend_path "LD_LIBRARY_PATH", Formula["zlib"].opt_lib
+      ENV.prepend_path "LD_LIBRARY_PATH", Formula["gcc"].opt_lib
+      ENV.prepend_path "LD_LIBRARY_PATH", Formula["opencl-icd-loader"].opt_lib
     end
 
     # Install python packages using virtualenv pip
@@ -99,6 +103,8 @@ class Openstructure < Formula
     lib_ext = OS.mac? ? "dylib" : "so"
 
     openmm_libs_base = libexec/"lib/python#{py_ver}/site-packages/OpenMM.libs"
+    ENV.prepend_path "LD_LIBRARY_PATH", openmm_libs_base/"lib"
+    ENV.prepend_path "LD_LIBRARY_PATH", openmm_libs_base/"lib/plugins"
 
     rpaths = [
       lib,
