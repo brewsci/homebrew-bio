@@ -67,14 +67,13 @@ class Openstructure < Formula
         "-undefined dynamic_lookup -Wl,-export_dynamic"
     elsif OS.linux?
       ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
-      ENV.append "LDFLAGS",
+      ENV.prepend "LDFLAGS",
+        "-L#{Formula["zlib"].opt_lib} -L#{Formula["gcc"].opt_lib} -L#{Formula["opencl-icd-loader"].opt_lib}"
+      ENV.prepend "LDFLAGS",
         "-Wl,--allow-shlib-undefined,--export-dynamic -lstdc++"
-      ENV.prepend "LDFLAGS", "-L#{Formula["zlib"].opt_lib}"
       ENV.prepend "CPPFLAGS", "-I#{Formula["zlib"].opt_include}"
+      ENV.delete "PKG_CONFIG_LIBDIR"
       ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["zlib"].opt_lib}/pkgconfig"
-      ENV.prepend_path "LD_LIBRARY_PATH", Formula["zlib"].opt_lib
-      ENV.prepend_path "LD_LIBRARY_PATH", Formula["gcc"].opt_lib
-      ENV.prepend_path "LD_LIBRARY_PATH", Formula["opencl-icd-loader"].opt_lib
     end
 
     # Install python packages using virtualenv pip
@@ -103,31 +102,22 @@ class Openstructure < Formula
     lib_ext = OS.mac? ? "dylib" : "so"
 
     openmm_libs_base = libexec/"lib/python#{py_ver}/site-packages/OpenMM.libs"
-    ENV.prepend_path "LD_LIBRARY_PATH", openmm_libs_base/"lib"
-    ENV.prepend_path "LD_LIBRARY_PATH", openmm_libs_base/"lib/plugins"
 
     rpaths = [
       lib,
       openmm_libs_base/"lib",
       openmm_libs_base/"lib/plugins",
     ]
-    if OS.linux?
-      rpaths << Formula["gcc"].opt_lib
-      rpaths << Formula["opencl-icd-loader"].opt_lib
-      rpaths << Formula["zlib"].opt_lib
-    end
 
     inreplace "CMakeLists.txt",
       'SET(CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}")',
-      "SET(CMAKE_INSTALL_RPATH #{rpaths.join(";")})"
+      "SET(CMAKE_INSTALL_RPATH #{rpaths.join(" ")})"
 
     mkdir "build" do
       cmake_args = std_cmake_args + %W[
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DCXX_FLAGS=#{ENV["CXXFLAGS"]}
         -DCMAKE_CXX_STANDARD=17
-        -DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}
-        -DCMAKE_INSTALL_RPATH_USE_LINK_PATH=ON
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{py_ver_nodot}.#{lib_ext}
@@ -164,8 +154,6 @@ class Openstructure < Formula
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DCXX_FLAGS=#{ENV["CXXFLAGS"]}
         -DCMAKE_CXX_STANDARD=17
-        -DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}
-        -DCMAKE_INSTALL_RPATH_USE_LINK_PATH=ON
         -DPREFIX=#{prefix}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
