@@ -17,6 +17,7 @@ class Openstructure < Formula
   depends_on "brewsci/bio/clustal-w"
   depends_on "brewsci/bio/parasail"
   depends_on "brewsci/bio/sip@4"
+  depends_on "brewsci/bio/usalign"
   depends_on "brewsci/bio/voronota"
   depends_on "eigen"
   depends_on "fftw"
@@ -164,7 +165,7 @@ class Openstructure < Formula
         -DUSE_RPATH=ON
         -DOPTIMIZE=ON
         -DENABLE_PARASAIL=ON
-        -DCOMPILE_TMTOOLS=ON
+        -DCOMPILE_TMTOOLS=OFF
         -DENABLE_GFX=ON
         -DENABLE_GUI=ON
         -DENABLE_INFO=ON
