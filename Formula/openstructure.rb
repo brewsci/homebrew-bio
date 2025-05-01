@@ -20,6 +20,7 @@ class Openstructure < Formula
   depends_on "brewsci/bio/voronota"
   depends_on "eigen"
   depends_on "fftw"
+  depends_on "gcc" if OS.linux?
   depends_on "glew"
   depends_on "glfw"
   depends_on "glm"
