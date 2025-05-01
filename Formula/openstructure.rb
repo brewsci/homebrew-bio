@@ -33,7 +33,6 @@ class Openstructure < Formula
   depends_on "python@3.13"
   depends_on "qt@5"
   depends_on "sqlite"
-  depends_on "zlib" if OS.linux?
 
   uses_from_macos "zlib"
 
@@ -102,15 +101,20 @@ class Openstructure < Formula
     openmm_libs_base = libexec/"lib/python#{py_ver}/site-packages/OpenMM.libs"
 
     rpaths = [
-      lib,
+      "$ORIGIN/../${LIB_DIR}",
       openmm_libs_base/"lib",
       openmm_libs_base/"lib/plugins",
-      Formula["zlib"].opt_lib,
     ]
+
+    if OS.linux?
+      rpaths << Formula["gcc"].opt_lib
+      rpaths << Formula["opencl-icd-loader"].opt_lib
+      rpaths << Formula["zlib"].opt_lib
+    end
 
     inreplace "CMakeLists.txt",
       'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}"',
-      "CMAKE_INSTALL_RPATH #{rpaths.join(";")}"
+      "CMAKE_INSTALL_RPATH #{rpaths.join(":")}"
 
     mkdir "build" do
       cmake_args = std_cmake_args + %W[
