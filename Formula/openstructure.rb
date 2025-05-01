@@ -101,7 +101,7 @@ class Openstructure < Formula
     openmm_libs_base = libexec/"lib/python#{py_ver}/site-packages/OpenMM.libs"
 
     rpaths = [
-      "$ORIGIN/../${LIB_DIR}",
+      lib,
       openmm_libs_base/"lib",
       openmm_libs_base/"lib/plugins",
     ]
