@@ -106,25 +106,19 @@ class Openstructure < Formula
       openmm_libs_base/"lib/plugins",
     ]
     if OS.linux?
-      rpaths += [
-        Formula["gcc"].opt_lib,
-        Formula["opencl-icd-loader"].opt_lib,
-        Formula["zlib"].opt_lib,
-      ]
+      rpaths << Formula["gcc"].opt_lib
+      rpaths << Formula["opencl-icd-loader"].opt_lib
+      rpaths << Formula["zlib"].opt_lib
     end
 
     inreplace "CMakeLists.txt",
       'SET(CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}")',
       "SET(CMAKE_INSTALL_RPATH #{rpaths.join(";")})"
 
-    ldflags = rpaths.map { |p| "-Wl,-rpath,#{p}" }.join(" ")
     mkdir "build" do
       cmake_args = std_cmake_args + %W[
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DCXX_FLAGS=#{ENV["CXXFLAGS"]}
-        -DCMAKE_EXE_LINKER_FLAGS=#{ldflags}
-        -DCMAKE_SHARED_LINKER_FLAGS=#{ldflags}
-        -DCMAKE_MODULE_LINKER_FLAGS=#{ldflags}
         -DCMAKE_CXX_STANDARD=17
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
@@ -137,11 +131,9 @@ class Openstructure < Formula
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
       if OS.linux?
-        cmake_args += [
-          "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}",
-          "-DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}",
-          "-DZLIB_INCLUDE_DIR=#{Formula["zlib"].opt_include}",
-        ]
+        cmake_args << "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}"
+        cmake_args << "-DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}"
+        cmake_args << "-DZLIB_INCLUDE_DIR=#{Formula["zlib"].opt_include}"
       end
 
       system "cmake", "..", *cmake_args
@@ -162,9 +154,6 @@ class Openstructure < Formula
       cmake_args = std_cmake_args + %W[
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DCXX_FLAGS=#{ENV["CXXFLAGS"]}
-        -DCMAKE_EXE_LINKER_FLAGS=#{ldflags}
-        -DCMAKE_SHARED_LINKER_FLAGS=#{ldflags}
-        -DCMAKE_MODULE_LINKER_FLAGS=#{ldflags}
         -DCMAKE_CXX_STANDARD=17
         -DPREFIX=#{prefix}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
@@ -190,11 +179,9 @@ class Openstructure < Formula
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
       if OS.linux?
-        cmake_args += [
-          "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}",
-          "-DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}",
-          "-DZLIB_INCLUDE_DIR=#{Formula["zlib"].opt_include}",
-        ]
+        cmake_args << "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}"
+        cmake_args << "-DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}"
+        cmake_args << "-DZLIB_INCLUDE_DIR=#{Formula["zlib"].opt_include}"
       end
 
       system "cmake", "..", *cmake_args
