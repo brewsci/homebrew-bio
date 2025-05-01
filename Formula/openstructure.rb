@@ -131,6 +131,7 @@ class Openstructure < Formula
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
       if OS.linux?
+        cmake_args << "-DCMAKE_PREFIX_PATH=#{Formula["zlib"].opt_prefix}"
         cmake_args << "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}"
         cmake_args << "-DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}"
         cmake_args << "-DZLIB_INCLUDE_DIR=#{Formula["zlib"].opt_include}"
@@ -179,6 +180,7 @@ class Openstructure < Formula
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
       if OS.linux?
+        cmake_args << "-DCMAKE_PREFIX_PATH=#{Formula["zlib"].opt_prefix}"
         cmake_args << "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}"
         cmake_args << "-DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}"
         cmake_args << "-DZLIB_INCLUDE_DIR=#{Formula["zlib"].opt_include}"
