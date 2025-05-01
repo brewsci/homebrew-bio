@@ -36,11 +36,6 @@ class Openstructure < Formula
 
   uses_from_macos "zlib"
 
-  conflicts_with "brewsci/bio/tmalign",
-    because: "both install `tmalign` binaries"
-  conflicts_with "brewsci/bio/usalign",
-    because: "both install `tmalign` binaries"
-
   resource "components-cif" do
     url "https://files.wwpdb.org/pub/pdb/data/monomers/components.cif.gz"
     sha256 "71ec068480215d86c561ee9216c21dfa1108d76eb38a3c54ddc27d28ef9c0b29"
