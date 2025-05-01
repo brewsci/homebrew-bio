@@ -105,7 +105,6 @@ class Openstructure < Formula
       openmm_libs_base/"lib",
       openmm_libs_base/"lib/plugins",
     ]
-
     if OS.linux?
       rpaths << Formula["gcc"].opt_lib
       rpaths << Formula["opencl-icd-loader"].opt_lib
@@ -113,8 +112,8 @@ class Openstructure < Formula
     end
 
     inreplace "CMakeLists.txt",
-      'CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}"',
-      "CMAKE_INSTALL_RPATH #{rpaths.join(":")}"
+      'SET(CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}")',
+      "SET(CMAKE_INSTALL_RPATH #{rpaths.join(";")})"
 
     mkdir "build" do
       cmake_args = std_cmake_args + %W[
@@ -128,6 +127,7 @@ class Openstructure < Formula
         -DENABLE_GUI=OFF
         -DENABLE_GFX=OFF
         -DENABLE_INFO=OFF
+        -DUSE_RPATH=ON
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
       if OS.linux?
