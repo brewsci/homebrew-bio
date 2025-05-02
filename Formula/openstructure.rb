@@ -74,9 +74,7 @@ class Openstructure < Formula
       ENV.prepend "LDFLAGS",
         "-Wl,--allow-shlib-undefined,--export-dynamic -lstdc++"
       ENV.prepend "LDFLAGS",
-        "-L#{Formula["python@3.13"].opt_lib} -L#{Formula["gcc"].opt_lib} -L#{Formula["opencl-icd-loader"].opt_lib}"
-      ENV.prepend "LDFLAGS", "-L#{Formula["zlib"].opt_lib}"
-      ENV.prepend "CFLAGS", "-I#{Formula["zlib"].opt_include} -I#{Formula["python@3.13"].opt_include}"
+        "-L#{Formula["zlib"].opt_lib} -L#{Formula["gcc"].opt_lib} -L#{Formula["opencl-icd-loader"].opt_lib}"
       ENV.prepend "CPPFLAGS", "-I#{Formula["zlib"].opt_include}"
       ENV.prepend_path "PKG_CONFIG_PATH", Formula["zlib"].opt_lib/"pkgconfig"
       ENV.delete "PKG_CONFIG_LIBDIR"
