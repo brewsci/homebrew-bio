@@ -33,7 +33,6 @@ class Openstructure < Formula
   depends_on "python@3.13"
   depends_on "qt@5"
   depends_on "sqlite"
-  depends_on "zlib" if OS.linux?
 
   uses_from_macos "zlib"
 
@@ -73,7 +72,7 @@ class Openstructure < Formula
         "-Wl,--allow-shlib-undefined,--export-dynamic -lstdc++"
       ENV.prepend "CPPFLAGS", "-I#{Formula["zlib"].opt_include}"
       ENV.delete "PKG_CONFIG_LIBDIR"
-      ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["zlib"].opt_lib}/pkgconfig"
+      ENV["PKG_CONFIG_LIBDIR"] = Formula["zlib"].opt_lib/"pkgconfig"
     end
 
     # Install python packages using virtualenv pip
