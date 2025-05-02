@@ -34,8 +34,7 @@ class Openstructure < Formula
   depends_on "python@3.13"
   depends_on "qt@5"
   depends_on "sqlite"
-
-  uses_from_macos "zlib"
+  depends_on "zlib"
 
   resource "components-cif" do
     url "https://files.wwpdb.org/pub/pdb/data/monomers/components.cif.gz"
@@ -68,12 +67,12 @@ class Openstructure < Formula
     elsif OS.linux?
       ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
       ENV.prepend "LDFLAGS",
-        "-L#{Formula["zlib"].opt_lib} -L#{Formula["gcc"].opt_lib} -L#{Formula["opencl-icd-loader"].opt_lib}"
-      ENV.prepend "LDFLAGS",
         "-Wl,--allow-shlib-undefined,--export-dynamic -lstdc++"
+      ENV.prepend "LDFLAGS",
+        "-L#{Formula["zlib"].opt_lib} -L#{Formula["gcc"].opt_lib} -L#{Formula["opencl-icd-loader"].opt_lib}"
       ENV.prepend "CPPFLAGS", "-I#{Formula["zlib"].opt_include}"
       ENV.delete "PKG_CONFIG_LIBDIR"
-      ENV["PKG_CONFIG_LIBDIR"] = Formula["zlib"].opt_lib/"pkgconfig"
+      ENV.prepend_path "PKG_CONFIG_PATH", Formula["zlib"].opt_lib/"pkgconfig"
     end
 
     # Install python packages using virtualenv pip
@@ -111,7 +110,7 @@ class Openstructure < Formula
 
     inreplace "CMakeLists.txt",
       'SET(CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}")',
-      "SET(CMAKE_INSTALL_RPATH #{rpaths.join(" ")})"
+      "SET(CMAKE_INSTALL_RPATH #{rpaths.join(";")})"
 
     mkdir "build" do
       cmake_args = std_cmake_args + %W[
