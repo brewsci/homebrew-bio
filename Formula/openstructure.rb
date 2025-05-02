@@ -37,6 +37,10 @@ class Openstructure < Formula
 
   uses_from_macos "zlib"
 
+  on_linux do
+    depends_on "zlib"
+  end
+
   resource "components-cif" do
     url "https://files.wwpdb.org/pub/pdb/data/monomers/components.cif.gz"
     sha256 "71ec068480215d86c561ee9216c21dfa1108d76eb38a3c54ddc27d28ef9c0b29"
@@ -72,10 +76,10 @@ class Openstructure < Formula
       ENV.prepend "LDFLAGS",
         "-L#{Formula["python@3.13"].opt_lib} -L#{Formula["gcc"].opt_lib} -L#{Formula["opencl-icd-loader"].opt_lib}"
       ENV.prepend "LDFLAGS", "-L#{Formula["zlib"].opt_lib} -lz"
-      ENV.prepend "CFLAGS", "-I#{Formula["zlib"].opt_include} -I#{Formula["python@3.13"].opt_prefix}/include"
+      ENV.prepend "CFLAGS", "-I#{Formula["zlib"].opt_include} -I#{Formula["python@3.13"].opt_include}"
       ENV.prepend "CPPFLAGS", "-I#{Formula["zlib"].opt_include}"
-      ENV.delete "PKG_CONFIG_LIBDIR"
       ENV.prepend_path "PKG_CONFIG_PATH", Formula["zlib"].opt_lib/"pkgconfig"
+      ENV.delete "PKG_CONFIG_LIBDIR"
     end
 
     # Install python packages using virtualenv pip
