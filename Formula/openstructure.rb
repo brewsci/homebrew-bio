@@ -34,7 +34,8 @@ class Openstructure < Formula
   depends_on "python@3.13"
   depends_on "qt@5"
   depends_on "sqlite"
-  depends_on "zlib"
+
+  uses_from_macos "zlib"
 
   resource "components-cif" do
     url "https://files.wwpdb.org/pub/pdb/data/monomers/components.cif.gz"
@@ -128,10 +129,13 @@ class Openstructure < Formula
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
       if OS.linux?
-        cmake_args << "-DCMAKE_PREFIX_PATH=#{Formula["zlib"].opt_prefix}"
-        cmake_args << "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}"
-        cmake_args << "-DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}"
-        cmake_args << "-DZLIB_INCLUDE_DIR=#{Formula["zlib"].opt_include}"
+        zlib_args = %W[
+          -DCMAKE_PREFIX_PATH=#{Formula["zlib"].opt_prefix}
+          -DZLIB_ROOT=#{Formula["zlib"].opt_prefix}
+          -DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}
+          -DZLIB_INCLUDE_DIR=#{Formula["zlib"].opt_include}
+        ]
+        cmake_args = zlib_args + cmake_args
       end
 
       system "cmake", "..", *cmake_args
@@ -177,10 +181,13 @@ class Openstructure < Formula
         -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
       if OS.linux?
-        cmake_args << "-DCMAKE_PREFIX_PATH=#{Formula["zlib"].opt_prefix}"
-        cmake_args << "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}"
-        cmake_args << "-DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}"
-        cmake_args << "-DZLIB_INCLUDE_DIR=#{Formula["zlib"].opt_include}"
+        zlib_args = %W[
+          -DCMAKE_PREFIX_PATH=#{Formula["zlib"].opt_prefix}
+          -DZLIB_ROOT=#{Formula["zlib"].opt_prefix}
+          -DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}
+          -DZLIB_INCLUDE_DIR=#{Formula["zlib"].opt_include}
+        ]
+        cmake_args = zlib_args + cmake_args
       end
 
       system "cmake", "..", *cmake_args
