@@ -124,12 +124,11 @@ class Openstructure < Formula
         -DUSE_RPATH=ON
       ]
       if OS.linux?
-        zlib_args = %W[
+        cmake_args += %W[
           -DZLIB_ROOT=#{Formula["zlib"].opt_prefix}
           -DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}
           -DZLIB_INCLUDE_DIR=#{Formula["zlib"].opt_include}
         ]
-        cmake_args = zlib_args + cmake_args
       end
 
       system "cmake", "..", *cmake_args
@@ -174,12 +173,11 @@ class Openstructure < Formula
         -DUSE_DOUBLE_PRECISION=OFF
       ]
       if OS.linux?
-        zlib_args = %W[
+        cmake_args += %W[
           -DZLIB_ROOT=#{Formula["zlib"].opt_prefix}
           -DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}
           -DZLIB_INCLUDE_DIR=#{Formula["zlib"].opt_include}
         ]
-        cmake_args = zlib_args + cmake_args
       end
 
       system "cmake", "..", *cmake_args
