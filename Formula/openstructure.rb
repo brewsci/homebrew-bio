@@ -132,8 +132,6 @@ class Openstructure < Formula
         cmake_args = zlib_args + cmake_args
       end
 
-      puts cmake_args
-      exit
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
 
