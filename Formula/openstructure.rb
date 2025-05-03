@@ -91,7 +91,7 @@ class Openstructure < Formula
     system libexec/"bin/python", "-m", "pip", "install", *%w[
       biopython
       networkx<3.0
-      numpy<2.0
+      numpy<2.2
       pandas<2.3
       scipy<2.0
       OpenMM
