@@ -125,6 +125,12 @@ class Openstructure < Formula
       ]
       if OS.linux?
         cmake_args += %W[
+          -DTIFF_ROOT=#{Formula["libtiff"].opt_prefix}
+          -DTIFF_LIBRARY=#{Formula["libtiff"].opt_lib}/libtiff.#{lib_ext}
+          -DTIFF_INCLUDE_DIR=#{Formula["libtiff"].opt_include}
+          -DPNG_ROOT=#{Formula["libpng"].opt_prefix}
+          -DPNG_LIBRARY=#{Formula["libpng"].opt_lib}/libpng.#{lib_ext}
+          -DPNG_PNG_INCLUDE_DIR=#{Formula["libpng"].opt_include}
           -DZLIB_ROOT=#{Formula["zlib"].opt_prefix}
           -DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}
           -DZLIB_INCLUDE_DIR=#{Formula["zlib"].opt_include}
@@ -174,6 +180,12 @@ class Openstructure < Formula
       ]
       if OS.linux?
         cmake_args += %W[
+          -DTIFF_ROOT=#{Formula["libtiff"].opt_prefix}
+          -DTIFF_LIBRARY=#{Formula["libtiff"].opt_lib}/libtiff.#{lib_ext}
+          -DTIFF_INCLUDE_DIR=#{Formula["libtiff"].opt_include}
+          -DPNG_ROOT=#{Formula["libpng"].opt_prefix}
+          -DPNG_LIBRARY=#{Formula["libpng"].opt_lib}/libpng.#{lib_ext}
+          -DPNG_PNG_INCLUDE_DIR=#{Formula["libpng"].opt_include}
           -DZLIB_ROOT=#{Formula["zlib"].opt_prefix}
           -DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}
           -DZLIB_INCLUDE_DIR=#{Formula["zlib"].opt_include}
