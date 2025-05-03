@@ -33,6 +33,7 @@ class Openstructure < Formula
   depends_on "pyqt@5"
   depends_on "python@3.13"
   depends_on "qt@5"
+  depends_on "scipy"
   depends_on "sqlite"
 
   uses_from_macos "zlib"
@@ -63,17 +64,10 @@ class Openstructure < Formula
 
     if OS.mac?
       ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
-      ENV.append "LDFLAGS",
-        "-undefined dynamic_lookup -Wl,-export_dynamic"
+      ENV.append "LDFLAGS", "-undefined dynamic_lookup -Wl,-export_dynamic"
     elsif OS.linux?
       ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
-      ENV.prepend "LDFLAGS",
-        "-L#{Formula["zlib"].opt_lib} -L#{Formula["gcc"].opt_lib} -L#{Formula["opencl-icd-loader"].opt_lib}"
-      ENV.prepend "LDFLAGS",
-        "-Wl,--allow-shlib-undefined,--export-dynamic -lstdc++"
-      ENV.prepend "CPPFLAGS", "-I#{Formula["zlib"].opt_include}"
-      ENV.delete "PKG_CONFIG_LIBDIR"
-      ENV.prepend_path "PKG_CONFIG_PATH", Formula["zlib"].opt_lib/"pkgconfig"
+      ENV.prepend "LDFLAGS", "-Wl,--allow-shlib-undefined,--export-dynamic -lstdc++"
     end
 
     # Install python packages using virtualenv pip
@@ -96,23 +90,10 @@ class Openstructure < Formula
       OpenMM<9.0
       parallelbar<3.0
     ]
-    # Build scipy from source to prevent from zlib being linked to system zlib
-    system libexec/"bin/python", "-m", "pip", "install", "--no-binary", ":all:", "scipy<2.0"
-
     venv.pip_install_and_link resource("dockq")
 
     lib_ext = OS.mac? ? "dylib" : "so"
     openmm_libs_base = libexec/"lib/python#{py_ver}/site-packages/OpenMM.libs"
-
-    rpaths = [
-      lib,
-      openmm_libs_base/"lib",
-      openmm_libs_base/"lib/plugins",
-    ]
-
-    inreplace "CMakeLists.txt",
-      'SET(CMAKE_INSTALL_RPATH "$ORIGIN/../${LIB_DIR}")',
-      "SET(CMAKE_INSTALL_RPATH #{rpaths.join(";")})"
 
     mkdir "build" do
       cmake_args = std_cmake_args + %W[
@@ -128,19 +109,6 @@ class Openstructure < Formula
         -DENABLE_INFO=OFF
         -DUSE_RPATH=ON
       ]
-      if OS.linux?
-        cmake_args += %W[
-          -DTIFF_ROOT=#{Formula["libtiff"].opt_prefix}
-          -DTIFF_LIBRARY=#{Formula["libtiff"].opt_lib}/libtiff.#{lib_ext}
-          -DTIFF_INCLUDE_DIR=#{Formula["libtiff"].opt_include}
-          -DPNG_ROOT=#{Formula["libpng"].opt_prefix}
-          -DPNG_LIBRARY=#{Formula["libpng"].opt_lib}/libpng.#{lib_ext}
-          -DPNG_PNG_INCLUDE_DIR=#{Formula["libpng"].opt_include}
-          -DZLIB_ROOT=#{Formula["zlib"].opt_prefix}
-          -DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}
-          -DZLIB_INCLUDE_DIR=#{Formula["zlib"].opt_include}
-        ]
-      end
 
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
@@ -169,10 +137,6 @@ class Openstructure < Formula
         -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
         -DPARASAIL_INCLUDE_DIR=#{Formula["brewsci/bio/parasail"].opt_include}
         -DPARASAIL_LIBRARY=#{Formula["brewsci/bio/parasail"].opt_lib}/libparasail.#{lib_ext}
-        -DOPEN_MM_LIBRARY=#{openmm_libs_base}/lib/libOpenMM.#{lib_ext}
-        -DOPEN_MM_INCLUDE_DIR=#{openmm_libs_base}/include
-        -DOPEN_MM_PLUGIN_DIR=#{openmm_libs_base}/lib/plugins
-        -DENABLE_MM=ON
         -DUSE_RPATH=ON
         -DOPTIMIZE=ON
         -DENABLE_PARASAIL=ON
@@ -183,17 +147,14 @@ class Openstructure < Formula
         -DUSE_SHADER=ON
         -DUSE_DOUBLE_PRECISION=OFF
       ]
-      if OS.linux?
-        cmake_args += %W[
-          -DTIFF_ROOT=#{Formula["libtiff"].opt_prefix}
-          -DTIFF_LIBRARY=#{Formula["libtiff"].opt_lib}/libtiff.#{lib_ext}
-          -DTIFF_INCLUDE_DIR=#{Formula["libtiff"].opt_include}
-          -DPNG_ROOT=#{Formula["libpng"].opt_prefix}
-          -DPNG_LIBRARY=#{Formula["libpng"].opt_lib}/libpng.#{lib_ext}
-          -DPNG_PNG_INCLUDE_DIR=#{Formula["libpng"].opt_include}
-          -DZLIB_ROOT=#{Formula["zlib"].opt_prefix}
-          -DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}
-          -DZLIB_INCLUDE_DIR=#{Formula["zlib"].opt_include}
+
+      # Enable OpenMM support only on macOS
+      if OS.mac?
+        cmake_args +=[
+          "-DENABLE_MM=ON",
+          "-DOPEN_MM_LIBRARY=#{openmm_libs_base}/lib/libOpenMM.#{lib_ext}",
+          "-DOPEN_MM_INCLUDE_DIR=#{openmm_libs_base}/include",
+          "-DOPEN_MM_PLUGIN_DIR=#{openmm_libs_base}/lib/plugins",
         ]
       end
 
