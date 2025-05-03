@@ -125,7 +125,6 @@ class Openstructure < Formula
         -DENABLE_GFX=OFF
         -DENABLE_INFO=OFF
         -DUSE_RPATH=ON
-        -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
       if OS.linux?
         zlib_args = %W[
@@ -178,7 +177,6 @@ class Openstructure < Formula
         -DENABLE_INFO=ON
         -DUSE_SHADER=ON
         -DUSE_DOUBLE_PRECISION=OFF
-        -DCMAKE_VERBOSE_MAKEFILE=ON
       ]
       if OS.linux?
         zlib_args = %W[
