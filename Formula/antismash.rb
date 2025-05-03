@@ -19,11 +19,10 @@ class Antismash < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "efcedbfe2e02d281cbae96ab77d73312a11174fb0dcd67b4e343cb01c82515b3"
-    sha256 cellar: :any,                 arm64_sonoma:  "92296cbf3e66d80996628c8b4b25537591e7e679ed98d321fa534165f6491099"
-    sha256 cellar: :any,                 ventura:       "12f82fbae77d44c32fab2a6f809b8cec08c6e50ac7dc322c8054ed4058e2ec34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83dc9aacaeb4b7dd019716a2427229630485276ada7d066292c9ce50eb66db39"
+    sha256 cellar: :any,                 arm64_sequoia: "725525bc9cee5e37c621ef86814efd2a2ddf0d3863bbe4bd674a198c6011a71f"
+    sha256 cellar: :any,                 arm64_sonoma:  "6c5c4972ecc55c81b8a1ff48a188244459157fa6ecaf7f628841793d548ea829"
+    sha256 cellar: :any,                 ventura:       "2eb5828e5351cf085ca92092f437cffd5a7a41e2e94e8a193199359d34eb4791"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d72264bbce13598717e9f3d6c92ab71e9d0c2d3f3bfd282094acf0865a0f9bf"
   end
 
   depends_on "cmake" => :build # scikit-learn
