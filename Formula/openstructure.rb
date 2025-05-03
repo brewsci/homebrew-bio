@@ -86,13 +86,13 @@ class Openstructure < Formula
       wheel
     ]
     system libexec/"bin/python", "-m", "pip", "install", *%w[
-      biopython
+      biopython<2.0
       networkx<3.0
-      numpy<2.2
+      numpy<2.0
       pandas<2.3
       scipy<2.0
-      OpenMM
-      parallelbar
+      OpenMM<9.0
+      parallelbar<3.0
     ]
     venv.pip_install_and_link resource("dockq")
 
