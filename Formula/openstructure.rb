@@ -68,9 +68,12 @@ class Openstructure < Formula
     elsif OS.linux?
       ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
       ENV.prepend "LDFLAGS",
-        "-Wl,--allow-shlib-undefined,--export-dynamic -lstdc++"
+        "-L#{Formula["zlib"].opt_lib} -L#{Formula["gcc"].opt_lib} -L#{Formula["opencl-icd-loader"].opt_lib}"
       ENV.prepend "LDFLAGS",
-        "-L#{Formula["gcc"].opt_lib/"gcc"/Formula["gcc"].version.major}"
+        "-Wl,--allow-shlib-undefined,--export-dynamic -lstdc++"
+      ENV.prepend "CPPFLAGS", "-I#{Formula["zlib"].opt_include}"
+      ENV.delete "PKG_CONFIG_LIBDIR"
+      ENV.prepend_path "PKG_CONFIG_PATH", Formula["zlib"].opt_lib/"pkgconfig"
     end
 
     # Install python packages using virtualenv pip
