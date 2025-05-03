@@ -37,10 +37,6 @@ class Openstructure < Formula
 
   uses_from_macos "zlib"
 
-  on_linux do
-    depends_on "zlib"
-  end
-
   resource "components-cif" do
     url "https://files.wwpdb.org/pub/pdb/data/monomers/components.cif.gz"
     sha256 "71ec068480215d86c561ee9216c21dfa1108d76eb38a3c54ddc27d28ef9c0b29"
@@ -82,6 +78,10 @@ class Openstructure < Formula
 
     # Install python packages using virtualenv pip
     venv = virtualenv_create libexec, which(python3)
+    ENV.prepend_path "PATH", libexec/"bin"
+    ENV.prepend_create_path "PYTHONPATH", venv.site_packages
+    site_packages_path = Language::Python.site_packages python3
+    (prefix/site_packages_path/"homebrew-openstructure.pth").write venv.site_packages
     system libexec/"bin/python", "-m", "pip", "install", "-U", *%w[
       pip
       setuptools
@@ -98,13 +98,8 @@ class Openstructure < Formula
       parallelbar
     ]
     venv.pip_install_and_link resource("dockq")
-    ENV.prepend_path "PATH", libexec/"bin"
-    ENV.prepend_create_path "PYTHONPATH", venv.site_packages
-    site_packages_path = Language::Python.site_packages python3
-    (prefix/site_packages_path/"homebrew-openstructure.pth").write venv.site_packages
 
     lib_ext = OS.mac? ? "dylib" : "so"
-
     openmm_libs_base = libexec/"lib/python#{py_ver}/site-packages/OpenMM.libs"
 
     rpaths = [
@@ -122,6 +117,7 @@ class Openstructure < Formula
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DCXX_FLAGS=#{ENV["CXXFLAGS"]}
         -DCMAKE_CXX_STANDARD=17
+        -DCMAKE_PREFIX_PATH=#{HOMEBREW_PREFIX}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{py_ver_nodot}.#{lib_ext}
@@ -134,7 +130,6 @@ class Openstructure < Formula
       ]
       if OS.linux?
         zlib_args = %W[
-          -DCMAKE_PREFIX_PATH=#{Formula["zlib"].opt_prefix}
           -DZLIB_ROOT=#{Formula["zlib"].opt_prefix}
           -DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}
           -DZLIB_INCLUDE_DIR=#{Formula["zlib"].opt_include}
@@ -142,6 +137,8 @@ class Openstructure < Formula
         cmake_args = zlib_args + cmake_args
       end
 
+      puts cmake_args
+      exit
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
 
@@ -161,6 +158,7 @@ class Openstructure < Formula
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
         -DCXX_FLAGS=#{ENV["CXXFLAGS"]}
         -DCMAKE_CXX_STANDARD=17
+        -DCMAKE_PREFIX_PATH=#{HOMEBREW_PREFIX}
         -DPREFIX=#{prefix}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
@@ -186,7 +184,6 @@ class Openstructure < Formula
       ]
       if OS.linux?
         zlib_args = %W[
-          -DCMAKE_PREFIX_PATH=#{Formula["zlib"].opt_prefix}
           -DZLIB_ROOT=#{Formula["zlib"].opt_prefix}
           -DZLIB_LIBRARY=#{Formula["zlib"].opt_lib}/libz.#{lib_ext}
           -DZLIB_INCLUDE_DIR=#{Formula["zlib"].opt_include}
