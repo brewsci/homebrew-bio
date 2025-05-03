@@ -93,10 +93,12 @@ class Openstructure < Formula
       networkx<3.0
       numpy<2.0
       pandas<2.3
-      scipy<2.0
       OpenMM<9.0
       parallelbar<3.0
     ]
+    # Build scipy from source to prevent from zlib being linked to system zlib
+    system libexec/"bin/python", "-m", "pip", "install", "--no-binary", ":all:", "scipy<2.0"
+
     venv.pip_install_and_link resource("dockq")
 
     lib_ext = OS.mac? ? "dylib" : "so"
