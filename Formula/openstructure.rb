@@ -121,7 +121,6 @@ class Openstructure < Formula
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{py_ver_nodot}.#{lib_ext}
-        -DPython_FIND_FRAMEWORK=NEVER
         -DENABLE_GUI=OFF
         -DENABLE_GFX=OFF
         -DENABLE_INFO=OFF
@@ -163,7 +162,6 @@ class Openstructure < Formula
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
         -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{py_ver_nodot}.#{lib_ext}
-        -DPython_FIND_FRAMEWORK=NEVER
         -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
         -DPARASAIL_INCLUDE_DIR=#{Formula["brewsci/bio/parasail"].opt_include}
         -DPARASAIL_LIBRARY=#{Formula["brewsci/bio/parasail"].opt_lib}/libparasail.#{lib_ext}
