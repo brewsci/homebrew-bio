@@ -6,36 +6,36 @@ class Antismash < Formula
   # cite Blin_2019: "https://doi.org/10.1093/nar/gkz310"
   # cite Blin_2021: "https://doi.org/10.1093/nar/gkab335"
   # cite Blin_2023: "https://doi.org/10.1093/nar/gkad344"
+  # cite Blin_2025: "https://doi.org/10.1093/nar/gkaf334"
   include Language::Python::Virtualenv
 
   desc "Antibiotics & Secondary Metabolite Analysis SHell"
   homepage "https://antismash.secondarymetabolites.org/"
-  url "https://github.com/antismash/antismash/archive/refs/tags/7-1-0-1.tar.gz"
-  version "7.1.0.1"
-  sha256 "1429986c369a81a7c1c60f2cb6efb1a28eacdb0290ec9c933477bad88d2b839d"
+  url "https://github.com/antismash/antismash/archive/refs/tags/8-0-0.tar.gz"
+  version "8.0.0"
+  sha256 "4dca221db6f5952f60f6d5a05b527593dfa694df4805f0a44cd65d0d71904c8d"
   license "AGPL-3.0-or-later"
   head "https://github.com/antismash/antismash.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sonoma: "2ff34ee73fed805df8886ccd8df52f44954f6571f5784a08f9445c62f2af8080"
-    sha256 cellar: :any,                 ventura:      "afaa9fe5de6ba026dc2b24ef5846cdb19c00b3628c395576388e42c626426b7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e55dbefa5f83597be56a296f7e34c4de395e949d57f9428de5d725824224511e"
+    sha256 cellar: :any,                 arm64_sequoia: "725525bc9cee5e37c621ef86814efd2a2ddf0d3863bbe4bd674a198c6011a71f"
+    sha256 cellar: :any,                 arm64_sonoma:  "6c5c4972ecc55c81b8a1ff48a188244459157fa6ecaf7f628841793d548ea829"
+    sha256 cellar: :any,                 ventura:       "2eb5828e5351cf085ca92092f437cffd5a7a41e2e94e8a193199359d34eb4791"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d72264bbce13598717e9f3d6c92ab71e9d0c2d3f3bfd282094acf0865a0f9bf"
   end
 
   depends_on "cmake" => :build # scikit-learn
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build # for nrpys
   depends_on "blast"
   depends_on "brewsci/bio/fasttree"
   depends_on "brewsci/bio/glimmerhmm"
   depends_on "brewsci/bio/hmmer@2"
   depends_on "brewsci/bio/meme@4.11.2"
-  depends_on "brewsci/bio/muscle"
   depends_on "ca-certificates"
-  depends_on "cython"
   depends_on "diamond"
   depends_on "freetype"
   depends_on "hmmer"
@@ -45,8 +45,8 @@ class Antismash < Formula
   depends_on "numpy"
   depends_on "pillow"
   depends_on "prodigal"
-  depends_on "python-matplotlib"
   depends_on "python@3.12"
+  depends_on "qhull"
   depends_on "scipy"
 
   on_macos do
@@ -55,7 +55,6 @@ class Antismash < Formula
 
   on_linux do
     depends_on "patchelf" => :build
-    depends_on "ca-certificates"
   end
 
   resource "attrs" do
@@ -69,8 +68,8 @@ class Antismash < Formula
   end
 
   resource "biopython" do
-    url "https://files.pythonhosted.org/packages/89/c5/7fe326081276f74a4073f6d6b13cfa7a04ba322a3ff1d84027f4773980b8/biopython-1.78.tar.gz"
-    sha256 "1ee0a0b6c2376680fea6642d5080baa419fd73df104a62d58a8baf7a8bbe4564"
+    url "https://files.pythonhosted.org/packages/ad/a4/237edd5f5e5b68d9543c79bcd695ef881e6317fbd0eae1b1e53e694f9d54/biopython-1.81.tar.gz"
+    sha256 "2cf38112b6d8415ad39d6a611988cd11fb5f33eb09346666a87263beba9614e0"
   end
 
   resource "brawn" do
@@ -86,6 +85,11 @@ class Antismash < Formula
   resource "cycler" do
     url "https://files.pythonhosted.org/packages/a9/95/a3dbbb5028f35eafb79008e7522a75244477d2838f38cbb722248dabc2a8/cycler-0.12.1.tar.gz"
     sha256 "88bb128f02ba341da8ef447245a9e138fae777f6a23943da4540077d3601eb1c"
+  end
+
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/5a/25/886e197c97a4b8e254173002cdc141441e878ff29aaa7d9ba560cd6e4866/cython-3.0.12.tar.gz"
+    sha256 "b988bb297ce76c671e28c97d017b95411010f7c77fa6623dd0bb47eed1aee1bc"
   end
 
   resource "fonttools" do
@@ -133,6 +137,11 @@ class Antismash < Formula
     sha256 "d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"
   end
 
+  resource "matplotlib" do
+    url "https://files.pythonhosted.org/packages/2f/08/b89867ecea2e305f408fbb417139a8dd941ecf7b23a2e02157c36da546f0/matplotlib-3.10.1.tar.gz"
+    sha256 "e8d2d0e3881b129268585bf4765ad3ee73a4591d77b9a18c214ac7e3a79fb2ba"
+  end
+
   resource "MOODS-python" do
     url "https://files.pythonhosted.org/packages/f7/34/c623e9b57e3e3f1edf030201603d8110bf9969921790d950836176be4749/MOODS-python-1.9.4.1.tar.gz"
     sha256 "b3b5e080cb0cd13c0fd175d0ee0d453fde3e42794fa7ac39a4f6db1ac5ddb4cc"
@@ -141,6 +150,11 @@ class Antismash < Formula
   resource "nrpys" do
     url "https://files.pythonhosted.org/packages/07/4e/fa89f65eb34d685b6d24da6e49c057e8d2f68c7fd2e66e8431ddd3664af2/nrpys-0.1.1.tar.gz"
     sha256 "eab0e7762ca97109ec701da51b161cc431680fbaeeba5fc6d4cf2c190f69bb7f"
+  end
+
+  resource "orjson" do
+    url "https://files.pythonhosted.org/packages/81/0b/fea456a3ffe74e70ba30e01ec183a9b26bec4d497f61dcfce1b601059c60/orjson-3.10.18.tar.gz"
+    sha256 "e8da3947d92123eda795b68228cafe2724815621fe35e8e320a9e9593a4bcd53"
   end
 
   resource "packaging" do
@@ -174,8 +188,8 @@ class Antismash < Formula
   end
 
   resource "six" do
-    url "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+    url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   resource "threadpoolctl" do
@@ -189,15 +203,30 @@ class Antismash < Formula
 
   def install
     ENV.append "CPPFLAGS", "-I#{Formula["freetype"].opt_include}/freetype2" if OS.linux?
-    venv = virtualenv_create(libexec, python3)
-    venv.pip_install(resources)
-    site_packages = Language::Python.site_packages(python3)
+    venv = virtualenv_install_with_resources without: "matplotlib"
+    # `matplotlib` needs extra inputs to use system libraries.
+    # Ref: https://github.com/matplotlib/matplotlib/blob/v3.9.2/doc/install/dependencies.rst#use-system-libraries
+    resource("matplotlib").stage do
+      python = venv.root/"bin/python"
+      system python, "-m", "pip", "install", "--config-settings=setup-args=-Dsystem-freetype=true",
+                                             "--config-settings=setup-args=-Dsystem-qhull=true",
+                                             *std_pip_args(prefix: false, build_isolation: true), "."
+    end
 
+    # We depend on numpy, but that's a separate formula, so install a `.pth` file to link them.
+    # This needs to happen _before_ we try to install antismash.
+    # NOTE: This is an exception to our usual policy as building `numpy` is complicated
+    site_packages = Language::Python.site_packages(python3)
+    pth_contents = "import site; site.addsitedir('#{Formula["numpy"].opt_libexec/site_packages}')\n"
+    (venv.site_packages/"homebrew-numpy.pth").write pth_contents
     venv.pip_install_and_link buildpath
     # Fix minor warning in BCBio
     inreplace "#{libexec}/lib/python3.12/site-packages/BCBio/GFF/GFFParser.py",
               "compile(\"\\w+=\")", "compile(r\"\\w+=\")"
-    (prefix/site_packages/"homebrew-antismash.pth").write venv.site_packages
+  end
+
+  def post_install
+    HOMEBREW_PREFIX.glob("lib/python*.*/site-packages/antismash/**/*.pyc").map(&:unlink)
   end
 
   def caveats
@@ -210,6 +239,9 @@ class Antismash < Formula
 
   test do
     assert_match "antiSMASH", shell_output("#{bin}/antismash -h 2>&1")
-    system python3, "-c", "import antismash"
+    (testpath/"test.py").write <<~PYTHON
+      import antismash
+    PYTHON
+    shell_output("#{libexec}/bin/python test.py")
   end
 end

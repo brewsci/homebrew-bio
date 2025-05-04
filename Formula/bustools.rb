@@ -2,25 +2,24 @@ class Bustools < Formula
   # cite Melsted_2021: "https://doi.org/10.1038/s41587-021-00870-2"
   desc "Tools for working with BUS files"
   homepage "https://github.com/BUStools/bustools"
-  url "https://github.com/BUStools/bustools/archive/refs/tags/v0.44.0.tar.gz"
-  sha256 "e9a12be416d5d3940dd0ec3bfb0be3a481f2eea7d4411df1ab24c814332d99b8"
+  url "https://github.com/BUStools/bustools/archive/refs/tags/v0.45.0.tar.gz"
+  sha256 "a4b2a60f8c8ed178caeab0bc35cdd32b62f83dfea892511aaec11338fd538d48"
   license "BSD-2-Clause"
   head "https://github.com/BUStools/bustools.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a565e30ad847ae81c9c8a998193d91f8025c10aaca218b6c7e51c998db9d16d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "09499bb96bb4eea55e28b20720992b6832e9bfc21d202875c7da2ebe5c896afb"
-    sha256 cellar: :any_skip_relocation, ventura:       "e01ea0c4d743a64e8f460cc204c7233681c9c1c302d4116d0f745d72d944b2a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "744516aab838192ebefb49baca7110bda35161035dce6158c10a617ac150da18"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5242c48c6515a4b90500131bc4f1890174502c462fecea778a7c607b6d1a9d10"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "22092c34a9eba596a0989866fa14336a138c055f3eefed4c7644bbc250d87eed"
+    sha256 cellar: :any_skip_relocation, ventura:       "5c773d80e31c62c57061f13ac4a6f4699e2c8fd0b897068ab941133826abd798"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bef453ec8ae2716c1d43d1289c0e96112dc71070db238454666a00d7bc721a5d"
   end
 
   depends_on "cmake" => :build
   uses_from_macos "zlib"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     prefix.install "test/test_cases"
