@@ -93,7 +93,6 @@ class Openstructure < Formula
     venv.pip_install_and_link resource("dockq")
 
     lib_ext = OS.mac? ? "dylib" : "so"
-    openmm_libs_base = libexec/"lib/python#{py_ver}/site-packages/OpenMM.libs"
 
     mkdir "build" do
       cmake_args = std_cmake_args + %W[
@@ -137,9 +136,9 @@ class Openstructure < Formula
         -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
         -DPARASAIL_INCLUDE_DIR=#{Formula["brewsci/bio/parasail"].opt_include}
         -DPARASAIL_LIBRARY=#{Formula["brewsci/bio/parasail"].opt_lib}/libparasail.#{lib_ext}
-        -DOPEN_MM_LIBRARY=#{openmm_libs_base}/lib/libOpenMM.#{lib_ext}
-        -DOPEN_MM_INCLUDE_DIR=#{openmm_libs_base}/include
-        -DOPEN_MM_PLUGIN_DIR=#{openmm_libs_base}/lib/plugins
+        -DOPEN_MM_LIBRARY=#{Formula["brewsci/bio/openmm@7"].opt_lib}/libOpenMM.#{lib_ext}
+        -DOPEN_MM_INCLUDE_DIR=#{Formula["brewsci/bio/openmm@7"].opt_include}
+        -DOPEN_MM_PLUGIN_DIR=#{Formula["brewsci/bio/openmm@7"].opt_lib}/plugins
         -DENABLE_MM=ON
         -DUSE_RPATH=ON
         -DOPTIMIZE=ON
