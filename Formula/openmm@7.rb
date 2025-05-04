@@ -7,6 +7,14 @@ class OpenmmAT7 < Formula
   sha256 "51970779b8dc639ea192e9c61c67f70189aa294575acb915e14be1670a586c25"
   license "LGPL-3.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any,                 arm64_sequoia: "b59a34726d70c02d7a9f8b68ad5e2c2de91a03b5c49a5ad723fec39eae62ec8e"
+    sha256 cellar: :any,                 arm64_sonoma:  "783bf372cc91438b4121ced154274d0eabd6ce58b8db9b6d9239173782689c75"
+    sha256 cellar: :any,                 ventura:       "3f6a2a5e07c64ec5ac76a0d12d7d379b92c72278fbf62623c052b97fe0507de3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13e6a8e3feb74ce45619a6d33761f3d8f83d39500495b4b1e9abbc990ba5e14e"
+  end
+
   keg_only :versioned_formula
 
   depends_on "cmake" => :build
