@@ -15,23 +15,38 @@ class Voronota < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "glm" => :build
   depends_on "boost"
   depends_on "glew"
   depends_on "glfw"
-  depends_on "glm"
+  depends_on "python"
+
+  on_macos do
+    depends_on "libomp"
+  end
+
+  on_linux do
+    depends_on "gcc" # for OpenMP support
+    depends_on "mesa"
+  end
 
   def install
     ENV.cxx11
 
-    args = std_cmake_args + [
-      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
-      "-DCMAKE_INSTALL_PREFIX=#{prefix}",
-      "-DCMAKE_BUILD_TYPE=Release",
-      "-DEXPANSION_JS=ON",
-      "-DEXPANSION_LT=ON",
-      "-DEXPANSION_GL=ON",
-      "-DCMAKE_CXX_COMPILER=#{ENV["CXX"]}",
-      "-DENABLE_MPI=OFF",
+    if OS.mac?
+      ENV.append "CXXFLAGS",
+        "-Xpreprocessor -fopenmp -I#{Formula["libomp"].opt_include} -L#{Formula["libomp"].opt_lib} -lomp"
+    elsif OS.linux?
+      ENV.append "CXXFLAGS", "-fopenmp"
+    end
+
+    args = std_cmake_args + %W[
+      -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+      -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
+      -DCMAKE_CXX_FLAGS=#{ENV["CXXFLAGS"]}
+      -DEXPANSION_JS=ON
+      -DEXPANSION_LT=ON
+      -DEXPANSION_GL=ON
     ]
 
     system "cmake", ".", *args
