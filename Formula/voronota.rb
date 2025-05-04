@@ -26,7 +26,7 @@ class Voronota < Formula
   end
 
   on_linux do
-    depends_on "gcc"  # for OpenMP support
+    depends_on "gcc" # for OpenMP support
     depends_on "mesa"
   end
 
