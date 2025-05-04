@@ -9,6 +9,7 @@ class Openstructure < Formula
   license "LGPL-3.0-or-later"
 
   depends_on "cmake" => :build
+  depends_on "glm" => :build
   depends_on "opencl-headers" => :build if OS.linux?
   depends_on "pkg-config" => :build
   depends_on "boost"
@@ -24,10 +25,10 @@ class Openstructure < Formula
   depends_on "gcc" if OS.linux?
   depends_on "glew"
   depends_on "glfw"
-  depends_on "glm"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "llvm" if OS.mac?
+  depends_on "mesa-glu" if OS.linux?
   depends_on "openblas"
   depends_on "opencl-icd-loader" if OS.linux?
   depends_on "postgresql@15" if OS.mac?
