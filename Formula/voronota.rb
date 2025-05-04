@@ -11,22 +11,22 @@ class Voronota < Formula
   depends_on "boost"
   depends_on "glew"
   depends_on "glfw"
-  depends_on "python3"
+  depends_on "python"
 
   on_macos do
     depends_on "libomp"
   end
 
   on_linux do
-    depends_on "gcc"
+    depends_on "gcc"  # for OpenMP support
     depends_on "mesa"
   end
 
   def install
     ENV.cxx11
-    
+
     if OS.mac?
-      ENV.append "CXXFLAGS", 
+      ENV.append "CXXFLAGS",
         "-Xpreprocessor -fopenmp -I#{libomp.opt_include} -L#{libomp.opt_lib} -lomp"
     elsif OS.linux?
       ENV.append "CXXFLAGS", "-fopenmp"
