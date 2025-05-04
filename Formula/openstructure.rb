@@ -87,13 +87,12 @@ class Openstructure < Formula
       networkx<3.0
       numpy<2.0
       pandas<2.3
-      OpenMM<9.0
       parallelbar<3.0
     ]
     venv.pip_install_and_link resource("dockq")
+    system(libexec/"bin/python", "-m", "pip", "install", "OpenMM<9.0") if OS.mac?
 
     lib_ext = OS.mac? ? "dylib" : "so"
-    openmm_libs_base = libexec/"lib/python#{py_ver}/site-packages/OpenMM.libs"
 
     mkdir "build" do
       cmake_args = std_cmake_args + %W[
@@ -150,6 +149,7 @@ class Openstructure < Formula
 
       # Enable OpenMM support only on macOS
       if OS.mac?
+        openmm_libs_base = libexec/"lib/python#{py_ver}/site-packages/OpenMM.libs"
         cmake_args +=[
           "-DENABLE_MM=ON",
           "-DOPEN_MM_LIBRARY=#{openmm_libs_base}/lib/libOpenMM.#{lib_ext}",
