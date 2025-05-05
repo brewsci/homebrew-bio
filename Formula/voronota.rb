@@ -17,10 +17,8 @@ class Voronota < Formula
 
   depends_on "cmake" => :build
   depends_on "glm" => :build
-  depends_on "boost"
   depends_on "glew"
   depends_on "glfw"
-  depends_on "python"
 
   on_macos do
     depends_on "libomp"
@@ -36,7 +34,9 @@ class Voronota < Formula
 
     if OS.mac?
       ENV.append "CXXFLAGS",
-        "-Xpreprocessor -fopenmp -I#{Formula["libomp"].opt_include} -L#{Formula["libomp"].opt_lib} -lomp"
+        "-I#{Formula["libomp"].opt_include} -Xpreprocessor -fopenmp"
+      ENV.append "LDFLAGS",
+        "-L#{Formula["libomp"].opt_lib} -lomp"
     elsif OS.linux?
       ENV.append "CXXFLAGS", "-fopenmp"
     end
