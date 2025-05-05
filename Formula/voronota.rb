@@ -16,10 +16,8 @@ class Voronota < Formula
 
   depends_on "cmake" => :build
   depends_on "glm" => :build
-  depends_on "boost"
   depends_on "glew"
   depends_on "glfw"
-  depends_on "python"
 
   on_macos do
     depends_on "libomp"
