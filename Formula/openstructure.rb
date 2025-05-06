@@ -35,8 +35,8 @@ class Openstructure < Formula
   uses_from_macos "zlib"
 
   on_macos do
+    depends_on "libpq"
     depends_on "llvm"
-    depends_on "postgresql@15"
   end
 
   on_linux do
