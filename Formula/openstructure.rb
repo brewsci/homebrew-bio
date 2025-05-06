@@ -8,6 +8,14 @@ class Openstructure < Formula
   sha256 "b5958ada252a3912a71da0cefb0313a4291ac6b17c93d6e0a61d361ee62de92e"
   license "LGPL-3.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256                               arm64_sequoia: "b05a39dfc022e5489a5b31411492a5319a6c7f7539ed907df2aa421fcd110b03"
+    sha256                               arm64_sonoma:  "edc153034712174b9da5584dffdb29e812d92593f4d1ceb8be1c5025eb8be191"
+    sha256 cellar: :any,                 ventura:       "ecc260ae6111215e5e04a74a58097267e0cc20cc01aaaa1b7972a060058e8c4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f001779a1f2f75454e6d95a398d2a7b982ffcb87d99c2df356eb218f822bae70"
+  end
+
   depends_on "cmake" => :build
   depends_on "glm" => :build
   depends_on "pkg-config" => :build

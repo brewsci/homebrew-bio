@@ -6,23 +6,23 @@ class Antismash < Formula
   # cite Blin_2019: "https://doi.org/10.1093/nar/gkz310"
   # cite Blin_2021: "https://doi.org/10.1093/nar/gkab335"
   # cite Blin_2023: "https://doi.org/10.1093/nar/gkad344"
+  # cite Blin_2025: "https://doi.org/10.1093/nar/gkaf334"
   include Language::Python::Virtualenv
 
   desc "Antibiotics & Secondary Metabolite Analysis SHell"
   homepage "https://antismash.secondarymetabolites.org/"
-  url "https://github.com/antismash/antismash/archive/refs/tags/7-1-0-1.tar.gz"
-  version "7.1.0.1"
-  sha256 "1429986c369a81a7c1c60f2cb6efb1a28eacdb0290ec9c933477bad88d2b839d"
+  url "https://github.com/antismash/antismash/archive/refs/tags/8-0-0.tar.gz"
+  version "8.0.0"
+  sha256 "4dca221db6f5952f60f6d5a05b527593dfa694df4805f0a44cd65d0d71904c8d"
   license "AGPL-3.0-or-later"
   head "https://github.com/antismash/antismash.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "efcedbfe2e02d281cbae96ab77d73312a11174fb0dcd67b4e343cb01c82515b3"
-    sha256 cellar: :any,                 arm64_sonoma:  "92296cbf3e66d80996628c8b4b25537591e7e679ed98d321fa534165f6491099"
-    sha256 cellar: :any,                 ventura:       "12f82fbae77d44c32fab2a6f809b8cec08c6e50ac7dc322c8054ed4058e2ec34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83dc9aacaeb4b7dd019716a2427229630485276ada7d066292c9ce50eb66db39"
+    sha256 cellar: :any,                 arm64_sequoia: "725525bc9cee5e37c621ef86814efd2a2ddf0d3863bbe4bd674a198c6011a71f"
+    sha256 cellar: :any,                 arm64_sonoma:  "6c5c4972ecc55c81b8a1ff48a188244459157fa6ecaf7f628841793d548ea829"
+    sha256 cellar: :any,                 ventura:       "2eb5828e5351cf085ca92092f437cffd5a7a41e2e94e8a193199359d34eb4791"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d72264bbce13598717e9f3d6c92ab71e9d0c2d3f3bfd282094acf0865a0f9bf"
   end
 
   depends_on "cmake" => :build # scikit-learn
@@ -35,7 +35,6 @@ class Antismash < Formula
   depends_on "brewsci/bio/glimmerhmm"
   depends_on "brewsci/bio/hmmer@2"
   depends_on "brewsci/bio/meme@4.11.2"
-  depends_on "brewsci/bio/muscle"
   depends_on "ca-certificates"
   depends_on "diamond"
   depends_on "freetype"
@@ -46,7 +45,7 @@ class Antismash < Formula
   depends_on "numpy"
   depends_on "pillow"
   depends_on "prodigal"
-  depends_on "python@3.12" # 3.13 is not supported yet for biopython 1.85
+  depends_on "python@3.12"
   depends_on "qhull"
   depends_on "scipy"
 
@@ -69,8 +68,8 @@ class Antismash < Formula
   end
 
   resource "biopython" do
-    url "https://files.pythonhosted.org/packages/89/c5/7fe326081276f74a4073f6d6b13cfa7a04ba322a3ff1d84027f4773980b8/biopython-1.78.tar.gz"
-    sha256 "1ee0a0b6c2376680fea6642d5080baa419fd73df104a62d58a8baf7a8bbe4564"
+    url "https://files.pythonhosted.org/packages/ad/a4/237edd5f5e5b68d9543c79bcd695ef881e6317fbd0eae1b1e53e694f9d54/biopython-1.81.tar.gz"
+    sha256 "2cf38112b6d8415ad39d6a611988cd11fb5f33eb09346666a87263beba9614e0"
   end
 
   resource "brawn" do
@@ -153,6 +152,11 @@ class Antismash < Formula
     sha256 "eab0e7762ca97109ec701da51b161cc431680fbaeeba5fc6d4cf2c190f69bb7f"
   end
 
+  resource "orjson" do
+    url "https://files.pythonhosted.org/packages/81/0b/fea456a3ffe74e70ba30e01ec183a9b26bec4d497f61dcfce1b601059c60/orjson-3.10.18.tar.gz"
+    sha256 "e8da3947d92123eda795b68228cafe2724815621fe35e8e320a9e9593a4bcd53"
+  end
+
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/ee/b5/b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4d/packaging-24.0.tar.gz"
     sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
@@ -209,11 +213,20 @@ class Antismash < Formula
                                              *std_pip_args(prefix: false, build_isolation: true), "."
     end
 
+    # We depend on numpy, but that's a separate formula, so install a `.pth` file to link them.
+    # This needs to happen _before_ we try to install antismash.
+    # NOTE: This is an exception to our usual policy as building `numpy` is complicated
+    site_packages = Language::Python.site_packages(python3)
+    pth_contents = "import site; site.addsitedir('#{Formula["numpy"].opt_libexec/site_packages}')\n"
+    (venv.site_packages/"homebrew-numpy.pth").write pth_contents
     venv.pip_install_and_link buildpath
     # Fix minor warning in BCBio
     inreplace "#{libexec}/lib/python3.12/site-packages/BCBio/GFF/GFFParser.py",
               "compile(\"\\w+=\")", "compile(r\"\\w+=\")"
-    (prefix/Language::Python.site_packages(python3)/"homebrew-antismash.pth").write venv.site_packages
+  end
+
+  def post_install
+    HOMEBREW_PREFIX.glob("lib/python*.*/site-packages/antismash/**/*.pyc").map(&:unlink)
   end
 
   def caveats
@@ -226,6 +239,9 @@ class Antismash < Formula
 
   test do
     assert_match "antiSMASH", shell_output("#{bin}/antismash -h 2>&1")
-    system python3, "-c", "import antismash"
+    (testpath/"test.py").write <<~PYTHON
+      import antismash
+    PYTHON
+    shell_output("#{libexec}/bin/python test.py")
   end
 end
