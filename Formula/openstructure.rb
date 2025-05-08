@@ -25,7 +25,6 @@ class Openstructure < Formula
   depends_on "brewsci/bio/clustal-w"
   depends_on "brewsci/bio/openmm@7"
   depends_on "brewsci/bio/parasail"
-  depends_on "brewsci/bio/usalign"
   depends_on "brewsci/bio/voronota"
   depends_on "eigen"
   depends_on "fftw"
