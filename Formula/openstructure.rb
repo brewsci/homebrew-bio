@@ -17,6 +17,7 @@ class Openstructure < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "gcc" => :build
   depends_on "glm" => :build
   depends_on "pkg-config" => :build
   depends_on "boost"
@@ -24,7 +25,6 @@ class Openstructure < Formula
   depends_on "brewsci/bio/clustal-w"
   depends_on "brewsci/bio/openmm@7"
   depends_on "brewsci/bio/parasail"
-  depends_on "brewsci/bio/sip@4"
   depends_on "brewsci/bio/usalign"
   depends_on "brewsci/bio/voronota"
   depends_on "eigen"
@@ -37,19 +37,19 @@ class Openstructure < Formula
   depends_on "pyqt@5"
   depends_on "python@3.13"
   depends_on "qt@5"
+  depends_on "sip"
   depends_on "scipy"
   depends_on "sqlite"
 
   uses_from_macos "zlib"
 
   on_macos do
+    depends_on "llvm" => :build
     depends_on "libpq"
-    depends_on "llvm"
   end
 
   on_linux do
     depends_on "opencl-headers" => :build
-    depends_on "gcc"
     depends_on "mesa"
     depends_on "mesa-glu"
     depends_on "opencl-icd-loader"
@@ -57,7 +57,7 @@ class Openstructure < Formula
 
   resource "components-cif" do
     url "https://files.wwpdb.org/pub/pdb/data/monomers/components.cif.gz"
-    sha256 "71ec068480215d86c561ee9216c21dfa1108d76eb38a3c54ddc27d28ef9c0b29"
+    sha256 "6ac793ab82094f0d20a2d2c9576066798e293809b20fa1ddab4ec2de30130e0d"
   end
 
   resource "dockq" do
@@ -159,7 +159,7 @@ class Openstructure < Formula
         -DUSE_RPATH=ON
         -DOPTIMIZE=ON
         -DENABLE_PARASAIL=ON
-        -DCOMPILE_TMTOOLS=OFF
+        -DCOMPILE_TMTOOLS=ON
         -DENABLE_GFX=ON
         -DENABLE_GUI=ON
         -DENABLE_INFO=ON
@@ -169,6 +169,7 @@ class Openstructure < Formula
 
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
+      system "make", "check"
       system "make", "install"
     end
     prefix.install "examples"
