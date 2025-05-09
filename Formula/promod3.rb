@@ -54,7 +54,6 @@ class Promod3 < Formula
     EOS
 
     system Formula["python@3.13"].opt_bin/"python3.13", "gen_pdb.py"
-    content = (testpath/"test.pdb").read
-    assert_match(/^ATOM\s+3\s+C\s+HIS\s+A\s+/, contents)
+    assert_match(/^ATOM\s+3\s+C\s+HIS\s+A\s+/, (testpath/"test.pdb").read)
   end
 end
