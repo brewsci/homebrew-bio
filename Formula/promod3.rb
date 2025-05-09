@@ -25,7 +25,7 @@ class Promod3 < Formula
         "-DDISABLE_DOCUMENTATION=ON",
         *std_cmake_args
       system "make"
-      # system "make", "check" # Test suite for built binaries
+      system "make", "check" # Test suite for built binaries
       system "make", "install"
     end
   end
