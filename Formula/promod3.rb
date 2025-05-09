@@ -16,10 +16,15 @@ class Promod3 < Formula
 
   def install
     if OS.mac?
-      ENV.append "LDFLAGS", "-undefined dynamic_lookup -Wl,-export_dynamic"
+      ENV.prepend "LDFLAGS", "-undefined dynamic_lookup -Wl,-export_dynamic"
     elsif OS.linux?
       ENV.prepend "LDFLAGS", "-Wl,--allow-shlib-undefined,--export-dynamic -lstdc++"
     end
+
+    # Disable linking directly to CPython shared libraries
+    inreplace "cmake_support/PROMOD3.cmake",
+      /^set\(CMAKE_REQUIRED_FLAGS "\$\{CMAKE_REQUIRED_FLAGS\} \$\{Python_LIBRARIES\}"\)\n?/, ""
+    inreplace "cmake_support/PROMOD3.cmake", /\s*\$\{Python_LIBRARIES\}\s*/, " "
 
     mkdir "build" do
       cmake_args = std_cmake_args + %W[
