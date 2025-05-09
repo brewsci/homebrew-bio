@@ -23,7 +23,7 @@ class Promod3 < Formula
         -DDISABLE_DOCUMENTATION=ON
       ]
       cmake_args << "-DENABLE_SSE=ON" if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      system "cmake", "..", cmake_args
+      system "cmake", "..", *cmake_args
       system "make"
       system "make", "check" # Test suite for built binaries
       system "make", "install"
