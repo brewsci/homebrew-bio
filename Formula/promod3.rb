@@ -23,7 +23,7 @@ class Promod3 < Formula
 
     # Disable linking directly to CPython shared libraries
     inreplace "cmake_support/PROMOD3.cmake",
-      /^set\(CMAKE_REQUIRED_FLAGS "\$\{CMAKE_REQUIRED_FLAGS\} \$\{Python_LIBRARIES\}"\)\n?/, ""
+      /^\s*set\(CMAKE_REQUIRED_FLAGS "\$\{CMAKE_REQUIRED_FLAGS\} \$\{Python_LIBRARIES\}"\)\n?/, ""
     inreplace "cmake_support/PROMOD3.cmake", /\s*\$\{Python_LIBRARIES\}\s*/, " "
 
     mkdir "build" do
