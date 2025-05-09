@@ -7,16 +7,23 @@ class Promod3 < Formula
   license "Apache-2.0"
 
   depends_on "cmake" => :build
+  depends_on "gcc@12" => :build
   depends_on "openstructure"
 
   def install
+    if OS.linux?
+        ENV["CXX"] = Formula["gcc@12"].opt_bin/"g++-12"
+    end
+
     mkdir "build" do
       system "cmake", "..",
-             "-DOST_ROOT=#{Formula["openstructure"].opt_prefix}",
-             "-DOPTIMIZE=ON",
-             "-DENABLE_SSE=ON",
-             "-DDISABLE_DOCUMENTATION=ON",
-             *std_cmake_args
+        "-DCMAKE_CXX_COMPILER=#{ENV["CXX"]}",
+        "-DCMAKE_CXX_STANDARD=17",
+        "-DOST_ROOT=#{Formula["openstructure"].opt_prefix}",
+        "-DOPTIMIZE=ON",
+        "-DENABLE_SSE=ON",
+        "-DDISABLE_DOCUMENTATION=ON",
+        *std_cmake_args
       system "make"
       system "make", "check" # Test suite for built binaries
       system "make", "install"
