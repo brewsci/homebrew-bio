@@ -18,7 +18,7 @@ class Openstructure < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "gcc" => :build  # for `tmalign` and `tmscore` implemented in Fortran
+  depends_on "gcc" => :build # for `tmalign` and `tmscore` implemented in Fortran
   depends_on "glm" => :build
   depends_on "pkg-config" => :build
   depends_on "boost"
@@ -37,14 +37,14 @@ class Openstructure < Formula
   depends_on "pyqt@5"
   depends_on "python@3.13"
   depends_on "qt@5"
-  depends_on "sip"
   depends_on "scipy"
+  depends_on "sip"
   depends_on "sqlite"
 
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "llvm" => :build  # Requires latest libc++ to compile
+    depends_on "llvm" => :build # Requires latest libc++ to compile
     depends_on "libpq"
   end
 
@@ -169,7 +169,7 @@ class Openstructure < Formula
 
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
-      system "make", "check"  # Test suite for built binaries
+      system "make", "check" # Test suite for built binaries
       system "make", "install"
     end
     prefix.install "examples"
