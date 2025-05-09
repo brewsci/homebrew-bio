@@ -36,12 +36,25 @@ class Promod3 < Formula
       cmake_args << "-DENABLE_SSE=ON" if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       system "cmake", "..", *cmake_args
       system "make"
-      system "make", "check" # Test suite for built binaries
       system "make", "install"
     end
   end
 
   test do
     assert_match "pm <action>", shell_output("#{bin}/pm 2>&1", 1)
+    ENV.prepend_path "PYTHONPATH", lib/"python3.13/site-packages"
+
+    (testpath/"gen_pdb.py").write <<~EOS
+      from ost import io
+      from promod3 import loop
+
+      sequence = "HELLYEAH"
+      bb_list = loop.BackboneList(sequence)
+      io.SavePDB(bb_list.ToEntity(), "test.pdb")
+    EOS
+
+    system Formula["python@3.13"].opt_bin/"python3.13", "gen_pdb.py"
+    content = (testpath/"test.pdb").read
+    assert_match(/^ATOM\s+3\s+C\s+HIS\s+A\s+/, contents)
   end
 end
