@@ -15,6 +15,12 @@ class Promod3 < Formula
   depends_on "python@3.13"
 
   def install
+    if OS.mac?
+      ENV.append "LDFLAGS", "-undefined dynamic_lookup -Wl,-export_dynamic"
+    elsif OS.linux?
+      ENV.prepend "LDFLAGS", "-Wl,--allow-shlib-undefined,--export-dynamic -lstdc++"
+    end
+
     mkdir "build" do
       cmake_args = std_cmake_args + %W[
         -DCMAKE_CXX_STANDARD=11
