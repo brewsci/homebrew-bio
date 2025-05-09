@@ -8,19 +8,17 @@ class Voronota < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "5478c60efa8e02957fbe8fb28b1b0080cc5bca3682534c01733a4614a679390f"
-    sha256 cellar: :any,                 arm64_sonoma:  "635b77fae3b4820788a11898bfa9fcbff6a588dcf7977d065778c0829c0f4ecc"
-    sha256 cellar: :any,                 ventura:       "17e8050129c94a6e5c0ba57a3d732f2286e6314b62f3d77d88772eb18d7a1c6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7236d50cb848d3babd0976894bfbc9cae7ded5bf51c29b544ddbb62df537444b"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "3ebef923cb7653925ab9c20ec044b29b62a48805c08144ffb920db68f1b10d49"
+    sha256 cellar: :any,                 arm64_sonoma:  "47b50a97c621211052518ceeece0fc000522502e9e3ec47a34734f43e5c4edb7"
+    sha256 cellar: :any,                 ventura:       "0f3d9661ea66d40ba767afb6313c8eb8e8cdc539a00af39f69c4e9db2b2e4a8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f6d066ec58f3408d6b454adaa8bab91f090e4386ab1d7876a5c0d250029db8b"
   end
 
   depends_on "cmake" => :build
   depends_on "glm" => :build
-  depends_on "boost"
   depends_on "glew"
   depends_on "glfw"
-  depends_on "python"
 
   on_macos do
     depends_on "libomp"
@@ -36,7 +34,9 @@ class Voronota < Formula
 
     if OS.mac?
       ENV.append "CXXFLAGS",
-        "-Xpreprocessor -fopenmp -I#{Formula["libomp"].opt_include} -L#{Formula["libomp"].opt_lib} -lomp"
+        "-I#{Formula["libomp"].opt_include} -Xpreprocessor -fopenmp"
+      ENV.append "LDFLAGS",
+        "-L#{Formula["libomp"].opt_lib} -lomp"
     elsif OS.linux?
       ENV.append "CXXFLAGS", "-fopenmp"
     end
