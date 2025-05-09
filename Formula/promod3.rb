@@ -16,14 +16,14 @@ class Promod3 < Formula
 
   def install
     mkdir "build" do
-      system "cmake", "..",
-        "-DCMAKE_CXX_COMPILER=#{ENV["CXX"]}",
-        "-DCMAKE_CXX_STANDARD=11",
-        "-DOST_ROOT=#{Formula["openstructure"].opt_prefix}",
-        "-DOPTIMIZE=ON",
-        "-DENABLE_SSE=ON",
-        "-DDISABLE_DOCUMENTATION=ON",
-        *std_cmake_args
+      cmake_args = std_cmake_args + %W[
+        -DCMAKE_CXX_STANDARD=11
+        -DOST_ROOT=#{Formula["openstructure"].opt_prefix}
+        -DOPTIMIZE=ON
+        -DDISABLE_DOCUMENTATION=ON
+      ]
+      cmake_args << "-DENABLE_SSE=ON" if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      system "cmake", "..", cmake_args
       system "make"
       system "make", "check" # Test suite for built binaries
       system "make", "install"
