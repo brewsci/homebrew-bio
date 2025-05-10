@@ -9,8 +9,10 @@ class Lsd2 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "ffe5a0cd4fc81d4120ed1ac0769e863a54c361adfbd191b5accfc3fd676469c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4433c4c8550fdb5a329532888461cbdd733256fa5232cacc1882a395f34d31c3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "525e3fc3059d4cd8284660f8b46875f3d1378afab5d6bc97213d00363c5a6144"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d80926c6905e4acedb2708b55e7c3baf04a70af81b8959a7bd8c32c74fb74439"
+    sha256 cellar: :any_skip_relocation, ventura:       "bca2cd6093728031fc193be83881854271e95d438a850fef1c502edfc696aed1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0807b7ecd12673e5980bda8038ba0faae29eb671ef7de1bee8943a40869b38a4"
   end
 
   def install
