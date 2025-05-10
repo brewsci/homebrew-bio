@@ -8,6 +8,15 @@ class Trimmomatic < Formula
   revision 1
   head "https://github.com/usadellab/Trimmomatic.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5080a5a31af4f856cdd01ff0e3ace9ad40bda07670c86fa67753760de39ba15d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3574b08bf72a1023c29e44df222546674930b47ca73b4f30081827d170998e97"
+    sha256 cellar: :any_skip_relocation, ventura:       "dbca8da6ef14be5458cbf7377878efafa483c00f29f3b6c385205377159ba054"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d4a80578d15d7dfc9cc3fa1a57e52757f33ef473c57158a2c616279c44c2a1d"
+  end
+
   depends_on "ant" => :build
   depends_on "openjdk@11"
 
