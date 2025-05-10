@@ -1,5 +1,7 @@
 class Promod3 < Formula
-  # cite "https://doi.org/10.1371/journal.pcbi.1008667"
+  include Language::Python::Virtualenv
+
+  # cite Studer_2021: "https://doi.org/10.1371/journal.pcbi.1008667"
   desc "Versatile Homology Modelling Toolbox"
   homepage "https://openstructure.org/promod3"
   url "https://git.scicore.unibas.ch/schwede/ProMod3/-/archive/3.4.2/ProMod3-3.4.2.tar.gz"
@@ -13,6 +15,10 @@ class Promod3 < Formula
   depends_on "brewsci/bio/openmm@7"
   depends_on "openstructure"
   depends_on "python@3.13"
+
+  def python3
+    "python3.13"
+  end
 
   def install
     if OS.mac?
@@ -28,6 +34,13 @@ class Promod3 < Formula
     end
 
     inreplace "CMakeLists.txt", "find_package(Python 3.6", "find_package(Python 3"
+
+    # Install promod3 to virtualenv
+    venv = virtualenv_create libexec, which(python3)
+    ENV.prepend_path "PATH", libexec/"bin"
+    ENV.prepend_create_path "PYTHONPATH", venv.site_packages
+    site_packages_path = Language::Python.site_packages python3
+    (prefix/site_packages_path/"homebrew-promod3.pth").write venv.site_packages
 
     mkdir "build" do
       cmake_args = std_cmake_args + %W[
@@ -45,24 +58,17 @@ class Promod3 < Formula
 
   test do
     assert_match "pm <action>", shell_output("#{bin}/pm 2>&1", 1)
-    ENV.prepend_path "PYTHONPATH", lib/"python3.13/site-packages"
 
     (testpath/"gen_pdb.py").write <<~EOS
-      import sys
-
       from ost import io
       from promod3 import loop
-
-      site_packages = os.path.join(os.path.dirname(__file__), "..", "lib", "python3.13", "site-packages")
-      site_packages = os.path.abspath(site_packages)
-      sys.path.insert(0, site_packages)
 
       sequence = "HELLYEAH"
       bb_list = loop.BackboneList(sequence)
       io.SavePDB(bb_list.ToEntity(), "test.pdb")
     EOS
 
-    system Formula["python@3.13"].opt_bin/"python3", "gen_pdb.py"
+    system libexec/"bin/python", "gen_pdb.py"
     assert_match(/^ATOM\s+3\s+C\s+HIS\s+A\s+/, (testpath/"test.pdb").read)
   end
 end
