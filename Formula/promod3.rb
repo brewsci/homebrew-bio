@@ -54,7 +54,7 @@ class Promod3 < Formula
       io.SavePDB(bb_list.ToEntity(), "test.pdb")
     EOS
 
-    system Formula["python@3.13"].opt_bin/"python", "gen_pdb.py"
+    system Formula["python@3.13"].opt_bin/"python3", "gen_pdb.py"
     assert_match(/^ATOM\s+3\s+C\s+HIS\s+A\s+/, (testpath/"test.pdb").read)
   end
 end
