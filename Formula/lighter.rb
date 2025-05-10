@@ -7,13 +7,6 @@ class Lighter < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/mourisl/Lighter.git", branch: "master"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "190c05f24d314728e07122fe082f9c8f41bef34e9b9634d11278c9b777ee63cf"
-    sha256 cellar: :any_skip_relocation, ventura:      "a18af500f31394c1ce37edc0daad76375ee6bdc775d5acc884f642afcbcbed46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "59e6bd4d4cdaef5a5cb2c5f8276b62bd015a6cac54925f092ab1410bee6a66b9"
-  end
-
   uses_from_macos "zlib"
 
   def install
