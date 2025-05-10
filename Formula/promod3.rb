@@ -17,14 +17,15 @@ class Promod3 < Formula
   def install
     if OS.mac?
       ENV.prepend "LDFLAGS", "-undefined dynamic_lookup -Wl,-export_dynamic"
+
+      # Disable linking directly to CPython shared libraries
+      inreplace "cmake_support/PROMOD3.cmake",
+        /^\s*set\(CMAKE_REQUIRED_FLAGS "\$\{CMAKE_REQUIRED_FLAGS\} \$\{Python_LIBRARIES\}"\)\n?/, ""
+      inreplace "cmake_support/PROMOD3.cmake", /\s*\$\{Python_LIBRARIES\}\s*/, " "
+
     elsif OS.linux?
       ENV.prepend "LDFLAGS", "-Wl,--allow-shlib-undefined,--export-dynamic -lstdc++"
     end
-
-    # Disable linking directly to CPython shared libraries
-    inreplace "cmake_support/PROMOD3.cmake",
-      /^\s*set\(CMAKE_REQUIRED_FLAGS "\$\{CMAKE_REQUIRED_FLAGS\} \$\{Python_LIBRARIES\}"\)\n?/, ""
-    inreplace "cmake_support/PROMOD3.cmake", /\s*\$\{Python_LIBRARIES\}\s*/, " "
 
     mkdir "build" do
       cmake_args = std_cmake_args + %W[
@@ -53,7 +54,7 @@ class Promod3 < Formula
       io.SavePDB(bb_list.ToEntity(), "test.pdb")
     EOS
 
-    system Formula["python@3.13"].opt_bin/"python3.13", "gen_pdb.py"
+    system Formula["python@3.13"].opt_bin/"python", "gen_pdb.py"
     assert_match(/^ATOM\s+3\s+C\s+HIS\s+A\s+/, (testpath/"test.pdb").read)
   end
 end
