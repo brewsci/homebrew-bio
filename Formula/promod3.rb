@@ -11,7 +11,7 @@ class Promod3 < Formula
   depends_on "boost"
   depends_on "boost-python3"
   depends_on "brewsci/bio/openmm@7"
-  depends_on "openstructure"
+  depends_on "brewsci/bio/openstructure"
   depends_on "python@3.13"
 
   def install
@@ -33,7 +33,7 @@ class Promod3 < Formula
       cmake_args = std_cmake_args + %W[
         -DCMAKE_CXX_STANDARD=11
         -DPython_ROOT_DIR=#{Formula["python@3.13"].opt_prefix}
-        -DOST_ROOT=#{Formula["openstructure"].opt_prefix}
+        -DOST_ROOT=#{Formula["brewsci/bio/openstructure"].opt_prefix}
         -DOPTIMIZE=ON
         -DDISABLE_DOCUMENTATION=ON
       ]
