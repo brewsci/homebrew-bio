@@ -48,8 +48,14 @@ class Promod3 < Formula
     ENV.prepend_path "PYTHONPATH", lib/"python3.13/site-packages"
 
     (testpath/"gen_pdb.py").write <<~EOS
+      import sys
+
       from ost import io
       from promod3 import loop
+
+      site_packages = os.path.join(os.path.dirname(__file__), "..", "lib", "python3.13", "site-packages")
+      site_packages = os.path.abspath(site_packages)
+      sys.path.insert(0, site_packages)
 
       sequence = "HELLYEAH"
       bb_list = loop.BackboneList(sequence)
