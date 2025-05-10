@@ -13,7 +13,7 @@ class Promod3 < Formula
   depends_on "boost"
   depends_on "boost-python3"
   depends_on "brewsci/bio/openmm@7"
-  depends_on "openstructure"
+  depends_on "brewsci/bio/openstructure"
   depends_on "python@3.13"
 
   def python3
