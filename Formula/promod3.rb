@@ -32,6 +32,7 @@ class Promod3 < Formula
     mkdir "build" do
       cmake_args = std_cmake_args + %W[
         -DCMAKE_CXX_STANDARD=11
+        -DPython_ROOT_DIR=#{Formula["python@3.13"].opt_prefix}
         -DOST_ROOT=#{Formula["openstructure"].opt_prefix}
         -DOPTIMIZE=ON
         -DDISABLE_DOCUMENTATION=ON
