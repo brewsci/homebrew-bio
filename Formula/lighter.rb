@@ -9,9 +9,11 @@ class Lighter < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "190c05f24d314728e07122fe082f9c8f41bef34e9b9634d11278c9b777ee63cf"
-    sha256 cellar: :any_skip_relocation, ventura:      "a18af500f31394c1ce37edc0daad76375ee6bdc775d5acc884f642afcbcbed46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "59e6bd4d4cdaef5a5cb2c5f8276b62bd015a6cac54925f092ab1410bee6a66b9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "03506e43e44d01b4173a3e658b2c8e52f5a6c3630722d0cab0e7abd28aa69ba5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ded135f9d425613f1e47a4fbc5e7e8f653d91015019da531915c584ba5c9b74"
+    sha256 cellar: :any_skip_relocation, ventura:       "12ccdfcfed688434e2e779e1374f8471da1b36f3a818431da2887e41b0ffed72"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c041ad05b6730fd9bd8fdecd813c35a14ce24d5c8c0438f2ec9fb913f4e7f3e8"
   end
 
   uses_from_macos "zlib"

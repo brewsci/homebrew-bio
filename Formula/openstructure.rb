@@ -10,13 +10,15 @@ class Openstructure < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256                               arm64_sequoia: "b05a39dfc022e5489a5b31411492a5319a6c7f7539ed907df2aa421fcd110b03"
-    sha256                               arm64_sonoma:  "edc153034712174b9da5584dffdb29e812d92593f4d1ceb8be1c5025eb8be191"
-    sha256 cellar: :any,                 ventura:       "ecc260ae6111215e5e04a74a58097267e0cc20cc01aaaa1b7972a060058e8c4b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f001779a1f2f75454e6d95a398d2a7b982ffcb87d99c2df356eb218f822bae70"
+    rebuild 2
+    sha256                               arm64_sequoia: "f32928aa385f3dff6eba7cb8c75f6cf56f5c2f6faea2a4602e262837e0f45808"
+    sha256                               arm64_sonoma:  "a7bec6cf6e0951a9189290def7123158481d1892532c5ad567eef9e7a2ed0416"
+    sha256 cellar: :any,                 ventura:       "89b71e637505d748631ed945c6f8ff2436f957b2fb0ff5e3fe680a97b4c94ae8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "101136543691713599ee38f81a25274fa2037bce2a4aef641697cfe763e6d03d"
   end
 
   depends_on "cmake" => :build
+  depends_on "gcc" => :build # for `tmalign` and `tmscore` implemented in Fortran
   depends_on "glm" => :build
   depends_on "pkg-config" => :build
   depends_on "boost"
@@ -24,8 +26,6 @@ class Openstructure < Formula
   depends_on "brewsci/bio/clustal-w"
   depends_on "brewsci/bio/openmm@7"
   depends_on "brewsci/bio/parasail"
-  depends_on "brewsci/bio/sip@4"
-  depends_on "brewsci/bio/usalign"
   depends_on "brewsci/bio/voronota"
   depends_on "eigen"
   depends_on "fftw"
@@ -38,18 +38,18 @@ class Openstructure < Formula
   depends_on "python@3.13"
   depends_on "qt@5"
   depends_on "scipy"
+  depends_on "sip"
   depends_on "sqlite"
 
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "llvm"
-    depends_on "postgresql@15"
+    depends_on "llvm" => :build # Requires latest libc++ to compile
+    depends_on "libpq"
   end
 
   on_linux do
     depends_on "opencl-headers" => :build
-    depends_on "gcc"
     depends_on "mesa"
     depends_on "mesa-glu"
     depends_on "opencl-icd-loader"
@@ -57,7 +57,7 @@ class Openstructure < Formula
 
   resource "components-cif" do
     url "https://files.wwpdb.org/pub/pdb/data/monomers/components.cif.gz"
-    sha256 "71ec068480215d86c561ee9216c21dfa1108d76eb38a3c54ddc27d28ef9c0b29"
+    sha256 "6ac793ab82094f0d20a2d2c9576066798e293809b20fa1ddab4ec2de30130e0d"
   end
 
   resource "dockq" do
@@ -159,7 +159,7 @@ class Openstructure < Formula
         -DUSE_RPATH=ON
         -DOPTIMIZE=ON
         -DENABLE_PARASAIL=ON
-        -DCOMPILE_TMTOOLS=OFF
+        -DCOMPILE_TMTOOLS=ON
         -DENABLE_GFX=ON
         -DENABLE_GUI=ON
         -DENABLE_INFO=ON
@@ -169,6 +169,7 @@ class Openstructure < Formula
 
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
+      system "make", "check" # Test suite for built binaries
       system "make", "install"
     end
     prefix.install "examples"
