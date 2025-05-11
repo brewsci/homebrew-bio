@@ -21,6 +21,9 @@ class Promod3 < Formula
       ENV.prepend "LDFLAGS", "-Wl,--allow-shlib-undefined,--export-dynamic -lstdc++"
     end
 
+    # Match homebrew shared library directory name
+    inreplace "cmake_support/PROMOD3.cmake", "lib64", "lib"
+
     # Disable linking directly to CPython shared libraries
     inreplace "cmake_support/PROMOD3.cmake",
       /^\s*set\(CMAKE_REQUIRED_FLAGS "\$\{CMAKE_REQUIRED_FLAGS\} \$\{Python_LIBRARIES\}"\)\n?/, ""
