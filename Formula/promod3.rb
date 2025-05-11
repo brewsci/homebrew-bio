@@ -1,5 +1,5 @@
 class Promod3 < Formula
-  # cite "https://doi.org/10.1371/journal.pcbi.1008667"
+  # cite Studer_2021: "https://doi.org/10.1371/journal.pcbi.1008667"
   desc "Versatile Homology Modelling Toolbox"
   homepage "https://openstructure.org/promod3"
   url "https://git.scicore.unibas.ch/schwede/ProMod3/-/archive/3.4.2/ProMod3-3.4.2.tar.gz"
