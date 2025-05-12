@@ -18,13 +18,8 @@ class Fastani < Formula
   end
 
   def install
-    ENV.append "CXXFLAGS", "-std=c++11"
-    # https://github.com/ParBLiSS/FastANI/issues/17 (macos clang opts for gcc)
-    # inreplace "Makefile.in", "-mmacosx-version-min=10.7 -stdlib=libc++", "-v"
-    args = %W[
-      -DGSL_ROOT_DIR=#{Formula["gsl"].opt_prefix}
-      -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
-    ]
+    args = %W[-DGSL_ROOT_DIR=#{Formula["gsl"].opt_prefix}]
+    args << "-DOpenMP_CXX_FLAGS:STRING=-Xpreprocessor;-fopenmp;-I#{Formula["libomp"].opt_include}" if OS.mac?
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
