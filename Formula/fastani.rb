@@ -18,6 +18,8 @@ class Fastani < Formula
   end
 
   def install
+    # require C++11
+    ENV.append "CXXFLAGS", "-std=c++11"
     args = %W[-DGSL_ROOT_DIR=#{Formula["gsl"].opt_prefix}]
     args << "-DOpenMP_CXX_FLAGS:STRING=-Xpreprocessor;-fopenmp;-I#{Formula["libomp"].opt_include}" if OS.mac?
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
