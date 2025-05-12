@@ -7,13 +7,6 @@ class Fastani < Formula
   license "Apache-2.0"
   head "https://github.com/ParBLiSS/FastANI.git", branch: "master"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sonoma: "f5b9dcfd5df5e9a14cc05025b7b3dee6b5978d5a8c7517b6f7b9bab5a7eb82eb"
-    sha256 cellar: :any,                 ventura:      "49f020c561fd674cf61702631fcbc8fde29675cb9e64d34cf827e92cf5b33b04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2cacbeb0b1a6194ca2d0f5e389d639a5b4766e86cbde33834e97af90758516ea"
-  end
-
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "gsl"
@@ -27,12 +20,8 @@ class Fastani < Formula
   def install
     # require C++11
     ENV.append "CXXFLAGS", "-std=c++11"
-    # https://github.com/ParBLiSS/FastANI/issues/17 (macos clang opts for gcc)
-    # inreplace "Makefile.in", "-mmacosx-version-min=10.7 -stdlib=libc++", "-v"
-    args = %W[
-      -DGSL_ROOT_DIR=#{Formula["gsl"].opt_prefix}
-      -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
-    ]
+    args = %W[-DGSL_ROOT_DIR=#{Formula["gsl"].opt_prefix}]
+    args << "-DOpenMP_CXX_FLAGS:STRING=-Xpreprocessor;-fopenmp;-I#{Formula["libomp"].opt_include}" if OS.mac?
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
