@@ -18,7 +18,6 @@ class Fastani < Formula
   end
 
   def install
-    # require C++11
     ENV.append "CXXFLAGS", "-std=c++11"
     # https://github.com/ParBLiSS/FastANI/issues/17 (macos clang opts for gcc)
     # inreplace "Makefile.in", "-mmacosx-version-min=10.7 -stdlib=libc++", "-v"
