@@ -7,6 +7,15 @@ class Fastani < Formula
   license "Apache-2.0"
   head "https://github.com/ParBLiSS/FastANI.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "4e9d242d0d1f7b2aa797c3b1a889b691d1e84e2deb3f8c7ba50f5dc2d121d759"
+    sha256 cellar: :any,                 arm64_sonoma:  "2e06c8a2cb802b39c6d84999d06723cbf005ca3fa527e3320ddf40dccd383698"
+    sha256 cellar: :any,                 ventura:       "a570676778c0ca5901dabb4c99e730d8da95011e2139da0f191690cf0fca55be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f969df9ca68999812d4b7577baf827d27e13000903a3c90ebe026a13c82ee4e5"
+  end
+
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "gsl"
