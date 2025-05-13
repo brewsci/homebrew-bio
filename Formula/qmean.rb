@@ -38,10 +38,12 @@ class Qmean < Formula
     inreplace "cmake_support/QMEAN2.cmake", "${Python_LIBRARIES}", ""
 
     mkdir "build" do
-      system "cmake", "..",
-        *std_cmake_args,
-        "-DOPTIMIZE=ON",
-        "-DOST_ROOT=#{Formula["openstructure"].opt_prefix}"
+      system "cmake", "..", *std_cmake_args, *%W[
+        -DCMAKE_CXX_STANDARD=11
+        -DPython_ROOT_DIR=#{Formula["python@3.13"].opt_prefix}
+        -DOST_ROOT=#{Formula["openstructure"].opt_prefix}
+        -DOPTIMIZE=ON
+      ]
 
       system "make"
       # system "make", "check"
