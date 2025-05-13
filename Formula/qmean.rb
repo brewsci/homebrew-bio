@@ -54,7 +54,8 @@ class Qmean < Formula
     end
 
     pkgshare.install "docker"
-    bin.install pkgshare/"docker/run_qmean.py" => "qmean"
+    cp pkgshare/"docker/run_qmean.py", pkgshare/"docker/run_qmean_copy.py"
+    bin.install pkgshare/"docker/run_qmean_copy.py" => "qmean"
     inreplace bin/"qmean", "#!/usr/local/bin/ost", "#!/usr/bin/env ost"
     inreplace bin/"qmean", "/usr/local", Formula["hh-suite"].opt_prefix
     inreplace bin/"qmean", '"/uniclust30"', 'os.getenv("QMEAN_UNICLUST30")'
