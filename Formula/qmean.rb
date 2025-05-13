@@ -7,6 +7,7 @@ class Qmean < Formula
 
   depends_on "cmake" => :build
   depends_on "eigen" => :build
+  depends_on "sphinx-doc" => :build
   depends_on "boost"
   depends_on "boost-python3"
   depends_on "brewsci/bio/openstructure"
@@ -26,15 +27,14 @@ class Qmean < Formula
       system "make", "install"
     end
 
-    # install helper scripts
     pkgshare.install Dir["docker/**/*"]
+    pkgshare.install Dir["data/**/*"]
     bin.install_symlink pkgshare/"docker/run_qmean.py" => "qmean"
     prefix.install_metafiles
   end
 
   test do
-    # simple invocation
     output = shell_output("#{bin}/qmean --version")
-    assert_match "qmean-4.3.0", output
+    assert_match "qmean-4.3.1", output
   end
 end
