@@ -27,8 +27,13 @@ class Qmean < Formula
       system "make", "install"
     end
 
-    pkgshare.install Dir["docker/**/*"]
-    pkgshare.install Dir["data/**/*"]
+    Dir.chdir doc do
+      system "make", "html"
+      pkgshare.install "build/html" => "doc"
+    end
+
+    pkgshare.install "data"
+    pkgshare.install "docker"
     bin.install_symlink pkgshare/"docker/run_qmean.py" => "qmean"
     prefix.install_metafiles
   end
