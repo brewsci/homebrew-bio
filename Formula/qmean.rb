@@ -1,7 +1,7 @@
 class Qmean < Formula
-  # cite
-  # cite
-  # cite
+  # cite Benkert_2011: "https://doi.org/10.1093/bioinformatics/btq662"
+  # cite Studer_2014: "https://doi.org/10.1093/bioinformatics/btu457"
+  # cite Studer_2020: "https://doi.org/10.1093/bioinformatics/btz828"
   desc "Qualitative Model Energy ANalysis (QMEAN)"
   homepage "https://git.scicore.unibas.ch/schwede/QMEAN"
   url "https://git.scicore.unibas.ch/schwede/QMEAN/-/archive/4.3.1/qmean-4.3.1.tar.gz"
