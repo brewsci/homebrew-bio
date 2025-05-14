@@ -1,7 +1,10 @@
 class Qmean < Formula
+  include Language::Python::Virtualenv
+
   # cite Benkert_2011: "https://doi.org/10.1093/bioinformatics/btq662"
   # cite Studer_2014: "https://doi.org/10.1093/bioinformatics/btu457"
   # cite Studer_2020: "https://doi.org/10.1093/bioinformatics/btz828"
+
   desc "Qualitative Model Energy ANalysis (QMEAN)"
   homepage "https://git.scicore.unibas.ch/schwede/QMEAN"
   url "https://git.scicore.unibas.ch/schwede/QMEAN/-/archive/4.3.1/qmean-4.3.1.tar.gz"
@@ -10,21 +13,42 @@ class Qmean < Formula
 
   depends_on "cmake" => :build
   depends_on "eigen" => :build
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
+  depends_on "python-setuptools" => :build
   depends_on "sphinx-doc" => :build
   depends_on "boost"
   depends_on "boost-python3"
   depends_on "brewsci/bio/hh-suite"
   depends_on "brewsci/bio/openstructure"
-  depends_on "numpy"
+  depends_on "openblas"
+  depends_on "pillow"
   depends_on "python-matplotlib"
   depends_on "python@3.13"
   depends_on "scipy"
 
-  # TODO: Add python package resources for virtualenv
+  on_linux do
+    depends_on "patchelf" => :build
+  end
+
+  resource "cython" do
+    url "https://files.pythonhosted.org/packages/5a/25/886e197c97a4b8e254173002cdc141441e878ff29aaa7d9ba560cd6e4866/cython-3.0.12.tar.gz"
+    sha256 "b988bb297ce76c671e28c97d017b95411010f7c77fa6623dd0bb47eed1aee1bc"
+  end
+
+  resource "numpy" do
+    url "https://files.pythonhosted.org/packages/65/6e/09db70a523a96d25e115e71cc56a6f9031e7b8cd166c1ac8438307c14058/numpy-1.26.4.tar.gz"
+    sha256 "2a02aba9ed12e4ac4eb3ea9421c420301a0c6460d9830d74a9df87efa4912010"
+  end
+
   patch do
     # Patch for Homebrew packaging (make src compatibile with boost@1.88 and fix qmean version display)
     url "https://raw.githubusercontent.com/eunos-1128/QMEAN/b972afca2842df673be49355669f68d54b965110/homebrew.patch"
     sha256 "19f114b8f84d73a61b5453418057b39e590676ce57489a787eb5eba323075a93"
+  end
+
+  def python3
+    "python3.13"
   end
 
   def install
@@ -33,6 +57,14 @@ class Qmean < Formula
     elsif OS.linux?
       ENV.prepend "LDFLAGS", "-Wl,--allow-shlib-undefined,--export-dynamic -lstdc++"
     end
+
+    # Install python packages using virtualenv pip
+    venv = virtualenv_create libexec, which(python3)
+    ENV.prepend_path "PATH", libexec/"bin"
+    ENV.prepend_create_path "PYTHONPATH", venv.site_packages
+    site_packages_path = Language::Python.site_packages python3
+    (prefix/site_packages_path/"homebrew-qmean.pth").write venv.site_packages
+    venv.virtualenv_install_with_resources
 
     inreplace "CMakeLists.txt", "lib64", "lib"
     inreplace "CMakeLists.txt", "find_package(Python 3.6", "find_package(Python 3"
@@ -47,13 +79,13 @@ class Qmean < Formula
       ]
 
       system "make"
-      # system "make", "check"
+      system "make", "check"
       system "make", "install"
     end
 
     Dir.chdir "doc" do
       system "make", "html"
-      doc.install Dir["build/html/*"]
+      doc.install Dir["*"]
     end
 
     pkgshare.install "docker"
@@ -123,8 +155,8 @@ class Qmean < Formula
     EOS
   end
 
-  # TODO: Add python module test
   test do
     assert_match "usage:", shell_output("#{bin}/qmean -h 2>&1")
+    system libexec/"bin/python3", doc/"source/example_scripts/local_scorer_example.py"
   end
 end
