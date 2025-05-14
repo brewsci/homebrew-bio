@@ -22,7 +22,6 @@ class Qmean < Formula
   depends_on "brewsci/bio/hh-suite"
   depends_on "brewsci/bio/openstructure"
   depends_on "openblas"
-  depends_on "pillow"
   depends_on "python-matplotlib"
   depends_on "python@3.13"
   depends_on "scipy"
