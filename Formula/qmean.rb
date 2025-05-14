@@ -70,30 +70,55 @@ class Qmean < Formula
     inreplace bin/"qmean",
       "# uniclust30 is expected to be mounted at /uniclust30",
       "# uniclust30 is expected to be mounted at `QMEAN_UNICLUST30`"
+    inreplace bin/"qmean", '"QMEAN container entry point running\n"', ""
+    inreplace bin/"qmean",
+      "os.getenv('VERSION_QMEAN')",
+      "\"#{version}\""
+    inreplace bin/"qmean",
+      "os.getenv('VERSION_OPENSTRUCTURE')",
+      "\"#{Formula["openstructure"].version}\""
+    inreplace bin/"qmean", '"/qmtl/VERSION"', 'f"/{os.getenv("QMEAN_QMTL")}/VERSION"'
+    inreplace bin/"qmean", '"/qmtl"', 'os.getenv("QMEAN_QMTL")'
+    inreplace bin/"qmean", "/qmtl", "`QMEAN_QMTL`"
+
     prefix.install_metafiles
   end
 
   def caveats
     <<~EOS
-      Command `qmean` needs access to the UniClust30 database to run properly.
+      QMEAN provides three analysis modes: QMEAN, QMEANDisCo, and QMEANBrane.
+      All modes require the UniClust30 database, while QMEANDisCo additionally
+      requires the QMEAN Template Library (QMTL) for its scoring.
 
-      You must set the `QMEAN_UNICLUST30` environment variable to point to
-      your UniClust30 database directory, which must contain the following files:
-        - *_a3m.ffdata
-        - *_a3m.ffindex
-        - *_hhm.ffdata
-        - *_hhm.ffindex
-        - *_cs219.ffdata
-        - *_cs219.ffindex
+      1) UniClust30 database (required by QMEAN, QMEANDisCo, QMEANBrane)
+         ───────────────────────────────────────────────────────────────────────
+         You must set the QMEAN_UNICLUST30 environment variable to point to
+         your local UniClust30 database directory, which must contain:
+           • *_a3m.ffdata
+           • *_a3m.ffindex
+           • *_hhm.ffdata
+           • *_hhm.ffindex
+           • *_cs219.ffdata
+           • *_cs219.ffindex
 
-      For example in your ~/.bashrc or ~/.zshrc:
-        `export QMEAN_UNICLUST30=/path/to/uniclust30/uniclust30_2018_08`
+         Example (add to ~/.bashrc or ~/.zshrc):
+           export QMEAN_UNICLUST30=/path/to/uniclust30/uniclust30_2018_08
 
-      Without this setting, `qmean` will fail with an error like:
-      "You must set UniClust30 to {QMEAN_UNICLUST30}"
+         Download UniClust30 from:
+           https://uniclust.mmseqs.com/
 
-      The UniClust30 database can be downloaded from:
-      https://uniclust.mmseqs.com/
+      2) QMEAN Template Library (QMTL) (required only by QMEANDisCo)
+         ───────────────────────────────────────────────────────────────────────
+         QMTL provides the model/template files needed for DisCo scoring.
+
+         You can download to extract the archive manually from:
+           https://swissmodel.expasy.org/repository/download/qmtl/qmtl.tar.bz2
+
+         Example (add to ~/.bashrc or ~/.zshrc):
+           `export QMEAN_QMTL=#{opt_pkgshare}/qmtl`
+
+      Without these environment variables, `qmean` will exit with an error
+      indicating which resource is missing.
     EOS
   end
 
