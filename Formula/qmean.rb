@@ -20,6 +20,7 @@ class Qmean < Formula
   depends_on "python@3.13"
   depends_on "scipy"
 
+  # TODO: Add python package resources for virtualenv
   patch do
     # Patch for Homebrew packaging (make src compatibile with boost@1.88 and fix qmean version display)
     url "https://raw.githubusercontent.com/eunos-1128/QMEAN/b972afca2842df673be49355669f68d54b965110/homebrew.patch"
@@ -122,6 +123,7 @@ class Qmean < Formula
     EOS
   end
 
+  # TODO: Add python module test
   test do
     assert_match "usage:", shell_output("#{bin}/qmean -h 2>&1")
   end
