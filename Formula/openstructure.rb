@@ -5,6 +5,7 @@ class Openstructure < Formula
   desc "Modular software framework for molecular modelling and visualization"
   homepage "https://openstructure.org"
   url "https://git.scicore.unibas.ch/schwede/openstructure/-/archive/2.9.3/openstructure-2.9.3.tar.gz"
+  version "2.9.3"
   sha256 "b5958ada252a3912a71da0cefb0313a4291ac6b17c93d6e0a61d361ee62de92e"
   license "LGPL-3.0-or-later"
 
