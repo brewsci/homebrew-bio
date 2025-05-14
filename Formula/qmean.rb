@@ -64,7 +64,7 @@ class Qmean < Formula
     ENV.prepend_create_path "PYTHONPATH", venv.site_packages
     site_packages_path = Language::Python.site_packages python3
     (prefix/site_packages_path/"homebrew-qmean.pth").write venv.site_packages
-    venv.virtualenv_install_with_resources
+    venv.pip_install resources
 
     inreplace "CMakeLists.txt", "lib64", "lib"
     inreplace "CMakeLists.txt", "find_package(Python 3.6", "find_package(Python 3"
