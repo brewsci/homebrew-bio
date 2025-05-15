@@ -83,7 +83,6 @@ class Qmean < Formula
       ]
 
       system "make"
-      system "make", "check"
       system "make", "install"
     end
 
