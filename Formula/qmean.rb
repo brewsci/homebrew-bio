@@ -13,21 +13,21 @@ class Qmean < Formula
 
   depends_on "cmake" => :build
   depends_on "eigen" => :build
-  depends_on "meson" => :build
-  depends_on "ninja" => :build
-  depends_on "python-setuptools" => :build
+  depends_on "meson" => :build # for building numpy
+  depends_on "ninja" => :build # for building numpy
+  depends_on "python-setuptools" => :build # for building numpy
   depends_on "sphinx-doc" => :build
   depends_on "boost"
   depends_on "boost-python3"
   depends_on "brewsci/bio/hh-suite"
   depends_on "brewsci/bio/openstructure"
-  depends_on "openblas"
+  depends_on "openblas" # for numpy
   depends_on "python-matplotlib"
   depends_on "python@3.13"
   depends_on "scipy"
 
   on_linux do
-    depends_on "patchelf" => :build
+    depends_on "patchelf" => :build # for building numpy
   end
 
   resource "cython" do
@@ -38,6 +38,11 @@ class Qmean < Formula
   resource "numpy" do
     url "https://files.pythonhosted.org/packages/65/6e/09db70a523a96d25e115e71cc56a6f9031e7b8cd166c1ac8438307c14058/numpy-1.26.4.tar.gz"
     sha256 "2a02aba9ed12e4ac4eb3ea9421c420301a0c6460d9830d74a9df87efa4912010"
+  end
+
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/a9/5a/0db4da3bc908df06e5efae42b44e75c81dd52716e10192ff36d0c1c8e379/setuptools-78.1.0.tar.gz"
+    sha256 "18fd474d4a82a5f83dac888df697af65afa82dec7323d09c3e37d1f14288da54"
   end
 
   patch do
