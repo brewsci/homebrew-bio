@@ -4,6 +4,9 @@ class Msms < Formula
   homepage "https://ccsb.scripps.edu/msms/"
   version "2.6.1"
 
+  # Freely usable for academic and teaching purposes (research-only license)
+  license :cannot_represent
+
   # Only post-build binaries and accompanying files are available
   if OS.mac?
     if Hardware::CPU.arm?
