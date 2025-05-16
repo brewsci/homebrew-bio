@@ -24,14 +24,12 @@ class Msms < Formula
   patch :DATA
 
   def install
-    lib.install "atmtypenumbers"
-
     inreplace "pdb_to_xyzr",
               'numfile = "./atmtypenumbers"',
-              "numfile = \"#{lib}/atmtypenumbers\""
+              "numfile = \"#{pkgshare}/atmtypenumbers\""
     inreplace "pdb_to_xyzrn",
               'numfile = "./atmtypenumbers"',
-              "numfile = \"#{lib}/atmtypenumbers\""
+              "numfile = \"#{pkgshare}/atmtypenumbers\""
 
     bin.install "pdb_to_xyzr", "pdb_to_xyzrn"
     if OS.mac?
@@ -46,7 +44,7 @@ class Msms < Formula
 
     man1.install "msms.1"
     doc.install "msms.html"
-    pkgshare.install "1crn.pdb", "1crn.xyzr"
+    pkgshare.install "1crn.pdb", "1crn.xyzr", "atmtypenumbers"
     prefix.install_metafiles
   end
 
