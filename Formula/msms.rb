@@ -1,6 +1,7 @@
 class Msms < Formula
+  # cite "Sanner_1996: https://doi.org/10.1002/(SICI)1097-0282(199603)38:3<305::AID-BIP4>3.0.CO;2-Y"
   desc "Compute molecular surfaces (MSMS)"
-  homepage "http://mgltools.scripps.edu/packages/MSMS/"
+  homepage "https://ccsb.scripps.edu/msms/"
   version "2.6.1"
 
   bottle :unneeded
