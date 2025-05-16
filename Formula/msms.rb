@@ -1,18 +1,14 @@
 class Msms < Formula
   # cite "Sanner_1996: https://doi.org/10.1002/(SICI)1097-0282(199603)38:3<305::AID-BIP4>3.0.CO;2-Y"
   desc "Compute molecular surfaces (MSMS)"
-  homepage "https://ccsb.scripps.edu/msms/"
+  homepage "https://ccsb.scripps.edu/msms"
   version "2.6.1"
 
-  bottle :unneeded
-
-  on_macos do
-    url "https://ccsb.scripps.edu/msms/download/950/"
+  if OS.mac?
+    url "https://ccsb.scripps.edu/msms/download/950"
     sha256 "aa9c6fcdffd78f20a48990d7ce6cbe19394bb88071e2a9cc26c675171eccfcc8"
-  end
-
-  on_linux do
-    url "https://ccsb.scripps.edu/msms/download/933/"
+  elsif OS.linux?
+    url "https://ccsb.scripps.edu/msms/download/933"
     sha256 "5f0ca50360b5938e74c538e0399d582abc4a40ef4cf410e66f31a1f91e6e3e1f"
   end
 
