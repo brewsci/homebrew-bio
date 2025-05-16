@@ -21,6 +21,8 @@ class Msms < Formula
     depends_on "awk"
   end
 
+  patch :DATA
+
   def install
     lib.install "atmtypenumbers"
 
@@ -58,3 +60,50 @@ class Msms < Formula
     assert_match "1302   1306   1309  1   1304", (testpath/"1crn.face").read
   end
 end
+__END__
+--- pdb_to_xyzr	2015-10-27 17:18:46.425473839 -0400
++++ pdb_to_xyzr	2015-10-27 17:19:43.017473698 -0400
+@@ -28,7 +28,7 @@
+ 	shift
+ 	fi
+ fi
+-nawk 'BEGIN{
++awk 'BEGIN{
+ 	# read radius table and patterns from supplied file
+ 	npats=0
+ 	numfile = "./atmtypenumbers"
+  --- pdb_to_xyzrn	2015-10-27 17:18:52.833473823 -0400
+  +++ pdb_to_xyzrn	2015-10-27 17:19:29.713473731 -0400
+  @@ -28,7 +28,7 @@
+   	shift
+   	fi
+   fi
+  -nawk 'BEGIN{
+  +awk 'BEGIN{
+   	# read radius table and patterns from supplied file
+   	npats=0
+   	numfile = "./atmtypenumbers"
+  @@ -80,10 +80,13 @@
+
+
+   	resnum=substr($0,23,4);
+  +	chain=substr($0,21,2);
+
+   	# trim any blanks
+   	gsub(" ", "", resname);
+   	gsub(" ", "", aname);
+  +	gsub(" ", "", resnum);
+  +	gsub(" ", "", chain);
+
+   	for(pat=0;pat<npats;pat++) {
+   		if( aname ~ atmpat[pat] && resname ~ respat[pat] ) break
+  @@ -96,7 +99,7 @@
+   		  | "cat 1>&2" # write to stderr
+   		print x,y,z,0.01
+   		}
+  -	else printf("%f %f %f %f %d %s_%s_%d\n", x, y, z, \
+  -	  ('$h_select'== 5 ? united_rad[atmnum[pat]]:explicit_rad[atmnum[pat]]), 1, aname, resname, resnum);
+  +	else printf("%f %f %f %f %d %s_%s_%d_%s\n", x, y, z, \
+  +	  ('$h_select'== 5 ? united_rad[atmnum[pat]]:explicit_rad[atmnum[pat]]), 1, aname, resname, resnum, chain);
+   	next;
+   	}' $*
