@@ -55,7 +55,7 @@ class Msms < Formula
     assert_match "12.703    4.973   10.746 1.40", ouput_pdb_to_xyzr
     ouput_pdb_to_xyzrn = shell_output("cat #{pkgshare}/1crn.pdb | #{bin}/pdb_to_xyzrn")
     assert_match "12.703000 4.973000 10.746000 1.400000 1 OXT_ASN_46", ouput_pdb_to_xyzrn
-    system "msms", "-if", "#{pkgshare}/1crn.xyzr", "-of", "1crn"
+    system "#{bin}/msms", "-if", "#{pkgshare}/1crn.xyzr", "-of", "1crn"
     assert_match "25.578    13.692     9.815", (testpath/"1crn.vert").read
     assert_match "1302   1306   1309  1   1304", (testpath/"1crn.face").read
   end
