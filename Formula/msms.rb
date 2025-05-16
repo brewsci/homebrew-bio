@@ -1,24 +1,29 @@
 class Msms < Formula
   desc "Compute molecular surfaces (MSMS)"
   homepage "http://mgltools.scripps.edu/packages/MSMS/"
-  url "http://mgltools.scripps.edu/downloads/tars/releases/MSMSRELEASE/REL2.6.1/msms_i86_64Linux2_2.6.1.tar.gz"
-  sha256 "6d2f155322ffe5d9406caf5785d47fadf8710d6c6bcc45d0cf787807657dbaa9"
   version "2.6.1"
 
   bottle :unneeded
 
-  def install
-    lib_msms = lib/"msms"
-    lib_msms.mkpath
+  on_macos do
+    url "https://ccsb.scripps.edu/msms/download/950/"
+    sha256 "aa9c6fcdffd78f20a48990d7ce6cbe19394bb88071e2a9cc26c675171eccfcc8"
+  end
 
-    lib_msms.install "atmtypenumbers"
+  on_linux do
+    url "https://ccsb.scripps.edu/msms/download/933/"
+    sha256 "5f0ca50360b5938e74c538e0399d582abc4a40ef4cf410e66f31a1f91e6e3e1f"
+  end
+
+  def install
+    lib.install "atmtypenumbers"
 
     inreplace "pdb_to_xyzr",
               'numfile = "./atmtypenumbers"',
-              "numfile = \"#{lib_msms}/atmtypenumbers\""
+              "numfile = \"#{lib}/atmtypenumbers\""
     inreplace "pdb_to_xyzrn",
               'numfile = "./atmtypenumbers"',
-              "numfile = \"#{lib_msms}/atmtypenumbers\""
+              "numfile = \"#{lib}/atmtypenumbers\""
 
     bin.install "pdb_to_xyzr", "pdb_to_xyzrn"
     bin.install Dir["msms.*.#{version}"] => "msms"
