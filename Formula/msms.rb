@@ -4,6 +4,7 @@ class Msms < Formula
   homepage "https://ccsb.scripps.edu/msms/"
   version "2.6.1"
 
+  # Only post-build binaries and accompanying files are available
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://ccsb.scripps.edu/msms/download/942/"
@@ -21,7 +22,12 @@ class Msms < Formula
     depends_on "awk"
   end
 
-  patch :DATA
+  # Due to the different directory structure when decompressing
+  if OS.mac?
+    patch :p1, :DATA
+  elsif OS.linux?
+    patch :p0, :DATA
+  end
 
   def install
     inreplace "pdb_to_xyzr",
