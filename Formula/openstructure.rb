@@ -183,6 +183,7 @@ class Openstructure < Formula
         - blast
         - brewsci/bio/dssp
         - brewsci/bio/hh-suite
+        - brewsci/bio/msms
         - mmseqs2
     EOS
   end
