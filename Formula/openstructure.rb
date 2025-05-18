@@ -18,6 +18,7 @@ class Openstructure < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "eigen" => :build
   depends_on "gcc" => :build # for `tmalign` and `tmscore` implemented in Fortran
   depends_on "glm" => :build
   depends_on "pkg-config" => :build
@@ -27,7 +28,6 @@ class Openstructure < Formula
   depends_on "brewsci/bio/openmm@7"
   depends_on "brewsci/bio/parasail"
   depends_on "brewsci/bio/voronota"
-  depends_on "eigen"
   depends_on "fftw"
   depends_on "glew"
   depends_on "glfw"
