@@ -17,6 +17,11 @@ class Freesasa < Formula
   def install
     system "autoreconf", "-fvi"
     system "./configure", *std_configure_args
+
+    if OS.linux?
+      inreplace "src/Makefile", "-lc++", "-lstdc++"
+    end
+
     system "make"
     system "make", "install"
 
