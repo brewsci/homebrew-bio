@@ -18,9 +18,8 @@ class Freesasa < Formula
     system "autoreconf", "-fvi"
     system "./configure", *std_configure_args
 
-    if OS.linux?
-      inreplace "src/Makefile", "-lc++", "-lstdc++"
-    end
+    # Refer to https://github.com/mittinatten/freesasa/issues/85#issuecomment-1588979627
+    inreplace "src/Makefile", "-lc++", "-lstdc++" if OS.linux?
 
     system "make"
     system "make", "install"
