@@ -20,7 +20,7 @@ class Freesasa < Formula
     system "make"
     system "make", "install"
 
-    pkgshare.install "tests"
+    pkgshare.install "tests/data"
     prefix.install_metafiles
   end
 
