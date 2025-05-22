@@ -26,6 +26,6 @@ class Freesasa < Formula
 
   test do
     assert_match "Usage", shell_output("#{bin}/freesasa -h 2>&1")
-    assert_match "Total   :   18923.28", shell_output("#{bin}/freesasa #{pkgshare}/tests/data/1a0q.pdb")
+    assert_match "Total   :   18923.28", shell_output("#{bin}/freesasa #{pkgshare}/data/1a0q.pdb")
   end
 end
