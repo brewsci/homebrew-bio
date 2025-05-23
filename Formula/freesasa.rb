@@ -7,6 +7,14 @@ class Freesasa < Formula
   license "MIT"
   head "https://github.com/mittinatten/freesasa.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any,                 arm64_sequoia: "c40ff23944747b9fa9189486d16131795aea21af6f71822a67968a20d4c7a56f"
+    sha256 cellar: :any,                 arm64_sonoma:  "8ded8b3061c458d895d6958486d65ba653ad5829515a1d417f1d69886e84756b"
+    sha256 cellar: :any,                 ventura:       "21c128c20c6f1aea59ab3e66aaf45d8c672954c422b1b080c7f56c37c1a3684c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13158ef0a4ec170a9c7edb4cf37d6c0f94831c0c670dbafb9ca5f2c2b8c098a6"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
