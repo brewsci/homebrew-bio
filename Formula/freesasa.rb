@@ -12,7 +12,8 @@ class Freesasa < Formula
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
   depends_on "json-c"
-  depends_on "libxml2"
+
+  uses_from_macos "libxml2"
 
   def install
     system "autoreconf", "-fvi"
