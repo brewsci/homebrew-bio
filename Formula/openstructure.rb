@@ -18,6 +18,7 @@ class Openstructure < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "eigen" => :build
   depends_on "glm" => :build
   depends_on "pkg-config" => :build
   depends_on "boost"
@@ -26,7 +27,6 @@ class Openstructure < Formula
   depends_on "brewsci/bio/openmm@7"
   depends_on "brewsci/bio/parasail"
   depends_on "brewsci/bio/voronota"
-  depends_on "eigen"
   depends_on "fftw"
   depends_on "gcc" # for `tmalign` and `tmscore` implemented in Fortran
   depends_on "glew"
@@ -185,6 +185,7 @@ class Openstructure < Formula
         - blast
         - brewsci/bio/dssp
         - brewsci/bio/hh-suite
+        - brewsci/bio/msms
         - mmseqs2
     EOS
   end
