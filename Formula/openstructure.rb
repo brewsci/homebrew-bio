@@ -20,6 +20,7 @@ class Openstructure < Formula
   depends_on "eigen" => :build
   depends_on "glm" => :build
   depends_on "pkg-config" => :build
+  depends_on "wget" => :build
   depends_on "boost"
   depends_on "boost-python3"
   depends_on "brewsci/bio/clustal-w"
@@ -52,11 +53,6 @@ class Openstructure < Formula
     depends_on "mesa"
     depends_on "mesa-glu"
     depends_on "opencl-icd-loader"
-  end
-
-  resource "components-cif" do
-    url "https://files.wwpdb.org/pub/pdb/data/monomers/components.cif.gz"
-    sha256 "21c40f9b6fdf19f73aca4cf0c073786dfe2a5f059c1a6bf45672f40db85532ae"
   end
 
   resource "dockq" do
@@ -127,9 +123,8 @@ class Openstructure < Formula
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
 
-      resource("components-cif").fetch
-      components_cif_path = resource("components-cif").cached_download
-      cp components_cif_path, "components.cif.gz"
+      # the components.cif.gz file is updated weekly (Wednesday 00:00 UTC)
+      system "wget", "https://files.wwpdb.org/pub/pdb/data/monomers/components.cif.gz"
 
       system "stage/bin/chemdict_tool", "create",
               "components.cif.gz", "compounds.chemlib",
@@ -179,7 +174,7 @@ class Openstructure < Formula
   def caveats
     <<~EOS
       You may need to install the following packages to use certain python bindings:
-      (Refer to https://openstructure.org/docs/2.9.2/bindings/bindings/)
+      (Refer to https://openstructure.org/docs/2.10/bindings/bindings/)
 
         - blast
         - brewsci/bio/dssp
