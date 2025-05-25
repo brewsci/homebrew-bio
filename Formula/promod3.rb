@@ -6,6 +6,10 @@ class Promod3 < Formula
   sha256 "8103bcb344489eb0fa0567ad8c9a8a9b42d3dbbb8d46c82587e6a58eab45eefd"
   license "Apache-2.0"
 
+  bottle do
+    rebuild 1
+  end
+
   depends_on "cmake" => :build
   depends_on "eigen" => :build
   depends_on "boost"
