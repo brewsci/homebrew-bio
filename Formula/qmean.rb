@@ -11,6 +11,10 @@ class Qmean < Formula
   sha256 "01a8b89e41bde00c35ae19d263bbd53df5591319281c0a5f6654a989e56a2ee4"
   license "Apache-2.0"
 
+  bottle do
+    rebuild 1
+  end
+
   depends_on "cmake" => :build
   depends_on "eigen" => :build
   depends_on "meson" => :build # for building numpy
