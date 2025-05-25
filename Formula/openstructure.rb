@@ -4,20 +4,20 @@ class Openstructure < Formula
   # cite Biasini_2013: "https://doi.org/10.1107/S0907444913007051"
   desc "Modular software framework for molecular modelling and visualization"
   homepage "https://openstructure.org"
-  url "https://git.scicore.unibas.ch/schwede/openstructure/-/archive/2.9.3/openstructure-2.9.3.tar.gz"
-  sha256 "b5958ada252a3912a71da0cefb0313a4291ac6b17c93d6e0a61d361ee62de92e"
+  url "https://git.scicore.unibas.ch/schwede/openstructure/-/archive/2.10.0/openstructure-2.10.0.tar.gz"
+  sha256 "88009b3d5b477f753e4ce1c731da19fb733aea4ed4ccac6c5fbaf6e1359a9560"
   license "LGPL-3.0-or-later"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256                               arm64_sequoia: "4a2dd663794681e65c35f72bed12de24dd3648493c9369d7d82c41b346b039c3"
-    sha256                               arm64_sonoma:  "243359c6fb7f9abe13f0e8fe2924fbbca5f6a79505311f8003c3f13b159209e9"
-    sha256 cellar: :any,                 ventura:       "41704bd2536dc8bd14a40a50cf2ce50cc4436607eec1c9989c01f8afc60ac7a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "246ff3334c15ea5633c8f37ad3fde2c770ccd2b84a76745eeed0c568c53d6755"
+    sha256                               arm64_sequoia: "3cccaff21e333345c212d70be2159628738366ec09bcc4cf0404297d1655b8b0"
+    sha256                               arm64_sonoma:  "1f65a8701ec114d8f6fcaff33f54ce0735bfcde0be853ee00934589d974784cb"
+    sha256 cellar: :any,                 ventura:       "9acfe8ce338c29b98ef360637efd9fc62d28f0820ce2d85b86f01ec235003212"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a189be63f4b88865ca7a1054d0509fa313322727b4f9fa4b82ab083a577997d"
   end
 
   depends_on "cmake" => :build
+  depends_on "eigen" => :build
   depends_on "glm" => :build
   depends_on "pkg-config" => :build
   depends_on "boost"
@@ -25,11 +25,9 @@ class Openstructure < Formula
   depends_on "brewsci/bio/clustal-w"
   depends_on "brewsci/bio/openmm@7"
   depends_on "brewsci/bio/parasail"
-  depends_on "brewsci/bio/sip@4"
-  depends_on "brewsci/bio/usalign"
   depends_on "brewsci/bio/voronota"
-  depends_on "eigen"
   depends_on "fftw"
+  depends_on "gcc" # for `tmalign` and `tmscore` implemented in Fortran
   depends_on "glew"
   depends_on "glfw"
   depends_on "libpng"
@@ -39,18 +37,18 @@ class Openstructure < Formula
   depends_on "python@3.13"
   depends_on "qt@5"
   depends_on "scipy"
+  depends_on "sip"
   depends_on "sqlite"
 
   uses_from_macos "zlib"
 
   on_macos do
+    depends_on "llvm" => :build # Requires latest libc++ to compile
     depends_on "libpq"
-    depends_on "llvm"
   end
 
   on_linux do
     depends_on "opencl-headers" => :build
-    depends_on "gcc"
     depends_on "mesa"
     depends_on "mesa-glu"
     depends_on "opencl-icd-loader"
@@ -58,7 +56,7 @@ class Openstructure < Formula
 
   resource "components-cif" do
     url "https://files.wwpdb.org/pub/pdb/data/monomers/components.cif.gz"
-    sha256 "71ec068480215d86c561ee9216c21dfa1108d76eb38a3c54ddc27d28ef9c0b29"
+    sha256 "21c40f9b6fdf19f73aca4cf0c073786dfe2a5f059c1a6bf45672f40db85532ae"
   end
 
   resource "dockq" do
@@ -68,8 +66,8 @@ class Openstructure < Formula
 
   patch do
     # Patch for Homebrew packaging (make openstructure src compatibile with boost@1.88 and fix CMake configs)
-    url "https://raw.githubusercontent.com/eunos-1128/openstructure/1fbcfe506352da6f3c95a1752d3d54ef089fa12b/homebrew.patch"
-    sha256 "ce4f81a39087817023bdca23c124fb5e5f4800378aa0f374c89458dcbc39b5a1"
+    url "https://raw.githubusercontent.com/eunos-1128/openstructure/1d222aecd67784358fbd3462a7c1c1adb1fba93c/homebrew.patch"
+    sha256 "d83c96555877f93275d5e3f0543f9fe89fc2f8a9add5694fec5e5437617a7862"
   end
 
   def python3
@@ -82,7 +80,7 @@ class Openstructure < Formula
 
     if OS.mac?
       ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
-      ENV.append "LDFLAGS", "-undefined dynamic_lookup -Wl,-export_dynamic"
+      ENV.prepend "LDFLAGS", "-undefined dynamic_lookup -Wl,-export_dynamic"
     elsif OS.linux?
       ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
       ENV.prepend "LDFLAGS", "-Wl,--allow-shlib-undefined,--export-dynamic -lstdc++"
@@ -160,7 +158,7 @@ class Openstructure < Formula
         -DUSE_RPATH=ON
         -DOPTIMIZE=ON
         -DENABLE_PARASAIL=ON
-        -DCOMPILE_TMTOOLS=OFF
+        -DCOMPILE_TMTOOLS=ON
         -DENABLE_GFX=ON
         -DENABLE_GUI=ON
         -DENABLE_INFO=ON
@@ -170,9 +168,12 @@ class Openstructure < Formula
 
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
+      system "make", "check" # Test suite for built binaries
       system "make", "install"
     end
-    prefix.install "examples"
+
+    pkgshare.install "examples"
+    prefix.install_metafiles
   end
 
   def caveats
@@ -183,13 +184,14 @@ class Openstructure < Formula
         - blast
         - brewsci/bio/dssp
         - brewsci/bio/hh-suite
+        - brewsci/bio/msms
         - mmseqs2
     EOS
   end
 
   test do
     assert_match "Usage:", shell_output("#{bin}/ost -h 2>&1", 255)
-    cp_r prefix/"examples", testpath
+    cp_r pkgshare/"examples", testpath
     system "#{bin}/ost", "compare-structures", "-m", testpath/"examples/scoring/model.pdb",
                          "-r", testpath/"examples/scoring/reference.cif.gz",
                          "--lddt", "--local-lddt", "--qs-score"
