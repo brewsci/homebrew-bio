@@ -7,7 +7,7 @@ class Promod3 < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
+    rebuild 2
   end
 
   depends_on "cmake" => :build
