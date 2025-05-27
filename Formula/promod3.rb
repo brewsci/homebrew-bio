@@ -5,10 +5,7 @@ class Promod3 < Formula
   url "https://git.scicore.unibas.ch/schwede/ProMod3/-/archive/3.4.2/ProMod3-3.4.2.tar.gz"
   sha256 "8103bcb344489eb0fa0567ad8c9a8a9b42d3dbbb8d46c82587e6a58eab45eefd"
   license "Apache-2.0"
-
-  bottle do
-    rebuild 2
-  end
+  revision 1
 
   depends_on "cmake" => :build
   depends_on "eigen" => :build
