@@ -20,7 +20,8 @@ class Freesasa < Formula
     system "./configure", *std_configure_args
 
     # Refer to https://github.com/mittinatten/freesasa/issues/85#issuecomment-1588979627
-    inreplace "src/Makefile", "-lc++", "-lstdc++" if OS.linux?
+    # Already fixed in HEAD
+    inreplace "src/Makefile", "-lc++", "-lstdc++" if OS.linux? && !build.head?
 
     system "make"
     system "make", "install"
