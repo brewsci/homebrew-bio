@@ -13,10 +13,11 @@ class Qmean < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sequoia: "a84eec553e42deac958e044af1ddafc441d0966aeb66eae3d5d3a57e46f00ff3"
-    sha256 cellar: :any,                 arm64_sonoma:  "943d057623dad843a54b63f5baa6210031e15d43ea92ef8a92c2e1a909ac349d"
-    sha256 cellar: :any,                 ventura:       "37fcb2aa4b3300cd9f9e4d5124c3c6442221fc477aca84a4be14bf6c2ad6f642"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8dd75ce4b8842f3976d2965fef3a5a16a68567251d288cb64f96467e43e76b66"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "0ef4640d61ea80a9a03058709b19bd58ac83792aadd4267f53f84b8d15ff3688"
+    sha256 cellar: :any,                 arm64_sonoma:  "e8fb2950c2a951ad0c70c3b82e3ae29ccde3028579b34047cd8b33a8ca234ca4"
+    sha256 cellar: :any,                 ventura:       "1cc4b079aaf9cceb9548ef9d5bb1f5effec6685918774b072f420819d999e97e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8200470ac7226e8c96e9dd361986b0ba8f6608c46861442a07cd39c5ff4a65eb"
   end
 
   depends_on "cmake" => :build

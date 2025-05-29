@@ -7,11 +7,7 @@ class Promod3 < Formula
   license "Apache-2.0"
 
   bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256                               arm64_sequoia: "15dbf51dc0b5cd4a7573a1dc5b82d0098c6bfeeedaffd7b81d305a0242222a88"
-    sha256                               arm64_sonoma:  "1c9800f0b2b07554b0489390e41f55b3683f00a26a93cd27711b7e2e0dec416b"
-    sha256 cellar: :any,                 ventura:       "421bbcbd0f829747aab8592610ce34ccca5d4eefbf0b06d8e6d08981109df970"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdea303173a44c865c99c25bbabc8fcecfec7449bd5f1b934d2f1cea3b241be9"
+    rebuild 2
   end
 
   depends_on "cmake" => :build
