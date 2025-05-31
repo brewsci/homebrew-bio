@@ -11,8 +11,8 @@ class Antismash < Formula
 
   desc "Antibiotics & Secondary Metabolite Analysis SHell"
   homepage "https://antismash.secondarymetabolites.org/"
-  url "https://github.com/antismash/antismash/archive/refs/tags/8-0-0.tar.gz"
-  version "8.0.0"
+  url "https://github.com/antismash/antismash/archive/refs/tags/8-0-1.tar.gz"
+  version "8.0.1"
   sha256 "4dca221db6f5952f60f6d5a05b527593dfa694df4805f0a44cd65d0d71904c8d"
   license "AGPL-3.0-or-later"
   head "https://github.com/antismash/antismash.git", branch: "master"
