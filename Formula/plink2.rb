@@ -25,7 +25,6 @@ class Plink2 < Formula
         inreplace "Makefile" do |s|
           s.gsub! "-L/usr/lib64/atlas -llapack -lblas -lcblas -latlas",
                   "-L#{Formula["openblas"].opt_lib} -lopenblas"
-          s.gsub! "ZLIB ?=		-L. ../zlib-1.3/libz.so.1.3", "ZLIB ?= -lz"
           s.gsub! "-Wall -O2 -g -I../2.0/simde",
                   "-Wall -O2 -g -I../2.0/simde -I#{Formula["openblas"].opt_include}"
         end
