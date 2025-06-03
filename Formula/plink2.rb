@@ -2,9 +2,8 @@ class Plink2 < Formula
   # cite Chang_2015: "https://doi.org/10.1186/s13742-015-0047-8"
   desc "Analyze genotype and phenotype data"
   homepage "https://www.cog-genomics.org/plink2"
-  url "https://github.com/chrchang/plink-ng/archive/refs/tags/v2.00a5.12.tar.gz"
-  version "2.00a5.12"
-  sha256 "bf55f172c709265c9c7bf1518bb4f0036d28fecdd7b17f8db7f9d106586bb3f5"
+  url "https://github.com/chrchang/plink-ng.git",
+      tag: "v2.0.0-a.6.14"
   head "https://github.com/chrchang/plink-ng.git", branch: "master"
 
   bottle do
@@ -14,9 +13,11 @@ class Plink2 < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "9512c33fd71a714cc054dfe9ece9692cb417176683ba62802e3c3bea65b1f355"
   end
 
-  depends_on "openblas"
   depends_on "zstd"
   uses_from_macos "zlib"
+  on_linux do
+    depends_on "openblas"
+  end
 
   def install
     cd "1.9" do
@@ -37,11 +38,13 @@ class Plink2 < Formula
       system "./build.sh"
       bin.install "bin/plink2" => "plink2"
       bin.install "bin/pgen_compress" => "pgen_compress"
+      system "make", "-C", "utils/vcf_subset"
+      bin.install "utils/vcf_subset/vcf_subset" => "vcf_subset"
     end
   end
 
   test do
-    system "#{bin}/plink2", "--dummy", "513", "1423", "0.02", "--out", "dummy_cc1"
+    system bin/"plink2", "--dummy", "513", "1423", "0.02", "--out", "dummy_cc1"
     assert_path_exists testpath/"dummy_cc1.pvar"
   end
 end
