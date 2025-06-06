@@ -8,10 +8,10 @@ class Promod3 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256                               arm64_sequoia: "77c1375653320089e595e38bd48f2f6655b7a7900297eb38afc5515fc1df39b2"
-    sha256                               arm64_sonoma:  "a2194b634952b63b63fb5db65ee63b2db06f619c04d98ca33ed0c3ee2a1954a8"
-    sha256 cellar: :any,                 ventura:       "7b06cdaabe97726786747110e75d0c0e3cfc0e6a95b9118a5201ad1cb5b32af9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc662e38349f5f1ec9acd005afb66cff40db6ea10fd0c351b4aef2f52487dd36"
+    sha256                               arm64_sequoia: "f59661ec3f3bfefbc7c9377e698bbf6f58e55f812e9f10113f7ef05bb94bbde5"
+    sha256                               arm64_sonoma:  "3043efb9e70a20aed11a488fcb30768d5fad0ddf52dc73c657480a3e006a06f3"
+    sha256 cellar: :any,                 ventura:       "e88dd2cbcdebac4cc708c017d4d1885eb1ca35871bb826e39a1f19170b0a233f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fa4b27c6cd52f915ff5c68d4f217ed5018b41c30ae45f961edeb6fbda1d95c7"
   end
 
   depends_on "cmake" => :build
