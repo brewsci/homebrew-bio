@@ -2,10 +2,9 @@ class Promod3 < Formula
   # cite Studer_2021: "https://doi.org/10.1371/journal.pcbi.1008667"
   desc "Versatile Homology Modelling Toolbox"
   homepage "https://openstructure.org/promod3"
-  url "https://git.scicore.unibas.ch/schwede/ProMod3/-/archive/3.4.2/ProMod3-3.4.2.tar.gz"
-  sha256 "8103bcb344489eb0fa0567ad8c9a8a9b42d3dbbb8d46c82587e6a58eab45eefd"
+  url "https://git.scicore.unibas.ch/schwede/ProMod3/-/archive/3.5.0/ProMod3-3.5.0.tar.gz"
+  sha256 "a358d799581e8dee783fda1e9e16cad48b1b3c46ded6321600bd7697fad74539"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -34,8 +33,7 @@ class Promod3 < Formula
     inreplace "cmake_support/PROMOD3.cmake", "lib64", "lib"
 
     # Disable linking directly to CPython shared libraries
-    inreplace "cmake_support/PROMOD3.cmake",
-      /^\s*set\(CMAKE_REQUIRED_FLAGS "\$\{CMAKE_REQUIRED_FLAGS\} \$\{Python_LIBRARIES\}"\)\n?/, ""
+    inreplace "cmake_support/PROMOD3.cmake", "set(CMAKE_CXX_STANDARD 17)", "set(CMAKE_CXX_STANDARD 11)"
     inreplace "cmake_support/PROMOD3.cmake", /\s*\$\{Python_LIBRARIES\}\s*/, " "
     inreplace "CMakeLists.txt", "find_package(Python 3.6", "find_package(Python 3"
 
