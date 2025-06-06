@@ -17,6 +17,7 @@ class Clipper4coot < Formula
 
   depends_on "pkg-config" => [:build, :test]
   depends_on "texinfo" => :build
+  depends_on "brewsci/bio/libccp4"
   depends_on "brewsci/bio/mmdb2"
 
   resource "libfftw2" do
@@ -30,6 +31,9 @@ class Clipper4coot < Formula
   end
 
   def install
+    # Need for "pkg-config --cflags clipper" to work
+    # from libccp 8.0.0?
+    inreplace "configure", "libccp4c", "ccp4c"
     # required to prevent flat namespace issues on macOS
     ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s if OS.mac?
     # install legacy fftw version 2.1.5, only single precision.
