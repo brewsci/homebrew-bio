@@ -33,8 +33,6 @@ class Promod3 < Formula
     inreplace "cmake_support/PROMOD3.cmake", "lib64", "lib"
 
     # Disable linking directly to CPython shared libraries
-    inreplace "cmake_support/PROMOD3.cmake",
-      /^\s*set\(CMAKE_REQUIRED_FLAGS "\$\{CMAKE_REQUIRED_FLAGS\} \$\{Python_LIBRARIES\}"\)\n?/, ""
     inreplace "cmake_support/PROMOD3.cmake", /\s*\$\{Python_LIBRARIES\}\s*/, " "
     inreplace "CMakeLists.txt", "find_package(Python 3.6", "find_package(Python 3"
 
