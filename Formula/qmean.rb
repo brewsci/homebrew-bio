@@ -7,13 +7,12 @@ class Qmean < Formula
 
   desc "Qualitative Model Energy ANalysis (QMEAN)"
   homepage "https://git.scicore.unibas.ch/schwede/QMEAN"
-  url "https://git.scicore.unibas.ch/schwede/QMEAN/-/archive/4.3.1/qmean-4.3.1.tar.gz"
-  sha256 "01a8b89e41bde00c35ae19d263bbd53df5591319281c0a5f6654a989e56a2ee4"
+  url "https://git.scicore.unibas.ch/schwede/QMEAN/-/archive/4.4.0/qmean-4.4.0.tar.gz"
+  sha256 "6e549c1984dc65325e0ad6960ec8f10ccd85420188df6292117bdee2028e06bf"
   license "Apache-2.0"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
     sha256 cellar: :any,                 arm64_sequoia: "0ef4640d61ea80a9a03058709b19bd58ac83792aadd4267f53f84b8d15ff3688"
     sha256 cellar: :any,                 arm64_sonoma:  "e8fb2950c2a951ad0c70c3b82e3ae29ccde3028579b34047cd8b33a8ca234ca4"
     sha256 cellar: :any,                 ventura:       "1cc4b079aaf9cceb9548ef9d5bb1f5effec6685918774b072f420819d999e97e"
