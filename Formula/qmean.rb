@@ -13,7 +13,6 @@ class Qmean < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
     sha256 cellar: :any,                 arm64_sequoia: "0ef4640d61ea80a9a03058709b19bd58ac83792aadd4267f53f84b8d15ff3688"
     sha256 cellar: :any,                 arm64_sonoma:  "e8fb2950c2a951ad0c70c3b82e3ae29ccde3028579b34047cd8b33a8ca234ca4"
     sha256 cellar: :any,                 ventura:       "1cc4b079aaf9cceb9548ef9d5bb1f5effec6685918774b072f420819d999e97e"
