@@ -45,6 +45,7 @@ class Coot < Formula
   depends_on "harfbuzz"
   depends_on "libepoxy"
   depends_on "libpng"
+  depends_on "librsvg"
   depends_on "numpy"
   depends_on "openblas"
   depends_on "pango"
