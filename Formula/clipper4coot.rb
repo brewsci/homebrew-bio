@@ -8,11 +8,11 @@ class Clipper4coot < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "1328ca2938e4a8fc8164a7a6b940b370f68d602648bbe9af0552cbf20e05f7d9"
-    sha256 cellar: :any,                 arm64_sonoma:  "c43e299e174bf0710d18275cbf3e51c64ad3a4d336f485c05f8176fa0f41d86c"
-    sha256 cellar: :any,                 ventura:       "c388209e0e65f28d39279270ff5ffa78769e910de6bdb0eefebe2ec7eabdabeb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab8a620c4fd7be0ff47dfea7ec613e7d35458e69f5e1f39dbf00c0bdb6eb1808"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "9b0f7e9a6eb5b43c46d63eb709b89ddd0486bc1e4f560d67cd13603f2b866ab4"
+    sha256 cellar: :any,                 arm64_sonoma:  "ca724d732c418bf47f83e1d9e03525158b7ac6fc067f223b6fe382a83cefe6ed"
+    sha256 cellar: :any,                 ventura:       "357d227fed6902cab2071367c9decaa005bc2486d3a2248b4c9c068a389a9ebb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76d5779c38e500d691702689bb16ce3e1841dfe73e589650bfe5454f89faef6f"
   end
 
   depends_on "pkg-config" => [:build, :test]
@@ -31,6 +31,9 @@ class Clipper4coot < Formula
   end
 
   def install
+    # Need for "pkg-config --cflags clipper" to work
+    # from libccp 8.0.0?
+    inreplace "configure", "libccp4c", "ccp4c"
     # required to prevent flat namespace issues on macOS
     ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s if OS.mac?
     # install legacy fftw version 2.1.5, only single precision.

@@ -9,10 +9,11 @@ class Freesasa < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sequoia: "c40ff23944747b9fa9189486d16131795aea21af6f71822a67968a20d4c7a56f"
-    sha256 cellar: :any,                 arm64_sonoma:  "8ded8b3061c458d895d6958486d65ba653ad5829515a1d417f1d69886e84756b"
-    sha256 cellar: :any,                 ventura:       "21c128c20c6f1aea59ab3e66aaf45d8c672954c422b1b080c7f56c37c1a3684c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13158ef0a4ec170a9c7edb4cf37d6c0f94831c0c670dbafb9ca5f2c2b8c098a6"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "4503f9abbd6b73dea4f657f41c2927841e005a04a9952e13fc154e55d7bc848a"
+    sha256 cellar: :any,                 arm64_sonoma:  "78acfa4672f165aabb630c7671e9e244fe9fe819c2753295a1fdb1473c595748"
+    sha256 cellar: :any,                 ventura:       "7462b8d32a5fc9bef99d89d22d1bf33144e293fa2e294555679c98c18f6a38f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7abe7461c2cfc7e1e28508bc1f0c11be10cd42fc9f8481ff5ae8e6a46937983a"
   end
 
   depends_on "autoconf" => :build
@@ -28,7 +29,8 @@ class Freesasa < Formula
     system "./configure", *std_configure_args
 
     # Refer to https://github.com/mittinatten/freesasa/issues/85#issuecomment-1588979627
-    inreplace "src/Makefile", "-lc++", "-lstdc++" if OS.linux?
+    # Already fixed in HEAD
+    inreplace "src/Makefile", "-lc++", "-lstdc++" if OS.linux? && !build.head?
 
     system "make"
     system "make", "install"
