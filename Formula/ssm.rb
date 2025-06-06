@@ -17,6 +17,7 @@ class Ssm < Formula
   end
 
   depends_on "pkg-config" => [:build, :test]
+  depends_on "brewsci/bio/libccp4"
   depends_on "brewsci/bio/mmdb2"
 
   def install
