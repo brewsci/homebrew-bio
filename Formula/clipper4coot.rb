@@ -17,6 +17,7 @@ class Clipper4coot < Formula
 
   depends_on "pkg-config" => [:build, :test]
   depends_on "texinfo" => :build
+  depends_on "brewsci/bio/libccp4"
   depends_on "brewsci/bio/mmdb2"
 
   resource "libfftw2" do
