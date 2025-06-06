@@ -1,9 +1,10 @@
 class Coot < Formula
   desc "Crystallographic Object-Oriented Toolkit"
   homepage "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/"
-  url "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/source/releases/coot-1.1.15.tar.gz"
-  sha256 "da6ab4986e3f681afdc9b434c3bbfc65f2fbfd344bb2383836e88052b55e1831"
+  url "https://github.com/pemsley/coot/archive/refs/tags/Release-1.1.16.tar.gz"
+  sha256 "ddaf9c7dade0d9b21881617ec01eebb5f4bb6fb7cb6282ec0db559469d366219"
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only", "GPL-2.0-or-later"]
+  head "https://github.com/pemsley/coot.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -14,26 +15,19 @@ class Coot < Formula
     sha256 x86_64_linux:  "7a5650b3c337f5c8c159c6413ff013fcba4663e9214328b8efa33bbf64a8074f"
   end
 
-  head do
-    url "https://github.com/pemsley/coot.git", branch: "main"
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-    depends_on "swig" => :build
-  end
-
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
   depends_on "glm" => :build
+  depends_on "libtool" => :build
   depends_on "pkg-config" => :build
+  depends_on "swig" => :build
   depends_on "adwaita-icon-theme"
   depends_on "boost"
   depends_on "boost-python3"
-  depends_on "brewsci/bio/clipper4coot"
   depends_on "brewsci/bio/gemmi"
-  depends_on "brewsci/bio/libccp4"
   depends_on "brewsci/bio/mmdb2"
   depends_on "brewsci/bio/pygobject3@3.50"
   depends_on "brewsci/bio/raster3d"
-  depends_on "brewsci/bio/ssm"
   depends_on "cairo"
   depends_on "coordgen"
   depends_on "dwarfutils"
@@ -81,11 +75,8 @@ class Coot < Formula
   def install
     ENV.cxx11
     ENV.libcxx
-    if build.head?
-      # libtool -> glibtool for macOS
-      inreplace "autogen.sh", "libtool", "glibtool"
-      system "./autogen.sh"
-    end
+    inreplace "autogen.sh", "libtool", "glibtool"
+    system "./autogen.sh"
     if OS.mac?
       inreplace "./configure", "$wl-flat_namespace", ""
       inreplace "./configure", "$wl-undefined ${wl}suppress", "-undefined dynamic_lookup"

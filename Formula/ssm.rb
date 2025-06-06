@@ -17,10 +17,16 @@ class Ssm < Formula
   end
 
   depends_on "pkg-config" => [:build, :test]
-  depends_on "brewsci/bio/libccp4"
   depends_on "brewsci/bio/mmdb2"
 
   def install
+    # fix "invalid suffix on literal; C++11 requires a space between literal and identifier"
+    inreplace "superpose.cpp" do |s|
+      s.gsub! '" v."superpose_version" from "superpose_date" built', '" v.%s from %s built'
+      s.gsub! ",ssm::MAJOR_VERSION", ",superpose_version, superpose_date, ssm::MAJOR_VERSION"
+      s.gsub! '" Superpose v."superpose_version" from "superpose_date" "', '" Superpose v.%s from %s "'
+      s.gsub! '------\n\n"', '------\n\n",superpose_version, superpose_date'
+    end
     # required to prevent flat namespace issues on macOS
     ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s if OS.mac?
     # --enable-shared is required for coot
