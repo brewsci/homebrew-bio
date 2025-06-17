@@ -1,19 +1,10 @@
 class Coot < Formula
   desc "Crystallographic Object-Oriented Toolkit"
   homepage "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/"
-  url "https://github.com/pemsley/coot/archive/refs/tags/Release-1.1.16.tar.gz"
-  sha256 "ddaf9c7dade0d9b21881617ec01eebb5f4bb6fb7cb6282ec0db559469d366219"
+  url "https://github.com/pemsley/coot/archive/refs/tags/Release-1.1.17-v2.tar.gz"
+  sha256 "841251b43c258a5653e3597ff7b97b7059fbd15e9205080b5739e22e768af97f"
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only", "GPL-2.0-or-later"]
   head "https://github.com/pemsley/coot.git", branch: "main"
-
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 2
-    sha256 arm64_sequoia: "d1ae1ea2def0a7565202b4736f47fc027a4d2c280b35ebbe33e013cce0db88f3"
-    sha256 arm64_sonoma:  "509e132b157d4134a9f6c26fd6bea9f0f0407ef9f93347963569c1bf06bda565"
-    sha256 ventura:       "bdcf4d974fe16c62d04064881f491841bafd0482edda152d8dff4716886a03cf"
-    sha256 x86_64_linux:  "2d667ec0f2e5fd19ef3049d2ad2b0f7f4ecdcb532e0cf86b9ae420475bf23a05"
-  end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
