@@ -4,8 +4,8 @@ class Openstructure < Formula
   # cite Biasini_2013: "https://doi.org/10.1107/S0907444913007051"
   desc "Modular software framework for molecular modelling and visualization"
   homepage "https://openstructure.org"
-  url "https://git.scicore.unibas.ch/schwede/openstructure/-/archive/2.10.0/openstructure-2.10.0.tar.gz"
-  sha256 "88009b3d5b477f753e4ce1c731da19fb733aea4ed4ccac6c5fbaf6e1359a9560"
+  url "https://git.scicore.unibas.ch/schwede/openstructure/-/archive/2.11.0/openstructure-2.11.0.tar.gz"
+  sha256 "46c91d0499f54818e3039cb6d51c9cc296b7e1a2ff34521dcc207cee18c38b60"
   license "LGPL-3.0-or-later"
 
   bottle do
@@ -24,7 +24,6 @@ class Openstructure < Formula
   depends_on "wget" => :build
   depends_on "boost"
   depends_on "boost-python3"
-  depends_on "brewsci/bio/clustal-w"
   depends_on "brewsci/bio/openmm@7"
   depends_on "brewsci/bio/parasail"
   depends_on "brewsci/bio/voronota"
@@ -59,12 +58,6 @@ class Openstructure < Formula
   resource "dockq" do
     url "https://files.pythonhosted.org/packages/c1/a5/df80285b0f2e5b94562ccc1656ba8f3eaff34f7428ea04f26dad28894ae0/dockq-2.1.3.tar.gz"
     sha256 "50c4e2b4bced3bf865b12061ec0b56e23de1383dc70b445441848224f6c72c0d"
-  end
-
-  patch do
-    # Patch for Homebrew packaging (make openstructure src compatibile with boost@1.88 and fix CMake configs)
-    url "https://raw.githubusercontent.com/eunos-1128/openstructure/1d222aecd67784358fbd3462a7c1c1adb1fba93c/homebrew.patch"
-    sha256 "d83c96555877f93275d5e3f0543f9fe89fc2f8a9add5694fec5e5437617a7862"
   end
 
   def python3
@@ -175,9 +168,10 @@ class Openstructure < Formula
   def caveats
     <<~EOS
       You may need to install the following packages to use certain python bindings:
-      (Refer to https://openstructure.org/docs/2.10/bindings/bindings/)
+      (Refer to https://openstructure.org/docs/bindings/bindings/)
 
         - blast
+        - brewsci/bio/clustal-w
         - brewsci/bio/dssp
         - brewsci/bio/hh-suite
         - brewsci/bio/msms
