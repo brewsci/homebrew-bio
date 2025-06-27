@@ -26,16 +26,20 @@ class NewickUtils < Formula
     ENV["CFLAGS"] = "-O2"
     ENV["LDFLAGS"] = ""
 
+    # Don't bother testing nw_gen, it's known to fail on macOS.
+    inreplace "tests/test_nw_gen.sh", "#!/bin/sh", "#!/usr/bin/true" if File.exist?("tests/test_nw_gen.sh") if OS.mac?
+    system "autoreconf", "-fi"
     if OS.mac?
-      # Don't bother testing nw_gen, it's known to fail on macOS.
-      inreplace "tests/test_nw_gen.sh", "#!/bin/sh", "#!/usr/bin/true" if File.exist?("tests/test_nw_gen.sh")
-      system "autoreconf", "-fi"
+      system "./configure",
+            "--prefix=#{prefix}",
+            "--with-libxml",
+            "--without-lua",
+            "--without-guile"
     end
-    system "./configure",
-      "--prefix=#{prefix}",
-      "--with-libxml",
-      "--without-lua",
-      "--without-guile"
+    if OS.linux?
+      system "./configure",
+             "--prefix=#{prefix}"
+    end
     system "make"
     system "make", "check" if OS.linux? # Skip tests on macOS due to known nw_gen failures
     system "make", "install"
