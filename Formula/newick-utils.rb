@@ -27,9 +27,9 @@ class NewickUtils < Formula
     ENV["LDFLAGS"] = ""
 
     # Don't bother testing nw_gen, it's known to fail on macOS.
-    inreplace "tests/test_nw_gen.sh", "#!/bin/sh", "#!/usr/bin/true" if File.exist?("tests/test_nw_gen.sh") if OS.mac?
     system "autoreconf", "-fi"
     if OS.mac?
+      inreplace "tests/test_nw_gen.sh", "#!/bin/sh", "#!/usr/bin/true" if File.exist?("tests/test_nw_gen.sh")
       system "./configure",
             "--prefix=#{prefix}",
             "--with-libxml",
