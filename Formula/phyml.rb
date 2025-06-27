@@ -6,7 +6,7 @@ class Phyml < Formula
   # There is a mismatch between archive and version
   version "3.3.20250429"
   sha256 "c8d09f52f080a95dde8d7d797da5874796a148158cd18f956110cdba13cd3368"
-  license "GPL-3.0"
+  license "GPL-3.0-only"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
