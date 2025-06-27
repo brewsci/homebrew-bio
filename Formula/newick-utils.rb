@@ -23,7 +23,7 @@ class NewickUtils < Formula
 
   def install
     # Set environment variables
-    ENV["CFLAGS"] = "-O2"
+    ENV["CFLAGS"] = "-O2 -fcommon"
     ENV["LDFLAGS"] = ""
 
     # Don't bother testing nw_gen, it's known to fail on macOS.
