@@ -23,10 +23,7 @@ class NewickUtils < Formula
 
   def install
     # Don't bother testing nw_gen, it's known to fail on macOS.
-    if OS.mac? && File.exist?("tests/test_nw_gen.sh")
-      inreplace "tests/test_nw_gen.sh", "#!/bin/sh", "#!/usr/bin/true"
-    end
-
+    inreplace "tests/test_nw_gen.sh", "#!/bin/sh", "#!/usr/bin/true" if OS.mac? && File.exist?("tests/test_nw_gen.sh")
     system "autoreconf", "-fi"
     system "./configure",
       "--prefix=#{prefix}",
@@ -34,13 +31,8 @@ class NewickUtils < Formula
       "--without-lua",
       "--without-guile"
     system "make"
-    if OS.mac?
-      # Skip tests on macOS due to known nw_gen failures
-      system "make", "install"
-    else
-      system "make", "check"
-      system "make", "install"
-    end    
+    system "make", "check" if OS.linux? # Skip tests on macOS due to known nw_gen failures
+    system "make", "install"
     doc.install Dir["doc/*"]
     pkgshare.install "data"
   end
