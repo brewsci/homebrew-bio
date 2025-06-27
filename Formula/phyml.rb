@@ -2,9 +2,11 @@ class Phyml < Formula
   # cite Guindon_2010: "https://doi.org/10.1093/sysbio/syq010"
   desc "Fast maximum likelihood-based phylogenetic inference"
   homepage "http://www.atgc-montpellier.fr/phyml/"
-  url "https://github.com/stephaneguindon/phyml/archive/refs/tags/v3.3.20200621.tar.gz"
-  sha256 "a8243923ee08c74cab609a4b086ade66c6156fc2b24450e2a500108dc644c867"
-  license "GPL-3.0"
+  url "https://github.com/stephaneguindon/phyml/archive/refs/tags/v3.3.20250515.tar.gz"
+  # There is a mismatch between archive and version
+  version "3.3.20250429"
+  sha256 "c8d09f52f080a95dde8d7d797da5874796a148158cd18f956110cdba13cd3368"
+  license "GPL-3.0-only"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -18,8 +20,8 @@ class Phyml < Formula
   depends_on "pkg-config" => :build
 
   def install
-    system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}"
+    system "sh", "./autogen.sh"
+    system "./configure", "--prefix=#{prefix}", "--enable-phyml"
     system "make"
     bin.install "src/phyml"
     doc.install "doc/phyml-manual.pdf"
