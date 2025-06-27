@@ -21,7 +21,7 @@ class Phyml < Formula
 
   def install
     system "sh", "./autogen.sh"
-    system "./configure", "--enable-phyml"
+    system "./configure", "--prefix=#{prefix}", "--enable-phyml"
     system "make"
     bin.install "src/phyml"
     doc.install "doc/phyml-manual.pdf"
