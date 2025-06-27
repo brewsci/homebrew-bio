@@ -6,7 +6,7 @@ class Smalt < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "cd6b0f671a4a141122aab57c88d3d73164b0730391dfebb7f3e9e3696bb3a124"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "80e68892a948076affec7e1157924798eb01ae4f15e78103eb2d809cb30aa92c"
   end

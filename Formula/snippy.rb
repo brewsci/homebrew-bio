@@ -6,7 +6,7 @@ class Snippy < Formula
   license "GPL-2.0"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "8c0d0939812e84c244a2f87a92d42ae79fa9c001ee3a4ea8f00fefa4dd2fd15b"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "c7a253e55f63fa2969d95ff81908f7fc61a6b1b09cc46b9d796511071396251b"
   end

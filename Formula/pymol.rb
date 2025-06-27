@@ -2,31 +2,29 @@ class Pymol < Formula
   include Language::Python::Virtualenv
   desc "Open-source PyMOL molecular visualization system"
   homepage "https://pymol.org/"
-  url "https://github.com/schrodinger/pymol-open-source/archive/v2.4.0.tar.gz"
-  sha256 "5ede4ce2e8f53713c5ee64f5905b2d29bf01e4391da7e536ce8909d6b9116581"
-  revision 2
+  url "https://github.com/schrodinger/pymol-open-source/archive/v2.5.0.tar.gz"
+  sha256 "aa828bf5719bd9a14510118a93182a6e0cadc03a574ba1e327e1e9780a0e80b3"
   head "https://github.com/schrodinger/pymol-open-source.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
-    rebuild 1
-    sha256 cellar: :any, catalina:     "12b63c0572b512c2639d2366b3c6cdab15128cf7b71f1a5ff1633fe0f90e4d67"
-    sha256               x86_64_linux: "88d616fb0c1a5430441cd00af1bc34d7d04406db029f737d75d7165dea605080"
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any,                 catalina:     "3ad1319e459e63e9b4c117cf30513fff43d672d6419deb4a6a1ac2c72219e5de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "196365715bdf0dd75a6fc3249b4983a053f44eaa8068c34f3d774fd23b019f41"
   end
 
   depends_on "brewsci/bio/mmtf-cpp"
   depends_on "catch2"
-  depends_on "ffmpeg" # enable export mp4 movies
+  depends_on "ffmpeg"
   depends_on "freeglut"
   depends_on "freetype"
   depends_on "glew"
   depends_on "glm"
   depends_on "libpng"
   depends_on "libxml2"
-  depends_on "msgpack"
+  depends_on "msgpack-cxx"
   depends_on "netcdf"
   depends_on "numpy"
-  depends_on "pyqt"
+  depends_on "pyqt@5"
   depends_on "python@3.9"
   depends_on "sip"
 
@@ -71,11 +69,14 @@ class Pymol < Formula
       --testing
     ]
     system Formula["python@3.9"].opt_bin/"python3", "setup.py", "install", *args
-
+    site_packages = "lib/python#{xy}/site-packages"
+    pth_contents = "import site; site.addsitedir('#{libexec/site_packages}')\n"
+    (prefix/site_packages/"homebrew-pymol.pth").write pth_contents
     bin.install libexec/"bin/pymol"
   end
 
   test do
     system "#{bin}/pymol", "-c"
+    system Formula["python@3.9"].opt_bin/"python3", "-c", "import pymol"
   end
 end

@@ -6,21 +6,19 @@ on:
 
 jobs:
   upload-bottles:
-    runs-on: ubuntu-latest
-    container:
-      image: homebrew/ubuntu16.04:master
+    runs-on: ubuntu-20.04
     env:
-      HOMEBREW_INTERNET_ARCHIVE_KEY: ${{secrets.HOMEBREW_INTERNET_ARCHIVE_KEY}}
+      HOMEBREW_FORCE_HOMEBREW_ON_LINUX: 1
+      HOMEBREW_GITHUB_PACKAGES_USER: LinuxbrewTestBot
+      HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{secrets.HOMEBREW_GITHUB_PACKAGES_TOKEN}}
       HOMEBREW_NO_ANALYTICS: 1
       HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
-      - name: Install dependencies
-        run: |
-          apt update
-          apt install -y jq unzip
       - uses: actions/checkout@master
         with:
           fetch-depth: 100
+      - name: Update Homebrew
+        run: brew update
       - name: Upload bottles
         shell: bash
         run: |
@@ -50,7 +48,9 @@ jobs:
             git -C "$(brew --repo ${{github.repository}})" status
             git config --global user.name "Brewsci"
             git config --global user.email "linux@brew.sh"
-            brew pr-upload --archive-item=brewsci --root-url=https://archive.org/download/brewsci/bottles-bio
+            which -a skopeo
+            skopeo --version
+            brew pr-upload --root-url=https://ghcr.io/v2/brewsci/bio
           fi
           cd "$(brew --repo ${{github.repository}})"
           git branch -f "pr$pr"

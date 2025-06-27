@@ -6,13 +6,13 @@ class Oma < Formula
   # cite Altenhoff_2014: "https://doi.org/10.1093/nar/gku1158"
   desc "Standalone package to infer orthologs with the OMA algorithm"
   homepage "https://omabrowser.org/standalone/"
-  url "https://omabrowser.org/standalone/OMA.2.4.2.tgz"
-  sha256 "73cc51300ecd162970a37b2ccb8992b66f710fafc76a00eab04b4d3857d19477"
+  url "https://omabrowser.org/standalone/OMA.2.5.0.tgz"
+  sha256 "30f5f4e73152c07a61a811ce982bdba2a5e1d236312cc16faa0b388b759e937e"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "729dcb8eb4c80b0c5a0609c6dde988435f104a08c74df0b2891bc1f382dde221"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "43580d201fff38e760fc4109df638faef4e370ce7e75c88c3df07c9dc3312b5e"
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "62859a53f9fa4f56d227089e6010e131c20c84dbc3de0d66bbdc3f07e6cf7913"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0d440610328984f5fc89d12d41dd25325659526a5cdbb32260f969c339de6992"
   end
 
   depends_on "numpy"

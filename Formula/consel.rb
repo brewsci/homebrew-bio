@@ -7,7 +7,7 @@ class Consel < Formula
   sha256 "cc6e8ee6077693817db475229aa47b9d9fb66bf5f48a3aace63e4b525f05238b"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "a27d35514c4c834befc6bf71f9beb91a09369190c73830c34f6fecba817857be"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "d8a7fd3a42022107b4fd61b490be3cfbc2248ccae15fd580853ab705ad9b6e2b"
   end

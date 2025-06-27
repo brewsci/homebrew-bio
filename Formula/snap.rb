@@ -7,7 +7,7 @@ class Snap < Formula
   revision 1
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "5e856b94be598ccbe6f40d0e18c7d8a3be24b428cf9f48f9f621a2899d2aa5e5"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "1719060198b0c7937b4a01eac3783262bfea23b240952c15b3d46320251322af"
   end

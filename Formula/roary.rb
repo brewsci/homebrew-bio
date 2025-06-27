@@ -5,19 +5,18 @@ class Roary < Formula
   url "https://github.com/sanger-pathogens/Roary/archive/v3.13.0.tar.gz"
   sha256 "375f83c8750b0f4dea5b676471e73e94f3710bc3a327ec88b59f25eae1c3a1e8"
   license "GPL-3.0"
-  revision 1
+  revision 2
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any, catalina:     "94907f6c61003dd602970c9c878fc7171bf2be0ddfee3d1db2ebd5a04869837a"
     sha256 cellar: :any, x86_64_linux: "74f824cff0367696af1bafe8c74f61dc17f3115506734a6f5604e91d96e2d830"
   end
 
   depends_on "cpanminus" => :build
-
   depends_on "bedtools"
+  depends_on "bioperl"
   depends_on "blast"
-  depends_on "brewsci/bio/bioperl"
   depends_on "brewsci/bio/cd-hit"
   depends_on "brewsci/bio/fasttree"
   depends_on "brewsci/bio/kraken"

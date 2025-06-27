@@ -8,7 +8,7 @@ class Express < Formula
   head "https://github.com/adarob/eXpress.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, mojave:       "1f8d67bf11bf49458dcfa173c13722ab83b6b9a555a2fcc27048f5409d1cdf8b"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "aae8e9f53dc1ea615b5cafa70a954beba40abe40c0fb15026237e42ea6a86529"
   end

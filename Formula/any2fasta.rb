@@ -6,7 +6,7 @@ class Any2fasta < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "8d3d3f2b64992031b9c29c0d634003e744d70a0d9696fc815bd1349db27db405"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "56f513ec7e523f5fae592ecdd98ebeab235644c54025ad8597ee3163d00e24c7"
   end

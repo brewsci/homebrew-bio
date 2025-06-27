@@ -7,7 +7,7 @@ class Raxml < Formula
   head "https://github.com/stamatak/standard-RAxML.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "d399bf6f9e9e84831182e64687d2b21fbebead01126e9337211cc4198f0b8ec9"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "3c091cd8095130a9e14e5c44ccc36fd0ae19f053fad65097cd90f1dc83bc245d"
   end

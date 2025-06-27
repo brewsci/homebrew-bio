@@ -8,7 +8,7 @@ class Dwgsim < Formula
   head "https://github.com/nh13/DWGSIM.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "f6794802ed9615c73fe240a0e322c6ab9e773b2e22c05482908f38f85c15c653"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "dd36a513fa17141d0a98a59b985f7965c80498b30c1fa2d8dabba3cc1d42929a"
   end

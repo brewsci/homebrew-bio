@@ -7,7 +7,7 @@ class Ssm < Formula
   license "GPL-3.0-only"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "0cea947187c889476c284ed284120c4d33ea298140ced301a8da6b5aae78b352"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "1b88c88c5b518517046acfe08fd37b382765a7ee7c05d6c24cfdc4e843adb31e"
   end

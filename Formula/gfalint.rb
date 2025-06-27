@@ -6,7 +6,7 @@ class Gfalint < Formula
   license "MIT"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "df40acd7ebcce869c0ffa8538d6a105a73737ffae107fda0f6ea561f36893331"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "8e82b29cec5636771ea2f2b9447f4083acbaa1efcc392f5ec64fe6c45bcad4c8"
   end

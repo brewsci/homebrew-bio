@@ -9,7 +9,7 @@ class Nonpareil < Formula
   head "https://github.com/lmrodriguezr/nonpareil.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "bc566819e555df1f2d78612647642e45cd52953514baf66f3412c797407bce9c"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "89f6054e0ac0294ff44a5abfe61db24e7c3b6a440435fac058cec1bdc9f51af0"
   end

@@ -7,7 +7,7 @@ class Falco < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "98dd1ff596681054096e0292182b37c003743f84f328295cd1ffa022b3d56efe"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "25bbeffa99ebc66777c484992e09a93e04630a621796387c60dcab32c6f46e27"
   end

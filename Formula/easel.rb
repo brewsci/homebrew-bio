@@ -11,7 +11,7 @@ class Easel < Formula
   end
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "c0ad8899059f44836c4358008f6ab0f8c0ab450dedb6dcd032c01dbf23c01e12"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "b3721d487dd864d06b3816fb8dc73c62747f881e64b441b844c6e6e29d894cc4"
   end

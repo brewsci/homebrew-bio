@@ -5,11 +5,14 @@ class Dssp < Formula
   homepage "https://github.com/cmbi/dssp"
   url "https://github.com/cmbi/dssp/archive/3.1.4.tar.gz"
   sha256 "496282b4b5defc55d111190ab9f1b615a9574a2f090e7cf5444521c747b272d4"
+  license "GPL-3.0-only"
+  revision 1
+  head "https://github.com/cmbi/dssp.git", branch: "master"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
-    sha256 cellar: :any, catalina:     "6ebb2d6959f7db323d0645e964ccdbc20a666bf9579aea4673291f06ed3ace82"
-    sha256 cellar: :any, x86_64_linux: "f838bdac491bd122ee73017146a2840f0ddcd450b38e9ac72c158365aa1e9a73"
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any,                 catalina:     "35408932044ec98f856214e9d09b05c576f4af0aa281b6028c769ef24da5780d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d9402c5aa18fd3f754e03a4d862ac3271593fbad60875153d9db418f0b4b7e73"
   end
 
   depends_on "autoconf" => :build

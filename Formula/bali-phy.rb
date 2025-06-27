@@ -14,7 +14,7 @@ class BaliPhy < Formula
   end
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any,                 catalina:     "272d54b06c0906e3fe6041c156d6fb748d0f2c27ff1c32d4271543fb302368a6"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "4d1dd23a90021c9a833c0d7a51a454481eb862acfd832e7f53be5eeea5a36f1b"
   end

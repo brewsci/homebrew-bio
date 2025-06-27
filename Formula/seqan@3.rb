@@ -3,19 +3,22 @@ class SeqanAT3 < Formula
   # cite Reinert_2017: "https://doi.org/10.1016/j.jbiotec.2017.07.017"
   desc "Modern C++ library for sequence analysis"
   homepage "https://www.seqan.de"
-  url "https://github.com/seqan/seqan3/releases/download/3.0.2/seqan3-3.0.2-Source.tar.xz"
-  sha256 "bab1a9cd0c01fd486842e0fa7a5b41c1bf6d2c43fdadf4c543956923deb62ee9"
+  url "https://github.com/seqan/seqan3/releases/download/3.0.3/seqan3-3.0.3-Source.tar.xz"
+  sha256 "42fca82e7e03ba2ed2026be739cd5e0be785152f872fdd0bac13b6f836035fc0"
   head "https://github.com/seqan/seqan3.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "2b09a9199ca88289ae9d7572ea159481e23cb57a419fec0c3e77647179f22a1a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "067d5789a5501d6ac6668fc8323cedc0a3cfd0252de6ee2478d754695d0d4f1a"
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "88c2c9c0d6678bff857625320c7ff963ee2fb3246291c2fbd9b5e38b7fd3765f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "24252dca489cb6db2a216cd615aa9e0458ace94b352a2954a73bfcdfbb8c283b"
   end
 
   depends_on "cmake" => :build
   depends_on "xz" => :build
   depends_on "gcc@9"
+
+  uses_from_macos "bzip2"
+  uses_from_macos "zlib"
 
   # requires c++17 and concepts
   fails_with :clang do

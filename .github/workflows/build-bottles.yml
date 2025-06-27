@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: homebrew/ubuntu16.04:master
+      options: --user root
     steps:
       - name: Update Homebrew
         run: brew update-reset
@@ -22,7 +23,7 @@ jobs:
           cp -a "$GITHUB_WORKSPACE" "$(brew --repo ${{github.repository}})"
           mkdir ~/bottles
           cd ~/bottles
-          brew test-bot --skip-recursive-dependents --root-url=https://archive.org/download/brewsci/bottles-bio --git-name=Brewsci --git-email=linux@brew.sh
+          brew test-bot --skip-recursive-dependents --root-url=https://ghcr.io/v2/brewsci/bio --git-name=Brewsci --git-email=linux@brew.sh
           cp -a ~/bottles $RUNNER_TEMP/
       - name: Upload bottles
         uses: actions/upload-artifact@v1
@@ -30,7 +31,7 @@ jobs:
           name: bottles
           path: ${{runner.temp}}/bottles
   build-macos-bottles:
-    runs-on: macos-latest
+    runs-on: macos-10.15
     env:
       HOMEBREW_FORCE_VENDOR_RUBY: 1
     steps:
@@ -43,7 +44,7 @@ jobs:
           cp -a "$GITHUB_WORKSPACE" "$(brew --repo ${{github.repository}})"
           mkdir ~/bottles
           cd ~/bottles
-          brew test-bot --cleanup --root-url=https://archive.org/download/brewsci/bottles-bio
+          brew test-bot --cleanup --root-url=https://ghcr.io/v2/brewsci/bio
           cp -a ~/bottles $RUNNER_TEMP/
       - name: Upload bottles
         uses: actions/upload-artifact@v1

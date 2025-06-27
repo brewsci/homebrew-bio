@@ -8,7 +8,7 @@ class Last < Formula
   head "http://last.cbrc.jp/last", using: :hg
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "66dccf49e7f904abd138fbfc83d0bdaf4800884a76d2f8aa55bc625432b2295d"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "36f3304a2a5d139dc3192c6126b8ed281fa7882ad2712f65e9576139dfb2dad8"
   end

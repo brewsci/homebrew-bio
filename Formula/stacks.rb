@@ -8,7 +8,7 @@ class Stacks < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any, sierra:       "9387a6190454b83f17ac5c179abc67382592fa64d00b8c0f6293a5b0100ca117"
     sha256 cellar: :any, x86_64_linux: "06ca98f340aeacd4b0f47d7f3025b73b868289f0f8ff861306c15d13bfc3755b"
   end

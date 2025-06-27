@@ -6,7 +6,7 @@ class Dehomopolymerate < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "21e7a971ea6a8657b9634f108e98e52bcf42ef2af5952cbff9cedc737328a25b"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "2d12702c3ae4fb608e1e85f69aab2bc2d4e0a858f385668de16fdb3fab6e918c"
   end

@@ -7,7 +7,7 @@ class Parsnp < Formula
   head "https://github.com/marbl/parsnp.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 catalina:     "a314260f40f1935bddabd3c0918615a966a928d9d4943946553df64374342312"
     sha256 x86_64_linux: "c88a39e77c87877394c668db346bfedf2559e4f13f3b54b590db5b999375976d"
   end

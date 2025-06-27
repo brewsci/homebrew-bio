@@ -7,7 +7,7 @@ class Mash < Formula
   head "https://github.com/marbl/Mash.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, mojave:       "ceded4203723c07f1468254f7f1281031bfd8163e948fb1b165659064f7ef5a6"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "4d75b04ef71f547af960aab06fe485dd53dd830695508fb0f2f33e1cfd5461b9"
   end

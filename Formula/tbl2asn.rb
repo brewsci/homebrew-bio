@@ -13,7 +13,7 @@ class Tbl2asn < Formula
   end
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "eacd51af092160d8382f67ee09409b2dc3d978415dc9f95d2cc7f08af39b30b0"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "756239685f6881a204f66cbf0e4ad3edb80e97de10b26c0086d816b2c559ac2a"
   end

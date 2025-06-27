@@ -7,7 +7,7 @@ class Bracken < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any, catalina:     "2f5ff6fb14b5bd5a787ded1a7a5fb996e8f85786feb75434a4433f5d5830ec9a"
     sha256 cellar: :any, x86_64_linux: "523af87b62653b651851715eced5ae3584e5bd0bb970b69f65fd126c865077f5"
   end

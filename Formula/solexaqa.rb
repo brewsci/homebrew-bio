@@ -6,7 +6,7 @@ class Solexaqa < Formula
   sha256 "b3bdabf955387a4f6176dbdfda1cf03bb869c077b4eec152304f2e76be5f0cf6"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "bb6cc746542b42234d0444bf2ae13bd3d7360e11c4582687bac2c30d7e167188"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "f3618d54e63db3fda2e442d2a8a38afb1db0c2c7f695e2e1013ae6cef1e86ff2"
   end

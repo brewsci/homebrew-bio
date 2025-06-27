@@ -8,7 +8,7 @@ class SnpSites < Formula
   head "https://github.com/sanger-pathogens/snp-sites.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "e6479d546058d193564ba724fec92872a997403816db0476d0d5b12d5659b2b5"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "b85086e6c5714775f2311f7647c571e97057ab761de0aada0afc2f0a8af5e9d7"
   end

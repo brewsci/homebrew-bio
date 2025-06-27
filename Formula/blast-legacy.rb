@@ -11,7 +11,7 @@ class BlastLegacy < Formula
   # cite Altschul_1990: "https://doi.org/10.1093/nar/25.17.3389"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "cb62bf738ed68725b0711f9259ad4cfb8273d6b445cc3b2dabc0de3c6a9d4af8"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "bf4932732f4f8a1f174db415e0fee1912e6ceb73b46ef907d44f9ed47df66857"
   end

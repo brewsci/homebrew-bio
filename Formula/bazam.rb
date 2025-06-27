@@ -12,7 +12,7 @@ class Bazam < Formula
   end
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "5fc4d9196cfaa7f87e40383c830ef220b0a0a76028c68ae03a3f0d48d1de5120"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "08d9d9e0560074dafa59cc6347fa714d717bdefe69cf90f88ce017ead1344919"
   end

@@ -7,7 +7,7 @@ class Trinity < Formula
   license "BSD-3-Clause"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any, catalina:     "aa8ad40994e918b6c20f053501ed87c4fb5585468d6f4c971ba88c788189dd42"
     sha256 cellar: :any, x86_64_linux: "964414c050baa9ddb52ef211438197bc95c91e76adc778861fcbda1c366c1afe"
   end
@@ -17,10 +17,10 @@ class Trinity < Formula
   depends_on "cmake" => :build
   depends_on "bowtie2"
   depends_on "brewsci/bio/express"
-  depends_on "brewsci/bio/jellyfish"
   depends_on "brewsci/bio/salmon"
   depends_on "brewsci/bio/trimmomatic"
   depends_on "htslib"
+  depends_on "jellyfish"
   depends_on "openjdk"
   depends_on "samtools"
 

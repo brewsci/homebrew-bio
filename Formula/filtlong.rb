@@ -6,7 +6,7 @@ class Filtlong < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "f587624c4b2dcf5c3b746b3fbf34e20e9ff5839d4fc80256035b23d834d05524"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "446414903f438e372b2548d88f2c601c428f5f105ddd39d457312959e7f73ece"
   end

@@ -7,7 +7,7 @@ class Clipper4coot < Formula
   revision 1
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any,                 catalina:     "b59b536495ee9b1691296458c4f0125c68c76de5e729738430621504492e1896"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "ce93bf961cd711153db05d726dbc9a0662c1e2d0d7af075ec99bb95015f71f43"
   end

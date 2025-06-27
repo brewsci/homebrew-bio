@@ -5,7 +5,7 @@ class Crumble < Formula
   sha256 "b1ab503f4c98a83e2c81fec4cf8d951c80957ae05b6a6a19b59ece6caf490c01"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any, catalina:     "7e410246c46034874e6812737679b52a096ed932078a0a25a5fc50b1fda4ee35"
     sha256 cellar: :any, x86_64_linux: "1f190dcc641889565cd072f02efd334ed9a23dbcb191c2f5b0a081420de3cbb3"
   end

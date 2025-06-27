@@ -7,7 +7,7 @@ class Orfm < Formula
   license "LGPL-3.0"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "0a19b5b29dcd9cdbc1357fc053750d8e546bdd716f865ffee0880b0e8a0a30ec"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "fc5c9e157ba4820a17c6ed38f56569e76ade956a449b32b06a904019f9b4845c"
   end

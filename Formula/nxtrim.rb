@@ -7,7 +7,7 @@ class Nxtrim < Formula
   head "https://github.com/sequencing/NxTrim.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "1a1af7b998b50d4f788d0096190ff96825131ad4117da8e02e5dd3b8c0b1a198"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "4a60e1b58c0ed93be841ea2f25c7046dc57170812c63fc5de813af55b9d3c094"
   end

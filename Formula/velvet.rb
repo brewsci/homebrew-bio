@@ -8,7 +8,7 @@ class Velvet < Formula
   head "https://github.com/dzerbino/velvet.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "2f7e5a1c844dbad804e896a9f27768cdd17b25b0c46de794449f7d44266379b2"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "79ad825ef586b4627de53573503b695c7a1f4167bba3a0f9058aa1d83382934e"
   end

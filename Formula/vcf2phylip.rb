@@ -8,7 +8,7 @@ class Vcf2phylip < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "4bf14803c03c07a2bba536d4ea6d81ede6c074d4ba7bd5574626d4902647b0c4"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "6f6121e02dfffdc964828c07f30ec6f601a3614234c3f4b69a9c2480b77d4992"
   end

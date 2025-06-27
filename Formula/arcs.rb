@@ -1,15 +1,15 @@
 class Arcs < Formula
   # cite Yeo_2017: "https://doi.org/10.1093/bioinformatics/btx675"
-  desc "Scaffold genome sequence assemblies using 10x Genomics data"
+  desc "Scaffold genome sequence assemblies using linked or long reads"
   homepage "https://github.com/bcgsc/arcs"
-  url "https://github.com/bcgsc/arcs/releases/download/v1.2.1/arcs-1.2.1.tar.gz"
-  sha256 "c86e2dae359b38bed0a628e60e47a95e496ac9ef0fbda712d9246e7f0332c832"
-  license "GPL-3.0"
+  url "https://github.com/bcgsc/arcs/releases/download/v1.2.2/arcs-1.2.2.tar.gz"
+  sha256 "9c3490eb77be198d28ca55eb10bae617f694f0abee0484d3f599e3354e97450b"
+  license "GPL-3.0-only"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
-    sha256 cellar: :any, catalina:     "20c0513d21d726a3cdf1d0016dc3072a7a2a78f34c6905373c1c2ccac9e9f736"
-    sha256 cellar: :any, x86_64_linux: "38fdc0f3ab018cc03d4de8089df3ec7a3d02751d098b46f9d24bdd0fcb492a24"
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any,                 catalina:     "81a8593090662ffa6a3abd831591d4a20799e0352eca7fa8b96841e56542cb5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c63717d8f1bac1db0b8bfff40e3433359c4df8f12add5805849e679ec99e0287"
   end
 
   head do
@@ -28,7 +28,7 @@ class Arcs < Formula
   end
 
   def install
-    on_macos do
+    if OS.mac?
       ENV.append "LDFLAGS", "-L#{Formula["libomp"].opt_lib} -lomp"
       ENV.append "CPPFLAGS", "-I#{HOMEBREW_PREFIX}/include -Xpreprocessor -fopenmp -lomp"
     end
@@ -40,9 +40,17 @@ class Arcs < Formula
       "--prefix=#{prefix}",
       "--with-boost=#{Formula["boost"].opt_include}"
     system "make", "install"
+    libexec_src = Pathname.new("#{libexec}/bin/src")
+    libexec_src.install "src/long-to-linked-pe"
+    libexec_bin = Pathname.new("#{libexec}/bin/Examples")
+    libexec_bin.install "Examples/makeTSVfile.py"
+    libexec_bin.install "Examples/arcs-make"
+    (bin/"arcs-make").write_env_script libexec/"bin/Examples/arcs-make", PYTHONPATH: ENV["PYTHONPATH"]
   end
 
   test do
     assert_match "Usage", shell_output("#{bin}/arcs --help")
+    assert_match "Usage", shell_output("#{bin}/long-to-linked-pe --help 2>&1")
+    assert_match "Usage", shell_output("#{bin}/arcs-make help")
   end
 end

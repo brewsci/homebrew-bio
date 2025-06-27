@@ -7,7 +7,7 @@ class ClusterPicker < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "88f08aced228d5d0938531578fb0fa1f5c978451a91c99fe1b23a491251060be"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "db273226399a88119c8790292b7262fe933012b58620dabe53868348f9fee34d"
   end

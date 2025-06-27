@@ -6,7 +6,7 @@ class Legsta < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "f911328d0fc033f93d5c8c60be93fd13498ec6ae91e8e27ce0ee54ec57d3953d"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "42753e6bd8bb2cd596026027ee92644d43c2c60b3e3b6896b0790218d9fd05aa"
   end

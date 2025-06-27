@@ -8,7 +8,7 @@ class Porechop < Formula
   head "https://github.com/rrwick/Porechop"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any, sierra:       "9582147a653c87fb61b94ef8f001da7d45455a87f445297bc7020520cb1be319"
     sha256 cellar: :any, x86_64_linux: "7f19dfbdbc11a540a7b1760b41781ac4456299db8bbe707575f9c7a8f4674358"
   end

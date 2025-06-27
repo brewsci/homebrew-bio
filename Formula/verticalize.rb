@@ -7,7 +7,7 @@ class Verticalize < Formula
   revision 1
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "cc01630a582a00db26eb35fbb1706ec8a98d987bf0d93596e60b0e5a744f3515"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "5c1b1ee9fe0b8c955f271745f0cbef8bcc34a09bc453144c44268e7ca4ea370f"
   end

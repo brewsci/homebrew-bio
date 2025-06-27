@@ -1,6 +1,6 @@
 class Pathvisio < Formula
   # cite Kutmon_2015: "https://doi.org/10.1371/journal.pcbi.1004085"
-  desc "Extendable Pathway Analysis Toolbox"
+  desc "Pathway editor, visualization, and analysis tool"
   homepage "https://www.pathvisio.org/"
   url "https://www.pathvisio.org/data/releases/3.3.0/pathvisio_bin-3.3.0.zip"
   sha256 "403b10e185061799225e1bf04998827edf87c442f2f872811d306997d8ecf672"

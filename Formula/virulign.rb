@@ -7,7 +7,7 @@ class Virulign < Formula
   license "GPL-2.0"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "aa82baa295f493e1627a4f9a4efc724c966ae4dc52226b65ba4cfda4fd7b9806"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "88d9376e8e85dc9ee5b8328753f3205814ed2721ba07779202fecbb86e2e09e8"
   end

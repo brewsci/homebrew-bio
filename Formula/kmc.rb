@@ -7,7 +7,7 @@ class Kmc < Formula
   head "https://github.com/marekkokot/KMC.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "357369318d5619a941285eca62a1b260ae2d519c4fe27f326b26277d70d97451"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "a14014ca6943cd93069815a57e40ae2147d01c32e10109b8009e5198ef0aba32"
   end

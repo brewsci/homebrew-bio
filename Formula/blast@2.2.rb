@@ -10,8 +10,6 @@ class BlastAT22 < Formula
   end
   version "2.2.31"
 
-  bottle :unneeded
-
   keg_only :versioned_formula
 
   depends_on "patchelf" => :build if OS.linux?

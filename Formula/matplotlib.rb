@@ -7,7 +7,7 @@ class Matplotlib < Formula
   sha256 "3e477db76c22929e4c6876c44f88d790aacdf3c3f8f3a90cb1975c0bf37825b0"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any,                 catalina:     "9bf624c16d6330f4bcebaba5411ae116d012f6903c36eebc0b6d7e48f275f281"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "ec088b401c215bdfbb7a3387b27c7cb931b9b368f1ac23e963c43b94dfa152e0"
   end

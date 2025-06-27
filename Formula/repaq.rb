@@ -6,7 +6,7 @@ class Repaq < Formula
   license "MIT"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "e958a6d2b6510627d73c6bd60f4bdb992e7214d3ff92e1d54fa49a80bf0e9924"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "4e291d5df6f67232d7bc2616b3b2f90f22c3960d56b006c46bcee37df383bbb7"
   end

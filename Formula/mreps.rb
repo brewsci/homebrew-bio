@@ -7,7 +7,7 @@ class Mreps < Formula
   license "GPL-2.0"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, mojave:       "18da69d83b028a26c6202a9879d3af24d8e678ff36f1cd25979df3dc91c511ac"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "0c7d4a4f202cd4885d25b470d02baa22f7ff8d816c9df7789bc57847a8f13bd7"
   end

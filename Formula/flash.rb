@@ -7,7 +7,7 @@ class Flash < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "de91f8ecf68dd85c6935367def8e7452cbeb3039e50e4fc10393f27dbbcebcc4"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "6ee7d8e115ea5c7ee2a4584a699f6366b8b91d8ff52dd3019f9932f56e437a18"
   end

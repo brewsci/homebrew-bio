@@ -8,7 +8,7 @@ class Kraken < Formula
   head "https://github.com/DerrickWood/kraken.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "fcefe1f392f6c3e9821b24cd8d096c90e8348a25fd577bfecdf507ff863462ef"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "a4533e0f5e6dda9546b71f59ce77653f838f9aa59468ca1f6730f838a966523b"
   end

@@ -7,7 +7,7 @@ class Fraggenescan < Formula
   revision 1
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "a82f77a860becbe0c068f8421fecd4f9371abf0342efdd5837aed3635d3612b3"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "962e3fad1b35d723b39231a27718d16f420332c36d1eb9b132522fedea786d1e"
   end

@@ -8,7 +8,7 @@ class Plink2 < Formula
   head "https://github.com/chrchang/plink-ng.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any, catalina:     "5c6ac77111c1eeeab30af40e8a1c14391a182a10e2535f9ebe0a58ee62f70828"
     sha256 cellar: :any, x86_64_linux: "23f851b712db8ddf8e5587623b12599833c288aca026fa4790ee5384f0a870ba"
   end

@@ -5,16 +5,17 @@ class MmtfCpp < Formula
   url "https://github.com/rcsb/mmtf-cpp/archive/v1.0.0.tar.gz"
   sha256 "881f69c4bb56605fa63fd5ca50842facc4947f686cbf678ad04930674d714f40"
   license "MIT"
+  revision 1
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
-    sha256 cellar: :any_skip_relocation, sierra:       "8b39cff9ba4c472eed266632996266fdf4533c28600ee629ad4fe5b433dccca3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "13fdd052921a4c7404dcb224c1dc426d8bf468349ddb401afb3d6932167ee3c5"
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "dd3cfec9312d4fd243a5f96a3ad7c2ac522fe5a69e6157787408b884ac68135e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a1d7736b79180ffa59ef4932da68faf37ae72b8c6691e4acd16d53fc62d86d80"
   end
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
-  depends_on "msgpack"
+  depends_on "msgpack-cxx"
 
   resource "173Dmmtf" do
     url "https://mmtf.rcsb.org/v1.0/full/173D.mmtf.gz"

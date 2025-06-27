@@ -6,7 +6,7 @@ class Panito < Formula
   head "https://github.com/sanger-pathogens/panito.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any, sierra:       "f8069888845a117be27072cd9393e0859d639372bb5588df4b7ddd84eec1bbcd"
     sha256 cellar: :any, x86_64_linux: "84a55028b58cdc1bd02b9d2d2a08caf4104da89e045a22af0a0f60e57b210450"
   end

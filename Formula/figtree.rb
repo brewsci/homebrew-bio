@@ -5,7 +5,7 @@ class Figtree < Formula
   sha256 "529b867657b29e369cf81cd361e6a76bd713d488a63b91932df2385800423aa8"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "46dded66c63bcc052039c5de56c770831ee21077c801be8b64bb428bf25b1f80"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "0dfa41c23b48cef3c43359faa55552ccc927f68fbcaf3749168c6de4c64c1c76"
   end

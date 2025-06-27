@@ -12,7 +12,7 @@ class Minigraph < Formula
   end
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "9dcb1abd6ccc96b5910276f3690542be85ab68bb6c33c0c096736a17f13fc01c"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "fadf58602f216a3f4faac81eaad58fe0bdda70e4200fa102a5c6cfd2c528d49e"
   end

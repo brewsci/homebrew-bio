@@ -12,7 +12,7 @@ class Centrifuge < Formula
   end
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "cd12f24f14e0fd03e3b534bce48f4c1fd54652473b95daf306bdace8aa101af9"
   end
 

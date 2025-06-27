@@ -6,7 +6,7 @@ class Ska < Formula
   license "MIT"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "fbd0265e5781a5ab96d69bf46d1616b1e8b9c53eef03316cb25ceeed50d90d73"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "caafb54652a88112431cbc92b5885602b3e97dc9722364dd168b252fa2d5b04b"
   end

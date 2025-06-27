@@ -6,7 +6,7 @@ class Kounta < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "1e0eb6dbb219f19b82dc684cbef7ddcdd7ed9f5b9cb5f7b21bb253bc1e369ea1"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "bd468d88c9e66bb63a3fd490c30398516e1ed78b119047d33917a00a9da6bc5a"
   end

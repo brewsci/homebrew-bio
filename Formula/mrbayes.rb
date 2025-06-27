@@ -13,7 +13,7 @@ class Mrbayes < Formula
   end
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any, sierra:       "55f858faa19f1073cc030c19be1feb1cc154e6baaf3c8905f0953ba013385e08"
     sha256 cellar: :any, x86_64_linux: "832051f9fbdb0557e2c3a483907b78723f1c1114ab42c8dcc1f804ff2eaa6376"
   end
@@ -23,10 +23,9 @@ class Mrbayes < Formula
   depends_on "open-mpi" => :optional
 
   def install
-    args = ["--prefix=#{prefix}"]
-    args << "--with-mpi=" + (build.with?("open-mpi") ? "yes" : "no")
-
-    system "./configure", *args
+    system "./configure",
+      "--prefix=#{prefix}",
+      "--with-mpi=#{build.with?("open-mpi") ? "yes" : "no"}"
     system "make"
     system "make", "install"
 

@@ -5,10 +5,10 @@ class Maker < Formula
   desc "Genome annotation pipeline"
   homepage "https://www.yandell-lab.org/software/maker.html"
   url "http://yandell.topaz.genetics.utah.edu/maker_downloads/static/maker-2.31.11.tgz"
-  sha256 "ebb66e798a6a996e4797878c1cb6154914b8e9ae0393381d3904af5782b3b0a5"
+  sha256 "129ce1d33df8ae29d417f0dac0df756398c5b76bdd58213233e94e735fe38c37"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, mojave:       "b6d7f905e818e0624a726a4ae270340b4bd950ea5cf92c6172f16f843e509446"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "bb1c95a44a03f74fcf2777058f57bf99aa52099d911a04c1ae355aa0a09fd4c4"
   end
@@ -20,8 +20,8 @@ class Maker < Formula
 
   depends_on "cpanminus" => :build
   depends_on "augustus"
+  depends_on "bioperl"
   depends_on "blast"
-  depends_on "brewsci/bio/bioperl"
   depends_on "brewsci/bio/exonerate"
   depends_on "brewsci/bio/repeatmasker"
   depends_on "brewsci/bio/snap"

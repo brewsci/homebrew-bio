@@ -8,7 +8,7 @@ class AbyssExplorer < Formula
   head "https://github.com/bcgsc/ABySS-explorer.git"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "44e6a1c361f36b0a7316b4bfa45371f571743fb7ad19df0dc76bddd1dcd22d8e"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "4e1f8ad29d192da909ac2ec6ea32eb7644e2dd9107e166c29aeef5a7d7f0fcdd"
   end

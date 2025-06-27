@@ -6,7 +6,7 @@ class Samclip < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "f1eef22d3337796057f2f1fd45b63a893b408bc543ebd740a0869d7bf98a4280"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "10ed4d3fb055a47767520c453b4952dcaca8dc734784e05749c24f3d59ebc695"
   end

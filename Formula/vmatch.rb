@@ -3,7 +3,7 @@ class Vmatch < Formula
   homepage "http://www.vmatch.de/"
   license "ISC"
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "510633853d4500dd2cd36b522fdef69056c594c17f14c624613a84300cceeb4d"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "a543d450bdedad7174a277f0b9060443ef7a43954f731c89a7fbbdd35430c4e6"
   end

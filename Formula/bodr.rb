@@ -12,7 +12,7 @@ class Bodr < Formula
   end
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "87f1a1334eeccaba523dd941872090b5d2ed138f2f3759d7c27d1e39a2195abc"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "902e4559129e1c0bc5e72e172b263ce6686423c82cb6dfdc15d1ed25c6eef01c"
   end

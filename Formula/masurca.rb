@@ -7,12 +7,12 @@ class Masurca < Formula
   license "GPL-3.0"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "8a71c43c7720af509a9754d0afec8bb28e24a1e751c2e84f4c9d4c3b041a4748"
   end
 
   depends_on "boost" => :build
-  depends_on "brewsci/bio/jellyfish"
+  depends_on "jellyfish"
   depends_on :linux
   depends_on "parallel"
   depends_on "perl"

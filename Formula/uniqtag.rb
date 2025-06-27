@@ -7,11 +7,16 @@ class Uniqtag < Formula
   license "MIT"
   head "https://github.com/sjackman/uniqtag.git"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "61be621e022719a2fec273ce9a565509a915f7d7fd32723439e986d7d60b724b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "31ab9e9aee63b3629d0839afb37694094dfdc9fb97b16e7b2346375b332e1ec6"
+  end
+
   uses_from_macos "ruby"
 
   def install
     system "make", "install", "prefix=#{prefix}"
-    doc.install "README.md"
   end
 
   test do

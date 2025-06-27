@@ -6,7 +6,7 @@ class Indelible < Formula
   sha256 "6b74cbe0d3ce202e99d04282a87b564449ab935c66480f20665f1fb4102721a6"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "b0e0bdb1d36361acd34e6aeeae0b5c30da04e27175ac8d114d7aa60abbc3675e"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "21419cb7b8262602bfada3b67fa5c1b0009814a978ef67e4987b11f9c1659330"
   end

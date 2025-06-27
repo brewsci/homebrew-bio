@@ -6,7 +6,7 @@ class RavenAssembler < Formula
   license "MIT"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "a2c5e6443f5f5199de1124cad4a2a6198cbb9501c2b4d5b26f1d84b6204e1e28"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "848aa58e9977cc568fb90aa73439e1b1706c165fc6e4a692b472c1ab3eee385b"
   end

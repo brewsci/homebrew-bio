@@ -8,7 +8,7 @@ class Hmmer2 < Formula
   sha256 "73cb85c2197017fa7a25482556ed250bdeed256974b99b0c25e02854e710a886"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "7cbccc680a07e5421f3a582e5bf8d2c73c9a930b77823360e794aecf7928c51d"
   end
 

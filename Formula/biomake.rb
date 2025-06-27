@@ -7,7 +7,7 @@ class Biomake < Formula
   license "BSD-3-Clause"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "392c08b1568213df278806f7565c254ebadae455e010803e3b748efffbbd73e5"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "7f74baac28c1761084e6a22c7595ba9002201540633e149e7e43270838f6cb0b"
   end

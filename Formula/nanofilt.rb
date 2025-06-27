@@ -4,31 +4,27 @@ class Nanofilt < Formula
   # cite De_Coster_2018: "https://doi.org/10.1093/bioinformatics/bty149"
   desc "Filtering and trimming of long read sequencing data"
   homepage "https://github.com/wdecoster/nanofilt"
-  url "https://files.pythonhosted.org/packages/77/13/f811015d65a4984db6b9f5ef722a2cfbaf577697840c68facc8cbe2a2c2c/NanoFilt-2.7.1.tar.gz"
-  sha256 "78de51ecdc8a22d4edc59bc9c858812c9b861e80bc9ec7626ad8d0f6cac68b4b"
+  url "https://files.pythonhosted.org/packages/85/fb/6218b8f18dd3b39569cdfd2803f837730f392cc31df58d5ea927cc14c40c/NanoFilt-2.8.0.tar.gz"
+  sha256 "47f4f4f8be834f011570a8d76d07cc12abe0686c8917607316a8ccfb3e20758c"
   license "GPL-3.0"
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "bbf3e5519315971faac2ef4f24b4eb26b3b7814963cc43957deeea388cd380d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f1a2c76d6bf5cc0b9e1f8fe1f585c6fdbb7f674a3a8b2d4340f284b95338553b"
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, catalina:     "ed128c5f1dd588cd8b2ba87d2f51098aa40d9ae2382ad9bfb4a7b4dca641946d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0e5ac69d718bc2e2073fc240d166d60e7b114a501004e41d7ae17185b5d9d939"
   end
 
-  depends_on "python@3.8"
+  depends_on "numpy"
+  depends_on "python@3.9"
 
   resource "biopython" do
-    url "https://files.pythonhosted.org/packages/3d/2f/d9df24de05d651c5e686ee8fea3afe3985c03ef9ca02f4cc1e7ea10aa31e/biopython-1.77.tar.gz"
-    sha256 "fb1936e9ca9e7af8de1050e84375f23328e04b801063edf0ad73733494d8ec42"
-  end
-
-  resource "numpy" do
-    url "https://files.pythonhosted.org/packages/f1/2c/717bdd12404c73ec0c8c734c81a0bad7048866bc36a88a1b69fd52b01c07/numpy-1.19.0.zip"
-    sha256 "76766cc80d6128750075378d3bb7812cf146415bd29b588616f72c943c00d598"
+    url "https://files.pythonhosted.org/packages/89/c5/7fe326081276f74a4073f6d6b13cfa7a04ba322a3ff1d84027f4773980b8/biopython-1.78.tar.gz"
+    sha256 "1ee0a0b6c2376680fea6642d5080baa419fd73df104a62d58a8baf7a8bbe4564"
   end
 
   resource "pandas" do
-    url "https://files.pythonhosted.org/packages/31/29/ede692aa6547dfc1f07a4d69e8411b35225218bcfbe9787e78b67a35d103/pandas-1.0.5.tar.gz"
-    sha256 "69c5d920a0b2a9838e677f78f4dde506b95ea8e4d30da25859db6469ded84fa8"
+    url "https://files.pythonhosted.org/packages/8a/6f/7fcef020b5b305862cacf376183eaa0f907f2fa42f0b687b2a9a2c6cda4d/pandas-1.2.3.tar.gz"
+    sha256 "df6f10b85aef7a5bb25259ad651ad1cc1d6bb09000595cab47e718cbac250b1d"
   end
 
   resource "python-dateutil" do
@@ -37,8 +33,8 @@ class Nanofilt < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/f4/f6/94fee50f4d54f58637d4b9987a1b862aeb6cd969e73623e02c5c00755577/pytz-2020.1.tar.gz"
-    sha256 "c35965d010ce31b23eeb663ed3cc8c906275d6be1a34393a1d73a41febf4a048"
+    url "https://files.pythonhosted.org/packages/b0/61/eddc6eb2c682ea6fd97a7e1018a6294be80dba08fa28e7a3570148b4612d/pytz-2021.1.tar.gz"
+    sha256 "83a4a90894bf38e243cf052c8b58f381bfe9a7a483f6a9cab140bc7f702ac4da"
   end
 
   resource "six" do

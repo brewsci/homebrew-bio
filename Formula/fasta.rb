@@ -13,7 +13,7 @@ class Fasta < Formula
   end
 
   bottle do
-    root_url "https://archive.org/download/brewsci/bottles-bio"
+    root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "7243b2aa0b0a8bd26748f1392639e111a692fd789bdc48622772778e5ea953ec"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "fa74efd96bdcaa4aeb87fd7c4bf2c0df07e366f467750a3fc7a10e9adaabf630"
   end
