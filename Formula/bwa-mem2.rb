@@ -2,8 +2,8 @@ class BwaMem2 < Formula
   desc "Next version of bwa-mem short read aligner"
   homepage "https://github.com/bwa-mem2/bwa-mem2"
   url "https://github.com/bwa-mem2/bwa-mem2.git",
-      tag:      "v2.2.1",
-      revision: "bf3d376e95f4321b0d37a27d7ff1c77da4d289ff"
+      tag:      "v2.3",
+      revision: "7aa5ff6"
   head "https://github.com/bwa-mem2/bwa-mem2.git"
 
   bottle do
