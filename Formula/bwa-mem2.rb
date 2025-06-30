@@ -3,7 +3,7 @@ class BwaMem2 < Formula
   homepage "https://github.com/bwa-mem2/bwa-mem2"
   url "https://github.com/bwa-mem2/bwa-mem2.git",
       tag:      "v2.3",
-      revision: "7aa5ff6"
+      revision: "7aa5ff6c3330490e5629ab9b7327683d2dce02d6"
   head "https://github.com/bwa-mem2/bwa-mem2.git"
 
   bottle do
