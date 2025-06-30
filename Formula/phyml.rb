@@ -10,8 +10,10 @@ class Phyml < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "adac7f68bc36a7bd0b4954749d2293af62ea6d9fe91febed13d84f514f089ed9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7253c8ac68f4f24790adc53d49c9030fd0113fe8f33c482375c47874386ce43e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2fd2486bab6bfa0c3d5b4f53d307929727c789b82bc5b13c2dd7d41659da93cd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0bf1cbd05010af7a238b01f8d21a8892e3d7bb3cfae3954c6923f78d782f3ed5"
+    sha256 cellar: :any_skip_relocation, ventura:       "9aae7991b2a29d53fa5f8f545ca722c340ac6d48d1488b0bd025eccfc166bb04"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a59a2b3497bc03def401b2e6e898bc38a07fb3c693da68e8057123ffee32f994"
   end
 
   depends_on "autoconf" => :build
