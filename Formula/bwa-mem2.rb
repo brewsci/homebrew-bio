@@ -18,8 +18,8 @@ class BwaMem2 < Formula
   uses_from_macos "zlib"
 
   resource "sse2neon" do
-    url "https://raw.githubusercontent.com/DLTcollab/sse2neon/v1.7.0/sse2neon.h"
-    sha256 "c36e1355c1a22d9c3357c945d1ef8bd005cb1f0f7b378e6577a45ea96931a083"
+    url "https://raw.githubusercontent.com/DLTcollab/sse2neon/v1.8.0/sse2neon.h"
+    sha256 "07723c9f9457dd4316f1fde3dd4eb6f31dd67d9955f6c21f4e609ac1698be48a"
   end
 
   resource "safestringlib" do
