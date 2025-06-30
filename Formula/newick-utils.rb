@@ -7,8 +7,11 @@ class NewickUtils < Formula
   sha256 "5214e2b64e3ba29458f0a3d763334701803f5bfc9c6759f4523aa73a5b66625e"
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 sierra:       "112a87fb8e837fe74b12c0fc77c3181b5f62d17eff1d566287ef6d106ac52a85"
-    sha256 x86_64_linux: "998dc74a04eef21d5cbe508ce5135414eb9dd97d3cd327324b1d02dbac200ce0"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "4a415f7583486878728bb892242a518c90416633a3b22f3741c8cbaea2f23f72"
+    sha256 cellar: :any,                 arm64_sonoma:  "8c8bdda745ff21c68b68715f63930d61459a602ef9aa754919ea0d62c41a2355"
+    sha256 cellar: :any,                 ventura:       "b5d21f31755a6b3965698f015424f75ef461a007c96dab3f4b721d14aedda90a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff7e4d4366238d42384f883eda1fdb8a2c97545e3b2344e5bc4efc9d5adb2a59"
   end
 
   depends_on "autoconf" => :build
