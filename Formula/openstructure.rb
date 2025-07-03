@@ -172,7 +172,6 @@ class Openstructure < Formula
 
         - blast
         - brewsci/bio/clustal-w
-        - brewsci/bio/dssp
         - brewsci/bio/hh-suite
         - brewsci/bio/msms
         - mmseqs2
