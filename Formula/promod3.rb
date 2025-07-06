@@ -7,8 +7,8 @@ class Promod3 < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
     root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 2
     sha256                               arm64_sequoia: "77c1375653320089e595e38bd48f2f6655b7a7900297eb38afc5515fc1df39b2"
     sha256                               arm64_sonoma:  "a2194b634952b63b63fb5db65ee63b2db06f619c04d98ca33ed0c3ee2a1954a8"
     sha256 cellar: :any,                 ventura:       "7b06cdaabe97726786747110e75d0c0e3cfc0e6a95b9118a5201ad1cb5b32af9"
