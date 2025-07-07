@@ -14,7 +14,7 @@ class Flowcraft < Formula
   end
 
   depends_on "brewsci/bio/nextflow"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   def install
     xy = Language::Python.major_minor_version "python3"
