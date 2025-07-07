@@ -13,8 +13,8 @@ class Flowcraft < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "45938c7344382686e14ef63d568e1ef74ad9155285cf9fe584127bb837484c4e"
   end
 
-  depends_on "brewsci/bio/nextflow"
-  depends_on "python@3.9"
+  # depends_on "brewsci/bio/nextflow"
+  depends_on "python@3.8"
 
   def install
     xy = Language::Python.major_minor_version "python3"
