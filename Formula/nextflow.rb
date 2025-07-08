@@ -14,8 +14,10 @@ class Nextflow < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "96dc9aafdb0ef9804017f32200c738cbe3e5856be40ac2d9dfb865d79268605a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3547d7f7f5a11ef0bb57e55230e28e1bc410882dd7bd2d3f75949e94522f8112"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5651c31be9ccc02bf18476500954de6444c23fb16e7c20cbb65528c1c20ea4f7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5651c31be9ccc02bf18476500954de6444c23fb16e7c20cbb65528c1c20ea4f7"
+    sha256 cellar: :any_skip_relocation, ventura:       "5651c31be9ccc02bf18476500954de6444c23fb16e7c20cbb65528c1c20ea4f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32511428d01559082c3e177d80984281a6aca81c438e61b91902e2848e25089c"
   end
 
   depends_on "openjdk@17"
