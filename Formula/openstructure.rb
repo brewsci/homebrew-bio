@@ -10,11 +10,11 @@ class Openstructure < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256                               arm64_sequoia: "e42dd1a5f356833a126a9d41c0f5e014ce61d46c40d3a1c9dc5372ab563de349"
-    sha256                               arm64_sonoma:  "dcfd1cfcee02842b3e1af9f07d8d5759f230751e41f8fe96517c2ac929e280cb"
-    sha256 cellar: :any,                 ventura:       "c9101c22cebbf661b17d97bd9ef24a59e9f6a57d094e6e6a836b8ccbb5bbc92b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b8b6e55634cdad24550fd6a69a4eeaa0040da58d6b42306ac92eb0da799be7d"
+    rebuild 2
+    sha256                               arm64_sequoia: "c76fb41c46e5710de200344f2adc7211425918c81c0d2a2e690691151c67d4f0"
+    sha256                               arm64_sonoma:  "5ed85d924620dd4e8f698d2fe58e050b8bc457de3ebb460772eed117b149b43c"
+    sha256 cellar: :any,                 ventura:       "fdb28171757c277f0dc9739b3f560e13d36b2f2673f3aca62511855874351dde"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bb8f0e16ea37b99037a01e9782fad5a4a3d1b282776eda22535df6b706f80f5"
   end
 
   depends_on "cmake" => :build
