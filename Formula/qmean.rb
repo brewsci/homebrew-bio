@@ -10,6 +10,7 @@ class Qmean < Formula
   url "https://git.scicore.unibas.ch/schwede/QMEAN/-/archive/4.3.1/qmean-4.3.1.tar.gz"
   sha256 "01a8b89e41bde00c35ae19d263bbd53df5591319281c0a5f6654a989e56a2ee4"
   license "Apache-2.0"
+  revision 1
 
   depends_on "cmake" => :build
   depends_on "eigen" => :build
