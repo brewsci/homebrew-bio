@@ -11,15 +11,6 @@ class Qmean < Formula
   sha256 "01a8b89e41bde00c35ae19d263bbd53df5591319281c0a5f6654a989e56a2ee4"
   license "Apache-2.0"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia: "c7d53d6aece19a239545047c292b2782b6785788b8af4a443195a5797317e68e"
-    sha256 cellar: :any,                 arm64_sonoma:  "9c2ad1dc79e4d7f7e7f7c1d78e9c26fc875782099efd8cbbc8127b9c46dec213"
-    sha256 cellar: :any,                 ventura:       "46c4471cad6955068c4450a5bea6e4b674c78eac2cc5c8abe67251ceac5994ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77669d65a304a431140f30016e0f57b1fcdeb0abdb961a6203ab5217c162f76f"
-  end
-
   depends_on "cmake" => :build
   depends_on "eigen" => :build
   depends_on "meson" => :build # for building numpy
