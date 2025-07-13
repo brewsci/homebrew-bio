@@ -3,8 +3,8 @@ class Dssp < Formula
   # cite Kabsch_1983: "https://doi.org/10.1002/bip.360221211"
   desc "Assign secondary structure to proteins"
   homepage "https://github.com/PDB-REDO/dssp"
-  url "https://github.com/PDB-REDO/dssp/archive/refs/tags/v4.4.10.tar.gz"
-  sha256 "b535d0410a79d612a2abea308d13d0ae2645bb925b13a86e5bb53c38b0fac723"
+  url "https://github.com/PDB-REDO/dssp/archive/refs/tags/v4.5.3.tar.gz"
+  sha256 "8dd92fdf2a252a170c8a811e3adb752e0f2860318ecb2b6ed5e4fd1d2b5ce5e6"
   license "BSD-2-Clause"
   head "https://github.com/PDB-REDO/dssp.git", branch: "trunk"
 
@@ -19,7 +19,9 @@ class Dssp < Formula
   depends_on "cmake" => :build
   depends_on "eigen" => :build
   depends_on "boost"
+  depends_on "boost-python3"
   depends_on "icu4c"
+  depends_on "python@3.13"
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
@@ -55,8 +57,11 @@ class Dssp < Formula
 
     system "cmake", "-S", ".", "-B", "build",
                     "-Dcifpp_DIR=#{prefix/"libcifpp/lib/cmake/cifpp"}",
-                    "-Dlibmcfp_DIR=#{prefix/"libmcfp/lib/cmake/libmcfp"}",
+                    "-Dmcfp_DIR=#{prefix/"libmcfp/lib/cmake/libmcfp"}",
                     "-DCMAKE_BUILD_TYPE=Release",
+                    "-DCMAKE_CXX_STANDARD=20",
+                    "-DINSTALL_LIBRARY=ON",
+                    "-DPython_ROOT_DIR=#{Formula["python@3.13"].opt_prefix}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
