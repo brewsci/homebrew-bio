@@ -57,7 +57,7 @@ class Dssp < Formula
 
     system "cmake", "-S", ".", "-B", "build",
                     "-Dcifpp_DIR=#{prefix/"libcifpp/lib/cmake/cifpp"}",
-                    "-Dmcfp_DIR=#{prefix/"libmcfp/lib/cmake/libmcfp"}",
+                    "-Dmcfp_DIR=#{prefix/"libmcfp/lib/cmake/mcfp"}",
                     "-DCMAKE_BUILD_TYPE=Release",
                     "-DCMAKE_CXX_STANDARD=20",
                     "-DINSTALL_LIBRARY=ON",
