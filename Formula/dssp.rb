@@ -55,6 +55,8 @@ class Dssp < Formula
       system "cmake", "--install", "build"
     end
 
+    inreplace "python-module/CMakeLists.txt", 'SUFFIX ".so"', 'SUFFIX ".dylib"' if OS.mac?
+
     system "cmake", "-S", ".", "-B", "build",
                     "-Dcifpp_DIR=#{prefix/"libcifpp/lib/cmake/cifpp"}",
                     "-Dmcfp_DIR=#{prefix/"libmcfp/lib/cmake/mcfp"}",
