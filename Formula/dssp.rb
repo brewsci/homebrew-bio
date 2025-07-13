@@ -19,9 +19,7 @@ class Dssp < Formula
   depends_on "cmake" => :build
   depends_on "eigen" => :build
   depends_on "boost"
-  depends_on "boost-python3"
   depends_on "icu4c"
-  depends_on "python@3.13"
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
@@ -55,16 +53,12 @@ class Dssp < Formula
       system "cmake", "--install", "build"
     end
 
-    inreplace "python-module/CMakeLists.txt", 'SUFFIX ".so"', 'SUFFIX ".dylib"' if OS.mac?
-
     system "cmake", "-S", ".", "-B", "build",
                     "-Dcifpp_DIR=#{prefix/"libcifpp/lib/cmake/cifpp"}",
                     "-Dmcfp_DIR=#{prefix/"libmcfp/lib/cmake/mcfp"}",
                     "-DCMAKE_BUILD_TYPE=Release",
                     "-DCMAKE_CXX_STANDARD=20",
                     "-DINSTALL_LIBRARY=ON",
-                    "-DBUILD_PYTHON_MODULE=ON",
-                    "-DPython_ROOT_DIR=#{Formula["python@3.13"].opt_prefix}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
