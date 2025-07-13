@@ -83,7 +83,7 @@ class Iqtree3 < Formula
 
     # Test with a simple phylogenetic analysis
     cp pkgshare/"test.phy", testpath
-    system "bin/iqtree3", "-s", "test.phy", "-m", "GTR"
+    system bin/"iqtree3", "-s", "test.phy", "-m", "GTR"
 
     # Check that output files were created
     assert_path_exists testpath/"test.phy.iqtree"
