@@ -61,6 +61,7 @@ class Dssp < Formula
                     "-DCMAKE_BUILD_TYPE=Release",
                     "-DCMAKE_CXX_STANDARD=20",
                     "-DINSTALL_LIBRARY=ON",
+                    "-DBUILD_PYTHON_MODULE=ON",
                     "-DPython_ROOT_DIR=#{Formula["python@3.13"].opt_prefix}",
                     *std_cmake_args
     system "cmake", "--build", "build"
