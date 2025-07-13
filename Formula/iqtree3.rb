@@ -1,17 +1,19 @@
 class Iqtree3 < Formula
+  # cite Wong_2025: "https://doi.org/10.32942/X2P62N"
   desc "Efficient and versatile phylogenomic software by maximum likelihood"
   homepage "http://www.iqtree.org/"
   # Use git clone to get submodules
   url "https://github.com/iqtree/iqtree3.git", branch: "master", shallow: false
   version "3.0.1"
-  license "GPL-2.0-or-later"
+  license "GPL-2.0-only"
   head "https://github.com/iqtree/iqtree3.git", branch: "master", shallow: false
 
+  depends_on "boost" => :build
   depends_on "cmake" => :build
-  depends_on "boost"
-  depends_on "eigen"
+  depends_on "eigen" => :build
   depends_on "googletest" if OS.mac? # For test helpers
-  depends_on "libomp"
+  depends_on "libomp" if OS.mac?
+  depends_on "llvm" if OS.mac?
   depends_on "lsd2" => :optional
   fails_with gcc: "4"
   fails_with gcc: "5" do
