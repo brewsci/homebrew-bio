@@ -37,22 +37,14 @@ class Iqtree3 < Formula
     args = std_cmake_args + [
       "-DCMAKE_C_COMPILER=#{ENV.cc}",
       "-DCMAKE_CXX_COMPILER=#{ENV.cxx}",
-      "-DCMAKE_CXX_FLAGS=#{ldflags} #{cppflags}",
+      "-D}CMAKE_CXX_FLAGS=#{ldflags} #{cppflags}",
       "-DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}/eigen3",
       "-DBUILD_TESTING=OFF",
       "-DIQTREE_TEST=OFF",
       "-DFETCHCONTENT_FULLY_DISCONNECTED=ON",
-      "-DUSE_CMAPLE=OFF", "-DUSE_LSD2=OF",
+      "-DUSE_CMAPLE=OFF", "-DUSE_LSD2=OFF",
       "-DFETCHCONTENT_TRY_FIND_PACKAGE_MODE=ALWAYS"
     ]
-
-    # Add architecture-specific optimizations
-    if Hardware::CPU.intel?
-      args << "-DIQTREE_FLAGS=fma" if Hardware::CPU.avx2?
-    elsif Hardware::CPU.arm?
-      # ARM-specific flags if needed
-      args << "-DIQTREE_FLAGS=omp"
-    end
 
     system "cmake", "-S", ".", "-B", "build", *args
     system "cmake", "--build", "build"
