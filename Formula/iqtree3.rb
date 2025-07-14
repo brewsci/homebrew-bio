@@ -11,11 +11,15 @@ class Iqtree3 < Formula
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "eigen" => :build
-  depends_on "googletest" if OS.mac? # For test helpers
-  depends_on "libomp" if OS.mac?
-  depends_on "llvm" if OS.mac?
   depends_on "zlib"
   depends_on "lsd2" => :optional
+
+  on_macs do
+    depends_on "googletest"
+    depends_on "libomp"
+    depends_on "llvm"
+  end
+  
 
   fails_with gcc: "4"
   fails_with gcc: "5" do
