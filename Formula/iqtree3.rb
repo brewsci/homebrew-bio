@@ -11,7 +11,6 @@ class Iqtree3 < Formula
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "eigen" => :build
-  depends_on "zlib"
   depends_on "lsd2" => :optional
 
   on_macs do
@@ -19,7 +18,8 @@ class Iqtree3 < Formula
     depends_on "libomp"
     depends_on "llvm"
   end
-  
+
+  uses_from_macos "zlib"
 
   fails_with gcc: "4"
   fails_with gcc: "5" do
