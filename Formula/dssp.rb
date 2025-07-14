@@ -60,7 +60,7 @@ class Dssp < Formula
     end
 
     site_packages_path = Language::Python.site_packages python3
-    mkdir_p site_packages_path
+    site_packages_path.mkpath
 
     system "cmake", "-S", ".", "-B", "build",
                     "-Dcifpp_DIR=#{prefix/"libcifpp/lib/cmake/cifpp"}",
