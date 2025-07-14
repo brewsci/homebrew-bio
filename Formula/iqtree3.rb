@@ -11,7 +11,6 @@ class Iqtree3 < Formula
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "eigen" => :build
-  depends_on "lsd2" => :optional
 
   on_macs do
     depends_on "googletest"
