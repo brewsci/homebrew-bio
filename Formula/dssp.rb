@@ -79,5 +79,8 @@ class Dssp < Formula
     cp Dir[pkgshare/"*.dic"], testpath
     system bin/"mkdssp", "1cbs.cif", "test.dssp"
     assert_match "CELLULAR RETINOIC ACID BINDING PROTEIN TYPE II", (testpath/"test.dssp").read
+
+    # Check if the Python module can be imported
+    system python3, "-c", "import mkdssp"
   end
 end
