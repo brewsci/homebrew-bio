@@ -12,13 +12,13 @@ class Iqtree3 < Formula
   depends_on "cmake" => :build
   depends_on "eigen" => :build
 
-  on_macs do
+  uses_from_macos "zlib"
+
+  on_macos do
     depends_on "googletest"
     depends_on "libomp"
     depends_on "llvm"
   end
-
-  uses_from_macos "zlib"
 
   fails_with gcc: "4"
   fails_with gcc: "5" do
