@@ -14,6 +14,7 @@ class Iqtree3 < Formula
   depends_on "googletest" if OS.mac? # For test helpers
   depends_on "libomp" if OS.mac?
   depends_on "llvm" if OS.mac?
+  depends_on "zlib"
   depends_on "lsd2" => :optional
 
   fails_with gcc: "4"
@@ -42,6 +43,7 @@ class Iqtree3 < Formula
       "-DBUILD_TESTING=OFF",
       "-DIQTREE_TEST=OFF",
       "-DFETCHCONTENT_FULLY_DISCONNECTED=ON",
+      "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}",
       "-DUSE_CMAPLE=OFF", "-DUSE_LSD2=OFF",
       "-DFETCHCONTENT_TRY_FIND_PACKAGE_MODE=ALWAYS"
     ]
