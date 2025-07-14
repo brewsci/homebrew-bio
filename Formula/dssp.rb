@@ -55,6 +55,8 @@ class Dssp < Formula
       system "cmake", "--install", "build"
     end
 
+    site_packages_path = (Formula["python@3.13"].opt_lib/"python3.13/site-packages").mkpath
+
     system "cmake", "-S", ".", "-B", "build",
                     "-Dcifpp_DIR=#{prefix/"libcifpp/lib/cmake/cifpp"}",
                     "-Dmcfp_DIR=#{prefix/"libmcfp/lib/cmake/mcfp"}",
@@ -62,7 +64,7 @@ class Dssp < Formula
                     "-DCMAKE_CXX_STANDARD=20",
                     "-DINSTALL_LIBRARY=ON",
                     "-DBUILD_PYTHON_MODULE=ON",
-                    "-DPython_SITELIB=#{Formula["python@3.13"].opt_lib/"python3.13/site-packages"}",
+                    "-DPython_SITELIB=#{site_packages_path}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
