@@ -60,8 +60,6 @@ class Dssp < Formula
     end
 
     site_packages_path = Language::Python.site_packages python3
-    mkdir_p site_packages_path
-    chmod 0755, site_packages_path
 
     system "cmake", "-S", ".", "-B", "build",
                     "-Dcifpp_DIR=#{prefix/"libcifpp/lib/cmake/cifpp"}",
@@ -70,6 +68,7 @@ class Dssp < Formula
                     "-DCMAKE_CXX_STANDARD=20",
                     "-DINSTALL_LIBRARY=ON",
                     "-DBUILD_PYTHON_MODULE=ON",
+                    "-DPYTHON_SITE_PACKAGES=#{site_packages_path}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
