@@ -40,6 +40,10 @@ class Dssp < Formula
     sha256 "c6a2e4716f843bd608c06cfa4b6a369a56a6021ae16e5f876237b8a73d0dcb5e"
   end
 
+  def python3
+    "python3.13"
+  end
+
   def install
     resource("libcifpp").stage do
       # libcifpp should be installed in 'prefix' directory since the path of dic files are always required.
@@ -54,6 +58,9 @@ class Dssp < Formula
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
     end
+
+    site_packages_path = Language::Python.site_packages python3
+    mkdir_p site_packages_path
 
     system "cmake", "-S", ".", "-B", "build",
                     "-Dcifpp_DIR=#{prefix/"libcifpp/lib/cmake/cifpp"}",
