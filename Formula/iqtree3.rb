@@ -15,6 +15,7 @@ class Iqtree3 < Formula
   depends_on "libomp" if OS.mac?
   depends_on "llvm" if OS.mac?
   depends_on "lsd2" => :optional
+
   fails_with gcc: "4"
   fails_with gcc: "5" do
     version "5.0"
@@ -47,11 +48,7 @@ class Iqtree3 < Formula
 
     # Add architecture-specific optimizations
     if Hardware::CPU.intel?
-      if Hardware::CPU.avx2?
-        args << "-DIQTREE_FLAGS=fma"
-      elsif Hardware::CPU.avx?
-        args << "-DIQTREE_FLAGS=avx"
-      end
+      args << "-DIQTREE_FLAGS=fma" if Hardware::CPU.avx2?
     elsif Hardware::CPU.arm?
       # ARM-specific flags if needed
       args << "-DIQTREE_FLAGS=omp"
