@@ -19,7 +19,9 @@ class Dssp < Formula
   depends_on "cmake" => :build
   depends_on "eigen" => :build
   depends_on "boost"
+  depends_on "boost-python3"
   depends_on "icu4c"
+  depends_on "python@3.13"
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
@@ -59,6 +61,7 @@ class Dssp < Formula
                     "-DCMAKE_BUILD_TYPE=Release",
                     "-DCMAKE_CXX_STANDARD=20",
                     "-DINSTALL_LIBRARY=ON",
+                    "-DBUILD_PYTHON_MODULE=ON",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
