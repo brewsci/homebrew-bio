@@ -3,8 +3,8 @@ class Dssp < Formula
   # cite Kabsch_1983: "https://doi.org/10.1002/bip.360221211"
   desc "Assign secondary structure to proteins"
   homepage "https://github.com/PDB-REDO/dssp"
-  url "https://github.com/PDB-REDO/dssp/archive/refs/tags/v4.4.10.tar.gz"
-  sha256 "b535d0410a79d612a2abea308d13d0ae2645bb925b13a86e5bb53c38b0fac723"
+  url "https://github.com/PDB-REDO/dssp/archive/refs/tags/v4.5.3.tar.gz"
+  sha256 "8dd92fdf2a252a170c8a811e3adb752e0f2860318ecb2b6ed5e4fd1d2b5ce5e6"
   license "BSD-2-Clause"
   head "https://github.com/PDB-REDO/dssp.git", branch: "trunk"
 
@@ -24,13 +24,13 @@ class Dssp < Formula
   uses_from_macos "zlib"
 
   resource "libcifpp" do
-    url "https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v7.0.7.tar.gz"
-    sha256 "0e88805b4704d4a899aeee6df5aaace1d6b47d8ccb3a3f39b35bc5a3997c09ac"
+    url "https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v8.0.1.tar.gz"
+    sha256 "53f0ff205711428dcabf9451b23804091539303cea9d2f54554199144ca0fc4e"
   end
 
   resource "libmcfp" do
-    url "https://github.com/mhekkel/libmcfp/archive/refs/tags/v1.3.3.tar.gz"
-    sha256 "d35e83e660c3cb443d20246fea39e78d2a11faebe3205ab838614f0280c308d0"
+    url "https://github.com/mhekkel/libmcfp/archive/refs/tags/v1.4.2.tar.gz"
+    sha256 "dcdf3e81601081b2a9e2f2e1bb1ee2a8545190358d5d9bec9158ad70f5ca355e"
   end
 
   resource "testdata" do
@@ -55,8 +55,10 @@ class Dssp < Formula
 
     system "cmake", "-S", ".", "-B", "build",
                     "-Dcifpp_DIR=#{prefix/"libcifpp/lib/cmake/cifpp"}",
-                    "-Dlibmcfp_DIR=#{prefix/"libmcfp/lib/cmake/libmcfp"}",
+                    "-Dmcfp_DIR=#{prefix/"libmcfp/lib/cmake/mcfp"}",
                     "-DCMAKE_BUILD_TYPE=Release",
+                    "-DCMAKE_CXX_STANDARD=20",
+                    "-DINSTALL_LIBRARY=ON",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
