@@ -11,6 +11,7 @@ class Iqtree3 < Formula
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "eigen" => :build
+  depends_on "lsd2"
 
   uses_from_macos "zlib"
 
@@ -41,14 +42,15 @@ class Iqtree3 < Formula
     args = std_cmake_args + [
       "-DCMAKE_C_COMPILER=#{ENV.cc}",
       "-DCMAKE_CXX_COMPILER=#{ENV.cxx}",
-      "-D}CMAKE_CXX_FLAGS=#{ldflags} #{cppflags}",
+      "-DCMAKE_CXX_FLAGS=#{ldflags} #{cppflags}",
       "-DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}/eigen3",
       "-DBUILD_TESTING=OFF",
       "-DIQTREE_TEST=OFF",
       "-DFETCHCONTENT_FULLY_DISCONNECTED=ON",
       "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}",
-      "-DUSE_CMAPLE=OFF", "-DUSE_LSD2=OFF",
-      "-DFETCHCONTENT_TRY_FIND_PACKAGE_MODE=ALWAYS"
+      "-DUSE_CMAPLE=OFF",
+      "-DUSE_LSD2=ON",
+      "-DFETCHCONTENT_TRY_FIND_PACKAGE_MODE=ALWAYS",
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args
