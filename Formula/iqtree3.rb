@@ -11,7 +11,7 @@ class Iqtree3 < Formula
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "eigen" => :build
-  depends_on "lsd2"
+  depends_on "brewsci/bio/lsd2"
 
   uses_from_macos "zlib"
 
