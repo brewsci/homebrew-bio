@@ -47,6 +47,10 @@ class Dssp < Formula
   end
 
   def install
+    if OS.mac?
+      ENV.prepend "LDFLAGS", "-undefined dynamic_lookup"
+    end
+
     resource("libcifpp").stage do
       # libcifpp should be installed in 'prefix' directory since the path of dic files are always required.
       system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: prefix/"libcifpp")
@@ -66,6 +70,7 @@ class Dssp < Formula
     ENV.prepend_create_path "PYTHONPATH", venv.site_packages
     site_packages_path = Language::Python.site_packages python3
     (prefix/site_packages_path/"homebrew-dssp.pth").write venv.site_packages
+    shared_lib_ext = OS.mac? ? "dylib" : "so"
 
     system "cmake", "-S", ".", "-B", "build",
                     "-Dcifpp_DIR=#{prefix/"libcifpp/lib/cmake/cifpp"}",
