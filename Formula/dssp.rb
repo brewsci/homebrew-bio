@@ -75,6 +75,8 @@ class Dssp < Formula
                     "-DINSTALL_LIBRARY=ON",
                     "-DBUILD_PYTHON_MODULE=ON",
                     "-DPython_ROOT_DIR=#{libexec}",
+                    "-DPython_EXECUTABLE=#{libexec/"bin/python3.13"}",
+                    "-DPython_INCLUDE_DIR=#{libexec/"include/python3.13"}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
