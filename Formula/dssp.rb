@@ -40,6 +40,10 @@ class Dssp < Formula
     sha256 "c6a2e4716f843bd608c06cfa4b6a369a56a6021ae16e5f876237b8a73d0dcb5e"
   end
 
+  def python3
+    "python3.13"
+  end
+
   def install
     resource("libcifpp").stage do
       # libcifpp should be installed in 'prefix' directory since the path of dic files are always required.
@@ -55,6 +59,12 @@ class Dssp < Formula
       system "cmake", "--install", "build"
     end
 
+    venv = virtualenv_create libexec, which(python3)
+    ENV.prepend_path "PATH", libexec/"bin"
+    ENV.prepend_create_path "PYTHONPATH", venv.site_packages
+    site_packages_path = Language::Python.site_packages python3
+    (prefix/site_packages_path/"homebrew-dssp.pth").write venv.site_packages
+
     system "cmake", "-S", ".", "-B", "build",
                     "-Dcifpp_DIR=#{prefix/"libcifpp/lib/cmake/cifpp"}",
                     "-Dmcfp_DIR=#{prefix/"libmcfp/lib/cmake/mcfp"}",
@@ -63,8 +73,6 @@ class Dssp < Formula
                     "-DINSTALL_LIBRARY=ON",
                     "-DBUILD_PYTHON_MODULE=ON",
                     "-DPython_ROOT_DIR=#{libexec}",
-                    "-DPython_EXECUTABLE=#{libexec/"bin/python3.13"}",
-                    "-DPython_INCLUDE_DIR=#{libexec/"include/python3.13"}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
@@ -77,6 +85,6 @@ class Dssp < Formula
     assert_match "CELLULAR RETINOIC ACID BINDING PROTEIN TYPE II", (testpath/"test.dssp").read
 
     # Check if the Python module can be imported
-    system "python3", "-c", "import mkdssp"
+    system python3, "-c", "import mkdssp"
   end
 end
