@@ -19,7 +19,9 @@ class Dssp < Formula
   depends_on "cmake" => :build
   depends_on "eigen" => :build
   depends_on "boost"
+  depends_on "boost-python3"
   depends_on "icu4c"
+  depends_on "python@3.13"
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
@@ -38,7 +40,13 @@ class Dssp < Formula
     sha256 "c6a2e4716f843bd608c06cfa4b6a369a56a6021ae16e5f876237b8a73d0dcb5e"
   end
 
+  def python3
+    "python3.13"
+  end
+
   def install
+    ENV.prepend "LDFLAGS", "-undefined dynamic_lookup" if OS.mac?
+
     resource("libcifpp").stage do
       # libcifpp should be installed in 'prefix' directory since the path of dic files are always required.
       system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: prefix/"libcifpp")
@@ -53,12 +61,22 @@ class Dssp < Formula
       system "cmake", "--install", "build"
     end
 
+    if OS.mac?
+      inreplace "python-module/CMakeLists.txt",
+        "target_link_libraries(mkdssp_module dssp::dssp Boost::python ${Python_LIBRARIES})",
+        "target_link_libraries(mkdssp_module dssp::dssp Boost::python)"
+      inreplace "python-module/CMakeLists.txt",
+        'LIBRARY DESTINATION "${Python_SITELIB}"',
+        "LIBRARY DESTINATION #{lib}/python3.13/site-packages"
+    end
+
     system "cmake", "-S", ".", "-B", "build",
                     "-Dcifpp_DIR=#{prefix/"libcifpp/lib/cmake/cifpp"}",
                     "-Dmcfp_DIR=#{prefix/"libmcfp/lib/cmake/mcfp"}",
                     "-DCMAKE_BUILD_TYPE=Release",
                     "-DCMAKE_CXX_STANDARD=20",
                     "-DINSTALL_LIBRARY=ON",
+                    "-DBUILD_PYTHON_MODULE=ON",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
@@ -69,5 +87,8 @@ class Dssp < Formula
     cp Dir[pkgshare/"*.dic"], testpath
     system bin/"mkdssp", "1cbs.cif", "test.dssp"
     assert_match "CELLULAR RETINOIC ACID BINDING PROTEIN TYPE II", (testpath/"test.dssp").read
+
+    # Check if the Python module can be imported
+    system python3, "-c", "import mkdssp"
   end
 end
