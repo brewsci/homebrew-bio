@@ -1,4 +1,6 @@
 class Dssp < Formula
+  include Language::Python::Virtualenv
+
   # cite Touw_2015: "https://doi.org/10.1093/nar/gku1028"
   # cite Kabsch_1983: "https://doi.org/10.1002/bip.360221211"
   desc "Assign secondary structure to proteins"
