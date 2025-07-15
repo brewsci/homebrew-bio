@@ -63,6 +63,9 @@ class Dssp < Formula
 
     if OS.mac?
       inreplace "python-module/CMakeLists.txt",
+        "target_link_libraries(mkdssp_module dssp::dssp Boost::python ${Python_LIBRARIES})",
+        "target_link_libraries(mkdssp_module dssp::dssp Boost::python)"
+      inreplace "python-module/CMakeLists.txt",
         'LIBRARY DESTINATION "${Python_SITELIB}"',
         "LIBRARY DESTINATION #{lib}/python3.13/site-packages"
     end
