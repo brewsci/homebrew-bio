@@ -1,6 +1,4 @@
 class Dssp < Formula
-  include Language::Python::Virtualenv
-
   # cite Touw_2015: "https://doi.org/10.1093/nar/gku1028"
   # cite Kabsch_1983: "https://doi.org/10.1002/bip.360221211"
   desc "Assign secondary structure to proteins"
@@ -63,12 +61,11 @@ class Dssp < Formula
       system "cmake", "--install", "build"
     end
 
-    venv = virtualenv_create libexec, which(python3)
-    ENV.prepend_path "PATH", libexec/"bin"
-    ENV.prepend_create_path "PYTHONPATH", venv.site_packages
-    site_packages_path = Language::Python.site_packages python3
-    (prefix/site_packages_path/"homebrew-dssp.pth").write venv.site_packages
-    shared_lib_ext = OS.mac? ? "dylib" : "so"
+    if OS.mac?
+      inreplace "python-module/CMakeLists.txt",
+        'LIBRARY DESTINATION "${Python_SITELIB}"',
+        "LIBRARY DESTINATION #{lib}/python3.13/site-packages"
+    end
 
     system "cmake", "-S", ".", "-B", "build",
                     "-Dcifpp_DIR=#{prefix/"libcifpp/lib/cmake/cifpp"}",
@@ -77,9 +74,6 @@ class Dssp < Formula
                     "-DCMAKE_CXX_STANDARD=20",
                     "-DINSTALL_LIBRARY=ON",
                     "-DBUILD_PYTHON_MODULE=ON",
-                    "-DPython_ROOT_DIR=#{libexec}",
-                    "-DPython_EXECUTABLE=#{libexec/"bin/python3.13"}",
-                    "-DPython_INCLUDE_DIR=#{libexec/"include/python3.13"}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
