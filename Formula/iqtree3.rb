@@ -8,6 +8,14 @@ class Iqtree3 < Formula
   license "GPL-2.0-only"
   head "https://github.com/iqtree/iqtree3.git", branch: "master", shallow: false
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any,                 arm64_sequoia: "c72eec46364d6d6c71698f015183c4b589e2b4c3297ec3be7c8be3d8eebd022e"
+    sha256 cellar: :any,                 arm64_sonoma:  "5b3ce443a3fde77539e4bfdfcdbf444d4efe9343cd729b35ea9945e55c7cf9a6"
+    sha256 cellar: :any,                 ventura:       "50f32eb9ab228f24447882efe371b9ffb994dca830d315b6c4ae01c2ac01d517"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a339fd89e31a07f5fda9276ec449e6f3ee9fd031e48fa797d5cbb5d5ee4bd84e"
+  end
+
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "eigen" => :build
