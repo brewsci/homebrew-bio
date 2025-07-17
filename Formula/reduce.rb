@@ -37,6 +37,7 @@ class Reduce < Formula
     # Install a shared library file and a Python module
     py_ver = Language::Python.major_minor_version "python3"
     site_packages = lib/"python#{py_ver}/site-packages"
+    mkdir_p site_packages
     cp "build/reduce_src/mmtbx_reduceOrig_ext.so", site_packages
     cp "build/reduce_src/reduce.py", site_packages
     chmod 0644, site_packages/"mmtbx_reduceOrig_ext.so"
@@ -54,5 +55,8 @@ class Reduce < Formula
     resource("homebrew-testdata").stage testpath
     system("#{bin}/reduce -NOFLIP -Quiet 3qug.pdb > 3qug_h.pdb")
     assert_match "add=1978, rem=0, adj=70", File.read("3qug_h.pdb")
+
+    # Check if the Python module can be imported
+    system python3, "-c", "import reduce"
   end
 end
