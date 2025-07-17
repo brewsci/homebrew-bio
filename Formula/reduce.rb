@@ -1,4 +1,5 @@
 class Reduce < Formula
+  # cite Word_1999: "https://doi.org/10.1006/jmbi.1998.2401"
   desc "Tool for adding and correcting hydrogens in PDB files"
   homepage "https://github.com/rlabduke/reduce"
   url "https://github.com/rlabduke/reduce/archive/refs/tags/v4.15.tar.gz"
@@ -13,15 +14,31 @@ class Reduce < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "ninja" => :build
+  depends_on "boost-python3"
   depends_on "python3"
 
   def install
+    ENV.append "LDFLAGS", "-undefined dynamic_lookup" if OS.mac?
+
+    inreplace "CMakeLists.txt",
+              "target_link_libraries(mmtbx_reduceOrig_ext PRIVATE reducelib ${Boost_LIBRARIES} ${PYTHON_LIBRARIES})",
+              "target_link_libraries(mmtbx_reduceOrig_ext PRIVATE reducelib ${Boost_LIBRARIES})"
+
     # Refer to https://github.com/rlabduke/reduce/issues/60 for `-DHET_DICTIONARY` and `-DHET_DICTOLD` flags
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
+    system "cmake", "-S", ".", "-B", "build", "-G", "Ninja", *std_cmake_args,
       "-DHET_DICTIONARY=#{prefix}/reduce_wwPDB_het_dict.txt",
       "-DHET_DICTOLD=#{prefix}/reduce_het_dict.txt"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+
+    # Install a shared library file and a Python module
+    py_ver = Language::Python.major_minor_version "python3"
+    site_packages = lib/"python#{py_ver}/site-packages"
+    cp "build/reduce_src/mmtbx_reduceOrig_ext.so", site_packages
+    cp "build/reduce_src/reduce.py", site_packages
+    chmod 0644, site_packages/"mmtbx_reduceOrig_ext.so"
+    chmod 0644, site_packages/"reduce.py"
   end
 
   test do
