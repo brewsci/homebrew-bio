@@ -3,7 +3,7 @@ class Fasta < Formula
   desc "Classic FASTA sequence alignment suite"
   homepage "https://fasta.bioch.virginia.edu/"
   url "https://github.com/wrpearson/fasta36/archive/refs/tags/v36.3.8i_14-Nov-2020.tar.gz"
-  version "36.3.8i_Nov2022"
+  version "36.3.8i"
   sha256 "b4b1c3c9be6beebcbaf4215368e159d69255e34c0bdbc84affa10cdb473ce008"
 
   livecheck do
