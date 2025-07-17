@@ -57,6 +57,6 @@ class Reduce < Formula
     assert_match "add=1978, rem=0, adj=70", File.read("3qug_h.pdb")
 
     # Check if the Python module can be imported
-    system python3, "-c", "import reduce"
+    system "python3", "-c", "import reduce"
   end
 end
