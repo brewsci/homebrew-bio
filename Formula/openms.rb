@@ -12,6 +12,7 @@ class Openms < Formula
   depends_on "coin-or-tools/coinor/cbc"
   depends_on "coin-or-tools/coinor/cgl"
   depends_on "coin-or-tools/coinor/clp"
+  depends_on "coin-or-tools/coinor/coinutils"
   depends_on "coin-or-tools/coinor/osi"
   depends_on "doxygen"
   depends_on "eigen"
@@ -23,10 +24,16 @@ class Openms < Formula
   depends_on "xerces-c"
   depends_on "yaml-cpp"
 
-  # Optional dependencies
-  depends_on "openjdk" => :optional
+  uses_from_macos "zlib"
 
   def install
+    # Fix missing cstdint include on Linux
+    if OS.linux?
+      inreplace "src/openms/extern/SQLiteCpp/include/SQLiteCpp/Statement.h",
+                "#include <memory>",
+                "#include <memory>\n#include <cstdint>"
+    end
+
     # Build OpenMS
     args = std_cmake_args + %W[
       -DCMAKE_C_COMPILER=#{ENV.cc}
