@@ -1,16 +1,16 @@
 class Gemmi < Formula
   desc "Macromolecular crystallography library and utilities"
   homepage "https://project-gemmi.github.io/"
-  url "https://github.com/project-gemmi/gemmi/archive/refs/tags/v0.7.1.tar.gz"
-  sha256 "5d87c3e82ee159f5642d7c083a74e00ca9cc038ccf9be2522d7ae985f3377393"
+  url "https://github.com/project-gemmi/gemmi/archive/refs/tags/v0.7.3.tar.gz"
+  sha256 "ed5e1d0665f27d623d877fa36f6c99a5de21310cc8715337ff9f6b545bd2e9d3"
   license "MPL-2.0"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sequoia: "e07b324a6c9fd2334442ad256df033d8f1fa8f346c6844efee1c4aa3532bcbcf"
-    sha256 cellar: :any,                 arm64_sonoma:  "f82aee40865363bcc3dadc60952ddcac488ab70b93dd5430e10539ec679726a6"
-    sha256 cellar: :any,                 ventura:       "e5b06ecace456cb8fd75332315fac0f1bace4673e4447ab00e3698ce361d9725"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9e804773699d35214ad11dea0e5e2ef3862ef3fa9ff2b37d4dbd39ae8d9107d"
+    sha256 cellar: :any,                 arm64_sequoia: "8213f3d71755b64716e0b2a41dfa6be1cb354354328268f8ce6c7811fe03d610"
+    sha256 cellar: :any,                 arm64_sonoma:  "214d556e428d48069f273e04beab7199b9e04f0c24f555e1a3837aec2a558f6c"
+    sha256 cellar: :any,                 ventura:       "c2c0f416a48d60fa9e48d8bbb17e4a3f0846710906e35af42f1a8b3a560855b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "763b99321bcfbcf0a120cdf2295202416759c7ddefd7034b1b2f933739e2618e"
   end
 
   depends_on "cmake" => :build

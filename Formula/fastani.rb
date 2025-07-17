@@ -9,9 +9,11 @@ class Fastani < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sonoma: "f5b9dcfd5df5e9a14cc05025b7b3dee6b5978d5a8c7517b6f7b9bab5a7eb82eb"
-    sha256 cellar: :any,                 ventura:      "49f020c561fd674cf61702631fcbc8fde29675cb9e64d34cf827e92cf5b33b04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2cacbeb0b1a6194ca2d0f5e389d639a5b4766e86cbde33834e97af90758516ea"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "4e9d242d0d1f7b2aa797c3b1a889b691d1e84e2deb3f8c7ba50f5dc2d121d759"
+    sha256 cellar: :any,                 arm64_sonoma:  "2e06c8a2cb802b39c6d84999d06723cbf005ca3fa527e3320ddf40dccd383698"
+    sha256 cellar: :any,                 ventura:       "a570676778c0ca5901dabb4c99e730d8da95011e2139da0f191690cf0fca55be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f969df9ca68999812d4b7577baf827d27e13000903a3c90ebe026a13c82ee4e5"
   end
 
   depends_on "cmake" => :build
@@ -27,12 +29,8 @@ class Fastani < Formula
   def install
     # require C++11
     ENV.append "CXXFLAGS", "-std=c++11"
-    # https://github.com/ParBLiSS/FastANI/issues/17 (macos clang opts for gcc)
-    # inreplace "Makefile.in", "-mmacosx-version-min=10.7 -stdlib=libc++", "-v"
-    args = %W[
-      -DGSL_ROOT_DIR=#{Formula["gsl"].opt_prefix}
-      -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
-    ]
+    args = %W[-DGSL_ROOT_DIR=#{Formula["gsl"].opt_prefix}]
+    args << "-DOpenMP_CXX_FLAGS:STRING=-Xpreprocessor;-fopenmp;-I#{Formula["libomp"].opt_include}" if OS.mac?
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

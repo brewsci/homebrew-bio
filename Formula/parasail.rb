@@ -7,16 +7,17 @@ class Parasail < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sonoma: "faeab0fcabddb2c01aa4074c33fdd0dd25741ecb0926cee06ca7cbdae0326446"
-    sha256 cellar: :any,                 ventura:      "ff35f0aeacce8b24808147f6b8e37698976bde5fd3f2ec583e8c93fa69429214"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f6338c1b45986fcc9cd499dfd4dbf265468a759f747d25d6adbb7a9177c9f120"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "c234488895eb041b53958f540f8fc75236245bbdb6586ceb0a7dfb045d962380"
+    sha256 cellar: :any,                 arm64_sonoma:  "99ab91cfa6056aa9b2231d4064dae3ac2a0b4d6b23fa0c84628e1a7fefe8e0bd"
+    sha256 cellar: :any,                 ventura:       "0e1245f84dca8fbcc21af41698b9ad0fd99a1d95ed7a676b554b99f10fb35f63"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50f2b63a65bc51123133d553be136a441ecab785a90148bae544f172680806ac"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-
   uses_from_macos "zlib"
 
   on_macos do
@@ -24,6 +25,13 @@ class Parasail < Formula
   end
 
   def install
+    if OS.linux?
+      inreplace "tests/test_verify_traces.c" do |s|
+        s.gsub! "ref_trace_table = parasail_result", "ref_trace_table = (int8_t *)parasail_result"
+        s.gsub! "size_a, size_b, ref_trace_table, trace_table",
+                "size_a, size_b, (int8_t *)ref_trace_table, (int8_t *)trace_table"
+      end
+    end
     system "autoreconf", "-fvi"
     system "./configure", *std_configure_args
     system "make", "check"

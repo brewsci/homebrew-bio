@@ -3,18 +3,17 @@ class Oarfish < Formula
   # cite Zare_2024: "https://doi.org/10.1101/2024.02.28.582591"
   desc "Long read RNA-seq quantification"
   homepage "https://github.com/COMBINE-lab/oarfish"
-  url "https://github.com/COMBINE-lab/oarfish/archive/refs/tags/v0.6.2.tar.gz"
-  sha256 "78b523fc459fec5ae3680395925862b4d367bd56d051120f28c689dd387e1758"
+  url "https://github.com/COMBINE-lab/oarfish/archive/refs/tags/v0.8.1.tar.gz"
+  sha256 "ca45f8c66de647c35a09adf790ece494c807efe1b7f9915711dc6b583b326f57"
   license "BSD-3-Clause"
   head "https://github.com/COMBINE-lab/oarfish.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0c05dbf8857ec513e25ab9ebb608ff427629e39eadb0c23f2a5a6e17808f489"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5106eaee0421cc51ba56b26c81c2b088db6d73918bc8710f8a566395bed51962"
-    sha256 cellar: :any_skip_relocation, ventura:       "5ca526ec6bf6105a6c6e80940741f4a2efb48d805d94a290e09b4282650df4e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d78f983a2c16dd5077c338e6c75edbc88f8234e353fca4722ea4b06841c278d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "532d4cd2831bf2c8d32e8d47afd41533528bbc32e2bf550fec8f245db7793c35"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "909258cb572ee7d39a69323cffe8fb499fe44c9322b3c99c52486ae1e371a7a2"
+    sha256 cellar: :any_skip_relocation, ventura:       "2ab27a2bfc79e94715b92716137a238a6fcf52de3cf28a7d3583e29c0a803e19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "941555d9390f35db6ecff3945afb254a30af7594ea1fce7184ed4a9bb0ffcaa4"
   end
 
   depends_on "rust" => :build

@@ -1,35 +1,33 @@
 class Coot < Formula
   desc "Crystallographic Object-Oriented Toolkit"
   homepage "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/"
-  url "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/source/releases/coot-1.1.15.tar.gz"
-  sha256 "da6ab4986e3f681afdc9b434c3bbfc65f2fbfd344bb2383836e88052b55e1831"
+  url "https://github.com/pemsley/coot/archive/refs/tags/Release-1.1.17-v2.tar.gz"
+  sha256 "841251b43c258a5653e3597ff7b97b7059fbd15e9205080b5739e22e768af97f"
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only", "GPL-2.0-or-later"]
+  head "https://github.com/pemsley/coot.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 arm64_sequoia: "8dfe0637dc39483425edec289aa96b68af7d5208c853b15cbcb6af92ac3fd46c"
-    sha256 arm64_sonoma:  "cfc94250c60165c2b045e867385fc4992d4e0b0931e1c2e0fe355cfdf9f0f197"
-    sha256 ventura:       "180e474f0625ba8465d02914ed4739ce5546a1ce391bf80849da1b177d28e8ff"
-    sha256 x86_64_linux:  "fb55347f2a76c2e05dbb6f258abadd90c843959e972fe5771e0f5674e19d9e07"
+    sha256 arm64_sequoia: "399b8061ce4510efbaf6ec771423ae1d7df5b4febea8c2c35ac225641ab232dd"
+    sha256 arm64_sonoma:  "6e861e0761191e6aad32afff5692b26318a75fb252ac5e7bd88783f3b56a05d4"
+    sha256 ventura:       "766aaae9f3a21623475731f8846d06578a76ab2c24a6b51b4d855c6b7047a6aa"
+    sha256 x86_64_linux:  "8e27e0cdfa813bad7a8841819196cb39eb08b87180d7c4e64dc3a86dc93f9f25"
   end
 
-  head do
-    url "https://github.com/pemsley/coot.git", branch: "main"
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-    depends_on "swig" => :build
-  end
-
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
   depends_on "glm" => :build
+  depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-  depends_on "adwaita-icon-theme" # display icons
+  depends_on "swig" => :build
+  depends_on "adwaita-icon-theme"
   depends_on "boost"
-  depends_on "brewsci/bio/boost-python3@1.87"
+  depends_on "boost-python3"
   depends_on "brewsci/bio/clipper4coot"
   depends_on "brewsci/bio/gemmi"
   depends_on "brewsci/bio/libccp4"
   depends_on "brewsci/bio/mmdb2"
+  depends_on "brewsci/bio/pygobject3@3.50"
   depends_on "brewsci/bio/raster3d"
   depends_on "brewsci/bio/ssm"
   depends_on "cairo"
@@ -46,12 +44,12 @@ class Coot < Formula
   depends_on "harfbuzz"
   depends_on "libepoxy"
   depends_on "libpng"
+  depends_on "librsvg"
   depends_on "numpy"
   depends_on "openblas"
   depends_on "pango"
   depends_on "py3cairo"
-  depends_on "pygobject3"
-  depends_on "python@3.12" # 3.13 is not supported yet?
+  depends_on "python@3.13"
   depends_on "rdkit"
   depends_on "sqlite"
 
@@ -74,17 +72,14 @@ class Coot < Formula
   end
 
   def python3
-    "python3.12"
+    "python3.13"
   end
 
   def install
     ENV.cxx11
     ENV.libcxx
-    if build.head?
-      # libtool -> glibtool for macOS
-      inreplace "autogen.sh", "libtool", "glibtool"
-      system "./autogen.sh"
-    end
+    inreplace "autogen.sh", "libtool", "glibtool"
+    system "./autogen.sh"
     if OS.mac?
       inreplace "./configure", "$wl-flat_namespace", ""
       inreplace "./configure", "$wl-undefined ${wl}suppress", "-undefined dynamic_lookup"
@@ -95,10 +90,15 @@ class Coot < Formula
     (lib/"python#{xy}/site-packages/homebrew-coot.pth").write "#{libexec/"lib/python#{xy}/site-packages"}\n"
     ENV.prepend_path "PYTHONPATH", Formula["numpy"].opt_prefix/Language::Python.site_packages(python3)
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
+    # Tweak to include pygobject3@3.50
+    ENV.prepend_path "PYTHONPATH",
+                     Formula["brewsci/bio/pygobject3@3.50"].opt_prefix/Language::Python.site_packages(python3)
+    ENV.prepend_path "PKG_CONFIG_PATH",
+                     Formula["brewsci/bio/pygobject3@3.50"].opt_lib/"pkgconfig"
 
     # Set Boost, RDKit, and FFTW2 root
     boost_prefix = Formula["boost"].opt_prefix
-    boost_python_lib = "boost_python312"
+    boost_python_lib = "boost_python313"
     rdkit_prefix = Formula["rdkit"].opt_prefix
     fftw2_prefix = Formula["clipper4coot"].opt_prefix/"fftw2"
 
