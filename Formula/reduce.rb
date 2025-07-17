@@ -22,9 +22,9 @@ class Reduce < Formula
     ENV.append "CXXFLAGS", "-O3"
     ENV.append "LDFLAGS", "-undefined dynamic_lookup" if OS.mac?
 
-    inreplace "CMakeLists.txt",
-              'target_link_libraries(mmtbx_reduceOrig_ext PRIVATE reducelib ${Boost_LIBRARIES} ${PYTHON_LIBRARIES})',
-              'target_link_libraries(mmtbx_reduceOrig_ext PRIVATE reducelib ${Boost_LIBRARIES})'
+    inreplace "reduce_src/CMakeLists.txt",
+              "target_link_libraries(mmtbx_reduceOrig_ext PRIVATE reducelib ${Boost_LIBRARIES} ${PYTHON_LIBRARIES})",
+              "target_link_libraries(mmtbx_reduceOrig_ext PRIVATE reducelib ${Boost_LIBRARIES})"
 
     # Refer to https://github.com/rlabduke/reduce/issues/60 for `-DHET_DICTIONARY` and `-DHET_DICTOLD` flags
     system "cmake", "-S", ".", "-B", "build", "-G", "Ninja", *std_cmake_args,
