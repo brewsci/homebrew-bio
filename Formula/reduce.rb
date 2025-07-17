@@ -19,6 +19,7 @@ class Reduce < Formula
   depends_on "python3"
 
   def install
+    ENV.append "CXXFLAGS", "-O3"
     ENV.append "LDFLAGS", "-undefined dynamic_lookup" if OS.mac?
 
     inreplace "CMakeLists.txt",
@@ -27,6 +28,7 @@ class Reduce < Formula
 
     # Refer to https://github.com/rlabduke/reduce/issues/60 for `-DHET_DICTIONARY` and `-DHET_DICTOLD` flags
     system "cmake", "-S", ".", "-B", "build", "-G", "Ninja", *std_cmake_args,
+      "-DCMAKE_CXX_FLAGS=#{ENV.cxxflags}",
       "-DHET_DICTIONARY=#{prefix}/reduce_wwPDB_het_dict.txt",
       "-DHET_DICTOLD=#{prefix}/reduce_het_dict.txt"
     system "cmake", "--build", "build"
