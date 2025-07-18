@@ -20,15 +20,22 @@ class Openms < Formula
   depends_on "hdf5"
   depends_on "libomp"
   depends_on "libsvm"
+  depends_on "libxcb" if OS.linux?
   depends_on "qt"
+  depends_on "xcb-util-cursor" if OS.linux?
   depends_on "xerces-c"
   depends_on "yaml-cpp"
 
   uses_from_macos "zlib"
 
   def install
-    # Fix missing cstdint include on Linux
     if OS.linux?
+      # Set headless environment for Linux
+      if OS.linux?
+        ENV["QT_QPA_PLATFORM"] = "offscreen"
+        ENV["DISPLAY"] = ":99"
+      end
+      # Fix missing cstdint include on Linux
       inreplace "src/openms/extern/SQLiteCpp/include/SQLiteCpp/Statement.h",
                 "#include <memory>",
                 "#include <memory>\n#include <cstdint>"
@@ -56,6 +63,9 @@ class Openms < Formula
     lib.install Dir["openms_build/lib/*"]
     doc.install Dir["openms_build/doc/*"]
     (share/"OpenMS").install Dir["share/OpenMS/*"]
+
+    # Remove CMake build artifacts from documentation
+    rm_r Dir["#{share}/doc/**/CMakeFiles"]
   end
 
   def caveats
