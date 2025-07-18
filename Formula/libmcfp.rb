@@ -17,6 +17,8 @@ class Libmcfp < Formula
 
   depends_on "cmake" => :build
 
+  patch :DATA
+
   def install
     # To use `std::to_chars`
     ENV.prepend "CXXFLAGS", "-mmacosx-version-min=13.3" if OS.mac?
@@ -143,3 +145,44 @@ class Libmcfp < Formula
     assert_match "a (4) * b (5) = 20", shell_output("./test -a 4 -b 5 /dev/null")
   end
 end
+__END__
+diff --git a/include/mcfp/detail/options.hpp b/include/mcfp/detail/options.hpp
+index e6d198c..70416c4 100644
+--- a/include/mcfp/detail/options.hpp
++++ b/include/mcfp/detail/options.hpp
+@@ -28,6 +28,7 @@
+
+ #include <cassert>
+ #include <filesystem>
++#include <sstream>
+ #include <string>
+ #include <type_traits>
+
+@@ -102,10 +103,16 @@ struct option_traits<T, typename std::enable_if_t<std::is_arithmetic_v<T>>>
+ 	static std::string to_string(const T &value)
+ 	{
+ 		char b[32];
+-		auto r = std::to_chars(b, b + sizeof(b), value);
+-		if (r.ec != std::errc())
+-			throw std::system_error(std::make_error_code(r.ec));
+-		return { b, r.ptr };
++		#if defined(__APPLE__) && defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && (__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ < 130300)
++			std::stringstream ss;
++			ss << value;
++			return ss.str();
++		#else
++			auto r = std::to_chars(b, b + sizeof(b), value);
++			if (r.ec != std::errc())
++				throw std::system_error(std::make_error_code(r.ec));
++			return { b, r.ptr };
++		#endif
+ 	}
+ };
+
+@@ -342,4 +349,4 @@ struct option<void> : public option_base
+ 	}
+ };
+
+-} // namespace mcfp::detail
+\ No newline at end of file
++} // namespace mcfp::detail
