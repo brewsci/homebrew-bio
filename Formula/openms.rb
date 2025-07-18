@@ -25,8 +25,7 @@ class Openms < Formula
   depends_on "xcb-util-cursor" if OS.linux?
   depends_on "xerces-c"
   depends_on "yaml-cpp"
-
-  uses_from_macos "zlib"
+  depends_on "zlib"
 
   def install
     if OS.linux?
