@@ -19,7 +19,7 @@ class Libmcfp < Formula
 
   def install
     # To use `std::to_chars`
-    ENV.append_to_cxxflags "-mmacosx-version-min=13.3" if OS.mac?
+    ENV.append "CXXFLAGS", "-mmacosx-version-min=13.3" if OS.mac?
 
     system "cmake", "-S", ".", "-B", "build",
       "-DCMAKE_CXX_FLAGS=#{ENV.cxxflags}",
