@@ -1,8 +1,8 @@
 class Libmcfp < Formula
   desc "Header only Library to collect configuration options from command-line arguments"
   homepage "https://github.com/mhekkel/libmcfp/"
-  url "https://github.com/mhekkel/libmcfp/archive/refs/tags/v1.3.3.tar.gz"
-  sha256 "d35e83e660c3cb443d20246fea39e78d2a11faebe3205ab838614f0280c308d0"
+  url "https://github.com/mhekkel/libmcfp/archive/refs/tags/v1.4.2.tar.gz"
+  sha256 "dcdf3e81601081b2a9e2f2e1bb1ee2a8545190358d5d9bec9158ad70f5ca355e"
   license "BSD-2-Clause"
   head "https://github.com/mhekkel/libmcfp.git", branch: "trunk"
 
