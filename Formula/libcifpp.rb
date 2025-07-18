@@ -1,8 +1,8 @@
 class Libcifpp < Formula
   desc "Library containing code to manipulate mmCIF and PDB files"
   homepage "https://pdb-redo.github.io/libcifpp/"
-  url "https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v7.0.8.tar.gz"
-  sha256 "2297e6649a4f71caf9da5f1d97f59512e7324bb62083bb5b08eb00c1c0385cb3"
+  url "https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v8.0.1.tar.gz"
+  sha256 "53f0ff205711428dcabf9451b23804091539303cea9d2f54554199144ca0fc4e"
   license "BSD-2-Clause"
   head "https://github.com/PDB-REDO/libcifpp.git", branch: "trunk"
 
@@ -16,13 +16,17 @@ class Libcifpp < Formula
 
   depends_on "cmake" => :build
   depends_on "eigen" => :build
-  depends_on "boost"
 
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
+  on_linux do
+    depends_on "boost"
+  end
+
   def install
     system "cmake", "-S", ".", "-B", "build",
+                    "-DBUILD_SHARED_LIBS=ON",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
