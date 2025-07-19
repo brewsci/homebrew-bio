@@ -54,7 +54,7 @@ class Dssp < Formula
 
     inreplace "libdssp/CMakeLists.txt",
       "DESTINATION share/libcifpp",
-      "DESTINATION ${CIFPP_SHARE_DIR}"
+      "DESTINATION #{Formula["libcifpp"].pkgshare}"
 
     system "cmake", "-S", ".", "-B", "build", "-G", "Ninja",
                     "-DCMAKE_BUILD_TYPE=Release",
