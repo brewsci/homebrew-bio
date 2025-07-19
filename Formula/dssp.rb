@@ -53,15 +53,13 @@ class Dssp < Formula
     end
 
     inreplace "libdssp/CMakeLists.txt",
-      'install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/mmcif_pdbx/dssp-extension.dic"',
-      'install(FILES "${CMAKE_SOURCE_DIR}/libdssp/mmcif_pdbx/dssp-extension.dic"'
-
-    inreplace "libdssp/CMakeLists.txt",
       "DESTINATION share/libcifpp",
-      "DESTINATION ${CIFPP_SHARE_DIR}"
+      "DESTINATION #{pkgshare}"
 
     system "ls", "-l", "libdssp/mmcif_pdbx"
     system "find", ".", "-name", "dssp-extension.dic"
+    puts pkgshare
+    puts share
 
     system "cmake", "-S", ".", "-B", "build", "-G", "Ninja",
                     "-DCMAKE_BUILD_TYPE=Release",
@@ -73,6 +71,10 @@ class Dssp < Formula
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+  end
+
+  def post_install
+    mv pkgshare/"dssp-extension.dic", Formula["libcifpp"].pkgshare
   end
 
   test do
