@@ -1,28 +1,32 @@
 class Libcifpp < Formula
   desc "Library containing code to manipulate mmCIF and PDB files"
   homepage "https://pdb-redo.github.io/libcifpp/"
-  url "https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v7.0.8.tar.gz"
-  sha256 "2297e6649a4f71caf9da5f1d97f59512e7324bb62083bb5b08eb00c1c0385cb3"
+  url "https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v8.0.1.tar.gz"
+  sha256 "53f0ff205711428dcabf9451b23804091539303cea9d2f54554199144ca0fc4e"
   license "BSD-2-Clause"
   head "https://github.com/PDB-REDO/libcifpp.git", branch: "trunk"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 arm64_sequoia: "ba71848350e79b4cbebf2c433b2ceed1c0617a9533f3bddce7ca9fc3797358c1"
-    sha256 arm64_sonoma:  "2bdbf57b3f936fc4b3d7ef9cbb89f045f944224888ed5ec0e767eff087143617"
-    sha256 ventura:       "5d795ba1cae7c0cf2e627872327a40a06efa1c62d0fc9253529787f1e3338773"
-    sha256 x86_64_linux:  "e6a635e7d0385c41e08354df0474b5026083d03ce2bab76eee9bfa8e8ff6e44c"
+    sha256                               arm64_sequoia: "5f6872a872572ae14457b257942bd7409241675f9cfdcae45442cea3784da307"
+    sha256                               arm64_sonoma:  "1798ef5398ddf5715e35a44b2cac1e0c5398bed01be753e382316d20bd12d673"
+    sha256                               ventura:       "86bd0f5263d920fe307917a04f46156e462f2441692b0be25c8ed6af8b0f71cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fabcb64700451cfc99da7fc6884176f7ff0a1535227856516387cb15f63b4a7d"
   end
 
   depends_on "cmake" => :build
   depends_on "eigen" => :build
-  depends_on "boost"
 
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
+  on_linux do
+    depends_on "boost"
+  end
+
   def install
     system "cmake", "-S", ".", "-B", "build",
+                    "-DBUILD_SHARED_LIBS=ON",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
