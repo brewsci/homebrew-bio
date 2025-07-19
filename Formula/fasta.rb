@@ -14,8 +14,10 @@ class Fasta < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "7243b2aa0b0a8bd26748f1392639e111a692fd789bdc48622772778e5ea953ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "fa74efd96bdcaa4aeb87fd7c4bf2c0df07e366f467750a3fc7a10e9adaabf630"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e16e8e21c5a0e8a369467e8f7aaeb639cc0b9c5555af61317dcc09056b170ad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f0f9c2fc37ac0257c336c3a9c20482f539a1388ace02be11272ee45f5f95409e"
+    sha256 cellar: :any_skip_relocation, ventura:       "4595e061ba574f46dd3f570d1a8e192db7cae0f22b83de5b58b45c636ddf66b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6e40109901d19b8cbf13f5a7ff80fe941934bc077f6749226bee518858a98db"
   end
 
   uses_from_macos "zlib"
