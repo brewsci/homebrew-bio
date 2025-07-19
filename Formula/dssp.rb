@@ -54,7 +54,10 @@ class Dssp < Formula
 
     inreplace "libdssp/CMakeLists.txt",
       "DESTINATION share/libcifpp",
-      "DESTINATION #{Formula["libcifpp"].pkgshare}"
+      "DESTINATION ${CIFPP_SHARE_DIR}"
+
+    system "ls", "-l", "libdssp/mmcif_pdbx"
+    system "find", ".", "-name", "dssp-extension.dic"
 
     system "cmake", "-S", ".", "-B", "build", "-G", "Ninja",
                     "-DCMAKE_BUILD_TYPE=Release",
