@@ -22,6 +22,7 @@ class Openms < Formula
   depends_on "libsvm"
   depends_on "libxcb" if OS.linux?
   depends_on "qt"
+  depends_on "sqlite" if OS.linux?
   depends_on "xcb-util-cursor" if OS.linux?
   depends_on "xerces-c"
   depends_on "yaml-cpp"
@@ -49,9 +50,8 @@ class Openms < Formula
                 "#include <memory>",
                 "#include <memory>\n#include <cstdint>"
 
-      # Force explicit uses of the system SQLite
-      args << "--with-sqlite=#{Formula["sqlite"].opt_prefix}"
-      args << "--disable-static-sqlite"
+      # Use external SQLite instead of bundled one to avoid conflicts
+      args << "-DSQLITECPP_INTERNAL_SQLITE=OFF"
     end
 
     system "cmake", "-S", ".", "-B", "openms_build", *args
@@ -78,6 +78,7 @@ class Openms < Formula
       To use OpenMS tools, you may need to set up your environment:
         export PATH="#{bin}:$PATH"
         export DYLD_LIBRARY_PATH="#{lib}:$DYLD_LIBRARY_PATH"
+        (or in Linux: export LD_LIBRARY_PATH="#{lib}:$LD_LIBRARY_PATH")
         export OPENMS_DATA_PATH="#{lib}/share/OpenMS"
 
       Or use the provided wrapper:
@@ -99,7 +100,11 @@ class Openms < Formula
 
   test do
     # Set up environment
-    ENV["DYLD_LIBRARY_PATH"] = "#{lib}:#{ENV["DYLD_LIBRARY_PATH"]}"
+    if OS.mac?
+      ENV["DYLD_LIBRARY_PATH"] = "#{lib}:#{ENV["DYLD_LIBRARY_PATH"]}"
+    else
+      ENV["LD_LIBRARY_PATH"] = "#{lib}:#{ENV["LD_LIBRARY_PATH"]}"
+    end
     ENV["OPENMS_DATA_PATH"] = "#{lib}/share/OpenMS"
 
     # Test basic functionality
