@@ -19,10 +19,12 @@ class Dssp < Formula
 
   depends_on "cmake" => :build
   depends_on "eigen" => :build
+  depends_on "ninja" => :build
   depends_on "boost"
   depends_on "boost-python3"
   depends_on "icu4c"
   depends_on "python3"
+
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
@@ -32,6 +34,7 @@ class Dssp < Formula
   end
 
   def install
+    ENV.append "CXXFLAGS", "-O3"
     ENV.prepend "LDFLAGS", "-undefined dynamic_lookup" if OS.mac?
 
     py_ver = Language::Python.major_minor_version "python3"
@@ -47,9 +50,10 @@ class Dssp < Formula
         "LIBRARY DESTINATION #{site_packages}"
     end
 
-    system "cmake", "-S", ".", "-B", "build",
+    system "cmake", "-S", ".", "-B", "build", "-G", "Ninja",
                     "-DCMAKE_BUILD_TYPE=Release",
                     "-DCMAKE_CXX_STANDARD=20",
+                    "-DCMAKE_CXX_FLAGS=#{ENV.cxxflags}",
                     "-DINSTALL_LIBRARY=ON",
                     "-DBUILD_PYTHON_MODULE=ON",
                     "-DCIFPP_SHARE_DIR=#{prefix/"libcifpp/share/cifpp"}",
