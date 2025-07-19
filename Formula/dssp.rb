@@ -53,6 +53,10 @@ class Dssp < Formula
     end
 
     inreplace "libdssp/CMakeLists.txt",
+      'install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/mmcif_pdbx/dssp-extension.dic"',
+      'install(FILES "${CMAKE_SOURCE_DIR}/libdssp/mmcif_pdbx/dssp-extension.dic"'
+
+    inreplace "libdssp/CMakeLists.txt",
       "DESTINATION share/libcifpp",
       "DESTINATION ${CIFPP_SHARE_DIR}"
 
