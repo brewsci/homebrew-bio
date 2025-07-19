@@ -8,9 +8,11 @@ class Reduce < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "123d1d666fcc44ff484c293d287e913e8b23c98158e96c9d49447b7cf510eb93"
-    sha256 cellar: :any_skip_relocation, ventura:      "d3d14773905e8bffad53ed565510b514c571e0eadba77a3157a37a435a8bb83f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0aa39a9f1f020a4f294fa8fdf6cf68a214313095e15847559ef842cea9aa41df"
+    rebuild 1
+    sha256 cellar: :any, arm64_sequoia: "e9fb021699f5d1f200721ac41505296d804730ba89463cbec49a902aef8cd49e"
+    sha256 cellar: :any, arm64_sonoma:  "118b939702512fb76092256336be88ba24aab837c343028816c23d89c605abcf"
+    sha256 cellar: :any, ventura:       "147984754506da87f86db5613b09e67dae197de0acf8246b797c69b7292e880d"
+    sha256               x86_64_linux:  "b02c9696e18765ccce357ca1881dfe08e90c150cd3c53b2bd92f0c4e4296fe7d"
   end
 
   depends_on "cmake" => :build
