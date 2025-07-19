@@ -56,25 +56,22 @@ class Dssp < Formula
       "DESTINATION share/libcifpp",
       "DESTINATION #{pkgshare}"
 
-    system "ls", "-l", "libdssp/mmcif_pdbx"
-    system "find", ".", "-name", "dssp-extension.dic"
-    puts pkgshare
-    puts share
-
     system "cmake", "-S", ".", "-B", "build", "-G", "Ninja",
                     "-DCMAKE_BUILD_TYPE=Release",
                     "-DCMAKE_CXX_STANDARD=20",
                     "-DCMAKE_CXX_FLAGS=#{ENV.cxxflags}",
                     "-DINSTALL_LIBRARY=ON",
                     "-DBUILD_PYTHON_MODULE=ON",
-                    "-DCIFPP_SHARE_DIR=#{Formula["libcifpp"].pkgshare}",
+                    "-DCIFPP_SHARE_DIR=#{pkgshare}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   def post_install
-    mv pkgshare/"dssp-extension.dic", Formula["libcifpp"].pkgshare
+    # Move files that could not be installed in libcifpp's share/ due to permission issues
+    system "ls", "-l", pkgshare
+    mv Dir["#{pkgshare}/*"], Formula["libcifpp"].pkgshare
   end
 
   test do
