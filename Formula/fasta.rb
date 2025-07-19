@@ -1,10 +1,10 @@
 class Fasta < Formula
   # cite Pearson_1990: "https://doi.org/10.1016/0076-6879(90)83007-V"
   desc "Classic FASTA sequence alignment suite"
-  homepage "https://faculty.virginia.edu/wrpearson/fasta/"
-  url "https://github.com/wrpearson/fasta36/archive/refs/tags/v36.3.8h_11-Feb-2020.tar.gz"
-  version "36.3.8h"
-  sha256 "916b327ac996151c808bd7066dea59c4ecb6035fc27c27fa8f011d49548867d6"
+  homepage "https://fasta.bioch.virginia.edu/"
+  url "https://github.com/wrpearson/fasta36/archive/refs/tags/v36.3.8i_14-Nov-2020.tar.gz"
+  version "36.3.8i"
+  sha256 "b4b1c3c9be6beebcbaf4215368e159d69255e34c0bdbc84affa10cdb473ce008"
 
   livecheck do
     url :stable
@@ -22,7 +22,11 @@ class Fasta < Formula
 
   def install
     bin.mkpath
-    arch = OS.mac? ? "os_x86_64" : "linux64_sse2"
+    arch = if OS.mac?
+      Hardware::CPU.arm? ? "os_x_arm64" : "os_x86_64"
+    else
+      "linux64_sse2"
+    end
     system "make", "-C", "src", "-f", "../make/Makefile.#{arch}"
     rm "bin/README"
     bin.install Dir["bin/*"]
@@ -31,6 +35,6 @@ class Fasta < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/fasta36 -h 2>&1")
+    assert_match version.to_s.gsub(/.\d+.\d+.\d+$/, ""), shell_output("#{bin}/fasta36 -h 2>&1")
   end
 end
