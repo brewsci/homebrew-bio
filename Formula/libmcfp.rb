@@ -8,11 +8,10 @@ class Libmcfp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80dc2b04ffaec57a45a3abcd7e1eb8715a10565db083a6978c465042e558ba30"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80dc2b04ffaec57a45a3abcd7e1eb8715a10565db083a6978c465042e558ba30"
-    sha256 cellar: :any_skip_relocation, ventura:       "80dc2b04ffaec57a45a3abcd7e1eb8715a10565db083a6978c465042e558ba30"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07e1fb49d52d31eb6d3f119271f2b529f456cc845488bbf5fc350b48f38911d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4b3cb991d4c205436bdb2f98d28ed95216ebe35c10fc5f0bd26ae387934c414d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b3cb991d4c205436bdb2f98d28ed95216ebe35c10fc5f0bd26ae387934c414d"
+    sha256 cellar: :any_skip_relocation, ventura:       "4b3cb991d4c205436bdb2f98d28ed95216ebe35c10fc5f0bd26ae387934c414d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92ef6686bdce6d88aaadb293cfac42c737ceb094b866fba7c3940415b11a1d95"
   end
 
   depends_on "cmake" => :build
