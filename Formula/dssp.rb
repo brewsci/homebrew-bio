@@ -58,7 +58,7 @@ class Dssp < Formula
                     "-DCMAKE_CXX_FLAGS=#{ENV.cxxflags}",
                     "-DINSTALL_LIBRARY=ON",
                     "-DBUILD_PYTHON_MODULE=ON",
-                    "-DCIFPP_SHARE_DIR=#{pkgshare/"libcifpp"}",
+                    "-DCIFPP_SHARE_DIR=#{Formula["libcifpp"].pkgshare/"libcifpp"}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
