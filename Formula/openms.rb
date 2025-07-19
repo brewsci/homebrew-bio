@@ -28,18 +28,6 @@ class Openms < Formula
   depends_on "zlib"
 
   def install
-    if OS.linux?
-      # Set headless environment for Linux
-      if OS.linux?
-        ENV["QT_QPA_PLATFORM"] = "offscreen"
-        ENV["DISPLAY"] = ":99"
-      end
-      # Fix missing cstdint include on Linux
-      inreplace "src/openms/extern/SQLiteCpp/include/SQLiteCpp/Statement.h",
-                "#include <memory>",
-                "#include <memory>\n#include <cstdint>"
-    end
-
     # Build OpenMS
     args = std_cmake_args + %W[
       -DCMAKE_C_COMPILER=#{ENV.cc}
@@ -49,6 +37,22 @@ class Openms < Formula
       -DCMAKE_PREFIX_PATH=#{Formula["qt"].opt_prefix}
       -DBOOST_USE_STATIC=OFF
     ]
+
+    # Set specifities for Linux
+    if OS.linux?
+      # Set headless environment for Linux
+      ENV["QT_QPA_PLATFORM"] = "offscreen"
+      ENV["DISPLAY"] = ":99"
+
+      # Fix missing cstdint include on Linux
+      inreplace "src/openms/extern/SQLiteCpp/include/SQLiteCpp/Statement.h",
+                "#include <memory>",
+                "#include <memory>\n#include <cstdint>"
+
+      # Force explicit uses of the system SQLite
+      args << "--with-sqlite=#{Formula["sqlite"].opt_prefix}"
+      args << "--disable-static-sqlite"
+    end
 
     system "cmake", "-S", ".", "-B", "openms_build", *args
     system "cmake", "--build", "openms_build"
