@@ -56,13 +56,14 @@ class Dssp < Formula
       "DESTINATION share/libcifpp",
       "DESTINATION #{pkgshare}"
 
+    inreplace "CMakeLists.txt", "${CIFPP_SHARE_DIR}", pkgshare
+
     system "cmake", "-S", ".", "-B", "build", "-G", "Ninja",
                     "-DCMAKE_BUILD_TYPE=Release",
                     "-DCMAKE_CXX_STANDARD=20",
                     "-DCMAKE_CXX_FLAGS=#{ENV.cxxflags}",
                     "-DINSTALL_LIBRARY=ON",
                     "-DBUILD_PYTHON_MODULE=ON",
-                    "-DCIFPP_SHARE_DIR=#{pkgshare}",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
