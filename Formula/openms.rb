@@ -7,6 +7,11 @@ class Openms < Formula
 
   head "https://github.com/OpenMS/OpenMS.git", branch: "develop"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 x86_64_linux: "6a3bda5fcd19d2c4f7b63dc3e34575fe146c5d8afc5b9dcb6a76aec9db74df74"
+  end
+
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "coin-or-tools/coinor/cbc"
