@@ -1,4 +1,5 @@
 class Gemmi < Formula
+  # cite Wojdyr_2022: "https://doi.org/10.21105/joss.04200"
   desc "Macromolecular crystallography library and utilities"
   homepage "https://project-gemmi.github.io/"
   url "https://github.com/project-gemmi/gemmi/archive/refs/tags/v0.7.3.tar.gz"
@@ -14,11 +15,20 @@ class Gemmi < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "nanobind" => :build
+  depends_on "python3"
 
   uses_from_macos "zlib"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    py_ver = Language::Python.major_minor_version "python3"
+    site_packages = lib/"python#{py_ver}/site-packages"
+    mkdir_p site_packages
+
+    system "cmake", "-S", ".", "-B", "build",
+      "-DUSE_PYTHON=ON",
+      "-DPYTHON_INSTALL_DIR=#{site_packages}",
+      *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
@@ -30,5 +40,8 @@ class Gemmi < Formula
     end
     resource("homebrew-testdata").stage testpath/"example"
     assert_match "_atom_site.B_iso_or_equiv\t1\t218", shell_output("#{bin}/gemmi tags example/5i55.cif")
+
+    # Check if the Python module can be imported
+    system "python3", "-c", "import gemmi"
   end
 end
