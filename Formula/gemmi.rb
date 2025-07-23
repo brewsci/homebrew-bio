@@ -16,8 +16,8 @@ class Gemmi < Formula
 
   depends_on "cmake" => :build
   depends_on "nanobind" => :build
+  depends_on "robin-map" => :build
   depends_on "python3"
-  depends_on "robin-map"
 
   uses_from_macos "zlib"
 
