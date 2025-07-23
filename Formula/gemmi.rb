@@ -18,8 +18,7 @@ class Gemmi < Formula
   depends_on "nanobind" => :build
   depends_on "robin-map" => :build
   depends_on "python3"
-
-  uses_from_macos "zlib"
+  depends_on "zlib-ng" # Faster than zlib
 
   def install
     py_ver = Language::Python.major_minor_version "python3"
@@ -33,6 +32,7 @@ class Gemmi < Formula
       "-DCMAKE_CXX_FLAGS=#{ENV["CXXFLAGS"]} #{ENV["CPPFLAGS"]}",
       "-DUSE_PYTHON=ON",
       "-DPYTHON_INSTALL_DIR=#{site_packages}",
+      "-DUSE_ZLIB_NG=ON",
       *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
