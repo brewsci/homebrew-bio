@@ -17,6 +17,7 @@ class Gemmi < Formula
   depends_on "cmake" => :build
   depends_on "nanobind" => :build
   depends_on "python3"
+  depends_on "robin-map"
 
   uses_from_macos "zlib"
 
@@ -25,7 +26,11 @@ class Gemmi < Formula
     site_packages = lib/"python#{py_ver}/site-packages"
     mkdir_p site_packages
 
+    ENV.append "CPPFLAGS", "-I#{Formula["nanobind"].opt_lib/"python#{py_ver}/site-packages/nanobind/include"}"
+    ENV.append "CPPFLAGS", "-I#{Formula["python3"].opt_include}/python#{py_ver}"
+
     system "cmake", "-S", ".", "-B", "build",
+      "-DCMAKE_CXX_FLAGS=#{ENV["CXXFLAGS"]} #{ENV["CPPFLAGS"]}",
       "-DUSE_PYTHON=ON",
       "-DPYTHON_INSTALL_DIR=#{site_packages}",
       *std_cmake_args
