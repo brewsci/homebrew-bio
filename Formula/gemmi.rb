@@ -18,7 +18,7 @@ class Gemmi < Formula
   depends_on "nanobind" => :build
   depends_on "ninja" => :build
   depends_on "robin-map" => :build
-  depends_on "python3"
+  depends_on "python@3.13"
   depends_on "zlib-ng" # Faster than zlib
 
   def install
@@ -27,7 +27,7 @@ class Gemmi < Formula
     mkdir_p site_packages
 
     ENV.append "CPPFLAGS", "-I#{Formula["nanobind"].opt_lib/"python#{py_ver}/site-packages/nanobind/include"}"
-    ENV.append "CPPFLAGS", "-I#{Formula["python3"].opt_include}/python#{py_ver}"
+    ENV.append "CPPFLAGS", "-I#{Formula["python@3.13"].opt_include}/python#{py_ver}"
 
     system "cmake", "-S", ".", "-B", "build", "-G", "Ninja",
       "-DCMAKE_CXX_FLAGS=#{ENV["CXXFLAGS"]} #{ENV["CPPFLAGS"]}",
