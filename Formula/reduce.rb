@@ -31,8 +31,8 @@ class Reduce < Formula
     # Refer to https://github.com/rlabduke/reduce/issues/60 for `-DHET_DICTIONARY` and `-DHET_DICTOLD` flags
     system "cmake", "-S", ".", "-B", "build", "-G", "Ninja", *std_cmake_args,
       "-DCMAKE_CXX_FLAGS=#{ENV.cxxflags}",
-      "-DHET_DICTIONARY=#{pkgshare}/reduce_wwPDB_het_dict.txt",
-      "-DHET_DICTOLD=#{pkgshare}/reduce_het_dict.txt"
+      "-DHET_DICTIONARY=#{pkgshare/"reduce_wwPDB_het_dict.txt"}",
+      "-DHET_DICTOLD=#{pkgshare/"reduce_het_dict.txt"}"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     pkgshare.install "update_het_dict.py"
