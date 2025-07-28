@@ -28,8 +28,6 @@ class Reduce < Formula
               "target_link_libraries(mmtbx_reduceOrig_ext PRIVATE reducelib ${Boost_LIBRARIES} ${PYTHON_LIBRARIES})",
               "target_link_libraries(mmtbx_reduceOrig_ext PRIVATE reducelib ${Boost_LIBRARIES})"
 
-    mkdir_p pkgshare
-
     # Refer to https://github.com/rlabduke/reduce/issues/60 for `-DHET_DICTIONARY` and `-DHET_DICTOLD` flags
     system "cmake", "-S", ".", "-B", "build", "-G", "Ninja", *std_cmake_args,
       "-DCMAKE_CXX_FLAGS=#{ENV.cxxflags}",
@@ -37,7 +35,7 @@ class Reduce < Formula
       "-DHET_DICTOLD=#{pkgshare/"reduce_het_dict.txt"}"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    pkgshare.install "update_het_dict.py"
+    pkgshare.install "reduce_wwPDB_het_dict.txt", "update_het_dict.py"
     prefix.install_metafiles
 
     # Install a shared library file and a Python module
