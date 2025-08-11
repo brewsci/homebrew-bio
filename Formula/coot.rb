@@ -1,17 +1,17 @@
 class Coot < Formula
   desc "Crystallographic Object-Oriented Toolkit"
   homepage "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/"
-  url "https://github.com/pemsley/coot/archive/refs/tags/Release-1.1.17-v2.tar.gz"
-  sha256 "841251b43c258a5653e3597ff7b97b7059fbd15e9205080b5739e22e768af97f"
+  url "https://github.com/pemsley/coot/archive/refs/tags/Release-1.1.18.tar.gz"
+  sha256 "c6e2864023c0bc83278c6fd760af704fd955616a007f00d61452b015f892f463"
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only", "GPL-2.0-or-later"]
   head "https://github.com/pemsley/coot.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 arm64_sequoia: "399b8061ce4510efbaf6ec771423ae1d7df5b4febea8c2c35ac225641ab232dd"
-    sha256 arm64_sonoma:  "6e861e0761191e6aad32afff5692b26318a75fb252ac5e7bd88783f3b56a05d4"
-    sha256 ventura:       "766aaae9f3a21623475731f8846d06578a76ab2c24a6b51b4d855c6b7047a6aa"
-    sha256 x86_64_linux:  "8e27e0cdfa813bad7a8841819196cb39eb08b87180d7c4e64dc3a86dc93f9f25"
+    sha256 arm64_sequoia: "12bc58528d08d105443110b6883c091353a347366c7edb4f73004f581c78f1d4"
+    sha256 arm64_sonoma:  "51e7b541d47d589a896c76d30ce756c825fc61cd8b96b35d23202e91e43a826c"
+    sha256 ventura:       "5967ee63f49fae34005c9b557a062871598329358fde25438ffcb7543080ad36"
+    sha256 x86_64_linux:  "87a90727a6bc43251a992cfd7ae3126955f3814708970b3dd24fbea88c6c60bc"
   end
 
   depends_on "autoconf" => :build
