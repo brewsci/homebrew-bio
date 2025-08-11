@@ -5,14 +5,14 @@ class Promod3 < Formula
   url "https://git.scicore.unibas.ch/schwede/ProMod3/-/archive/3.5.0/ProMod3-3.5.0.tar.gz"
   sha256 "a358d799581e8dee783fda1e9e16cad48b1b3c46ded6321600bd7697fad74539"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 2
-    sha256                               arm64_sequoia: "77c1375653320089e595e38bd48f2f6655b7a7900297eb38afc5515fc1df39b2"
-    sha256                               arm64_sonoma:  "a2194b634952b63b63fb5db65ee63b2db06f619c04d98ca33ed0c3ee2a1954a8"
-    sha256 cellar: :any,                 ventura:       "7b06cdaabe97726786747110e75d0c0e3cfc0e6a95b9118a5201ad1cb5b32af9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc662e38349f5f1ec9acd005afb66cff40db6ea10fd0c351b4aef2f52487dd36"
+    sha256                               arm64_sequoia: "42de23f278d08076caf9fe3165254e1f1098e855eea0510fac47f9d526702d5a"
+    sha256                               arm64_sonoma:  "4c6a68928bb78e915d437a06779f72e24f31887433ec47521a8bcc7ab09a3b7c"
+    sha256 cellar: :any,                 ventura:       "470ef5e9d9136b768a64b41211e48773a35353d93ae9033d029bc3e43186a478"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48c3ffc93c622d94d13ef8023b8f1d2cfec9a0867bc139ab4fad5ec08cfc4d4b"
   end
 
   depends_on "cmake" => :build
