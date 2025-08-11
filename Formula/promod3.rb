@@ -3,9 +3,8 @@ class Promod3 < Formula
   desc "Versatile Homology Modelling Toolbox"
   homepage "https://openstructure.org/promod3"
   url "https://git.scicore.unibas.ch/schwede/ProMod3/-/archive/3.6.0/ProMod3-3.6.0.tar.gz"
-  sha256 "30228074a6aef71a2455170418d827c841c497411771baca20a11030fec0951c"
+  sha256 "9bac495145c0c8ce4f24100a620060d137df865007c880efcc04d4f43f717f6f"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
