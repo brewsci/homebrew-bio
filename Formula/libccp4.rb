@@ -1,19 +1,16 @@
 class Libccp4 < Formula
   desc "Protein X-ray crystallography toolkit"
-  homepage "https://github.com/cctbx/ccp4io"
-  url "https://github.com/cctbx/ccp4io/archive/b58c4fb68902e4e6a58f4a585d0722e542516076.tar.gz"
-  sha256 "f1edc5a830cd4a078eae700e14b1d89612fb7a12318094363642340aafe41af6"
+  homepage "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies"
+  url "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/libccp4-8.0.0.tar.gz"
+  sha256 "cb813ae86612a0866329deab7cee96eac573d81be5b240341d40f9ad5322ff2d"
   license "LGPL-3.0-only"
-  revision 2
-  head "https://github.com/cctbx/ccp4io.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 arm64_sequoia: "434cc06634014092558e8460d52d74deebbfe2943f0229e6b15a737f60b81f88"
-    sha256 arm64_sonoma:  "7e4c4eef0f1b15103184108765ff972acfab496b8b28df161b9a8df2469afa21"
-    sha256 ventura:       "6eea3bada2567049b6fec220245411f71c972a3e1505f77731d34ab49b3bb3a0"
-    sha256 x86_64_linux:  "d13d82745d32fa3abbd468758faba5c6fa49151a910c618c8b9558e2b1ae52de"
+    sha256 arm64_sequoia: "8d1804e2a1f0e762f18b4f043983ef0ae269332268997e95ef9211b4ce0e09d0"
+    sha256 arm64_sonoma:  "1a379e8e3a312e98b5135ca117345d90b9b2bf66c33193cdfd636c6badbf7e83"
+    sha256 ventura:       "bc0a2c04b4914fe7b78faea2692da15e34c38e04573fc844507e685d3ffe7510"
+    sha256 x86_64_linux:  "d2126d51495f1dc50b07fcc6293fa771c7b46075a83ada412af6307717ddcc76"
   end
 
   depends_on "pkg-config" => [:build, :test]
@@ -21,20 +18,18 @@ class Libccp4 < Formula
   uses_from_macos "m4"
 
   def install
-    cd "libccp4" do
-      # not fortran
-      args = %W[
-        --prefix=#{prefix}
-        --enable-shared
-        --disable-static
-        --disable-fortran
-      ]
-      system "./configure", *args
-      system "make", "install"
-    end
+    # not fortran
+    args = %W[
+      --prefix=#{prefix}
+      --enable-shared
+      --disable-static
+      --disable-fortran
+    ]
+    system "./configure", *args
+    system "make", "install"
   end
 
   test do
-    assert_match "-I#{include}", shell_output("pkg-config --cflags libccp4c")
+    assert_match "-I#{include}", shell_output("pkg-config --cflags ccp4c")
   end
 end

@@ -10,14 +10,7 @@ class Qmean < Formula
   url "https://git.scicore.unibas.ch/schwede/QMEAN/-/archive/4.3.1/qmean-4.3.1.tar.gz"
   sha256 "01a8b89e41bde00c35ae19d263bbd53df5591319281c0a5f6654a989e56a2ee4"
   license "Apache-2.0"
-
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sequoia: "a84eec553e42deac958e044af1ddafc441d0966aeb66eae3d5d3a57e46f00ff3"
-    sha256 cellar: :any,                 arm64_sonoma:  "943d057623dad843a54b63f5baa6210031e15d43ea92ef8a92c2e1a909ac349d"
-    sha256 cellar: :any,                 ventura:       "37fcb2aa4b3300cd9f9e4d5124c3c6442221fc477aca84a4be14bf6c2ad6f642"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8dd75ce4b8842f3976d2965fef3a5a16a68567251d288cb64f96467e43e76b66"
-  end
+  revision 1
 
   depends_on "cmake" => :build
   depends_on "eigen" => :build

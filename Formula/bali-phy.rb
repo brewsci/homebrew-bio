@@ -4,8 +4,8 @@ class BaliPhy < Formula
   desc "Bayesian co-estimation of phylogenies and multiple alignments"
   homepage "https://www.bali-phy.org/"
   url "https://github.com/bredelings/BAli-Phy.git",
-    tag:      "4.0",
-    revision: "6cb702d708600ebfdff41829e8be2ed9f033d336"
+    tag:      "4.1",
+    revision: "1fd88e6ebe99a8e32cba486cb324740ca3a343d7"
   license "GPL-2.0-or-later"
   head "https://github.com/bredelings/BAli-Phy.git", branch: "master"
 
@@ -16,10 +16,10 @@ class BaliPhy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sequoia: "57e5d80a2663ce86c0aa75ed3d940485c7e7a77aa874b9c1ce92f8a7e029d8e0"
-    sha256 cellar: :any,                 arm64_sonoma:  "9132452fb7a5b549701bb59be0086263f8c453498d547f3bc9a41fb3f83c00b0"
-    sha256 cellar: :any,                 ventura:       "e6c3f3bfc09100bedaddb8d7e2924ad7078380d65b58fbdcf48d26b812622746"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "731aee7b7f086d331f735c27db8bb32286bf771e7eb176a61b5c956b6cd82e02"
+    sha256 cellar: :any,                 arm64_sequoia: "9fc996bdac09b7f758991a3ae495781d70fe81db6b8cbdf2750a941aad77da8c"
+    sha256 cellar: :any,                 arm64_sonoma:  "82d0cb3e8a1b08975f03a52e33ea7374cfc05f303b17422ea72f4c380a34a134"
+    sha256 cellar: :any,                 ventura:       "a6aefbd1ecba93eced72470d933cdb6aec5ca4a537c3daebbf89ad930f66d384"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6e6dc84ff4d7727efc4754a8744f8beab4a714cbd3955046c4c8f7489aecb06"
   end
 
   depends_on "cereal" => :build

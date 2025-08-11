@@ -2,16 +2,17 @@ class Promod3 < Formula
   # cite Studer_2021: "https://doi.org/10.1371/journal.pcbi.1008667"
   desc "Versatile Homology Modelling Toolbox"
   homepage "https://openstructure.org/promod3"
-  url "https://git.scicore.unibas.ch/schwede/ProMod3/-/archive/3.4.2/ProMod3-3.4.2.tar.gz"
-  sha256 "8103bcb344489eb0fa0567ad8c9a8a9b42d3dbbb8d46c82587e6a58eab45eefd"
+  url "https://git.scicore.unibas.ch/schwede/ProMod3/-/archive/3.5.0/ProMod3-3.5.0.tar.gz"
+  sha256 "a358d799581e8dee783fda1e9e16cad48b1b3c46ded6321600bd7697fad74539"
   license "Apache-2.0"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256                               arm64_sequoia: "15dbf51dc0b5cd4a7573a1dc5b82d0098c6bfeeedaffd7b81d305a0242222a88"
-    sha256                               arm64_sonoma:  "1c9800f0b2b07554b0489390e41f55b3683f00a26a93cd27711b7e2e0dec416b"
-    sha256 cellar: :any,                 ventura:       "421bbcbd0f829747aab8592610ce34ccca5d4eefbf0b06d8e6d08981109df970"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdea303173a44c865c99c25bbabc8fcecfec7449bd5f1b934d2f1cea3b241be9"
+    sha256                               arm64_sequoia: "42de23f278d08076caf9fe3165254e1f1098e855eea0510fac47f9d526702d5a"
+    sha256                               arm64_sonoma:  "4c6a68928bb78e915d437a06779f72e24f31887433ec47521a8bcc7ab09a3b7c"
+    sha256 cellar: :any,                 ventura:       "470ef5e9d9136b768a64b41211e48773a35353d93ae9033d029bc3e43186a478"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48c3ffc93c622d94d13ef8023b8f1d2cfec9a0867bc139ab4fad5ec08cfc4d4b"
   end
 
   depends_on "cmake" => :build
@@ -33,8 +34,7 @@ class Promod3 < Formula
     inreplace "cmake_support/PROMOD3.cmake", "lib64", "lib"
 
     # Disable linking directly to CPython shared libraries
-    inreplace "cmake_support/PROMOD3.cmake",
-      /^\s*set\(CMAKE_REQUIRED_FLAGS "\$\{CMAKE_REQUIRED_FLAGS\} \$\{Python_LIBRARIES\}"\)\n?/, ""
+    inreplace "cmake_support/PROMOD3.cmake", "set(CMAKE_CXX_STANDARD 17)", "set(CMAKE_CXX_STANDARD 11)"
     inreplace "cmake_support/PROMOD3.cmake", /\s*\$\{Python_LIBRARIES\}\s*/, " "
     inreplace "CMakeLists.txt", "find_package(Python 3.6", "find_package(Python 3"
 

@@ -4,31 +4,31 @@ class Openstructure < Formula
   # cite Biasini_2013: "https://doi.org/10.1107/S0907444913007051"
   desc "Modular software framework for molecular modelling and visualization"
   homepage "https://openstructure.org"
-  url "https://git.scicore.unibas.ch/schwede/openstructure/-/archive/2.9.3/openstructure-2.9.3.tar.gz"
-  sha256 "b5958ada252a3912a71da0cefb0313a4291ac6b17c93d6e0a61d361ee62de92e"
+  url "https://git.scicore.unibas.ch/schwede/openstructure/-/archive/2.11.0/openstructure-2.11.0.tar.gz"
+  sha256 "46c91d0499f54818e3039cb6d51c9cc296b7e1a2ff34521dcc207cee18c38b60"
   license "LGPL-3.0-or-later"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
     rebuild 2
-    sha256                               arm64_sequoia: "f32928aa385f3dff6eba7cb8c75f6cf56f5c2f6faea2a4602e262837e0f45808"
-    sha256                               arm64_sonoma:  "a7bec6cf6e0951a9189290def7123158481d1892532c5ad567eef9e7a2ed0416"
-    sha256 cellar: :any,                 ventura:       "89b71e637505d748631ed945c6f8ff2436f957b2fb0ff5e3fe680a97b4c94ae8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "101136543691713599ee38f81a25274fa2037bce2a4aef641697cfe763e6d03d"
+    sha256                               arm64_sequoia: "c76fb41c46e5710de200344f2adc7211425918c81c0d2a2e690691151c67d4f0"
+    sha256                               arm64_sonoma:  "5ed85d924620dd4e8f698d2fe58e050b8bc457de3ebb460772eed117b149b43c"
+    sha256 cellar: :any,                 ventura:       "fdb28171757c277f0dc9739b3f560e13d36b2f2673f3aca62511855874351dde"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bb8f0e16ea37b99037a01e9782fad5a4a3d1b282776eda22535df6b706f80f5"
   end
 
   depends_on "cmake" => :build
-  depends_on "gcc" => :build # for `tmalign` and `tmscore` implemented in Fortran
+  depends_on "eigen" => :build
   depends_on "glm" => :build
   depends_on "pkg-config" => :build
+  depends_on "wget" => :build
   depends_on "boost"
   depends_on "boost-python3"
-  depends_on "brewsci/bio/clustal-w"
   depends_on "brewsci/bio/openmm@7"
   depends_on "brewsci/bio/parasail"
   depends_on "brewsci/bio/voronota"
-  depends_on "eigen"
   depends_on "fftw"
+  depends_on "gcc" # for `tmalign` and `tmscore` implemented in Fortran
   depends_on "glew"
   depends_on "glfw"
   depends_on "libpng"
@@ -55,20 +55,9 @@ class Openstructure < Formula
     depends_on "opencl-icd-loader"
   end
 
-  resource "components-cif" do
-    url "https://files.wwpdb.org/pub/pdb/data/monomers/components.cif.gz"
-    sha256 "6ac793ab82094f0d20a2d2c9576066798e293809b20fa1ddab4ec2de30130e0d"
-  end
-
   resource "dockq" do
     url "https://files.pythonhosted.org/packages/c1/a5/df80285b0f2e5b94562ccc1656ba8f3eaff34f7428ea04f26dad28894ae0/dockq-2.1.3.tar.gz"
     sha256 "50c4e2b4bced3bf865b12061ec0b56e23de1383dc70b445441848224f6c72c0d"
-  end
-
-  patch do
-    # Patch for Homebrew packaging (make openstructure src compatibile with boost@1.88 and fix CMake configs)
-    url "https://raw.githubusercontent.com/eunos-1128/openstructure/568cb192f92e22c0e026483294d513480b18276c/homebrew.patch"
-    sha256 "8c6817a22fc2bc9e07fdab77873a493cf1e4c581a9bbabc8fff5bee50adfda6c"
   end
 
   def python3
@@ -81,7 +70,7 @@ class Openstructure < Formula
 
     if OS.mac?
       ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
-      ENV.append "LDFLAGS", "-undefined dynamic_lookup -Wl,-export_dynamic"
+      ENV.prepend "LDFLAGS", "-undefined dynamic_lookup -Wl,-export_dynamic"
     elsif OS.linux?
       ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
       ENV.prepend "LDFLAGS", "-Wl,--allow-shlib-undefined,--export-dynamic -lstdc++"
@@ -128,9 +117,8 @@ class Openstructure < Formula
       system "cmake", "..", *cmake_args
       system "make", "VERBOSE=1"
 
-      resource("components-cif").fetch
-      components_cif_path = resource("components-cif").cached_download
-      cp components_cif_path, "components.cif.gz"
+      # the components.cif.gz file is updated weekly (Wednesday 00:00 UTC)
+      system "wget", "https://files.wwpdb.org/pub/pdb/data/monomers/components.cif.gz"
 
       system "stage/bin/chemdict_tool", "create",
               "components.cif.gz", "compounds.chemlib",
@@ -172,24 +160,27 @@ class Openstructure < Formula
       system "make", "check" # Test suite for built binaries
       system "make", "install"
     end
-    prefix.install "examples"
+
+    pkgshare.install "examples"
+    prefix.install_metafiles
   end
 
   def caveats
     <<~EOS
       You may need to install the following packages to use certain python bindings:
-      (Refer to https://openstructure.org/docs/2.9.2/bindings/bindings/)
+      (Refer to https://openstructure.org/docs/bindings/bindings/)
 
         - blast
-        - brewsci/bio/dssp
+        - brewsci/bio/clustal-w
         - brewsci/bio/hh-suite
+        - brewsci/bio/msms
         - mmseqs2
     EOS
   end
 
   test do
     assert_match "Usage:", shell_output("#{bin}/ost -h 2>&1", 255)
-    cp_r prefix/"examples", testpath
+    cp_r pkgshare/"examples", testpath
     system "#{bin}/ost", "compare-structures", "-m", testpath/"examples/scoring/model.pdb",
                          "-r", testpath/"examples/scoring/reference.cif.gz",
                          "--lddt", "--local-lddt", "--qs-score"

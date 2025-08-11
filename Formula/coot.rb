@@ -1,29 +1,25 @@
 class Coot < Formula
   desc "Crystallographic Object-Oriented Toolkit"
   homepage "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/"
-  url "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/source/releases/coot-1.1.15.tar.gz"
-  sha256 "da6ab4986e3f681afdc9b434c3bbfc65f2fbfd344bb2383836e88052b55e1831"
+  url "https://github.com/pemsley/coot/archive/refs/tags/Release-1.1.18.tar.gz"
+  sha256 "c6e2864023c0bc83278c6fd760af704fd955616a007f00d61452b015f892f463"
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only", "GPL-2.0-or-later"]
+  head "https://github.com/pemsley/coot.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 arm64_sequoia: "ac493504de14add7689bc32a51589addd0bd7013fc087fcc2653f3588a319c20"
-    sha256 arm64_sonoma:  "44efe116c1f3ca259b06c52631857d790bf7dae3f5b0a2547ab0755a725c503c"
-    sha256 ventura:       "122134089756bd941a9b07906fba309ef8aacb538613b6b0737026048edcd14a"
-    sha256 x86_64_linux:  "7a5650b3c337f5c8c159c6413ff013fcba4663e9214328b8efa33bbf64a8074f"
+    sha256 arm64_sequoia: "12bc58528d08d105443110b6883c091353a347366c7edb4f73004f581c78f1d4"
+    sha256 arm64_sonoma:  "51e7b541d47d589a896c76d30ce756c825fc61cd8b96b35d23202e91e43a826c"
+    sha256 ventura:       "5967ee63f49fae34005c9b557a062871598329358fde25438ffcb7543080ad36"
+    sha256 x86_64_linux:  "87a90727a6bc43251a992cfd7ae3126955f3814708970b3dd24fbea88c6c60bc"
   end
 
-  head do
-    url "https://github.com/pemsley/coot.git", branch: "main"
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-    depends_on "swig" => :build
-  end
-
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
   depends_on "glm" => :build
+  depends_on "libtool" => :build
   depends_on "pkg-config" => :build
+  depends_on "swig" => :build
   depends_on "adwaita-icon-theme"
   depends_on "boost"
   depends_on "boost-python3"
@@ -48,6 +44,7 @@ class Coot < Formula
   depends_on "harfbuzz"
   depends_on "libepoxy"
   depends_on "libpng"
+  depends_on "librsvg"
   depends_on "numpy"
   depends_on "openblas"
   depends_on "pango"
@@ -81,11 +78,8 @@ class Coot < Formula
   def install
     ENV.cxx11
     ENV.libcxx
-    if build.head?
-      # libtool -> glibtool for macOS
-      inreplace "autogen.sh", "libtool", "glibtool"
-      system "./autogen.sh"
-    end
+    inreplace "autogen.sh", "libtool", "glibtool"
+    system "./autogen.sh"
     if OS.mac?
       inreplace "./configure", "$wl-flat_namespace", ""
       inreplace "./configure", "$wl-undefined ${wl}suppress", "-undefined dynamic_lookup"

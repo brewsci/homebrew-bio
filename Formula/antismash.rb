@@ -11,18 +11,18 @@ class Antismash < Formula
 
   desc "Antibiotics & Secondary Metabolite Analysis SHell"
   homepage "https://antismash.secondarymetabolites.org/"
-  url "https://github.com/antismash/antismash/archive/refs/tags/8-0-0.tar.gz"
-  version "8.0.0"
-  sha256 "4dca221db6f5952f60f6d5a05b527593dfa694df4805f0a44cd65d0d71904c8d"
+  url "https://github.com/antismash/antismash/archive/refs/tags/8-0-2.tar.gz"
+  version "8.0.2"
+  sha256 "4fd5abb391b1dcad951939e3ee139626ba7b2d4feb7314f5aea594786211dc1f"
   license "AGPL-3.0-or-later"
   head "https://github.com/antismash/antismash.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sequoia: "725525bc9cee5e37c621ef86814efd2a2ddf0d3863bbe4bd674a198c6011a71f"
-    sha256 cellar: :any,                 arm64_sonoma:  "6c5c4972ecc55c81b8a1ff48a188244459157fa6ecaf7f628841793d548ea829"
-    sha256 cellar: :any,                 ventura:       "2eb5828e5351cf085ca92092f437cffd5a7a41e2e94e8a193199359d34eb4791"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d72264bbce13598717e9f3d6c92ab71e9d0c2d3f3bfd282094acf0865a0f9bf"
+    sha256 arm64_sequoia: "df433195f2f8910bf437b7225cbb651bc701a24298edba72126af155a9104ec5"
+    sha256 arm64_sonoma:  "e0c93f492060eb5fac51157ae1b2cc8467aa9da8de3195af8fb64069d3e7617a"
+    sha256 ventura:       "8af038685800ea8b4e3e603d672cc941f70aa1cfbd626a0112d1b8f8d3d4d0bc"
+    sha256 x86_64_linux:  "92610e3c930f8af8c98c27d563280e53d210a821b6bb144789d4fa07665f6e0d"
   end
 
   depends_on "cmake" => :build # scikit-learn
