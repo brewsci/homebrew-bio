@@ -2,10 +2,9 @@ class Promod3 < Formula
   # cite Studer_2021: "https://doi.org/10.1371/journal.pcbi.1008667"
   desc "Versatile Homology Modelling Toolbox"
   homepage "https://openstructure.org/promod3"
-  url "https://git.scicore.unibas.ch/schwede/ProMod3/-/archive/3.5.0/ProMod3-3.5.0.tar.gz"
-  sha256 "a358d799581e8dee783fda1e9e16cad48b1b3c46ded6321600bd7697fad74539"
+  url "https://git.scicore.unibas.ch/schwede/ProMod3/-/archive/3.6.0/ProMod3-3.6.0.tar.gz"
+  sha256 "9bac495145c0c8ce4f24100a620060d137df865007c880efcc04d4f43f717f6f"
   license "Apache-2.0"
-  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -17,6 +16,7 @@ class Promod3 < Formula
 
   depends_on "cmake" => :build
   depends_on "eigen" => :build
+  depends_on "ninja" => :build
   depends_on "boost"
   depends_on "boost-python3"
   depends_on "brewsci/bio/openmm@7"
@@ -30,27 +30,17 @@ class Promod3 < Formula
       ENV.prepend "LDFLAGS", "-Wl,--allow-shlib-undefined,--export-dynamic -lstdc++"
     end
 
-    # Match homebrew shared library directory name
-    inreplace "cmake_support/PROMOD3.cmake", "lib64", "lib"
-
-    # Disable linking directly to CPython shared libraries
-    inreplace "cmake_support/PROMOD3.cmake", "set(CMAKE_CXX_STANDARD 17)", "set(CMAKE_CXX_STANDARD 11)"
-    inreplace "cmake_support/PROMOD3.cmake", /\s*\$\{Python_LIBRARIES\}\s*/, " "
-    inreplace "CMakeLists.txt", "find_package(Python 3.6", "find_package(Python 3"
-
-    mkdir "build" do
-      cmake_args = std_cmake_args + %W[
-        -DCMAKE_CXX_STANDARD=11
-        -DPython_ROOT_DIR=#{Formula["python@3.13"].opt_prefix}
-        -DOST_ROOT=#{Formula["brewsci/bio/openstructure"].opt_prefix}
-        -DOPTIMIZE=ON
-        -DDISABLE_DOCUMENTATION=ON
-      ]
-      cmake_args << "-DENABLE_SSE=ON" if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      system "cmake", "..", *cmake_args
-      system "make"
-      system "make", "install"
-    end
+    cmake_args = std_cmake_args + %W[
+      -DPython_ROOT_DIR=#{Formula["python@3.13"].opt_prefix}
+      -DOST_ROOT=#{Formula["brewsci/bio/openstructure"].opt_prefix}
+      -DOPTIMIZE=ON
+      -DDISABLE_DOCUMENTATION=ON
+    ]
+    cmake_args << "-DENABLE_SSE=ON" if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+    system "cmake", "-S", ".", "-B", "build", "-G", "Ninja", *cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--build", "build", "--target", "check", "--parallel", "1"
+    system "cmake", "--install", "build"
   end
 
   test do
