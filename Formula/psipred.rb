@@ -8,6 +8,11 @@ class Psipred < Formula
   # Freely usable for academic and teaching purposes (research-only license)
   license :cannot_represent
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2ace66fa40ab62bf919ad485247df9785ba8e99a025dca6a7239329d8b39d59b"
+  end
+
   depends_on "brewsci/bio/blast-legacy"
   depends_on "tcsh"
 
