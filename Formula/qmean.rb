@@ -4,13 +4,11 @@ class Qmean < Formula
   # cite Benkert_2011: "https://doi.org/10.1093/bioinformatics/btq662"
   # cite Studer_2014: "https://doi.org/10.1093/bioinformatics/btu457"
   # cite Studer_2020: "https://doi.org/10.1093/bioinformatics/btz828"
-
   desc "Qualitative Model Energy ANalysis (QMEAN)"
   homepage "https://git.scicore.unibas.ch/schwede/QMEAN"
-  url "https://git.scicore.unibas.ch/schwede/QMEAN/-/archive/4.3.1/qmean-4.3.1.tar.gz"
-  sha256 "01a8b89e41bde00c35ae19d263bbd53df5591319281c0a5f6654a989e56a2ee4"
+  url "https://git.scicore.unibas.ch/schwede/QMEAN/-/archive/4.4.0/qmean-4.4.0.tar.gz"
+  sha256 "6e549c1984dc65325e0ad6960ec8f10ccd85420188df6292117bdee2028e06bf"
   license "Apache-2.0"
-  revision 1
 
   depends_on "cmake" => :build
   depends_on "eigen" => :build
