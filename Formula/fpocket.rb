@@ -12,6 +12,7 @@ class Fpocket < Formula
   end
 
   depends_on "netcdf"
+  depends_on "qhull"
 
   def install
     # fix compilation issue: see https://github.com/Discngine/fpocket/issues/164
