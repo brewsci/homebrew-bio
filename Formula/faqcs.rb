@@ -2,8 +2,8 @@ class Faqcs < Formula
   # cite Lo_2014: "https://doi.org/10.1186/s12859-014-0366-2"
   desc "Quality Control of Next Generation Sequencing Data"
   homepage "https://github.com/LANL-Bioinformatics/FaQCs"
-  url "https://github.com/LANL-Bioinformatics/FaQCs/archive/refs/tags/2.10.tar.gz"
-  sha256 "0458e3500adab5257ba11d1db5402adfc52feb936da39c0a26089cbfc1007832"
+  url "https://github.com/LANL-Bioinformatics/FaQCs/archive/refs/tags/2.12.tar.gz"
+  sha256 "cff6ada0f9ecc5a72fb5c484addd304f35952b1b11424c74016b827d21a07384"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -15,8 +15,27 @@ class Faqcs < Formula
   depends_on "jellyfish"
   depends_on "r"
   uses_from_macos "zlib"
+  on_macos do
+    depends_on "libomp"
+  end
+
+  resource "sse2neon" do
+    url "https://raw.githubusercontent.com/DLTcollab/sse2neon/v1.8.0/sse2neon.h"
+    sha256 "07723c9f9457dd4316f1fde3dd4eb6f31dd67d9955f6c21f4e609ac1698be48a"
+  end
 
   def install
+    inreplace "Makefile" do |s|
+      s.gsub! "gcc", "$(CC)"
+      s.gsub! "g++", "$(CXX)"
+      s.gsub! "-I.", "-I. -I$(PREFIX)/include"
+    end
+    # use sse2neon for ARM
+    if OS.mac? && Hardware::CPU.arm?
+      buildpath.install resource("sse2neon")
+      inreplace "seq_overlap.h", "#include <xmmintrin.h>", "#include \"sse2neon.h\""
+      inreplace "Makefile", "-msse2", ""
+    end
     system "make"
     bin.install "FaQCs"
     bin.install "VTrim"
