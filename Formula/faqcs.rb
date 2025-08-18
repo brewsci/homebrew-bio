@@ -8,8 +8,10 @@ class Faqcs < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "258fb769595a3a22700bb2f102092803a419cd723f6ee43874807af3c3a7a42d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "34097faab16f1a1d2fe1f227a39facd5e32e4addf3984624dd50fa95069b30dd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "11064ff6d15390db5f426cb90dbe5b7cec26731bc00eb71987cde9c6893c44ee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30383f8608037b1dfc76e58f7c246579c5a7e98b8b65cee414da999287f393e0"
+    sha256 cellar: :any_skip_relocation, ventura:       "f33a533cdd209e1652c4900ca1a0fbfb2e2985fb5e6b008c4b1cd0d69ea11957"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9bbaf8e07a6a37514afb261141754d093dd2354a752e28b68a679cb19a6fb252"
   end
 
   depends_on "jellyfish"
