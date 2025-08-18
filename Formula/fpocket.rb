@@ -1,8 +1,8 @@
 class Fpocket < Formula
   desc "Protein pocket detection algorithm based on Voronoi tessellation"
   homepage "https://github.com/Discngine/fpocket"
-  url "https://github.com/Discngine/fpocket/archive/refs/tags/4.0.0.tar.gz"
-  sha256 "97b808b233b0fc314fe5e32c9cc8cc7d4377b53aba36807a5554a180f13524c0"
+  url "https://github.com/Discngine/fpocket/archive/refs/tags/4.2.2.tar.gz"
+  sha256 "4042125e7243e03465200bee787e55a54c16c1a10908718af75275c46bfafaad"
   license "MIT"
 
   bottle do
@@ -12,11 +12,16 @@ class Fpocket < Formula
   end
 
   depends_on "netcdf"
-  depends_on "qhull"
 
   def install
-    system "make" if OS.linux?
-    system "make", "ARCH=MACOSXX86_64" if OS.mac?
+    arch = if OS.mac? && Hardware::CPU.arm?
+      "ARCH=MACOSXARM64"
+    elsif OS.mac? && Hardware::CPU.intel?
+      "ARCH=MACOSXX86_64"
+    else
+      "ARCH=LINUX"
+    end
+    system "make", arch
     bin.install Dir["bin/*pocket"]
   end
 
