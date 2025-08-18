@@ -16,7 +16,12 @@ class Faqcs < Formula
   depends_on "r"
   uses_from_macos "zlib"
   on_macos do
-    depends_on "sse2neon"
+    depends_on "libomp"
+  end
+
+  resource "sse2neon" do
+    url "https://raw.githubusercontent.com/DLTcollab/sse2neon/v1.8.0/sse2neon.h"
+    sha256 "07723c9f9457dd4316f1fde3dd4eb6f31dd67d9955f6c21f4e609ac1698be48a"
   end
 
   def install
@@ -27,6 +32,7 @@ class Faqcs < Formula
     end
     # use sse2neon for ARM
     if OS.mac? && Hardware::CPU.arm?
+      buildpath.install resource("sse2neon")
       inreplace "seq_overlap.h", "#include <xmmintrin.h>", "#include \"sse2neon.h\""
       inreplace "Makefile", "-msse2", ""
     end
