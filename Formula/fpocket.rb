@@ -24,7 +24,7 @@ class Fpocket < Formula
     elsif OS.mac? && Hardware::CPU.intel?
       "ARCH=MACOSXX86_64"
     else
-      "ARCH=LINUX"
+      "ARCH=LINUXAMD64"
     end
     system "make", arch
     bin.install Dir["bin/*pocket"]
