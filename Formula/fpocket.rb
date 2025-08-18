@@ -14,7 +14,11 @@ class Fpocket < Formula
   depends_on "netcdf"
 
   def install
-    inreplace "src/fparams.c", "strcpy(&residue_string, pt);", "strcpy(residue_string, pt);"
+    # fix compilation issue: see https://github.com/Discngine/fpocket/issues/164
+    inreplace "src/fparams.c" do |s|
+      s.gsub! "char *rest2;", "char *rest2;\nchar residue_string[8000];"
+      s.gsub! "strcpy(&residue_string, pt);", "strcpy(residue_string, pt);"
+    end
     arch = if OS.mac? && Hardware::CPU.arm?
       "ARCH=MACOSXARM64"
     elsif OS.mac? && Hardware::CPU.intel?
