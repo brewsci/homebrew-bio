@@ -14,6 +14,7 @@ class Fpocket < Formula
   depends_on "netcdf"
 
   def install
+    inreplace "src/fparams.c", "strcpy(&residue_string, pt);", "strcpy(residue_string, pt);"
     arch = if OS.mac? && Hardware::CPU.arm?
       "ARCH=MACOSXARM64"
     elsif OS.mac? && Hardware::CPU.intel?
