@@ -98,6 +98,10 @@ class Openstructure < Formula
 
     shlib_ext = OS.mac? ? "dylib" : "so"
 
+    # Workaround for stub library libboost_system.so removed from 1.89.0
+    # Refer to https://github.com/boostorg/system/issues/132
+    inreplace "CMakeLists.txt", " system", ""
+
     mkdir "build" do
       cmake_args = std_cmake_args + %W[
         -DCMAKE_CXX_COMPILER=#{ENV["CXX"]}
