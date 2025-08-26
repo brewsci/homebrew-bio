@@ -2,8 +2,8 @@ class Hyphy < Formula
   # cite Pond_2019: "https://doi.org/10.1093/molbev/msz197"
   desc "Hypothesis testing with phylogenies"
   homepage "https://www.hyphy.org/"
-  url "https://github.com/veg/hyphy/archive/refs/tags/2.5.63.tar.gz"
-  sha256 "86a94a601fa136443a8cd69f61e3a47b1dc85f10743d317715b1e433278e9ee0"
+  url "https://github.com/veg/hyphy/archive/refs/tags/2.5.78.tar.gz"
+  sha256 "06bef149fbcdfd1692f6c01e1246e99e120513a041126c5bbc4c46960a18d141"
   license "MIT"
   head "https://github.com/veg/hyphy.git", branch: "master"
 
