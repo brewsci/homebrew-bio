@@ -29,7 +29,7 @@ class Hyphy < Formula
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     cd "build" do
-      system "make", "MP", "HYPHYMPI"
+      system "make", "hyphy", "HYPHYMPI"
       system "make", "install"
     end
   end
