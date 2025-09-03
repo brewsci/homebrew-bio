@@ -21,10 +21,12 @@ class Dssp < Formula
   depends_on "eigen" => :build
   depends_on "libmcfp" => :build
   depends_on "ninja" => :build
+  depends_on "pkgconf" = :build
   depends_on "boost"
   depends_on "boost-python3"
   depends_on "icu4c"
   depends_on "libcifpp"
+  depends_on "pcre2"
   depends_on "python3"
 
   uses_from_macos "bzip2"
