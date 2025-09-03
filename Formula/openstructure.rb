@@ -4,17 +4,16 @@ class Openstructure < Formula
   # cite Biasini_2013: "https://doi.org/10.1107/S0907444913007051"
   desc "Modular software framework for molecular modelling and visualization"
   homepage "https://openstructure.org"
-  url "https://git.scicore.unibas.ch/schwede/openstructure/-/archive/2.11.0/openstructure-2.11.0.tar.gz"
-  sha256 "46c91d0499f54818e3039cb6d51c9cc296b7e1a2ff34521dcc207cee18c38b60"
+  url "https://git.scicore.unibas.ch/schwede/openstructure/-/archive/2.11.1/openstructure-2.11.1.tar.gz"
+  sha256 "9ac12e1ce8ec879ec900b69bdbcc71632ed05d8cf8c09d3e847a57814d8a7e7b"
   license "LGPL-3.0-or-later"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 2
-    sha256                               arm64_sequoia: "c76fb41c46e5710de200344f2adc7211425918c81c0d2a2e690691151c67d4f0"
-    sha256                               arm64_sonoma:  "5ed85d924620dd4e8f698d2fe58e050b8bc457de3ebb460772eed117b149b43c"
-    sha256 cellar: :any,                 ventura:       "fdb28171757c277f0dc9739b3f560e13d36b2f2673f3aca62511855874351dde"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bb8f0e16ea37b99037a01e9782fad5a4a3d1b282776eda22535df6b706f80f5"
+    sha256                               arm64_sequoia: "48e9ded1b107feb3659c6fb74825e6ba685a3e7699341460b8e1a16b146a6907"
+    sha256                               arm64_sonoma:  "6cb5afe6d6951ffbf8048f099b5d66464f73c1ce0f7a3eed57fb956a9b23e304"
+    sha256                               ventura:       "bc0feba0207e5d258ddf8c770e07cc4267195c49e800c43602d12747d91d0195"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3804831b123f8018d88d0b2277775a60420e98815b4624ddb847e11ba77b1192"
   end
 
   depends_on "cmake" => :build
@@ -97,7 +96,11 @@ class Openstructure < Formula
     ]
     venv.pip_install_and_link resource("dockq")
 
-    lib_ext = OS.mac? ? "dylib" : "so"
+    shlib_ext = OS.mac? ? "dylib" : "so"
+
+    # Workaround for stub library libboost_system.so removed from 1.89.0
+    # Refer to https://github.com/boostorg/system/issues/132
+    inreplace "CMakeLists.txt", " system", ""
 
     mkdir "build" do
       cmake_args = std_cmake_args + %W[
@@ -107,7 +110,7 @@ class Openstructure < Formula
         -DCMAKE_PREFIX_PATH=#{HOMEBREW_PREFIX}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
-        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{py_ver_nodot}.#{lib_ext}
+        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{py_ver_nodot}.#{shlib_ext}
         -DENABLE_GUI=OFF
         -DENABLE_GFX=OFF
         -DENABLE_INFO=OFF
@@ -136,11 +139,11 @@ class Openstructure < Formula
         -DPREFIX=#{prefix}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
-        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{py_ver_nodot}.#{lib_ext}
+        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{py_ver_nodot}.#{shlib_ext}
         -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
         -DPARASAIL_INCLUDE_DIR=#{Formula["brewsci/bio/parasail"].opt_include}
-        -DPARASAIL_LIBRARY=#{Formula["brewsci/bio/parasail"].opt_lib}/libparasail.#{lib_ext}
-        -DOPEN_MM_LIBRARY=#{Formula["brewsci/bio/openmm@7"].opt_lib}/libOpenMM.#{lib_ext}
+        -DPARASAIL_LIBRARY=#{Formula["brewsci/bio/parasail"].opt_lib}/libparasail.#{shlib_ext}
+        -DOPEN_MM_LIBRARY=#{Formula["brewsci/bio/openmm@7"].opt_lib}/libOpenMM.#{shlib_ext}
         -DOPEN_MM_INCLUDE_DIR=#{Formula["brewsci/bio/openmm@7"].opt_include}
         -DOPEN_MM_PLUGIN_DIR=#{Formula["brewsci/bio/openmm@7"].opt_lib}/plugins
         -DENABLE_MM=ON

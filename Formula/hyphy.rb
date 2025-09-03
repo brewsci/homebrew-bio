@@ -2,17 +2,17 @@ class Hyphy < Formula
   # cite Pond_2019: "https://doi.org/10.1093/molbev/msz197"
   desc "Hypothesis testing with phylogenies"
   homepage "https://www.hyphy.org/"
-  url "https://github.com/veg/hyphy/archive/refs/tags/2.5.63.tar.gz"
-  sha256 "86a94a601fa136443a8cd69f61e3a47b1dc85f10743d317715b1e433278e9ee0"
+  url "https://github.com/veg/hyphy/archive/refs/tags/2.5.78.tar.gz"
+  sha256 "06bef149fbcdfd1692f6c01e1246e99e120513a041126c5bbc4c46960a18d141"
   license "MIT"
   head "https://github.com/veg/hyphy.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 arm64_sequoia: "03502116c383e272a488f09927b262a6fb9a1de173e8497c814d547e452ef397"
-    sha256 arm64_sonoma:  "28f2100bc15f1d89338360efaa49e430488bc9c36cb9e964fb24808e9afc3b2b"
-    sha256 ventura:       "678b3a93cbb816582253f56b5943811140f6a6d2c981257ed64896637518eb59"
-    sha256 x86_64_linux:  "463346cbbc939ee4a2abacdb67d776169a889dad7ce55896019cb9fcf5e99334"
+    sha256 arm64_sequoia: "1b5deaa189abbf2639ed0df461e11fb902e76a80e9979ab81ca058cde44f377b"
+    sha256 arm64_sonoma:  "3b454962b4ab62b5bef19ef7e624fdc476c8090bf247390b0fa2018bc45b0145"
+    sha256 ventura:       "cb2dcdf444f6ec558b2933e2a62ba810f7dda866e322aaab91113ffffb5c64bf"
+    sha256 x86_64_linux:  "9129ef53acd4c17a84360b4bbba07d84124f76604f97b664b274b61e8fccc308"
   end
 
   depends_on "cmake" => :build
@@ -29,7 +29,7 @@ class Hyphy < Formula
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     cd "build" do
-      system "make", "MP", "HYPHYMPI"
+      system "make", "hyphy", "HYPHYMPI"
       system "make", "install"
     end
   end
