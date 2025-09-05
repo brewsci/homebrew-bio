@@ -30,10 +30,6 @@ class Dssp < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  on_macos do
-    depends_on "llvm" => :build # for the latest libc++
-  end
-
   resource "libcifpp" do
     url "https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v9.0.1.tar.gz"
     sha256 "094831ecf3a48d64706c41b9dd1145508fcd1f9b7b0993efee282c0492c4514f"
@@ -55,11 +51,13 @@ class Dssp < Formula
 
   def install
     ENV.prepend "LDFLAGS", "-undefined dynamic_lookup" if OS.mac?
-    ENV["CXXFLAGS"] = "#{ENV.cxxflags} -O3 -D_LIBCPP_DISABLE_AVAILABILITY"
+    ENV.append "CXXFLAGS", "-O3 -D_LIBCPP_DISABLE_AVAILABILITY"
 
     resource("libcifpp").stage do
       # libcifpp should be installed in 'prefix' directory since the path of dic files are always required.
-      system "cmake", "-S", ".", "-B", "build", "-G", "Ninja", *std_cmake_args(install_prefix: prefix/"libcifpp")
+      system "cmake", "-S", ".", "-B", "build", "-G", "Ninja",
+        "-DCMAKE_CXX_STANDARD=20",
+        *std_cmake_args(install_prefix: prefix/"libcifpp")
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
     end
