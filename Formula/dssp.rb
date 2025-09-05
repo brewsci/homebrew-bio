@@ -30,6 +30,10 @@ class Dssp < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
+  on_macs do
+    depends_on "llvm" => :build
+  end
+
   resource "libcifpp" do
     url "https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v9.0.1.tar.gz"
     sha256 "094831ecf3a48d64706c41b9dd1145508fcd1f9b7b0993efee282c0492c4514f"
