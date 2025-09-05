@@ -30,7 +30,7 @@ class Dssp < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  on_macs do
+  on_macos do
     depends_on "llvm" => :build
   end
 
