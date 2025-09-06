@@ -31,7 +31,7 @@ class Dssp < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "llvm" => :build
+    depends_on "llvm"
   end
 
   resource "libcifpp" do
