@@ -31,7 +31,7 @@ class Dssp < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "llvm" => [:build, :test]
+    depends_on "llvm"
   end
 
   resource "libcifpp" do
@@ -104,6 +104,7 @@ class Dssp < Formula
   end
 
   test do
+    ENV["DYLD_LIBRARY_PATH"] = Formula["llvm"].opt_lib.to_s if OS.mac?
     resource("testdata").unpack testpath
     cp Dir[pkgshare/"*.dic"], testpath
     system bin/"mkdssp", "1cbs.cif", "test.dssp"
