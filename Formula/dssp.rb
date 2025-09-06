@@ -57,15 +57,17 @@ class Dssp < Formula
     ENV.prepend "LDFLAGS", "-undefined dynamic_lookup" if OS.mac?
     ENV.append "CXXFLAGS", "-O3 -std=c++20 -D_LIBCPP_DISABLE_AVAILABILITY"
 
+    if OS.mac?
+      ENV.append "CXXFLAGS", "-D_LIBCPP_ENABLE_CXX20_REMOVED_ALLOCATOR_MEMBERS"
+      ENV.append "CXXFLAGS", "-D_LIBCPP_ENABLE_CXX20_REMOVED_ALLOCATOR_TRAITS_MEMBERS"
+    end
+
     resource("libcifpp").stage do
       # libcifpp should be installed in 'prefix' directory since the path of dic files are always required.
       system "cmake", "-S", ".", "-B", "build", "-G", "Ninja",
         "-DCMAKE_CXX_STANDARD=20",
         "-DCMAKE_CXX_STANDARD_REQUIRED=ON",
         "-DCMAKE_CXX_FLAGS=#{ENV["CXXFLAGS"]}",
-        "-DCMAKE_OSX_DEPLOYMENT_TARGET=15.0",
-        "-D_LIBCPP_ENABLE_CXX20_REMOVED_ALLOCATOR_MEMBERS=ON",
-        "-D_LIBCPP_ENABLE_CXX20_REMOVED_ALLOCATOR_TRAITS_MEMBERS=ON",
         *std_cmake_args(install_prefix: prefix/"libcifpp")
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
