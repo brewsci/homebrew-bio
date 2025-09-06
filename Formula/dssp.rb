@@ -55,11 +55,12 @@ class Dssp < Formula
 
   def install
     ENV.prepend "LDFLAGS", "-undefined dynamic_lookup" if OS.mac?
-    ENV.append "CXXFLAGS", "-O3 -std=c++20 -D_LIBCPP_DISABLE_AVAILABILITY"
+    ENV.append "CXXFLAGS", "-O3 -std=c++20"
 
     if OS.mac?
-      ENV.append "CXXFLAGS", "-D_LIBCPP_ENABLE_CXX20_REMOVED_ALLOCATOR_MEMBERS"
-      ENV.append "CXXFLAGS", "-D_LIBCPP_ENABLE_CXX20_REMOVED_ALLOCATOR_TRAITS_MEMBERS"
+      ENV.append "CXXFLAGS", "-D_LIBCPP_DISABLE_AVAILABILITY=ON"
+      ENV.append "CXXFLAGS", "-D_LIBCPP_ENABLE_CXX20_REMOVED_ALLOCATOR_MEMBERS=ON"
+      ENV.append "CXXFLAGS", "-D_LIBCPP_ENABLE_CXX20_REMOVED_ALLOCATOR_TRAITS_MEMBERS=ON"
     end
 
     resource("libcifpp").stage do
