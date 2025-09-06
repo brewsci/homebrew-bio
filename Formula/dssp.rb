@@ -65,6 +65,7 @@ class Dssp < Formula
         "-DCMAKE_CXX_FLAGS=#{ENV["CXXFLAGS"]}",
         "-D_LIBCPP_ENABLE_CXX20_REMOVED_ALLOCATOR_MEMBERS=ON",
         "-D_LIBCPP_ENABLE_CXX20_REMOVED_ALLOCATOR_TRAITS_MEMBERS=ON",
+        "-D_LIBCPP_DISABLE_AVAILABILITY=ON",
         *std_cmake_args(install_prefix: prefix/"libcifpp")
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
