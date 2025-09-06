@@ -55,7 +55,7 @@ class Dssp < Formula
 
   def install
     ENV.prepend "LDFLAGS", "-undefined dynamic_lookup" if OS.mac?
-    ENV.append "CXXFLAGS", "-O3 -std=c++20 -D_LIBCPP_DISABLE_AVAILABILITY"
+    ENV.append "CXXFLAGS", "-O3 -std=c++20"
 
     resource("libcifpp").stage do
       # libcifpp should be installed in 'prefix' directory since the path of dic files are always required.
