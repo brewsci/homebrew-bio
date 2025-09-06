@@ -58,6 +58,7 @@ class Dssp < Formula
     ENV.append "CXXFLAGS", "-O3 -std=c++20"
 
     if OS.mac?
+      ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
       ENV.append "CXXFLAGS", "-D_LIBCPP_DISABLE_AVAILABILITY"
       ENV.append "CXXFLAGS", "-D_LIBCPP_ENABLE_CXX20_REMOVED_ALLOCATOR_MEMBERS"
       ENV.append "CXXFLAGS", "-D_LIBCPP_ENABLE_CXX20_REMOVED_ALLOCATOR_TRAITS_MEMBERS"
