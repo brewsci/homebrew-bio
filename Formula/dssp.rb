@@ -24,6 +24,7 @@ class Dssp < Formula
   depends_on "boost"
   depends_on "boost-python3"
   depends_on "icu4c"
+  depends_on "openssl@3"
   depends_on "pcre2"
   depends_on "python@3.13"
 
@@ -104,7 +105,6 @@ class Dssp < Formula
   end
 
   test do
-    ENV["DYLD_LIBRARY_PATH"] = Formula["llvm"].opt_lib.to_s if OS.mac?
     resource("testdata").unpack testpath
     cp Dir[pkgshare/"*.dic"], testpath
     system bin/"mkdssp", "1cbs.cif", "test.dssp"
