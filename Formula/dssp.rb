@@ -104,7 +104,7 @@ class Dssp < Formula
   test do
     resource("testdata").unpack testpath
     cp Dir[pkgshare/"*.dic"], testpath
-    system bin/"mkdssp", "1cbs.cif", "test.dssp"
+    system bin/"mkdssp", "1cbs.cif", "test.dssp", :verbose => true
     assert_match "CELLULAR RETINOIC ACID BINDING PROTEIN TYPE II", (testpath/"test.dssp").read
 
     # Check if the Python module can be imported
