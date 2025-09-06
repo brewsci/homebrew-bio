@@ -62,6 +62,7 @@ class Dssp < Formula
       system "cmake", "-S", ".", "-B", "build", "-G", "Ninja",
         "-DCMAKE_CXX_STANDARD=20",
         "-DCMAKE_CXX_STANDARD_REQUIRED=ON",
+        "-DCMAKE_CXX_FLAGS=#{ENV["CXXFLAGS"]}",
         *std_cmake_args(install_prefix: prefix/"libcifpp")
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
