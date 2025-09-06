@@ -58,8 +58,8 @@ class Dssp < Formula
 
     if OS.mac?
       ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
-      ENV.prepend "LDFLAGS", "-undefined dynamic_lookup"
-      ENV.append "LDFLAGS", "-L#{Formula["llvm"].opt_lib} -Wl,-rpath,#{Formula["llvm"].opt_lib}"
+      ENV.prepend "LDFLAGS",
+        "-undefined dynamic_lookup -L#{Formula["llvm"].opt_lib} -Wl,-rpath,#{Formula["llvm"].opt_lib}"
     end
 
     resource("libcifpp").stage do
