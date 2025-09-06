@@ -24,7 +24,6 @@ class Dssp < Formula
   depends_on "boost"
   depends_on "boost-python3"
   depends_on "icu4c"
-  depends_on "openssl@3"
   depends_on "pcre2"
   depends_on "python@3.13"
 
@@ -33,6 +32,7 @@ class Dssp < Formula
 
   on_macos do
     depends_on "llvm"
+    depends_on "openssl@3"
   end
 
   resource "libcifpp" do
