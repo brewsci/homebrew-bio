@@ -32,7 +32,6 @@ class Dssp < Formula
 
   on_macos do
     depends_on "llvm"
-    depends_on "openssl@3"
   end
 
   resource "libcifpp" do
@@ -55,14 +54,11 @@ class Dssp < Formula
   end
 
   def install
-    ENV.prepend "LDFLAGS", "-undefined dynamic_lookup" if OS.mac?
     ENV.append "CXXFLAGS", "-O3 -std=c++20"
 
     if OS.mac?
+      ENV.prepend "LDFLAGS", "-undefined dynamic_lookup"
       ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
-      ENV.append "CXXFLAGS", "-D_LIBCPP_DISABLE_AVAILABILITY"
-      ENV.append "CXXFLAGS", "-D_LIBCPP_ENABLE_CXX20_REMOVED_ALLOCATOR_MEMBERS"
-      ENV.append "CXXFLAGS", "-D_LIBCPP_ENABLE_CXX20_REMOVED_ALLOCATOR_TRAITS_MEMBERS"
     end
 
     resource("libcifpp").stage do
