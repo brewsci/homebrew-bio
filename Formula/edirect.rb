@@ -3,7 +3,7 @@ class Edirect < Formula
   homepage "https://www.ncbi.nlm.nih.gov/books/NBK179288/"
   url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/24.7.20250910/edirect-24.7.20250910.tar.gz"
   version "24.7"
-  sha256 "7577bc353d098108b9162a65e432226cf1760b8bac40d9ce97c0f09113043796"
+  sha256 "cfb67eff0ab1530c8097cddbb98e388b009bb79a117033f9eb79345be48de869"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
