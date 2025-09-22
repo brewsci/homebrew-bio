@@ -7,6 +7,15 @@ class Ssm < Formula
   license "GPL-3.0-or-later"
   revision 2
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_tahoe:   "73c3da560fe502537a897cda5570fe82e8639c8e6738749c1e0ccf08f79f28cd"
+    sha256 cellar: :any,                 arm64_sequoia: "d5b1c2f96a5f8b25c181f4674509ffbfc848cbc569f7ba3027d344b6c3761284"
+    sha256 cellar: :any,                 arm64_sonoma:  "b30cd0df31dbc1c940a74448a928473cdce7f731f9c4e705f8dab3169a621263"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07b6e9efa753487b11a84c1ceed365cef0718e229fa596769599dcfe7407e142"
+  end
+
   depends_on "pkg-config" => [:build, :test]
   depends_on "brewsci/bio/libccp4"
   depends_on "brewsci/bio/mmdb2"
