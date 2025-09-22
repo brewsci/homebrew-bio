@@ -6,15 +6,6 @@ class Gemmi < Formula
   sha256 "ed5e1d0665f27d623d877fa36f6c99a5de21310cc8715337ff9f6b545bd2e9d3"
   license "MPL-2.0"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "479ef836d8ab2cb2c329caace6cf6ef8c2a5cf37a2f402a422ee6a91c1b3fc29"
-    sha256 cellar: :any,                 arm64_sonoma:  "5c0f6eea0e9d117263214d296ac244a7557415bda142200c10187939ef739e4b"
-    sha256 cellar: :any,                 ventura:       "5a1a37d9eb856694ce2b38ed621d3c95f2020413aea22d70741e29047cb05a43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44044851e8c5d402622d65eed181acdbadb5b78f186bfbc15576a5f4104809af"
-  end
-
   depends_on "cmake" => :build
   depends_on "nanobind" => :build
   depends_on "ninja" => :build
