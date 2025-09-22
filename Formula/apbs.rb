@@ -60,7 +60,6 @@ class Apbs < Formula
     fetk_cmake_prefix = prefix/"fetk/share/fetk/cmake"
     cflags = ["-I#{prefix}/fetk/include"]
     cflags << "-Wno-error=incompatible-pointer-types" if OS.mac?
-    # failed if additional modules and python are enabled
     args = std_cmake_args + %W[
       -DHOMEBREW_ALLOW_FETCHCONTENT=OFF
       -DBUILD_TOOLS=ON
