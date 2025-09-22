@@ -4,8 +4,8 @@ class Coot < Formula
   url "https://github.com/pemsley/coot/archive/refs/tags/Release-1.1.18.tar.gz"
   sha256 "c6e2864023c0bc83278c6fd760af704fd955616a007f00d61452b015f892f463"
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only", "GPL-2.0-or-later"]
-  head "https://github.com/pemsley/coot.git", branch: "main"
   revision 1
+  head "https://github.com/pemsley/coot.git", branch: "main"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
