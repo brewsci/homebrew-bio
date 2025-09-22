@@ -9,6 +9,15 @@ class Raster3d < Formula
   license "Artistic-2.0"
   revision 3
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "8296a50172ba70bb5834e61ae3cb2baad794305f3d69c86fe118e5bc578840d6"
+    sha256 cellar: :any,                 arm64_sequoia: "cb7b9b704b365dd12bb57b5af3eb8aa6a2bcbcce236b7ada1717b1b0126f66e8"
+    sha256 cellar: :any,                 arm64_sonoma:  "cb6b165b566870226231650f568a9df6775cded65763d4793cdfb1e4aedac1a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3fd21a8e80f504e2ef53188d469962f971850bf92b98220dd96fad90d1357fe"
+  end
+
   depends_on "gcc"
   depends_on "gd"
   depends_on "imagemagick"
