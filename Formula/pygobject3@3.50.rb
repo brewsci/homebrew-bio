@@ -5,15 +5,6 @@ class Pygobject3AT350 < Formula
   sha256 "8d836e75b5a881d457ee1622cae4a32bcdba28a0ba562193adb3bbb472472212"
   license "LGPL-2.1-or-later"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any, arm64_sequoia: "a026b2f6625c79cdf3b31d9f03cd36724067f4cd04395354921768fb69a59f46"
-    sha256 cellar: :any, arm64_sonoma:  "878adf762c024d9a6b1694468ce218de71c67317b5daecdc25a2fedcf68f0e35"
-    sha256 cellar: :any, ventura:       "65c194787e8f637a88b7361882226a282fc60817a180c02dc04c3881c8892e5a"
-    sha256               x86_64_linux:  "1bd749d8a890f465b8dbed54cfc20f711152a0c6e58fb521d4527b5ad891339f"
-  end
-
   keg_only :versioned_formula
 
   depends_on "meson" => :build
