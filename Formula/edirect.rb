@@ -50,7 +50,7 @@ class Edirect < Formula
     cd "#{libexec}/cmd" do
       system "./build.sh", bin
     end
-    cd "#{libexec}/extern" do
+    cd "#{libexec}/eutils" do
       system "./build.sh", bin
     end
   end
