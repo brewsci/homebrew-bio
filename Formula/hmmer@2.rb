@@ -7,7 +7,7 @@ class HmmerAT2 < Formula
   url "http://eddylab.org/software/hmmer/hmmer-2.3.2.tar.gz"
   sha256 "d20e1779fcdff34ab4e986ea74a6c4ac5c5f01da2993b14e92c94d2f076828b4"
   license "GPL-2.0-only"
-  revision 3
+  revision 4
 
   resource "config.sub" do
     url "https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD"
