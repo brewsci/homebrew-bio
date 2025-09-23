@@ -20,7 +20,6 @@ class HmmerAT2 < Formula
   end
 
   def install
-    # patch to Makefile.in to coexist with HMMER 3.x
     inreplace "Makefile.in", "cp src/$$file $(BINDIR)/", "cp src/$$file $(BINDIR)/\"$${file}2\""
     inreplace "Makefile.in", "man$(MANSUFFIX)/$$file.$(MANSUFFIX)", "man$(MANSUFFIX)/\"$${file}2\".$(MANSUFFIX)"
     # download config.sub and config.guess from newer autoconf-archive
