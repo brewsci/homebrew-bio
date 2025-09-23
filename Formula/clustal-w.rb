@@ -8,11 +8,11 @@ class ClustalW < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "426a34059e0c0247d9f7576322af141e8608c432518d8144c49faad01e95d722"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d07f17471f77ef64bff195f5aee75256306b507ff5a257c67d25a1e65f15d5e"
-    sha256 cellar: :any_skip_relocation, ventura:       "7d2437c7c93c54a41ade8fbd73b2263f228fefe9ec82b8498f21b580f572b58b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b96e6e3ed8d23bb1772c912b5d8767b735cb283f22868a1f28be69823121ebdb"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8a8dbe6283c5fba496ca865be5fe221efb58ac35eed5c6591caff7c681d1c027"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd49acf6241d5c909976d685b14704906a947541c9f0612c9d99792db38c3249"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7302c77b486c1d5923cfcc9722faa58f66b6ba556c0281a7de9904ddc87860d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a2153e925fae0faaeecf2eb439a89f867e109fab4d4964a294bb942b5f3dc8d"
   end
 
   def install
