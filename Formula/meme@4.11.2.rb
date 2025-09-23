@@ -8,6 +8,15 @@ class MemeAT4112 < Formula
   license :cannot_represent
   revision 3
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 2
+    sha256 arm64_tahoe:   "e84243d4b9aca894d518b18d97f5610780bbc1762b51ce492fa07e806079b82a"
+    sha256 arm64_sequoia: "dd51a40b2dfcb476577753d10e510a716c8e123f72de0abd7e383870ad7b4fdf"
+    sha256 arm64_sonoma:  "7ca399464dce22edd5bff1758cceaa391aafd842a16f3e81d63cb2b22c3538b0"
+    sha256 x86_64_linux:  "cef5c834e93e0340d2cf4192f521a324bc76ee1bfe227263285972ba7c5c8d5e"
+  end
+
   depends_on "ghostscript"
   depends_on "open-mpi"
   depends_on "python@3.12"
