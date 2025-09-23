@@ -11,12 +11,12 @@ class HmmerAT2 < Formula
 
   resource "config.sub" do
     url "http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD"
-    sha256 "11c54f55c3ac99e5d2c3dc2bb0bcccbf69f8223cc68f6b2438daa806cf0d16d8"
+    sha256 "26b852f75a637448360a956931439f7e818bf63150eaadb9b85484347628d1fd"
   end
 
   resource "config.guess" do
     url "http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb=HEAD"
-    sha256 "e3d148130e9151735f8b9a8e69a70d06890ece51468a9762eb7ac0feddddcc2f"
+    sha256 "50205cf3ec5c7615b17f937a0a57babf4ec5cd0aade3d7b3cccbe5f1bf91a7ef"
   end
 
   def install
