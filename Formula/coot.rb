@@ -7,6 +7,14 @@ class Coot < Formula
   revision 1
   head "https://github.com/pemsley/coot.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 arm64_tahoe:   "527b1e57baf646c00c3c418de4e4fa9dd527857d14a6aff59810c0a5fbba7491"
+    sha256 arm64_sequoia: "0d61c0a162861c3b79d0de324f99f5c29fc1f416c4bab6ecfec5373282fd98e2"
+    sha256 arm64_sonoma:  "c7c7f5714f8a33ae314492ee3e44c7939e31291bea00b111ae79c5da1942ca94"
+    sha256 x86_64_linux:  "ac530c5c16f06f3d2af29c7e4da7fc4b9a1c3d7dcb676fd0a9b11b434500bcf5"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "glm" => :build
