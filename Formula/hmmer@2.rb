@@ -7,7 +7,15 @@ class HmmerAT2 < Formula
   url "http://eddylab.org/software/hmmer/hmmer-2.3.2.tar.gz"
   sha256 "d20e1779fcdff34ab4e986ea74a6c4ac5c5f01da2993b14e92c94d2f076828b4"
   license "GPL-2.0-only"
-  revision 3
+  revision 4
+
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e179491c31a29f2cbbe6dbb8e438bad1bb35db12e1cfdbc2479b9142493c768a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e4ae5abe818016610c97584e20b9c48ba13e09a0b9c530247b848b29bd0b7dd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d75264c08a4628c66e0d0f7c62e9480e9eee993b74e299de755ba07b75fc47d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b364a66a04d40e3317fa8d50229bdd1912a62158f3644c438b13feeaad3a7114"
+  end
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -29,7 +37,6 @@ class HmmerAT2 < Formula
   end
 
   def install
-    # patch to Makefile.in to coexist with HMMER 3.x
     inreplace "Makefile.in", "cp src/$$file $(BINDIR)/", "cp src/$$file $(BINDIR)/\"$${file}2\""
     inreplace "Makefile.in", "man$(MANSUFFIX)/$$file.$(MANSUFFIX)", "man$(MANSUFFIX)/\"$${file}2\".$(MANSUFFIX)"
     # download config.sub and config.guess from newer autoconf-archive
