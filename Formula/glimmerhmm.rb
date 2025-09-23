@@ -7,7 +7,6 @@ class Glimmerhmm < Formula
   revision 1
 
   def install
-    # fatal error: 'malloc.h' file not found
     inreplace %w[train/utils.cpp], "malloc.h", "stdlib.h"
     system "make", "-C", "sources"
     system "make", "-C", "train"
