@@ -11,11 +11,11 @@ class Qtltools < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "762c2fd611be80e195ff934e4cf1b29ddd7b58d54b7f567a363bdc3624905a0a"
-    sha256 cellar: :any,                 arm64_sonoma:  "99689e96433f50af727a7596ec22eb3b15122d4e53b589996d7cc9256e974e27"
-    sha256 cellar: :any,                 ventura:       "ef102605869a4c5afcffc24c773d7c3ae11be9ace93bd86c587218abac2199b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce20881125f72f4c4183b5aa580a4d3c24fb1941a0104d503ec5254059013159"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "5f698de1c5c128d5b87939aa898885225f2eb7c268fabfc6b6c25839d7594d6b"
+    sha256 cellar: :any,                 arm64_sequoia: "9992225fa10e6de33e79022f9c6257231fc1c00e19a0c00b15981211439ce7dc"
+    sha256 cellar: :any,                 arm64_sonoma:  "44a2c3b21e0ca82aacf118babf52645654b4d2e21b5dfaa11db1355dbfde87d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7e8c3fab9026ba2df01d0377ef019e437edc21e5edceb1577766c2572dd5f8c"
   end
 
   depends_on "pkg-config" => :build

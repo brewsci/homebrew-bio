@@ -10,11 +10,11 @@ class MemeAT4112 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 arm64_sequoia: "8db59f0f29d2d3ce627b82b5d31a566df74bce3beadfb82a1f5d8ab1d43c1863"
-    sha256 arm64_sonoma:  "d16beb26a003552d274cde0e3154b0022dd5cf706f0e638f2fc246333f9144db"
-    sha256 ventura:       "d5edb62bc514dd71be4223edbb8f38fea1342f128fd7bc1476457acfd8044e03"
-    sha256 x86_64_linux:  "31bb379cd8af341c30765c509cf7af2f3f985f0ce1b8ed2b3bc53a96f2d9481b"
+    rebuild 2
+    sha256 arm64_tahoe:   "e84243d4b9aca894d518b18d97f5610780bbc1762b51ce492fa07e806079b82a"
+    sha256 arm64_sequoia: "dd51a40b2dfcb476577753d10e510a716c8e123f72de0abd7e383870ad7b4fdf"
+    sha256 arm64_sonoma:  "7ca399464dce22edd5bff1758cceaa391aafd842a16f3e81d63cb2b22c3538b0"
+    sha256 x86_64_linux:  "cef5c834e93e0340d2cf4192f521a324bc76ee1bfe227263285972ba7c5c8d5e"
   end
 
   depends_on "ghostscript"
