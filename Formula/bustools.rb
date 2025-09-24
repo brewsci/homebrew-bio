@@ -2,8 +2,8 @@ class Bustools < Formula
   # cite Melsted_2021: "https://doi.org/10.1038/s41587-021-00870-2"
   desc "Tools for working with BUS files"
   homepage "https://github.com/BUStools/bustools"
-  url "https://github.com/BUStools/bustools/archive/refs/tags/v0.45.0.tar.gz"
-  sha256 "a4b2a60f8c8ed178caeab0bc35cdd32b62f83dfea892511aaec11338fd538d48"
+  url "https://github.com/BUStools/bustools/archive/refs/tags/v0.45.1.tar.gz"
+  sha256 "d6b3ce8c700335aa10e28421da1edcedd3efa55e8390dd2729ff1d43ead0e642"
   license "BSD-2-Clause"
   head "https://github.com/BUStools/bustools.git", branch: "master"
 
