@@ -2,9 +2,9 @@ class Foldseek < Formula
   # cite van Kempen_2023: "https://doi.org/10.1038/s41587-023-01773-0"
   desc "Fast and sensitive comparisons of large protein structure sets"
   homepage "https://github.com/steineggerlab/foldseek"
-  url "https://github.com/steineggerlab/foldseek/archive/refs/tags/9-427df8a.tar.gz"
-  version "9-427df8a"
-  sha256 "b17d2d85b49a8508f79ffd8b15e54afc5feef5f3fb0276a291141ca5dbbbe8bc"
+  url "https://github.com/steineggerlab/foldseek/archive/refs/tags/10-941cd33.tar.gz"
+  version "10-941cd33"
+  sha256 "0db8bf072c9ec895efc6aa3626c746f4ca020acc9b92e9b2292b56c8c9f8a943"
   license "GPL-3.0-or-later"
   head "https://github.com/steineggerlab/foldseek.git", branch: "master"
 
@@ -28,15 +28,6 @@ class Foldseek < Formula
   end
 
   def install
-    # Rename block-aligner-c to block_aligner_c to fix rust 1.79 breaking foldseek
-    # https://github.com/steineggerlab/foldseek/commit/ca58f9b36a02d281f4971484e38ffb557c28d093
-    unless build.head?
-      inreplace %w[CMakeLists.txt
-                   lib/block-aligner/c/Cargo.toml
-                   lib/block-aligner/c/Makefile
-                   lib/block-aligner/c/cbindgen.toml
-                   src/CMakeLists.txt], "block-aligner-c", "block_aligner_c"
-    end
     args = []
     if OS.mac?
       libomp = Formula["libomp"]
@@ -46,6 +37,7 @@ class Foldseek < Formula
       args << "-DOpenMP_CXX_LIB_NAMES=omp"
       args << "-DOpenMP_omp_LIBRARY=#{libomp.opt_lib}/libomp.a"
     end
+    args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
