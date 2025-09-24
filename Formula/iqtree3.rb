@@ -2,7 +2,6 @@ class Iqtree3 < Formula
   # cite Wong_2025: "https://doi.org/10.32942/X2P62N"
   desc "Efficient and versatile phylogenomic software by maximum likelihood"
   homepage "https://iqtree.github.io/"
-  # Use git clone to get submodules
   url "https://github.com/iqtree/iqtree3.git", branch: "master", shallow: false
   version "3.0.1"
   license "GPL-2.0-only"
