@@ -9,15 +9,6 @@ class Apbs < Formula
   revision 2
   head "https://github.com/Electrostatics/apbs.git", branch: "main"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "8408ebfce6311dbc40f58a5ebd02c7aa200442504cf9015c51eecf8c3ab4bd3f"
-    sha256 cellar: :any,                 arm64_sonoma:  "3f097a8d2074385b336889d0b3ee819cd70082e0f9b0cd67eee21241561f82f3"
-    sha256 cellar: :any,                 ventura:       "7b9256ef575f32030eeb9cda3406b24547b9bac57036382189ab5fbb481f4d52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9db17dcffcce57503753848946b357ad4cf60fef9179de5b32b1e904c0e74e17"
-  end
-
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "metis"
@@ -42,8 +33,10 @@ class Apbs < Formula
       args = %w[
         -DBLA_STATIC=OFF
         -DBUILD_SUPERLU=OFF
+        -DBLAS_LIBRARIES=#{Formula["openblas"].opt_lib}/libopenblas.a
+        -DLAPACK_LIBRARIES=#{Formula["openblas"].opt_lib}/libopenblas.a
       ]
-      args << "-DCMAKE_C_FLAGS=-Wno-error=implicit-int" if OS.mac?
+      args << "-DCMAKE_C_FLAGS=-Wno-error=implicit-int"
       system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: prefix/"fetk"), *args
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
@@ -59,7 +52,7 @@ class Apbs < Formula
     # include FETK installed in the prefix directory
     fetk_cmake_prefix = prefix/"fetk/share/fetk/cmake"
     cflags = ["-I#{prefix}/fetk/include"]
-    cflags << "-Wno-error=incompatible-pointer-types" if OS.mac?
+    cflags << "-Wno-error=incompatible-pointer-types"
     # failed if additional modules and python are enabled
     args = std_cmake_args + %W[
       -DHOMEBREW_ALLOW_FETCHCONTENT=OFF
