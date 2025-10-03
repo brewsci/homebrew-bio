@@ -9,6 +9,15 @@ class Apbs < Formula
   revision 2
   head "https://github.com/Electrostatics/apbs.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "ff3f63096473f2799ecbaa974d373cff89b8db38a9807ad1d37f9474afe169e7"
+    sha256 cellar: :any,                 arm64_sequoia: "32ca68e41577790b7ee19e2185b2b79a53a1bd01aaf8bbb5633bc3bb45509c89"
+    sha256 cellar: :any,                 arm64_sonoma:  "c7f168390caa4998420b7220bbfc43923497b6a67304d1707740c821054d0b45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8cf00e896bcb7ac179875ce42932c958279856508c0dac5a1b8c804707620610"
+  end
+
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "metis"
