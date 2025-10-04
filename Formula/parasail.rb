@@ -5,6 +5,15 @@ class Parasail < Formula
   url "https://github.com/jeffdaily/parasail/archive/refs/tags/v2.6.2.tar.gz"
   sha256 "9057041db8e1cde76678f649420b85054650414e5de9ea84ee268756c7ea4b4b"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "d33b9922b04448b1db43b257d7bc38a62dfd3f16ee4071c8d605ba6b143db4c5"
+    sha256 cellar: :any,                 arm64_sequoia: "7c194a8470069d80b40c2d49b6ac8e12fbaa7744bba863a2500ed34abb043417"
+    sha256 cellar: :any,                 arm64_sonoma:  "46519846cb725dc5e0fa79265e48d9c0b557d643f1b7abf4c6a842fc72984b8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d429793e35de58f3b11f7a4c705e67984e3d8254d4e381d8d7d0597b28303be7"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
