@@ -9,11 +9,10 @@ class Voronota < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 3
-    sha256 cellar: :any,                 arm64_sequoia: "852cd983c11446640e3c0f677658c03a3b7213745bd630319087639c9064d599"
-    sha256 cellar: :any,                 arm64_sonoma:  "b62d2853de710428b1d8607762a10a8601796be64afb9b681973b3b1320b81ce"
-    sha256 cellar: :any,                 ventura:       "65a083256258dcab0d09e7c34333590935deee106f366690dc875bc2137ccb31"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2aab9f9c4e5802783bd9bc1270a518e71fe5759fe1f1ca72b195e049c31b877d"
+    sha256 cellar: :any,                 arm64_tahoe:   "f6d69941551efc750bb1c7b36562bbd9cd5eaafc821104cb6b6139bfb3351664"
+    sha256 cellar: :any,                 arm64_sequoia: "79c700be345c86e086ea7fcbc0ffbbc7457384cbabc7cbd78f96a0838d171a66"
+    sha256 cellar: :any,                 arm64_sonoma:  "14ac8bea4ee533b45f310ff1ace169ef554a699d77b7b88013d9a6adfd701613"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "956b8e4472b1ba72c2e5090e7799a513b8eb03a8f208a04776ebde712d2f2432"
   end
 
   depends_on "cmake" => :build
