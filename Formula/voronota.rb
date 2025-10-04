@@ -2,8 +2,8 @@ class Voronota < Formula
   # cite Olechnovič_2014: "https://doi.org/10.1002/jcc.23538"
   desc "Compute Voronoi diagram vertices for macromolecular structures"
   homepage "https://github.com/kliment-olechnovic/voronota"
-  url "https://github.com/kliment-olechnovic/voronota/archive/refs/tags/v1.29.4370.tar.gz"
-  sha256 "c7b55f1de0a36502121d87d5fe980dbc13223e0323c86a644cf1f3b39de52eda"
+  url "https://github.com/kliment-olechnovic/voronota/archive/refs/tags/v1.29.4415.tar.gz"
+  sha256 "ac3ab668bb808343fd2d5bd5eef621cc4aede5f1e4423d5e752005caa7b889b2"
   license "MIT"
   head "https://github.com/kliment-olechnovic/voronota.git", branch: "master"
 
@@ -26,7 +26,6 @@ class Voronota < Formula
   end
 
   on_linux do
-    depends_on "gcc" # for OpenMP support
     depends_on "mesa"
   end
 
@@ -51,9 +50,9 @@ class Voronota < Formula
       -DEXPANSION_GL=ON
     ]
 
-    system "cmake", ".", *args
-    system "make"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
