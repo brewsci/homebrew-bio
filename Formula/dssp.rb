@@ -3,8 +3,8 @@ class Dssp < Formula
   # cite Kabsch_1983: "https://doi.org/10.1002/bip.360221211"
   desc "Assign secondary structure to proteins"
   homepage "https://github.com/PDB-REDO/dssp"
-  url "https://github.com/PDB-REDO/dssp/archive/refs/tags/v4.5.3.tar.gz"
-  sha256 "8dd92fdf2a252a170c8a811e3adb752e0f2860318ecb2b6ed5e4fd1d2b5ce5e6"
+  url "https://github.com/PDB-REDO/dssp/archive/refs/tags/v4.5.6.tar.gz"
+  sha256 "940062a5c97be30546af045020761dbba68d4ca64cbaf2343b3765c0bf1f10b3"
   license "BSD-2-Clause"
   head "https://github.com/PDB-REDO/dssp.git", branch: "trunk"
 
@@ -19,16 +19,24 @@ class Dssp < Formula
 
   depends_on "cmake" => :build
   depends_on "eigen" => :build
+  depends_on "ninja" => :build
+  depends_on "pkgconf" => :build
   depends_on "boost"
   depends_on "boost-python3"
   depends_on "icu4c"
+  depends_on "pcre2"
   depends_on "python@3.13"
+
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
+  on_macos do
+    depends_on "llvm"
+  end
+
   resource "libcifpp" do
-    url "https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v8.0.1.tar.gz"
-    sha256 "53f0ff205711428dcabf9451b23804091539303cea9d2f54554199144ca0fc4e"
+    url "https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v9.0.1.tar.gz"
+    sha256 "094831ecf3a48d64706c41b9dd1145508fcd1f9b7b0993efee282c0492c4514f"
   end
 
   resource "libmcfp" do
@@ -46,18 +54,28 @@ class Dssp < Formula
   end
 
   def install
-    ENV.prepend "LDFLAGS", "-undefined dynamic_lookup" if OS.mac?
+    ENV.append "CXXFLAGS", "-O3 -std=c++20"
+
+    if OS.mac?
+      ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
+      ENV.prepend "LDFLAGS",
+        "-undefined dynamic_lookup -L#{Formula["llvm"].opt_lib} -Wl,-rpath,#{Formula["llvm"].opt_lib}"
+    end
 
     resource("libcifpp").stage do
       # libcifpp should be installed in 'prefix' directory since the path of dic files are always required.
-      system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: prefix/"libcifpp")
+      system "cmake", "-S", ".", "-B", "build", "-G", "Ninja",
+        "-DCMAKE_CXX_STANDARD=20",
+        "-DCMAKE_CXX_STANDARD_REQUIRED=ON",
+        "-DCMAKE_CXX_FLAGS=#{ENV["CXXFLAGS"]}",
+        *std_cmake_args(install_prefix: prefix/"libcifpp")
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
     end
 
     resource("libmcfp").stage do
       # libcifpp should be installed in 'prefix' directory since the path of dic files are always required.
-      system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: prefix/"libmcfp")
+      system "cmake", "-S", ".", "-B", "build", "-G", "Ninja", *std_cmake_args(install_prefix: prefix/"libmcfp")
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
     end
@@ -71,7 +89,7 @@ class Dssp < Formula
         "LIBRARY DESTINATION #{lib}/python3.13/site-packages"
     end
 
-    system "cmake", "-S", ".", "-B", "build",
+    system "cmake", "-S", ".", "-B", "build", "-G", "Ninja",
                     "-Dcifpp_DIR=#{prefix/"libcifpp/lib/cmake/cifpp"}",
                     "-Dmcfp_DIR=#{prefix/"libmcfp/lib/cmake/mcfp"}",
                     "-DCMAKE_BUILD_TYPE=Release",
@@ -86,7 +104,7 @@ class Dssp < Formula
   test do
     resource("testdata").unpack testpath
     cp Dir[pkgshare/"*.dic"], testpath
-    system bin/"mkdssp", "1cbs.cif", "test.dssp"
+    system bin/"mkdssp", "1cbs.cif", "test.dssp", :verbose => true
     assert_match "CELLULAR RETINOIC ACID BINDING PROTEIN TYPE II", (testpath/"test.dssp").read
 
     # Check if the Python module can be imported
