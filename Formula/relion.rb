@@ -8,10 +8,10 @@ class Relion < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sequoia: "83d0e36240407c4d534481bd9f0ca74fcf8f1f4c684ba352ba00fb95196e7a23"
-    sha256 cellar: :any,                 arm64_sonoma:  "d2e4b8336b36d89e7ad5a280c6c823896392a8d453f08cf65c7e12923cbc5c5b"
-    sha256 cellar: :any,                 ventura:       "b36233e1c2aefac3a9770902a97295f567a10cea570e4f3939b98f9e80c3ede5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3223b679d993b88f51b80b31b7c8e530109c551a40dbd1bc3a775265dc770405"
+    sha256 cellar: :any,                 arm64_tahoe:   "a3e668f02c173472c46fb5a56e1345c9fc0f8879497292805e324dd4cc3d0d00"
+    sha256 cellar: :any,                 arm64_sequoia: "ae9cff4e093e2890858b195d17c3c9c7c0bc01fdd36f5b47f046135646655962"
+    sha256 cellar: :any,                 arm64_sonoma:  "7a40c196f06b300e0c29d703fcb987ee32ab168bc0cebe9e5a75e4b61e2c2297"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee283054e938fb4a4a3a5942f3938322c1d24f47e002d9d0329833e0e1cfcac1"
   end
 
   depends_on "cmake" => :build
