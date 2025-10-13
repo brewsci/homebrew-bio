@@ -1,8 +1,8 @@
 class Relion < Formula
   desc "Image-processing software for cryo-electron microscopy"
   homepage "https://github.com/3dem/relion"
-  url "https://github.com/3dem/relion/archive/refs/tags/5.0.0.tar.gz"
-  sha256 "5d02d529bfdb396204310b35963f35e5ec40ed9fd10bc88c901119ae7d7739fc"
+  url "https://github.com/3dem/relion/archive/refs/tags/5.0.1.tar.gz"
+  sha256 "acbf898e96513b092514a56ff2a255c69a795e7a6f04131eacc8f55e2a900c23"
   license "GPL-2.0-only"
   head "https://github.com/3dem/relion.git", branch: "master"
 
@@ -35,6 +35,7 @@ class Relion < Formula
 
   def install
     args = []
+    args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
     args << "-DFETCH_TORCH_MODELS=OFF"
     args << "-DCUDA=OFF"
     args << "-DPYTHON_EXE_PATH=#{Formula["python@3.13"].opt_bin}/python3"
