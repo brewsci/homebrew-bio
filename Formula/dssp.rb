@@ -8,6 +8,12 @@ class Dssp < Formula
   license "BSD-2-Clause"
   head "https://github.com/PDB-REDO/dssp.git", branch: "trunk"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 arm64_tahoe:   "a574887c62903f6585d7697ee002edd38d4394b1ec38671f401e4c483f6286e6"
+    sha256 arm64_sequoia: "1ce24fc49172fbf6369dd0da24e3b10b39873bf6858dd5c169e6708efd2f8cc8"
+  end
+
   depends_on "cmake" => :build
   depends_on "eigen" => :build
   depends_on "boost"
