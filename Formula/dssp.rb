@@ -32,27 +32,17 @@ class Dssp < Formula
   end
 
   def install
-    ENV.append "CXXFLAGS", "-O3 -std=c++20"
-
-    if OS.mac?
-      ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
-      ENV.prepend "LDFLAGS",
-        "-undefined dynamic_lookup -L#{Formula["llvm"].opt_lib} -Wl,-rpath,#{Formula["llvm"].opt_lib}"
-    end
+    ENV.prepend "LDFLAGS", "-undefined dynamic_lookup" if OS.mac?
 
     resource("libcifpp").stage do
       # libcifpp should be installed in 'prefix' directory since the path of dic files are always required.
-      system "cmake", "-S", ".", "-B", "build",
-        "-DCMAKE_CXX_STANDARD=20",
-        "-DCMAKE_CXX_STANDARD_REQUIRED=ON",
-        "-DCMAKE_CXX_FLAGS=#{ENV["CXXFLAGS"]}",
-        *std_cmake_args(install_prefix: prefix/"libcifpp")
+      system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: prefix/"libcifpp")
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
     end
 
     resource("libmcfp").stage do
-      # libcifpp should be installed in 'prefix' directory since the path of dic files are always required.
+      # libmcfp should be installed in 'prefix' directory since the path of dic files are always required.
       system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: prefix/"libmcfp")
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
