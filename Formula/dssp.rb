@@ -42,7 +42,7 @@ class Dssp < Formula
 
     resource("libcifpp").stage do
       # libcifpp should be installed in 'prefix' directory since the path of dic files are always required.
-      system "cmake", "-S", ".", "-B", "build", "-G", "Ninja",
+      system "cmake", "-S", ".", "-B", "build",
         "-DCMAKE_CXX_STANDARD=20",
         "-DCMAKE_CXX_STANDARD_REQUIRED=ON",
         "-DCMAKE_CXX_FLAGS=#{ENV["CXXFLAGS"]}",
@@ -53,12 +53,12 @@ class Dssp < Formula
 
     resource("libmcfp").stage do
       # libcifpp should be installed in 'prefix' directory since the path of dic files are always required.
-      system "cmake", "-S", ".", "-B", "build", "-G", "Ninja", *std_cmake_args(install_prefix: prefix/"libmcfp")
+      system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: prefix/"libmcfp")
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
     end
 
-    system "cmake", "-S", ".", "-B", "build", "-G", "Ninja",
+    system "cmake", "-S", ".", "-B", "build",
                     "-Dcifpp_DIR=#{prefix/"libcifpp/lib/cmake/cifpp"}",
                     "-Dmcfp_DIR=#{prefix/"libmcfp/lib/cmake/mcfp"}",
                     "-DCMAKE_BUILD_TYPE=Release",
