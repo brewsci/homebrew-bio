@@ -19,8 +19,8 @@ class Dssp < Formula
   depends_on "pkgconf" => :build
   depends_on "boost"
   depends_on "icu4c"
+  depends_on "pcre2"
   uses_from_macos "bzip2"
-  uses_from_macos "pcre2"
   uses_from_macos "zlib"
 
   resource "libcifpp" do
