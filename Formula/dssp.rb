@@ -18,8 +18,8 @@ class Dssp < Formula
   depends_on "eigen" => :build
   depends_on "boost"
   depends_on "icu4c"
-  depends_on "pcre2"
   uses_from_macos "bzip2"
+  uses_from_macos "pcre2"
   uses_from_macos "zlib"
 
   resource "libcifpp" do
@@ -42,17 +42,28 @@ class Dssp < Formula
 
     resource("libcifpp").stage do
       # libcifpp should be installed in 'prefix' directory since the path of dic files are always required.
-      system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: prefix/"libcifpp")
+      system "cmake", "-S", ".", "-B", "build",
+             "-DCMAKE_CXX_STANDARD=20",
+             *std_cmake_args(install_prefix: prefix/"libcifpp")
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
     end
 
     resource("libmcfp").stage do
       # libmcfp should be installed in 'prefix' directory since the path of dic files are always required.
-      system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: prefix/"libmcfp")
+      system "cmake", "-S", ".", "-B", "build",
+             "-DCMAKE_CXX_STANDARD=20",
+             *std_cmake_args(install_prefix: prefix/"libmcfp")
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
     end
+
+    inreplace "python-module/CMakeLists.txt",
+      "target_link_libraries(mkdssp_module dssp::dssp Boost::python ${Python_LIBRARIES})",
+      "target_link_libraries(mkdssp_module dssp::dssp Boost::python)"
+    inreplace "python-module/CMakeLists.txt",
+      'LIBRARY DESTINATION "${Python_SITELIB}"',
+      "LIBRARY DESTINATION #{lib}/python3.13/site-packages"
 
     system "cmake", "-S", ".", "-B", "build",
                     "-Dcifpp_DIR=#{prefix/"libcifpp/lib/cmake/cifpp"}",
