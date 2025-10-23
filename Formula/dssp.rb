@@ -16,6 +16,7 @@ class Dssp < Formula
 
   depends_on "cmake" => :build
   depends_on "eigen" => :build
+  depends_on "pkgconf" => :build
   depends_on "boost"
   depends_on "icu4c"
   depends_on "pcre2"
