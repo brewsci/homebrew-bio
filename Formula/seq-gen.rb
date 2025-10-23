@@ -2,8 +2,8 @@ class SeqGen < Formula
   # cite Rambaut_1997: "https://doi.org/10.1093/bioinformatics/13.3.235"
   desc "Simulator of DNA and amino acid sequence evolution"
   homepage "http://tree.bio.ed.ac.uk/software/seqgen/"
-  url "https://github.com/rambaut/Seq-Gen/archive/refs/tags/1.3.4.tar.gz"
-  sha256 "092ec2255ce656a02b2c3012c32443c7d8e38c692f165fb155b304ca030cbb59"
+  url "https://github.com/rambaut/Seq-Gen/archive/refs/tags/v1.3.5.tar.gz"
+  sha256 "abd03af0239f02786ddfdddf02ce6b655e544e3bdcf864091538735fe1ce58ae"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
