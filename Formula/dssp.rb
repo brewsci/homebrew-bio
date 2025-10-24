@@ -35,12 +35,17 @@ class Dssp < Formula
     sha256 "dcdf3e81601081b2a9e2f2e1bb1ee2a8545190358d5d9bec9158ad70f5ca355e"
   end
 
+  resource "homebrew-testdata" do
+    url "https://github.com/PDB-REDO/dssp/raw/fa880e3d88f842703f680185fffc4de540284b25/test/1cbs.cif.gz"
+    sha256 "c6a2e4716f843bd608c06cfa4b6a369a56a6021ae16e5f876237b8a73d0dcb5e"
+  end
+
   def python3
     "python3.14"
   end
 
   def install
-    ENV.append "CXXFLAGS", "-O3 -std=c++20"
+    ENV["CXXFLAGS"] = "#{ENV["CXXFLAGS"]} -std=c++20"
     resource("libcifpp").stage do
       # libcifpp should be installed in 'prefix' directory since the path of dic files are always required.
       system "cmake", "-S", ".", "-B", "build",
@@ -78,10 +83,6 @@ class Dssp < Formula
   end
 
   test do
-    resource "homebrew-testdata" do
-      url "https://github.com/PDB-REDO/dssp/raw/fa880e3d88f842703f680185fffc4de540284b25/test/1cbs.cif.gz"
-      sha256 "c6a2e4716f843bd608c06cfa4b6a369a56a6021ae16e5f876237b8a73d0dcb5e"
-    end
     resource("homebrew-testdata").unpack testpath
     cp Dir[pkgshare/"*.dic"], testpath
     system bin/"mkdssp", "1cbs.cif", "test.dssp"
