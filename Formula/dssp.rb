@@ -10,8 +10,11 @@ class Dssp < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 arm64_tahoe:   "a574887c62903f6585d7697ee002edd38d4394b1ec38671f401e4c483f6286e6"
-    sha256 arm64_sequoia: "1ce24fc49172fbf6369dd0da24e3b10b39873bf6858dd5c169e6708efd2f8cc8"
+    rebuild 1
+    sha256 arm64_tahoe:   "8e765ceacd2f9ca6841960493c9c4904b092acb95f207929b20ee8f22d03bb12"
+    sha256 arm64_sequoia: "b2eef78a62cb8b4b34f2e6cd853e0bdf6939206a429c655acb02cde7e3cc7496"
+    sha256 arm64_sonoma:  "06d53df27f419f0ecbc1a2781c428e7348c31295677737052b7c4d02132e5c95"
+    sha256 x86_64_linux:  "94dadffcc5b24971061046b0bd0e64c92e6b7eb7dcec9f07aa57863db2a6c7e1"
   end
 
   depends_on "cmake" => :build
