@@ -27,7 +27,6 @@ class Coot < Formula
   depends_on "brewsci/bio/gemmi"
   depends_on "brewsci/bio/libccp4"
   depends_on "brewsci/bio/mmdb2"
-  depends_on "brewsci/bio/pygobject3@3.50"
   depends_on "brewsci/bio/raster3d"
   depends_on "brewsci/bio/ssm"
   depends_on "cairo"
@@ -49,7 +48,8 @@ class Coot < Formula
   depends_on "openblas"
   depends_on "pango"
   depends_on "py3cairo"
-  depends_on "python@3.13"
+  depends_on "pygobject3"
+  depends_on "python@3.14"
   depends_on "rdkit"
   depends_on "sqlite"
 
@@ -72,7 +72,7 @@ class Coot < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install
@@ -90,15 +90,15 @@ class Coot < Formula
     (lib/"python#{xy}/site-packages/homebrew-coot.pth").write "#{libexec/"lib/python#{xy}/site-packages"}\n"
     ENV.prepend_path "PYTHONPATH", Formula["numpy"].opt_prefix/Language::Python.site_packages(python3)
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
-    # Tweak to include pygobject3@3.50
-    ENV.prepend_path "PYTHONPATH",
-                     Formula["brewsci/bio/pygobject3@3.50"].opt_prefix/Language::Python.site_packages(python3)
-    ENV.prepend_path "PKG_CONFIG_PATH",
-                     Formula["brewsci/bio/pygobject3@3.50"].opt_lib/"pkgconfig"
+    # # Tweak to include pygobject3@3.50
+    # ENV.prepend_path "PYTHONPATH",
+    #                  Formula["brewsci/bio/pygobject3@3.50"].opt_prefix/Language::Python.site_packages(python3)
+    # ENV.prepend_path "PKG_CONFIG_PATH",
+    #                  Formula["brewsci/bio/pygobject3@3.50"].opt_lib/"pkgconfig"
 
     # Set Boost, RDKit, and FFTW2 root
     boost_prefix = Formula["boost"].opt_prefix
-    boost_python_lib = "boost_python313"
+    boost_python_lib = "boost_python314"
     rdkit_prefix = Formula["rdkit"].opt_prefix
     fftw2_prefix = Formula["clipper4coot"].opt_prefix/"fftw2"
 
