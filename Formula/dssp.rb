@@ -25,6 +25,10 @@ class Dssp < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
+  on_linux do
+    depends_on "fmt"
+  end
+
   resource "libcifpp" do
     url "https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v9.0.3.tar.gz"
     sha256 "f4f359d77c4e29b95a7d3a85658c783022def8f70a9bb94a9da47111f45f5edd"
