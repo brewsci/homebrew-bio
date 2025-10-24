@@ -25,9 +25,23 @@ class Dssp < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
+  on_macos do
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1500
+  end
+
   on_linux do
     depends_on "gcc" => :build # for C++20 support
     depends_on "fmt"
+  end
+
+  fails_with :clang do
+    build 1500
+    cause "Requires C++20 support"
+  end
+
+  fails_with :gcc do
+    version "12"
+    cause "requires GCC 13+"
   end
 
   resource "libcifpp" do
@@ -50,7 +64,7 @@ class Dssp < Formula
   end
 
   def install
-    ENV["CXXFLAGS"] = "#{ENV["CXXFLAGS"]} -std=c++20"
+    ENV.append "CXXFLAGS", "-std=c++20"
     resource("libcifpp").stage do
       # libcifpp should be installed in 'prefix' directory since the path of dic files are always required.
       system "cmake", "-S", ".", "-B", "build",
