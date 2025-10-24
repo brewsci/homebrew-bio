@@ -26,6 +26,7 @@ class Dssp < Formula
   uses_from_macos "zlib"
 
   on_linux do
+    depends_on "gcc" => :build # for C++20 support
     depends_on "fmt"
   end
 
