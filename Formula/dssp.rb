@@ -18,10 +18,31 @@ class Dssp < Formula
   depends_on "eigen" => :build
   depends_on "pkgconf" => :build
   depends_on "boost"
+  depends_on "boost-python3"
   depends_on "icu4c"
   depends_on "pcre2"
+  depends_on "python@3.14"
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1500
+  end
+
+  on_linux do
+    depends_on "gcc" => :build # for C++20 support
+    depends_on "fmt"
+  end
+
+  fails_with :clang do
+    build 1500
+    cause "Requires C++20 support"
+  end
+
+  fails_with :gcc do
+    version "12"
+    cause "requires GCC 13+"
+  end
 
   resource "libcifpp" do
     url "https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v9.0.3.tar.gz"
@@ -33,44 +54,76 @@ class Dssp < Formula
     sha256 "dcdf3e81601081b2a9e2f2e1bb1ee2a8545190358d5d9bec9158ad70f5ca355e"
   end
 
-  resource "testdata" do
+  resource "homebrew-testdata" do
     url "https://github.com/PDB-REDO/dssp/raw/fa880e3d88f842703f680185fffc4de540284b25/test/1cbs.cif.gz"
     sha256 "c6a2e4716f843bd608c06cfa4b6a369a56a6021ae16e5f876237b8a73d0dcb5e"
   end
 
-  def install
-    ENV.prepend "LDFLAGS", "-undefined dynamic_lookup" if OS.mac?
+  def python3
+    "python3.14"
+  end
 
+  def install
+    ENV.append "CXXFLAGS", "-std=c++20"
     resource("libcifpp").stage do
       # libcifpp should be installed in 'prefix' directory since the path of dic files are always required.
-      system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: prefix/"libcifpp")
+      system "cmake", "-S", ".", "-B", "build",
+             "-DCMAKE_CXX_STANDARD=20",
+             *std_cmake_args(install_prefix: prefix/"libcifpp")
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
     end
 
     resource("libmcfp").stage do
       # libmcfp should be installed in 'prefix' directory since the path of dic files are always required.
-      system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: prefix/"libmcfp")
+      system "cmake", "-S", ".", "-B", "build",
+             "-DCMAKE_CXX_STANDARD=20",
+             *std_cmake_args(install_prefix: prefix/"libmcfp")
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
     end
+
+    inreplace "python-module/CMakeLists.txt",
+      'LIBRARY DESTINATION "${Python_SITELIB}"',
+      "LIBRARY DESTINATION #{prefix/Language::Python.site_packages(python3)}"
+
+    dssp_rpath = rpath(source: prefix/Language::Python.site_packages(python3)/"dssp")
+    inreplace "python-module/CMakeLists.txt", "${Python_LIBRARIES}",
+                                              "-Wl,-undefined,dynamic_lookup,-rpath,#{dssp_rpath}"
 
     system "cmake", "-S", ".", "-B", "build",
                     "-Dcifpp_DIR=#{prefix/"libcifpp/lib/cmake/cifpp"}",
                     "-Dmcfp_DIR=#{prefix/"libmcfp/lib/cmake/mcfp"}",
                     "-DCMAKE_BUILD_TYPE=Release",
-                    "-DCMAKE_CXX_STANDARD=20",
-                    "-DINSTALL_LIBRARY=ON",
-                    "-DBUILD_PYTHON_MODULE=OFF",
+                    "-DBUILD_PYTHON_MODULE=ON",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    resource("testdata").unpack testpath
+    resource("homebrew-testdata").unpack testpath
     cp Dir[pkgshare/"*.dic"], testpath
     system bin/"mkdssp", "1cbs.cif", "test.dssp"
     assert_match "CELLULAR RETINOIC ACID BINDING PROTEIN TYPE II", (testpath/"test.dssp").read
+
+    (testpath/"test.py").write <<~EOS
+      import os
+
+      from mkdssp import dssp
+
+      file_path = os.path.join("1cbs.cif")
+
+      with open(file_path, "r") as f:
+          file_content = f.read()
+
+      dssp = dssp(file_content)
+      print("residues: ", dssp.statistics.residues)
+      for res in dssp:
+          print(res.asym_id, res.seq_id, res.compound_id, res.type)
+    EOS
+    output = shell_output("#{python3} test.py")
+    assert_match "residues:  137", output
+    assert_match "A 1 PRO Loop", output
   end
 end
