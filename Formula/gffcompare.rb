@@ -1,8 +1,8 @@
 class Gffcompare < Formula
   desc "Classify, merge, tracking and annotation of GFF files"
   homepage "https://github.com/gpertea/gffcompare"
-  url "https://github.com/gpertea/gffcompare/archive/refs/tags/v0.12.6.tar.gz"
-  sha256 "4e01344c533987a0a8227bfcca9d180504c1a1392aa343e1f6b0752341e712cf"
+  url "https://github.com/gpertea/gffcompare/archive/refs/tags/v0.12.10.tar.gz"
+  sha256 "c708798c873b83b7a3c8e5a779da885b4d24e6039eebc6990d235aa8efe77646"
   license "MIT"
   head "https://github.com/gpertea/gffcompare.git", branch: "master"
 
