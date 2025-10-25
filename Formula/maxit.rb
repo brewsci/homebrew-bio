@@ -29,11 +29,10 @@ class Maxit < Formula
 
   test do
     resource "homebrew-testdata" do
-      url "https://files.rcsb.org/download/3QUG.pdb"
+      url "https://files.rcsb.org/download/3qug.pdb"
       sha256 "7b71128bedcd7ebdea42713942a30af590b3cf514726485f9aa27430c3999657"
     end
     resource("homebrew-testdata").stage testpath
-    system "mv" "3QUG.pdb", "3qug.pdb"
     system bin/"maxit", "-input", "3qug.pdb", "-output", "3qug.cif", "-o", "1", "-log", "maxit.log"
     assert_match "_audit_author.name", File.read("3qug.cif")
   end
