@@ -8,9 +8,10 @@ class Gffcompare < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "12efb3fc54031b11d10495f7e5f43b498dbdc1be73325ee5155fbda1a3042680"
-    sha256 cellar: :any_skip_relocation, ventura:      "60eb9381af143dbebb860aede53370c6cc1bcd959112b5c22dcb0451f351ec09"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e78c42ed6290d95bbbf0cc0442a2ba95f8a350e289665d5dbbdb96a0c24a218b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "36b488e39ecfb2a697c3efb8f67c7125723ef44c5b0cbfdb097540170960d6ca"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "980446d510890d9a0edc9868209bce1ca8792d2db8032c61b6bafcb134bc27d7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ee18a477761276cf8ef0ca9f805caeffc4ea9d4a3bd855c5d5c202e86d3671c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea679fae84071d32e4a59a6739d1e918b3236bd09a124d7636dec1f87c0fcfc5"
   end
 
   def install
