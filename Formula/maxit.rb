@@ -1,8 +1,8 @@
 class Maxit < Formula
   desc "Assists in the processing and curation of macromolecular structure data"
   homepage "https://sw-tools.rcsb.org/apps/MAXIT"
-  url "https://sw-tools.rcsb.org/apps/MAXIT/maxit-v11.300-prod-src.tar.gz"
-  sha256 "04d23c16550690a50d6766c0081b9b8686786000c8430dcf8c25ff7dc1d289a2"
+  url "https://sw-tools.rcsb.org/apps/MAXIT/maxit-v11.400-prod-src.tar.gz"
+  sha256 "2bcb9d7495048546c0159282d4edd6f95b56cdf310d661078b0853157bd24978"
   license :cannot_represent
 
   bottle do
@@ -29,7 +29,7 @@ class Maxit < Formula
 
   test do
     resource "homebrew-testdata" do
-      url "https://files.rcsb.org/download/3QUG.pdb"
+      url "https://files.rcsb.org/download/3qug.pdb"
       sha256 "7b71128bedcd7ebdea42713942a30af590b3cf514726485f9aa27430c3999657"
     end
     resource("homebrew-testdata").stage testpath
