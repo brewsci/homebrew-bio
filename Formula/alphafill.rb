@@ -2,8 +2,8 @@ class Alphafill < Formula
   # cite Hekkelman_2023: "https://doi.org/10.1038/s41592-022-01685-y"
   desc "Transplant missing compounds to the AlphaFold models"
   homepage "https://github.com/PDB-REDO/alphafill"
-  url "https://github.com/PDB-REDO/alphafill/archive/refs/tags/v2.1.0.tar.gz"
-  sha256 "30b554a936fcf052c562020ac6dd516386863dfc710ac91be3a11b83bb4c69d1"
+  url "https://github.com/PDB-REDO/alphafill/archive/refs/tags/v2.3.0.tar.gz"
+  sha256 "db90ee97ff6e691945f7672c368f4ef43fc106976a14b07ffa153de07fb70019"
   license "BSD-2-Clause"
   head "https://github.com/PDB-REDO/alphafill.git", branch: "trunk"
 
@@ -17,27 +17,108 @@ class Alphafill < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build
+  depends_on "eigen" => :build
+  depends_on "llvm" => :build
+  depends_on "pkgconf" => :build
   depends_on "boost"
-  depends_on "brewsci/bio/libcifpp"
-  depends_on "brewsci/bio/libmcfp"
-  depends_on "brewsci/bio/libzeep"
+  depends_on "fast_float"
+  depends_on "howard-hinnant-date"
+  depends_on "pcre2"
 
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
+  on_linux do
+    depends_on "gcc" => :build # for C++20 support
+    depends_on "fmt"
+  end
+
+  fails_with :gcc do
+    version "12"
+    cause "requires GCC 13+"
+  end
+
+  resource "cifpp" do
+    url "https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v9.0.4.tar.gz"
+    sha256 "b7c3ac628c2ea78febf98f54fdd7a595773bddb07cbedcd55b9866b11a013aba"
+  end
+
+  resource "mcfp" do
+    url "https://github.com/mhekkel/libmcfp/archive/refs/tags/v1.4.2.tar.gz"
+    sha256 "dcdf3e81601081b2a9e2f2e1bb1ee2a8545190358d5d9bec9158ad70f5ca355e"
+  end
+
+  resource "zeep" do
+    url "https://github.com/mhekkel/libzeep/archive/refs/tags/v7.2.0.tar.gz"
+    sha256 "da02dd20b1f82d0628e9a973052f119cd118cf40b55d76e054d79d46bee0e1e8"
+  end
+
+  resource "mxml" do
+    url "https://forge.hekkelman.net/maarten/mxml/archive/v2.0.2.tar.gz"
+    sha256 "41a6cf9ddf2e474f166be774994599e7dd853450dab5ce41a897ad60a5fb1f3e"
+  end
+
   def install
-    inreplace "CMakeLists.txt" do |s|
-      s.gsub! "find_package(libmcfp 1.2.4 QUIET)", "find_package(libmcfp REQUIRED)"
-      s.gsub! "find_package(libpqxx 7.8.0 QUIET)",
-              "find_package(PkgConfig)\npkg_check_modules(libpqxx REQUIRED libpqxx>=7.8.0)"
-      s.gsub! "libpqxx::pqxx", "${LIBPQXX_LIBRARIES}"
+    ENV.append "CXXFLAGS", "-std=c++20"
+    # Use llvm for cifpp, mcfp, mxml, and zeep. But, use clang for alphafill on macOS.
+    ENV.llvm_clang if OS.mac?
+    resource("cifpp").stage do
+      # cifpp should be installed in 'prefix' directory since the path of dic files are always required.
+      system "cmake", "-S", ".", "-B", "build",
+             "-DCMAKE_CXX_STANDARD=20",
+             *std_cmake_args(install_prefix: prefix/"cifpp")
+      system "cmake", "--build", "build"
+      system "cmake", "--install", "build"
     end
+
+    resource("mcfp").stage do
+      # mcfp should be installed in 'prefix' directory since the path of dic files are always required.
+      system "cmake", "-S", ".", "-B", "build",
+             "-DCMAKE_CXX_STANDARD=20",
+             *std_cmake_args(install_prefix: prefix/"mcfp")
+      system "cmake", "--build", "build"
+      system "cmake", "--install", "build"
+    end
+
+    resource("mxml").stage do
+      inreplace "CMakeLists.txt",
+          "target_include_directories(mxml PRIVATE $<TARGET_PROPERTY:fast_float,INTERFACE_INCLUDE_DIRECTORIES>)",
+          <<~EOS
+            if(TARGET fast_float)
+              target_include_directories(mxml PRIVATE $<TARGET_PROPERTY:fast_float,INTERFACE_INCLUDE_DIRECTORIES>)
+            endif()
+          EOS
+      system "cmake", "-S", ".", "-B", "build",
+                      "-DCMAKE_CXX_STANDARD=20",
+                      *std_cmake_args(install_prefix: prefix/"mxml")
+      system "cmake", "--build", "build"
+      system "cmake", "--install", "build"
+    end
+
+    resource("zeep").stage do
+      system "cmake", "-S", ".", "-B", "build",
+             "-DCMAKE_CXX_STANDARD=20",
+             "-Dmxml_DIR=#{prefix/"mxml/lib/cmake/mxml"}",
+             "-DCMAKE_BUILD_TYPE=Release",
+             *std_cmake_args(install_prefix: prefix/"zeep")
+      system "cmake", "--build", "build"
+      system "cmake", "--install", "build"
+    end
+
     # WEB_APPLICATION and BUILD_DOCUMENTATION were OFF because they failed to build
+    # if macOS sonoma, use Apple Clang
+    args = %w[
+      -DBUILD_DOCUMENTATION=OFF
+      -DBUILD_WEB_APPLICATION=OFF
+    ]
+    # Use Apple clang to build alphafill on macOS
+    ENV.clang if OS.mac?
     system "cmake", "-S", ".", "-B", "build",
-                    "-DBUILD_DOCUMENTATION=OFF",
-                    "-DBUILD_WEB_APPLICATION=OFF",
+                    "-Dmcfp_DIR=#{prefix/"mcfp/lib/cmake/mcfp"}",
+                    "-Dcifpp_DIR=#{prefix/"cifpp/lib/cmake/cifpp"}",
+                    "-Dzeep_DIR=#{prefix/"zeep/lib/cmake/zeep"}",
                     "-DALPHAFILL_DATA_DIR=#{pkgshare}",
+                    *args,
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
@@ -50,7 +131,7 @@ class Alphafill < Formula
       pdb-fasta=#{testpath}/pdb-redo.fa
       ligands=#{share}/alphafill/af-ligands.cif
     EOS
-    ENV["LIBCIFPP_DATA_DIR"] = "#{Formula["brewsci/bio/libcifpp"].opt_share}/libcifpp"
+    ENV["CIFPP_DATA_DIR"] = "#{prefix}/cifpp"
     system "#{bin}/alphafill", "create-index"
     assert_match ">pdb-entity|2CBS|1|R13\nPNFSGNW", File.read("#{testpath}/pdb-redo.fa")
     system "#{bin}/alphafill", "process", "--config", "#{testpath}/alphafill.conf",
