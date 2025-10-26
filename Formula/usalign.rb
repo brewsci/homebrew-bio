@@ -10,10 +10,10 @@ class Usalign < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd88e6192cc803c34b5d9b8d56a741c8689dba20c35c2671e9c337d89e8e9fd6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "31f1756960b991b0542431aaa547b72db45daf31cd7c238d3767c9b98b5ed3fa"
-    sha256 cellar: :any_skip_relocation, ventura:       "01d5ce8595ff848cb8ce2426ee25a0fd8c30bb9aafe5582b35b133ddafc9868b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cbfade4415ac2eba48cfcecaa7bf573eb5f6c6d536beae398810ddac51077be"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "80da885a6cfcb7eb437afe5ddfbb9580df2eae285a58bc6e34fde9cab13a96f3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b104b52f00167d4f7ba569cc926ec06db02c5af2dc74f4a6069470d7a4bd1435"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d25860dcc565c9f12febe8bc4c5442beb43d994c0e584e350335053b261f021"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fcd17979bff992585e22bab7e6f1776b038358e649f1086fdafe0bb14bf73211"
   end
 
   def install
