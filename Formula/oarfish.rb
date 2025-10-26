@@ -3,8 +3,8 @@ class Oarfish < Formula
   # cite Zare_2024: "https://doi.org/10.1101/2024.02.28.582591"
   desc "Long read RNA-seq quantification"
   homepage "https://github.com/COMBINE-lab/oarfish"
-  url "https://github.com/COMBINE-lab/oarfish/archive/refs/tags/v0.8.1.tar.gz"
-  sha256 "ca45f8c66de647c35a09adf790ece494c807efe1b7f9915711dc6b583b326f57"
+  url "https://github.com/COMBINE-lab/oarfish/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "5a00e6a0c9ec54e3710a943af72bd61d73203aa33d94f9df728025eb004e4ea8"
   license "BSD-3-Clause"
   head "https://github.com/COMBINE-lab/oarfish.git", branch: "main"
 
