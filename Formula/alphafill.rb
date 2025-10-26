@@ -19,7 +19,6 @@ class Alphafill < Formula
   depends_on "cmake" => :build
   depends_on "eigen" => :build
   depends_on "pkgconf" => :build
-  depends_on xcode: :build
   depends_on "boost"
   depends_on "fast_float"
   depends_on "howard-hinnant-date"
@@ -27,6 +26,10 @@ class Alphafill < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
+
+  on_macos do
+    depends_on xcode: :build if DevelopmentTools.clang_build_version <= 1500
+  end
 
   on_linux do
     depends_on "gcc" => :build # for C++20 support
