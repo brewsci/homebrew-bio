@@ -9,11 +9,10 @@ class Alphafill < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 arm64_sequoia: "14a4f1588d63784f115108d8790a582839cbf112be29bf6e9dba479bc34943e8"
-    sha256 arm64_sonoma:  "bd151620e2c2a1d807d8e17f90862e3b30b228d1d6c9ba40c1d22c28ed71c844"
-    sha256 ventura:       "33dced5b45d30fa169dfb3ec8756e722ed307a0eb6911ac99c6fd0307f26e758"
-    sha256 x86_64_linux:  "1173db7569de93c3ce22bb8ef33ebe561bcf7f38ecb75523669c6afe10bf768b"
+    sha256 arm64_tahoe:   "173eb4cd516f0498c2f5aa7be2c291335258d83656da844023fd36507bc7c2aa"
+    sha256 arm64_sequoia: "e0da52ca5f5d28622c8cc5ae7f2bea179a5990814ebd988f2d091caea356b6e1"
+    sha256 arm64_sonoma:  "a2e1526f96de658f17d8138b9b66ef2ec0b1fdf824739410846c12ac22e30976"
+    sha256 x86_64_linux:  "d9b7a92ce2aff775a3305a6892d53722cf4990254702b08b42084e3b093cea1e"
   end
 
   depends_on "cmake" => :build
