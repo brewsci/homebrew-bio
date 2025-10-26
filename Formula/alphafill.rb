@@ -19,14 +19,14 @@ class Alphafill < Formula
   depends_on "cmake" => :build
   depends_on "eigen" => :build
   depends_on "pkgconf" => :build
+  depends_on xcode: :build
   depends_on "boost"
+  depends_on "fast_float"
+  depends_on "howard-hinnant-date"
+  depends_on "pcre2"
 
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
-
-  on_macos do
-    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1500
-  end
 
   on_linux do
     depends_on "gcc" => :build # for C++20 support
@@ -64,6 +64,7 @@ class Alphafill < Formula
   end
 
   def install
+    ENV.append "CXXFLAGS", "-std=c++20"
     resource("cifpp").stage do
       # cifpp should be installed in 'prefix' directory since the path of dic files are always required.
       system "cmake", "-S", ".", "-B", "build",
@@ -83,9 +84,15 @@ class Alphafill < Formula
     end
 
     resource("mxml").stage do
+      inreplace "CMakeLists.txt",
+          "target_include_directories(mxml PRIVATE $<TARGET_PROPERTY:fast_float,INTERFACE_INCLUDE_DIRECTORIES>)",
+          <<~EOS
+            if(TARGET fast_float)
+              target_include_directories(mxml PRIVATE $<TARGET_PROPERTY:fast_float,INTERFACE_INCLUDE_DIRECTORIES>)
+            endif()
+          EOS
       system "cmake", "-S", ".", "-B", "build",
                       "-DCMAKE_CXX_STANDARD=20",
-                      "-DSTD_CHARCONV_COMPILING=ON",
                       *std_cmake_args(install_prefix: prefix/"mxml")
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
@@ -102,13 +109,21 @@ class Alphafill < Formula
     end
 
     # WEB_APPLICATION and BUILD_DOCUMENTATION were OFF because they failed to build
+    # if macOS sonoma, use Apple Clang
+    args = %w[
+      -DBUILD_DOCUMENTATION=OFF
+      -DBUILD_WEB_APPLICATION=OFF
+    ]
+    if OS.mac? && DevelopmentTools.clang_build_version <= 1500
+      args << "-DCMAKE_CXX_COMPILER=clang++"
+      args << "-DCMAKE_C_COMPILER=clang"
+    end
     system "cmake", "-S", ".", "-B", "build",
-                    "-DBUILD_DOCUMENTATION=OFF",
-                    "-DBUILD_WEB_APPLICATION=OFF",
                     "-Dmcfp_DIR=#{prefix/"mcfp/lib/cmake/mcfp"}",
                     "-Dcifpp_DIR=#{prefix/"cifpp/lib/cmake/cifpp"}",
                     "-Dzeep_DIR=#{prefix/"zeep/lib/cmake/zeep"}",
                     "-DALPHAFILL_DATA_DIR=#{pkgshare}",
+                    *args,
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
