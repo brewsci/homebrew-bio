@@ -19,6 +19,7 @@ class Alphafill < Formula
   depends_on "cmake" => :build
   depends_on "eigen" => :build
   depends_on "pkgconf" => :build
+  depends_on "llvm" => :build
   depends_on "boost"
   depends_on "fast_float"
   depends_on "howard-hinnant-date"
@@ -27,18 +28,9 @@ class Alphafill < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  on_macos do
-    depends_on xcode: :build if DevelopmentTools.clang_build_version <= 1500
-  end
-
   on_linux do
     depends_on "gcc" => :build # for C++20 support
     depends_on "fmt"
-  end
-
-  fails_with :clang do
-    build 1500
-    cause "Requires C++20 support"
   end
 
   fails_with :gcc do
@@ -68,6 +60,8 @@ class Alphafill < Formula
 
   def install
     ENV.append "CXXFLAGS", "-std=c++20"
+    # Use llvm for cifpp, mcfp, mxml, and zeep. But, use clang for alphafill on macOS.
+    ENV.llvm_clang if OS.mac?
     resource("cifpp").stage do
       # cifpp should be installed in 'prefix' directory since the path of dic files are always required.
       system "cmake", "-S", ".", "-B", "build",
@@ -117,10 +111,8 @@ class Alphafill < Formula
       -DBUILD_DOCUMENTATION=OFF
       -DBUILD_WEB_APPLICATION=OFF
     ]
-    if OS.mac? && DevelopmentTools.clang_build_version <= 1500
-      args << "-DCMAKE_CXX_COMPILER=clang++"
-      args << "-DCMAKE_C_COMPILER=clang"
-    end
+    # Use Apple clang to build alphafill on macOS
+    ENV.clang if OS.mac?
     system "cmake", "-S", ".", "-B", "build",
                     "-Dmcfp_DIR=#{prefix/"mcfp/lib/cmake/mcfp"}",
                     "-Dcifpp_DIR=#{prefix/"cifpp/lib/cmake/cifpp"}",
