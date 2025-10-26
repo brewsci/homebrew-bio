@@ -18,8 +18,8 @@ class Alphafill < Formula
 
   depends_on "cmake" => :build
   depends_on "eigen" => :build
-  depends_on "pkgconf" => :build
   depends_on "llvm" => :build
+  depends_on "pkgconf" => :build
   depends_on "boost"
   depends_on "fast_float"
   depends_on "howard-hinnant-date"
