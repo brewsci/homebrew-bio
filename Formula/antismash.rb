@@ -11,9 +11,9 @@ class Antismash < Formula
 
   desc "Antibiotics & Secondary Metabolite Analysis SHell"
   homepage "https://antismash.secondarymetabolites.org/"
-  url "https://github.com/antismash/antismash/archive/refs/tags/8-0-3.tar.gz"
-  version "8.0.3"
-  sha256 "084c6f2707e6b334a5c78b75344bc9a2f0d05591b5d806479f2c2fae350c1f44"
+  url "https://github.com/antismash/antismash/archive/refs/tags/8-0-4.tar.gz"
+  version "8.0.4"
+  sha256 "ee18976631b1e0112299e865e11e62b2835be2027ac5422b0237465513b74c25"
   license "AGPL-3.0-or-later"
   head "https://github.com/antismash/antismash.git", branch: "master"
 
@@ -39,16 +39,17 @@ class Antismash < Formula
   depends_on "ca-certificates"
   depends_on "diamond"
   depends_on "freetype"
+  depends_on "gcc" # for scipy
   depends_on "hmmer"
   depends_on "jpeg-turbo"
   depends_on "libtiff"
   depends_on "little-cms2"
   depends_on "numpy"
+  depends_on "openblas"
   depends_on "pillow"
   depends_on "prodigal"
   depends_on "python@3.12"
   depends_on "qhull"
-  depends_on "scipy"
 
   on_macos do
     depends_on "libomp"
@@ -186,6 +187,11 @@ class Antismash < Formula
   resource "scikit-learn" do
     url "https://files.pythonhosted.org/packages/92/72/2961b9874a9ddf2b0f95f329d4e67f67c3301c1d88ba5e239ff25661bb85/scikit_learn-1.5.1.tar.gz"
     sha256 "0ea5d40c0e3951df445721927448755d3fe1d80833b0b7308ebff5d2a45e6414"
+  end
+
+  resource "scipy" do
+    url "https://files.pythonhosted.org/packages/0f/37/6964b830433e654ec7485e45a00fc9a27cf868d622838f6b6d9c5ec0d532/scipy-1.15.3.tar.gz"
+    sha256 "eae3cf522bc7df64b42cad3925c876e1b0b6c35c1337c93e12c0f366f55b0eaf"
   end
 
   resource "six" do
