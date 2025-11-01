@@ -19,11 +19,10 @@ class Antismash < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 arm64_tahoe:   "30212eeb3b0da7cb35318d3a768d4ab5ceef340379cd5cf159fe170aa94c360e"
-    sha256 arm64_sequoia: "d546f87019e649bf707bdef1c4a3ddfc9d18d26cfeef359ea786a8b0b6030a66"
-    sha256 arm64_sonoma:  "22c9853d3f69487a7fe065bb547b0227b7a5d4157eb7b437e628b628a466c279"
-    sha256 x86_64_linux:  "0d30f4d12a1c3a8dc7cec52f0a2d6cddac11a9cebace04d4d39e3cdc33d2d68a"
+    sha256 arm64_tahoe:   "c1beb210f90464b473ea89e8dd5ce7c2bfef3b4de287f2b9cd737ccbded38258"
+    sha256 arm64_sequoia: "2b22366c5771b7ef8103ffd6c0111c92384de93f7e4219946ee15bd939887193"
+    sha256 arm64_sonoma:  "3f933863367fd0851dabae5011134729c4364daa9493630376e420c4332b897e"
+    sha256 x86_64_linux:  "920c148959286d7cee3bbbf54febd1f7aa94505c9f7a1192cea5d86795ec63ec"
   end
 
   depends_on "cmake" => :build # scikit-learn
