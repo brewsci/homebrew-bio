@@ -9,9 +9,10 @@ class Metabuli < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "75e2588b17eb85a8db7ab1b59c2aab66c156a8912644b98dbc648a03340f345c"
-    sha256 cellar: :any_skip_relocation, ventura:      "1b110d073d1cccc55b67fc70024bf9e122080e06267c079bd41cd000cd4347c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "93348547d2a71880d608e6f5d9ed0c57f31bf1baf7a056d5ae4cc5d517a65d97"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c90a4a08bbe41ab10f90687653696d25c0191fa0fe83856b155803b534dd4fc3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "308156dde074a59c63186834fcf1cd9fde16fcf69352abd67773ddb0f7365f5b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "28420dba98c116c5dcec101dc931268aa70f849901e989678927a767e7b9709e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd50565a4ec9ab27a935c39408eea1df467b6ff248ddfc3a6cdd0c868c88021f"
   end
 
   depends_on "cmake" => :build
