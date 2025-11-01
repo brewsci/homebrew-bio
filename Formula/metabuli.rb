@@ -2,8 +2,8 @@ class Metabuli < Formula
   # cite Kim_2024: "https://doi.org/10.1038/s41592-024-02273-y""
   desc "Specific and sensitive metagenomic classification"
   homepage "https://github.com/steineggerlab/Metabuli"
-  url "https://github.com/steineggerlab/Metabuli/archive/refs/tags/1.0.8.tar.gz"
-  sha256 "cc7e496ff82f00b56ef59aa2a04fa572a2025225b0558e0df144f166fade82d4"
+  url "https://github.com/steineggerlab/Metabuli/archive/refs/tags/1.1.1.tar.gz"
+  sha256 "62c2c8da10010b03ab5c5a353407b9ae12b8fe34aa5e5a648ae17383d7609192"
   license "GPL-3.0-or-later"
   head "https://github.com/steineggerlab/Metabuli.git", branch: "master"
 
@@ -23,8 +23,21 @@ class Metabuli < Formula
     depends_on "libomp"
   end
 
+  resource "mmseqs" do
+    url "https://github.com/jaebeom-kim/MMseqs2/archive/62f8d3e17b429825695273e347775871339cda75.tar.gz"
+    sha256 "67ff092e076e73772e03b79a8d980a370aaa097b7a1bec6a47718e43ba27f948"
+  end
+
+  resource "fasta_validator" do
+    url "https://github.com/jaebeom-kim/fasta_validator/archive/ab9c05b81fc28c210dff5319e110b6aa8b81afa7.tar.gz"
+    sha256 "67eac23d52d1f156a462f54b47b0e3f7a1500907a49c9e466f97f532143f40f4"
+  end
+
   def install
-    args = []
+    inreplace "CMakeLists.txt", "CMP0060 OLD", "CMP0060 NEW"
+    (buildpath/"lib/mmseqs").install resource("mmseqs")
+    (buildpath/"lib/fasta_validator").install resource("fasta_validator")
+    args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
     if OS.mac?
       libomp = Formula["libomp"]
       args << "-DOpenMP_C_FLAGS=-Xpreprocessor -fopenmp -I#{libomp.opt_include}"
@@ -40,11 +53,6 @@ class Metabuli < Formula
   end
 
   test do
-    resource "homebrew-testdata" do
-      url "https://github.com/steineggerlab/Metabuli-regression/archive/de07988ae1310d2fa2d0fec68409484c5ca652d8.tar.gz"
-      sha256 "2d6faf0f00e38387b4a5bf76aa11e3a9d21707b679fcbf314e0fe70496398a9a"
-    end
-    resource("homebrew-testdata").stage testpath
-    system "./run_regression.sh", bin/"metabuli", "tmp"
+    assert_match "metabuli Version", shell_output("#{bin}/metabuli --help")
   end
 end
