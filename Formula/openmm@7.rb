@@ -27,6 +27,7 @@ class OpenmmAT7 < Formula
   depends_on "python-setuptools" => :build
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
   depends_on "swig" => :build
   depends_on "fftw"
   depends_on "openblas"
