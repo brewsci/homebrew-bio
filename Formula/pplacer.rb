@@ -1,48 +1,54 @@
 class Pplacer < Formula
   # cite Matsen_2010: "https://doi.org/10.1186/1471-2105-11-538"
   desc "Place query sequences on a fixed reference phylogenetic tree"
-  homepage "https://matsen.fhcrc.org/pplacer/"
-  license "GPL-3.0"
+  homepage "http://matsen.fredhutch.org/pplacer/"
+  url "https://github.com/matsen/pplacer/archive/refs/tags/v1.1.alpha20.tar.gz"
+  sha256 "f88b4f0bf460d08e040e7178b5327c305f9b707af5e15b0522cdf6f2d5268ee5"
+  license "GPL-3.0-or-later"
 
-  # We use binaries to avoid compiling OCaml code
-  if OS.mac?
-    url "https://github.com/matsen/pplacer/releases/download/v1.1.alpha17/pplacer-Darwin-v1.1.alpha17.zip"
-    sha256 "db1ac64e1bc9b4d24d17ee2e388c061c283ca9fbec075e022bdeaad1adc6d41c"
-  else
-    url "https://github.com/matsen/pplacer/releases/download/v1.1.alpha17/pplacer-Linux-v1.1.alpha17.zip"
-    sha256 "3dc8e20fa8642d01daadde5bf9e36df2c180abec8f85c0b2f296f7852b63537c"
+  depends_on "dune" => :build
+  depends_on "ocaml" => :build
+  depends_on "opam" => :build
+  depends_on "pkgconf" => :build
+  depends_on "gsl"
+
+  uses_from_macos "sqlite"
+  uses_from_macos "zlib"
+
+  resource "mcl" do
+    url "https://github.com/fhcrc/mcl/archive/b1f7a969371d434eaa6848bdbb79a851de617c1f.tar.gz"
+    sha256 "9736fb693bc5eb4ec9fb26d300eaa656ea20744febe15efb98cd39699d2ff33b"
   end
-
-  livecheck do
-    url :stable
-    strategy :github_latest
-    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+(?:\.(?:(?:alpha|beta|rc|r)\d+)+)?)["' >]}i)
-  end
-
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, sierra:       "67bc8639e0f54daa1c141b906814578cd26f9510f9803297c337b4a0c241f577"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a3defbdaf841d3fb1297cb1175a29b7ecee7f964cd6e25cf95a1de7a4946a105"
-  end
-
-  depends_on "gsl" if OS.mac?
 
   def install
-    binaries = ["pplacer", "guppy", "rppr"]
-    if OS.mac?
-      binaries.each do |bin|
-        MachO::Tools.change_install_name bin, "/usr/local/lib/libgsl.0.dylib", "#{Formula["gsl"].lib}/libgsl.dylib"
-        MachO::Tools.change_install_name bin,
-          "/usr/local/lib/libgslcblas.0.dylib",
-          "#{Formula["gsl"].lib}/libgslcblas.0.dylib"
-        MachO::Tools.change_install_name bin, "/usr/local/lib/gcc/5/libgcc_s.1.dylib", "/usr/lib/libgcc_s.1.dylib"
-      end
+    ENV["OPAMROOT"] = buildpath/".opam"
+    ENV["OPAMYES"] = "1"
+    ENV["OPAMVERBOSE"] = "1"
+
+    system "opam", "init", "--compiler=ocaml-system", "--disable-sandboxing"
+    system "opam", "repo", "add", "pplacer-deps", "http://matsen.github.io/pplacer-opam-repository"
+    system "opam", "update"
+    system "opam", "install", "--assume-depexts", "-y",
+           "dune", "csv", "ounit2", "xmlm", "batteries", "gsl", "sqlite3", "camlzip", "ocamlfind"
+
+    (buildpath/"mcl").install resource("mcl")
+    inreplace "mcl/src/shmx/mcxclcf.c", "#include \"mcx.h\"",
+                                        "#include \"mcx.h\"\n#include \"impala/app.h\""
+    cd "mcl" do
+      system "./configure"
+      system "opam", "exec", "make"
     end
-    libexec.install "scripts"
-    bin.install binaries
+    system "opam", "exec", "dune", "build"
+    cd "_build/default" do
+      bin.install "pplacer.exe" => "pplacer"
+      bin.install "guppy.exe" => "guppy"
+      bin.install "rppr.exe" => "rppr"
+    end
   end
 
   test do
     assert_match "pplacer [options]", shell_output("#{bin}/pplacer -help")
+    assert_match "to_csv [options]", shell_output("#{bin}/guppy to_csv --help")
+    assert_match "check -c my", shell_output("#{bin}/rppr check --help")
   end
 end
