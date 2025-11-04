@@ -9,11 +9,11 @@ class OpenmmAT7 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_tahoe:   "727f11c237feee3203a0374d8aaf519945eddfec56be200dcc3e827839207b96"
-    sha256 cellar: :any,                 arm64_sequoia: "83e2b5a9694bff03d1e752373d6defb57a61cd1ca97a1ff8a02ded51214fe039"
-    sha256 cellar: :any,                 arm64_sonoma:  "695d78d1589d2adb6caf87c4d0744675ef749638f17d97d7cf698442c0e6b27f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5a97780d6fb2dd6d2d8041137a5ef7236c1b5d7c0f3e52d7a3ce0b40c9b41a3"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "5336d6351f749ce237fa535a0c53b37eeb3d2dd18bc4608456b18e839241761b"
+    sha256 cellar: :any,                 arm64_sequoia: "10ee9f7a390b3ccba0282629228b8d5cbbfb13fb05399cfd35a74d3379568fb8"
+    sha256 cellar: :any,                 arm64_sonoma:  "e3f00477cb5e57ed51f7571022239573850d66c420300265a553b964b56c622b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbd4409a78c2ff8fade1540114205c06f623c38a7474f61e7303790bb1469b32"
   end
 
   keg_only :versioned_formula
