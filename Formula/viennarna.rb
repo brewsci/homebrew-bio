@@ -7,6 +7,14 @@ class Viennarna < Formula
   license :cannot_represent
   head "https://github.com/ViennaRNA/ViennaRNA.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any,                 arm64_tahoe:   "2b017598f54a2e323fecd916e083afb374a574b644eeb673f2764eb990b6de34"
+    sha256 cellar: :any,                 arm64_sequoia: "e3f33395b833bd36737fa86cf19e0df240215f6d9b0978be71338ad00f1afa55"
+    sha256 cellar: :any,                 arm64_sonoma:  "a77ea63bdb12cde724fd4edad57d34bca1bcf5eacd1eeb792e42e49efe443421"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d7197cda05ac4416d7fadaf805038dbeb56c61fbb3963a97e5dfeeee67ba27f"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "doxygen" => :build
