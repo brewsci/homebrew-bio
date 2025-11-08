@@ -86,8 +86,7 @@ class Metabat < Formula
       # Handle libraries that will not be built.
       without_libraries = ["python", "mpi"]
 
-      # Boost.Log cannot be built using Apple GCC at the moment. Disabled
-      # on such systems.
+      # Boost.Log cannot be built using Apple GCC at the moment. Disabled on such systems.
       without_libraries << "log" if ENV.compiler == :gcc
 
       bootstrap_args << "--without-libraries=#{without_libraries.join(",")}"
