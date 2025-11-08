@@ -116,7 +116,7 @@ class Metabat < Formula
     end
 
     system "cmake", "-S", ".", "-B", "build",
-                    "-DCMAKE_PREFIX_PATH=#{Formula["boost@1.86"].opt_prefix}",
+                    "-DCMAKE_PREFIX_PATH=#{prefix}/boost@1.86",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
