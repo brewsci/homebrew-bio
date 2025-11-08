@@ -15,7 +15,7 @@ class Metabat < Formula
   depends_on "automake" => :build
   depends_on "cmake" => :build
   depends_on "htslib"
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "xz"
   depends_on "zstd"
 
@@ -37,11 +37,12 @@ class Metabat < Formula
       s.gsub!("CMAKE_CXX_STANDARD 17", "CMAKE_CXX_STANDARD 14")
       s.gsub!("CMAKE_C_STANDARD 17", "CMAKE_C_STANDARD 14")
     end
-    inreplace "src/CMakeLists.txt" do |s|
-      s.gsub!("${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}",
-              "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS} -Wno-c++11-narrowing -Wno-non-pod-varargs")
-      s.gsub!("${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS}",
-              "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS} -L#{Formula["libomp"].opt_lib} -lomp")
+    inreplace "src/CMakeLists.txt",
+              "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}",
+              "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS} -Wno-c++11-narrowing -Wno-non-pod-varargs"
+    if OS.mac?
+      inreplace "src/CMakeLists.txt", "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS}",
+                "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS} -L#{Formula["libomp"].opt_lib} -lomp"
     end
     # Use lock_guard instead of scoped_lock for C++14 compatibility
     inreplace "src/contigOverlaps.cpp", "scoped_lock", "lock_guard"
