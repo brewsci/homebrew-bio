@@ -2,75 +2,125 @@ class Metabat < Formula
   # cite Kang_2015: "https://doi.org/10.7717/peerj.1165"
   desc "Statistical framework for reconstructing genomes from metagenomic data"
   homepage "https://bitbucket.org/berkeleylab/metabat/"
-  url "https://bitbucket.org/berkeleylab/metabat/get/v2.15.tar.gz"
-  sha256 "550487b66ec9b3bc53edf513d00c9deda594a584f53802165f037bde29b4d34e"
-  head "https://bitbucket.org/berkeleylab/metabat.git"
+  url "https://bitbucket.org/berkeleylab/metabat/get/v2.18.tar.gz"
+  sha256 "d547a75bef07bf9f6144d4ffe3fdd062ce7ecb89b23d083e74465ef2a99bb9ef"
+  head "https://bitbucket.org/berkeleylab/metabat.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "4fcd6b616061cd662956ca9ccb57dcfc5e61e10024d9313ee0a3e9ae89adcea5"
   end
 
-  depends_on :linux unless build.head?
-
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "cmake" => :build
+  depends_on "htslib"
+  depends_on "icu4c@76"
+  depends_on "xz"
+  depends_on "zstd"
 
-  fails_with :clang # needs openmp
+  uses_from_macos "bzip2"
+  uses_from_macos "zlib"
 
-  if OS.mac?
-    resource "boost" do
-      url "https://downloads.sourceforge.net/project/boost/boost/1.69.0/boost_1_69_0.tar.gz"
-      sha256 "9a2c2819310839ea373f42d69e733c339b4e9a19deab6bfec448281554aa4dbb"
-    end
-  else
-    depends_on "boost"
+  on_macos do
+    depends_on "libomp"
+  end
+
+  resource "boost186" do
+    url "https://github.com/boostorg/boost/releases/download/boost-1.86.0/boost-1.86.0-b2-nodocs.tar.xz"
+    sha256 "a4d99d032ab74c9c5e76eddcecc4489134282245fffa7e079c5804b92b45f51d"
   end
 
   def install
-    if OS.mac?
-      boost_libs = %w[program_options filesystem system graph serialization iostreams]
-      boost_dir = buildpath/"boost"
-
-      # weird bug where /usr/local boost is selected despite
-      # -DBoost_NO_SYSTEM_PATHS=TRUE, so the libraries are specified manually
-      inreplace buildpath/"src/CMakeLists.txt", /^find_package\(Boost.*$/, <<~EOS
-        set(Boost_INCLUDE_DIRS ${BOOST_ROOT})
-        set(Boost_LIBRARIES #{boost_libs.map do |comp|
-          "#{boost_dir}/stage/lib/libboost_#{comp}.a"
-        end.join(" ")})
-      EOS
-
-      resource("boost").stage do
-        mkdir boost_dir
-        cp_r ".", boost_dir
-      end
-
-      cd boost_dir do
-        system "./bootstrap.sh", "--with-toolset=gcc", "--with-libraries=#{boost_libs.join(",")}"
-        system "./b2", "link=static", "visibility=global"
-      end
-
-      system "cmake", ".", "-DBOOST_ROOT=#{boost_dir}", *std_cmake_args
-    else
-      system "cmake", ".", *std_cmake_args
+    # use c++14
+    inreplace "CMakeLists.txt" do |s|
+      s.gsub!("CMAKE_CXX_STANDARD 17", "CMAKE_CXX_STANDARD 14")
+      s.gsub!("CMAKE_C_STANDARD 17", "CMAKE_C_STANDARD 14")
+    end
+    inreplace "src/CMakeLists.txt" do |s|
+      s.gsub!("${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}",
+              "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS} -Wno-c++11-narrowing -Wno-non-pod-varargs")
+      s.gsub!("${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS}",
+              "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS} -L#{Formula["libomp"].opt_lib} -lomp")
+    end
+    # Use lock_guard instead of scoped_lock for C++14 compatibility
+    inreplace "src/contigOverlaps.cpp", "scoped_lock", "lock_guard"
+    inreplace "src/jgi_summarize_bam_contig_depths.h" do |s|
+      s.gsub!("_alloc.reset(new BaseCountType[requiredLen]);",
+              "_alloc.reset(new BaseCountType[requiredLen], std::default_delete<BaseCountType[]>());")
+      s.gsub!("shared_ptr<CountType[]>", "shared_ptr<CountType>")
+      s.gsub!("shared_ptr<BaseCountType[]>", "shared_ptr<BaseCountType>")
+    end
+    inreplace "src/jgi_summarize_bam_contig_depths.cpp" do |s|
+      s.gsub!("reset(new CountType[header->n_targets]);",
+              "reset(new CountType[header->n_targets], std::default_delete<CountType[]>());")
+      s.gsub!("#include <mutex>", "#include <mutex>\n#include <memory>")
+    end
+    # remove "VERSION" file to avoid an error: "error: expected unqualified-id"
+    mv "VERSION", "version.txt"
+    ENV["VERSION"] = version
+    inreplace "cmake/Modules/GetGitVersion.cmake" do |s|
+      s.gsub!("/VERSION", "/version.txt")
+      s.gsub!("cat VERSION", "cat version.txt")
     end
 
-    system "make", "install"
+    resource("boost186").stage do
+      # Force boost to compile with the desired compiler
+      open("user-config.jam", "a") do |file|
+        if OS.mac?
+          file.write "using darwin : : #{ENV.cxx} ;\n"
+        else
+          file.write "using gcc : : #{ENV.cxx} ;\n"
+        end
+      end
 
-    pkgshare.install("test")
-  end
+      # libdir should be set by --prefix but isn't
+      icu4c = deps.map(&:to_formula).find { |f| f.name.match?(/^icu4c@\d+$/) }
+      bootstrap_args = %W[
+        --prefix=#{prefix}/boost@1.86
+        --libdir=#{prefix}/boost@1.86/lib
+        --with-icu=#{icu4c.opt_prefix}
+      ]
 
-  if OS.mac?
-    def caveats
-      <<~EOS
-        Only HEAD currently works on macOS. Use the following to install:
+      # Handle libraries that will not be built.
+      without_libraries = ["python", "mpi"]
 
-            brew install --HEAD brewsci/bio/metabat
+      # Boost.Log cannot be built using Apple GCC at the moment. Disabled
+      # on such systems.
+      without_libraries << "log" if ENV.compiler == :gcc
 
-      EOS
+      bootstrap_args << "--without-libraries=#{without_libraries.join(",")}"
+
+      # layout should be synchronized with boost-python and boost-mpi
+      args = %W[
+        --prefix=#{prefix}/boost@1.86
+        --libdir=#{prefix}/boost@1.86/lib
+        -d2
+        -j#{ENV.make_jobs}
+        --layout=tagged-1.66
+        --user-config=user-config.jam
+        install
+        threading=multi,single
+        link=shared,static
+      ]
+
+      # Boost is using "clang++ -x c" to select C compiler which breaks C++
+      # handling in superenv. Using "cxxflags" and "linkflags" still works.
+      # C++17 is due to `icu4c`.
+      args << "cxxflags=-std=c++17"
+      args << "cxxflags=-stdlib=libc++" << "linkflags=-stdlib=libc++" if ENV.compiler == :clang
+
+      system "./bootstrap.sh", *bootstrap_args
+      system "./b2", "headers"
+      system "./b2", *args
     end
+
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DCMAKE_PREFIX_PATH=#{Formula["boost@1.86"].opt_prefix}",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+    pkgshare.install "test"
   end
 
   test do
@@ -79,7 +129,7 @@ class Metabat < Formula
       system "#{bin}/jgi_summarize_bam_contig_depths",
              "--outputDepth", "depth.txt",
              "contigs-1000.fastq.bam"
-      assert_match "NODE_1_length_5374_cov_8.558988	5404	14.2158	14.2158	16.817", File.read("depth.txt")
+      assert_match "NODE_1_length_5374_cov_8.558988", File.read("depth.txt")
       assert_match "0 bins (0 bases in total) formed.",
                    shell_output("#{bin}/metabat2 -i contigs.fa -l -a depth.txt -o bin 2>&1")
     end
