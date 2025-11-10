@@ -90,6 +90,7 @@ class BoostAT186 < Formula
   end
 
   test do
+    ENV["CXXFLAGS"] = "-std=c++14"
     (testpath/"test.cpp").write <<~CPP
       #include <boost/algorithm/string.hpp>
       #include <boost/iostreams/device/array.hpp>
@@ -138,6 +139,7 @@ class BoostAT186 < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-std=c++14", "-o", "test", "-L#{lib}", "-lboost_iostreams",
+                    "-I#{Formula["brewsci/bio/boost@1.86"].opt_include}",
                     "-L#{Formula["zstd"].opt_lib}", "-lzstd"
     system "./test"
   end
