@@ -6,6 +6,14 @@ class Metabat < Formula
   sha256 "d547a75bef07bf9f6144d4ffe3fdd062ce7ecb89b23d083e74465ef2a99bb9ef"
   head "https://bitbucket.org/berkeleylab/metabat.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any,                 arm64_tahoe:   "7ca259022cd19b23369be741e9b29a1c00f1d1e41485ced6e3ddc02088155b3f"
+    sha256 cellar: :any,                 arm64_sequoia: "1478a843a9c89f7b299ecf8aad9387e1770ddb5df3ef174faa9d3531c03d76ca"
+    sha256 cellar: :any,                 arm64_sonoma:  "0bea46566e68dcad96fcb936e3ed3f9c2f00292a2d4e9eb5f0b4e054a542a9d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3195dfc8f3298c1d39b9c37df4109401fcfadad8bb347c35860f24e2fdf39522"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "cmake" => :build
