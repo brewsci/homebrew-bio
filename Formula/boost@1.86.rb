@@ -29,6 +29,14 @@ class BoostAT186 < Formula
     end
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256                               arm64_tahoe:   "328727e5ad7d54d5c155ae9f7c1de37eddf22555aa1b48ce4165e9fdbdaa8d4e"
+    sha256                               arm64_sequoia: "c26b8e0f7633e2d2ae72f33b64abf5a0af4ca9f58bd8be9b4d4844c3819cd64d"
+    sha256                               arm64_sonoma:  "5f291d2efac2fe6b6de344e3c1fcc60cfa963584d92a8bfff7d7351da924ebe8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cd387cb07c9ceaa48b9b80fff99dff2ff0c5e8b52d52782a00516e040627efa"
+  end
+
   keg_only :versioned_formula
 
   depends_on "icu4c@77"
