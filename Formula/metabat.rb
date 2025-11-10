@@ -9,6 +9,7 @@ class Metabat < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "cmake" => :build
+  depends_on "brewsci/bio/boost@1.86"
   depends_on "htslib"
   depends_on "icu4c@77"
   depends_on "xz"
@@ -19,11 +20,6 @@ class Metabat < Formula
 
   on_macos do
     depends_on "libomp"
-  end
-
-  resource "boost186" do
-    url "https://github.com/boostorg/boost/releases/download/boost-1.86.0/boost-1.86.0-b2-nodocs.tar.xz"
-    sha256 "a4d99d032ab74c9c5e76eddcecc4489134282245fffa7e079c5804b92b45f51d"
   end
 
   def install
@@ -60,59 +56,10 @@ class Metabat < Formula
       s.gsub!("cat VERSION", "cat version.txt")
     end
 
-    resource("boost186").stage do
-      # Force boost to compile with the desired compiler
-      open("user-config.jam", "a") do |file|
-        if OS.mac?
-          file.write "using darwin : : #{ENV.cxx} ;\n"
-        else
-          file.write "using gcc : : #{ENV.cxx} ;\n"
-        end
-      end
-
-      # libdir should be set by --prefix but isn't
-      icu4c = deps.map(&:to_formula).find { |f| f.name.match?(/^icu4c@\d+$/) }
-      bootstrap_args = %W[
-        --prefix=#{prefix}/boost@1.86
-        --libdir=#{prefix}/boost@1.86/lib
-        --with-icu=#{icu4c.opt_prefix}
-      ]
-
-      # Handle libraries that will not be built.
-      without_libraries = ["python", "mpi"]
-
-      # Boost.Log cannot be built using Apple GCC at the moment. Disabled on such systems.
-      without_libraries << "log" if ENV.compiler == :gcc
-
-      bootstrap_args << "--without-libraries=#{without_libraries.join(",")}"
-
-      # layout should be synchronized with boost-python and boost-mpi
-      args = %W[
-        --prefix=#{prefix}/boost@1.86
-        --libdir=#{prefix}/boost@1.86/lib
-        -d2
-        -j#{ENV.make_jobs}
-        --layout=tagged-1.66
-        --user-config=user-config.jam
-        install
-        threading=multi,single
-        link=shared,static
-      ]
-
-      # Boost is using "clang++ -x c" to select C compiler which breaks C++
-      # handling in superenv. Using "cxxflags" and "linkflags" still works.
-      # C++17 is due to `icu4c`.
-      args << "cxxflags=-std=c++17"
-      args << "cxxflags=-stdlib=libc++" << "linkflags=-stdlib=libc++" if ENV.compiler == :clang
-
-      system "./bootstrap.sh", *bootstrap_args
-      system "./b2", "headers"
-      system "./b2", *args
-    end
     cmakeargs = %W[
       -DBoost_USE_STATIC_LIBS:BOOL=ON
-      -DBoost_INCLUDE_DIR:PATH=#{prefix}/boost@1.86/include
-      -DBoost_LIBRARY_DIR_RELEASE:PATH=#{prefix}/boost@1.86/lib
+      -DBoost_INCLUDE_DIR:PATH=#{Formula["brewsci/bio/boost@1.86"].opt_include}
+      -DBoost_LIBRARY_DIR_RELEASE:PATH=#{Formula["brewsci/bio/boost@1.86"].opt_lib}
     ]
     system "cmake", "-S", ".", "-B", "build",
                     *std_cmake_args, *cmakeargs
