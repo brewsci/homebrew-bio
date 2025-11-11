@@ -20,6 +20,7 @@ class Meme < Formula
   depends_on "open-mpi"
   depends_on "python@3.14"
 
+  uses_from_macos "expat"
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
   uses_from_macos "perl"
