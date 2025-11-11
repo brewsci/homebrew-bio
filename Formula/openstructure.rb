@@ -8,14 +8,6 @@ class Openstructure < Formula
   sha256 "9ac12e1ce8ec879ec900b69bdbcc71632ed05d8cf8c09d3e847a57814d8a7e7b"
   license "LGPL-3.0-or-later"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256                               arm64_sequoia: "48e9ded1b107feb3659c6fb74825e6ba685a3e7699341460b8e1a16b146a6907"
-    sha256                               arm64_sonoma:  "6cb5afe6d6951ffbf8048f099b5d66464f73c1ce0f7a3eed57fb956a9b23e304"
-    sha256                               ventura:       "bc0feba0207e5d258ddf8c770e07cc4267195c49e800c43602d12747d91d0195"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3804831b123f8018d88d0b2277775a60420e98815b4624ddb847e11ba77b1192"
-  end
-
   depends_on "cmake" => :build
   depends_on "eigen" => :build
   depends_on "glm" => :build
@@ -34,7 +26,7 @@ class Openstructure < Formula
   depends_on "libtiff"
   depends_on "openblas"
   depends_on "pyqt@5"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "qt@5"
   depends_on "scipy"
   depends_on "sip"
@@ -43,7 +35,6 @@ class Openstructure < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "llvm" => :build # Requires latest libc++ to compile
     depends_on "libpq"
   end
 
@@ -60,7 +51,7 @@ class Openstructure < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install
@@ -68,7 +59,6 @@ class Openstructure < Formula
     py_ver_nodot = py_ver.to_s.delete(".")
 
     if OS.mac?
-      ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
       ENV.prepend "LDFLAGS", "-undefined dynamic_lookup -Wl,-export_dynamic"
     elsif OS.linux?
       ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
