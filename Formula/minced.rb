@@ -6,6 +6,15 @@ class Minced < Formula
   license "GPL-3.0-or-later"
   revision 1
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "100aa02c3791505242f4b493b4bda072ba20a1ae6dfba3acce531441c570b2c9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a94873a2763908b1003c82ef6d06a7522e83cde276676fefd7bdf7206d288e49"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1cf4a684b40fa3c1367e813f5d877f04c63fc85d74a6dc99e2edc58e6c4da553"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f658feea8003af87fe6eb0079fe40b7c04f3277f3949d4453cf2b06d9c9ce05"
+  end
+
   depends_on "openjdk"
 
   def install
