@@ -20,6 +20,7 @@ class Roary < Formula
   depends_on "parallel"
   depends_on "perl"
 
+  uses_from_macos "expat"
   uses_from_macos "libxml2"
 
   def install
