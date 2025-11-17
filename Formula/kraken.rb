@@ -8,13 +8,6 @@ class Kraken < Formula
   revision 1
   head "https://github.com/DerrickWood/kraken.git", branch: "master"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "021da2b6e256d07ef98730717f2e49679f31370e9e288138ff3195c3fb24239d"
-    sha256 cellar: :any_skip_relocation, ventura:      "2e5194d2b3ef4204461fa466ebc00eae65729f25a59ba6f45a04ae1bba6bea0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a65a8057b3366ff21b193ae1b6750e82d594ccf3635d4afa48af172b4f3ae51d"
-  end
-
   on_macos do
     depends_on "libomp"
   end
