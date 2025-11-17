@@ -27,7 +27,7 @@ class Roary < Formula
     libexec.install Dir["bin/*"]
     pkgshare.install "contrib"
 
-    # let CPAN install these
+    # let CPAN install these.
     rm_r buildpath/"lib"
     rm_r buildpath/"t"
     rm_r buildpath/"bin"
