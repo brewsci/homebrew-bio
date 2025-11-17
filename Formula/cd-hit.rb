@@ -1,7 +1,7 @@
 class CdHit < Formula
   # cite Li_2006: "https://doi.org/10.1093/bioinformatics/btl158"
   desc "Cluster and compare protein or nucleotide sequences"
-  homepage "http://cd-hit.org"
+  homepage "https://sites.google.com/view/cd-hit"
   url "https://github.com/weizhongli/cdhit/archive/refs/tags/V4.8.1.tar.gz"
   sha256 "f8bc3cdd7aebb432fcd35eed0093e7a6413f1e36bbd2a837ebc06e57cdb20b70"
   license "GPL-2.0-or-later"
