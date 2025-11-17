@@ -6,7 +6,7 @@ class CdHit < Formula
   sha256 "f8bc3cdd7aebb432fcd35eed0093e7a6413f1e36bbd2a837ebc06e57cdb20b70"
   license "GPL-2.0-or-later"
   revision 2
-  head "https://github.com/weizhongli/cdhit.git"
+  head "https://github.com/weizhongli/cdhit.git", branch: "master"
 
   uses_from_macos "zlib"
 
