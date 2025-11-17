@@ -6,6 +6,15 @@ class Roary < Formula
   sha256 "375f83c8750b0f4dea5b676471e73e94f3710bc3a327ec88b59f25eae1c3a1e8"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "d18d7980fb51cb8ea30bb96541cb65f6076ceccad5c698808a288768f4e834a9"
+    sha256 cellar: :any,                 arm64_sequoia: "c5df50c60db1cc07f01641ac0d775a91fd3bd033e6894951639f83f8286142f5"
+    sha256 cellar: :any,                 arm64_sonoma:  "a6607be2670cdf1fc0fb71e3279ea7156ee119489dd075f2a5214a98092b87e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2eb2e28e4471769b4f272f6381f442a5acf5da6f1212245ebf9b72874624ba1"
+  end
+
   depends_on "cpanminus" => :build
   depends_on "bedtools"
   depends_on "bioperl"
