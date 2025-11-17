@@ -8,15 +8,6 @@ class CdHit < Formula
   revision 2
   head "https://github.com/weizhongli/cdhit.git"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "7956683c00ba17abb83c248102faf10bb17d3baf4b6d12b1f573c606324c2eef"
-    sha256 cellar: :any,                 arm64_sonoma:  "33f0107f7883c65ca99bd0b5a4f1ecc9da20c8678fb86a756800ea01133e66ce"
-    sha256 cellar: :any,                 ventura:       "c2afa662f007e4bc4f3c286c12c56b02c70b2ca6f13db174101ea942e0c45c6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92f6b333033936097328fd30711518f67d35f326bf0a158b15b5010bafbf3b72"
-  end
-
   uses_from_macos "zlib"
 
   on_macos do
