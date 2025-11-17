@@ -5,6 +5,15 @@ class Mcl < Formula
   url "https://micans.org/mcl/src/mcl-22-282.tar.gz"
   sha256 "291f35837b6e852743bd87e499c5a46936125dcdf334f7747af92e88ac902183"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:   "fbf976c5c8fc97b51726eb8f07388ecd69f602d91e93e1603689d46218574ebe"
+    sha256 cellar: :any,                 arm64_sequoia: "df1895b07f2b89fc0cf4c30dcb6298826a42eb99363aa774010aac4e32fed218"
+    sha256 cellar: :any,                 arm64_sonoma:  "05e4c1cdaaba7ba5cfcc6198a2b7272c18d4963c78c3fbdbe8d437b9b8c8e404"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91bfe87f16712ecb2037ef135d86f220ebabb0ad6bab6f8353fc8e66a3f18787"
+  end
+
   depends_on "pkg-config" => [:build, :test]
 
   uses_from_macos "perl"
