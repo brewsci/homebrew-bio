@@ -38,7 +38,6 @@ class Roary < Formula
 
     # --notest because https://github.com/sanger-pathogens/Roary/issues/386
     system "cpanm", "--notest", "--self-contained", "-l", prefix/"perl5", "Bio::Roary"
-
     Dir[libexec/"*"].each do |exe|
       name = File.basename exe
       (bin/name).write_env_script(exe, PERL5LIB: ENV["PERL5LIB"])
