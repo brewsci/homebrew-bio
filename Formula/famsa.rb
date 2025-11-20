@@ -35,6 +35,11 @@ class Famsa < Formula
       s.gsub! "GCC, Darwin_x86_64, 11, 13", "clanGCC, Darwin_x86_64, 11, 20"
       s.gsub! "GCC, Darwin_arm64, 11, 13", "clanGCC, Darwin_arm64, 11, 20"
     end
+    inreplace "refresh.mk" do |s|
+      s.gsub! "-DMI_MALLOC_OVERRIDE -O3 -DNDEBUG -fPIC -Wall -Wextra -Wno-unknown-pragmas",
+              "-DMI_INSTALL_TOPLEVEL=ON"
+      s.gsub! "-fvisibility=hidden -ftls-model=initial-exec -fno-builtin-malloc", ""
+    end
     system "gmake"
     bin.install "bin/famsa"
     pkgshare.install "test"
