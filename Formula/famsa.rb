@@ -30,7 +30,15 @@ class Famsa < Formula
     cause "Requires C++20"
   end
 
+  # Use the latest zlib-ng for macOS ventura compatibility
+  resource "zlib-ng" do
+    url "https://github.com/zlib-ng/zlib-ng/archive/refs/tags/2.2.5.tar.gz"
+    sha256 "5b3b022489f3ced82384f06db1e13ba148cbce38c7941e424d6cb414416acd18"
+  end
+
   def install
+    rm_rf "libs/zlib-ng"
+    resource("zlib-ng").unpack buildpath/"libs/zlib-ng"
     ENV.append "CXXFLAGS", "-std=c++20" if OS.mac?
     inreplace "makefile" do |s|
       s.gsub! "GCC, Darwin_x86_64, 11, 13", "clanGCC, Darwin_x86_64, 11, 20"
