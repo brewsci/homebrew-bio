@@ -30,6 +30,9 @@ class Famsa < Formula
       s.gsub! "GCC, Darwin_x86_64, 11, 13", "clanGCC, Darwin_x86_64, 11, 20"
       s.gsub! "GCC, Darwin_arm64, 11, 13", "clanGCC, Darwin_arm64, 11, 20"
     end
+    if OS.mac and DevelopmentTools.clang_build_version <= 1599
+      inreplace "makefile", "clanGCC", "llvm_clanGCC"
+    end
     system "gmake"
     bin.install "bin/famsa"
     pkgshare.install "test"
