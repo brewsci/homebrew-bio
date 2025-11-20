@@ -31,14 +31,14 @@ class Famsa < Formula
   end
 
   # Use the latest zlib-ng for macOS ventura compatibility
-  resource "zlib-ng" do
-    url "https://github.com/zlib-ng/zlib-ng/archive/refs/tags/2.2.5.tar.gz"
-    sha256 "5b3b022489f3ced82384f06db1e13ba148cbce38c7941e424d6cb414416acd18"
+  resource "mimalloc" do
+    url "https://github.com/microsoft/mimalloc/archive/refs/tags/v3.1.5.tar.gz"
+    sha256 "1c6949032069d5ebea438ec5cedd602d06f40a92ddf0f0d9dcff0993e5f6635c"
   end
 
   def install
-    rm_r "libs/zlib-ng"
-    resource("zlib-ng").unpack buildpath/"libs/zlib-ng"
+    rm_r "libs/mimalloc"
+    resource("mimalloc").unpack buildpath/"libs/mimalloc"
     ENV.append "CXXFLAGS", "-std=c++20" if OS.mac?
     inreplace "makefile" do |s|
       s.gsub! "GCC, Darwin_x86_64, 11, 13", "clanGCC, Darwin_x86_64, 11, 20"
