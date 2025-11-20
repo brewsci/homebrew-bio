@@ -12,16 +12,11 @@ class Famsa < Formula
   depends_on "make" => :build
 
   on_macos do
-    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1499
-  end
-
-  on_ventura do
-    # Ventura seems to be missing the `source_location` header.
-    depends_on "llvm" => :build
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1599
   end
 
   fails_with :clang do
-    build 1499
+    build 1599
     cause "Requires C++20"
   end
 
@@ -34,11 +29,6 @@ class Famsa < Formula
     inreplace "makefile" do |s|
       s.gsub! "GCC, Darwin_x86_64, 11, 13", "clanGCC, Darwin_x86_64, 11, 20"
       s.gsub! "GCC, Darwin_arm64, 11, 13", "clanGCC, Darwin_arm64, 11, 20"
-    end
-    inreplace "refresh.mk" do |s|
-      s.gsub! "-DMI_MALLOC_OVERRIDE -O3 -DNDEBUG -fPIC -Wall -Wextra -Wno-unknown-pragmas",
-              "-DMI_INSTALL_TOPLEVEL=ON"
-      s.gsub! "-fvisibility=hidden -ftls-model=initial-exec -fno-builtin-malloc", ""
     end
     system "gmake"
     bin.install "bin/famsa"
