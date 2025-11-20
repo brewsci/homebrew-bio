@@ -8,6 +8,14 @@ class Famsa < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/refresh-bio/FAMSA.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "138555b7705177fcccbfe7ae105af0e2d9ad08cb6e5d28b6b5554b64153901c7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fb8de904fe2e75f88c051480d473ba0e0d498a71161f1bed27b120c0c850b78e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "177bcd2caedae5e0697091883d5c519f5a2d48b11fdc1724039ab7b5a0493aeb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6efe4b6e7f7756742f25923629de3249a5ad63b310b7730c9e642addef0990f"
+  end
+
   depends_on "cmake" => :build
   depends_on "make" => :build
 
