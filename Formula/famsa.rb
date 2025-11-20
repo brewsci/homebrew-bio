@@ -37,7 +37,7 @@ class Famsa < Formula
   end
 
   def install
-    rm_rf "libs/zlib-ng"
+    rm_r "libs/zlib-ng"
     resource("zlib-ng").unpack buildpath/"libs/zlib-ng"
     ENV.append "CXXFLAGS", "-std=c++20" if OS.mac?
     inreplace "makefile" do |s|
