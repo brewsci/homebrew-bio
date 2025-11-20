@@ -30,16 +30,7 @@ class Famsa < Formula
     cause "Requires C++20"
   end
 
-  # Use the latest zlib-ng for macOS ventura compatibility
-  resource "mimalloc" do
-    url "https://github.com/microsoft/mimalloc/archive/refs/tags/v3.1.5.tar.gz"
-    sha256 "1c6949032069d5ebea438ec5cedd602d06f40a92ddf0f0d9dcff0993e5f6635c"
-  end
-
   def install
-    rm_r "libs/mimalloc"
-    resource("mimalloc").unpack buildpath/"libs/mimalloc"
-    ENV.append "CXXFLAGS", "-std=c++20" if OS.mac?
     inreplace "makefile" do |s|
       s.gsub! "GCC, Darwin_x86_64, 11, 13", "clanGCC, Darwin_x86_64, 11, 20"
       s.gsub! "GCC, Darwin_arm64, 11, 13", "clanGCC, Darwin_arm64, 11, 20"
