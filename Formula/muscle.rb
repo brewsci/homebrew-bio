@@ -11,11 +11,17 @@ class Muscle < Formula
   depends_on "python@3.14" => :build
 
   on_macos do
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
     depends_on "libomp"
   end
 
   on_linux do
     depends_on "gcc"
+  end
+
+  fails_with :clang do
+    build 1699
+    cause "Requires C++20"
   end
 
   resource "vcxproj_make" do
