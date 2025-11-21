@@ -8,6 +8,14 @@ class Muscle < Formula
   license "GPL-3.0-only"
   head "https://github.com/rcedgar/muscle.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any,                 arm64_tahoe:   "cfd474743359f49522cd872de75fa49436f20ff7d2959e21060ecea622ce53b2"
+    sha256 cellar: :any,                 arm64_sequoia: "bef222ee7ceea33f53a906304c99b986ab558375eda4120c426775e8578d7675"
+    sha256 cellar: :any,                 arm64_sonoma:  "4e80557f09db9f42b87301ca3dde456babc5300bda158d28bf559e56d986ff00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f83164696d49a71d24ddeea34a5b15e5b00b09dc0c1e3b6d34ba65a5f62dcbb4"
+  end
+
   depends_on "python@3.14" => :build
 
   on_macos do
