@@ -7,11 +7,11 @@ class Pygobject3AT350 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 2
-    sha256 cellar: :any, arm64_tahoe:   "03514a10f4bdfc55dac46e6e19f4040692e5199f4ef4a341662ebe7b4f0375a6"
-    sha256 cellar: :any, arm64_sequoia: "ad0b2afe8dfcff38b2686fa68822be6f75002c3db684be1ae4a89f5f113911bf"
-    sha256 cellar: :any, arm64_sonoma:  "bb5c12a4181d6139da727a390f2c5bc8a77acaf066f711e4e322762fbc2ae4ae"
-    sha256               x86_64_linux:  "ecae14b9407f28996a0bbac2a46cbf5cdeb1b73affc8a8bd08d6599181518374"
+    rebuild 3
+    sha256 cellar: :any, arm64_tahoe:   "1fb0df5ae11106e824aadafb93fc3be7628fe2d5c21984522ce59b23e74d81d7"
+    sha256 cellar: :any, arm64_sequoia: "9b5e53e77fea99cfb9531d1529566d5832b5048a50bbff5f962f193fd323eca6"
+    sha256 cellar: :any, arm64_sonoma:  "eb45923e424a62b94b08dba614a9603347a896b672f630a643bdd6b79488410d"
+    sha256               x86_64_linux:  "ae6fe871356aad5ffd6f8a19515313f757c07a85ba6faf96ab77217994ca0d81"
   end
 
   keg_only :versioned_formula
