@@ -6,6 +6,14 @@ class RustSasa < Formula
   license "MIT"
   head "https://github.com/maxall41/RustSASA.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e50ca95ebea47cb71f534ae71e5e6e91fa55e91b6ea2777d2111d2553aeb2f9b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9735127cbe65dc913a01a059282551e3b877a3b7b865ef05ffabaaa1f8e47170"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a01fdd67963aa21e6b413a4559f53f9af9931463a5d8cd7cc32687be912dc257"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15e95f831aa7ca412fa6a50f86351231f23a312669d9ae4bbdaec9bc6e40e684"
+  end
+
   depends_on "rust" => :build
 
   resource "pdbtbx" do
