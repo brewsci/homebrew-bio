@@ -9,6 +9,13 @@ class Ambertools < Formula
   sha256 "ac009b2adeb25ccd2191db28905b867df49240e038dc590f423edf0d84f8a13b"
   license all_of: ["BSD-3-Clause", "GPL-3.0-or-later", "LGPL-3.0-or-later", "MIT"]
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 arm64_tahoe:   "454f711d98d696228b9b27d2fa7b8ec827c83575b079de208f088cac0b244d12"
+    sha256 arm64_sequoia: "e8038f666473cd9eae638ef4f193691ced9fe6d9a9f805f3ac82bb599f953479"
+    sha256 arm64_sonoma:  "9751456357d99070d09a285cbeeb93a99ea397b5d553ac3495412c0bf81248ba"
+  end
+
   depends_on "cmake" => :build
   depends_on "rust" => :build # for rpds-py
   depends_on "arpack"
