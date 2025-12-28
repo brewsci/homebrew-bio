@@ -43,9 +43,12 @@ class Coot < Formula
   depends_on "gtk4"
   depends_on "harfbuzz"
   depends_on "libepoxy"
+  depends_on "libogg"
   depends_on "libpng"
   depends_on "librsvg"
+  depends_on "libvorbis"
   depends_on "numpy"
+  depends_on "openal-soft"
   depends_on "openblas"
   depends_on "pango"
   depends_on "py3cairo"
@@ -77,6 +80,10 @@ class Coot < Formula
   end
 
   def install
+    # fix issue of https://github.com/pemsley/coot/issues/266
+    # include <iomanip> is needed for std::setw on Linux
+    inreplace "src/molecule-class-info.h", "#include \"compat/coot-sysdep.h\"",
+                                           "#include \"compat/coot-sysdep.h\"\n#include <iomanip>"
     ENV.cxx11
     ENV.libcxx
     inreplace "autogen.sh", "libtool", "glibtool"
@@ -114,6 +121,7 @@ class Coot < Formula
       --with-fftw-prefix=#{fftw2_prefix}
       --with-backward
       --with-libdw
+      --with-sound
       BOOST_PYTHON_LIB=#{boost_python_lib}
       PYTHON=#{python3}
     ]
