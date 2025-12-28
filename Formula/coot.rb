@@ -82,8 +82,9 @@ class Coot < Formula
   def install
     # fix issue of https://github.com/pemsley/coot/issues/266
     # include <iomanip> is needed for std::setw on Linux
-    inreplace "src/molecule-class-info.h", "#include \"compat/coot-sysdep.h\"",
-                                           "#include \"compat/coot-sysdep.h\"\n#include <iomanip>"
+    inreplace "src/molecule-class-info.h",
+              "#include \"compat/coot-sysdep.h\"",
+              "#include \"compat/coot-sysdep.h\"\n#include <iomanip>\n#include <cmath>"
     ENV.cxx11
     ENV.libcxx
     inreplace "autogen.sh", "libtool", "glibtool"
