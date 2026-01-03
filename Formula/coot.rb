@@ -85,6 +85,14 @@ class Coot < Formula
     inreplace "src/molecule-class-info.h",
               "#include \"compat/coot-sysdep.h\"",
               "#include \"compat/coot-sysdep.h\"\n#include <iomanip>\n#include <cmath>"
+    # fix error of molecule-class-info-backup.cc:104:70:
+    # error: 'fabsf' is not a member of 'std'; did you mean 'fabs'?
+    inreplace "src/molecule-class-info-backup.cc",
+              "#include <utility>",
+              "#include <utility>\n#include <cmath>"
+    inreplace "src/molecule-class-info-backup.cc",
+              "fabsf",
+              "fabs"
     ENV.cxx11
     ENV.libcxx
     inreplace "autogen.sh", "libtool", "glibtool"
