@@ -1,8 +1,8 @@
 class Coot < Formula
   desc "Crystallographic Object-Oriented Toolkit"
   homepage "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/"
-  url "https://github.com/pemsley/coot/archive/refs/tags/Release-1.1.19.tar.gz"
-  sha256 "514b21e59ef1f4c69f1361309c5c7252940f0babf5aeacf1f0382f86cc82313a"
+  url "https://github.com/pemsley/coot/archive/refs/tags/Release-1.1.20.tar.gz"
+  sha256 "3bac75e3aaa7991ff2c24539cc594f1e1c205fe1bd7aa256e4f4d13120fdd04f"
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only", "GPL-2.0-or-later"]
   head "https://github.com/pemsley/coot.git", branch: "main"
 
@@ -43,9 +43,12 @@ class Coot < Formula
   depends_on "gtk4"
   depends_on "harfbuzz"
   depends_on "libepoxy"
+  depends_on "libogg"
   depends_on "libpng"
   depends_on "librsvg"
+  depends_on "libvorbis"
   depends_on "numpy"
+  depends_on "openal-soft"
   depends_on "openblas"
   depends_on "pango"
   depends_on "py3cairo"
@@ -77,6 +80,19 @@ class Coot < Formula
   end
 
   def install
+    # fix issue of https://github.com/pemsley/coot/issues/266
+    # include <iomanip> is needed for std::setw on Linux
+    inreplace "src/molecule-class-info.h",
+              "#include \"compat/coot-sysdep.h\"",
+              "#include \"compat/coot-sysdep.h\"\n#include <iomanip>\n#include <cmath>"
+    # fix error of molecule-class-info-backup.cc:104:70:
+    # error: 'fabsf' is not a member of 'std'; did you mean 'fabs'?
+    inreplace "src/molecule-class-info-backup.cc",
+              "#include <utility>",
+              "#include <utility>\n#include <cmath>"
+    inreplace "src/molecule-class-info-backup.cc",
+              "fabsf",
+              "fabs"
     ENV.cxx11
     ENV.libcxx
     inreplace "autogen.sh", "libtool", "glibtool"
@@ -114,6 +130,7 @@ class Coot < Formula
       --with-fftw-prefix=#{fftw2_prefix}
       --with-backward
       --with-libdw
+      --with-sound
       BOOST_PYTHON_LIB=#{boost_python_lib}
       PYTHON=#{python3}
     ]
