@@ -2,6 +2,7 @@ class AutodockVina < Formula
   # cite Eberhardt_2021: "https://10.1021/acs.jcim.1c00203"
   # cite Trott_2010: "https://10.1002/jcc.21334"
   include Language::Python::Virtualenv
+
   desc "Docking and virtual screening program"
   homepage "https://github.com/ccsb-scripps/AutoDock-Vina/"
   url "https://github.com/ccsb-scripps/AutoDock-Vina/archive/refs/tags/v1.2.7.tar.gz"

@@ -1,6 +1,7 @@
 class Ntlink < Formula
-  include Language::Python::Virtualenv
   # cite Coombe_2021: "https://doi.org/10.1186/s12859-021-04451-7"
+  include Language::Python::Virtualenv
+
   desc "Assembly scaffolder using long reads and minimizers"
   homepage "https://bcgsc.ca/resources/software/ntlink"
   url "https://github.com/bcgsc/ntLink/archive/refs/tags/v1.3.11.tar.gz"
