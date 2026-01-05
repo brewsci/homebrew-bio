@@ -60,7 +60,7 @@ class Reduce < Formula
       sha256 "7b71128bedcd7ebdea42713942a30af590b3cf514726485f9aa27430c3999657"
     end
 
-    output = shell_output(bin/"reduce -Version 2>&1", 2)
+    output = shell_output("#{bin}/reduce -Version 2>&1", 2)
     assert_match "reduce.4.15.250408", output
     resource("homebrew-testdata").stage testpath
     system("#{bin}/reduce -NOFLIP -Quiet 3qug.pdb > 3qug_h.pdb")
