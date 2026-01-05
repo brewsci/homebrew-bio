@@ -74,8 +74,6 @@ class Coot < Formula
     sha256 "44db38506f0f90c097d4855ad81a82a36b49cd1e3ffe7d6ee4728b15109e281a"
   end
 
-  patch :DATA
-
   def python3
     "python3.14"
   end
@@ -155,15 +153,3 @@ class Coot < Formula
     assert_match "Usage: coot", shell_output("#{bin}/coot --help 2>&1")
   end
 end
-__END__
-diff --git a/src/molecule-class-info.h b/src/molecule-class-info.h
-index 4a9fb8d0bd..3c634e0fee 100644
---- a/src/molecule-class-info.h
-+++ b/src/molecule-class-info.h
-@@ -34,6 +34,7 @@
- #endif // HAVE_STRING
-
- #include <deque>
-+#include <iomanip>
-
- #include "compat/coot-sysdep.h"
