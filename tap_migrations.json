@@ -13,7 +13,7 @@
   "kalign": "homebrew/core",
   "kraken2": "homebrew/core",
   "lastz": "homebrew/core",
-  "libdivsufasort": "homebrew/core",
+  "libdivsufsort": "homebrew/core",
   "minigraph": "homebrew/core",
   "mrbayes": "homebrew/core",
   "mummer": "homebrew/core",
