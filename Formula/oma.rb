@@ -1,9 +1,10 @@
 class Oma < Formula
-  include Language::Python::Virtualenv
   # cite Altenhoff_2019: "https://doi.org/10.1101/gr.243212.118"
   # cite Altenhoff_2017: "https://doi.org/10.1093/nar/gkx1019"
   # cite Train_2017: "https://doi.org/10.1093/bioinformatics/btx229"
   # cite Altenhoff_2014: "https://doi.org/10.1093/nar/gku1158"
+  include Language::Python::Virtualenv
+
   desc "Standalone package to infer orthologs with the OMA algorithm"
   homepage "https://omabrowser.org/standalone/"
   url "https://omabrowser.org/standalone/OMA.2.6.0.tgz"

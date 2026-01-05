@@ -1,7 +1,8 @@
 class Ntsynt < Formula
+  # cite Coombe_2024: "https://doi.org/10.1101/2024.02.07.579356"
   include Language::Python::Virtualenv
   include Language::Python::Shebang
-  # cite Coombe_2024: "https://doi.org/10.1101/2024.02.07.579356"
+
   desc "Detecting multi-genome synteny using minimizer graph mapping"
   homepage "https://github.com/bcgsc/ntSynt"
   url "https://github.com/bcgsc/ntSynt.git",
