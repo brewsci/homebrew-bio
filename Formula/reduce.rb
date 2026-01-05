@@ -63,8 +63,8 @@ class Reduce < Formula
     output = shell_output("#{bin}/reduce -Version 2>&1", 2)
     assert_match "reduce.4.15.250408", output
     resource("homebrew-testdata").stage testpath
-    system("#{bin}/reduce -NOFLIP -Quiet 3qug.pdb > 3qug_h.pdb")
-    assert_match "add=1978, rem=0, adj=70", File.read("3qug_h.pdb")
+    system("#{bin}/reduce -NOFLIP -Quiet 3QUG.pdb > 3QUG_H.pdb")
+    assert_match "add=1978, rem=0, adj=70", File.read("3QUG_H.pdb")
 
     # Check if the Python module can be imported
     system "python3", "-c", "import reduce"
