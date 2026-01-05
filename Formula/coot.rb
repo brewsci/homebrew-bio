@@ -123,6 +123,7 @@ class Coot < Formula
     args = %W[
       --prefix=#{prefix}
       --with-enhanced-ligand-tools
+      --with-coordgen
       --with-boost=#{boost_prefix}
       --with-boost-libdir=#{boost_prefix}/lib
       --with-gemmi=#{Formula["gemmi"].opt_prefix}
