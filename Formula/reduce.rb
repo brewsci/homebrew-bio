@@ -51,7 +51,7 @@ class Reduce < Formula
   def post_install
     # Remove mislocated reduce_wwPDB_het_dict.txt
     # TODO: Remove this block after upstream PR (https://github.com/rlabduke/reduce/pull/66) is merged
-    rm_f prefix/"reduce_wwPDB_het_dict.txt"
+    rm prefix/"reduce_wwPDB_het_dict.txt"
   end
 
   test do
