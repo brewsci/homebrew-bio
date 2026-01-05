@@ -2,14 +2,17 @@ class Viennarna < Formula
   # cite Lorenz_2011: "https://doi.org/10.1186/1748-7188-6-26"
   desc "Prediction and comparison of RNA secondary structures"
   homepage "https://www.tbi.univie.ac.at/~ronny/RNA/"
-  url "https://github.com/ViennaRNA/ViennaRNA/archive/refs/tags/v2.6.4.tar.gz"
-  sha256 "2f9b5ac8a8175b7485ec5e3b773210afce130d6ce0a3b111457c78c4466ad1c7"
+  url "https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_7_x/ViennaRNA-2.7.0.tar.gz"
+  sha256 "9a99fd68ed380894defb4d5e6a8a2871629270028cdf7f16f0a05da6e8c71473"
+  license :cannot_represent
+  head "https://github.com/ViennaRNA/ViennaRNA.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sonoma: "8b6df1b73b8f0df52d391c94fbe27e17838dacc525415a2976a04f4038bbcf53"
-    sha256 cellar: :any,                 ventura:      "621dc4aa92b99fb3c0d30fb6377b2d0007b116164398d88ccec2bf442ed92e31"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "72ddd1730d2d720566c5a59465a9b43dd5aa1834e771db452fd7b8ca4618edbe"
+    sha256 cellar: :any,                 arm64_tahoe:   "2b017598f54a2e323fecd916e083afb374a574b644eeb673f2764eb990b6de34"
+    sha256 cellar: :any,                 arm64_sequoia: "e3f33395b833bd36737fa86cf19e0df240215f6d9b0978be71338ad00f1afa55"
+    sha256 cellar: :any,                 arm64_sonoma:  "a77ea63bdb12cde724fd4edad57d34bca1bcf5eacd1eeb792e42e49efe443421"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d7197cda05ac4416d7fadaf805038dbeb56c61fbb3963a97e5dfeeee67ba27f"
   end
 
   depends_on "autoconf" => :build
@@ -26,8 +29,8 @@ class Viennarna < Formula
   depends_on "gsl"
   depends_on "mpfr"
   depends_on "openblas"
-  depends_on "perl" # for EXTERN.h
-  depends_on "python@3.12"
+  depends_on "perl"
+  depends_on "python@3.14"
 
   uses_from_macos "flex" => :build
   uses_from_macos "zlib"
@@ -36,40 +39,34 @@ class Viennarna < Formula
     depends_on "libomp"
   end
 
+  patch do
+    url "https://raw.githubusercontent.com/bioconda/bioconda-recipes/871a0e5a3b9af8bb0b8e033620aae08f32390bd0/recipes/viennarna/fix_python_module_copy.patch"
+    sha256 "8ff562202871a56ec163e5d805bd1e312bfe984b430d4e24f9e4ece2d0987ef5"
+  end
+
+  patch :DATA
+
   def python3
-    which("python3.12")
+    which("python3.14")
   end
 
   def install
     ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version if OS.mac?
     ENV.append "CXXFLAGS", "-std=c++17" # for Kinwalker
-    inreplace "src/RNAlocmin/hash_util.h", "register ", "" # c++17 deprecated register
-
+    # Fix dlib build with newer compilers
+    inreplace "src/dlib-19.24/dlib/global_optimization/find_max_global.h",
+              "::template go(std::forward<T>(f),a))",
+              "::go(std::forward<T>(f),a))"
     # regenerate configure file
     system "autoreconf", "-fvi"
 
-    inreplace "src/RNAxplorer/interfaces/Python/Makefile.in",
-              "pkgpycache_DATA = RNAxplorer/__pycache__/__init__.@PYTHON3_CACHE_TAG@.pyc \\",
-              "pkgpycache_DATA = "
-    inreplace "src/RNAxplorer/interfaces/Python/Makefile.in",
-              "RNAxplorer/__pycache__/__init__.@PYTHON3_CACHE_OPT1_EXT@",
-              ""
-
-    # unpack libsvm and dlib
-    cd "src" do
-      system "tar", "zxf", "libsvm-3.31.tar.gz"
-      system "tar", "jxf", "dlib-19.24.tar.bz2"
-    end
+    ENV.append "LDFLAGS", "-Wl,-headerpad_max_install_names"
     args = %W[
-      --disable-debug
-      --disable-dependency-tracking
-      --disable-silent-rules
-      --enable-openmp
-      --without-python
-      --with-cluster
-      --with-kinwalker
-      --disable-check-python2
       --prefix=#{prefix}
+      --with-kinwalker
+      --with-cluster
+      --disable-lto
+      --without-cla
     ]
     if OS.mac?
       # Work around "checking for OpenMP flag of C compiler... unknown"
@@ -93,11 +90,45 @@ class Viennarna < Formula
 
     system "./configure", *args
     system "make"
-    ENV.deparallelize
     system "make", "install"
   end
 
   test do
     assert_match "-1.30 MEA=21.31", pipe_output("#{bin}/RNAfold --MEA", "CGACGUAGAUGCUAGCUGACUCGAUGC")
+    text = "GGGCACCCCCCUUCGGGGGGUCACCUCGCGUAGCUAGCUACGCGAGGGUUAAAGCGCCUUUCUCCCUCGCGUAGC"
+    assert_match "-43.30", pipe_output("#{bin}/RNAxplorer -M RSH -n 10 --sequence #{text}")
+    system python3, "-c", "import RNA; print(RNA.__doc__)"
+    system python3, "-c", "import RNAxplorer"
   end
 end
+
+__END__
+diff --git a/interfaces/Python/Makefile.am b/interfaces/Python/Makefile.am
+--- a/interfaces/Python/Makefile.am
++++ b/interfaces/Python/Makefile.am
+@@ -38,11 +38,7 @@ pkgpyexec_DATA = \
+ pkgpyexec_DATA = \
+     RNA/__init__.py \
+     RNA/RNA.py
+-pkgpycache_DATA = \
+-    RNA/__pycache__/__init__.@PYTHON3_CACHE_TAG@.pyc \
+-    RNA/__pycache__/__init__.@PYTHON3_CACHE_OPT1_EXT@ \
+-    RNA/__pycache__/RNA.@PYTHON3_CACHE_TAG@.pyc \
+-    RNA/__pycache__/RNA.@PYTHON3_CACHE_OPT1_EXT@
++pkgpycache_DATA =
+
+ pkgpyvrnaexecdir = $(py3execdir)/ViennaRNA
+ pkgpyvrnaexec_DATA = \
+diff --git a/src/RNAxplorer/interfaces/Python/Makefile.am b/src/RNAxplorer/interfaces/Python/Makefile.am
+--- a/src/RNAxplorer/interfaces/Python/Makefile.am
++++ b/src/RNAxplorer/interfaces/Python/Makefile.am
+@@ -7,8 +7,7 @@ pkgpyexec_DATA =  RNAxplorer/__init__.py
+
+ pkgpyexec_LTLIBRARIES = _RNAxplorer.la
+ pkgpyexec_DATA =  RNAxplorer/__init__.py
+-pkgpycache_DATA = RNAxplorer/__pycache__/__init__.@PYTHON3_CACHE_TAG@.pyc \
+-                  RNAxplorer/__pycache__/__init__.@PYTHON3_CACHE_OPT1_EXT@
++pkgpycache_DATA =
+
+ _RNAxplorer_la_SOURCES = $(INTERFACE_FILES) \
+                          $(SWIG_wrapper)

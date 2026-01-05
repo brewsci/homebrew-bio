@@ -1,6 +1,7 @@
 class Cutadapt < Formula
   # cite Martin_2011: "https://doi.org/10.14806/ej.17.1.200"
   include Language::Python::Virtualenv
+
   desc "Removes adapter sequences, primers, and poly-A tails"
   homepage "https://github.com/marcelm/cutadapt"
   url "https://github.com/marcelm/cutadapt.git",

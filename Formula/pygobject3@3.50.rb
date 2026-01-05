@@ -7,11 +7,11 @@ class Pygobject3AT350 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any, arm64_sequoia: "a026b2f6625c79cdf3b31d9f03cd36724067f4cd04395354921768fb69a59f46"
-    sha256 cellar: :any, arm64_sonoma:  "878adf762c024d9a6b1694468ce218de71c67317b5daecdc25a2fedcf68f0e35"
-    sha256 cellar: :any, ventura:       "65c194787e8f637a88b7361882226a282fc60817a180c02dc04c3881c8892e5a"
-    sha256               x86_64_linux:  "1bd749d8a890f465b8dbed54cfc20f711152a0c6e58fb521d4527b5ad891339f"
+    rebuild 3
+    sha256 cellar: :any, arm64_tahoe:   "1fb0df5ae11106e824aadafb93fc3be7628fe2d5c21984522ce59b23e74d81d7"
+    sha256 cellar: :any, arm64_sequoia: "9b5e53e77fea99cfb9531d1529566d5832b5048a50bbff5f962f193fd323eca6"
+    sha256 cellar: :any, arm64_sonoma:  "eb45923e424a62b94b08dba614a9603347a896b672f630a643bdd6b79488410d"
+    sha256               x86_64_linux:  "ae6fe871356aad5ffd6f8a19515313f757c07a85ba6faf96ab77217994ca0d81"
   end
 
   keg_only :versioned_formula
@@ -23,6 +23,7 @@ class Pygobject3AT350 < Formula
   depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
 
   depends_on "cairo"
   depends_on "glib"

@@ -1,16 +1,17 @@
 class Kraken2 < Formula
   desc "Taxonomic sequence classification system"
   homepage "https://github.com/DerrickWood/kraken2"
-  url "https://github.com/DerrickWood/kraken2/archive/refs/tags/v2.1.5.tar.gz"
-  sha256 "6feb9b1e0840a574598b84a3134a25622e5528ac6d0f4c756cdab629275d8f42"
+  url "https://github.com/DerrickWood/kraken2/archive/refs/tags/v2.1.6.tar.gz"
+  sha256 "5bbd79392ff7c530124986dfdfe126bf638477db94fb7a901ec2daf9261707f3"
   license "MIT"
+  head "https://github.com/DerrickWood/kraken2.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4b30330bbcf0cce0aeb27e2136333d0854bb5c1a098199d71cd845d2e924319e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "692d41e231d135a9488f145acd578de0a7a9f9cd93f057d2e4daa6b3a2bcb249"
-    sha256 cellar: :any_skip_relocation, ventura:       "f96376c0f01afad2b5bc49382c5e53b40e90dc7076c5a9fca14fa4d672df055e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d192f70f159654c5b41f215324a2d305209a3b2d096269b92068b3f7e38414d3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "54a364b5f9670acca86eda276475121d06b51aea877e184521a3a4f92559ba4f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "890e1f546be6610b1dac7211aceb9a927f165646a2522626b18a507721027cfb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "40f158613d0097f3cabff05b669b72aac25819b4ef5125bfbb67578446890a04"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2bf9cdb39dae6e35d7fbc6165e098b483d5ce7fd3d00295fe6182beb7b8d867e"
   end
 
   depends_on "blast" # for segmasker + dustmasker

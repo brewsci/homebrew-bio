@@ -1,16 +1,17 @@
 class Edirect < Formula
   desc "Access NCBI databases via the command-line"
   homepage "https://www.ncbi.nlm.nih.gov/books/NBK179288/"
-  url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/23.8.20250429/edirect-23.8.20250429.tar.gz"
-  version "23.8"
-  sha256 "7577bc353d098108b9162a65e432226cf1760b8bac40d9ce97c0f09113043796"
+  url "https://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/24.7.20250910/edirect-24.7.20250910.tar.gz"
+  version "24.7"
+  sha256 "cfb67eff0ab1530c8097cddbb98e388b009bb79a117033f9eb79345be48de869"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 arm64_sequoia: "f5159c6010767dbd381c2f4e593203f9e77a6cebade22cca2cf5fb62a3c781cb"
-    sha256 arm64_sonoma:  "4e95e35caca99d06c8d00abeb5b1e0695fdf92da7e46bdac7e5e236856a71392"
-    sha256 ventura:       "c44a929f70186ac74fd9ac280d941a2ab5657c4e9fcd66e807268d3988babf27"
-    sha256 x86_64_linux:  "1d19222885247e1a4e769d2a6d73cb75243d066111d0248fa35aca8ffc4c0fab"
+    rebuild 1
+    sha256 arm64_tahoe:   "fb2f3b8d7803aece8044bed8304651c9b314c4f4200c5a9498540ab4cbc5673b"
+    sha256 arm64_sequoia: "84dcca3919323c011b0ea44e155bcbea5e59e5edcec50af7a9fd3b0b451288f6"
+    sha256 arm64_sonoma:  "d2254dfc4f97020b7f4678e04404b9f54dc714c4afe51ac5d8a8a2c3476b9fc7"
+    sha256 x86_64_linux:  "ec056ea55921bbd9599c150810476b8b5bee71a8386f4bd7b2fb73dc86532c34"
   end
 
   depends_on "cpanminus" => :build
@@ -50,7 +51,7 @@ class Edirect < Formula
     cd "#{libexec}/cmd" do
       system "./build.sh", bin
     end
-    cd "#{libexec}/extern" do
+    cd "#{libexec}/eutils" do
       system "./build.sh", bin
     end
   end

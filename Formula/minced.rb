@@ -3,16 +3,16 @@ class Minced < Formula
   homepage "https://github.com/ctSkennerton/minced"
   url "https://github.com/ctSkennerton/minced/archive/refs/tags/0.4.2.tar.gz"
   sha256 "35b6ee22fe6bdc26a31d0203a7dcc6bd1a19fd6733c60d80ceb44431884af165"
-  license "GPL-3.0"
+  license "GPL-3.0-or-later"
   revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "846f648f698d7291bfa04f480e91e90ddb55cc3467f3be3aff43a07a6015804b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce6f5782aee93c447c47e4cfc5dc4dd1bd9ee4f602bd371b488112a026e9acf4"
-    sha256 cellar: :any_skip_relocation, ventura:       "65d4f82b10786c302348d4f44717c6cc05891d31a5ca67fe731d947609ff1c37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30e4290a7f59a5758b879f293ea0a8477dc0e74957c7ec5653c259c7e2e715bc"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "100aa02c3791505242f4b493b4bda072ba20a1ae6dfba3acce531441c570b2c9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a94873a2763908b1003c82ef6d06a7522e83cde276676fefd7bdf7206d288e49"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1cf4a684b40fa3c1367e813f5d877f04c63fc85d74a6dc99e2edc58e6c4da553"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f658feea8003af87fe6eb0079fe40b7c04f3277f3949d4453cf2b06d9c9ce05"
   end
 
   depends_on "openjdk"

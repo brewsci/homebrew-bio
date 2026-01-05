@@ -11,11 +11,11 @@ class Raster3d < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "5bbf48059173bacd209046b42265d6d7267e585d9b14c39f6b0867ce5fa17341"
-    sha256 cellar: :any,                 arm64_sonoma:  "97a4e64bab4045b7d37a6092fef2cf257d6e73277952991bfee25432b4e8c089"
-    sha256 cellar: :any,                 ventura:       "01f663701f739c316dd2890f340d77a4996e8a251a5d962ae80f93620505d991"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d91079610ab03c38207a7bea4ff9aa83ef806dd7778e0207c81df192112bafae"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "8296a50172ba70bb5834e61ae3cb2baad794305f3d69c86fe118e5bc578840d6"
+    sha256 cellar: :any,                 arm64_sequoia: "cb7b9b704b365dd12bb57b5af3eb8aa6a2bcbcce236b7ada1717b1b0126f66e8"
+    sha256 cellar: :any,                 arm64_sonoma:  "cb6b165b566870226231650f568a9df6775cded65763d4793cdfb1e4aedac1a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3fd21a8e80f504e2ef53188d469962f971850bf92b98220dd96fad90d1357fe"
   end
 
   depends_on "gcc"

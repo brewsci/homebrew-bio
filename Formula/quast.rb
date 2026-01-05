@@ -4,6 +4,7 @@ class Quast < Formula
   # cite Mikheenko_2016: "https://doi.org/10.1093/bioinformatics/btw379"
   # cite Mikheenko_2018: "https://doi.org/10.1093/bioinformatics/bty266"
   include Language::Python::Virtualenv
+
   desc "Quality Assessment Tool for Genome Assemblies"
   homepage "https://quast.sourceforge.io/"
   url "https://github.com/ablab/quast/archive/refs/tags/quast_5.2.0.tar.gz"

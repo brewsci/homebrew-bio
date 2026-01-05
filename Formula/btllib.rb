@@ -1,6 +1,7 @@
 class Btllib < Formula
   # cite Nikolić_2022: "https://doi.org/10.21105/joss.04720"
   include Language::Python::Virtualenv
+
   desc "Bioinformatics Technology Lab common code library in C++ with Python wrappers"
   homepage "https://bcgsc.github.io/btllib/"
   url "https://github.com/bcgsc/btllib.git",

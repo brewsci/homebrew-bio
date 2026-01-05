@@ -8,11 +8,11 @@ class ClustalOmega < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia: "2bbd881809ee624a7b3c5732e5f37b51a2bd4df4c05b7122fb1e88cfd473a021"
-    sha256 cellar: :any,                 arm64_sonoma:  "aba1fc89a09a5c52025542f9a7d15a735c97b9e4739c7770fc2aa7368e446a10"
-    sha256 cellar: :any,                 ventura:       "3d35823db663fc55de82e6a30bd70a149aa35028d71a6ace84363757a3bf2564"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15545ef6477891e944add3ab66efddd3cc26a682797afb4b3524321c1ebee4e0"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_tahoe:   "807996c8f370bd8ef87045cf35baaf78953ae1514b0ddcf468b8401d2baca524"
+    sha256 cellar: :any,                 arm64_sequoia: "fd501728fd220c1aa96a0c62ed8cbf35be06f3508ab1a43eb83cfb0eb1e3ffd0"
+    sha256 cellar: :any,                 arm64_sonoma:  "8b5d20b9292e8243441cb69a89956c8789d0412e360651c24e3f6f22532cd148"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e4f6c9945f35c43213059aa2af5fb96c0ec04e254b75caff9bbdb5226e7d27e"
   end
 
   depends_on "argtable"

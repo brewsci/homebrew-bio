@@ -11,18 +11,18 @@ class Antismash < Formula
 
   desc "Antibiotics & Secondary Metabolite Analysis SHell"
   homepage "https://antismash.secondarymetabolites.org/"
-  url "https://github.com/antismash/antismash/archive/refs/tags/8-0-1.tar.gz"
-  version "8.0.1"
-  sha256 "e008eaeab13a92a657de82d077b2ffd782a97bc334c248ff22618c52f04fbc02"
+  url "https://github.com/antismash/antismash/archive/refs/tags/8-0-4.tar.gz"
+  version "8.0.4"
+  sha256 "ee18976631b1e0112299e865e11e62b2835be2027ac5422b0237465513b74c25"
   license "AGPL-3.0-or-later"
   head "https://github.com/antismash/antismash.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 arm64_sequoia: "25f9fdbab1b7a37df4d4d3a2a8eab7af48cd900a858283603686d08079cf1a08"
-    sha256 arm64_sonoma:  "5f25135a5e0ef3cdbdd6cf6ada0207abefc6ab119a77224a7c23cec4f08f93a7"
-    sha256 ventura:       "e01215bf602325e774c3a013919601ca0adfc99cfdfd67fcebd984a762e81ddc"
-    sha256 x86_64_linux:  "d3780acd16a2983edbc0c26b7fba3d5fe7c6afef9833861703f18991eafc512d"
+    sha256 arm64_tahoe:   "c1beb210f90464b473ea89e8dd5ce7c2bfef3b4de287f2b9cd737ccbded38258"
+    sha256 arm64_sequoia: "2b22366c5771b7ef8103ffd6c0111c92384de93f7e4219946ee15bd939887193"
+    sha256 arm64_sonoma:  "3f933863367fd0851dabae5011134729c4364daa9493630376e420c4332b897e"
+    sha256 x86_64_linux:  "920c148959286d7cee3bbbf54febd1f7aa94505c9f7a1192cea5d86795ec63ec"
   end
 
   depends_on "cmake" => :build # scikit-learn
@@ -38,16 +38,17 @@ class Antismash < Formula
   depends_on "ca-certificates"
   depends_on "diamond"
   depends_on "freetype"
+  depends_on "gcc" # for scipy
   depends_on "hmmer"
   depends_on "jpeg-turbo"
   depends_on "libtiff"
   depends_on "little-cms2"
   depends_on "numpy"
+  depends_on "openblas"
   depends_on "pillow"
   depends_on "prodigal"
   depends_on "python@3.12"
   depends_on "qhull"
-  depends_on "scipy"
 
   on_macos do
     depends_on "libomp"
@@ -185,6 +186,11 @@ class Antismash < Formula
   resource "scikit-learn" do
     url "https://files.pythonhosted.org/packages/92/72/2961b9874a9ddf2b0f95f329d4e67f67c3301c1d88ba5e239ff25661bb85/scikit_learn-1.5.1.tar.gz"
     sha256 "0ea5d40c0e3951df445721927448755d3fe1d80833b0b7308ebff5d2a45e6414"
+  end
+
+  resource "scipy" do
+    url "https://files.pythonhosted.org/packages/0f/37/6964b830433e654ec7485e45a00fc9a27cf868d622838f6b6d9c5ec0d532/scipy-1.15.3.tar.gz"
+    sha256 "eae3cf522bc7df64b42cad3925c876e1b0b6c35c1337c93e12c0f366f55b0eaf"
   end
 
   resource "six" do

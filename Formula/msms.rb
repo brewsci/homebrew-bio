@@ -9,9 +9,10 @@ class Msms < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "6b9491ae3c992e3c1b5ccc4c3012f6709bf6cbf27574f07de371cbe346f1a754"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b9491ae3c992e3c1b5ccc4c3012f6709bf6cbf27574f07de371cbe346f1a754"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6b9491ae3c992e3c1b5ccc4c3012f6709bf6cbf27574f07de371cbe346f1a754"
-    sha256 cellar: :any_skip_relocation, ventura:       "d587bef1034df96c068a2037ef6655fd0524f29666831ed377d0aa21d50dd11a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e17d8e959430ca5b2d0735d4cb4040f3d984fdbff5aa7931af12748c62ae2ea"
   end
 

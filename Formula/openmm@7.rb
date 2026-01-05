@@ -9,10 +9,11 @@ class OpenmmAT7 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sequoia: "b59a34726d70c02d7a9f8b68ad5e2c2de91a03b5c49a5ad723fec39eae62ec8e"
-    sha256 cellar: :any,                 arm64_sonoma:  "783bf372cc91438b4121ced154274d0eabd6ce58b8db9b6d9239173782689c75"
-    sha256 cellar: :any,                 ventura:       "3f6a2a5e07c64ec5ac76a0d12d7d379b92c72278fbf62623c052b97fe0507de3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13e6a8e3feb74ce45619a6d33761f3d8f83d39500495b4b1e9abbc990ba5e14e"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "5336d6351f749ce237fa535a0c53b37eeb3d2dd18bc4608456b18e839241761b"
+    sha256 cellar: :any,                 arm64_sequoia: "10ee9f7a390b3ccba0282629228b8d5cbbfb13fb05399cfd35a74d3379568fb8"
+    sha256 cellar: :any,                 arm64_sonoma:  "e3f00477cb5e57ed51f7571022239573850d66c420300265a553b964b56c622b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbd4409a78c2ff8fade1540114205c06f623c38a7474f61e7303790bb1469b32"
   end
 
   keg_only :versioned_formula
@@ -26,6 +27,7 @@ class OpenmmAT7 < Formula
   depends_on "python-setuptools" => :build
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
+  depends_on "python@3.14" => [:build, :test]
   depends_on "swig" => :build
   depends_on "fftw"
   depends_on "openblas"

@@ -1,20 +1,20 @@
 class CdHit < Formula
   # cite Li_2006: "https://doi.org/10.1093/bioinformatics/btl158"
   desc "Cluster and compare protein or nucleotide sequences"
-  homepage "http://cd-hit.org"
+  homepage "https://sites.google.com/view/cd-hit"
   url "https://github.com/weizhongli/cdhit/archive/refs/tags/V4.8.1.tar.gz"
   sha256 "f8bc3cdd7aebb432fcd35eed0093e7a6413f1e36bbd2a837ebc06e57cdb20b70"
   license "GPL-2.0-or-later"
   revision 2
-  head "https://github.com/weizhongli/cdhit.git"
+  head "https://github.com/weizhongli/cdhit.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "7956683c00ba17abb83c248102faf10bb17d3baf4b6d12b1f573c606324c2eef"
-    sha256 cellar: :any,                 arm64_sonoma:  "33f0107f7883c65ca99bd0b5a4f1ecc9da20c8678fb86a756800ea01133e66ce"
-    sha256 cellar: :any,                 ventura:       "c2afa662f007e4bc4f3c286c12c56b02c70b2ca6f13db174101ea942e0c45c6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92f6b333033936097328fd30711518f67d35f326bf0a158b15b5010bafbf3b72"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "0be33edfd9e6fe0ce4c3758a997d95be804b8d642d0b3244952f7b496b5583b8"
+    sha256 cellar: :any,                 arm64_sequoia: "7943f22b01bcc34a9032acc533e90ea97ef12c027f5ec9bf6d35a3c0194799c4"
+    sha256 cellar: :any,                 arm64_sonoma:  "4efba7d3141dcb7b3c3924b85665b72285d407ff41672e885159cd92e1eeb1d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "155b52979927e27c3d8a6bc594ad1a3c31e951b6beaa547bc24df3d88063404a"
   end
 
   uses_from_macos "zlib"

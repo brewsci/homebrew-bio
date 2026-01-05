@@ -4,17 +4,17 @@ class Openstructure < Formula
   # cite Biasini_2013: "https://doi.org/10.1107/S0907444913007051"
   desc "Modular software framework for molecular modelling and visualization"
   homepage "https://openstructure.org"
-  url "https://git.scicore.unibas.ch/schwede/openstructure/-/archive/2.11.0/openstructure-2.11.0.tar.gz"
-  sha256 "46c91d0499f54818e3039cb6d51c9cc296b7e1a2ff34521dcc207cee18c38b60"
+  url "https://git.scicore.unibas.ch/schwede/openstructure/-/archive/2.11.1/openstructure-2.11.1.tar.gz"
+  sha256 "9ac12e1ce8ec879ec900b69bdbcc71632ed05d8cf8c09d3e847a57814d8a7e7b"
   license "LGPL-3.0-or-later"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 2
-    sha256                               arm64_sequoia: "c76fb41c46e5710de200344f2adc7211425918c81c0d2a2e690691151c67d4f0"
-    sha256                               arm64_sonoma:  "5ed85d924620dd4e8f698d2fe58e050b8bc457de3ebb460772eed117b149b43c"
-    sha256 cellar: :any,                 ventura:       "fdb28171757c277f0dc9739b3f560e13d36b2f2673f3aca62511855874351dde"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bb8f0e16ea37b99037a01e9782fad5a4a3d1b282776eda22535df6b706f80f5"
+    rebuild 1
+    sha256                               arm64_tahoe:   "d08716e424600af01fdc6273615d8e5a30aacf1bf61129ed2116faffc05a93e3"
+    sha256                               arm64_sequoia: "1aa8b89073cede7a6124bbbc3f5e73f944f1d292a9d83c9886b5ddb5f66bba74"
+    sha256                               arm64_sonoma:  "8430a6a9bdf7ee5fcb1e0e450dbe055201b7afc180ad3e7b97481cf20c36d230"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "231ffa04daa93e03e98986649c8e541db0bda1f856fe92ba85cb9d787a42bbcc"
   end
 
   depends_on "cmake" => :build
@@ -35,7 +35,7 @@ class Openstructure < Formula
   depends_on "libtiff"
   depends_on "openblas"
   depends_on "pyqt@5"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "qt@5"
   depends_on "scipy"
   depends_on "sip"
@@ -44,7 +44,6 @@ class Openstructure < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "llvm" => :build # Requires latest libc++ to compile
     depends_on "libpq"
   end
 
@@ -61,7 +60,7 @@ class Openstructure < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install
@@ -69,7 +68,6 @@ class Openstructure < Formula
     py_ver_nodot = py_ver.to_s.delete(".")
 
     if OS.mac?
-      ENV["CXX"] = Formula["llvm"].opt_bin/"clang++"
       ENV.prepend "LDFLAGS", "-undefined dynamic_lookup -Wl,-export_dynamic"
     elsif OS.linux?
       ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
@@ -97,7 +95,11 @@ class Openstructure < Formula
     ]
     venv.pip_install_and_link resource("dockq")
 
-    lib_ext = OS.mac? ? "dylib" : "so"
+    shlib_ext = OS.mac? ? "dylib" : "so"
+
+    # Workaround for stub library libboost_system.so removed from 1.89.0
+    # Refer to https://github.com/boostorg/system/issues/132
+    inreplace "CMakeLists.txt", " system", ""
 
     mkdir "build" do
       cmake_args = std_cmake_args + %W[
@@ -107,7 +109,7 @@ class Openstructure < Formula
         -DCMAKE_PREFIX_PATH=#{HOMEBREW_PREFIX}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
-        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{py_ver_nodot}.#{lib_ext}
+        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{py_ver_nodot}.#{shlib_ext}
         -DENABLE_GUI=OFF
         -DENABLE_GFX=OFF
         -DENABLE_INFO=OFF
@@ -136,11 +138,11 @@ class Openstructure < Formula
         -DPREFIX=#{prefix}
         -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
-        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{py_ver_nodot}.#{lib_ext}
+        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{py_ver_nodot}.#{shlib_ext}
         -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
         -DPARASAIL_INCLUDE_DIR=#{Formula["brewsci/bio/parasail"].opt_include}
-        -DPARASAIL_LIBRARY=#{Formula["brewsci/bio/parasail"].opt_lib}/libparasail.#{lib_ext}
-        -DOPEN_MM_LIBRARY=#{Formula["brewsci/bio/openmm@7"].opt_lib}/libOpenMM.#{lib_ext}
+        -DPARASAIL_LIBRARY=#{Formula["brewsci/bio/parasail"].opt_lib}/libparasail.#{shlib_ext}
+        -DOPEN_MM_LIBRARY=#{Formula["brewsci/bio/openmm@7"].opt_lib}/libOpenMM.#{shlib_ext}
         -DOPEN_MM_INCLUDE_DIR=#{Formula["brewsci/bio/openmm@7"].opt_include}
         -DOPEN_MM_PLUGIN_DIR=#{Formula["brewsci/bio/openmm@7"].opt_lib}/plugins
         -DENABLE_MM=ON

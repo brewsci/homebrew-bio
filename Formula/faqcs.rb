@@ -2,21 +2,42 @@ class Faqcs < Formula
   # cite Lo_2014: "https://doi.org/10.1186/s12859-014-0366-2"
   desc "Quality Control of Next Generation Sequencing Data"
   homepage "https://github.com/LANL-Bioinformatics/FaQCs"
-  url "https://github.com/LANL-Bioinformatics/FaQCs/archive/refs/tags/2.10.tar.gz"
-  sha256 "0458e3500adab5257ba11d1db5402adfc52feb936da39c0a26089cbfc1007832"
+  url "https://github.com/LANL-Bioinformatics/FaQCs/archive/refs/tags/2.12.tar.gz"
+  sha256 "cff6ada0f9ecc5a72fb5c484addd304f35952b1b11424c74016b827d21a07384"
   license "GPL-3.0-or-later"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "258fb769595a3a22700bb2f102092803a419cd723f6ee43874807af3c3a7a42d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "34097faab16f1a1d2fe1f227a39facd5e32e4addf3984624dd50fa95069b30dd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "11064ff6d15390db5f426cb90dbe5b7cec26731bc00eb71987cde9c6893c44ee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30383f8608037b1dfc76e58f7c246579c5a7e98b8b65cee414da999287f393e0"
+    sha256 cellar: :any_skip_relocation, ventura:       "f33a533cdd209e1652c4900ca1a0fbfb2e2985fb5e6b008c4b1cd0d69ea11957"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9bbaf8e07a6a37514afb261141754d093dd2354a752e28b68a679cb19a6fb252"
   end
 
   depends_on "jellyfish"
   depends_on "r"
   uses_from_macos "zlib"
+  on_macos do
+    depends_on "libomp"
+  end
+
+  resource "sse2neon" do
+    url "https://raw.githubusercontent.com/DLTcollab/sse2neon/v1.8.0/sse2neon.h"
+    sha256 "07723c9f9457dd4316f1fde3dd4eb6f31dd67d9955f6c21f4e609ac1698be48a"
+  end
 
   def install
+    inreplace "Makefile" do |s|
+      s.gsub! "gcc", "$(CC)"
+      s.gsub! "g++", "$(CXX)"
+      s.gsub! "-I.", "-I. -I$(PREFIX)/include"
+    end
+    # use sse2neon for ARM
+    if OS.mac? && Hardware::CPU.arm?
+      buildpath.install resource("sse2neon")
+      inreplace "seq_overlap.h", "#include <xmmintrin.h>", "#include \"sse2neon.h\""
+      inreplace "Makefile", "-msse2", ""
+    end
     system "make"
     bin.install "FaQCs"
     bin.install "VTrim"

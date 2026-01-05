@@ -4,22 +4,23 @@ class Meme < Formula
   # cite Bailey_2015: "https://doi.org/10.1093/nar/gkv416"
   desc "Motif-based sequence analysis tools"
   homepage "https://meme-suite.org"
-  url "https://meme-suite.org/meme/meme-software/5.5.7/meme-5.5.7.tar.gz"
-  sha256 "1dca8d0e6d1d36570c1a88ab8dbe7e4b177733fbbeacaa2e8c4674febf57aaf4"
+  url "https://meme-suite.org/meme/meme-software/5.5.8/meme-5.5.8.tar.gz"
+  sha256 "1b4a1753795c09b1d46de6c4a3f04b33c1bcc3e41bbcf4e6e14220e8ad76743b"
   license :cannot_represent
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 arm64_sequoia: "abb99fb2140558b2d5171314f3e491ab1e12dee65952d9384c36f90e65c2ad4a"
-    sha256 arm64_sonoma:  "c4627d12c361852b0f99effd24213e6752d3cb5280e1b3d17c4fc47514fbcefb"
-    sha256 ventura:       "3a0a4b3a24c9b5efd762a662ad3d39e277230f4761bde0346468538e5318fd9b"
-    sha256 x86_64_linux:  "ad991b1efad6a110b553b932219357bd655a6396850ae33f7d6934c0c0c5f8eb"
+    sha256 arm64_tahoe:   "bdfe73064b8bd5baad09e93498dbcb7fbdfa9a19cd25837e83b07d427eb4fb29"
+    sha256 arm64_sequoia: "1ff51eb17a94e46aad51b83b919023873b249b465bc28befcd752d1ee56761a6"
+    sha256 arm64_sonoma:  "c5b6e3ce882ab09998ae2c104a6b4ca34da76710beebc342ebff6b2f4d0d2a07"
+    sha256 x86_64_linux:  "5572caec25810afbe31c3715cc09ab938c1ac08f8230b2f401172134806ebed2"
   end
 
   depends_on "ghostscript"
   depends_on "open-mpi"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
+  uses_from_macos "expat"
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
   uses_from_macos "perl"
@@ -47,7 +48,7 @@ class Meme < Formula
       "--disable-dependency-tracking",
       "--prefix=#{prefix}",
       "--with-mpidir=#{Formula["open-mpi"].opt_prefix}",
-      "--with-python=#{Formula["python@3.13"].opt_bin}/python3",
+      "--with-python=#{Formula["python@3.14"].opt_bin}/python3",
       "--with-gs=#{Formula["ghostscript"].opt_bin}/gs"
 
     system "make", "install"

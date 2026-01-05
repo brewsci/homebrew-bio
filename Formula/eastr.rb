@@ -1,6 +1,7 @@
 class Eastr < Formula
   # cite Shinder_2023: "https://doi.org/10.1038/s41467-023-43017-4"
   include Language::Python::Virtualenv
+
   desc "Emending Alignment of Spliced Transcript Reads"
   homepage "https://github.com/gpertea/gffread/"
   url "https://github.com/ishinder/EASTR.git",

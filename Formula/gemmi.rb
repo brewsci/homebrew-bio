@@ -2,24 +2,23 @@ class Gemmi < Formula
   # cite Wojdyr_2022: "https://doi.org/10.21105/joss.04200"
   desc "Macromolecular crystallography library and utilities"
   homepage "https://project-gemmi.github.io/"
-  url "https://github.com/project-gemmi/gemmi/archive/refs/tags/v0.7.3.tar.gz"
-  sha256 "ed5e1d0665f27d623d877fa36f6c99a5de21310cc8715337ff9f6b545bd2e9d3"
+  url "https://github.com/project-gemmi/gemmi/archive/refs/tags/v0.7.4.tar.gz"
+  sha256 "58ed9023e0f75033ebec1da630461bc6e1af661f29f0c41deed66c20315ebe2a"
   license "MPL-2.0"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "479ef836d8ab2cb2c329caace6cf6ef8c2a5cf37a2f402a422ee6a91c1b3fc29"
-    sha256 cellar: :any,                 arm64_sonoma:  "5c0f6eea0e9d117263214d296ac244a7557415bda142200c10187939ef739e4b"
-    sha256 cellar: :any,                 ventura:       "5a1a37d9eb856694ce2b38ed621d3c95f2020413aea22d70741e29047cb05a43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44044851e8c5d402622d65eed181acdbadb5b78f186bfbc15576a5f4104809af"
+    sha256 cellar: :any,                 arm64_tahoe:   "cafb71e3534243b33bd1f8ce42baf0df5809833e20a10320e9c7ac41ab9fed93"
+    sha256 cellar: :any,                 arm64_sequoia: "8dc6d7669a5ba54a0564942a8c0476bfdb740767922275f8256cf8aa2f1f759f"
+    sha256 cellar: :any,                 arm64_sonoma:  "b9a14602fc2932e4a4fcdd3465b53e555ef3ab419f19db7bd72b4ead4222c697"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ba8433f83975d5c4e1705db56adbecbe7f5e2ec17d7af7b101981e15debc735"
   end
 
   depends_on "cmake" => :build
   depends_on "nanobind" => :build
   depends_on "ninja" => :build
   depends_on "robin-map" => :build
-  depends_on "python@3.13"
+  depends_on "python@3.14"
   depends_on "zlib-ng" # Faster than zlib
 
   def install
@@ -28,7 +27,7 @@ class Gemmi < Formula
     mkdir_p site_packages
 
     ENV.append "CPPFLAGS", "-I#{Formula["nanobind"].opt_lib/"python#{py_ver}/site-packages/nanobind/include"}"
-    ENV.append "CPPFLAGS", "-I#{Formula["python@3.13"].opt_include}/python#{py_ver}"
+    ENV.append "CPPFLAGS", "-I#{Formula["python@3.14"].opt_include}/python#{py_ver}"
 
     system "cmake", "-S", ".", "-B", "build", "-G", "Ninja",
       "-DCMAKE_CXX_FLAGS=#{ENV["CXXFLAGS"]} #{ENV["CPPFLAGS"]}",

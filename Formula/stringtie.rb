@@ -2,17 +2,17 @@ class Stringtie < Formula
   # cite Pertea_2015: "https://doi.org/10.1038/nbt.3122"
   desc "Transcript assembly and quantification for RNA-Seq"
   homepage "https://ccb.jhu.edu/software/stringtie/"
-  url "https://github.com/gpertea/stringtie/archive/refs/tags/v3.0.0.tar.gz"
-  sha256 "c8d66f7c76965df112de4d5fe24f558a63b4e72b3b2286b9172b13aa8f0aa9f5"
+  url "https://github.com/gpertea/stringtie/archive/refs/tags/v3.0.2.tar.gz"
+  sha256 "8fc429eb7437cb62cd95440a3e28529719cc72133592ce8e02f5cf249ce3142e"
   license "MIT"
   head "https://github.com/gpertea/stringtie.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sequoia: "661e3f96ccd8f9383b2bdd05bcd30120718310e65b726de949a1210acda33297"
-    sha256 cellar: :any,                 arm64_sonoma:  "6c96d97546ef63d4f884bad342cb663d2d41258de53e19d16c423821aa8ec5ae"
-    sha256 cellar: :any,                 ventura:       "2cf9df857f2f43108a4936a4913abf8c06b55bfc96632f478f08f268c4a6dbc6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5494f3d9e0e2792332a33a8bc246832bf3078afeea0ce3bf0505e26bddc8e0fe"
+    sha256 cellar: :any,                 arm64_tahoe:   "35824801c9ba307b41e721fc1c8c89d3349937580579c947f5017496a51e5f7d"
+    sha256 cellar: :any,                 arm64_sequoia: "f00184a5fea953f41305a0de880766f4b1476d869b4c8d7d223920b8b881ba68"
+    sha256 cellar: :any,                 arm64_sonoma:  "a11b204ba46798048daf88607cf63e77e9df3a6aa0c36038d1ecacb433f119a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5a1f0cf613c35bb9c9840ab1ba66b1423e2f7e0d9b02ecc877175fa748037bd"
   end
 
   depends_on "htslib"

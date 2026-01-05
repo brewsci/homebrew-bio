@@ -11,11 +11,11 @@ class Apbs < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "8408ebfce6311dbc40f58a5ebd02c7aa200442504cf9015c51eecf8c3ab4bd3f"
-    sha256 cellar: :any,                 arm64_sonoma:  "3f097a8d2074385b336889d0b3ee819cd70082e0f9b0cd67eee21241561f82f3"
-    sha256 cellar: :any,                 ventura:       "7b9256ef575f32030eeb9cda3406b24547b9bac57036382189ab5fbb481f4d52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9db17dcffcce57503753848946b357ad4cf60fef9179de5b32b1e904c0e74e17"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "ff3f63096473f2799ecbaa974d373cff89b8db38a9807ad1d37f9474afe169e7"
+    sha256 cellar: :any,                 arm64_sequoia: "32ca68e41577790b7ee19e2185b2b79a53a1bd01aaf8bbb5633bc3bb45509c89"
+    sha256 cellar: :any,                 arm64_sonoma:  "c7f168390caa4998420b7220bbfc43923497b6a67304d1707740c821054d0b45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8cf00e896bcb7ac179875ce42932c958279856508c0dac5a1b8c804707620610"
   end
 
   depends_on "boost" => :build
@@ -42,8 +42,10 @@ class Apbs < Formula
       args = %w[
         -DBLA_STATIC=OFF
         -DBUILD_SUPERLU=OFF
+        -DBLAS_LIBRARIES=#{Formula["openblas"].opt_lib}/libopenblas.a
+        -DLAPACK_LIBRARIES=#{Formula["openblas"].opt_lib}/libopenblas.a
       ]
-      args << "-DCMAKE_C_FLAGS=-Wno-error=implicit-int" if OS.mac?
+      args << "-DCMAKE_C_FLAGS=-Wno-error=implicit-int"
       system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: prefix/"fetk"), *args
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
@@ -59,7 +61,7 @@ class Apbs < Formula
     # include FETK installed in the prefix directory
     fetk_cmake_prefix = prefix/"fetk/share/fetk/cmake"
     cflags = ["-I#{prefix}/fetk/include"]
-    cflags << "-Wno-error=incompatible-pointer-types" if OS.mac?
+    cflags << "-Wno-error=incompatible-pointer-types"
     # failed if additional modules and python are enabled
     args = std_cmake_args + %W[
       -DHOMEBREW_ALLOW_FETCHCONTENT=OFF

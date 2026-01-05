@@ -20,7 +20,7 @@ class Vt < Formula
   end
 
   depends_on "htslib"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "xz"
 
   uses_from_macos "bzip2"

@@ -8,11 +8,11 @@ class Fasttree < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "8657303011bfb1dc09b7301b70e4311d6da254fc2af121b0fb41b693ae846aa2"
-    sha256 cellar: :any,                 arm64_sonoma:  "2486324b394187f2b0ce9ee5474fabdae07c6ce32402ee64dffddbd60a86f642"
-    sha256 cellar: :any,                 ventura:       "e6a699aa264b419e9225d1ebfe49a6dcc3c15840569a0e1a314b6a2f5b72dad6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed6eccef2017b5f43c78354e94057d69ac828f34c0f7d7abad39803b93341921"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_tahoe:   "8db5f99ad593bd14f297135475ea3b3baed4c530b7e08eafaba18f92227e5f03"
+    sha256 cellar: :any,                 arm64_sequoia: "e7b72181fb4a351615e30074f5cb9669e63f3f7ca9acb96c56916faf5bf96fd8"
+    sha256 cellar: :any,                 arm64_sonoma:  "f414744118247ddc7f688f7b196d19d5e94419d3dbb7002b24a33e6b76a222e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "181f75853b54820f3d25a17d0864d55dc9ff507de408ab86cdc89e0b03b78a6e"
   end
 
   # 26 Aug 2017; Community mostly wants USE_DOUBLE; make it default now

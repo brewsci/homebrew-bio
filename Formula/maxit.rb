@@ -1,16 +1,16 @@
 class Maxit < Formula
   desc "Assists in the processing and curation of macromolecular structure data"
   homepage "https://sw-tools.rcsb.org/apps/MAXIT"
-  url "https://sw-tools.rcsb.org/apps/MAXIT/maxit-v11.300-prod-src.tar.gz"
-  sha256 "04d23c16550690a50d6766c0081b9b8686786000c8430dcf8c25ff7dc1d289a2"
+  url "https://sw-tools.rcsb.org/apps/MAXIT/maxit-v11.400-prod-src.tar.gz"
+  sha256 "2bcb9d7495048546c0159282d4edd6f95b56cdf310d661078b0853157bd24978"
   license :cannot_represent
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 arm64_sequoia: "235d105449dde8db3df3d81311f4eaba17b8bac970c71d2eb00f5af0bca546dd"
-    sha256 arm64_sonoma:  "4e0d922714e1720777b8dcbeba13a8b297b7544ac27869c8f9d149f6e0864bf0"
-    sha256 ventura:       "c4dd7df1de917153487c30043a54681872fda42a6c03e4aefe40ed0173870eb9"
-    sha256 x86_64_linux:  "697d345cf0abb3345619b0c15533e0b14289ea42d31c4b8899fec98595128f38"
+    sha256 arm64_tahoe:   "083bd8e36f0eaf48a61ee6e30e6dd4152be3999cd9833ff4ef7d6b80251d0ad5"
+    sha256 arm64_sequoia: "740d18cd3da8edb011ff11ba9c9ff6a9f4d1ff600f9b520164b70007b4a7b4a2"
+    sha256 arm64_sonoma:  "c443ad29ae7e0720ff4ca2d7e9dbe5dfe7868e64b2188f72cbe9356c5221631c"
+    sha256 x86_64_linux:  "49ad80f097c1e84006aa028d1ae79de91e88a7dadf78cc44a9e07b14be50bb73"
   end
 
   def install
@@ -29,7 +29,7 @@ class Maxit < Formula
 
   test do
     resource "homebrew-testdata" do
-      url "https://files.rcsb.org/download/3QUG.pdb"
+      url "https://files.rcsb.org/download/3qug.pdb"
       sha256 "7b71128bedcd7ebdea42713942a30af590b3cf514726485f9aa27430c3999657"
     end
     resource("homebrew-testdata").stage testpath

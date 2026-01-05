@@ -9,11 +9,11 @@ class Emboss < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 2
-    sha256 arm64_sequoia: "92bbf3dffca883d34308594f0af039ee73df2006efbff35e4d1c4761fbf7f2af"
-    sha256 arm64_sonoma:  "a404717e834c59b5637a73168d67547308ff594571b64a58847b5b7798e1711c"
-    sha256 ventura:       "2c1ce88c647244c24981ef05435b2fdb2dbb327da07b39b3b90fe60f9bfe2cea"
-    sha256 x86_64_linux:  "cac7c05c0fc882c43868ba3d9dc323af1387d68b55e67d63f4af38f8e5a2add0"
+    rebuild 3
+    sha256 arm64_tahoe:   "ae800cbbf7c51b416b043777fab63ed8aa28ad02307df26047b6efd963b5a9c1"
+    sha256 arm64_sequoia: "d19cda26e755bb5d29e0cc57c7f55c36e9a0677aea6d97f7d7b3aea2a3a44da9"
+    sha256 arm64_sonoma:  "d583bd3056ea3184c96f1768e831da7e4422b8bdbe9df2353e4093589597fec9"
+    sha256 x86_64_linux:  "1122f6d0d8c03f074fb8d795066e1af9a0499c678090046ec9b844eff616be30"
   end
 
   depends_on "autoconf" => :build

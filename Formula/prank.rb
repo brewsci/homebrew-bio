@@ -8,9 +8,11 @@ class Prank < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "ecf7c563b9f65a477472da84b4466984758240aabf5698071fa8f6b85cf44e23"
-    sha256 cellar: :any_skip_relocation, ventura:      "4410e054413713681810b06e68d2dd9fac05a8b0b715869262c4d08cca38d9b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "bfa66458bfb90ac261177a5c3007daac9f53701f86c48df4876e4c2400d110a6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "0e9dd55908217cf7c5d264f0e4f8b3a3c7a6dec25b5b845e5f776434e4be9ff3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "41b3b4f6a940f8e1f66131e618661dfb46ed9220ec0389f6d56c1fc1a2163383"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26121d8553e01fe2f83938ca16d099ee36888e91ed58c294ce326df266ca1239"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b050fe8cd099253548161a7fc0307a84ac379f6b1fcbb64c9d042e306ad7b7eb"
   end
 
   depends_on "brewsci/bio/exonerate"

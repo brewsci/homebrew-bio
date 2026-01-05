@@ -1,6 +1,7 @@
 class Portcullis < Formula
-  include Language::Python::Virtualenv
   # cite Mapleson_2017: "https://www.biorxiv.org/content/early/2017/11/10/217620"
+  include Language::Python::Virtualenv
+
   desc "Genuine splice junction prediction from BAM files"
   homepage "https://github.com/maplesond/portcullis"
   url "https://github.com/maplesond/portcullis/archive/refs/tags/Release-1.1.0.tar.gz"

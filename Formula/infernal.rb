@@ -7,11 +7,11 @@ class Infernal < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7d2aa2c65ee7b9cc98226bae551897406d34abf9739aec2e36e1e17b0ca04798"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "55dd988f9ce52f02fa375625ad107e80ded9e9798b709e65b7eaf768200c4b64"
-    sha256 cellar: :any_skip_relocation, ventura:       "928a3daa94efa21d8bdebe5828037c37cae97c7e46db317088b4d4f56c1123ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32f95d029d98bebb284149240f6437ae08030e34ffabcb0b8969bdf4fe287e9a"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1c1bbc13442b5f7ae9908c4f274f67b6b0a38bb3b5b0be5447b9bad9ce5c7716"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85b45e096ad08fbcd16007d55e5f55249efa2d5d8d0e5d715756e9e18e66ff94"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5411e72d195993f3ed9d00dc6a4cabfaee0272d25faa1c163e9ca10398ef164f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9351ccc8fbfbd703dfde77bb4ce2350b1ec94f74dc8c489ab02d12eb753a4fb"
   end
 
   def install

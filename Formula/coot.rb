@@ -1,17 +1,17 @@
 class Coot < Formula
   desc "Crystallographic Object-Oriented Toolkit"
   homepage "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/"
-  url "https://github.com/pemsley/coot/archive/refs/tags/Release-1.1.17-v2.tar.gz"
-  sha256 "841251b43c258a5653e3597ff7b97b7059fbd15e9205080b5739e22e768af97f"
+  url "https://github.com/pemsley/coot/archive/refs/tags/Release-1.1.20.tar.gz"
+  sha256 "3bac75e3aaa7991ff2c24539cc594f1e1c205fe1bd7aa256e4f4d13120fdd04f"
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only", "GPL-2.0-or-later"]
   head "https://github.com/pemsley/coot.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 arm64_sequoia: "399b8061ce4510efbaf6ec771423ae1d7df5b4febea8c2c35ac225641ab232dd"
-    sha256 arm64_sonoma:  "6e861e0761191e6aad32afff5692b26318a75fb252ac5e7bd88783f3b56a05d4"
-    sha256 ventura:       "766aaae9f3a21623475731f8846d06578a76ab2c24a6b51b4d855c6b7047a6aa"
-    sha256 x86_64_linux:  "8e27e0cdfa813bad7a8841819196cb39eb08b87180d7c4e64dc3a86dc93f9f25"
+    sha256 arm64_tahoe:   "5a0a765feb0a859d2114ca798aee086c2f3df10e0865e65bcacb5c52b6988945"
+    sha256 arm64_sequoia: "7ade32725c80627bfc4591a8233e7277a4052570eb9d0d4b75629e513d35a48c"
+    sha256 arm64_sonoma:  "49fbdcf0825cf6e1433ca95945c5f08752d094fb149e6e894accf2fda6fcbe87"
+    sha256 x86_64_linux:  "ab65a8dcdd1e811ce0f99d9349d33a663197d2b735a6b1ca93beee787cdcf54f"
   end
 
   depends_on "autoconf" => :build
@@ -27,7 +27,6 @@ class Coot < Formula
   depends_on "brewsci/bio/gemmi"
   depends_on "brewsci/bio/libccp4"
   depends_on "brewsci/bio/mmdb2"
-  depends_on "brewsci/bio/pygobject3@3.50"
   depends_on "brewsci/bio/raster3d"
   depends_on "brewsci/bio/ssm"
   depends_on "cairo"
@@ -43,13 +42,17 @@ class Coot < Formula
   depends_on "gtk4"
   depends_on "harfbuzz"
   depends_on "libepoxy"
+  depends_on "libogg"
   depends_on "libpng"
   depends_on "librsvg"
+  depends_on "libvorbis"
   depends_on "numpy"
+  depends_on "openal-soft"
   depends_on "openblas"
   depends_on "pango"
   depends_on "py3cairo"
-  depends_on "python@3.13"
+  depends_on "pygobject3"
+  depends_on "python@3.14"
   depends_on "rdkit"
   depends_on "sqlite"
 
@@ -72,10 +75,23 @@ class Coot < Formula
   end
 
   def python3
-    "python3.13"
+    "python3.14"
   end
 
   def install
+    # fix issue of https://github.com/pemsley/coot/issues/266
+    # include <iomanip> is needed for std::setw on Linux
+    inreplace "src/molecule-class-info.h",
+              "#include \"compat/coot-sysdep.h\"",
+              "#include \"compat/coot-sysdep.h\"\n#include <iomanip>\n#include <cmath>"
+    # fix error of molecule-class-info-backup.cc:104:70:
+    # error: 'fabsf' is not a member of 'std'; did you mean 'fabs'?
+    inreplace "src/molecule-class-info-backup.cc",
+              "#include <utility>",
+              "#include <utility>\n#include <cmath>"
+    inreplace "src/molecule-class-info-backup.cc",
+              "fabsf",
+              "fabs"
     ENV.cxx11
     ENV.libcxx
     inreplace "autogen.sh", "libtool", "glibtool"
@@ -90,15 +106,15 @@ class Coot < Formula
     (lib/"python#{xy}/site-packages/homebrew-coot.pth").write "#{libexec/"lib/python#{xy}/site-packages"}\n"
     ENV.prepend_path "PYTHONPATH", Formula["numpy"].opt_prefix/Language::Python.site_packages(python3)
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
-    # Tweak to include pygobject3@3.50
-    ENV.prepend_path "PYTHONPATH",
-                     Formula["brewsci/bio/pygobject3@3.50"].opt_prefix/Language::Python.site_packages(python3)
-    ENV.prepend_path "PKG_CONFIG_PATH",
-                     Formula["brewsci/bio/pygobject3@3.50"].opt_lib/"pkgconfig"
+    # # Tweak to include pygobject3@3.50
+    # ENV.prepend_path "PYTHONPATH",
+    #                  Formula["brewsci/bio/pygobject3@3.50"].opt_prefix/Language::Python.site_packages(python3)
+    # ENV.prepend_path "PKG_CONFIG_PATH",
+    #                  Formula["brewsci/bio/pygobject3@3.50"].opt_lib/"pkgconfig"
 
     # Set Boost, RDKit, and FFTW2 root
     boost_prefix = Formula["boost"].opt_prefix
-    boost_python_lib = "boost_python313"
+    boost_python_lib = "boost_python314"
     rdkit_prefix = Formula["rdkit"].opt_prefix
     fftw2_prefix = Formula["clipper4coot"].opt_prefix/"fftw2"
 
@@ -113,6 +129,7 @@ class Coot < Formula
       --with-fftw-prefix=#{fftw2_prefix}
       --with-backward
       --with-libdw
+      --with-sound
       BOOST_PYTHON_LIB=#{boost_python_lib}
       PYTHON=#{python3}
     ]
