@@ -48,17 +48,23 @@ class Reduce < Formula
     chmod 0644, site_packages/"reduce.py"
   end
 
+  def post_install
+    # Remove mislocated reduce_wwPDB_het_dict.txt
+    # TODO: Remove this block after upstream PR (https://github.com/rlabduke/reduce/pull/66) is merged
+    rm "#{prefix}/reduce_wwPDB_het_dict.txt"
+  end
+
   test do
     resource "homebrew-testdata" do
       url "https://files.rcsb.org/download/3QUG.pdb"
       sha256 "7b71128bedcd7ebdea42713942a30af590b3cf514726485f9aa27430c3999657"
     end
 
-    output = shell_output(bin/"reduce -Version 2>&1", 2)
+    output = shell_output("#{bin}/reduce -Version 2>&1", 2)
     assert_match "reduce.4.15.250408", output
     resource("homebrew-testdata").stage testpath
-    system("#{bin}/reduce -NOFLIP -Quiet 3qug.pdb > 3qug_h.pdb")
-    assert_match "add=1978, rem=0, adj=70", File.read("3qug_h.pdb")
+    system("#{bin}/reduce -NOFLIP -Quiet 3QUG.pdb > 3QUG_H.pdb")
+    assert_match "add=1978, rem=0, adj=70", File.read("3QUG_H.pdb")
 
     # Check if the Python module can be imported
     system "python3", "-c", "import reduce"
