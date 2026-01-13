@@ -1,5 +1,6 @@
 {
   "abricate": "homebrew/core",
+  "any2fasta": "homebrew/core",
   "bbtools": "homebrew/core",
   "beagle": "homebrew/core",
   "bioperl": "homebrew/core",
