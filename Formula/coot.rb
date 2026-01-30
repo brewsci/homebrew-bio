@@ -18,7 +18,7 @@ class Coot < Formula
   depends_on "automake" => :build
   depends_on "glm" => :build
   depends_on "libtool" => :build
-  depends_on "pkg-config" => :build
+  depends_on "pkgconf" => :build
   depends_on "swig" => :build
   depends_on "adwaita-icon-theme"
   depends_on "boost"
