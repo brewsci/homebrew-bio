@@ -54,8 +54,8 @@ class Dssp < Formula
   end
 
   resource "libmcfp" do
-    url "https://github.com/mhekkel/libmcfp/archive/refs/tags/v2.0.0.tar.gz"
-    sha256 "696d1fc1b8280ccc51af311458596220a20865b5fd1402a0f719120b5b4fd2a2"
+    url "https://github.com/mhekkel/libmcfp/archive/refs/tags/v1.4.2.tar.gz"
+    sha256 "dcdf3e81601081b2a9e2f2e1bb1ee2a8545190358d5d9bec9158ad70f5ca355e"
   end
 
   resource "homebrew-testdata" do
