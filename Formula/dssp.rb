@@ -80,7 +80,7 @@ class Dssp < Formula
 
     resource("libmcfp").stage do
       # libmcfp should be installed in 'prefix' directory since the path of dic files are always required.
-      if OS.mac? && DevelopmentTools.clang_build_version <= 1500
+      if OS.mac? && DevelopmentTools.clang_build_version <= 1600
         inreplace "CMakeLists.txt" do |s|
           s.gsub! "if(NOT STD_CHARCONV_COMPILING)\n\tmessage",
                   "find_package(FastFloat 8.0 QUIET CONFIG)\nif(STD_CHARCONV_COMPILING)\n\tmessage"
@@ -103,6 +103,11 @@ class Dssp < Formula
               "Boost::python ${Python_LIBRARIES}",
               "Boost::python -Wl,-undefined,dynamic_lookup,-rpath,#{prefix/Language::Python.site_packages(python3)/"dssp"}"
 
+    if OS.mac? && DevelopmentTools.clang_build_version <= 1600
+      inreplace "CMakeLists.txt",
+                "find_package(mrc QUIET)",
+                "find_package(mrc QUIET)\nfind_package(FastFloat 8.0 QUIET CONFIG)"
+    end
     system "cmake", "-S", ".", "-B", "build",
                     "-Dcifpp_DIR=#{prefix/"libcifpp/lib/cmake/cifpp"}",
                     "-Dmcfp_DIR=#{prefix/"libmcfp/lib/cmake/mcfp"}",
