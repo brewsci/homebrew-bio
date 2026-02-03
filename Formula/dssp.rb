@@ -3,8 +3,8 @@ class Dssp < Formula
   # cite Kabsch_1983: "https://doi.org/10.1002/bip.360221211"
   desc "Assign secondary structure to proteins"
   homepage "https://github.com/PDB-REDO/dssp"
-  url "https://github.com/PDB-REDO/dssp/archive/refs/tags/v4.5.6.tar.gz"
-  sha256 "940062a5c97be30546af045020761dbba68d4ca64cbaf2343b3765c0bf1f10b3"
+  url "https://github.com/PDB-REDO/dssp/archive/refs/tags/v4.5.8.tar.gz"
+  sha256 "634bf8d8dd96954bd680da90f3dcb66b87189c13b12b52b61de8af9d597b74ac"
   license "BSD-2-Clause"
   head "https://github.com/PDB-REDO/dssp.git", branch: "trunk"
 
@@ -48,13 +48,13 @@ class Dssp < Formula
   end
 
   resource "libcifpp" do
-    url "https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v9.0.3.tar.gz"
-    sha256 "f4f359d77c4e29b95a7d3a85658c783022def8f70a9bb94a9da47111f45f5edd"
+    url "https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v9.0.6.tar.gz"
+    sha256 "e6263a63404762671d6875de385e0c7ad869b0fe3fae41808003e00c94e7ed8c"
   end
 
   resource "libmcfp" do
-    url "https://github.com/mhekkel/libmcfp/archive/refs/tags/v1.4.2.tar.gz"
-    sha256 "dcdf3e81601081b2a9e2f2e1bb1ee2a8545190358d5d9bec9158ad70f5ca355e"
+    url "https://github.com/mhekkel/libmcfp/archive/refs/tags/v2.0.0.tar.gz"
+    sha256 "696d1fc1b8280ccc51af311458596220a20865b5fd1402a0f719120b5b4fd2a2"
   end
 
   resource "homebrew-testdata" do
@@ -90,9 +90,9 @@ class Dssp < Formula
       'LIBRARY DESTINATION "${Python_SITELIB}"',
       "LIBRARY DESTINATION #{prefix/Language::Python.site_packages(python3)}"
 
-    dssp_rpath = rpath(source: prefix/Language::Python.site_packages(python3)/"dssp")
-    inreplace "python-module/CMakeLists.txt", "${Python_LIBRARIES}",
-                                              "-Wl,-undefined,dynamic_lookup,-rpath,#{dssp_rpath}"
+    inreplace "python-module/CMakeLists.txt",
+              "Boost::python ${Python_LIBRARIES}",
+              "Boost::python -Wl,-undefined,dynamic_lookup,-rpath,#{prefix/Language::Python.site_packages(python3)/"dssp"}"
 
     system "cmake", "-S", ".", "-B", "build",
                     "-Dcifpp_DIR=#{prefix/"libcifpp/lib/cmake/cifpp"}",
