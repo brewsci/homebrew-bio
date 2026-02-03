@@ -80,7 +80,7 @@ class Dssp < Formula
 
     resource("libmcfp").stage do
       # libmcfp should be installed in 'prefix' directory since the path of dic files are always required.
-      if OS.mac? and DevelopmentTools.clang_build_version <= 1500
+      if OS.mac? && DevelopmentTools.clang_build_version <= 1500
         inreplace "CMakeLists.txt",
                   "if(NOT STD_CHARCONV_COMPILING)\n\tmessage",
                   "if(STD_CHARCONV_COMPILING)\n\tmessage"
