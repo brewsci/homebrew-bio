@@ -81,9 +81,11 @@ class Dssp < Formula
     resource("libmcfp").stage do
       # libmcfp should be installed in 'prefix' directory since the path of dic files are always required.
       if OS.mac? && DevelopmentTools.clang_build_version <= 1500
-        inreplace "CMakeLists.txt",
-                  "if(NOT STD_CHARCONV_COMPILING)\n\tmessage",
-                  "if(STD_CHARCONV_COMPILING)\n\tmessage"
+        inreplace "CMakeLists.txt" do |s|
+          s.gsub! "if(NOT STD_CHARCONV_COMPILING)\n\tmessage",
+                  "find_package(FastFloat 8.0 QUIET CONFIG)\nif(STD_CHARCONV_COMPILING)\n\tmessage"
+          s.gsub! "PRIVATE $<TARGET_PROPERTY:FastFloat::fast_float,INTERFACE_INCLUDE_DIRECTORIES>",
+                  "PRIVATE FastFloat::fast_float"
       end
       system "cmake", "-S", ".", "-B", "build",
              "-DCMAKE_CXX_STANDARD=20",
