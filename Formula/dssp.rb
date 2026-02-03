@@ -86,6 +86,7 @@ class Dssp < Formula
                   "find_package(FastFloat 8.0 QUIET CONFIG)\nif(STD_CHARCONV_COMPILING)\n\tmessage"
           s.gsub! "PRIVATE $<TARGET_PROPERTY:FastFloat::fast_float,INTERFACE_INCLUDE_DIRECTORIES>",
                   "PRIVATE FastFloat::fast_float"
+        end
       end
       system "cmake", "-S", ".", "-B", "build",
              "-DCMAKE_CXX_STANDARD=20",
