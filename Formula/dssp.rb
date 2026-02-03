@@ -19,6 +19,7 @@ class Dssp < Formula
 
   depends_on "cmake" => :build
   depends_on "eigen" => :build
+  depends_on "fast_float" => :build
   depends_on "pkgconf" => :build
   depends_on "boost"
   depends_on "boost-python3"
