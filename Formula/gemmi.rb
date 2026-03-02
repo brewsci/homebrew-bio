@@ -2,8 +2,8 @@ class Gemmi < Formula
   # cite Wojdyr_2022: "https://doi.org/10.21105/joss.04200"
   desc "Macromolecular crystallography library and utilities"
   homepage "https://project-gemmi.github.io/"
-  url "https://github.com/project-gemmi/gemmi/archive/refs/tags/v0.7.4.tar.gz"
-  sha256 "58ed9023e0f75033ebec1da630461bc6e1af661f29f0c41deed66c20315ebe2a"
+  url "https://github.com/project-gemmi/gemmi/archive/refs/tags/v0.7.5.tar.gz"
+  sha256 "9e2a8a51e62c69bf43f62aadf527ca4312860de8a36c12a8747d3e8ae556f0b3"
   license "MPL-2.0"
 
   bottle do
