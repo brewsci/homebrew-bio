@@ -95,8 +95,8 @@ class Coot < Formula
     end
     inreplace "src/coot.in",
               "exec_prefix=",
-              "export GI_TYPELIB_PATH=#{HOMEBREW_PREFIX}/lib/girepository-1.0${GI_TYPELIB_PATH:+:$GI_TYPELIB_PATH}\n" \
-              "exec_prefix="
+              "export GI_TYPELIB_PATH=#{HOMEBREW_PREFIX}/lib/girepository-1.0${GI_TYPELIB_PATH:+:$GI_TYPELIB_PATH}" \
+              "\nexec_prefix="
     ENV.cxx11
     ENV.libcxx
     inreplace "autogen.sh", "libtool", "glibtool"
