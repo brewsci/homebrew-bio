@@ -86,13 +86,16 @@ class Coot < Formula
               "fabs"
     # fix issue of https://github.com/pemsley/coot/issues/335
     # include DYLD_FALLBACK_LIBRARY_PATH and GI_TYPELIB_PATH
-    inreplace "src/coot.in",
-              "data/syminfo.lib",
-              "data/syminfo.lib\nexport DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/opt/glib/lib:" \
-              "/opt/homebrew/lib${DYLD_FALLBACK_LIBRARY_PATH:+:$DYLD_FALLBACK_LIBRARY_PATH}"
+    glib_opt_lib = Formula["glib"].opt_lib
+    if OS.mac?
+      inreplace "src/coot.in",
+                "data/syminfo.lib",
+                "data/syminfo.lib\nexport DYLD_FALLBACK_LIBRARY_PATH=#{glib_opt_lib}:#{HOMEBREW_PREFIX}/lib" \
+                "${DYLD_FALLBACK_LIBRARY_PATH:+:$DYLD_FALLBACK_LIBRARY_PATH}"
+    end
     inreplace "src/coot.in",
               "exec_prefix=",
-              "export GI_TYPELIB_PATH=/opt/homebrew/lib/girepository-1.0${GI_TYPELIB_PATH:+:$GI_TYPELIB_PATH}\n" \
+              "export GI_TYPELIB_PATH=#{HOMEBREW_PREFIX}/lib/girepository-1.0${GI_TYPELIB_PATH:+:$GI_TYPELIB_PATH}\n" \
               "exec_prefix="
     ENV.cxx11
     ENV.libcxx
