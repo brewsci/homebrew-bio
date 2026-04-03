@@ -47,14 +47,13 @@ class Coot < Formula
   depends_on "python@3.14"
   depends_on "rdkit"
   depends_on "sqlite"
+  depends_on "zlib-ng-compat"
 
   uses_from_macos "bzip2"
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   on_linux do
     depends_on "elfutils"
-    depends_on "zlib-ng-compat"
   end
 
   resource "monomers" do
