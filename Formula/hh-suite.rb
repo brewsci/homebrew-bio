@@ -8,6 +8,14 @@ class HhSuite < Formula
   revision 5
   head "https://github.com/soedinglab/hh-suite.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any,                 arm64_tahoe:   "3e09eb1a51afe2768103bb23034517fd69b1b64e39cd3dddb42e88c6d64f3f91"
+    sha256 cellar: :any,                 arm64_sequoia: "67926e0b17f68998beb68c3cc327431a8cd61b2635651a1114590480cebb26cd"
+    sha256 cellar: :any,                 arm64_sonoma:  "9a586865e33158ab6ec86916a577abc3a4dbafbeb6e73f6e270581b84675b232"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "980a182e49b239fe39c8b20423a82fc898c61ad53ce2d3895869f631d3d95d6c"
+  end
+
   depends_on "cmake" => :build
   depends_on "libomp"
   depends_on "open-mpi"
