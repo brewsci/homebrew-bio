@@ -100,7 +100,7 @@ class Coot < Formula
     # fix issue of src/cc-interface-map-utils.cc
     inreplace "src/cc-interface-map-utils.cc",
               "new em_placement_data_t(em_placement_output_file_name);",
-              "new em_placement_data_t{em_placement_output_file_name, 0};
+              "new em_placement_data_t{em_placement_output_file_name, 0};"
     ENV.cxx11
     ENV.libcxx
     inreplace "autogen.sh", "libtool", "glibtool"
