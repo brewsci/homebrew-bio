@@ -6,11 +6,6 @@ class Coot < Formula
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only", "GPL-2.0-or-later"]
   head "https://github.com/pemsley/coot.git", branch: "main"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 arm64_tahoe: "8eae32dcd7081b1ffe69896168f84e7b7c42583facd6bc7bd0be02e7e5cd5415"
-  end
-
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "glm" => :build
@@ -59,6 +54,7 @@ class Coot < Formula
 
   on_linux do
     depends_on "elfutils"
+    depends_on "zlib-ng-compat"
   end
 
   resource "monomers" do
