@@ -16,6 +16,7 @@ class HhSuite < Formula
 
   def install
     args = *std_cmake_args << "-DCHECK_MPI=1"
+    args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
     args << if Hardware::CPU.arm?
       "-DHAVE_ARM8=1"
     else
