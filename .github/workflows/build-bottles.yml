@@ -58,7 +58,7 @@ jobs:
     needs: build-bottles
     steps:
       - name: Merge Artifacts
-        uses: actions/upload-artifact/merge@v4
+        uses: actions/upload-artifact/merge@v6
         with:
           name: all-bottles
           pattern: bottles-*
