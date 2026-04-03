@@ -6,7 +6,7 @@ class HhSuite < Formula
   sha256 "dd67f7f3bf601e48c9c0bc4cf1fbe3b946f787a808bde765e9436a48d27b0964"
   license "GPL-3.0-or-later"
   revision 5
-  head "https://github.com/soedinglab/hh-suite.git"
+  head "https://github.com/soedinglab/hh-suite.git", branch: "master"
 
   depends_on "cmake" => :build
   depends_on "libomp"
