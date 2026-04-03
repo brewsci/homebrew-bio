@@ -97,6 +97,10 @@ class Coot < Formula
               "exec_prefix=",
               "export GI_TYPELIB_PATH=#{HOMEBREW_PREFIX}/lib/girepository-1.0${GI_TYPELIB_PATH:+:$GI_TYPELIB_PATH}" \
               "\nexec_prefix="
+    # fix issue of src/cc-interface-map-utils.cc
+    inreplace "src/cc-interface-map-utils.cc",
+              "new em_placement_data_t(em_placement_output_file_name);",
+              "new em_placement_data_t{em_placement_output_file_name, 0};
     ENV.cxx11
     ENV.libcxx
     inreplace "autogen.sh", "libtool", "glibtool"
