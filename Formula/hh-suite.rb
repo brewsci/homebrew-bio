@@ -5,17 +5,17 @@ class HhSuite < Formula
   url "https://github.com/soedinglab/hh-suite/archive/refs/tags/v3.3.0.tar.gz"
   sha256 "dd67f7f3bf601e48c9c0bc4cf1fbe3b946f787a808bde765e9436a48d27b0964"
   license "GPL-3.0-or-later"
-  revision 4
-  head "https://github.com/soedinglab/hh-suite.git"
+  revision 5
+  head "https://github.com/soedinglab/hh-suite.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "5105b1d2ae59850785df08947a53d046386b547ba059210216f4b1b810db4ca6"
-    sha256 cellar: :any,                 arm64_sonoma:  "008fc503311e698ab01bada3c3860df3580aee62f6c842b1af46c476874e78ca"
-    sha256 cellar: :any,                 ventura:       "89317d52604182d57bbfc52e121e10ae7d339624da98dc0f6fbaf153bb1e7f9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "574fe5c131734b50bb2298319935362e6c2dfba1e04fba728e23a09d0ac8fc7f"
+    sha256 cellar: :any,                 arm64_tahoe:   "3e09eb1a51afe2768103bb23034517fd69b1b64e39cd3dddb42e88c6d64f3f91"
+    sha256 cellar: :any,                 arm64_sequoia: "67926e0b17f68998beb68c3cc327431a8cd61b2635651a1114590480cebb26cd"
+    sha256 cellar: :any,                 arm64_sonoma:  "9a586865e33158ab6ec86916a577abc3a4dbafbeb6e73f6e270581b84675b232"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "980a182e49b239fe39c8b20423a82fc898c61ad53ce2d3895869f631d3d95d6c"
   end
+
   depends_on "cmake" => :build
   depends_on "libomp"
   depends_on "open-mpi"
@@ -24,6 +24,7 @@ class HhSuite < Formula
 
   def install
     args = *std_cmake_args << "-DCHECK_MPI=1"
+    args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
     args << if Hardware::CPU.arm?
       "-DHAVE_ARM8=1"
     else
