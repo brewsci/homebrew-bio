@@ -44,6 +44,7 @@ class Coot < Formula
   depends_on "libpng"
   depends_on "librsvg"
   depends_on "libvorbis"
+  depends_on "netcdf"
   depends_on "numpy"
   depends_on "openal-soft"
   depends_on "openblas"
@@ -138,6 +139,7 @@ class Coot < Formula
       --with-fftw-prefix=#{fftw2_prefix}
       --with-backward
       --with-libdw
+      --with-netcdf
       --with-sound
       BOOST_PYTHON_LIB=#{boost_python_lib}
       PYTHON=#{python3}
