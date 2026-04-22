@@ -1,10 +1,10 @@
 class Paml < Formula
   # cite Yang_2007: "https://doi.org/10.1093/molbev/msm088"
   desc "Phylogenetic analysis by maximum likelihood"
-  homepage "http://abacus.gene.ucl.ac.uk/software/paml.html"
-  url "http://abacus.gene.ucl.ac.uk/software/paml4.9j.tgz"
-  version "4.9j"
-  sha256 "9b00fbd37fe825129a160599372ba4c8e88b22d14c0388044a711fb281a0191d"
+  homepage "https://www.ucl.ac.uk/life-sciences/yang-lab/resources"
+  url "https://github.com/abacus-gene/paml/archive/refs/heads/master.tar.gz"
+  version "4.10.10"
+  sha256 "d54899c0195034857a87fbd5ff61a6986ecaf6eada85079c3e9bf9442675bf0b"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
