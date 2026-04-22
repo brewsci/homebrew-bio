@@ -8,8 +8,10 @@ class Paml < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "f38a4f56221825dfd56ee64855fc3731c97e38347b3aabafee63541c1926240e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0bb90b5cac3f74c0d03d26fbde658dcd2edca8ea8847662da0e682c56c028cf5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "5a0b7ce7de714bf0327156f434d03f53125b5b87d12305af109c4266a4a184aa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b9b25b4a59f163e6ef68bcdcb98ca3b9988bf6fd9c0f9bfa3c2eb5a5060b0f4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "715940b45cb781b1d61cb55187b40fcc0656cd841418f41053ddd89ad2308a5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "abae1aea01fae2aa93a27ec992147bad1eba055f25a4f115ce323a054ec901a3"
   end
 
   def install
