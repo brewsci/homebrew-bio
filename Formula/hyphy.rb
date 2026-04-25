@@ -27,7 +27,7 @@ class Hyphy < Formula
   end
 
   on_linux do
-    depends_on "zlib-ng-compats"
+    depends_on "zlib-ng-compat"
   end
 
   def install
