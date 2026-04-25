@@ -26,6 +26,10 @@ class Hyphy < Formula
     depends_on "libomp"
   end
 
+  on_linux do
+    depends_on "zlib-ng-compats"
+  end
+
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     cd "build" do
