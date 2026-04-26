@@ -9,10 +9,10 @@ class Hyphy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 arm64_sequoia: "1b5deaa189abbf2639ed0df461e11fb902e76a80e9979ab81ca058cde44f377b"
-    sha256 arm64_sonoma:  "3b454962b4ab62b5bef19ef7e624fdc476c8090bf247390b0fa2018bc45b0145"
-    sha256 ventura:       "cb2dcdf444f6ec558b2933e2a62ba810f7dda866e322aaab91113ffffb5c64bf"
-    sha256 x86_64_linux:  "9129ef53acd4c17a84360b4bbba07d84124f76604f97b664b274b61e8fccc308"
+    sha256 arm64_tahoe:   "bf29b61c2681dff726f2b69babc9a86d5f53c042a6f2b347c84842e85a05437c"
+    sha256 arm64_sequoia: "461b1baa21e25bc16f2a36e677bcbd0996dcde9c618897127250ba3aa5fafaa1"
+    sha256 arm64_sonoma:  "0e3316228d6f115e19122d9889646c32f2cdd5a4db16c8e65e9674d09840f650"
+    sha256 x86_64_linux:  "9e0f6925c42f4c6fe850fbfef6d53616d822b88c288b59b2c1546bc41ba0086f"
   end
 
   depends_on "cmake" => :build
