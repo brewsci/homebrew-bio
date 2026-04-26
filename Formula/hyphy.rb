@@ -2,8 +2,8 @@ class Hyphy < Formula
   # cite Pond_2019: "https://doi.org/10.1093/molbev/msz197"
   desc "Hypothesis testing with phylogenies"
   homepage "https://www.hyphy.org/"
-  url "https://github.com/veg/hyphy/archive/refs/tags/2.5.78.tar.gz"
-  sha256 "06bef149fbcdfd1692f6c01e1246e99e120513a041126c5bbc4c46960a18d141"
+  url "https://github.com/veg/hyphy/archive/refs/tags/2.5.97.tar.gz"
+  sha256 "88461597630b9cbc9ec7c0ebbd3cd5c7035d00fec5394d02821bfb2b4b4b087e"
   license "MIT"
   head "https://github.com/veg/hyphy.git", branch: "master"
 
@@ -24,6 +24,10 @@ class Hyphy < Formula
 
   on_macos do
     depends_on "libomp"
+  end
+
+  on_linux do
+    depends_on "zlib-ng-compat"
   end
 
   def install
