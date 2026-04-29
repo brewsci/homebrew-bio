@@ -21,7 +21,7 @@ class Mmdb2 < Formula
       # Fix error: unknown type name 'size_t';
       # https://github.com/brewsci/homebrew-bio/issues/2181
       inreplace "mmdb2/mmdb_machine_.h", "#include \"mmdb_mattype.h\"",
-                "#include <cstddef>\n#include \"mmdb_mattype.h\""
+                "#include <stddef.h>\n#include \"mmdb_mattype.h\""
     end
     args = %W[
       --prefix=#{prefix}
