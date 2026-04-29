@@ -17,6 +17,12 @@ class Mmdb2 < Formula
   depends_on "pkg-config" => [:build, :test]
 
   def install
+    if OS.mac?
+      # Fix error: unknown type name 'size_t';
+      # https://github.com/brewsci/homebrew-bio/issues/2181
+      inreplace "mmdb2/mmdb_machine_.h", "#include \"mmdb_mattype.h\"",
+                "#include <cstddef>\n#include \"mmdb_mattype.h\""
+    end
     args = %W[
       --prefix=#{prefix}
       --enable-shared
