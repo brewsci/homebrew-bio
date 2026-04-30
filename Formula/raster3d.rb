@@ -3,20 +3,10 @@ class Raster3d < Formula
   # cite Merritt_1994: "https://doi.org/10.1107/S0907444994006396"
   # cite Merritt_1997: "https://doi.org/10.1016/s0076-6879(97)77028-9"
   desc "Set of tools for generating high quality raster images of proteins"
-  homepage "http://www.bmsc.washington.edu/raster3d"
-  url "http://www.bmsc.washington.edu/raster3d/Raster3D_3.0-7.tar.gz"
-  sha256 "f566b499fee341db3a95229672c6afdbdb69da7faabdbe34f6e0d332d766160c"
+  homepage "https://kali.download/kali/pool/main/r/raster3d"
+  url "https://kali.download/kali/pool/main/r/raster3d/raster3d_3.0-8.orig.tar.gz"
+  sha256 "cc2c8b2c0a7df61c5810c9e803e1d04433ad525329239679cab73e63e762cbe2"
   license "Artistic-2.0"
-  revision 3
-
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 2
-    sha256 cellar: :any,                 arm64_tahoe:   "8296a50172ba70bb5834e61ae3cb2baad794305f3d69c86fe118e5bc578840d6"
-    sha256 cellar: :any,                 arm64_sequoia: "cb7b9b704b365dd12bb57b5af3eb8aa6a2bcbcce236b7ada1717b1b0126f66e8"
-    sha256 cellar: :any,                 arm64_sonoma:  "cb6b165b566870226231650f568a9df6775cded65763d4793cdfb1e4aedac1a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3fd21a8e80f504e2ef53188d469962f971850bf92b98220dd96fad90d1357fe"
-  end
 
   depends_on "gcc"
   depends_on "gd"
