@@ -1,22 +1,14 @@
 class Coot < Formula
   desc "Crystallographic Object-Oriented Toolkit"
   homepage "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/"
-  url "https://github.com/pemsley/coot/archive/refs/tags/Release-1.2.tar.gz"
-  sha256 "ebf19951382151a53ed9c176aea0cf732994235478c64be611cd3f6fc0bdc9ea"
+  url "https://github.com/pemsley/coot/archive/refs/tags/Release-1.3.1.tar.gz"
+  sha256 "39069510b2bd499a407d5cc9202d4df591b353c344dd21aaf30e2ceab8260025"
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only", "GPL-2.0-or-later"]
   head "https://github.com/pemsley/coot.git", branch: "main"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 3
-    sha256 arm64_tahoe:   "e57c7476b8d13509c8f5d147fd74e80f7ccb5f6d875ed882b44038849ce9c722"
-    sha256 arm64_sequoia: "5407426c7f2dc3f77d77dc61aad82e8d1d2ca99c94e2008a91bd2b54c17b8a99"
-    sha256 arm64_sonoma:  "0d949230adf118e068ca6b1dbd167f211c3600e6c63a18a163586b4d59cc9ab8"
-    sha256 x86_64_linux:  "018e6ad2fc9ef34e8ea82a571cb67d0c3ca24a0dd75b6d8dfc1bc2f2afe99017"
-  end
-
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "eigen" => :build
   depends_on "glm" => :build
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
@@ -46,6 +38,7 @@ class Coot < Formula
   depends_on "libpng"
   depends_on "librsvg"
   depends_on "libvorbis"
+  depends_on "maeparser"
   depends_on "netcdf"
   depends_on "numpy"
   depends_on "openal-soft"
@@ -132,7 +125,6 @@ class Coot < Formula
 
     args = %W[
       --prefix=#{prefix}
-      --with-enhanced-ligand-tools
       --with-boost=#{boost_prefix}
       --with-boost-libdir=#{boost_prefix}/lib
       --with-gemmi=#{Formula["gemmi"].opt_prefix}
