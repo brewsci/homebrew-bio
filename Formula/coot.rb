@@ -6,6 +6,14 @@ class Coot < Formula
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only", "GPL-2.0-or-later"]
   head "https://github.com/pemsley/coot.git", branch: "main"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 arm64_tahoe:   "f116ce7886b81c66d06fecea79350d2a8a1869fd186aeb73c7a99c3d4df1b32e"
+    sha256 arm64_sequoia: "19aeec59adcec1ef8a090b78837be6738e1796adda969c822b6218ad5b6c6d4c"
+    sha256 arm64_sonoma:  "a89b22225a921a9a3adec4f5a7c4a8a62a312cbc879451962f816e781bec2887"
+    sha256 x86_64_linux:  "7d6b403e5354ac711cfd6a4bdbd486be18877aab652ef2befe3f40f242ae77f9"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "eigen" => :build
