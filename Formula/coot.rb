@@ -57,6 +57,7 @@ class Coot < Formula
   depends_on "python@3.14"
   depends_on "rdkit"
   depends_on "sqlite"
+  depends_on "vte3"
   depends_on "zlib-ng-compat"
 
   uses_from_macos "bzip2"
@@ -143,6 +144,7 @@ class Coot < Formula
       --with-libdw
       --with-netcdf
       --with-sound
+      --with-vte
       BOOST_PYTHON_LIB=#{boost_python_lib}
       PYTHON=#{python3}
     ]
