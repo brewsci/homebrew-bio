@@ -8,10 +8,11 @@ class Coot < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 arm64_tahoe:   "f116ce7886b81c66d06fecea79350d2a8a1869fd186aeb73c7a99c3d4df1b32e"
-    sha256 arm64_sequoia: "19aeec59adcec1ef8a090b78837be6738e1796adda969c822b6218ad5b6c6d4c"
-    sha256 arm64_sonoma:  "a89b22225a921a9a3adec4f5a7c4a8a62a312cbc879451962f816e781bec2887"
-    sha256 x86_64_linux:  "7d6b403e5354ac711cfd6a4bdbd486be18877aab652ef2befe3f40f242ae77f9"
+    rebuild 1
+    sha256 arm64_tahoe:   "fea18013d962c9b21d7e5cde85a92069b4c8d75b6c845e01c3415f98b363a988"
+    sha256 arm64_sequoia: "1a2533eeb7e65b14b4fbb5e68f189398b6e8883c64eabd6277b1aece863e2119"
+    sha256 arm64_sonoma:  "25fb7259a69c858b9bb61524dcedde5bdbd3b320a82f5aea9cfc5e8f524dddc6"
+    sha256 x86_64_linux:  "64f9ef32219d6f1b813e284e771d163ab169cfa60382d034841f0b68aa4ecb52"
   end
 
   depends_on "autoconf" => :build
