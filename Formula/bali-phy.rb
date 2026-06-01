@@ -4,8 +4,8 @@ class BaliPhy < Formula
   desc "Bayesian co-estimation of phylogenies and multiple alignments"
   homepage "https://www.bali-phy.org/"
   url "https://github.com/bredelings/BAli-Phy.git",
-    tag:      "4.1",
-    revision: "1fd88e6ebe99a8e32cba486cb324740ca3a343d7"
+    tag:      "4.2",
+    revision: "c1f6e56e17ab399b73e74188c1a475e90909cdfd"
   license "GPL-2.0-or-later"
   head "https://github.com/bredelings/BAli-Phy.git", branch: "master"
 
@@ -29,11 +29,12 @@ class BaliPhy < Formula
   depends_on "pandoc" => :build
   depends_on "pkg-config" => :build
   depends_on "range-v3" => :build
+  depends_on "xxhash" => :build
 
   depends_on "boost"
   depends_on "cairo"
   depends_on "fmt"
-  depends_on "gcc" unless OS.mac? # for C++20
+  depends_on "gcc" unless OS.mac? # for C++23
 
   on_macos do
     depends_on "llvm" if DevelopmentTools.clang_build_version <= 1500
@@ -41,12 +42,12 @@ class BaliPhy < Formula
 
   fails_with :clang do
     build 1500
-    cause "Requires C++20 support"
+    cause "Requires C++23 support"
   end
 
   fails_with :gcc do
-    version "11"
-    cause "Requires C++20 support"
+    version "13"
+    cause "Requires C++23 support"
   end
 
   def install
