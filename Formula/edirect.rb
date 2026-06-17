@@ -5,6 +5,14 @@ class Edirect < Formula
   version "25.9"
   sha256 "c34978d32aa09c6c29f6f7612a0b58cfb2af8e3dd9bd9429c8116c0f7ac0dc08"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 arm64_tahoe:   "249e07ce9f7466a838adab84952a99c54b328c63740bf259c6c5aceaa5e5e501"
+    sha256 arm64_sequoia: "f04b6dc4898e16a12e6a2168308b93d67dbae45ec780240da06604640b9dde80"
+    sha256 arm64_sonoma:  "0f76a2b29612acd50a3a24d7a5fa397e979fc6981f0ac40cd0342adf3a59c2ac"
+    sha256 x86_64_linux:  "c53c7fde829cfe364cb10bee3a4aa199dba941ebb97529bf173c7fca6a0a27e7"
+  end
+
   depends_on "cpanminus" => :build
   depends_on "go" => :build
   depends_on "openssl@3"
