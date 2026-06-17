@@ -21,6 +21,7 @@ jobs:
         run: |
           echo "/home/linuxbrew/.linuxbrew/bin" >> "$GITHUB_PATH"
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          brew trust brewsci/bio
           brew update
       - name: Upload bottles
         shell: bash
