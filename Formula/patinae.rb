@@ -3,8 +3,8 @@ class Patinae < Formula
 
   desc "Fast, programmable molecular viewer for research, scripting, and the web"
   homepage "https://zmactep.github.io/pymol-rs/"
-  url "https://github.com/zmactep/pymol-rs/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "52f2d341f73ef8f2da33c95ae44dbc1f17e6baba57b9cbe8d569a48d4bdf0b4e"
+  url "https://github.com/zmactep/pymol-rs/archive/refs/tags/v0.4.2.tar.gz"
+  sha256 "5e274ba0f8aa77f4462aec2e4de070c1e1622e9f4ed137dd5d5e1fb6775f51ba"
   license "BSD-3-Clause"
   head "https://github.com/zmactep/pymol-rs.git", branch: "main"
 
@@ -16,10 +16,10 @@ class Patinae < Formula
   depends_on "maturin" => :build
   depends_on "rust" => :build
   depends_on :macos
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
-    python = Formula["python@3.13"].opt_bin/"python3.13"
+    python = Formula["python@3.14"].opt_bin/"python3.14"
     ENV["PYO3_PYTHON"] = python
 
     system "cargo", "install", *std_cargo_args(root: libexec, path: "patinae")
@@ -67,8 +67,8 @@ class Patinae < Formula
     assert_path_exists libexec/"plugins/libpython_plugin.dylib"
     assert_match "Mach-O", shell_output("file -b #{libexec}/bin/patinae")
 
-    # The embedded interpreter links python@3.13 and must import `patinae`.
-    assert_match "python@3.13",
+    # The embedded interpreter links python@3.14 and must import `patinae`.
+    assert_match "python@3.14",
       shell_output("otool -L #{libexec}/plugins/libpython_plugin.dylib")
     system libexec/"venv/bin/python", "-c", "import patinae; from patinae import cmd"
   end
