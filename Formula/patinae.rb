@@ -13,6 +13,13 @@ class Patinae < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any, arm64_tahoe:   "5f52d09c4ea78e204617692710eb730abff62c85527772b80cf28d8d2a0627bf"
+    sha256 cellar: :any, arm64_sequoia: "79be5909c4f29ccb94db7d12a6e4666ced9fcc8624536daa1351519b7f24e3eb"
+    sha256 cellar: :any, arm64_sonoma:  "25a883a9a97ac45e4b3878724381ae657c9957a5d95ed278931fbd9d883a6479"
+  end
+
   depends_on "maturin" => :build
   depends_on "rust" => :build
   depends_on :macos
