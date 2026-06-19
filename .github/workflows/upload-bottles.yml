@@ -35,6 +35,10 @@ jobs:
           # pr="$(echo "$COMMIT_MESSAGE" | sed 's/^.*#\([0-9]*\).*/\1/;q')"
           pr="${COMMIT_MESSAGE##*#}"
           pr="${pr%%[^0-9]*}"
+          if [[ -z "$pr" ]]; then
+            echo "No PR number found in commit message. Skipping upload."
+            exit 0
+          fi
           mkdir -p "$(dirname "$(brew --repo ${{github.repository}})")"
           cp -a "$GITHUB_WORKSPACE" "$(brew --repo ${{github.repository}})"
           rm -rf -- .git *
