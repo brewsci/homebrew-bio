@@ -4,7 +4,7 @@ class BwaMem2 < Formula
   url "https://github.com/bwa-mem2/bwa-mem2.git",
       tag:      "v2.3",
       revision: "7aa5ff6c3330490e5629ab9b7327683d2dce02d6"
-  head "https://github.com/bwa-mem2/bwa-mem2.git"
+  head "https://github.com/bwa-mem2/bwa-mem2.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -53,7 +53,10 @@ class BwaMem2 < Formula
       inreplace "makefile", "LDFLAGS=-z noexecstack -z relo -z now", "LDFLAGS="
       inreplace "CMakeLists.txt", " -z noexecstack -z relro -z now", ""
       inreplace "include/safe_mem_lib.h", "extern errno_t memset_s", "//xxx extern errno_t memset_s"
-      system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: buildpath/"safestringlib")
+      # safestringlib v1.2.0 declares cmake_minimum_required < 3.5, which CMake
+      # 4.x rejects; allow it to configure with the old policy version.
+      system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+             *std_cmake_args(install_prefix: buildpath/"safestringlib")
       system "cmake", "--build", "build"
     end
     inreplace "Makefile" do |s|
