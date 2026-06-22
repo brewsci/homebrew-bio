@@ -47,6 +47,10 @@ class BwaMem2 < Formula
     system "patch", "-p1", "src/bandedSWA.cpp", "bandedSWA.cpp.patch"
     # The src/utils.h __GNUC__ < 11 guard (previously applied via inreplace) is
     # already present upstream as of v2.3, so no patching is needed here anymore.
+    # Upstream's v2.3 tag forgot to bump PACKAGE_VERSION (still "2.2.1"), so the
+    # built binary misreports its version; set it to the real version.
+    inreplace "src/main.cpp", "#define PACKAGE_VERSION \"2.2.1\"",
+                              "#define PACKAGE_VERSION \"#{version}\""
     # install safestringlib v1.2.0 first
     (buildpath/"safestringlib-1.2.0").install resource("safestringlib")
     cd "safestringlib-1.2.0" do
