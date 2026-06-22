@@ -8,9 +8,10 @@ class BwaMem2 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "74d6e7d0f925b162dedbf3590f196fb606875f991c63d7250314f877ae44f728"
-    sha256 cellar: :any_skip_relocation, ventura:      "aa0fae1aa99dc74ef7e8ab90fac0755b9c58809d1aa41fa15669d9bd7b3e3578"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e056d8db1310b86c7b74df95786d9232c0cd9033acaccbd37027e72bc23e9f01"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bcb6187216f2e06f399a2b6e0981cda078de1395cc5be3d442834536540481bc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "526a09971acc00b4852d4210cd98220d3a14cb4363c30d60a8e308d4c896c231"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44dde4e76d961d783ef351cf2c346459786770ccb3f6eac1bbc61740894f9687"
+    sha256 cellar: :any,                 x86_64_linux:  "4555f7555641999b9c76df8b42d19412de383621e2b7064c975539dd82648433"
   end
 
   depends_on "cmake" => :build
