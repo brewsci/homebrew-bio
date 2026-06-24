@@ -26,8 +26,8 @@ class Mash < Formula
     system "./bootstrap.sh"
     system "./configure",
       "--prefix=#{prefix}",
-      "--with-capnp=#{Formula["capnp"].opt_prefix}",
-      "--with-gsl=#{Formula["gsl"].opt_prefix}"
+      "--with-capnp=#{formula_opt_prefix("capnp")}",
+      "--with-gsl=#{formula_opt_prefix("gsl")}"
     system "make"
     system "make", "test"
 

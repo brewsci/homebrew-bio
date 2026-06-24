@@ -39,7 +39,7 @@ class Emboss < Formula
       --docdir=#{doc}
       --enable-64
       --with-thread
-      --with-hpdf=#{Formula["libharu"].opt_prefix}
+      --with-hpdf=#{formula_opt_prefix("libharu")}
       --with-pngdriver=#{HOMEBREW_PREFIX}
       --without-x
     ]

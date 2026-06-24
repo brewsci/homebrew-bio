@@ -31,10 +31,10 @@ class Mosdepth < Formula
     # make nim.cfg for Homebrew
     rm buildpath/"nim.cfg"
     (buildpath/"nim.cfg").write <<~EOS
-      passl:"-L#{Formula["htslib"].opt_lib} -lhts"
-      passl:"-L#{Formula["brewsci/bio/d4tools"].opt_lib} -ld4binding"
-      passl:"-L#{Formula["libdeflate"].opt_lib} -ldeflate"
-      passl:"-L#{Formula["openssl@3"].opt_lib} -lcrypto -lssl"
+      passl:"-L#{formula_opt_lib("htslib")} -lhts"
+      passl:"-L#{formula_opt_lib("brewsci/bio/d4tools")} -ld4binding"
+      passl:"-L#{formula_opt_lib("libdeflate")} -ldeflate"
+      passl:"-L#{formula_opt_lib("openssl@3")} -lcrypto -lssl"
       passl:"-llzma"
       passl:"-lz"
       passl:"-lbz2"

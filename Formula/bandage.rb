@@ -21,7 +21,7 @@ class Bandage < Formula
     unless OS.mac?
       system "patchelf",
         "--set-interpreter", HOMEBREW_PREFIX/"lib/ld.so",
-        "--set-rpath", HOMEBREW_PREFIX/"lib:#{Formula["qt"].opt_lib}",
+        "--set-rpath", HOMEBREW_PREFIX/"lib:#{formula_opt_lib("qt")}",
         bin/"Bandage"
     end
     pkgshare.install "sample_LastGraph"

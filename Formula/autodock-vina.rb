@@ -23,11 +23,11 @@ class AutodockVina < Formula
   depends_on "python@3.13"
 
   def install
-    xy = Language::Python.major_minor_version Formula["python@3.13"].opt_bin/"python3"
+    xy = Language::Python.major_minor_version formula_opt_bin("python@3.13")/"python3"
     ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
     binaries = ["vina", "vina_split"]
-    inreplace "build/makefile_common", "$(BASE)", Formula["boost"].opt_prefix
-    inreplace "build/makefile_common", "${BASE}", Formula["boost"].opt_prefix
+    inreplace "build/makefile_common", "$(BASE)", formula_opt_prefix("boost")
+    inreplace "build/makefile_common", "${BASE}", formula_opt_prefix("boost")
     if OS.mac?
       cd "build/mac/release" do
         inreplace "Makefile" do |s|

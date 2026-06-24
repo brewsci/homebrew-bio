@@ -20,7 +20,7 @@ class Ghostz < Formula
     if OS.mac?
       inreplace "Makefile",
                 "-fopenmp",
-                "-L#{Formula["libomp"].opt_lib} -lomp"
+                "-L#{formula_opt_lib("libomp")} -lomp"
 
       # Fix error: use of overloaded operator '==' is ambiguous (with operand
       #            types 'std::shared_ptr<SeqmentType>' and 'long')

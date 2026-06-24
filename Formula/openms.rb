@@ -40,7 +40,7 @@ class Openms < Formula
       -DCMAKE_CXX_COMPILER=#{ENV.cxx}
       -DCMAKE_INSTALL_PREFIX=#{prefix}
       -DCMAKE_BUILD_TYPE=Release
-      -DCMAKE_PREFIX_PATH=#{Formula["qt"].opt_prefix}
+      -DCMAKE_PREFIX_PATH=#{formula_opt_prefix("qt")}
       -DBOOST_USE_STATIC=OFF
     ]
 

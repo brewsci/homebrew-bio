@@ -37,7 +37,7 @@ class HarvestTools < Formula
               "-lpthread -labsl_log_internal_check_op -labsl_log_internal_message"
     inreplace "Makefile.in", "-lpthread",
               "-lpthread -labsl_base -labsl_strings -labsl_synchronization"
-    ENV.append "CXXFLAGS", "-L#{Formula["abseil"].opt_lib}"
+    ENV.append "CXXFLAGS", "-L#{formula_opt_lib("abseil")}"
     # use dynamic libraries
     if OS.mac?
       inreplace "Makefile.in", ".a", ".dylib"
@@ -47,8 +47,8 @@ class HarvestTools < Formula
     system "autoreconf", "-fvi"
     args = [
       "--prefix=#{prefix}",
-      "--with-protobuf=#{Formula["protobuf"].opt_prefix}",
-      "--with-capnp=#{Formula["capnp"].opt_prefix}",
+      "--with-protobuf=#{formula_opt_prefix("protobuf")}",
+      "--with-capnp=#{formula_opt_prefix("capnp")}",
     ]
     system "./configure", *args
     system "make", "all"

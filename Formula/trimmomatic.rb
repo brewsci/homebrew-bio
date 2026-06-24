@@ -21,7 +21,7 @@ class Trimmomatic < Formula
   depends_on "openjdk@11"
 
   def install
-    ENV["JAVA_HOME"] = Formula["openjdk@11"].opt_prefix
+    ENV["JAVA_HOME"] = formula_opt_prefix("openjdk@11")
     # Set source and target versions to 1.8
     inreplace "build.xml", "source=\"1.5\" target=\"1.5\"", "source=\"1.8\" target=\"1.8\""
     system "ant"

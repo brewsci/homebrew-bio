@@ -24,7 +24,7 @@ class CdHit < Formula
   end
 
   def install
-    inreplace "Makefile", "-fopenmp", "-L#{Formula["libomp"].opt_lib} -lomp" if OS.mac?
+    inreplace "Makefile", "-fopenmp", "-L#{formula_opt_lib("libomp")} -lomp" if OS.mac?
     bin.mkpath
     system "make"
     system "make", "PREFIX=#{bin}", "install"

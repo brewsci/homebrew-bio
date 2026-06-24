@@ -46,7 +46,7 @@ class Muscle < Formula
     cd "src" do
       if OS.mac?
         ENV["CPPFLAGS"] = "-Xpreprocessor -I#{Formula["libomp"].opt_include}"
-        ENV["LDFLAGS"] = "-L#{Formula["libomp"].opt_lib} -lomp"
+        ENV["LDFLAGS"] = "-L#{formula_opt_lib("libomp")} -lomp"
       else
         inreplace "vcxproj_make.py", "-static", ""
       end

@@ -22,7 +22,7 @@ class Hssp < Formula
   def install
     system "./autogen.sh"
     system "./configure", "--prefix=#{prefix}",
-           "--with-boost=#{Formula["boost"].opt_prefix}"
+           "--with-boost=#{formula_opt_prefix("boost")}"
 
     system "make"
     system "make", "install"

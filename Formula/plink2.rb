@@ -23,7 +23,7 @@ class Plink2 < Formula
       if OS.linux?
         inreplace "Makefile" do |s|
           s.gsub! "-L/usr/lib64/atlas -llapack -lblas -lcblas -latlas",
-                  "-L#{Formula["openblas"].opt_lib} -lopenblas"
+                  "-L#{formula_opt_lib("openblas")} -lopenblas"
           s.gsub! "ZLIB ?=		-L. ../zlib-1.3/libz.so.1.3", "ZLIB ?= -lz"
           s.gsub! "-Wall -O2 -g -I../2.0/simde",
                   "-Wall -O2 -g -I../2.0/simde -I#{Formula["openblas"].opt_include}"
@@ -33,7 +33,7 @@ class Plink2 < Formula
       bin.install "plink"
     end
     cd "2.0" do
-      inreplace "build.sh", " -llapack -lcblas -lblas", "-L#{Formula["openblas"].opt_lib} -lopenblas" if OS.linux?
+      inreplace "build.sh", " -llapack -lcblas -lblas", "-L#{formula_opt_lib("openblas")} -lopenblas" if OS.linux?
       system "./build.sh"
       bin.install "bin/plink2" => "plink2"
       bin.install "bin/pgen_compress" => "pgen_compress"

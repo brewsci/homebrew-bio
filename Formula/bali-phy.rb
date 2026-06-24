@@ -51,8 +51,8 @@ class BaliPhy < Formula
 
   def install
     ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1500
-    ENV["CXX"] = Formula["llvm"].opt_bin/"clang++" if OS.mac? && DevelopmentTools.clang_build_version <= 1500
-    ENV["BOOST_ROOT"] = Formula["boost"].opt_prefix
+    ENV["CXX"] = formula_opt_bin("llvm")/"clang++" if OS.mac? && DevelopmentTools.clang_build_version <= 1500
+    ENV["BOOST_ROOT"] = formula_opt_prefix("boost")
 
     flags = %w[install -C build]
     system "meson", "setup", "build", "--prefix=#{prefix}", "--buildtype=release", "-Db_ndebug=true"

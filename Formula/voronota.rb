@@ -35,7 +35,7 @@ class Voronota < Formula
       ENV.append "CXXFLAGS",
         "-I#{Formula["libomp"].opt_include} -Xpreprocessor -fopenmp"
       ENV.append "LDFLAGS",
-        "-L#{Formula["libomp"].opt_lib} -lomp"
+        "-L#{formula_opt_lib("libomp")} -lomp"
     elsif OS.linux?
       ENV.append "CXXFLAGS", "-fopenmp"
     end

@@ -22,7 +22,7 @@ class DshBio < Formula
       name = File.basename(exe)
       (bin/name).write <<~EOS
         #!/bin/bash
-        export JAVA_HOME="${JAVA_HOME:-#{Formula["openjdk"].opt_prefix}}"
+        export JAVA_HOME="${JAVA_HOME:-#{formula_opt_prefix("openjdk")}}"
         exec "#{exe}" "$@"
       EOS
     end

@@ -40,11 +40,11 @@ class Qtltools < Formula
     end
     args = [
       "BOOST_INC=#{Formula["boost"].opt_include}",
-      "BOOST_LIB=#{Formula["boost"].opt_lib}",
+      "BOOST_LIB=#{formula_opt_lib("boost")}",
       "RMATH_INC=#{Formula["r"].opt_include}",
-      "RMATH_LIB=#{Formula["r"].opt_lib}",
+      "RMATH_LIB=#{formula_opt_lib("r")}",
       "HTSLD_INC=#{Formula["htslib"].opt_include}",
-      "HTSLD_LIB=#{Formula["htslib"].opt_lib}",
+      "HTSLD_LIB=#{formula_opt_lib("htslib")}",
       "LIB_FLAGS=-lz -lgsl -lbz2 -llzma -lgslcblas -lm -lpthread -lcurl -lhts -ldeflate -lssl -lcrypto",
     ]
     system "make", *args
