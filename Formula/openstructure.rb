@@ -70,7 +70,7 @@ class Openstructure < Formula
     if OS.mac?
       ENV.prepend "LDFLAGS", "-undefined dynamic_lookup -Wl,-export_dynamic"
     elsif OS.linux?
-      ENV["CXX"] = Formula["gcc"].opt_bin/"g++-#{Formula["gcc"].version.major}"
+      ENV["CXX"] = formula_opt_bin("gcc")/"g++-#{Formula["gcc"].version.major}"
       ENV.prepend "LDFLAGS", "-Wl,--allow-shlib-undefined,--export-dynamic -lstdc++"
     end
 
@@ -107,9 +107,9 @@ class Openstructure < Formula
         -DCXX_FLAGS=#{ENV["CXXFLAGS"]}
         -DCMAKE_CXX_STANDARD=17
         -DCMAKE_PREFIX_PATH=#{HOMEBREW_PREFIX}
-        -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
+        -DBOOST_ROOT=#{formula_opt_prefix("boost")}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
-        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{py_ver_nodot}.#{shlib_ext}
+        -DBOOST_PYTHON_LIBRARIES=#{formula_opt_lib("boost-python3")}/libboost_python#{py_ver_nodot}.#{shlib_ext}
         -DENABLE_GUI=OFF
         -DENABLE_GFX=OFF
         -DENABLE_INFO=OFF
@@ -136,15 +136,15 @@ class Openstructure < Formula
         -DCMAKE_CXX_STANDARD=17
         -DCMAKE_PREFIX_PATH=#{HOMEBREW_PREFIX}
         -DPREFIX=#{prefix}
-        -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
+        -DBOOST_ROOT=#{formula_opt_prefix("boost")}
         -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
-        -DBOOST_PYTHON_LIBRARIES=#{Formula["boost-python3"].opt_lib}/libboost_python#{py_ver_nodot}.#{shlib_ext}
+        -DBOOST_PYTHON_LIBRARIES=#{formula_opt_lib("boost-python3")}/libboost_python#{py_ver_nodot}.#{shlib_ext}
         -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
         -DPARASAIL_INCLUDE_DIR=#{Formula["brewsci/bio/parasail"].opt_include}
-        -DPARASAIL_LIBRARY=#{Formula["brewsci/bio/parasail"].opt_lib}/libparasail.#{shlib_ext}
-        -DOPEN_MM_LIBRARY=#{Formula["brewsci/bio/openmm@7"].opt_lib}/libOpenMM.#{shlib_ext}
+        -DPARASAIL_LIBRARY=#{formula_opt_lib("brewsci/bio/parasail")}/libparasail.#{shlib_ext}
+        -DOPEN_MM_LIBRARY=#{formula_opt_lib("brewsci/bio/openmm@7")}/libOpenMM.#{shlib_ext}
         -DOPEN_MM_INCLUDE_DIR=#{Formula["brewsci/bio/openmm@7"].opt_include}
-        -DOPEN_MM_PLUGIN_DIR=#{Formula["brewsci/bio/openmm@7"].opt_lib}/plugins
+        -DOPEN_MM_PLUGIN_DIR=#{formula_opt_lib("brewsci/bio/openmm@7")}/plugins
         -DENABLE_MM=ON
         -DUSE_RPATH=ON
         -DOPTIMIZE=ON

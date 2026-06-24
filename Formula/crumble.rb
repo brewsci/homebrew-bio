@@ -14,7 +14,7 @@ class Crumble < Formula
 
   def install
     system "./configure", "--prefix=#{prefix}",
-                          "--with-htslib=#{Formula["htslib"].opt_prefix}"
+                          "--with-htslib=#{formula_opt_prefix("htslib")}"
     system "make", "install"
   end
 

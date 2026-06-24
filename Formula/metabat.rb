@@ -41,7 +41,7 @@ class Metabat < Formula
               "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS} -Wno-c++11-narrowing -Wno-non-pod-varargs"
     if OS.mac?
       inreplace "src/CMakeLists.txt", "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS}",
-                "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS} -L#{Formula["libomp"].opt_lib} -lomp"
+                "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS} -L#{formula_opt_lib("libomp")} -lomp"
     end
     # Use lock_guard instead of scoped_lock for C++14 compatibility
     inreplace "src/contigOverlaps.cpp", "scoped_lock", "lock_guard"
@@ -67,7 +67,7 @@ class Metabat < Formula
     cmakeargs = %W[
       -DBoost_USE_STATIC_LIBS:BOOL=ON
       -DBoost_INCLUDE_DIR:PATH=#{Formula["brewsci/bio/boost@1.86"].opt_include}
-      -DBoost_LIBRARY_DIR_RELEASE:PATH=#{Formula["brewsci/bio/boost@1.86"].opt_lib}
+      -DBoost_LIBRARY_DIR_RELEASE:PATH=#{formula_opt_lib("brewsci/bio/boost@1.86")}
     ]
     system "cmake", "-S", ".", "-B", "build",
                     *std_cmake_args, *cmakeargs

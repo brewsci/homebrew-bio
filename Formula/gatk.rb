@@ -27,7 +27,7 @@ class Gatk < Formula
 
   def install
     # use openjdk@17's java for gatk
-    inreplace "gatk", "\"java\"", "\"#{Formula["openjdk@17"].opt_bin}/java\""
+    inreplace "gatk", "\"java\"", "\"#{formula_opt_bin("openjdk@17")}/java\""
     prefix.install "gatk"
     prefix.install "scripts/dataproc-cluster-ui"
     prefix.install "gatk-package-#{version}-spark.jar"

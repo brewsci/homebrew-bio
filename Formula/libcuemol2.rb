@@ -34,7 +34,7 @@ class Libcuemol2 < Formula
     # install CGAL@4 first
     resource("cgal4").stage do
       args = %W[
-        -DBOOST_ROOT=#{Formula["boost"].opt_prefix}
+        -DBOOST_ROOT=#{formula_opt_prefix("boost")}
         -DWITH_CGAL_Qt5=OFF
         -DWITH_CGAL_ImageIO=OFF
         -DCGAL_DISABLE_GMP=TRUE
@@ -50,12 +50,12 @@ class Libcuemol2 < Formula
     end
     cflags = ["-I#{prefix}/cgal4/include"]
     args = %W[
-      -DBoost_ROOT=#{Formula["boost"].opt_prefix}
-      -DFFTW_ROOT=#{Formula["fftw"].opt_prefix}
-      -DLCMS2_ROOT=#{Formula["little-cms2"].opt_prefix}
-      -DGLEW_ROOT=#{Formula["glew"].opt_prefix}
+      -DBoost_ROOT=#{formula_opt_prefix("boost")}
+      -DFFTW_ROOT=#{formula_opt_prefix("fftw")}
+      -DLCMS2_ROOT=#{formula_opt_prefix("little-cms2")}
+      -DGLEW_ROOT=#{formula_opt_prefix("glew")}
       -DBUILD_PYTHON_BINDINGS=ON
-      -DPython3_ROOT_DIR=#{Formula["python@3.12"].opt_prefix}
+      -DPython3_ROOT_DIR=#{formula_opt_prefix("python@3.12")}
       -DBUILD_XPCJS_BINDINGS=ON
       -DCMAKE_BUILD_TYPE=Release
       -DCMAKE_PREFIX_PATH=#{prefix}/cgal4

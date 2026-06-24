@@ -29,8 +29,8 @@ class Jmol < Formula
     bin.install "jmol.sh" => "jmol"
     env = {
       JMOL_HOME: libexec,
-      JAVA_HOME: Formula["openjdk"].opt_prefix,
-      PATH:      "#{Formula["openjdk"].opt_bin}:$PATH",
+      JAVA_HOME: formula_opt_prefix("openjdk"),
+      PATH:      "#{formula_opt_bin("openjdk")}:$PATH",
     }
     bin.env_script_all_files libexec/"bin", env
   end

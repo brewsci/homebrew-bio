@@ -41,7 +41,7 @@ class Trinity < Formula
     inreplace "trinity-plugins/bamsifter/Makefile" do |s|
       s.gsub! "sift_bam_max_cov: sift_bam_max_cov.cpp htslib/version.h",
               "sift_bam_max_cov: sift_bam_max_cov.cpp"
-      s.gsub! "-L./htslib/build/lib/", "-L#{Formula["htslib"].opt_lib}"
+      s.gsub! "-L./htslib/build/lib/", "-L#{formula_opt_lib("htslib")}"
       s.gsub! "-I./htslib/build/include", "-I#{Formula["htslib"].opt_include}"
     end
 
@@ -77,7 +77,7 @@ class Trinity < Formula
 
     inreplace "util/misc/run_jellyfish.pl",
       '$JELLYFISH_DIR = $FindBin::RealBin . "/../../trinity-plugins/jellyfish-1.1.3";',
-      "$JELLYFISH_DIR = \"#{Formula["jellyfish"].opt_prefix}\";"
+      "$JELLYFISH_DIR = \"#{formula_opt_prefix("jellyfish")}\";"
     system "make", "all", "plugins", "test"
     rm Dir["**/config.log"]
     rm Dir["**/*.tar.gz"]
@@ -86,7 +86,7 @@ class Trinity < Formula
     libexec.install Dir["*"]
     envs = {
       PERL5LIB:  libexec/"PerlLib",
-      JAVA_HOME: Formula["openjdk@11"].opt_prefix,
+      JAVA_HOME: formula_opt_prefix("openjdk@11"),
     }
     (bin/"Trinity").write_env_script(libexec/"Trinity", envs)
   end

@@ -45,7 +45,7 @@ class Snippy < Formula
   def install
     rm_r "binaries"
 
-    ENV.prepend_path "PERL5LIB", Formula["bioperl"].opt_libexec/"lib/perl5"
+    ENV.prepend_path "PERL5LIB", formula_opt_libexec("bioperl")/"lib/perl5"
     ENV.prepend_create_path "PERL5LIB", libexec
     ENV["PERL_MM_USE_DEFAULT"] = "1"
 
@@ -62,7 +62,7 @@ class Snippy < Formula
     ]
     binaries.each do |name|
       (bin/name).write_env_script("#{libexec}/bin/#{name}",
-                                   JAVA_HOME: Formula["openjdk@11"].opt_prefix,
+                                   JAVA_HOME: formula_opt_prefix("openjdk@11"),
                                    PERL5LIB:  ENV["PERL5LIB"])
     end
 

@@ -40,7 +40,7 @@ class Iqtree3 < Formula
     system "git", "submodule", "update", "--init", "--recursive"
 
     # Set up environment for OpenMP
-    ldflags = "-L#{Formula["libomp"].opt_lib}"
+    ldflags = "-L#{formula_opt_lib("libomp")}"
     cppflags = "-I#{Formula["libomp"].opt_include}"
 
     # Set environment to prevent FetchContent downloads
@@ -55,7 +55,7 @@ class Iqtree3 < Formula
       "-DBUILD_TESTING=OFF",
       "-DIQTREE_TEST=OFF",
       "-DFETCHCONTENT_FULLY_DISCONNECTED=ON",
-      "-DZLIB_ROOT=#{Formula["zlib"].opt_prefix}",
+      "-DZLIB_ROOT=#{formula_opt_prefix("zlib")}",
       "-DUSE_CMAPLE=OFF",
       "-DUSE_LSD2=ON",
       "-DFETCHCONTENT_TRY_FIND_PACKAGE_MODE=ALWAYS",

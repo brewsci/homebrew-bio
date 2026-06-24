@@ -72,7 +72,7 @@ class Circlator < Formula
   end
 
   test do
-    ENV.prepend_path "PATH", Formula["python@3.12"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", formula_opt_libexec("python@3.12")/"bin"
     output = shell_output("#{bin}/circlator test outdir")
     assert_match "Finished run on test data OK", output
   end

@@ -26,7 +26,7 @@ class Gemmi < Formula
     site_packages = lib/"python#{py_ver}/site-packages"
     mkdir_p site_packages
 
-    ENV.append "CPPFLAGS", "-I#{Formula["nanobind"].opt_lib/"python#{py_ver}/site-packages/nanobind/include"}"
+    ENV.append "CPPFLAGS", "-I#{formula_opt_lib("nanobind")/"python#{py_ver}/site-packages/nanobind/include"}"
     ENV.append "CPPFLAGS", "-I#{Formula["python@3.14"].opt_include}/python#{py_ver}"
 
     system "cmake", "-S", ".", "-B", "build", "-G", "Ninja",

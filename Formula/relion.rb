@@ -38,8 +38,8 @@ class Relion < Formula
     args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
     args << "-DFETCH_TORCH_MODELS=OFF"
     args << "-DCUDA=OFF"
-    args << "-DPYTHON_EXE_PATH=#{Formula["python@3.13"].opt_bin}/python3"
-    args << "-DTORCH_HOME_PATH=#{Formula["pytorch"].opt_prefix}"
+    args << "-DPYTHON_EXE_PATH=#{formula_opt_bin("python@3.13")}/python3"
+    args << "-DTORCH_HOME_PATH=#{formula_opt_prefix("pytorch")}"
     if OS.mac?
       libomp = Formula["libomp"]
       args << "-DOpenMP_C_FLAGS=-Xpreprocessor -fopenmp -I#{libomp.opt_include}"

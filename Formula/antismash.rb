@@ -223,7 +223,7 @@ class Antismash < Formula
     # This needs to happen _before_ we try to install antismash.
     # NOTE: This is an exception to our usual policy as building `numpy` is complicated
     site_packages = Language::Python.site_packages(python3)
-    pth_contents = "import site; site.addsitedir('#{Formula["numpy"].opt_libexec/site_packages}')\n"
+    pth_contents = "import site; site.addsitedir('#{formula_opt_libexec("numpy")/site_packages}')\n"
     (venv.site_packages/"homebrew-numpy.pth").write pth_contents
     venv.pip_install_and_link buildpath
     # Fix minor warning in BCBio

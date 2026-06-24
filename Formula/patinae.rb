@@ -26,7 +26,7 @@ class Patinae < Formula
   depends_on "python@3.14"
 
   def install
-    python = Formula["python@3.14"].opt_bin/"python3.14"
+    python = formula_opt_bin("python@3.14")/"python3.14"
     ENV["PYO3_PYTHON"] = python
 
     system "cargo", "install", *std_cargo_args(root: libexec, path: "patinae")

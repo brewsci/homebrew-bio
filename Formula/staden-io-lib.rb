@@ -32,8 +32,8 @@ class StadenIoLib < Formula
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
-                          "--with-libdeflate=#{Formula["libdeflate"].opt_prefix}",
-                          "--with-zstd=#{Formula["zstd"].opt_prefix}",
+                          "--with-libdeflate=#{formula_opt_prefix("libdeflate")}",
+                          "--with-zstd=#{formula_opt_prefix("zstd")}",
                           "--prefix=#{prefix}"
     system "make", "install"
 

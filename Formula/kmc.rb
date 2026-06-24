@@ -31,7 +31,7 @@ class Kmc < Formula
       inreplace "Makefile", "-static -Wl,", "-lstdc++ -Wl,"
     end
     gcc_major_ver = Formula["gcc"].any_installed_version.major
-    cc = Formula["gcc"].opt_bin/"gcc-#{gcc_major_ver}"
+    cc = formula_opt_bin("gcc")/"gcc-#{gcc_major_ver}"
     args = %W[CC=#{cc} KMC_BIN_DIR=#{bin}]
     system "make", *args, "kmc", "kmc_dump", "kmc_tools"
     bin.install Dir["bin/kmc*"]
