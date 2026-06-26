@@ -47,6 +47,9 @@ class Trinity < Formula
 
   def install
     ENV.cxx11
+    # CMake 4 dropped compatibility with cmake_minimum_required < 3.5, which
+    # Trinity's bundled Inchworm/Chrysalis CMake projects still declare.
+    ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
 
     rm_r "Butterfly/Butterfly"
     rm_r "trinity-plugins/bamsifter/htslib"
