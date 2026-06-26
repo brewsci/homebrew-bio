@@ -4,6 +4,13 @@ class SalmonAT1 < Formula
   homepage "https://github.com/COMBINE-lab/salmon"
   license "GPL-3.0-or-later"
 
+  # Track only the legacy C++ 1.x line; never follow the 2.x Rust releases.
+  livecheck do
+    url :homepage
+    regex(/^v?(1(?:\.\d+)+)$/i)
+    strategy :github_releases
+  end
+
   # salmon 2.0 is a Rust rewrite shipped as the unversioned `salmon` formula.
   # This keeps the final C++ release (1.x line) available alongside it via the
   # upstream prebuilt binaries. Both provide a `salmon` binary, so stay
