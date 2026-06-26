@@ -1,0 +1,48 @@
+name: Autobump
+
+# Opens version-bump pull requests for outdated formulae, using each formula's
+# `livecheck` block to detect new upstream releases.
+#
+# Requires a repository secret named `HOMEBREW_GITHUB_API_TOKEN`: a Personal
+# Access Token (classic `public_repo`/`repo` scope, or a fine-grained token with
+# Contents + Pull requests write) belonging to the account that should open the
+# PRs. Without it this workflow is inert. Using a PAT (rather than the default
+# GITHUB_TOKEN) ensures the bump PRs trigger the bottle-building CI.
+
+on:
+  schedule:
+    # Mondays at 05:00 UTC
+    - cron: "0 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  HOMEBREW_NO_ANALYTICS: 1
+  HOMEBREW_NO_AUTO_UPDATE: 1
+  HOMEBREW_NO_INSTALL_CLEANUP: 1
+
+concurrency:
+  group: autobump
+  cancel-in-progress: false
+
+jobs:
+  autobump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@main
+
+      - name: Tap brewsci/bio
+        run: brew tap brewsci/bio "https://github.com/${{ github.repository }}"
+
+      - name: Configure git author
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Open version-bump PRs for outdated formulae
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+        run: brew bump --tap brewsci/bio --formulae --open-pr
