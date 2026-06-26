@@ -38,7 +38,7 @@ class Arcs < Formula
 
     system "./autogen.sh"
     system "./configure", *std_configure_args,
-           "--with-boost=#{Formula["boost"].opt_include}"
+           "--with-boost=#{formula_opt_include("boost")}"
     system "make", "install"
     inreplace "bin/arcs-make",
               "$(bin)/../src/long-to-linked-pe",

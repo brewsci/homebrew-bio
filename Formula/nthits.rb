@@ -26,7 +26,7 @@ class Nthits < Formula
 
   def install
     # Use Homebrew's argparse
-    inreplace "meson.build", "vendor/argparse/include", Formula["argparse"].opt_include
+    inreplace "meson.build", "vendor/argparse/include", formula_opt_include("argparse")
     system "meson", "setup", "build", "--prefix", prefix
     cd "build" do
       system "ninja"

@@ -39,7 +39,7 @@ class Vcflib < Formula
               "install(TARGETS vcflib ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})"
     inreplace "CMakeLists.txt",
               "include_directories($ENV{CMAKE_PREFIX_PATH}/include/wfa2lib)",
-              "include_directories(#{Formula["wfa2-lib"].opt_include}/wfa2lib)"
+              "include_directories(#{formula_opt_include("wfa2-lib")}/wfa2lib)"
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
                     "-DHTSLIB_LOCAL=False",
                     "-DZIG=OFF",

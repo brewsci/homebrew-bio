@@ -44,7 +44,7 @@ class Canu < Formula
         s.gsub! "CXXFLAGS += -fopenmp -pthread -fPIC -m64 -Wno-format",
                 "CXXFLAGS += -Xpreprocessor -fopenmp -pthread -fPIC -m64 -Wno-format"
         s.gsub! "-m64 -Wno-format",
-                "-m64 -Wno-format -I#{Formula["libomp"].opt_include} -I#{Formula["boost"].opt_include}"
+                "-m64 -Wno-format -I#{formula_opt_include("libomp")} -I#{formula_opt_include("boost")}"
         s.gsub! "-fopenmp -pthread -lm",
                 "-Xpreprocessor -fopenmp -pthread -lm -lomp"
         s.gsub! "-pthread -lm -lomp",

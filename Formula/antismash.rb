@@ -208,7 +208,7 @@ class Antismash < Formula
   end
 
   def install
-    ENV.append "CPPFLAGS", "-I#{Formula["freetype"].opt_include}/freetype2" if OS.linux?
+    ENV.append "CPPFLAGS", "-I#{formula_opt_include("freetype")}/freetype2" if OS.linux?
     venv = virtualenv_install_with_resources without: "matplotlib"
     # `matplotlib` needs extra inputs to use system libraries.
     # Ref: https://github.com/matplotlib/matplotlib/blob/v3.9.2/doc/install/dependencies.rst#use-system-libraries

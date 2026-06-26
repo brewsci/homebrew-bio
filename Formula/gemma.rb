@@ -28,8 +28,8 @@ class Gemma < Formula
     inreplace "Makefile", "-lgfortran", ""
     inreplace "Makefile", "-lquadmath", ""
 
-    system "make", "EIGEN_INCLUDE_PATH=#{Formula["eigen"].opt_include}/eigen3",
-                   "OPENBLAS_INCLUDE_PATH=#{Formula["openblas"].opt_include}",
+    system "make", "EIGEN_INCLUDE_PATH=#{formula_opt_include("eigen")}/eigen3",
+                   "OPENBLAS_INCLUDE_PATH=#{formula_opt_include("openblas")}",
                    "DEBUG="
     bin.install "bin/gemma"
     doc.install Dir["doc/*"]

@@ -147,7 +147,7 @@ class BoostAT186 < Formula
       }
     CPP
     system ENV.cxx, "test.cpp", "-std=c++14", "-o", "test", "-L#{lib}", "-lboost_iostreams",
-                    "-I#{Formula["brewsci/bio/boost@1.86"].opt_include}",
+                    "-I#{formula_opt_include("brewsci/bio/boost@1.86")}",
                     "-L#{formula_opt_lib("zstd")}", "-lzstd"
     system "./test"
   end

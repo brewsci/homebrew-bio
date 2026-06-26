@@ -30,11 +30,11 @@ class Rdock < Formula
     ENV["CXX"] = formula_opt_bin("gcc")/"g++-14"
 
     inreplace "Makefile" do |s|
-      s.gsub!(/INCLUDE\s*:=/, "INCLUDE := -I#{Formula["popt"].opt_include} ")
+      s.gsub!(/INCLUDE\s*:=/, "INCLUDE := -I#{formula_opt_include("popt")} ")
       s.gsub!(/LIB_DEPENDENCIES\s*:=\s*-lpopt/, "LIB_DEPENDENCIES := -L#{formula_opt_lib("popt")} -lpopt")
     end
 
-    ENV["CXX_EXTRA_FLAGS"] = "-I#{Formula["popt"].opt_include}"
+    ENV["CXX_EXTRA_FLAGS"] = "-I#{formula_opt_include("popt")}"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{formula_opt_lib("gcc")}/gcc/14" if OS.mac?
     (share/"lib").mkpath
     cp_r Dir["lib/*"], share/"lib"
