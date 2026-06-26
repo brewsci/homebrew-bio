@@ -38,6 +38,9 @@ class Trinity < Formula
     # `use DB_File`, which the macOS system perl ships but Homebrew's perl does
     # not. Build the module against berkeley-db@5 (see install).
     depends_on "berkeley-db@5"
+    # libz on linuxbrew is provided by zlib-ng-compat; declare it directly so
+    # `brew linkage` does not flag it as an indirect dependency (via htslib).
+    depends_on "zlib-ng-compat"
 
     resource "DB_File" do
       url "https://cpan.metacpan.org/authors/id/P/PM/PMQS/DB_File-1.860.tar.gz"
