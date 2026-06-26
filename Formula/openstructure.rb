@@ -108,7 +108,7 @@ class Openstructure < Formula
         -DCMAKE_CXX_STANDARD=17
         -DCMAKE_PREFIX_PATH=#{HOMEBREW_PREFIX}
         -DBOOST_ROOT=#{formula_opt_prefix("boost")}
-        -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
+        -DBoost_INCLUDE_DIRS=#{formula_opt_include("boost")}
         -DBOOST_PYTHON_LIBRARIES=#{formula_opt_lib("boost-python3")}/libboost_python#{py_ver_nodot}.#{shlib_ext}
         -DENABLE_GUI=OFF
         -DENABLE_GFX=OFF
@@ -137,13 +137,13 @@ class Openstructure < Formula
         -DCMAKE_PREFIX_PATH=#{HOMEBREW_PREFIX}
         -DPREFIX=#{prefix}
         -DBOOST_ROOT=#{formula_opt_prefix("boost")}
-        -DBoost_INCLUDE_DIRS=#{Formula["boost"].opt_include}
+        -DBoost_INCLUDE_DIRS=#{formula_opt_include("boost")}
         -DBOOST_PYTHON_LIBRARIES=#{formula_opt_lib("boost-python3")}/libboost_python#{py_ver_nodot}.#{shlib_ext}
         -DCOMPOUND_LIB=#{buildpath}/build/compounds.chemlib
-        -DPARASAIL_INCLUDE_DIR=#{Formula["brewsci/bio/parasail"].opt_include}
+        -DPARASAIL_INCLUDE_DIR=#{formula_opt_include("brewsci/bio/parasail")}
         -DPARASAIL_LIBRARY=#{formula_opt_lib("brewsci/bio/parasail")}/libparasail.#{shlib_ext}
         -DOPEN_MM_LIBRARY=#{formula_opt_lib("brewsci/bio/openmm@7")}/libOpenMM.#{shlib_ext}
-        -DOPEN_MM_INCLUDE_DIR=#{Formula["brewsci/bio/openmm@7"].opt_include}
+        -DOPEN_MM_INCLUDE_DIR=#{formula_opt_include("brewsci/bio/openmm@7")}
         -DOPEN_MM_PLUGIN_DIR=#{formula_opt_lib("brewsci/bio/openmm@7")}/plugins
         -DENABLE_MM=ON
         -DUSE_RPATH=ON

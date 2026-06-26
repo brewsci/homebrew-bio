@@ -27,7 +27,7 @@ class Gemmi < Formula
     mkdir_p site_packages
 
     ENV.append "CPPFLAGS", "-I#{formula_opt_lib("nanobind")/"python#{py_ver}/site-packages/nanobind/include"}"
-    ENV.append "CPPFLAGS", "-I#{Formula["python@3.14"].opt_include}/python#{py_ver}"
+    ENV.append "CPPFLAGS", "-I#{formula_opt_include("python@3.14")}/python#{py_ver}"
 
     system "cmake", "-S", ".", "-B", "build", "-G", "Ninja",
       "-DCMAKE_CXX_FLAGS=#{ENV["CXXFLAGS"]} #{ENV["CPPFLAGS"]}",

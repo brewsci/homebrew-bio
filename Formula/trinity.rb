@@ -42,7 +42,7 @@ class Trinity < Formula
       s.gsub! "sift_bam_max_cov: sift_bam_max_cov.cpp htslib/version.h",
               "sift_bam_max_cov: sift_bam_max_cov.cpp"
       s.gsub! "-L./htslib/build/lib/", "-L#{formula_opt_lib("htslib")}"
-      s.gsub! "-I./htslib/build/include", "-I#{Formula["htslib"].opt_include}"
+      s.gsub! "-I./htslib/build/include", "-I#{formula_opt_include("htslib")}"
     end
 
     if OS.mac?

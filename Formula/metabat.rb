@@ -66,7 +66,7 @@ class Metabat < Formula
 
     cmakeargs = %W[
       -DBoost_USE_STATIC_LIBS:BOOL=ON
-      -DBoost_INCLUDE_DIR:PATH=#{Formula["brewsci/bio/boost@1.86"].opt_include}
+      -DBoost_INCLUDE_DIR:PATH=#{formula_opt_include("brewsci/bio/boost@1.86")}
       -DBoost_LIBRARY_DIR_RELEASE:PATH=#{formula_opt_lib("brewsci/bio/boost@1.86")}
     ]
     system "cmake", "-S", ".", "-B", "build",

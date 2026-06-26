@@ -41,17 +41,17 @@ class Iqtree3 < Formula
 
     # Set up environment for OpenMP
     ldflags = "-L#{formula_opt_lib("libomp")}"
-    cppflags = "-I#{Formula["libomp"].opt_include}"
+    cppflags = "-I#{formula_opt_include("libomp")}"
 
     # Set environment to prevent FetchContent downloads
     ENV["FETCHCONTENT_FULLY_DISCONNECTED"] = "ON"
     ENV["FETCHCONTENT_TRY_FIND_PACKAGE_MODE"] = "ALWAYS"
-    ENV.append "CFLAGS", "-I#{Formula["googletest"].opt_include}/googletest/googletest"
+    ENV.append "CFLAGS", "-I#{formula_opt_include("googletest")}/googletest/googletest"
     args = std_cmake_args + [
       "-DCMAKE_C_COMPILER=#{ENV.cc}",
       "-DCMAKE_CXX_COMPILER=#{ENV.cxx}",
       "-DCMAKE_CXX_FLAGS=#{ldflags} #{cppflags}",
-      "-DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}/eigen3",
+      "-DEIGEN3_INCLUDE_DIR=#{formula_opt_include("eigen")}/eigen3",
       "-DBUILD_TESTING=OFF",
       "-DIQTREE_TEST=OFF",
       "-DFETCHCONTENT_FULLY_DISCONNECTED=ON",

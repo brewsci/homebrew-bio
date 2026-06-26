@@ -32,7 +32,7 @@ class AutodockVina < Formula
       cd "build/mac/release" do
         inreplace "Makefile" do |s|
           s.gsub! "BASE=$(shell brew --prefix)", "BASE=#{prefix}"
-          s.gsub! "$(BASE)/include", Formula["boost"].opt_include
+          s.gsub! "$(BASE)/include", formula_opt_include("boost")
           s.gsub! "GPP=/usr/bin/clang++", "GPP=#{ENV.cxx}"
           s.gsub! "BOOST_STATIC=y", "BOOST_STATIC="
         end
@@ -43,7 +43,7 @@ class AutodockVina < Formula
       cd "build/linux/release" do
         inreplace "Makefile" do |s|
           s.gsub! "BASE=/usr", "BASE=#{prefix}"
-          s.gsub! "$(BASE)/include", Formula["boost"].opt_include
+          s.gsub! "$(BASE)/include", formula_opt_include("boost")
         end
         system "make"
         bin.install binaries

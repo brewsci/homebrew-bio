@@ -33,7 +33,7 @@ class Voronota < Formula
 
     if OS.mac?
       ENV.append "CXXFLAGS",
-        "-I#{Formula["libomp"].opt_include} -Xpreprocessor -fopenmp"
+        "-I#{formula_opt_include("libomp")} -Xpreprocessor -fopenmp"
       ENV.append "LDFLAGS",
         "-L#{formula_opt_lib("libomp")} -lomp"
     elsif OS.linux?

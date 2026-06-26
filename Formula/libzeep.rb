@@ -119,7 +119,7 @@ class Libzeep < Formula
     EOS
     system ENV.cxx, "test.cpp", "-o", "test",
                     "-std=c++17", "-I#{include}",
-                    "-I#{Formula["boost"].opt_include}",
+                    "-I#{formula_opt_include("boost")}",
                     "-L#{lib}", "-lzeep"
     assert_match "server is not running", shell_output("./test status 2>&1", 1)
   end
