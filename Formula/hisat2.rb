@@ -4,22 +4,14 @@ class Hisat2 < Formula
   # cite Kim_2015: "https://doi.org/10.1038/nmeth.3317"
   desc "Graph-based alignment to a population of genomes"
   homepage "https://daehwankimlab.github.io/hisat2/"
-  url "https://github.com/DaehwanKimLab/hisat2/archive/refs/tags/v2.2.1.tar.gz"
-  sha256 "f3f4f867d0a6b1f880d64efc19deaa5788c62050e0a4d614ce98b3492f702599"
+  url "https://github.com/DaehwanKimLab/hisat2/archive/refs/tags/v2.2.2.tar.gz"
+  sha256 "d3996d7bee30e38e51beb69c44b10461a4692e686487c465f9a20e3f54b6e815"
   license "GPL-3.0-or-later"
-  revision 1
-  head "https://github.com/DaehwanKimLab/hisat2.git"
+  head "https://github.com/DaehwanKimLab/hisat2.git", branch: "master"
 
   livecheck do
     url :stable
     strategy :github_latest
-  end
-
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "c20ceca0fc0a7156dea5c5f77aa4e873eb62dc572d7c3a4dfaa59446c7f4772b"
-    sha256 cellar: :any_skip_relocation, ventura:      "fdbf80320dd91bd6c5d241158eed6e642ec73179515dac6174c111536e4657ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e60d0fa07fd0fb8ccd8172eaf4ab481169f64a6abb6d41dc7f41c692fa1c0fad"
   end
 
   depends_on "python@3.12"
@@ -66,7 +58,7 @@ class Hisat2 < Formula
   end
 
   test do
-    system "#{bin}/hisat2-build", "-p", "12", pkgshare/"example/reference/22_20-21M.fa", "genome_index"
+    system bin/"hisat2-build", "-p", "12", pkgshare/"example/reference/22_20-21M.fa", "genome_index"
     assert_path_exists testpath/"genome_index.1.ht2"
   end
 end
