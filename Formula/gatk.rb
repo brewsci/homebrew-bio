@@ -13,6 +13,13 @@ class Gatk < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any, arm64_tahoe:   "9f4ea52f27255cd8d6839492ff65d35b76405440da7df47317a3e2ec56d32ac1"
+    sha256 cellar: :any, arm64_sequoia: "a374482506b70e992ea1d94b48f9b9eef4fd7167043a98a23ac36a505ac0abe8"
+    sha256 cellar: :any, arm64_sonoma:  "a0ff8be5584fd3fbe26b5853e388580a61efdea7f2702182d12ee105c2dfabae"
+  end
+
   # NOTE: torch 2.1.0 (pinned by GATK's conda env) only ships wheels through
   # cp311, so this formula is pinned to python@3.10 (GATK's exact pin). Bumping
   # Python requires bumping torch, which GATK ties to its gcnvkernel package.
