@@ -1,6 +1,11 @@
 name: Build bottles
 
-on: pull_request
+# Only build bottles when a formula actually changes; this avoids the `merge`
+# job failing on PRs that touch no formulae (no bottles -> no artifacts).
+on:
+  pull_request:
+    paths:
+      - Formula/**
 
 env:
   HOMEBREW_NO_ANALYTICS: 1

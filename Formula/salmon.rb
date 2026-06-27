@@ -2,43 +2,63 @@ class Salmon < Formula
   # cite Patro_2017: "https://doi.org/10.1038/nmeth.4197"
   desc "Transcript-level quantification from RNA-seq reads"
   homepage "https://github.com/COMBINE-lab/salmon"
-  url "https://github.com/COMBINE-lab/salmon/archive/refs/tags/v1.10.3.tar.gz"
-  sha256 "a053fba63598efc4ade3684aa2c8e8e2294186927d4fcdf1041c36edc2aa0871"
-  license "GPL-3.0-or-later"
-  head "https://github.com/COMBINE-lab/salmon.git", branch: "master"
+  license "BSD-3-Clause"
+
+  # Track GitHub releases so new versions are detected by `brew livecheck`.
+  livecheck do
+    url :homepage
+    strategy :github_latest
+  end
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "7848bf107e84581e266a23668b9a8abb67d620101f8a37e352ccbe9e8cf5c6a7"
-    sha256 cellar: :any,                 arm64_sonoma:  "0571a9cae7fe97a04669dd76c78e7222cf6214caa91b426f4e1c2e8cddbb4040"
-    sha256 cellar: :any,                 ventura:       "2de62df335d4bdcb9bb3fd3946960bf248c491e810f83f51ed52f35a821cb451"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8bfb7680361ebe1832dedb87a31dd5f23fc262400c01922f5d986e6e9aa3a006"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52b48a0050464f22ebcde396b1043f0e6c3e418e8885d3ec729a26de1d517149"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52b48a0050464f22ebcde396b1043f0e6c3e418e8885d3ec729a26de1d517149"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "52b48a0050464f22ebcde396b1043f0e6c3e418e8885d3ec729a26de1d517149"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11a1d787c8e86b37fcff0e9d0d9af2a77f97d51b89b834842036f6670197c2ec"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "boost" => :build
-  depends_on "cmake" => :build
-  depends_on "tbb"
-  depends_on "xz"
-  depends_on "zstd"
+  # salmon 2.0 is a from-scratch Rust rewrite shipped as a single binary via
+  # cargo-dist (the final C++ release, 1.10.x, lives on the upstream `cpp`
+  # branch). Use the prebuilt per-platform artifacts directly.
+  #
+  # The artifact filenames (salmon-cli-<target-triple>.tar.xz) carry no version,
+  # and the `x86_64` triple makes Homebrew mis-scan the version as
+  # "64-unknown-linux-gnu". The `#/salmon.tar.xz` fragment renames the download
+  # so the scanner ignores the triple and picks up "2.1.2" from the URL path on
+  # every platform, keeping detection consistent without a redundant `version`.
+  on_macos do
+    on_arm do
+      url "https://github.com/COMBINE-lab/salmon/releases/download/v2.1.2/salmon-cli-aarch64-apple-darwin.tar.xz#/salmon.tar.xz"
+      sha256 "0d8ada4db7ebedbfc189d15ff570773c4a9d4d25a5d4c3e48c34ac47cadf00ab"
+    end
+    on_intel do
+      url "https://github.com/COMBINE-lab/salmon/releases/download/v2.1.2/salmon-cli-x86_64-apple-darwin.tar.xz#/salmon.tar.xz"
+      sha256 "c12cf50bd52a9547b75ba0ffd9749491ddd311a2b5a98d3077ff44dc9120a4c9"
+    end
+  end
 
-  uses_from_macos "unzip" => :build
-  uses_from_macos "bzip2"
-  uses_from_macos "curl"
-  uses_from_macos "zlib"
+  on_linux do
+    on_arm do
+      url "https://github.com/COMBINE-lab/salmon/releases/download/v2.1.2/salmon-cli-aarch64-unknown-linux-gnu.tar.xz#/salmon.tar.xz"
+      sha256 "2e09b3bbcbb50b74a82166367ce7c1ad7dda39ef7b438fd50d0202d88f885048"
+    end
+    on_intel do
+      url "https://github.com/COMBINE-lab/salmon/releases/download/v2.1.2/salmon-cli-x86_64-unknown-linux-gnu.tar.xz#/salmon.tar.xz"
+      sha256 "6ecba19104f76667c62a0211bd4e208dbcfb2d1386bdc6925baea9081cf72124"
+    end
+  end
 
   def install
-    args = *std_cmake_args
-    # https://github.com/COMBINE-lab/salmon/issues/664
-    args << "-DNO_IPO=TRUE" if OS.linux?
-    system "cmake", ".", *args
-    system "make"
-    system "make", "install"
+    bin.install "salmon"
   end
 
   test do
-    assert_match "Usage", shell_output("#{bin}/salmon --help 2>&1")
+    assert_match version.to_s, shell_output("#{bin}/salmon --version")
+
+    # Build a tiny index end to end.
+    (testpath/"txome.fa").write ">t0\n#{"ACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGT" * 4}\n"
+    system bin/"salmon", "index", "-t", "txome.fa", "-i", "idx", "-k", "31"
+    assert_predicate testpath/"idx", :directory?
   end
 end

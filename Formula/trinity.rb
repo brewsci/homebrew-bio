@@ -5,12 +5,13 @@ class Trinity < Formula
   url "https://github.com/trinityrnaseq/trinityrnaseq/releases/download/Trinity-v2.15.1/trinityrnaseq-v2.15.1.FULL.tar.gz"
   sha256 "ba37e5f696d3d54e8749c4ba439901a3e97e14a4314a5229d7a069ad7b1ee580"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sonoma: "f71e98e93d78627e3257df4e1934816a33596d7a7ca490f712999526233ae450"
-    sha256 cellar: :any,                 ventura:      "1b7e142197849f8d59333b7cbe50b24e8183900685ddeae6c7fa54c8b90b896c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "671075ec7397e804cfb61e292aa4c7369a2d42446dff971d822cc0cbdec27f46"
+    sha256 cellar: :any, arm64_sequoia: "4b94412b0c89d55e040bd3607ce541ffbef663717239e578d462cdb4e6c488bf"
+    sha256 cellar: :any, arm64_sonoma:  "f4f29ad426e5cb5ad1d0dbbf6e6ccb884719571a9e531fba4a4213adb97718df"
+    sha256 cellar: :any, x86_64_linux:  "2a7dc95402ec73bae349641d11f9f57bbe84f96c7bcc909c9a6b89ac497635d8"
   end
 
   depends_on "autoconf" => :build
@@ -32,8 +33,26 @@ class Trinity < Formula
     depends_on "libomp"
   end
 
+  on_linux do
+    # Trinity's read-normalization step (insilico_read_normalization.pl) does
+    # `use DB_File`, which the macOS system perl ships but Homebrew's perl does
+    # not. Build the module against berkeley-db@5 (see install).
+    depends_on "berkeley-db@5"
+    # libz on linuxbrew is provided by zlib-ng-compat; declare it directly so
+    # `brew linkage` does not flag it as an indirect dependency (via htslib).
+    depends_on "zlib-ng-compat"
+
+    resource "DB_File" do
+      url "https://cpan.metacpan.org/authors/id/P/PM/PMQS/DB_File-1.860.tar.gz"
+      sha256 "cbe5e90b0e40e0d566f505789b73196e93c56709f660ca316af50662260749a0"
+    end
+  end
+
   def install
     ENV.cxx11
+    # CMake 4 dropped compatibility with cmake_minimum_required < 3.5, which
+    # Trinity's bundled Inchworm/Chrysalis CMake projects still declare.
+    ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
 
     rm_r "Butterfly/Butterfly"
     rm_r "trinity-plugins/bamsifter/htslib"
@@ -84,6 +103,26 @@ class Trinity < Formula
     rm_r Dir["**/build"]
     rm_r Dir["**/src"]
     libexec.install Dir["*"]
+
+    # Provide DB_File for Homebrew's perl on Linux by building it against
+    # berkeley-db@5 and dropping it into Trinity's bundled PerlLib, which is
+    # already on the perl scripts' @INC and PERL5LIB.
+    if OS.linux?
+      resource("DB_File").stage do
+        bdb = Formula["berkeley-db@5"]
+        inreplace "config.in" do |s|
+          s.gsub!(/^INCLUDE\s*=.*/, "INCLUDE = #{bdb.opt_include}")
+          s.gsub!(/^LIB\s*=.*/, "LIB = #{bdb.opt_lib}")
+        end
+        system "perl", "Makefile.PL", "INSTALL_BASE=#{buildpath}/db_file"
+        system "make"
+        system "make", "install"
+      end
+      perllib = libexec/"PerlLib"
+      perllib.install Dir["#{buildpath}/db_file/lib/perl5/**/DB_File.pm"].first
+      (perllib/"auto/DB_File").install Dir["#{buildpath}/db_file/lib/perl5/**/auto/DB_File/DB_File.so"].first
+    end
+
     envs = {
       PERL5LIB:  libexec/"PerlLib",
       JAVA_HOME: formula_opt_prefix("openjdk@11"),
