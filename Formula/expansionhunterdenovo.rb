@@ -9,9 +9,9 @@ class Expansionhunterdenovo < Formula
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "htslib"
+  depends_on "xz" # liblzma, linked transitively via the imported htslib
 
   uses_from_macos "bzip2"
-  uses_from_macos "xz"
   uses_from_macos "zlib"
 
   def install
