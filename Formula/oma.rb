@@ -16,6 +16,9 @@ class Oma < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "b1c873f9cc4a6d468c491fdfa8216eca5b9cb97190ddccd87dec111da4cbfeeb"
   end
 
+  # OMA standalone ships only x86_64 binaries (omadarwin.mac64 / linux64);
+  # there is no arm64 build, so it cannot produce a native arm64 bottle.
+  depends_on arch: :x86_64
   depends_on "numpy"
   depends_on "python"
 
