@@ -46,6 +46,10 @@ class Vep < Formula
     url "https://github.com/Ensembl/ensembl-io/archive/6afb5dc27a5ae6881d75959153fbe6e9a4a7e788.tar.gz"
     sha256 "45154809117aff507b91df86fe5fd74a4df0bcf3b588f0b0d0f6ea5278ee28cc"
   end
+  resource "ensembl-compara" do
+    url "https://github.com/Ensembl/ensembl-compara/archive/5ea78be5e7e8fc25615dd31612fd5d97dda9478e.tar.gz"
+    sha256 "7af4c23dde23716de2bee7a04938fdee19b9dd22069927af88b9db7a914011fd"
+  end
 
   # BioPerl version frozen by the Ensembl API (pure-Perl, just staged).
   resource "bioperl" do
@@ -78,11 +82,30 @@ class Vep < Formula
            "JSON", "Text::CSV", "PerlIO::gzip", "Sereal", "Capture::Tiny", "Archive::Zip",
            "List::MoreUtils", "LWP::Simple"
 
-    %w[ensembl ensembl-variation ensembl-funcgen ensembl-io].each do |r|
+    # The five Ensembl API modules VEP requires (ensembl, ensembl-variation,
+    # ensembl-funcgen, ensembl-compara, ensembl-io), each pinned to a commit on
+    # the release/116 branch. The commit is recorded so `vep` can report the
+    # per-module version, exactly as INSTALL.pl does via `.version/<module>`.
+    api_release = version.major.to_s
+    api_modules = {
+      "ensembl"           => "0d852313c420a1d5128b6774635125ebbac03350",
+      "ensembl-variation" => "2fb834b987ede3824e200197a838ce11e91aeb4b",
+      "ensembl-funcgen"   => "90049ea7ee4d8ae3a6d298dca46d6c6ab20538c4",
+      "ensembl-compara"   => "5ea78be5e7e8fc25615dd31612fd5d97dda9478e",
+      "ensembl-io"        => "6afb5dc27a5ae6881d75959153fbe6e9a4a7e788",
+    }
+    api_modules.each_key do |r|
       resource(r).stage { (libexec/"api"/r).install "modules" }
     end
 
     libexec.install "vep", "filter_vep", "haplo", "variant_recoder", "INSTALL.pl", "modules"
+
+    # Version metadata read by Bio::EnsEMBL::VEP::Utils::get_version_data, so
+    # `vep --help` lists the API module versions instead of only ensembl-vep.
+    (libexec/".version").mkpath
+    api_modules.each do |r, commit|
+      (libexec/".version"/r).write "release #{api_release}\nsub #{commit}\n"
+    end
 
     perl5lib = [
       vendor/"lib/perl5",
@@ -90,6 +113,7 @@ class Vep < Formula
       libexec/"api/ensembl/modules",
       libexec/"api/ensembl-variation/modules",
       libexec/"api/ensembl-funcgen/modules",
+      libexec/"api/ensembl-compara/modules",
       libexec/"api/ensembl-io/modules",
       libexec/"modules",
     ].join(":")
@@ -116,7 +140,11 @@ class Vep < Formula
   end
 
   test do
-    assert_match "Ensembl VEP", shell_output("#{bin}/vep --help 2>&1")
+    help = shell_output("#{bin}/vep --help 2>&1")
+    assert_match "Ensembl VEP", help
+    # The bundled API modules must report their versions, not just ensembl-vep.
+    assert_match(/^\s*ensembl\s+: #{version.major}\./, help)
+    assert_match(/^\s*ensembl-compara\s+: #{version.major}\./, help)
     assert_match "filter_vep", shell_output("#{bin}/filter_vep --help 2>&1")
   end
 end
