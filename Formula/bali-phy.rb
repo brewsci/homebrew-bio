@@ -4,8 +4,8 @@ class BaliPhy < Formula
   desc "Bayesian co-estimation of phylogenies and multiple alignments"
   homepage "https://www.bali-phy.org/"
   url "https://github.com/bredelings/BAli-Phy.git",
-    tag:      "4.1",
-    revision: "1fd88e6ebe99a8e32cba486cb324740ca3a343d7"
+    tag:      "4.2",
+    revision: "c1f6e56e17ab399b73e74188c1a475e90909cdfd"
   license "GPL-2.0-or-later"
   head "https://github.com/bredelings/BAli-Phy.git", branch: "master"
 
@@ -49,6 +49,12 @@ class BaliPhy < Formula
     cause "Requires C++20 support"
   end
 
+  # Use fmt/format.h instead of fmt/core.h. Since fmt 11, fmt/core.h no longer
+  # declares fmt::format unless FMT_DEPRECATED_HEAVY_CORE is defined, which
+  # breaks the build against the current fmt (12.x). Reported upstream-compatible
+  # fix: include the full format header where fmt::format is used.
+  patch :DATA
+
   def install
     ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1500
     ENV["CXX"] = formula_opt_bin("llvm")/"clang++" if OS.mac? && DevelopmentTools.clang_build_version <= 1500
@@ -65,3 +71,18 @@ class BaliPhy < Formula
     system "#{bin}/bp-analyze", "5d-1"
   end
 end
+
+__END__
+diff --git a/src/computation/haskell/literal.cc b/src/computation/haskell/literal.cc
+index bf5940b..4658c00 100644
+--- a/src/computation/haskell/literal.cc
++++ b/src/computation/haskell/literal.cc
+@@ -2,7 +2,7 @@
+ #include "util/string/join.H"
+ #include "util/string/convert.H"
+ #include <regex>
+-#include "fmt/core.h"
++#include "fmt/format.h"
+
+ using std::string;
+ using std::optional;
