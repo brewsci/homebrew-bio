@@ -12,6 +12,14 @@ class Vep < Formula
     regex(%r{^release/(\d+(?:\.\d+)+)$}i)
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any, arm64_tahoe:   "f3fbc2ab02b3e9d84b5b20466c80d6df3fe8550ef65dee6922c6631592097996"
+    sha256 cellar: :any, arm64_sequoia: "d5d3accb53e56fbede339a8512eb7079dcce5bf2120a2af883273a57c3149ae7"
+    sha256 cellar: :any, arm64_sonoma:  "1b79c5f40c243a364f100874e81ccec58523bff031ead2b3aa30ad550368cdc9"
+    sha256 cellar: :any, x86_64_linux:  "ec2ebfeb1e417f696260d3f4544934d5f9f52dbf182885fd5c70a6f0836cda99"
+  end
+
   depends_on "cpanminus" => :build
   depends_on "htslib"
   depends_on "mysql-client"
