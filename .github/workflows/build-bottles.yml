@@ -58,6 +58,10 @@ jobs:
     needs: build-bottles
     steps:
       - name: Merge Artifacts
+        # Tolerate PRs that change no formula (e.g. workflow-only changes):
+        # no bottles are built, so there is nothing to merge and the action
+        # would otherwise error on an empty `bottles-*` pattern.
+        continue-on-error: true
         uses: actions/upload-artifact/merge@v6
         with:
           name: all-bottles
