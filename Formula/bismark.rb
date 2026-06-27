@@ -6,6 +6,10 @@ class Bismark < Formula
   sha256 "b7e69f8e4893059f73863a8d2835245e70132715fdf49163b453bb7c0a8de61d"
   license "GPL-3.0-or-later"
 
+  # NOTE: Bismark v2 is a Rust rewrite. When livecheck/autobump detects it, the
+  # version-bump PR will only change url/sha256 and WILL fail: the v2 tarball
+  # has no Perl scripts. It needs a full formula rewrite (depends_on "rust" =>
+  # :build, a cargo build, and revised runtime deps) rather than an auto-bump.
   livecheck do
     url :stable
     strategy :github_latest
