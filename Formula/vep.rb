@@ -1,7 +1,7 @@
 class Vep < Formula
   # cite McLaren_2016: "https://doi.org/10.1186/s13059-016-0974-4"
   desc "Ensembl Variant Effect Predictor (VEP)"
-  homepage "https://www.ensembl.org/info/docs/tools/vep/index.html"
+  homepage "https://github.com/Ensembl/ensembl-vep"
   url "https://github.com/Ensembl/ensembl-vep/archive/refs/tags/release/116.0.tar.gz"
   sha256 "618a4b6d37efbe0968d7ad1115bf6b712f8537c4697659be6c41580708eb5167"
   license "Apache-2.0"
@@ -57,6 +57,14 @@ class Vep < Formula
     sha256 "547a65a1c083bd40345514893cf91491d49318f2290dd8d0a539b742327cbe25"
   end
 
+  # Official VEP plugins (Ensembl/VEP_plugins), pinned to release/116. These
+  # are the .pm files `vep_install -a p` would otherwise fetch; the data files
+  # some plugins need are not bundled.
+  resource "vep-plugins" do
+    url "https://github.com/Ensembl/VEP_plugins/archive/61f2dd41e74ea172bcc129e4e64400496b39d0d8.tar.gz"
+    sha256 "c76ab6167ee1d26be9a58376214c6e5bb0aa674673ba563e21701b49c6a0500e"
+  end
+
   def install
     vendor = libexec/"vendor"
     perl = formula_opt_bin("perl")/"perl"
@@ -107,6 +115,14 @@ class Vep < Formula
       (libexec/".version"/r).write "release #{api_release}\nsub #{commit}\n"
     end
 
+    # Bundle the official VEP plugins so `--plugin <Name>` works out of the box
+    # with `--dir_plugins`. Stage the .pm files (and the example config) only,
+    # dropping the repo's docs/tooling.
+    resource("vep-plugins").stage do
+      (libexec/"Plugins").install Dir["*.pm"]
+      (libexec/"Plugins").install "config" if File.directory?("config")
+    end
+
     perl5lib = [
       vendor/"lib/perl5",
       vendor/"lib/perl5"/archname,
@@ -136,6 +152,11 @@ class Vep < Formula
         vep_install -a cf -s homo_sapiens -y GRCh38 -c ~/.vep
       then run offline:
         vep --offline --cache --dir_cache ~/.vep -i input.vcf -o out.txt
+
+      The official VEP plugins are bundled. Point VEP at them with:
+        vep --dir_plugins #{opt_libexec}/Plugins --plugin <PluginName> ...
+      Many plugins need extra data files you must download separately (see each
+      plugin's header docs).
     EOS
   end
 
@@ -146,5 +167,7 @@ class Vep < Formula
     assert_match(/^\s*ensembl\s+: #{version.major}\./, help)
     assert_match(/^\s*ensembl-compara\s+: #{version.major}\./, help)
     assert_match "filter_vep", shell_output("#{bin}/filter_vep --help 2>&1")
+    # The bundled VEP plugins should be present for use with --dir_plugins.
+    assert_path_exists libexec/"Plugins/AlphaMissense.pm"
   end
 end
