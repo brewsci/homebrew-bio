@@ -45,6 +45,11 @@ class Reviewer < Formula
     # deprecation warnings under modern clang that are not fatal here.
     inreplace graphtools/"CMakeLists.txt", " -Wall -Werror -pedantic ", " -Wall "
 
+    # GraphCoordinates.cpp uses std::numeric_limits without including <limits>;
+    # libc++ pulls it in transitively but gcc (Linux) does not.
+    inreplace graphtools/"src/graphcore/GraphCoordinates.cpp",
+              "#include <cassert>", "#include <cassert>\n#include <limits>"
+
     # Prefer the shared htslib: the static archive does not pull in libdeflate.
     inreplace inner/"CMakeLists.txt",
               "find_library(htslib libhts.a)\nfind_library(htslib hts)",
