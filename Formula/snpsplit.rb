@@ -10,15 +10,19 @@ class Snpsplit < Formula
     strategy :github_latest
   end
 
+  depends_on "perl"
   depends_on "samtools"
-  uses_from_macos "perl"
 
   def install
     # The scripts locate their siblings via FindBin's $RealBin (which resolves
     # symlinks), so install them into libexec and symlink the executables.
     scripts = %w[SNPsplit SNPsplit_genome_preparation tag2sort]
     libexec.install scripts
-    scripts.each { |s| bin.install_symlink libexec/s }
+    scripts.each do |s|
+      # Run under Homebrew's Perl rather than whatever `env perl` finds first.
+      inreplace libexec/s, "#!/usr/bin/env perl", "#!#{formula_opt_bin("perl")}/perl"
+      bin.install_symlink libexec/s
+    end
   end
 
   test do
