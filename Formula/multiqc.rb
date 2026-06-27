@@ -223,9 +223,17 @@ class Multiqc < Formula
     end
   end
 
+  # Installed from wheels: the pyarrow sdist build-requires the Arrow C++
+  # libraries, which are not available in the sandbox.
   resource "pyarrow" do
-    url "https://files.pythonhosted.org/packages/91/13/13e1069b351bdc3881266e11147ffccf687505dbb0ea74036237f5d454a5/pyarrow-24.0.0.tar.gz"
-    sha256 "85fe721a14dd823aca09127acbb06c3ca723efbd436c004f16bca601b04dcc83"
+    on_macos do
+      url "https://files.pythonhosted.org/packages/6f/d3/a1abf004482026ddc17f4503db227787fa3cfe41ec5091ff20e4fea55e57/pyarrow-24.0.0-cp313-cp313-macosx_12_0_arm64.whl"
+      sha256 "02b001b3ed4723caa44f6cd1af2d5c86aa2cf9971dacc2ffa55b21237713dfba"
+    end
+    on_linux do
+      url "https://files.pythonhosted.org/packages/84/9f/8fb7c222b100d314137fa40ec050de56cd8c6d957d1cfff685ce72f15b17/pyarrow-24.0.0-cp313-cp313-manylinux_2_28_x86_64.whl"
+      sha256 "6f066b179d68c413374294bc1735f68475457c933258df594443bb9d88ddc2a0"
+    end
   end
 
   resource "pydantic" do
@@ -342,7 +350,7 @@ class Multiqc < Formula
     # Resources only published as platform-specific wheels: kaleido 0.2.1 has no
     # sdist, and the polars rust runtimes need a pinned nightly toolchain to
     # build from source. Install those as binaries; build everything else.
-    wheel_resources = %w[kaleido polars-runtime-32 polars-runtime-compat]
+    wheel_resources = %w[kaleido polars-runtime-32 polars-runtime-compat pyarrow]
 
     venv = virtualenv_create(libexec, "python3.13")
     venv.pip_install resources.reject { |r| wheel_resources.include?(r.name) }
