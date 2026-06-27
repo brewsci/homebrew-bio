@@ -11,6 +11,12 @@ class Bismark < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "e03e329207c49789e0b35c752ce4527a6d468aecc4b0acf3132bc782c59134b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c8e9396d911024bca4ab3309a2c2069c6cdbaad7238ef9627d5145fca3eaca99"
+  end
+
   depends_on "bowtie2"
   depends_on "hisat2"
   depends_on "minimap2"
