@@ -18,6 +18,7 @@ class Raptor < Formula
 
   depends_on "cmake" => :build
   depends_on "gcc@12"
+  depends_on "yaml-cpp"
 
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
@@ -34,6 +35,7 @@ class Raptor < Formula
     args = %w[
       -DCMAKE_BUILD_TYPE=Release
       -DRAPTOR_NATIVE_BUILD=OFF
+      -DFETCHCONTENT_TRY_FIND_PACKAGE_MODE=ALWAYS
     ]
     # AVX2 is x86-only; build without it on arm64 (Apple Silicon).
     args << "-DCMAKE_CXX_FLAGS=-mavx2" if Hardware::CPU.intel?
