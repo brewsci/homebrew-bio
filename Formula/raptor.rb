@@ -40,7 +40,22 @@ class Raptor < Formula
     # AVX2 is x86-only; build without it on arm64 (Apple Silicon).
     args << "-DCMAKE_CXX_FLAGS=-mavx2" if Hardware::CPU.intel?
 
-    system "cmake", ".", *args, *std_cmake_args
+    # Only Linux builds the `layout` subcommand, which pulls in the bundled
+    # chopper/xxHash submodules via FetchContent (local SOURCE_DIR) plus a
+    # nested ExternalProject. Homebrew's FetchContent trap refuses even those
+    # local populations, and the bundled CMakeLists predate CMake 4's policy
+    # floor; clear the trap and raise the floor (also in the environment, so the
+    # nested ExternalProject cmake invocations inherit it). macOS does not build
+    # that path, so its working configuration is left untouched.
+    cmake_args = [".", *args, *std_cmake_args]
+    if OS.linux?
+      ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
+      cmake_args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+      # Must come after std_cmake_args to override Homebrew's trap injection.
+      cmake_args << "-DCMAKE_PROJECT_TOP_LEVEL_INCLUDES="
+    end
+
+    system "cmake", *cmake_args
     system "make"
     bin.install "bin/raptor"
   end
