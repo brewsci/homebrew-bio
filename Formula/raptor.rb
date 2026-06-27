@@ -6,9 +6,9 @@ class Raptor < Formula
   url "https://github.com/seqan/raptor",
     using:    :git,
     tag:      "raptor-v3.0.1",
-    revision: "387c7da78f2ebdd72feddabc1e4dddcbe026b4ad"
+    revision: "01b8afc0ced404b036bece173f137f53a777ca51"
   license "BSD-3-Clause"
-  head "https://github.com/seqan/raptor.git"
+  head "https://github.com/seqan/raptor.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
