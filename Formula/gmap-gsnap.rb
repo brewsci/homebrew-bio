@@ -22,6 +22,12 @@ class GmapGsnap < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
+  # The binary links libz, provided by zlib-ng-compat on Linux; declare it
+  # directly so it is not flagged as an indirect-dependency linkage.
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
+
   def install
     # gmap 2025 builds several SIMD-level binaries (sse42, avx2, nosimd, ...)
     # and dispatches at runtime, so the bottle stays portable without pinning
