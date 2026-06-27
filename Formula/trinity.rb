@@ -9,9 +9,9 @@ class Trinity < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sonoma: "f71e98e93d78627e3257df4e1934816a33596d7a7ca490f712999526233ae450"
-    sha256 cellar: :any,                 ventura:      "1b7e142197849f8d59333b7cbe50b24e8183900685ddeae6c7fa54c8b90b896c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "671075ec7397e804cfb61e292aa4c7369a2d42446dff971d822cc0cbdec27f46"
+    sha256 cellar: :any, arm64_sequoia: "4b94412b0c89d55e040bd3607ce541ffbef663717239e578d462cdb4e6c488bf"
+    sha256 cellar: :any, arm64_sonoma:  "f4f29ad426e5cb5ad1d0dbbf6e6ccb884719571a9e531fba4a4213adb97718df"
+    sha256 cellar: :any, x86_64_linux:  "2a7dc95402ec73bae349641d11f9f57bbe84f96c7bcc909c9a6b89ac497635d8"
   end
 
   depends_on "autoconf" => :build
