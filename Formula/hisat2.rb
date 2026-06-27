@@ -14,6 +14,14 @@ class Hisat2 < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "c9fe862014d2d534f994c0fec85985f31b983bf3860753446c3d8de36229d4a8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "acfe20f863cd0d02920e030726a4c3c2069d33d7473e3fea8941c2447aa3d0c1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c160c22e90799693a2a9a226dc8093bea30f5b335e8858cc952120685504591c"
+    sha256 cellar: :any,                 x86_64_linux:  "e637568676afa7f851a9710af945c333a9446a464cb5f2060ae0e39c4fba300a"
+  end
+
   depends_on "python@3.12"
 
   resource "sse2neon" do
