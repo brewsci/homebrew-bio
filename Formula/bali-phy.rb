@@ -86,3 +86,46 @@ index bf5940b..4658c00 100644
 
  using std::string;
  using std::optional;
+diff --git a/src/util/include/util/ptree.H b/src/util/include/util/ptree.H
+index 7fc6c09..cd71c45 100644
+--- a/src/util/include/util/ptree.H
++++ b/src/util/include/util/ptree.H
+@@ -159,4 +159,9 @@ inline ptree array_index(const ptree& p, int i)
+ 
+ std::ostream& operator<<(std::ostream& o, const ptree::value_t& v);
+ 
++// ptree derives from std::vector, whose C++20 operator<=> recurses on ptree
++// itself under libc++. Provide an explicit operator< (defined with named
++// recursion, never infix ptree<ptree) to break that recursion.
++bool operator<(const ptree& a, const ptree& b);
++
+ #endif
+diff --git a/src/util/ptree.cc b/src/util/ptree.cc
+index a73ed37..1a84e8d 100644
+--- a/src/util/ptree.cc
++++ b/src/util/ptree.cc
+@@ -11,6 +11,24 @@ using std::optional;
+ 
+ std::ostream& operator<<(std::ostream& o,const monostate&) {o<<"()";return o;}
+ 
++static bool ptree_lt(const ptree& a, const ptree& b)
++{
++    if (a.value < b.value) return true;
++    if (b.value < a.value) return false;
++    if (a.size() < b.size()) return true;
++    if (b.size() < a.size()) return false;
++    for(auto it1 = a.begin(), it2 = b.begin(); it1 != a.end(); ++it1, ++it2)
++    {
++        if (it1->first < it2->first) return true;
++        if (it2->first < it1->first) return false;
++        if (ptree_lt(it1->second, it2->second)) return true;
++        if (ptree_lt(it2->second, it1->second)) return false;
++    }
++    return false;
++}
++
++bool operator<(const ptree& a, const ptree& b) { return ptree_lt(a, b); }
++
+ bool ptree::value_is_empty() const
+ {
+     return value.index() == 0;
