@@ -2,21 +2,10 @@ class Delly < Formula
   # cite Rausch_2012: "https://doi.org/10.1093/bioinformatics/bts378"
   desc "Structural variant discovery by paired-end and split-read analysis"
   homepage "https://github.com/dellytools/delly"
-  url "https://github.com/dellytools/delly/archive/refs/tags/v1.3.1.tar.gz"
-  sha256 "914a29c301556746031586c5880e70ad7f31bd7899cc4e47b23ee4d5426761ae"
+  url "https://github.com/dellytools/delly/archive/refs/tags/v2.1.0.tar.gz"
+  sha256 "fbc6105489c8cefc94af662b3acbc8b7dd30b3c78a74d59da9982d416dcf584b"
   license "BSD-3-Clause"
-  head "https://github.com/tobiasrausch/delly.git", branch: "master"
-
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sequoia: "25df4a56b84b929be857de4b4c92931499b19e75a188ca45c2e6e75a15a99d39"
-    sha256 cellar: :any,                 arm64_sonoma:  "3a4487022c7983800754136165f8c1fc20314202d339f725d42b96c0ee286240"
-    sha256 cellar: :any,                 ventura:       "eaa7df2f3eb24c0ffc9f53d1a7994e6b8596553bc53e136b670aa66b1cc8aa9c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89fdeacf3657fc08dc80f02aa7bd4b49e97d572157aed5bb4b11c6339b4fdc9e"
-  end
-
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
+  head "https://github.com/dellytools/delly.git", branch: "main"
 
   depends_on "boost"
   depends_on "htslib"
@@ -25,13 +14,17 @@ class Delly < Formula
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
-  on_macos do
-    depends_on "libomp"
-  end
-
   def install
-    ENV.append_to_cflags "-Xpreprocessor -fopenmp -lomp" if OS.mac?
-    system "make", "PARALLEL=1", "src/delly"
+    # Build against Homebrew's htslib and boost instead of the bundled
+    # submodules. Setting EBROOTHTSLIB to the Homebrew htslib prefix skips
+    # the bundled htslib build, and the boost include/lib paths are added
+    # explicitly so the linker finds the Homebrew boost libraries.
+    ENV.append "CXXFLAGS", "-I#{formula_opt_include("boost")}"
+    ENV.append "LDFLAGS", "-L#{formula_opt_lib("htslib")}"
+    ENV.append "LDFLAGS", "-L#{formula_opt_lib("boost")}"
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{formula_opt_lib("boost")}"
+
+    system "make", "PARALLEL=1", "EBROOTHTSLIB=#{formula_opt_include("htslib")}", "src/delly"
     bin.install "src/delly"
     prefix.install %w[example R scripts]
   end
