@@ -11,9 +11,9 @@ class Ambertools < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 arm64_tahoe:   "454f711d98d696228b9b27d2fa7b8ec827c83575b079de208f088cac0b244d12"
-    sha256 arm64_sequoia: "e8038f666473cd9eae638ef4f193691ced9fe6d9a9f805f3ac82bb599f953479"
-    sha256 arm64_sonoma:  "9751456357d99070d09a285cbeeb93a99ea397b5d553ac3495412c0bf81248ba"
+    sha256 arm64_tahoe:   "e5c7020d2e92490d7674cac40a0f29cb1aae68762901ee04221d9dd85e46d0c2"
+    sha256 arm64_sequoia: "0c3bb31c8745823c4dbf0edd0a0a944befabbd521ea8f956d68a7e2e390c9741"
+    sha256 arm64_sonoma:  "2ef8b7d44e6425cbe58a8333f8a5582721e844922016bde48a082a38a3c7cd30"
   end
 
   depends_on "cmake" => :build
