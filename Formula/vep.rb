@@ -14,10 +14,11 @@ class Vep < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, arm64_tahoe:   "f3fbc2ab02b3e9d84b5b20466c80d6df3fe8550ef65dee6922c6631592097996"
-    sha256 cellar: :any, arm64_sequoia: "d5d3accb53e56fbede339a8512eb7079dcce5bf2120a2af883273a57c3149ae7"
-    sha256 cellar: :any, arm64_sonoma:  "1b79c5f40c243a364f100874e81ccec58523bff031ead2b3aa30ad550368cdc9"
-    sha256 cellar: :any, x86_64_linux:  "ec2ebfeb1e417f696260d3f4544934d5f9f52dbf182885fd5c70a6f0836cda99"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "f58da9c27abf0d29660bbc1c202631652f0249720ad767233c96bebe948ff08a"
+    sha256 cellar: :any, arm64_sequoia: "8985141218ed44680439b157cb475f9233c4711b7c1898c852e730259b2f30c1"
+    sha256 cellar: :any, arm64_sonoma:  "d6835322960147b8f005261d8cf30574b4ea6fc2cc55c98a07fb49df95a2fa00"
+    sha256 cellar: :any, x86_64_linux:  "fb475972e62546ad4e88826306d52e4649855118f95b13ff8b28dfcf9586ef7e"
   end
 
   depends_on "cpanminus" => :build
