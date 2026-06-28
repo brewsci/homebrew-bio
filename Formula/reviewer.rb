@@ -6,6 +6,14 @@ class Reviewer < Formula
   sha256 "8411c40028907b0294b1899cd20af6934325796da160511b649044ecf9a5169f"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any, arm64_tahoe:   "4fbec038295e23a0e07717423d797195466fb2d4be806a0bfde921cbbfae16fe"
+    sha256 cellar: :any, arm64_sequoia: "525752187029969122f8ed6ca4b38e02990972c92545a752b7efd81e5fb89231"
+    sha256 cellar: :any, arm64_sonoma:  "47ac10f5d1fac68428114ee94721333e21a6253273b9021db50b43ea09c66ae4"
+    sha256 cellar: :any, x86_64_linux:  "fa67c0df052ba77694547ac13c4033142852e12b389ae2759dab6840de54f4ea"
+  end
+
   depends_on "cmake" => :build
 
   depends_on "boost"
