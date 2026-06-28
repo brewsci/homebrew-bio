@@ -6,6 +6,14 @@ class Expansionhunter < Formula
   sha256 "921d1f8be658f2bdd144150278210bb921d605af921816e94a7508c0b9b9dfff"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any, arm64_tahoe:   "2889d3e740cdc6b1ff09d6d9093d98d6eaa1c274a80ee6b8c6a35c41b4801462"
+    sha256 cellar: :any, arm64_sequoia: "cc414a440606ea04efe60cfe6cddc8790c1b63b1d5bab010d7a3353241ee8943"
+    sha256 cellar: :any, arm64_sonoma:  "ad25cc5ca87303b59ba64d5827826a61d74a03fa4a8378eefbad2d623203d75b"
+    sha256 cellar: :any, x86_64_linux:  "f15aae307adaf5dc36ec6afa4e31f2fd07011e98dd211d5f93e43f8a6cd0d25b"
+  end
+
   depends_on "cmake" => :build
   depends_on "googletest" => :build
 
