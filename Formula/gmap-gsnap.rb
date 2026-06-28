@@ -13,8 +13,10 @@ class GmapGsnap < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, mojave:       "b907aaa226905eaacde9dd120f17046a6a2b56b8a7af9425f0a1b16c682a9f2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b4d6d09f1b7f4633054f9219d105a6fe459f71e7bcd7e35937852df240452a59"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9874be6c901296c0346907065f5caed0f90b321f1c9626a93a517a9c9f190a1b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "50a6eb56ac910479e81d2237b6df732383ad45c33f617c89d34f57cc927ca59b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c3eaad20bb18fd247ae2eed30189111820710ea9e02ed0cd3ff3f3578b7ca3a"
+    sha256 cellar: :any,                 x86_64_linux:  "f374fc88685f4291845ebbd80cff752106a05e3fa3a54afd9d6a2896eb0f821e"
   end
 
   depends_on "samtools"
