@@ -17,8 +17,11 @@ class Bismark < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "e03e329207c49789e0b35c752ce4527a6d468aecc4b0acf3132bc782c59134b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c8e9396d911024bca4ab3309a2c2069c6cdbaad7238ef9627d5145fca3eaca99"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b49c0530a8d4928ee65631da18a9ebbda75d8d1d30734d9c7d837c274637763a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b49c0530a8d4928ee65631da18a9ebbda75d8d1d30734d9c7d837c274637763a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b49c0530a8d4928ee65631da18a9ebbda75d8d1d30734d9c7d837c274637763a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c55ae7483eb072e30793f747a2a3cff26b73867e136703539a58fbd68e018eb1"
   end
 
   depends_on "bowtie2"
