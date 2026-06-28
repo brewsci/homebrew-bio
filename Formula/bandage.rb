@@ -2,33 +2,23 @@ class Bandage < Formula
   # cite Wick_2015: "https://doi.org/10.1093/bioinformatics/btv383"
   desc "Bioinf App for Navigating De novo Assembly Graphs Easily"
   homepage "https://rrwick.github.io/Bandage/"
-  url "https://github.com/rrwick/Bandage/releases/download/v0.8.1/Bandage_Ubuntu_dynamic_v0_8_1.zip"
-  sha256 "2e8332e59b95438040a1b0ad29b3730ac63d7c638c635aeddde4789bf7a3116c"
-  license "GPL-3.0"
+  url "https://github.com/rrwick/Bandage/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "04de8152d8bf5e5aa32b41a63cf1c23e1fee7b67ccd9f1407db8dc2824ca4e30"
+  license "GPL-3.0-only"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2f9db41fa2cc366255bc4cf5d58db949f0765db087021adf6d701a44b4a2f6ab"
-  end
-
-  depends_on :linux
-  depends_on "qt"
-  depends_on "patchelf" => :build unless OS.mac?
-  depends_on "zlib"
+  depends_on "qt@5"
 
   def install
-    bin.install "Bandage"
-    unless OS.mac?
-      system "patchelf",
-        "--set-interpreter", HOMEBREW_PREFIX/"lib/ld.so",
-        "--set-rpath", HOMEBREW_PREFIX/"lib:#{formula_opt_lib("qt")}",
-        bin/"Bandage"
-    end
-    pkgshare.install "sample_LastGraph"
-    doc.install "dependencies"
+    # Build a plain executable (not a macOS .app bundle) so the CLI is usable
+    # the same way on every platform.
+    system formula_opt_bin("qt@5")/"qmake", "Bandage.pro", "CONFIG-=app_bundle"
+    system "make", "-j#{ENV.make_jobs}"
+    bin.install "Bandage" => "bandage"
+    pkgshare.install "build_scripts/sample_LastGraph"
   end
 
   test do
-    assert_match "Usage", shell_output("#{bin}/Bandage --help")
+    ENV["QT_QPA_PLATFORM"] = "offscreen"
+    assert_match "Usage", shell_output("#{bin}/bandage --help")
   end
 end
