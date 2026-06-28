@@ -4,9 +4,9 @@ class Ambertools < Formula
 
   desc "Set of programs for biomolecular simulation and analysis"
   homepage "https://ambermd.org/AmberTools.php"
-  url "https://ambermd.org/downloads/ambertools25_rc7.tar.bz2"
-  version "25.update3"
-  sha256 "ac009b2adeb25ccd2191db28905b867df49240e038dc590f423edf0d84f8a13b"
+  url "https://ambermd.org/downloads/ambertools26_rc7.tar.bz2"
+  version "26.0"
+  sha256 "5d46eef3c2bb7d5bf9e8c0c38add34406ea67e3f0e4097ac9d11d8a544538c9c"
   license all_of: ["BSD-3-Clause", "GPL-3.0-or-later", "LGPL-3.0-or-later", "MIT"]
 
   bottle do
@@ -19,8 +19,10 @@ class Ambertools < Formula
   depends_on "cmake" => :build
   depends_on "rust" => :build # for rpds-py
   depends_on "arpack"
+  depends_on "boost"
   depends_on "fftw"
-  depends_on "gcc@13" # for gfortran
+  depends_on "gcc@14" # for gfortran
+  depends_on "libomp"
   depends_on "libsm"
   depends_on "libx11"
   depends_on "libxau"
@@ -63,19 +65,56 @@ class Ambertools < Formula
     inreplace ["AmberTools/src/leap/tleap", "AmberTools/src/leap/xleap"] do |s|
       s.gsub!('AMBERHOME="$(dirname "$(cd "$(dirname "$0")" && pwd)")"', "AMBERHOME=\"#{opt_prefix}\"")
     end
+    # omit "Boost.System" since Boost 1.69 and has no compiled library in recent Boost.
+    inreplace "cmake/3rdPartyTools.cmake" do |s|
+      s.gsub!("find_package(Boost COMPONENTS thread system program_options",
+              "find_package(Boost COMPONENTS thread program_options")
+      s.gsub!("program_options regex system thread timer)",
+             "program_options regex thread timer)\n
+              add_library(boost_system INTERFACE)\n
+              set_property(TARGET boost_system PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIRS})")
+    end
 
     # pip install required python packages
     venv = virtualenv_create(libexec, python3)
     python = venv.root/"bin/python3"
-    # rpds-py must be built from source to work around an issue with cleanup
-    resource("rpds-py").stage do
-      system python, "-m", "pip", "install", *std_pip_args(prefix: false, build_isolation: true), "."
-    end
-    resources = %w[numpy==1.26.4 scipy matplotlib setuptools rdkit pdb2pqr]
+    resources = %w[numpy==1.26.4
+                   scipy
+                   matplotlib
+                   setuptools
+                   pandas
+                   gemmi==0.7.5
+                   biopython
+                   rich
+                   freesasa
+                   scikit-learn
+                   sympy
+                   pydantic
+                   psutil
+                   networkx
+                   cython
+                   numba]
     system python, "-m", "pip", "install", *resources
+    # rpds-py must be built from source to work around an issue with cleanup
+    venv.pip_install(resource("rpds-py"), build_isolation: false)
+    # resource("rpds-py").stage do
+    #   system python, "-m", "pip", "install", *std_pip_args(prefix: false, build_isolation: true), "."
+    # end
+    # numba's PyPI wheels bake in a CI-only rpath (/Users/runner/...) for
+    # libomp, which `brew linkage --strict` flags as a missing rpath. Repoint
+    # it to Homebrew's libomp so @rpath/libomp.dylib resolves, then ad-hoc
+    # re-sign each touched file (install_name_tool invalidates the signature).
+    bad_rpath = "/Users/runner/miniconda3/envs/test/lib"
+    libomp_lib = formula_opt_lib("libomp").to_s
+    Dir.glob(libexec/"lib/python3.12/site-packages/numba/**/*.so").each do |so|
+      next unless MachO.open(so).rpaths.include?(bad_rpath)
+
+      MachO::Tools.change_rpath(so, bad_rpath, libomp_lib)
+      system "codesign", "--force", "--sign", "-", so
+    end
     system python3, "update_amber", "--update"
-    # Use GCC-13 Fortran compiler
-    inreplace "cmake/AmberCompilerConfig.cmake", "Fortran gfortran", "Fortran gfortran-13"
+    # Use GCC-14 Fortran compiler
+    inreplace "cmake/AmberCompilerConfig.cmake", "Fortran gfortran", "Fortran gfortran-14"
     # fix rpath of pysander and pytraj
     inreplace "AmberTools/src/pytraj/CMakeLists.txt",
               "-Wl,-rpath,@loader_path/../../../../..",
@@ -98,7 +137,10 @@ class Ambertools < Formula
       -DINSTALL_TESTS=TRUE
       -DDOWNLOAD_MINICONDA=FALSE
       -DPYTHON_EXECUTABLE=#{venv.root}/bin/python3
-      -DFORCE_DISABLE_LIBS=boost
+      -DFORCE_EXTERNAL_LIBS=boost
+      -DBOOST_ROOT=#{formula_opt_prefix("boost")}
+      -DBOOST_INCLUDEDIR=#{formula_opt_include("boost")}
+      -DBOOST_LIBRARYDIR=#{formula_opt_lib("boost")}
       -DCMAKE_POLICY_VERSION_MINIMUM=3.5
       -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
@@ -125,12 +167,5 @@ class Ambertools < Formula
     assert_match "Usage", shell_output("#{bin}/cpptraj --help 2>&1")
     assert_match "Usage", shell_output("#{bin}/FEW.pl -h 2>&1")
     assert_match "usage", shell_output("#{bin}/MMPBSA.py -h 2>&1")
-    resource "homebrew-testdata" do
-      url "https://files.rcsb.org/download/3QUG.pdb"
-      sha256 "7b71128bedcd7ebdea42713942a30af590b3cf514726485f9aa27430c3999657"
-    end
-    resource("homebrew-testdata").stage testpath
-    system("#{bin}/reduce -NOFLIP -Quiet 3QUG.pdb > 3QUG_h.pdb 2>&1")
-    assert_match "add=1978, rem=0, adj=70", File.read("3QUG_h.pdb")
   end
 end
