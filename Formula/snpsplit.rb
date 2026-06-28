@@ -10,6 +10,14 @@ class Snpsplit < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e494427de901c6442179d28df4e023cba390f27f37bc5cf77f7ab9d5a934b312"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e494427de901c6442179d28df4e023cba390f27f37bc5cf77f7ab9d5a934b312"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e494427de901c6442179d28df4e023cba390f27f37bc5cf77f7ab9d5a934b312"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d20fdb117f6d6308da5b4d6bc9324b4917cdde4f24600e2a9b276d189d0a3f21"
+  end
+
   depends_on "perl"
   depends_on "samtools"
 
