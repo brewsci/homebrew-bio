@@ -1,7 +1,7 @@
 class Vep < Formula
   # cite McLaren_2016: "https://doi.org/10.1186/s13059-016-0974-4"
   desc "Ensembl Variant Effect Predictor (VEP)"
-  homepage "https://www.ensembl.org/info/docs/tools/vep/index.html"
+  homepage "https://github.com/Ensembl/ensembl-vep"
   url "https://github.com/Ensembl/ensembl-vep/archive/refs/tags/release/116.0.tar.gz"
   sha256 "618a4b6d37efbe0968d7ad1115bf6b712f8537c4697659be6c41580708eb5167"
   license "Apache-2.0"
@@ -46,11 +46,23 @@ class Vep < Formula
     url "https://github.com/Ensembl/ensembl-io/archive/6afb5dc27a5ae6881d75959153fbe6e9a4a7e788.tar.gz"
     sha256 "45154809117aff507b91df86fe5fd74a4df0bcf3b588f0b0d0f6ea5278ee28cc"
   end
+  resource "ensembl-compara" do
+    url "https://github.com/Ensembl/ensembl-compara/archive/5ea78be5e7e8fc25615dd31612fd5d97dda9478e.tar.gz"
+    sha256 "7af4c23dde23716de2bee7a04938fdee19b9dd22069927af88b9db7a914011fd"
+  end
 
   # BioPerl version frozen by the Ensembl API (pure-Perl, just staged).
   resource "bioperl" do
     url "https://github.com/bioperl/bioperl-live/archive/refs/tags/release-1-6-924.tar.gz"
     sha256 "547a65a1c083bd40345514893cf91491d49318f2290dd8d0a539b742327cbe25"
+  end
+
+  # Official VEP plugins (Ensembl/VEP_plugins), pinned to release/116. These
+  # are the .pm files `vep_install -a p` would otherwise fetch; the data files
+  # some plugins need are not bundled.
+  resource "vep-plugins" do
+    url "https://github.com/Ensembl/VEP_plugins/archive/61f2dd41e74ea172bcc129e4e64400496b39d0d8.tar.gz"
+    sha256 "c76ab6167ee1d26be9a58376214c6e5bb0aa674673ba563e21701b49c6a0500e"
   end
 
   def install
@@ -78,11 +90,38 @@ class Vep < Formula
            "JSON", "Text::CSV", "PerlIO::gzip", "Sereal", "Capture::Tiny", "Archive::Zip",
            "List::MoreUtils", "LWP::Simple"
 
-    %w[ensembl ensembl-variation ensembl-funcgen ensembl-io].each do |r|
+    # The five Ensembl API modules VEP requires (ensembl, ensembl-variation,
+    # ensembl-funcgen, ensembl-compara, ensembl-io), each pinned to a commit on
+    # the release/116 branch. The commit is recorded so `vep` can report the
+    # per-module version, exactly as INSTALL.pl does via `.version/<module>`.
+    api_release = version.major.to_s
+    api_modules = {
+      "ensembl"           => "0d852313c420a1d5128b6774635125ebbac03350",
+      "ensembl-variation" => "2fb834b987ede3824e200197a838ce11e91aeb4b",
+      "ensembl-funcgen"   => "90049ea7ee4d8ae3a6d298dca46d6c6ab20538c4",
+      "ensembl-compara"   => "5ea78be5e7e8fc25615dd31612fd5d97dda9478e",
+      "ensembl-io"        => "6afb5dc27a5ae6881d75959153fbe6e9a4a7e788",
+    }
+    api_modules.each_key do |r|
       resource(r).stage { (libexec/"api"/r).install "modules" }
     end
 
     libexec.install "vep", "filter_vep", "haplo", "variant_recoder", "INSTALL.pl", "modules"
+
+    # Version metadata read by Bio::EnsEMBL::VEP::Utils::get_version_data, so
+    # `vep --help` lists the API module versions instead of only ensembl-vep.
+    (libexec/".version").mkpath
+    api_modules.each do |r, commit|
+      (libexec/".version"/r).write "release #{api_release}\nsub #{commit}\n"
+    end
+
+    # Bundle the official VEP plugins so `--plugin <Name>` works out of the box
+    # with `--dir_plugins`. Stage the .pm files (and the example config) only,
+    # dropping the repo's docs/tooling.
+    resource("vep-plugins").stage do
+      (libexec/"Plugins").install Dir["*.pm"]
+      (libexec/"Plugins").install "config" if File.directory?("config")
+    end
 
     perl5lib = [
       vendor/"lib/perl5",
@@ -90,6 +129,7 @@ class Vep < Formula
       libexec/"api/ensembl/modules",
       libexec/"api/ensembl-variation/modules",
       libexec/"api/ensembl-funcgen/modules",
+      libexec/"api/ensembl-compara/modules",
       libexec/"api/ensembl-io/modules",
       libexec/"modules",
     ].join(":")
@@ -112,11 +152,22 @@ class Vep < Formula
         vep_install -a cf -s homo_sapiens -y GRCh38 -c ~/.vep
       then run offline:
         vep --offline --cache --dir_cache ~/.vep -i input.vcf -o out.txt
+
+      The official VEP plugins are bundled. Point VEP at them with:
+        vep --dir_plugins #{opt_libexec}/Plugins --plugin <PluginName> ...
+      Many plugins need extra data files you must download separately (see each
+      plugin's header docs).
     EOS
   end
 
   test do
-    assert_match "Ensembl VEP", shell_output("#{bin}/vep --help 2>&1")
+    help = shell_output("#{bin}/vep --help 2>&1")
+    assert_match "Ensembl VEP", help
+    # The bundled API modules must report their versions, not just ensembl-vep.
+    assert_match(/^\s*ensembl\s+: #{version.major}\./, help)
+    assert_match(/^\s*ensembl-compara\s+: #{version.major}\./, help)
     assert_match "filter_vep", shell_output("#{bin}/filter_vep --help 2>&1")
+    # The bundled VEP plugins should be present for use with --dir_plugins.
+    assert_path_exists libexec/"Plugins/AlphaMissense.pm"
   end
 end
