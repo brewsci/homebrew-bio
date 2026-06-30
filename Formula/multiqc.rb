@@ -14,9 +14,19 @@ class Multiqc < Formula
 
   uses_from_macos "zlib" # for pillow
 
-  # On Linux, libz is provided by zlib-ng-compat; declare it directly so the
-  # pillow extension's linkage is not flagged as an indirect dependency.
+  # On Linux these libraries are pulled in by bundled binaries and would
+  # otherwise resolve to the host's /lib, failing `brew linkage --test`.
+  # Declare them so they resolve to the brewed copies instead:
+  #   - zlib-ng-compat: libz, for the pillow extension
+  #   - libyaml: PyYAML's _yaml C extension
+  #   - expat, sqlite, nss, nspr: the prebuilt headless-chromium binary that
+  #     kaleido 0.2.1 ships for static image export
   on_linux do
+    depends_on "expat"
+    depends_on "libyaml"
+    depends_on "nspr"
+    depends_on "nss"
+    depends_on "sqlite"
     depends_on "zlib-ng-compat"
   end
 
