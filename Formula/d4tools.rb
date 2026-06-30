@@ -20,6 +20,11 @@ class D4tools < Formula
   depends_on "rustup"
 
   def install
+    # The bundled htslib and libBigWig build scripts vendor zlib 1.2.11,
+    # whose zutil.h defines `fdopen` to NULL under TARGET_OS_MAC and fails
+    # to compile against newer macOS SDKs. Bump zlib to a release that builds cleanly.
+    inreplace "d4-hts/build_htslib.sh", "1.2.11", "1.3.1"
+    inreplace "d4-bigwig/build-lib.sh", "1.2.11", "1.3.1"
     cd "d4tools" do
       system "cargo", "install", *std_cargo_args
     end
