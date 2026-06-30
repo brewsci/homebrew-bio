@@ -9,17 +9,22 @@ class D4tools < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "ab6decc49fd87b0fe22c3a3d8db84b7d24406600fee48cc8f5a4eed8fc798fe4"
-    sha256 cellar: :any,                 arm64_sonoma:  "5d8b75e4a64ca82263019a608291f213f15ab39cc9ff3e36442f6b1e69544986"
-    sha256 cellar: :any,                 ventura:       "d6813d4a90fdffc82d8dc7d2cf20b3fb27ee2ee999a6f31af738fd931995a093"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a4e643f67b17bf4606be5c4a3803582e9ed5847a503b71e8851383ba05adfb4"
+    rebuild 2
+    sha256 cellar: :any, arm64_tahoe:   "e2e19076eea4f3eb0f82d185692ddeb104371b862cd6fe2e3c17f2f278817048"
+    sha256 cellar: :any, arm64_sequoia: "6a1f7fd56a6e35f684fbaf9e8e4807c4e47a8e9563ed2ea643ea2706653d2fcf"
+    sha256 cellar: :any, arm64_sonoma:  "30806f8ce65fe1a42f7834b5ca1ff50552ca368448d8fd8879a0c7ecb66dcdbe"
+    sha256 cellar: :any, x86_64_linux:  "560bc7a8f3184067c45216ac39c255e43e0bad372c5457bd5bf98675c3f77c31"
   end
 
   depends_on "rust" => :build
   depends_on "rustup"
 
   def install
+    # The bundled htslib and libBigWig build scripts vendor zlib 1.2.11,
+    # whose zutil.h defines `fdopen` to NULL under TARGET_OS_MAC and fails
+    # to compile against newer macOS SDKs. Bump zlib to a release that builds cleanly.
+    inreplace "d4-hts/build_htslib.sh", "1.2.11", "1.3.1"
+    inreplace "d4-bigwig/build-lib.sh", "1.2.11", "1.3.1"
     cd "d4tools" do
       system "cargo", "install", *std_cargo_args
     end
