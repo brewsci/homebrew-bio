@@ -19,14 +19,8 @@ class Multiqc < Formula
   # Declare them so they resolve to the brewed copies instead:
   #   - zlib-ng-compat: libz, for the pillow extension
   #   - libyaml: PyYAML's _yaml C extension
-  #   - expat, sqlite, nss, nspr: the prebuilt headless-chromium binary that
-  #     kaleido 0.2.1 ships for static image export
   on_linux do
-    depends_on "expat"
     depends_on "libyaml"
-    depends_on "nspr"
-    depends_on "nss"
-    depends_on "sqlite"
     depends_on "zlib-ng-compat"
   end
 
@@ -115,6 +109,11 @@ class Multiqc < Formula
     sha256 "b540987f239e745613c7a9176f3edb72b832a4ac465cf02712288397832b5e8d"
   end
 
+  # kaleido 0.2.1 (static image export) ships a prebuilt headless-chromium that
+  # links the host's system libraries (nss, nspr, expat, sqlite) on Linux and so
+  # fails `brew linkage --test`; the macOS wheels link only allowed system
+  # frameworks. Restrict it to macOS. On Linux MultiQC still produces its
+  # interactive HTML reports; only static (PNG/PDF/SVG) plot export is omitted.
   resource "kaleido" do
     on_macos do
       on_arm do
@@ -124,16 +123,6 @@ class Multiqc < Formula
       on_intel do
         url "https://files.pythonhosted.org/packages/e0/f7/0ccaa596ec341963adbb4f839774c36d5659e75a0812d946732b927d480e/kaleido-0.2.1-py2.py3-none-macosx_10_11_x86_64.whl"
         sha256 "ca6f73e7ff00aaebf2843f73f1d3bacde1930ef5041093fe76b83a15785049a7"
-      end
-    end
-    on_linux do
-      on_arm do
-        url "https://files.pythonhosted.org/packages/a1/2b/680662678a57afab1685f0c431c2aba7783ce4344f06ec162074d485d469/kaleido-0.2.1-py2.py3-none-manylinux2014_aarch64.whl"
-        sha256 "845819844c8082c9469d9c17e42621fbf85c2b237ef8a86ec8a8527f98b6512a"
-      end
-      on_intel do
-        url "https://files.pythonhosted.org/packages/ae/b3/a0f0f4faac229b0011d8c4a7ee6da7c2dca0b6fd08039c95920846f23ca4/kaleido-0.2.1-py2.py3-none-manylinux1_x86_64.whl"
-        sha256 "aa21cf1bf1c78f8fa50a9f7d45e1003c387bd3d6fe0a767cfbbf344b95bdc3a8"
       end
     end
   end
@@ -366,7 +355,9 @@ class Multiqc < Formula
     # Resources only published as platform-specific wheels: kaleido 0.2.1 has no
     # sdist, and the polars rust runtimes need a pinned nightly toolchain to
     # build from source. Install those as binaries; build everything else.
-    wheel_resources = %w[kaleido polars-runtime-32 polars-runtime-compat pyarrow]
+    # kaleido is macOS-only here (see the resource block above).
+    wheel_resources = %w[polars-runtime-32 polars-runtime-compat pyarrow]
+    wheel_resources << "kaleido" if OS.mac?
 
     venv = virtualenv_create(libexec, "python3.13")
     venv.pip_install resources.reject { |r| wheel_resources.include?(r.name) }
