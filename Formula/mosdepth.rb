@@ -2,8 +2,8 @@ class Mosdepth < Formula
   # cite Pederson_2017: "https://doi.org/10.1093/bioinformatics/btx699"
   desc "Fast BAM/CRAM depth calculator"
   homepage "https://github.com/brentp/mosdepth"
-  url "https://github.com/brentp/mosdepth/archive/refs/tags/v0.3.11.tar.gz"
-  sha256 "4becd1e74a81ed590588ed2745ef7f1443d0a5aad35f9880a2d452d56a7227ff"
+  url "https://github.com/brentp/mosdepth/archive/refs/tags/v0.3.14.tar.gz"
+  sha256 "abac67de4547dc5642efd46846044d6b3536d2ca3443b4ca172446edf82eeb42"
   license "MIT"
   head "https://github.com/brentp/mosdepth.git", branch: "master"
 
