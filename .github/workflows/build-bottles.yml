@@ -31,6 +31,13 @@ jobs:
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@main
 
+      - name: Trust external taps
+        run: |
+          brew tap aws/tap
+          brew tap azure/bicep
+          brew trust aws/tap
+          brew trust azure/bicep
+
       - name: Cache Homebrew Bundler RubyGems
         id: cache
         uses: actions/cache@v5
