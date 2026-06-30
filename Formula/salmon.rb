@@ -12,10 +12,10 @@ class Salmon < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "52b48a0050464f22ebcde396b1043f0e6c3e418e8885d3ec729a26de1d517149"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52b48a0050464f22ebcde396b1043f0e6c3e418e8885d3ec729a26de1d517149"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "52b48a0050464f22ebcde396b1043f0e6c3e418e8885d3ec729a26de1d517149"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11a1d787c8e86b37fcff0e9d0d9af2a77f97d51b89b834842036f6670197c2ec"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "283e64670d74cb80ed09c53018e68f5c78bd684745042d7e7424be2081083ae1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "283e64670d74cb80ed09c53018e68f5c78bd684745042d7e7424be2081083ae1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "283e64670d74cb80ed09c53018e68f5c78bd684745042d7e7424be2081083ae1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "494a9d91223aad7fc4f963b33fe3614e304d45d83150462b35e113c0f0fc9441"
   end
 
   # salmon 2.0 is a from-scratch Rust rewrite shipped as a single binary via
