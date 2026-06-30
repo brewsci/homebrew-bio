@@ -7,14 +7,6 @@ class Mosdepth < Formula
   license "MIT"
   head "https://github.com/brentp/mosdepth.git", branch: "master"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sequoia: "f6b9c535f17ba87c89c374a2cd8b3dc0074a5be8fae367b3dfcece578f6db334"
-    sha256 cellar: :any,                 arm64_sonoma:  "6b3d07a358bda492f13e81c2caddc632d13ed16ff92eec02643af16e28e90667"
-    sha256 cellar: :any,                 ventura:       "053e7e2bc5c911d75fc2d6139d22bd01965f8a05ed56609ce9eacaa65601aab6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f6301e7f4c83badb6393379bdc861b7e9b5f412ba2af625b06e026c631ee3f9"
-  end
-
   depends_on "nim" => :build
   depends_on "brewsci/bio/d4tools"
   depends_on "bwa"
