@@ -31,12 +31,13 @@ jobs:
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@main
 
-      - name: Trust external taps
-        run: |
-          brew tap aws/tap
-          brew tap azure/bicep
-          brew trust aws/tap
-          brew trust azure/bicep
+      - name: Remove pre-installed external taps
+        # The GitHub runner images ship the aws/tap and azure/bicep taps, which
+        # are irrelevant to this tap. They were previously trusted to satisfy
+        # brew's tap-trust requirement, but `brew trust` now fails on Linux with
+        # "Unexpected platform!", breaking every PR's ubuntu-latest job. Untap
+        # them instead so the trust check has nothing to flag.
+        run: brew untap --force aws/tap azure/bicep 2>/dev/null || true
 
       - name: Cache Homebrew Bundler RubyGems
         id: cache
