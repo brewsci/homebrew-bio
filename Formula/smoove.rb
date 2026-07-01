@@ -6,6 +6,14 @@ class Smoove < Formula
   license "Apache-2.0"
   head "https://github.com/brentp/smoove.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "88c751e9c80854dbdcef89c4946fd52d3aaada4e9d144e4006fff6ced4b88514"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "88c751e9c80854dbdcef89c4946fd52d3aaada4e9d144e4006fff6ced4b88514"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88c751e9c80854dbdcef89c4946fd52d3aaada4e9d144e4006fff6ced4b88514"
+    sha256 cellar: :any,                 x86_64_linux:  "be6c9f92598fbfca4c30b4ff1a61a5f136d41ee5b2f6e12259fe366a84d0051a"
+  end
+
   depends_on "go" => :build
   depends_on "bcftools"
   depends_on "htslib" # bgzip, tabix
