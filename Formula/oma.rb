@@ -1,44 +1,37 @@
 class Oma < Formula
+  include Language::Python::Virtualenv
+
   # cite Altenhoff_2019: "https://doi.org/10.1101/gr.243212.118"
   # cite Altenhoff_2017: "https://doi.org/10.1093/nar/gkx1019"
   # cite Train_2017: "https://doi.org/10.1093/bioinformatics/btx229"
   # cite Altenhoff_2014: "https://doi.org/10.1093/nar/gku1158"
-  include Language::Python::Virtualenv
-
   desc "Standalone package to infer orthologs with the OMA algorithm"
   homepage "https://omabrowser.org/standalone/"
-  url "https://omabrowser.org/standalone/OMA.2.6.0.tgz"
-  sha256 "6ec1b638e586a6a6896662d7182e7507d98d10d3b47fa0977db065d5e552eb1e"
-
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, monterey:     "5c7d45fb493156defbf5082151e843f0dce3977d3464c4230fbf05d6b91f22d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b1c873f9cc4a6d468c491fdfa8216eca5b9cb97190ddccd87dec111da4cbfeeb"
-  end
+  url "https://omabrowser.org/standalone/OMA.2.7.0.tgz"
+  sha256 "7354488a2ce3b415d420f7a93dad7a65dec3f05838d5a71c32f175146295ba91"
 
   depends_on "numpy"
-  depends_on "python"
+  depends_on "python@3.14"
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
 
   resource "biopython" do
-    url "https://files.pythonhosted.org/packages/ad/a4/237edd5f5e5b68d9543c79bcd695ef881e6317fbd0eae1b1e53e694f9d54/biopython-1.81.tar.gz"
-    sha256 "2cf38112b6d8415ad39d6a611988cd11fb5f33eb09346666a87263beba9614e0"
+    url "https://files.pythonhosted.org/packages/df/3e/3c6aa8b2a7e6b791a34407736db32f59657001f0446ada31db73a3e0b7d5/biopython-1.87.tar.gz"
+    sha256 "8456c803459b679a9712422e5a7fd9809f2f089bf69bb085f3b077946ac9bdbf"
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/30/39/7305428d1c4f28282a4f5bdbef24e0f905d351f34cf351ceb131f5cddf78/lxml-4.9.3.tar.gz"
-    sha256 "48628bd53a426c9eb9bc066a923acaa0878d1e86129fd5359aee99285f4eed9c"
+    url "https://files.pythonhosted.org/packages/05/3b/aab6728cae887456f409b4d75e8a01856e4f04bd510de38052a47768b680/lxml-6.1.1.tar.gz"
+    sha256 "ba96ae44888e0185281e937633a743ea90d5a196c6000f82565ebb0580012d40"
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3")
+    venv = virtualenv_create(libexec, "python3.14")
     resources.each do |r|
       venv.pip_install r
     end
     venv.pip_install_and_link buildpath/"hog_bottom_up"
-
     system "./install.sh", prefix, share, "--brew-python"
     share.mkpath
     (share/"README").write <<~EOS
