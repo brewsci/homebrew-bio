@@ -7,6 +7,14 @@ class Multiqc < Formula
   sha256 "5a4aa6480e6def2f9c0af2893358bf7ec5c304d606ecf613cd25ddcd0e244e77"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any, arm64_tahoe:   "f63de301639a7f5d1b38ab4aa130b9a8c3d25ac7769779de93ae7dc6d6c938b7"
+    sha256 cellar: :any, arm64_sequoia: "42eeb95d9ff0ab358e6e638147c3d8939fd176791b81e489c31c8652f9c87db4"
+    sha256 cellar: :any, arm64_sonoma:  "c898254068bffcd374842bf520d026ffc0b26f53c4f791b9b2ab7a3f0554c464"
+    sha256 cellar: :any, x86_64_linux:  "ae5beb6533fac1c97e85da2e99de8d9ed9487a8ab1ef361e169e75c63c0da971"
+  end
+
   depends_on "rust" => :build # for pydantic-core, polars, rpds-py, tiktoken
   depends_on "freetype" # for pillow
   depends_on "jpeg-turbo" # for pillow
