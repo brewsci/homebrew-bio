@@ -10,6 +10,14 @@ class Oma < Formula
   url "https://omabrowser.org/standalone/OMA.2.7.0.tgz"
   sha256 "7354488a2ce3b415d420f7a93dad7a65dec3f05838d5a71c32f175146295ba91"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "738044231b281dde9a4caff4d9a3a3dc4c9108d3a8b4386d8ec70a14fca9158a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f704581510cb702c5d8385755a8093acdcf07509a9bc90e683bb39590a652ae7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "47021bf125db48e0451bab0876e839906165046aa136e71e54497856a3c64f5c"
+    sha256 cellar: :any,                 x86_64_linux:  "258f303fe2d77aa9473b7b6bf87bd508f72c1c12ac8877cd6cd761ae7b2aa67c"
+  end
+
   depends_on "numpy"
   depends_on "python@3.14"
 
