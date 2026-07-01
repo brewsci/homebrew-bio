@@ -12,8 +12,10 @@ class Raptor < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 big_sur:      "b293099ca0f8d0d54dcf5ed8a2244cdcc6fb278d6c1cc6e647bc84271efa14fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8f6862223cf1a6b07ad08413d404eacda595f69c6580ac691969eb283f74e614"
+    sha256 cellar: :any, arm64_tahoe:   "122c3302e9b4b0302db23047aa06fae83472882cc9721881386ed900a02793c1"
+    sha256 cellar: :any, arm64_sequoia: "d009510d7f33546181b491ed2e91cc40a6fb9ff06b7ca4656038a4fe862ab863"
+    sha256 cellar: :any, arm64_sonoma:  "71b32bdcfc3ee14d267f182425d6f2ca5862594cc985afae45a16d32d85861e9"
+    sha256 cellar: :any, x86_64_linux:  "b7df4be9087f8670606adbead41b4b324be6b422906bbda391daa7d9fc82b22f"
   end
 
   depends_on "cmake" => :build
