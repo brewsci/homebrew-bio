@@ -10,33 +10,24 @@ class Oma < Formula
   url "https://omabrowser.org/standalone/OMA.2.7.0.tgz"
   sha256 "7354488a2ce3b415d420f7a93dad7a65dec3f05838d5a71c32f175146295ba91"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, monterey:     "5c7d45fb493156defbf5082151e843f0dce3977d3464c4230fbf05d6b91f22d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b1c873f9cc4a6d468c491fdfa8216eca5b9cb97190ddccd87dec111da4cbfeeb"
-  end
-
-  # OMA standalone ships only x86_64 binaries (omadarwin.mac64 / linux64);
-  # there is no arm64 build, so it cannot produce a native arm64 bottle.
-  depends_on arch: :x86_64
   depends_on "numpy"
-  depends_on "python"
+  depends_on "python@3.14"
 
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
 
   resource "biopython" do
-    url "https://files.pythonhosted.org/packages/db/ca/1d5fab0fedaf5c2f376d9746d447cdce04241c433602c3861693361ce54c/biopython-1.85.tar.gz"
-    sha256 "5dafab74059de4e78f49f6b5684eddae6e7ce46f09cfa059c1d1339e8b1ea0a6"
+    url "https://files.pythonhosted.org/packages/df/3e/3c6aa8b2a7e6b791a34407736db32f59657001f0446ada31db73a3e0b7d5/biopython-1.87.tar.gz"
+    sha256 "8456c803459b679a9712422e5a7fd9809f2f089bf69bb085f3b077946ac9bdbf"
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/c5/ed/60eb6fa2923602fba988d9ca7c5cdbd7cf25faa795162ed538b527a35411/lxml-6.0.0.tar.gz"
-    sha256 "032e65120339d44cdc3efc326c9f660f5f7205f3a535c1fdbf898b29ea01fb72"
+    url "https://files.pythonhosted.org/packages/05/3b/aab6728cae887456f409b4d75e8a01856e4f04bd510de38052a47768b680/lxml-6.1.1.tar.gz"
+    sha256 "ba96ae44888e0185281e937633a743ea90d5a196c6000f82565ebb0580012d40"
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3")
+    venv = virtualenv_create(libexec, "python3.14")
     resources.each do |r|
       venv.pip_install r
     end
