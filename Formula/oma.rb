@@ -32,7 +32,6 @@ class Oma < Formula
       venv.pip_install r
     end
     venv.pip_install_and_link buildpath/"hog_bottom_up"
-
     system "./install.sh", prefix, share, "--brew-python"
     share.mkpath
     (share/"README").write <<~EOS
