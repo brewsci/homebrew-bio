@@ -10,14 +10,6 @@ class Salmon < Formula
     strategy :github_latest
   end
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "283e64670d74cb80ed09c53018e68f5c78bd684745042d7e7424be2081083ae1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "283e64670d74cb80ed09c53018e68f5c78bd684745042d7e7424be2081083ae1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "283e64670d74cb80ed09c53018e68f5c78bd684745042d7e7424be2081083ae1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "494a9d91223aad7fc4f963b33fe3614e304d45d83150462b35e113c0f0fc9441"
-  end
-
   # salmon 2.0 is a from-scratch Rust rewrite shipped as a single binary via
   # cargo-dist (the final C++ release, 1.10.x, lives on the upstream `cpp`
   # branch). Use the prebuilt per-platform artifacts directly.
@@ -25,27 +17,27 @@ class Salmon < Formula
   # The artifact filenames (salmon-cli-<target-triple>.tar.xz) carry no version,
   # and the `x86_64` triple makes Homebrew mis-scan the version as
   # "64-unknown-linux-gnu". The `#/salmon.tar.xz` fragment renames the download
-  # so the scanner ignores the triple and picks up "2.2.1" from the URL path on
+  # so the scanner ignores the triple and picks up "2.3.0" from the URL path on
   # every platform, keeping detection consistent without a redundant `version`.
   on_macos do
     on_arm do
-      url "https://github.com/COMBINE-lab/salmon/releases/download/v2.2.1/salmon-cli-aarch64-apple-darwin.tar.xz#/salmon.tar.xz"
-      sha256 "e5cbcaf015c30471e9672ea9545f3dd33b8842bbb21dd07d5b096fa245b23972"
+      url "https://github.com/COMBINE-lab/salmon/releases/download/v2.3.0/salmon-cli-aarch64-apple-darwin.tar.xz#/salmon.tar.xz"
+      sha256 "adff8afed7404254db4389a0ba2c3f7ccbbc5775bc75c1e72a1a41099444bc9c"
     end
     on_intel do
-      url "https://github.com/COMBINE-lab/salmon/releases/download/v2.2.1/salmon-cli-x86_64-apple-darwin.tar.xz#/salmon.tar.xz"
-      sha256 "6382d5ef7827d60c5f57b4133804a11030b204f39630346a380cfd3db5b05b1e"
+      url "https://github.com/COMBINE-lab/salmon/releases/download/v2.3.0/salmon-cli-x86_64-apple-darwin.tar.xz#/salmon.tar.xz"
+      sha256 "9d7016acd38f754e774f6d6481d29863ae6ac39889b41e995dbd1e1ef3e4ade4"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/COMBINE-lab/salmon/releases/download/v2.2.1/salmon-cli-aarch64-unknown-linux-gnu.tar.xz#/salmon.tar.xz"
-      sha256 "bb3b7d1f367f1d3a5001b15c83f38d39584ac6451c2b46e779c311f8f48307fb"
+      url "https://github.com/COMBINE-lab/salmon/releases/download/v2.3.0/salmon-cli-aarch64-unknown-linux-gnu.tar.xz#/salmon.tar.xz"
+      sha256 "5fe21d0a1d3ef14b58b49b12fa205ef61c530dd2eceb897458ddf6cc7b49130f"
     end
     on_intel do
-      url "https://github.com/COMBINE-lab/salmon/releases/download/v2.2.1/salmon-cli-x86_64-unknown-linux-gnu.tar.xz#/salmon.tar.xz"
-      sha256 "a5250dc9d9e9c4f54e24683f787fca59bafb11ba3d46c500ca5f97b3272693e9"
+      url "https://github.com/COMBINE-lab/salmon/releases/download/v2.3.0/salmon-cli-x86_64-unknown-linux-gnu.tar.xz#/salmon.tar.xz"
+      sha256 "0816c1764e580db4a2a2b7854f6b784fbe8d498539139a94ef6549f5304d43f1"
     end
   end
 
