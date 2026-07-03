@@ -10,6 +10,14 @@ class Salmon < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "8f9ba4fb85285f1fb458612e6dce361a9368fb585b7bceedf5c2b0a7799d7782"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f9ba4fb85285f1fb458612e6dce361a9368fb585b7bceedf5c2b0a7799d7782"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f9ba4fb85285f1fb458612e6dce361a9368fb585b7bceedf5c2b0a7799d7782"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4eb7cb9dfd4558297b6849c7c4f5a412818ee19e9d6f81ec7ecc76805b6899b1"
+  end
+
   # salmon 2.0 is a from-scratch Rust rewrite shipped as a single binary via
   # cargo-dist (the final C++ release, 1.10.x, lives on the upstream `cpp`
   # branch). Use the prebuilt per-platform artifacts directly.
