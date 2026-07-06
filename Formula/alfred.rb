@@ -19,9 +19,9 @@ class Alfred < Formula
   depends_on "htslib"
   depends_on "libdeflate"
   depends_on "xz"
+  depends_on "zlib-ng-compat"
 
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
 
   def install
     system "make", "all"
