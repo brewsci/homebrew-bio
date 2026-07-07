@@ -27,7 +27,6 @@ class Dssp < Formula
   depends_on "python@3.14"
   depends_on "sqlite"
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1500
@@ -36,6 +35,7 @@ class Dssp < Formula
   on_linux do
     depends_on "gcc" => :build # for C++20 support
     depends_on "fmt"
+    depends_on "zlib-ng-compat"
   end
 
   fails_with :clang do
@@ -82,8 +82,8 @@ class Dssp < Formula
       # libmcfp should be installed in 'prefix' directory since the path of dic files are always required.
       if OS.mac? && MacOS.version <= :sequoia
         inreplace "CMakeLists.txt" do |s|
-          s.gsub! "if(NOT STD_CHARCONV_COMPILING)\n\tmessage",
-                  "find_package(FastFloat 8.0 QUIET CONFIG)\nif(STD_CHARCONV_COMPILING)\n\tmessage"
+          s.gsub! "if(NOT STD_CHARCONV_COMPILING)\n    message",
+                  "find_package(FastFloat 8.0 QUIET CONFIG)\nif(STD_CHARCONV_COMPILING)\n    message"
           s.gsub! "PRIVATE $<TARGET_PROPERTY:FastFloat::fast_float,INTERFACE_INCLUDE_DIRECTORIES>",
                   "PRIVATE FastFloat::fast_float"
         end
