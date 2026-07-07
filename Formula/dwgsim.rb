@@ -5,7 +5,7 @@ class Dwgsim < Formula
     tag:      "dwgsim.0.1.16",
     revision: "5b1cfc663ed10a6aa8fef4cc62d37f28d996868b"
   license "GPL-2.0"
-  head "https://github.com/nh13/DWGSIM.git"
+  head "https://github.com/nh13/DWGSIM.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
