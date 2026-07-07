@@ -8,11 +8,10 @@ class Kaiju < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4177d74dad22dcbc1ad562987899e9a62da689ebe7f7e18bac5d29bd6302d9c7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f19dab2a1fb0c7191973ed2231d9b5c36c5ca955e9810ad47e1658fba1445a0d"
-    sha256 cellar: :any_skip_relocation, ventura:       "c0e97b0e6960c706dbe32b352d0ba5cc3c27fcee3a3bf4857cca1749484e0080"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "398d26bcfe5a59a348eb1020acd34034f430c00c90c690db94de442b7e86a1ea"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "95483bf34ab62e137dd6909e87074c02f0701bfc5c9938e81076f4cae80b5b9e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da2c27cc3499dd3504f46d3db2cd915ab0eccee7885b813d0ee1df9c0975ee5d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7e1f398fb5544b735a5fc0315b0b13bde68e7e14839829ef5466a051ff654777"
+    sha256 cellar: :any,                 x86_64_linux:  "dceaeb204ee76010008aa768c637e8a1e0feb0a07a0beca7d8d8bbe0f5c3c7b6"
   end
 
   uses_from_macos "perl"
