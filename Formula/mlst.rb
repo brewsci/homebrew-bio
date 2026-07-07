@@ -4,7 +4,7 @@ class Mlst < Formula
   url "https://github.com/tseemann/mlst/archive/refs/tags/v2.35.0.tar.gz"
   sha256 "9f1291ed02494b7a862e0d56d8f501f500d7a4a207fe4244962b743df1c3dcc4"
   license "GPL-2.0"
-  head "https://github.com/tseemann/mlst.git"
+  head "https://github.com/tseemann/mlst.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
