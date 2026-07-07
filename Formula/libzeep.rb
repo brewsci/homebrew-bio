@@ -1,8 +1,8 @@
 class Libzeep < Formula
   desc "Web application framework written in C++"
   homepage "https://github.com/mhekkel/libzeep"
-  url "https://github.com/mhekkel/libzeep/archive/refs/tags/v6.0.14.tar.gz"
-  sha256 "8e2e4bed9be06ebd69414bd1f7df48bac56154c2284f5137fe749ca1fa90d310"
+  url "https://github.com/mhekkel/libzeep/archive/refs/tags/v7.3.2.tar.gz"
+  sha256 "e794589ef8aad5bd4d7bf674ca0dfa2a4027b3bcc966496490ba18d8908cd080"
   license "BSL-1.0"
   head "https://github.com/mhekkel/libzeep.git", branch: "trunk"
 
