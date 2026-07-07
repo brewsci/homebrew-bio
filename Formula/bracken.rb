@@ -2,8 +2,8 @@ class Bracken < Formula
   # cite Lu_2017: "https://doi.org/10.7717/peerj-cs.104"
   desc "Bayesian estimation species abundances from Kraken output"
   homepage "https://ccb.jhu.edu/software/bracken/index.shtml"
-  url "https://github.com/jenniferlu717/Bracken/archive/refs/tags/v2.6.0.tar.gz"
-  sha256 "fb1837d6f32b8f8c87353b9dc8a23d3418c348b00824a7064eb58f9bab11ea68"
+  url "https://github.com/jenniferlu717/Bracken/archive/refs/tags/v3.1.tar.gz"
+  sha256 "c0a35331a8aac1e0dbb14c2a92c4de6f89f0aac540101c05c2eec54032107560"
   license "GPL-3.0"
 
   bottle do
@@ -25,8 +25,7 @@ class Bracken < Formula
     bin.install "bracken", "bracken-build"
     libexec.install "src/est_abundance.py",
                     "src/generate_kmer_distribution.py",
-                    "src/kmer2read_distr",
-                    "src/kreport2mpa.py"
+                    "src/kmer2read_distr"
   end
 
   test do
