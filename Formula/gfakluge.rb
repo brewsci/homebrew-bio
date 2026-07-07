@@ -5,7 +5,7 @@ class Gfakluge < Formula
   url "https://github.com/edawson/gfakluge/archive/refs/tags/1.1.3.tar.gz"
   sha256 "64aa19d95d3ae439315bc032645c6b4519cf93e67b60910ea9cef24695d00d0a"
   license "MIT"
-  head "https://github.com/edawson/gfakluge.git"
+  head "https://github.com/edawson/gfakluge.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
