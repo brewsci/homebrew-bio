@@ -5,7 +5,7 @@ class Tigmint < Formula
   url "https://github.com/bcgsc/tigmint/releases/download/v1.2.10/tigmint-1.2.10.tar.gz"
   sha256 "8e7b5d424ff69d5da7b117bef9996463b02205078ce0fb6e3074ca6c9933efa9"
   license "GPL-3.0-only"
-  head "https://github.com/bcgsc/tigmint.git"
+  head "https://github.com/bcgsc/tigmint.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
