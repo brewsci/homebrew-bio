@@ -2,8 +2,8 @@ class Lofreq < Formula
   # cite Wilm_2012: "https://10.1093/nar/gks918"
   desc "Low frequency variant calling in populations"
   homepage "https://csb5.github.io/lofreq/"
-  url "https://github.com/CSB5/lofreq/archive/refs/tags/v2.1.3.1.tar.gz"
-  sha256 "72ad0165a226ad8601297d5e01d139574f30d0637c70dec543f8d513c26958eb"
+  url "https://github.com/CSB5/lofreq/archive/refs/tags/v2.1.5.tar.gz"
+  sha256 "da85ec4baca21e20a55b5f9ee491cdda2986d0dc672177007a2c70ca1d804fe7"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
