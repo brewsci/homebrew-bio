@@ -3,7 +3,7 @@ class Pilon < Formula
   homepage "https://github.com/broadinstitute/pilon/wiki"
   url "https://github.com/broadinstitute/pilon/releases/download/v1.24/pilon-1.24.jar"
   sha256 "ea8e7ca8669887ebe1c376bef440ba487377d4802a45c5937ed37c49cafb8df6"
-  head "https://github.com/broadinstitute/pilon.git"
+  head "https://github.com/broadinstitute/pilon.git", branch: "master"
   # cite Walker_2014: "https://doi.org/10.1371/journal.pone.0112963"
 
   bottle do
