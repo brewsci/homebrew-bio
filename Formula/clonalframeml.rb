@@ -9,8 +9,10 @@ class Clonalframeml < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, sierra:       "ef12d55ae473ef2e287e2e42d8b03631c938435ac6a58276e5afb20bd1df20d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "63567c0ed398baf544e83c62020169bf90790c5a1eb700678ad10a7ee42a5833"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2f003ce3e54ec0139dcdc3b9ce53a4bf12c2739e94a2abdf181740672f76ee76"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f7abc279d17bf83855db8722e409ba9a734380bc48fdf8149d439b5a30ad358"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "63e1058f1102f19d0ae4109744dfdb31eaff6fa679453b3c035e4a4cf4b4e394"
+    sha256 cellar: :any,                 x86_64_linux:  "fadfd2dbf4be0f38aa29827469609d28a9d71d9441efe5706fe062444de1b70e"
   end
 
   def install
