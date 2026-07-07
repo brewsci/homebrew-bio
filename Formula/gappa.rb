@@ -6,7 +6,7 @@ class Gappa < Formula
   url "https://github.com/lczech/gappa/archive/refs/tags/v0.9.0.tar.gz"
   sha256 "6c3e64c6621d1a3ae2ab9f7a3af8d6d130f35e3b260ab659ebf6b60e8364d126"
   license "GPL-3.0-or-later"
-  head "https://github.com/lczech/gappa.git"
+  head "https://github.com/lczech/gappa.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -26,7 +26,7 @@ class Gappa < Formula
 
   def install
     mkdir "build" do
-      system "cmake", "..", *std_cmake_args
+      system "cmake", "..", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
       system "make"
     end
     bin.install "bin/gappa"
