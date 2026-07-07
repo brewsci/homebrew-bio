@@ -1,14 +1,14 @@
 class Unikmer < Formula
   desc "Manipulate small kmers without frequency information"
   homepage "https://github.com/shenwei356/unikmer"
-  version "0.11.0"
+  version "0.20.0"
   license "MIT"
   if OS.mac?
-    url "https://github.com/shenwei356/unikmer/releases/download/v0.11.0/unikmer_darwin_amd64.tar.gz"
-    sha256 "6e13d2990d6f662cea81568c9b04d2f59dd6b3679e7db56ba4c66bc73a8b1eaf"
+    url "https://github.com/shenwei356/unikmer/releases/download/v0.20.0/unikmer_darwin_amd64.tar.gz"
+    sha256 "e065348a1cb123c720666f20cadd306b72990891d12583bfe4c43a07625e22f1"
   elsif OS.linux?
-    url "https://github.com/shenwei356/unikmer/releases/download/v0.11.0/unikmer_linux_amd64.tar.gz"
-    sha256 "856f55364cb7b8b6cd0380a65aa90629aa1336879daf23234e2f09d1ca62af55"
+    url "https://github.com/shenwei356/unikmer/releases/download/v0.20.0/unikmer_linux_amd64.tar.gz"
+    sha256 "f6558c7f01c6c3458e52ada9a0fde276f4d4b1a32458f0fdc80760d39928022d"
   end
 
   bottle do
