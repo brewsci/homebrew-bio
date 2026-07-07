@@ -1,8 +1,8 @@
 class RavenAssembler < Formula
   desc "De novo DNA assembly of long uncorrected read"
   homepage "https://github.com/lbcb-sci/raven"
-  url "https://github.com/lbcb-sci/raven/releases/download/0.0.0/raven-v0.0.0.tar.gz"
-  sha256 "6ca62a0152e130216da2959099ca152aa21d6758770b74c430f515ff755c1b2d"
+  url "https://github.com/lbcb-sci/raven/archive/refs/tags/1.8.3.tar.gz"
+  sha256 "5e7725d1115f7bbd2b6e72d3eb813e99beee552abdb751050d092de2348e5439"
   license "MIT"
 
   bottle do
