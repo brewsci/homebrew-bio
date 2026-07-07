@@ -2,8 +2,8 @@ class Souporcell < Formula
   # cite Heaton_2019: "https://www.biorxiv.org/content/10.1101/699637v1"
   desc "Clustering scRNAseq by genotypes"
   homepage "https://github.com/wheaton5/souporcell"
-  url "https://github.com/wheaton5/souporcell/archive/refs/tags/2.0.tar.gz"
-  sha256 "308b0fc4edc410cf13a9d8e8572e80fd6ceadeb981703383f31b2fcaa138bf1c"
+  url "https://github.com/wheaton5/souporcell/archive/refs/tags/3.0.tar.gz"
+  sha256 "6d2e3b4b7a33cd266e56ecb477ee5311567e9bcc91e9f60301e730ab46e28de6"
   license "MIT"
 
   bottle do
