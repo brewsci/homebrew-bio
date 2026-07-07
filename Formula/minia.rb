@@ -19,6 +19,7 @@ class Minia < Formula
   def install
     mkdir "build" do
       args = std_cmake_args
+      args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
       args << "-DSKIP_DOC=1"
       system "cmake", "..", *args
       system "make"
