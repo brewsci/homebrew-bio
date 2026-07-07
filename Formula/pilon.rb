@@ -8,8 +8,10 @@ class Pilon < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, sierra:       "0a36e64ea157912c9e47c0098a710080c549d06a55502dbe4c2972bebd6ec3db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "37157f6eb70104f6d4cd972c995db5004988295f349126f6208ce584345ff6ba"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "47c10c0dfbc7fa5fe3b346bc073a1fa00f60c00a1469feb0b6799b600310b464"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "47c10c0dfbc7fa5fe3b346bc073a1fa00f60c00a1469feb0b6799b600310b464"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "47c10c0dfbc7fa5fe3b346bc073a1fa00f60c00a1469feb0b6799b600310b464"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67870c075071e5a7657aba2a3fa38fd3b83a0b39b9c58aea2d3f1b1ea4d714ba"
   end
 
   depends_on "openjdk"
