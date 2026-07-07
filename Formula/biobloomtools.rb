@@ -39,10 +39,15 @@ class Biobloomtools < Formula
 
   def install
     system "./autogen.sh" if build.head?
+    # Newer compilers promote added -Wall/-Wextra warnings to errors under the
+    # upstream -Werror; -Wno-error (appended after it) keeps the build going.
+    ENV.append "CXXFLAGS", "-Wno-error"
     if OS.mac?
       sdsl = buildpath/"sdsl"
       resource("sdsl").stage do
         ENV.cxx11
+        # sdsl's CMakeLists predates CMake 3.5; allow modern CMake to configure it.
+        ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
         system "./install.sh", sdsl
       end
       system "./configure",
