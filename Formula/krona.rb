@@ -8,8 +8,10 @@ class Krona < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "70f28f3e1555927c085f0f50de11b4c20057398766bc6f3e37790d3416f0fed4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9a46952c87598ce809c4bdd18ffc6837bf12a265eab78e4181b55aa486ed689a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "64e74caf6fd0629903d377ae0e86ad839d3db19614dfd6936baf4e78a68f8f45"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64e74caf6fd0629903d377ae0e86ad839d3db19614dfd6936baf4e78a68f8f45"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "64e74caf6fd0629903d377ae0e86ad839d3db19614dfd6936baf4e78a68f8f45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "836673a48ced959e4b6c1c6631a7bab1e671455f029143a95958261e2b6adfab"
   end
 
   def install
