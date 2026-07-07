@@ -2,8 +2,8 @@ class Mothur < Formula
   # cite Schloss_2009: "https://doi.org/10.1128/AEM.01541-09"
   desc "16s analysis software"
   homepage "https://mothur.org/"
-  url "https://github.com/mothur/mothur/archive/refs/tags/v1.44.3.tar.gz"
-  sha256 "a9825ccbb7f60b527f63c16e07f9dd45373bdc8ee65c8f2f0b45f8b2113b2e6f"
+  url "https://github.com/mothur/mothur/archive/refs/tags/v1.48.5.tar.gz"
+  sha256 "d6bbd172cefdfe468d654532e620831e5e9a6814c751361034027aeb1cbccd27"
   license "GPL-3.0"
   head "https://github.com/mothur/mothur.git"
 
