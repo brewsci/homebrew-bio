@@ -7,7 +7,7 @@ class Portcullis < Formula
   url "https://github.com/maplesond/portcullis/archive/refs/tags/Release-1.2.4.tar.gz"
   sha256 "9183c4e8108af1e813dbc35e537e16e5d0e13f53ed4c0a36b182c3f8bfcea438"
   license "GPL-3.0"
-  head "https://github.com/maplesond/portcullis.git"
+  head "https://github.com/maplesond/portcullis.git", branch: "develop"
 
   livecheck do
     url :stable
