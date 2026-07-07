@@ -2,8 +2,8 @@ class Phyx < Formula
   # cite Brown_2017: "https://doi.org/10.1093/bioinformatics/btx063"
   desc "Command-line tools for phylogenetic analyses"
   homepage "https://github.com/FePhyFoFum/phyx"
-  url "https://github.com/FePhyFoFum/phyx/archive/refs/tags/v1.2.1.tar.gz"
-  sha256 "0634dd14026d1f708341b3ce6dd1d5b9d7c1dcb00f3fad71e64246e293e181e7"
+  url "https://github.com/FePhyFoFum/phyx/archive/refs/tags/v1.3.2.tar.gz"
+  sha256 "2c4a80c73b8bbf2117c4a4686655c19f9e0a1f81921cd1ad201b1933e1c6ad14"
   license "GPL-3.0-only"
 
   bottle do
