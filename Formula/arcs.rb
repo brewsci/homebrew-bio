@@ -23,8 +23,7 @@ class Arcs < Formula
   depends_on "brewsci/bio/btllib"
   depends_on "brewsci/bio/links-scaffolder"
   depends_on "minimap2"
-
-  uses_from_macos "zlib"
+  depends_on "zlib-ng-compat" # avoids indirect-linkage failure on Linux
 
   on_macos do
     depends_on "libomp"
@@ -34,6 +33,9 @@ class Arcs < Formula
     if OS.mac?
       ENV.append "LDFLAGS", "-L#{formula_opt_lib("libomp")} -lomp"
       ENV.append "CPPFLAGS", "-I#{HOMEBREW_PREFIX}/include -Xpreprocessor -fopenmp -lomp"
+      # macOS 14's default C++ standard is too old to compile modern Boost
+      # headers during AX_BOOST_BASE's probe; force C++17.
+      ENV.append "CXXFLAGS", "-std=c++17"
     end
 
     system "./autogen.sh"
