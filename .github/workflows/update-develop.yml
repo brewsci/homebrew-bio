@@ -4,12 +4,44 @@ on:
   push:
     branches: [master]
 
+concurrency:
+  group: develop-writers
+  cancel-in-progress: false
+
 jobs:
   update-develop:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@main
+      - name: Checkout develop (full history)
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 100
-      - name: Update the develop branch
-        run: git push origin origin/master:develop
+          ref: develop
+          fetch-depth: 0
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Rebase onto latest develop
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin develop
+          if [ -n "$(git log origin/develop..HEAD --oneline)" ]; then
+            git rebase origin/develop
+          fi
+
+      - name: Push develop with retry
+        shell: bash
+        run: |
+          set -euo pipefail
+          for i in 1 2 3; do
+            if git push origin HEAD:develop; then
+              exit 0
+            fi
+            git fetch origin develop
+            git rebase origin/develop
+            sleep $((i*2))
+          done
+          exit 1
