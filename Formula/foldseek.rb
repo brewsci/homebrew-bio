@@ -2,9 +2,9 @@ class Foldseek < Formula
   # cite van Kempen_2023: "https://doi.org/10.1038/s41587-023-01773-0"
   desc "Fast and sensitive comparisons of large protein structure sets"
   homepage "https://github.com/steineggerlab/foldseek"
-  url "https://github.com/steineggerlab/foldseek/archive/refs/tags/9-427df8a.tar.gz"
-  version "9-427df8a"
-  sha256 "b17d2d85b49a8508f79ffd8b15e54afc5feef5f3fb0276a291141ca5dbbbe8bc"
+  url "https://github.com/steineggerlab/foldseek/archive/refs/tags/10-941cd33.tar.gz"
+  version "10-941cd33"
+  sha256 "0db8bf072c9ec895efc6aa3626c746f4ca020acc9b92e9b2292b56c8c9f8a943"
   license "GPL-3.0-or-later"
   head "https://github.com/steineggerlab/foldseek.git", branch: "master"
 
