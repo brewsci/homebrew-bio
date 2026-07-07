@@ -6,8 +6,8 @@ class Ntsynt < Formula
   desc "Detecting multi-genome synteny using minimizer graph mapping"
   homepage "https://github.com/bcgsc/ntSynt"
   url "https://github.com/bcgsc/ntSynt.git",
-  tag:      "v1.0.2",
-  revision: "f7e358fb1b58e7a1c33f3a876a29214e185c5dde"
+  tag:      "v1.0.8",
+  revision: "ffef728f16334af9aef15338de97014e3494f83f"
   license "GPL-3.0-or-later"
   head "https://github.com/bcgsc/ntSynt.git", branch: "main"
 
