@@ -43,6 +43,9 @@ class Biobloomtools < Formula
     # upstream -Werror; -Wno-error (appended after it) keeps the build going.
     # Newer Boost headers need C++17 (std::is_final etc.); the later -std wins.
     ENV.append "CXXFLAGS", "-Wno-error -std=c++17"
+    # The system sdsl-lite ships a non-PIC libsdsl.a, which cannot be linked
+    # into a position-independent executable; link non-PIE on Linux.
+    ENV.append "LDFLAGS", "-no-pie" if OS.linux?
     if OS.mac?
       sdsl = buildpath/"sdsl"
       resource("sdsl").stage do
