@@ -8,8 +8,10 @@ class Mlst < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "1798bf97d935367e32cb7c7854b25c5d04453c4ac5c00360b3c9c2969c77d110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1d618e68933b2866250ca1a60bb5e1e259890e17dbda5139afc03e4b64bb4a98"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b90e5a657e5d9a4ffe2067e1eb3ff4567d529d82f2feed8253874f068287decc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6fab4e9192170573135aa69ba8c711c242e20d8b945d11f3cd3da2f7ae299886"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a936170b75aa0e4b852cf43988d1fadf1f3b999f4d2fe765f30cbae9be2af38"
+    sha256 cellar: :any,                 x86_64_linux:  "a74ea761e9b7bb5ee918d8567e396467a3500c4d537e7171dcf37acb7c02b2f3"
   end
 
   depends_on "cpanminus" => :build
