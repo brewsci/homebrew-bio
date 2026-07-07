@@ -15,7 +15,7 @@ class Legsta < Formula
   depends_on "ispcr"
 
   def install
-    rm "bin/isPcr" # remove bundled binary
+    rm "bin/isPcr" if File.exist?("bin/isPcr") # remove bundled binary
     prefix.install Dir["*"]
   end
 
