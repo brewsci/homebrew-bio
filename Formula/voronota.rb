@@ -2,8 +2,8 @@ class Voronota < Formula
   # cite Olechnovič_2014: "https://doi.org/10.1002/jcc.23538"
   desc "Compute Voronoi diagram vertices for macromolecular structures"
   homepage "https://github.com/kliment-olechnovic/voronota"
-  url "https://github.com/kliment-olechnovic/voronota/archive/refs/tags/v1.29.4415.tar.gz"
-  sha256 "ac3ab668bb808343fd2d5bd5eef621cc4aede5f1e4423d5e752005caa7b889b2"
+  url "https://github.com/kliment-olechnovic/voronota/archive/refs/tags/v1.29.4781.tar.gz"
+  sha256 "efd46fa08437c818f45bada7be11b539e10822923bcf03ad93d25a02660fb634"
   license "MIT"
   head "https://github.com/kliment-olechnovic/voronota.git", branch: "master"
 
