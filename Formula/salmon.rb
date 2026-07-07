@@ -29,23 +29,23 @@ class Salmon < Formula
   # every platform, keeping detection consistent without a redundant `version`.
   on_macos do
     on_arm do
-      url "https://github.com/COMBINE-lab/salmon/releases/download/v2.3.0/salmon-cli-aarch64-apple-darwin.tar.xz#/salmon.tar.xz"
-      sha256 "adff8afed7404254db4389a0ba2c3f7ccbbc5775bc75c1e72a1a41099444bc9c"
+      url "https://github.com/COMBINE-lab/salmon/releases/download/v2.3.1/salmon-cli-aarch64-apple-darwin.tar.xz#/salmon.tar.xz"
+      sha256 "203c0659af46a27396354ba3c5de844074d5c06af73923e97cbc73a02eed547f"
     end
     on_intel do
-      url "https://github.com/COMBINE-lab/salmon/releases/download/v2.3.0/salmon-cli-x86_64-apple-darwin.tar.xz#/salmon.tar.xz"
-      sha256 "9d7016acd38f754e774f6d6481d29863ae6ac39889b41e995dbd1e1ef3e4ade4"
+      url "https://github.com/COMBINE-lab/salmon/releases/download/v2.3.1/salmon-cli-x86_64-apple-darwin.tar.xz#/salmon.tar.xz"
+      sha256 "cd95e213325cbe17b425e7c0b11d05d2960a304698dd00771eba50592840c14c"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/COMBINE-lab/salmon/releases/download/v2.3.0/salmon-cli-aarch64-unknown-linux-gnu.tar.xz#/salmon.tar.xz"
-      sha256 "5fe21d0a1d3ef14b58b49b12fa205ef61c530dd2eceb897458ddf6cc7b49130f"
+      url "https://github.com/COMBINE-lab/salmon/releases/download/v2.3.1/salmon-cli-aarch64-unknown-linux-gnu.tar.xz#/salmon.tar.xz"
+      sha256 "478377823b9eb74c8ad8f1d2df68ff85bc1fc018c1f7f40296f80c64e4cb4acc"
     end
     on_intel do
-      url "https://github.com/COMBINE-lab/salmon/releases/download/v2.3.0/salmon-cli-x86_64-unknown-linux-gnu.tar.xz#/salmon.tar.xz"
-      sha256 "0816c1764e580db4a2a2b7854f6b784fbe8d498539139a94ef6549f5304d43f1"
+      url "https://github.com/COMBINE-lab/salmon/releases/download/v2.3.1/salmon-cli-x86_64-unknown-linux-gnu.tar.xz#/salmon.tar.xz"
+      sha256 "0b5390db80ac2ccfe963e24c201e6bcffafe82807054f28f47cafa9c84e868ef"
     end
   end
 
