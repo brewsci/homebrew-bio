@@ -1,8 +1,8 @@
 class Libsbml < Formula
   desc "Library for handling SBML (Systems Biology Markup Language)"
   homepage "https://sbml.org/software/libsbml"
-  url "https://github.com/sbmlteam/libsbml/archive/refs/tags/v5.20.4.tar.gz"
-  sha256 "02c225d3513e1f5d6e3c0168456f568e67f006eddaab82f09b4bdf0d53d2050e"
+  url "https://github.com/sbmlteam/libsbml/archive/refs/tags/v5.21.1.tar.gz"
+  sha256 "c595f9d6f04035863f9003986552a651b95df85c219b998b0c1c0ba14ff042fd"
   license "LGPL-2.1-only"
 
   bottle do
