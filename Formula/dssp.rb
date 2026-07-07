@@ -3,8 +3,8 @@ class Dssp < Formula
   # cite Kabsch_1983: "https://doi.org/10.1002/bip.360221211"
   desc "Assign secondary structure to proteins"
   homepage "https://github.com/PDB-REDO/dssp"
-  url "https://github.com/PDB-REDO/dssp/archive/refs/tags/v4.5.8.tar.gz"
-  sha256 "634bf8d8dd96954bd680da90f3dcb66b87189c13b12b52b61de8af9d597b74ac"
+  url "https://github.com/PDB-REDO/dssp/archive/refs/tags/v4.6.1.tar.gz"
+  sha256 "5ddb8274f03ac0338adffcd661989f515fffb95d40afca404cf2677024256ae3"
   license "BSD-2-Clause"
   head "https://github.com/PDB-REDO/dssp.git", branch: "trunk"
 
