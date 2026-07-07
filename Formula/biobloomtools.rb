@@ -12,7 +12,7 @@ class Biobloomtools < Formula
   end
 
   head do
-    url "https://github.com/bcgsc/biobloom.git"
+    url "https://github.com/bcgsc/biobloom.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
   end
@@ -41,7 +41,8 @@ class Biobloomtools < Formula
     system "./autogen.sh" if build.head?
     # Newer compilers promote added -Wall/-Wextra warnings to errors under the
     # upstream -Werror; -Wno-error (appended after it) keeps the build going.
-    ENV.append "CXXFLAGS", "-Wno-error"
+    # Newer Boost headers need C++17 (std::is_final etc.); the later -std wins.
+    ENV.append "CXXFLAGS", "-Wno-error -std=c++17"
     if OS.mac?
       sdsl = buildpath/"sdsl"
       resource("sdsl").stage do
