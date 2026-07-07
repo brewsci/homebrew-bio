@@ -5,7 +5,7 @@ class Sortmerna < Formula
   url "https://github.com/biocore/sortmerna/archive/refs/tags/v6.0.2.tar.gz"
   sha256 "f2a9d2b1a1041436d06278dd147cfa048d027e45edf79c994a80c64fc375e20b"
   license "GPL-3.0"
-  head "https://github.com/biocore/sortmerna.git"
+  head "https://github.com/biocore/sortmerna.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
