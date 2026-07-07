@@ -1,8 +1,8 @@
 class Transdecoder < Formula
   desc "Identifies candidate coding regions within transcript sequences"
   homepage "https://transdecoder.github.io/"
-  url "https://github.com/TransDecoder/TransDecoder/archive/refs/tags/TransDecoder-v5.7.1.tar.gz"
-  sha256 "41dd5e95f6ba946ff21340417d867e5e99f123b4035779b25d3cffd20b828a30"
+  url "https://github.com/TransDecoder/TransDecoder/archive/refs/tags/TransDecoder-v6.0.0.tar.gz"
+  sha256 "53892ccedba4f8163adf4ffd0ceb2af1cf6685c6bae6f00491eeae74c3829799"
   head "https://github.com/TransDecoder/TransDecoder.git"
 
   bottle do
