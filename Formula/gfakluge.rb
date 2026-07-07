@@ -2,8 +2,8 @@ class Gfakluge < Formula
   # cite Dawson_2019: "https://doi.org/10.21105/joss.01083"
   desc "C++ library and utilities for Graphical Fragment Assembly (GFA)"
   homepage "https://github.com/edawson/gfakluge"
-  url "https://github.com/edawson/gfakluge/archive/refs/tags/1.1.2.tar.gz"
-  sha256 "4b9e2d358d87a8a0b8508b6ae076af7657f8bb5c823a73f912917c5689f72121"
+  url "https://github.com/edawson/gfakluge/archive/refs/tags/1.1.3.tar.gz"
+  sha256 "64aa19d95d3ae439315bc032645c6b4519cf93e67b60910ea9cef24695d00d0a"
   license "MIT"
   head "https://github.com/edawson/gfakluge.git"
 
