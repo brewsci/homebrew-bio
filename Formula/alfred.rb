@@ -8,11 +8,10 @@ class Alfred < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "68324569aa25f74056e8c0878297df0691cb8da3e2c9464e5c47992e57979e82"
-    sha256 cellar: :any,                 arm64_sonoma:  "fff7de0af0d736a574ebb68c8f4d4f8bb9aa8073b94a7ebe2259a88c58feb9d1"
-    sha256 cellar: :any,                 ventura:       "ef2c2d71c60ab217c38f2252cd9ae2c355a0c88c5c7bb62621ea0ccac76ff532"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cfcec5082dd0f4eb3ab40630d89ff4136b4529099c6a3c6ce53df139bc71e30"
+    sha256 cellar: :any, arm64_tahoe:   "03b6616e65c3666f6c960b70968018a4d7128a1284358c5d2b8aeea6793a6497"
+    sha256 cellar: :any, arm64_sequoia: "e2336ab1735e1d65beabea3cad3a6393508eb20c809ea31f6c7e5dc40522ef08"
+    sha256 cellar: :any, arm64_sonoma:  "5343015f4f1a3147ca3c14f0b5ccbeb7579efbf2ec0b783dfbb40773b8bb7fa0"
+    sha256 cellar: :any, x86_64_linux:  "fdb59cd845de1911abe7d90ce830a22081de6ed09e37fa671bd468929f41f6c3"
   end
 
   depends_on "boost"
