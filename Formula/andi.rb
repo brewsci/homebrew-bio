@@ -2,8 +2,8 @@ class Andi < Formula
   # cite Hauboid_2015: "https://doi.org/10.1093/bioinformatics/btu815"
   desc "Estimate evolutionary distance between similar genomes"
   homepage "https://github.com/EvolBioInf/andi"
-  url "https://github.com/EvolBioInf/andi/archive/refs/tags/v0.14.tar.gz"
-  sha256 "2c9e11524f38e74fe3f981e6acd9527c1a1ca30994a30c5e86808ba5165a25b7"
+  url "https://github.com/EvolBioInf/andi/archive/refs/tags/v1.15.tar.gz"
+  sha256 "2e26ab53c06740b2d71d7905b185f49b53108a918f1640e3610a7f48b485a047"
   license "GPL-3.0-or-later"
 
   bottle do
