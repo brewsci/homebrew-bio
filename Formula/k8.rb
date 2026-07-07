@@ -1,8 +1,8 @@
 class K8 < Formula
   desc "Javascript shell based on Google's V8 Javascript engine"
   homepage "https://github.com/attractivechaos/k8"
-  url "https://github.com/attractivechaos/k8/releases/download/0.2.5/k8-0.2.5.tar.bz2"
-  sha256 "a937ac44532e042cd89ac743647b592c21cfcf31679e39e5f362e81034d93d18"
+  url "https://github.com/attractivechaos/k8/releases/download/v1.2/k8-1.2.tar.bz2"
+  sha256 "a86b160a82f3233a21235d21170f3719a600dbd96bf1ec705a6eb57d770953c9"
 
   livecheck do
     url :stable
