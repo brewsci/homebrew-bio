@@ -6,7 +6,7 @@ class Nonpareil < Formula
   url "https://github.com/lmrodriguezr/nonpareil/archive/refs/tags/v3.5.5.tar.gz"
   sha256 "a1896a3ecf1394cbbc685de8dcb0eef04aa089e5ad6badf51d0eaa89b4b3bf1e"
   license "Artistic-2.0"
-  head "https://github.com/lmrodriguezr/nonpareil.git"
+  head "https://github.com/lmrodriguezr/nonpareil.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
