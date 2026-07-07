@@ -6,7 +6,7 @@ class Ntedit < Formula
       tag:      "v2.1.1",
       revision: "1679c966d10f7805525633d7b9110aeff6585fa0"
   license "GPL-3.0-or-later"
-  head "https://github.com/bcgsc/ntEdit.git"
+  head "https://github.com/bcgsc/ntEdit.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
