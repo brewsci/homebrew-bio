@@ -4,7 +4,7 @@ class Raxml < Formula
   homepage "https://sco.h-its.org/exelixis/web/software/raxml/index.html"
   url "https://github.com/stamatak/standard-RAxML/archive/refs/tags/v8.2.13.tar.gz"
   sha256 "28e500793324bd7d330b396ef27ea49c9186fa5e1edb3d5439036dc6c33e6067"
-  head "https://github.com/stamatak/standard-RAxML.git"
+  head "https://github.com/stamatak/standard-RAxML.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
