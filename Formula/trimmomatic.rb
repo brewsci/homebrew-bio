@@ -2,10 +2,9 @@ class Trimmomatic < Formula
   # cite Bolger_2014: "https://doi.org/10.1093/bioinformatics/btu170"
   desc "Flexible read trimming tool for Illumina data"
   homepage "https://github.com/usadellab/Trimmomatic"
-  url "https://github.com/usadellab/Trimmomatic/archive/refs/tags/v0.39.tar.gz"
-  sha256 "a05e28c3391d6ef55dec40de76bb19ca828c4896f3d6ad72e9659ed6a2229e34"
+  url "https://github.com/usadellab/Trimmomatic/archive/refs/tags/v0.41.tar.gz"
+  sha256 "ad4cd81f665a6b8b066fc9513cd4a13612fa98f06ada27988473248ee6110ad3"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/usadellab/Trimmomatic.git", branch: "master"
 
   bottle do
