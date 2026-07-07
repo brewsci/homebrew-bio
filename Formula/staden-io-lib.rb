@@ -3,7 +3,7 @@ class StadenIoLib < Formula
   homepage "https://staden.sourceforge.io/"
   url "https://github.com/jkbonfield/io_lib/archive/refs/tags/io_lib-1-16-0.tar.gz"
   sha256 "2eeb5852378050aa5ca539a8680148f05d7ce52fa9c288224e7a0b698bd97068"
-  head "https://github.com/jkbonfield/io_lib.git"
+  head "https://github.com/jkbonfield/io_lib.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
