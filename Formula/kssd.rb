@@ -1,8 +1,8 @@
 class Kssd < Formula
   desc "K-mer substring space sampling/shuffling decomposition"
   homepage "https://github.com/yhg926/public_kssd"
-  url "https://github.com/yhg926/public_kssd/archive/refs/tags/v1.1.tar.gz"
-  sha256 "bdf42a9a280126c41736aa9ee480d2948e32f9027e97607fe18473db59187bf4"
+  url "https://github.com/yhg926/public_kssd/archive/refs/tags/v2.21.tar.gz"
+  sha256 "2f6217b6e685dbe15c9aa4fa9a7eeb225651eb608f34799efea4ce84e2d0fd86"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
