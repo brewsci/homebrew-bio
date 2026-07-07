@@ -5,7 +5,7 @@ class Ngmerge < Formula
   url "https://github.com/jsh58/NGmerge/archive/refs/tags/v0.5.tar.gz"
   sha256 "bf766185a1b2c41c73ebb22e39163d52965c8df1b1d41b648c58f9b3157f0409"
   license "MIT"
-  head "https://github.com/jsh58/NGmerge.git"
+  head "https://github.com/jsh58/NGmerge.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
