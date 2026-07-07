@@ -13,8 +13,10 @@ class Varscan < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "54a78df4e18651c18647c55b16783cf350d92b996943660cc1c2769f5e511fb2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "94c247d9491f48ff0bbd71eacd38be4d07b33986015715b53668c083a793508f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2ddf94ef137835807cbdae3bfa4613cf5ed4734447ec30002999bbdf54d64a20"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "28c32dd5f12015a704289f7a0cc45a9830027f50bd898bf86611f7438251fb0d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "798d813c5b07ae82e52e941b49cd39cfe76f630d4f13ccc6e70deacba7f79d73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3501f7a458acb12cc5b963c1eb26e3ee78fae3be026c7baf508650c4f2b0ef9"
   end
 
   depends_on "openjdk"
