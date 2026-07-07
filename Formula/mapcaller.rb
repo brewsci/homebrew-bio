@@ -12,10 +12,10 @@ class Mapcaller < Formula
   end
 
   depends_on "xz"
+  depends_on "zlib-ng-compat"
 
   uses_from_macos "bzip2"
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   def install
     system "make"
