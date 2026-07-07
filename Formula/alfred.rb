@@ -2,8 +2,8 @@ class Alfred < Formula
   # cite Rausch_2019: "https://doi.org/10.1093/bioinformatics/bty1007"
   desc "BAM Statistics, Feature Counting and Annotation"
   homepage "https://www.gear-genomics.com/alfred/"
-  url "https://github.com/tobiasrausch/alfred/archive/refs/tags/v0.3.2.tar.gz"
-  sha256 "506967a9588ee51911fb4ddd6d2d3274bff0140004b2473de32728de76567d05"
+  url "https://github.com/tobiasrausch/alfred/archive/refs/tags/v0.5.3.tar.gz"
+  sha256 "b6c9a31cfe4fd322b7bf1b09cc930ab2cd9e42efc834b0cbd6ff1ecf4307cdd9"
   license "BSD-3-Clause"
 
   bottle do
@@ -19,9 +19,9 @@ class Alfred < Formula
   depends_on "htslib"
   depends_on "libdeflate"
   depends_on "xz"
+  depends_on "zlib-ng-compat"
 
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
 
   def install
     system "make", "all"
