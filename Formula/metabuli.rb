@@ -2,8 +2,8 @@ class Metabuli < Formula
   # cite Kim_2024: "https://doi.org/10.1038/s41592-024-02273-y""
   desc "Specific and sensitive metagenomic classification"
   homepage "https://github.com/steineggerlab/Metabuli"
-  url "https://github.com/steineggerlab/Metabuli/archive/refs/tags/1.1.1.tar.gz"
-  sha256 "62c2c8da10010b03ab5c5a353407b9ae12b8fe34aa5e5a648ae17383d7609192"
+  url "https://github.com/steineggerlab/Metabuli/archive/refs/tags/1.2.0.tar.gz"
+  sha256 "2cdeff949676852276930b9fb14c564b50fbc3c48b9c2f903531fc3d1bd3f50c"
   license "GPL-3.0-or-later"
   head "https://github.com/steineggerlab/Metabuli.git", branch: "master"
 
