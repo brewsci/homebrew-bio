@@ -5,7 +5,7 @@ class Clonalframeml < Formula
   url "https://github.com/xavierdidelot/ClonalFrameML/archive/refs/tags/v1.20.tar.gz"
   sha256 "ae797b187793599876a325cd5011959c82fc2b0f72b11b973b0cd1a3d47f6fb2"
   license "GPL-3.0"
-  head "https://github.com/xavierdidelot/ClonalFrameML.git"
+  head "https://github.com/xavierdidelot/ClonalFrameML.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
