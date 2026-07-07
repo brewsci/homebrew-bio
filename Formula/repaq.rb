@@ -14,6 +14,7 @@ class Repaq < Formula
   uses_from_macos "zlib"
 
   def install
+    ENV.append "CXXFLAGS", "-include cstdint" # newer GCC needs explicit <cstdint>
     system "make"
     # https://github.com/OpenGene/repaq/issues/6
     bin.mkpath
