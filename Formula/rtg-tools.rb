@@ -2,8 +2,8 @@ class RtgTools < Formula
   # cite Cleary_2015: "https://doi.org/10.1101/023754"
   desc "Easily manipulate and accurately compare multiple VCF files"
   homepage "https://www.realtimegenomics.com/products/rtg-tools"
-  url "https://github.com/RealTimeGenomics/rtg-tools/releases/download/3.11/rtg-tools-3.11-nojre.zip"
-  sha256 "f9ca3fa5a7d2c737490560970fee4cfa185490542283fb005ec77b77690c133e"
+  url "https://github.com/RealTimeGenomics/rtg-tools/releases/download/3.13/rtg-tools-3.13-nojre.zip"
+  sha256 "bc5c6badb07d7e20d1c5c557bd6d571a022bbd9f58fa1e3840bcff9431a18f96"
   license "BSD-2-Clause"
 
   bottle do
