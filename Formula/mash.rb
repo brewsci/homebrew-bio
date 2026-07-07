@@ -4,7 +4,7 @@ class Mash < Formula
   homepage "https://github.com/marbl/Mash"
   url "https://github.com/marbl/Mash/archive/refs/tags/v2.3.tar.gz"
   sha256 "f96cf7305e010012c3debed966ac83ceecac0351dbbfeaa6cd7ad7f068d87fe1"
-  head "https://github.com/marbl/Mash.git"
+  head "https://github.com/marbl/Mash.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
