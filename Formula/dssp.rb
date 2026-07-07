@@ -3,8 +3,8 @@ class Dssp < Formula
   # cite Kabsch_1983: "https://doi.org/10.1002/bip.360221211"
   desc "Assign secondary structure to proteins"
   homepage "https://github.com/PDB-REDO/dssp"
-  url "https://github.com/PDB-REDO/dssp/archive/refs/tags/v4.5.8.tar.gz"
-  sha256 "634bf8d8dd96954bd680da90f3dcb66b87189c13b12b52b61de8af9d597b74ac"
+  url "https://github.com/PDB-REDO/dssp/archive/refs/tags/v4.6.1.tar.gz"
+  sha256 "5ddb8274f03ac0338adffcd661989f515fffb95d40afca404cf2677024256ae3"
   license "BSD-2-Clause"
   head "https://github.com/PDB-REDO/dssp.git", branch: "trunk"
 
@@ -25,8 +25,8 @@ class Dssp < Formula
   depends_on "icu4c"
   depends_on "pcre2"
   depends_on "python@3.14"
+  depends_on "sqlite"
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1500
@@ -35,6 +35,7 @@ class Dssp < Formula
   on_linux do
     depends_on "gcc" => :build # for C++20 support
     depends_on "fmt"
+    depends_on "zlib-ng-compat"
   end
 
   fails_with :clang do
@@ -48,13 +49,13 @@ class Dssp < Formula
   end
 
   resource "libcifpp" do
-    url "https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v9.0.6.tar.gz"
-    sha256 "e6263a63404762671d6875de385e0c7ad869b0fe3fae41808003e00c94e7ed8c"
+    url "https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v10.0.4.tar.gz"
+    sha256 "4ef1386438b5032842c287b0629d5ffc4838d28fa91f384bdc57915dfca8fe9f"
   end
 
   resource "libmcfp" do
-    url "https://github.com/mhekkel/libmcfp/archive/refs/tags/v2.0.0.tar.gz"
-    sha256 "696d1fc1b8280ccc51af311458596220a20865b5fd1402a0f719120b5b4fd2a2"
+    url "https://github.com/mhekkel/libmcfp/archive/refs/tags/v2.0.3.tar.gz"
+    sha256 "99043c1d586980d7597d0ff181c386de6236723e602e0d268afdc5e725b7fe71"
   end
 
   resource "homebrew-testdata" do
@@ -81,8 +82,8 @@ class Dssp < Formula
       # libmcfp should be installed in 'prefix' directory since the path of dic files are always required.
       if OS.mac? && MacOS.version <= :sequoia
         inreplace "CMakeLists.txt" do |s|
-          s.gsub! "if(NOT STD_CHARCONV_COMPILING)\n\tmessage",
-                  "find_package(FastFloat 8.0 QUIET CONFIG)\nif(STD_CHARCONV_COMPILING)\n\tmessage"
+          s.gsub! "if(NOT STD_CHARCONV_COMPILING)\n    message",
+                  "find_package(FastFloat 8.0 QUIET CONFIG)\nif(STD_CHARCONV_COMPILING)\n    message"
           s.gsub! "PRIVATE $<TARGET_PROPERTY:FastFloat::fast_float,INTERFACE_INCLUDE_DIRECTORIES>",
                   "PRIVATE FastFloat::fast_float"
         end
@@ -99,8 +100,8 @@ class Dssp < Formula
       "LIBRARY DESTINATION #{prefix/Language::Python.site_packages(python3)}"
 
     inreplace "python-module/CMakeLists.txt",
-              "Boost::python ${Python_LIBRARIES}",
-              "Boost::python -Wl,-undefined,dynamic_lookup,-rpath,#{prefix/Language::Python.site_packages(python3)/"dssp"}"
+      "${Python_LIBRARIES} Boost::python",
+      "Boost::python -Wl,-undefined,dynamic_lookup,-rpath,#{prefix/Language::Python.site_packages(python3)/"dssp"}"
 
     if OS.mac? && MacOS.version <= :sequoia
       inreplace "CMakeLists.txt",
