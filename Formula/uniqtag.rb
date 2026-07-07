@@ -5,7 +5,7 @@ class Uniqtag < Formula
   url "https://github.com/sjackman/uniqtag/archive/refs/tags/1.0.1.tar.gz"
   sha256 "ead5cc86658ffb928c68501ed3a17608c76fdb7eaf21cd291f88cf4582bf3ea2"
   license "MIT"
-  head "https://github.com/sjackman/uniqtag.git"
+  head "https://github.com/sjackman/uniqtag.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
