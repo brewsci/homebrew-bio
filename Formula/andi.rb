@@ -8,7 +8,10 @@ class Andi < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c18b5df442cab486cfbbfb6d848f8fa6ea63ecf2468b9df5116e2faf4eff4698"
+    sha256 cellar: :any, arm64_tahoe:   "5047a1c68930f5d9c54643667050541c5ef91b6d30f8be619045daa5ab9c2866"
+    sha256 cellar: :any, arm64_sequoia: "09707c7ae3a4e44582517dc0ff9ff0124122ca39b7f4fcb704939ee67ea82628"
+    sha256 cellar: :any, arm64_sonoma:  "85552976f9462f504223f56da1159016aadcff332348b146b9842358b33ea9ba"
+    sha256 cellar: :any, x86_64_linux:  "5ed8d5c6d6e23ba5c38aaf30e6fabee7a1b5e9b705a6ec5c5e1352c281dadb1e"
   end
 
   depends_on "autoconf" => :build
