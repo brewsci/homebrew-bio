@@ -1,8 +1,8 @@
 class StadenIoLib < Formula
   desc "Staden Package io_lib"
   homepage "https://staden.sourceforge.io/"
-  url "https://github.com/jkbonfield/io_lib/archive/refs/tags/io_lib-1-15-0.tar.gz"
-  sha256 "7006ab127ec05649d1f1bceafb7953defc665408da24cf990804d2c65e510f39"
+  url "https://github.com/jkbonfield/io_lib/archive/refs/tags/io_lib-1-16-0.tar.gz"
+  sha256 "2eeb5852378050aa5ca539a8680148f05d7ce52fa9c288224e7a0b698bd97068"
   head "https://github.com/jkbonfield/io_lib.git"
 
   bottle do
