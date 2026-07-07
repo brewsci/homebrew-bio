@@ -5,9 +5,9 @@ class Eastr < Formula
   desc "Emending Alignment of Spliced Transcript Reads"
   homepage "https://github.com/gpertea/gffread/"
   url "https://github.com/ishinder/EASTR.git",
-    tag:      "v1.0-paper",
-    revision: "3ce55dc40a6b3de816f61e52508993816e90bdbb"
-  version "1.0"
+    tag:      "1.1.2",
+    revision: "90ac86ec925b5102f7f74d07908fe868c960e791"
+  version "1.1.2"
   license "MIT"
   head "https://github.com/ishinder/EASTR.git", branch: "main"
 
