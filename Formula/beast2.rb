@@ -16,12 +16,6 @@ class Beast2 < Formula
   depends_on "openjdk"
 
   def install
-    # Homebrew renames the unpacked source folder, but build.xml
-    # assumes that it won't be renamed.
-    inreplace "build.xml", "../beast2/", ""
-    # Targeting Java 6 is no longer supported.
-    inreplace "build.xml", 'source="1.6"', 'source="1.7"'
-    inreplace "build.xml", 'target="1.6"', 'target="1.7"'
     system "ant", "linux"
 
     cd "release/Linux/beast" do
