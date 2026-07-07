@@ -21,7 +21,7 @@ class Gemma < Formula
   depends_on "gsl"
   depends_on "openblas"
 
-  uses_from_macos "zlib"
+  depends_on "zlib-ng-compat"
 
   def install
     # https://github.com/brewsci/homebrew-bio/pull/479
