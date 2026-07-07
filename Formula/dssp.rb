@@ -25,6 +25,7 @@ class Dssp < Formula
   depends_on "icu4c"
   depends_on "pcre2"
   depends_on "python@3.14"
+  depends_on "sqlite"
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
 
@@ -97,6 +98,10 @@ class Dssp < Formula
     inreplace "python-module/CMakeLists.txt",
       'LIBRARY DESTINATION "${Python_SITELIB}"',
       "LIBRARY DESTINATION #{prefix/Language::Python.site_packages(python3)}"
+
+    inreplace "python-module/CMakeLists.txt",
+      "${Python_LIBRARIES} Boost::python",
+      "Boost::python -Wl,-undefined,dynamic_lookup,-rpath,#{prefix/Language::Python.site_packages(python3)/"dssp"}"
 
     if OS.mac? && MacOS.version <= :sequoia
       inreplace "CMakeLists.txt",
