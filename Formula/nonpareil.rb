@@ -3,8 +3,8 @@ class Nonpareil < Formula
   desc "Estimates coverage in metagenomic datasets"
   homepage "http://enve-omics.ce.gatech.edu/nonpareil"
 
-  url "https://github.com/lmrodriguezr/nonpareil/archive/refs/tags/v3.5.4.tar.gz"
-  sha256 "41ea9c1378e85787142b29c7cdf8d352073764a620f818333492266e6bbec1cd"
+  url "https://github.com/lmrodriguezr/nonpareil/archive/refs/tags/v3.5.5.tar.gz"
+  sha256 "a1896a3ecf1394cbbc685de8dcb0eef04aa089e5ad6badf51d0eaa89b4b3bf1e"
   license "Artistic-2.0"
   head "https://github.com/lmrodriguezr/nonpareil.git"
 
