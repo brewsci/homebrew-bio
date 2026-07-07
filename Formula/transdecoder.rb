@@ -3,7 +3,7 @@ class Transdecoder < Formula
   homepage "https://transdecoder.github.io/"
   url "https://github.com/TransDecoder/TransDecoder/archive/refs/tags/TransDecoder-v6.0.0.tar.gz"
   sha256 "53892ccedba4f8163adf4ffd0ceb2af1cf6685c6bae6f00491eeae74c3829799"
-  head "https://github.com/TransDecoder/TransDecoder.git"
+  head "https://github.com/TransDecoder/TransDecoder.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
