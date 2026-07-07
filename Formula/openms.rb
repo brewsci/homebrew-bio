@@ -1,8 +1,8 @@
 class Openms < Formula
   desc "Open-source software C++ library for LC-MS data management and analyses"
   homepage "https://www.openms.de/"
-  url "https://github.com/OpenMS/OpenMS/releases/download/release%2F3.4.1/OpenMS-3.4.1.tar.gz"
-  sha256 "ab3c30a8f2b905c2aa7c7b5f821066ed77a111bb5970f5586384c5effb9a6ec8"
+  url "https://github.com/OpenMS/OpenMS/releases/download/release%2F3.5.0/OpenMS-3.5.0.tar.gz"
+  sha256 "29ddff876b6f7e604edca962cbd2f57fe2467262db4b4f039aa43148589f2dbd"
   license "BSD-3-Clause"
 
   head "https://github.com/OpenMS/OpenMS.git", branch: "develop"
