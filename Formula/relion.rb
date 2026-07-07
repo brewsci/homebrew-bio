@@ -1,8 +1,8 @@
 class Relion < Formula
   desc "Image-processing software for cryo-electron microscopy"
   homepage "https://github.com/3dem/relion"
-  url "https://github.com/3dem/relion/archive/refs/tags/5.0.1.tar.gz"
-  sha256 "acbf898e96513b092514a56ff2a255c69a795e7a6f04131eacc8f55e2a900c23"
+  url "https://github.com/3dem/relion/archive/refs/tags/5.1.0.tar.gz"
+  sha256 "4767804dd8ba2198efd1e1082b4632bc36aeca0ad09d4d2f7de956f84bbbb429"
   license "GPL-2.0-only"
   head "https://github.com/3dem/relion.git", branch: "master"
 
