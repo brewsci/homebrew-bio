@@ -2,8 +2,8 @@ class Vep < Formula
   # cite McLaren_2016: "https://doi.org/10.1186/s13059-016-0974-4"
   desc "Ensembl Variant Effect Predictor (VEP)"
   homepage "https://github.com/Ensembl/ensembl-vep"
-  url "https://github.com/Ensembl/ensembl-vep/archive/refs/tags/release/116.0.tar.gz"
-  sha256 "618a4b6d37efbe0968d7ad1115bf6b712f8537c4697659be6c41580708eb5167"
+  url "https://github.com/Ensembl/ensembl-vep/archive/refs/tags/release/167.0.tar.gz"
+  sha256 "3e2b98b63e4d96ae7dade9f926c40a4347a3fefcecd1c56aac134fb1c443eefc"
   license "Apache-2.0"
 
   livecheck do
