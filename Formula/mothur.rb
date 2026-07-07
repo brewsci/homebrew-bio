@@ -5,7 +5,7 @@ class Mothur < Formula
   url "https://github.com/mothur/mothur/archive/refs/tags/v1.48.5.tar.gz"
   sha256 "d6bbd172cefdfe468d654532e620831e5e9a6814c751361034027aeb1cbccd27"
   license "GPL-3.0"
-  head "https://github.com/mothur/mothur.git"
+  head "https://github.com/mothur/mothur.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
