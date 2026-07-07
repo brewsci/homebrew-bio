@@ -48,13 +48,13 @@ class Dssp < Formula
   end
 
   resource "libcifpp" do
-    url "https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v9.0.6.tar.gz"
-    sha256 "e6263a63404762671d6875de385e0c7ad869b0fe3fae41808003e00c94e7ed8c"
+    url "https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v10.0.4.tar.gz"
+    sha256 "4ef1386438b5032842c287b0629d5ffc4838d28fa91f384bdc57915dfca8fe9f"
   end
 
   resource "libmcfp" do
-    url "https://github.com/mhekkel/libmcfp/archive/refs/tags/v2.0.0.tar.gz"
-    sha256 "696d1fc1b8280ccc51af311458596220a20865b5fd1402a0f719120b5b4fd2a2"
+    url "https://github.com/mhekkel/libmcfp/archive/refs/tags/v2.0.3.tar.gz"
+    sha256 "99043c1d586980d7597d0ff181c386de6236723e602e0d268afdc5e725b7fe71"
   end
 
   resource "homebrew-testdata" do
@@ -97,10 +97,6 @@ class Dssp < Formula
     inreplace "python-module/CMakeLists.txt",
       'LIBRARY DESTINATION "${Python_SITELIB}"',
       "LIBRARY DESTINATION #{prefix/Language::Python.site_packages(python3)}"
-
-    inreplace "python-module/CMakeLists.txt",
-              "Boost::python ${Python_LIBRARIES}",
-              "Boost::python -Wl,-undefined,dynamic_lookup,-rpath,#{prefix/Language::Python.site_packages(python3)/"dssp"}"
 
     if OS.mac? && MacOS.version <= :sequoia
       inreplace "CMakeLists.txt",
