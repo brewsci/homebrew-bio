@@ -13,7 +13,7 @@ class Trimmomatic < Formula
   def install
     ENV["JAVA_HOME"] = formula_opt_prefix("openjdk@26")
     system "mvn", "clean", "package"
-    libexec.install "target/Trimmomatic-#{version}.jar"
+    libexec.install "target/trimmomatic-#{version}.jar"
     bin.write_jar_script libexec/"trimmomatic-#{version}.jar", "trimmomatic", java_version: "26"
     pkgshare.install "adapters"
   end
@@ -21,7 +21,7 @@ class Trimmomatic < Formula
   def caveats
     <<~EOS
       FASTA file of adapter sequences are located here:
-      #{libexec}/Trimmomatic-#{version}/adapters
+      #{libexec}/trimmomatic-#{version}/adapters
     EOS
   end
 
