@@ -21,6 +21,10 @@ class Mothur < Formula
 
   def install
     boost = Formula["boost"]
+    # On Linux the Makefile's subdir-include computation omits source/ itself,
+    # so headers such as mothurout.h are not found. Add -Isource explicitly.
+    inreplace "Makefile", "CXXFLAGS += -I. $(subDirIncludes)",
+                          "CXXFLAGS += -I. -Isource $(subDirIncludes)"
     system "make", "USEBOOST=yes", "BOOST_LIBRARY_DIR=#{boost.opt_lib}", "BOOST_INCLUDE_DIR=#{boost.opt_include}"
     bin.install "mothur", "uchime"
   end
