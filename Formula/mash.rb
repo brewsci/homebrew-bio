@@ -23,7 +23,8 @@ class Mash < Formula
   uses_from_macos "zlib"
 
   def install
-    ENV.append "CXXFLAGS", "-include cstdint" # newer GCC needs explicit <cstdint>
+    # newer GCC needs explicit <cstdint> (uintN_t) and <limits> (numeric_limits)
+    ENV.append "CXXFLAGS", "-include cstdint -include limits"
     system "./bootstrap.sh"
     system "./configure",
       "--prefix=#{prefix}",
