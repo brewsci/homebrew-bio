@@ -13,11 +13,11 @@ class HarvestTools < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 3
-    sha256 cellar: :any,                 arm64_sequoia: "ffcec9e2fc5b63b42e27c0a58885934462b621062e124ace01760a0a7b178ebb"
-    sha256 cellar: :any,                 arm64_sonoma:  "6255a5ebdf9912e06a631db8edd56e2306605fbf11d80c93516a238eb9cc5457"
-    sha256 cellar: :any,                 ventura:       "a520f82f6b6780e1e62178ae0aa9db954ed0968a84266464671602f48c88116b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9901d9302915a4607a3a85e302fb4acceeab6d79d1ccf20e1e8b1e731ff15746"
+    rebuild 4
+    sha256 cellar: :any, arm64_tahoe:   "a75b5756486208e482f5a6d4d92f4890354638f7cdd2171708089421a84a213c"
+    sha256 cellar: :any, arm64_sequoia: "03abdbab5ab2f6aa0e7dfb94fb72f5209b4c3b332d90a46161903d3a2f010a8e"
+    sha256 cellar: :any, arm64_sonoma:  "624b43a65d6d3dcf3e5f2f35ad948cd6b3bff9859448ea1eb99e282836406e84"
+    sha256               x86_64_linux:  "232ef0368152c24fe1e57a5aaa2a82a7cc0c62501d74e16fb2adc26833d94eb9"
   end
 
   depends_on "autoconf" => :build
@@ -26,12 +26,15 @@ class HarvestTools < Formula
   depends_on "abseil"
   depends_on "capnp"
   depends_on "protobuf"
-
   uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     inreplace "configure.ac", "-std=c++11", "-std=c++17"
     inreplace "Makefile.in", "-std=c++11", "-std=c++17"
+    inreplace "Makefile.in", "-mmacosx-version-min=10.7", "-mmacosx-version-min=10.14" if OS.mac?
     inreplace "src/harvest/HarvestIO.cpp", "SetTotalBytesLimit(INT_MAX, INT_MAX)", "SetTotalBytesLimit(INT_MAX)"
     inreplace "Makefile.in", "-lpthread",
               "-lpthread -labsl_log_internal_check_op -labsl_log_internal_message"
