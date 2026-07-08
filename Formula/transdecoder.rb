@@ -19,16 +19,17 @@ class Transdecoder < Formula
     system "make"
     rm "Makefile"
     prefix.install Dir["*"]
+    # v6.0.0 moved these scripts from the repo root into util/
     executables = "TransDecoder.LongOrfs", "TransDecoder.Predict"
     if OS.mac?
       executables.each do |executable|
-        bin.write_exec_script prefix/executable
+        bin.write_exec_script prefix/"util"/executable
       end
     else
       ENV["PERL5LIB"] = libexec/"lib/perl5"
       system "cpanm", "--self-contained", "-l", libexec, "URI::Escape"
       executables.each do |executable|
-        (bin/executable).write_env_script(prefix/executable, PERL5LIB: ENV["PERL5LIB"])
+        (bin/executable).write_env_script(prefix/"util"/executable, PERL5LIB: ENV["PERL5LIB"])
       end
     end
   end
