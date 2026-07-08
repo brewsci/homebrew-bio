@@ -2,15 +2,17 @@ class Clonalframeml < Formula
   # cite Didelot_2015: "https://doi.org/10.1371/journal.pcbi.1004041"
   desc "Efficient Inference of Recombination in Bacterial Genomes"
   homepage "https://github.com/xavierdidelot/ClonalFrameML"
-  url "https://github.com/xavierdidelot/ClonalFrameML/archive/refs/tags/v1.12.tar.gz"
-  sha256 "ef76705c1a0f1343184f956cd0bdc96c2cfdbb998177330b09b6df84c74c2de6"
+  url "https://github.com/xavierdidelot/ClonalFrameML/archive/refs/tags/v1.20.tar.gz"
+  sha256 "ae797b187793599876a325cd5011959c82fc2b0f72b11b973b0cd1a3d47f6fb2"
   license "GPL-3.0"
-  head "https://github.com/xavierdidelot/ClonalFrameML.git"
+  head "https://github.com/xavierdidelot/ClonalFrameML.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, sierra:       "ef12d55ae473ef2e287e2e42d8b03631c938435ac6a58276e5afb20bd1df20d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "63567c0ed398baf544e83c62020169bf90790c5a1eb700678ad10a7ee42a5833"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "2f003ce3e54ec0139dcdc3b9ce53a4bf12c2739e94a2abdf181740672f76ee76"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f7abc279d17bf83855db8722e409ba9a734380bc48fdf8149d439b5a30ad358"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "63e1058f1102f19d0ae4109744dfdb31eaff6fa679453b3c035e4a4cf4b4e394"
+    sha256 cellar: :any,                 x86_64_linux:  "fadfd2dbf4be0f38aa29827469609d28a9d71d9441efe5706fe062444de1b70e"
   end
 
   def install

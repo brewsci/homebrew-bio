@@ -1,8 +1,8 @@
 class Crumble < Formula
   desc "Controllable lossy compression of BAM/CRAM files"
   homepage "https://github.com/jkbonfield/crumble"
-  url "https://github.com/jkbonfield/crumble/releases/download/v0.8.3/crumble-0.8.3.tar.gz"
-  sha256 "b1ab503f4c98a83e2c81fec4cf8d951c80957ae05b6a6a19b59ece6caf490c01"
+  url "https://github.com/jkbonfield/crumble/releases/download/v0.9.1/crumble-0.9.1.tar.gz"
+  sha256 "f68c568c1bbbbda2963bc503d9720af8f7e9c6f0f935f3b248aa81635ed1a076"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"

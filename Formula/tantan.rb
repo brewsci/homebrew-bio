@@ -2,16 +2,17 @@ class Tantan < Formula
   # cite Frith_2011: "https://doi.org/10.1093/nar/gkq1212"
   desc "Correct misassemblies using linked or long reads"
   homepage "https://gitlab.com/mcfrith/tantan"
-  url "https://gitlab.com/mcfrith/tantan/-/archive/50/tantan-50.tar.gz"
-  sha256 "a239e9fb3c059ed9eb4c25a29b3c44a2ef1c1b492a9780874f429de7ae8b5407"
+  url "https://gitlab.com/mcfrith/tantan/-/archive/51/tantan-51.tar.gz"
+  sha256 "f25db9441409d526becfb10df7a610c10d0e5f163d58b21535e4f045bcfc118f"
   license "GPL-3.0-or-later"
   head "https://gitlab.com/mcfrith/tantan.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "3c65534e2fe582a10e9f8d815d238643d5df0b706681e35fcf30e3c7c8118d38"
-    sha256 cellar: :any_skip_relocation, ventura:      "df806da047b3215dc87620252fda2099ae783f16655874128058065040f7ec99"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ba52222561bcd666820de2a208ec32f9725140480f3fc5b8da2527a20184b8dd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e9cf1bd40db8050ec69ba70c9e7b7169c3752205bb9dcbc21326bf8aa81496d8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cab7d111232a560963f4b05d75e4c3d52ed38de91c136735cf5410124ccb294e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "39aeb41ad9d04e9a3e3a0b0c221f9d49715a0bad0fc86d71179e7a24535546c0"
+    sha256 cellar: :any,                 x86_64_linux:  "8bac1f8857a87a7eb783f7e20263142114bce13b16f2b3abfefa7130fb9b5c28"
   end
 
   uses_from_macos "zlib"
