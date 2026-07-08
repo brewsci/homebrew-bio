@@ -25,8 +25,12 @@ class Gappa < Formula
   fails_with :clang # needs openmp
 
   def install
+    # gappa downloads and configures CLI11/genesis/sparsepp in nested cmake
+    # runs that do not inherit the -D flag; the env var propagates to them and
+    # satisfies their removed "CMake < 3.5" compatibility requirement.
+    ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
     mkdir "build" do
-      system "cmake", "..", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
+      system "cmake", "..", *std_cmake_args
       system "make"
     end
     bin.install "bin/gappa"
