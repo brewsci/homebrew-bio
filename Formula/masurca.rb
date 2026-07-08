@@ -28,7 +28,8 @@ class Masurca < Formula
     system "./install.sh"
 
     bin.install_symlink libexec/"bin/masurca"
-    pkgshare.install "sr_config_example.txt"
+    # v4 install.sh generates masurca_config_example.txt (was sr_config_example.txt)
+    pkgshare.install "masurca_config_example.txt"
   end
 
   test do
