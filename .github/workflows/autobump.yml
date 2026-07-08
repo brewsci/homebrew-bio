@@ -26,7 +26,7 @@ on:
   workflow_dispatch:
     inputs:
       formulae:
-        description: Space-separated formulae to livecheck and bump (default: all outdated)
+        description: "Space-separated formulae to livecheck and bump (default: all outdated)"
         required: false
   push:
     branches: [develop, master]
