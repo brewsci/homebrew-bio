@@ -34,6 +34,14 @@ class Relion < Formula
   end
 
   def install
+    # relion 5.1.0 links relion_lib here with the plain target_link_libraries()
+    # signature while every other call uses the PUBLIC keyword form; CMake
+    # forbids mixing them. This only trips on macOS, where the formula sets
+    # OpenMP_omp_LIBRARY (empty and thus a no-op on Linux).
+    inreplace "src/apps/CMakeLists.txt",
+              "target_link_libraries(relion_lib ${OpenMP_omp_LIBRARY})",
+              "target_link_libraries(relion_lib PUBLIC ${OpenMP_omp_LIBRARY})"
+
     args = []
     args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
     args << "-DFETCH_TORCH_MODELS=OFF"
