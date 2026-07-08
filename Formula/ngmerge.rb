@@ -25,7 +25,6 @@ class Ngmerge < Formula
     system "make"
 
     pkgshare.install "scripts"
-    doc.install "UserGuide.pdf"
     bin.install "NGmerge"
   end
 
