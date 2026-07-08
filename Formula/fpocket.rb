@@ -1,8 +1,8 @@
 class Fpocket < Formula
   desc "Protein pocket detection algorithm based on Voronoi tessellation"
   homepage "https://github.com/Discngine/fpocket"
-  url "https://github.com/Discngine/fpocket/archive/refs/tags/4.2.2.tar.gz"
-  sha256 "4042125e7243e03465200bee787e55a54c16c1a10908718af75275c46bfafaad"
+  url "https://github.com/Discngine/fpocket/archive/refs/tags/4.2.3.tar.gz"
+  sha256 "62b3da6490eeab0db488f0182150d340de2be0be23f4fd1def9d5846ce724ede"
   license "MIT"
 
   bottle do

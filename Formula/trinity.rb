@@ -2,16 +2,16 @@ class Trinity < Formula
   # cite Grabherr_2011: "https://doi.org/10.1038/nbt.1883"
   desc "RNA-Seq de novo assembler"
   homepage "https://github.com/trinityrnaseq"
-  url "https://github.com/trinityrnaseq/trinityrnaseq/releases/download/Trinity-v2.15.1/trinityrnaseq-v2.15.1.FULL.tar.gz"
-  sha256 "ba37e5f696d3d54e8749c4ba439901a3e97e14a4314a5229d7a069ad7b1ee580"
+  url "https://github.com/trinityrnaseq/trinityrnaseq/releases/download/Trinity-v2.15.2/trinityrnaseq-v2.15.2.FULL.tar.gz"
+  sha256 "baab87e4878ad097e265c46de121414629bf88fa9342022baae5cac12432a15c"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, arm64_sequoia: "4b94412b0c89d55e040bd3607ce541ffbef663717239e578d462cdb4e6c488bf"
-    sha256 cellar: :any, arm64_sonoma:  "f4f29ad426e5cb5ad1d0dbbf6e6ccb884719571a9e531fba4a4213adb97718df"
-    sha256 cellar: :any, x86_64_linux:  "2a7dc95402ec73bae349641d11f9f57bbe84f96c7bcc909c9a6b89ac497635d8"
+    sha256 cellar: :any, arm64_tahoe:   "a4fa6341efc662fe46b1355cccefec5c2b89b084d56928a8880bdc04c2fae2c2"
+    sha256 cellar: :any, arm64_sequoia: "c2a2cb1cb72e8df6f067a9568caf6e71bd97b859ddb713d61cb6cdf0fef6a762"
+    sha256 cellar: :any, arm64_sonoma:  "59e15f78734ecd1fd59746491172adffc1a79b3769f09776818da6a5ad40f4ff"
+    sha256 cellar: :any, x86_64_linux:  "093cb0639bcdb191af89ee4969263579fbf16d052b75bbb9a3a2655bc18feb75"
   end
 
   depends_on "autoconf" => :build

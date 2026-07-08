@@ -56,7 +56,7 @@ jobs:
       - run: brew test-bot --only-tap-syntax
 
       - run: |
-          brew test-bot --only-formulae --only-json-tab --skip-recursive-dependents --root-url="https://ghcr.io/v2/brewsci/bio"
+          brew test-bot --only-formulae --only-json-tab --root-url="https://ghcr.io/v2/brewsci/bio"
         if: github.event_name == 'pull_request'
 
       - name: Upload bottles as artifact
