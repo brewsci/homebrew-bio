@@ -2,17 +2,17 @@ class Voronota < Formula
   # cite Olechnovič_2014: "https://doi.org/10.1002/jcc.23538"
   desc "Compute Voronoi diagram vertices for macromolecular structures"
   homepage "https://github.com/kliment-olechnovic/voronota"
-  url "https://github.com/kliment-olechnovic/voronota/archive/refs/tags/v1.29.4415.tar.gz"
-  sha256 "ac3ab668bb808343fd2d5bd5eef621cc4aede5f1e4423d5e752005caa7b889b2"
+  url "https://github.com/kliment-olechnovic/voronota/archive/refs/tags/v1.29.4781.tar.gz"
+  sha256 "efd46fa08437c818f45bada7be11b539e10822923bcf03ad93d25a02660fb634"
   license "MIT"
   head "https://github.com/kliment-olechnovic/voronota.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_tahoe:   "f6d69941551efc750bb1c7b36562bbd9cd5eaafc821104cb6b6139bfb3351664"
-    sha256 cellar: :any,                 arm64_sequoia: "79c700be345c86e086ea7fcbc0ffbbc7457384cbabc7cbd78f96a0838d171a66"
-    sha256 cellar: :any,                 arm64_sonoma:  "14ac8bea4ee533b45f310ff1ace169ef554a699d77b7b88013d9a6adfd701613"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "956b8e4472b1ba72c2e5090e7799a513b8eb03a8f208a04776ebde712d2f2432"
+    sha256 cellar: :any, arm64_tahoe:   "674b9f7c5b7d4f9789ef7969f0d55c55da04456698109e77a5d99c0cabb20572"
+    sha256 cellar: :any, arm64_sequoia: "a07602c737fbf5a8e2d727bc210282998526345cadfedcd66853c948b2f5ab19"
+    sha256 cellar: :any, arm64_sonoma:  "d9d6f8b90fe6bfdcb556cfc6824dcbd1c451eada65fcd9dae4b517f2f1bec0b5"
+    sha256 cellar: :any, x86_64_linux:  "1f1d4f49c29f423a9b2b93d830038c3253fadcaa0367f65c6696a9bd382b611a"
   end
 
   depends_on "cmake" => :build
