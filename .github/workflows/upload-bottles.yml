@@ -19,7 +19,7 @@ jobs:
       HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
       - name: Checkout develop (full history)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: develop
           fetch-depth: 0
