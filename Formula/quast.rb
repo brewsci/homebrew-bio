@@ -25,7 +25,7 @@ class Quast < Formula
   depends_on "minimap2"
   depends_on "openjdk@11"
   depends_on "python-matplotlib"
-  depends_on "python@3.12"
+  depends_on "python@3.14"
   depends_on "sambamba"
 
   uses_from_macos "perl"
@@ -47,7 +47,7 @@ class Quast < Formula
   end
 
   def python3
-    which("python3.12")
+    which("python3.14")
   end
 
   def install
@@ -61,7 +61,7 @@ class Quast < Formula
               "return get_path_to_program(fname, sambamba_dirpath)"
       s.gsub! "from distutils.dir_util import copy_tree", "from setuptools import copy_tree"
     end
-    # To be compatible with python 3.12
+    # To be compatible with python 3.12+ (distutils removed)
     inreplace "quast_libs/qconfig.py", "from distutils.version import LooseVersion",
                                        "from packaging.version import Version as LooseVersion"
     # Use Homebrew's barrnap
