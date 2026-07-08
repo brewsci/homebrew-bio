@@ -16,6 +16,9 @@ class Libcifpp < Formula
 
   depends_on "cmake" => :build
   depends_on "eigen" => :build
+  # macOS's std::from_chars lacks floating-point support, so libcifpp's
+  # try_compile fails and it requires fast_float instead.
+  depends_on "fast_float" => :build
 
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
@@ -25,8 +28,11 @@ class Libcifpp < Formula
   end
 
   def install
+    # The bundled pcre2 is compiled into the shared libcifpp, so it must be
+    # position-independent (Linux ld rejects the non-PIC objects otherwise).
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_SHARED_LIBS=ON",
+                    "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
