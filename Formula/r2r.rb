@@ -19,6 +19,10 @@ class R2r < Formula
             "--prefix=#{prefix}"
     system "make", "install"
     doc.install "R2R-manual.pdf"
+    # R2R_Stockholm.pm is a Perl module, not an executable; keep it out of bin
+    libexec.install bin/"R2R_Stockholm.pm"
+    inreplace bin/"SelectSubFamilyFromStockholm.pl",
+              "use lib $Bin;", "use lib \"#{libexec}\";"
   end
 
   test do
