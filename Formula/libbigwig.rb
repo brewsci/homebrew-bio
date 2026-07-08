@@ -12,8 +12,9 @@ class Libbigwig < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "37b031e10b9c6de938c1004952fe08f890b5de817963821e3d977280aad2fb28"
   end
 
+  depends_on "zlib-ng-compat" # avoids indirect-linkage failure on Linux
+
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   def install
     inreplace "Makefile", "libBigWig.so", "libBigWig.dylib" if OS.mac?
