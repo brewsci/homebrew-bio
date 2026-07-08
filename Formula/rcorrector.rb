@@ -13,8 +13,7 @@ class Rcorrector < Formula
   end
 
   depends_on "jellyfish"
-
-  uses_from_macos "zlib"
+  depends_on "zlib-ng-compat"
 
   def install
     system "make"
