@@ -35,7 +35,6 @@ class Metabuli < Formula
   end
 
   def install
-    inreplace "CMakeLists.txt", "CMP0060 OLD", "CMP0060 NEW"
     (buildpath/"lib/mmseqs").install resource("mmseqs")
     (buildpath/"lib/fasta_validator").install resource("fasta_validator")
     args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
