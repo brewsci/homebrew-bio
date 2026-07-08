@@ -49,7 +49,11 @@ class Lofreq < Formula
 
     system "glibtoolize"
     system "./bootstrap"
+    # Skip automake dependency-tracking; its config.status "depfiles" bootstrap
+    # fails on Linux ("Something went wrong bootstrapping makefile fragments"),
+    # and it is unneeded for a one-shot build.
     system "./configure",
+           "--disable-dependency-tracking",
            "--prefix=#{prefix}",
            "SAMTOOLS=#{samtools}",
            "--with-htslib=#{htslib}"
