@@ -20,6 +20,7 @@ class Masurca < Formula
   depends_on "zlib"
 
   def install
+    ENV.append "CXXFLAGS", "-include cstdint" # newer GCC needs explicit <cstdint>
     ENV.deparallelize
     # Respect MAKEFLAGS variable
     inreplace "install.sh", "make -j $NUM_THREADS", "make"
