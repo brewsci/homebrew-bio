@@ -7,7 +7,6 @@ class Eastr < Formula
   url "https://github.com/ishinder/EASTR.git",
     tag:      "1.1.2",
     revision: "90ac86ec925b5102f7f74d07908fe868c960e791"
-  version "1.1.2"
   license "MIT"
   head "https://github.com/ishinder/EASTR.git", branch: "main"
 
