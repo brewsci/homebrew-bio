@@ -26,8 +26,10 @@ class HarvestTools < Formula
   depends_on "abseil"
   depends_on "capnp"
   depends_on "protobuf"
-
   uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     inreplace "configure.ac", "-std=c++11", "-std=c++17"
