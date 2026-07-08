@@ -17,6 +17,8 @@ class Minia < Formula
   uses_from_macos "zlib"
 
   def install
+    # newer GCC needs explicit <cstdint> for uintN_t in bundled gatb-core/kff
+    ENV.append "CXXFLAGS", "-include cstdint"
     mkdir "build" do
       args = std_cmake_args
       args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
