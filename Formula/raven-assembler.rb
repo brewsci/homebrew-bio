@@ -14,6 +14,8 @@ class RavenAssembler < Formula
   depends_on "cmake" => :build
 
   def install
+    # cereal (fetched via FetchContent) still declares cmake_minimum_required < 3.5
+    ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
       system "make"
