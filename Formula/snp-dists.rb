@@ -5,6 +5,14 @@ class SnpDists < Formula
   sha256 "a786ee22e9744b421561bfa4dbac9f3149abca05edd5d48797566c25feea9bdc"
   license "GPL-3.0"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any, arm64_tahoe:   "289caa0d1b0ae5d8baa1e3b9f3a16e367d6ffdfb41b3b3099da18f61cf84653e"
+    sha256 cellar: :any, arm64_sequoia: "4db720871373e1eb5c42bb9451ff22c3c3575284696aa83ea0ad3f0f4498c264"
+    sha256 cellar: :any, arm64_sonoma:  "6b970e646cb06859a8597feaf386bbe3ab68a4f5db06ff04bd8df44aa77ce727"
+    sha256 cellar: :any, x86_64_linux:  "6bea1394624186d515bdc90d0f125567dd65478fa331c9a6ae50b08568a99df3"
+  end
+
   uses_from_macos "zlib"
 
   on_macos do
