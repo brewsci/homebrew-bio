@@ -19,6 +19,11 @@ class Sequencetools < Formula
   depends_on "ghc@9.6" => :build
   depends_on "haskell-stack" => :build
 
+  on_linux do
+    # libz on linuxbrew is provided by zlib-ng-compat; declare it so linkage passes
+    depends_on "zlib-ng-compat"
+  end
+
   def install
     stack_args = %W[
       -v
