@@ -24,8 +24,6 @@ class Prokka < Formula
   depends_on "prodigal"
 
   def install
-    # remove all bundled stuff and use brew ones
-    rm_r "binaries"
     # remove non-user scripts
     rm "bin/prokka-build_kingdom_dbs"
     rm "bin/prokka-make_tarball"
