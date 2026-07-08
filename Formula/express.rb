@@ -16,6 +16,10 @@ class Express < Formula
   depends_on "protobuf"
   uses_from_macos "zlib"
 
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
+
   def install
     # use C++17
     inreplace "CMakeLists.txt", "set(CMAKE_CXX_STANDARD 11)", "set(CMAKE_CXX_STANDARD 17)"
