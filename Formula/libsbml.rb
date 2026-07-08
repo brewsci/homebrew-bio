@@ -26,6 +26,7 @@ class Libsbml < Formula
     ENV.append_to_cflags "-fpermissive" if OS.linux?
     args = %w[
       -DWITH_SWIG=OFF
+      -DLIBSBML_SHARED_VERSION=OFF
       -DWITH_ZLIB=OFF
       -DWITH_BZIP2=ON
       -DENABLE_COMP=ON
