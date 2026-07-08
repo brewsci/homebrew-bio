@@ -26,6 +26,6 @@ class WebinCli < Formula
   end
 
   test do
-    assert_match "Missing", shell_output("#{bin}/webin-cli 2>&1", 1)
+    assert_match "Missing", shell_output("#{bin}/webin-cli 2>&1", 2)
   end
 end
