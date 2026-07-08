@@ -1,8 +1,8 @@
 class Filtlong < Formula
   desc "Quality filtering of long noisy DNA sequencing reads"
   homepage "https://github.com/rrwick/Filtlong"
-  url "https://github.com/rrwick/Filtlong/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "a4afb925d7ced8d083be12ca58911bb16d5348754e7c2f6431127138338ee02a"
+  url "https://github.com/rrwick/Filtlong/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "09b43a0c9e2c6b40cd29e3025de8ff39302c0b5eabbf660a47c9c26bdf9dd35e"
   license "GPL-3.0"
 
   bottle do
