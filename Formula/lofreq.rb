@@ -52,7 +52,7 @@ class Lofreq < Formula
     system "./configure",
            "--prefix=#{prefix}",
            "SAMTOOLS=#{samtools}",
-           "HTSLIB=#{htslib}"
+           "--with-htslib=#{htslib}"
     system "make"
     system "make", "install"
   end
