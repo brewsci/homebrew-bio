@@ -14,7 +14,9 @@ class Repaq < Formula
   uses_from_macos "zlib"
 
   def install
-    ENV.append "CXXFLAGS", "-include cstdint" # newer GCC needs explicit <cstdint>
+    # newer GCC needs an explicit <cstdint>; the Makefile hard-assigns CXXFLAGS
+    # with ":=" so env CXXFLAGS is ignored, patch the assignment directly.
+    inreplace "Makefile", "CXXFLAGS := -std=c++11", "CXXFLAGS := -std=c++11 -include cstdint"
     system "make"
     # https://github.com/OpenGene/repaq/issues/6
     bin.mkpath
