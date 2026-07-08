@@ -23,15 +23,15 @@ class RustSasa < Formula
 
   def install
     resource("pdbtbx").stage(buildpath/"pdbtbx")
-    system "cargo", "install", *std_cargo_args
-    pkgshare.install "pdbs", "radii"
+    system "cargo", "install", "--features", "cli", *std_cargo_args
+    pkgshare.install "tests/data/pdbs/example.cif"
   end
 
   test do
     assert_match "Usage: rust-sasa [OPTIONS] <INPUT> <OUTPUT>", shell_output("#{bin}/rust-sasa --help")
-    shell_output("#{bin}/rust-sasa #{pkgshare}/pdbs/example.cif #{testpath}/out.json")
+    shell_output("#{bin}/rust-sasa #{pkgshare}/example.cif #{testpath}/out.json")
     assert_path_exists testpath/"out.json"
     output = File.read(testpath/"out.json")
-    assert_match '"value":222.80806,"name":"MET","is_polar":false', output
+    assert_match '"value":220.10417,"name":"MET","is_polar":false', output
   end
 end
