@@ -34,6 +34,9 @@ class HarvestTools < Formula
   def install
     inreplace "configure.ac", "-std=c++11", "-std=c++17"
     inreplace "Makefile.in", "-std=c++11", "-std=c++17"
+    if OS.mac?
+      inreplace ["configure.ac", "Makefile.in"], "-mmacosx-version-min=10.7", "-mmacosx-version-min=#{MacOS.version}"
+    end
     inreplace "src/harvest/HarvestIO.cpp", "SetTotalBytesLimit(INT_MAX, INT_MAX)", "SetTotalBytesLimit(INT_MAX)"
     inreplace "Makefile.in", "-lpthread",
               "-lpthread -labsl_log_internal_check_op -labsl_log_internal_message"
