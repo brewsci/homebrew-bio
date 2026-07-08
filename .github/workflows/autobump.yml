@@ -1,7 +1,15 @@
 name: Autobump
 
-# Opens version-bump pull requests for outdated formulae, using each formula's
-# `livecheck` block to detect new upstream releases.
+# Opens version-bump pull requests for outdated formulae.
+#
+#   1. Primary: `brew bump --open-pr`, using each formula's `livecheck` block to
+#      detect new upstream releases.
+#   2. Fallback: `.github/scripts/autobump-git-direct.sh` handles formulae whose
+#      livecheck cannot resolve a version by reading upstream GitHub tags directly.
+#
+# Individual formula errors (dead upstreams, bogus livecheck 404s, audit
+# failures) are tolerated via `continue-on-error` so one bad formula never fails
+# the whole scheduled run; a per-step summary records what happened.
 #
 # Requires a repository secret named `HOMEBREW_GITHUB_API_TOKEN`: a Personal
 # Access Token (classic `public_repo`/`repo` scope, or a fine-grained token with
@@ -11,9 +19,20 @@ name: Autobump
 
 on:
   schedule:
-    # Mondays at 05:00 UTC
-    - cron: "0 5 * * 1"
+    # Hourly. GitHub Actions cannot subscribe to external repos' release events,
+    # so this polls as often as is practical to approximate "bump on upstream
+    # release". `brew bump` de-duplicates, so it never re-opens an existing PR.
+    - cron: "0 * * * *"
   workflow_dispatch:
+    inputs:
+      formulae:
+        description: "Space-separated formulae to livecheck and bump (default: all outdated)"
+        required: false
+  push:
+    branches: [develop, master]
+    paths:
+      - .github/workflows/autobump.yml
+      - .github/scripts/autobump-git-direct.sh
 
 permissions:
   contents: read
@@ -42,7 +61,38 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Open version-bump PRs for outdated formulae
+      - name: Open version-bump PRs (livecheck)
+        # Tolerate per-formula failures: still open every valid PR and keep the
+        # scheduled run green even when some upstreams are dead or misdetected.
+        continue-on-error: true
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
-        run: brew bump --tap brewsci/bio --formulae --open-pr
+          # Optional custom list from workflow_dispatch (mirrors homebrew-core's
+          # autobump input). `brew bump --auto` is official-repos-only, so a
+          # third-party tap iterates all its formulae by default instead.
+          FORMULAE: ${{ inputs.formulae }}
+        run: |
+          set -o pipefail
+          BUMP=(brew bump --tap brewsci/bio --formulae --open-pr)
+          if [[ -n "${FORMULAE-}" ]]; then
+            "${BUMP[@]}" ${FORMULAE} 2>&1 | tee bump.log || true
+          else
+            "${BUMP[@]}" 2>&1 | tee bump.log || true
+          fi
+          {
+            echo "### Autobump (livecheck)"
+            grep -iE 'bump|pull request|error|failed|up to date' bump.log | tail -60 || true
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Open version-bump PRs (direct GitHub tags)
+        # Fallback for formulae livecheck cannot resolve. Also best-effort.
+        continue-on-error: true
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+          GH_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+        run: |
+          bash .github/scripts/autobump-git-direct.sh 2>&1 | tee git-direct.log || true
+          {
+            echo "### Autobump (direct GitHub tags)"
+            grep -iE 'git-direct|blind' git-direct.log | tail -60 || true
+          } >> "$GITHUB_STEP_SUMMARY"
