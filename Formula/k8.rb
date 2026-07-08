@@ -21,7 +21,7 @@ class K8 < Formula
   end
 
   def install
-    exe = OS.mac? ? "k8-Darwin" : "k8-Linux"
+    exe = OS.mac? ? "k8-#{Hardware::CPU.arch}-Darwin" : "k8-#{Hardware::CPU.arch}-Linux"
     bin.install exe => "k8"
     if OS.linux?
       system "patchelf",
@@ -29,7 +29,7 @@ class K8 < Formula
         "--set-rpath", HOMEBREW_PREFIX/"lib",
         bin/"k8"
     end
-    pkgshare.install "k8.js"
+    pkgshare.install "scripts/k8.js"
   end
 
   test do
