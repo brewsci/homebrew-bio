@@ -13,6 +13,11 @@ class Kssd < Formula
   depends_on :linux
   depends_on "zlib"
 
+  # Fix a heap off-by-one (long_domain buffer too small by 1) that aborts with
+  # "buffer overflow detected" under glibc _FORTIFY_SOURCE=3, and bump the
+  # internal version banner (upstream left it at 2.2).
+  patch :DATA
+
   def install
     system "make"
     bin.install "kssd"
@@ -23,3 +28,24 @@ class Kssd < Formula
     assert_match version.to_s, shell_output("#{bin}/kssd -V 2>&1")
   end
 end
+__END__
+--- a/kssd.c
++++ b/kssd.c
+@@ -17,7 +17,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include "global_basic.h"
+-const char *argp_program_version = "kssd version 2.2";
++const char *argp_program_version = "kssd version 2.21";
+ const char *argp_program_bug_address = "yhg926@gmail.com";
+ int main(int argc, char** argv)
+ {
+@@ -26,7 +26,7 @@
+  const char subcommand_n[] = "<subcommand>";
+   domain = (char*) malloc(strlen(argv[0])+1);
+   strcpy(domain,argv[0]);
+-  long_domain = (char*) malloc( strlen(domain) + strlen(subcommand_n) + 1);
++  long_domain = (char*) malloc( strlen(domain) + strlen(subcommand_n) + 2);
+   snprintf(long_domain,strlen(domain) + strlen(subcommand_n) + 2,"%s %s",domain,subcommand_n);
+   cmd_global(argc, argv);
+   return 0;
