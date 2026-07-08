@@ -75,7 +75,8 @@ jobs:
           set -o pipefail
           BUMP=(brew bump --tap brewsci/bio --formulae --open-pr)
           if [[ -n "${FORMULAE-}" ]]; then
-            "${BUMP[@]}" ${FORMULAE} 2>&1 | tee bump.log || true
+            read -ra FLIST <<<"${FORMULAE}"
+            "${BUMP[@]}" "${FLIST[@]}" 2>&1 | tee bump.log || true
           else
             "${BUMP[@]}" 2>&1 | tee bump.log || true
           fi
