@@ -16,6 +16,8 @@ class Uniqtag < Formula
   uses_from_macos "ruby"
 
   def install
+    # Upstream did not bump the internal version string in the 1.0.1 release
+    inreplace "uniqtag", 'opts.version = "1.0.0"', "opts.version = \"#{version}\""
     system "make", "install", "prefix=#{prefix}"
   end
 
