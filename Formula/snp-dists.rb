@@ -5,19 +5,33 @@ class SnpDists < Formula
   sha256 "a786ee22e9744b421561bfa4dbac9f3149abca05edd5d48797566c25feea9bdc"
   license "GPL-3.0"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "642483d9173b5996dda4bd9676a99cd6b7e38f80352957bd19fc96be20ccd3ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1e6bd8de0a2fc72365256c8b7ce8fcb2d3f53a108ecc719f57d417796ea45e5c"
-  end
-
   uses_from_macos "zlib"
 
+  on_macos do
+    depends_on "libomp"
+  end
+
   def install
-    exe = "snp-dists"
+    inreplace "Makefile" do |s|
+      if OS.mac?
+        # Apple Clang needs -Xpreprocessor -fopenmp plus explicit libomp
+        # include/library paths and -lomp to link the OpenMP runtime.
+        libomp = Formula["libomp"]
+        s.gsub! "CFLAGS = -Wall -Wextra -Ofast -std=c99 -fopenmp",
+                "CFLAGS += -Wall -Wextra -Ofast -std=c99 " \
+                "-Xpreprocessor -fopenmp -I#{libomp.opt_include}"
+        s.gsub! "LIBS = -lz -lm",
+                "LIBS += -lz -lm -L#{libomp.opt_lib} -lomp"
+      else
+        s.gsub! "CFLAGS = -Wall -Wextra -Ofast -std=c99 -fopenmp",
+                "CFLAGS += -Wall -Wextra -Ofast -std=c99 -fopenmp"
+        s.gsub! "LIBS = -lz -lm",
+                "LIBS += -lz -lm"
+      end
+    end
     system "make"
     system "make", "check"
-    bin.install exe
+    bin.install "snp-dists"
     pkgshare.install "test"
   end
 
