@@ -13,6 +13,7 @@ class StadenIoLib < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
+  depends_on "htslib"
   depends_on "libdeflate"
   depends_on "xz"
   depends_on "zstd"
@@ -34,6 +35,7 @@ class StadenIoLib < Formula
                           "--disable-silent-rules",
                           "--with-libdeflate=#{formula_opt_prefix("libdeflate")}",
                           "--with-zstd=#{formula_opt_prefix("zstd")}",
+                          "--with-htslib=#{formula_opt_prefix("htslib")}",
                           "--prefix=#{prefix}"
     system "make", "install"
 
