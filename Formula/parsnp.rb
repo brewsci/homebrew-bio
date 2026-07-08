@@ -30,7 +30,6 @@ class Parsnp < Formula
   def install
     # remove binaries
     rm Dir["bin/*"]
-
     # https://github.com/marbl/parsnp/issues/52
     inreplace "src/parsnp.cpp", "1.0.1", version.to_s
 
