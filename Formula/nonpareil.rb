@@ -23,7 +23,7 @@ class Nonpareil < Formula
     r_library.mkpath
     inreplace "Makefile", "CMD INSTALL", "CMD INSTALL --library=#{r_library}"
     system "make", "nonpareil"
-    system "make", "nonpareil-mpi" if build.with? :"open-mpi"
+    system "make", "nonpareil-mpi" if build.with? "open-mpi"
     system "make", "prefix=#{prefix}", "mandir=#{man1}", "install"
     libexec.install "test/test.fasta.gz"
     libexec.install "test/test.fastq.gz"
@@ -41,7 +41,7 @@ class Nonpareil < Formula
                             "-b", "#{testpath}/test"
     system bin/"nonpareil", "-s", "#{testpath}/test.fastq.gz", "-T", "kmer",
                             "-b", "#{testpath}/test", "-X", "50", "-f", "fastq", "-X", "50"
-    if build.with? :"open-mpi"
+    if build.with? "open-mpi"
       system "mpirun", "-c", 1, bin/"nonpareil-mpi",
                        "-s", "#{testpath}/test.fasta.gz", "-T", "alignment",
                        "-b", "#{testpath}/test", "-f", "fasta", "-X", "50"
