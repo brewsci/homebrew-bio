@@ -8,6 +8,14 @@ class Express < Formula
   revision 2
   head "https://github.com/adarob/eXpress.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any, arm64_tahoe:   "83f9d617282ab2fbda55962ea3c4d092b5758618b7173c5751d881a8ae2ff0ad"
+    sha256 cellar: :any, arm64_sequoia: "d8f38d47e4e883dd71aee0594246179200f6a12da4b1759a1d8190dc3123a4d4"
+    sha256 cellar: :any, arm64_sonoma:  "2a4f7f8270067235bcee0d10ec0ae5d4e1b1f1e082527e284d90b488f7b1f0f9"
+    sha256               x86_64_linux:  "28767001ef71c6fcf190d86cc722e1c91d127dff5cdcc23e3fd235eeda3228a1"
+  end
+
   depends_on "bamtools" => :build
   depends_on "boost" => :build
   depends_on "cmake" => :build
