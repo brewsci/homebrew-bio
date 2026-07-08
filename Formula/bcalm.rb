@@ -18,6 +18,8 @@ class Bcalm < Formula
   uses_from_macos "zlib"
 
   def install
+    # bcalm and its gatb-core submodule request an ancient CMake policy version
+    ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
       system "make"
