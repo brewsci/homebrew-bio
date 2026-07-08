@@ -7,7 +7,7 @@ class StarAligner < Formula
   sha256 "3f65305e4112bd154c7e22b333dcdaafc681f4a895048fa30fa7ae56cac408e7"
   license "MIT"
   revision 1
-  head "https://github.com/alexdobin/STAR.git"
+  head "https://github.com/alexdobin/STAR.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
