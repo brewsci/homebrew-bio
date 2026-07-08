@@ -24,6 +24,15 @@ on:
     # release". `brew bump` de-duplicates, so it never re-opens an existing PR.
     - cron: "0 * * * *"
   workflow_dispatch:
+    inputs:
+      formulae:
+        description: Space-separated formulae to livecheck and bump (default: all outdated)
+        required: false
+  push:
+    branches: [develop, master]
+    paths:
+      - .github/workflows/autobump.yml
+      - .github/scripts/autobump-git-direct.sh
 
 permissions:
   contents: read
@@ -58,9 +67,18 @@ jobs:
         continue-on-error: true
         env:
           HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.HOMEBREW_GITHUB_API_TOKEN }}
+          # Optional custom list from workflow_dispatch (mirrors homebrew-core's
+          # autobump input). `brew bump --auto` is official-repos-only, so a
+          # third-party tap iterates all its formulae by default instead.
+          FORMULAE: ${{ inputs.formulae }}
         run: |
           set -o pipefail
-          brew bump --tap brewsci/bio --formulae --open-pr 2>&1 | tee bump.log || true
+          BUMP=(brew bump --tap brewsci/bio --formulae --open-pr)
+          if [[ -n "${FORMULAE-}" ]]; then
+            "${BUMP[@]}" ${FORMULAE} 2>&1 | tee bump.log || true
+          else
+            "${BUMP[@]}" 2>&1 | tee bump.log || true
+          fi
           {
             echo "### Autobump (livecheck)"
             grep -iE 'bump|pull request|error|failed|up to date' bump.log | tail -60 || true
