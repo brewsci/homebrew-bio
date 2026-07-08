@@ -28,7 +28,8 @@ class Iqtree2 < Formula
   def install
     mkdir "build" do
       ENV.append_path "PREFIX_PATH", buildpath/"lsd2"
-      system "cmake", "..", *std_cmake_args
+      system "cmake", "..", "-DEIGEN3_INCLUDE_DIR=#{formula_opt_include("eigen")}/eigen3",
+             *std_cmake_args
       system "make", "install"
     end
   end
