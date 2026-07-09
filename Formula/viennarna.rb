@@ -7,6 +7,13 @@ class Viennarna < Formula
   license :cannot_represent
   head "https://github.com/ViennaRNA/ViennaRNA.git", branch: "master"
 
+  # The tbi.univie.ac.at download URL is not version-parseable; track GitHub releases.
+  livecheck do
+    url :head
+    strategy :github_latest
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any,                 arm64_tahoe:   "2b017598f54a2e323fecd916e083afb374a574b644eeb673f2764eb990b6de34"
