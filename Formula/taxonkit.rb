@@ -6,8 +6,10 @@ class Taxonkit < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "b5156f92a6bfef4a9353271fd8f35019bf42439ce8bf2164738bf6d8e1f03c33"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e1a59f86c2807be540d54c8241ab627409d21fc6d6cedd0de05c524358668506"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "7472f1649dbec3d8740947469230638410ec6bbb16d2c01e6d9c07dd7f54110c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7472f1649dbec3d8740947469230638410ec6bbb16d2c01e6d9c07dd7f54110c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7472f1649dbec3d8740947469230638410ec6bbb16d2c01e6d9c07dd7f54110c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eca76acbad5720d369da551cb1d3626d75602a3b4280afe6be778705ad2e8568"
   end
 
   on_macos do
