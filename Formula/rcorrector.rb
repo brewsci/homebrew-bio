@@ -2,8 +2,8 @@ class Rcorrector < Formula
   # cite Song_2015: "https://doi.org/10.1186/s13742-015-0089-y"
   desc "Error correction for Illumina RNA-seq reads"
   homepage "https://github.com/mourisl/Rcorrector"
-  url "https://github.com/mourisl/Rcorrector/archive/refs/tags/v1.0.4.tar.gz"
-  sha256 "ac1754d71aff09b395b3643ec4248ad498e14675a6585296b33918e3c64c2f25"
+  url "https://github.com/mourisl/Rcorrector/archive/refs/tags/v1.0.7.tar.gz"
+  sha256 "cc1a9e82056bdc717b7ac40729c90573caad371899f9a1c61c25b50f019fbedb"
   license "GPL-3.0"
 
   bottle do
@@ -13,8 +13,7 @@ class Rcorrector < Formula
   end
 
   depends_on "jellyfish"
-
-  uses_from_macos "zlib"
+  depends_on "zlib-ng-compat"
 
   def install
     system "make"
