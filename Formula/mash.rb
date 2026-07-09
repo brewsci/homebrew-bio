@@ -6,12 +6,6 @@ class Mash < Formula
   sha256 "f96cf7305e010012c3debed966ac83ceecac0351dbbfeaa6cd7ad7f068d87fe1"
   head "https://github.com/marbl/Mash.git", branch: "master"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, mojave:       "ceded4203723c07f1468254f7f1281031bfd8163e948fb1b165659064f7ef5a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4d75b04ef71f547af960aab06fe485dd53dd830695508fb0f2f33e1cfd5461b9"
-  end
-
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
@@ -21,6 +15,9 @@ class Mash < Formula
   depends_on "gsl"
 
   uses_from_macos "zlib"
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # newer GCC needs explicit <cstdint> (uintN_t) and <limits> (numeric_limits)
