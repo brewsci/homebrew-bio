@@ -11,6 +11,14 @@ class Interop < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "d3dd89faaa8bbe2f77e8b2d99fec1141f0348b01dc7069083548e1b9dfc149f6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23d56e56c4db0400f33054e55e169a091c3a013b4320e4f30ee63ed248ecd617"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b5516255a953827c492519211811c40660993ef37670361384017628c7bb03e2"
+    sha256 cellar: :any,                 x86_64_linux:  "5bcccaa9d03165bd007179b0b6f3db6fcf61b59cd40b7cbac5b50efbf1e5c2a5"
+  end
+
   depends_on "cmake" => :build
 
   def install
