@@ -8,12 +8,6 @@ class Gappa < Formula
   license "GPL-3.0-or-later"
   head "https://github.com/lczech/gappa.git", branch: "master"
 
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, catalina:     "086ff9f6e2e67a9143ad7ae5e04f5c1df2141deb2e2ca197956292334c8016f7"
-    sha256 cellar: :any, x86_64_linux: "2ea3c16aecfd9d8c097fe82fcff5239d0ba82bb3f0d06189cf889c4e98a045e6"
-  end
-
   depends_on "cmake" => :build
 
   if OS.mac?
@@ -25,9 +19,6 @@ class Gappa < Formula
   fails_with :clang # needs openmp
 
   def install
-    # gappa downloads and configures CLI11/genesis/sparsepp in nested cmake
-    # runs that do not inherit the -D flag; the env var propagates to them and
-    # satisfies their removed "CMake < 3.5" compatibility requirement.
     ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
