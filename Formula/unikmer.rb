@@ -6,8 +6,10 @@ class Unikmer < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "0db8530f9dc5c2b16a71595d69f7fca624225f70bf4c8f67575c3bfd31ecd57b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1c911f2be23033c8cb4d494e5f67bdfe5394d5a92cf01848f518c8343134a73a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bb8a29877ed01403b14e60320e073b05012a260f91e258d9f4290239a133a5fd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb8a29877ed01403b14e60320e073b05012a260f91e258d9f4290239a133a5fd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb8a29877ed01403b14e60320e073b05012a260f91e258d9f4290239a133a5fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef436c716b5ac7adf96cd7ca9dda14192b5300316d57c1e3c1df5f7d7f0fe0cd"
   end
 
   on_macos do
