@@ -2,9 +2,9 @@ class Raxml < Formula
   # cite Stamatakis_2014: "https://doi.org/10.1093/bioinformatics/btu033"
   desc "Maximum likelihood analysis of large phylogenies"
   homepage "https://sco.h-its.org/exelixis/web/software/raxml/index.html"
-  url "https://github.com/stamatak/standard-RAxML/archive/refs/tags/v8.2.12.tar.gz"
-  sha256 "338f81b52b54e16090e193daf36c1d4baa9b902705cfdc7f4497e3e09718533b"
-  head "https://github.com/stamatak/standard-RAxML.git"
+  url "https://github.com/stamatak/standard-RAxML/archive/refs/tags/v8.2.13.tar.gz"
+  sha256 "28e500793324bd7d330b396ef27ea49c9186fa5e1edb3d5439036dc6c33e6067"
+  head "https://github.com/stamatak/standard-RAxML.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -16,6 +16,13 @@ class Raxml < Formula
   depends_on "open-mpi" => :recommended unless OS.mac? # uses Linux-specific APIs
 
   def install
+    # Homebrew's superenv strips -march=core-avx2, which is what enables FMA for
+    # the AVX2 code path (-D_FMA uses _mm256_fmadd_pd). Add -mfma (kept by the
+    # shim) so the FMA intrinsics build.
+    inreplace Dir["Makefile.AVX2*.gcc"],
+              "-mavx2 -D_FMA -march=core-avx2",
+              "-mavx2 -mfma -D_FMA -march=core-avx2"
+
     stems = %w[SSE3 SSE3.PTHREADS]
     stems += %w[AVX AVX.PTHREADS] if Hardware::CPU.avx?
     stems += %w[AVX2 AVX2.PTHREADS] if Hardware::CPU.avx2?
