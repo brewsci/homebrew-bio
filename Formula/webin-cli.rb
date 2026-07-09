@@ -1,8 +1,8 @@
 class WebinCli < Formula
   desc "ENA Webin command-line submission tool"
   homepage "https://github.com/enasequence/webin-cli"
-  url "https://github.com/enasequence/webin-cli/releases/download/v1.8.11/webin-cli-1.8.11.jar"
-  sha256 "50862324dcc98aeef23f9789e6eac9eb37bd04378baaf2d17dfa97644c1a1e66"
+  url "https://github.com/enasequence/webin-cli/releases/download/v4.4.0/webin-cli-4.4.0.jar"
+  sha256 "5db9c8ff5d8463c957596fccd3d0c6e41ba2a55723c4dd0dc94f107946fb7b70"
   license "Apache-2.0"
 
   livecheck do
@@ -26,6 +26,6 @@ class WebinCli < Formula
   end
 
   test do
-    assert_match "Missing", shell_output("#{bin}/webin-cli 2>&1", 1)
+    assert_match "Missing", shell_output("#{bin}/webin-cli 2>&1", 2)
   end
 end
