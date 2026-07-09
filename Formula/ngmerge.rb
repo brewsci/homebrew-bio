@@ -9,8 +9,10 @@ class Ngmerge < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, catalina:     "d24a87d8ef03468e83a8ef10a594a4c3bf9588945a1c817294d8b831d704cc59"
-    sha256 cellar: :any, x86_64_linux: "57587c4834b4ba04d472b69f0ccfa92ebf1f068c27b43ba21fe165fe06dbe52f"
+    sha256 cellar: :any, arm64_tahoe:   "a5d1f0efe44b04b18bd1c8a0b5acf5a0992dbd34065dd68c911e26ab874228e5"
+    sha256 cellar: :any, arm64_sequoia: "b4eac54914da7db49e802ff034a3f5e9753fe2cbf024b5d0b94207f599ff0a21"
+    sha256 cellar: :any, arm64_sonoma:  "a1278ca4ceaca066476bc9e4e2e509cb7ef2d75757e40d30c57348fac92a9b54"
+    sha256 cellar: :any, x86_64_linux:  "83abeb541fe972333d46f965817696382165ca2c072b13906022b3c219b427d5"
   end
 
   uses_from_macos "zlib"
