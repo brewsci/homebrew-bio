@@ -3,8 +3,8 @@ class Famsa < Formula
   desc "Algorithm for ultra-scale multiple sequence alignments"
   homepage "https://github.com/refresh-bio/FAMSA"
   url "https://github.com/refresh-bio/FAMSA.git",
-    tag:      "v2.4.1",
-    revision: "45c9b2b4d15e4526212a0e968f130395eef05bb7"
+    tag:      "v2.5.2",
+    revision: "259841074f86361b50367bed396b4e270dfe343a"
   license "GPL-3.0-or-later"
   head "https://github.com/refresh-bio/FAMSA.git", branch: "master"
 
@@ -38,7 +38,6 @@ class Famsa < Formula
       s.gsub! "GCC, Darwin_x86_64, 11, 13", "clanGCC, Darwin_x86_64, 11, 20"
       s.gsub! "GCC, Darwin_arm64, 11, 13", "clanGCC, Darwin_arm64, 11, 30"
     end
-    inreplace "makefile", "clanGCC", "llvm_clanGCC" if OS.mac? && DevelopmentTools.clang_build_version <= 1599
     system "gmake"
     bin.install "bin/famsa"
     pkgshare.install "test"
