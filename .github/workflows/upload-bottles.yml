@@ -121,7 +121,20 @@ jobs:
             git -C "$(brew --repo ${{github.repository}})" status
             which -a skopeo
             skopeo --version
-            brew pr-upload --root-url=https://ghcr.io/v2/brewsci/bio
+            if ! brew pr-upload --root-url=https://ghcr.io/v2/brewsci/bio; then
+              echo "brew pr-upload failed, retrying upload..."
+              for i in 1 2 3; do
+                echo "Retry attempt $i/3, sleeping $((30 * i))s..."
+                sleep $((30 * i))
+                if brew pr-upload --upload-only --root-url=https://ghcr.io/v2/brewsci/bio; then
+                  break
+                fi
+                if [ "$i" = "3" ]; then
+                  echo "brew pr-upload failed after 3 retries"
+                  exit 1
+                fi
+              done
+            fi
           fi
 
           cd "$(brew --repo ${{github.repository}})"
