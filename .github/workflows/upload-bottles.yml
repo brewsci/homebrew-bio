@@ -121,10 +121,11 @@ jobs:
             git -C "$(brew --repo ${{github.repository}})" status
             which -a skopeo
             skopeo --version
-            upload_success=true
-            if ! brew pr-upload --root-url=https://ghcr.io/v2/brewsci/bio; then
+            upload_success=false
+            if brew pr-upload --root-url=https://ghcr.io/v2/brewsci/bio; then
+              upload_success=true
+            else
               echo "brew pr-upload failed, retrying upload..."
-              upload_success=false
               for i in 1 2 3; do
                 echo "Retry attempt $i/3, sleeping $((30 * i))s..."
                 sleep $((30 * i))
