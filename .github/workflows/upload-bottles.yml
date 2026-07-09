@@ -88,7 +88,7 @@ jobs:
             fi
 
             artifact_id=""
-            for i in {1..30}; do
+            for i in {1..8}; do
               artifact_id="$(curl -fsSL \
                 -H 'Accept: application/vnd.github+json' \
                 -H "Authorization: Bearer ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}" \
@@ -127,8 +127,8 @@ jobs:
             else
               echo "brew pr-upload failed, retrying upload..."
               for i in 1 2 3; do
-                echo "Retry attempt $i/3, sleeping $((30 * i))s..."
-                sleep $((30 * i))
+                echo "Retry attempt $i/3, sleeping $((10 * i))s..."
+                sleep $((10 * i))
                 if brew pr-upload --upload-only --root-url=https://ghcr.io/v2/brewsci/bio; then
                   upload_success=true
                   break
