@@ -7,9 +7,11 @@ class Vep < Formula
   license "Apache-2.0"
 
   livecheck do
-    url "https://github.com/Ensembl/ensembl-vep.git"
-    strategy :git
-    regex(%r{^release/(\d+(?:\.\d+)+)$}i)
+    # Use published releases (not raw tags): the repo carries stray tags like
+    # release/162.2 and release/167.0 that are not real VEP releases.
+    url :stable
+    strategy :github_latest
+    regex(%r{release[/-]v?(\d+(?:\.\d+)+)}i)
   end
 
   bottle do
