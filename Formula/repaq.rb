@@ -7,8 +7,10 @@ class Repaq < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, sierra:       "e958a6d2b6510627d73c6bd60f4bdb992e7214d3ff92e1d54fa49a80bf0e9924"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4e291d5df6f67232d7bc2616b3b2f90f22c3960d56b006c46bcee37df383bbb7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "525d967c0b778978a36a7dbbc63b53f6efb49880c9316512a098c122410ff92b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42cf85aaf8f98ff155174db95052222f729058c8abcf16207f5c7dc809d52171"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "472e26133164fe39c56eda741d3b28047f2e788554b9ccaebddcc49c17935e96"
+    sha256 cellar: :any,                 x86_64_linux:  "0607ec967f458facf824ffa57d86095ee173aadfca30fc99cb31c4e2f3d802ba"
   end
 
   uses_from_macos "zlib"
