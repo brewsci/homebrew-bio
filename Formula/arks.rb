@@ -30,7 +30,7 @@ class Arks < Formula
                           "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
-                          "--with-boost=#{Formula["boost"].opt_include}"
+                          "--with-boost=#{formula_opt_include("boost")}"
     system "make", "install"
     doc.install "Examples"
   end

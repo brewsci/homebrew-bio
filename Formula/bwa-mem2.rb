@@ -2,15 +2,16 @@ class BwaMem2 < Formula
   desc "Next version of bwa-mem short read aligner"
   homepage "https://github.com/bwa-mem2/bwa-mem2"
   url "https://github.com/bwa-mem2/bwa-mem2.git",
-      tag:      "v2.2.1",
-      revision: "bf3d376e95f4321b0d37a27d7ff1c77da4d289ff"
-  head "https://github.com/bwa-mem2/bwa-mem2.git"
+      tag:      "v2.3",
+      revision: "7aa5ff6c3330490e5629ab9b7327683d2dce02d6"
+  head "https://github.com/bwa-mem2/bwa-mem2.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "74d6e7d0f925b162dedbf3590f196fb606875f991c63d7250314f877ae44f728"
-    sha256 cellar: :any_skip_relocation, ventura:      "aa0fae1aa99dc74ef7e8ab90fac0755b9c58809d1aa41fa15669d9bd7b3e3578"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e056d8db1310b86c7b74df95786d9232c0cd9033acaccbd37027e72bc23e9f01"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "bcb6187216f2e06f399a2b6e0981cda078de1395cc5be3d442834536540481bc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "526a09971acc00b4852d4210cd98220d3a14cb4363c30d60a8e308d4c896c231"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44dde4e76d961d783ef351cf2c346459786770ccb3f6eac1bbc61740894f9687"
+    sha256 cellar: :any,                 x86_64_linux:  "4555f7555641999b9c76df8b42d19412de383621e2b7064c975539dd82648433"
   end
 
   depends_on "cmake" => :build
@@ -18,8 +19,8 @@ class BwaMem2 < Formula
   uses_from_macos "zlib"
 
   resource "sse2neon" do
-    url "https://raw.githubusercontent.com/DLTcollab/sse2neon/v1.7.0/sse2neon.h"
-    sha256 "c36e1355c1a22d9c3357c945d1ef8bd005cb1f0f7b378e6577a45ea96931a083"
+    url "https://raw.githubusercontent.com/DLTcollab/sse2neon/v1.8.0/sse2neon.h"
+    sha256 "07723c9f9457dd4316f1fde3dd4eb6f31dd67d9955f6c21f4e609ac1698be48a"
   end
 
   resource "safestringlib" do
@@ -45,17 +46,22 @@ class BwaMem2 < Formula
     buildpath.install resource("patch2")
     system "patch", "-p1", "src/fastmap.cpp", "fastmap.patch"
     system "patch", "-p1", "src/bandedSWA.cpp", "bandedSWA.cpp.patch"
-    # patch for src/utils.h to fix build error
-    # https://aur.archlinux.org/cgit/aur.git/tree/gcc_rdtsc.patch?h=bwa-mem2
-    inreplace "src/utils.h", "defined(__GNUC__) && !defined(__clang__)",
-                             "defined(__GNUC__) &&  __GNUC__ < 11 && !defined(__clang__)"
+    # The src/utils.h __GNUC__ < 11 guard (previously applied via inreplace) is
+    # already present upstream as of v2.3, so no patching is needed here anymore.
+    # Upstream's v2.3 tag forgot to bump PACKAGE_VERSION (still "2.2.1"), so the
+    # built binary misreports its version; set it to the real version.
+    inreplace "src/main.cpp", "#define PACKAGE_VERSION \"2.2.1\"",
+                              "#define PACKAGE_VERSION \"#{version}\""
     # install safestringlib v1.2.0 first
     (buildpath/"safestringlib-1.2.0").install resource("safestringlib")
     cd "safestringlib-1.2.0" do
       inreplace "makefile", "LDFLAGS=-z noexecstack -z relo -z now", "LDFLAGS="
       inreplace "CMakeLists.txt", " -z noexecstack -z relro -z now", ""
       inreplace "include/safe_mem_lib.h", "extern errno_t memset_s", "//xxx extern errno_t memset_s"
-      system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: buildpath/"safestringlib")
+      # safestringlib v1.2.0 declares cmake_minimum_required < 3.5, which CMake
+      # 4.x rejects; allow it to configure with the old policy version.
+      system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+             *std_cmake_args(install_prefix: buildpath/"safestringlib")
       system "cmake", "--build", "build"
     end
     inreplace "Makefile" do |s|

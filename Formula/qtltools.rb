@@ -39,12 +39,12 @@ class Qtltools < Formula
       s.gsub! "autocompdir = /etc/bash_completion.d", "autocompdir = #{prefix}/etc/bash_completion.d"
     end
     args = [
-      "BOOST_INC=#{Formula["boost"].opt_include}",
-      "BOOST_LIB=#{Formula["boost"].opt_lib}",
-      "RMATH_INC=#{Formula["r"].opt_include}",
-      "RMATH_LIB=#{Formula["r"].opt_lib}",
-      "HTSLD_INC=#{Formula["htslib"].opt_include}",
-      "HTSLD_LIB=#{Formula["htslib"].opt_lib}",
+      "BOOST_INC=#{formula_opt_include("boost")}",
+      "BOOST_LIB=#{formula_opt_lib("boost")}",
+      "RMATH_INC=#{formula_opt_include("r")}",
+      "RMATH_LIB=#{formula_opt_lib("r")}",
+      "HTSLD_INC=#{formula_opt_include("htslib")}",
+      "HTSLD_LIB=#{formula_opt_lib("htslib")}",
       "LIB_FLAGS=-lz -lgsl -lbz2 -llzma -lgslcblas -lm -lpthread -lcurl -lhts -ldeflate -lssl -lcrypto",
     ]
     system "make", *args

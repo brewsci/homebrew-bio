@@ -38,7 +38,7 @@ class Skesa < Formula
 
   def install
     system "make", "-f", "Makefile.nongs",
-      "BOOST_PATH=#{Formula["boost"].opt_prefix}"
+      "BOOST_PATH=#{formula_opt_prefix("boost")}"
     bin.install "skesa", "gfa_connector", "kmercounter"
   end
 

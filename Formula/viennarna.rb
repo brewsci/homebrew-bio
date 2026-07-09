@@ -80,7 +80,7 @@ class Viennarna < Formula
     python_include = if OS.mac?
       Formula["python@#{xy}"].opt_frameworks/"Python.framework/Versions/#{xy}/include/python#{xy}"
     else
-      Formula["python@#{xy}"].opt_include/"python#{xy}"
+      formula_opt_include("python@#{xy}")/"python#{xy}"
     end
     site_packages = prefix/Language::Python.site_packages(python3)
     ENV["PYTHON3"] = python3

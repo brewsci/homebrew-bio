@@ -38,7 +38,7 @@ class Ntedit < Formula
 
   def install
     inreplace "run-ntedit", "#!/usr/bin/env python3",
-                            "#!#{Formula["snakemake"].opt_libexec}/bin/python3.13"
+                            "#!#{formula_opt_libexec("snakemake")}/bin/python3.13"
     system "meson", "setup", "build", "--prefix", prefix
     cd "build" do
       system "ninja", "install"

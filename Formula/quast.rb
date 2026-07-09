@@ -67,14 +67,14 @@ class Quast < Formula
     # Use Homebrew's barrnap
     inreplace "quast_libs/run_barrnap.py",
               "barrnap_fpath = join(qconfig.LIBS_LOCATION, 'barrnap', 'bin', 'barrnap')",
-              "barrnap_fpath = \"#{Formula["brewsci/bio/barrnap"].opt_bin}/barrnap\""
+              "barrnap_fpath = \"#{formula_opt_bin("brewsci/bio/barrnap")}/barrnap\""
     ENV.prepend_create_path "PYTHONPATH", libexec/Language::Python.site_packages(python3)
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resources
     venv.pip_install buildpath
     # install *.py scripts
     bin.install Dir[libexec/"bin/*.py"]
-    bin.env_script_all_files(libexec/"bin", JAVA_HOME:  Formula["openjdk@11"].opt_prefix,
+    bin.env_script_all_files(libexec/"bin", JAVA_HOME:  formula_opt_prefix("openjdk@11"),
                                             PYTHONPATH: ENV["PYTHONPATH"])
     prefix.install "test_data"
   end

@@ -1,17 +1,18 @@
 class Relion < Formula
   desc "Image-processing software for cryo-electron microscopy"
   homepage "https://github.com/3dem/relion"
-  url "https://github.com/3dem/relion/archive/refs/tags/5.0.1.tar.gz"
-  sha256 "acbf898e96513b092514a56ff2a255c69a795e7a6f04131eacc8f55e2a900c23"
+  url "https://github.com/3dem/relion/archive/refs/tags/5.1.0.tar.gz"
+  sha256 "4767804dd8ba2198efd1e1082b4632bc36aeca0ad09d4d2f7de956f84bbbb429"
   license "GPL-2.0-only"
   head "https://github.com/3dem/relion.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_tahoe:   "a3e668f02c173472c46fb5a56e1345c9fc0f8879497292805e324dd4cc3d0d00"
-    sha256 cellar: :any,                 arm64_sequoia: "ae9cff4e093e2890858b195d17c3c9c7c0bc01fdd36f5b47f046135646655962"
-    sha256 cellar: :any,                 arm64_sonoma:  "7a40c196f06b300e0c29d703fcb987ee32ab168bc0cebe9e5a75e4b61e2c2297"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee283054e938fb4a4a3a5942f3938322c1d24f47e002d9d0329833e0e1cfcac1"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "f166e583997b5431b64333cb098a4c5cbf7d6878d64e2d3061ce4d140563ab10"
+    sha256 cellar: :any, arm64_sequoia: "831c7b1f8997c654a6c6d9362a69214d9959bd50d32dba7718d67f868c63d844"
+    sha256 cellar: :any, arm64_sonoma:  "3d0fa6cbdb4d18b6b1ae4c09f4e1a3b835ec3295c5510eb3b6e9366ebf281b81"
+    sha256 cellar: :any, x86_64_linux:  "e5c1f73e7fa292a54a03e2172de95dc5b8cee0c1553bf659fa88c5a35b510a85"
   end
 
   depends_on "cmake" => :build
@@ -34,12 +35,20 @@ class Relion < Formula
   end
 
   def install
+    # relion 5.1.0 links relion_lib here with the plain target_link_libraries()
+    # signature while every other call uses the PUBLIC keyword form; CMake
+    # forbids mixing them. This only trips on macOS, where the formula sets
+    # OpenMP_omp_LIBRARY (empty and thus a no-op on Linux).
+    inreplace "src/apps/CMakeLists.txt",
+              "target_link_libraries(relion_lib ${OpenMP_omp_LIBRARY})",
+              "target_link_libraries(relion_lib PUBLIC ${OpenMP_omp_LIBRARY})"
+
     args = []
     args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
     args << "-DFETCH_TORCH_MODELS=OFF"
     args << "-DCUDA=OFF"
-    args << "-DPYTHON_EXE_PATH=#{Formula["python@3.13"].opt_bin}/python3"
-    args << "-DTORCH_HOME_PATH=#{Formula["pytorch"].opt_prefix}"
+    args << "-DPYTHON_EXE_PATH=#{formula_opt_bin("python@3.13")}/python3"
+    args << "-DTORCH_HOME_PATH=#{formula_opt_prefix("pytorch")}"
     if OS.mac?
       libomp = Formula["libomp"]
       args << "-DOpenMP_C_FLAGS=-Xpreprocessor -fopenmp -I#{libomp.opt_include}"

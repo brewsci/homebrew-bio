@@ -32,7 +32,7 @@ class Fasttree < Formula
       -DUSE_DOUBLE
     ]
     if OS.mac?
-      opts << "-L#{Formula["libomp"].opt_lib}" << "-lomp"
+      opts << "-L#{formula_opt_lib("libomp")}" << "-lomp"
     else
       opts << "-fopenmp"
     end

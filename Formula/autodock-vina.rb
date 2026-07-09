@@ -23,16 +23,16 @@ class AutodockVina < Formula
   depends_on "python@3.13"
 
   def install
-    xy = Language::Python.major_minor_version Formula["python@3.13"].opt_bin/"python3"
+    xy = Language::Python.major_minor_version formula_opt_bin("python@3.13")/"python3"
     ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
     binaries = ["vina", "vina_split"]
-    inreplace "build/makefile_common", "$(BASE)", Formula["boost"].opt_prefix
-    inreplace "build/makefile_common", "${BASE}", Formula["boost"].opt_prefix
+    inreplace "build/makefile_common", "$(BASE)", formula_opt_prefix("boost")
+    inreplace "build/makefile_common", "${BASE}", formula_opt_prefix("boost")
     if OS.mac?
       cd "build/mac/release" do
         inreplace "Makefile" do |s|
           s.gsub! "BASE=$(shell brew --prefix)", "BASE=#{prefix}"
-          s.gsub! "$(BASE)/include", Formula["boost"].opt_include
+          s.gsub! "$(BASE)/include", formula_opt_include("boost")
           s.gsub! "GPP=/usr/bin/clang++", "GPP=#{ENV.cxx}"
           s.gsub! "BOOST_STATIC=y", "BOOST_STATIC="
         end
@@ -43,7 +43,7 @@ class AutodockVina < Formula
       cd "build/linux/release" do
         inreplace "Makefile" do |s|
           s.gsub! "BASE=/usr", "BASE=#{prefix}"
-          s.gsub! "$(BASE)/include", Formula["boost"].opt_include
+          s.gsub! "$(BASE)/include", formula_opt_include("boost")
         end
         system "make"
         bin.install binaries

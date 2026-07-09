@@ -3,8 +3,8 @@ class Patinae < Formula
 
   desc "Fast, programmable molecular viewer for research, scripting, and the web"
   homepage "https://zmactep.github.io/pymol-rs/"
-  url "https://github.com/zmactep/pymol-rs/archive/refs/tags/v0.4.2.tar.gz"
-  sha256 "5e274ba0f8aa77f4462aec2e4de070c1e1622e9f4ed137dd5d5e1fb6775f51ba"
+  url "https://github.com/zmactep/pymol-rs/archive/refs/tags/v0.4.4.tar.gz"
+  sha256 "412eb80494568a9c08393eece83d8aafd2249a7ff512dd1bc9e9ada112a7276f"
   license "BSD-3-Clause"
   head "https://github.com/zmactep/pymol-rs.git", branch: "main"
 
@@ -15,9 +15,9 @@ class Patinae < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, arm64_tahoe:   "5f52d09c4ea78e204617692710eb730abff62c85527772b80cf28d8d2a0627bf"
-    sha256 cellar: :any, arm64_sequoia: "79be5909c4f29ccb94db7d12a6e4666ced9fcc8624536daa1351519b7f24e3eb"
-    sha256 cellar: :any, arm64_sonoma:  "25a883a9a97ac45e4b3878724381ae657c9957a5d95ed278931fbd9d883a6479"
+    sha256 cellar: :any, arm64_tahoe:   "fd4934a4f0f2c3f95317b9c418238129cee19e19ccfe0b2feac51361526e07f7"
+    sha256 cellar: :any, arm64_sequoia: "2ad3cfca4186a4f5dbcc341869bccaa4bdc135c782ab9ed2ad5c747fa823046b"
+    sha256 cellar: :any, arm64_sonoma:  "bf8c04f2119c0fd00b3f14acc30fb95cba3f67a8b2b131a4d0efff383cd69b77"
   end
 
   depends_on "maturin" => :build
@@ -26,7 +26,7 @@ class Patinae < Formula
   depends_on "python@3.14"
 
   def install
-    python = Formula["python@3.14"].opt_bin/"python3.14"
+    python = formula_opt_bin("python@3.14")/"python3.14"
     ENV["PYO3_PYTHON"] = python
 
     system "cargo", "install", *std_cargo_args(root: libexec, path: "patinae")

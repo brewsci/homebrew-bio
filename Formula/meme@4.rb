@@ -47,10 +47,10 @@ class MemeAT4 < Formula
     system "./configure",
       "--disable-dependency-tracking",
       "--prefix=#{prefix}",
-      "--with-mpidir=#{Formula["open-mpi"].opt_prefix}",
+      "--with-mpidir=#{formula_opt_prefix("open-mpi")}",
       "--with-url=https://meme-suite.org/meme" \
-      "--with-python3=#{Formula["python@3.12"].opt_bin}/python3",
-      "--with-gs=#{Formula["ghostscript"].opt_bin}/gs"
+      "--with-python3=#{formula_opt_bin("python@3.12")}/python3",
+      "--with-gs=#{formula_opt_bin("ghostscript")}/gs"
 
     system "make", "install"
     bin.env_script_all_files libexec/"bin", PERL5LIB: ENV["PERL5LIB"] if OS.linux?

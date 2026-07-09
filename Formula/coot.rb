@@ -85,7 +85,7 @@ class Coot < Formula
   def install
     # fix issue of https://github.com/pemsley/coot/issues/335
     # include DYLD_FALLBACK_LIBRARY_PATH and GI_TYPELIB_PATH
-    glib_opt_lib = Formula["glib"].opt_lib
+    glib_opt_lib = formula_opt_lib("glib")
     if OS.mac?
       inreplace "src/coot.in",
                 "data/syminfo.lib",
@@ -108,20 +108,20 @@ class Coot < Formula
     # Get Python location
     xy = Language::Python.major_minor_version python3
     (lib/"python#{xy}/site-packages/homebrew-coot.pth").write "#{libexec/"lib/python#{xy}/site-packages"}\n"
-    ENV.prepend_path "PYTHONPATH", Formula["numpy"].opt_prefix/Language::Python.site_packages(python3)
+    ENV.prepend_path "PYTHONPATH", formula_opt_prefix("numpy")/Language::Python.site_packages(python3)
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
     # Set Boost, RDKit, and FFTW2 root
-    boost_prefix = Formula["boost"].opt_prefix
+    boost_prefix = formula_opt_prefix("boost")
     boost_python_lib = "boost_python314"
-    rdkit_prefix = Formula["rdkit"].opt_prefix
-    fftw2_prefix = Formula["clipper4coot"].opt_prefix/"fftw2"
+    rdkit_prefix = formula_opt_prefix("rdkit")
+    fftw2_prefix = formula_opt_prefix("clipper4coot")/"fftw2"
 
     args = %W[
       --prefix=#{prefix}
       --with-boost=#{boost_prefix}
       --with-boost-libdir=#{boost_prefix}/lib
-      --with-gemmi=#{Formula["gemmi"].opt_prefix}
-      --with-glm=#{Formula["glm"].opt_prefix}
+      --with-gemmi=#{formula_opt_prefix("gemmi")}
+      --with-glm=#{formula_opt_prefix("glm")}
       --with-rdkit-prefix=#{rdkit_prefix}
       --with-fftw-prefix=#{fftw2_prefix}
       --with-backward

@@ -4,6 +4,10 @@ on:
   push:
     branches: [develop]
 
+concurrency:
+  group: develop-writers
+  cancel-in-progress: false
+
 jobs:
   upload-bottles:
     runs-on: ubuntu-latest
@@ -14,22 +18,31 @@ jobs:
       HOMEBREW_NO_ANALYTICS: 1
       HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
-      - uses: actions/checkout@master
+      - name: Checkout develop (full history)
+        uses: actions/checkout@v5
         with:
-          fetch-depth: 100
+          ref: develop
+          fetch-depth: 0
+
+      - name: Configure git
+        run: |
+          git config --global user.name "Brewsci"
+          git config --global user.email "linux@brew.sh"
+
       - name: Update Homebrew
         run: |
           echo "/home/linuxbrew/.linuxbrew/bin" >> "$GITHUB_PATH"
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           brew trust brewsci/bio
           brew update
+
       - name: Upload bottles
         shell: bash
         env:
           COMMIT_MESSAGE: ${{github.event.head_commit.message}}
         run: |
           #!/bin/bash
-          set -eu
+          set -euo pipefail
           echo sha1='${{github.event.head_commit.id}}'
           echo "$COMMIT_MESSAGE"
           # pr="$(echo "$COMMIT_MESSAGE" | sed 's/^.*#\([0-9]*\).*/\1/;q')"
@@ -39,45 +52,126 @@ jobs:
             echo "No PR number found in commit message. Skipping upload."
             exit 0
           fi
+
           mkdir -p "$(dirname "$(brew --repo ${{github.repository}})")"
           cp -a "$GITHUB_WORKSPACE" "$(brew --repo ${{github.repository}})"
           rm -rf -- .git *
+
           git -C "$(brew --repo ${{github.repository}})" fetch origin "pull/$pr/head:pr-head"
           sha1="$(git -C "$(brew --repo ${{github.repository}})" rev-parse pr-head)"
           echo pr="$pr" sha1="$sha1"
+
           if [[ -n "$(curl -fs -H 'Accept: application/vnd.github.antiope-preview+json' "https://api.github.com/repos/${{github.repository}}/pulls/$pr" \
             | jq '.labels[] | select(.name == "ci-skip-upload")')" ]]; then
             echo Skipping upload...
           else
-            run_id="$(curl -fs -H 'Accept: application/vnd.github.antiope-preview+json' https://api.github.com/repos/${{github.repository}}/actions/workflows/build-bottles.yml/runs \
-              | jq ".workflow_runs[] | select(.head_sha == \"$sha1\").id")"
-            # search "all-bottles"
-            artifact_id="$(curl -fs -H 'Accept: application/vnd.github+json' "https://api.github.com/repos/${{github.repository}}/actions/runs/$run_id/artifacts?name=all-bottles" \
-              | jq -r '.artifacts[0].id')"
+            run_id=""
+            for i in {1..30}; do
+              run_id="$(curl -fsSL \
+                -H 'Accept: application/vnd.github+json' \
+                -H "Authorization: Bearer ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}" \
+                "https://api.github.com/repos/${{github.repository}}/actions/workflows/build-bottles.yml/runs?per_page=100" \
+                | jq -r ".workflow_runs[] | select(.head_sha == \"$sha1\") | .id" \
+                | head -n1)"
+
+              if [[ -n "$run_id" && "$run_id" != "null" ]]; then
+                break
+              fi
+
+              echo "No build-bottles workflow run found yet for sha $sha1. retry=$i"
+              sleep 10
+            done
+
+            if [[ -z "$run_id" || "$run_id" == "null" ]]; then
+              echo "No build-bottles workflow run found for sha $sha1"
+              exit 1
+            fi
+
+            artifact_id=""
+            for i in {1..8}; do
+              artifact_id="$(curl -fsSL \
+                -H 'Accept: application/vnd.github+json' \
+                -H "Authorization: Bearer ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}" \
+                "https://api.github.com/repos/${{github.repository}}/actions/runs/$run_id/artifacts" \
+                | jq -r '.artifacts[] | select(.name == "all-bottles") | .id' \
+                | head -n1)"
+
+              if [[ -n "$artifact_id" && "$artifact_id" != "null" ]]; then
+                break
+              fi
+
+              echo "No all-bottles artifact found yet for run $run_id. retry=$i"
+              sleep 10
+            done
+
+            if [[ -z "$artifact_id" || "$artifact_id" == "null" ]]; then
+              echo "No all-bottles artifact found for run $run_id"
+              exit 1
+            fi
+
             echo run_id="$run_id" artifact_id="$artifact_id"
-            curl -fL -o bottles.zip "https://${{secrets.HOMEBREW_GITHUB_API_TOKEN}}@api.github.com/repos/${{github.repository}}/actions/artifacts/$artifact_id/zip"
+            curl -fsSL \
+              -H 'Accept: application/vnd.github+json' \
+              -H "Authorization: Bearer ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}" \
+              -o bottles.zip \
+              "https://api.github.com/repos/${{github.repository}}/actions/artifacts/$artifact_id/zip"
             file bottles.zip
             unzip bottles.zip
+
             git -C "$(brew --repo ${{github.repository}})" status
-            git config --global user.name "Brewsci"
-            git config --global user.email "linux@brew.sh"
             which -a skopeo
             skopeo --version
-            brew pr-upload --root-url=https://ghcr.io/v2/brewsci/bio
+            upload_success=false
+            if brew pr-upload --root-url=https://ghcr.io/v2/brewsci/bio; then
+              upload_success=true
+            else
+              echo "brew pr-upload failed, retrying upload..."
+              for i in 1 2 3; do
+                echo "Retry attempt $i/3, sleeping $((10 * i))s..."
+                sleep $((10 * i))
+                if brew pr-upload --upload-only --root-url=https://ghcr.io/v2/brewsci/bio; then
+                  upload_success=true
+                  break
+                fi
+                echo "Retry $i failed."
+              done
+            fi
+            if [ "$upload_success" != "true" ]; then
+              echo "brew pr-upload failed after 3 retries"
+              exit 1
+            fi
           fi
+
           cd "$(brew --repo ${{github.repository}})"
           git branch -f "pr$pr"
+
           git fetch origin master
-          git checkout master
-          git reset --hard origin/master
+          git checkout -B master origin/master
           git merge -m "Merge pull request #$pr" "pr$pr"
-          git status
-          if ! git push "https://LinuxbrewTestBot:${{secrets.HOMEBREW_GITHUB_API_TOKEN}}@github.com/${{github.repository}}" master:develop master; then
-            git push --force origin "pr$pr"
-            mkdir ~/bin
-            curl -fsL https://github.com/github/hub/releases/download/v2.14.1/hub-linux-amd64-2.14.1.tgz \
-              | tar xzO hub-linux-amd64-2.14.1/bin/hub >~/bin/hub
-            chmod +x ~/bin/hub
-            git reset --hard origin/master
-            GITHUB_TOKEN='${{secrets.HOMEBREW_GITHUB_API_TOKEN}}' ~/bin/hub pull-request -l bottles -b master -h "pr$pr" -m "Bottles for PR $pr" --no-edit
-          fi
+
+          # To avoid conflicts with other pushes to develop, we retry the push up to 3 times,
+          # syncing with origin each time.
+          for i in 1 2 3; do
+            git fetch origin develop master
+
+            git branch -f develop origin/develop
+            git checkout develop
+            git reset --hard origin/develop
+            git merge -m "Merge pull request #$pr" "pr$pr"
+
+            if git push "https://LinuxbrewTestBot:${{secrets.HOMEBREW_GITHUB_API_TOKEN}}@github.com/${{github.repository}}" develop master; then
+              exit 0
+            fi
+
+            echo "push failed (attempt $i), retrying after sync..."
+            sleep $((i*2))
+          done
+
+          # fallback if push fails after 3 attempts
+          git push --force origin "pr$pr"
+          mkdir -p ~/bin
+          curl -fsL https://github.com/github/hub/releases/download/v2.14.1/hub-linux-amd64-2.14.1.tgz \
+            | tar xzO hub-linux-amd64-2.14.1/bin/hub >~/bin/hub
+          chmod +x ~/bin/hub
+          git reset --hard origin/master
+          GITHUB_TOKEN='${{secrets.HOMEBREW_GITHUB_API_TOKEN}}' ~/bin/hub pull-request -l bottles -b master -h "pr$pr" -m "Bottles for PR $pr" --no-edit

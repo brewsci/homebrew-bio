@@ -2,17 +2,17 @@ class Mosdepth < Formula
   # cite Pederson_2017: "https://doi.org/10.1093/bioinformatics/btx699"
   desc "Fast BAM/CRAM depth calculator"
   homepage "https://github.com/brentp/mosdepth"
-  url "https://github.com/brentp/mosdepth/archive/refs/tags/v0.3.11.tar.gz"
-  sha256 "4becd1e74a81ed590588ed2745ef7f1443d0a5aad35f9880a2d452d56a7227ff"
+  url "https://github.com/brentp/mosdepth/archive/refs/tags/v0.3.14.tar.gz"
+  sha256 "abac67de4547dc5642efd46846044d6b3536d2ca3443b4ca172446edf82eeb42"
   license "MIT"
   head "https://github.com/brentp/mosdepth.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any,                 arm64_sequoia: "f6b9c535f17ba87c89c374a2cd8b3dc0074a5be8fae367b3dfcece578f6db334"
-    sha256 cellar: :any,                 arm64_sonoma:  "6b3d07a358bda492f13e81c2caddc632d13ed16ff92eec02643af16e28e90667"
-    sha256 cellar: :any,                 ventura:       "053e7e2bc5c911d75fc2d6139d22bd01965f8a05ed56609ce9eacaa65601aab6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f6301e7f4c83badb6393379bdc861b7e9b5f412ba2af625b06e026c631ee3f9"
+    sha256 cellar: :any, arm64_tahoe:   "44810548ec991ba423f78f3e7b0bcfd240f40dfdf9d53030c4c26442a58f288a"
+    sha256 cellar: :any, arm64_sequoia: "e6a4de8b57c3aa1ce08815170e23870e0101d564430f9f54b074f1598b501143"
+    sha256 cellar: :any, arm64_sonoma:  "7ce8a310916ca625409fd22d1696686ec0460c2f13d55a8884c2ccc83a5cb706"
+    sha256 cellar: :any, x86_64_linux:  "25102cb292ba505af1b4159224ca8e9b31f92f9673dbba8574323a6d0403f3e4"
   end
 
   depends_on "nim" => :build
@@ -31,10 +31,10 @@ class Mosdepth < Formula
     # make nim.cfg for Homebrew
     rm buildpath/"nim.cfg"
     (buildpath/"nim.cfg").write <<~EOS
-      passl:"-L#{Formula["htslib"].opt_lib} -lhts"
-      passl:"-L#{Formula["brewsci/bio/d4tools"].opt_lib} -ld4binding"
-      passl:"-L#{Formula["libdeflate"].opt_lib} -ldeflate"
-      passl:"-L#{Formula["openssl@3"].opt_lib} -lcrypto -lssl"
+      passl:"-L#{formula_opt_lib("htslib")} -lhts"
+      passl:"-L#{formula_opt_lib("brewsci/bio/d4tools")} -ld4binding"
+      passl:"-L#{formula_opt_lib("libdeflate")} -ldeflate"
+      passl:"-L#{formula_opt_lib("openssl@3")} -lcrypto -lssl"
       passl:"-llzma"
       passl:"-lz"
       passl:"-lbz2"

@@ -1,16 +1,16 @@
 class DshBio < Formula
   desc "Tools for BED, FASTA, FASTQ, GAF, GFA1/2, GFF3, PAF, SAM, and VCF files"
   homepage "https://github.com/heuermh/dishevelled-bio"
-  url "https://search.maven.org/remotecontent?filepath=org/dishevelled/dsh-bio-tools/3.0/dsh-bio-tools-3.0-bin.tar.gz"
-  sha256 "6bb942a29bce10486b242dc379847d1dbeae2a33415f9fbf08fb2cb12491102e"
+  url "https://search.maven.org/remotecontent?filepath=org/dishevelled/dsh-bio-tools/4.0/dsh-bio-tools-4.0-bin.tar.gz"
+  sha256 "4e61c8fc5dff674c68eff732adbd8ed4ae208149713337a3b66dd8b28adf76de"
   license "LGPL-3.0-or-later"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4ca54db849c9d67a85833b8098b5c2bc70b2b7e9479abf116428e989e94d85e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d4ca54db849c9d67a85833b8098b5c2bc70b2b7e9479abf116428e989e94d85e"
-    sha256 cellar: :any_skip_relocation, ventura:       "d4ca54db849c9d67a85833b8098b5c2bc70b2b7e9479abf116428e989e94d85e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d54f821a023eefe445bb0a06244dcecf3f3a99abf8750defe08c81a51c25cde9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "4f91ed6923b310a405c8c1027b0b506c4f85bfa129ebcf85b0913ac0cfe21e80"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4f91ed6923b310a405c8c1027b0b506c4f85bfa129ebcf85b0913ac0cfe21e80"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f91ed6923b310a405c8c1027b0b506c4f85bfa129ebcf85b0913ac0cfe21e80"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0fa20770bae9ea2a7dbd230e6fca1832b73509efff65adfaafd890c4dc48cea"
   end
 
   depends_on "openjdk"
@@ -22,7 +22,7 @@ class DshBio < Formula
       name = File.basename(exe)
       (bin/name).write <<~EOS
         #!/bin/bash
-        export JAVA_HOME="${JAVA_HOME:-#{Formula["openjdk"].opt_prefix}}"
+        export JAVA_HOME="${JAVA_HOME:-#{formula_opt_prefix("openjdk")}}"
         exec "#{exe}" "$@"
       EOS
     end

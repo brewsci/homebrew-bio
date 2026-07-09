@@ -1,6 +1,11 @@
 name: Build bottles
 
-on: pull_request
+# Only build bottles when a formula actually changes; this avoids the `merge`
+# job failing on PRs that touch no formulae (no bottles -> no artifacts).
+on:
+  pull_request:
+    paths:
+      - Formula/**
 
 env:
   HOMEBREW_NO_ANALYTICS: 1
@@ -26,6 +31,14 @@ jobs:
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@main
 
+      - name: Remove pre-installed external taps
+        # The GitHub runner images ship the aws/tap and azure/bicep taps, which
+        # are irrelevant to this tap. They were previously trusted to satisfy
+        # brew's tap-trust requirement, but `brew trust` now fails on Linux with
+        # "Unexpected platform!", breaking every PR's ubuntu-latest job. Untap
+        # them instead so the trust check has nothing to flag.
+        run: brew untap --force aws/tap azure/bicep 2>/dev/null || true
+
       - name: Cache Homebrew Bundler RubyGems
         id: cache
         uses: actions/cache@v5
@@ -43,7 +56,7 @@ jobs:
       - run: brew test-bot --only-tap-syntax
 
       - run: |
-          brew test-bot --only-formulae --only-json-tab --skip-recursive-dependents --root-url="https://ghcr.io/v2/brewsci/bio"
+          brew test-bot --only-formulae --only-json-tab --root-url="https://ghcr.io/v2/brewsci/bio"
         if: github.event_name == 'pull_request'
 
       - name: Upload bottles as artifact
@@ -58,6 +71,10 @@ jobs:
     needs: build-bottles
     steps:
       - name: Merge Artifacts
+        # Tolerate PRs that change no formula (e.g. workflow-only changes):
+        # no bottles are built, so there is nothing to merge and the action
+        # would otherwise error on an empty `bottles-*` pattern.
+        continue-on-error: true
         uses: actions/upload-artifact/merge@v6
         with:
           name: all-bottles

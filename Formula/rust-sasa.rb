@@ -1,17 +1,17 @@
 class RustSasa < Formula
   desc "Ludicrously fast CLI for calculating protein SASA written in Rust"
   homepage "https://github.com/maxall41/RustSASA"
-  url "https://github.com/maxall41/RustSASA/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "649d73e07d67958641f3546f5874534cf13e43a19c1d729ba0e5fad562338bcc"
+  url "https://github.com/maxall41/RustSASA/archive/refs/tags/v0.9.2.tar.gz"
+  sha256 "2f2d7509d2e2bb3a9c1cf79d1b53d6bc1c6de2693ae7d8494a637ab136fadcae"
   license "MIT"
   head "https://github.com/maxall41/RustSASA.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "e50ca95ebea47cb71f534ae71e5e6e91fa55e91b6ea2777d2111d2553aeb2f9b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9735127cbe65dc913a01a059282551e3b877a3b7b865ef05ffabaaa1f8e47170"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a01fdd67963aa21e6b413a4559f53f9af9931463a5d8cd7cc32687be912dc257"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15e95f831aa7ca412fa6a50f86351231f23a312669d9ae4bbdaec9bc6e40e684"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "73719270ba4488c7d9be2d66c05c8f42ea26a4ad6c07dd709402ecc31d38dafb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da7f67b779d1387c70982daded786a532f9525aaffd58a08288186c0ed7e1a6e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f52598e6423682f268377f31c086573842aaaf2dca130b266f5031d04011641"
+    sha256 cellar: :any,                 x86_64_linux:  "442241d89b4b1c03190254620bd4cd9d13d38e9d7038033228b81d8f6e5f3b36"
   end
 
   depends_on "rust" => :build
@@ -23,15 +23,15 @@ class RustSasa < Formula
 
   def install
     resource("pdbtbx").stage(buildpath/"pdbtbx")
-    system "cargo", "install", *std_cargo_args
-    pkgshare.install "pdbs", "radii"
+    system "cargo", "install", "--features", "cli", *std_cargo_args
+    pkgshare.install "tests/data/pdbs/example.cif"
   end
 
   test do
     assert_match "Usage: rust-sasa [OPTIONS] <INPUT> <OUTPUT>", shell_output("#{bin}/rust-sasa --help")
-    shell_output("#{bin}/rust-sasa #{pkgshare}/pdbs/example.cif #{testpath}/out.json")
+    shell_output("#{bin}/rust-sasa #{pkgshare}/example.cif #{testpath}/out.json")
     assert_path_exists testpath/"out.json"
     output = File.read(testpath/"out.json")
-    assert_match '"value":222.80806,"name":"MET","is_polar":false', output
+    assert_match '"value":220.10417,"name":"MET","is_polar":false', output
   end
 end

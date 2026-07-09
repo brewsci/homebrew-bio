@@ -2,15 +2,13 @@ class Prokka < Formula
   # cite Seemann_2014: "https://doi.org/10.1093/bioinformatics/btu153"
   desc "Rapid annotation of prokaryotic genomes"
   homepage "https://github.com/tseemann/prokka"
-  url "https://github.com/tseemann/prokka/archive/refs/tags/v1.14.6.tar.gz"
-  sha256 "f730b5400ea9e507bfe6c5f3d22ce61960a897195c11571c2e1308ce2533faf8"
-  revision 1
+  url "https://github.com/tseemann/prokka/archive/refs/tags/v1.15.6.tar.gz"
+  sha256 "e626d53313401d7c5fac48b41f161c2cf233c8ce6aec844d5ca419e644665df1"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "ff9fb6fc4bc1f9b0f29cecf2ae8b88320ad1deee7a77c6e51f15d39594d0b295"
-    sha256 cellar: :any_skip_relocation, ventura:      "ff9fb6fc4bc1f9b0f29cecf2ae8b88320ad1deee7a77c6e51f15d39594d0b295"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "618b46c4c3c25fc9cc64f73836cd1d6ffd177d46ce6789f95cd9b9fa5eba8629"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "24e1353aaca147ff545e47cce05ea869a7eeaa7d7e7ad9c16bfb3091461cac7c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3a2dfcf267d54b5d5325631d28344277969d587450d31ff2b970ed364f61984b"
   end
 
   depends_on "bioperl"
@@ -25,8 +23,6 @@ class Prokka < Formula
   depends_on "prodigal"
 
   def install
-    # remove all bundled stuff and use brew ones
-    rm_r "binaries"
     # remove non-user scripts
     rm "bin/prokka-build_kingdom_dbs"
     rm "bin/prokka-make_tarball"

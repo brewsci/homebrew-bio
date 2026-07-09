@@ -62,7 +62,7 @@ class Smina < Formula
       system "cmake", "..",
              "-DCMAKE_BUILD_TYPE=Release",
              "-DCMAKE_INSTALL_PREFIX=#{prefix}",
-             "-DOPENBABEL_DIR=#{Formula["open-babel"].opt_prefix}",
+             "-DOPENBABEL_DIR=#{formula_opt_prefix("open-babel")}",
              *std_cmake_args
       system "make"
       bin.install "smina"

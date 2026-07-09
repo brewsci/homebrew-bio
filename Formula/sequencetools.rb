@@ -2,8 +2,8 @@ class Sequencetools < Formula
   desc "Programs for processing sequencing data"
   homepage "https://github.com/stschiff/sequenceTools"
   url "https://github.com/stschiff/sequenceTools.git",
-      tag:      "v1.5.4.0",
-      revision: "13c46b6ff323c4e04d1cdc49e9b2b0898a6c3e52"
+      tag:      "v1.6.0.0",
+      revision: "fca636eba450bacf8ee414b05adfb6ef8a6a2d37"
   license "BSD-3-Clause"
   head "https://github.com/stschiff/sequenceTools.git", branch: "master"
 
@@ -18,6 +18,11 @@ class Sequencetools < Formula
 
   depends_on "ghc@9.6" => :build
   depends_on "haskell-stack" => :build
+
+  on_linux do
+    # libz on linuxbrew is provided by zlib-ng-compat; declare it so linkage passes
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     stack_args = %W[

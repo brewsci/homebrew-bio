@@ -34,7 +34,7 @@ class Edirect < Formula
     end
 
     ENV.prepend_create_path "PERL5LIB", prefix/"perl5/lib/perl5"
-    ENV["OPENSSL_PREFIX"] = Formula["openssl"].opt_prefix # for Net::SSLeay
+    ENV["OPENSSL_PREFIX"] = formula_opt_prefix("openssl") # for Net::SSLeay
     pms = %w[XML::Simple Encode::Locale File::Listing HTML::Parser HTML::Tagset HTML::Entities HTML::Tree
              HTTP::Cookies HTTP::Date HTTP::Message HTTP::Negotiate LWP::MediaTypes IO::Socket::SSL
              LWP::Protocol::https URI WWW::RobotRules Mozilla::CA Net::SSLeay]

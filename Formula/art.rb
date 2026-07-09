@@ -22,8 +22,8 @@ class Art < Formula
   depends_on "gsl"
 
   def install
-    ENV.append "CPPFLAGS", "-I#{Formula["gsl"].opt_include}"
-    ENV.append "LDFLAGS",  "-L#{Formula["gsl"].opt_lib}"
+    ENV.append "CPPFLAGS", "-I#{formula_opt_include("gsl")}"
+    ENV.append "LDFLAGS",  "-L#{formula_opt_lib("gsl")}"
     system "./configure", "--prefix=#{prefix}"
     # remove the bundled binaries so they get re-made against our libraries
     system "make", "clean"

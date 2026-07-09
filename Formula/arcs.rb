@@ -32,13 +32,13 @@ class Arcs < Formula
 
   def install
     if OS.mac?
-      ENV.append "LDFLAGS", "-L#{Formula["libomp"].opt_lib} -lomp"
+      ENV.append "LDFLAGS", "-L#{formula_opt_lib("libomp")} -lomp"
       ENV.append "CPPFLAGS", "-I#{HOMEBREW_PREFIX}/include -Xpreprocessor -fopenmp -lomp"
     end
 
     system "./autogen.sh"
     system "./configure", *std_configure_args,
-           "--with-boost=#{Formula["boost"].opt_include}"
+           "--with-boost=#{formula_opt_include("boost")}"
     system "make", "install"
     inreplace "bin/arcs-make",
               "$(bin)/../src/long-to-linked-pe",

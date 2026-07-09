@@ -32,7 +32,7 @@ class Libzeep < Formula
       system "cmake", "--install", "build"
     end
     inreplace "CMakeLists.txt", "date 3.0.1 QUIET NAMES date", "date 3.0.0 REQUIRED NAMES date"
-    date_cmake_prefix = Formula["howard-hinnant-date"].opt_lib/"cmake"
+    date_cmake_prefix = formula_opt_lib("howard-hinnant-date")/"cmake"
     system "cmake", "-S", ".", "-B", "build",
                   "-Dlibmcfp_DIR=#{prefix/"libmcfp/lib/cmake/libmcfp"}",
                   "-DCMAKE_MODULE_PATH=#{date_cmake_prefix}",
@@ -119,7 +119,7 @@ class Libzeep < Formula
     EOS
     system ENV.cxx, "test.cpp", "-o", "test",
                     "-std=c++17", "-I#{include}",
-                    "-I#{Formula["boost"].opt_include}",
+                    "-I#{formula_opt_include("boost")}",
                     "-L#{lib}", "-lzeep"
     assert_match "server is not running", shell_output("./test status 2>&1", 1)
   end

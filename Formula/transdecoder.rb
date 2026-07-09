@@ -1,9 +1,9 @@
 class Transdecoder < Formula
   desc "Identifies candidate coding regions within transcript sequences"
   homepage "https://transdecoder.github.io/"
-  url "https://github.com/TransDecoder/TransDecoder/archive/refs/tags/TransDecoder-v5.7.1.tar.gz"
-  sha256 "41dd5e95f6ba946ff21340417d867e5e99f123b4035779b25d3cffd20b828a30"
-  head "https://github.com/TransDecoder/TransDecoder.git"
+  url "https://github.com/TransDecoder/TransDecoder/archive/refs/tags/TransDecoder-v6.0.0.tar.gz"
+  sha256 "53892ccedba4f8163adf4ffd0ceb2af1cf6685c6bae6f00491eeae74c3829799"
+  head "https://github.com/TransDecoder/TransDecoder.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -19,16 +19,17 @@ class Transdecoder < Formula
     system "make"
     rm "Makefile"
     prefix.install Dir["*"]
+    # v6.0.0 moved these scripts from the repo root into util/
     executables = "TransDecoder.LongOrfs", "TransDecoder.Predict"
     if OS.mac?
       executables.each do |executable|
-        bin.write_exec_script prefix/executable
+        bin.write_exec_script prefix/"util"/executable
       end
     else
       ENV["PERL5LIB"] = libexec/"lib/perl5"
       system "cpanm", "--self-contained", "-l", libexec, "URI::Escape"
       executables.each do |executable|
-        (bin/executable).write_env_script(prefix/executable, PERL5LIB: ENV["PERL5LIB"])
+        (bin/executable).write_env_script(prefix/"util"/executable, PERL5LIB: ENV["PERL5LIB"])
       end
     end
   end

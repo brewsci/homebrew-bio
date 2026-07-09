@@ -1,13 +1,15 @@
 class Libgff < Formula
   desc "Ligntweight C++ library for parsing GFF/GTF files"
   homepage "https://github.com/COMBINE-lab/libgff"
-  url "https://github.com/COMBINE-lab/libgff/archive/refs/tags/v2.0.0.tar.gz"
-  sha256 "7656b19459a7ca7d2fd0fcec4f2e0fd0deec1b4f39c703a114e8f4c22d82a99c"
+  url "https://github.com/COMBINE-lab/libgff/archive/refs/tags/v2.0.1.tar.gz"
+  sha256 "96d2bda64aaf9cf7b6c1a42205e408b0ef2a353ba42dad560db215e7ec105e2e"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "fe14582a9d6be713cae7378e060d5d91408449aeea98ba720754a491beed8cda"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b313f0cd8a8532ba0c330bfc22a11e4cbbfb21dad02f400934e87fd48e4a8482"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "61cb05dd029d65d00961b92044202453b2ba03912a7468be01450798dc2183ed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "858aa9e199f72d9ec3de25417534773d4d3c0b468f4bd705ccf7edb5bd7ce7a5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6399aeab645551e8d795f827e58676a7d6f49599d31432a31b5b5424bc3ced4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22a102754f1ba7630f5ac84ab9acc4a1a4a4c9466e298f472cce3b32ea5fc439"
   end
 
   depends_on "cmake" => :build
