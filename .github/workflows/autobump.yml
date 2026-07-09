@@ -22,7 +22,7 @@ on:
     # Hourly. GitHub Actions cannot subscribe to external repos' release events,
     # so this polls as often as is practical to approximate "bump on upstream
     # release". `brew bump` de-duplicates, so it never re-opens an existing PR.
-    - cron: "0 * * * *"
+    - cron: "0 4 * * 0"
   workflow_dispatch:
     inputs:
       formulae:
