@@ -2,9 +2,8 @@ class Prokka < Formula
   # cite Seemann_2014: "https://doi.org/10.1093/bioinformatics/btu153"
   desc "Rapid annotation of prokaryotic genomes"
   homepage "https://github.com/tseemann/prokka"
-  url "https://github.com/tseemann/prokka/archive/refs/tags/v1.14.6.tar.gz"
-  sha256 "f730b5400ea9e507bfe6c5f3d22ce61960a897195c11571c2e1308ce2533faf8"
-  revision 1
+  url "https://github.com/tseemann/prokka/archive/refs/tags/v1.15.6.tar.gz"
+  sha256 "e626d53313401d7c5fac48b41f161c2cf233c8ce6aec844d5ca419e644665df1"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -25,8 +24,6 @@ class Prokka < Formula
   depends_on "prodigal"
 
   def install
-    # remove all bundled stuff and use brew ones
-    rm_r "binaries"
     # remove non-user scripts
     rm "bin/prokka-build_kingdom_dbs"
     rm "bin/prokka-make_tarball"
