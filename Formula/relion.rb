@@ -1,8 +1,8 @@
 class Relion < Formula
   desc "Image-processing software for cryo-electron microscopy"
   homepage "https://github.com/3dem/relion"
-  url "https://github.com/3dem/relion/archive/refs/tags/5.0.1.tar.gz"
-  sha256 "acbf898e96513b092514a56ff2a255c69a795e7a6f04131eacc8f55e2a900c23"
+  url "https://github.com/3dem/relion/archive/refs/tags/5.1.0.tar.gz"
+  sha256 "4767804dd8ba2198efd1e1082b4632bc36aeca0ad09d4d2f7de956f84bbbb429"
   license "GPL-2.0-only"
   head "https://github.com/3dem/relion.git", branch: "master"
 
@@ -34,6 +34,14 @@ class Relion < Formula
   end
 
   def install
+    # relion 5.1.0 links relion_lib here with the plain target_link_libraries()
+    # signature while every other call uses the PUBLIC keyword form; CMake
+    # forbids mixing them. This only trips on macOS, where the formula sets
+    # OpenMP_omp_LIBRARY (empty and thus a no-op on Linux).
+    inreplace "src/apps/CMakeLists.txt",
+              "target_link_libraries(relion_lib ${OpenMP_omp_LIBRARY})",
+              "target_link_libraries(relion_lib PUBLIC ${OpenMP_omp_LIBRARY})"
+
     args = []
     args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
     args << "-DFETCH_TORCH_MODELS=OFF"
