@@ -8,8 +8,6 @@ class Gvcfgenotyper < Formula
 
   depends_on "htslib"
 
-  uses_from_macos "bzip2"
-  uses_from_macos "xz"
   uses_from_macos "zlib"
 
   def install
@@ -25,6 +23,8 @@ class Gvcfgenotyper < Formula
       s.gsub! "HTSLIB = $(HTSDIR)/libhts.a", "HTSLIB = -L#{formula_opt_lib("htslib")} -lhts"
       s.gsub! "bin/gvcfgenotyper: src/cpp/gvcfgenotyper.cpp  $(OBJS) $(HTSLIB)",
               "bin/gvcfgenotyper: src/cpp/gvcfgenotyper.cpp $(OBJS)"
+      # Don't link htslib's transitive libs directly (fails `brew linkage`).
+      s.gsub! "LFLAGS = -lz -lm -lpthread -llzma -lbz2", "LFLAGS = -lz -lm -lpthread"
     end
 
     system "make", "bin/gvcfgenotyper", "CXX=#{ENV.cxx}", "CC=#{ENV.cc}"
