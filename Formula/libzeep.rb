@@ -19,25 +19,47 @@ class Libzeep < Formula
   depends_on "boost"
   depends_on "howard-hinnant-date"
 
-  resource "libmcfp" do
-    url "https://github.com/mhekkel/libmcfp/archive/refs/tags/v1.3.3.tar.gz"
-    sha256 "d35e83e660c3cb443d20246fea39e78d2a11faebe3205ab838614f0280c308d0"
+  # zeem is a required dependency of libzeep 7.3.x and has no Homebrew formula,
+  # so build it from source and bundle it into the keg.
+  resource "zeem" do
+    url "https://github.com/mhekkel/zeem/archive/refs/tags/v2.1.1.tar.gz"
+    sha256 "4321aecbdd97f650e3cba062a2ce4f61c4b86f7eaa1d13601638d0174f97e9d3"
+  end
+
+  # zeem fetches fast_float via CMake FetchContent; provide the source locally
+  # so no network access is required during the build.
+  resource "fast_float" do
+    url "https://github.com/fastfloat/fast_float/archive/refs/tags/v8.0.2.tar.gz"
+    sha256 "e14a33089712b681d74d94e2a11362643bd7d769ae8f7e7caefe955f57f7eacd"
   end
 
   def install
-    resource("libmcfp").stage do
+    fast_float_source = buildpath/"fast_float-src"
+    resource("fast_float").stage(fast_float_source)
+
+    # Build and install the bundled zeem dependency. It uses Howard Hinnant's
+    # date (found via find_package) and fast_float (provided locally).
+    # HOMEBREW_ALLOW_FETCHCONTENT lets CPM consume the local fast_float source
+    # instead of downloading it.
+    resource("zeem").stage do
       system "cmake", "-S", ".", "-B", "build",
-                      *std_cmake_args(install_prefix: prefix/"libmcfp")
+             "-DHOMEBREW_ALLOW_FETCHCONTENT=ON",
+             "-DCPM_fast_float_SOURCE=#{fast_float_source}",
+             "-DZEEM_BUILD_EXAMPLES=OFF",
+             "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
+             *std_cmake_args
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
     end
-    inreplace "CMakeLists.txt", "date 3.0.1 QUIET NAMES date", "date 3.0.0 REQUIRED NAMES date"
-    date_cmake_prefix = formula_opt_lib("howard-hinnant-date")/"cmake"
+
+    # zeem and date are both discoverable via find_package now, so libzeep needs
+    # no FetchContent. Build shared so the static zeem is absorbed into libzeep.
     system "cmake", "-S", ".", "-B", "build",
-                  "-Dlibmcfp_DIR=#{prefix/"libmcfp/lib/cmake/libmcfp"}",
-                  "-DCMAKE_MODULE_PATH=#{date_cmake_prefix}",
-                  "-DCMAKE_BUILD_TYPE=Release",
-                  *std_cmake_args
+           "-DBUILD_SHARED_LIBS=ON",
+           "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
+           "-DZEEP_BUILD_EXAMPLES=OFF",
+           "-DCMAKE_PREFIX_PATH=#{prefix}",
+           *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
@@ -118,9 +140,10 @@ class Libzeep < Formula
       }
     EOS
     system ENV.cxx, "test.cpp", "-o", "test",
-                    "-std=c++17", "-I#{include}",
-                    "-I#{formula_opt_include("boost")}",
-                    "-L#{lib}", "-lzeep"
+           "-std=c++20", "-I#{include}",
+           "-I#{formula_opt_include("boost")}",
+           "-I#{formula_opt_include("howard-hinnant-date")}",
+           "-L#{lib}", "-lzeep"
     assert_match "server is not running", shell_output("./test status 2>&1", 1)
   end
 end
