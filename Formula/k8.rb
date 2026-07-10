@@ -17,7 +17,10 @@ class K8 < Formula
 
   unless OS.mac?
     depends_on "patchelf" => :build
-    depends_on "zlib"
+    # The bundled Linux binary is dynamically linked against libz and would
+    # otherwise resolve to the host's /lib, failing `brew linkage --test`.
+    # zlib-ng-compat provides libz.so.1 so it resolves to the brewed copy.
+    depends_on "zlib-ng-compat"
   end
 
   def install
