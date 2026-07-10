@@ -19,6 +19,20 @@ class Minia < Formula
   def install
     # newer GCC needs explicit <cstdint> for uintN_t in bundled gatb-core/kff
     ENV.append "CXXFLAGS", "-include cstdint"
+
+    if OS.linux?
+      # The bundled HDF5 bakes the full compiler path into bin/h5cc and into
+      # a settings banner statically linked into bin/minia. Under Homebrew's
+      # Linux superenv that path is the shims wrapper, which trips brew
+      # audit's "references to the Homebrew shims directory" check.
+      inreplace Dir["thirdparty/gatb-core/**/hdf5/config/cmake/libh5cc.in",
+                    "thirdparty/gatb-core/**/hdf5/config/cmake/libhdf5.settings.cmake.in"] do |s|
+        s.gsub! "@_PKG_CONFIG_COMPILER@", ENV.cc
+        s.gsub! "@CMAKE_C_COMPILER@", ENV.cc
+        s.gsub! "@CMAKE_CXX_COMPILER@", ENV.cxx
+      end
+    end
+
     mkdir "build" do
       args = std_cmake_args
       args << "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
