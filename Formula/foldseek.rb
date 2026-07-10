@@ -28,6 +28,10 @@ class Foldseek < Formula
   end
 
   def install
+    # foldseek bundles mmseqs which requires cmake_minimum_required < 3.5,
+    # removed in CMake 4; allow the old policy version.
+    ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
+
     args = []
     if OS.mac?
       libomp = Formula["libomp"]
