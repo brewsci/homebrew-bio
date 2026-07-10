@@ -79,27 +79,21 @@ class Eastr < Formula
     sha256 "2674120f8d891909751c38abcdfd386ac0a5a1127954fbc332af6b5ceae07efd"
   end
 
-  patch :DATA
-
   def install
     cd "utils" do
-      # Use Homebrew's htslib
+      # Use Homebrew's htslib instead of the bundled ExternalProject_Add(htslib) fetch
       inreplace "CMakeLists.txt" do |s|
+        s.sub!(/include\(ExternalProject\)\nExternalProject_Add\(htslib\n.*?\n\s*\)\n/m, "")
         s.gsub! "${CMAKE_SOURCE_DIR}/include/htslib/libhts.a", "hts"
         s.gsub! "add_dependencies(vacuum htslib)", "# add_dependencies(vacuum htslib)"
         s.gsub! "add_dependencies(junction_extractor htslib)", "# add_dependencies(junction_extractor htslib)"
       end
       inreplace ["src/GSam.h", "src/tmerge.h"], "htslib/htslib", "htslib"
-      inreplace "src/vacuum.cpp", "strverscmp", "strcmp"
       system "cmake", ".", *std_cmake_args
       system "make"
       bin.install "vacuum", "junction_extractor"
     end
-    # pkg_resources is not available in Python 3.12
-    inreplace "EASTR/utils.py" do |s|
-      s.gsub! "import pkg_resources", "import importlib.resources as resources"
-      s.gsub! "pkg_resources.resource_filename", "resources.files"
-    end
+    # As of 1.1.2 upstream moved to a src/eastr layout and no longer uses pkg_resources
     virtualenv_install_with_resources
   end
 
@@ -107,32 +101,3 @@ class Eastr < Formula
     assert_match "usage", shell_output("#{bin}/eastr --help")
   end
 end
-__END__
-diff --git a/utils/CMakeLists.txt b/utils/CMakeLists.txt
-index 05028a3..1a1d8a1 100644
---- a/utils/CMakeLists.txt
-+++ b/utils/CMakeLists.txt
-@@ -6,16 +6,16 @@ set(CMAKE_CXX_STANDARD 11)
- set(CMAKE_CXX_FLAGS "${CMAKE_sCXX_FLAGS} -fpermissive -DNOCURL=1")
- include_directories("${CMAKE_SOURCE_DIR}/include/")
- link_directories("${CMAKE_SOURCE_DIR}/include/htslib")
--include(ExternalProject)
--ExternalProject_Add(htslib
--        SOURCE_DIR ${CMAKE_SOURCE_DIR}/include/htslib
--        # if this is not specified, need to include the packages manually
--        GIT_REPOSITORY https://github.com/samtools/htslib.git
--        BUILD_IN_SOURCE 1
--        CONFIGURE_COMMAND autoheader COMMAND autoconf COMMAND ./configure --without-libdeflate --disable-libcurl --disable-lzma
--        BUILD_COMMAND ${MAKE}
--        INSTALL_COMMAND ""
--        )
-+# include(ExternalProject)
-+# ExternalProject_Add(htslib
-+#         SOURCE_DIR ${CMAKE_SOURCE_DIR}/include/htslib
-+#         # if this is not specified, need to include the packages manually
-+#         GIT_REPOSITORY https://github.com/samtools/htslib.git
-+#         BUILD_IN_SOURCE 1
-+#         CONFIGURE_COMMAND autoheader COMMAND autoconf COMMAND ./configure --without-libdeflate --disable-libcurl --disable-lzma
-+#         BUILD_COMMAND ${MAKE}
-+#         INSTALL_COMMAND ""
-+#         )
