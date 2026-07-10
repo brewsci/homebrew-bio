@@ -22,6 +22,13 @@ class Bcalm < Formula
     ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
+      if OS.linux?
+        # gatb-core bakes CMAKE_C_COMPILER (Homebrew's shim wrapper on Linux)
+        # into bin/bcalm via a generated build_info.hpp, which trips brew
+        # audit's check for references to the Homebrew shims directory.
+        inreplace "ext/gatb-core/include/gatb/system/api/build_info.hpp",
+                  HOMEBREW_SHIMS_PATH.to_s, "/usr/bin"
+      end
       system "make"
       bin.install "bcalm"
     end
