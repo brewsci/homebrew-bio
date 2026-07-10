@@ -242,6 +242,11 @@ class Ntsynt < Formula
     sha256 "d72a210824facfdaf8768cf2d7ca25a042c30320b3020de2fa04640920d4e121"
   end
 
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/0d/1c/73e719955c59b8e424d015ab450f51c0af856ae46ea2da83eba51cc88de1/setuptools-81.0.0.tar.gz"
+    sha256 "487b53915f52501f0a79ccfd0c02c165ffe06631443a886740b91af4b7a5845a"
+  end
+
   resource "smart-open" do
     url "https://files.pythonhosted.org/packages/06/84/c6e6276a72a78996f11118b8bc1d9e9b619aa78201f408210f4a584bd377/smart_open-7.0.4.tar.gz"
     sha256 "62b65852bdd1d1d516839fcb1f6bc50cd0f16e05b4ec44b52f43d38bcb838524"
