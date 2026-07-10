@@ -8,13 +8,16 @@ class Vcfexpress < Formula
 
   # rust-htslib builds a bundled, static htslib
   depends_on "cmake" => :build
+  depends_on "pkg-config" => :build
   depends_on "rust" => :build
+  depends_on "openssl@3"
 
   uses_from_macos "bzip2"
   uses_from_macos "xz"
   uses_from_macos "zlib"
 
   def install
+    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@3")
     system "cargo", "install", *std_cargo_args
   end
 
