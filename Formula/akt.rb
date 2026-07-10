@@ -9,9 +9,6 @@ class Akt < Formula
   depends_on "eigen" => :build
   depends_on "htslib"
 
-  uses_from_macos "bzip2"
-  uses_from_macos "curl"
-  uses_from_macos "xz"
   uses_from_macos "zlib"
 
   def install
@@ -26,7 +23,6 @@ class Akt < Formula
               "IFLAGS = -I#{formula_opt_include("htslib")} -I#{eigen} -I./"
       s.gsub! "HTSLIB = $(HTSDIR)/libhts.a", "HTSLIB = -L#{formula_opt_lib("htslib")} -lhts"
       s.gsub! "akt: akt.cpp version.hh $(OBJS) $(HTSLIB)", "akt: akt.cpp version.hh $(OBJS)"
-      s.gsub! "LFLAGS = -lz -lm  -lpthread", "LFLAGS = -lz -lm -lpthread -lbz2 -llzma -lcurl"
       s.gsub! "-std=c++11", "-std=c++14"
     end
 
