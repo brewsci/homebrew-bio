@@ -6,6 +6,14 @@ class Slivar < Formula
   license "MIT"
   head "https://github.com/brentp/slivar.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any, arm64_tahoe:   "94d441351b055b6283909e90a87ec28c02d71d52558f9a33c6f24a564970b0ca"
+    sha256 cellar: :any, arm64_sequoia: "865b0bcbbd670e333b895a992d29e82f398553609aa1eae5a3aa668f682a16d4"
+    sha256 cellar: :any, arm64_sonoma:  "ef7fd1613c016e67aeb71508965cf04d1d8f9b0ba29c68fa8a12c1c3bdfac2b8"
+    sha256 cellar: :any, x86_64_linux:  "5235245930b919d1d98a60104ef47aac07be5ac8b468e5b8ca6e9f17656e12fc"
+  end
+
   depends_on "nim" => :build
   depends_on "htslib"
   depends_on "libdeflate"
