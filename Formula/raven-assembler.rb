@@ -17,7 +17,7 @@ class RavenAssembler < Formula
     # cereal (fetched via FetchContent) still declares cmake_minimum_required < 3.5
     ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
     mkdir "build" do
-      system "cmake", "..", *std_cmake_args
+      system "cmake", "..", "-DRAVEN_BUILD_EXE=ON", *std_cmake_args
       system "make"
       system "make", "install"
     end
