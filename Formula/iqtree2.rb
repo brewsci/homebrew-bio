@@ -25,10 +25,20 @@ class Iqtree2 < Formula
   depends_on "llvm" if OS.mac?
   uses_from_macos "zlib"
 
+  # The bundled cmaple submodule fetches GoogleTest via CMake FetchContent,
+  # which Homebrew blocks. Vendor the exact pinned source and point
+  # FetchContent at it so no network access happens during the build.
+  resource "googletest" do
+    url "https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.tar.gz"
+    sha256 "3dd5da4302b4069f90b2d58f48e6f3bc4c9938e024e7599241cafaebda476013"
+  end
+
   def install
+    (buildpath/"googletest").install resource("googletest")
     mkdir "build" do
       ENV.append_path "PREFIX_PATH", buildpath/"lsd2"
       system "cmake", "..", "-DEIGEN3_INCLUDE_DIR=#{formula_opt_include("eigen")}/eigen3",
+             "-DFETCHCONTENT_SOURCE_DIR_GOOGLETEST=#{buildpath}/googletest",
              *std_cmake_args
       system "make", "install"
     end
