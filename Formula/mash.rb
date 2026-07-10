@@ -7,6 +7,15 @@ class Mash < Formula
   license "BSD-3-Clause"
   head "https://github.com/marbl/Mash.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "ffa139172215d17096a1180601ee6a11092f576e77202b1116a1b2f1fb38c9d1"
+    sha256 cellar: :any, arm64_sequoia: "1a7d45e92cb4e4bccb72816b4e2e55f0f7b53a60826422ed7651739c64e96d66"
+    sha256 cellar: :any, arm64_sonoma:  "662a8306fe60d19984f3f2ed2f21253559206f629377ea99be7302825df95af4"
+    sha256 cellar: :any, x86_64_linux:  "866a60d8900de1fdcdf2f383dcf723b975598ed29461f873f31fba8b7073d29a"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
