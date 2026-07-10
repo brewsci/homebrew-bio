@@ -17,7 +17,7 @@ class Masurca < Formula
   depends_on :linux
   depends_on "parallel"
   depends_on "perl"
-  depends_on "zlib"
+  depends_on "zlib-ng-compat"
 
   def install
     ENV.append "CXXFLAGS", "-include cstdint" # newer GCC needs explicit <cstdint>
