@@ -6,6 +6,14 @@ class Akt < Formula
   license "GPL-3.0-only"
   head "https://github.com/Illumina/akt.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any, arm64_tahoe:   "70188dad2cb6a18979fae713bed7404479aa2bc46e056a38fbda905d4487bcc9"
+    sha256 cellar: :any, arm64_sequoia: "e1d50b63503a38ee707ada9262f9fe3594b44c766734291f6943e35d79a14461"
+    sha256 cellar: :any, arm64_sonoma:  "5fd17c4ad5c435f269d0384706b3628602eabc7d5703cd9a58562e848b5752f8"
+    sha256 cellar: :any, x86_64_linux:  "0a8351099a8a120fa65855fb150f66ae817abf31fda42d90de9b6b5fffccaedf"
+  end
+
   depends_on "eigen" => :build
   depends_on "htslib"
 
