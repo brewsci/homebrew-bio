@@ -14,11 +14,10 @@ class Openms < Formula
 
   depends_on "cmake" => :build
   depends_on "boost"
-  depends_on "coin-or-tools/coinor/cbc"
-  depends_on "coin-or-tools/coinor/cgl"
-  depends_on "coin-or-tools/coinor/clp"
-  depends_on "coin-or-tools/coinor/coinutils"
-  depends_on "coin-or-tools/coinor/osi"
+  depends_on "cbc"
+  depends_on "cgl"
+  depends_on "clp"
+  depends_on "coinutils"
   depends_on "doxygen"
   depends_on "eigen"
   depends_on "glpk"
@@ -26,6 +25,7 @@ class Openms < Formula
   depends_on "libomp"
   depends_on "libsvm"
   depends_on "libxcb" if OS.linux?
+  depends_on "osi"
   depends_on "qt"
   depends_on "sqlite" if OS.linux?
   depends_on "xcb-util-cursor" if OS.linux?
