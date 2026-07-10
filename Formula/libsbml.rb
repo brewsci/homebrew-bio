@@ -39,7 +39,10 @@ class Libsbml < Formula
       -DENABLE_RENDER=ON
     ]
     args << "-DLIBSBML_DEPENDENCY_DIR=#{HOMEBREW_PREFIX}"
-    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    # Pass an absolute CMAKE_INSTALL_LIBDIR: this version's include(GNUInstallDirs)
+    # re-types the variable as PATH, so a relative "lib" gets absolutized against
+    # the source dir and the libraries install outside the keg (empty lib/).
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args(install_libdir: lib)
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
