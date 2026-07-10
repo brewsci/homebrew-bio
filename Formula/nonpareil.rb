@@ -16,6 +16,7 @@ class Nonpareil < Formula
   end
 
   depends_on "r"
+  depends_on "zlib-ng-compat"
   depends_on "open-mpi" => :optional
 
   def install
