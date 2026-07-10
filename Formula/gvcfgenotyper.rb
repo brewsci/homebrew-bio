@@ -6,6 +6,14 @@ class Gvcfgenotyper < Formula
   license "Apache-2.0"
   head "https://github.com/Illumina/gvcfgenotyper.git", branch: "master"
 
+  bottle do
+    root_url "https://ghcr.io/v2/brewsci/bio"
+    sha256 cellar: :any, arm64_tahoe:   "f8546520de8e5d63846e5e71ea6d155a7c6927f848af9d15f096900783113f50"
+    sha256 cellar: :any, arm64_sequoia: "e3e224f683b4effab90202736de6aa7252b40648553687e8395d90931475311f"
+    sha256 cellar: :any, arm64_sonoma:  "3a0b00ce4c4ad2b8e05a8ad0f1248d9446d059e7c299066e05ca4ec5d6a2b03f"
+    sha256 cellar: :any, x86_64_linux:  "0c47a8eec0427cdfbc70d2c6b2d9af6dadcba386c440938c91156164f4abf75c"
+  end
+
   depends_on "htslib"
 
   uses_from_macos "zlib"
