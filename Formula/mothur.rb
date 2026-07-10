@@ -25,6 +25,10 @@ class Mothur < Formula
     # so headers such as mothurout.h are not found. Add -Isource explicitly.
     inreplace "Makefile", "CXXFLAGS += -I. $(subDirIncludes)",
                           "CXXFLAGS += -I. -Isource $(subDirIncludes)"
+    # boost_system has been header-only since Boost 1.87, so Homebrew's boost
+    # no longer builds libboost_system; drop it from the link line.
+    inreplace "Makefile", "-lboost_iostreams -lboost_system -lboost_filesystem -lz",
+                          "-lboost_iostreams -lboost_filesystem -lz"
     system "make", "USEBOOST=yes", "BOOST_LIBRARY_DIR=#{boost.opt_lib}", "BOOST_INCLUDE_DIR=#{boost.opt_include}"
     bin.install "mothur", "uchime"
   end
