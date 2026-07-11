@@ -12,12 +12,12 @@ class Masurca < Formula
   end
 
   depends_on "boost" => :build
+  depends_on "patchelf" => :build
   depends_on "bzip2"
   depends_on "jellyfish"
   depends_on :linux
   depends_on "parallel"
   depends_on "perl"
-  depends_on "zlib"
   # libz on Linux is provided by zlib-ng-compat; declare it directly so the
   # binary links the brewed libz.so.1 (not the host one) and it is not flagged
   # as an indirect-dependency linkage.
@@ -30,6 +30,20 @@ class Masurca < Formula
     inreplace "install.sh", "make -j $NUM_THREADS", "make"
     ENV["DEST"] = libexec
     system "./install.sh"
+
+    # The bundled Flye and global-1 tools link libz (minimap2's "LIBS=-lz",
+    # Flye's "LDFLAGS+=-lz") without an rpath, and global-1's libtool relink
+    # strips the one Homebrew injects. Their RUNPATH then omits the Homebrew
+    # prefix, so libz.so.1 resolves to the host /lib/x86_64-linux-gnu copy and
+    # trips the "Unwanted system libraries" audit. Retarget every installed ELF
+    # at the brewed zlib-ng-compat so linkage stays inside Homebrew.
+    zlib_rpath = formula_opt_lib("zlib-ng-compat")
+    Dir[libexec/"**/*"].each do |f|
+      next unless File.file?(f)
+      next if File.binread(f, 4) != "\x7fELF"
+
+      quiet_system "patchelf", "--add-rpath", zlib_rpath, f
+    end
 
     bin.install_symlink libexec/"bin/masurca"
     # v4 install.sh generates masurca_config_example.txt (was sr_config_example.txt)
