@@ -32,6 +32,7 @@ class Openms < Formula
   depends_on "xerces-c"
   depends_on "yaml-cpp"
   depends_on "zlib"
+  depends_on "zlib-ng-compat" if OS.linux?
 
   def install
     # Build OpenMS
