@@ -29,7 +29,24 @@ class Ntstat < Formula
       s.gsub! "find_program('python3-config')", "find_program('python3.13-config')"
     end
 
-    system "meson", "setup", "build", "--prefix", prefix
+    # argparse, indicators and tabulate are header-only libraries. Homebrew ships
+    # them with CMake configs only, and meson's dependency() lookup fails in the
+    # build sandbox (the pkg-config shim is disabled and indicators' CMake config
+    # errors out). Point the module builds at their headers directly instead.
+    header_only = {
+      "argparse"   => formula_opt_include("argparse"),
+      "indicators" => formula_opt_include("indicators"),
+      "tabulate"   => formula_opt_include("tabulate"),
+    }
+    inreplace Dir["src/modules/{filter,count}/meson.build"] do |s|
+      header_only.each do |name, inc|
+        s.gsub! "dependency('#{name}')", "declare_dependency(compile_args: ['-I#{inc}'])"
+      end
+    end
+
+    # Disable LTO: it makes meson probe for llvm-ar (absent), and is unnecessary
+    # for these Python extension modules.
+    system "meson", "setup", "build", "--prefix", prefix, "-Db_lto=false"
     system "meson", "install", "-C", "build"
 
     # The launcher imports its bundled extension modules (ntstat.filter, ...),
