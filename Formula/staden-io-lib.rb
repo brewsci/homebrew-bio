@@ -16,11 +16,11 @@ class StadenIoLib < Formula
   depends_on "htslib"
   depends_on "libdeflate"
   depends_on "xz"
+  depends_on "zlib-ng-compat"
   depends_on "zstd"
 
   uses_from_macos "bzip2"
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   resource "htscodecs" do
     url "https://github.com/samtools/htscodecs/archive/5aecc6e107db1c2ff59529a5aa034d28b799b7d1.tar.gz"
@@ -47,16 +47,17 @@ class StadenIoLib < Formula
 
   test do
     (testpath/"test.sam").write <<~EOS
-      @SQ  SN:xx  LN:30
-      a0  16  xx  4  1  10H  *  0  0  *  *
+      @SQ	SN:xx	LN:30
+      a0	16	xx	4	1	10H	*	0	0	*	*
     EOS
 
     (testpath/"test.c").write <<~EOS
       #include "io_lib/scram.h"
       int main(int argc, char** argv) {
-        cram_fd* cramfd = cram_io_open("test.sam","rc","rb");
-        if (CRAM_IO_SEEK(cramfd,0,SEEK_END) == 0) return 0;
-        else return 1;
+        scram_fd* fd = scram_open("test.sam", "r");
+        if (fd == NULL) return 1;
+        scram_close(fd);
+        return 0;
       }
     EOS
 
