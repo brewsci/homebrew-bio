@@ -13,11 +13,21 @@ class RavenAssembler < Formula
 
   depends_on "cmake" => :build
 
+  uses_from_macos "zlib"
+
+  # The raven binary links libz (via bioparser/racon); on Linux use the brewed
+  # zlib-ng-compat so linkage isn't flagged against the host system libz.
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
+
   def install
     # cereal (fetched via FetchContent) still declares cmake_minimum_required < 3.5
     ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
+    args = ["-DRAVEN_BUILD_EXE=ON"]
+    args << "-DZLIB_ROOT=#{formula_opt_prefix("zlib-ng-compat")}" if OS.linux?
     mkdir "build" do
-      system "cmake", "..", "-DRAVEN_BUILD_EXE=ON", *std_cmake_args
+      system "cmake", "..", *args, *std_cmake_args
       system "make"
       system "make", "install"
     end
