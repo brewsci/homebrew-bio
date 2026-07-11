@@ -36,14 +36,16 @@ class Portcullis < Formula
     sha256 "83a0b8e17c09f012090a50e1e97ae897300a72b35e0c86c0b53d3bd2ae86d8c6"
   end
 
-  # pandas 0.20.1 (and its matching python-dateutil/pytz/six pins) predates
-  # PEP 517 and needs pkg_resources/distutils, both gone from modern Python
-  # and setuptools, so its build fails on ubuntu-latest. Bumped to the same
-  # pandas/python-dateutil/pytz/six/tzdata combination already proven to
-  # build here in brewsci/bio/eastr.
+  # pandas 0.20.1 (the original pin) predates PEP 517 and needs
+  # pkg_resources/distutils, both gone from modern Python and setuptools.
+  # pandas 2.2.2 in turn fails to compile under Homebrew's default Python
+  # 3.14 because its pinned Cython 3.0.5 emits `[[maybe_unused]]` in the
+  # middle of decl-specifiers, which the newer GCC rejects. pandas 2.3.3 is
+  # the first release with Python 3.14 (cp314) support and an unbounded
+  # Cython pin, so build isolation pulls a Cython that compiles cleanly.
   resource "pandas" do
-    url "https://files.pythonhosted.org/packages/88/d9/ecf715f34c73ccb1d8ceb82fc01cd1028a65a5f6dbc57bfa6ea155119058/pandas-2.2.2.tar.gz"
-    sha256 "9e79019aba43cb4fda9e4d983f8e88ca0373adbb697ae9c6c43093218de28b54"
+    url "https://files.pythonhosted.org/packages/33/01/d40b85317f86cf08d853a4f495195c73815fdf205eef3993821720274518/pandas-2.3.3.tar.gz"
+    sha256 "e05e1af93b977f7eafa636d043f9f94c7ee3ac81af99c13508215942e64c993b"
   end
 
   resource "python-dateutil" do
