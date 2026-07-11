@@ -21,10 +21,12 @@ class Mothur < Formula
 
   def install
     boost = Formula["boost"]
-    # On Linux the Makefile's subdir-include computation omits source/ itself,
-    # so headers such as mothurout.h are not found. Add -Isource explicitly.
-    inreplace "Makefile", "CXXFLAGS += -I. $(subDirIncludes)",
-                          "CXXFLAGS += -I. -Isource $(subDirIncludes)"
+    # The Makefile's "subdirs" glob only matches source/*/ subdirectories, so
+    # source/ itself is dropped from both the include path and the object list.
+    # That loses the top-level sources defining main (mothur.cpp), Utils and
+    # MothurOut, breaking headers and the final link. Add source/ to subdirs.
+    inreplace "Makefile", "$(wildcard source/*/)",
+                          "$(wildcard source/ source/*/)"
     # boost_system has been header-only since Boost 1.87, so Homebrew's boost
     # no longer builds libboost_system; drop it from the link line.
     inreplace "Makefile", "-lboost_iostreams -lboost_system -lboost_filesystem -lz",
