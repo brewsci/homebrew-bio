@@ -35,6 +35,16 @@ class Iqtree2 < Formula
 
   def install
     (buildpath/"googletest").install resource("googletest")
+
+    # The bundled prebuilt libomp.a (libmac*/) is stale and lacks newer
+    # OpenMP runtime symbols (e.g. __kmpc_dispatch_deinit) that current
+    # clang emits for dynamic-schedule loops, breaking the arm64 link of
+    # decentTree. Drop it and link against Homebrew's up-to-date libomp.
+    if OS.mac?
+      rm_f Dir[buildpath/"libmac*/libomp.a"]
+      ENV.append "LDFLAGS", "-L#{formula_opt_lib("libomp")}"
+    end
+
     mkdir "build" do
       ENV.append_path "PREFIX_PATH", buildpath/"lsd2"
       system "cmake", "..", "-DEIGEN3_INCLUDE_DIR=#{formula_opt_include("eigen")}/eigen3",
