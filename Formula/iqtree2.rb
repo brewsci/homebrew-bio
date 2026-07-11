@@ -41,7 +41,7 @@ class Iqtree2 < Formula
     # clang emits for dynamic-schedule loops, breaking the arm64 link of
     # decentTree. Drop it and link against Homebrew's up-to-date libomp.
     if OS.mac?
-      rm_f Dir[buildpath/"libmac*/libomp.a"]
+      Dir[buildpath/"libmac*/libomp.a"].each { |f| rm f }
       ENV.append "LDFLAGS", "-L#{formula_opt_lib("libomp")}"
     end
 
