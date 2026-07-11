@@ -3,7 +3,7 @@ class Tigmint < Formula
 
   # cite Jackman_2018: "https://doi.org/10.1186/s12859-018-2425-6"
   desc "Correct misassemblies using linked or long reads"
-  homepage "https://bcgsc.github.io/tigmint/"
+  homepage "https://github.com/bcgsc/tigmint"
   url "https://github.com/bcgsc/tigmint/releases/download/v1.2.10/tigmint-1.2.10.tar.gz"
   sha256 "8e7b5d424ff69d5da7b117bef9996463b02205078ce0fb6e3074ca6c9933efa9"
   license "GPL-3.0-only"
@@ -17,10 +17,15 @@ class Tigmint < Formula
 
   depends_on "bedtools"
   depends_on "btllib"
+  depends_on "libdeflate"
   depends_on "minimap2"
   depends_on "numpy"
   depends_on "python@3.14"
   depends_on "samtools"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV.prepend_path "PATH", libexec/"bin"
