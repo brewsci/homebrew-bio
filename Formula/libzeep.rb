@@ -52,6 +52,13 @@ class Libzeep < Formula
       system "cmake", "--install", "build"
     end
 
+    # macOS 14's libc++ (Xcode 15) lacks P0960 parenthesized aggregate
+    # initialization in std::construct_at, so emplace_back on the aggregate
+    # lang_score fails to compile. Construct the element explicitly instead.
+    inreplace "src/request.cpp",
+              "scores.emplace_back(std::move(lang), std::move(region), score, loc);",
+              "scores.push_back(lang_score{ std::move(lang), std::move(region), score, loc });"
+
     # zeem and date are both discoverable via find_package now, so libzeep needs
     # no FetchContent. Build shared so the static zeem is absorbed into libzeep.
     system "cmake", "-S", ".", "-B", "build",
