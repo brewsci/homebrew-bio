@@ -32,6 +32,10 @@ class Foldseek < Formula
     # removed in CMake 4; allow the old policy version.
     ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
 
+    # CMake 4 no longer supports setting CMP0060 to OLD (hard error); the
+    # zlib static-build concern behind it does not apply to Homebrew builds.
+    inreplace "CMakeLists.txt", "cmake_policy(SET CMP0060 OLD)", "cmake_policy(SET CMP0060 NEW)"
+
     args = []
     if OS.mac?
       libomp = Formula["libomp"]
