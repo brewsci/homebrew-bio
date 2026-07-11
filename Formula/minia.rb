@@ -21,19 +21,20 @@ class Minia < Formula
     ENV.append "CXXFLAGS", "-include cstdint"
 
     if OS.linux?
-      # The bundled HDF5 bakes the full compiler path into bin/h5cc (via
-      # @_PKG_CONFIG_COMPILER@) and into a settings banner statically linked
-      # into bin/minia (via @CMAKE_C_COMPILER@/@CMAKE_CXX_COMPILER@). Under
-      # Homebrew's Linux superenv that path is the shims wrapper, which trips
-      # brew audit's "references to the Homebrew shims directory" check.
-      # Each template only holds some of these tokens, so tolerate misses.
-      templates = Dir["thirdparty/gatb-core/**/hdf5/config/cmake/libh5cc.in"] +
-                  Dir["thirdparty/gatb-core/**/hdf5/config/cmake/libhdf5.settings.cmake.in"]
-      inreplace templates do |s|
-        s.gsub! "@_PKG_CONFIG_COMPILER@", ENV.cc, audit_result: false
-        s.gsub! "@CMAKE_C_COMPILER@", ENV.cc, audit_result: false
-        s.gsub! "@CMAKE_CXX_COMPILER@", ENV.cxx, audit_result: false
+      # Homebrew's Linux superenv compiles through a shims wrapper. gatb-core
+      # and the bundled HDF5 bake that wrapper's path into compiler-banner
+      # strings compiled into bin/minia, and into the bin/h5cc wrapper script,
+      # which trips brew audit's "references to the Homebrew shims directory"
+      # check. Replace the compiler placeholders at their source before cmake.
+      inreplace Dir["src/build_info.hpp.in",
+                    "thirdparty/gatb-core/**/src/gatb/system/api/build_info.hpp.in"],
+                "${CMAKE_C_COMPILER}", "cc"
+      inreplace Dir["thirdparty/gatb-core/**/hdf5/config/cmake/libhdf5.settings.cmake.in"] do |s|
+        s.gsub! "@CMAKE_C_COMPILER@", "cc"
+        s.gsub! "@CMAKE_CXX_COMPILER@", "c++"
       end
+      inreplace Dir["thirdparty/gatb-core/**/hdf5/config/cmake/libh5cc.in"],
+                "@_PKG_CONFIG_COMPILER@", "cc"
     end
 
     mkdir "build" do
