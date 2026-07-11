@@ -27,10 +27,13 @@ class K8 < Formula
     exe = OS.mac? ? "k8-#{Hardware::CPU.arch}-Darwin" : "k8-#{Hardware::CPU.arch}-Linux"
     bin.install exe => "k8"
     if OS.linux?
+      # The prebuilt binary is NEEDED libz.so.1; point its rpath at the
+      # keg-only zlib-ng-compat lib so `brew linkage --test` resolves the
+      # brewed libz instead of the host's /lib/x86_64-linux-gnu/libz.so.1.
       system "patchelf",
-        "--set-interpreter", HOMEBREW_PREFIX/"lib/ld.so",
-        "--set-rpath", HOMEBREW_PREFIX/"lib",
-        bin/"k8"
+             "--set-interpreter", HOMEBREW_PREFIX/"lib/ld.so",
+             "--set-rpath", "#{formula_opt_lib("zlib-ng-compat")}:#{HOMEBREW_PREFIX}/lib",
+             bin/"k8"
     end
     pkgshare.install "scripts/k8.js"
   end
