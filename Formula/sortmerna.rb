@@ -47,6 +47,16 @@ class Sortmerna < Formula
     inreplace ["CMakeLists.txt", "src/sortmerna/CMakeLists.txt"],
               "set(CMAKE_CXX_STANDARD 17)", "set(CMAKE_CXX_STANDARD 20)"
 
+    # sortmerna 6.0.2 targets rocksdb 7.10.2, but Homebrew ships rocksdb >= 9,
+    # which removed the raw-pointer `DB::Open(Options, name, DB**)` overload in
+    # favour of `DB::Open(Options, name, std::unique_ptr<DB>*)`. Adapt the single
+    # call site: open into a unique_ptr, then release into the raw member.
+    inreplace "src/sortmerna/kvdb.cpp",
+              "rocksdb::Status s = rocksdb::DB::Open(options, kvdbPath, &kvdb);",
+              "std::unique_ptr<rocksdb::DB> kvdb_uptr; " \
+              "rocksdb::Status s = rocksdb::DB::Open(options, kvdbPath, &kvdb_uptr); " \
+              "kvdb = kvdb_uptr.release();"
+
     args = %W[
       -DWITH_TESTS=OFF
       -DROCKSDB_USE_STATIC_LIBS=ON
