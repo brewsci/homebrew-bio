@@ -20,15 +20,20 @@ class Bcalm < Formula
   def install
     # bcalm and its gatb-core submodule request an ancient CMake policy version
     ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
+
+    # gatb-core and its bundled HDF5 bake the compiler path (Homebrew's shim
+    # wrapper on Linux) into bin/bcalm via generated build banners, which trips
+    # brew audit's check for references to the Homebrew shims directory. Drop
+    # the compiler-path substitutions from the source templates so nothing
+    # references the shim directory.
+    inreplace "gatb-core/gatb-core/src/gatb/system/api/build_info.hpp.in",
+              "${CMAKE_C_COMPILER}", "cc"
+    hdf5_settings = "gatb-core/gatb-core/thirdparty/hdf5/config/cmake/libhdf5.settings.cmake.in"
+    inreplace hdf5_settings, "@CMAKE_C_COMPILER@", "cc"
+    inreplace hdf5_settings, "@CMAKE_CXX_COMPILER@", "c++"
+
     mkdir "build" do
       system "cmake", "..", *std_cmake_args
-      if OS.linux?
-        # gatb-core bakes CMAKE_C_COMPILER (Homebrew's shim wrapper on Linux)
-        # into bin/bcalm via a generated build_info.hpp, which trips brew
-        # audit's check for references to the Homebrew shims directory.
-        inreplace "ext/gatb-core/include/gatb/system/api/build_info.hpp",
-                  HOMEBREW_SHIMS_PATH.to_s, "/usr/bin"
-      end
       system "make"
       bin.install "bcalm"
     end
