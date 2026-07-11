@@ -17,6 +17,10 @@ class Masurca < Formula
   depends_on :linux
   depends_on "parallel"
   depends_on "perl"
+  depends_on "zlib"
+  # libz on Linux is provided by zlib-ng-compat; declare it directly so the
+  # binary links the brewed libz.so.1 (not the host one) and it is not flagged
+  # as an indirect-dependency linkage.
   depends_on "zlib-ng-compat"
 
   def install
