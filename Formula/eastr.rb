@@ -89,9 +89,13 @@ class Eastr < Formula
         s.gsub! "add_dependencies(junction_extractor htslib)", "# add_dependencies(junction_extractor htslib)"
       end
       inreplace ["src/GSam.h", "src/tmerge.h"], "htslib/htslib", "htslib"
-      system "cmake", ".", *std_cmake_args
-      system "make"
-      bin.install "vacuum", "junction_extractor"
+      # Build out-of-source: setup.py's CMake extension reconfigures utils/ during
+      # the pip install below and fails if an in-source CMakeCache.txt is left here.
+      mkdir "build" do
+        system "cmake", "..", *std_cmake_args
+        system "make"
+        bin.install "vacuum", "junction_extractor"
+      end
     end
     # As of 1.1.2 upstream moved to a src/eastr layout and no longer uses pkg_resources
     virtualenv_install_with_resources
