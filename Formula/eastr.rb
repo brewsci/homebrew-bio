@@ -60,8 +60,8 @@ class Eastr < Formula
   end
 
   resource "pysam" do
-    url "https://files.pythonhosted.org/packages/a6/bc/e0a79d74137643940f5406121039d1272f29f55c5330e7b43484b2259da5/pysam-0.22.1.tar.gz"
-    sha256 "18a0b97be95bd71e584de698441c46651cdff378db1c9a4fb3f541e560253b22"
+    url "https://files.pythonhosted.org/packages/7c/2b/1cf19890a0e4c73ad2672ce7eb485606c4bd2846eef2d892c078ab193c92/pysam-0.23.3.tar.gz"
+    sha256 "9ebcb1f004b296fd139b103ec6fd7e415e80f89f194eb7d0d972ac6d11bbaf24"
   end
 
   resource "pytz" do
