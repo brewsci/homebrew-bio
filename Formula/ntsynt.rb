@@ -338,7 +338,12 @@ class Ntsynt < Formula
 
   def install
     venv = virtualenv_create(libexec, python3)
-    venv.pip_install resources
+    # pybedtools ships a legacy setup.py that imports pkg_resources, which was
+    # removed in setuptools >= 82. Install the other resources first (pinning
+    # setuptools 81), then build pybedtools with build isolation disabled so it
+    # uses the venv's pinned setuptools instead of fetching the latest.
+    venv.pip_install resources.reject { |r| r.name == "pybedtools" }
+    venv.pip_install resource("pybedtools"), build_isolation: false
     # Remove the bundled CBC solver (Ref: homebrew-core/Formula/snakemake.rb)
     rm_r(venv.site_packages/"pulp/solverdir/cbc")
     # Use venv's python3 and snakemake
