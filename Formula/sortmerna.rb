@@ -40,6 +40,13 @@ class Sortmerna < Formula
     (buildpath/"3rdparty/bbhash").install resource("bbhash")
     (buildpath/"3rdparty/indexed_bzip2").install resource("indexed_bzip2")
 
+    # rocksdb's public headers (compression_type.h) use C++20 features such as
+    # defaulted operator==, so sortmerna must compile as C++20. The CMakeLists
+    # files hardcode `set(CMAKE_CXX_STANDARD 17)`, which shadows a -D flag, so
+    # bump the sources directly.
+    inreplace ["CMakeLists.txt", "src/sortmerna/CMakeLists.txt"],
+              "set(CMAKE_CXX_STANDARD 17)", "set(CMAKE_CXX_STANDARD 20)"
+
     args = %W[
       -DWITH_TESTS=OFF
       -DROCKSDB_USE_STATIC_LIBS=ON
