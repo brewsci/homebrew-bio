@@ -26,6 +26,7 @@ class Ntedit < Formula
   depends_on "brewsci/bio/btllib"
   depends_on "brewsci/bio/ntcard"
   depends_on "brewsci/bio/nthits"
+  depends_on "brewsci/bio/ntstat"
   depends_on "python@3.13"
   depends_on "snakemake"
 
