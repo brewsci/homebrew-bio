@@ -27,6 +27,7 @@ class Openms < Formula
   depends_on "libxcb" if OS.linux?
   depends_on "osi"
   depends_on "qt"
+  depends_on "qtwebengine"
   depends_on "sqlite" if OS.linux?
   depends_on "xcb-util-cursor" if OS.linux?
   depends_on "xerces-c"
