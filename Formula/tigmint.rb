@@ -24,6 +24,7 @@ class Tigmint < Formula
   depends_on "samtools"
 
   on_linux do
+    depends_on "xz"
     depends_on "zlib-ng-compat"
   end
 
