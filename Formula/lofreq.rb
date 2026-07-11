@@ -14,6 +14,9 @@ class Lofreq < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
+  # setuptools provides the distutils shim removed from Python 3.12+ stdlib,
+  # needed by src/tools/setup.py ("from distutils.core import setup").
+  depends_on "python-setuptools" => :build
   depends_on "htslib"
   depends_on "python"
 
