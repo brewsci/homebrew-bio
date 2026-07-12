@@ -1,43 +1,71 @@
 class Libzeep < Formula
   desc "Web application framework written in C++"
   homepage "https://github.com/mhekkel/libzeep"
-  url "https://github.com/mhekkel/libzeep/archive/refs/tags/v6.0.14.tar.gz"
-  sha256 "8e2e4bed9be06ebd69414bd1f7df48bac56154c2284f5137fe749ca1fa90d310"
+  url "https://github.com/mhekkel/libzeep/archive/refs/tags/v7.3.2.tar.gz"
+  sha256 "e794589ef8aad5bd4d7bf674ca0dfa2a4027b3bcc966496490ba18d8908cd080"
   license "BSL-1.0"
   head "https://github.com/mhekkel/libzeep.git", branch: "trunk"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2a5d0bc040b5bcfdf3d6e48d06e3f24167c8303e63f40423adc4c6d2a5657b5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e589c65dd923914def1bca945ab595b10bb94b0e0afede7878ae2111c0075bd"
-    sha256 cellar: :any_skip_relocation, ventura:       "d3c1d42711c371aa895a2d1279e864242f65a8ceddf795d781f82b4b954052be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afb6e8c7475e6582a18fa7ff983964ef4e9e804344926c3ca09c48edb35eb746"
+    sha256 cellar: :any, arm64_tahoe:   "5c3bfad7ceea4fbead888052d2f758396f4307fb02d6b3143664ed17cdb1c6d1"
+    sha256 cellar: :any, arm64_sequoia: "47be1e0dc66db0a591ed00b3e34f15c18c93a33223b2f56f343773edc54df822"
+    sha256 cellar: :any, arm64_sonoma:  "d81e6a2b9b9723209c172606949693f94ec1339e49ee4f4e4cd007020bc27460"
+    sha256 cellar: :any, x86_64_linux:  "cf12be8a2e080638eec2125ea31a318da4e7daee47cd3dde12f16fc020b1ea07"
   end
 
   depends_on "cmake" => :build
   depends_on "boost"
   depends_on "howard-hinnant-date"
 
-  resource "libmcfp" do
-    url "https://github.com/mhekkel/libmcfp/archive/refs/tags/v1.3.3.tar.gz"
-    sha256 "d35e83e660c3cb443d20246fea39e78d2a11faebe3205ab838614f0280c308d0"
+  # zeem is a required dependency of libzeep 7.3.x and has no Homebrew formula,
+  # so build it from source and bundle it into the keg.
+  resource "zeem" do
+    url "https://github.com/mhekkel/zeem/archive/refs/tags/v2.1.1.tar.gz"
+    sha256 "4321aecbdd97f650e3cba062a2ce4f61c4b86f7eaa1d13601638d0174f97e9d3"
+  end
+
+  # zeem fetches fast_float via CMake FetchContent; provide the source locally
+  # so no network access is required during the build.
+  resource "fast_float" do
+    url "https://github.com/fastfloat/fast_float/archive/refs/tags/v8.0.2.tar.gz"
+    sha256 "e14a33089712b681d74d94e2a11362643bd7d769ae8f7e7caefe955f57f7eacd"
   end
 
   def install
-    resource("libmcfp").stage do
+    fast_float_source = buildpath/"fast_float-src"
+    resource("fast_float").stage(fast_float_source)
+
+    # Build and install the bundled zeem dependency. It uses Howard Hinnant's
+    # date (found via find_package) and fast_float (provided locally).
+    # HOMEBREW_ALLOW_FETCHCONTENT lets CPM consume the local fast_float source
+    # instead of downloading it.
+    resource("zeem").stage do
       system "cmake", "-S", ".", "-B", "build",
-                      *std_cmake_args(install_prefix: prefix/"libmcfp")
+             "-DHOMEBREW_ALLOW_FETCHCONTENT=ON",
+             "-DCPM_fast_float_SOURCE=#{fast_float_source}",
+             "-DZEEM_BUILD_EXAMPLES=OFF",
+             "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
+             *std_cmake_args
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
     end
-    inreplace "CMakeLists.txt", "date 3.0.1 QUIET NAMES date", "date 3.0.0 REQUIRED NAMES date"
-    date_cmake_prefix = formula_opt_lib("howard-hinnant-date")/"cmake"
+
+    # macOS 14's libc++ (Xcode 15) lacks P0960 parenthesized aggregate
+    # initialization in std::construct_at, so emplace_back on the aggregate
+    # lang_score fails to compile. Construct the element explicitly instead.
+    inreplace "src/request.cpp",
+              "scores.emplace_back(std::move(lang), std::move(region), score, loc);",
+              "scores.push_back(lang_score{ std::move(lang), std::move(region), score, loc });"
+
+    # zeem and date are both discoverable via find_package now, so libzeep needs
+    # no FetchContent. Build shared so the static zeem is absorbed into libzeep.
     system "cmake", "-S", ".", "-B", "build",
-                  "-Dlibmcfp_DIR=#{prefix/"libmcfp/lib/cmake/libmcfp"}",
-                  "-DCMAKE_MODULE_PATH=#{date_cmake_prefix}",
-                  "-DCMAKE_BUILD_TYPE=Release",
-                  *std_cmake_args
+           "-DBUILD_SHARED_LIBS=ON",
+           "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
+           "-DZEEP_BUILD_EXAMPLES=OFF",
+           "-DCMAKE_PREFIX_PATH=#{prefix}",
+           *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
@@ -118,9 +146,10 @@ class Libzeep < Formula
       }
     EOS
     system ENV.cxx, "test.cpp", "-o", "test",
-                    "-std=c++17", "-I#{include}",
-                    "-I#{formula_opt_include("boost")}",
-                    "-L#{lib}", "-lzeep"
+           "-std=c++20", "-I#{include}",
+           "-I#{formula_opt_include("boost")}",
+           "-I#{formula_opt_include("howard-hinnant-date")}",
+           "-L#{lib}", "-lzeep"
     assert_match "server is not running", shell_output("./test status 2>&1", 1)
   end
 end
