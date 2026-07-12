@@ -9,8 +9,10 @@ class Mothur < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, catalina:     "c620df4847160e97694e4871c6b7b856262e07f72a1f36a78ef39cd2c1dc2032"
-    sha256 cellar: :any, x86_64_linux: "890a3599359b95cebf84704a746e57c14cad3a3bedd682f7fc6d013034b00497"
+    sha256 cellar: :any, arm64_tahoe:   "bcfbcb706621e745061a2165f4ac380148f78d5f6a349e3a04e6b428301d9f10"
+    sha256 cellar: :any, arm64_sequoia: "1f90df7efcdb572b0b458a9c8e4b93ad0b830813d7f0d2886fedb03c4a7d5482"
+    sha256 cellar: :any, arm64_sonoma:  "40b567805e99e616a08400708221a0f523b9d62192c7d8d3de438bf40b80a646"
+    sha256 cellar: :any, x86_64_linux:  "ccab1b715aea7614f1f32278922dd76659861baf393a0b0420936ece716fc932"
   end
 
   depends_on "boost"
