@@ -7,8 +7,10 @@ class RavenAssembler < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, sierra:       "a2c5e6443f5f5199de1124cad4a2a6198cbb9501c2b4d5b26f1d84b6204e1e28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "848aa58e9977cc568fb90aa73439e1b1706c165fc6e4a692b472c1ab3eee385b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "86b200972144ef249645fdb53b20875da2e0b7cd328f71edd18da8c194b92e62"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "20653812b4be84396ba30805921e79ee1011bbeae48f0a7434412dd81ac617e6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d6343f43ce0e8f44192bbabd47b44b323c40913b80c64a91cdbcf2898a2f0247"
+    sha256 cellar: :any,                 x86_64_linux:  "1469e8fd454fe95ee94b365597ee136769a6bfb512b0c5c5877d60cb201e6174"
   end
 
   depends_on "cmake" => :build
