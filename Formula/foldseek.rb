@@ -10,11 +10,10 @@ class Foldseek < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0dd412d775cf30c54a10660d34bdde7d7831f2eae75265a8b223299f8e9f47ff"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2fa969cf0115606a6732288a269e94ee2ec883081223a21a7f0792c58c67c1a8"
-    sha256 cellar: :any_skip_relocation, ventura:       "d06bb40102fdb91449b6782f00f2f312f1fbda6206942376acca1d577886ff51"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f4e029553c2dccf2d9a44d459a188c7501ef4f5d7406adb49573cac546f92fb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "218a8174a6a0c47b8bf92d50e49e20531ac49adb59a10521a7b7885665b4d8cd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22f58712af01d0b387c257d9f8524af8ae6250f4a70dad4e58fd5911c113897e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d23d2054d1ba68a32c4e07988fa16b8f1f7d2b7cd1e533569ac7089d6ee64cd1"
+    sha256 cellar: :any,                 x86_64_linux:  "18fb78c11fb7b279a4eee326a5070eb90dde3781f93c3e26a8b0c8b3bc3c6ab5"
   end
 
   depends_on "cmake" => [:build, :test]
