@@ -2,10 +2,10 @@ class Mothur < Formula
   # cite Schloss_2009: "https://doi.org/10.1128/AEM.01541-09"
   desc "16s analysis software"
   homepage "https://mothur.org/"
-  url "https://github.com/mothur/mothur/archive/refs/tags/v1.44.3.tar.gz"
-  sha256 "a9825ccbb7f60b527f63c16e07f9dd45373bdc8ee65c8f2f0b45f8b2113b2e6f"
+  url "https://github.com/mothur/mothur/archive/refs/tags/v1.48.5.tar.gz"
+  sha256 "d6bbd172cefdfe468d654532e620831e5e9a6814c751361034027aeb1cbccd27"
   license "GPL-3.0"
-  head "https://github.com/mothur/mothur.git"
+  head "https://github.com/mothur/mothur.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -21,6 +21,16 @@ class Mothur < Formula
 
   def install
     boost = Formula["boost"]
+    # The Makefile's "subdirs" glob only matches source/*/ subdirectories, so
+    # source/ itself is dropped from both the include path and the object list.
+    # That loses the top-level sources defining main (mothur.cpp), Utils and
+    # MothurOut, breaking headers and the final link. Add source/ to subdirs.
+    inreplace "Makefile", "$(wildcard source/*/)",
+                          "$(wildcard source/ source/*/)"
+    # boost_system has been header-only since Boost 1.87, so Homebrew's boost
+    # no longer builds libboost_system; drop it from the link line.
+    inreplace "Makefile", "-lboost_iostreams -lboost_system -lboost_filesystem -lz",
+                          "-lboost_iostreams -lboost_filesystem -lz"
     system "make", "USEBOOST=yes", "BOOST_LIBRARY_DIR=#{boost.opt_lib}", "BOOST_INCLUDE_DIR=#{boost.opt_include}"
     bin.install "mothur", "uchime"
   end
