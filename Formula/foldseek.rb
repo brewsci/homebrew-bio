@@ -28,12 +28,7 @@ class Foldseek < Formula
   end
 
   def install
-    # foldseek bundles mmseqs which requires cmake_minimum_required < 3.5,
-    # removed in CMake 4; allow the old policy version.
     ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
-
-    # CMake 4 no longer supports setting CMP0060 to OLD (hard error); the
-    # zlib static-build concern behind it does not apply to Homebrew builds.
     inreplace "CMakeLists.txt", "cmake_policy(SET CMP0060 OLD)", "cmake_policy(SET CMP0060 NEW)"
 
     args = []
@@ -60,8 +55,6 @@ class Foldseek < Formula
     end
     resource("homebrew-testdata").stage testpath/"example"
     system bin/"foldseek", "easy-search", "example/d1asha_", "example", "aln", "tmpFolder"
-    # A self vs self search yields a perfect hit; the evalue/bits columns vary
-    # across architectures (SIMD/floating point), so only assert stable columns.
     assert_match(/^d1asha_\td1asha_\t1\.000\t147\t0\t0\t1\t147\t1\t147\t/, File.read("aln"))
   end
 end
