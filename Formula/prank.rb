@@ -2,7 +2,6 @@ class Prank < Formula
   desc "Multiple alignment for DNA, codon and amino-acid sequences"
   homepage "https://ariloytynoja.github.io/prank-msa/"
   url "https://github.com/ariloytynoja/prank-msa/raw/v.251117/binaries/prank.source.251117.tgz"
-  version "251117"
   sha256 "d8a2165b001d89506e75bb28c1a3fbdc39e32b06ceb865da2e6fffe976844c95"
   head "https://github.com/ariloytynoja/prank-msa.git", branch: "master"
 
