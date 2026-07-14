@@ -32,6 +32,9 @@ class Prank < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/prank -help 2>&1")
+    # Upstream ships an inconsistent binary version inside the dated tarball
+    # (the 251117 archive reports "v.250331"), so assert on stable help text
+    # rather than the formula version.
+    assert_match "Minimal usage", shell_output("#{bin}/prank -help 2>&1")
   end
 end

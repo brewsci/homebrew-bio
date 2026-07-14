@@ -2,17 +2,15 @@ class FinchRs < Formula
   # Bovee_2018: "https://doi.org/10.21105/joss.00505"
   desc "Genomic minhashing implementation in Rust"
   homepage "https://github.com/onecodex/finch-rs"
+  # Build the Rust source instead of the prebuilt release binaries: upstream only
+  # ever shipped x86_64 finch-mac64/finch-linux64 assets, which fail the
+  # non-native-architecture audit on Apple Silicon runners.
+  url "https://github.com/onecodex/finch-rs/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "bca7ce13bd588656f47316eb8bf4ee10321261f412ead339105713a7d154f438"
   license "MIT"
-  if OS.mac?
-    url "https://github.com/onecodex/finch-rs/releases/download/v0.3.0/finch-mac64-v0.3.0.zip"
-    sha256 "06535290f528901868f566beadce71ae89d3b3e238b805317318e6109f756fe0"
-  else
-    url "https://github.com/onecodex/finch-rs/releases/download/v0.3.0/finch-linux64-v0.3.0.gz"
-    sha256 "d6c41f123bfa4d58028cd2ef9d9981cdd3ed5568f02f53c34e8be602224f7f1b"
-  end
 
-  # Upstream no longer ships standalone finch-mac64/finch-linux64 binaries;
-  # newer release assets are Python wheels, so bumps need manual rework.
+  # Newer releases ship only Python wheels (no standalone Rust source bumps we
+  # can track cleanly), so pin 0.3.0 and skip autobump.
   livecheck do
     skip "upstream now ships Python wheels instead of standalone binaries"
   end
@@ -23,18 +21,11 @@ class FinchRs < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "b9e2bc391659d9e97baec72828d5c5d90ec5c991a3a6a0d80f17ec2b52732240"
   end
 
-  depends_on "patchelf" => :build unless OS.mac?
+  depends_on "rust" => :build
   depends_on "xz"
 
   def install
-    exe = "finch"
-    bin.install exe
-    if OS.linux?
-      system "patchelf",
-        "--set-interpreter", HOMEBREW_PREFIX/"lib/ld.so",
-        "--set-rpath", HOMEBREW_PREFIX/"lib",
-        bin/exe
-    end
+    system "cargo", "install", *std_cargo_args
   end
 
   test do

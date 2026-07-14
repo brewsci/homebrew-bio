@@ -42,7 +42,12 @@ class BoostAT186 < Formula
   depends_on "zstd"
 
   uses_from_macos "bzip2"
-  uses_from_macos "zlib"
+
+  on_linux do
+    # boost links libz from zlib-ng-compat (the tap's zlib provider); declare it
+    # directly so `brew linkage` doesn't flag it as an indirect dependency.
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     # Force boost to compile with the desired compiler

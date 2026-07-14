@@ -74,6 +74,13 @@ class Circlator < Formula
     sha256 "18a0b97be95bd71e584de698441c46651cdff378db1c9a4fb3f541e560253b22"
   end
 
+  # circlator imports pkg_resources at runtime; modern Python venvs no longer
+  # seed setuptools, so vendor it (pinned <81, which still ships pkg_resources).
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
+  end
+
   def install
     virtualenv_install_with_resources
   end

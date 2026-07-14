@@ -34,7 +34,10 @@ class Rdock < Formula
   end
 
   def install
-    ENV["CXX"] = formula_opt_bin("gcc")/"g++-14"
+    # Track the current gcc formula's major version instead of hardcoding
+    # g++-14, which disappears whenever the gcc dependency is bumped.
+    gcc_major = Formula["gcc"].version.major
+    ENV["CXX"] = formula_opt_bin("gcc")/"g++-#{gcc_major}"
 
     inreplace "Makefile" do |s|
       s.gsub!(/INCLUDE\s*:=/, "INCLUDE := -I#{formula_opt_include("popt")} ")
@@ -42,7 +45,7 @@ class Rdock < Formula
     end
 
     ENV["CXX_EXTRA_FLAGS"] = "-I#{formula_opt_include("popt")}"
-    ENV.append "LDFLAGS", "-Wl,-rpath,#{formula_opt_lib("gcc")}/gcc/14" if OS.mac?
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{formula_opt_lib("gcc")}/gcc/#{gcc_major}" if OS.mac?
     (share/"lib").mkpath
     cp_r Dir["lib/*"], share/"lib"
     rm Dir["lib/*"]

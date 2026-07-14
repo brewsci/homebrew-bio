@@ -37,11 +37,15 @@ class Sga < Formula
   def install
     cd "src" do
       system "./autogen.sh"
+      # sga's AC_CHECK_HEADERS([google/sparse_hash_set]) probes with the C
+      # compiler, but the header transitively includes <algorithm> and only
+      # compiles as C++; prime the cache var so the (correct) C++ build proceeds.
       system "./configure",
         "--disable-dependency-tracking",
         "--prefix=#{prefix}",
         "--with-bamtools=#{Formula["bamtools"].prefix}",
-        "--with-sparsehash=#{Formula["google-sparsehash"].prefix}"
+        "--with-sparsehash=#{Formula["google-sparsehash"].prefix}",
+        "ac_cv_header_google_sparse_hash_set=yes"
       system "make", "install"
       bin.install Dir["bin/*"] - Dir["bin/Makefile*"]
     end

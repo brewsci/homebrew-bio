@@ -3,7 +3,10 @@ class Plink2 < Formula
   desc "Analyze genotype and phenotype data"
   homepage "https://www.cog-genomics.org/plink2"
   url "https://github.com/chrchang/plink-ng/archive/refs/tags/v2.0.0-a.7.1.tar.gz"
-  version "2.0.0-a.7.1"
+  # Upstream moved from 2.00aX.Y to SemVer v2.0.0-a.X tags. Homebrew's comparator
+  # ranks "2.0.0-a.7.1" BELOW the old "2.00a5.12" (a version decrease), so map the
+  # new tag back into the old aX.Y scheme to keep versions monotonically increasing.
+  version "2.00a7.1"
   sha256 "19344fa5ed9fac92241c23d5e2b5f73059c8880f8216b590187b7ea5caf79551"
   head "https://github.com/chrchang/plink-ng.git", branch: "master"
 

@@ -23,9 +23,11 @@ class Oases < Formula
 
   uses_from_macos "zlib"
 
+  # The upstream ebi.ac.uk velvet tarball now 500s; use the author's GitHub
+  # mirror of the same 1.2.10 source instead.
   resource "velvet" do
-    url "https://www.ebi.ac.uk/~zerbino/velvet/velvet_1.2.10.tgz"
-    sha256 "884dd488c2d12f1f89cdc530a266af5d3106965f21ab9149e8cb5c633c977640"
+    url "https://github.com/dzerbino/velvet/archive/refs/tags/v1.2.10.tar.gz"
+    sha256 "4615e52dc2e8a05f1009daf2c0978c218860be364afa044f73677cd298f10c7b"
   end
 
   def install

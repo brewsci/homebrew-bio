@@ -58,6 +58,13 @@ class Iva < Formula
     sha256 "dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb"
   end
 
+  # Old resources (Cython 0.29, pysam 0.19) build against pkg_resources, which
+  # modern Python venvs no longer seed; vendor setuptools (<81) to provide it.
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/18/5d/3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fca/setuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
+  end
+
   def install
     virtualenv_install_with_resources
   end
