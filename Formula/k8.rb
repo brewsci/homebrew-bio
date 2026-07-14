@@ -28,14 +28,16 @@ class K8 < Formula
     bin.install exe => "k8"
     if OS.linux?
       # The prebuilt binary is NEEDED libz.so.1. Symlink the brewed
-      # zlib-ng-compat copy into our own keg and point the rpath at it with a
-      # relative $ORIGIN entry. This satisfies `brew linkage --test` without
-      # leaving any HOMEBREW_PREFIX path in the ELF, so `brew bottle` skips its
-      # rpath relocation entirely. That relocation runs the vendored
-      # patchelf.rb, which crashes (split_index) on this binary's segment
-      # layout; every absolute-rpath variant hit that bug.
-      lib.install_symlink formula_opt_lib("zlib-ng-compat")/"libz.so.1"
-      system "patchelf", "--set-rpath", "$ORIGIN/../lib", bin/"k8"
+      # zlib-ng-compat copy into libexec (which, unlike lib, is not linked into
+      # the shared prefix, so it cannot collide with zlib-ng-compat's own
+      # libz.so.1) and point the rpath at it with a relative $ORIGIN entry.
+      # This satisfies `brew linkage --test` without leaving any
+      # HOMEBREW_PREFIX path in the ELF, so `brew bottle` skips its rpath
+      # relocation entirely. That relocation runs the vendored patchelf.rb,
+      # which crashes (split_index) on this binary's segment layout; every
+      # absolute-rpath variant hit that bug.
+      (libexec/"lib").install_symlink formula_opt_lib("zlib-ng-compat")/"libz.so.1"
+      system "patchelf", "--set-rpath", "$ORIGIN/../libexec/lib", bin/"k8"
     end
     pkgshare.install "scripts/k8.js"
   end
