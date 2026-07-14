@@ -37,16 +37,20 @@ class Sga < Formula
   def install
     cd "src" do
       system "./autogen.sh"
-      # sga probes google/sparse_hash_set and api/BamReader.h with AC_CHECK_HEADERS,
-      # which uses the C compiler; both are C++-only headers (they include
-      # <algorithm>), so the probes fail even though the paths are correct. Prime
-      # the cache vars so the (correct) C++ build, which does find them, proceeds.
+      # sga probes google/sparse_hash_{set,map} and api/BamReader.h with
+      # AC_CHECK_HEADERS, which uses the C compiler; all are C++-only headers
+      # (they include <algorithm>), so the probes fail even though the paths are
+      # correct. In particular the failing sparse_hash_map probe leaves
+      # HAVE_GOOGLE_SPARSE_HASH_MAP undefined, tripping HashMap.h's `#error The
+      # google sparse hash is required`. Prime the cache vars so the (correct)
+      # C++ build, which does find them, proceeds.
       system "./configure",
         "--disable-dependency-tracking",
         "--prefix=#{prefix}",
         "--with-bamtools=#{Formula["bamtools"].prefix}",
         "--with-sparsehash=#{Formula["google-sparsehash"].prefix}",
         "ac_cv_header_google_sparse_hash_set=yes",
+        "ac_cv_header_google_sparse_hash_map=yes",
         "ac_cv_header_api_BamReader_h=yes"
       system "make", "install"
       bin.install Dir["bin/*"] - Dir["bin/Makefile*"]

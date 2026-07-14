@@ -23,6 +23,9 @@ class Iva < Formula
 
   depends_on "brewsci/bio/kmc"
   depends_on "brewsci/bio/mummer"
+  # iva's setup.py aborts the build unless smalt is on PATH (iva uses it as a
+  # read mapper), and it was missing from the dependency list.
+  depends_on "brewsci/bio/smalt"
   depends_on "libdeflate"
   depends_on "numpy"
   depends_on "python@3.10"

@@ -24,7 +24,12 @@ class Plink2 < Formula
 
   depends_on "openblas"
   depends_on "zstd"
-  uses_from_macos "zlib"
+
+  on_linux do
+    # plink2 links libz, provided by the tap's zlib-ng-compat on Linux; declare
+    # it directly so `brew linkage --test` doesn't flag it as indirect.
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     cd "1.9" do
@@ -49,7 +54,9 @@ class Plink2 < Formula
   end
 
   test do
-    system "#{bin}/plink2", "--dummy", "513", "1423", "0.02", "--out", "dummy_cc1"
+    # --threads 1: the Linux CI sandbox limits thread creation, so plink2's
+    # default (one thread per core) aborts with "Failed to create thread".
+    system "#{bin}/plink2", "--dummy", "513", "1423", "0.02", "--threads", "1", "--out", "dummy_cc1"
     assert_path_exists testpath/"dummy_cc1.pvar"
   end
 end

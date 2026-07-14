@@ -36,6 +36,12 @@ class Roary < Formula
   uses_from_macos "expat"
   uses_from_macos "libxml2"
 
+  on_linux do
+    # A module in the self-contained CPAN bundle links libdb; declare
+    # berkeley-db@5 on Linux so `brew linkage --test` is satisfied.
+    depends_on "berkeley-db@5"
+  end
+
   def install
     libexec.install Dir["bin/*"]
     pkgshare.install "contrib"

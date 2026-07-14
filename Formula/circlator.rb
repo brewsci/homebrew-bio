@@ -37,7 +37,12 @@ class Circlator < Formula
 
   uses_from_macos "bzip2"
   uses_from_macos "curl"
-  uses_from_macos "zlib"
+
+  on_linux do
+    # The bundled pysam extensions link libz, provided by the tap's
+    # zlib-ng-compat on Linux; declare it so `brew linkage --test` passes.
+    depends_on "zlib-ng-compat"
+  end
 
   resource "cython" do
     url "https://files.pythonhosted.org/packages/84/4d/b720d6000f4ca77f030bd70f12550820f0766b568e43f11af7f7ad9061aa/cython-3.0.11.tar.gz"
