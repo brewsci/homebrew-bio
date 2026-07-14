@@ -31,6 +31,12 @@ class Iva < Formula
   depends_on "python@3.10"
   depends_on "samtools"
 
+  on_linux do
+    # The bundled pysam extensions link libz, provided by the tap's
+    # zlib-ng-compat on Linux; declare it so `brew linkage --test` passes.
+    depends_on "zlib-ng-compat"
+  end
+
   resource "cython" do
     url "https://files.pythonhosted.org/packages/4c/76/1e41fbb365ad20b6efab2e61b0f4751518444c953b390f9b2d36cf97eea0/Cython-0.29.32.tar.gz"
     sha256 "8733cf4758b79304f2a4e39ebfac5e92341bce47bcceb26c1254398b2f8c1af7"
@@ -56,9 +62,11 @@ class Iva < Formula
     sha256 "dee403cbdf232170c1e11cc24c76e7dd748fc672ad38eb0414f3b9d569b1448f"
   end
 
+  # packaging 24.2 drops the pyparsing dependency that 21.3 needed (and that was
+  # not vendored, so `iva` failed at runtime with ModuleNotFoundError).
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/df/9e/d1a7217f69310c1db8fdf8ab396229f55a699ce34a203691794c5d1cad0c/packaging-21.3.tar.gz"
-    sha256 "dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb"
+    url "https://files.pythonhosted.org/packages/d0/63/68dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106da/packaging-24.2.tar.gz"
+    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
   end
 
   # Old resources (Cython 0.29, pysam 0.19) build against pkg_resources, which

@@ -36,6 +36,10 @@ class Sga < Formula
 
   def install
     cd "src" do
+      # Modern google-sparsehash requires C++11; sga hardcodes -std=c++98, under
+      # which sparse_hash_map's iterator fails to compile on gcc 16 ("base
+      # operand of '->' is not a pointer"). Build as C++11 instead.
+      inreplace "configure.ac", "-std=c++98", "-std=c++11"
       system "./autogen.sh"
       # sga probes google/sparse_hash_{set,map} and api/BamReader.h with
       # AC_CHECK_HEADERS, which uses the C compiler; all are C++-only headers
