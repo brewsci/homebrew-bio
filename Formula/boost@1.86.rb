@@ -21,10 +21,12 @@ class BoostAT186 < Formula
     end
   end
 
-  # Versioned formula pinned to the Boost 1.86 line; the download page only
-  # ever lists the newest Boost, so autobump must not track it.
   livecheck do
-    skip "versioned formula pinned to the Boost 1.86 release line"
+    url "https://www.boost.org/users/download/"
+    regex(/href=.*?boost[._-]v?(\d+(?:[._]\d+)+)\.t/i)
+    strategy :page_match do |page, regex|
+      page.scan(regex).map { |match| match.first.tr("_", ".") }
+    end
   end
 
   bottle do
@@ -42,12 +44,7 @@ class BoostAT186 < Formula
   depends_on "zstd"
 
   uses_from_macos "bzip2"
-
-  on_linux do
-    # boost links libz from zlib-ng-compat (the tap's zlib provider); declare it
-    # directly so `brew linkage` doesn't flag it as an indirect dependency.
-    depends_on "zlib-ng-compat"
-  end
+  uses_from_macos "zlib"
 
   def install
     # Force boost to compile with the desired compiler

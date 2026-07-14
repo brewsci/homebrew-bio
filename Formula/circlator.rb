@@ -82,7 +82,16 @@ class Circlator < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3.12")
+    # Build pysam against the vendored Cython/setuptools without build isolation.
+    # Under isolation pip pulls the latest Cython (3.1+) from PyPI, which breaks
+    # pysam's module-level CIGAR constants (its import then raises
+    # `libcalignedsegment has no attribute 'CMATCH'`); pinning Cython only helps
+    # if that pin is actually the one used to compile pysam.
+    %w[setuptools cython].each { |r| venv.pip_install resource(r) }
+    venv.pip_install resource("pysam"), build_isolation: false
+    venv.pip_install(resources.reject { |r| %w[setuptools cython pysam].include?(r.name) })
+    venv.pip_install_and_link buildpath
   end
 
   test do

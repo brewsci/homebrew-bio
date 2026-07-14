@@ -21,7 +21,10 @@ class Rdock < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "12a1c46c9fe86e1e5ccc8422bf8976e6c9b03649a9dadb87b18fa994fd3b4ca8"
   end
 
-  depends_on "gcc" => :build
+  # rdock is compiled with GNU g++ and its binaries link gcc's libstdc++/libgcc
+  # at runtime, so gcc must be a runtime (not build-only) dependency; otherwise
+  # `brew linkage --test --strict` flags it as an indirect dependency.
+  depends_on "gcc"
   depends_on "numpy"
   depends_on "perl"
   depends_on "popt"
