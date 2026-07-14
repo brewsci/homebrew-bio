@@ -2,15 +2,14 @@ class Freesasa < Formula
   # Mitternacht_2016: "https://doi.org/10.12688/f1000research.7931.1"
   desc "C-library for calculating Solvent Accessible Surface Areas"
   homepage "https://freesasa.github.io/"
-  url "https://github.com/mittinatten/freesasa/releases/download/2.1.2/freesasa-2.1.2.zip"
-  sha256 "a031c4eb8cd59e802d715a37ef72930ec2d90ec53dfcf1bea0b0255980490fd5"
+  url "https://github.com/mittinatten/freesasa/archive/refs/tags/2.1.3.tar.gz"
+  sha256 "dc4fe377352569299d69329d9ded2f141e527da325960b20d2e30b5335c2b3ff"
   license "MIT"
   head "https://github.com/mittinatten/freesasa.git", branch: "master"
 
-  # The release url is a hand-packaged `make dist` zip that upstream no longer
-  # attaches to newer releases, so bumps require manual repackaging.
   livecheck do
-    skip "upstream no longer attaches the packaged dist zip to releases"
+    url :stable
+    strategy :github_latest
   end
 
   bottle do
@@ -33,11 +32,6 @@ class Freesasa < Formula
   def install
     system "autoreconf", "-fvi"
     system "./configure", *std_configure_args
-
-    # Refer to https://github.com/mittinatten/freesasa/issues/85#issuecomment-1588979627
-    # Already fixed in HEAD
-    inreplace "src/Makefile", "-lc++", "-lstdc++" if OS.linux? && !build.head?
-
     system "make"
     system "make", "install"
 

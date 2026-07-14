@@ -1,15 +1,15 @@
 class Prank < Formula
   desc "Multiple alignment for DNA, codon and amino-acid sequences"
   homepage "https://ariloytynoja.github.io/prank-msa/"
-  url "http://wasabiapp.org/download/prank/prank.source.170427.tgz"
-  sha256 "623eb5e9b5cb0be1f49c3bf715e5fabceb1059b21168437264bdcd5c587a8859"
-  revision 1
+  url "https://github.com/ariloytynoja/prank-msa/raw/v.251117/binaries/prank.source.251117.tgz"
+  version "251117"
+  sha256 "d8a2165b001d89506e75bb28c1a3fbdc39e32b06ceb865da2e6fffe976844c95"
   head "https://github.com/ariloytynoja/prank-msa.git", branch: "master"
 
-  # Source moved off wasabiapp to GitHub with a non-standard date tag
-  # (v.251117) that does not map to the current date-stamped version.
+  # The GitHub source is a nested binaries/ tarball tagged v.251117, a
+  # non-standard date tag that autobump can't map to the version.
   livecheck do
-    skip "source moved to GitHub with an incompatible date tag"
+    skip "GitHub source is a nested tarball under a non-standard date tag"
   end
 
   bottle do

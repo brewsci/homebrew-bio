@@ -2,9 +2,9 @@ class Plink2 < Formula
   # cite Chang_2015: "https://doi.org/10.1186/s13742-015-0047-8"
   desc "Analyze genotype and phenotype data"
   homepage "https://www.cog-genomics.org/plink2"
-  url "https://github.com/chrchang/plink-ng/archive/refs/tags/v2.00a5.12.tar.gz"
-  version "2.00a5.12"
-  sha256 "bf55f172c709265c9c7bf1518bb4f0036d28fecdd7b17f8db7f9d106586bb3f5"
+  url "https://github.com/chrchang/plink-ng/archive/refs/tags/v2.0.0-a.7.1.tar.gz"
+  version "2.0.0-a.7.1"
+  sha256 "19344fa5ed9fac92241c23d5e2b5f73059c8880f8216b590187b7ea5caf79551"
   head "https://github.com/chrchang/plink-ng.git", branch: "master"
 
   # Upstream switched from 2.00aX.Y to SemVer-style v2.0.0-a.X tags, which

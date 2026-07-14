@@ -2,15 +2,15 @@ class Oases < Formula
   # cite Schulz_2012: "https://doi.org/10.1093/bioinformatics/bts094"
   desc "De novo transcriptome assembler for very short reads"
   homepage "https://www.ebi.ac.uk/~zerbino/oases/"
-  url "https://www.ebi.ac.uk/~zerbino/oases/oases_0.2.08.tgz"
-  sha256 "a90d469bd19d355edf6193dcf321f77216389d2831a849d4c151c1c0c771ab36"
+  url "https://github.com/dzerbino/oases/archive/refs/tags/0.2.09.tar.gz"
+  sha256 "7aad1195b3e5d88291150669acd9a32cc328df173d88697287f1c2b9da24d3bd"
   license "GPL-3.0"
   head "https://github.com/dzerbino/oases"
 
-  # The EBI download host is unreliable and does not publish the newer 0.2.09
-  # that the GitHub head repo carries, so autobump can't follow it.
   livecheck do
-    skip "EBI download host is unreliable and newer versions are not published there"
+    url :stable
+    strategy :git
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -39,12 +39,8 @@ class Oases < Formula
     args = ["LONGSEQUENCES=1", "CATEGORIES=2", "MAXKMERLENGTH=127"]
     args << "OPENMP=1" unless OS.mac?
 
-    # don't want to install LaTeX just to make the binary
-    inreplace "Makefile", "oases doc", "oases"
-
-    # needs access to .o files from our resource
-    inreplace "Makefile", "VELVET_DIR=../velvet", "VELVET_DIR=./velvet\n.PHONY: velvet"
-
+    # The 0.2.09 Makefile already defaults to VELVET_DIR=velvet (our staged
+    # resource) and no longer has a `doc` target, so no inreplaces are needed.
     system "make", *args
 
     bin.install "oases", "scripts/oases_pipeline.py"
