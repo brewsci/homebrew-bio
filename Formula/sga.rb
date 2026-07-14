@@ -9,7 +9,9 @@ class Sga < Formula
 
   livecheck do
     url :stable
-    strategy :github_latest
+    # The repo publishes no GitHub releases, only vX.Y.Z tags.
+    strategy :git
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do

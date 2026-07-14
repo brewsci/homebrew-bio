@@ -6,6 +6,12 @@ class Prank < Formula
   revision 1
   head "https://github.com/ariloytynoja/prank-msa.git", branch: "master"
 
+  # Source moved off wasabiapp to GitHub with a non-standard date tag
+  # (v.251117) that does not map to the current date-stamped version.
+  livecheck do
+    skip "source moved to GitHub with an incompatible date tag"
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
     rebuild 1

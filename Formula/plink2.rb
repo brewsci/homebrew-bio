@@ -7,6 +7,12 @@ class Plink2 < Formula
   sha256 "bf55f172c709265c9c7bf1518bb4f0036d28fecdd7b17f8db7f9d106586bb3f5"
   head "https://github.com/chrchang/plink-ng.git", branch: "master"
 
+  # Upstream switched from 2.00aX.Y to SemVer-style v2.0.0-a.X tags, which
+  # cannot be compared with or substituted into the current version scheme.
+  livecheck do
+    skip "upstream moved to an incompatible SemVer tag scheme"
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any,                 arm64_sonoma: "ea7c863dafde5bc757b6db986e81b01f730eafa0e698204ad625c9d0e9bf7f62"

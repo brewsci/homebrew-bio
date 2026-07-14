@@ -9,6 +9,13 @@ class Iva < Formula
   license "GPL-3.0-or-later"
   revision 1
 
+  # Track the latest release; a stray mislabeled tag (1.5.0, pointing at a 2014
+  # commit) otherwise wins the greatest-tag comparison and 404s.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "74d66980f3f4d7ff31d7937fb84bb62d93eba219fbe6215bc123861bf5c05432"

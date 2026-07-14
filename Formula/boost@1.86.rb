@@ -21,12 +21,10 @@ class BoostAT186 < Formula
     end
   end
 
+  # Versioned formula pinned to the Boost 1.86 line; the download page only
+  # ever lists the newest Boost, so autobump must not track it.
   livecheck do
-    url "https://www.boost.org/users/download/"
-    regex(/href=.*?boost[._-]v?(\d+(?:[._]\d+)+)\.t/i)
-    strategy :page_match do |page, regex|
-      page.scan(regex).map { |match| match.first.tr("_", ".") }
-    end
+    skip "versioned formula pinned to the Boost 1.86 release line"
   end
 
   bottle do

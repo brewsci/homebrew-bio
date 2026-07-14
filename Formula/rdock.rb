@@ -6,6 +6,13 @@ class Rdock < Formula
   license "LGPL-3.0-only"
   head "https://github.com/CBDD/rdock.git", branch: "main"
 
+  livecheck do
+    url :stable
+    # Capture only the numeric part of the -legacy tag so it equals the
+    # formula's parsed version (24.04.204) instead of flagging a bogus bump.
+    regex(/^v?(\d+(?:\.\d+)+)-legacy$/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any,                 arm64_sequoia: "d9810213a0f5a454a7955eb63900d52928646e8ad4572b116f41d6edd2f4edc4"

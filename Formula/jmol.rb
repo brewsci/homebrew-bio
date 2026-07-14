@@ -5,6 +5,12 @@ class Jmol < Formula
   sha256 "c25eafef65ee52c2af70f95405c52e795ecb5bcb7bb0acd166af6cb27849f470"
   license "LGPL-2.1-or-later"
 
+  # SourceForge nests each release under a Version%20X.Y folder that cannot be
+  # reconstructed from the file version, so bumps must be done manually.
+  livecheck do
+    skip "SourceForge nests a version folder not derivable from the file version"
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "0cd34c8ceeb45a5bdfff32d1e1f7d4ff52f28e47d3a110059c0d79de989b2e16"

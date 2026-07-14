@@ -6,6 +6,12 @@ class Gepard < Formula
   sha256 "9f35adefbc4843eb87e545bb54a47ef007ea02d145f2c13df86756e63bef8418"
   license "MIT"
 
+  # Distributed as a raw-blob jar (Gepard-1.40.jar) whose filename version
+  # cannot be derived from the vX.Y.Z release tags.
+  livecheck do
+    skip "distributed as a raw-blob jar with no matching release tag"
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra: "c8e3c9921c645c8c1656980a39168078a369dfbe7b56cc77f74fdd3741eca7d4"

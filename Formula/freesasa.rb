@@ -7,6 +7,12 @@ class Freesasa < Formula
   license "MIT"
   head "https://github.com/mittinatten/freesasa.git", branch: "master"
 
+  # The release url is a hand-packaged `make dist` zip that upstream no longer
+  # attaches to newer releases, so bumps require manual repackaging.
+  livecheck do
+    skip "upstream no longer attaches the packaged dist zip to releases"
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
     rebuild 1

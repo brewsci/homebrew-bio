@@ -7,6 +7,12 @@ class Oases < Formula
   license "GPL-3.0"
   head "https://github.com/dzerbino/oases"
 
+  # The EBI download host is unreliable and does not publish the newer 0.2.09
+  # that the GitHub head repo carries, so autobump can't follow it.
+  livecheck do
+    skip "EBI download host is unreliable and newer versions are not published there"
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "79b961f7f73835ea2ae13a7312bfd84f18c0af317de31659a475e27048d946c9"

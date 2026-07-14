@@ -5,6 +5,12 @@ class Barrnap < Formula
   sha256 "36c27cd4350531d98b3b2fb7d294a2d35c15b7365771476456d7873ba33cce15"
   revision 1
 
+  # The v1.10.x release tree dropped the examples directory, so the install and
+  # test blocks need manual rework before this can be bumped.
+  livecheck do
+    skip "v1.10.x needs manual install and test rework"
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, arm64_sonoma: "98d207d07bcb6abefcb86abe70b01695a9294690c5595bd2650d4ddfd4243273"

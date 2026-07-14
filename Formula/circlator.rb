@@ -9,6 +9,13 @@ class Circlator < Formula
   sha256 "c9c9d5cad0badb8b1c7707dce80235397cbd3846f8b686974b968f109a5222c6"
   license "GPL-3.0-or-later"
 
+  livecheck do
+    url :stable
+    # Tags carry a -dockerN suffix; capture only the numeric version so it
+    # matches the formula's `version` (1.5.5) instead of a bogus 1.5.5-docker5.
+    regex(/^v?(\d+(?:\.\d+)+)-docker\d+$/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
     rebuild 1

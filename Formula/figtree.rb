@@ -4,6 +4,13 @@ class Figtree < Formula
   url "https://github.com/rambaut/figtree/releases/download/v1.4.4/FigTree_v1.4.4.tgz"
   sha256 "529b867657b29e369cf81cd361e6a76bd713d488a63b91932df2385800423aa8"
 
+  # Track the latest release; the default git strategy otherwise picks
+  # pre-release tags (v1.5.0-beta1, v1.4.5pre) and 404s on the bump.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "46dded66c63bcc052039c5de56c770831ee21077c801be8b64bb428bf25b1f80"

@@ -6,6 +6,13 @@ class Coot < Formula
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only", "GPL-2.0-or-later"]
   head "https://github.com/pemsley/coot.git", branch: "main"
 
+  # Track the tagged releases; the default git strategy otherwise picks junk
+  # tags like revision-count-* and reports a bogus version.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
     rebuild 1

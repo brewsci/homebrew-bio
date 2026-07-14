@@ -11,6 +11,12 @@ class FinchRs < Formula
     sha256 "d6c41f123bfa4d58028cd2ef9d9981cdd3ed5568f02f53c34e8be602224f7f1b"
   end
 
+  # Upstream no longer ships standalone finch-mac64/finch-linux64 binaries;
+  # newer release assets are Python wheels, so bumps need manual rework.
+  livecheck do
+    skip "upstream now ships Python wheels instead of standalone binaries"
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, catalina:     "eca9f68be258523651b801b889a7535638b069ffe06d5608dc6171da192aacc3"
