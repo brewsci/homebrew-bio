@@ -32,9 +32,14 @@ class Iva < Formula
   depends_on "python@3.10"
   depends_on "samtools"
 
+  # pysam's bundled htslib links libbz2 and libcurl (alongside libz/liblzma/
+  # libcrypto), which `brew linkage --test` flags on Linux.
+  uses_from_macos "bzip2"
+  uses_from_macos "curl"
+
   on_linux do
-    # The bundled pysam extensions link libz and liblzma, provided by the tap's
-    # zlib-ng-compat and xz on Linux; declare them so `brew linkage --test` passes.
+    # libz and liblzma come from the tap's zlib-ng-compat and xz on Linux;
+    # declare them so `brew linkage --test` passes.
     depends_on "xz"
     depends_on "zlib-ng-compat"
   end

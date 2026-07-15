@@ -33,16 +33,20 @@ class Plink2 < Formula
 
   def install
     cd "1.9" do
-      if OS.linux?
-        inreplace "Makefile" do |s|
+      # Link the system/brewed zlib instead of statically building the copy that
+      # plink_first_compile fetches from zlib.net (an unreliable network download
+      # that intermittently fails the build with "Could not resolve host").
+      inreplace "Makefile" do |s|
+        s.gsub! "-L. ../zlib-1.3/libz.a", "-lz"
+        s.gsub! "-L. ../zlib-1.3/libz.so.1.3", "-lz"
+        if OS.linux?
           s.gsub! "-L/usr/lib64/atlas -llapack -lblas -lcblas -latlas",
                   "-L#{formula_opt_lib("openblas")} -lopenblas"
-          s.gsub! "ZLIB ?=		-L. ../zlib-1.3/libz.so.1.3", "ZLIB ?= -lz"
           s.gsub! "-Wall -O2 -g -I../2.0/simde",
                   "-Wall -O2 -g -I../2.0/simde -I#{formula_opt_include("openblas")}"
         end
       end
-      system "./plink_first_compile"
+      system "make"
       bin.install "plink"
     end
     cd "2.0" do
