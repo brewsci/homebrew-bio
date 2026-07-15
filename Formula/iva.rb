@@ -28,6 +28,7 @@ class Iva < Formula
   depends_on "brewsci/bio/smalt"
   depends_on "libdeflate"
   depends_on "numpy"
+  depends_on "openssl@3"
   depends_on "python@3.10"
   depends_on "samtools"
 

@@ -25,7 +25,11 @@ class Sga < Formula
   depends_on "google-sparsehash" => :build
   depends_on "bamtools"
 
-  uses_from_macos "zlib"
+  on_linux do
+    # sga links libz from the tap's zlib-ng-compat on Linux; declare it directly
+    # so `brew linkage --test` doesn't flag it as an indirect dependency.
+    depends_on "zlib-ng-compat"
+  end
 
   # Fix error: call to 'abs' is ambiguous
   # https://github.com/jts/sga/pull/148
