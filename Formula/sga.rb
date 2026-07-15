@@ -40,6 +40,17 @@ class Sga < Formula
       # which sparse_hash_map's iterator fails to compile on gcc 16 ("base
       # operand of '->' is not a pointer"). Build as C++11 instead.
       inreplace "configure.ac", "-std=c++98", "-std=c++11"
+      # C++11 makes std::istream's operator bool explicit, so these copy-inits
+      # of a bool from a stream expression no longer compile; make them explicit.
+      inreplace "Util/ClusterReader.cpp",
+                "bool good = getline(*m_pReader, line);",
+                "bool good = static_cast<bool>(getline(*m_pReader, line));"
+      inreplace "Util/StdAlnTools.cpp",
+                "bool success = parser >> code;",
+                "bool success = static_cast<bool>(parser >> code);"
+      inreplace "SGA/rmdup.cpp",
+                "bool valid = getline(*reader_vec[currReaderIdx], line);",
+                "bool valid = static_cast<bool>(getline(*reader_vec[currReaderIdx], line));"
       system "./autogen.sh"
       # sga probes google/sparse_hash_{set,map} and api/BamReader.h with
       # AC_CHECK_HEADERS, which uses the C compiler; all are C++-only headers

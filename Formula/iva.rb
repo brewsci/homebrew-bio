@@ -32,8 +32,9 @@ class Iva < Formula
   depends_on "samtools"
 
   on_linux do
-    # The bundled pysam extensions link libz, provided by the tap's
-    # zlib-ng-compat on Linux; declare it so `brew linkage --test` passes.
+    # The bundled pysam extensions link libz and liblzma, provided by the tap's
+    # zlib-ng-compat and xz on Linux; declare them so `brew linkage --test` passes.
+    depends_on "xz"
     depends_on "zlib-ng-compat"
   end
 
