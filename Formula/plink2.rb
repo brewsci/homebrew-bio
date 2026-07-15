@@ -46,10 +46,16 @@ class Plink2 < Formula
                   "-Wall -O2 -g -I../2.0/simde -I#{formula_opt_include("openblas")}"
         end
       end
+      # These sources hardcode the header from the bundled zlib we no longer
+      # download; point them at the system/brewed zlib instead.
+      inreplace ["plink_common.h", "pigz.c", "dose2plink.c"],
+                "\"../zlib-1.3/zlib.h\"", "<zlib.h>"
       system "make"
       bin.install "plink"
     end
     cd "2.0" do
+      # Same hardcoded bundled-zlib header reference in the 2.0 tree.
+      inreplace "include/plink2_text.h", "\"../../zlib-1.3/zlib.h\"", "<zlib.h>"
       inreplace "build.sh", " -llapack -lcblas -lblas", "-L#{formula_opt_lib("openblas")} -lopenblas" if OS.linux?
       system "./build.sh"
       bin.install "bin/plink2" => "plink2"
