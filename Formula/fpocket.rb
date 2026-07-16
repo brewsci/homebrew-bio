@@ -7,10 +7,11 @@ class Fpocket < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce10672b7e6a3c586de73fd8e27379edde1b43b35c0ca29523a8ad7acc228715"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e4c411b2811bed4eaa3975295a930ff9cfd421a24c73cf13ad9f6dc34773cb0"
-    sha256 cellar: :any_skip_relocation, ventura:       "ce933414bda9bc886c83cca2938d9d4d604f567e06a6ba1b644c430ccab1ae72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59c42984af44df1708bd3186f73bd3ff787c43362ef498a9f4cdd9c46ead1c2c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "f9246e9c4af3ed7d718ce791a349b7df59991aae10f67af86a6128504a0e06bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ccb39b48d1973fac244d7d2dc8d88bd8031ffb5b8e78c1dbfededabe6231c3e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e05d7ccfe9bfe05e617cc33c2a2f63d6006f4a9e5984791742c6e518d8d7c28"
+    sha256 cellar: :any,                 x86_64_linux:  "f6034926c065520bf76f5ce3f847c44eadc661e4505891983f68e244dc29b98a"
   end
 
   depends_on "netcdf"
