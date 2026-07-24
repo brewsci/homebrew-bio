@@ -6,6 +6,13 @@ class Libmcfp < Formula
   license "BSD-2-Clause"
   head "https://github.com/mhekkel/libmcfp.git", branch: "trunk"
 
+  # Track the latest release; the default git strategy otherwise parses junk
+  # tags (working-cpp20-module, build) into bogus versions.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4b3cb991d4c205436bdb2f98d28ed95216ebe35c10fc5f0bd26ae387934c414d"

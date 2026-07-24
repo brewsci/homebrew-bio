@@ -9,7 +9,9 @@ class Sga < Formula
 
   livecheck do
     url :stable
-    strategy :github_latest
+    # The repo publishes no GitHub releases, only vX.Y.Z tags.
+    strategy :git
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -23,7 +25,11 @@ class Sga < Formula
   depends_on "google-sparsehash" => :build
   depends_on "bamtools"
 
-  uses_from_macos "zlib"
+  on_linux do
+    # sga links libz from the tap's zlib-ng-compat on Linux; declare it directly
+    # so `brew linkage --test` doesn't flag it as an indirect dependency.
+    depends_on "zlib-ng-compat"
+  end
 
   # Fix error: call to 'abs' is ambiguous
   # https://github.com/jts/sga/pull/148
@@ -34,12 +40,37 @@ class Sga < Formula
 
   def install
     cd "src" do
+      # Modern google-sparsehash requires C++11; sga hardcodes -std=c++98, under
+      # which sparse_hash_map's iterator fails to compile on gcc 16 ("base
+      # operand of '->' is not a pointer"). Build as C++11 instead.
+      inreplace "configure.ac", "-std=c++98", "-std=c++11"
+      # C++11 makes std::istream's operator bool explicit, so these copy-inits
+      # of a bool from a stream expression no longer compile; make them explicit.
+      inreplace "Util/ClusterReader.cpp",
+                "bool good = getline(*m_pReader, line);",
+                "bool good = static_cast<bool>(getline(*m_pReader, line));"
+      inreplace "Util/StdAlnTools.cpp",
+                "bool success = parser >> code;",
+                "bool success = static_cast<bool>(parser >> code);"
+      inreplace "SGA/rmdup.cpp",
+                "bool valid = getline(*reader_vec[currReaderIdx], line);",
+                "bool valid = static_cast<bool>(getline(*reader_vec[currReaderIdx], line));"
       system "./autogen.sh"
+      # sga probes google/sparse_hash_{set,map} and api/BamReader.h with
+      # AC_CHECK_HEADERS, which uses the C compiler; all are C++-only headers
+      # (they include <algorithm>), so the probes fail even though the paths are
+      # correct. In particular the failing sparse_hash_map probe leaves
+      # HAVE_GOOGLE_SPARSE_HASH_MAP undefined, tripping HashMap.h's `#error The
+      # google sparse hash is required`. Prime the cache vars so the (correct)
+      # C++ build, which does find them, proceeds.
       system "./configure",
         "--disable-dependency-tracking",
         "--prefix=#{prefix}",
         "--with-bamtools=#{Formula["bamtools"].prefix}",
-        "--with-sparsehash=#{Formula["google-sparsehash"].prefix}"
+        "--with-sparsehash=#{Formula["google-sparsehash"].prefix}",
+        "ac_cv_header_google_sparse_hash_set=yes",
+        "ac_cv_header_google_sparse_hash_map=yes",
+        "ac_cv_header_api_BamReader_h=yes"
       system "make", "install"
       bin.install Dir["bin/*"] - Dir["bin/Makefile*"]
     end
