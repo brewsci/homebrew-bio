@@ -3,8 +3,8 @@ class Patinae < Formula
 
   desc "Fast, programmable molecular viewer for research, scripting, and the web"
   homepage "https://zmactep.github.io/pymol-rs/"
-  url "https://github.com/zmactep/pymol-rs/archive/refs/tags/v0.4.4.tar.gz"
-  sha256 "412eb80494568a9c08393eece83d8aafd2249a7ff512dd1bc9e9ada112a7276f"
+  url "https://github.com/zmactep/pymol-rs/archive/refs/tags/v0.4.5.tar.gz"
+  sha256 "fbbc10d3c2e7f25d5a19f8eaf6a2cbedf54143e775cf6646bf8ac52c5fbc85ea"
   license "BSD-3-Clause"
   head "https://github.com/zmactep/pymol-rs.git", branch: "main"
 
