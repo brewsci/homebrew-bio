@@ -2,11 +2,11 @@ class Patinae < Formula
   include Language::Python::Virtualenv
 
   desc "Fast, programmable molecular viewer for research, scripting, and the web"
-  homepage "https://zmactep.github.io/pymol-rs/"
-  url "https://github.com/zmactep/pymol-rs/archive/refs/tags/v0.4.5.tar.gz"
+  homepage "https://github.com/zmactep/patinae"
+  url "https://github.com/zmactep/patinae/archive/refs/tags/v0.4.5.tar.gz"
   sha256 "fbbc10d3c2e7f25d5a19f8eaf6a2cbedf54143e775cf6646bf8ac52c5fbc85ea"
   license "BSD-3-Clause"
-  head "https://github.com/zmactep/pymol-rs.git", branch: "main"
+  head "https://github.com/zmactep/patinae.git", branch: "main"
 
   livecheck do
     url :stable
