@@ -6,8 +6,10 @@ class Easel < Formula
 
   livecheck do
     url :stable
-    strategy :github_latest
-    regex(%r{href=.*?/tag/easel[._-]v?(\d+(?:\.\d+)+)["' >]}i)
+    # The repo publishes no GitHub releases (only tags) and shares its tag
+    # namespace with infernal/ssu-align, so match the easel-prefixed tags.
+    strategy :git
+    regex(/^easel[._-]v?(\d+(?:\.\d+)+[a-z]?)$/i)
   end
 
   bottle do

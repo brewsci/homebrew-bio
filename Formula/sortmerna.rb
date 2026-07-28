@@ -7,11 +7,22 @@ class Sortmerna < Formula
   license "GPL-3.0"
   head "https://github.com/biocore/sortmerna.git"
 
+  # Upgrading past 2.1b requires a full formula rewrite for the 7.x CMake build
+  # (new RocksDB/zlib deps and prebuilt-binary release assets).
+  livecheck do
+    skip "7.x needs a full formula rewrite for the CMake build"
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "aa26fd0b1316228b17fcb700bab6a2121af7806435c1657c9cbbf8724ce1f47d"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "b412dde11f5cb06f8c4a1aa3d78719d0647ffe5a2e9ff81df960903346269bd1"
   end
+
+  # 2.1b is hardwired to x86 SSE intrinsics and cannot compile on arm64; it has
+  # only ever bottled for x86 (sierra + x86_64_linux). arm64 support needs the
+  # 7.x/CMake rewrite (see livecheck skip), so restrict to x86_64 until then.
+  depends_on arch: :x86_64
 
   uses_from_macos "zlib"
 

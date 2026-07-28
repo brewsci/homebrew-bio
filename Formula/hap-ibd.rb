@@ -8,6 +8,13 @@ class HapIbd < Formula
   license "Apache-2.0"
   head "https://github.com/browning-lab/hap-ibd.git", branch: "master"
 
+  livecheck do
+    url :stable
+    # The sole tag carries a date+hash suffix (v1.0.0-15Jun23.92f); match only
+    # the numeric version so autobump does not try to rebuild that suffix.
+    regex(/^v?(\d+(?:\.\d+)+)/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, arm64_sonoma: "29252599d28d22d83ad30a5e83cbf0d95410b504e493f545c585b092b8040ce1"

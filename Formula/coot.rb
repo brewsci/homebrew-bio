@@ -6,6 +6,13 @@ class Coot < Formula
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only", "GPL-2.0-or-later"]
   head "https://github.com/pemsley/coot.git", branch: "main"
 
+  # Track the tagged releases; the default git strategy otherwise picks junk
+  # tags like revision-count-* and reports a bogus version.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
     rebuild 1
@@ -98,6 +105,13 @@ class Coot < Formula
               "\nexec_prefix="
     ENV.cxx11
     ENV.libcxx
+    # clang 15 (macOS 14) predates C++20 parenthesized aggregate initialization
+    # (P0960, landed in clang 16), so this `new T(str)` on the plain aggregate
+    # em_placement_data_t fails to compile there. Brace-initialize it instead,
+    # which is valid C++17 and behaves identically (obj stays value-initialized).
+    inreplace "src/cc-interface-map-utils.cc",
+              "new em_placement_data_t(em_placement_output_file_name)",
+              "new em_placement_data_t{em_placement_output_file_name}"
     inreplace "autogen.sh", "libtool", "glibtool"
     system "./autogen.sh"
     if OS.mac?

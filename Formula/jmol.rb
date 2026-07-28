@@ -1,9 +1,15 @@
 class Jmol < Formula
   desc "Open-source Java viewer for chemical structures in 3D"
   homepage "https://jmol.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/jmol/Jmol/Version%2014.32/Jmol%2014.32.61/Jmol-14.32.61-binary.zip"
-  sha256 "c25eafef65ee52c2af70f95405c52e795ecb5bcb7bb0acd166af6cb27849f470"
+  url "https://downloads.sourceforge.net/project/jmol/Jmol/Version%2016.4/Jmol%2016.4.13/Jmol-16.4.13-binary.zip"
+  sha256 "c22aa9fcea4227e618e12b7e2a31858a89066e00e97ab3ca665cef96a3e47196"
   license "LGPL-2.1-or-later"
+
+  # SourceForge nests each release under a Version%20X.Y folder that cannot be
+  # reconstructed from the file version, so bumps must be done manually.
+  livecheck do
+    skip "SourceForge nests a version folder not derivable from the file version"
+  end
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"

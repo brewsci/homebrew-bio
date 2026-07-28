@@ -6,6 +6,12 @@ class Orfm < Formula
   sha256 "19f39c72bcc48127b757613c5eef4abae95ee6c82dccf96b041db527b27f319a"
   license "LGPL-3.0"
 
+  # orfm 2.x is a Rust/cargo-dist rewrite with a new URL scheme and release
+  # assets, so it needs a full formula rewrite rather than a url/sha bump.
+  livecheck do
+    skip "2.x is a Rust rewrite needing a full formula rewrite"
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any_skip_relocation, sierra:       "0a19b5b29dcd9cdbc1357fc053750d8e546bdd716f865ffee0880b0e8a0a30ec"

@@ -6,6 +6,13 @@ class Rdock < Formula
   license "LGPL-3.0-only"
   head "https://github.com/CBDD/rdock.git", branch: "main"
 
+  livecheck do
+    url :stable
+    # Capture only the numeric part of the -legacy tag so it equals the
+    # formula's parsed version (24.04.204) instead of flagging a bogus bump.
+    regex(/^v?(\d+(?:\.\d+)+)-legacy$/i)
+  end
+
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
     sha256 cellar: :any,                 arm64_sequoia: "d9810213a0f5a454a7955eb63900d52928646e8ad4572b116f41d6edd2f4edc4"
@@ -14,7 +21,10 @@ class Rdock < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "12a1c46c9fe86e1e5ccc8422bf8976e6c9b03649a9dadb87b18fa994fd3b4ca8"
   end
 
-  depends_on "gcc" => :build
+  # rdock is compiled with GNU g++ and its binaries link gcc's libstdc++/libgcc
+  # at runtime, so gcc must be a runtime (not build-only) dependency; otherwise
+  # `brew linkage --test --strict` flags it as an indirect dependency.
+  depends_on "gcc"
   depends_on "numpy"
   depends_on "perl"
   depends_on "popt"
@@ -27,7 +37,10 @@ class Rdock < Formula
   end
 
   def install
-    ENV["CXX"] = formula_opt_bin("gcc")/"g++-14"
+    # Track the current gcc formula's major version instead of hardcoding
+    # g++-14, which disappears whenever the gcc dependency is bumped.
+    gcc_major = Formula["gcc"].version.major
+    ENV["CXX"] = formula_opt_bin("gcc")/"g++-#{gcc_major}"
 
     inreplace "Makefile" do |s|
       s.gsub!(/INCLUDE\s*:=/, "INCLUDE := -I#{formula_opt_include("popt")} ")
@@ -35,7 +48,7 @@ class Rdock < Formula
     end
 
     ENV["CXX_EXTRA_FLAGS"] = "-I#{formula_opt_include("popt")}"
-    ENV.append "LDFLAGS", "-Wl,-rpath,#{formula_opt_lib("gcc")}/gcc/14" if OS.mac?
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{formula_opt_lib("gcc")}/gcc/#{gcc_major}" if OS.mac?
     (share/"lib").mkpath
     cp_r Dir["lib/*"], share/"lib"
     rm Dir["lib/*"]

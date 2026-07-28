@@ -2,10 +2,16 @@ class Oases < Formula
   # cite Schulz_2012: "https://doi.org/10.1093/bioinformatics/bts094"
   desc "De novo transcriptome assembler for very short reads"
   homepage "https://www.ebi.ac.uk/~zerbino/oases/"
-  url "https://www.ebi.ac.uk/~zerbino/oases/oases_0.2.08.tgz"
-  sha256 "a90d469bd19d355edf6193dcf321f77216389d2831a849d4c151c1c0c771ab36"
+  url "https://github.com/dzerbino/oases/archive/refs/tags/0.2.09.tar.gz"
+  sha256 "7aad1195b3e5d88291150669acd9a32cc328df173d88697287f1c2b9da24d3bd"
   license "GPL-3.0"
   head "https://github.com/dzerbino/oases"
+
+  livecheck do
+    url :stable
+    strategy :git
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -17,9 +23,11 @@ class Oases < Formula
 
   uses_from_macos "zlib"
 
+  # The upstream ebi.ac.uk velvet tarball now 500s; use the author's GitHub
+  # mirror of the same 1.2.10 source instead.
   resource "velvet" do
-    url "https://www.ebi.ac.uk/~zerbino/velvet/velvet_1.2.10.tgz"
-    sha256 "884dd488c2d12f1f89cdc530a266af5d3106965f21ab9149e8cb5c633c977640"
+    url "https://github.com/dzerbino/velvet/archive/refs/tags/v1.2.10.tar.gz"
+    sha256 "4615e52dc2e8a05f1009daf2c0978c218860be364afa044f73677cd298f10c7b"
   end
 
   def install
@@ -33,12 +41,8 @@ class Oases < Formula
     args = ["LONGSEQUENCES=1", "CATEGORIES=2", "MAXKMERLENGTH=127"]
     args << "OPENMP=1" unless OS.mac?
 
-    # don't want to install LaTeX just to make the binary
-    inreplace "Makefile", "oases doc", "oases"
-
-    # needs access to .o files from our resource
-    inreplace "Makefile", "VELVET_DIR=../velvet", "VELVET_DIR=./velvet\n.PHONY: velvet"
-
+    # The 0.2.09 Makefile already defaults to VELVET_DIR=velvet (our staged
+    # resource) and no longer has a `doc` target, so no inreplaces are needed.
     system "make", *args
 
     bin.install "oases", "scripts/oases_pipeline.py"
