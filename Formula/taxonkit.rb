@@ -1,7 +1,6 @@
 class Taxonkit < Formula
   desc "NCBI taxonomy toolkit"
   homepage "https://github.com/shenwei356/taxonkit"
-  version "0.20.0"
   license "MIT"
 
   bottle do
