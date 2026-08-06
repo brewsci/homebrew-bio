@@ -3,21 +3,14 @@ class Patinae < Formula
 
   desc "Fast, programmable molecular viewer for research, scripting, and the web"
   homepage "https://github.com/zmactep/patinae"
-  url "https://github.com/zmactep/patinae/archive/refs/tags/v0.4.5.tar.gz"
-  sha256 "fbbc10d3c2e7f25d5a19f8eaf6a2cbedf54143e775cf6646bf8ac52c5fbc85ea"
+  url "https://github.com/zmactep/patinae/archive/refs/tags/v0.4.6.tar.gz"
+  sha256 "ba6a6752dc73c31b22ca560fa1bb1b39407982902397a3eff33a387c1d18a1c9"
   license "BSD-3-Clause"
   head "https://github.com/zmactep/patinae.git", branch: "main"
 
   livecheck do
     url :stable
     strategy :github_latest
-  end
-
-  bottle do
-    root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, arm64_tahoe:   "d998b0dcd989c7a5ee4c6de94f5f366d9bda46498ee2d86c9ac9de6c8f94f60a"
-    sha256 cellar: :any, arm64_sequoia: "c83a4ac885150289daad25acd065640a5f6a92e21c72961564c7493b7beb1e21"
-    sha256 cellar: :any, arm64_sonoma:  "27ded28dc8339f8b43b681170da6b5e0b35f1e2555c7664e8107bc6c7ba147a8"
   end
 
   depends_on "maturin" => :build
