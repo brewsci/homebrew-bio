@@ -3,7 +3,6 @@ class Mhap < Formula
   desc "MinHash Alignment Process"
   homepage "https://github.com/marbl/MHAP"
   url "https://github.com/marbl/MHAP/releases/download/2.1.3/mhap-2.1.3.jar.gz"
-  version "2.1.3"
   sha256 "665c0da4f2c94ddc405b291cb088b1377229249a6f2c1b80eebb8b85aebfa983"
   license "Apache-2.0"
 

@@ -1,7 +1,6 @@
 class Unikmer < Formula
   desc "Manipulate small kmers without frequency information"
   homepage "https://github.com/shenwei356/unikmer"
-  version "0.20.0"
   license "MIT"
 
   bottle do
