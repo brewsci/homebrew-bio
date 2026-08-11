@@ -105,6 +105,10 @@ class Coot < Formula
               "\nexec_prefix="
     ENV.cxx11
     ENV.libcxx
+
+    inreplace "src/cc-interface-map-utils.cc",
+              "new em_placement_data_t(em_placement_output_file_name, 0)",
+              "new em_placement_data_t{em_placement_output_file_name}"
     inreplace "autogen.sh", "libtool", "glibtool"
     system "./autogen.sh"
     if OS.mac?
