@@ -1,8 +1,8 @@
 class Coot < Formula
   desc "Crystallographic Object-Oriented Toolkit"
   homepage "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/"
-  url "https://github.com/pemsley/coot/archive/refs/tags/Release-1.3.1.tar.gz"
-  sha256 "39069510b2bd499a407d5cc9202d4df591b353c344dd21aaf30e2ceab8260025"
+  url "https://github.com/pemsley/coot/archive/refs/tags/Release-1.3.2.tar.gz"
+  sha256 "8bd71e6582e87a8d2959bc1b956875a7f62c575b5a93ca60f2e575eaab42ff57"
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only", "GPL-2.0-or-later"]
   head "https://github.com/pemsley/coot.git", branch: "main"
 
@@ -105,13 +105,6 @@ class Coot < Formula
               "\nexec_prefix="
     ENV.cxx11
     ENV.libcxx
-    # clang 15 (macOS 14) predates C++20 parenthesized aggregate initialization
-    # (P0960, landed in clang 16), so this `new T(str)` on the plain aggregate
-    # em_placement_data_t fails to compile there. Brace-initialize it instead,
-    # which is valid C++17 and behaves identically (obj stays value-initialized).
-    inreplace "src/cc-interface-map-utils.cc",
-              "new em_placement_data_t(em_placement_output_file_name)",
-              "new em_placement_data_t{em_placement_output_file_name}"
     inreplace "autogen.sh", "libtool", "glibtool"
     system "./autogen.sh"
     if OS.mac?
