@@ -1,13 +1,11 @@
 class Coot < Formula
   desc "Crystallographic Object-Oriented Toolkit"
   homepage "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/"
-  url "https://github.com/pemsley/coot/archive/refs/tags/Release-1.3.1.tar.gz"
-  sha256 "39069510b2bd499a407d5cc9202d4df591b353c344dd21aaf30e2ceab8260025"
+  url "https://github.com/pemsley/coot/archive/refs/tags/Release-1.3.2.tar.gz"
+  sha256 "8bd71e6582e87a8d2959bc1b956875a7f62c575b5a93ca60f2e575eaab42ff57"
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only", "GPL-2.0-or-later"]
   head "https://github.com/pemsley/coot.git", branch: "main"
 
-  # Track the tagged releases; the default git strategy otherwise picks junk
-  # tags like revision-count-* and reports a bogus version.
   livecheck do
     url :stable
     strategy :github_latest
@@ -15,11 +13,10 @@ class Coot < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 arm64_tahoe:   "fea18013d962c9b21d7e5cde85a92069b4c8d75b6c845e01c3415f98b363a988"
-    sha256 arm64_sequoia: "1a2533eeb7e65b14b4fbb5e68f189398b6e8883c64eabd6277b1aece863e2119"
-    sha256 arm64_sonoma:  "25fb7259a69c858b9bb61524dcedde5bdbd3b320a82f5aea9cfc5e8f524dddc6"
-    sha256 x86_64_linux:  "64f9ef32219d6f1b813e284e771d163ab169cfa60382d034841f0b68aa4ecb52"
+    sha256 arm64_tahoe:   "a6f477e91c30b315a78178f463ea0f5718ab2223ed0db92f245dbbb4fda7e68d"
+    sha256 arm64_sequoia: "ff629dac7f575966b780fee581ba7030bd28e3eeed53916a101d05d39fbccb7d"
+    sha256 arm64_sonoma:  "2de15d7423e8c9598f7ee91a53e74e9dc723dc61b25cd07aa8e59398be6d37a0"
+    sha256 x86_64_linux:  "ea7eef8a68869efbc5aa774fb2d054a29f030541f95fcf62471292c5c6711c4c"
   end
 
   depends_on "autoconf" => :build
@@ -105,12 +102,63 @@ class Coot < Formula
               "\nexec_prefix="
     ENV.cxx11
     ENV.libcxx
-    # clang 15 (macOS 14) predates C++20 parenthesized aggregate initialization
-    # (P0960, landed in clang 16), so this `new T(str)` on the plain aggregate
-    # em_placement_data_t fails to compile there. Brace-initialize it instead,
-    # which is valid C++17 and behaves identically (obj stays value-initialized).
+
+    if OS.mac?
+      # coot's bare GTK4 window has no Dock icon on macOS. Build a tiny
+      # static helper that calls NSApplication#setApplicationIconImage via
+      # AppKit, and link it only into the MacCoot binary (see the OS_DARWIN
+      # block appended to src/Makefile.am below).
+      dock_icon_source = buildpath/"src/coot-macos-dock-icon.mm"
+      dock_icon_source.write <<~OBJCPP
+        #import <AppKit/AppKit.h>
+
+        extern "C" void set_coot_macos_dock_icon(const char *path) {
+          @autoreleasepool {
+            NSString *icon_path = [NSString stringWithUTF8String:path];
+            NSImage *image = [[NSImage alloc] initWithContentsOfFile:icon_path];
+            if (image != nil) {
+              [[NSApplication sharedApplication] setApplicationIconImage:image];
+              [image release];
+            }
+          }
+        }
+      OBJCPP
+      system ENV.cxx, "-c", dock_icon_source, "-o", "src/coot-macos-dock-icon.o"
+      system "ar", "rcs", "src/libcoot-macos-dock-icon.a", "src/coot-macos-dock-icon.o"
+
+      # extern "C" linkage specifications are only valid at namespace scope,
+      # so the declaration goes just above startup(), and only the call
+      # itself goes inline after gtk_init().
+      inreplace "src/startup.cc", "int startup(int argc, char **argv) {", <<~CPP.chomp
+        #ifdef __APPLE__
+        extern "C" void set_coot_macos_dock_icon(const char *path);
+        #endif
+
+        int startup(int argc, char **argv) {
+      CPP
+
+      inreplace "src/startup.cc", "gtk_init();", <<~CPP.chomp
+        gtk_init();
+
+        #ifdef __APPLE__
+           set_coot_macos_dock_icon("#{pkgshare}/coot-dock-icon.png");
+        #endif
+      CPP
+
+      inreplace "src/Makefile.am" do |s|
+        s.inreplace_string.sub!(/(MacCoot_LDADD\s*=.*?\$\(EMBEDDED_PYTHON_LIBS\))(\nelse\ncoot_1_LDADD)/m) do
+          "#{Regexp.last_match(1)} \\\n\tlibcoot-macos-dock-icon.a#{Regexp.last_match(2)}"
+        end
+      end
+      # automake requires linker flags such as -framework to live in
+      # _LDFLAGS rather than _LDADD.
+      inreplace "src/Makefile.am",
+                "MacCoot_LDFLAGS = $(EXPORT_DYNAMIC_FLAG_SPEC)",
+                "MacCoot_LDFLAGS = $(EXPORT_DYNAMIC_FLAG_SPEC) -framework AppKit"
+    end
+
     inreplace "src/cc-interface-map-utils.cc",
-              "new em_placement_data_t(em_placement_output_file_name)",
+              "new em_placement_data_t(em_placement_output_file_name, 0)",
               "new em_placement_data_t{em_placement_output_file_name}"
     inreplace "autogen.sh", "libtool", "glibtool"
     system "./autogen.sh"
@@ -152,6 +200,8 @@ class Coot < Formula
     system "make"
     ENV.deparallelize { system "make", "install" }
     bin.install_symlink libexec/"Maccoot"
+    # install the Dock icon image referenced by the AppKit helper above
+    pkgshare.install "pixmaps/icons/hicolor_apps_256x256_coot.png" => "coot-dock-icon.png" if OS.mac?
     # install reference data
     # install data, #{pkgshare} is /path/to/share/coot
     (pkgshare/"reference-structures").install resource("reference-structures")
