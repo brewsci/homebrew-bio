@@ -1,8 +1,8 @@
 class Coot < Formula
   desc "Crystallographic Object-Oriented Toolkit"
   homepage "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/"
-  url "https://github.com/pemsley/coot/archive/refs/tags/Release-1.3.2.tar.gz"
-  sha256 "8bd71e6582e87a8d2959bc1b956875a7f62c575b5a93ca60f2e575eaab42ff57"
+  url "https://github.com/pemsley/coot/archive/refs/tags/Release-1.3.3.tar.gz"
+  sha256 "5144e3d96b56c8f27173aeac2db5826eead98dda7bd9f1af846fa8cc2055b0d5"
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only", "GPL-2.0-or-later"]
   head "https://github.com/pemsley/coot.git", branch: "main"
 
@@ -157,9 +157,6 @@ class Coot < Formula
                 "MacCoot_LDFLAGS = $(EXPORT_DYNAMIC_FLAG_SPEC) -framework AppKit"
     end
 
-    inreplace "src/cc-interface-map-utils.cc",
-              "new em_placement_data_t(em_placement_output_file_name, 0)",
-              "new em_placement_data_t{em_placement_output_file_name}"
     inreplace "autogen.sh", "libtool", "glibtool"
     system "./autogen.sh"
     if OS.mac?
