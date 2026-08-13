@@ -1,8 +1,8 @@
 class Coot < Formula
   desc "Crystallographic Object-Oriented Toolkit"
   homepage "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/"
-  url "https://github.com/pemsley/coot/archive/refs/tags/Release-1.3.2.tar.gz"
-  sha256 "8bd71e6582e87a8d2959bc1b956875a7f62c575b5a93ca60f2e575eaab42ff57"
+  url "https://github.com/pemsley/coot/archive/refs/tags/Release-1.3.3.tar.gz"
+  sha256 "5144e3d96b56c8f27173aeac2db5826eead98dda7bd9f1af846fa8cc2055b0d5"
   license any_of: ["GPL-3.0-only", "LGPL-3.0-only", "GPL-2.0-or-later"]
   head "https://github.com/pemsley/coot.git", branch: "main"
 
@@ -13,10 +13,10 @@ class Coot < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 arm64_tahoe:   "a6f477e91c30b315a78178f463ea0f5718ab2223ed0db92f245dbbb4fda7e68d"
-    sha256 arm64_sequoia: "ff629dac7f575966b780fee581ba7030bd28e3eeed53916a101d05d39fbccb7d"
-    sha256 arm64_sonoma:  "2de15d7423e8c9598f7ee91a53e74e9dc723dc61b25cd07aa8e59398be6d37a0"
-    sha256 x86_64_linux:  "ea7eef8a68869efbc5aa774fb2d054a29f030541f95fcf62471292c5c6711c4c"
+    sha256 arm64_tahoe:   "8070b6df19a0fac9d754be25d684100af8737c014425abd87e257e050e1a280a"
+    sha256 arm64_sequoia: "6c491085cf51698b898bfbc3cf0a94281ff01719e6ac175e446c75ab1afabeaa"
+    sha256 arm64_sonoma:  "46a390a6258439df501f7c58f7cde610eb84b38f056000864017df3a934a62fc"
+    sha256 x86_64_linux:  "90845feaf72d4890d825f3d341c210f16df6fd4142aaca4a0f4e066708a15fe9"
   end
 
   depends_on "autoconf" => :build
@@ -157,9 +157,6 @@ class Coot < Formula
                 "MacCoot_LDFLAGS = $(EXPORT_DYNAMIC_FLAG_SPEC) -framework AppKit"
     end
 
-    inreplace "src/cc-interface-map-utils.cc",
-              "new em_placement_data_t(em_placement_output_file_name, 0)",
-              "new em_placement_data_t{em_placement_output_file_name}"
     inreplace "autogen.sh", "libtool", "glibtool"
     system "./autogen.sh"
     if OS.mac?
