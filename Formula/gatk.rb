@@ -6,7 +6,7 @@ class Gatk < Formula
   homepage "https://github.com/broadinstitute/gatk"
   url "https://github.com/broadinstitute/gatk/releases/download/4.6.2.0/gatk-4.6.2.0.zip"
   sha256 "32d2f90bf13fcb3a8ac765bb2cb8ec1fc9a6cc447055d0156bd1db2092d4e3e8"
-  license "BSD-3-Clause"
+  license "Apache-2.0"
 
   livecheck do
     url :stable
