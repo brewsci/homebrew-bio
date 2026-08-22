@@ -28,6 +28,11 @@ class Gatk < Formula
   depends_on "python@3.10"
   depends_on "r"
 
+  on_linux do
+    # Picked up by the Python wheels installed below.
+    depends_on "zlib-ng-compat"
+  end
+
   resource "homebrew-count_reads.bam" do
     url "https://github.com/broadinstitute/gatk/blob/626c88732c02b0fd5f395db20c91bf2784ec54b9/src/test/resources/org/broadinstitute/hellbender/tools/count_reads.bam?raw=true"
     sha256 "656e36331a39a3641565ef7810a529ac51270b4132007d7b94e6efff99133a2c"
