@@ -5,9 +5,8 @@ class Eastr < Formula
   desc "Emending Alignment of Spliced Transcript Reads"
   homepage "https://github.com/gpertea/gffread/"
   url "https://github.com/ishinder/EASTR.git",
-    tag:      "v1.0-paper",
-    revision: "3ce55dc40a6b3de816f61e52508993816e90bdbb"
-  version "1.0"
+    tag:      "1.1.2",
+    revision: "90ac86ec925b5102f7f74d07908fe868c960e791"
   license "MIT"
   head "https://github.com/ishinder/EASTR.git", branch: "main"
 
@@ -61,8 +60,8 @@ class Eastr < Formula
   end
 
   resource "pysam" do
-    url "https://files.pythonhosted.org/packages/a6/bc/e0a79d74137643940f5406121039d1272f29f55c5330e7b43484b2259da5/pysam-0.22.1.tar.gz"
-    sha256 "18a0b97be95bd71e584de698441c46651cdff378db1c9a4fb3f541e560253b22"
+    url "https://files.pythonhosted.org/packages/7c/2b/1cf19890a0e4c73ad2672ce7eb485606c4bd2846eef2d892c078ab193c92/pysam-0.23.3.tar.gz"
+    sha256 "9ebcb1f004b296fd139b103ec6fd7e415e80f89f194eb7d0d972ac6d11bbaf24"
   end
 
   resource "pytz" do
@@ -80,27 +79,25 @@ class Eastr < Formula
     sha256 "2674120f8d891909751c38abcdfd386ac0a5a1127954fbc332af6b5ceae07efd"
   end
 
-  patch :DATA
-
   def install
     cd "utils" do
-      # Use Homebrew's htslib
+      # Use Homebrew's htslib instead of the bundled ExternalProject_Add(htslib) fetch
       inreplace "CMakeLists.txt" do |s|
+        s.sub!(/include\(ExternalProject\)\nExternalProject_Add\(htslib\n.*?\n\s*\)\n/m, "")
         s.gsub! "${CMAKE_SOURCE_DIR}/include/htslib/libhts.a", "hts"
         s.gsub! "add_dependencies(vacuum htslib)", "# add_dependencies(vacuum htslib)"
         s.gsub! "add_dependencies(junction_extractor htslib)", "# add_dependencies(junction_extractor htslib)"
       end
       inreplace ["src/GSam.h", "src/tmerge.h"], "htslib/htslib", "htslib"
-      inreplace "src/vacuum.cpp", "strverscmp", "strcmp"
-      system "cmake", ".", *std_cmake_args
-      system "make"
-      bin.install "vacuum", "junction_extractor"
+      # Build out-of-source: setup.py's CMake extension reconfigures utils/ during
+      # the pip install below and fails if an in-source CMakeCache.txt is left here.
+      mkdir "build" do
+        system "cmake", "..", *std_cmake_args
+        system "make"
+        bin.install "vacuum", "junction_extractor"
+      end
     end
-    # pkg_resources is not available in Python 3.12
-    inreplace "EASTR/utils.py" do |s|
-      s.gsub! "import pkg_resources", "import importlib.resources as resources"
-      s.gsub! "pkg_resources.resource_filename", "resources.files"
-    end
+    # As of 1.1.2 upstream moved to a src/eastr layout and no longer uses pkg_resources
     virtualenv_install_with_resources
   end
 
@@ -108,32 +105,3 @@ class Eastr < Formula
     assert_match "usage", shell_output("#{bin}/eastr --help")
   end
 end
-__END__
-diff --git a/utils/CMakeLists.txt b/utils/CMakeLists.txt
-index 05028a3..1a1d8a1 100644
---- a/utils/CMakeLists.txt
-+++ b/utils/CMakeLists.txt
-@@ -6,16 +6,16 @@ set(CMAKE_CXX_STANDARD 11)
- set(CMAKE_CXX_FLAGS "${CMAKE_sCXX_FLAGS} -fpermissive -DNOCURL=1")
- include_directories("${CMAKE_SOURCE_DIR}/include/")
- link_directories("${CMAKE_SOURCE_DIR}/include/htslib")
--include(ExternalProject)
--ExternalProject_Add(htslib
--        SOURCE_DIR ${CMAKE_SOURCE_DIR}/include/htslib
--        # if this is not specified, need to include the packages manually
--        GIT_REPOSITORY https://github.com/samtools/htslib.git
--        BUILD_IN_SOURCE 1
--        CONFIGURE_COMMAND autoheader COMMAND autoconf COMMAND ./configure --without-libdeflate --disable-libcurl --disable-lzma
--        BUILD_COMMAND ${MAKE}
--        INSTALL_COMMAND ""
--        )
-+# include(ExternalProject)
-+# ExternalProject_Add(htslib
-+#         SOURCE_DIR ${CMAKE_SOURCE_DIR}/include/htslib
-+#         # if this is not specified, need to include the packages manually
-+#         GIT_REPOSITORY https://github.com/samtools/htslib.git
-+#         BUILD_IN_SOURCE 1
-+#         CONFIGURE_COMMAND autoheader COMMAND autoconf COMMAND ./configure --without-libdeflate --disable-libcurl --disable-lzma
-+#         BUILD_COMMAND ${MAKE}
-+#         INSTALL_COMMAND ""
-+#         )
