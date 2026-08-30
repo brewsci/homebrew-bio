@@ -4,8 +4,8 @@ class Iqtree2 < Formula
   homepage "http://www.iqtree.org/"
   # pull from git tag to get submodules
   url "https://github.com/iqtree/iqtree2.git",
-    tag:      "v2.3.6",
-    revision: "e7b30628a1ed17f999fcb68cab51cd4dbca5a9f9"
+    tag:      "v2.4.0",
+    revision: "977cc4324234b36fbfb80b326b8e43b73952e365"
   license "GPL-2.0-only"
   head "https://github.com/iqtree/iqtree2.git", branch: "master"
 
@@ -25,10 +25,31 @@ class Iqtree2 < Formula
   depends_on "llvm" if OS.mac?
   uses_from_macos "zlib"
 
+  # The bundled cmaple submodule fetches GoogleTest via CMake FetchContent,
+  # which Homebrew blocks. Vendor the exact pinned source and point
+  # FetchContent at it so no network access happens during the build.
+  resource "googletest" do
+    url "https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.tar.gz"
+    sha256 "3dd5da4302b4069f90b2d58f48e6f3bc4c9938e024e7599241cafaebda476013"
+  end
+
   def install
+    (buildpath/"googletest").install resource("googletest")
+
+    # The bundled prebuilt libomp.a (libmac*/) is stale and lacks newer
+    # OpenMP runtime symbols (e.g. __kmpc_dispatch_deinit) that current
+    # clang emits for dynamic-schedule loops, breaking the arm64 link of
+    # decentTree. Drop it and link against Homebrew's up-to-date libomp.
+    if OS.mac?
+      Dir[buildpath/"libmac*/libomp.a"].each { |f| rm f }
+      ENV.append "LDFLAGS", "-L#{formula_opt_lib("libomp")}"
+    end
+
     mkdir "build" do
       ENV.append_path "PREFIX_PATH", buildpath/"lsd2"
-      system "cmake", "..", *std_cmake_args
+      system "cmake", "..", "-DEIGEN3_INCLUDE_DIR=#{formula_opt_include("eigen")}/eigen3",
+             "-DFETCHCONTENT_SOURCE_DIR_GOOGLETEST=#{buildpath}/googletest",
+             *std_cmake_args
       system "make", "install"
     end
   end
