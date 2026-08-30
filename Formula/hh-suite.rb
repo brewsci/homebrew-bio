@@ -43,7 +43,7 @@ class HhSuite < Formula
     # Fix an error: no member named 'ptr_fun' in namespace 'std'
     inreplace "src/a3m_compress.cpp", "std::not1(std::ptr_fun<int, int>(std::isspace)))",
                                       "[](unsigned char ch) { return !std::isspace(ch); })"
-    system "cmake", ".", *args
+    system "cmake", "-S", ".", "-B", ".", *args
     system "make", "install"
     prefix.install "scripts"
     bin.install_symlink prefix/"scripts/reformat.pl"

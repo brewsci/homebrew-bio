@@ -35,7 +35,7 @@ class Iqtree < Formula
     end
 
     mkdir "build" do
-      system "cmake", "..", "-DIQTREE_FLAGS=omp", *std_cmake_args
+      system "cmake", "-S", "..", "-B", ".", "-DIQTREE_FLAGS=omp", *std_cmake_args
       system "make"
     end
     bin.install "build/iqtree"

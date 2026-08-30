@@ -30,7 +30,7 @@ class Gappa < Formula
   def install
     ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
     mkdir "build" do
-      system "cmake", "..", *std_cmake_args
+      system "cmake", "-S", "..", "-B", ".", *std_cmake_args
       system "make"
     end
     bin.install "bin/gappa"
