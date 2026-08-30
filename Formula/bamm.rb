@@ -21,7 +21,7 @@ class Bamm < Formula
 
   def install
     mkdir "build" do
-      system "cmake", "..", *std_cmake_args
+      system "cmake", "-S", "..", "-B", ".", *std_cmake_args
       system "make", "install"
     end
     pkgshare.install Dir["examples/*"]

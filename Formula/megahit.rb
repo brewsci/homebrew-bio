@@ -27,7 +27,7 @@ class Megahit < Formula
   def install
     inreplace "src/megahit", "#!/usr/bin/env python", "#!/usr/bin/env python3"
     mkdir "build" do
-      system "cmake", "..", *std_cmake_args
+      system "cmake", "-S", "..", "-B", ".", *std_cmake_args
       system "make"
       system "make", "install"
     end
