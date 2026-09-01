@@ -2,10 +2,10 @@ class Uniqtag < Formula
   # cite Jackman_2015: "https://doi.org/10.1371/journal.pone.0128026"
   desc "Abbreviate strings to short unique identifiers"
   homepage "https://github.com/sjackman/uniqtag"
-  url "https://github.com/sjackman/uniqtag/archive/refs/tags/1.0.tar.gz"
-  sha256 "8ff0dd850c15ff3468707ae38a171deb6518866a699964a1aeeec9c90ded7313"
+  url "https://github.com/sjackman/uniqtag/archive/refs/tags/1.0.1.tar.gz"
+  sha256 "ead5cc86658ffb928c68501ed3a17608c76fdb7eaf21cd291f88cf4582bf3ea2"
   license "MIT"
-  head "https://github.com/sjackman/uniqtag.git"
+  head "https://github.com/sjackman/uniqtag.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -16,6 +16,8 @@ class Uniqtag < Formula
   uses_from_macos "ruby"
 
   def install
+    # Upstream did not bump the internal version string in the 1.0.1 release
+    inreplace "uniqtag", 'opts.version = "1.0.0"', "opts.version = \"#{version}\""
     system "make", "install", "prefix=#{prefix}"
   end
 
