@@ -3,10 +3,10 @@ class Ntedit < Formula
   desc "Scalable genome assembly polishing"
   homepage "https://github.com/bcgsc/ntEdit"
   url "https://github.com/bcgsc/ntEdit.git",
-      tag:      "v2.0.3",
-      revision: "d004dbc6166f044d7d576dac3f8f7c81c180e008"
+      tag:      "v2.1.1",
+      revision: "1679c966d10f7805525633d7b9110aeff6585fa0"
   license "GPL-3.0-or-later"
-  head "https://github.com/bcgsc/ntEdit.git"
+  head "https://github.com/bcgsc/ntEdit.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -26,6 +26,7 @@ class Ntedit < Formula
   depends_on "brewsci/bio/btllib"
   depends_on "brewsci/bio/ntcard"
   depends_on "brewsci/bio/nthits"
+  depends_on "brewsci/bio/ntstat"
   depends_on "python@3.13"
   depends_on "snakemake"
 
@@ -38,7 +39,7 @@ class Ntedit < Formula
 
   def install
     inreplace "run-ntedit", "#!/usr/bin/env python3",
-                            "#!#{formula_opt_libexec("snakemake")}/bin/python3.13"
+                            "#!#{formula_opt_libexec("snakemake")}/bin/python3"
     system "meson", "setup", "build", "--prefix", prefix
     cd "build" do
       system "ninja", "install"
