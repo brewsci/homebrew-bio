@@ -1,11 +1,13 @@
 class Tigmint < Formula
+  include Language::Python::Shebang
+
   # cite Jackman_2018: "https://doi.org/10.1186/s12859-018-2425-6"
   desc "Correct misassemblies using linked or long reads"
-  homepage "https://bcgsc.github.io/tigmint/"
-  url "https://github.com/bcgsc/tigmint/releases/download/v1.2.5/tigmint-1.2.5.tar.gz"
-  sha256 "15a56748f19732462c0445fe9df2f737a4bf8caa97dbc0fe6e943e3fd1c6b5f0"
+  homepage "https://github.com/bcgsc/tigmint"
+  url "https://github.com/bcgsc/tigmint/releases/download/v1.2.10/tigmint-1.2.10.tar.gz"
+  sha256 "8e7b5d424ff69d5da7b117bef9996463b02205078ce0fb6e3074ca6c9933efa9"
   license "GPL-3.0-only"
-  head "https://github.com/bcgsc/tigmint.git"
+  head "https://github.com/bcgsc/tigmint.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -14,24 +16,40 @@ class Tigmint < Formula
   end
 
   depends_on "bedtools"
+  depends_on "btllib"
+  depends_on "libdeflate"
   depends_on "minimap2"
   depends_on "numpy"
-  depends_on "python@3.9"
+  depends_on "python@3.14"
   depends_on "samtools"
+
+  on_linux do
+    depends_on "xz"
+    depends_on "zlib-ng-compat"
+  end
 
   def install
     ENV.prepend_path "PATH", libexec/"bin"
-    xy = Language::Python.major_minor_version "python3"
+    python = formula_opt_bin("python@3.14")/"python3.14"
+    xy = Language::Python.major_minor_version python
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
-    inreplace "bin/tigmint-cut", "/usr/bin/env python3", Formula["python@3.9"].bin/"python3.9"
-    inreplace "bin/tigmint_molecule.py", "/usr/bin/env python3", Formula["python@3.9"].bin/"python3.9"
-    inreplace "bin/tigmint_molecule_paf.py", "/usr/bin/env python3", Formula["python@3.9"].bin/"python3.9"
-    system "pip3", "install", "--prefix=#{libexec}", "-r", "requirements.txt", "--no-binary=pysam"
+    # btllib is provided by Homebrew (its PyPI pin is unsatisfiable on modern
+    # Python) and numpy comes from the numpy formula; drop both from the pip list.
+    inreplace "requirements.txt" do |s|
+      s.gsub!(/^btllib\b.*\n/, "")
+      s.gsub!(/^numpy\b.*\n/, "")
+    end
+    system python, "-m", "pip", "install", "--prefix=#{libexec}",
+           "-r", "requirements.txt", "--no-binary=pysam"
     bin.install Dir["bin/*"]
+    rewrite_shebang python_shebang_rewrite_info(python), *bin.children
     system "make", "-C", "src"
     libexec_src = Pathname.new("#{libexec}/src")
     libexec_src.install "src/long-to-linked-pe"
-    bin.env_script_all_files libexec/"bin", PYTHONPATH: Dir[libexec/"lib/python*/site-packages"].first
+    btllib_python = formula_opt_lib("btllib")/"btllib/python"
+    site_packages = Dir[libexec/"lib/python*/site-packages"].first
+    bin.env_script_all_files libexec/"bin",
+                             PYTHONPATH: "#{site_packages}#{File::PATH_SEPARATOR}#{btllib_python}"
   end
 
   test do
