@@ -37,6 +37,10 @@ class Prokka < Formula
     end
   end
 
+  post_install_steps do
+    run "prokka", args: ["--setupdb"], base: :bin
+  end
+
   def caveats
     <<~EOS
       This formula doesn't contain tbl2asn because it is deprecated now.

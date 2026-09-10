@@ -231,8 +231,8 @@ class Antismash < Formula
               "compile(\"\\w+=\")", "compile(r\"\\w+=\")"
   end
 
-  def post_install_steps
-    HOMEBREW_PREFIX.glob("lib/python*.*/site-packages/antismash/**/*.pyc").map(&:unlink)
+  post_install_steps do
+    remove "lib/python*.*/site-packages/antismash/**/*.pyc", base: :homebrew_prefix
   end
 
   def caveats

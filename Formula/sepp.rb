@@ -50,24 +50,21 @@ class Sepp < Formula
     pkgshare.install Dir[buildpath/"test/unittest/data/mock/*"]
   end
 
-  def post_install_steps
-    config = libexec/".sepp/main.config"
-    ohai "Rewriting #{config}"
-    rm config
-    config.write <<~EOS
+  post_install_steps do
+    write_file ".sepp/main.config", <<~EOS, base: :libexec
       [pplacer]
-      path=#{libexec}/.sepp/bundled/pplacer
+      path={{libexec}}/.sepp/bundled/pplacer
       [hmmalign]
-      path=#{libexec}/.sepp/bundled/hmmalign
+      path={{libexec}}/.sepp/bundled/hmmalign
       [hmmsearch]
-      path=#{libexec}/.sepp/bundled/hmmsearch
+      path={{libexec}}/.sepp/bundled/hmmsearch
       piped=False
       elim=10000
       filters=True
       [hmmbuild]
-      path=#{libexec}/.sepp/bundled/hmmbuild
+      path={{libexec}}/.sepp/bundled/hmmbuild
       [jsonmerger]
-      path=#{libexec}/.sepp/bundled/seppJsonMerger.jar
+      path={{libexec}}/.sepp/bundled/seppJsonMerger.jar
       [exhaustive]
       strategy = centroid
       minsubsetsize = 2
