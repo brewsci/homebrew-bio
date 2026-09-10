@@ -50,7 +50,7 @@ class Sepp < Formula
     pkgshare.install Dir[buildpath/"test/unittest/data/mock/*"]
   end
 
-  def post_install
+  def post_install_steps
     config = libexec/".sepp/main.config"
     ohai "Rewriting #{config}"
     rm config
