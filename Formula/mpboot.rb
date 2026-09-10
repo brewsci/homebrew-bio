@@ -27,7 +27,7 @@ class Mpboot < Formula
 
     mkdir "build" do
       simd = build.with?("avx") ? "avx" : "sse4"
-      system "cmake", "..", "-DIQTREE_FLAGS=#{simd}", *std_cmake_args
+      system "cmake", "-S", "..", "-B", ".", "-DIQTREE_FLAGS=#{simd}", *std_cmake_args
       system "make"
       system "make", "install"
       mv bin/"mpboot-avx", bin/"mpboot" if simd == "avx"

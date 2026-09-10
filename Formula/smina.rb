@@ -59,7 +59,7 @@ class Smina < Formula
       EOS
 
       ENV.append "CXXFLAGS", "-DBOOST_TIMER_ENABLE_DEPRECATED=1"
-      system "cmake", "..",
+      system "cmake", "-S", "..", "-B", ".",
              "-DCMAKE_BUILD_TYPE=Release",
              "-DCMAKE_INSTALL_PREFIX=#{prefix}",
              "-DOPENBABEL_DIR=#{formula_opt_prefix("open-babel")}",

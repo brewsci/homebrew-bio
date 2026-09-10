@@ -18,7 +18,7 @@ class Sibelia < Formula
   def install
     # 'build' folder already exists
     mkdir "build" do
-      system "cmake", "../src", *std_cmake_args
+      system "cmake", "-S", "../src", "-B", ".", *std_cmake_args
       system "make"
       system "make", "install"
     end

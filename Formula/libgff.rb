@@ -17,7 +17,7 @@ class Libgff < Formula
   depends_on "boost"
 
   def install
-    system "cmake", ".", *std_cmake_args
+    system "cmake", "-S", ".", "-B", ".", *std_cmake_args
     system "make"
     system "make", "install"
   end

@@ -41,7 +41,7 @@ First see [the Homebrew documentation](https://docs.brew.sh/#contributors) and [
 Include a citation to the tool before the `desc`. For example:
 
 ```ruby
-  # cite Smith_2010: "https://doi.org/10.1234/56789"
+# cite Smith_2010: "https://doi.org/10.1234/56789"
 ```
 
 The citation label is the first author's surname and year of publication separated by an underscore. Please use `doi.org` to look up the citation label for a DOI:

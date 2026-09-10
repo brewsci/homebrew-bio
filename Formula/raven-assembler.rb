@@ -29,7 +29,7 @@ class RavenAssembler < Formula
     args = ["-DRAVEN_BUILD_EXE=ON"]
     args << "-DZLIB_ROOT=#{formula_opt_prefix("zlib-ng-compat")}" if OS.linux?
     mkdir "build" do
-      system "cmake", "..", *args, *std_cmake_args
+      system "cmake", "-S", "..", "-B", ".", *args, *std_cmake_args
       system "make"
       system "make", "install"
     end

@@ -92,7 +92,7 @@ class Eastr < Formula
       end
       inreplace ["src/GSam.h", "src/tmerge.h"], "htslib/htslib", "htslib"
       inreplace "src/vacuum.cpp", "strverscmp", "strcmp"
-      system "cmake", ".", *std_cmake_args
+      system "cmake", "-S", ".", "-B", ".", *std_cmake_args
       system "make"
       bin.install "vacuum", "junction_extractor"
     end

@@ -37,8 +37,8 @@ class Prokka < Formula
     end
   end
 
-  def post_install
-    system "#{bin}/prokka", "--setupdb"
+  post_install_steps do
+    run "prokka", args: ["--setupdb"], base: :bin
   end
 
   def caveats

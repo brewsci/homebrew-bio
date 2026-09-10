@@ -20,7 +20,7 @@ class Minia < Formula
     mkdir "build" do
       args = std_cmake_args
       args << "-DSKIP_DOC=1"
-      system "cmake", "..", *args
+      system "cmake", "-S", "..", "-B", ".", *args
       system "make"
       system "make", "install"
     end

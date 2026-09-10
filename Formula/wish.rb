@@ -19,7 +19,7 @@ class Wish < Formula
   fails_with :clang # needs openmp
 
   def install
-    system "cmake", ".", *std_cmake_args
+    system "cmake", "-S", ".", "-B", ".", *std_cmake_args
     system "make"
     bin.install "WIsH"
   end

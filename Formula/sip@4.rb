@@ -62,8 +62,8 @@ class SipAT4 < Formula
     system "make", "install"
   end
 
-  def post_install_steps
-    (prefix/"share/sip").mkpath
+  post_install_steps do
+    mkdir_p "sip", base: :share
   end
 
   test do
