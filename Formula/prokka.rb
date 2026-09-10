@@ -37,10 +37,6 @@ class Prokka < Formula
     end
   end
 
-  def post_install_steps
-    system "#{bin}/prokka", "--setupdb"
-  end
-
   def caveats
     <<~EOS
       This formula doesn't contain tbl2asn because it is deprecated now.
