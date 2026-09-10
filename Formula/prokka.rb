@@ -37,7 +37,7 @@ class Prokka < Formula
     end
   end
 
-  def post_install
+  def post_install_steps
     system "#{bin}/prokka", "--setupdb"
   end
 
