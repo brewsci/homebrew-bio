@@ -3,8 +3,8 @@ class Patinae < Formula
 
   desc "Fast, programmable molecular viewer for research, scripting, and the web"
   homepage "https://github.com/zmactep/patinae"
-  url "https://github.com/zmactep/patinae/archive/refs/tags/v0.4.6.tar.gz"
-  sha256 "ba6a6752dc73c31b22ca560fa1bb1b39407982902397a3eff33a387c1d18a1c9"
+  url "https://github.com/zmactep/patinae/archive/refs/tags/v0.4.7.tar.gz"
+  sha256 "2393261ce09918118f9524b7412d85b4fafac8f93a08e5067280db84ea9ae74e"
   license "BSD-3-Clause"
   head "https://github.com/zmactep/patinae.git", branch: "main"
 
