@@ -52,8 +52,10 @@ class Sepp < Formula
 
   def post_install_steps
     config = libexec/".sepp/main.config"
+    return unless config.dirname.exist?
+
     ohai "Rewriting #{config}"
-    rm config
+    rm_f config
     config.write <<~EOS
       [pplacer]
       path=#{libexec}/.sepp/bundled/pplacer
