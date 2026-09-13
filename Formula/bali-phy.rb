@@ -16,10 +16,9 @@ class BaliPhy < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, arm64_tahoe:   "ade38c42564fa5aafcb02a0f45ba58be5152fed0053e3d93a03d6e733cfffe35"
-    sha256 cellar: :any, arm64_sequoia: "20e7a82d254fe8d58e490f7b2f56e54f254ba149613a131cf40b40191ae1fa11"
-    sha256 cellar: :any, arm64_sonoma:  "154ecfddd30db92ebe10b52ad06dd22ddc4d9a50467fff81f1c525bd5e7eba80"
-    sha256 cellar: :any, x86_64_linux:  "222265e830fd8473210c3a7bbc60654e015625ff9738d91cd3d1b60591927345"
+    sha256 cellar: :any, arm64_tahoe:   "06ec1449c233d9e8df858bdaaf972c9b31efffc802847c9b1d12016746cd6826"
+    sha256 cellar: :any, arm64_sequoia: "29a22a78e2ca5b65aac5e06c465d0af37238369a0c85096f1e3b4e52318edb31"
+    sha256 cellar: :any, x86_64_linux:  "ddfd24cd20e5d6a318dbf870f008cfe0bdb65bc33c2d33998c54a47a18918af9"
   end
 
   depends_on "cereal" => :build
