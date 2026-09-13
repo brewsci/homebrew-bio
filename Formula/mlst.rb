@@ -4,12 +4,15 @@ class Mlst < Formula
   url "https://github.com/tseemann/mlst/archive/refs/tags/v2.35.0.tar.gz"
   sha256 "9f1291ed02494b7a862e0d56d8f501f500d7a4a207fe4244962b743df1c3dcc4"
   license "GPL-2.0"
+  revision 1
   head "https://github.com/tseemann/mlst.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, catalina:     "1798bf97d935367e32cb7c7854b25c5d04453c4ac5c00360b3c9c2969c77d110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1d618e68933b2866250ca1a60bb5e1e259890e17dbda5139afc03e4b64bb4a98"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "b90e5a657e5d9a4ffe2067e1eb3ff4567d529d82f2feed8253874f068287decc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6fab4e9192170573135aa69ba8c711c242e20d8b945d11f3cd3da2f7ae299886"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a936170b75aa0e4b852cf43988d1fadf1f3b999f4d2fe765f30cbae9be2af38"
+    sha256 cellar: :any,                 x86_64_linux:  "a74ea761e9b7bb5ee918d8567e396467a3500c4d537e7171dcf37acb7c02b2f3"
   end
 
   depends_on "cpanminus" => :build
@@ -23,6 +26,10 @@ class Mlst < Formula
   uses_from_macos "zlib"
 
   def install
+    # Rebuild bundled indexes with our BLAST: LMDB 1.0 cannot read LMDB 0.9 databases.
+    rm_r "db/blast"
+    system "bash", "-e", "-o", "pipefail", "scripts/mlst-make_blast_db"
+
     libexec.install Dir["*"]
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
     system "cpanm", "--self-contained", "-l", libexec, "Moo", "List::MoreUtils", "JSON"
