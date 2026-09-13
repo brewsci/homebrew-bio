@@ -4,6 +4,7 @@ class Mlst < Formula
   url "https://github.com/tseemann/mlst/archive/refs/tags/v2.35.0.tar.gz"
   sha256 "9f1291ed02494b7a862e0d56d8f501f500d7a4a207fe4244962b743df1c3dcc4"
   license "GPL-2.0"
+  revision 1
   head "https://github.com/tseemann/mlst.git", branch: "master"
 
   bottle do
@@ -25,6 +26,10 @@ class Mlst < Formula
   uses_from_macos "zlib"
 
   def install
+    # Rebuild bundled indexes with our BLAST: LMDB 1.0 cannot read LMDB 0.9 databases.
+    rm_r "db/blast"
+    system "bash", "-e", "-o", "pipefail", "scripts/mlst-make_blast_db"
+
     libexec.install Dir["*"]
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
     system "cpanm", "--self-contained", "-l", libexec, "Moo", "List::MoreUtils", "JSON"
