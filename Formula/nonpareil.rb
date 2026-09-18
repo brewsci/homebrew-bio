@@ -3,10 +3,10 @@ class Nonpareil < Formula
   desc "Estimates coverage in metagenomic datasets"
   homepage "http://enve-omics.ce.gatech.edu/nonpareil"
 
-  url "https://github.com/lmrodriguezr/nonpareil/archive/refs/tags/v3.5.4.tar.gz"
-  sha256 "41ea9c1378e85787142b29c7cdf8d352073764a620f818333492266e6bbec1cd"
+  url "https://github.com/lmrodriguezr/nonpareil/archive/refs/tags/v3.5.5.tar.gz"
+  sha256 "a1896a3ecf1394cbbc685de8dcb0eef04aa089e5ad6badf51d0eaa89b4b3bf1e"
   license "Artistic-2.0"
-  head "https://github.com/lmrodriguezr/nonpareil.git"
+  head "https://github.com/lmrodriguezr/nonpareil.git", branch: "main"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -16,6 +16,7 @@ class Nonpareil < Formula
   end
 
   depends_on "r"
+  depends_on "zlib-ng-compat"
   depends_on "open-mpi" => :optional
 
   def install
@@ -23,7 +24,7 @@ class Nonpareil < Formula
     r_library.mkpath
     inreplace "Makefile", "CMD INSTALL", "CMD INSTALL --library=#{r_library}"
     system "make", "nonpareil"
-    system "make", "nonpareil-mpi" if build.with? :"open-mpi"
+    system "make", "nonpareil-mpi" if build.with? "open-mpi"
     system "make", "prefix=#{prefix}", "mandir=#{man1}", "install"
     libexec.install "test/test.fasta.gz"
     libexec.install "test/test.fastq.gz"
@@ -41,7 +42,7 @@ class Nonpareil < Formula
                             "-b", "#{testpath}/test"
     system bin/"nonpareil", "-s", "#{testpath}/test.fastq.gz", "-T", "kmer",
                             "-b", "#{testpath}/test", "-X", "50", "-f", "fastq", "-X", "50"
-    if build.with? :"open-mpi"
+    if build.with? "open-mpi"
       system "mpirun", "-c", 1, bin/"nonpareil-mpi",
                        "-s", "#{testpath}/test.fasta.gz", "-T", "alignment",
                        "-b", "#{testpath}/test", "-f", "fasta", "-X", "50"
