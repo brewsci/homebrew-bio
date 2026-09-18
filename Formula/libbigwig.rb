@@ -1,8 +1,8 @@
 class Libbigwig < Formula
   desc "C library for processing the big UCSC fomats"
   homepage "https://github.com/dpryan79/libBigWig"
-  url "https://github.com/dpryan79/libBigWig/archive/refs/tags/0.4.7.tar.gz"
-  sha256 "8e057797011d93fa00e756600898af4fe6ca2d48959236efc9f296abe94916d9"
+  url "https://github.com/dpryan79/libBigWig/archive/refs/tags/0.4.8.tar.gz"
+  sha256 "10e904ea6eab4c9926dd938050af888bebe6281e8d933237e4a254cb9d3063b1"
   license "MIT"
 
   bottle do
@@ -12,8 +12,9 @@ class Libbigwig < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "37b031e10b9c6de938c1004952fe08f890b5de817963821e3d977280aad2fb28"
   end
 
+  depends_on "zlib-ng-compat" # avoids indirect-linkage failure on Linux
+
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   def install
     inreplace "Makefile", "libBigWig.so", "libBigWig.dylib" if OS.mac?
