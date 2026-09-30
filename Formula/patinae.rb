@@ -3,8 +3,8 @@ class Patinae < Formula
 
   desc "Fast, programmable molecular viewer for research, scripting, and the web"
   homepage "https://github.com/zmactep/patinae"
-  url "https://github.com/zmactep/patinae/archive/refs/tags/v0.4.7.tar.gz"
-  sha256 "2393261ce09918118f9524b7412d85b4fafac8f93a08e5067280db84ea9ae74e"
+  url "https://github.com/zmactep/patinae/archive/refs/tags/v0.5.1.tar.gz"
+  sha256 "b03f70d23f3d9d64e2a6c76aa75fb0d8a4f5d9738baa29deca2c1d1fa26c204f"
   license "BSD-3-Clause"
   head "https://github.com/zmactep/patinae.git", branch: "main"
 
@@ -47,18 +47,6 @@ class Patinae < Formula
            "--interpreter", python,
            "--out", buildpath/"wheels"
     venv.pip_install Dir[buildpath/"wheels/patinae-*.whl"].first
-
-    if OS.mac?
-      # Generate AppIcon.icns from images/patinae.png (uses sips + python3).
-      system "make", "icon"
-      libexec.install "target/app/AppIcon.icns"
-
-      (buildpath/"icon.r").write <<~REZ
-        read 'icns' (-16455, "patinae") "AppIcon.icns";
-      REZ
-      system "Rez", "-i", libexec, "-o", libexec/"bin/patinae", buildpath/"icon.r"
-      system "SetFile", "-a", "C", libexec/"bin/patinae"
-    end
 
     (bin/"patinae").write <<~SH
       #!/bin/bash
