@@ -2,8 +2,8 @@ class Beast2 < Formula
   # cite Bouckaert_2014: "https://doi.org/10.1371/journal.pcbi.1003537"
   desc "Bayesian evolutionary analysis by sampling trees"
   homepage "https://www.beast2.org/"
-  url "https://github.com/CompEvol/beast2/archive/refs/tags/v2.6.3.tar.gz"
-  sha256 "7528d3f4732bd2066079eb9001161deda20afc59424ec58fca844e56785dc6a9"
+  url "https://github.com/CompEvol/beast2/archive/refs/tags/v2.7.8.tar.gz"
+  sha256 "a616e12e72b0fde29f2686ed8924d552ff53454c34be353591488b45733a56df"
   license "LGPL-2.1"
 
   bottle do
@@ -16,12 +16,6 @@ class Beast2 < Formula
   depends_on "openjdk"
 
   def install
-    # Homebrew renames the unpacked source folder, but build.xml
-    # assumes that it won't be renamed.
-    inreplace "build.xml", "../beast2/", ""
-    # Targeting Java 6 is no longer supported.
-    inreplace "build.xml", 'source="1.6"', 'source="1.7"'
-    inreplace "build.xml", 'target="1.6"', 'target="1.7"'
     system "ant", "linux"
 
     cd "release/Linux/beast" do
