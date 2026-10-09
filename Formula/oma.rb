@@ -7,8 +7,8 @@ class Oma < Formula
   # cite Altenhoff_2014: "https://doi.org/10.1093/nar/gku1158"
   desc "Standalone package to infer orthologs with the OMA algorithm"
   homepage "https://omabrowser.org/standalone/"
-  url "https://omabrowser.org/standalone/OMA.2.7.0.tgz"
-  sha256 "7354488a2ce3b415d420f7a93dad7a65dec3f05838d5a71c32f175146295ba91"
+  url "https://github.com/DessimozLab/OmaStandalone/releases/download/2.8.0/OMA.2.8.0.tgz"
+  sha256 "289be5dcfa0fcfadcdf0972c6863210e19512ff3efbdd37f2175e7d622ba8cb9"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -25,13 +25,13 @@ class Oma < Formula
   uses_from_macos "libxslt"
 
   resource "biopython" do
-    url "https://files.pythonhosted.org/packages/df/3e/3c6aa8b2a7e6b791a34407736db32f59657001f0446ada31db73a3e0b7d5/biopython-1.87.tar.gz"
-    sha256 "8456c803459b679a9712422e5a7fd9809f2f089bf69bb085f3b077946ac9bdbf"
+    url "https://files.pythonhosted.org/packages/f6/a0/cf657d076ec56a5f9e5c29a560c1f97b8eb6ae6608dc8bc95b4e2437f129/biopython-1.88.tar.gz"
+    sha256 "9aaa31c0bda4d059f7b2ee00bfdb5cbb73ade3057aa4b737a7cc0187091d071a"
   end
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/05/3b/aab6728cae887456f409b4d75e8a01856e4f04bd510de38052a47768b680/lxml-6.1.1.tar.gz"
-    sha256 "ba96ae44888e0185281e937633a743ea90d5a196c6000f82565ebb0580012d40"
+    url "https://files.pythonhosted.org/packages/23/ad/28ecd7cb894d172f3c9c80a075eeeb2017ac62e3632cee05a5f9493547eb/lxml-6.1.3.tar.gz"
+    sha256 "45222d94ddd511536f3b2f7d9deae3b2339b4ce0f075f1ca25703b07cad9dd21"
   end
 
   def install
@@ -41,6 +41,14 @@ class Oma < Formula
     end
     venv.pip_install_and_link buildpath/"hog_bottom_up"
     system "./install.sh", prefix, share, "--brew-python"
+    native_darwin = if OS.mac?
+      "darwin-macos"
+    elsif Hardware::CPU.arm?
+      "darwin-linux-arm64"
+    else
+      "darwin-linux"
+    end
+    rm (prefix/"OMA/OMA.#{version}/darwin/bin").glob("darwin-*").reject { |f| f.basename.to_s == native_darwin }
     share.mkpath
     (share/"README").write <<~EOS
       This directory contains data files for oma standalone
@@ -49,7 +57,7 @@ class Oma < Formula
   end
 
   test do
-    system "#{bin}/oma", "-p"
+    system bin/"oma", "-p"
     File.exist?("parameters.drw")
     inreplace "parameters.drw" do |p|
       p.gsub! "DoGroupFunctionPrediction := true", "DoGroupFunctionPrediction := false"
@@ -70,7 +78,7 @@ class Oma < Formula
       >s2_2
       MTIHNVSLFTTIFNIFKFCVLYITSSLGISLERFIKCRKVKNINDIVSE
     EOS
-    system "#{bin}/oma"
+    system bin/"oma"
     assert_path_exists testpath/"Output/HierarchicalGroups.orthoxml"
   end
 end
