@@ -16,13 +16,13 @@ class Trimmomatic < Formula
   end
 
   depends_on "maven" => :build
-  depends_on "openjdk@26"
+  depends_on "openjdk"
 
   def install
-    ENV["JAVA_HOME"] = formula_opt_prefix("openjdk@26")
-    system "mvn", "clean", "package"
+    ENV["JAVA_HOME"] = formula_opt_prefix("openjdk")
+    system "mvn", "clean", "package", "-DskipTests"
     libexec.install "target/trimmomatic-#{version}.jar"
-    bin.write_jar_script libexec/"trimmomatic-#{version}.jar", "trimmomatic", java_version: "26"
+    bin.write_jar_script libexec/"trimmomatic-#{version}.jar", "trimmomatic"
     pkgshare.install "adapters"
   end
 
