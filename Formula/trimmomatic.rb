@@ -9,20 +9,20 @@ class Trimmomatic < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "3795dbc1d4736d6be4f8ba00175a1dc32096bb2083c49ed5e653520d70596171"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72a367e33d5652cc6d9465fd476707f48af215085284311d0ae6e51f86f44fb1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e341bfd840706617499aaf63420106cb5e649e08371fdcff04b23c7739d24cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b97c706eb6f439a3ba1b37cf640519f71cb8051e4295782e7d04eadb9da5ea7e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "9e7e1b699df3c72f397b0b1eff0c549b53c7aeb132fb1117e912878ae1f23401"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e7e1b699df3c72f397b0b1eff0c549b53c7aeb132fb1117e912878ae1f23401"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37a442b93032e2780b7332735041f51d30d8953d212b062037a53b8f5a55a3f0"
   end
 
   depends_on "maven" => :build
-  depends_on "openjdk@26"
+  depends_on "openjdk"
 
   def install
-    ENV["JAVA_HOME"] = formula_opt_prefix("openjdk@26")
-    system "mvn", "clean", "package"
+    ENV["JAVA_HOME"] = formula_opt_prefix("openjdk")
+    system "mvn", "clean", "package", "-DskipTests"
     libexec.install "target/trimmomatic-#{version}.jar"
-    bin.write_jar_script libexec/"trimmomatic-#{version}.jar", "trimmomatic", java_version: "26"
+    bin.write_jar_script libexec/"trimmomatic-#{version}.jar", "trimmomatic"
     pkgshare.install "adapters"
   end
 
