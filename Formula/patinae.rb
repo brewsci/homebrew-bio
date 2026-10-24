@@ -3,8 +3,8 @@ class Patinae < Formula
 
   desc "Fast, programmable molecular viewer for research, scripting, and the web"
   homepage "https://github.com/zmactep/patinae"
-  url "https://github.com/zmactep/patinae/archive/refs/tags/v0.4.7.tar.gz"
-  sha256 "2393261ce09918118f9524b7412d85b4fafac8f93a08e5067280db84ea9ae74e"
+  url "https://github.com/zmactep/patinae/archive/refs/tags/v0.5.2.tar.gz"
+  sha256 "ee91dd404550927d0d2222b0bb1c6779f3e2bbd3b37961498ad2a517c72bc21a"
   license "BSD-3-Clause"
   head "https://github.com/zmactep/patinae.git", branch: "main"
 
@@ -15,9 +15,8 @@ class Patinae < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, arm64_tahoe:   "bb036d8a59588dea1e8c6115398de0f1296b172d86353ab6fb96d5f1d861260b"
-    sha256 cellar: :any, arm64_sequoia: "31f88c7c31057dd255cf92a5a8f1fbf843f2950221738db4be16b4c9d93f7c70"
-    sha256 cellar: :any, arm64_sonoma:  "aea28ecf140d90f74c4a6434b29648554da07b8882cc5d4eeb1610006bdc793a"
+    sha256 cellar: :any, arm64_tahoe:   "185951219900d05cae07462d38a42f59de76c4193e092476b4fa9331bb6c3c5e"
+    sha256 cellar: :any, arm64_sequoia: "2e5e327ed0873bcc56717f8779b7b5d72a70a425a02c7b7122fcf7e4ce4d8225"
   end
 
   depends_on "maturin" => :build
@@ -52,7 +51,6 @@ class Patinae < Formula
       # Generate AppIcon.icns from images/patinae.png (uses sips + python3).
       system "make", "icon"
       libexec.install "target/app/AppIcon.icns"
-
       (buildpath/"icon.r").write <<~REZ
         read 'icns' (-16455, "patinae") "AppIcon.icns";
       REZ
