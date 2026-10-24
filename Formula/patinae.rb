@@ -48,6 +48,17 @@ class Patinae < Formula
            "--out", buildpath/"wheels"
     venv.pip_install Dir[buildpath/"wheels/patinae-*.whl"].first
 
+    if OS.mac?
+      # Generate AppIcon.icns from images/patinae.png (uses sips + python3).
+      system "make", "icon"
+      libexec.install "target/app/AppIcon.icns"
+      (buildpath/"icon.r").write <<~REZ
+        read 'icns' (-16455, "patinae") "AppIcon.icns";
+      REZ
+      system "Rez", "-i", libexec, "-o", libexec/"bin/patinae", buildpath/"icon.r"
+      system "SetFile", "-a", "C", libexec/"bin/patinae"
+     end
+
     (bin/"patinae").write <<~SH
       #!/bin/bash
       export PATINAE_PLUGIN_DIR="#{libexec}/plugins"
