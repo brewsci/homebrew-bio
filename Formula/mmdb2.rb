@@ -7,7 +7,7 @@ class Mmdb2 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 3
+    rebuild 4
     sha256 cellar: :any,                 arm64_tahoe:   "c1a635773646d051f3ee7555f85fb38c55785ddfeb515ccb49e852c94b013529"
     sha256 cellar: :any,                 arm64_sequoia: "4a58793e2b06d299ea6515dfb801cd2b706a763c4a7f150b8315134d6d640972"
     sha256 cellar: :any,                 arm64_sonoma:  "e18f1bf54d7ce386dc01a9264d009fc9d2d3efd56248e1dfd170ef698ea771d7"
