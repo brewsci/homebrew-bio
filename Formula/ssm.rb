@@ -10,10 +10,10 @@ class Ssm < Formula
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
     rebuild 4
-    sha256 cellar: :any,                 arm64_tahoe:   "73c3da560fe502537a897cda5570fe82e8639c8e6738749c1e0ccf08f79f28cd"
-    sha256 cellar: :any,                 arm64_sequoia: "d5b1c2f96a5f8b25c181f4674509ffbfc848cbc569f7ba3027d344b6c3761284"
-    sha256 cellar: :any,                 arm64_sonoma:  "b30cd0df31dbc1c940a74448a928473cdce7f731f9c4e705f8dab3169a621263"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07b6e9efa753487b11a84c1ceed365cef0718e229fa596769599dcfe7407e142"
+    sha256 cellar: :any, arm64_golden_gate: "455c554679e607cea1d8e4abaa007913a47a11a2dac48a4576215b984521dd0c"
+    sha256 cellar: :any, arm64_tahoe:       "858f1f0131a1ad63262b97fbc86c8b7c24671e3935c2b82149728b5727f86fac"
+    sha256 cellar: :any, arm64_sequoia:     "699ed6e8a0b31ec712653d33b9ca51dc7eef32e17cc03e25c682614e0861f905"
+    sha256 cellar: :any, x86_64_linux:      "ab3049a73e040e5577caa03b924312800ba5647cd7b57b8b07618f398a16e178"
   end
 
   depends_on "pkg-config" => [:build, :test]
