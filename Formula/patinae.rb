@@ -57,7 +57,7 @@ class Patinae < Formula
       REZ
       system "Rez", "-i", libexec, "-o", libexec/"bin/patinae", buildpath/"icon.r"
       system "SetFile", "-a", "C", libexec/"bin/patinae"
-     end
+    end
 
     (bin/"patinae").write <<~SH
       #!/bin/bash
