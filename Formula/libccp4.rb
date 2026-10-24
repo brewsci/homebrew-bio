@@ -7,11 +7,11 @@ class Libccp4 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
-    sha256 arm64_tahoe:   "0ea5b65efc2371d9e13b039b0be402da3bb702331fa36c36a6b70a6d9d88f7e0"
-    sha256 arm64_sequoia: "edf211b7df112f7cd53750d4d6cf5b0c0aeefa4463767f7127a02245d3ade93c"
-    sha256 arm64_sonoma:  "1a379e8e3a312e98b5135ca117345d90b9b2bf66c33193cdfd636c6badbf7e83"
-    sha256 x86_64_linux:  "7e589a6c84ddefe61703bff691fd0eaac05b4143cfd9d7178a354dfa26cc76f6"
+    rebuild 2
+    sha256 arm64_golden_gate: "45ceae3f6a78c9617b103936c9b4a91b508a776460a77883034002fd115c5dbc"
+    sha256 arm64_tahoe:       "96ed2fee39e1e871f05f0d7e798d991d4c1e8383e3b64e24fb6037ef19d9b443"
+    sha256 arm64_sequoia:     "8b0a0de05886c5f0579f20f3be308f02f81d629744c1cf878be4cece8d4026c9"
+    sha256 x86_64_linux:      "46bdd0c04e12125df57db952a0fc50179703502ab56ea927515114dd5cb6dc39"
   end
 
   depends_on "pkg-config" => [:build, :test]
