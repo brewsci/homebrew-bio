@@ -15,9 +15,8 @@ class Patinae < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, arm64_tahoe:   "bb036d8a59588dea1e8c6115398de0f1296b172d86353ab6fb96d5f1d861260b"
-    sha256 cellar: :any, arm64_sequoia: "31f88c7c31057dd255cf92a5a8f1fbf843f2950221738db4be16b4c9d93f7c70"
-    sha256 cellar: :any, arm64_sonoma:  "aea28ecf140d90f74c4a6434b29648554da07b8882cc5d4eeb1610006bdc793a"
+    sha256 cellar: :any, arm64_tahoe:   "185951219900d05cae07462d38a42f59de76c4193e092476b4fa9331bb6c3c5e"
+    sha256 cellar: :any, arm64_sequoia: "2e5e327ed0873bcc56717f8779b7b5d72a70a425a02c7b7122fcf7e4ce4d8225"
   end
 
   depends_on "maturin" => :build
