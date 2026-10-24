@@ -7,7 +7,7 @@ class Libccp4 < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 1
+    rebuild 2
     sha256 arm64_tahoe:   "0ea5b65efc2371d9e13b039b0be402da3bb702331fa36c36a6b70a6d9d88f7e0"
     sha256 arm64_sequoia: "edf211b7df112f7cd53750d4d6cf5b0c0aeefa4463767f7127a02245d3ade93c"
     sha256 arm64_sonoma:  "1a379e8e3a312e98b5135ca117345d90b9b2bf66c33193cdfd636c6badbf7e83"
