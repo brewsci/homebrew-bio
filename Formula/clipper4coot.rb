@@ -8,7 +8,7 @@ class Clipper4coot < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 3
+    rebuild 4
     sha256 cellar: :any,                 arm64_tahoe:   "627edb09b29ee20bcdd679ac521803399ba8036f4aadb9abbdefa8f65ad4af86"
     sha256 cellar: :any,                 arm64_sequoia: "f5c4bb630b551bef0265f2630101a03b1d04f2ddbcf3e3bdc4a735859a39501d"
     sha256 cellar: :any,                 arm64_sonoma:  "ca724d732c418bf47f83e1d9e03525158b7ac6fc067f223b6fe382a83cefe6ed"
