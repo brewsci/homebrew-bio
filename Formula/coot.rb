@@ -168,6 +168,17 @@ class Coot < Formula
                 "MacCoot_LDFLAGS = $(EXPORT_DYNAMIC_FLAG_SPEC) -framework AppKit"
     end
 
+    # On Linux, the VTE implementation is built into the coot-sumo shared library
+    if OS.linux?
+      inreplace "src/Makefile.am" do |s|
+        # Move VTE implementation from executables into the shared library.
+        s.gsub! "\tvte.cc vte.hh \\\n", ""
+        s.sub! "libcootsumo_la_SOURCES =",
+              "libcootsumo_la_SOURCES = vte.cc vte.hh"
+        s.sub! "libcootsumo_la_LIBADD =",
+              "libcootsumo_la_LIBADD = $(VTE_LIBS)"
+      end
+    end
     inreplace "autogen.sh", "libtool", "glibtool"
     system "./autogen.sh"
     if OS.mac?
