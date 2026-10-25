@@ -72,6 +72,11 @@ class Coot < Formula
     depends_on "elfutils"
   end
 
+  fails_with :gcc do
+    version "13"
+    cause "vte3 requires __cxa_call_terminate@CXXABI_1.3.15 (GCC 14+)"
+  end
+
   resource "monomers" do
     url "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/refmac-monomer-library.tar.gz"
     sha256 "03562eec612103a48bd114cfe0d171943e88f94b84610d16d542cda138e5f36b"
