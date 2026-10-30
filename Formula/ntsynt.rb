@@ -6,8 +6,8 @@ class Ntsynt < Formula
   desc "Detecting multi-genome synteny using minimizer graph mapping"
   homepage "https://github.com/bcgsc/ntSynt"
   url "https://github.com/bcgsc/ntSynt.git",
-  tag:      "v1.0.2",
-  revision: "f7e358fb1b58e7a1c33f3a876a29214e185c5dde"
+  tag:      "v1.0.8",
+  revision: "ffef728f16334af9aef15338de97014e3494f83f"
   license "GPL-3.0-or-later"
   head "https://github.com/bcgsc/ntSynt.git", branch: "main"
 
@@ -242,6 +242,11 @@ class Ntsynt < Formula
     sha256 "d72a210824facfdaf8768cf2d7ca25a042c30320b3020de2fa04640920d4e121"
   end
 
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/0d/1c/73e719955c59b8e424d015ab450f51c0af856ae46ea2da83eba51cc88de1/setuptools-81.0.0.tar.gz"
+    sha256 "487b53915f52501f0a79ccfd0c02c165ffe06631443a886740b91af4b7a5845a"
+  end
+
   resource "smart-open" do
     url "https://files.pythonhosted.org/packages/06/84/c6e6276a72a78996f11118b8bc1d9e9b619aa78201f408210f4a584bd377/smart_open-7.0.4.tar.gz"
     sha256 "62b65852bdd1d1d516839fcb1f6bc50cd0f16e05b4ec44b52f43d38bcb838524"
@@ -333,7 +338,12 @@ class Ntsynt < Formula
 
   def install
     venv = virtualenv_create(libexec, python3)
-    venv.pip_install resources
+    # pybedtools ships a legacy setup.py that imports pkg_resources, which was
+    # removed in setuptools >= 82. Install the other resources first (pinning
+    # setuptools 81), then build pybedtools with build isolation disabled so it
+    # uses the venv's pinned setuptools instead of fetching the latest.
+    venv.pip_install resources.reject { |r| r.name == "pybedtools" }
+    venv.pip_install resource("pybedtools"), build_isolation: false
     # Remove the bundled CBC solver (Ref: homebrew-core/Formula/snakemake.rb)
     rm_r(venv.site_packages/"pulp/solverdir/cbc")
     # Use venv's python3 and snakemake
