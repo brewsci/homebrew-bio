@@ -6,8 +6,8 @@ class Busco < Formula
   # cite Sim_o_2015: "https://doi.org/10.1093/bioinformatics/btv351"
   desc "Assess genome assembly completeness with single-copy orthologs"
   homepage "https://busco.ezlab.org"
-  url "https://gitlab.com/ezlab/busco/-/archive/5.0.0/busco-5.0.0.tar.gz"
-  sha256 "0d4ff765a751a5d22771bece2c1992b1e780da57504501a82752f307be86dcef"
+  url "https://gitlab.com/ezlab/busco/-/archive/6.1.0/busco-6.1.0.tar.gz"
+  sha256 "7aa3b6adfe98f5da9adf6d312722c165cbdea7959af5be7a692ecadd1e81194e"
   license "MIT"
   head "https://gitlab.com/ezlab/busco.git"
 
