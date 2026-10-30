@@ -4,8 +4,8 @@ class Canu < Formula
   # cite Nurk_2020: "https://doi.org/10.1101/gr.263566.120"
   desc "Single molecule sequence assembler"
   homepage "https://canu.readthedocs.io/en/latest/"
-  url "https://github.com/marbl/canu/releases/download/v2.2/canu-2.2.tar.xz"
-  sha256 "e4d0c7b82149114f442ccd39e18f7fe2061c63b28d53700ad896e022b73b7404"
+  url "https://github.com/marbl/canu/releases/download/v2.3/canu-2.3.tar.xz"
+  sha256 "ecb071943cde722152deb861d4ab897090f00b227fd0b261592e1e3fdd3e3e1a"
   license "GPL-2.0-or-later"
 
   bottle do
