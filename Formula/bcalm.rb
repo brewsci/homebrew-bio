@@ -3,8 +3,8 @@ class Bcalm < Formula
   desc "De Bruijn graph compaction in low memory"
   homepage "https://github.com/GATB/bcalm"
   url "https://github.com/GATB/bcalm.git",
-      tag:      "v2.2.2",
-      revision: "febf79a3b9e334962902b5f920114b7cc7e91881"
+      tag:      "v2.2.3",
+      revision: "1f8a8b15e84f6bcaf47296eb3eb381288131b203"
   license "MIT"
 
   bottle do
@@ -18,6 +18,20 @@ class Bcalm < Formula
   uses_from_macos "zlib"
 
   def install
+    # bcalm and its gatb-core submodule request an ancient CMake policy version
+    ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
+
+    # gatb-core and its bundled HDF5 bake the compiler path (Homebrew's shim
+    # wrapper on Linux) into bin/bcalm via generated build banners, which trips
+    # brew audit's check for references to the Homebrew shims directory. Drop
+    # the compiler-path substitutions from the source templates so nothing
+    # references the shim directory.
+    inreplace "gatb-core/gatb-core/src/gatb/system/api/build_info.hpp.in",
+              "${CMAKE_C_COMPILER}", "cc"
+    hdf5_settings = "gatb-core/gatb-core/thirdparty/hdf5/config/cmake/libhdf5.settings.cmake.in"
+    inreplace hdf5_settings, "@CMAKE_C_COMPILER@", "cc"
+    inreplace hdf5_settings, "@CMAKE_CXX_COMPILER@", "c++"
+
     mkdir "build" do
       system "cmake", "-S", "..", "-B", ".", *std_cmake_args
       system "make"
