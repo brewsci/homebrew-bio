@@ -7,8 +7,8 @@ class Quast < Formula
 
   desc "Quality Assessment Tool for Genome Assemblies"
   homepage "https://quast.sourceforge.io/"
-  url "https://github.com/ablab/quast/archive/refs/tags/quast_5.2.0.tar.gz"
-  sha256 "db903a6e4dd81384687f1c38d47cbe0f51bdf7f6d5e5c0bd30c13796391f4f04"
+  url "https://github.com/ablab/quast/archive/refs/tags/quast_5.3.0.tar.gz"
+  sha256 "b9caa839d9f072dc257b3b1f28288b3ec36bd061bc92fa7079b517ffbd0c2de3"
   head "https://github.com/ablab/quast.git", branch: "master"
 
   bottle do
@@ -25,7 +25,7 @@ class Quast < Formula
   depends_on "minimap2"
   depends_on "openjdk@11"
   depends_on "python-matplotlib"
-  depends_on "python@3.12"
+  depends_on "python@3.14"
   depends_on "sambamba"
 
   uses_from_macos "perl"
@@ -47,7 +47,7 @@ class Quast < Formula
   end
 
   def python3
-    which("python3.12")
+    which("python3.14")
   end
 
   def install
@@ -61,7 +61,7 @@ class Quast < Formula
               "return get_path_to_program(fname, sambamba_dirpath)"
       s.gsub! "from distutils.dir_util import copy_tree", "from setuptools import copy_tree"
     end
-    # To be compatible with python 3.12
+    # To be compatible with python 3.12+ (distutils removed)
     inreplace "quast_libs/qconfig.py", "from distutils.version import LooseVersion",
                                        "from packaging.version import Version as LooseVersion"
     # Use Homebrew's barrnap
