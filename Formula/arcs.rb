@@ -2,8 +2,8 @@ class Arcs < Formula
   # cite Yeo_2017: "https://doi.org/10.1093/bioinformatics/btx675"
   desc "Scaffold genome sequence assemblies using linked or long reads"
   homepage "https://github.com/bcgsc/arcs"
-  url "https://github.com/bcgsc/arcs/archive/refs/tags/v1.2.7.tar.gz"
-  sha256 "6ddb0afe2df3f34bed14c4d51bdb3d504ea34a76a10b6d82848823648e58ae3f"
+  url "https://github.com/bcgsc/arcs/archive/refs/tags/v1.2.8.tar.gz"
+  sha256 "f5046074d25da70ceef52a80b5afd2394894df178f27d74815897adce9734a10"
   license "GPL-3.0-only"
   head "https://github.com/bcgsc/arcs.git", branch: "master"
 
@@ -23,8 +23,7 @@ class Arcs < Formula
   depends_on "brewsci/bio/btllib"
   depends_on "brewsci/bio/links-scaffolder"
   depends_on "minimap2"
-
-  uses_from_macos "zlib"
+  depends_on "zlib-ng-compat" # avoids indirect-linkage failure on Linux
 
   on_macos do
     depends_on "libomp"
@@ -34,11 +33,14 @@ class Arcs < Formula
     if OS.mac?
       ENV.append "LDFLAGS", "-L#{formula_opt_lib("libomp")} -lomp"
       ENV.append "CPPFLAGS", "-I#{HOMEBREW_PREFIX}/include -Xpreprocessor -fopenmp -lomp"
+      # macOS 14's default C++ standard is too old to compile modern Boost
+      # headers during AX_BOOST_BASE's probe; force C++17.
+      ENV.append "CXXFLAGS", "-std=c++17"
     end
 
     system "./autogen.sh"
     system "./configure", *std_configure_args,
-           "--with-boost=#{formula_opt_include("boost")}"
+           "--with-boost=#{formula_opt_prefix("boost")}"
     system "make", "install"
     inreplace "bin/arcs-make",
               "$(bin)/../src/long-to-linked-pe",
