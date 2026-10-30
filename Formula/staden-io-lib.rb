@@ -1,9 +1,9 @@
 class StadenIoLib < Formula
   desc "Staden Package io_lib"
   homepage "https://staden.sourceforge.io/"
-  url "https://github.com/jkbonfield/io_lib/archive/refs/tags/io_lib-1-15-0.tar.gz"
-  sha256 "7006ab127ec05649d1f1bceafb7953defc665408da24cf990804d2c65e510f39"
-  head "https://github.com/jkbonfield/io_lib.git"
+  url "https://github.com/jkbonfield/io_lib/archive/refs/tags/io_lib-1-16-0.tar.gz"
+  sha256 "2eeb5852378050aa5ca539a8680148f05d7ce52fa9c288224e7a0b698bd97068"
+  head "https://github.com/jkbonfield/io_lib.git", branch: "master"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -13,13 +13,14 @@ class StadenIoLib < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
+  depends_on "htslib"
   depends_on "libdeflate"
   depends_on "xz"
+  depends_on "zlib-ng-compat"
   depends_on "zstd"
 
   uses_from_macos "bzip2"
   uses_from_macos "curl"
-  uses_from_macos "zlib"
 
   resource "htscodecs" do
     url "https://github.com/samtools/htscodecs/archive/5aecc6e107db1c2ff59529a5aa034d28b799b7d1.tar.gz"
@@ -34,30 +35,29 @@ class StadenIoLib < Formula
                           "--disable-silent-rules",
                           "--with-libdeflate=#{formula_opt_prefix("libdeflate")}",
                           "--with-zstd=#{formula_opt_prefix("zstd")}",
+                          "--with-htslib=#{formula_opt_prefix("htslib")}",
                           "--prefix=#{prefix}"
     system "make", "install"
 
     pkgshare.install "tests"
 
     # Avoid references to Homebrew shims
-    if OS.linux?
-      inreplace pkgshare/"tests/Makefile", HOMEBREW_LIBRARY/"Homebrew/shims/linux/super/", "/usr/bin/"
-      rm pkgshare/"tests/cram_io_test"
-    end
+    inreplace pkgshare/"tests/Makefile", HOMEBREW_LIBRARY/"Homebrew/shims/linux/super/", "/usr/bin/" if OS.linux?
   end
 
   test do
     (testpath/"test.sam").write <<~EOS
-      @SQ  SN:xx  LN:30
-      a0  16  xx  4  1  10H  *  0  0  *  *
+      @SQ	SN:xx	LN:30
+      a0	16	xx	4	1	10H	*	0	0	*	*
     EOS
 
     (testpath/"test.c").write <<~EOS
       #include "io_lib/scram.h"
       int main(int argc, char** argv) {
-        cram_fd* cramfd = cram_io_open("test.sam","rc","rb");
-        if (CRAM_IO_SEEK(cramfd,0,SEEK_END) == 0) return 0;
-        else return 1;
+        scram_fd* fd = scram_open("test.sam", "r");
+        if (fd == NULL) return 1;
+        scram_close(fd);
+        return 0;
       }
     EOS
 
