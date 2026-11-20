@@ -1,8 +1,8 @@
 class Openms < Formula
   desc "Open-source software C++ library for LC-MS data management and analyses"
   homepage "https://www.openms.de/"
-  url "https://github.com/OpenMS/OpenMS/releases/download/release%2F3.4.1/OpenMS-3.4.1.tar.gz"
-  sha256 "ab3c30a8f2b905c2aa7c7b5f821066ed77a111bb5970f5586384c5effb9a6ec8"
+  url "https://github.com/OpenMS/OpenMS/releases/download/release%2F3.5.0/OpenMS-3.5.0.tar.gz"
+  sha256 "29ddff876b6f7e604edca962cbd2f57fe2467262db4b4f039aa43148589f2dbd"
   license "BSD-3-Clause"
 
   head "https://github.com/OpenMS/OpenMS.git", branch: "develop"
@@ -14,11 +14,10 @@ class Openms < Formula
 
   depends_on "cmake" => :build
   depends_on "boost"
-  depends_on "coin-or-tools/coinor/cbc"
-  depends_on "coin-or-tools/coinor/cgl"
-  depends_on "coin-or-tools/coinor/clp"
-  depends_on "coin-or-tools/coinor/coinutils"
-  depends_on "coin-or-tools/coinor/osi"
+  depends_on "cbc"
+  depends_on "cgl"
+  depends_on "clp"
+  depends_on "coinutils"
   depends_on "doxygen"
   depends_on "eigen"
   depends_on "glpk"
@@ -26,12 +25,15 @@ class Openms < Formula
   depends_on "libomp"
   depends_on "libsvm"
   depends_on "libxcb" if OS.linux?
+  depends_on "osi"
   depends_on "qt"
+  depends_on "qtwebengine"
   depends_on "sqlite" if OS.linux?
   depends_on "xcb-util-cursor" if OS.linux?
   depends_on "xerces-c"
   depends_on "yaml-cpp"
   depends_on "zlib"
+  depends_on "zlib-ng-compat" if OS.linux?
 
   def install
     # Build OpenMS
