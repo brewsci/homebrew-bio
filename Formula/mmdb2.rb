@@ -1,17 +1,16 @@
 class Mmdb2 < Formula
   desc "C++ toolkit for working with macromolecular coordinate files"
   homepage "https://www2.mrc-lmb.cam.ac.uk/"
-  url "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/mmdb2-2.0.22.tar.gz"
-  sha256 "a9646933ce9f34633e1ae4901f2383af0e5318d6490851328f5b6aa06195ab51"
-  license all_of: ["GPL-3.0-only", "LGPL-3.0-only"]
+  url "https://ccp4forge.rc-harwell.ac.uk/ccp4/mmdb2/-/archive/2.0.24/mmdb2-2.0.24.tar.bz2"
+  sha256 "aa904db3b57740741c5483e384231d19c4bfc0bf4cd962bbb1b979703ed6c9d1"
+  license "GPL-3.0-only"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    rebuild 4
-    sha256 cellar: :any, arm64_golden_gate: "03edeb7505ec042b121a31ce367b3920864f8fc4fac778348fbb716e70330e2f"
-    sha256 cellar: :any, arm64_tahoe:       "fd330e6a16b8203689be3c7773a526e4d80bd38bc28ac03c5e42d93e3801c354"
-    sha256 cellar: :any, arm64_sequoia:     "ca07d41656c75c13b67ba5379b7039b2b0859cc29bb30f3e22dd2b234c01d62d"
-    sha256 cellar: :any, x86_64_linux:      "3f3534914839eb553091fa617549b96c8bdfc218803261bc93ae42b7bc5fb904"
+    sha256 cellar: :any, arm64_golden_gate: "25802db3d6c447462aa25b8c90ebe7d8bd4b377b0a7c2e562cb7bd1c0b6f9760"
+    sha256 cellar: :any, arm64_tahoe:       "c72734b3b86b48bd3d0e7dc6b2ff07b8ccddd6a50a9236ce11781c8c39dfc0bc"
+    sha256 cellar: :any, arm64_sequoia:     "fcde753c66b968c54104ed7550d7330de064cd2c0cda868021996c3c3a8ae39b"
+    sha256 cellar: :any, x86_64_linux:      "2aea42e6d4ad900fdd16ee219623cde8eb5aad3dfc0fc90118b632db322ca392"
   end
 
   depends_on "pkg-config" => [:build, :test]
