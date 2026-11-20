@@ -2,8 +2,8 @@ class Masurca < Formula
   # cite Zimin_2013: "https://doi.org/10.1093/bioinformatics/btt476"
   desc "Maryland Super-Read Celera Assembler"
   homepage "https://masurca.blogspot.com/"
-  url "https://github.com/alekseyzimin/masurca/releases/download/v3.4.1/MaSuRCA-3.4.1.tar.gz"
-  sha256 "a00b941901d8d332c7fa17670ab68eb767cf476a96d8bf721493a37294f5287f"
+  url "https://github.com/alekseyzimin/masurca/releases/download/v4.1.4/MaSuRCA-4.1.4.tar.gz"
+  sha256 "6112d742bac326917a57d02f71494e5de4c6a67c6bbef8de54f842b9d5873d7d"
   license "GPL-3.0"
 
   bottle do
@@ -12,22 +12,42 @@ class Masurca < Formula
   end
 
   depends_on "boost" => :build
+  depends_on "patchelf" => :build
   depends_on "bzip2"
   depends_on "jellyfish"
   depends_on :linux
   depends_on "parallel"
   depends_on "perl"
-  depends_on "zlib"
+  # libz on Linux is provided by zlib-ng-compat; declare it directly so the
+  # binary links the brewed libz.so.1 (not the host one) and it is not flagged
+  # as an indirect-dependency linkage.
+  depends_on "zlib-ng-compat"
 
   def install
+    ENV.append "CXXFLAGS", "-include cstdint" # newer GCC needs explicit <cstdint>
     ENV.deparallelize
     # Respect MAKEFLAGS variable
     inreplace "install.sh", "make -j $NUM_THREADS", "make"
     ENV["DEST"] = libexec
     system "./install.sh"
 
+    # The bundled Flye and global-1 tools link libz (minimap2's "LIBS=-lz",
+    # Flye's "LDFLAGS+=-lz") without an rpath, and global-1's libtool relink
+    # strips the one Homebrew injects. Their RUNPATH then omits the Homebrew
+    # prefix, so libz.so.1 resolves to the host /lib/x86_64-linux-gnu copy and
+    # trips the "Unwanted system libraries" audit. Retarget every installed ELF
+    # at the brewed zlib-ng-compat so linkage stays inside Homebrew.
+    zlib_rpath = formula_opt_lib("zlib-ng-compat")
+    Dir[libexec/"**/*"].each do |f|
+      next unless File.file?(f)
+      next if File.binread(f, 4) != "\x7fELF"
+
+      quiet_system "patchelf", "--add-rpath", zlib_rpath, f
+    end
+
     bin.install_symlink libexec/"bin/masurca"
-    pkgshare.install "sr_config_example.txt"
+    # v4 install.sh generates masurca_config_example.txt (was sr_config_example.txt)
+    pkgshare.install "masurca_config_example.txt"
   end
 
   test do
