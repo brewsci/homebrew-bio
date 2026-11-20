@@ -2,8 +2,8 @@ class Subread < Formula
   # cite Liao_2013: "https://doi.org/10.1093/nar/gkt214"
   desc "High-performance read alignment, quantification and mutation discovery"
   homepage "https://academic.oup.com/nar/article/41/10/e108/1075719"
-  url "https://cfhcable.dl.sourceforge.net/project/subread/subread-2.0.1/subread-2.0.1-source.tar.gz"
-  sha256 "d808eb5b1823c572cb45a97c95a3c5acb3d8e29aa47ec74e3ca1eb345787c17b"
+  url "https://cfhcable.dl.sourceforge.net/project/subread/subread-2.1.1/subread-2.1.1-source.tar.gz"
+  sha256 "6392d7c66831cdd767e58251892a79a51b6fab8ed0ba9671ad5e85ff1ab01eaa"
   license "GPL-3.0"
 
   bottle do
