@@ -2,8 +2,8 @@ class Biobloomtools < Formula
   # cite Chu_2014: "https://doi.org/10.1093/bioinformatics/btu558"
   desc "BBT: Bloom filter for bioinformatics"
   homepage "https://www.bcgsc.ca/platform/bioinfo/software/biobloomtools/"
-  url "https://github.com/bcgsc/biobloom/releases/download/2.3.3/biobloomtools-2.3.3.tar.gz"
-  sha256 "cd3ca08677aae4cf99da30fdec87a23b12a8320c6d0e21df9d0c3b26b62b6153"
+  url "https://github.com/bcgsc/biobloom/releases/download/2.3.5/biobloomtools-2.3.5.tar.gz"
+  sha256 "03fbc0d0fc867f76d64f756d556598e5fe5f015363df8f97fbed4cfd541c6749"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -12,7 +12,7 @@ class Biobloomtools < Formula
   end
 
   head do
-    url "https://github.com/bcgsc/biobloom.git"
+    url "https://github.com/bcgsc/biobloom.git", branch: "master"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
   end
@@ -39,10 +39,19 @@ class Biobloomtools < Formula
 
   def install
     system "./autogen.sh" if build.head?
+    # Newer compilers promote added -Wall/-Wextra warnings to errors under the
+    # upstream -Werror; -Wno-error (appended after it) keeps the build going.
+    # Newer Boost headers need C++17 (std::is_final etc.); the later -std wins.
+    ENV.append "CXXFLAGS", "-Wno-error -std=c++17"
+    # The system sdsl-lite ships a non-PIC libsdsl.a, which cannot be linked
+    # into a position-independent executable; link non-PIE on Linux.
+    ENV.append "LDFLAGS", "-no-pie" if OS.linux?
     if OS.mac?
       sdsl = buildpath/"sdsl"
       resource("sdsl").stage do
         ENV.cxx11
+        # sdsl's CMakeLists predates CMake 3.5; allow modern CMake to configure it.
+        ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
         system "./install.sh", sdsl
       end
       system "./configure",
