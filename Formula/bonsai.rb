@@ -1,8 +1,8 @@
 class Bonsai < Formula
   desc "Ultrafast, flexible taxonomic analysis and classification"
   homepage "https://github.com/dnbaker/bonsai"
-  url "https://github.com/dnbaker/bonsai/archive/refs/tags/v0.3.tar.gz"
-  sha256 "f89efdf87c4d4a20bf3b8d4e9a11120b44b2b6b3055698c1e48d7790088618b3"
+  url "https://github.com/dnbaker/bonsai/archive/refs/tags/v0.5.1.tar.gz"
+  sha256 "250a22eb000918f33d6e1cdd5b3e58d144605e5bf8a3da757c43445a6d795dda"
   license "MIT"
 
   bottle do
