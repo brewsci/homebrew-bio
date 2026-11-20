@@ -2,8 +2,8 @@ class Centrifuge < Formula
   # cite Kim_2016: "https://doi.org/10.1101/gr.210641.116"
   desc "Rapid sensitive classification of metagenomic sequences"
   homepage "https://www.ccb.jhu.edu/software/centrifuge"
-  url "https://github.com/DaehwanKimLab/centrifuge/archive/refs/tags/v1.0.4.1.tar.gz"
-  sha256 "638cc6701688bfdf81173d65fa95332139e11b215b2d25c030f8ae873c34e5cc"
+  url "https://github.com/DaehwanKimLab/centrifuge/archive/refs/tags/v1.0.4.2.tar.gz"
+  sha256 "db142790522a72971c7deda7d22e1f29fce54dbf23afc2e40def9f5a764f4c99"
   license "GPL-3.0-or-later"
 
   livecheck do
