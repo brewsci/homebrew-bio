@@ -7,8 +7,11 @@ class Indelible < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any_skip_relocation, sierra:       "b0e0bdb1d36361acd34e6aeeae0b5c30da04e27175ac8d114d7aa60abbc3675e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "21419cb7b8262602bfada3b67fa5c1b0009814a978ef67e4987b11f9c1659330"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a6c03e021fa79353e5aead410c8c5d810020d52f42cc01b6285fb2436f0a9577"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "af8338e6e84a1613a219c2d99aa34dfc33b94d468f6bf3b9d5cc84681421b792"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "80c9e96221f4430dc8fa380dec425eb3d97c585c368ce4d7e1ac8b2d9c4cd166"
+    sha256 cellar: :any,                 x86_64_linux:      "2c27fece3f5e850985562b3fd637daf30494fe5800d0ad71ba49b3ff0c7a4079"
   end
 
   def install
