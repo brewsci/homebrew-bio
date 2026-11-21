@@ -1,9 +1,9 @@
 class Indelible < Formula
   # cite Fletcher_2009: "https://doi.org/10.1093/molbev/msp098"
   desc "Flexible Simulator of Biological Sequence Evolution"
-  homepage "http://abacus.gene.ucl.ac.uk/software/indelible/"
-  url "http://abacus.gene.ucl.ac.uk/software/indelible/EFBKqHdv0v7qir6CyeHgqaz/INDELibleV1.03.tar.gz"
-  sha256 "6b74cbe0d3ce202e99d04282a87b564449ab935c66480f20665f1fb4102721a6"
+  homepage "https://tracker.debian.org/pkg/indelible"
+  url "http://archive.ubuntu.com/ubuntu/pool/universe/i/indelible/indelible_1.03.orig.tar.xz"
+  sha256 "60ed2a8fd50608a56a92f708a117194d4a6d23a53e55ecc27bf76e5fdf470c80"
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
@@ -15,6 +15,9 @@ class Indelible < Formula
     cd "src" do
       # MersenneTwister.h:326:19: error: 'getpid' was not declared in this scope
       inreplace "MersenneTwister.h", "<stdio.h>", "<unistd.h>"
+      # paml.cpp: error: reference to 'identity' is ambiguous
+      # https://bugs.debian.org/1143661
+      inreplace "paml.cpp", "identity (", "identity_matrix ("
       exe = "indelible"
       system ENV.cxx, "-o", exe, "indelible.cpp"
       bin.install exe
