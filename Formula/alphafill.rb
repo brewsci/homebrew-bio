@@ -97,7 +97,7 @@ class Alphafill < Formula
     resource("zeep").stage do
       system "cmake", "-S", ".", "-B", "build",
              "-DCMAKE_CXX_STANDARD=20",
-             "-Dmxml_DIR=#{prefix/"mxml/lib/cmake/mxml"}",
+             "-Dmxml_DIR=#{prefix}/mxml/lib/cmake/mxml",
              "-DCMAKE_BUILD_TYPE=Release",
              *std_cmake_args(install_prefix: prefix/"zeep")
       system "cmake", "--build", "build"
@@ -113,9 +113,9 @@ class Alphafill < Formula
     # Use Apple clang to build alphafill on macOS
     ENV.clang if OS.mac?
     system "cmake", "-S", ".", "-B", "build",
-                    "-Dmcfp_DIR=#{prefix/"mcfp/lib/cmake/mcfp"}",
-                    "-Dcifpp_DIR=#{prefix/"cifpp/lib/cmake/cifpp"}",
-                    "-Dzeep_DIR=#{prefix/"zeep/lib/cmake/zeep"}",
+                    "-Dmcfp_DIR=#{prefix}/mcfp/lib/cmake/mcfp",
+                    "-Dcifpp_DIR=#{prefix}/cifpp/lib/cmake/cifpp",
+                    "-Dzeep_DIR=#{prefix}/zeep/lib/cmake/zeep",
                     "-DALPHAFILL_DATA_DIR=#{pkgshare}",
                     *args,
                     *std_cmake_args

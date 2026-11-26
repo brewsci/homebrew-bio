@@ -95,22 +95,25 @@ class Dssp < Formula
       system "cmake", "--install", "build"
     end
 
+    site_packages = prefix/Language::Python.site_packages(python3)
     inreplace "python-module/CMakeLists.txt",
       'LIBRARY DESTINATION "${Python_SITELIB}"',
-      "LIBRARY DESTINATION #{prefix/Language::Python.site_packages(python3)}"
+      "LIBRARY DESTINATION #{site_packages}"
 
     inreplace "python-module/CMakeLists.txt",
       "${Python_LIBRARIES} Boost::python",
-      "Boost::python -Wl,-undefined,dynamic_lookup,-rpath,#{prefix/Language::Python.site_packages(python3)/"dssp"}"
+      "Boost::python -Wl,-undefined,dynamic_lookup,-rpath,#{site_packages}/dssp"
 
     if OS.mac? && MacOS.version <= :sequoia
       inreplace "CMakeLists.txt",
                 "find_package(mrc QUIET)",
                 "find_package(mrc QUIET)\nfind_package(FastFloat 8.0 QUIET CONFIG)"
     end
+    cifpp_cmake_dir = prefix/"libcifpp/lib/cmake/cifpp"
+    mcfp_cmake_dir = prefix/"libmcfp/lib/cmake/mcfp"
     system "cmake", "-S", ".", "-B", "build",
-                    "-Dcifpp_DIR=#{prefix/"libcifpp/lib/cmake/cifpp"}",
-                    "-Dmcfp_DIR=#{prefix/"libmcfp/lib/cmake/mcfp"}",
+                    "-Dcifpp_DIR=#{cifpp_cmake_dir}",
+                    "-Dmcfp_DIR=#{mcfp_cmake_dir}",
                     "-DCMAKE_BUILD_TYPE=Release",
                     "-DBUILD_PYTHON_MODULE=ON",
                     *std_cmake_args

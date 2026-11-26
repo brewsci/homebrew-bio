@@ -97,10 +97,11 @@ class Busco < Formula
   end
 
   def caveats
+    r_cask_instructions = "Or:\n  brew cask install r" if OS.mac?
     <<~EOS
       R must be installed to generate graphs.
-        brew install r
-      #{"Or:\n  brew cask install r" if OS.mac?}
+        brew install --cask r
+      #{r_cask_instructions}
     EOS
   end
 

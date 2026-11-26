@@ -188,7 +188,7 @@ class Coot < Formula
 
     # Get Python location
     xy = Language::Python.major_minor_version python3
-    (lib/"python#{xy}/site-packages/homebrew-coot.pth").write "#{libexec/"lib/python#{xy}/site-packages"}\n"
+    (lib/"python#{xy}/site-packages/homebrew-coot.pth").write "#{libexec}/lib/python#{xy}/site-packages\n"
     ENV.prepend_path "PYTHONPATH", formula_opt_prefix("numpy")/Language::Python.site_packages(python3)
     ENV.prepend_path "PYTHONPATH", libexec/"lib/python#{xy}/site-packages"
     # Set Boost, RDKit, and FFTW2 root

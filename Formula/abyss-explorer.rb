@@ -20,7 +20,7 @@ class AbyssExplorer < Formula
     (bin / "abyss-explorer").write <<~EOS
       #!/bin/sh
       set -eu
-      exec #{Formula["openjdk"]/bin}/java -jar #{libexec}/ABySS-explorer.jar "$@"
+      exec #{formula_opt_bin("openjdk")}/java -jar #{libexec}/ABySS-explorer.jar "$@"
     EOS
   end
 
