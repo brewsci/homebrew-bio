@@ -65,7 +65,8 @@ class StarAligner < Formula
     (testpath/"ref.fa").write ">chr1\n#{genome}\n"
 
     read = genome[500, 50]
-    (testpath/"reads.fq").write "@r1\n#{read}\n+\n#{"I" * read.length}\n"
+    quality = "I" * read.length
+    (testpath/"reads.fq").write "@r1\n#{read}\n+\n#{quality}\n"
 
     (testpath/"genome").mkpath
     system bin/"STAR", "--runMode", "genomeGenerate", "--genomeDir", "genome",

@@ -50,7 +50,7 @@ class Ema < Formula
   end
 
   def caveats
-    "The barcode allowlist is available at\n#{prefix/"4M-with-alts-february-2016.txt"}"
+    "The barcode allowlist is available at\n#{prefix}/4M-with-alts-february-2016.txt"
   end
 
   test do
