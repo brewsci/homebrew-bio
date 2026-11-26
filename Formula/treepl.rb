@@ -33,7 +33,8 @@ class Treepl < Formula
       system "tar", "xvf", "ADOL-C-2.6.3.tgz"
       cd "ADOL-C-2.6.3" do
         args = std_configure_args + %W[--prefix=#{libexec} --libdir=#{libexec}/lib --with-boost=no]
-        args << "--with-openmp-flag=#{OS.mac? ? "-Xpreprocessor -fopenmp -lomp" : "-fopenmp"}"
+        openmp_flag = OS.mac? ? "-Xpreprocessor -fopenmp -lomp" : "-fopenmp"
+        args << "--with-openmp-flag=#{openmp_flag}"
         system "./configure", *args
         system "make", "install"
       end
@@ -44,7 +45,8 @@ class Treepl < Formula
       nlopt = Formula["nlopt"]
       args = %W[CPPFLAGS=-I#{libexec}/include CFLAGS=-I#{nlopt.include}]
       # don't use RPATH on macOS
-      args << "LDFLAGS=-L#{nlopt.lib} -L#{libexec}/lib #{"-Wl,-rpath,#{libexec}/lib" unless OS.mac?}"
+      rpath = "-Wl,-rpath,#{libexec}/lib" unless OS.mac?
+      args << "LDFLAGS=-L#{nlopt.lib} -L#{libexec}/lib #{rpath}"
       args << "OPENMP=-Xpreprocessor -fopenmp -lomp" if OS.mac?
       system "./configure", *std_configure_args
       system "make", *args

@@ -3,8 +3,8 @@ class Patinae < Formula
 
   desc "Fast, programmable molecular viewer for research, scripting, and the web"
   homepage "https://github.com/zmactep/patinae"
-  url "https://github.com/zmactep/patinae/archive/refs/tags/v0.5.2.tar.gz"
-  sha256 "ee91dd404550927d0d2222b0bb1c6779f3e2bbd3b37961498ad2a517c72bc21a"
+  url "https://github.com/zmactep/patinae/archive/refs/tags/v0.5.4.tar.gz"
+  sha256 "42c023a4428dfab8d0b3f8c1cd046954f25ec75bcbfd7596655621b63f78e094"
   license "BSD-3-Clause"
   head "https://github.com/zmactep/patinae.git", branch: "main"
 
@@ -15,8 +15,10 @@ class Patinae < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/brewsci/bio"
-    sha256 cellar: :any, arm64_tahoe:   "185951219900d05cae07462d38a42f59de76c4193e092476b4fa9331bb6c3c5e"
-    sha256 cellar: :any, arm64_sequoia: "2e5e327ed0873bcc56717f8779b7b5d72a70a425a02c7b7122fcf7e4ce4d8225"
+    manifest_sha256 "a0f54a3f97b4abeb431ce4f5e9ae362536ebe123df2fe28fd03b03b43ddbdf2e"
+    sha256 cellar: :any, arm64_golden_gate: "2a3ea7b417ef64a17f541aeb3e964c276f83c900719b42ad710dc2475ae36457"
+    sha256 cellar: :any, arm64_tahoe:       "1e7974462fea43a35b5e3bc01fda4838d6ae4f8781890e24c8c733e836023f60"
+    sha256 cellar: :any, arm64_sequoia:     "f9f7ecfc7e6f3d35cab19405e9018cc8ddeaa895c9bd412f80a48e662dd4f218"
   end
 
   depends_on "maturin" => :build
